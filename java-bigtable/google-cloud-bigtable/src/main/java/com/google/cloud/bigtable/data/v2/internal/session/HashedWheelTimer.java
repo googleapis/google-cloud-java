@@ -28,17 +28,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * {@link BigtableTimer} backed by a single-thread hashed wheel — same algorithm as Netty's
- * {@code HashedWheelTimer} but with no Netty dependency. Tick = {@value #TICK_DURATION_MS} ms,
- * {@value #TICKS_PER_WHEEL} buckets, so one full rotation is ~5 s.
+ * {@link BigtableTimer} backed by a single-thread hashed wheel — same algorithm as Netty's {@code
+ * HashedWheelTimer} but with no Netty dependency. Tick = {@value #TICK_DURATION_MS} ms, {@value
+ * #TICKS_PER_WHEEL} buckets, so one full rotation is ~5 s.
  *
- * <p>Insert is O(1): the new {@link Timeout} is enqueued onto an MPSC pending queue and bucketed
- * by the tick thread on the next tick. Cancel is O(1): a single state CAS marks the entry
- * cancelled, and the worker unlinks it the next time the bucket is swept (so a cancelled entry
- * holds memory for at most one wheel rotation).
+ * <p>Insert is O(1): the new {@link Timeout} is enqueued onto an MPSC pending queue and bucketed by
+ * the tick thread on the next tick. Cancel is O(1): a single state CAS marks the entry cancelled,
+ * and the worker unlinks it the next time the bucket is swept (so a cancelled entry holds memory
+ * for at most one wheel rotation).
  *
- * <p>The worker thread only advances the wheel and hops fires to the caller-supplied
- * {@link Executor}; user code never runs on the tick thread.
+ * <p>The worker thread only advances the wheel and hops fires to the caller-supplied {@link
+ * Executor}; user code never runs on the tick thread.
  */
 public final class HashedWheelTimer implements BigtableTimer {
   private static final Logger LOG = Logger.getLogger(HashedWheelTimer.class.getName());
