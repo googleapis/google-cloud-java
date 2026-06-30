@@ -866,23 +866,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               }
             }
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetProceduresComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getProcedures", LOG);
-            }
-
-            if (!Thread.currentThread().isInterrupted()) {
-              populateQueue(collectedResults, queue, localResultSchemaFields);
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetProceduresComparator(localResultSchemaFields);
+            sortResults(collectedResults, comparator, "getProcedures", LOG);
+            populateQueue(collectedResults, queue, localResultSchemaFields);
 
           } catch (Throwable t) {
-            LOG.severe("Unexpected error in procedure fetcher runnable: " + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getProcedures");
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
-            signalEndOfData(queue, localResultSchemaFields);
-            LOG.info("Procedure fetcher thread finished.");
+            finalizeFetcher(queue, localResultSchemaFields, "Procedure fetcher");
           }
         };
 
@@ -1075,31 +1068,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             processProcedureArgumentsSequentially(
                 fullRoutines, columnNameRegex, collectedResults, resultSchema.getFields(), LOG);
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetProcedureColumnsComparator(resultSchema.getFields());
-              sortResults(collectedResults, comparator, "getProcedureColumns", LOG);
-              populateQueue(collectedResults, queue, resultSchema.getFields());
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetProcedureColumnsComparator(resultSchema.getFields());
+            sortResults(collectedResults, comparator, "getProcedureColumns", LOG);
+            populateQueue(collectedResults, queue, resultSchema.getFields());
 
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            LOG.warning(
-                "Fetcher: Interrupted in main try block for catalog "
-                    + catalogParam
-                    + ". Error: "
-                    + e.getMessage());
-            writeErrorToQueue(queue, e);
           } catch (Throwable t) {
-            LOG.severe(
-                "Fetcher: Unexpected error in main try block for catalog "
-                    + catalogParam
-                    + ". Error: "
-                    + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getProcedureColumns");
           } finally {
-            signalEndOfData(queue, resultSchema.getFields());
-            LOG.info("Procedure column fetcher thread finished for catalog: " + catalogParam);
+            finalizeFetcher(queue, resultSchema.getFields(), "Procedure column fetcher");
           }
         };
 
@@ -1675,23 +1652,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               }
             }
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetTablesComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getTables", LOG);
-            }
-
-            if (!Thread.currentThread().isInterrupted()) {
-              populateQueue(collectedResults, queue, localResultSchemaFields);
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetTablesComparator(localResultSchemaFields);
+            sortResults(collectedResults, comparator, "getTables", LOG);
+            populateQueue(collectedResults, queue, localResultSchemaFields);
 
           } catch (Throwable t) {
-            LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getTables");
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
-            signalEndOfData(queue, localResultSchemaFields);
-            LOG.info("Table fetcher thread finished.");
+            finalizeFetcher(queue, localResultSchemaFields, "Table fetcher");
           }
         };
 
@@ -1992,23 +1962,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
             waitForTasksCompletion(taskFutures);
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetColumnsComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getColumns", LOG);
-            }
-
-            if (!Thread.currentThread().isInterrupted()) {
-              populateQueue(collectedResults, queue, localResultSchemaFields);
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetColumnsComparator(localResultSchemaFields);
+            sortResults(collectedResults, comparator, "getColumns", LOG);
+            populateQueue(collectedResults, queue, localResultSchemaFields);
 
           } catch (Throwable t) {
-            LOG.severe("Unexpected error in column fetcher runnable: " + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getColumns");
           } finally {
             taskFutures.forEach(f -> f.cancel(true));
-            signalEndOfData(queue, localResultSchemaFields);
-            LOG.info("Column fetcher thread finished.");
+            finalizeFetcher(queue, localResultSchemaFields, "Column fetcher");
           }
         };
 
@@ -3511,23 +3474,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
             }
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetSchemasComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getSchemas", LOG);
-            }
-
-            if (!Thread.currentThread().isInterrupted()) {
-              populateQueue(collectedResults, queue, localResultSchemaFields);
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetSchemasComparator(localResultSchemaFields);
+            sortResults(collectedResults, comparator, "getSchemas", LOG);
+            populateQueue(collectedResults, queue, localResultSchemaFields);
 
           } catch (Throwable t) {
-            LOG.severe("Unexpected error in multi-schema fetcher runnable: " + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getSchemas");
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
-            signalEndOfData(queue, localResultSchemaFields);
-            LOG.info("Multi-schema fetcher thread finished.");
+            finalizeFetcher(queue, localResultSchemaFields, "Multi-schema fetcher");
           }
         };
 
@@ -3792,12 +3748,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             sortResults(collectedResults, comparator, "getFunctions", LOG);
             populateQueue(collectedResults, queue, localResultSchemaFields);
           } catch (Throwable t) {
-            LOG.severe("Unexpected error in function fetcher runnable: " + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getFunctions");
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
-            signalEndOfData(queue, localResultSchemaFields);
-            LOG.info("Function fetcher thread finished.");
+            finalizeFetcher(queue, localResultSchemaFields, "Function fetcher");
           }
         };
 
@@ -3972,31 +3926,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             processFunctionParametersSequentially(
                 fullFunctions, columnNameRegex, collectedResults, resultSchemaFields, LOG);
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetFunctionColumnsComparator(resultSchemaFields);
-              sortResults(collectedResults, comparator, "getFunctionColumns", LOG);
-              populateQueue(collectedResults, queue, resultSchemaFields);
-            }
+            Comparator<FieldValueList> comparator =
+                defineGetFunctionColumnsComparator(resultSchemaFields);
+            sortResults(collectedResults, comparator, "getFunctionColumns", LOG);
+            populateQueue(collectedResults, queue, resultSchemaFields);
 
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            LOG.warning(
-                "Fetcher: Interrupted in main try block for catalog "
-                    + catalogParam
-                    + ". Error: "
-                    + e.getMessage());
-            writeErrorToQueue(queue, e);
           } catch (Throwable t) {
-            LOG.severe(
-                "Fetcher: Unexpected error in main try block for catalog "
-                    + catalogParam
-                    + ". Error: "
-                    + t.getMessage());
-            writeErrorToQueue(queue, t);
+            handleFetcherException(t, queue, "getFunctionColumns");
           } finally {
-            signalEndOfData(queue, resultSchemaFields);
-            LOG.info("Function column fetcher thread finished for catalog: " + catalogParam);
+            finalizeFetcher(queue, resultSchemaFields, "Function column fetcher");
           }
         };
 
@@ -4854,6 +4792,26 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
+  private void handleFetcherException(
+      Throwable t, BlockingQueue<BigQueryFieldValueListWrapper> queue, String fetcherName) {
+    if (t instanceof InterruptedException) {
+      Thread.currentThread().interrupt();
+      LOG.warning("Fetcher interrupted in " + fetcherName + ": " + t.getMessage());
+    } else {
+      LOG.severe("Unexpected error in " + fetcherName + ": " + t.getMessage());
+    }
+    writeErrorToQueue(queue, t);
+  }
+
+  private void finalizeFetcher(
+      BlockingQueue<BigQueryFieldValueListWrapper> queue, FieldList schema, String fetcherName) {
+    if (Thread.currentThread().isInterrupted()) {
+      writeErrorToQueue(queue, new SQLException("Metadata fetch interrupted."));
+    }
+    signalEndOfData(queue, schema);
+    LOG.info(fetcherName + " finished.");
+  }
+
   private void signalEndOfData(
       BlockingQueue<BigQueryFieldValueListWrapper> queue, FieldList resultSchemaFields) {
     try {
@@ -4874,7 +4832,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Dataset> allDatasets = new ArrayList<>();
     for (String project : projects) {
       if (Thread.currentThread().isInterrupted()) {
-        break;
+        throw new SQLException("Interrupted while fetching matching datasets");
       }
       try {
         List<Dataset> datasets =
@@ -4891,7 +4849,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        break;
+        throw new SQLException("Interrupted while fetching matching datasets", e);
       } catch (Exception e) {
         throw new SQLException("Failed to fetch matching datasets for project " + project, e);
       }
