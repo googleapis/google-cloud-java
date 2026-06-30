@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: Generate new GAPIC client library (Hermetic Build)
 on:
   workflow_dispatch:
@@ -56,8 +59,10 @@ jobs:
       contents: write
       pull-requests: write    
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
@@ -90,7 +95,7 @@ jobs:
           # create and push to branch in origin
           # random_id allows multiple runs of this workflow
           random_id=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
-          branch_name="new-library/${{ github.event.inputs.api_shortname }}-${random_id}"
+          branch_name="new-library/${GITHUB_EVENT_INPUTS_API_SHORTNAME}-${random_id}"
           git checkout -b "${branch_name}"
           git add --all
           commit_message="feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}"
@@ -115,3 +120,4 @@ jobs:
           GENERATION_ARGUMENTS: ${{ steps.config_generation.outputs.new_library_args }}
           DOCKER_VOLUMES: ${{ steps.generation.outputs.repo_volumes }}
           GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+          GITHUB_EVENT_INPUTS_API_SHORTNAME: ${{ github.event.inputs.api_shortname }}

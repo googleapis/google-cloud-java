@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 # Copyright 2026 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +33,9 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
       - name: Extract showcase version from pom.xml
         id: extract_version
         shell: bash
@@ -38,7 +43,7 @@ jobs:
           version=$(awk -F'[<>]' '/gapic-showcase.version/{print $3; exit}' java-showcase/gapic-showcase/pom.xml)
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
           go-version: '1.24'
       - name: Extract showcase commit from librarian.yaml
