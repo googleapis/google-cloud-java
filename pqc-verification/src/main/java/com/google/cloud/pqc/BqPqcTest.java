@@ -28,36 +28,38 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.security.Security;
-import org.conscrypt.Conscrypt;
-import org.conscrypt.OpenSSLSocketImpl;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
+import org.conscrypt.Conscrypt;
+import org.conscrypt.OpenSSLSocketImpl;
 
 /**
- * A reproduction sample to trace TLS handshake details (protocol, cipher suite, and negotiated curve)
- * for Google Cloud BigQuery client calls, verifying that PQC (X25519MLKEM768) is negotiated.
+ * A reproduction sample to trace TLS handshake details (protocol, cipher suite, and negotiated
+ * curve) for Google Cloud BigQuery client calls, verifying that PQC (X25519MLKEM768) is negotiated.
  *
- * This code requires Conscrypt on the classpath to enable and detect PQC algorithms.
+ * <p>This code requires Conscrypt on the classpath to enable and detect PQC algorithms.
  */
 public class BqPqcTest {
 
   public static void main(String[] args) throws Exception {
-    // 1. Try to register Conscrypt provider
-    registerConscrypt();
     System.out.println("[DEBUG] Java Version: " + System.getProperty("java.version"));
     System.out.println("[DEBUG] Java Runtime: " + System.getProperty("java.runtime.version"));
-    System.out.println("[DEBUG] Java VM     : " + System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.version") + ")");
+    System.out.println(
+        "[DEBUG] Java VM     : "
+            + System.getProperty("java.vm.name")
+            + " ("
+            + System.getProperty("java.vm.version")
+            + ")");
     try {
       System.out.println("[DEBUG] Conscrypt Version: " + Conscrypt.version());
+      Security.addProvider(Conscrypt.newProvider());
+      System.out.println("Registered Conscrypt provider.");
     } catch (Throwable t) {
-      System.out.println("[DEBUG] Failed to get Conscrypt version: " + t.getMessage());
+      System.out.println("[DEBUG] Failed to register or get Conscrypt version: " + t.getMessage());
     }
 
-    // Force Conscrypt and OpenJDK to prefer X25519MLKEM768 for TLS 1.3
-    System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768,X25519,secp256r1");
-
-    // 2. Build custom HttpTransportFactory with Tracing SSLSocketFactory
+    // 1. Build custom HttpTransportFactory with Tracing SSLSocketFactory
     HttpTransportFactory transportFactory = new TracingHttpTransportFactory();
 
     HttpTransportOptions transportOptions =
@@ -86,30 +88,23 @@ public class BqPqcTest {
     }
   }
 
-  private static void registerConscrypt() {
-    try {
-      java.security.Provider provider = Conscrypt.newProvider();
-      if (Security.getProvider("Conscrypt") == null) {
-        Security.insertProviderAt(provider, 1);
-        System.out.println("Registered Conscrypt provider at position 1.");
-      }
-    } catch (Throwable t) {
-      System.err.println("Failed to register Conscrypt: " + t.getMessage());
-      t.printStackTrace();
-    }
-  }
-
   private static void logHandshakeDetails(
-      String protocol, String cipherSuite, String curve, String methodUsed, String socketClassName) {
+      String protocol,
+      String cipherSuite,
+      String curve,
+      String methodUsed,
+      String socketClassName) {
     System.out.println("[TLS TRACE] Handshake Completed");
     System.out.println("  Protocol   : " + protocol);
     System.out.println("  CipherSuite: " + cipherSuite);
     if (curve != null) {
       System.out.println("  Curve Name : " + curve + " (via Conscrypt " + methodUsed + ")");
-      boolean isPqc = curve.equalsIgnoreCase("X25519MLKEM768") 
-          || curve.toLowerCase().contains("mlkem") 
-          || curve.toLowerCase().contains("kyber");
-      System.out.println("  Is PQC?    : " + (isPqc ? "YES (Hybrid Post-Quantum)" : "NO (Classical)"));
+      boolean isPqc =
+          curve.equalsIgnoreCase("X25519MLKEM768")
+              || curve.toLowerCase().contains("mlkem")
+              || curve.toLowerCase().contains("kyber");
+      System.out.println(
+          "  Is PQC?    : " + (isPqc ? "YES (Hybrid Post-Quantum)" : "NO (Classical)"));
     } else {
       System.out.println("  Curve Name : Unknown");
       System.out.println("  Socket Class: " + socketClassName);
@@ -121,15 +116,15 @@ public class BqPqcTest {
     @Override
     public HttpTransport create() {
       try {
-        // Strictly use Conscrypt provider for TLS context
+        // Build a standard Conscrypt-backed TLS context
         SSLContext sslContext = SSLContext.getInstance("TLS", "Conscrypt");
         sslContext.init(null, null, null);
+        SSLSocketFactory conscryptFactory = sslContext.getSocketFactory();
 
-        SSLSocketFactory baseFactory = sslContext.getSocketFactory();
-        SSLSocketFactory pqcFactory = new PqcEnforcingSSLSocketFactory(
-            baseFactory, new String[] {"X25519MLKEM768", "X25519"});
-        SSLSocketFactory tracingFactory = new TracingSSLSocketFactory(pqcFactory);
+        // Wrap it in the tracing factory so we can log handshake outcomes
+        SSLSocketFactory tracingFactory = new TracingSSLSocketFactory(conscryptFactory);
 
+        // NetHttpTransport automatically wraps our tracing factory to enforce PQC named groups
         return new NetHttpTransport.Builder().setSslSocketFactory(tracingFactory).build();
       } catch (Exception e) {
         throw new RuntimeException("Failed to create Conscrypt-enforced tracing transport", e);
@@ -137,6 +132,11 @@ public class BqPqcTest {
     }
   }
 
+  /**
+   * A wrapper SSLSocketFactory that registers a handshake completion listener to intercept and
+   * print TLS metadata (protocol, cipher suite, and negotiated group/curve) for developer
+   * visibility and testing.
+   */
   private static class TracingSSLSocketFactory extends SSLSocketFactory {
     private final SSLSocketFactory delegate;
 
@@ -153,16 +153,17 @@ public class BqPqcTest {
                 String cipherSuite = event.getCipherSuite();
                 String protocol = event.getSession().getProtocol();
                 Socket rawSocket = event.getSocket();
-                
+
                 String curve = null;
                 String methodUsed = "";
-                
+
                 if (rawSocket instanceof OpenSSLSocketImpl) {
                   curve = ((OpenSSLSocketImpl) rawSocket).getCurveNameForTesting();
                   methodUsed = "OpenSSLSocketImpl.getCurveNameForTesting";
                 }
 
-                logHandshakeDetails(protocol, cipherSuite, curve, methodUsed, rawSocket.getClass().getName());
+                logHandshakeDetails(
+                    protocol, cipherSuite, curve, methodUsed, rawSocket.getClass().getName());
               } catch (Exception e) {
                 System.err.println("Failed to log TLS handshake: " + e.getMessage());
               }
@@ -212,75 +213,6 @@ public class BqPqcTest {
     public Socket createSocket(
         InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
       return wrap(delegate.createSocket(address, port, localAddress, localPort));
-    }
-  }
-
-  private static void trySetNamedGroups(SSLSocket sslSocket, String[] groups) {
-    try {
-      Conscrypt.setNamedGroups(sslSocket, groups);
-    } catch (Exception e) {
-      System.err.println("[TLS TRACE] Failed to set named groups: " + e.getMessage());
-      e.printStackTrace();
-    }
-  }
-
-  private static class PqcEnforcingSSLSocketFactory extends SSLSocketFactory {
-    private final SSLSocketFactory delegate;
-    private final String[] groups;
-
-    PqcEnforcingSSLSocketFactory(SSLSocketFactory delegate, String[] groups) {
-      this.delegate = delegate;
-      this.groups = groups;
-    }
-
-    private Socket configure(Socket socket) {
-      if (socket instanceof SSLSocket) {
-        trySetNamedGroups((SSLSocket) socket, groups);
-      }
-      return socket;
-    }
-
-    @Override
-    public String[] getDefaultCipherSuites() {
-      return delegate.getDefaultCipherSuites();
-    }
-
-    @Override
-    public String[] getSupportedCipherSuites() {
-      return delegate.getSupportedCipherSuites();
-    }
-
-    @Override
-    public Socket createSocket(Socket s, String host, int port, boolean autoClose)
-        throws IOException {
-      return configure(delegate.createSocket(s, host, port, autoClose));
-    }
-
-    @Override
-    public Socket createSocket() throws IOException {
-      return configure(delegate.createSocket());
-    }
-
-    @Override
-    public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
-      return configure(delegate.createSocket(host, port));
-    }
-
-    @Override
-    public Socket createSocket(String host, int port, InetAddress localHost, int localPort)
-        throws IOException, UnknownHostException {
-      return configure(delegate.createSocket(host, port, localHost, localPort));
-    }
-
-    @Override
-    public Socket createSocket(InetAddress host, int port) throws IOException {
-      return configure(delegate.createSocket(host, port));
-    }
-
-    @Override
-    public Socket createSocket(
-        InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
-      return configure(delegate.createSocket(address, port, localAddress, localPort));
     }
   }
 }

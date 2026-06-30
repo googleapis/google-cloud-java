@@ -26,6 +26,8 @@ HTTP_CLIENT_DIR="${HTTP_CLIENT_DIR:-${PARENT_DIR}/google-http-java-client}"
 HTTP_CLIENT_BRANCH="${HTTP_CLIENT_BRANCH:-pqc-support-conscrypt}"
 
 
+HTTP_CLIENT_VERSION="${HTTP_CLIENT_VERSION:-2.1.2-SNAPSHOT}"
+
 echo "========================================================================="
 echo "Building and installing google-http-java-client snapshot..."
 echo "Using path: ${HTTP_CLIENT_DIR}"
@@ -38,7 +40,7 @@ if [ ! -d "${HTTP_CLIENT_DIR}" ]; then
 fi
 
 # Check if the snapshot jar is already built in the local maven repository
-M2_JAR_PATH="${HOME}/.m2/repository/com/google/http-client/google-http-client/2.1.2-SNAPSHOT/google-http-client-2.1.2-SNAPSHOT.jar"
+M2_JAR_PATH="${HOME}/.m2/repository/com/google/http-client/google-http-client/${HTTP_CLIENT_VERSION}/google-http-client-${HTTP_CLIENT_VERSION}.jar"
 
 if [ -f "${M2_JAR_PATH}" ] && [ "${FORCE_REBUILD}" != "true" ]; then
   echo "Found existing google-http-client snapshot at ${M2_JAR_PATH}."
