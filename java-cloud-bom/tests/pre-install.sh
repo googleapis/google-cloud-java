@@ -23,6 +23,9 @@ set -eo pipefail
   echo "sdk-platform-java/java-shared-dependencies/first-party-dependencies"
   echo "sdk-platform-java/java-shared-dependencies/third-party-dependencies"
   echo "sdk-platform-java/java-core"
+  echo "sdk-platform-java/java-core/google-cloud-core"
+  echo "sdk-platform-java/java-core/google-cloud-core-http"
+  echo "sdk-platform-java/java-core/google-cloud-core-grpc"
   echo "google-auth-library-java"
   echo "grpc-gcp-java"
   for f in $(find . -maxdepth 1 -name "java-*" | grep -v "java-cloud-bom" | grep -v "java-shared-config" | grep -v "java-showcase" | grep -v "java-samples"); do
