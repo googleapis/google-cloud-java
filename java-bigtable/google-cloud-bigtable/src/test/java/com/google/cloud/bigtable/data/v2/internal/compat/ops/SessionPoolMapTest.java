@@ -73,6 +73,28 @@ class SessionPoolMapTest {
   }
 
   @Test
+  void apply_convertsOpSyncThrowToFailedFuture() throws Exception {
+    // op.apply may throw synchronously (NPE on malformed input, REE during shutdown, any
+    // RuntimeException from the wrapped call chain). The async surface must not propagate
+    // the throw — same contract as the loader-throw path above.
+    CountingHandle handle = new CountingHandle();
+    SessionPoolMap<String, CountingHandle> map = new SessionPoolMap<>(key -> handle);
+
+    CompletableFuture<String> result =
+        map.apply(
+            "k",
+            v -> {
+              throw new IllegalStateException("op blew up");
+            });
+
+    assertThat(result.isCompletedExceptionally()).isTrue();
+    ExecutionException ee =
+        assertThrows(ExecutionException.class, () -> result.get(1, TimeUnit.SECONDS));
+    assertThat(ee).hasCauseThat().isInstanceOf(IllegalStateException.class);
+    assertThat(ee).hasCauseThat().hasMessageThat().isEqualTo("op blew up");
+  }
+
+  @Test
   void apply_happyPathInvokesOp() throws Exception {
     CountingHandle handle = new CountingHandle();
     SessionPoolMap<String, CountingHandle> map = new SessionPoolMap<>(key -> handle);

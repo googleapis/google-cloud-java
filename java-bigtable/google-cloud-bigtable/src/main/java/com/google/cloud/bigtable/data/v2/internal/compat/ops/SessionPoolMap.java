@@ -54,9 +54,10 @@ public class SessionPoolMap<K, V extends Closeable> {
   }
 
   /**
-   * Looks up the cached value and applies {@code op}. If the lookup throws (e.g. {@link
-   * IllegalStateException} from a closed Client), the throw is converted to a failed future so
-   * callers consistently observe failures through the future surface.
+   * Looks up the cached value and applies {@code op}. Both the lookup (e.g. {@link
+   * IllegalStateException} from a closed Client) and a synchronous throw from {@code op.apply}
+   * (e.g. NPE on malformed input, RejectedExecutionException during shutdown) are converted to a
+   * failed future so callers consistently observe failures through the future surface.
    */
   public <R> CompletableFuture<R> apply(K key, Function<V, CompletableFuture<R>> op) {
     V v;
@@ -67,7 +68,13 @@ public class SessionPoolMap<K, V extends Closeable> {
       f.completeExceptionally(e);
       return f;
     }
-    return op.apply(v);
+    try {
+      return op.apply(v);
+    } catch (Throwable t) {
+      CompletableFuture<R> f = new CompletableFuture<>();
+      f.completeExceptionally(t);
+      return f;
+    }
   }
 
   /** Evicts all entries, triggering Closeable.close on each via the cache's removal listener. */
