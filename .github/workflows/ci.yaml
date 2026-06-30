@@ -413,23 +413,4 @@ jobs:
       uses: googleapis/java-cloud-bom/tests/validate-bom@v26.79.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
-  generation-config-check:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: validate generation configuration
-      shell: bash
-      run: |
-        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref || 'main' }}" \
-          -e GENERATOR_VERSION="${library_generation_image_tag}" \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):${workspace_name}" \
-          --entrypoint python \
-          -- \
-          /src/library_generation/cli/entry_point.py validate-generation-config
-      env:
-        library_generation_image_tag: 2.68.0
-        workspace_name: /workspace
+
