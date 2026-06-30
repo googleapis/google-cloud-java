@@ -71,11 +71,7 @@ jobs:
         new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
-    # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
-    - name: Update generation_config.yaml
-      run: |
-        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
-        git diff generation_config.yaml
+
     - name: Detect Changes To Librarian.yaml
       id: detect_librarian
       run: |
@@ -132,7 +128,7 @@ jobs:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
         PR_BODY: |
-          Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}
+          Updated googleapis commitish in librarian.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}
 
           💡 **Note:** Please merge or close this PR so that the daily update workflow can continue to run successfully the next day. Alternatively, you can manually trigger the workflow once this PR is merged or closed.
       run: |
@@ -157,7 +153,7 @@ jobs:
         
         # 1. Commit Config Changes
         # Ensure they are staged
-        git add librarian.yaml generation_config.yaml
+        git add librarian.yaml
         if ! git diff --cached --quiet; then
           git commit -m "${PR_TITLE}"
         else
