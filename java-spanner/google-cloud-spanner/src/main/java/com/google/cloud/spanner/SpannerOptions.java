@@ -53,6 +53,7 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -66,6 +67,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.crypto.tink.util.SecretBytes;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
@@ -1239,8 +1241,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           builder.sessionPoolOptions =
               builder.sessionPoolOptions.toBuilder().setExperimentalHost().build();
         }
-        if (builder.credentials == null) {
-          builder.setCredentials(environment.getDefaultSpannerOmniCredentials());
+        if (builder.username != null && builder.secretBytes != null) {
+          builder.setCredentials(
+              new SpannerOmniCredentials(builder.username, builder.secretBytes, builder.host));
+        } else if (builder.credentials == null) {
+          GoogleCredentials defaultCreds = environment.getDefaultSpannerOmniCredentials();
+          if (defaultCreds != null) {
+            builder.setCredentials(defaultCreds);
+          }
+        }
+        if (builder.credentials instanceof SpannerOmniCredentials) {
+          ((SpannerOmniCredentials) builder.credentials)
+              .initChannel(builder.usePlainText, builder.mTLSContext);
+        }
+      } else {
+        if (builder.username != null || builder.secretBytes != null) {
+          throw new IllegalStateException("login() can only be used with InstanceType.OMNI.");
         }
       }
       return builder;
@@ -1296,6 +1312,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         DEFAULT_ADMIN_REQUESTS_LIMIT_EXCEEDED_RETRY_SETTINGS;
     private boolean autoThrottleAdministrativeRequests = false;
     private boolean trackTransactionStarter = false;
+    private String username;
+    private SecretBytes secretBytes;
     private Map<DatabaseId, QueryOptions> defaultQueryOptions = new HashMap<>();
     private boolean enableGrpcGcpOtelMetrics =
         SpannerOptions.environment.isEnableGrpcGcpOtelMetrics();
@@ -1907,6 +1925,28 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setType(InstanceType instanceType) {
       this.instanceType = instanceType;
+      return this;
+    }
+
+    /**
+     * Authenticates to Spanner Omni using the provided username and password, and configures the
+     * resulting token for use in subsequent Spanner API calls.
+     *
+     * <p>Note: The provided {@code password} array will be cleared (zeroed out) by this method for
+     * security purposes.
+     *
+     * @param username The username for login.
+     * @param password The password for login.
+     * @return this builder
+     */
+    public Builder login(String username, char[] password) {
+      Preconditions.checkArgument(
+          username != null && !username.isEmpty(), "username cannot be null or empty");
+      Preconditions.checkArgument(
+          password != null && password.length > 0, "password cannot be null or empty");
+
+      this.username = username;
+      this.secretBytes = SpannerOmniCredentials.convertToSecretBytes(password);
       return this;
     }
 

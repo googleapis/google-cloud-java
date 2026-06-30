@@ -19,8 +19,8 @@ sources:
     commit: 4679f0c8e33ba14d27612bd607649e1f867a881c
     sha256: 35131934f78f0eb4499feb17845ca0c060d3cfc506e0d1d626fbb1bce4d70e23
   showcase:
-    commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
-    sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
+    commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
+    sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
 tools:
   maven:
     - name: google-java-format
@@ -1843,6 +1843,9 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
+    version: 1.88.0-SNAPSHOT
+    skip_generate: true
+  - name: google-cloud-pom-parent
     version: 1.88.0-SNAPSHOT
     skip_generate: true
   - name: grafeas
