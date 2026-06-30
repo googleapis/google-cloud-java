@@ -58,8 +58,6 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
 import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -155,7 +153,7 @@ public class ITPqc {
     assumeTrue(
         hasCert, "CA Certificate not found at " + caCertPath + ". Skipping HttpJson PQC test.");
 
-    // Build custom SSLContext trusting the CA cert
+    // Build custom TrustManager trusting the CA cert
     KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
     trustStore.load(null, null);
     CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -163,21 +161,12 @@ public class ITPqc {
       Certificate cert = cf.generateCertificate(is);
       trustStore.setCertificateEntry("showcase-ca", cert);
     }
-    TrustManagerFactory tmf =
-        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-    tmf.init(trustStore);
 
-    // Force Conscrypt TLS context
-    SSLContext sslContext = SSLContext.getInstance("TLS", Conscrypt.newProvider());
-    sslContext.init(null, tmf.getTrustManagers(), null);
-
-    // Wrap socket factory to enforce PQC named groups
-    javax.net.ssl.SSLSocketFactory pqcFactory =
-        new PqcEnforcingSSLSocketFactory(
-            sslContext.getSocketFactory(), new String[] {"X25519MLKEM768"});
-
+    // Since Conscrypt was registered at position 1 in setUp(),
+    // trustCertificates will resolve SSLContext using Conscrypt,
+    // and NetHttpTransport will automatically wrap the socket factory to enforce PQC.
     NetHttpTransport transport =
-        new NetHttpTransport.Builder().setSslSocketFactory(pqcFactory).build();
+        new NetHttpTransport.Builder().trustCertificates(trustStore).build();
 
     HttpJsonHeaderCapturingInterceptor interceptor = new HttpJsonHeaderCapturingInterceptor();
 
@@ -337,82 +326,5 @@ public class ITPqc {
       return String.valueOf(valueObj);
     }
     return null;
-  }
-
-  private static void trySetNamedGroups(javax.net.ssl.SSLParameters params, String[] groups) {
-    try {
-      java.lang.reflect.Method setNamedGroupsMethod =
-          javax.net.ssl.SSLParameters.class.getMethod("setNamedGroups", String[].class);
-      setNamedGroupsMethod.invoke(params, (Object) groups);
-    } catch (Exception e) {
-      System.err.println("Failed to set named groups via reflection: " + e.getMessage());
-    }
-  }
-
-  private static class PqcEnforcingSSLSocketFactory extends javax.net.ssl.SSLSocketFactory {
-    private final javax.net.ssl.SSLSocketFactory delegate;
-    private final String[] groups;
-
-    PqcEnforcingSSLSocketFactory(javax.net.ssl.SSLSocketFactory delegate, String[] groups) {
-      this.delegate = delegate;
-      this.groups = groups;
-    }
-
-    private java.net.Socket configure(java.net.Socket socket) {
-      if (socket instanceof javax.net.ssl.SSLSocket) {
-        javax.net.ssl.SSLSocket sslSocket = (javax.net.ssl.SSLSocket) socket;
-        javax.net.ssl.SSLParameters params = sslSocket.getSSLParameters();
-        trySetNamedGroups(params, groups);
-        sslSocket.setSSLParameters(params);
-      }
-      return socket;
-    }
-
-    @Override
-    public String[] getDefaultCipherSuites() {
-      return delegate.getDefaultCipherSuites();
-    }
-
-    @Override
-    public String[] getSupportedCipherSuites() {
-      return delegate.getSupportedCipherSuites();
-    }
-
-    @Override
-    public java.net.Socket createSocket(java.net.Socket s, String host, int port, boolean autoClose)
-        throws java.io.IOException {
-      return configure(delegate.createSocket(s, host, port, autoClose));
-    }
-
-    @Override
-    public java.net.Socket createSocket() throws java.io.IOException {
-      return configure(delegate.createSocket());
-    }
-
-    @Override
-    public java.net.Socket createSocket(String host, int port)
-        throws java.io.IOException, java.net.UnknownHostException {
-      return configure(delegate.createSocket(host, port));
-    }
-
-    @Override
-    public java.net.Socket createSocket(
-        String host, int port, java.net.InetAddress localHost, int localPort)
-        throws java.io.IOException, java.net.UnknownHostException {
-      return configure(delegate.createSocket(host, port, localHost, localPort));
-    }
-
-    @Override
-    public java.net.Socket createSocket(java.net.InetAddress host, int port)
-        throws java.io.IOException {
-      return configure(delegate.createSocket(host, port));
-    }
-
-    @Override
-    public java.net.Socket createSocket(
-        java.net.InetAddress address, int port, java.net.InetAddress localAddress, int localPort)
-        throws java.io.IOException {
-      return configure(delegate.createSocket(address, port, localAddress, localPort));
-    }
   }
 }
