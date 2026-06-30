@@ -79,6 +79,9 @@ public class ITPqc {
     File certFile = new File(caCertPath);
     hasCert = certFile.exists() && certFile.isFile();
 
+    // Force Conscrypt and OpenJDK to prefer X25519MLKEM768 for TLS 1.3
+    System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768,X25519,secp256r1");
+
     // Register Conscrypt provider if available and not already registered
     if (hasCert) {
       try {
