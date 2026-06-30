@@ -187,7 +187,7 @@
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>${project.commons-codec.version}</version>
+        <version>${project.common-codec.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
