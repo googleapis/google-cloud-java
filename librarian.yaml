@@ -1845,6 +1845,9 @@ libraries:
   - name: google-cloud-java
     version: 1.88.0-SNAPSHOT
     skip_generate: true
+  - name: google-cloud-pom-parent
+    version: 1.88.0-SNAPSHOT
+    skip_generate: true
   - name: grafeas
     version: 2.95.0-SNAPSHOT
     apis:
