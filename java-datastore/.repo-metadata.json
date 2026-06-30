@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Datastore",
   "product_documentation": "https://cloud.google.com/datastore",
   "api_description": "is a fully managed, schemaless database for\\nstoring non-relational data. Cloud Datastore automatically scales with\\nyour users and supports ACID transactions, high availability of reads and\\nwrites, strong consistency for reads and ancestor queries, and eventual\\nconsistency for all other queries.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/overview",
   "release_level": "stable",
   "transport": "both",
   "language": "java",

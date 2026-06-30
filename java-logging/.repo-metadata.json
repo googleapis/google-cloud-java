@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Logging",
   "product_documentation": "https://cloud.google.com/logging/docs",
   "api_description": "allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

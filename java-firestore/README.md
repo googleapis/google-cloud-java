@@ -67,7 +67,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "3.43.1"
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+See the [Authentication][authentication] guide and the [Java-specific Authentication Guide][java-authentication] for more information.
 
 ## Authorization
 
@@ -102,22 +102,20 @@ use this Cloud Firestore Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/tree/main/samples) directory.
-
+Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/tree/main/java-firestore/samples) directory.
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Pipeline Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/preview-snippets/src/main/java/com/example/firestore/PipelineSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/preview-snippets/src/main/java/com/example/firestore/PipelineSnippets.java) |
-| Quickstart | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/Quickstart.java) |
-| Example Firestore Beam Read | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamRead.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamRead.java) |
-| Example Firestore Beam Write | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamWrite.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamWrite.java) |
-| Listen Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/ListenDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/ListenDataSnippets.java) |
-| Manage Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/ManageDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/ManageDataSnippets.java) |
-| Multiple Range Inequality Filters Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/MultipleRangeInequalityFiltersSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/MultipleRangeInequalityFiltersSnippets.java) |
-| Query Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/QueryDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/QueryDataSnippets.java) |
-| References | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/References.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/References.java) |
-| Retrieve Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/RetrieveDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/RetrieveDataSnippets.java) |
-| City | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/firestore/snippets/model/City.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/firestore/snippets/model/City.java) |
-
+| Pipeline Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/preview-snippets/src/main/java/com/example/firestore/PipelineSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/preview-snippets/src/main/java/com/example/firestore/PipelineSnippets.java) |
+| Quickstart | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/Quickstart.java) |
+| Example Firestore Beam Read | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamRead.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamRead.java) |
+| Example Firestore Beam Write | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamWrite.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/beam/ExampleFirestoreBeamWrite.java) |
+| Listen Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/ListenDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/ListenDataSnippets.java) |
+| Manage Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/ManageDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/ManageDataSnippets.java) |
+| Multiple Range Inequality Filters Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/MultipleRangeInequalityFiltersSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/MultipleRangeInequalityFiltersSnippets.java) |
+| Query Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/QueryDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/QueryDataSnippets.java) |
+| References | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/References.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/References.java) |
+| Retrieve Data Snippets | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/RetrieveDataSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/RetrieveDataSnippets.java) |
+| City | [source code](https://github.com/googleapis/google-cloud-java/blob/main/java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/model/City.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=java-firestore/samples/snippets/src/main/java/com/example/firestore/snippets/model/City.java) |
 
 
 ## Troubleshooting
@@ -198,18 +196,19 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/firestore
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-firestore.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-firestore/3.43.1
-[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[authentication]: https://cloud.google.com/docs/authentication/
+[java-authentication]: https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
-[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
+[troubleshooting]: https://cloud.google.com/java/docs/troubleshooting
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE

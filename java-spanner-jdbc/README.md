@@ -44,7 +44,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-spanner-jdbc" % "2.40.
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+See the [Authentication][authentication] guide and the [Java-specific Authentication Guide][java-authentication] for more information.
 
 ## Authorization
 
@@ -159,17 +159,17 @@ activate the `shade` profile like this:
 
 ## Samples
 
-See the [samples](/samples) directory for various examples for using the Spanner JDBC driver.
+See the [samples](samples) directory for various examples for using the Spanner JDBC driver.
 
-- [snippets](/samples/snippets): Contains small code snippets for commonly used JDBC and Spanner
+- [snippets](samples/snippets): Contains small code snippets for commonly used JDBC and Spanner
   features. Refer to these snippets for examples on how to execute DDL and DML batches, use various
   data types with the JDBC driver, execute various types of transactions (read/write, read-only,
   Partitioned DML), use request and transaction tags, etc.
-- [spring-data-jdbc](/samples/spring-data-jdbc): Contains a sample application that uses Spring Data
+- [spring-data-jdbc](samples/spring-data-jdbc): Contains a sample application that uses Spring Data
   JDBC in combination with a Spanner PostgreSQL database.
-- [spring-data-mybatis](/samples/spring-data-mybatis): Contains a sample application that uses
+- [spring-data-mybatis](samples/spring-data-mybatis): Contains a sample application that uses
   Spring Data MyBatis in combination with a Spanner PostgreSQL database.
-- [quickperf](/samples/quickperf): Contains a simple benchmarking application.
+- [quickperf](samples/quickperf): Contains a simple benchmarking application.
 
 
 ## Troubleshooting
@@ -246,18 +246,19 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/spanner/docs/use-oss-jdbc
-[javadocs]: https://googleapis.dev/java/google-cloud-spanner-jdbc/latest/index.html
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner-jdbc.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-spanner-jdbc&core=gav
-[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[authentication]: https://cloud.google.com/docs/authentication/
+[java-authentication]: https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
-[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
+[troubleshooting]: https://cloud.google.com/java/docs/troubleshooting
 [contributing]: https://github.com/googleapis/java-spanner-jdbc/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-spanner-jdbc/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-spanner-jdbc/blob/main/LICENSE

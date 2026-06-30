@@ -101,7 +101,7 @@ libraryDependencies += "{{ group_id }}" % "{{ artifact_id }}" % "{{ version }}"
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+See the [Authentication][authentication] guide and the [Java-specific Authentication Guide][java-authentication] for more information.
 
 ## Authorization
 
@@ -140,12 +140,21 @@ use this {{metadata['repo']['name_pretty']}} Client Library.
 {% if metadata['samples']|length %}
 ## Samples
 
+{% if monorepo -%}
+Samples are in the [`samples/`](https://github.com/{{  metadata['repo']['repo'] }}/tree/main/{{ metadata['repo']['repo_short'] }}/samples) directory.
+{% else -%}
 Samples are in the [`samples/`](https://github.com/{{  metadata['repo']['repo'] }}/tree/main/samples) directory.
+{% endif -%}
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-{% for sample in metadata['samples'] %}| {{ sample.title }} | [source code](https://github.com/{{ metadata['repo']['repo']  }}/blob/main/{{ sample.file }}) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/{{ metadata['repo']['repo'] }}&page=editor&open_in_editor={{ sample.file }}) |
-{% endfor %}
+{% for sample in metadata['samples'] -%}
+{% if monorepo -%}
+| {{ sample.title }} | [source code](https://github.com/{{ metadata['repo']['repo']  }}/blob/main/{{ metadata['repo']['repo_short'] }}/{{ sample.file }}) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/{{ metadata['repo']['repo'] }}&page=editor&open_in_editor={{ metadata['repo']['repo_short'] }}/{{ sample.file }}) |
+{% else -%}
+| {{ sample.title }} | [source code](https://github.com/{{ metadata['repo']['repo']  }}/blob/main/{{ sample.file }}) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/{{ metadata['repo']['repo'] }}&page=editor&open_in_editor={{ sample.file }}) |
+{% endif -%}
+{% endfor -%}
 {% endif %}
 
 ## Troubleshooting
@@ -245,14 +254,15 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [stability-image]: https://img.shields.io/badge/stability-{% if metadata['repo']['release_level'] == 'stable' %}stable-green{% elif metadata['repo']['release_level'] == 'preview' %}preview-yellow{% else %}unknown-red{% endif %}
 [maven-version-image]: https://img.shields.io/maven-central/v/{{ group_id }}/{{ artifact_id }}.svg
 [maven-version-link]: https://central.sonatype.com/artifact/{{ group_id }}/{{ artifact_id }}/{{ version }}
-[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[authentication]: https://cloud.google.com/docs/authentication/
+[java-authentication]: https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
-[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
+[troubleshooting]: https://cloud.google.com/java/docs/troubleshooting
 [contributing]: https://github.com/{{metadata['repo']['repo']}}/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/{{metadata['repo']['repo']}}/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/{{metadata['repo']['repo']}}/blob/main/LICENSE
