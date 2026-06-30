@@ -8,7 +8,6 @@ import com.google.testdata.v1.stub.DeprecatedServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,7 +110,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
-@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public class DeprecatedServiceClient implements BackgroundResource {

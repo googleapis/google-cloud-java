@@ -79,7 +79,6 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceSettingsClassComposer implements ClassComposer {
   private static final String BUILDER_CLASS_NAME = "Builder";
@@ -205,7 +204,6 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
 
   private static List<AnnotationNode> createClassAnnotations(Service service) {
     List<AnnotationNode> annotations = new ArrayList<>();
-    annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("BetaApi")));
     }
@@ -849,8 +847,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
             StreamingCallSettings.class,
             StubSettings.class,
             TransportChannelProvider.class,
-            UnaryCallSettings.class,
-            NullMarked.class);
+            UnaryCallSettings.class);
     return new TypeStore(concreteClazzes);
   }
 

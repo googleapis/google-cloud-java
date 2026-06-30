@@ -41,7 +41,6 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -49,7 +48,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class CloudRedisStub implements BackgroundResource {

@@ -35,7 +35,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -43,7 +42,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>This class is for advanced usage.
  */
-@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcEchoCallableFactory implements GrpcStubCallableFactory {

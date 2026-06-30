@@ -40,6 +40,7 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
@@ -1343,6 +1344,29 @@ public class ConnectionOptionsTest {
     assertTrue(optionsWithOmniType.getSessionPoolOptions().getUseMultiplexedSessionForRW());
     assertTrue(
         optionsWithOmniType.getSessionPoolOptions().getUseMultiplexedSessionPartitionedOps());
+  }
+
+  @Test
+  public void testBuildWithOmniCredentialsProperties() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user;password=test_pass")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
+    assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
+  }
+
+  @Test
+  public void testBuildWithOmniCredentialsPropertiesMissingPassword() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
   }
 
   @Test

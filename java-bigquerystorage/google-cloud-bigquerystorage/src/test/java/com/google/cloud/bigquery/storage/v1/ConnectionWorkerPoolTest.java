@@ -280,7 +280,7 @@ class ConnectionWorkerPoolTest {
             /* maxRequests= */ 3, /* maxBytes= */ 100000, java.time.Duration.ofSeconds(5));
 
     // Sets the sleep time to simulate requests stuck in connection.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
+    testBigQueryWrite.setResponseSleep(Duration.ofMillis(200L));
     StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
     StreamWriter writeStream2 = getTestStreamWriter(TEST_STREAM_2);
 

@@ -785,6 +785,7 @@ final class KeyAwareChannel extends ManagedChannel {
       if (selector.getSelectorCase() == TransactionSelector.SelectorCase.BEGIN
           && !selector.getBegin().hasReadOnly()) {
         shouldRecordTransactionAffinity = true;
+        allowDefaultAffinity = true;
       }
     }
 

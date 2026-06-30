@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -43,6 +44,7 @@ import com.google.cloud.spanner.SpannerOptions.FixedCloseableExecutorProvider;
 import com.google.cloud.spanner.SpannerOptions.SpannerCallContextTimeoutConfigurator;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Strings;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
@@ -1433,5 +1435,21 @@ public class SpannerOptionsTest {
     assertTrue(options.getSessionPoolOptions().getUseMultiplexedSession());
     assertEquals(
         Duration.ofSeconds(42), options.getSessionPoolOptions().getAcquireSessionTimeout());
+  }
+
+  @Test
+  public void testLogin() {
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setHost("http://localhost:15000")
+            .setType(SpannerOptions.InstanceType.OMNI);
+    char[] password = new char[] {'p', 'a', 's', 's', 'w', 'o', 'r', 'd'};
+    builder.login("user", password);
+
+    // Password array should be cleared
+    assertArrayEquals(new char[] {'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, password);
+
+    SpannerOptions options = builder.build();
+    assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
   }
 }

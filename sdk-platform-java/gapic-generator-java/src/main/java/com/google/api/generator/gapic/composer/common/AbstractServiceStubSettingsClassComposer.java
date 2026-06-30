@@ -124,7 +124,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
-import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceStubSettingsClassComposer implements ClassComposer {
   private static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
@@ -412,7 +411,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
 
   private List<AnnotationNode> createClassAnnotations(Service service) {
     List<AnnotationNode> annotations = new ArrayList<>();
-    annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("BetaApi")));
     }
@@ -2219,8 +2217,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             SuppressWarnings.class,
             TransportChannelProvider.class,
             UnaryCallSettings.class,
-            UnaryCallable.class,
-            NullMarked.class);
+            UnaryCallable.class);
     return new TypeStore(concreteClazzes);
   }
 
