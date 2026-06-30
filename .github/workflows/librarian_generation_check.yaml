@@ -96,13 +96,16 @@ jobs:
         fi
     - name: Commit and push changes (manual run only)
       if: ${{ github.event_name == 'workflow_dispatch' }}
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
         if [ -n "$(git status --porcelain)" ]; then
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
+          [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
           git add -A
           git commit -m "chore: regenerate libraries"
-          git push
+          git remote set-url origin https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git push origin HEAD:${{ github.ref }}
         else
           echo "No changes to commit"
         fi
