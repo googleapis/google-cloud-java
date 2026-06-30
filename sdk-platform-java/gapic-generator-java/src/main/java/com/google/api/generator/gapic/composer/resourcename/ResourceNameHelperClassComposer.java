@@ -69,7 +69,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 public class ResourceNameHelperClassComposer {
   private static final String CLASS_NAME_PATTERN = "%sName";
@@ -153,7 +152,6 @@ public class ResourceNameHelperClassComposer {
 
   private static List<AnnotationNode> createClassAnnotations() {
     return Arrays.asList(
-        AnnotationNode.withType(FIXED_TYPESTORE.get("NullMarked")),
         AnnotationNode.builder()
             .setType(FIXED_TYPESTORE.get("Generated"))
             .setDescription("by gapic-generator-java")
@@ -1706,8 +1704,7 @@ public class ResourceNameHelperClassComposer {
             PathTemplate.class,
             Preconditions.class,
             com.google.api.resourcenames.ResourceName.class,
-            ValidationException.class,
-            NullMarked.class);
+            ValidationException.class);
     return new TypeStore(concreteClazzes);
   }
 
