@@ -2419,7 +2419,9 @@ public class ITBigQueryJDBCTest extends ITBase {
         Statement statementHTAPI = connectionHTAPI.createStatement()) {
 
       String query =
-          "SELECT * FROM INTEGRATION_TEST_FORMAT.all_bq_types WHERE stringField is not null";
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is not null",
+              PROJECT_ID, DATASET);
       ResultSet resultSetRegular = statement.executeQuery(query);
       ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
       resultSetRegular.next();
@@ -2710,7 +2712,8 @@ public class ITBigQueryJDBCTest extends ITBase {
         Statement statementHTAPI = connectionHTAPI.createStatement()) {
 
       String query =
-          "SELECT * FROM INTEGRATION_TEST_FORMAT.all_bq_types WHERE stringField is null;";
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null;", PROJECT_ID, DATASET);
       ResultSet resultSetRegular = statement.executeQuery(query);
       ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
       resultSetRegular.next();

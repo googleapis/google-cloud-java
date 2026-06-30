@@ -109,6 +109,78 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + "  CONSTRAINT my_fk2 FOREIGN KEY (address) REFERENCES `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE3`(address) NOT ENFORCED\n"
           + ");\n";
 
+  private static final String DDL_ALL_BQ_TYPES =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.all_bq_types`\n"
+          + "(\n"
+          + "  stringField STRING,\n"
+          + "  bytesField BYTES,\n"
+          + "  intField INT64,\n"
+          + "  floatField FLOAT64,\n"
+          + "  numericField NUMERIC,\n"
+          + "  bigNumericField BIGNUMERIC,\n"
+          + "  booleanField BOOLEAN,\n"
+          + "  timestampFiled TIMESTAMP,\n"
+          + "  dateField DATE,\n"
+          + "  timeField TIME,\n"
+          + "  dateTimeField DATETIME,\n"
+          + "  geographyField GEOGRAPHY,\n"
+          + "  recordField STRUCT<name STRING, recordNested STRUCT<lastName STRING>>,\n"
+          + "  rangeField RANGE<DATE>,\n"
+          + "  jsonField JSON,\n"
+          + "  arrayString ARRAY<STRING>,\n"
+          + "  arrayRecord ARRAY<STRUCT<value STRING>>,\n"
+          + "  arrayBytes ARRAY<BYTES>,\n"
+          + "  arrayInteger ARRAY<INT64>,\n"
+          + "  arrayNumeric ARRAY<NUMERIC>,\n"
+          + "  arrayBignumeric ARRAY<BIGNUMERIC>,\n"
+          + "  arrayBoolean ARRAY<BOOLEAN>,\n"
+          + "  arrayTimestamp ARRAY<TIMESTAMP>,\n"
+          + "  arrayDate ARRAY<DATE>,\n"
+          + "  arrayTime ARRAY<TIME>,\n"
+          + "  arrayDatetime ARRAY<DATETIME>,\n"
+          + "  arrayGeography ARRAY<GEOGRAPHY>,\n"
+          + "  arrayRange ARRAY<RANGE<DATE>>,\n"
+          + "  arrayJson ARRAY<JSON>,\n"
+          + "  arrayFloat ARRAY<FLOAT64>\n"
+          + ");\n";
+
+  private static final String DML_ALL_BQ_TYPES =
+      "INSERT INTO `%1$s.%2$s.all_bq_types`\n"
+          + "(\n"
+          + "  stringField, bytesField, intField, floatField, numericField, bigNumericField, booleanField,\n"
+          + "  timestampFiled, dateField, timeField, dateTimeField, geographyField, recordField, rangeField, jsonField,\n"
+          + "  arrayString, arrayRecord, arrayBytes, arrayInteger, arrayNumeric, arrayBignumeric, arrayBoolean,\n"
+          + "  arrayTimestamp, arrayDate, arrayTime, arrayDatetime, arrayGeography, arrayRange, arrayJson, arrayFloat\n"
+          + ")\n"
+          + "VALUES\n"
+          + "(\n"
+          + "  'StringValue', CAST('BytesValue' AS BYTES), 123, 10.5, CAST('12345.67' AS NUMERIC), CAST('98765432109876543210.123456789' AS BIGNUMERIC), true,\n"
+          + "  TIMESTAMP '2023-07-28 12:30:00', DATE '2023-07-28', TIME '12:30:00', DATETIME '2023-07-28 12:30:00', ST_GEOGFROMTEXT('POINT(-74.006 40.7128)'),\n"
+          + "  STRUCT('NameValue' AS name, STRUCT('LastNameValue' AS lastName) AS recordNested),\n"
+          + "  RANGE<DATE> '[2023-01-01, 2023-12-01)', JSON '{\"key\":\"value\"}',\n"
+          + "  ['abc', 'def', 'ghi'],\n"
+          + "  [STRUCT('rec_val1' AS value), STRUCT('rec_val2' AS value)],\n"
+          + "  [CAST('byte1' AS BYTES), CAST('byte2' AS BYTES)],\n"
+          + "  [10, 20],\n"
+          + "  [CAST('10.5' AS NUMERIC), CAST('20.5' AS NUMERIC)],\n"
+          + "  [CAST('100.1' AS BIGNUMERIC), CAST('200.2' AS BIGNUMERIC)],\n"
+          + "  [true, false],\n"
+          + "  [TIMESTAMP '2023-01-01 01:00:00', TIMESTAMP '2023-01-01 02:00:00'],\n"
+          + "  [DATE '2023-01-01', DATE '2023-01-02'],\n"
+          + "  [TIME '01:00:00', TIME '02:00:00'],\n"
+          + "  [DATETIME '2023-01-01 01:00:00', DATETIME '2023-01-01 02:00:00'],\n"
+          + "  [ST_GEOGFROMTEXT('POINT(1 1)'), ST_GEOGFROMTEXT('POINT(2 2)')],\n"
+          + "  [RANGE<DATE> '[2023-01-01, 2023-01-03)', RANGE<DATE> '[2023-01-04, 2023-01-06)'],\n"
+          + "  [JSON '{\"a\":1}', JSON '{\"b\":2}'],\n"
+          + "  [1.1, 2.2]\n"
+          + "),\n"
+          + "(\n"
+          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
+          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
+          + "  [], [], [], [], [], [], [],\n"
+          + "  [], [], [], [], [], [], [], []\n"
+          + ");\n";
+
   private static final String CREATE_RESOURCES_SCRIPT =
       DDL_IT_CALLABLE_STMT_PROC_DML_TABLE
           + DDL_IT_CALLABLE_STMT_PROC_TABLE
@@ -118,7 +190,9 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + DDL_IT_CALLABLE_STMT_PROC_DML_INSERT_TEST
           + DDL_IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST
           + DDL_IT_CALLABLE_STMT_PROC_DML_DELETE_TEST
-          + DDL_IT_CALLABLE_STMT_PROC_TEST;
+          + DDL_IT_CALLABLE_STMT_PROC_TEST
+          + DDL_ALL_BQ_TYPES
+          + DML_ALL_BQ_TYPES;
 
   public static synchronized String getSharedDataset() {
     if (sharedDataset == null) {
