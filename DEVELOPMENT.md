@@ -67,3 +67,19 @@ For more information on how to use Librarian, configure generation, or troublesh
 *   **[Librarian GitHub Repository](https://github.com/googleapis/librarian)**: The main repository for the Librarian tool.
 *   **[Librarian Command Reference](https://pkg.go.dev/github.com/googleapis/librarian/cmd/librarian)**: Detailed documentation of `librarian` CLI commands.
 *   **[Librarian Configuration Schema](https://github.com/googleapis/librarian/blob/main/doc/config-schema.md)**: Guide to the structure and options available in `librarian.yaml`.
+
+### Triggering Code Generation in CI
+
+The repository has automated workflows to manage and verify code generation.
+
+#### Automatically Commit Generated Changes on a PR (Manual Trigger)
+If you raise a Pull Request that you expect to introduce changes to generated code (e.g., changes in `gapic-generator-java`), but do not want to run `librarian generate` from local, you can have GitHub Actions automatically regenerate all the client libraries and push the changes back to your branch:
+
+1. Go to the **Actions** tab on the GitHub repository page.
+2. Select **Librarian - Generate libraries check / update** from the workflow list on the left.
+3. Click the **Run workflow** dropdown menu on the right.
+4. Select your **PR branch** from the dropdown and click the **Run workflow** button.
+
+When run manually (via `workflow_dispatch`), the workflow will:
+* Run the generation check.
+* If any code changes are produced, it will automatically commit the changes (`chore: regenerate libraries`) and push them directly back to your PR branch.
