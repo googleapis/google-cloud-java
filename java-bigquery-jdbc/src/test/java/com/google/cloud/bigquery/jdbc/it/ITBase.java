@@ -121,7 +121,7 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + DDL_IT_CALLABLE_STMT_PROC_TEST;
 
   public static String getUniqueDatasetName(String prefix) {
-    return prefix + +System.currentTimeMillis() + "_" + (100 + new java.util.Random().nextInt(900));
+    return prefix + System.currentTimeMillis() + "_" + (100 + new java.util.Random().nextInt(900));
   }
 
   public static synchronized String getSharedDataset() {

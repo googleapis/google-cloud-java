@@ -1768,7 +1768,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       assertTrue(result);
     } finally {
       // clean up
-      bigQueryStatement.execute(String.format("DROP SCHEMA %s CASCADE;", largeResultDataset));
+      bigQueryStatement.execute(String.format("DROP SCHEMA IF EXISTS %s CASCADE;", largeResultDataset));
     }
   }
 
