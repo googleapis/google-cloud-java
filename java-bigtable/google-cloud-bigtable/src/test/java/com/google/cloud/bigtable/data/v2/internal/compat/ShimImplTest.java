@@ -54,8 +54,7 @@ public class ShimImplTest {
 
     Resource<Executor> resource =
         ShimImpl.selectUserCallbackExecutor(
-            EMPTY_TRANSPORT,
-            FixedExecutorProvider.create(userExec, /* shouldAutoClose= */ false));
+            EMPTY_TRANSPORT, FixedExecutorProvider.create(userExec, /* shouldAutoClose= */ false));
 
     assertThat(resource.get()).isSameInstanceAs(userExec);
     resource.close();
@@ -68,8 +67,7 @@ public class ShimImplTest {
 
     Resource<Executor> resource =
         ShimImpl.selectUserCallbackExecutor(
-            EMPTY_TRANSPORT,
-            FixedExecutorProvider.create(userExec, /* shouldAutoClose= */ true));
+            EMPTY_TRANSPORT, FixedExecutorProvider.create(userExec, /* shouldAutoClose= */ true));
 
     assertThat(resource.get()).isSameInstanceAs(userExec);
     resource.close();
