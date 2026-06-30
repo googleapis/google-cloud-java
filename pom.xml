@@ -70,6 +70,7 @@
     <module>java-channel</module>
     <module>java-chat</module>
     <module>java-chronicle</module>
+    <module>java-cloud-bom</module>
     <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
