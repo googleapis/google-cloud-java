@@ -3515,13 +3515,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 LOG.warning("Fetcher interrupted while processing API futures.");
                 break;
               }
-              try {
-                List<Dataset> datasetsResult = apiFuture.get();
-                if (datasetsResult != null) {
-                  collectedDatasets.addAll(datasetsResult);
-                }
-              } catch (ExecutionException e) {
-                LOG.warning("ExecutionException in fetchMatchingDatasets task: " + e.getMessage());
+              List<Dataset> datasetsResult = apiFuture.get();
+              if (datasetsResult != null) {
+                collectedDatasets.addAll(datasetsResult);
               }
             }
 
@@ -4925,11 +4921,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         Thread.currentThread().interrupt();
         break;
       } catch (Exception e) {
-        if (catalog != null) {
-          throw new SQLException("Failed to fetch matching datasets for project " + project, e);
-        }
-        LOG.warning(
-            "Failed to fetch matching datasets for project " + project + ": " + e.getMessage());
+        throw new SQLException("Failed to fetch matching datasets for project " + project, e);
       }
     }
     return allDatasets;
