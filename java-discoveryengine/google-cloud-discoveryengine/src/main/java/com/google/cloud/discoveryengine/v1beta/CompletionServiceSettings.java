@@ -193,6 +193,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
         .purgeCompletionSuggestionsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeSuggestion. */
+  public UnaryCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).removeSuggestionSettings();
+  }
+
   public static final CompletionServiceSettings create(CompletionServiceStubSettings stub)
       throws IOException {
     return new CompletionServiceSettings.Builder(stub.toBuilder()).build();
@@ -375,6 +381,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
             PurgeCompletionSuggestionsMetadata>
         purgeCompletionSuggestionsOperationSettings() {
       return getStubSettingsBuilder().purgeCompletionSuggestionsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeSuggestion. */
+    public UnaryCallSettings.Builder<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionSettings() {
+      return getStubSettingsBuilder().removeSuggestionSettings();
     }
 
     @Override

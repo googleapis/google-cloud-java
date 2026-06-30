@@ -31,6 +31,8 @@ import com.google.cloud.chronicle.v1.ListReferenceListsRequest;
 import com.google.cloud.chronicle.v1.ListReferenceListsResponse;
 import com.google.cloud.chronicle.v1.ReferenceList;
 import com.google.cloud.chronicle.v1.UpdateReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -94,6 +96,19 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListMethodDescriptor =
+          MethodDescriptor.<VerifyReferenceListRequest, VerifyReferenceListResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.chronicle.v1.ReferenceListService/VerifyReferenceList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyReferenceListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyReferenceListResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetReferenceListRequest, ReferenceList> getReferenceListCallable;
   private final UnaryCallable<ListReferenceListsRequest, ListReferenceListsResponse>
       listReferenceListsCallable;
@@ -103,6 +118,8 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
       createReferenceListCallable;
   private final UnaryCallable<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListCallable;
+  private final UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -196,6 +213,18 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListTransportSettings =
+            GrpcCallSettings.<VerifyReferenceListRequest, VerifyReferenceListResponse>newBuilder()
+                .setMethodDescriptor(verifyReferenceListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getInstance())
+                .build();
 
     this.getReferenceListCallable =
         callableFactory.createUnaryCallable(
@@ -219,6 +248,11 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
         callableFactory.createUnaryCallable(
             updateReferenceListTransportSettings,
             settings.updateReferenceListSettings(),
+            clientContext);
+    this.verifyReferenceListCallable =
+        callableFactory.createUnaryCallable(
+            verifyReferenceListTransportSettings,
+            settings.verifyReferenceListSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -254,6 +288,12 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
   @Override
   public UnaryCallable<UpdateReferenceListRequest, ReferenceList> updateReferenceListCallable() {
     return updateReferenceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable() {
+    return verifyReferenceListCallable;
   }
 
   @Override

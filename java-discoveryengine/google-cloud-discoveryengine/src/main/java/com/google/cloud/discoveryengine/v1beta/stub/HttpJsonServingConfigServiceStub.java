@@ -31,11 +31,14 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1beta.ServingConfig;
 import com.google.cloud.discoveryengine.v1beta.UpdateServingConfigRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,6 +58,87 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<CreateServingConfigRequest, ServingConfig>
+      createServingConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateServingConfigRequest, ServingConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ServingConfigService/CreateServingConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateServingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/dataStores/*}/servingConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/servingConfigs",
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/engines/*}/servingConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "servingConfigId", request.getServingConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("servingConfig", request.getServingConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ServingConfig>newBuilder()
+                      .setDefaultInstance(ServingConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteServingConfigRequest, Empty>
+      deleteServingConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteServingConfigRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ServingConfigService/DeleteServingConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteServingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/dataStores/*/servingConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}",
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigMethodDescriptor =
@@ -177,6 +261,9 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .build())
               .build();
 
+  private final UnaryCallable<CreateServingConfigRequest, ServingConfig>
+      createServingConfigCallable;
+  private final UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable;
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigCallable;
   private final UnaryCallable<GetServingConfigRequest, ServingConfig> getServingConfigCallable;
@@ -229,6 +316,31 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<CreateServingConfigRequest, ServingConfig>
+        createServingConfigTransportSettings =
+            HttpJsonCallSettings.<CreateServingConfigRequest, ServingConfig>newBuilder()
+                .setMethodDescriptor(createServingConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
+        HttpJsonCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteServingConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
             HttpJsonCallSettings.<UpdateServingConfigRequest, ServingConfig>newBuilder()
@@ -269,6 +381,16 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
+    this.createServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            createServingConfigTransportSettings,
+            settings.createServingConfigSettings(),
+            clientContext);
+    this.deleteServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteServingConfigTransportSettings,
+            settings.deleteServingConfigSettings(),
+            clientContext);
     this.updateServingConfigCallable =
         callableFactory.createUnaryCallable(
             updateServingConfigTransportSettings,
@@ -295,10 +417,22 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(createServingConfigMethodDescriptor);
+    methodDescriptors.add(deleteServingConfigMethodDescriptor);
     methodDescriptors.add(updateServingConfigMethodDescriptor);
     methodDescriptors.add(getServingConfigMethodDescriptor);
     methodDescriptors.add(listServingConfigsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    return createServingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    return deleteServingConfigCallable;
   }
 
   @Override

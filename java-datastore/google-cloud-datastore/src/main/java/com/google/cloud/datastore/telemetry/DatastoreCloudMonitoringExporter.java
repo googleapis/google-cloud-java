@@ -235,6 +235,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
+    if (datastoreTimeSeries.isEmpty()) {
+      return CompletableResultCode.ofSuccess();
+    }
+
     ProjectName projectName = ProjectName.of(projectId);
 
     // Perform the actual network call to Cloud Monitoring.

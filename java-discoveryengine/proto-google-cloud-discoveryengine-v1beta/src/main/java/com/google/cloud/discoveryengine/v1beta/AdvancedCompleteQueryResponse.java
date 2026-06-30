@@ -225,6 +225,19 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
      * @return The bytes of the dataStore at the given index.
      */
     com.google.protobuf.ByteString getDataStoreBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 4;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
   }
 
   /**
@@ -482,6 +495,25 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       return dataStore_.getByteString(index);
     }
 
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private double score_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 4;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -505,6 +537,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       for (int i = 0; i < dataStore_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, dataStore_.getRaw(i));
+      }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        output.writeDouble(4, score_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -534,6 +569,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         size += dataSize;
         size += 1 * getDataStoreList().size();
       }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, score_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -557,6 +595,8 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       if (!getCompletableFieldPathsList().equals(other.getCompletableFieldPathsList()))
         return false;
       if (!getDataStoreList().equals(other.getDataStoreList())) return false;
+      if (java.lang.Double.doubleToLongBits(getScore())
+          != java.lang.Double.doubleToLongBits(other.getScore())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -578,6 +618,11 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
         hash = (53 * hash) + getDataStoreList().hashCode();
       }
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getScore()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -746,6 +791,7 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         suggestion_ = "";
         completableFieldPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
         dataStore_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        score_ = 0D;
         return this;
       }
 
@@ -802,6 +848,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           dataStore_.makeImmutable();
           result.dataStore_ = dataStore_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.score_ = score_;
+        }
       }
 
       @java.lang.Override
@@ -850,6 +899,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           }
           onChanged();
         }
+        if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+          setScore(other.getScore());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -896,6 +948,12 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
                   dataStore_.add(s);
                   break;
                 } // case 26
+              case 33:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 33
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1420,6 +1478,62 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         return this;
       }
 
+      private double score_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 4;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 4;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        score_ = 0D;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.QuerySuggestion)
     }
 
@@ -1607,6 +1721,71 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
      * @return The bytes for dataStore.
      */
     com.google.protobuf.ByteString getDataStoreBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 6;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * The photo uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string display_photo_uri = 7;</code>
+     *
+     * @return The displayPhotoUri.
+     */
+    java.lang.String getDisplayPhotoUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * The photo uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string display_photo_uri = 7;</code>
+     *
+     * @return The bytes for displayPhotoUri.
+     */
+    com.google.protobuf.ByteString getDisplayPhotoUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The destinationUri.
+     */
+    java.lang.String getDestinationUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The bytes for destinationUri.
+     */
+    com.google.protobuf.ByteString getDestinationUriBytes();
   }
 
   /**
@@ -1644,6 +1823,8 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       suggestion_ = "";
       personType_ = 0;
       dataStore_ = "";
+      displayPhotoUri_ = "";
+      destinationUri_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2048,6 +2229,131 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
     }
 
+    public static final int SCORE_FIELD_NUMBER = 6;
+    private double score_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 6;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
+    }
+
+    public static final int DISPLAY_PHOTO_URI_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayPhotoUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The photo uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string display_photo_uri = 7;</code>
+     *
+     * @return The displayPhotoUri.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayPhotoUri() {
+      java.lang.Object ref = displayPhotoUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayPhotoUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The photo uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string display_photo_uri = 7;</code>
+     *
+     * @return The bytes for displayPhotoUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayPhotoUriBytes() {
+      java.lang.Object ref = displayPhotoUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayPhotoUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESTINATION_URI_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object destinationUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The destinationUri.
+     */
+    @java.lang.Override
+    public java.lang.String getDestinationUri() {
+      java.lang.Object ref = destinationUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destinationUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the person suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The bytes for destinationUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDestinationUriBytes() {
+      java.lang.Object ref = destinationUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destinationUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2077,6 +2383,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, dataStore_);
       }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        output.writeDouble(6, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayPhotoUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, displayPhotoUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, destinationUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2100,6 +2415,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, dataStore_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayPhotoUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, displayPhotoUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, destinationUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2127,6 +2451,10 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (!getDocument().equals(other.getDocument())) return false;
       }
       if (!getDataStore().equals(other.getDataStore())) return false;
+      if (java.lang.Double.doubleToLongBits(getScore())
+          != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+      if (!getDisplayPhotoUri().equals(other.getDisplayPhotoUri())) return false;
+      if (!getDestinationUri().equals(other.getDestinationUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2148,6 +2476,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
       hash = (53 * hash) + getDataStore().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getScore()));
+      hash = (37 * hash) + DISPLAY_PHOTO_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayPhotoUri().hashCode();
+      hash = (37 * hash) + DESTINATION_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2330,6 +2667,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           documentBuilder_ = null;
         }
         dataStore_ = "";
+        score_ = 0D;
+        displayPhotoUri_ = "";
+        destinationUri_ = "";
         return this;
       }
 
@@ -2389,6 +2729,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.dataStore_ = dataStore_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.displayPhotoUri_ = displayPhotoUri_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.destinationUri_ = destinationUri_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2428,6 +2777,19 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (!other.getDataStore().isEmpty()) {
           dataStore_ = other.dataStore_;
           bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+          setScore(other.getScore());
+        }
+        if (!other.getDisplayPhotoUri().isEmpty()) {
+          displayPhotoUri_ = other.displayPhotoUri_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getDestinationUri().isEmpty()) {
+          destinationUri_ = other.destinationUri_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2481,6 +2843,24 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 42
+              case 49:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 49
+              case 58:
+                {
+                  displayPhotoUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  destinationUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3043,6 +3423,284 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         return this;
       }
 
+      private double score_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        score_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayPhotoUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The photo uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string display_photo_uri = 7;</code>
+       *
+       * @return The displayPhotoUri.
+       */
+      public java.lang.String getDisplayPhotoUri() {
+        java.lang.Object ref = displayPhotoUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayPhotoUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The photo uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string display_photo_uri = 7;</code>
+       *
+       * @return The bytes for displayPhotoUri.
+       */
+      public com.google.protobuf.ByteString getDisplayPhotoUriBytes() {
+        java.lang.Object ref = displayPhotoUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayPhotoUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The photo uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string display_photo_uri = 7;</code>
+       *
+       * @param value The displayPhotoUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayPhotoUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayPhotoUri_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The photo uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string display_photo_uri = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayPhotoUri() {
+        displayPhotoUri_ = getDefaultInstance().getDisplayPhotoUri();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The photo uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string display_photo_uri = 7;</code>
+       *
+       * @param value The bytes for displayPhotoUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayPhotoUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        displayPhotoUri_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object destinationUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return The destinationUri.
+       */
+      public java.lang.String getDestinationUri() {
+        java.lang.Object ref = destinationUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          destinationUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return The bytes for destinationUri.
+       */
+      public com.google.protobuf.ByteString getDestinationUriBytes() {
+        java.lang.Object ref = destinationUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          destinationUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @param value The destinationUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestinationUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationUri_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDestinationUri() {
+        destinationUri_ = getDefaultInstance().getDestinationUri();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the person suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @param value The bytes for destinationUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestinationUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        destinationUri_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.PersonSuggestion)
     }
 
@@ -3230,6 +3888,71 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
      * @return The bytes for dataStore.
      */
     com.google.protobuf.ByteString getDataStoreBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 6;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * The icon uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string icon_uri = 7;</code>
+     *
+     * @return The iconUri.
+     */
+    java.lang.String getIconUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * The icon uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string icon_uri = 7;</code>
+     *
+     * @return The bytes for iconUri.
+     */
+    com.google.protobuf.ByteString getIconUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The destinationUri.
+     */
+    java.lang.String getDestinationUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The bytes for destinationUri.
+     */
+    com.google.protobuf.ByteString getDestinationUriBytes();
   }
 
   /**
@@ -3267,6 +3990,8 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       suggestion_ = "";
       contentType_ = 0;
       dataStore_ = "";
+      iconUri_ = "";
+      destinationUri_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3671,6 +4396,131 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
     }
 
+    public static final int SCORE_FIELD_NUMBER = 6;
+    private double score_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 6;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
+    }
+
+    public static final int ICON_URI_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object iconUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The icon uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string icon_uri = 7;</code>
+     *
+     * @return The iconUri.
+     */
+    @java.lang.Override
+    public java.lang.String getIconUri() {
+      java.lang.Object ref = iconUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iconUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The icon uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string icon_uri = 7;</code>
+     *
+     * @return The bytes for iconUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIconUriBytes() {
+      java.lang.Object ref = iconUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        iconUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESTINATION_URI_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object destinationUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The destinationUri.
+     */
+    @java.lang.Override
+    public java.lang.String getDestinationUri() {
+      java.lang.Object ref = destinationUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destinationUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The destination uri of the content suggestion.
+     * </pre>
+     *
+     * <code>string destination_uri = 8;</code>
+     *
+     * @return The bytes for destinationUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDestinationUriBytes() {
+      java.lang.Object ref = destinationUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destinationUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3700,6 +4550,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, dataStore_);
       }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        output.writeDouble(6, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iconUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, iconUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, destinationUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3723,6 +4582,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, dataStore_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iconUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, iconUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, destinationUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3753,6 +4621,10 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (!getDocument().equals(other.getDocument())) return false;
       }
       if (!getDataStore().equals(other.getDataStore())) return false;
+      if (java.lang.Double.doubleToLongBits(getScore())
+          != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+      if (!getIconUri().equals(other.getIconUri())) return false;
+      if (!getDestinationUri().equals(other.getDestinationUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3774,6 +4646,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
       hash = (53 * hash) + getDataStore().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getScore()));
+      hash = (37 * hash) + ICON_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getIconUri().hashCode();
+      hash = (37 * hash) + DESTINATION_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3956,6 +4837,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           documentBuilder_ = null;
         }
         dataStore_ = "";
+        score_ = 0D;
+        iconUri_ = "";
+        destinationUri_ = "";
         return this;
       }
 
@@ -4015,6 +4899,15 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.dataStore_ = dataStore_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.iconUri_ = iconUri_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.destinationUri_ = destinationUri_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4054,6 +4947,19 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         if (!other.getDataStore().isEmpty()) {
           dataStore_ = other.dataStore_;
           bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+          setScore(other.getScore());
+        }
+        if (!other.getIconUri().isEmpty()) {
+          iconUri_ = other.iconUri_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getDestinationUri().isEmpty()) {
+          destinationUri_ = other.destinationUri_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4107,6 +5013,24 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 42
+              case 49:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 49
+              case 58:
+                {
+                  iconUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  destinationUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4669,6 +5593,284 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         return this;
       }
 
+      private double score_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        score_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object iconUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The icon uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string icon_uri = 7;</code>
+       *
+       * @return The iconUri.
+       */
+      public java.lang.String getIconUri() {
+        java.lang.Object ref = iconUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iconUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The icon uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string icon_uri = 7;</code>
+       *
+       * @return The bytes for iconUri.
+       */
+      public com.google.protobuf.ByteString getIconUriBytes() {
+        java.lang.Object ref = iconUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          iconUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The icon uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string icon_uri = 7;</code>
+       *
+       * @param value The iconUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIconUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        iconUri_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The icon uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string icon_uri = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIconUri() {
+        iconUri_ = getDefaultInstance().getIconUri();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The icon uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string icon_uri = 7;</code>
+       *
+       * @param value The bytes for iconUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIconUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        iconUri_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object destinationUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return The destinationUri.
+       */
+      public java.lang.String getDestinationUri() {
+        java.lang.Object ref = destinationUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          destinationUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return The bytes for destinationUri.
+       */
+      public com.google.protobuf.ByteString getDestinationUriBytes() {
+        java.lang.Object ref = destinationUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          destinationUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @param value The destinationUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestinationUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationUri_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDestinationUri() {
+        destinationUri_ = getDefaultInstance().getDestinationUri();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The destination uri of the content suggestion.
+       * </pre>
+       *
+       * <code>string destination_uri = 8;</code>
+       *
+       * @param value The bytes for destinationUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestinationUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        destinationUri_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.ContentSuggestion)
     }
 
@@ -4795,6 +5997,19 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
      * <code>.google.protobuf.Timestamp recent_search_time = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getRecentSearchTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 3;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
   }
 
   /**
@@ -4956,6 +6171,25 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           : recentSearchTime_;
     }
 
+    public static final int SCORE_FIELD_NUMBER = 3;
+    private double score_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each suggestion. The score is in the range of [0, 1].
+     * </pre>
+     *
+     * <code>double score = 3;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4976,6 +6210,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getRecentSearchTime());
       }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        output.writeDouble(3, score_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4990,6 +6227,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRecentSearchTime());
+      }
+      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, score_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5018,6 +6258,8 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
       if (hasRecentSearchTime()) {
         if (!getRecentSearchTime().equals(other.getRecentSearchTime())) return false;
       }
+      if (java.lang.Double.doubleToLongBits(getScore())
+          != java.lang.Double.doubleToLongBits(other.getScore())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5035,6 +6277,11 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         hash = (37 * hash) + RECENT_SEARCH_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getRecentSearchTime().hashCode();
       }
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getScore()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5215,6 +6462,7 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           recentSearchTimeBuilder_.dispose();
           recentSearchTimeBuilder_ = null;
         }
+        score_ = 0D;
         return this;
       }
 
@@ -5275,6 +6523,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
                   : recentSearchTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.score_ = score_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -5308,6 +6559,9 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
         }
         if (other.hasRecentSearchTime()) {
           mergeRecentSearchTime(other.getRecentSearchTime());
+        }
+        if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5348,6 +6602,12 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 25:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 25
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5670,6 +6930,62 @@ public final class AdvancedCompleteQueryResponse extends com.google.protobuf.Gen
           recentSearchTime_ = null;
         }
         return recentSearchTimeBuilder_;
+      }
+
+      private double score_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 3;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 3;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The score of each suggestion. The score is in the range of [0, 1].
+       * </pre>
+       *
+       * <code>double score = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        score_ = 0D;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.RecentSearchSuggestion)

@@ -46,8 +46,8 @@ jobs:
           workflows:
             - '.github/workflows/**'
           src:
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-shared-config|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-shared-config|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -219,6 +219,8 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-shared-config:
+            - 'java-shared-config/**'
   split-units:
     runs-on: ubuntu-latest
     needs: changes

@@ -59,6 +59,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
     authority_ = "";
     service_ = "";
     forwardHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     wireFormat_ = 0;
   }
 
@@ -442,15 +443,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. All backend services and forwarding rules referenced by this
+   * Optional. All backend services and forwarding rules referenced by this
    * extension must share the same load balancing scheme. Supported values:
-   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+   * that do not reference a backend service. For more information, refer to
    * [Backend services
    * overview](https://cloud.google.com/load-balancing/docs/backend-service).
    * </pre>
    *
    * <code>
-   * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -464,15 +466,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. All backend services and forwarding rules referenced by this
+   * Optional. All backend services and forwarding rules referenced by this
    * extension must share the same load balancing scheme. Supported values:
-   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+   * that do not reference a backend service. For more information, refer to
    * [Backend services
    * overview](https://cloud.google.com/load-balancing/docs/backend-service).
    * </pre>
    *
    * <code>
-   * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The loadBalancingScheme.
@@ -495,11 +498,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The `:authority` header in the gRPC request sent from Envoy
-   * to the extension service.
+   * Optional. The `:authority` header in the gRPC request sent from Envoy to
+   * the extension service. It is required when the `service` field points to a
+   * backend service or a wasm plugin.
    * </pre>
    *
-   * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The authority.
    */
@@ -520,11 +524,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The `:authority` header in the gRPC request sent from Envoy
-   * to the extension service.
+   * Optional. The `:authority` header in the gRPC request sent from Envoy to
+   * the extension service. It is required when the `service` field points to a
+   * backend service or a wasm plugin.
    * </pre>
    *
-   * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for authority.
    */
@@ -845,6 +850,106 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
     return forwardHeaders_.getByteString(index);
   }
 
+  public static final int FORWARD_ATTRIBUTES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList forwardAttributes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of the Envoy attributes to forward to the extension server.
+   * The attributes provided here are included as part of the
+   * `ProcessingRequest.attributes` field (of type
+   * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+   * names. Refer to the
+   * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+   * for the names of attributes that can be forwarded. If omitted, no
+   * attributes are sent. Each element is a string indicating the
+   * attribute name.
+   * </pre>
+   *
+   * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the forwardAttributes.
+   */
+  public com.google.protobuf.ProtocolStringList getForwardAttributesList() {
+    return forwardAttributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of the Envoy attributes to forward to the extension server.
+   * The attributes provided here are included as part of the
+   * `ProcessingRequest.attributes` field (of type
+   * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+   * names. Refer to the
+   * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+   * for the names of attributes that can be forwarded. If omitted, no
+   * attributes are sent. Each element is a string indicating the
+   * attribute name.
+   * </pre>
+   *
+   * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of forwardAttributes.
+   */
+  public int getForwardAttributesCount() {
+    return forwardAttributes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of the Envoy attributes to forward to the extension server.
+   * The attributes provided here are included as part of the
+   * `ProcessingRequest.attributes` field (of type
+   * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+   * names. Refer to the
+   * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+   * for the names of attributes that can be forwarded. If omitted, no
+   * attributes are sent. Each element is a string indicating the
+   * attribute name.
+   * </pre>
+   *
+   * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The forwardAttributes at the given index.
+   */
+  public java.lang.String getForwardAttributes(int index) {
+    return forwardAttributes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of the Envoy attributes to forward to the extension server.
+   * The attributes provided here are included as part of the
+   * `ProcessingRequest.attributes` field (of type
+   * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+   * names. Refer to the
+   * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+   * for the names of attributes that can be forwarded. If omitted, no
+   * attributes are sent. Each element is a string indicating the
+   * attribute name.
+   * </pre>
+   *
+   * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the forwardAttributes at the given index.
+   */
+  public com.google.protobuf.ByteString getForwardAttributesBytes(int index) {
+    return forwardAttributes_.getByteString(index);
+  }
+
   public static final int WIRE_FORMAT_FIELD_NUMBER = 14;
   private int wireFormat_ = 0;
 
@@ -853,7 +958,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The format of communication supported by the callout extension.
-   * If not specified, the default value `EXT_PROC_GRPC` is used.
+   * This field is supported only for regional `AuthzExtension` resources. If
+   * not specified, the default value `EXT_PROC_GRPC` is used. Global
+   * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
    * </pre>
    *
    * <code>
@@ -872,7 +979,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The format of communication supported by the callout extension.
-   * If not specified, the default value `EXT_PROC_GRPC` is used.
+   * This field is supported only for regional `AuthzExtension` resources. If
+   * not specified, the default value `EXT_PROC_GRPC` is used. Global
+   * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
    * </pre>
    *
    * <code>
@@ -939,6 +1048,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < forwardHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, forwardHeaders_.getRaw(i));
     }
+    for (int i = 0; i < forwardAttributes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, forwardAttributes_.getRaw(i));
+    }
     if (wireFormat_
         != com.google.cloud.networkservices.v1.WireFormat.WIRE_FORMAT_UNSPECIFIED.getNumber()) {
       output.writeEnum(14, wireFormat_);
@@ -1002,6 +1114,14 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getForwardHeadersList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < forwardAttributes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(forwardAttributes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getForwardAttributesList().size();
+    }
     if (wireFormat_
         != com.google.cloud.networkservices.v1.WireFormat.WIRE_FORMAT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, wireFormat_);
@@ -1046,6 +1166,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getForwardHeadersList().equals(other.getForwardHeadersList())) return false;
+    if (!getForwardAttributesList().equals(other.getForwardAttributesList())) return false;
     if (wireFormat_ != other.wireFormat_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1093,6 +1214,10 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
     if (getForwardHeadersCount() > 0) {
       hash = (37 * hash) + FORWARD_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getForwardHeadersList().hashCode();
+    }
+    if (getForwardAttributesCount() > 0) {
+      hash = (37 * hash) + FORWARD_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getForwardAttributesList().hashCode();
     }
     hash = (37 * hash) + WIRE_FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + wireFormat_;
@@ -1299,6 +1424,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
         metadataBuilder_ = null;
       }
       forwardHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       wireFormat_ = 0;
       return this;
     }
@@ -1380,6 +1506,10 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
         result.forwardHeaders_ = forwardHeaders_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        forwardAttributes_.makeImmutable();
+        result.forwardAttributes_ = forwardAttributes_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.wireFormat_ = wireFormat_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1445,6 +1575,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
         } else {
           ensureForwardHeadersIsMutable();
           forwardHeaders_.addAll(other.forwardHeaders_);
+        }
+        onChanged();
+      }
+      if (!other.forwardAttributes_.isEmpty()) {
+        if (forwardAttributes_.isEmpty()) {
+          forwardAttributes_ = other.forwardAttributes_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureForwardAttributesIsMutable();
+          forwardAttributes_.addAll(other.forwardAttributes_);
         }
         onChanged();
       }
@@ -1559,10 +1699,17 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
                 forwardHeaders_.add(s);
                 break;
               } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureForwardAttributesIsMutable();
+                forwardAttributes_.add(s);
+                break;
+              } // case 106
             case 112:
               {
                 wireFormat_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             default:
@@ -2463,15 +2610,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. All backend services and forwarding rules referenced by this
+     * Optional. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
-     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+     * that do not reference a backend service. For more information, refer to
      * [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
-     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -2485,15 +2633,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. All backend services and forwarding rules referenced by this
+     * Optional. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
-     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+     * that do not reference a backend service. For more information, refer to
      * [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
-     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for loadBalancingScheme to set.
@@ -2510,15 +2659,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. All backend services and forwarding rules referenced by this
+     * Optional. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
-     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+     * that do not reference a backend service. For more information, refer to
      * [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
-     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The loadBalancingScheme.
@@ -2536,15 +2686,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. All backend services and forwarding rules referenced by this
+     * Optional. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
-     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+     * that do not reference a backend service. For more information, refer to
      * [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
-     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The loadBalancingScheme to set.
@@ -2565,15 +2716,16 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. All backend services and forwarding rules referenced by this
+     * Optional. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
-     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
+     * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
+     * that do not reference a backend service. For more information, refer to
      * [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
-     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.networkservices.v1.LoadBalancingScheme load_balancing_scheme = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -2591,11 +2743,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The `:authority` header in the gRPC request sent from Envoy
-     * to the extension service.
+     * Optional. The `:authority` header in the gRPC request sent from Envoy to
+     * the extension service. It is required when the `service` field points to a
+     * backend service or a wasm plugin.
      * </pre>
      *
-     * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The authority.
      */
@@ -2615,11 +2768,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The `:authority` header in the gRPC request sent from Envoy
-     * to the extension service.
+     * Optional. The `:authority` header in the gRPC request sent from Envoy to
+     * the extension service. It is required when the `service` field points to a
+     * backend service or a wasm plugin.
      * </pre>
      *
-     * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for authority.
      */
@@ -2639,11 +2793,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The `:authority` header in the gRPC request sent from Envoy
-     * to the extension service.
+     * Optional. The `:authority` header in the gRPC request sent from Envoy to
+     * the extension service. It is required when the `service` field points to a
+     * backend service or a wasm plugin.
      * </pre>
      *
-     * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The authority to set.
      * @return This builder for chaining.
@@ -2662,11 +2817,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The `:authority` header in the gRPC request sent from Envoy
-     * to the extension service.
+     * Optional. The `:authority` header in the gRPC request sent from Envoy to
+     * the extension service. It is required when the `service` field points to a
+     * backend service or a wasm plugin.
      * </pre>
      *
-     * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2681,11 +2837,12 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The `:authority` header in the gRPC request sent from Envoy
-     * to the extension service.
+     * Optional. The `:authority` header in the gRPC request sent from Envoy to
+     * the extension service. It is required when the `service` field points to a
+     * backend service or a wasm plugin.
      * </pre>
      *
-     * <code>string authority = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string authority = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for authority to set.
      * @return This builder for chaining.
@@ -3614,6 +3771,270 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList forwardAttributes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureForwardAttributesIsMutable() {
+      if (!forwardAttributes_.isModifiable()) {
+        forwardAttributes_ = new com.google.protobuf.LazyStringArrayList(forwardAttributes_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the forwardAttributes.
+     */
+    public com.google.protobuf.ProtocolStringList getForwardAttributesList() {
+      forwardAttributes_.makeImmutable();
+      return forwardAttributes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of forwardAttributes.
+     */
+    public int getForwardAttributesCount() {
+      return forwardAttributes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The forwardAttributes at the given index.
+     */
+    public java.lang.String getForwardAttributes(int index) {
+      return forwardAttributes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the forwardAttributes at the given index.
+     */
+    public com.google.protobuf.ByteString getForwardAttributesBytes(int index) {
+      return forwardAttributes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The forwardAttributes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardAttributes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureForwardAttributesIsMutable();
+      forwardAttributes_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The forwardAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addForwardAttributes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureForwardAttributesIsMutable();
+      forwardAttributes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The forwardAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllForwardAttributes(java.lang.Iterable<java.lang.String> values) {
+      ensureForwardAttributesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, forwardAttributes_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForwardAttributes() {
+      forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension server.
+     * The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the forwardAttributes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addForwardAttributesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureForwardAttributesIsMutable();
+      forwardAttributes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private int wireFormat_ = 0;
 
     /**
@@ -3621,7 +4042,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The format of communication supported by the callout extension.
-     * If not specified, the default value `EXT_PROC_GRPC` is used.
+     * This field is supported only for regional `AuthzExtension` resources. If
+     * not specified, the default value `EXT_PROC_GRPC` is used. Global
+     * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
      * </pre>
      *
      * <code>
@@ -3640,7 +4063,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The format of communication supported by the callout extension.
-     * If not specified, the default value `EXT_PROC_GRPC` is used.
+     * This field is supported only for regional `AuthzExtension` resources. If
+     * not specified, the default value `EXT_PROC_GRPC` is used. Global
+     * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
      * </pre>
      *
      * <code>
@@ -3652,7 +4077,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      */
     public Builder setWireFormatValue(int value) {
       wireFormat_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3662,7 +4087,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The format of communication supported by the callout extension.
-     * If not specified, the default value `EXT_PROC_GRPC` is used.
+     * This field is supported only for regional `AuthzExtension` resources. If
+     * not specified, the default value `EXT_PROC_GRPC` is used. Global
+     * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
      * </pre>
      *
      * <code>
@@ -3683,7 +4110,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The format of communication supported by the callout extension.
-     * If not specified, the default value `EXT_PROC_GRPC` is used.
+     * This field is supported only for regional `AuthzExtension` resources. If
+     * not specified, the default value `EXT_PROC_GRPC` is used. Global
+     * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
      * </pre>
      *
      * <code>
@@ -3697,7 +4126,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       wireFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -3708,7 +4137,9 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The format of communication supported by the callout extension.
-     * If not specified, the default value `EXT_PROC_GRPC` is used.
+     * This field is supported only for regional `AuthzExtension` resources. If
+     * not specified, the default value `EXT_PROC_GRPC` is used. Global
+     * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
      * </pre>
      *
      * <code>
@@ -3718,7 +4149,7 @@ public final class AuthzExtension extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearWireFormat() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       wireFormat_ = 0;
       onChanged();
       return this;

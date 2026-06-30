@@ -90,7 +90,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -104,11 +104,7 @@ public class ITAuthTests extends ITBase {
 
   @Test
   public void testServiceAccountAuthenticationMissingOAuthPvtKeyPath() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=0;";
+    String connection_uri = getBaseConnectionUrl() + "ProjectId=" + PROJECT_ID + ";OAuthType=0;";
 
     try {
       DriverManager.getConnection(connection_uri);
@@ -127,7 +123,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -144,7 +140,7 @@ public class ITAuthTests extends ITBase {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -162,7 +158,7 @@ public class ITAuthTests extends ITBase {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -192,9 +188,12 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidGoogleUserAccountAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAuthType=1;OAuthClientId=client_id;OAuthClientSecret=client_secret;";
+            + ";OAuthType=1;"
+            + "OAuthClientId=client_id;"
+            + "OAuthClientSecret=client_secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
@@ -213,12 +212,15 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "BYOID_AudienceUri=//iam.googleapis.com/projects/<project>/locations/<location>/workloadIdentityPools/<pool>/providers/<provider>;"
-            + "BYOID_SubjectTokenType=<type>;BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
-            + "BYOID_SA_Impersonation_Uri=<sa>;BYOID_TokenUri=<uri>;";
+            + "BYOID_SubjectTokenType=<type>;"
+            + "BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
+            + "BYOID_SA_Impersonation_Uri=<sa>;"
+            + "BYOID_TokenUri=<uri>;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
@@ -237,7 +239,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationFromFile() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "OAuthPvtKeyPath=/path/to/file;";
@@ -259,9 +262,11 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationRawJson() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=4;OAuthPvtKey={\n"
+            + ";OAUTHTYPE=4;"
+            + "OAuthPvtKey={\n"
             + "  \"universe_domain\": \"googleapis.com\",\n"
             + "  \"type\": \"external_account\",\n"
             + "  \"audience\":"
@@ -303,7 +308,8 @@ public class ITAuthTests extends ITBase {
     String accessToken = credentials.getAccessToken().getTokenValue();
 
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
+        getBaseConnectionUrl()
+            + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=2"
             + ";OAuthAccessToken="
@@ -319,10 +325,13 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidRefreshTokenAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=2;OAuthRefreshToken=refresh_token;"
-            + ";OAuthClientId=client;OAuthClientSecret=secret;";
+            + ";OAUTHTYPE=2;"
+            + "OAuthRefreshToken=refresh_token;"
+            + ";OAuthClientId=client;"
+            + "OAuthClientSecret=secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);

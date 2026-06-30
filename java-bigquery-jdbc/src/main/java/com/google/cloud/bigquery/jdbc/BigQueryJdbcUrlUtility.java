@@ -142,6 +142,7 @@ final class BigQueryJdbcUrlUtility {
           Pattern.CASE_INSENSITIVE);
   static final String METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME = "MetaDataFetchThreadCount";
   static final int DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE = 32;
+
   static final String RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME = "Timeout";
   static final long DEFAULT_RETRY_TIMEOUT_IN_SECS_VALUE = 0L;
   static final String JOB_TIMEOUT_PROPERTY_NAME = "JobTimeout";
@@ -167,6 +168,8 @@ final class BigQueryJdbcUrlUtility {
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
       "FilterTablesOnDefaultDataset";
   static final boolean DEFAULT_FILTER_TABLES_ON_DEFAULT_DATASET_VALUE = false;
+  static final String ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME = "EnableProjectDiscovery";
+  static final boolean DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE = false;
   static final String REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME = "RequestGoogleDriveScope";
   static final String SSL_TRUST_STORE_PROPERTY_NAME = "SSLTrustStore";
   static final String SSL_TRUST_STORE_PWD_PROPERTY_NAME = "SSLTrustStorePwd";
@@ -575,6 +578,13 @@ final class BigQueryJdbcUrlUtility {
                               + " when catalog/schema patterns are null or wildcards.")
                       .setDefaultValue(
                           String.valueOf(DEFAULT_FILTER_TABLES_ON_DEFAULT_DATASET_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables automatic discovery of all accessible Google Cloud projects. "
+                              + "When disabled, only the default ProjectId and AdditionalProjects are listed as catalogs.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME)

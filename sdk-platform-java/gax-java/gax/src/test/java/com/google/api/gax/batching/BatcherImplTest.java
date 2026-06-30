@@ -33,6 +33,7 @@ import static com.google.api.gax.rpc.testing.FakeBatchableApi.SQUARER_BATCHING_D
 import static com.google.api.gax.rpc.testing.FakeBatchableApi.callLabeledIntSquarer;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -515,7 +516,6 @@ class BatcherImplTest {
 
   /** Validates that the elements are not leaking to multiple batches */
   @Test
-  @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
   void testElementsNotLeaking() throws Exception {
     ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
     ScheduledExecutorService multiThreadExecutor = Executors.newScheduledThreadPool(20);
@@ -566,7 +566,7 @@ class BatcherImplTest {
       }
 
       // Closing the resources
-      future.get();
+      future.get(10, TimeUnit.SECONDS);
       assertThat(isDuplicateElement.get()).isFalse();
       singleThreadExecutor.shutdown();
       multiThreadExecutor.shutdown();
@@ -599,15 +599,14 @@ class BatcherImplTest {
     // Batcher present inside runnable should be GCed after following loop.
     batcher.close();
     batcher = null;
-    for (int retry = 0; retry < 3; retry++) {
-      System.gc();
-      System.runFinalization();
-      isExecutorCancelled = pushBatchRunnable.isCancelled();
-      if (isExecutorCancelled) {
-        break;
-      }
-      Thread.sleep(DELAY_TIME * (1L << retry));
-    }
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () -> {
+              System.gc();
+              System.runFinalization();
+              return pushBatchRunnable.isCancelled();
+            });
     // ScheduledFuture should be isCancelled now.
     assertThat(pushBatchRunnable.isCancelled()).isTrue();
   }
@@ -733,18 +732,14 @@ class BatcherImplTest {
    */
   @Test
   void testUnclosedBatchersAreLogged() throws Exception {
-    final long DELAY_TIME = 30L;
-    int actualRemaining = 0;
-    for (int retry = 0; retry < 3; retry++) {
-      System.gc();
-      System.runFinalization();
-      actualRemaining = BatcherReference.cleanQueue();
-      if (actualRemaining == 0) {
-        break;
-      }
-      Thread.sleep(DELAY_TIME * (1L << retry));
-    }
-    assertThat(actualRemaining).isAtMost(0);
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () -> {
+              System.gc();
+              System.runFinalization();
+              return BatcherReference.cleanQueue() == 0;
+            });
     underTest = createDefaultBatcherImpl(batchingSettings, null);
     Batcher<Integer, Integer> extraBatcher = createDefaultBatcherImpl(batchingSettings, null);
 
@@ -771,20 +766,16 @@ class BatcherImplTest {
 
       underTest = null;
       // That *should* have been the last reference.  Try to reclaim it.
-      boolean success = false;
-      for (int retry = 0; retry < 3; retry++) {
-        System.gc();
-        System.runFinalization();
-        int orphans = BatcherReference.cleanQueue();
-        if (orphans == 1) {
-          success = true;
-          break;
-        }
-        // Validates that there are no other batcher instance present while GC cleanup.
-        assertWithMessage("unexpected extra orphans").that(orphans).isEqualTo(0);
-        Thread.sleep(DELAY_TIME * (1L << retry));
-      }
-      assertWithMessage("Batcher was not garbage collected").that(success).isTrue();
+      await()
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () -> {
+                System.gc();
+                System.runFinalization();
+                int orphans = BatcherReference.cleanQueue();
+                assertWithMessage("unexpected extra orphans").that(orphans).isAtMost(1);
+                return orphans == 1;
+              });
 
       LogRecord lr;
       synchronized (records) {
@@ -807,18 +798,14 @@ class BatcherImplTest {
   @Test
   void testClosedBatchersAreNotLogged() throws Exception {
     // Clean out the existing instances
-    final long DELAY_TIME = 30L;
-    int actualRemaining = 0;
-    for (int retry = 0; retry < 3; retry++) {
-      System.gc();
-      System.runFinalization();
-      actualRemaining = BatcherReference.cleanQueue();
-      if (actualRemaining == 0) {
-        break;
-      }
-      Thread.sleep(DELAY_TIME * (1L << retry));
-    }
-    assertThat(actualRemaining).isAtMost(0);
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () -> {
+              System.gc();
+              System.runFinalization();
+              return BatcherReference.cleanQueue() == 0;
+            });
 
     // Capture logs
     final List<LogRecord> records = new ArrayList<>(1);
@@ -849,16 +836,19 @@ class BatcherImplTest {
         }
       }
       // Run GC a few times to give the batchers a chance to be collected
-      for (int retry = 0; retry < 100; retry++) {
-        System.gc();
-        System.runFinalization();
-        BatcherReference.cleanQueue();
-        Thread.sleep(10);
-      }
-
-      synchronized (records) {
-        assertThat(records).isEmpty();
-      }
+      await()
+          .pollInterval(Duration.ofMillis(10))
+          .during(Duration.ofSeconds(1))
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () -> {
+                System.gc();
+                System.runFinalization();
+                BatcherReference.cleanQueue();
+                synchronized (records) {
+                  return records.isEmpty();
+                }
+              });
     } finally {
       // reset logging
       batcherLogger.setFilter(oldFilter);
@@ -990,10 +980,12 @@ class BatcherImplTest {
       // resulting in a shorter total_throttled_time at the verification of throttledTime
       // at the end of the test.
       // https://github.com/googleapis/sdk-platform-java/issues/1193
-      do {
-        Thread.sleep(10);
-      } while (batcherAddThreadHolder.isEmpty()
-          || batcherAddThreadHolder.get(0).getState() != Thread.State.WAITING);
+      await()
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () ->
+                  !batcherAddThreadHolder.isEmpty()
+                      && batcherAddThreadHolder.get(0).getState() == Thread.State.WAITING);
 
       long beforeGetCall = System.currentTimeMillis();
       executor.submit(

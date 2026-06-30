@@ -89,6 +89,7 @@ class ConnectionWorkerPoolTest {
             .build();
     ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.5);
     ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.6);
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofSeconds(3));
   }
 
   @Test
@@ -553,6 +554,55 @@ class ConnectionWorkerPoolTest {
       rowsBuilder.addSerializedRows(foo.toByteString());
     }
     return rowsBuilder.build();
+  }
+
+  @Test
+  void testSingleTableConnections_overwhelmed_timeSinceLastCallback() throws Exception {
+    // Set count/bytes thresholds to be very high so they don't trigger.
+    ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.9);
+    ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.9);
+    // Set time threshold to 100ms.
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofMillis(100));
+
+    // We use a pool with max 8 connections.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder()
+            .setMinConnectionsPerRegion(1) // Start with 1 connection to make scaling obvious.
+            .setMaxConnectionsPerRegion(8)
+            .build());
+
+    // We set maxRequests to a large value (100) so it's not overwhelmed by count (threshold 90).
+    ConnectionWorkerPool connectionWorkerPool =
+        createConnectionWorkerPool(
+            /* maxRequests= */ 100, /* maxBytes= */ 1000000, java.time.Duration.ofSeconds(5));
+
+    // Stuck requests for 500ms (larger than 100ms threshold).
+    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+
+    // Send 1 request. It will go to Connection 1.
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    StreamWriter writer = getTestStreamWriter(TEST_STREAM_1);
+
+    ApiFuture<AppendRowsResponse> future1 =
+        sendFooStringTestMessage(writer, connectionWorkerPool, new String[] {"0"}, 0);
+
+    // Wait 500ms. Request 1 is still in flight (needs 1000ms).
+    // Connection 1 timeSinceLastCallback should be ~500ms > 100ms.
+    // So Connection 1 is now overwhelmed.
+    Thread.sleep(500);
+
+    // Send Request 2. Since Connection 1 is overwhelmed, it should scale up and create Connection
+    // 2.
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+    ApiFuture<AppendRowsResponse> future2 =
+        sendFooStringTestMessage(writer, connectionWorkerPool, new String[] {"1"}, 1);
+
+    // Wait for both to finish.
+    future1.get();
+    future2.get();
+
+    // Verify that we created 2 connections.
+    assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(2);
   }
 
   ConnectionWorkerPool createConnectionWorkerPool(

@@ -1229,9 +1229,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The ID of the Vertex job that executed the notebook in
-     * contents and also the ID used for the outputs created in Google Cloud
-     * Storage buckets. Only set once the job has started to run.
+     * Output only. The ID of the Gemini Enterprise Agent Platform job that
+     * executed the notebook in contents and also the ID used for the outputs
+     * created in Google Cloud Storage buckets. Only set once the job has
+     * started to run.
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1244,9 +1245,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The ID of the Vertex job that executed the notebook in
-     * contents and also the ID used for the outputs created in Google Cloud
-     * Storage buckets. Only set once the job has started to run.
+     * Output only. The ID of the Gemini Enterprise Agent Platform job that
+     * executed the notebook in contents and also the ID used for the outputs
+     * created in Google Cloud Storage buckets. Only set once the job has
+     * started to run.
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1369,9 +1371,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The ID of the Vertex job that executed the notebook in
-     * contents and also the ID used for the outputs created in Google Cloud
-     * Storage buckets. Only set once the job has started to run.
+     * Output only. The ID of the Gemini Enterprise Agent Platform job that
+     * executed the notebook in contents and also the ID used for the outputs
+     * created in Google Cloud Storage buckets. Only set once the job has
+     * started to run.
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1395,9 +1398,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The ID of the Vertex job that executed the notebook in
-     * contents and also the ID used for the outputs created in Google Cloud
-     * Storage buckets. Only set once the job has started to run.
+     * Output only. The ID of the Gemini Enterprise Agent Platform job that
+     * executed the notebook in contents and also the ID used for the outputs
+     * created in Google Cloud Storage buckets. Only set once the job has
+     * started to run.
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1887,9 +1891,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Output only. The ID of the Vertex job that executed the notebook in
-       * contents and also the ID used for the outputs created in Google Cloud
-       * Storage buckets. Only set once the job has started to run.
+       * Output only. The ID of the Gemini Enterprise Agent Platform job that
+       * executed the notebook in contents and also the ID used for the outputs
+       * created in Google Cloud Storage buckets. Only set once the job has
+       * started to run.
        * </pre>
        *
        * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1912,9 +1917,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Output only. The ID of the Vertex job that executed the notebook in
-       * contents and also the ID used for the outputs created in Google Cloud
-       * Storage buckets. Only set once the job has started to run.
+       * Output only. The ID of the Gemini Enterprise Agent Platform job that
+       * executed the notebook in contents and also the ID used for the outputs
+       * created in Google Cloud Storage buckets. Only set once the job has
+       * started to run.
        * </pre>
        *
        * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1937,9 +1943,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Output only. The ID of the Vertex job that executed the notebook in
-       * contents and also the ID used for the outputs created in Google Cloud
-       * Storage buckets. Only set once the job has started to run.
+       * Output only. The ID of the Gemini Enterprise Agent Platform job that
+       * executed the notebook in contents and also the ID used for the outputs
+       * created in Google Cloud Storage buckets. Only set once the job has
+       * started to run.
        * </pre>
        *
        * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1961,9 +1968,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Output only. The ID of the Vertex job that executed the notebook in
-       * contents and also the ID used for the outputs created in Google Cloud
-       * Storage buckets. Only set once the job has started to run.
+       * Output only. The ID of the Gemini Enterprise Agent Platform job that
+       * executed the notebook in contents and also the ID used for the outputs
+       * created in Google Cloud Storage buckets. Only set once the job has
+       * started to run.
        * </pre>
        *
        * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1981,9 +1989,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Output only. The ID of the Vertex job that executed the notebook in
-       * contents and also the ID used for the outputs created in Google Cloud
-       * Storage buckets. Only set once the job has started to run.
+       * Output only. The ID of the Gemini Enterprise Agent Platform job that
+       * executed the notebook in contents and also the ID used for the outputs
+       * created in Google Cloud Storage buckets. Only set once the job has
+       * started to run.
        * </pre>
        *
        * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
