@@ -64,8 +64,7 @@ public final class NettyWheelTimer implements BigtableTimer {
     if (stopped) {
       throw new IllegalStateException("timer stopped");
     }
-    return new TimeoutHandle(
-        delegate.newTimeout(ignored -> dispatcher.execute(task), delay, unit));
+    return new TimeoutHandle(delegate.newTimeout(ignored -> dispatcher.execute(task), delay, unit));
   }
 
   @Override

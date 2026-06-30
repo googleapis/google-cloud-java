@@ -47,8 +47,7 @@ public interface BigtableTimer {
 
   /**
    * Releases the tick thread and discards any pending timeouts. Idempotent. After {@code stop()},
-   * subsequent calls to {@link #newTimeout} or {@link #onStop} throw {@link
-   * IllegalStateException}.
+   * subsequent calls to {@link #newTimeout} or {@link #onStop} throw {@link IllegalStateException}.
    *
    * <p>Before releasing the tick thread, invokes every hook registered via {@link #onStop} on the
    * caller thread. Hooks fire in unspecified order; a hook that throws is logged and other hooks
