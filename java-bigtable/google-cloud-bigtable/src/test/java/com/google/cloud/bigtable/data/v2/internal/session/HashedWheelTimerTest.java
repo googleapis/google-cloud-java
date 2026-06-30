@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.internal.session;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer.Registration;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -68,7 +67,7 @@ class HashedWheelTimerTest {
   }
 
   @Test
-  void stop_runs_all_hooks_on_caller_thread_and_rejects_inserts() {
+  void stop_runs_all_hooks_on_caller_thread_then_newTimeout_returns_dead() {
     timer = new HashedWheelTimer("wheel-test");
     Thread caller = Thread.currentThread();
     List<Thread> ran = new CopyOnWriteArrayList<>();
@@ -82,9 +81,39 @@ class HashedWheelTimerTest {
     for (Thread t : ran) {
       assertThat(t).isSameInstanceAs(caller);
     }
-    assertThrows(
-        IllegalStateException.class,
-        () -> timer.newTimeout(() -> {}, DIRECT, 1, TimeUnit.MILLISECONDS));
+    // After stop, newTimeout returns a pre-cancelled Timeout that never fires.
+    BigtableTimer.Timeout t = timer.newTimeout(() -> {}, DIRECT, 1, TimeUnit.MILLISECONDS);
+    assertThat(t.isCancelled()).isTrue();
+    timer = null;
+  }
+
+  @Test
+  void onStop_after_stop_fires_hook_synchronously() {
+    timer = new HashedWheelTimer("wheel-test");
+    timer.stop();
+    Thread caller = Thread.currentThread();
+    List<Thread> ran = new CopyOnWriteArrayList<>();
+
+    Registration reg = timer.onStop(() -> ran.add(Thread.currentThread()));
+
+    assertThat(ran).hasSize(1);
+    assertThat(ran.get(0)).isSameInstanceAs(caller);
+    // Registration is still safe to call; should be a no-op.
+    reg.unregister();
+    timer = null;
+  }
+
+  @Test
+  void double_stop_does_not_re_run_hooks() {
+    timer = new HashedWheelTimer("wheel-test");
+    AtomicInteger fires = new AtomicInteger();
+
+    timer.onStop(fires::incrementAndGet);
+
+    timer.stop();
+    timer.stop();
+
+    assertThat(fires.get()).isEqualTo(1);
     timer = null;
   }
 

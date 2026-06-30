@@ -23,6 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,6 +51,21 @@ public final class HashedWheelTimer implements BigtableTimer {
   // Bound transfers per tick so a sustained insert flood can't starve bucket processing.
   private static final int MAX_PENDING_TRANSFERS_PER_TICK = 100_000;
 
+  // Returned from newTimeout when the timer is already stopped. Pre-cancelled so callers that
+  // poll isCancelled() see "done" and skip cleanup paths; cancel() is a no-op.
+  private static final Timeout DEAD_TIMEOUT =
+      new Timeout() {
+        @Override
+        public boolean cancel() {
+          return false;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return true;
+        }
+      };
+
   private final HashedWheelBucket[] wheel = new HashedWheelBucket[TICKS_PER_WHEEL];
   private final Queue<HashedWheelTimeout> pendingTimeouts = new ConcurrentLinkedQueue<>();
   private final Set<Runnable> stopHooks = ConcurrentHashMap.newKeySet();
@@ -57,7 +73,10 @@ public final class HashedWheelTimer implements BigtableTimer {
   private final Thread worker;
   private final long startNanos;
 
-  private volatile boolean stopped = false;
+  // Single-shot transition from false to true; CAS in stop() pairs with .get() in newTimeout/
+  // onStop so racing register-ers either land before stop()'s drain (and are caught by it) or
+  // observe true and self-resolve.
+  private final AtomicBoolean stopped = new AtomicBoolean(false);
 
   public HashedWheelTimer(String name) {
     for (int i = 0; i < TICKS_PER_WHEEL; i++) {
@@ -75,38 +94,65 @@ public final class HashedWheelTimer implements BigtableTimer {
 
   @Override
   public Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit) {
-    if (stopped) {
-      throw new IllegalStateException("timer stopped");
+    if (stopped.get()) {
+      return DEAD_TIMEOUT;
     }
     long delayNanos = Math.max(0L, unit.toNanos(delay));
     long deadlineNanos = (System.nanoTime() - startNanos) + delayNanos;
     HashedWheelTimeout timeout = new HashedWheelTimeout(task, executor, deadlineNanos);
     pendingTimeouts.add(timeout);
+    // If stop() raced after our get(), its drain loop will catch this entry and cancel it.
     return timeout;
   }
 
   @Override
   public Registration onStop(Runnable hook) {
-    if (stopped) {
-      throw new IllegalStateException("timer stopped");
+    if (stopped.get()) {
+      hook.run();
+      return NO_OP_REGISTRATION;
     }
     stopHooks.add(hook);
+    if (stopped.get()) {
+      // Raced with stop(). Either its drain already consumed and invoked our hook (set.remove
+      // returns false → no-op), or our add landed after its drain (set.remove returns true →
+      // we own it and must fire it ourselves). Either way the caller sees the hook run.
+      if (stopHooks.remove(hook)) {
+        hook.run();
+      }
+      return NO_OP_REGISTRATION;
+    }
     return () -> stopHooks.remove(hook);
   }
 
+  private static final Registration NO_OP_REGISTRATION = () -> {};
+
   @Override
   public void stop() {
-    if (stopped) {
+    if (!stopped.compareAndSet(false, true)) {
       return;
     }
-    stopped = true;
-    Set<Runnable> hooks = new HashSet<>(stopHooks);
-    stopHooks.clear();
-    for (Runnable hook : hooks) {
-      try {
-        hook.run();
-      } catch (Throwable t) {
-        LOG.log(Level.WARNING, "stop hook threw; continuing", t);
+    // Drain both queues in a loop. In-flight register-ers that read stopped==false before our
+    // CAS will eventually finish their add and land in stopHooks/pendingTimeouts; the loop
+    // keeps draining until no new entries appear. Readers that arrive after our CAS observe
+    // stopped==true and skip the add entirely.
+    while (true) {
+      Set<Runnable> hooks = new HashSet<>(stopHooks);
+      stopHooks.removeAll(hooks);
+      for (Runnable hook : hooks) {
+        try {
+          hook.run();
+        } catch (Throwable t) {
+          LOG.log(Level.WARNING, "stop hook threw; continuing", t);
+        }
+      }
+      int drained = 0;
+      HashedWheelTimeout t;
+      while ((t = pendingTimeouts.poll()) != null) {
+        t.cancel();
+        drained++;
+      }
+      if (hooks.isEmpty() && drained == 0) {
+        break;
       }
     }
     worker.interrupt();
@@ -114,7 +160,7 @@ public final class HashedWheelTimer implements BigtableTimer {
 
   private void workerLoop() {
     long tick = 0;
-    while (!stopped) {
+    while (!stopped.get()) {
       if (waitForNextTick(tick) < 0) {
         return;
       }
@@ -133,14 +179,14 @@ public final class HashedWheelTimer implements BigtableTimer {
       if (sleepNanos <= 0) {
         return elapsed;
       }
-      if (stopped) {
+      if (stopped.get()) {
         return -1;
       }
       long sleepMs = (sleepNanos + 999_999L) / 1_000_000L;
       try {
         Thread.sleep(sleepMs);
       } catch (InterruptedException e) {
-        if (stopped) {
+        if (stopped.get()) {
           return -1;
         }
         // Spurious interrupt; recompute and keep sleeping.

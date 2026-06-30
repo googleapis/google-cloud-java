@@ -326,31 +326,21 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onStart() {
-      try {
-        stopHook = timer.onStop(this::onTimerStopping);
-        // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
-        // the moment the body runs on the op executor.
-        future =
-            timer.newTimeout(
-                () ->
-                    grpcContext
-                        .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
-                        .run(),
-                context.getExecutor(),
-                Durations.toMillis(retryDelay),
-                TimeUnit.MILLISECONDS);
-      } catch (IllegalStateException e) {
-        // Timer was stopped between Active.onClose deciding to retry and this task running on the
-        // op executor. Race window is narrow (post-drain shutdown), but cover it cleanly so the
-        // op-executor uncaught handler does not have to. onExit will release the stopHook.
-        onStateChange(
-            new Done(
-                VRpcResult.createRejectedError(
-                    Status.CANCELLED
-                        .withDescription(
-                            "Executor shutting down, can't schedule operation for retry.")
-                        .withCause(e))));
-      }
+      // If the timer is already stopped, onStop fires the hook synchronously here — which
+      // enqueues an onTimerStopping body on the op executor — and newTimeout returns a
+      // pre-cancelled Timeout. The queued onTimerStopping then drives us to Done(CANCELLED).
+      stopHook = timer.onStop(this::onTimerStopping);
+      // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
+      // the moment the body runs on the op executor.
+      future =
+          timer.newTimeout(
+              () ->
+                  grpcContext
+                      .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
+                      .run(),
+              context.getExecutor(),
+              Durations.toMillis(retryDelay),
+              TimeUnit.MILLISECONDS);
     }
 
     // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so
