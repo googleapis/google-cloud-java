@@ -44,7 +44,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <google-cloud-shared-dependencies.version>3.63.0</google-cloud-shared-dependencies.version>
+    <first-party-dependencies.version>3.64.0-SNAPSHOT</first-party-dependencies.version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
     <enforcer.skip>true</enforcer.skip>
   </properties>
 
@@ -61,17 +61,13 @@
 
   <dependencyManagement>
     <dependencies>
-      <!--
-        Import google-cloud-shared-dependencies instead of first-party-dependencies
-        to ensure all third-party transitive dependencies (like io.opentelemetry:opentelemetry-api)
-        are centrally managed and converged. Without this, conflicts like the one between
-        google-cloud-bigtable (using opentelemetry 1.62.0) and exporter-metrics (using opentelemetry 1.42.1)
-        will not converge for users of libraries-bom.
-      -->
+      <!-- first-party-dependencies is part of java-shared-dependencies
+           BOM in https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml.
+           This includes Guava, Protobuf, gRPC, Google Auth Libraries, etc. -->
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <artifactId>first-party-dependencies</artifactId>
+        <version>${first-party-dependencies.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
