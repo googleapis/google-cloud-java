@@ -5,7 +5,7 @@
   "api_description": "Creates and manages Redis instances on the Google Cloud Platform.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-redis-cluster/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-redis-cluster",
