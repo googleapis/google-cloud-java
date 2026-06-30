@@ -634,6 +634,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       this.deadlineMonitor = monitorDeadline(executorService, ctx.getOperationInfo().getDeadline());
 
       synchronized (SessionPoolImpl.this) {
+        if (isCancelled) {
+          return;
+        }
         if (SessionPoolImpl.this.poolState != PoolState.STARTED) {
           listener.onClose(
               VRpcResult.createUncommitedError(
