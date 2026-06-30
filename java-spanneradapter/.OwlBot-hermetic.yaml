@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-spanneradapter/grpc-google-.*/src"
 - "/java-spanneradapter/proto-google-.*/src"
-- "/java-spanneradapter/google-.*/src/main"
-- "/java-spanneradapter/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-spanneradapter/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-spanneradapter/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-spanneradapter/google-.*/src"
 - "/java-spanneradapter/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/spanner/adapter/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-spanneradapter/$1/proto-google-cloud-spanneradapter-$1/src"
 - source: "/google/spanner/adapter/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-spanneradapter/$1/grpc-google-cloud-spanneradapter-$1/src"
-- source: "/google/spanner/adapter/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-spanneradapter/$1/google-cloud-spanneradapter/src/main"
+- source: "/google/spanner/adapter/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-spanneradapter/$1/google-cloud-spanneradapter/src"
 - source: "/google/spanner/adapter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-spanneradapter/$1/samples/snippets/generated"
 

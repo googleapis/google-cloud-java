@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-shopping-merchant-reports/grpc-google-.*/src"
 - "/java-shopping-merchant-reports/proto-google-.*/src"
-- "/java-shopping-merchant-reports/google-.*/src/main"
-- "/java-shopping-merchant-reports/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-shopping-merchant-reports/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-shopping-merchant-reports/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-shopping-merchant-reports/google-.*/src"
 - "/java-shopping-merchant-reports/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/shopping/merchant/reports/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-reports/$1/proto-google-shopping-merchant-reports-$1/src"
 - source: "/google/shopping/merchant/reports/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-reports/$1/grpc-google-shopping-merchant-reports-$1/src"
-- source: "/google/shopping/merchant/reports/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-shopping-merchant-reports/$1/google-shopping-merchant-reports/src/main"
+- source: "/google/shopping/merchant/reports/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-reports/$1/google-shopping-merchant-reports/src"
 - source: "/google/shopping/merchant/reports/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-shopping-merchant-reports/$1/samples/snippets/generated"
 

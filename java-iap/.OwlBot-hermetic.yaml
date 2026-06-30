@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-iap/grpc-google-.*/src"
 - "/java-iap/proto-google-.*/src"
-- "/java-iap/google-.*/src/main"
-- "/java-iap/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-iap/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-iap/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-iap/google-.*/src"
 - "/java-iap/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/iap/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-iap/$1/proto-google-cloud-iap-$1/src"
 - source: "/google/cloud/iap/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-iap/$1/grpc-google-cloud-iap-$1/src"
-- source: "/google/cloud/iap/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-iap/$1/google-cloud-iap/src/main"
+- source: "/google/cloud/iap/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-iap/$1/google-cloud-iap/src"
 - source: "/google/cloud/iap/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-iap/$1/samples/snippets/generated"
 
