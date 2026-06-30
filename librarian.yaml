@@ -20,7 +20,7 @@ sources:
     sha256: 35131934f78f0eb4499feb17845ca0c060d3cfc506e0d1d626fbb1bce4d70e23
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
-    sha256: 44aabfbf5d976f3c546366a284dc9f74e4a391fa56dc6e66b39eccb3c4c48e18
+    sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
 tools:
   maven:
     - name: google-java-format
