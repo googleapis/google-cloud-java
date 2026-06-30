@@ -84,7 +84,6 @@
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
-
         </configuration>
       </plugin>
       <plugin>
@@ -224,7 +223,6 @@
       <artifactId>google-cloud-bigquerystorage</artifactId>
       <version>3.30.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
-
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-apache-v5</artifactId>
