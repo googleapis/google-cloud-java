@@ -110,7 +110,7 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + ");\n";
 
   private static final String DDL_ALL_BQ_TYPES =
-      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.all_bq_types`\n"
+      "CREATE OR REPLACE TABLE `%1$s.%2$s.all_bq_types`\n"
           + "(\n"
           + "  stringField STRING,\n"
           + "  bytesField BYTES,\n"
