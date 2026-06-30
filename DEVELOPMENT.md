@@ -73,6 +73,10 @@ For more information on how to use Librarian, configure generation, or troublesh
 The repository has automated workflows to manage and verify code generation.
 
 #### Automatically Commit Generated Changes on a PR (Manual Trigger)
+
+> [!NOTE]
+> As of June 30, 2026, running this workflow on GitHub Actions takes approximately 90 minutes to complete.
+> 
 If you raise a Pull Request that you expect to introduce changes to generated code (e.g., changes in `gapic-generator-java`), but do not want to run `librarian generate` locally, you can have GitHub Actions automatically regenerate all the client libraries and push the changes back to your branch:
 
 1. Go to the **Actions** tab on the GitHub repository page.
