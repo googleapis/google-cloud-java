@@ -861,12 +861,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Thread.currentThread().interrupt();
                 LOG.warning("Fetcher thread interrupted while waiting for API future result.");
                 break;
-              } catch (ExecutionException e) {
-                LOG.warning(
-                    "Error executing findMatchingRoutines task: "
-                        + e.getMessage()
-                        + ". Cause: "
-                        + e.getCause());
               } catch (CancellationException e) {
                 LOG.warning("A findMatchingRoutines task was cancelled.");
               }
@@ -1124,7 +1118,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       ExecutorService listRoutinesExecutor,
       String catalogParam,
       BigQueryJdbcCustomLogger logger)
-      throws InterruptedException {
+      throws InterruptedException, ExecutionException {
 
     logger.fine(
         "Listing matching procedure IDs from %d datasets for catalog '%s'.",
@@ -1190,9 +1184,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             }
           }
         }
-      } catch (ExecutionException e) {
-        logger.warning(
-            "Error getting routine list result for catalog " + catalogParam + ": " + e.getCause());
       } catch (CancellationException e) {
         logger.warning("Routine list task cancelled for catalog: " + catalogParam);
       }
@@ -1207,7 +1198,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<RoutineId> procedureIdsToGet,
       ExecutorService getRoutineDetailsExecutor,
       BigQueryJdbcCustomLogger logger)
-      throws InterruptedException {
+      throws InterruptedException, ExecutionException {
     logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
     final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
     final List<Routine> fullRoutines = Collections.synchronizedList(new ArrayList<>());
@@ -1250,8 +1241,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         if (fullRoutine != null) {
           fullRoutines.add(fullRoutine);
         }
-      } catch (ExecutionException e) {
-        logger.warning("Error processing getRoutine future result: " + e.getCause());
       } catch (CancellationException e) {
         logger.warning("getRoutine detail task cancelled.");
       }
@@ -1681,12 +1670,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Thread.currentThread().interrupt();
                 LOG.warning("Fetcher thread interrupted while waiting for API future result.");
                 break;
-              } catch (ExecutionException e) {
-                LOG.warning(
-                    "Error executing findMatchingTables task: "
-                        + e.getMessage()
-                        + ". Cause: "
-                        + e.getCause());
               } catch (CancellationException e) {
                 LOG.warning("A findMatchingTables task was cancelled.");
               }
@@ -3799,10 +3782,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 LOG.warning(
                     "Function fetcher thread interrupted while waiting for API future result.");
                 break;
-              } catch (ExecutionException | CancellationException e) {
+              } catch (CancellationException e) {
                 LOG.warning(
-                    "Error or cancellation in findMatchingRoutines (for functions) task: "
-                        + e.getMessage());
+                    "Cancellation in findMatchingRoutines (for functions) task: " + e.getMessage());
               }
             }
             Comparator<FieldValueList> comparator =
@@ -4100,7 +4082,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       ExecutorService listRoutinesExecutor,
       String catalogParam,
       BigQueryJdbcCustomLogger logger)
-      throws InterruptedException {
+      throws InterruptedException, ExecutionException {
 
     logger.fine(
         "Listing matching function IDs from %d datasets for catalog '%s'.",
@@ -4165,12 +4147,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             }
           }
         }
-      } catch (ExecutionException e) {
-        logger.warning(
-            "Error getting routine (function) list result for catalog "
-                + catalogParam
-                + ": "
-                + e.getCause());
       } catch (CancellationException e) {
         logger.warning("Routine (function) list task cancelled for catalog: " + catalogParam);
       }
@@ -4835,7 +4811,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private void waitForTasksCompletion(List<Future<?>> taskFutures) {
+  private void waitForTasksCompletion(List<Future<?>> taskFutures) throws ExecutionException {
     LOG.info("Waiting for %d submitted tasks to complete...", taskFutures.size());
     for (Future<?> future : taskFutures) {
       try {
@@ -4844,10 +4820,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       } catch (CancellationException e) {
         LOG.warning("A table processing task was cancelled.");
-      } catch (ExecutionException e) {
-        LOG.severe(
-            "Error executing table processing task: %s",
-            (e.getCause() != null ? e.getCause().getMessage() : e.getMessage()));
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         LOG.warning(
