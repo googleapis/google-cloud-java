@@ -51,14 +51,22 @@ if [ ! -d "${HTTP_CLIENT_DIR}" ]; then
   exit 1
 fi
 
-# Store current directory and build http client
-pushd "${HTTP_CLIENT_DIR}"
-  echo "Switching to branch ${HTTP_CLIENT_BRANCH} in google-http-java-client..."
-  git checkout "${HTTP_CLIENT_BRANCH}"
-  
-  echo "Running maven install..."
-  mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -Dclirr.skip=true
-popd
+# Check if the snapshot jar is already built in the local maven repository
+M2_JAR_PATH="${HOME}/.m2/repository/com/google/http-client/google-http-client/2.1.2-SNAPSHOT/google-http-client-2.1.2-SNAPSHOT.jar"
+
+if [ -f "${M2_JAR_PATH}" ] && [ "${FORCE_REBUILD}" != "true" ]; then
+  echo "Found existing google-http-client snapshot at ${M2_JAR_PATH}."
+  echo "Skipping build. (To force rebuild, run with FORCE_REBUILD=true)"
+else
+  # Store current directory and build http client
+  pushd "${HTTP_CLIENT_DIR}"
+    echo "Switching to branch ${HTTP_CLIENT_BRANCH} in google-http-java-client..."
+    git checkout "${HTTP_CLIENT_BRANCH}"
+    
+    echo "Running maven install..."
+    mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -Dclirr.skip=true
+  popd
+fi
 
 echo "========================================================================="
 echo "Building and verifying gapic-showcase with PQC in google-cloud-java..."
