@@ -194,6 +194,10 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + DDL_ALL_BQ_TYPES
           + DML_ALL_BQ_TYPES;
 
+  public static String getUniqueDatasetName(String prefix) {
+    return prefix + System.currentTimeMillis() + "_" + (100 + new java.util.Random().nextInt(900));
+  }
+
   public static synchronized String getSharedDataset() {
     if (sharedDataset == null) {
       sharedDataset =

@@ -1743,30 +1743,34 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDestinationTableAndDestinationDatasetThatDoesNotExistsCreates()
       throws SQLException {
     // setup
+    String largeResultDataset = ITBase.getUniqueDatasetName("FakeDataset");
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri
-            + "QueryDialect=BIG_QUERY;"
-            + "AllowLargeResults=1;"
-            + "LargeResultTable=FakeTable;"
-            + "LargeResultDataset=FakeDataset;";
+        String.format(
+            ITBigQueryJDBCTest.connection_uri
+                + "QueryDialect=BIG_QUERY;"
+                + "AllowLargeResults=1;"
+                + "LargeResultTable=FakeTable;"
+                + "LargeResultDataset=%s;",
+            largeResultDataset);
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
-    Connection connection = driver.connect(connection_uri, new Properties());
-    Statement statement = connection.createStatement();
+    try (Connection connection = driver.connect(connection_uri, new Properties())) {
+      Statement statement = connection.createStatement();
 
-    // act
-    ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
+      // act
+      ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
-    // assertion
-    assertNotNull(resultSet);
-    String separateQuery = "SELECT * FROM FakeDataset.FakeTable;";
-    boolean result = bigQueryStatement.execute(separateQuery);
-    assertTrue(result);
-
-    // clean up
-    bigQueryStatement.execute("DROP SCHEMA FakeDataset CASCADE;");
-    connection.close();
+      // assertion
+      assertNotNull(resultSet);
+      String separateQuery = String.format("SELECT * FROM %s.FakeTable;", largeResultDataset);
+      boolean result = bigQueryStatement.execute(separateQuery);
+      assertTrue(result);
+    } finally {
+      // clean up
+      bigQueryStatement.execute(
+          String.format("DROP SCHEMA IF EXISTS %s CASCADE;", largeResultDataset));
+    }
   }
 
   @Test
