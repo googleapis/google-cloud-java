@@ -112,8 +112,12 @@ class SessionList {
 
   /** Closes all the sessions with this reason. */
   void close(CloseSessionRequest req) {
-    // Notify all sessions to close and have the callbacks clean up the rest of the state
-    for (SessionHandle s : allSessions) {
+    // Snapshot before iterating: session.close(req) enqueues on sessionSyncContext, and
+    // io.grpc.SynchronizationContext.execute drains inline when the caller is the drainer. A
+    // pre-existing queued task (e.g. dispatchStreamClosed from a transport error just before
+    // close, or a heartbeat-miss forceClose that already fired) can drain here and remove its
+    // handle via onSessionClosed → allSessions.remove, tripping a fail-fast iterator CME.
+    for (SessionHandle s : new ArrayList<>(allSessions)) {
       s.getSession().close(req);
     }
   }
@@ -239,41 +243,51 @@ class SessionList {
     }
 
     void onSessionClosed(SessionState prevState) {
-      if (inExpectedCount) {
-        poolStats.expectedCapacity--;
-        inExpectedCount = false;
-      }
-      // only update counts after the session started and has an afe associated
-      afe.ifPresent(afeHandle -> afeHandle.refCount--);
+      // Always drop from allSessions on the way out, even if the branch below throws — otherwise a
+      // stranded handle blocks drainedFuture and pool.awaitTerminated hangs until the shared close
+      // deadline elapses.
+      try {
+        if (inExpectedCount) {
+          poolStats.expectedCapacity--;
+          inExpectedCount = false;
+        }
+        // only update counts after the session started and has an afe associated
+        afe.ifPresent(afeHandle -> afeHandle.refCount--);
 
-      // NOTE: don't need to update vRpc counters, onVRpcFinish will have been invoked already
-      switch (prevState) {
-        case NEW:
-          throw new IllegalStateException("NEW session was closed");
-        case STARTING:
-          poolStats.startingCount--;
-          break;
-        case READY:
-          {
-            AfeHandle afeHandle = afe.get();
-            // If the session was available & idle, then we need to remove it
-            if (afeHandle.sessions.remove(this)) {
-              poolStats.readyCount--;
-              if (afeHandle.sessions.isEmpty()) {
-                afesWithReadySessions.remove(afeHandle);
-              }
-            }
+        // NOTE: don't need to update vRpc counters, onVRpcFinish will have been invoked already
+        switch (prevState) {
+          case NEW:
+            throw new IllegalStateException("NEW session was closed");
+          case STARTING:
+            poolStats.startingCount--;
             break;
-          }
-        case CLOSING:
-        case WAIT_SERVER_CLOSE:
-          // noop
-          break;
-        case CLOSED:
-          throw new IllegalStateException("double close");
+          case READY:
+            {
+              // afe may be empty if SessionPoolImpl.onSessionReady early-returned on poolState !=
+              // STARTED (pool closed after SessionImpl transitioned to READY but before
+              // handle.onSessionStarted ran). Skip the AFE bookkeeping cleanly rather than NPE.
+              if (afe.isPresent()) {
+                AfeHandle afeHandle = afe.get();
+                // If the session was available & idle, then we need to remove it
+                if (afeHandle.sessions.remove(this)) {
+                  poolStats.readyCount--;
+                  if (afeHandle.sessions.isEmpty()) {
+                    afesWithReadySessions.remove(afeHandle);
+                  }
+                }
+              }
+              break;
+            }
+          case CLOSING:
+          case WAIT_SERVER_CLOSE:
+            // noop
+            break;
+          case CLOSED:
+            throw new IllegalStateException("double close");
+        }
+      } finally {
+        allSessions.remove(this);
       }
-
-      allSessions.remove(this);
     }
   }
 

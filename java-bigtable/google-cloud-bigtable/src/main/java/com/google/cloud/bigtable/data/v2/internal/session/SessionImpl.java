@@ -294,6 +294,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   public void start(OpenSessionRequest req, Metadata headers, Listener sessionListener) {
     sessionSyncContext.execute(
         () -> {
+          // Publish sessionListener FIRST so that if anything below throws (tracer.onStart,
+          // OpenParams.create, stream.start), abortFromUncaughtException → notifyTerminalClose
+          // can still fire sessionListener.onClose. Otherwise the handle stays in
+          // SessionList.allSessions and drainedFuture never completes.
+          this.sessionListener = sessionListener;
+
           debugTagTracer.checkPrecondition(
               state == SessionState.NEW,
               "session_start_wrong_state",
@@ -305,7 +311,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
           updateState(SessionState.STARTING);
           openParams = OpenParams.create(headers, req);
-          this.sessionListener = sessionListener;
 
           SessionRequest wrappedReq = SessionRequest.newBuilder().setOpenSession(req).build();
           stream.start(
@@ -801,7 +806,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
             t);
       }
       try {
-        tracer.onVRpcClose(Status.UNAVAILABLE.getCode());
+        tracer.onVRpcClose(status.getCode());
       } catch (Throwable t) {
         logger.log(
             Level.WARNING,

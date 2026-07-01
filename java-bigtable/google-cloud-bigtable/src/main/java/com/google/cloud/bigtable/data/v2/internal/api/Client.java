@@ -291,15 +291,26 @@ public class Client implements AutoCloseable {
     // to a terminal Done — that delivery hops through op executor → userCallbackExecutor, both
     // of which must still be alive at this moment.
     //
+    // channelPool.close() runs BEFORE userCallbackExecutor.close() so any classic (non-session)
+    // gRPC call still in flight has its StreamListener.onClose delivered while the callback
+    // executor is alive — otherwise the callback lands on a shut-down executor, hits REE, and
+    // the caller's listener never sees a terminal onClose. Phase 2 only drains session-based
+    // pools; classic callables share this same userCallbackExecutor.
+    //
     // userCallbackExecutor.close() next, with a 5s drain to catch the listener.onClose tasks
-    // queued by both the session drain (Phase 2) and the just-fired retry shutdowns.
+    // queued by the session drain (Phase 2), the just-fired retry shutdowns, and channel
+    // teardown.
+    //
+    // metrics.close() and configManager.close() don't depend on the shared channelPool (metrics
+    // uses its own OTel exporter channel; configManager should have finished any config RPCs
+    // before close).
     //
     // backgroundExecutor must close last because it's the timer's dispatcher and the op
     // executor's chain ultimately runs ScheduledExecutorService tasks here.
     sessionTimer.stop();
+    channelPool.close();
     userCallbackExecutor.close();
     metrics.close();
-    channelPool.close();
     configManager.close();
     backgroundExecutor.close();
   }
