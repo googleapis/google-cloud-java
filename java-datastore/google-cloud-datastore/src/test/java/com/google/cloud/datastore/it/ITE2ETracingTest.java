@@ -289,13 +289,12 @@ public class ITE2ETracingTest {
     // where default ADC resolution might fail for the exporter.
     Credentials credentials = DatastoreOptions.getDefaultInstance().getCredentials();
 
-    TraceConfiguration.Builder traceConfigurationBuilder = TraceConfiguration.builder();
+    TraceConfiguration.Builder traceConfigurationBuilder =
+        TraceConfiguration.builder().setProjectId(projectId);
     if (credentials != null) {
       traceConfigurationBuilder.setCredentials(credentials);
     }
-    traceExporter =
-        TraceExporter.createWithConfiguration(
-            traceConfigurationBuilder.setProjectId(projectId).build());
+    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
 
     TraceServiceSettings.Builder clientBuilder = TraceServiceSettings.newBuilder();
     if (credentials != null) {
