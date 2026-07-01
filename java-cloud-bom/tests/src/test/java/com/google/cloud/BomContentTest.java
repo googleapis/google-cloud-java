@@ -77,6 +77,9 @@ public class BomContentTest {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
+      // If the artifact is built locally (e.g. during a release PR), it will be in the local
+      // .m2 cache. We can skip checking Maven Central for these local artifacts since they
+      // are not yet published.
       if (existsLocally(artifact)) {
         continue;
       }
@@ -108,6 +111,9 @@ public class BomContentTest {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
+      // If the artifact is built locally (e.g. during a release PR), it will be in the local
+      // .m2 cache. We can skip checking Maven Central for these local artifacts since they
+      // are not yet published.
       if (existsLocally(artifact)) {
         continue;
       }
@@ -141,9 +147,15 @@ public class BomContentTest {
         + ".pom";
   }
 
+  /**
+   * Checks if the artifact exists in the local Maven repository cache.
+   * This is used as a fallback/bypass for reachability checks during release PRs.
+   */
   private static boolean existsLocally(Artifact artifact) {
     String localRepository = System.getProperty("maven.repo.local");
     if (localRepository == null) {
+      // Standard default location for Maven local repository.
+      // GHA runners also use this path by default (cached by actions/setup-java).
       localRepository = System.getProperty("user.home") + "/.m2/repository";
     }
     Path localPath = Paths.get(localRepository,
