@@ -146,11 +146,17 @@ flatten-plugin)
     ../.kokoro/build.sh
     echo "After running ../.kokoro/build.sh"
     pushd ${LIBRARY_NAME}
-    mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
+    mvn -B -ntp dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
         | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
-    echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}):"
-    diff "${scriptDir}/${EXPECTED_DEPENDENCIES_LIST}" .actual-flattened-dependencies-list.txt
+    
+    # Strip -SNAPSHOT for comparison to support release PRs where dependencies are bumped to release versions
+    sed 's/-SNAPSHOT//g' "${scriptDir}/${EXPECTED_DEPENDENCIES_LIST}" > .expected-stripped.txt
+    sed 's/-SNAPSHOT//g' .actual-flattened-dependencies-list.txt > .actual-stripped.txt
+    
+    echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}) (ignoring -SNAPSHOT):"
+    diff .expected-stripped.txt .actual-stripped.txt
     RETURN_CODE=$?
+    rm .expected-stripped.txt .actual-stripped.txt
     if [ "${RETURN_CODE}" == 0 ]; then
       echo "No diff."
     else
