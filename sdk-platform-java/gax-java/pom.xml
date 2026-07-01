@@ -270,25 +270,6 @@
   </build>
 
   <profiles>
-    <profile>
-      <!-- profile for nexus-staging:release invocation -->
-      <id>release-staging-repository</id>
-      <build>
-        <plugins>
-          <plugin>
-            <!-- The root project runs nexus-staging:release task -->
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.7.0</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>sonatype-nexus-staging</serverId>
-              <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+
   </profiles>
 </project>

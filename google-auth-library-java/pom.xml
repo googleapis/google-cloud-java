@@ -21,10 +21,7 @@
   </parent>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+
     <site>
       <id>googleapis.dev</id>
       <name>Google self-hosted documentation site</name>
@@ -196,19 +193,7 @@
     <!-- This is the parent, so only define pluginManagement, not plugins. -->
     <pluginManagement>
       <plugins>
-        <plugin>
-          <!-- nexus-staging-maven-plugin is activated by the release-sonatype
-             profile defined in native-image-shared-config -->
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.7.0</version>
-          <extensions>true</extensions>
-          <configuration>
-            <serverId>ossrh</serverId>
-            <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
-            <autoReleaseAfterClose>${deploy.autorelease}</autoReleaseAfterClose>
-          </configuration>
-        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>

@@ -14,12 +14,7 @@
   <artifactId>google-auth-library-oauth2-http</artifactId>
   <name>Google Auth Library for Java - OAuth2 HTTP</name>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
+
 
   <profiles>
     <profile>
