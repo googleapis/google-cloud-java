@@ -172,7 +172,7 @@
         <!-- Artifacts from google-cloud-java monorepo -->
         <groupId>com.google.cloud</groupId>
         <artifactId>gapic-libraries-bom</artifactId>
-        <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:gapic-libraries:current} -->
+        <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
