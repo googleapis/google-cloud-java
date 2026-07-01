@@ -27,7 +27,7 @@ jobs:
             - 'java-cloud-bom/**'
   release-note-generation:
     needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    if: ${{ needs.filter.outputs.library == 'true' && (github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/')) }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -52,13 +52,10 @@ jobs:
         if [ -n "${WORKFLOW_DISPATCH_INPUT}" ]; then
           echo "WORKFLOW_DISPATCH_INPUT: ${WORKFLOW_DISPATCH_INPUT}"
           echo "libraries-bom-version=${WORKFLOW_DISPATCH_INPUT}" >> $GITHUB_OUTPUT
-        elif [[ "${GITHUB_REF}" == *"refs/tags/v"* ]]; then
-          # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
-          # Example value of GITHUB_REF: refs/tags/v26.5.0
-          # With the single-component setup of Release Please, the Libraries BOM
-          # version is the version of this repository release.
+        elif [[ "${GITHUB_REF}" == *"refs/tags/libraries-bom/v"* ]]; then
+          # Example value of GITHUB_REF: refs/tags/libraries-bom/v26.5.0
           echo "GITHUB_REF: ${GITHUB_REF}"
-          VERSION=${GITHUB_REF#refs/*/v}
+          VERSION=${GITHUB_REF#*v}
           echo "libraries-bom-version=${VERSION}" >> $GITHUB_OUTPUT
         else
           echo "Couldn't find the Libraries BOM version. WORKFLOW_DISPATCH_INPUT \
@@ -89,7 +86,7 @@ jobs:
         GH_TOKEN: ${{ github.token }}
     - name: Update the release note with release_note.md
       run: |
-        TAG="v${LIBRARIES_BOM_VERSION}"
+        TAG="libraries-bom/v${LIBRARIES_BOM_VERSION}"
         echo "Updating ${TAG}"
         gh release edit "${TAG}" --notes-file release_note.md
       working-directory: java-cloud-bom/release-note-generation
