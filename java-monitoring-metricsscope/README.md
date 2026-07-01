@@ -63,7 +63,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-metricsscop
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+See the [Authentication][authentication] guide and the [Java-specific Authentication Guide][java-authentication] for more information.
 
 ## Authorization
 
@@ -182,14 +182,15 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring-metricsscope.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-monitoring-metricsscope/0.87.0
-[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[authentication]: https://cloud.google.com/docs/authentication/
+[java-authentication]: https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
-[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
+[troubleshooting]: https://cloud.google.com/java/docs/troubleshooting
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
