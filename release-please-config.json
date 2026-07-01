@@ -23,6 +23,10 @@
         "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-c.cfg",
         "java-bigquery/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/telemetry/Version.java"
       ]
+    },
+    "java-cloud-bom": {
+      "component": "libraries-bom",
+      "include-component-in-tag": true
     }
   }
 }

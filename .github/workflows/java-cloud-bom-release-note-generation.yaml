@@ -40,6 +40,10 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
+    - name: Pre-install Snapshot Dependencies
+      run: |
+        bash java-cloud-bom/tests/pre-install.sh
+      shell: bash
     - name: Pick Libraries BOM version
       id: pick-version
       shell: bash
