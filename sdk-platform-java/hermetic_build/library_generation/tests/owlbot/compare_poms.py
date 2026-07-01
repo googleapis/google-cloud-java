@@ -5,7 +5,11 @@ The only comparison points are: element path (e.g. project/dependencies) and ele
 There is a special case for `dependency`, where the maven coordinates are prepared as well
 """
 
-from library_generation.utils.utilities import eprint
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
 import xml.etree.ElementTree as et
 from collections import Counter
 import sys

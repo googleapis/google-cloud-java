@@ -15,7 +15,7 @@ import os
 import shutil
 import unittest
 from library_generation.owlbot.src.fix_poms import main
-from library_generation.tests.compare_poms import compare_pom_in_subdir
+from library_generation.tests.owlbot.compare_poms import compare_pom_in_subdir
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 resources_dir = os.path.join(script_dir, "..", "resources", "test-owlbot")
