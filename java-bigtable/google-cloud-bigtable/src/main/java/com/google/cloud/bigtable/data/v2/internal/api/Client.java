@@ -257,14 +257,26 @@ public class Client implements AutoCloseable {
     // Phase 2: wait for sessions to drain. The pool's watchdog stays alive during this wait and
     // escalates anything stuck in WAIT_SERVER_CLOSE longer than its tick interval (5 min). Once
     // a pool's last session reaches CLOSED, drainedFuture completes and awaitTerminated returns.
-    // Sequential: worst case is POOL_DRAIN_TIMEOUT * N pools, but the happy path drains in << 1s.
+    //
+    // Shared deadline across all pools: every pool's watchdog started at Phase 1 and ticks in
+    // parallel on the shared sessionTimer, so one watchdog interval is enough for the whole
+    // fleet to escalate. Bounding on a single deadline keeps close() finite even if multiple
+    // pools' force-close paths hang.
+    long deadlineNanos = System.nanoTime() + POOL_DRAIN_TIMEOUT.toNanos();
     for (SessionPool<?> pool : toClose) {
+      long remainingNanos = deadlineNanos - System.nanoTime();
+      if (remainingNanos <= 0) {
+        logger.warning(
+            "SessionPool drain deadline ("
+                + POOL_DRAIN_TIMEOUT
+                + ") exceeded; abandoning remaining pools");
+        break;
+      }
       try {
-        if (!pool.awaitTerminated(POOL_DRAIN_TIMEOUT)) {
+        if (!pool.awaitTerminated(Duration.ofNanos(remainingNanos))) {
           logger.warning(
-              "SessionPool did not drain within "
-                  + POOL_DRAIN_TIMEOUT
-                  + "; abandoning and continuing shutdown");
+              "SessionPool did not drain within remaining shutdown budget;"
+                  + " abandoning and continuing shutdown");
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
