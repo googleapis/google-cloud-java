@@ -16,8 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class BigQueryJdbcBaseTest {
 
@@ -42,6 +45,16 @@ public class BigQueryJdbcBaseTest {
           "2wK1Zawz/A==\n"
           + //
           "-----END PRIVATE KEY-----";
+
+  protected static BigQuery getBigQuery(String connectionUrl) {
+    try {
+      return DriverManager.getConnection(connectionUrl)
+          .unwrap(BigQueryConnection.class)
+          .getBigQuery();
+    } catch (SQLException e) {
+      throw new RuntimeException("Failed to initialize BigQuery client", e);
+    }
+  }
 
   protected static URIBuilder getBaseUri() {
     return new URIBuilder(TestUtilities.getBaseConnectionUrl());
