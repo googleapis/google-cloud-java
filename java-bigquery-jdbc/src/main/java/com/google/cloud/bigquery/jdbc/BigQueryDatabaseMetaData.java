@@ -3402,13 +3402,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineGetSchemasSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-        (catalog != null)
-            ? new LinkedBlockingQueue<>()
-            : new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-
     if (catalog != null) {
       // Single-Catalog Path: completely synchronous on caller thread
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
       List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
       List<FieldValueList> collectedResults = new ArrayList<>();
       for (Dataset dataset : datasets) {
@@ -3422,6 +3418,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     Runnable multiSchemaFetcher =
         () -> {
           final FieldList localResultSchemaFields = resultSchemaFields;
