@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.internal.session;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import java.util.HashSet;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -135,23 +134,29 @@ public final class HashedWheelTimer implements BigtableTimer {
     // CAS will eventually finish their add and land in stopHooks/pendingTimeouts; the loop
     // keeps draining until no new entries appear. Readers that arrive after our CAS observe
     // stopped==true and skip the add entirely.
+    //
+    // stopHooks.remove(hook) is the ownership token: only the thread whose remove returns true
+    // runs the hook. Same pattern onStop() uses on its own-hook fast path, so this races cleanly
+    // with an onStop caller that observed stopped==true and is also trying to remove.
     while (true) {
-      Set<Runnable> hooks = new HashSet<>(stopHooks);
-      stopHooks.removeAll(hooks);
-      for (Runnable hook : hooks) {
-        try {
-          hook.run();
-        } catch (Throwable t) {
-          LOG.log(Level.WARNING, "stop hook threw; continuing", t);
+      int drainedHooks = 0;
+      for (Runnable hook : stopHooks) {
+        if (stopHooks.remove(hook)) {
+          drainedHooks++;
+          try {
+            hook.run();
+          } catch (Throwable t) {
+            LOG.log(Level.WARNING, "stop hook threw; continuing", t);
+          }
         }
       }
-      int drained = 0;
+      int drainedTimeouts = 0;
       HashedWheelTimeout t;
       while ((t = pendingTimeouts.poll()) != null) {
         t.cancel();
-        drained++;
+        drainedTimeouts++;
       }
-      if (hooks.isEmpty() && drained == 0) {
+      if (drainedHooks == 0 && drainedTimeouts == 0) {
         break;
       }
     }
