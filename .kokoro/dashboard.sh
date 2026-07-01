@@ -25,8 +25,6 @@ if [[ "${JOB_TYPE}" == "dashboard-units-check" ]]; then
   echo -e "\n******************** BUILDING THE DASHBOARD ********************"
   mvn test --fail-at-end
 elif [[ "${JOB_TYPE}" == "dependency-convergence-check" ]]; then
-  echo -e "\n******************** BUILDING DEPENDENCIES ********************"
-  mvn install -pl java-cloud-bom/tests/dependency-convergence -am -Pquick-build -DskipTests
   cd java-cloud-bom/tests/dependency-convergence/
   echo -e "\n******************** RUNNING DEPENDENCY CONVERGENCE CHECK ********************"
   mvn validate --fail-at-end
