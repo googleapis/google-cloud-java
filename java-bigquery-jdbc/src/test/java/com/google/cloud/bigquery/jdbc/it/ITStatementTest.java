@@ -28,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.FieldValueList;
@@ -383,8 +382,8 @@ public class ITStatementTest extends ITBase {
     String tempDatasetName = "jdbc_temp_dataset_" + System.currentTimeMillis() + "_" + randomSuffix;
 
     String customConnectionUrl =
-        ITBase.connectionUrl + 
-        ";Location="
+        ITBase.connectionUrl
+            + ";Location="
             + location
             + ";AllowLargeResults=true;LargeResultDataset="
             + tempDatasetName

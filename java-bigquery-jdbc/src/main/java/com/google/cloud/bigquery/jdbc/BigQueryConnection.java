@@ -431,7 +431,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.bigQueryWriteClient;
   }
 
-  public BigQuery getBigQuery() {
+  BigQuery getBigQuery() {
     return this.bigQuery;
   }
 

@@ -21,8 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import java.sql.Connection;
@@ -99,8 +97,7 @@ public class ITDriverTest extends ITBase {
     String CONNECTION_URL = ITBase.connectionUrl + "LOCATION=us-east5;";
 
     // US Connection
-    Connection connectionUS =
-        DriverManager.getConnection(CONNECTION_URL);
+    Connection connectionUS = DriverManager.getConnection(CONNECTION_URL);
     Statement statementUS = connectionUS.createStatement();
     statementUS.execute(String.format(createDataset, DEFAULT_CATALOG, datasetUS));
     statementUS.execute(String.format(createQuery, DEFAULT_CATALOG, datasetUS, tableNameUS));
