@@ -226,10 +226,7 @@ class ClientConfigurationManagerTest {
     assertThat(resolvedConfig.getSessionConfiguration().getSessionLoad()).isEqualTo(0.75f);
     assertThat(resolvedConfig.getSessionConfiguration().getSessionPoolConfiguration())
         .isEqualTo(
-            manager
-                .getDefaultConfig()
-                .getSessionConfiguration()
-                .getSessionPoolConfiguration());
+            manager.getDefaultConfig().getSessionConfiguration().getSessionPoolConfiguration());
     assertThat(manager.areSessionsRequired()).isTrue();
   }
 
