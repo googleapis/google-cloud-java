@@ -5,7 +5,7 @@
   "api_description": "The Maintenance API provides a centralized view of planned disruptive maintenance events across supported Google Cloud products.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-maintenance",

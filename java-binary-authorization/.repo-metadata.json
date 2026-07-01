@@ -5,7 +5,7 @@
   "api_description": " is a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-binary-authorization/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-binary-authorization",

@@ -5,7 +5,7 @@
   "api_description": "enables you to programmatically manage resources by project, folder, and organization.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-resourcemanager/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-resourcemanager",

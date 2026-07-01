@@ -5,7 +5,7 @@
   "api_description": "Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-cloudcontrolspartner/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-cloudcontrolspartner",
