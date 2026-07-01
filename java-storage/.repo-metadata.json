@@ -5,7 +5,7 @@
   "api_description": "is a durable and highly available object storage service. Google Cloud Storage is almost infinitely scalable and guarantees consistency: when a write succeeds, the latest copy of the object will be returned to any GET, globally.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history",
   "release_level": "stable",
-  "transport": "http",
+  "transport": "rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-storage",

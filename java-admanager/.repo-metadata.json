@@ -5,7 +5,7 @@
   "api_description": "The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/ad-manager/latest/overview",
   "release_level": "preview",
-  "transport": "http",
+  "transport": "rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-admanager",

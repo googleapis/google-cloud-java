@@ -5,7 +5,7 @@
   "api_description": "The Google Health API lets you view and manage health and fitness metrics and measurement data.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-health/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-health",

@@ -5,7 +5,7 @@
   "api_description": "Google Distributed Cloud Edge allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-distributedcloudedge/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-distributedcloudedge",
