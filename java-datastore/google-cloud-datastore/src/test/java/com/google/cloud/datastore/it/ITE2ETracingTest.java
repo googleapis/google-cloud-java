@@ -37,8 +37,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.auth.Credentials;
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResult;
 import com.google.cloud.datastore.AggregationResults;
@@ -58,6 +60,7 @@ import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
 import com.google.cloud.opentelemetry.trace.TraceConfiguration;
 import com.google.cloud.opentelemetry.trace.TraceExporter;
 import com.google.cloud.trace.v1.TraceServiceClient;
+import com.google.cloud.trace.v1.TraceServiceSettings;
 import com.google.common.base.Preconditions;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
@@ -246,12 +249,12 @@ public class ITE2ETracingTest {
   private static TraceExporter traceExporter;
 
   // Required for reading back traces from Cloud Trace for validation
-  private static TraceServiceClient traceClient_v1;
+  private static TraceServiceClient traceClient;
 
   // Custom SpanContext for each test, required for TraceID injection
   private static SpanContext customSpanContext;
 
-  // Trace read back from Cloud Trace using traceClient_v1 for verification
+  // Trace read back from Cloud Trace using traceClient for verification
   private static Trace retrievedTrace;
 
   private static String rootSpanName;
@@ -280,10 +283,24 @@ public class ITE2ETracingTest {
   @BeforeClass
   public static void setup() throws IOException {
     projectId = DatastoreOptions.getDefaultProjectId();
-    traceExporter =
-        TraceExporter.createWithConfiguration(
-            TraceConfiguration.builder().setProjectId(projectId).build());
-    traceClient_v1 = TraceServiceClient.create();
+
+    // Share the same credentials used by Datastore client with the TraceExporter and
+    // TraceServiceClient to ensure consistency and avoid auth issues in environments
+    // where default ADC resolution might fail for the exporter.
+    Credentials credentials = DatastoreOptions.getDefaultInstance().getCredentials();
+
+    TraceConfiguration.Builder traceConfigurationBuilder =
+        TraceConfiguration.builder().setProjectId(projectId);
+    if (credentials != null) {
+      traceConfigurationBuilder.setCredentials(credentials);
+    }
+    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
+
+    TraceServiceSettings.Builder clientBuilder = TraceServiceSettings.newBuilder();
+    if (credentials != null) {
+      clientBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
+    }
+    traceClient = TraceServiceClient.create(clientBuilder.build());
     random = new Random();
   }
 
@@ -381,7 +398,7 @@ public class ITE2ETracingTest {
 
   @AfterClass
   public static void teardown() throws Exception {
-    traceClient_v1.close();
+    traceClient.close();
   }
 
   // Generates a random hex string of length `numBytes`
@@ -443,7 +460,7 @@ public class ITE2ETracingTest {
     // Fetch traces
     do {
       try {
-        retrievedTrace = traceClient_v1.getTrace(projectId, traceId);
+        retrievedTrace = traceClient.getTrace(projectId, traceId);
         assertEquals(traceId, retrievedTrace.getTraceId());
 
         logger.info(
@@ -530,7 +547,7 @@ public class ITE2ETracingTest {
     int numRetries = GET_TRACE_RETRY_COUNT;
     do {
       try {
-        traceResp = traceClient_v1.getTrace(projectId, customSpanContext.getTraceId());
+        traceResp = traceClient.getTrace(projectId, customSpanContext.getTraceId());
         if (traceResp.getSpansCount() == expectedSpanCount) {
           logger.info("Success: Got " + expectedSpanCount + " spans.");
           break;
@@ -990,7 +1007,7 @@ public class ITE2ETracingTest {
           Query.newEntityQueryBuilder().setKind(KEY1.getKind()).setFilter(filter).build();
       Datastore.TransactionCallable<Boolean> callable =
           transaction -> {
-            QueryResults<Entity> queryResults = datastore.run(query);
+            QueryResults<Entity> queryResults = transaction.run(query);
             assertTrue(queryResults.hasNext());
             assertEquals(entity1, queryResults.next());
             assertFalse(queryResults.hasNext());
@@ -1007,7 +1024,7 @@ public class ITE2ETracingTest {
         /* numExpectedSpans= */ 4,
         Arrays.asList(
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_BEGIN_TRANSACTION),
-            Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_RUN_QUERY),
+            Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_RUN_QUERY),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_COMMIT)));
   }
 }
