@@ -1007,7 +1007,7 @@ public class ITE2ETracingTest {
           Query.newEntityQueryBuilder().setKind(KEY1.getKind()).setFilter(filter).build();
       Datastore.TransactionCallable<Boolean> callable =
           transaction -> {
-            QueryResults<Entity> queryResults = datastore.run(query);
+            QueryResults<Entity> queryResults = transaction.run(query);
             assertTrue(queryResults.hasNext());
             assertEquals(entity1, queryResults.next());
             assertFalse(queryResults.hasNext());
@@ -1024,7 +1024,7 @@ public class ITE2ETracingTest {
         /* numExpectedSpans= */ 4,
         Arrays.asList(
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_BEGIN_TRANSACTION),
-            Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_RUN_QUERY),
+            Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_RUN_QUERY),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_COMMIT)));
   }
 }
