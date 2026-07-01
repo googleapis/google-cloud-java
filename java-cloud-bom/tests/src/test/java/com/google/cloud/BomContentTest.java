@@ -30,6 +30,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -76,6 +77,9 @@ public class BomContentTest {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
+      if (existsLocally(artifact)) {
+        continue;
+      }
       assertReachable(buildMavenCentralUrl(artifact));
     }
 
@@ -102,6 +106,9 @@ public class BomContentTest {
     StringBuilder errors = new StringBuilder();
     for (Artifact artifact : artifacts) {
       if (artifact.getVersion().contains("SNAPSHOT")) {
+        continue;
+      }
+      if (existsLocally(artifact)) {
         continue;
       }
       try {
@@ -132,6 +139,19 @@ public class BomContentTest {
         + "-"
         + artifact.getVersion()
         + ".pom";
+  }
+
+  private static boolean existsLocally(Artifact artifact) {
+    String localRepository = System.getProperty("maven.repo.local");
+    if (localRepository == null) {
+      localRepository = System.getProperty("user.home") + "/.m2/repository";
+    }
+    Path localPath = Paths.get(localRepository,
+        artifact.getGroupId().replace('.', '/'),
+        artifact.getArtifactId(),
+        artifact.getVersion(),
+        artifact.getArtifactId() + "-" + artifact.getVersion() + ".pom");
+    return Files.exists(localPath);
   }
 
   /** Asserts that the BOM only provides JARs which contains unique class names to the classpath. */
