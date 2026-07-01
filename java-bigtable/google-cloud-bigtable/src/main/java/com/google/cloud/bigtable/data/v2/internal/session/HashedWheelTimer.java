@@ -100,7 +100,12 @@ public final class HashedWheelTimer implements BigtableTimer {
     long deadlineNanos = (System.nanoTime() - startNanos) + delayNanos;
     HashedWheelTimeout timeout = new HashedWheelTimeout(task, executor, deadlineNanos);
     pendingTimeouts.add(timeout);
-    // If stop() raced after our get(), its drain loop will catch this entry and cancel it.
+    // Re-check after add: stop()'s drain can finish between our stopped.get() above and this
+    // add, leaking the entry. If stop has fired, cancel ourselves so the returned handle
+    // accurately reports its terminal state. Same pattern onStop() uses on its own-hook path.
+    if (stopped.get()) {
+      timeout.cancel();
+    }
     return timeout;
   }
 
