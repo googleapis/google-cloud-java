@@ -60,6 +60,7 @@ jobs:
       env:
         JOB_TYPE: test
         GH_TOKEN: ${{ github.token }}
+        MAVEN_OPTS: -Xmx4g ${{ github.head_ref == 'release-please--branches--main' && '-DuseLocalCache=true' || '' }}
   units-java8:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -90,6 +91,7 @@ jobs:
         env:
           JOB_TYPE: test
           GH_TOKEN: ${{ github.token }}
+          MAVEN_OPTS: -Xmx4g ${{ github.head_ref == 'release-please--branches--main' && '-DuseLocalCache=true' || '' }}
   windows:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -111,6 +113,7 @@ jobs:
       env:
         JOB_TYPE: test
         GH_TOKEN: ${{ github.token }}
+        MAVEN_OPTS: -Xmx4g ${{ github.head_ref == 'release-please--branches--main' && '-DuseLocalCache=true' || '' }}
   dependencies:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

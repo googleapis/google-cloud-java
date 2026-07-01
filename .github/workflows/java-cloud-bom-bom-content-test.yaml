@@ -46,7 +46,7 @@ jobs:
     - name: Ensure the BOM has valid content (at releases)
       if: github.head_ref == 'release-please--branches--main'
       run: |
-        mvn -B -V -ntp verify -Dtest="BomContentTest#testLibrariesBom"
+        mvn -B -V -ntp verify -Dtest="BomContentTest#testLibrariesBom" -DuseLocalCache=true
       working-directory: java-cloud-bom/tests
 
   bom-assertion-test:

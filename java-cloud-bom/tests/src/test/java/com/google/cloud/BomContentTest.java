@@ -30,6 +30,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -72,11 +73,17 @@ public class BomContentTest {
   private void checkBom(Path bomPath) throws Exception {
     Bom bom = Bom.readBom(bomPath);
     List<Artifact> artifacts = bom.getManagedDependencies();
+    boolean useLocalCache = Boolean.getBoolean("useLocalCache");
     for (Artifact artifact : artifacts) {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
-      assertReachable(buildMavenCentralUrl(artifact));
+      if (useLocalCache) {
+        Assert.assertTrue(
+            "Artifact " + artifact + " not found in local m2 cache", existsLocally(artifact));
+      } else {
+        assertReachable(buildMavenCentralUrl(artifact));
+      }
     }
 
     assertNoDowngradeRule(bom);
@@ -98,16 +105,23 @@ public class BomContentTest {
   static void checkBomReachable(Path bomPath) throws Exception {
     Bom bom = Bom.readBom(bomPath);
     List<Artifact> artifacts = bom.getManagedDependencies();
+    boolean useLocalCache = Boolean.getBoolean("useLocalCache");
 
     StringBuilder errors = new StringBuilder();
     for (Artifact artifact : artifacts) {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
-      try {
-        assertReachable(buildMavenCentralUrl(artifact));
-      } catch (IOException ex) {
-        errors.append(ex.getMessage() + "\n");
+      if (useLocalCache) {
+        if (!existsLocally(artifact)) {
+          errors.append("Artifact " + artifact + " not found in local m2 cache\n");
+        }
+      } else {
+        try {
+          assertReachable(buildMavenCentralUrl(artifact));
+        } catch (IOException ex) {
+          errors.append(ex.getMessage() + "\n");
+        }
       }
     }
     if (errors.length() != 0) {
@@ -132,6 +146,19 @@ public class BomContentTest {
         + "-"
         + artifact.getVersion()
         + ".pom";
+  }
+
+  private static boolean existsLocally(Artifact artifact) {
+    String localRepository = System.getProperty("maven.repo.local");
+    if (localRepository == null) {
+      localRepository = System.getProperty("user.home") + "/.m2/repository";
+    }
+    Path localPath = Paths.get(localRepository,
+        artifact.getGroupId().replace('.', '/'),
+        artifact.getArtifactId(),
+        artifact.getVersion(),
+        artifact.getArtifactId() + "-" + artifact.getVersion() + ".pom");
+    return Files.exists(localPath);
   }
 
   /** Asserts that the BOM only provides JARs which contains unique class names to the classpath. */
