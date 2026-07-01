@@ -44,7 +44,9 @@ import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.FakeDescriptor;
+import com.google.cloud.bigtable.data.v2.internal.session.HashedWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.Session;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionFactory;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionImpl;
@@ -97,6 +99,7 @@ public class VRpcTracerTest {
       Correspondence.transforming(MetricData::getName, "MetricData name");
 
   private ScheduledExecutorService executor;
+  private BigtableTimer timer;
 
   private Server server;
   private ChannelPool channelPool;
@@ -115,6 +118,7 @@ public class VRpcTracerTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
+    timer = new HashedWheelTimer("vrpc-tracer-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
@@ -157,7 +161,7 @@ public class VRpcTracerTest {
     SessionFactory sessionFactory =
         new SessionFactory(
             channelPool, FakeDescriptor.FAKE_SESSION.getMethodDescriptor(), CallOptions.DEFAULT);
-    session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
   }
 
   @AfterEach
@@ -173,6 +177,7 @@ public class VRpcTracerTest {
     metrics.close();
     server.shutdownNow();
     executor.shutdownNow();
+    timer.stop();
   }
 
   @Test
@@ -199,7 +204,7 @@ public class VRpcTracerTest {
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     Stopwatch stopwatch = Stopwatch.createStarted();
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -258,7 +263,7 @@ public class VRpcTracerTest {
     AtomicLong maxAttemptLatency = new AtomicLong();
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor));
+            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer));
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -316,7 +321,7 @@ public class VRpcTracerTest {
 
     // Test
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     MethodInfo methodInfo =
@@ -367,7 +372,7 @@ public class VRpcTracerTest {
     // Test
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor));
+            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer));
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> attemptFinished = new CompletableFuture<>();
     MethodInfo methodInfo =
@@ -501,6 +506,11 @@ public class VRpcTracerTest {
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isDone() {
+      return false;
     }
 
     @Override
