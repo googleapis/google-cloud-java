@@ -383,7 +383,7 @@ public class ITStatementTest extends ITBase {
 
     String customConnectionUrl =
         ITBase.connectionUrl
-            + ";Location="
+            + "Location="
             + location
             + ";AllowLargeResults=true;LargeResultDataset="
             + tempDatasetName
