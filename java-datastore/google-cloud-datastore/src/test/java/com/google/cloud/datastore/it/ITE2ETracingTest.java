@@ -249,12 +249,12 @@ public class ITE2ETracingTest {
   private static TraceExporter traceExporter;
 
   // Required for reading back traces from Cloud Trace for validation
-  private static TraceServiceClient traceClient_v1;
+  private static TraceServiceClient traceClientV1;
 
   // Custom SpanContext for each test, required for TraceID injection
   private static SpanContext customSpanContext;
 
-  // Trace read back from Cloud Trace using traceClient_v1 for verification
+  // Trace read back from Cloud Trace using traceClientV1 for verification
   private static Trace retrievedTrace;
 
   private static String rootSpanName;
@@ -301,7 +301,7 @@ public class ITE2ETracingTest {
     if (credentials != null) {
       clientBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
     }
-    traceClient_v1 = TraceServiceClient.create(clientBuilder.build());
+    traceClientV1 = TraceServiceClient.create(clientBuilder.build());
     random = new Random();
   }
 
@@ -399,7 +399,7 @@ public class ITE2ETracingTest {
 
   @AfterClass
   public static void teardown() throws Exception {
-    traceClient_v1.close();
+    traceClientV1.close();
   }
 
   // Generates a random hex string of length `numBytes`
@@ -461,7 +461,7 @@ public class ITE2ETracingTest {
     // Fetch traces
     do {
       try {
-        retrievedTrace = traceClient_v1.getTrace(projectId, traceId);
+        retrievedTrace = traceClientV1.getTrace(projectId, traceId);
         assertEquals(traceId, retrievedTrace.getTraceId());
 
         logger.info(
@@ -548,7 +548,7 @@ public class ITE2ETracingTest {
     int numRetries = GET_TRACE_RETRY_COUNT;
     do {
       try {
-        traceResp = traceClient_v1.getTrace(projectId, customSpanContext.getTraceId());
+        traceResp = traceClientV1.getTrace(projectId, customSpanContext.getTraceId());
         if (traceResp.getSpansCount() == expectedSpanCount) {
           logger.info("Success: Got " + expectedSpanCount + " spans.");
           break;
