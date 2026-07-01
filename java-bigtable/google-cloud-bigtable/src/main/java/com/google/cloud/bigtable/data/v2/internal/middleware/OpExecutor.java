@@ -81,7 +81,10 @@ public final class OpExecutor implements Executor {
     synchronized (queue) {
       if (drainScheduled || runningThread != null || !queue.isEmpty()) {
         queue.add(r);
-        if (!drainScheduled) {
+        // Same guard as execute(): if another thread is running inline, don't schedule a drain —
+        // its finally block will schedule one when the queue is non-empty. Scheduling here would
+        // let drain() run concurrently with the inline task, breaking serialization.
+        if (!drainScheduled && runningThread == null) {
           scheduleDrainLocked();
         }
         return;
