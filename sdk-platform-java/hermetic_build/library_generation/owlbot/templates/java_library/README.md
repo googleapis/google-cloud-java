@@ -166,9 +166,9 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 {% if metadata['repo']['transport'] == 'grpc' -%}
 {{metadata['repo']['name_pretty']}} uses gRPC for the transport layer.
-{% elif metadata['repo']['transport'] == 'http' -%}
+{% elif metadata['repo']['transport'] == 'http' or metadata['repo']['transport'] == 'rest' -%}
 {{metadata['repo']['name_pretty']}} uses HTTP/JSON for the transport layer.
-{% elif metadata['repo']['transport'] == 'both' -%}
+{% elif metadata['repo']['transport'] == 'both' or metadata['repo']['transport'] == 'grpc+rest' -%}
 {{metadata['repo']['name_pretty']}} uses both gRPC and HTTP/JSON for the transport layer.
 {% endif %}
 {% endif -%}

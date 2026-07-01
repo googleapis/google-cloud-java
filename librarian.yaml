@@ -722,7 +722,7 @@ libraries:
     java:
       api_id_override: bigquerystorage.googleapis.com
       api_description_override: is an API for reading data stored in BigQuery. This API provides direct, high-throughput read access to existing BigQuery tables, supports parallel access with automatic liquid sharding, and allows fine-grained control over what data is returned.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/overview
       codeowner_team: '@googleapis/bigquery-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
       library_type_override: GAPIC_COMBO
@@ -745,7 +745,7 @@ libraries:
     java:
       api_id_override: bigtable.googleapis.com
       api_description_override: API for reading and writing the contents of Bigtables associated with a cloud project.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview
       codeowner_team: '@googleapis/bigtable-team'
       excluded_poms:
         - google-cloud-bigtable-bom
@@ -1049,7 +1049,7 @@ libraries:
       api_description_override: Protobuf classes for Google's common protos.
       api_shortname_override: common-protos
       artifact_id: proto-google-common-protos
-      client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/overview
       excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
       excluded_poms:
         - proto-google-common-protos-bom
@@ -1342,7 +1342,7 @@ libraries:
     java:
       api_id_override: datastore.googleapis.com
       api_description_override: is a fully managed, schemaless database for\nstoring non-relational data. Cloud Datastore automatically scales with\nyour users and supports ACID transactions, high availability of reads and\nwrites, strong consistency for reads and ancestor queries, and eventual\nconsistency for all other queries.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/overview
       excluded_dependencies: grpc-google-cloud-datastore-v1
       excluded_poms:
         - grpc-google-cloud-datastore-v1
@@ -1691,7 +1691,7 @@ libraries:
     java:
       api_id_override: firestore.googleapis.com
       api_description_override: is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/overview
       codeowner_team: '@googleapis/firestore-team'
       excluded_poms:
         - google-cloud-firestore
@@ -2050,7 +2050,7 @@ libraries:
       api_description_override: n/a
       api_shortname_override: iam-policy
       artifact_id: google-iam-policy
-      client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
       excluded_dependencies: google-iam-policy
       excluded_poms:
         - proto-google-iam-v1-bom
@@ -2227,7 +2227,7 @@ libraries:
     java:
       api_id_override: logging.googleapis.com
       api_description_override: allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/overview
       codeowner_team: '@googleapis/cloud-sdk-java-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559764
       library_type_override: GAPIC_COMBO
@@ -2901,7 +2901,7 @@ libraries:
       api_id_override: pubsub.googleapis.com
       api_reference: https://cloud.google.com/pubsub/
       api_description_override: is designed to provide reliable, many-to-many, asynchronous messaging between applications. Publisher applications can send messages to a topic and other applications can subscribe to that topic to receive the messages. By decoupling senders and receivers, Google Cloud Pub/Sub allows developers to communicate between independently written applications.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/overview
       codeowner_team: '@googleapis/pubsub-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559741
       library_type_override: GAPIC_COMBO
@@ -3460,7 +3460,7 @@ libraries:
     java:
       api_id_override: spanner.googleapis.com
       api_description_override: is a fully managed, mission-critical,  relational database service that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability. Be sure to activate the Cloud Spanner API on the Developer's Console to use Cloud Spanner from your project.
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/overview
       codeowner_team: '@googleapis/spanner-team'
       excluded_poms:
         - google-cloud-spanner-bom
@@ -3530,7 +3530,7 @@ libraries:
     java:
       api_id_override: storage.googleapis.com
       api_description_override: 'is a durable and highly available object storage service. Google Cloud Storage is almost infinitely scalable and guarantees consistency: when a write succeeds, the latest copy of the object will be returned to any GET, globally.'
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/overview
       codeowner_team: '@googleapis/gcs-team'
       excluded_poms:
         - google-cloud-storage-bom
