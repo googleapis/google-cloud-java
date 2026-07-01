@@ -19,8 +19,8 @@ import static com.google.cloud.bigtable.data.v2.internal.test_helpers.VRpcResult
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.longThat;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -53,8 +53,8 @@ import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionServic
 import com.google.cloud.bigtable.data.v2.internal.session.fake.PeerInfoInterceptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.base.Suppliers;
-import com.google.common.collect.Range;
 import com.google.common.truth.Correspondence;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.Code;
@@ -74,21 +74,26 @@ import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
+import io.grpc.Status;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.LongPredicate;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Answers;
 import org.mockito.ArgumentCaptor;
@@ -96,7 +101,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@Nested
+@Timeout(30)
 @ExtendWith(MockitoExtension.class)
 public class SessionPoolImplTest {
   private static final ClientInfo CLIENT_INFO =
@@ -110,6 +115,7 @@ public class SessionPoolImplTest {
           Correspondence.transforming(SessionRequest::getOpenSession, "open session");
 
   private ScheduledExecutorService executor;
+  private HashedWheelTimer testTimer;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private Metrics metrics;
@@ -126,6 +132,7 @@ public class SessionPoolImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
+    testTimer = new HashedWheelTimer("test-timer");
     fakeService = new FakeSessionService(executor);
     headerInterceptor = new HeaderInterceptor();
     server =
@@ -159,20 +166,25 @@ public class SessionPoolImplTest {
             CallOptions.DEFAULT,
             FakeDescriptor.FAKE_SESSION,
             "fake-pool",
-            executor);
+            testTimer,
+            MoreExecutors.directExecutor());
   }
 
   @AfterEach
-  void tearDown() {
+  void tearDown() throws InterruptedException {
     sessionPool.close(
         CloseSessionRequest.newBuilder()
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("close session")
             .build());
+    // Wait for sessions to drain so the watchdog can be closed before testTimer.stop() races
+    // with its self-reschedule loop.
+    sessionPool.awaitTerminated(Duration.ofSeconds(10));
     channelPool.close();
     // channel gets shutdown in channelPool.close()
     server.shutdownNow();
     executor.shutdownNow();
+    testTimer.stop();
   }
 
   @Test
@@ -239,7 +251,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
-              executor);
+              testTimer,
+              MoreExecutors.directExecutor());
 
       // session ack should be delayed by at least 10ms
       testSessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
@@ -273,6 +286,169 @@ public class SessionPoolImplTest {
   }
 
   @Test
+  void awaitTerminatedReturnsTrueWhenPoolIsEmpty() throws InterruptedException {
+    // A pool that was never started has no sessions; close() should complete drainedFuture
+    // immediately and awaitTerminated should return true without blocking.
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("empty pool")
+            .build());
+    assertThat(sessionPool.awaitTerminated(Duration.ofMillis(100))).isTrue();
+  }
+
+  @Test
+  void awaitTerminatedReturnsTrueAfterSessionsDrain()
+      throws InterruptedException, ExecutionException, TimeoutException {
+    // Start a real session, issue + complete a vRPC so the session is fully open, then close
+    // the pool and verify awaitTerminated returns true (sessions cleanly drained).
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> resultFuture = new UnaryResponseFuture<>();
+    vrpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(10, TimeUnit.SECONDS), true, vrpcTracer),
+        resultFuture);
+    resultFuture.get(10, TimeUnit.SECONDS);
+
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("after drain")
+            .build());
+
+    assertThat(sessionPool.awaitTerminated(Duration.ofSeconds(10))).isTrue();
+  }
+
+  @Test
+  void closeCancelsInFlightVRpcAndDrains() throws InterruptedException {
+    // Park the session-open response in the client interceptor so the vRPC cannot drain to a
+    // ready session and sits in pendingRpcs. Then close the pool and verify (a) the queued
+    // vRPC's listener gets a CANCELLED onClose with the "SessionPool closed:" description from
+    // SessionPoolImpl.close()'s cancellation loop, (b) awaitTerminated returns true (the
+    // OPENING session is driven to CLOSED by sessions.close(req), not parked until the
+    // watchdog tick), and (c) no second onClose arrives once the delayed responses finally
+    // flush past the interceptor.
+    SessionPool<OpenFakeSessionRequest> testSessionPool = null;
+    try (ChannelPool delayedPool =
+        new SingleChannelPool(
+            Suppliers.ofInstance(
+                Grpc.newChannelBuilderForAddress(
+                        "localhost", server.getPort(), InsecureChannelCredentials.create())
+                    .intercept(new DelayedClientInterceptor(Duration.ofMillis(100)))
+                    .build()))) {
+
+      delayedPool.start();
+
+      testSessionPool =
+          new SessionPoolImpl<>(
+              metrics,
+              FeatureFlags.getDefaultInstance(),
+              CLIENT_INFO,
+              configManager,
+              delayedPool,
+              CallOptions.DEFAULT,
+              FakeDescriptor.FAKE_SESSION,
+              "fake-pool-in-flight",
+              testTimer,
+              MoreExecutors.directExecutor());
+
+      testSessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+          testSessionPool.newCall(FakeDescriptor.SCRIPTED);
+      CopyOnWriteArrayList<VRpcResult> closes = new CopyOnWriteArrayList<>();
+      CountDownLatch firstClose = new CountDownLatch(1);
+      Duration deadline = Duration.ofSeconds(10);
+      vrpc.start(
+          SessionFakeScriptedRequest.getDefaultInstance(),
+          VRpcCallContext.create(
+              Deadline.after(deadline.toMillis(), TimeUnit.MILLISECONDS), true, vrpcTracer),
+          new VRpc.VRpcListener<SessionFakeScriptedResponse>() {
+            @Override
+            public void onMessage(SessionFakeScriptedResponse msg) {}
+
+            @Override
+            public void onClose(VRpcResult result) {
+              closes.add(result);
+              firstClose.countDown();
+            }
+          });
+
+      // vRPC is now queued in pendingRpcs behind the parked session-open. Close the pool.
+      testSessionPool.close(
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+              .setDescription("close while in flight")
+              .build());
+
+      // Cancellation hops through the vRPC's per-op SerializingExecutor — not the gRPC
+      // listener thread — so it should arrive promptly even while the interceptor is asleep.
+      assertThat(firstClose.await(2, TimeUnit.SECONDS)).isTrue();
+      assertThat(closes).hasSize(1);
+      VRpcResult result = closes.get(0);
+      assertThat(result).status().code().isEqualTo(Status.Code.CANCELLED);
+      assertThat(result).status().description().contains("SessionPool closed:");
+
+      // OPENING session drains via sessions.close(req) once the delayed onMessages flush.
+      assertThat(testSessionPool.awaitTerminated(Duration.ofSeconds(10))).isTrue();
+
+      // Regression guard: the delayed session-open responses arriving post-cancellation must
+      // not produce a phantom second onClose on the cancelled vRPC's listener.
+      Thread.sleep(200);
+      assertThat(closes).hasSize(1);
+    } finally {
+      if (testSessionPool != null) {
+        testSessionPool.close(CloseSessionRequest.getDefaultInstance());
+      }
+    }
+  }
+
+  @Test
+  void pendingVRpcOnClosedPoolDoesNotLeakDeadlineMonitor() throws InterruptedException {
+    // Regression: PendingVRpc.start used to arm the deadline timer before the pool-state
+    // check, so the fast-fail "pool closed" branch leaked an armed timer that fired later
+    // and called listener.onClose a second time with DEADLINE_EXCEEDED.
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("close before issuing rpc")
+            .build());
+
+    CopyOnWriteArrayList<VRpcResult> closes = new CopyOnWriteArrayList<>();
+    CountDownLatch firstClose = new CountDownLatch(1);
+    Duration deadline = Duration.ofMillis(100);
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    vrpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(
+            Deadline.after(deadline.toMillis(), TimeUnit.MILLISECONDS), true, vrpcTracer),
+        new VRpc.VRpcListener<SessionFakeScriptedResponse>() {
+          @Override
+          public void onMessage(SessionFakeScriptedResponse msg) {}
+
+          @Override
+          public void onClose(VRpcResult result) {
+            closes.add(result);
+            firstClose.countDown();
+          }
+        });
+
+    // The fast-fail UNAVAILABLE onClose should arrive immediately.
+    assertThat(firstClose.await(1, TimeUnit.SECONDS)).isTrue();
+    assertThat(closes).hasSize(1);
+
+    // Wait past the deadline. With the bug (leaked deadlineMonitor), a phantom
+    // onClose(DEADLINE_EXCEEDED) would arrive in this window. With the fix, no second close.
+    Thread.sleep(deadline.toMillis() * 5);
+    assertThat(closes).hasSize(1);
+  }
+
+  @Test
   void testCreateSessionDoesntPropagateDeadline() {
     DeadlineInterceptor deadlineInterceptor = new DeadlineInterceptor();
     try (ChannelPool capturedDeadlinePool =
@@ -295,7 +471,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
-              executor);
+              testTimer,
+              MoreExecutors.directExecutor());
 
       Context.current()
           .withDeadlineAfter(1, TimeUnit.MINUTES, executor)
@@ -314,7 +491,7 @@ public class SessionPoolImplTest {
   class RetrySessionCreation {
 
     private FakeClock fakeClock;
-    private ScheduledExecutorService mockExecutor;
+    private BigtableTimer mockTimer;
     private FakeSessionService fakeService;
     private ChannelPool channelPool;
     private SessionPoolImpl<OpenFakeSessionRequest> sessionPool;
@@ -324,7 +501,9 @@ public class SessionPoolImplTest {
     @BeforeEach
     void setUp() throws Exception {
       fakeClock = new FakeClock(Instant.now());
-      mockExecutor = mock(ScheduledExecutorService.class, Mockito.RETURNS_DEEP_STUBS);
+      // The retry-create-session site uses timer.newTimeout(); we capture the scheduled body on a
+      // mock timer and run it inline below.
+      mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
 
       Duration penalty = Duration.ofMinutes(1);
       SessionCreationBudget budget = new SessionCreationBudget(10, penalty, fakeClock);
@@ -353,7 +532,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
-              mockExecutor,
+              mockTimer,
+              MoreExecutors.directExecutor(),
               budget);
     }
 
@@ -371,7 +551,13 @@ public class SessionPoolImplTest {
     @Test
     public void test() throws Exception {
       ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
-      ArgumentCaptor<Long> delayCaptor = ArgumentCaptor.forClass(Long.class);
+      // Filter out watchdog (5 min, exact) and AFE prune (10 min, exact) ticks. The
+      // retry-create-session site computes its delay against the real wall clock and the fake
+      // budget clock, so it can land anywhere from sub-second to a couple of penalty intervals.
+      // Match anything that isn't one of the two fixed cadences.
+      long watchdogMs = Duration.ofMinutes(5).toMillis();
+      long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
+      LongPredicate isRetrySchedule = d -> d > 0 && d != watchdogMs && d != afePruneMs;
 
       // start the pool
       sessionPool.start(
@@ -384,12 +570,12 @@ public class SessionPoolImplTest {
       // The delay should be around budget creation failure penalty. It'll take some time for the
       // job to exhaust all the creation budget so set a delay before verifying.
       int waitForReadyMs = 1000;
-      verify(mockExecutor, Mockito.timeout(waitForReadyMs))
-          .schedule(runnableCaptor.capture(), delayCaptor.capture(), eq(TimeUnit.MILLISECONDS));
-      assertThat(delayCaptor.getValue())
-          .isIn(
-              Range.openClosed(
-                  penalty.minus(Duration.ofMillis(waitForReadyMs)).toMillis(), penalty.toMillis()));
+      verify(mockTimer, Mockito.timeout(waitForReadyMs))
+          .newTimeout(
+              runnableCaptor.capture(),
+              any(Executor.class),
+              longThat(isRetrySchedule::test),
+              eq(TimeUnit.MILLISECONDS));
 
       // we should have received some open requests
       int requestsBefore = fakeService.getOpenRequestCount().get();
@@ -407,13 +593,17 @@ public class SessionPoolImplTest {
       // Advance the clock so there's more budget to create sessions
       fakeClock.increment(penalty.plusMillis(1));
 
-      // Run the scheduled task, pool sizer will return a positive scale factor because there's a
-      // pending vrpc
+      // Run the scheduled timer body inline. The body executes the retry which schedules another
+      // timer tick.
       runnableCaptor.getValue().run();
 
       // The retry task will try to open new sessions. This will fail and schedule another retry.
-      verify(mockExecutor, Mockito.timeout(1000).times(2))
-          .schedule(any(Runnable.class), anyLong(), eq(TimeUnit.MILLISECONDS));
+      verify(mockTimer, Mockito.timeout(5000).times(2))
+          .newTimeout(
+              any(Runnable.class),
+              any(Executor.class),
+              longThat(isRetrySchedule::test),
+              eq(TimeUnit.MILLISECONDS));
 
       // the retry will exhaust the budget again. we should see double the request compared to
       // before

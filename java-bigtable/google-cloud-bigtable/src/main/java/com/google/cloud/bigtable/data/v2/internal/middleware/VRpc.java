@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Any;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
@@ -59,6 +60,14 @@ public interface VRpc<ReqT, RespT> {
   void cancel(@Nullable String message, @Nullable Throwable cause);
 
   /**
+   * True once a terminal result has been (or is about to be) delivered to the listener; future
+   * events on this VRpc are no-ops. Callers use this to detect a synchronous terminal during {@link
+   * #start} — e.g. VOperationImpl checks this to avoid registering a gRPC cancellation listener
+   * that would never be removed because the chain already finished.
+   */
+  boolean isDone();
+
+  /**
    * TBD - server streaming rpcs. This will be used to request more data. Unlike gRPC's request(n),
    * starting a call will implicitly request the first message.
    */
@@ -92,12 +101,29 @@ public interface VRpc<ReqT, RespT> {
 
     public abstract VRpcTracer getTracer();
 
+    /**
+     * The per-op executor that serializes all middleware below {@link VOperationImpl}. Owned by
+     * {@code VOperationImpl}; downstream layers use it via {@code ctx.getExecutor()}.
+     */
+    public abstract OpExecutor getExecutor();
+
     // TODO: csm
     // Clientside metrics instrument
     // public abstract BigtableTracer getTracer();
 
+    /**
+     * Defaults the executor to one over {@link MoreExecutors#directExecutor()}. Suitable for tests
+     * that do not exercise the per-op serialization; production callers go through {@link
+     * VOperationImpl} which supplies a real serializing executor.
+     */
     public static VRpcCallContext create(
         Deadline deadline, boolean isIdempotent, VRpcTracer tracer) {
+      return create(
+          deadline, isIdempotent, tracer, new OpExecutor(MoreExecutors.directExecutor(), t -> {}));
+    }
+
+    public static VRpcCallContext create(
+        Deadline deadline, boolean isIdempotent, VRpcTracer tracer, OpExecutor executor) {
 
       Deadline grpcContextDeadline = Context.current().getDeadline();
 
@@ -114,12 +140,12 @@ public interface VRpc<ReqT, RespT> {
       }
 
       return new AutoValue_VRpc_VRpcCallContext(
-          OperationInfo.create(operationTimeout, isIdempotent), "TODO", tracer);
+          OperationInfo.create(operationTimeout, isIdempotent), "TODO", tracer, executor);
     }
 
     public VRpcCallContext createForNextAttempt() {
       return new AutoValue_VRpc_VRpcCallContext(
-          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer());
+          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer(), getExecutor());
     }
   }
 

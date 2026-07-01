@@ -37,6 +37,14 @@ public interface SessionStream {
 
   public void forceClose(@Nullable String message, @Nullable Throwable cause);
 
+  /**
+   * Callbacks for session stream events.
+   *
+   * <p><b>Invariant:</b> callbacks are delivered on Netty I/O threads via {@code DirectExecutor}.
+   * All work must be fast and non-blocking — any user-facing or potentially blocking work must be
+   * dispatched onto the session {@code SynchronizationContext} (which then forwards to the op
+   * executor) before returning. Violating this stalls the channel.
+   */
   public interface Listener {
     void onBeforeSessionStart(PeerInfo peerInfo);
 
