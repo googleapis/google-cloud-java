@@ -33,11 +33,11 @@ com.google.errorprone:error_prone_annotations:jar:2.48.0:compile
 com.google.guava:failureaccess:jar:1.0.3:compile
 com.google.guava:guava:jar:33.5.0-jre:compile
 com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
-com.google.http-client:google-http-client-apache-v2:jar:2.1.0:compile
-com.google.http-client:google-http-client-appengine:jar:2.1.0:compile
-com.google.http-client:google-http-client-gson:jar:2.1.0:compile
-com.google.http-client:google-http-client-jackson2:jar:2.1.0:compile
-com.google.http-client:google-http-client:jar:2.1.0:compile
+com.google.http-client:google-http-client-apache-v2:jar:2.1.1:compile
+com.google.http-client:google-http-client-appengine:jar:2.1.1:compile
+com.google.http-client:google-http-client-gson:jar:2.1.1:compile
+com.google.http-client:google-http-client-jackson2:jar:2.1.1:compile
+com.google.http-client:google-http-client:jar:2.1.1:compile
 com.google.j2objc:j2objc-annotations:jar:3.1:compile
 com.google.oauth-client:google-oauth-client:jar:1.39.0:compile
 com.google.protobuf:protobuf-java-util:jar:4.33.2:compile

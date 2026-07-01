@@ -20,4 +20,5 @@
 /java-bigtable/ @googleapis/bigtable-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
 /java-firestore/ @googleapis/firestore-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
 /librarian.yaml @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-cloud-bom/ @googleapis/cloud-sdk-java-team
 /java-shared-config/ @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team

@@ -251,8 +251,6 @@
                   <executable>bash</executable>
                   <arguments>
                     <argument>scripts/generate_showcase.sh</argument>
-                    <argument>--replace</argument>
-                    <argument>true</argument>
                   </arguments>
                 </configuration>
               </execution>

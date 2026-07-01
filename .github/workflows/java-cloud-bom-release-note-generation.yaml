@@ -1,0 +1,96 @@
+on:
+  workflow_dispatch:
+    inputs:
+      librariesBomVersion:
+        description: 'The version of the Libraries BOM we generate release note (e.g., 26.1.5)'
+        required: true
+        type: string
+
+  release: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
+    types: [released]
+
+name: java-cloud-bom release-notes
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-cloud-bom/**'
+  release-note-generation:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' && (github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/')) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - name: Pre-install Snapshot Dependencies
+      run: |
+        bash java-cloud-bom/tests/pre-install.sh
+      shell: bash
+    - name: Pick Libraries BOM version
+      id: pick-version
+      shell: bash
+      run: |
+        set -x
+        if [ -n "${WORKFLOW_DISPATCH_INPUT}" ]; then
+          echo "WORKFLOW_DISPATCH_INPUT: ${WORKFLOW_DISPATCH_INPUT}"
+          echo "libraries-bom-version=${WORKFLOW_DISPATCH_INPUT}" >> $GITHUB_OUTPUT
+        elif [[ "${GITHUB_REF}" == *"refs/tags/libraries-bom/v"* ]]; then
+          # Example value of GITHUB_REF: refs/tags/libraries-bom/v26.5.0
+          echo "GITHUB_REF: ${GITHUB_REF}"
+          VERSION=${GITHUB_REF#*v}
+          echo "libraries-bom-version=${VERSION}" >> $GITHUB_OUTPUT
+        else
+          echo "Couldn't find the Libraries BOM version. WORKFLOW_DISPATCH_INPUT \
+              was empty and GITHUB_REF was ${GITHUB_REF}."
+          exit 1
+        fi
+      env:
+        WORKFLOW_DISPATCH_INPUT: ${{ inputs.librariesBomVersion }}
+    - name: Install the BOMs locally
+      run: mvn install -f java-cloud-bom/pom.xml -DskipTests
+      shell: bash
+    - name: Generate release_note.md
+      shell: bash
+      run: |
+        set -x
+        mvn -B -ntp compile -f java-cloud-bom/release-note-generation/pom.xml
+
+        GOOGLE_CLOUD_JAVA_VERSION=$(grep -A1 'gapic-libraries-bom' \
+            ../google-cloud-bom/pom.xml |perl -nle 'print $1 if m/<version>(.+)</')
+
+        # This generates release_note.md file
+        mvn -B -ntp exec:java -f java-cloud-bom/release-note-generation/pom.xml \
+            -Dlibraries-bom.version="${LIBRARIES_BOM_VERSION}" \
+            -Dgoogle-cloud-java.version="${GOOGLE_CLOUD_JAVA_VERSION}"
+      working-directory: java-cloud-bom/release-note-generation
+      env:
+        LIBRARIES_BOM_VERSION: ${{ steps.pick-version.outputs.libraries-bom-version }}
+        GH_TOKEN: ${{ github.token }}
+    - name: Update the release note with release_note.md
+      run: |
+        TAG="libraries-bom/v${LIBRARIES_BOM_VERSION}"
+        echo "Updating ${TAG}"
+        gh release edit "${TAG}" --notes-file release_note.md
+      working-directory: java-cloud-bom/release-note-generation
+      env:
+        LIBRARIES_BOM_VERSION: ${{ steps.pick-version.outputs.libraries-bom-version }}
+        GH_TOKEN: ${{ github.token }}
+

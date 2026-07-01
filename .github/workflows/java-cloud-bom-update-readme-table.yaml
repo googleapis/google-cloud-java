@@ -1,0 +1,67 @@
+name: java-cloud-bom Update README with libraries-bom table
+# Run this workflow upon published release
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+    - published
+
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-cloud-bom/**'
+  update-readme:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.9'
+
+    - name: Delete existing 'update-readme-bot' branch
+      run: |
+        git push --delete origin update-readme-bot || echo "Branch doesn't exist, continuing..."
+        git branch -D update-readme-bot || echo "Branch doesn't exist, continuing..."
+
+    - name: Install dependencies
+      run: pip install pyyaml
+
+    - name: Update table of artifacts
+      run: |
+        echo "Updating README.md with table of artifacts associated with the latest libraries-bom..."
+        python libraries-bom-table-generation/updateREADMETable.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Cloud Java Bot"
+        git config --global user.email "cloud-java-bot@google.com"
+        git add README.md
+        git commit -m "chore: update README with release table"
+        git checkout -b update-readme-bot
+        git push origin update-readme-bot
+
+    - name: Create Pull Request
+      run: |
+        gh pr create --base main --head update-readme-bot --title "chore: Update README with release table" --body "Updating README with the table of artifacts associated with the latest libraries-bom release"
+      env:
+        GITHUB_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
