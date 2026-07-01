@@ -50,6 +50,7 @@ import com.google.showcase.v1beta1.stub.MessagingStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -125,6 +126,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MessagingSettings extends ClientSettings<MessagingSettings> {

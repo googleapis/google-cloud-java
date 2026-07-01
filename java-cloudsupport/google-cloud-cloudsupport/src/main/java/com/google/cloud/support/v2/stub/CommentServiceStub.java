@@ -26,6 +26,7 @@ import com.google.cloud.support.v2.GetCommentRequest;
 import com.google.cloud.support.v2.ListCommentsRequest;
 import com.google.cloud.support.v2.ListCommentsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CommentServiceStub implements BackgroundResource {
 

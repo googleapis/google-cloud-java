@@ -55,6 +55,7 @@ import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -62,6 +63,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class EchoStub implements BackgroundResource {

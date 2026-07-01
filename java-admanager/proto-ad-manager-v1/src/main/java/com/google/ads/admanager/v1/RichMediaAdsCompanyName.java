@@ -25,8 +25,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RichMediaAdsCompanyName implements ResourceName {
   private static final PathTemplate NETWORK_CODE_RICH_MEDIA_ADS_COMPANY =

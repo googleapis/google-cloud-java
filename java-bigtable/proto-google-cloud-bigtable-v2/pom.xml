@@ -52,6 +52,10 @@
       <artifactId>proto-google-common-protos</artifactId>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

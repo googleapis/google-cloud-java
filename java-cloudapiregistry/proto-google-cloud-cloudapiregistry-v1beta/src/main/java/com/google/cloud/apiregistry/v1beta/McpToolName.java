@@ -26,8 +26,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class McpToolName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_API_NAMESPACE_MCP_SERVER_MCP_TOOL =

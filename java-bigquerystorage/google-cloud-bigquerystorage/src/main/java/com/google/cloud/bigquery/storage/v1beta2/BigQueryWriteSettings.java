@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.storage.v1beta2.stub.BigQueryWriteStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +85,7 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @BetaApi
 @Deprecated
 @Generated("by gapic-generator-java")

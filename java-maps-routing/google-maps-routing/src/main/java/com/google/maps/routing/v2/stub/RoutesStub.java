@@ -24,6 +24,7 @@ import com.google.maps.routing.v2.ComputeRoutesRequest;
 import com.google.maps.routing.v2.ComputeRoutesResponse;
 import com.google.maps.routing.v2.RouteMatrixElement;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -31,6 +32,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RoutesStub implements BackgroundResource {
 

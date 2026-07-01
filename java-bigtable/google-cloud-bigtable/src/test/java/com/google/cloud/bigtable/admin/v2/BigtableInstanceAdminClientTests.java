@@ -141,7 +141,7 @@ public class BigtableInstanceAdminClientTests {
                           .build()))
           .build();
 
-  @Mock private BigtableInstanceAdminStub mockStub;
+  private BigtableInstanceAdminStub mockStub;
 
   @Mock
   private OperationCallable<
@@ -310,6 +310,8 @@ public class BigtableInstanceAdminClientTests {
 
   @Before
   public void setUp() {
+    mockStub =
+        Mockito.mock(BigtableInstanceAdminStub.class, Mockito.withSettings().withoutAnnotations());
     adminClient = BigtableInstanceAdminClient.create(PROJECT_ID, mockStub);
   }
 
