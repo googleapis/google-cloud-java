@@ -253,6 +253,38 @@ class UtilitiesTest(unittest.TestCase):
         )
         self.__remove_postprocessing_prerequisite_files(path=library_path)
 
+    def test_generate_postprocessing_prerequisite_files_unversioned_proto_only_success(self):
+        self.maxDiff = None
+        library_path = self.__setup_postprocessing_prerequisite_files(
+            combination=3,
+            library_type="OTHER",
+            proto_path="google/cloud/baremetalsolution",
+            has_version=False,
+            proto_only=True,
+        )
+
+        file_comparator.compare_files(
+            f"{library_path}/.OwlBot-hermetic.yaml",
+            f"{library_path}/.OwlBot-hermetic-unversioned-proto-only-golden.yaml",
+        )
+        self.__remove_postprocessing_prerequisite_files(path=library_path)
+
+    def test_generate_postprocessing_prerequisite_files_unversioned_gapic_success(self):
+        self.maxDiff = None
+        library_path = self.__setup_postprocessing_prerequisite_files(
+            combination=2,
+            library_type="GAPIC_AUTO",
+            proto_path="google/cloud/baremetalsolution",
+            has_version=False,
+            proto_only=False,
+        )
+
+        file_comparator.compare_files(
+            f"{library_path}/.OwlBot-hermetic.yaml",
+            f"{library_path}/.OwlBot-hermetic-unversioned-gapic-golden.yaml",
+        )
+        self.__remove_postprocessing_prerequisite_files(path=library_path)
+
     def test_generate_postprocessing_prerequisite_files__custom_transport_set_in_config__success(
         self,
     ):
@@ -326,6 +358,9 @@ class UtilitiesTest(unittest.TestCase):
         combination: int,
         library_type: str = "GAPIC_AUTO",
         library: LibraryConfig = library_1,
+        proto_path: str = "google/cloud/baremetalsolution/v2",
+        has_version: bool = True,
+        proto_only: bool = False,
     ) -> str:
         library_path = f"{resources_dir}/goldens"
         files = [
@@ -336,7 +371,6 @@ class UtilitiesTest(unittest.TestCase):
         cleanup(files)
         library.library_type = library_type
         config = self.__get_a_gen_config(combination, library_type=library_type)
-        proto_path = "google/cloud/baremetalsolution/v2"
         gapic_inputs = GapicInputs()  # defaults to transport=grpc
         transport = library.get_transport(gapic_inputs)
         util.generate_postprocessing_prerequisite_files(
@@ -345,6 +379,8 @@ class UtilitiesTest(unittest.TestCase):
             proto_path=proto_path,
             transport=transport,
             library_path=library_path,
+            has_version=has_version,
+            proto_only=proto_only,
         )
         return library_path
 
