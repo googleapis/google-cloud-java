@@ -155,7 +155,6 @@ public class BomContentTest {
     String localRepository = System.getProperty("maven.repo.local");
     if (localRepository == null) {
       // Standard default location for Maven local repository.
-      // GHA runners also use this path by default (cached by actions/setup-java).
       localRepository = System.getProperty("user.home") + "/.m2/repository";
     }
     Path localPath = Paths.get(localRepository,
