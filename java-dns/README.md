@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.78.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -32,11 +32,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dns</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-dns:released} -->
 
 ```xml
 <dependency>
@@ -57,11 +57,10 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "2.91.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+See the [Authentication][authentication] guide and the [Java-specific Authentication Guide][java-authentication] for more information.
 
 ## Authorization
 
@@ -166,40 +165,22 @@ information.
 
 Apache 2.0 - See [LICENSE][license] for more information.
 
-## CI Status
-
-Java Version | Status
------------- | ------
-Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
-Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
-Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
-Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
-
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/dns
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-dns/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-dns/2.12.0
-[authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-dns/2.91.0
+[authentication]: https://cloud.google.com/docs/authentication/
+[java-authentication]: https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
-[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
+[troubleshooting]: https://cloud.google.com/java/docs/troubleshooting
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE

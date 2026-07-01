@@ -5,7 +5,7 @@
   "api_description": "Places Insights API.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-maps-area-insights",
