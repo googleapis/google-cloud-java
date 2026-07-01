@@ -69,7 +69,7 @@ final class RegionalAccessBoundary implements Serializable {
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
-  private static volatile MtlsUtils.MtlsEndpointUsagePolicy userMtlsPolicy = null;
+
 
   private final String encodedLocations;
   private final List<String> locations;
@@ -184,7 +184,8 @@ final class RegionalAccessBoundary implements Serializable {
       String url,
       AccessToken accessToken,
       Clock clock,
-      int maxRetryElapsedTimeMillis)
+      int maxRetryElapsedTimeMillis,
+      EnvironmentProvider envProvider)
       throws IOException {
     Preconditions.checkNotNull(accessToken, "The provided access token is null.");
     if (accessToken.getExpirationTimeMillis() != null
@@ -192,16 +193,9 @@ final class RegionalAccessBoundary implements Serializable {
       throw new IllegalArgumentException("The provided access token is expired.");
     }
 
-    if (userMtlsPolicy == null) {
-      synchronized (RegionalAccessBoundary.class) {
-        if (userMtlsPolicy == null) {
-          userMtlsPolicy =
-              MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
-        }
-      }
-    }
+    MtlsUtils.MtlsEndpointUsagePolicy policy = MtlsUtils.getMtlsEndpointUsagePolicy(envProvider);
     if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory
-        || userMtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
+        || policy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
       url = url.replace("iamcredentials.googleapis.com", "iamcredentials.mtls.googleapis.com");
     }
 

@@ -405,7 +405,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
             transportFactory, getEnvironmentProvider(), getPropertyProvider(), null);
 
     regionalAccessBoundaryManager.triggerAsyncRefresh(
-        transportFactory, (RegionalAccessBoundaryProvider) this, token);
+        transportFactory, (RegionalAccessBoundaryProvider) this, token, getEnvironmentProvider());
   }
 
   /**

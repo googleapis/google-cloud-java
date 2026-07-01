@@ -1370,6 +1370,66 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     }
   }
 
+  @Test
+  public void regionalAccessBoundary_refreshUsesMtlsEndpointWhenConfigured()
+      throws IOException, InterruptedException {
+    MockTokenServerTransport transport = new MockTokenServerTransport();
+    transport.setRegionalAccessBoundary(
+        new RegionalAccessBoundary("valid", Collections.singletonList("us-central1"), null));
+
+    // Configure the environment provider to enable mTLS with ALWAYS policy
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "true";
+            }
+            if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+              return "always";
+            }
+            return null;
+          }
+        };
+
+    AccessToken token =
+        new AccessToken(
+            "test-token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+
+    com.google.auth.mtls.MtlsHttpTransportFactory mockMtlsFactory;
+    try {
+      java.security.KeyStore dummyKeyStore =
+          java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+      dummyKeyStore.load(null, null);
+      mockMtlsFactory =
+          new com.google.auth.mtls.MtlsHttpTransportFactory(dummyKeyStore) {
+            @Override
+            public com.google.api.client.http.HttpTransport create() {
+              return transport;
+            }
+          };
+    } catch (java.security.GeneralSecurityException e) {
+      throw new RuntimeException(e);
+    }
+
+    TestRegionalCredentials credentials =
+        new TestRegionalCredentials(token, envProvider, mockMtlsFactory);
+
+    credentials.getRequestMetadata(URI.create("https://foo.com"));
+
+    // Wait for the async refresh to complete
+    waitForRegionalAccessBoundary(credentials);
+
+    // Verify a request was made
+    assertEquals(1, transport.getRegionalAccessBoundaryRequestCount());
+    // Verify the request URL used the mTLS subdomain: "iamcredentials.mtls.googleapis.com"
+    String requestedUrl = transport.getRequest().getUrl();
+    assertNotNull(requestedUrl);
+    assertTrue(
+        requestedUrl.contains("iamcredentials.mtls.googleapis.com"),
+        "Expected mTLS URL, but got: " + requestedUrl);
+  }
+
   private static class TestClock implements Clock {
     private final AtomicLong currentTime = new AtomicLong(System.currentTimeMillis());
 

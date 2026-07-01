@@ -115,10 +115,18 @@ public class MtlsUtils {
     File certConfig =
         resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
     if (certConfig == null) {
-      File wellKnownConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
-      throw new CertificateSourceUnavailableException(
-          "Certificate configuration file does not exist or is not a file: "
-              + wellKnownConfig.getAbsolutePath());
+      try {
+        File wellKnownConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
+        throw new CertificateSourceUnavailableException(
+            "Certificate configuration file does not exist or is not a file: "
+                + wellKnownConfig.getAbsolutePath());
+      } catch (IOException e) {
+        if (e instanceof CertificateSourceUnavailableException) {
+          throw (CertificateSourceUnavailableException) e;
+        }
+        throw new CertificateSourceUnavailableException(
+            "Failed to get well-known certificate config file path", e);
+      }
     }
     try (InputStream certConfigStream = new FileInputStream(certConfig)) {
       return WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
@@ -259,9 +267,9 @@ public class MtlsUtils {
   public static MtlsEndpointUsagePolicy getMtlsEndpointUsagePolicy(
       EnvironmentProvider envProvider) {
     String mtlsEndpointUsagePolicy = envProvider.getEnv("GOOGLE_API_USE_MTLS_ENDPOINT");
-    if ("never".equals(mtlsEndpointUsagePolicy)) {
+    if ("never".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.NEVER;
-    } else if ("always".equals(mtlsEndpointUsagePolicy)) {
+    } else if ("always".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
@@ -285,33 +293,36 @@ public class MtlsUtils {
       String certConfigPathOverride)
       throws IOException {
 
-    MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
-    try {
-      if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
-        // A custom MtlsHttpTransportFactory was already pre-configured by the user.
-        // Keep using it as-is without re-initializing.
-        return baseTransportFactory;
-      }
+    if (baseTransportFactory == null) {
+      return null;
+    }
 
-      if (!canBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
-        return baseTransportFactory;
-      }
+    if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
+      // A custom MtlsHttpTransportFactory was already pre-configured by the user.
+      // Keep using it as-is without re-initializing.
+      return baseTransportFactory;
+    }
 
-      if (baseTransportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
-        // This is the default HttpTransportFactory assigned by credentials.
-        // Automatically discover and load client certificates to construct an mTLS factory.
-        X509Provider x509Provider =
-            new X509Provider(envProvider, propProvider, certConfigPathOverride);
-        KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-        return new MtlsHttpTransportFactory(mtlsKeyStore);
-      }
+    if (!canBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
+      return baseTransportFactory;
+    }
 
+    if (baseTransportFactory != OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
       // A user configured non-mTLS HttpTransportFactory was explicitly injected.
       // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
       throw new IOException(
           "mTLS is enabled on the system, but a user configured non-mTLS HttpTransportFactory was provided: "
               + baseTransportFactory.getClass().getName());
+    }
 
+    MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
+    try {
+      // This is the default HttpTransportFactory assigned by credentials.
+      // Automatically discover and load client certificates to construct an mTLS factory.
+      X509Provider x509Provider =
+          new X509Provider(envProvider, propProvider, certConfigPathOverride);
+      KeyStore mtlsKeyStore = x509Provider.getKeyStore();
+      return new MtlsHttpTransportFactory(mtlsKeyStore);
     } catch (Exception e) {
       if (mtlsPolicy == MtlsEndpointUsagePolicy.ALWAYS) {
         throw new IOException(

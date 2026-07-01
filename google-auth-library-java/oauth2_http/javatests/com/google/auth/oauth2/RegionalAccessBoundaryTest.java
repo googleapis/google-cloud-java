@@ -150,7 +150,8 @@ public class RegionalAccessBoundaryTest {
     HttpTransportFactory transportFactory = () -> transport;
 
     RegionalAccessBoundary rab =
-        RegionalAccessBoundary.refresh(transportFactory, url, token, testClock, 1000);
+        RegionalAccessBoundary.refresh(
+            transportFactory, url, token, testClock, 1000, SystemEnvironmentProvider.getInstance());
 
     assertEquals("encoded", rab.getEncodedLocations());
     assertTrue(mockResponse.isDisconnected(), "Response should have been disconnected");
@@ -182,7 +183,8 @@ public class RegionalAccessBoundaryTest {
     RegionalAccessBoundaryManager manager = new RegionalAccessBoundaryManager(testClock);
 
     // 1. Let's first get a RAB into the cache
-    manager.triggerAsyncRefresh(transportFactory, provider, token);
+    manager.triggerAsyncRefresh(
+        transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
 
     // Wait for it to be cached
     int retries = 0;
@@ -213,7 +215,8 @@ public class RegionalAccessBoundaryTest {
     HttpTransportFactory transportFactory2 = () -> transport2;
 
     // 4. Trigger refresh - should start because we are in grace period
-    manager.triggerAsyncRefresh(transportFactory2, provider, token);
+    manager.triggerAsyncRefresh(
+        transportFactory2, provider, token, SystemEnvironmentProvider.getInstance());
 
     // 5. Wait for background refresh to complete
     // We expect the cached RAB to eventually change to newerEncoded
@@ -297,7 +300,8 @@ public class RegionalAccessBoundaryTest {
               testClock,
               RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
               testExecutor);
-      managers[i].triggerAsyncRefresh(transportFactory, provider, token);
+      managers[i].triggerAsyncRefresh(
+          transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
     }
 
     RegionalAccessBoundaryManager extraManager =
@@ -307,7 +311,8 @@ public class RegionalAccessBoundaryTest {
             testExecutor);
     assertFalse(extraManager.isCooldownActive());
 
-    extraManager.triggerAsyncRefresh(transportFactory, provider, token);
+    extraManager.triggerAsyncRefresh(
+        transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
 
     assertTrue(
         extraManager.isCooldownActive(),

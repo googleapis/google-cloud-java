@@ -177,7 +177,8 @@ final class RegionalAccessBoundaryManager {
   void triggerAsyncRefresh(
       final HttpTransportFactory transportFactory,
       final RegionalAccessBoundaryProvider provider,
-      final AccessToken accessToken) {
+      final AccessToken accessToken,
+      final EnvironmentProvider envProvider) {
     if (skipRAB.get() || isCooldownActive()) {
       return;
     }
@@ -201,7 +202,12 @@ final class RegionalAccessBoundaryManager {
               }
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
-                      transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
+                      transportFactory,
+                      url,
+                      accessToken,
+                      clock,
+                      maxRetryElapsedTimeMillis,
+                      envProvider);
               cachedRAB.set(newRAB);
               resetCooldown();
             } catch (Throwable e) {
