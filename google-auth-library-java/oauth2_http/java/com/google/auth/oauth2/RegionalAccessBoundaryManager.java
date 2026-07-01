@@ -178,7 +178,8 @@ final class RegionalAccessBoundaryManager {
       final HttpTransportFactory transportFactory,
       final RegionalAccessBoundaryProvider provider,
       final AccessToken accessToken,
-      final EnvironmentProvider envProvider) {
+      final EnvironmentProvider envProvider,
+      final PropertyProvider propProvider) {
     if (skipRAB.get() || isCooldownActive()) {
       return;
     }
@@ -200,9 +201,12 @@ final class RegionalAccessBoundaryManager {
                 skipRAB.set(true);
                 return;
               }
+              HttpTransportFactory upgradedTransportFactory =
+                  com.google.auth.mtls.MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+                      transportFactory, envProvider, propProvider, null);
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
-                      transportFactory,
+                      upgradedTransportFactory,
                       url,
                       accessToken,
                       clock,

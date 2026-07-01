@@ -184,7 +184,11 @@ public class RegionalAccessBoundaryTest {
 
     // 1. Let's first get a RAB into the cache
     manager.triggerAsyncRefresh(
-        transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
+        transportFactory,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     // Wait for it to be cached
     int retries = 0;
@@ -216,7 +220,11 @@ public class RegionalAccessBoundaryTest {
 
     // 4. Trigger refresh - should start because we are in grace period
     manager.triggerAsyncRefresh(
-        transportFactory2, provider, token, SystemEnvironmentProvider.getInstance());
+        transportFactory2,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     // 5. Wait for background refresh to complete
     // We expect the cached RAB to eventually change to newerEncoded
@@ -301,7 +309,11 @@ public class RegionalAccessBoundaryTest {
               RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
               testExecutor);
       managers[i].triggerAsyncRefresh(
-          transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
+          transportFactory,
+          provider,
+          token,
+          SystemEnvironmentProvider.getInstance(),
+          SystemPropertyProvider.getInstance());
     }
 
     RegionalAccessBoundaryManager extraManager =
@@ -312,7 +324,11 @@ public class RegionalAccessBoundaryTest {
     assertFalse(extraManager.isCooldownActive());
 
     extraManager.triggerAsyncRefresh(
-        transportFactory, provider, token, SystemEnvironmentProvider.getInstance());
+        transportFactory,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     assertTrue(
         extraManager.isCooldownActive(),

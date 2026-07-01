@@ -398,14 +398,12 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return;
     }
 
-    // Automatically discover certificates or enforce mTLS policy if applicable
-    // TODO: https://github.com/googleapis/google-cloud-java/issues/13461
-    transportFactory =
-        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
-            transportFactory, getEnvironmentProvider(), getPropertyProvider(), null);
-
     regionalAccessBoundaryManager.triggerAsyncRefresh(
-        transportFactory, (RegionalAccessBoundaryProvider) this, token, getEnvironmentProvider());
+        transportFactory,
+        (RegionalAccessBoundaryProvider) this,
+        token,
+        getEnvironmentProvider(),
+        getPropertyProvider());
   }
 
   /**
