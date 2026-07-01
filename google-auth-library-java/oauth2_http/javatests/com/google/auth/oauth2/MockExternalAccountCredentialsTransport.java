@@ -203,8 +203,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   .setContent(response.toPrettyString());
             }
 
-            if (url.contains(IAM_ENDPOINT)
-                || url.contains(MTLS_IAM_ENDPOINT)) {
+            if (url.contains(IAM_ENDPOINT) || url.contains(MTLS_IAM_ENDPOINT)) {
 
               if (url.endsWith(REGIONAL_ACCESS_BOUNDARY_URL_END)) {
                 String normalizedUrl = url.replace(MTLS_IAM_ENDPOINT, IAM_ENDPOINT);

@@ -1393,8 +1393,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
         };
 
     AccessToken token =
-        new AccessToken(
-            "test-token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+        new AccessToken("test-token", new java.util.Date(System.currentTimeMillis() + 3600000L));
 
     com.google.auth.mtls.MtlsHttpTransportFactory mockMtlsFactory;
     try {
