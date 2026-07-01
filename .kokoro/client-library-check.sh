@@ -146,7 +146,7 @@ flatten-plugin)
     ../.kokoro/build.sh
     echo "After running ../.kokoro/build.sh"
     pushd ${LIBRARY_NAME}
-    mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
+    mvn -B dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
         | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
     echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}):"
     diff "${scriptDir}/${EXPECTED_DEPENDENCIES_LIST}" .actual-flattened-dependencies-list.txt
