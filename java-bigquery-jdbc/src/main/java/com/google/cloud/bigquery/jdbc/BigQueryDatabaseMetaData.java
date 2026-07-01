@@ -4794,6 +4794,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void handleFetcherException(
       Throwable t, BlockingQueue<BigQueryFieldValueListWrapper> queue, String fetcherName) {
+    if (t instanceof ExecutionException && t.getCause() != null) {
+      t = t.getCause();
+    }
     if (t instanceof InterruptedException) {
       Thread.currentThread().interrupt();
       LOG.warning("Fetcher interrupted in " + fetcherName + ": " + t.getMessage());
@@ -4816,10 +4819,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       BlockingQueue<BigQueryFieldValueListWrapper> queue, FieldList resultSchemaFields) {
     try {
       LOG.info("Adding end signal to queue.");
-      queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, null, true));
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      LOG.warning("Interrupted while sending end signal to queue.");
+      BigQueryFieldValueListWrapper element =
+          BigQueryFieldValueListWrapper.of(resultSchemaFields, null, true);
+      if (!queue.offer(element)) {
+        boolean wasInterrupted = Thread.interrupted();
+        try {
+          queue.put(element);
+        } catch (InterruptedException e) {
+          LOG.warning("Interrupted while sending end signal to queue.");
+          wasInterrupted = true;
+        } finally {
+          if (wasInterrupted) {
+            Thread.currentThread().interrupt();
+          }
+        }
+      }
     } catch (Exception e) {
       LOG.severe("Exception while sending end signal to queue: " + e.getMessage());
     }
@@ -4907,11 +4921,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
     Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-    try {
-      queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-    } catch (InterruptedException ie) {
-      LOG.warning("Failed to put exception to queue due to interruption.");
-      Thread.currentThread().interrupt();
+    BigQueryFieldValueListWrapper element = BigQueryFieldValueListWrapper.ofError(ex);
+    if (!queue.offer(element)) {
+      boolean wasInterrupted = Thread.interrupted();
+      try {
+        queue.put(element);
+      } catch (InterruptedException ie) {
+        LOG.warning("Failed to put exception to queue due to interruption.");
+        wasInterrupted = true;
+      } finally {
+        if (wasInterrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
     }
   }
 }
