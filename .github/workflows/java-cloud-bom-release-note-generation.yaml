@@ -13,21 +13,8 @@ name: java-cloud-bom release-notes
 env:
   BUILD_SUBDIR: java-cloud-bom
 jobs:
-  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{ steps.filter.outputs.library }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - 'java-cloud-bom/**'
   release-note-generation:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' && (github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/')) }}
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/') }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
