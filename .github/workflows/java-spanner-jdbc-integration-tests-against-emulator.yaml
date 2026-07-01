@@ -31,7 +31,7 @@ jobs:
 
     services:
       emulator:
-        image: gcr.io/cloud-spanner-emulator/emulator:latest
+        image: gcr.io/cloud-spanner-emulator/emulator@sha256:ad54472fe7b161b9214f7f816f304b649a4779e348229c375ac067f5ed5a6422 # 1.5.55
         ports:
           - 9010:9010
           - 9020:9020
