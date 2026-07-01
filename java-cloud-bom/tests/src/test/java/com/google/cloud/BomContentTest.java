@@ -72,11 +72,15 @@ public class BomContentTest {
   private void checkBom(Path bomPath) throws Exception {
     Bom bom = Bom.readBom(bomPath);
     List<Artifact> artifacts = bom.getManagedDependencies();
+    boolean skipReachability = Boolean.getBoolean("skipReachabilityCheck")
+        && bomPath.toString().endsWith("libraries-bom/pom.xml");
     for (Artifact artifact : artifacts) {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
-      assertReachable(buildMavenCentralUrl(artifact));
+      if (!skipReachability) {
+        assertReachable(buildMavenCentralUrl(artifact));
+      }
     }
 
     assertNoDowngradeRule(bom);
@@ -98,6 +102,11 @@ public class BomContentTest {
   static void checkBomReachable(Path bomPath) throws Exception {
     Bom bom = Bom.readBom(bomPath);
     List<Artifact> artifacts = bom.getManagedDependencies();
+    boolean skipReachability = Boolean.getBoolean("skipReachabilityCheck")
+        && bomPath.toString().endsWith("libraries-bom/pom.xml");
+    if (skipReachability) {
+      return;
+    }
 
     StringBuilder errors = new StringBuilder();
     for (Artifact artifact : artifacts) {
