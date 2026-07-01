@@ -5,7 +5,7 @@
   "api_description": "allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-apigee-connect/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-apigee-connect",
