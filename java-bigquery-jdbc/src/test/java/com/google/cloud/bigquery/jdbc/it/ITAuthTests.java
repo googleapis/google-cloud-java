@@ -300,10 +300,9 @@ public class ITAuthTests extends ITBase {
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
-    InputStream stream =
-        new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8));
+    
     GoogleCredentials credentials =
-        GoogleCredentials.fromStream(stream).createScoped(Arrays.asList(scope));
+        ((GoogleCredentials)bigQuery.getOptions().getCredentials()).createScoped(Arrays.asList(scope));
     credentials.refresh();
     String accessToken = credentials.getAccessToken().getTokenValue();
 

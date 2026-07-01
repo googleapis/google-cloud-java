@@ -378,21 +378,18 @@ public class ITStatementTest extends ITBase {
 
   @Test
   public void testTemporaryDatasetLocation() throws SQLException, InterruptedException {
-    String projectId = DEFAULT_CATALOG;
     String location = "europe-west3";
     String randomSuffix = String.valueOf(100 + new Random().nextInt(900));
     String tempDatasetName = "jdbc_temp_dataset_" + System.currentTimeMillis() + "_" + randomSuffix;
 
     String customConnectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + projectId
-            + ";OAuthType=3;Timeout=3600;Location="
+        ITBase.connectionUrl + 
+        ";Location="
             + location
             + ";AllowLargeResults=true;LargeResultDataset="
             + tempDatasetName
             + ";";
 
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     try (Connection connection = DriverManager.getConnection(customConnectionUrl)) {
       Statement statement = connection.createStatement();
       String query = "SELECT 1 as val;";
