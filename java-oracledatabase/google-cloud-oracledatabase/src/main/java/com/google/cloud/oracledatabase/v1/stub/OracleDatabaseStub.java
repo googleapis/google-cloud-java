@@ -57,6 +57,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -241,6 +242,21 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       deleteCloudExadataInfrastructureCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteCloudExadataInfrastructureCallable()");
+  }
+
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureOperationCallable()");
+  }
+
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureCallable()");
   }
 
   public UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>

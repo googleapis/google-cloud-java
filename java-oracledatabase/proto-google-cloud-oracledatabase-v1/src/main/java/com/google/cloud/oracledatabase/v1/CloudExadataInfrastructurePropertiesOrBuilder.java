@@ -745,4 +745,47 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The bytes for storageServerType.
    */
   com.google.protobuf.ByteString getStorageServerTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the exascaleConfig field is set.
+   */
+  boolean hasExascaleConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The exascaleConfig.
+   */
+  com.google.cloud.oracledatabase.v1.ExascaleConfig getExascaleConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder getExascaleConfigOrBuilder();
 }
