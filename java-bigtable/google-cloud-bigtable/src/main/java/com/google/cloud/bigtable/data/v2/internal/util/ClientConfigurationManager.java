@@ -395,8 +395,10 @@ public class ClientConfigurationManager implements AutoCloseable {
     // Inject overrides
     overrideConfig.ifPresent(builder::mergeFrom);
 
-    // When sessions are disabled make sure to clear out the config
-    if (cfg.getSessionConfiguration().getSessionLoad() == 0) {
+    // When sessions are disabled make sure to clear out the config. Read from the builder, not
+    // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
+    // the server-returned config has session_load=0.
+    if (builder.getSessionConfiguration().getSessionLoad() == 0) {
       builder.clearSessionConfiguration();
       return builder.build();
     }

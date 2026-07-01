@@ -196,6 +196,43 @@ class ClientConfigurationManagerTest {
         .isEqualToDefaultInstance();
   }
 
+  @Test
+  void testDisabledSessionsOverriddenBySysProp()
+      throws ExecutionException, InterruptedException, IOException {
+    // Server returns session_load=0 (sessions disabled from the server's perspective)…
+    ClientConfiguration.Builder disabledBuilder = manager.getDefaultConfig().toBuilder();
+    disabledBuilder.getSessionConfigurationBuilder().setSessionLoad(0);
+    service.config.set(disabledBuilder.build());
+
+    // …but a sys-prop override forces session_load>0 to opt this client into sessions.
+    manager.close();
+    String clientConfigOverrides =
+        TextFormat.printer()
+            .printToString(
+                ClientConfiguration.newBuilder()
+                    .setSessionConfiguration(
+                        SessionClientConfiguration.newBuilder().setSessionLoad(0.75f))
+                    .build());
+    Properties sysProps = new Properties();
+    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    manager =
+        new ClientConfigurationManager(
+            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
+
+    ClientConfiguration resolvedConfig = manager.start().get();
+
+    // The override must be honoured: session_load and the default SessionPoolConfiguration must
+    // survive normalization instead of being cleared as if sessions were disabled.
+    assertThat(resolvedConfig.getSessionConfiguration().getSessionLoad()).isEqualTo(0.75f);
+    assertThat(resolvedConfig.getSessionConfiguration().getSessionPoolConfiguration())
+        .isEqualTo(
+            manager
+                .getDefaultConfig()
+                .getSessionConfiguration()
+                .getSessionPoolConfiguration());
+    assertThat(manager.areSessionsRequired()).isTrue();
+  }
+
   @Deprecated
   @Test
   void testMigrateSessionPool() throws ExecutionException, InterruptedException {
