@@ -38,6 +38,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -137,6 +138,28 @@ public final class FoldersTest {
     DeleteFolder.deleteFolder(bucket.getName(), folderName.getFolder());
     assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(folderName.toString());
     assertThrows(NotFoundException.class, () -> storageControl.getFolder(folderName));
+  }
+
+  @Ignore("Feature not yet enabled for all buckets/projects")
+  @Test
+  public void deleteFolderRecursive()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    String parentFolderName = UUID.randomUUID().toString();
+    FolderName parentFolder = FolderName.of("_", bucket.getName(), parentFolderName);
+    storageControl.createFolder(
+        BucketName.of("_", bucket.getName()),
+        Folder.getDefaultInstance(),
+        parentFolder.getFolder());
+
+    String childFolderName = parentFolderName + "/" + UUID.randomUUID().toString();
+    FolderName childFolder = FolderName.of("_", bucket.getName(), childFolderName);
+    storageControl.createFolder(
+        BucketName.of("_", bucket.getName()), Folder.getDefaultInstance(), childFolder.getFolder());
+
+    DeleteFolderRecursive.deleteFolderRecursive(bucket.getName(), parentFolder.getFolder());
+    assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(parentFolder.toString());
+    assertThrows(NotFoundException.class, () -> storageControl.getFolder(parentFolder));
+    assertThrows(NotFoundException.class, () -> storageControl.getFolder(childFolder));
   }
 
   @Test
