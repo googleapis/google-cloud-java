@@ -227,7 +227,7 @@ public class ITE2ETracingTest {
 
   private static final int NUM_SPAN_ID_BYTES = 16;
 
-  private static final int GET_TRACE_RETRY_COUNT = 60;
+  private static final int GET_TRACE_RETRY_COUNT = 120;
 
   private static final int GET_TRACE_RETRY_BACKOFF_MILLIS = 1000;
 
@@ -393,6 +393,12 @@ public class ITE2ETracingTest {
     tracer = null;
     retrievedTrace = null;
     customSpanContext = null;
+    if (openTelemetrySdk != null) {
+      openTelemetrySdk
+          .getSdkTracerProvider()
+          .shutdown()
+          .join(TRACE_PROVIDER_SHUTDOWN_MILLIS, TimeUnit.MILLISECONDS);
+    }
     openTelemetrySdk = null;
   }
 
@@ -441,6 +447,9 @@ public class ITE2ETracingTest {
     CompletableResultCode completableResultCode =
         openTelemetrySdk.getSdkTracerProvider().forceFlush();
     completableResultCode.join(TRACE_FORCE_FLUSH_MILLIS, TimeUnit.MILLISECONDS);
+    if (!completableResultCode.isSuccess()) {
+      logger.warning("Force flush did not complete successfully");
+    }
   }
 
   // Validates `retrievedTrace`. Cloud Trace indexes traces w/ eventual consistency, even when
