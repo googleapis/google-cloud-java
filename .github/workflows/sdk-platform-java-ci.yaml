@@ -29,11 +29,15 @@ jobs:
         java: [ 11, 17, 21, 25, 26 ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: java -version
       - name: Unit Tests
         shell: bash
@@ -59,10 +63,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -75,10 +84,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 17
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: sdk-platform-java
@@ -91,16 +105,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Java 8 tests uses JDK 17 to compile and JDK 8 to run tests.
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 8
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Install all modules using Java 17
         shell: bash
         run: .kokoro/build.sh
@@ -148,11 +171,22 @@ jobs:
         java: [ 11, 17, 21 ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
+      - name: Cache Bazel Repository Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bazel/_bazel_*/cache/repos
+          key: ${{ runner.os }}-bazel-repo-${{ hashFiles('**/BUILD.bazel', '**/WORKSPACE', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-repo-
       - run: bazelisk version
       - name: Install all modules
         shell: bash
@@ -176,11 +210,22 @@ jobs:
         java: [ 25, 26 ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
+      - name: Cache Bazel Repository Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bazel/_bazel_*/cache/repos
+          key: ${{ runner.os }}-bazel-repo-${{ hashFiles('**/BUILD.bazel', '**/WORKSPACE', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-repo-
       - run: bazelisk version
       - name: Install all modules
         shell: bash
@@ -202,11 +247,22 @@ jobs:
         java: [ 11, 17 ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
+      - name: Cache Bazel Repository Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bazel/_bazel_*/cache/repos
+          key: ${{ runner.os }}-bazel-repo-${{ hashFiles('**/BUILD.bazel', '**/WORKSPACE', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-repo-
       - run: bazelisk version
       - name: Install all modules using Java 11
         shell: bash
@@ -241,21 +297,37 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 11
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
+      - name: Cache Bazel Repository Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/bazel/_bazel_*/cache/repos
+          key: ${{ runner.os }}-bazel-repo-${{ hashFiles('**/BUILD.bazel', '**/WORKSPACE', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-repo-
       - name: Install all modules using Java 11
         shell: bash
         run: .kokoro/build.sh
         env:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 8
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: java -version
       - name: Run tests in Java 8 with the source compiled in Java 11 for gapic-generator-java
         shell: bash
@@ -291,11 +363,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 17
-        distribution: temurin
-        cache: maven
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - name: Install sdk-platform-modules to local Maven repository
       shell: bash
       run: .kokoro/build.sh
@@ -325,11 +401,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
-        distribution: temurin
-        cache: maven
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - name: Install Maven modules to local Maven repository
       shell: bash
       run: .kokoro/build.sh
@@ -349,10 +429,15 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
-        distribution: temurin
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - run: mvn -version
     - name: Unit Tests
       run: |
@@ -377,10 +462,15 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 17
-        distribution: temurin
+        cache-dependency-path: |
+          pom.xml
+          sdk-platform-java/pom.xml
+          sdk-platform-java/**/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
     - run: mvn -version
     - name: Unit Tests
       run: |

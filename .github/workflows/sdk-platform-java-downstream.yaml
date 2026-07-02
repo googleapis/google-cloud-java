@@ -39,10 +39,15 @@ jobs:
           - java-pubsub
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: mvn -version
       - name: Install xmllint
         run: |
@@ -61,10 +66,15 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: mvn -version
       - name: Install xmllint
         run: |

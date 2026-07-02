@@ -24,11 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: maven
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Run test in release-note-generation
       shell: bash
@@ -44,11 +46,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: maven
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Dry-run release-note-generation
       shell: bash

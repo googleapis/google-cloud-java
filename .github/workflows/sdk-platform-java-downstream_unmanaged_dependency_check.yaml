@@ -48,11 +48,15 @@ jobs:
           set -euxo pipefail
           pwd
           ls -alt
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 11
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Install the modules of sdk-platform-java
         shell: bash
         run: .kokoro/build.sh

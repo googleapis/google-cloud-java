@@ -31,9 +31,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
     - name: Running tests
       run: .kokoro/build.sh

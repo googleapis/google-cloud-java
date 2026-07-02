@@ -28,21 +28,34 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 11
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Install all modules using Java 11
         shell: bash
         run: .kokoro/build.sh
         env:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
-      - uses: actions/setup-java@v3
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 8
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: java -version
       - name: Parse showcase version
         working-directory: java-showcase/gapic-showcase
@@ -104,10 +117,17 @@ jobs:
         java: [ 11, 17, 21, 25, 26 ]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - run: mvn -version
       - name: Install Maven modules
         shell: bash
@@ -139,10 +159,17 @@ jobs:
           go install github.com/googleapis/librarian/cmd/librarian@$V
           librarian install
       - name: Setup Java 17 for Golden Tests
-        uses: actions/setup-java@v4
+        uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Showcase golden tests
         working-directory: java-showcase
         run: |
@@ -151,10 +178,17 @@ jobs:
             --batch-mode \
             --no-transfer-progress
       - name: Restore Matrix Java
-        uses: actions/setup-java@v4
+        uses: ./.github/actions/setup-java-cached
         with:
           java-version: ${{ matrix.java }}
-          distribution: temurin
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Parse showcase version
         working-directory: java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
@@ -218,11 +252,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.base_ref }}
-      - uses: actions/setup-java@v4
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
-          cache: maven
+          cache-dependency-path: |
+            pom.xml
+            java-showcase/pom.xml
+            java-showcase/**/pom.xml
+            sdk-platform-java/pom.xml
+            sdk-platform-java/**/pom.xml
+            java-shared-config/pom.xml
+            java-shared-config/**/pom.xml
       - name: Install Maven modules
         shell: bash
         run: .kokoro/build.sh

@@ -45,7 +45,7 @@ jobs:
         repository: googleapis/cloud-bigtable-clients-test
         ref: main
         path: cloud-bigtable-clients-test
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         distribution: zulu
         java-version: 11

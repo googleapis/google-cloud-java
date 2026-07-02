@@ -61,25 +61,14 @@ jobs:
       matrix:
         java: [11, 17, 21, 25, 26]
     steps:
-    - name: Get current week within the year
-      id: date
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-    - uses: actions/setup-java@v4
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+      uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-    - uses: actions/cache@v4
-      id: mvn-cache
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       env:
@@ -90,35 +79,22 @@ jobs:
     needs: bulk-filter
     name: "units (8)"
     steps:
-    - name: Get current week within the year
-      id: date
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-    - uses: actions/setup-java@v4
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+      uses: ./.github/actions/setup-java-cached
       with:
         java-version: 8
-        distribution: temurin
     - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
       # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
       # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
       shell: bash    
-    - uses: actions/setup-java@v4
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+      uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
-        distribution: temurin
-        cache: maven
-    - uses: actions/cache@v4
-      id: mvn-cache
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       shell: bash      
@@ -230,14 +206,19 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [11, 17, 21, 25, 26]
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: ${{matrix.java}}
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
+          ${{ matrix.package }}/pom.xml
+          ${{ matrix.package }}/**/pom.xml
     - run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -253,31 +234,38 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [8]
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
-        distribution: temurin
-        cache: maven
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
+          ${{ matrix.package }}/pom.xml
+          ${{ matrix.package }}/**/pom.xml
     - run: java -version
-    - uses: actions/cache@v4
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - name: Install all modules using Java 11
       shell: bash
       run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: install
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: ${{matrix.java}}
-        distribution: temurin
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
+          ${{ matrix.package }}/pom.xml
+          ${{ matrix.package }}/**/pom.xml
     - run: java -version
     - name: Run tests in Java ${{matrix.java}} with the source compiled in Java 11
       run: |
@@ -302,10 +290,18 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
+          ${{ matrix.package }}/pom.xml
+          ${{ matrix.package }}/**/pom.xml
     - run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -319,10 +315,18 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 17
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/pom.xml
+          java-shared-config/**/pom.xml
+          ${{ matrix.package }}/pom.xml
+          ${{ matrix.package }}/**/pom.xml
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -345,11 +349,9 @@ jobs:
     - name: Support longpaths
       run: git config --system core.longpaths true
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: 'maven'
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -363,9 +365,8 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 17
     - run: java -version
     - run: .kokoro/build.sh
@@ -378,15 +379,10 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: maven
     - run: java -version
     - name: Install Maven modules to local Maven repository
       run: .kokoro/build.sh
@@ -400,11 +396,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
-        distribution: temurin
-        cache: maven
     - name: Install Maven modules to local Maven repository
       run: .kokoro/build.sh
       env:

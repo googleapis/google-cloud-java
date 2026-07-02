@@ -41,7 +41,7 @@ jobs:
         - javadoc-with-doclet # test javadoc generation with doclet
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         distribution: zulu
         java-version: 11
@@ -55,7 +55,7 @@ jobs:
         LIB_DIR="${{matrix.repo}}"
         LIB_NAME="google-cloud-${LIB_DIR#java-}"
         mvn install -pl ${LIB_DIR}/${LIB_NAME} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
@@ -80,7 +80,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
@@ -132,9 +132,8 @@ jobs:
         - java-bigquerystorage
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 17
     - run: java -version
     - run: sudo apt-get update -y

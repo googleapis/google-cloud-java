@@ -58,11 +58,9 @@ jobs:
         cd /usr/local
         sudo unzip -o /tmp/protoc.zip
         protoc --version
-    - uses: actions/setup-java@v4
+    - uses: ./.github/actions/setup-java-cached
       with:
         java-version: "17"
-        distribution: "temurin"
-        cache: "maven"
     - name: Verify Java and Maven installation
       run: |
         java -version

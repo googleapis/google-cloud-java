@@ -47,11 +47,13 @@ jobs:
         java: [11, 17, 21]
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: ${{matrix.java}}
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh
@@ -68,21 +70,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v5
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 11
-          distribution: temurin
-          cache: 'maven'
+          cache-dependency-path: |
+            pom.xml
+            java-cloud-bom/pom.xml
+            java-cloud-bom/**/pom.xml
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
         run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java -P !java17" >> $GITHUB_ENV
         shell: bash
-      - uses: actions/setup-java@v5
+      - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
-          distribution: temurin
-          cache: 'maven'
+          cache-dependency-path: |
+            pom.xml
+            java-cloud-bom/pom.xml
+            java-cloud-bom/**/pom.xml
       - name: Pre-install all BOM modules to populate local cache
         run: bash java-cloud-bom/tests/pre-install.sh
         shell: bash
@@ -98,11 +104,13 @@ jobs:
     - name: Support longpaths
       run: git config --system core.longpaths true
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh
@@ -120,11 +128,13 @@ jobs:
         java: [17]
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: ${{matrix.java}}
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh
@@ -136,11 +146,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 17
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh
@@ -156,11 +168,13 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh
@@ -176,11 +190,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: ./.github/actions/setup-java-cached
       with:
-        distribution: temurin
         java-version: 11
-        cache: 'maven'
+        cache-dependency-path: |
+          pom.xml
+          java-cloud-bom/pom.xml
+          java-cloud-bom/**/pom.xml
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache
       run: bash java-cloud-bom/tests/pre-install.sh

@@ -1,0 +1,35 @@
+# This action wraps actions/setup-java to centralize Java setup configuration.
+# We centralize it to ensure consistent caching defaults across all workflows and
+# to make future updates (e.g., changing JDK distribution, adding Gradle cache,
+# or changing caching provider) easier by modifying only this file instead of 40+ workflows.
+name: 'Setup Java with Caching'
+description: 'Sets up Java and configures Maven caching by default'
+inputs:
+  java-version:
+    description: 'The Java version to set up'
+    required: true
+  distribution:
+    description: 'Java distribution'
+    default: 'temurin'
+  cache:
+    description: 'Cache type (maven, gradle, or none)'
+    default: 'maven'
+  cache-dependency-path:
+    description: 'Optional path to dependency file(s) to search for. Defaults to all pom.xml.'
+    default: '**/pom.xml'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-java@v4
+      with:
+        java-version: ${{ inputs.java-version }}
+        distribution: ${{ inputs.distribution }}
+        # Only set cache if it is not 'none'.
+        # Note: actions/setup-java internally handles cache key generation using
+        # the OS (runner.os) and the hash of dependency files,
+        # with automatic fallbacks (restore-keys) to the latest available cache.
+        # By default, it hashes all pom.xml in the repo. To reduce cache misses in
+        # a monorepo, workflows can specify a narrower 'cache-dependency-path'
+        # (e.g., only hashing parent POMs and the specific module's pom.xml).
+        cache: ${{ inputs.cache != 'none' && inputs.cache || '' }}
+        cache-dependency-path: ${{ inputs.cache-dependency-path }}
