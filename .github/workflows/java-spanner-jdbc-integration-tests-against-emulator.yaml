@@ -36,6 +36,14 @@ jobs:
     - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 17
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/**/pom.xml
+          java-spanner-jdbc/pom.xml
+          java-spanner-jdbc/**/pom.xml
     - run: java -version
     - name: Install dependencies for the integration test
       run: .kokoro/build.sh

@@ -40,6 +40,9 @@ jobs:
       - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 17
+          cache-dependency-path: |
+            java-spanner-jdbc/samples/spring-data-jdbc/googlesql/pom.xml
+            java-spanner-jdbc/samples/spring-data-jdbc/postgresql/pom.xml
       - name: Run tests on GoogleSQL
         run: mvn test
         working-directory: java-spanner-jdbc/samples/spring-data-jdbc/googlesql

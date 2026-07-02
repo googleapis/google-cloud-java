@@ -40,6 +40,7 @@ jobs:
       - uses: ./.github/actions/setup-java-cached
         with:
           java-version: 8
+          cache-dependency-path: java-spanner-jdbc/samples/snippets/pom.xml
       - name: Run sample tests
         run: mvn --quiet --batch-mode test
         working-directory: java-spanner-jdbc/samples/snippets

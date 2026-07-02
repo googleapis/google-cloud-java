@@ -34,6 +34,14 @@ jobs:
     - uses: ./.github/actions/setup-java-cached
       with:
         java-version: 11
+        cache-dependency-path: |
+          pom.xml
+          google-cloud-pom-parent/pom.xml
+          google-cloud-jar-parent/pom.xml
+          sdk-platform-java/sdk-platform-java-config/pom.xml
+          java-shared-config/**/pom.xml
+          java-spanner/pom.xml
+          java-spanner/**/pom.xml
     - name: Running tests
       run: .kokoro/build.sh
       env:
