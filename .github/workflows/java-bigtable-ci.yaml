@@ -44,18 +44,10 @@ jobs:
         java: [11, 17, 21, 25, 26]
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: ${{matrix.java}}
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -68,35 +60,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-java-cached
+      - uses: actions/setup-java@v4
         with:
           java-version: 11
-          cache-dependency-path: |
-            pom.xml
-            google-cloud-pom-parent/pom.xml
-            google-cloud-jar-parent/pom.xml
-            sdk-platform-java/sdk-platform-java-config/pom.xml
-            java-shared-config/pom.xml
-            java-shared-config/**/pom.xml
-            java-bigtable/pom.xml
-            java-bigtable/**/pom.xml
+          distribution: temurin
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
         run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java -P !java17" >> $GITHUB_ENV
         shell: bash
-      - uses: ./.github/actions/setup-java-cached
+      - uses: actions/setup-java@v4
         with:
           java-version: 17
-          cache-dependency-path: |
-            pom.xml
-            google-cloud-pom-parent/pom.xml
-            google-cloud-jar-parent/pom.xml
-            sdk-platform-java/sdk-platform-java-config/pom.xml
-            java-shared-config/pom.xml
-            java-shared-config/**/pom.xml
-            java-bigtable/pom.xml
-            java-bigtable/**/pom.xml
+          distribution: temurin
       - run: .kokoro/build.sh
         env:
           JOB_TYPE: test
@@ -108,18 +84,10 @@ jobs:
     - name: Support longpaths
       run: git config --system core.longpaths true
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: 11
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -133,18 +101,10 @@ jobs:
         java: [17]
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: ${{matrix.java}}
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/dependencies.sh
   javadoc:
@@ -153,18 +113,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: 17
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -177,18 +129,10 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: 17
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -201,18 +145,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-java-cached
+    - uses: actions/setup-java@v4
       with:
+        distribution: temurin
         java-version: 11
-        cache-dependency-path: |
-          pom.xml
-          google-cloud-pom-parent/pom.xml
-          google-cloud-jar-parent/pom.xml
-          sdk-platform-java/sdk-platform-java-config/pom.xml
-          java-shared-config/pom.xml
-          java-shared-config/**/pom.xml
-          java-bigtable/pom.xml
-          java-bigtable/**/pom.xml
     - run: java -version
     - run: .kokoro/build.sh
       env:

@@ -37,10 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup-java-cached
+      - uses: actions/setup-java@v5
         with:
+          distribution: temurin
           java-version: 8
-          cache-dependency-path: java-spanner-jdbc/samples/snippets/pom.xml
       - name: Run sample tests
         run: mvn --quiet --batch-mode test
         working-directory: java-spanner-jdbc/samples/snippets
