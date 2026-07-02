@@ -101,9 +101,9 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
         proxy.blackhole();
         long startTime = System.currentTimeMillis();
 
-        // 6. Restore proxy and clear execution delay at t=8s.
-        // This is before the keepalive fires and times out.
-        Thread.sleep(7000L);
+        // 6. Restore proxy and clear execution delay at t=16s.
+        // This is after the keepalive fires and times out (10s keepalive + 5s timeout).
+        Thread.sleep(15000L);
         proxy.restore();
         mockSpanner.removeAllExecutionTimes();
 
@@ -111,7 +111,7 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
         // Keepalive (10s keepalive + 5s timeout) should fire at t=16s, causing client to
         // retry the query over the restored proxy, succeeding immediately.
         try {
-          future.get(25, TimeUnit.SECONDS);
+          future.get(10, TimeUnit.SECONDS);
           long elapsed = System.currentTimeMillis() - startTime;
           System.out.println("Query succeeded after blackhole recovery in " + elapsed + " ms");
           assertTrue(
@@ -134,6 +134,7 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
     private final AtomicBoolean blackholed = new AtomicBoolean(false);
     private final List<Socket> clientSockets = Collections.synchronizedList(new ArrayList<>());
     private final List<Socket> serverSockets = Collections.synchronizedList(new ArrayList<>());
+    private final List<Thread> forwardingThreads = Collections.synchronizedList(new ArrayList<>());
     private final Thread acceptThread;
 
     SimpleProxy(int targetPort) throws IOException {
@@ -141,6 +142,7 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
       this.localPort = serverSocket.getLocalPort();
       this.targetPort = targetPort;
       this.acceptThread = new Thread(this::acceptConnections, "SimpleProxy-accept");
+      this.acceptThread.setDaemon(true);
       this.acceptThread.start();
     }
 
@@ -178,6 +180,10 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
                 new Thread(() -> forward(clientSocket, serverSocket), "SimpleProxy-C2S");
             Thread forwardServerToClient =
                 new Thread(() -> forward(serverSocket, clientSocket), "SimpleProxy-S2C");
+            forwardClientToServer.setDaemon(true);
+            forwardServerToClient.setDaemon(true);
+            forwardingThreads.add(forwardClientToServer);
+            forwardingThreads.add(forwardServerToClient);
             forwardClientToServer.start();
             forwardServerToClient.start();
           } catch (IOException e) {
@@ -213,8 +219,15 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
             blockIndefinitely();
             break;
           }
-          out.write(buffer, 0, read);
-          out.flush();
+          try {
+            out.write(buffer, 0, read);
+            out.flush();
+          } catch (IOException e) {
+            if (blackholed.get()) {
+              blockIndefinitely();
+            }
+            throw e;
+          }
         }
       } catch (Exception e) {
         // ignore
@@ -235,17 +248,41 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
 
     @Override
     public void close() throws Exception {
-      serverSocket.close();
-      acceptThread.join(1000L);
       synchronized (clientSockets) {
         for (Socket s : clientSockets) {
-          s.close();
+          try {
+            s.close();
+          } catch (IOException e) {
+            // ignore
+          }
         }
+        clientSockets.clear();
       }
       synchronized (serverSockets) {
         for (Socket s : serverSockets) {
-          s.close();
+          try {
+            s.close();
+          } catch (IOException e) {
+            // ignore
+          }
         }
+        serverSockets.clear();
+      }
+      synchronized (forwardingThreads) {
+        for (Thread t : forwardingThreads) {
+          t.interrupt();
+        }
+        forwardingThreads.clear();
+      }
+      try {
+        serverSocket.close();
+      } catch (IOException e) {
+        // ignore
+      }
+      try {
+        acceptThread.join(1000L);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
       }
     }
   }
