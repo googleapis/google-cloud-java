@@ -38,7 +38,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -140,7 +139,6 @@ public final class FoldersTest {
     assertThrows(NotFoundException.class, () -> storageControl.getFolder(folderName));
   }
 
-  @Ignore("Feature not yet enabled for all buckets/projects")
   @Test
   public void deleteFolderRecursive()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
