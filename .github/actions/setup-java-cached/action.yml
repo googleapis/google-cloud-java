@@ -31,5 +31,16 @@ runs:
         # By default, it hashes all pom.xml in the repo. To reduce cache misses in
         # a monorepo, workflows can specify a narrower 'cache-dependency-path'
         # (e.g., only hashing parent POMs and the specific module's pom.xml).
+        #
+        # Caveat for matrix jobs: the cache key is derived only from
+        # cache-dependency-path (plus runner.os), not from inputs like
+        # java-version. Matrix legs that pass the same cache-dependency-path
+        # (e.g. java: [11, 17, 21, 25, 26] in a single job) therefore all
+        # compute the same cache key and race to save it at the end of the
+        # job. actions/cache only lets the first leg to finish write the
+        # cache for that key; the rest log a harmless "Cache already exists"
+        # notice and skip saving. This is expected and not a bug -- it just
+        # means only one matrix leg's resolved dependencies get persisted per
+        # run, so don't expect every leg to contribute to the cache.
         cache: ${{ inputs.cache != 'none' && inputs.cache || '' }}
         cache-dependency-path: ${{ inputs.cache-dependency-path }}
