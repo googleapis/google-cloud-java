@@ -1452,4 +1452,69 @@ public class SpannerOptionsTest {
     SpannerOptions options = builder.build();
     assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
   }
+
+  @Test
+  public void testGrpcKeepAliveTime() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(120), defaultOptions.getGrpcKeepAliveTime());
+
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setGrpcKeepAliveTime(Duration.ofSeconds(20))
+            .build();
+    assertEquals(Duration.ofSeconds(20), customOptions.getGrpcKeepAliveTime());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertEquals(Duration.ofSeconds(20), optionsFromBuilder.getGrpcKeepAliveTime());
+
+    assertThrows(
+        NullPointerException.class, () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(null));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(Duration.ZERO));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(Duration.ofSeconds(-10)));
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeout() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(20), defaultOptions.getGrpcKeepAliveTimeout());
+
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setGrpcKeepAliveTimeout(Duration.ofSeconds(5))
+            .build();
+    assertEquals(Duration.ofSeconds(5), customOptions.getGrpcKeepAliveTimeout());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertEquals(Duration.ofSeconds(5), optionsFromBuilder.getGrpcKeepAliveTimeout());
+
+    assertThrows(
+        NullPointerException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(null));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ZERO));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ofSeconds(-10)));
+  }
 }

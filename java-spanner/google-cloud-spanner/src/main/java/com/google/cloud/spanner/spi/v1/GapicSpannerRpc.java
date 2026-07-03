@@ -251,7 +251,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       "com.google.cloud.spanner.watchdogPeriodSeconds";
   private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
   private static final int DEFAULT_PERIOD_SECONDS = 10;
-  private static final int GRPC_KEEPALIVE_SECONDS = 2 * 60;
   private static final String USER_AGENT_KEY = "user-agent";
   private static final String CLIENT_LIBRARY_LANGUAGE = "spanner-java";
   public static final String DEFAULT_USER_AGENT =
@@ -740,9 +739,10 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
             .setPoolSize(options.getNumChannels())
 
-            // Set a keepalive time of 120 seconds to help long running
+            // Set a keepalive time to help long running
             // commit GRPC calls succeed
-            .setKeepAliveTimeDuration(Duration.ofSeconds(GRPC_KEEPALIVE_SECONDS))
+            .setKeepAliveTimeDuration(options.getGrpcKeepAliveTime())
+            .setKeepAliveTimeoutDuration(options.getGrpcKeepAliveTimeout())
 
             // Then check if SpannerOptions provides an InterceptorProvider. Create a default
             // SpannerInterceptorProvider if none is provided
