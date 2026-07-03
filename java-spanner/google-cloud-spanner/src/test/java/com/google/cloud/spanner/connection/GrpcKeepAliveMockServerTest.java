@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.connection;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -24,11 +25,13 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SlowTest;
 import com.google.cloud.spanner.Statement;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -79,11 +82,18 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
               .build();
 
       try (Connection connection = createITConnection(options)) {
-        // 3. Make mock Spanner server delay the execution of SELECT 1
+        // 3. Warm up the connection so session creation and dialect detection are done, then
+        // make the mock Spanner server delay the execution of any following queries.
+        try (ResultSet rs = connection.executeQuery(Statement.of("SELECT 1"))) {
+          while (rs.next()) {
+            // consume
+          }
+        }
         mockSpanner.setExecuteStreamingSqlExecutionTime(
             SimulatedExecutionTime.ofMinimumAndRandomTime(35000, 0));
 
         // 4. Run the query in a separate thread
+        mockSpanner.clearRequests();
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<Void> future =
             executor.submit(
@@ -96,20 +106,23 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
                   return null;
                 });
 
-        // 5. Let the query run for 1 second, then trigger network blackhole
-        Thread.sleep(1000L);
+        // 5. Wait until the query is actually in flight on the server, then trigger the
+        // network blackhole.
+        await()
+            .atMost(Duration.ofSeconds(10))
+            .until(() -> mockSpanner.countRequestsOfType(ExecuteSqlRequest.class) > 0);
         proxy.blackhole();
         long startTime = System.currentTimeMillis();
 
-        // 6. Restore proxy and clear execution delay at t=16s.
-        // This is after the keepalive fires and times out (10s keepalive + 5s timeout).
-        Thread.sleep(15000L);
+        // 6. Wait until the client detects the dead connection through the keepalive
+        // (10s keepalive + 5s timeout) and drops it, then restore the proxy and clear the
+        // execution delay so the retry succeeds immediately.
+        await().atMost(Duration.ofSeconds(60)).until(proxy::isClientDisconnected);
         proxy.restore();
         mockSpanner.removeAllExecutionTimes();
 
-        // 7. Wait for the query to recover and complete.
-        // Keepalive (10s keepalive + 5s timeout) should fire at t=16s, causing client to
-        // retry the query over the restored proxy, succeeding immediately.
+        // 7. Wait for the query to recover and complete. The client has already dropped the
+        // dead connection, so the retry runs over the restored proxy and succeeds immediately.
         try {
           future.get(10, TimeUnit.SECONDS);
           long elapsed = System.currentTimeMillis() - startTime;
@@ -132,6 +145,7 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
     private final int localPort;
     private final int targetPort;
     private final AtomicBoolean blackholed = new AtomicBoolean(false);
+    private final AtomicBoolean clientDisconnected = new AtomicBoolean(false);
     private final List<Socket> clientSockets = Collections.synchronizedList(new ArrayList<>());
     private final List<Socket> serverSockets = Collections.synchronizedList(new ArrayList<>());
     private final List<Thread> forwardingThreads = Collections.synchronizedList(new ArrayList<>());
@@ -148,6 +162,14 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
 
     int getPort() {
       return localPort;
+    }
+
+    /**
+     * Returns true when the client has dropped a black-holed connection (which happens when the
+     * client-side keepalive times out and the client closes the transport).
+     */
+    boolean isClientDisconnected() {
+      return clientDisconnected.get();
     }
 
     void blackhole() {
@@ -177,9 +199,9 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
             serverSockets.add(serverSocket);
 
             Thread forwardClientToServer =
-                new Thread(() -> forward(clientSocket, serverSocket), "SimpleProxy-C2S");
+                new Thread(() -> forward(clientSocket, serverSocket, true), "SimpleProxy-C2S");
             Thread forwardServerToClient =
-                new Thread(() -> forward(serverSocket, clientSocket), "SimpleProxy-S2C");
+                new Thread(() -> forward(serverSocket, clientSocket, false), "SimpleProxy-S2C");
             forwardClientToServer.setDaemon(true);
             forwardServerToClient.setDaemon(true);
             forwardingThreads.add(forwardClientToServer);
@@ -195,7 +217,16 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
       }
     }
 
-    private void forward(Socket input, Socket output) {
+    /**
+     * Forwards data from one socket to the other until the connection breaks or the blackhole is
+     * triggered. Once this direction has seen the blackhole it is poisoned and never forwards
+     * again: the client-to-server direction keeps reading and discarding, so the client closing the
+     * connection after its keepalive timeout is detected and signals {@link #clientDisconnected},
+     * while the server-to-client direction parks to keep the client socket open without delivering
+     * any data.
+     */
+    private void forward(Socket input, Socket output, boolean fromClient) {
+      boolean poisoned = false;
       try (InputStream in = input.getInputStream();
           OutputStream out = output.getOutputStream()) {
         byte[] buffer = new byte[4096];
@@ -204,18 +235,32 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
           try {
             read = in.read(buffer);
           } catch (IOException e) {
-            if (blackholed.get()) {
-              blockIndefinitely();
+            if (poisoned || blackholed.get()) {
+              if (fromClient) {
+                clientDisconnected.set(true);
+              } else {
+                blockIndefinitely();
+              }
             }
             throw e;
           }
           if (read == -1) {
-            if (blackholed.get()) {
-              blockIndefinitely();
+            if (poisoned || blackholed.get()) {
+              if (fromClient) {
+                clientDisconnected.set(true);
+              } else {
+                blockIndefinitely();
+              }
             }
             break;
           }
-          if (blackholed.get()) {
+          if (poisoned || blackholed.get()) {
+            poisoned = true;
+            if (fromClient) {
+              // Silently drop the data, but keep reading so the connection close by the client
+              // (after the keepalive timeout) is detected.
+              continue;
+            }
             blockIndefinitely();
             break;
           }
@@ -224,6 +269,12 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
             out.flush();
           } catch (IOException e) {
             if (blackholed.get()) {
+              poisoned = true;
+              if (fromClient) {
+                // The server side is gone; keep draining the client so its disconnect is
+                // detected.
+                continue;
+              }
               blockIndefinitely();
             }
             throw e;

@@ -15,6 +15,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
+    <awaitility.version>4.3.0</awaitility.version>
     <opencensus.version>0.31.1</opencensus.version>
     <google.cloud.monitoring.version>3.85.0</google.cloud.monitoring.version>
     <spanner.testenv.config.class>com.google.cloud.spanner.GceTestEnvConfig</spanner.testenv.config.class>
@@ -432,6 +433,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>${awaitility.version}</version>
       <scope>test</scope>
     </dependency>
 
