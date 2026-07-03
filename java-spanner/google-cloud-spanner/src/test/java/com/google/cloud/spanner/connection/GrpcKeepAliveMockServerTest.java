@@ -117,7 +117,10 @@ public class GrpcKeepAliveMockServerTest extends AbstractMockServerTest {
         // 6. Wait until the client detects the dead connection through the keepalive
         // (10s keepalive + 5s timeout) and drops it, then restore the proxy and clear the
         // execution delay so the retry succeeds immediately.
-        await().atMost(Duration.ofSeconds(60)).until(proxy::isClientDisconnected);
+        // The disconnect is expected after ~15 seconds; the 20 second bound verifies that the
+        // lower keep-alive settings actually make the client recover this quickly (the default
+        // 120 second keep-alive time would need more than 2 minutes).
+        await().atMost(Duration.ofSeconds(20)).until(proxy::isClientDisconnected);
         proxy.restore();
         mockSpanner.removeAllExecutionTimes();
 
