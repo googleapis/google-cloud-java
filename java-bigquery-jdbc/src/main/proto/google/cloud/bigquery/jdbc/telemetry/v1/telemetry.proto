@@ -122,11 +122,18 @@ message StatementExecution {
   DurationHistogram duration = 6;
 }
 
-// Duration histogram distribution for execution latency tracking.
+// Histogram representation for query duration measurements in milliseconds.
 message DurationHistogram {
+  // Count of items in each bucket.
   repeated int64 bucket_counts = 1;
+
+  // Upper bounds for each bucket in milliseconds.
   repeated double explicit_bounds = 2;
+
+  // Total count of recorded duration events.
   int64 count = 3;
+
+  // Cumulative sum of recorded durations in milliseconds.
   double sum = 4;
 }
 
