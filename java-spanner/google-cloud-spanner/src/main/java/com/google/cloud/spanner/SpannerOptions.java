@@ -144,7 +144,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   // Dynamic Channel Pool (DCP) default values and bounds
   /** Default max concurrent RPCs per channel before triggering scale up. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 90;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 25;
 
   /** Default min concurrent RPCs per channel for scale down check. */
   public static final int DEFAULT_DYNAMIC_POOL_MIN_RPC = 15;
@@ -153,13 +153,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL = Duration.ofMinutes(3);
 
   /** Default initial number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 4;
 
   /** Default max number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 256;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 10;
 
   /** Default min number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 2;
 
   /**
    * Default affinity key lifetime for dynamic channel pool. This is how long to keep an affinity
