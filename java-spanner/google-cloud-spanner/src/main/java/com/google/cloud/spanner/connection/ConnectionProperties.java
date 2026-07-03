@@ -267,9 +267,9 @@ public class ConnectionProperties {
   static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIMEOUT =
       create(
           GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME,
-          "The keepalive timeout for gRPC connections (e.g. '20s', '5s'). "
-              + "This determines how long the client waits for a keep-alive ping response before terminating "
-              + "the connection. A lower timeout helps speed up recovery during network failures.",
+          "The keepalive timeout for gRPC connections (e.g. '20s', '5s'). This determines how long"
+              + " the client waits for a keep-alive ping response before terminating the"
+              + " connection. A lower timeout helps speed up recovery during network failures.",
           null,
           DurationConverter.INSTANCE,
           Context.STARTUP);
