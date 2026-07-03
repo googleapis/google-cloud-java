@@ -1345,6 +1345,20 @@ public class SpannerOptionsTest {
   }
 
   @Test
+  public void testDynamicChannelPoolDefaultValues() {
+    // Pins the documented dynamic channel pool default values. If this test fails, the defaults
+    // changed: update these literals deliberately and call the change out in the PR description.
+    assertEquals(25, SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC);
+    assertEquals(15, SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC);
+    assertEquals(Duration.ofMinutes(3), SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL);
+    assertEquals(4, SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE);
+    assertEquals(10, SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_CHANNELS);
+    assertEquals(2, SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_CHANNELS);
+    assertEquals(Duration.ofMinutes(10), SpannerOptions.DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME);
+    assertEquals(Duration.ofMinutes(1), SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL);
+  }
+
+  @Test
   public void testCreateDefaultDynamicChannelPoolOptions() {
     // Test the static factory method for creating default options
     GcpChannelPoolOptions defaults = SpannerOptions.createDefaultDynamicChannelPoolOptions();
