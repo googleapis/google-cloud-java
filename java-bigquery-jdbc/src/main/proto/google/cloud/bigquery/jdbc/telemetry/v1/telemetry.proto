@@ -25,7 +25,7 @@ option java_outer_classname = "TelemetryProto";
 // Aggregated client-side telemetry payload sent to Clearcut analytics backend.
 message TelemetryPayload {
   DriverEnvironment driver_environment = 1;
-  google.protobuf.Timestamp timestamp = 2;
+  google.protobuf.Timestamp event_time = 2;
   repeated ConnectionAttempt connection_attempts = 3;
   repeated StatementExecution statement_executions = 4;
   repeated ErrorMetric errors = 5;
