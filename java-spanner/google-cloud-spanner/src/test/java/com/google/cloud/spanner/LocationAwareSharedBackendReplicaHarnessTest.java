@@ -67,6 +67,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   private static final String PROJECT = "fake-project";
   private static final String INSTANCE = "fake-instance";
   private static final String DATABASE = "fake-database";
+  private static final AtomicInteger DATABASE_COUNTER = new AtomicInteger();
   private static final String TABLE = "T";
   private static final String REPLICA_LOCATION = "us-east1";
   private static final Statement SEED_QUERY = Statement.of("SELECT 1");
@@ -85,6 +86,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           .build();
   private static SharedBackendReplicaHarness harness;
 
+  // Assigned a fresh value per test so each test uses a distinct database scope. The location-aware
+  // routing layer keeps a process-wide EndpointLatencyRegistry keyed by (databaseScope,
+  // operationUid, ...). Each test builds a new Spanner whose per-channel operationUid counter
+  // restarts at 1, so without a unique scope a prior test's recorded error/latency penalties (e.g.
+  // an aborted commit on the leader) would leak into a later test and skew its routing, making the
+  // routing assertions flaky.
+  private String database;
+
   @BeforeClass
   public static void enableLocationAwareRouting() throws Exception {
     SpannerOptions.useEnvironment(
@@ -100,6 +109,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   @Before
   public void resetHarness() {
     harness.reset();
+    database = DATABASE + "-" + DATABASE_COUNTER.incrementAndGet();
   }
 
   @AfterClass
@@ -118,7 +128,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   public void singleUseReadReroutesOnResourceExhaustedForBypassTraffic() throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedRead(client, harness);
@@ -135,7 +145,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(resultSet.next());
+        assertTrue(drain(resultSet));
       }
 
       String diagnostics = routingDiagnostics(harness);
@@ -154,7 +164,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   public void singleUseReadCooldownSkipsReplicaOnNextRequestForBypassTraffic() throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedRead(client, harness);
@@ -172,7 +182,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(firstRead.next());
+        assertTrue(drain(firstRead));
       }
 
       try (ResultSet secondRead =
@@ -183,7 +193,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(secondRead.next());
+        assertTrue(drain(secondRead));
       }
 
       String diagnostics = routingDiagnostics(harness);
@@ -210,7 +220,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   public void singleUseReadReroutesOnUnavailableForBypassTraffic() throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedRead(client, harness);
@@ -227,7 +237,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(resultSet.next());
+        assertTrue(drain(resultSet));
       }
 
       String diagnostics = routingDiagnostics(harness);
@@ -247,7 +257,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedRead(client, harness);
@@ -264,7 +274,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(firstRead.next());
+        assertTrue(drain(firstRead));
       }
 
       try (ResultSet secondRead =
@@ -275,7 +285,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        assertTrue(secondRead.next());
+        assertTrue(drain(secondRead));
       }
 
       String diagnostics = routingDiagnostics(harness);
@@ -303,7 +313,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, multiRowReadResultSet("b", "c", "d"));
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedRead(client, harness);
@@ -355,11 +365,74 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   }
 
   @Test
+  public void readWriteTransactionInlineBeginOnDefaultKeepsReadOnDefaultForBypassTraffic()
+      throws Exception {
+    try (Spanner spanner = createSpanner(harness)) {
+      configureBackend(harness, singleRowReadResultSet("b"), /* leaderReplicaIndex= */ 1);
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
+
+      seedLocationMetadata(client);
+      waitForReplicaRoutedStrongRead(client, harness, /* expectedReplicaIndex= */ 1);
+      harness.clearRequests();
+
+      client
+          .readWriteTransaction()
+          .run(
+              transaction -> {
+                try (ResultSet resultSet = transaction.executeQuery(SEED_QUERY)) {
+                  assertTrue(drain(resultSet));
+                }
+                try (ResultSet resultSet =
+                    transaction.read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
+                  assertTrue(drain(resultSet));
+                }
+                return null;
+              });
+
+      String diagnostics = routingDiagnostics(harness);
+      assertEquals(
+          "Read after inline begin on default should stay on default.\n" + diagnostics,
+          1,
+          harness
+              .defaultReplica
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          "Direct replicas should not receive the transaction read.\n" + diagnostics,
+          0,
+          harness
+                  .replicas
+                  .get(0)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+                  .size()
+              + harness
+                  .replicas
+                  .get(1)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+                  .size());
+      assertEquals(
+          "Commit should use the default transaction affinity.\n" + diagnostics,
+          1,
+          harness.defaultReplica.getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size());
+      assertEquals(
+          "Direct replicas should not receive commit for the default-pinned transaction.\n"
+              + diagnostics,
+          0,
+          harness.replicas.get(0).getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size()
+              + harness
+                  .replicas
+                  .get(1)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_COMMIT)
+                  .size());
+    }
+  }
+
+  @Test
   public void readWriteTransactionAbortedCommitUsesReadAffinityReplicaForBypassTraffic()
       throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"), /* leaderReplicaIndex= */ 1);
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, database));
 
       seedLocationMetadata(client);
       waitForReplicaRoutedStrongRead(client, harness, /* expectedReplicaIndex= */ 1);
@@ -374,7 +447,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                 int attempt = attempts.incrementAndGet();
                 try (ResultSet resultSet =
                     transaction.read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
-                  assertTrue(resultSet.next());
+                  assertTrue(drain(resultSet));
                 }
 
                 if (attempt == 1) {
@@ -398,7 +471,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
               });
 
       assertEquals(2, attempts.get());
-      assertEquals(1, firstReplicaIndex.get());
+      assertNotEquals(
+          "Expected read-write transaction read to route to a bypass replica.\n"
+              + routingDiagnostics(harness),
+          -1,
+          firstReplicaIndex.get());
       int secondReplicaIndex = 1 - firstReplicaIndex.get();
       assertEquals(
           2,
@@ -482,6 +559,20 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     }
   }
 
+  /**
+   * Fully consumes the result set so the underlying gRPC streaming read closes promptly. Leaving a
+   * stream open keeps the routed endpoint's active-request count above zero, which inflates its
+   * selection cost and can bounce the next request to a different replica, making routing
+   * assertions flaky under load. Returns whether at least one row was seen.
+   */
+  private static boolean drain(ResultSet resultSet) {
+    boolean sawRow = false;
+    while (resultSet.next()) {
+      sawRow = true;
+    }
+    return sawRow;
+  }
+
   private static int waitForReplicaRoutedRead(
       DatabaseClient client, SharedBackendReplicaHarness harness) throws InterruptedException {
     long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
@@ -494,7 +585,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        if (resultSet.next()) {
+        if (drain(resultSet)) {
           for (int replicaIndex = 0; replicaIndex < harness.replicas.size(); replicaIndex++) {
             if (!harness
                 .replicas
@@ -517,17 +608,18 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
     while (System.nanoTime() < deadlineNanos) {
       harness.clearRequests();
+      boolean sawRow;
       try (ResultSet resultSet =
           client.singleUse().read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
-        if (resultSet.next()) {
-          if (!harness
+        sawRow = drain(resultSet);
+      }
+      if (sawRow
+          && !harness
               .replicas
               .get(expectedReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .isEmpty()) {
-            return;
-          }
-        }
+        return;
       }
       Thread.sleep(50L);
     }

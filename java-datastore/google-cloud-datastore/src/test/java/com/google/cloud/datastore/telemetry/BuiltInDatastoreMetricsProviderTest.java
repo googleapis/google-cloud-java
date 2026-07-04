@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -54,7 +55,7 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+    assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
   }
 
   @Test
@@ -69,6 +70,10 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setProjectId(PROJECT_ID)
             .setDatabaseId("test-db")
             .setCredentials(credentials)
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
             .build();
 
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
@@ -96,6 +101,10 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setProjectId(PROJECT_ID)
             .setDatabaseId("test-db")
             .setCredentials(credentials1)
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
             .build();
 
     DatastoreOptions options2 =
@@ -103,6 +112,10 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setProjectId(PROJECT_ID)
             .setDatabaseId("test-db")
             .setCredentials(credentials2)
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
             .build();
 
     OpenTelemetry otel1 = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options1);
@@ -132,9 +145,26 @@ public class BuiltInDatastoreMetricsProviderTest {
               .setCredentials(NoCredentials.getInstance())
               .build();
       OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-      assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+      assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
     } finally {
       System.clearProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     }
+  }
+
+  @Test
+  public void testCreateOpenTelemetry_exportDisabled_returnsNoOp() {
+    Credentials credentials = EasyMock.mock(Credentials.class);
+    EasyMock.replay(credentials);
+
+    DatastoreOptions options =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-db")
+            .setCredentials(credentials)
+            // export is disabled by default
+            .build();
+
+    OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
   }
 }

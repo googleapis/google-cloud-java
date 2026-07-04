@@ -81,6 +81,14 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_DeleteRuleRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_VerifyRuleTextRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_VerifyRuleTextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_VerifyRuleTextResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_VerifyRuleTextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_fieldAccessorTable;
@@ -260,7 +268,15 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
           + "\021DeleteRuleRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
           + "\035chronicle.googleapis.com/Rule\022\022\n"
-          + "\005force\030\002 \001(\010B\003\340A\001\"\251\001\n"
+          + "\005force\030\002 \001(\010B\003\340A\001\"l\n"
+          + "\025VerifyRuleTextRequest\022;\n"
+          + "\010instance\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!chronicle.googleapis.com/Instance\022\026\n"
+          + "\trule_text\030\002 \001(\tB\003\340A\002\"|\n"
+          + "\026VerifyRuleTextResponse\022\017\n"
+          + "\007success\030\001 \001(\010\022Q\n"
+          + "\027compilation_diagnostics\030\003"
+          + " \003(\01320.google.cloud.chronicle.v1.CompilationDiagnostic\"\251\001\n"
           + "\030ListRuleRevisionsRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
           + "\035chronicle.googleapis.com/Rule\022\021\n"
@@ -280,7 +296,8 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
           + "\025ListRetrohuntsRequest\022:\n"
           + "\006parent\030\001 \001("
           + "\tB*\340A\002\372A$\022\"chronicle.googleapis.com/Retrohunt\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n"
+          + "\n"
           + "page_token\030\003 \001(\t\022\016\n"
           + "\006filter\030\004 \001(\t\"k\n"
           + "\026ListRetrohuntsResponse\0228\n\n"
@@ -290,14 +307,14 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
           + "\'chronicle.googleapis.com/RuleDeployment\"\224\001\n"
           + "\032ListRuleDeploymentsRequest\022?\n"
-          + "\006parent\030\001 \001("
-          + "\tB/\340A\002\372A)\022\'chronicle.googleapis.com/RuleDeployment\022\021\n"
+          + "\006parent\030\001 \001(\t"
+          + "B/\340A\002\372A)\022\'chronicle.googleapis.com/RuleDeployment\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\016\n"
           + "\006filter\030\004 \001(\t\"{\n"
           + "\033ListRuleDeploymentsResponse\022C\n"
-          + "\020rule_deployments\030\001"
-          + " \003(\0132).google.cloud.chronicle.v1.RuleDeployment\022\027\n"
+          + "\020rule_deployments\030\001 \003("
+          + "\0132).google.cloud.chronicle.v1.RuleDeployment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\234\001\n"
           + "\033UpdateRuleDeploymentRequest\022G\n"
           + "\017rule_deployment\030\001"
@@ -343,61 +360,68 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
           + "\025RULE_VIEW_UNSPECIFIED\020\000\022\t\n"
           + "\005BASIC\020\001\022\010\n"
           + "\004FULL\020\002\022\032\n"
-          + "\026REVISION_METADATA_ONLY\020\0032\251\023\n"
+          + "\026REVISION_METADATA_ONLY\020\0032\342\025\n"
           + "\013RuleService\022\256\001\n\n"
-          + "CreateRule\022,.google.cloud.chronicle.v1.CreateRuleRequest\032\037"
-          + ".google.cloud.chronicle.v1.Rule\"Q\332A\013pare"
-          + "nt,rule\202\323\344\223\002=\"5/v1/{parent=projects/*/locations/*/instances/*}/rules:\004rule\022\233\001\n"
-          + "\007GetRule\022).google.cloud.chronicle.v1.GetRu"
-          + "leRequest\032\037.google.cloud.chronicle.v1.Ru"
-          + "le\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/*/locations/*/instances/*/rules/*}\022\256\001\n"
-          + "\tListRules\022+.google.cloud.chronicle.v1.ListR"
-          + "ulesRequest\032,.google.cloud.chronicle.v1."
-          + "ListRulesResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/"
-          + "{parent=projects/*/locations/*/instances/*}/rules\022\270\001\n\n"
-          + "UpdateRule\022,.google.cloud.chronicle.v1.UpdateRuleRequest\032\037.google."
-          + "cloud.chronicle.v1.Rule\"[\332A\020rule,update_"
-          + "mask\202\323\344\223\002B2:/v1/{rule.name=projects/*/locations/*/instances/*/rules/*}:\004rule\022\230\001\n"
-          + "\n"
-          + "DeleteRule\022,.google.cloud.chronicle.v1."
-          + "DeleteRuleRequest\032\026.google.protobuf.Empt"
-          + "y\"D\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/locations/*/instances/*/rules/*}\022\322\001\n"
-          + "\021ListRuleRevisions\0223.google.cloud.chronicle.v"
-          + "1.ListRuleRevisionsRequest\0324.google.cloud.chronicle.v1.ListRuleRevisionsResponse"
-          + "\"R\332A\004name\202\323\344\223\002E\022C/v1/{name=projects/*/lo"
-          + "cations/*/instances/*/rules/*}:listRevisions\022\357\001\n"
-          + "\017CreateRetrohunt\0221.google.cloud."
-          + "chronicle.v1.CreateRetrohuntRequest\032\035.google.longrunning.Operation\"\211\001\312A\036\n"
-          + "\tRetrohunt\022\021RetrohuntMetadata\332A\020parent,retrohun"
-          + "t\202\323\344\223\002O\"B/v1/{parent=projects/*/locations/*/instances/*/rules/*}/retrohunts:"
-          + "\tretrohunt\022\267\001\n"
-          + "\014GetRetrohunt\022..google.cloud.chronicle.v1.GetRetrohuntRequest\032$.google"
-          + ".cloud.chronicle.v1.Retrohunt\"Q\332A\004name\202\323"
-          + "\344\223\002D\022B/v1/{name=projects/*/locations/*/instances/*/rules/*/retrohunts/*}\022\312\001\n"
-          + "\016ListRetrohunts\0220.google.cloud.chronicle.v1."
-          + "ListRetrohuntsRequest\0321.google.cloud.chr"
-          + "onicle.v1.ListRetrohuntsResponse\"S\332A\006par"
-          + "ent\202\323\344\223\002D\022B/v1/{parent=projects/*/locati"
-          + "ons/*/instances/*/rules/*}/retrohunts\022\304\001\n"
-          + "\021GetRuleDeployment\0223.google.cloud.chron"
-          + "icle.v1.GetRuleDeploymentRequest\032).googl"
-          + "e.cloud.chronicle.v1.RuleDeployment\"O\332A\004"
-          + "name\202\323\344\223\002B\022@/v1/{name=projects/*/locations/*/instances/*/rules/*/deployment}\022\332\001\n"
-          + "\023ListRuleDeployments\0225.google.cloud.chro"
-          + "nicle.v1.ListRuleDeploymentsRequest\0326.google.cloud.chronicle.v1.ListRuleDeployme"
-          + "ntsResponse\"T\332A\006parent\202\323\344\223\002E\022C/v1/{paren"
-          + "t=projects/*/locations/*/instances/*/rules/*}/deployments\022\203\002\n"
-          + "\024UpdateRuleDeployment\0226.google.cloud.chronicle.v1.UpdateRul"
-          + "eDeploymentRequest\032).google.cloud.chroni"
-          + "cle.v1.RuleDeployment\"\207\001\332A\033rule_deployme"
-          + "nt,update_mask\202\323\344\223\002c2P/v1/{rule_deployme"
-          + "nt.name=projects/*/locations/*/instances/*/rules/*/deployment}:\017rule_deployment\032"
-          + "L\312A\030chronicle.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\300\001\n"
-          + "\035com.google.cloud.chronicle.v1B\tRuleProtoP\001Z;cloud.google.com/go/chronicle/apiv"
-          + "1/chroniclepb;chroniclepb\252\002\031Google.Cloud"
-          + ".Chronicle.V1\312\002\031Google\\Cloud\\Chronicle\\V"
-          + "1\352\002\034Google::Cloud::Chronicle::V1b\006proto3"
+          + "CreateRule\022,.google.cloud.chronicle.v1.CreateRuleRequest\032\037.goo"
+          + "gle.cloud.chronicle.v1.Rule\"Q\332A\013parent,r"
+          + "ule\202\323\344\223\002=\"5/v1/{parent=projects/*/locations/*/instances/*}/rules:\004rule\022\233\001\n"
+          + "\007GetRule\022).google.cloud.chronicle.v1.GetRuleRe"
+          + "quest\032\037.google.cloud.chronicle.v1.Rule\"D"
+          + "\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/*/locations/*/instances/*/rules/*}\022\256\001\n"
+          + "\tListRules\022+.google.cloud.chronicle.v1.ListRules"
+          + "Request\032,.google.cloud.chronicle.v1.List"
+          + "RulesResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{par"
+          + "ent=projects/*/locations/*/instances/*}/rules\022\270\001\n\n"
+          + "UpdateRule\022,.google.cloud.chronicle.v1.UpdateRuleRequest\032\037.google.clou"
+          + "d.chronicle.v1.Rule\"[\332A\020rule,update_mask"
+          + "\202\323\344\223\002B2:/v1/{rule.name=projects/*/locations/*/instances/*/rules/*}:\004rule\022\230\001\n\n"
+          + "DeleteRule\022,.google.cloud.chronicle.v1.Dele"
+          + "teRuleRequest\032\026.google.protobuf.Empty\"D\332"
+          + "A\004name\202\323\344\223\0027*5/v1/{name=projects/*/locations/*/instances/*/rules/*}\022\327\001\n"
+          + "\016VerifyRuleText\0220.google.cloud.chronicle.v1.Verif"
+          + "yRuleTextRequest\0321.google.cloud.chronicl"
+          + "e.v1.VerifyRuleTextResponse\"`\332A\022instance"
+          + ",rule_text\202\323\344\223\002E\"@/v1/{instance=projects"
+          + "/*/locations/*/instances/*}:verifyRuleText:\001*\022\322\001\n"
+          + "\021ListRuleRevisions\0223.google.cloud.chronicle.v1.ListRuleRevisionsRequest"
+          + "\0324.google.cloud.chronicle.v1.ListRuleRev"
+          + "isionsResponse\"R\332A\004name\202\323\344\223\002E\022C/v1/{name"
+          + "=projects/*/locations/*/instances/*/rules/*}:listRevisions\022\357\001\n"
+          + "\017CreateRetrohunt\0221.google.cloud.chronicle.v1.CreateRetrohu"
+          + "ntRequest\032\035.google.longrunning.Operation\"\211\001\312A\036\n"
+          + "\tRetrohunt\022\021RetrohuntMetadata\332A\020p"
+          + "arent,retrohunt\202\323\344\223\002O\"B/v1/{parent=proje"
+          + "cts/*/locations/*/instances/*/rules/*}/retrohunts:\tretrohunt\022\267\001\n"
+          + "\014GetRetrohunt\022..google.cloud.chronicle.v1.GetRetrohuntRe"
+          + "quest\032$.google.cloud.chronicle.v1.Retroh"
+          + "unt\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=projects/*"
+          + "/locations/*/instances/*/rules/*/retrohunts/*}\022\312\001\n"
+          + "\016ListRetrohunts\0220.google.cloud.chronicle.v1.ListRetrohuntsRequest\0321.go"
+          + "ogle.cloud.chronicle.v1.ListRetrohuntsRe"
+          + "sponse\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=pro"
+          + "jects/*/locations/*/instances/*/rules/*}/retrohunts\022\304\001\n"
+          + "\021GetRuleDeployment\0223.google.cloud.chronicle.v1.GetRuleDeploymentR"
+          + "equest\032).google.cloud.chronicle.v1.RuleD"
+          + "eployment\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=proj"
+          + "ects/*/locations/*/instances/*/rules/*/deployment}\022\332\001\n"
+          + "\023ListRuleDeployments\0225.google.cloud.chronicle.v1.ListRuleDeploymen"
+          + "tsRequest\0326.google.cloud.chronicle.v1.Li"
+          + "stRuleDeploymentsResponse\"T\332A\006parent\202\323\344\223"
+          + "\002E\022C/v1/{parent=projects/*/locations/*/instances/*/rules/*}/deployments\022\203\002\n"
+          + "\024UpdateRuleDeployment\0226.google.cloud.chronicl"
+          + "e.v1.UpdateRuleDeploymentRequest\032).googl"
+          + "e.cloud.chronicle.v1.RuleDeployment\"\207\001\332A"
+          + "\033rule_deployment,update_mask\202\323\344\223\002c2P/v1/"
+          + "{rule_deployment.name=projects/*/locations/*/instances/*/rules/*/deployment}:\017ru"
+          + "le_deployment\032\252\001\312A\030chronicle.googleapis."
+          + "com\322A\213\001https://www.googleapis.com/auth/c"
+          + "hronicle,https://www.googleapis.com/auth"
+          + "/chronicle.readonly,https://www.googleapis.com/auth/cloud-platformB\300\001\n"
+          + "\035com.google.cloud.chronicle.v1B\tRuleProtoP\001Z;cloud"
+          + ".google.com/go/chronicle/apiv1/chronicle"
+          + "pb;chroniclepb\252\002\031Google.Cloud.Chronicle."
+          + "V1\312\002\031Google\\Cloud\\Chronicle\\V1\352\002\034Google:"
+          + ":Cloud::Chronicle::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -518,8 +542,24 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "Force",
             });
-    internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_descriptor =
+    internal_static_google_cloud_chronicle_v1_VerifyRuleTextRequest_descriptor =
         getDescriptor().getMessageType(9);
+    internal_static_google_cloud_chronicle_v1_VerifyRuleTextRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_VerifyRuleTextRequest_descriptor,
+            new java.lang.String[] {
+              "Instance", "RuleText",
+            });
+    internal_static_google_cloud_chronicle_v1_VerifyRuleTextResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_chronicle_v1_VerifyRuleTextResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_VerifyRuleTextResponse_descriptor,
+            new java.lang.String[] {
+              "Success", "CompilationDiagnostics",
+            });
+    internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_descriptor =
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRuleRevisionsRequest_descriptor,
@@ -527,7 +567,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Name", "PageSize", "PageToken", "View",
             });
     internal_static_google_cloud_chronicle_v1_ListRuleRevisionsResponse_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_chronicle_v1_ListRuleRevisionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRuleRevisionsResponse_descriptor,
@@ -535,7 +575,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Rules", "NextPageToken",
             });
     internal_static_google_cloud_chronicle_v1_CreateRetrohuntRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_chronicle_v1_CreateRetrohuntRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_CreateRetrohuntRequest_descriptor,
@@ -543,7 +583,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Retrohunt",
             });
     internal_static_google_cloud_chronicle_v1_GetRetrohuntRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_chronicle_v1_GetRetrohuntRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_GetRetrohuntRequest_descriptor,
@@ -551,7 +591,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_chronicle_v1_ListRetrohuntsRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_chronicle_v1_ListRetrohuntsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRetrohuntsRequest_descriptor,
@@ -559,7 +599,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_chronicle_v1_ListRetrohuntsResponse_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_chronicle_v1_ListRetrohuntsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRetrohuntsResponse_descriptor,
@@ -567,7 +607,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Retrohunts", "NextPageToken",
             });
     internal_static_google_cloud_chronicle_v1_GetRuleDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_chronicle_v1_GetRuleDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_GetRuleDeploymentRequest_descriptor,
@@ -575,7 +615,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsRequest_descriptor,
@@ -583,7 +623,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsResponse_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListRuleDeploymentsResponse_descriptor,
@@ -591,7 +631,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "RuleDeployments", "NextPageToken",
             });
     internal_static_google_cloud_chronicle_v1_UpdateRuleDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_chronicle_v1_UpdateRuleDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_UpdateRuleDeploymentRequest_descriptor,
@@ -599,7 +639,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "RuleDeployment", "UpdateMask",
             });
     internal_static_google_cloud_chronicle_v1_CompilationPosition_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_chronicle_v1_CompilationPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_CompilationPosition_descriptor,
@@ -607,7 +647,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "StartLine", "StartColumn", "EndLine", "EndColumn",
             });
     internal_static_google_cloud_chronicle_v1_CompilationDiagnostic_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_chronicle_v1_CompilationDiagnostic_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_CompilationDiagnostic_descriptor,
@@ -615,7 +655,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Message", "Position", "Severity", "Uri",
             });
     internal_static_google_cloud_chronicle_v1_Severity_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_chronicle_v1_Severity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_Severity_descriptor,
@@ -623,7 +663,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "DisplayName",
             });
     internal_static_google_cloud_chronicle_v1_RetrohuntMetadata_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_chronicle_v1_RetrohuntMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_RetrohuntMetadata_descriptor,
@@ -631,7 +671,7 @@ public final class RuleProto extends com.google.protobuf.GeneratedFile {
               "Retrohunt", "ExecutionInterval", "ProgressPercentage",
             });
     internal_static_google_cloud_chronicle_v1_InputsUsed_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_chronicle_v1_InputsUsed_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_InputsUsed_descriptor,

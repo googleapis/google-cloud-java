@@ -25,35 +25,33 @@ import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.MaterializedViewAsync;
 import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
 import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
-import com.google.cloud.bigtable.data.v2.internal.compat.Util;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
-import com.google.common.cache.LoadingCache;
 import io.grpc.Deadline;
 import java.util.concurrent.CompletableFuture;
 
 public class ReadRowShimInner implements UnaryShim<Query, SessionReadRowResponse> {
-  private final LoadingCache<TableId, TableAsync> tables;
-  private final LoadingCache<AuthorizedViewId, AuthorizedViewAsync> authViews;
-  private final LoadingCache<MaterializedViewId, MaterializedViewAsync> matViews;
+  private final SessionPoolMap<TableId, TableAsync> tables;
+  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
+  private final SessionPoolMap<MaterializedViewId, MaterializedViewAsync> matViews;
 
   public ReadRowShimInner(Client client) {
     tables =
-        Util.createSessionMap(
+        new SessionPoolMap<>(
             k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_READ));
     authViews =
-        Util.createSessionMap(
+        new SessionPoolMap<>(
             k ->
                 client.openAuthorizedViewAsync(
                     k.getTableId(),
                     k.getAuthorizedViewId(),
                     OpenAuthorizedViewRequest.Permission.PERMISSION_READ));
     matViews =
-        Util.createSessionMap(
+        new SessionPoolMap<>(
             k ->
                 client.openMaterializedViewAsync(
                     k.getMaterializedViewId(),
@@ -73,11 +71,11 @@ public class ReadRowShimInner implements UnaryShim<Query, SessionReadRowResponse
     SessionPool<?> pool;
     // TODO avoid double lookup
     if (targetId instanceof TableId) {
-      pool = tables.getUnchecked((TableId) targetId).getSessionPool();
+      pool = tables.get((TableId) targetId).getSessionPool();
     } else if (targetId instanceof AuthorizedViewId) {
-      pool = authViews.getUnchecked((AuthorizedViewId) targetId).getSessionPool();
+      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
     } else if (targetId instanceof MaterializedViewId) {
-      pool = matViews.getUnchecked((MaterializedViewId) targetId).getSessionPool();
+      pool = matViews.get((MaterializedViewId) targetId).getSessionPool();
     } else {
       return false;
     }
@@ -95,13 +93,13 @@ public class ReadRowShimInner implements UnaryShim<Query, SessionReadRowResponse
     SessionReadRowRequest innerReq = query.toSessionPointProto();
 
     if (targetId instanceof TableId) {
-      return tables.getUnchecked((TableId) targetId).readRow(innerReq, deadline);
+      return tables.apply((TableId) targetId, t -> t.readRow(innerReq, deadline));
     }
     if (targetId instanceof AuthorizedViewId) {
-      return authViews.getUnchecked((AuthorizedViewId) targetId).readRow(innerReq, deadline);
+      return authViews.apply((AuthorizedViewId) targetId, v -> v.readRow(innerReq, deadline));
     }
     if (targetId instanceof MaterializedViewId) {
-      return matViews.getUnchecked((MaterializedViewId) targetId).readRow(innerReq, deadline);
+      return matViews.apply((MaterializedViewId) targetId, v -> v.readRow(innerReq, deadline));
     }
 
     CompletableFuture<SessionReadRowResponse> f = new CompletableFuture<>();

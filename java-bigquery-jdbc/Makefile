@@ -1,9 +1,11 @@
 SHELL := /bin/bash # Default 'sh' doesn't support 'source'
 BUILD_BRANCH=main
 CONTAINER_NAME=jdbc
+PROXY_CONTAINER_NAME=$(CONTAINER_NAME)-proxy
 PACKAGE_DESTINATION=$(PWD)/drivers
 SRC="$(PWD)"
 skipSurefire ?= true
+skipShade ?= true
 JDBC_DRIVER_VERSION = $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 JDBC_JAR = $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
 
@@ -33,13 +35,14 @@ unittest: |
 		-Dtest=$(test) \
 		test
 
-# Important: By default, this command will skip unittests.
+# Important: By default, this command will skip unittests & uberjar build.
 # To include unit tests, run: make integration-test skipSurefire=false
 integration-test:
 	mvn -B -ntp \
 		-Penable-integration-tests \
 		-DtrimStackTrace=false \
 		-DskipSurefire=$(skipSurefire) \
+		-DskipShade=$(skipShade) \
 		-Dclirr.skip=true \
 		-Denforcer.skip=true \
 		-Dit.failIfNoSpecifiedTests=true \
@@ -76,6 +79,7 @@ run-it-standalone:
 # Commands for dockerized environments
 .docker-run: | 
 	docker run -it \
+		--cap-add=NET_ADMIN \
 		-v $(GOOGLE_APPLICATION_CREDENTIALS):/auth/application_creds.json \
 		-v "$(GOOGLE_APPLICATION_CREDENTIALS).p12":/auth/application_creds.p12 \
 		-e "GOOGLE_APPLICATION_CREDENTIALS=/auth/application_creds.json" \
@@ -83,13 +87,21 @@ run-it-standalone:
 		-e "SA_EMAIL=test_email" \
 		-e "SA_SECRET=/auth/application_creds.json" \
 		-e "SA_SECRET_P12=/auth/application_creds.p12" \
+		-e "BIGQUERY_BASE_URL=$(BIGQUERY_BASE_URL)" \
+		-e "BIGQUERY_URL_FLAGS=$(BIGQUERY_URL_FLAGS)" \
 		$(CONTAINER_NAME) $(args)
 
 docker-build:
-	docker build -t $(CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
+	docker build --target regular -t $(CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
+
+docker-proxy-build:
+	docker build --target proxy -t $(PROXY_CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
 
 docker-session:
 	$(MAKE) .docker-run args="bash"
+
+docker-proxy-session:
+	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash"
 
 docker-package-all-dependencies: docker-build
 	mkdir -p $(PACKAGE_DESTINATION)
@@ -133,6 +145,9 @@ docker-unittest: |
 
 docker-integration-test: .check-env
 	$(MAKE) .docker-run args="make integration-test test=$(test) skipSurefire=$(skipSurefire)"
+
+docker-proxy-integration-test: .check-env docker-proxy-build
+	$(MAKE) docker-integration-test CONTAINER_NAME=$(PROXY_CONTAINER_NAME) BIGQUERY_URL_FLAGS="ProxyHost=127.0.0.1;ProxyPort=3128;"
 
 docker-coverage: 
 	$(MAKE) .docker-run args="make unit-test-coverage"

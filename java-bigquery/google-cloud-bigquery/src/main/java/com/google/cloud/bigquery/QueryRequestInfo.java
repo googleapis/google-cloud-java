@@ -21,10 +21,10 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 final class QueryRequestInfo {
@@ -45,6 +45,7 @@ final class QueryRequestInfo {
   private final JobCreationMode jobCreationMode;
   private final DataFormatOptions formatOptions;
   private final String reservation;
+  private final Long jobTimeoutMs;
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
@@ -64,22 +65,26 @@ final class QueryRequestInfo {
     this.jobCreationMode = config.getJobCreationMode();
     this.formatOptions = dataFormatOptions.toPb();
     this.reservation = config.getReservation();
+    this.jobTimeoutMs = config.getJobTimeoutMs();
   }
 
-  boolean isFastQuerySupported(JobId jobId) {
-    // Fast query path is not possible if job is specified in the JobID object
-    // Respect Job field value in JobId specified by user.
-    // Specifying it will force the query to take the slower path.
-    if (jobId != null) {
-      if (jobId.getJob() != null) {
-        return false;
-      }
-    }
+  /**
+   * Determines if the query can be executed via the "fast query" path (jobs.query API) instead of
+   * the "slow path" (jobs.insert API followed by jobs.getQueryResults).
+   *
+   * <p>The fast query path is preferred because it completes in a single RPC, significantly
+   * reducing end-to-end latency for small queries.
+   *
+   * <p>However, the jobs.query API does not support all configuration options available in
+   * jobs.insert (e.g., destination table, clustering, time partitioning). This method checks the
+   * QueryJobConfiguration for any unsupported options. If any are present, we must fall back to the
+   * jobs.insert path.
+   */
+  boolean isFastQuerySupported() {
     return config.getClustering() == null
         && config.getCreateDisposition() == null
         && config.getDestinationEncryptionConfiguration() == null
         && config.getDestinationTable() == null
-        && config.getJobTimeoutMs() == null
         && config.getMaximumBillingTier() == null
         && config.getPriority() == null
         && config.getRangePartitioning() == null
@@ -134,6 +139,9 @@ final class QueryRequestInfo {
     if (reservation != null) {
       request.setReservation(reservation);
     }
+    if (jobTimeoutMs != null) {
+      request.setJobTimeoutMs(jobTimeoutMs);
+    }
     return request;
   }
 
@@ -155,12 +163,13 @@ final class QueryRequestInfo {
         .add("jobCreationMode", jobCreationMode)
         .add("formatOptions", formatOptions.getUseInt64Timestamp())
         .add("reservation", reservation)
+        .add("jobTimeoutMs", jobTimeoutMs)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(
+    return Objects.hash(
         connectionProperties,
         defaultDataset,
         dryRun,
@@ -175,14 +184,34 @@ final class QueryRequestInfo {
         useLegacySql,
         jobCreationMode,
         formatOptions,
-        reservation);
+        reservation,
+        jobTimeoutMs);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj != null
-            && obj.getClass().equals(QueryRequestInfo.class)
-            && java.util.Objects.equals(toPb(), ((QueryRequestInfo) obj).toPb());
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(QueryRequestInfo.class)) {
+      return false;
+    }
+    QueryRequestInfo other = (QueryRequestInfo) obj;
+    return Objects.equals(connectionProperties, other.connectionProperties)
+        && Objects.equals(defaultDataset, other.defaultDataset)
+        && Objects.equals(dryRun, other.dryRun)
+        && Objects.equals(labels, other.labels)
+        && Objects.equals(maximumBytesBilled, other.maximumBytesBilled)
+        && Objects.equals(maxResults, other.maxResults)
+        && Objects.equals(query, other.query)
+        && Objects.equals(queryParameters, other.queryParameters)
+        && Objects.equals(requestId, other.requestId)
+        && Objects.equals(createSession, other.createSession)
+        && Objects.equals(useQueryCache, other.useQueryCache)
+        && Objects.equals(useLegacySql, other.useLegacySql)
+        && Objects.equals(jobCreationMode, other.jobCreationMode)
+        && Objects.equals(formatOptions, other.formatOptions)
+        && Objects.equals(reservation, other.reservation)
+        && Objects.equals(jobTimeoutMs, other.jobTimeoutMs);
   }
 }

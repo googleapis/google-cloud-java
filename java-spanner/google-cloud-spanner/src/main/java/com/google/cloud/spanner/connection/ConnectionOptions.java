@@ -42,6 +42,8 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_GR
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENCODED_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIME;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIMEOUT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionProperties.LENIENT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.MAX_COMMIT_DELAY;
@@ -89,12 +91,14 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
@@ -154,6 +158,8 @@ public class ConnectionOptions {
   static final boolean DEFAULT_USE_PLAIN_TEXT = false;
   static final boolean DEFAULT_IS_EXPERIMENTAL_HOST = false;
   static final SpannerOptions.InstanceType DEFAULT_TYPE = SpannerOptions.InstanceType.CLOUD;
+  static final String DEFAULT_USERNAME = "";
+  static final String DEFAULT_PASSWORD = "";
   static final boolean DEFAULT_AUTOCOMMIT = true;
   static final boolean DEFAULT_READONLY = false;
   static final boolean DEFAULT_RETRY_ABORTS_INTERNALLY = true;
@@ -224,6 +230,12 @@ public class ConnectionOptions {
   /** The type of Spanner instance to connect to (cloud, omni, or emulator). */
   public static final String TYPE_PROPERTY_NAME = "type";
 
+  /** Username for OPAQUE login */
+  public static final String USERNAME_PROPERTY_NAME = "username";
+
+  /** Password for OPAQUE login */
+  public static final String PASSWORD_PROPERTY_NAME = "password";
+
   /** Client certificate path to establish mTLS */
   static final String CLIENT_CERTIFICATE_PROPERTY_NAME = "clientCertificate";
 
@@ -268,6 +280,12 @@ public class ConnectionOptions {
    * OAuth token to use for authentication. Cannot be used in combination with a credentials file.
    */
   public static final String OAUTH_TOKEN_PROPERTY_NAME = "oauthToken";
+
+  /** Name of the 'grpcKeepAliveTime' connection property. */
+  public static final String GRPC_KEEPALIVE_TIME_PROPERTY_NAME = "grpcKeepAliveTime";
+
+  /** Name of the 'grpcKeepAliveTimeout' connection property. */
+  public static final String GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME = "grpcKeepAliveTimeout";
 
   /** Name of the 'minSessions' connection property. */
   public static final String MIN_SESSIONS_PROPERTY_NAME = "minSessions";
@@ -775,6 +793,8 @@ public class ConnectionOptions {
             System.getenv());
     GoogleCredentials defaultSpannerOmniCredentials =
         SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
+    String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
+    String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
@@ -783,14 +803,29 @@ public class ConnectionOptions {
         && getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) == null
         && getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
         && getInitialConnectionPropertyValue(OAUTH_TOKEN) == null
+        && Strings.isNullOrEmpty(getInitialConnectionPropertyValue(ConnectionProperties.USERNAME))
         && usePlainText) {
       this.credentials = NoCredentials.getInstance();
     } else if (getInitialConnectionPropertyValue(OAUTH_TOKEN) != null) {
       this.credentials =
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
-    } else if ((isSpannerOmniPattern || isSpannerOmni()) && defaultSpannerOmniCredentials != null) {
-      this.credentials = defaultSpannerOmniCredentials;
+    } else if (isSpannerOmniPattern || isSpannerOmni()) {
+      if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
+        SecretBytes secretBytes =
+            SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
+        this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
+        // Clear the password from the initial connection state to allow it to be GC'd.
+        this.initialConnectionState.setValue(
+            ConnectionProperties.PASSWORD,
+            DEFAULT_PASSWORD,
+            ConnectionProperty.Context.STARTUP,
+            /* inTransaction= */ false);
+      } else if (defaultSpannerOmniCredentials != null) {
+        this.credentials = defaultSpannerOmniCredentials;
+      } else {
+        this.credentials = NoCredentials.getInstance();
+      }
     } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {
       try {
         this.credentials = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getCredentials();
@@ -1054,6 +1089,16 @@ public class ConnectionOptions {
   /** The number of channels to use for the connection. */
   public Integer getNumChannels() {
     return getInitialConnectionPropertyValue(NUM_CHANNELS);
+  }
+
+  /** The gRPC keepalive time for this connection. */
+  public Duration getGrpcKeepAliveTime() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIME);
+  }
+
+  /** The gRPC keepalive timeout for this connection. */
+  public Duration getGrpcKeepAliveTimeout() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIMEOUT);
   }
 
   /** Whether dynamic channel pooling is enabled for this connection. */

@@ -20,6 +20,7 @@
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
     <module>java-advisorynotifications</module>
+    <module>java-agentregistry</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
     <module>java-alloydb-connectors</module>
@@ -69,6 +70,7 @@
     <module>java-channel</module>
     <module>java-chat</module>
     <module>java-chronicle</module>
+    <module>java-cloud-bom</module>
     <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
@@ -221,6 +223,7 @@
     <module>java-service-usage</module>
     <module>java-servicedirectory</module>
     <module>java-servicehealth</module>
+    <module>java-shared-config</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
     <module>java-shopping-merchant-accounts</module>
