@@ -485,6 +485,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetImportJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "publicKeyFormat", request.getPublicKeyFormatValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

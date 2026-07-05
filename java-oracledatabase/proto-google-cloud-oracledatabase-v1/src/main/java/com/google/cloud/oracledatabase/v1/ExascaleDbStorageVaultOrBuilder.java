@@ -290,4 +290,40 @@ public interface ExascaleDbStorageVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Exadata Infrastructure resource on which
+   * ExascaleDbStorageVault
+   * resource is created, in the following format:
+   * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+   * </pre>
+   *
+   * <code>
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The exadataInfrastructure.
+   */
+  java.lang.String getExadataInfrastructure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Exadata Infrastructure resource on which
+   * ExascaleDbStorageVault
+   * resource is created, in the following format:
+   * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+   * </pre>
+   *
+   * <code>
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for exadataInfrastructure.
+   */
+  com.google.protobuf.ByteString getExadataInfrastructureBytes();
 }

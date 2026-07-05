@@ -791,7 +791,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -810,7 +810,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -1571,6 +1571,47 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfoOrBuilder
       getNgfwPacketInspectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return Whether the dmsPrivateConnection field is set.
+   */
+  boolean hasDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfo getDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+      getDmsPrivateConnectionOrBuilder();
 
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

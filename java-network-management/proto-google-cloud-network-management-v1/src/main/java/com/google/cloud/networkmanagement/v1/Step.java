@@ -278,6 +278,16 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a DMS Private Connection.
+     * </pre>
+     *
+     * <code>START_FROM_DMS_PRIVATE_CONNECTION = 48;</code>
+     */
+    START_FROM_DMS_PRIVATE_CONNECTION(48),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -812,6 +822,17 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a DMS Private Connection.
+     * </pre>
+     *
+     * <code>START_FROM_DMS_PRIVATE_CONNECTION = 48;</code>
+     */
+    public static final int START_FROM_DMS_PRIVATE_CONNECTION_VALUE = 48;
+
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -1208,6 +1229,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return START_FROM_PSC_PUBLISHED_SERVICE;
         case 31:
           return START_FROM_SERVERLESS_NEG;
+        case 48:
+          return START_FROM_DMS_PRIVATE_CONNECTION;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -1368,6 +1391,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     STORAGE_BUCKET(28),
     SERVERLESS_NEG(29),
     NGFW_PACKET_INSPECTION(42),
+    DMS_PRIVATE_CONNECTION(43),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -1461,6 +1485,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return SERVERLESS_NEG;
         case 42:
           return NGFW_PACKET_INSPECTION;
+        case 43:
+          return DMS_PRIVATE_CONNECTION;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -2611,7 +2637,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2633,7 +2659,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -3740,6 +3766,64 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfo.getDefaultInstance();
   }
 
+  public static final int DMS_PRIVATE_CONNECTION_FIELD_NUMBER = 43;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return Whether the dmsPrivateConnection field is set.
+   */
+  @java.lang.Override
+  public boolean hasDmsPrivateConnection() {
+    return stepInfoCase_ == 43;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo getDmsPrivateConnection() {
+    if (stepInfoCase_ == 43) {
+      return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+      getDmsPrivateConnectionOrBuilder() {
+    if (stepInfoCase_ == 43) {
+      return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3885,6 +3969,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     if (stepInfoCase_ == 42) {
       output.writeMessage(
           42, (com.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 43) {
+      output.writeMessage(
+          43, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
     }
     if (stepInfoCase_ == 45) {
       output.writeMessage(45, (com.google.cloud.networkmanagement.v1.CloudRunJobInfo) stepInfo_);
@@ -4091,6 +4179,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42, (com.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 43) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              43, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
+    }
     if (stepInfoCase_ == 45) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4230,6 +4323,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         break;
       case 42:
         if (!getNgfwPacketInspection().equals(other.getNgfwPacketInspection())) return false;
+        break;
+      case 43:
+        if (!getDmsPrivateConnection().equals(other.getDmsPrivateConnection())) return false;
         break;
       case 0:
       default:
@@ -4401,6 +4497,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       case 42:
         hash = (37 * hash) + NGFW_PACKET_INSPECTION_FIELD_NUMBER;
         hash = (53 * hash) + getNgfwPacketInspection().hashCode();
+        break;
+      case 43:
+        hash = (37 * hash) + DMS_PRIVATE_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDmsPrivateConnection().hashCode();
         break;
       case 0:
       default:
@@ -4662,6 +4762,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       if (ngfwPacketInspectionBuilder_ != null) {
         ngfwPacketInspectionBuilder_.clear();
       }
+      if (dmsPrivateConnectionBuilder_ != null) {
+        dmsPrivateConnectionBuilder_.clear();
+      }
       stepInfoCase_ = 0;
       stepInfo_ = null;
       return this;
@@ -4835,6 +4938,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       }
       if (stepInfoCase_ == 42 && ngfwPacketInspectionBuilder_ != null) {
         result.stepInfo_ = ngfwPacketInspectionBuilder_.build();
+      }
+      if (stepInfoCase_ == 43 && dmsPrivateConnectionBuilder_ != null) {
+        result.stepInfo_ = dmsPrivateConnectionBuilder_.build();
       }
     }
 
@@ -5050,6 +5156,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         case NGFW_PACKET_INSPECTION:
           {
             mergeNgfwPacketInspection(other.getNgfwPacketInspection());
+            break;
+          }
+        case DMS_PRIVATE_CONNECTION:
+          {
+            mergeDmsPrivateConnection(other.getDmsPrivateConnection());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -5356,6 +5467,13 @@ public final class Step extends com.google.protobuf.GeneratedMessage
                 stepInfoCase_ = 42;
                 break;
               } // case 338
+            case 346:
+              {
+                input.readMessage(
+                    internalGetDmsPrivateConnectionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 43;
+                break;
+              } // case 346
             case 362:
               {
                 input.readMessage(
@@ -9636,7 +9754,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=315
+     *     google/cloud/networkmanagement/v1/trace.proto;l=318
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -9658,7 +9776,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=315
+     *     google/cloud/networkmanagement/v1/trace.proto;l=318
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -14206,6 +14324,240 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       stepInfoCase_ = 42;
       onChanged();
       return ngfwPacketInspectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>
+        dmsPrivateConnectionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     *
+     * @return Whether the dmsPrivateConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasDmsPrivateConnection() {
+      return stepInfoCase_ == 43;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     *
+     * @return The dmsPrivateConnection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo getDmsPrivateConnection() {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 43) {
+          return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 43) {
+          return dmsPrivateConnectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    public Builder setDmsPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo value) {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        dmsPrivateConnectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    public Builder setDmsPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder builderForValue) {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        dmsPrivateConnectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    public Builder mergeDmsPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo value) {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 43
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.PrivateConnectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 43) {
+          dmsPrivateConnectionBuilder_.mergeFrom(value);
+        } else {
+          dmsPrivateConnectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    public Builder clearDmsPrivateConnection() {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 43) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 43) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        dmsPrivateConnectionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder
+        getDmsPrivateConnectionBuilder() {
+      return internalGetDmsPrivateConnectionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+        getDmsPrivateConnectionOrBuilder() {
+      if ((stepInfoCase_ == 43) && (dmsPrivateConnectionBuilder_ != null)) {
+        return dmsPrivateConnectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 43) {
+          return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a DMS Private Connection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>
+        internalGetDmsPrivateConnectionFieldBuilder() {
+      if (dmsPrivateConnectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 43)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+        }
+        dmsPrivateConnectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 43;
+      onChanged();
+      return dmsPrivateConnectionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1.Step)
