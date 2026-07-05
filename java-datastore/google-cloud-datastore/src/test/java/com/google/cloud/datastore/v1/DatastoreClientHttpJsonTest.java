@@ -44,6 +44,7 @@ import com.google.datastore.v1.PropertyMask;
 import com.google.datastore.v1.Query;
 import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.ReadOptions;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunAggregationQueryRequest;
@@ -168,6 +169,7 @@ public class DatastoreClientHttpJsonTest {
             .setReadOptions(ReadOptions.newBuilder().build())
             .setPropertyMask(PropertyMask.newBuilder().build())
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     RunQueryResponse actualResponse = client.runQuery(request);
@@ -204,6 +206,7 @@ public class DatastoreClientHttpJsonTest {
               .setReadOptions(ReadOptions.newBuilder().build())
               .setPropertyMask(PropertyMask.newBuilder().build())
               .setExplainOptions(ExplainOptions.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.runQuery(request);
       Assert.fail("No exception raised");
@@ -230,6 +233,7 @@ public class DatastoreClientHttpJsonTest {
             .setPartitionId(PartitionId.newBuilder().build())
             .setReadOptions(ReadOptions.newBuilder().build())
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     RunAggregationQueryResponse actualResponse = client.runAggregationQuery(request);
@@ -265,6 +269,7 @@ public class DatastoreClientHttpJsonTest {
               .setPartitionId(PartitionId.newBuilder().build())
               .setReadOptions(ReadOptions.newBuilder().build())
               .setExplainOptions(ExplainOptions.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.runAggregationQuery(request);
       Assert.fail("No exception raised");

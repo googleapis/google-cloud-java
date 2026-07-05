@@ -195,8 +195,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
    * Optional. The containing Folder resource name. This should take
    * the format: projects/{project}/locations/{location}/folders/{folder},
    * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-   * projects/{project}/locations/{location} if this is a root Folder. This
-   * field can only be updated through MoveFolder.
+   * "" if this is a root Folder. This field can only be updated through
+   * MoveFolder.
    * </pre>
    *
    * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -223,8 +223,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
    * Optional. The containing Folder resource name. This should take
    * the format: projects/{project}/locations/{location}/folders/{folder},
    * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-   * projects/{project}/locations/{location} if this is a root Folder. This
-   * field can only be updated through MoveFolder.
+   * "" if this is a root Folder. This field can only be updated through
+   * MoveFolder.
    * </pre>
    *
    * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1307,8 +1307,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
      * Optional. The containing Folder resource name. This should take
      * the format: projects/{project}/locations/{location}/folders/{folder},
      * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-     * projects/{project}/locations/{location} if this is a root Folder. This
-     * field can only be updated through MoveFolder.
+     * "" if this is a root Folder. This field can only be updated through
+     * MoveFolder.
      * </pre>
      *
      * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1334,8 +1334,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
      * Optional. The containing Folder resource name. This should take
      * the format: projects/{project}/locations/{location}/folders/{folder},
      * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-     * projects/{project}/locations/{location} if this is a root Folder. This
-     * field can only be updated through MoveFolder.
+     * "" if this is a root Folder. This field can only be updated through
+     * MoveFolder.
      * </pre>
      *
      * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1361,8 +1361,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
      * Optional. The containing Folder resource name. This should take
      * the format: projects/{project}/locations/{location}/folders/{folder},
      * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-     * projects/{project}/locations/{location} if this is a root Folder. This
-     * field can only be updated through MoveFolder.
+     * "" if this is a root Folder. This field can only be updated through
+     * MoveFolder.
      * </pre>
      *
      * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1387,8 +1387,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
      * Optional. The containing Folder resource name. This should take
      * the format: projects/{project}/locations/{location}/folders/{folder},
      * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-     * projects/{project}/locations/{location} if this is a root Folder. This
-     * field can only be updated through MoveFolder.
+     * "" if this is a root Folder. This field can only be updated through
+     * MoveFolder.
      * </pre>
      *
      * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1409,8 +1409,8 @@ public final class Folder extends com.google.protobuf.GeneratedMessage
      * Optional. The containing Folder resource name. This should take
      * the format: projects/{project}/locations/{location}/folders/{folder},
      * projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just
-     * projects/{project}/locations/{location} if this is a root Folder. This
-     * field can only be updated through MoveFolder.
+     * "" if this is a root Folder. This field can only be updated through
+     * MoveFolder.
      * </pre>
      *
      * <code>string containing_folder = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

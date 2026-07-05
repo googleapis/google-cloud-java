@@ -61,16 +61,11 @@ public interface SearchCasesRequestOrBuilder
    * Expressions use the following fields separated by `AND` and specified with
    * `=`:
    *
-   * - `organization`: An organization name in the form
-   * `organizations/&lt;organization_id&gt;`.
-   * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
    * - `state`: Can be `OPEN` or `CLOSED`.
    * - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You
    * can specify multiple values for priority using the `OR` operator. For
    * example, `priority=P1 OR priority=P2`.
    * - `creator.email`: The email address of the case creator.
-   *
-   * You must specify either `organization` or `project`.
    *
    * To search across `displayName`, `description`, and comments, use a global
    * restriction with no keyword or operator. For example, `"my search"`.
@@ -80,7 +75,28 @@ public interface SearchCasesRequestOrBuilder
    * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
    * `update_time` only supports the greater than operator (`&gt;`).
    *
+   * If you are using the `v2` version of the API, you must specify the case
+   * parent in the `parent` field. If you provide an empty `query`, all cases
+   * under the parent resource will be returned.
+   *
+   * If you are using the `v2beta` version of the API, you must specify the case
+   * parent in the `query` field using one of the two fields below, which are
+   * only available for `v2beta`. The `parent` field will be ignored.
+   *
+   * - `organization`: An organization name in the form
+   * `organizations/&lt;organization_id&gt;`.
+   * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
+   *
    * Examples:
+   *
+   * For `v2`:
+   *
+   * - `state=CLOSED`
+   * - `state=OPEN AND creator.email="tester&#64;example.com"`
+   * - `state=OPEN AND (priority=P0 OR priority=P1)`
+   * - `update_time&gt;"2020-01-01T00:00:00-05:00"`
+   *
+   * For `v2beta`:
    *
    * - `organization="organizations/123456789"`
    * - `project="projects/my-project-id"`
@@ -105,16 +121,11 @@ public interface SearchCasesRequestOrBuilder
    * Expressions use the following fields separated by `AND` and specified with
    * `=`:
    *
-   * - `organization`: An organization name in the form
-   * `organizations/&lt;organization_id&gt;`.
-   * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
    * - `state`: Can be `OPEN` or `CLOSED`.
    * - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You
    * can specify multiple values for priority using the `OR` operator. For
    * example, `priority=P1 OR priority=P2`.
    * - `creator.email`: The email address of the case creator.
-   *
-   * You must specify either `organization` or `project`.
    *
    * To search across `displayName`, `description`, and comments, use a global
    * restriction with no keyword or operator. For example, `"my search"`.
@@ -124,7 +135,28 @@ public interface SearchCasesRequestOrBuilder
    * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
    * `update_time` only supports the greater than operator (`&gt;`).
    *
+   * If you are using the `v2` version of the API, you must specify the case
+   * parent in the `parent` field. If you provide an empty `query`, all cases
+   * under the parent resource will be returned.
+   *
+   * If you are using the `v2beta` version of the API, you must specify the case
+   * parent in the `query` field using one of the two fields below, which are
+   * only available for `v2beta`. The `parent` field will be ignored.
+   *
+   * - `organization`: An organization name in the form
+   * `organizations/&lt;organization_id&gt;`.
+   * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
+   *
    * Examples:
+   *
+   * For `v2`:
+   *
+   * - `state=CLOSED`
+   * - `state=OPEN AND creator.email="tester&#64;example.com"`
+   * - `state=OPEN AND (priority=P0 OR priority=P1)`
+   * - `update_time&gt;"2020-01-01T00:00:00-05:00"`
+   *
+   * For `v2beta`:
    *
    * - `organization="organizations/123456789"`
    * - `project="projects/my-project-id"`

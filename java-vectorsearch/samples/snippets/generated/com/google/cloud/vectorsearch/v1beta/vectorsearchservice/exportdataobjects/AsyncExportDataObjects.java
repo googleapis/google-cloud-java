@@ -39,6 +39,7 @@ public class AsyncExportDataObjects {
       ExportDataObjectsRequest request =
           ExportDataObjectsRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           vectorSearchServiceClient.exportDataObjectsCallable().futureCall(request);
