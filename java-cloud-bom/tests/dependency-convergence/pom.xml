@@ -5,7 +5,7 @@
   <artifactId>full-convergence-check</artifactId>
   <packaging>pom</packaging>
   <!-- We do not publish this module to Maven Central -->
-  <version>0.84.0-SNAPSHOT</version><!-- {x-version-update:full-convergence-check:current} -->
+  <version>0.84.0</version><!-- {x-version-update:full-convergence-check:current} -->
   <name>Full convergence check for all library dependencies in Google Cloud Java BOM</name>
   <description>
     BOM for Full convergence check on google-cloud-java
@@ -28,7 +28,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>26.85.0-SNAPSHOT</version><!-- {x-version-update:libraries-bom:current} -->
+        <version>26.85.0</version><!-- {x-version-update:libraries-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
