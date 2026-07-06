@@ -1,0 +1,169 @@
+// Copyright 2026 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.cloud.bigquery.jdbc.telemetry.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.cloud.bigquery.jdbc.telemetry.v1";
+option java_outer_classname = "TelemetryProto";
+
+// Aggregated client-side telemetry payload sent to Clearcut analytics backend.
+message TelemetryPayload {
+  DriverEnvironment driver_environment = 1;
+  google.protobuf.Timestamp event_time = 2;
+  repeated ConnectionAttempt connection_attempts = 3;
+  repeated StatementExecution statement_executions = 4;
+  repeated ErrorMetric errors = 5;
+  repeated FeatureUsage feature_usages = 6;
+}
+
+// Client runtime and environment attributes.
+message DriverEnvironment {
+  enum OsType {
+    OS_TYPE_UNSPECIFIED = 0;
+    OS_TYPE_LINUX = 1;
+    OS_TYPE_WINDOWS = 2;
+    OS_TYPE_MACOS = 3;
+    OS_TYPE_SOLARIS = 4;
+    OS_TYPE_FREEBSD = 5;
+    OS_TYPE_OPENBSD = 6;
+    OS_TYPE_NETBSD = 7;
+    OS_TYPE_AIX = 8;
+    OS_TYPE_UNKNOWN = 9;
+  }
+  string driver_name = 1;
+  string driver_version = 2;
+  string client_language = 3;
+  string client_language_version = 4;
+  OsType os_type = 5;
+  string os_version = 6;
+  string telemetry_tag = 7;
+}
+
+// Execution status enum for connection attempts and statement executions.
+enum Status {
+  STATUS_UNSPECIFIED = 0;
+  STATUS_SUCCESS = 1;
+  STATUS_ERROR = 2;
+  STATUS_CANCELLED = 3;
+}
+
+// Authentication types utilized during connection creation.
+enum AuthenticationType {
+  AUTHENTICATION_TYPE_UNSPECIFIED = 0;
+  AUTHENTICATION_TYPE_SERVICE_ACCOUNT = 1;
+  AUTHENTICATION_TYPE_USER_AUTHENTICATION = 2;
+  AUTHENTICATION_TYPE_TOKEN = 3;
+  AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS = 4;
+  AUTHENTICATION_TYPE_EXTERNAL = 5;
+  AUTHENTICATION_TYPE_CUSTOM = 6;
+}
+
+// Aggregated metrics for connection attempts.
+message ConnectionAttempt {
+  Status status = 1;
+  string error_code = 2;
+  AuthenticationType auth_type = 3;
+  int64 count = 4;
+}
+
+// High-level classification of statement execution types.
+enum StatementType {
+  STATEMENT_TYPE_UNSPECIFIED = 0;
+  STATEMENT_TYPE_SELECT = 1;
+  STATEMENT_TYPE_INSERT = 2;
+  STATEMENT_TYPE_UPDATE = 3;
+  STATEMENT_TYPE_DELETE = 4;
+  STATEMENT_TYPE_MERGE = 5;
+  STATEMENT_TYPE_CREATE_TABLE = 6;
+  STATEMENT_TYPE_CREATE_MODEL = 7;
+  STATEMENT_TYPE_CREATE_VIEW = 8;
+  STATEMENT_TYPE_DROP_TABLE = 9;
+  STATEMENT_TYPE_DROP_VIEW = 10;
+  STATEMENT_TYPE_ALTER_TABLE = 11;
+  STATEMENT_TYPE_ALTER_VIEW = 12;
+  STATEMENT_TYPE_SCRIPT = 13;
+  STATEMENT_TYPE_CALL = 14;
+  STATEMENT_TYPE_EXPLAIN = 15;
+  STATEMENT_TYPE_OTHER = 16;
+}
+
+// API substrate used during query execution (REST API vs Read API vs Write API vs Jobless Query).
+enum QueryApiType {
+  QUERY_API_TYPE_UNSPECIFIED = 0;
+  QUERY_API_TYPE_STANDARD_REST_API = 1;
+  QUERY_API_TYPE_READ_API = 2;
+  QUERY_API_TYPE_WRITE_API = 3;
+  QUERY_API_TYPE_JOBLESS_QUERY = 4;
+}
+
+// Aggregated execution metrics for statement executions.
+message StatementExecution {
+  StatementType statement_type = 1;
+  QueryApiType query_api_type = 2;
+  Status status = 3;
+  string error_code = 4;
+  int64 count = 5;
+  DurationHistogram duration = 6;
+}
+
+// Histogram representation for query duration measurements in milliseconds.
+message DurationHistogram {
+  // Count of items in each bucket.
+  repeated int64 bucket_counts = 1;
+
+  // Upper bounds for each bucket in milliseconds.
+  repeated double explicit_bounds = 2;
+
+  // Total count of recorded duration events.
+  int64 count = 3;
+
+  // Cumulative sum of recorded durations in milliseconds.
+  double sum = 4;
+}
+
+// Aggregated error counts grouped by error code, SQL state, and method.
+message ErrorMetric {
+  string error_code = 1;
+  string error_xdbc_code = 2;
+  string method_name = 3;
+  int64 count = 4;
+}
+
+// High-level driver runtime features and capabilities tracked for telemetry.
+enum DriverFeature {
+  DRIVER_FEATURE_UNSPECIFIED = 0;
+  DRIVER_FEATURE_BATCH_OPERATIONS = 1;
+  DRIVER_FEATURE_PREPARED_STATEMENT = 2;
+  DRIVER_FEATURE_CALLABLE_STATEMENT = 3;
+  DRIVER_FEATURE_AUTOCOMMIT_ENABLED = 4;
+  DRIVER_FEATURE_AUTOCOMMIT_DISABLED = 5;
+  DRIVER_FEATURE_TRANSACTIONS = 6;
+  DRIVER_FEATURE_CONNECTION_POOLING = 7;
+  DRIVER_FEATURE_STATEMENT_CANCEL = 8;
+  DRIVER_FEATURE_PARAMETER_BINDING = 9;
+  DRIVER_FEATURE_METADATA_RETRIEVAL = 10;
+  DRIVER_FEATURE_CUSTOM = 11;
+}
+
+// Usage metrics for specific features.
+message FeatureUsage {
+  DriverFeature driver_feature = 1;
+  string custom_feature_name = 2;
+  int64 count = 3;
+}
