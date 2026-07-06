@@ -249,27 +249,28 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
               responseObserver.onError(failedStatus.asException());
             } else {
               Response response = determineResponse(offset);
-              if (verifyOffset) {
-                synchronized (expectedOffset) {
-                  if (!response.getResponse().hasError()
-                      && response.getResponse().getAppendResult().getOffset().getValue() > -1) {
-                    long currentExpectedOffset = expectedOffset.get();
-                    if (response.getResponse().getAppendResult().getOffset().getValue()
-                        != currentExpectedOffset) {
-                      com.google.rpc.Status status =
-                          com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL_VALUE).build();
-                      response =
-                          new Response(AppendRowsResponse.newBuilder().setError(status).build());
-                    } else {
-                      LOG.info(
-                          String.format(
-                              "asserted offset: %s expected: %s",
-                              response.getResponse().getAppendResult().getOffset().getValue(),
-                              currentExpectedOffset));
-                      LOG.info(String.format("sending response: %s", response.getResponse()));
-                      expectedOffset.incrementAndGet();
-                    }
-                  }
+              if (verifyOffset
+                  && !response.getResponse().hasError()
+                  && response.getResponse().getAppendResult().getOffset().getValue() > -1) {
+                long responseOffset =
+                    response.getResponse().getAppendResult().getOffset().getValue();
+                // Atomically verify that the response offset matches the expected offset
+                // and increment the expected offset for the next request. This avoids
+                // using a synchronized block while ensuring thread safety across concurrent
+                // streams.
+                if (!expectedOffset.compareAndSet(responseOffset, responseOffset + 1)) {
+                  LOG.info(
+                      String.format(
+                          "Offset mismatch: expected %s, got %s",
+                          expectedOffset.get(), responseOffset));
+                  com.google.rpc.Status status =
+                      com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL_VALUE).build();
+                  response = new Response(AppendRowsResponse.newBuilder().setError(status).build());
+                } else {
+                  LOG.info(
+                      String.format(
+                          "asserted offset: %s expected: %s", responseOffset, responseOffset));
+                  LOG.info(String.format("sending response: %s", response.getResponse()));
                 }
               }
               sendResponse(response, responseObserver);
