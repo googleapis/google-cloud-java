@@ -39,6 +39,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.rpc.ApiException;
 import com.google.auth.Credentials;
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResult;
@@ -65,6 +66,7 @@ import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
 import com.google.testing.junit.testparameterinjector.TestParameter;
 import com.google.testing.junit.testparameterinjector.TestParameterInjector;
+import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
@@ -461,7 +463,9 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptionsMatching(ITE2ETracingTest::isIgnoredException)
+          .ignoreExceptionsInstanceOf(ApiException.class)
+          .ignoreExceptionsInstanceOf(StatusRuntimeException.class)
+          .ignoreExceptionsInstanceOf(IndexOutOfBoundsException.class)
           .until(
               () -> {
                 retrievedTrace = traceClient.getTrace(projectId, traceId);
@@ -541,7 +545,8 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptionsMatching(ITE2ETracingTest::isIgnoredException)
+          .ignoreExceptionsInstanceOf(ApiException.class)
+          .ignoreExceptionsInstanceOf(StatusRuntimeException.class)
           .until(
               () -> {
                 Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
@@ -1024,13 +1029,5 @@ public class ITE2ETracingTest {
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_BEGIN_TRANSACTION),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_RUN_QUERY),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_COMMIT)));
-  }
-
-  private static boolean isIgnoredException(Throwable e) {
-    String name = e.getClass().getName();
-    return name.equals("com.google.api.gax.rpc.NotFoundException")
-        || name.equals("io.grpc.StatusRuntimeException")
-        || name.equals("com.google.api.gax.rpc.DeadlineExceededException")
-        || name.equals("java.lang.IndexOutOfBoundsException");
   }
 }
