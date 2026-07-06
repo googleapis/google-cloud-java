@@ -154,8 +154,12 @@ public class BomContentTest {
   private static boolean existsLocally(Artifact artifact) {
     String localRepository = System.getProperty("maven.repo.local");
     if (localRepository == null) {
+      String userHome = System.getProperty("user.home");
+      if (userHome == null) {
+        return false;
+      }
       // Standard default location for Maven local repository.
-      localRepository = System.getProperty("user.home") + "/.m2/repository";
+      localRepository = userHome + "/.m2/repository";
     }
     Path localPath =
         Paths.get(
