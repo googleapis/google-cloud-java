@@ -244,22 +244,24 @@ public class ITE2ETracingTest {
   // Random int generator for trace ID and span ID
   private static Random random;
 
-  private static TraceExporter traceExporter;
+  private static Credentials credentials;
+
+  private TraceExporter traceExporter;
 
   // Required for reading back traces from Cloud Trace for validation
   private static TraceServiceClient traceClient;
 
   // Custom SpanContext for each test, required for TraceID injection
-  private static SpanContext customSpanContext;
+  private SpanContext customSpanContext;
 
   // Trace read back from Cloud Trace using traceClient for verification
-  private static Trace retrievedTrace;
+  private Trace retrievedTrace;
 
-  private static String rootSpanName;
-  private static Tracer tracer;
+  private String rootSpanName;
+  private Tracer tracer;
 
   // Required to set custom-root span
-  private static OpenTelemetrySdk openTelemetrySdk;
+  private OpenTelemetrySdk openTelemetrySdk;
 
   private static String projectId;
 
@@ -285,14 +287,7 @@ public class ITE2ETracingTest {
     // Share the same credentials used by Datastore client with the TraceExporter and
     // TraceServiceClient to ensure consistency and avoid auth issues in environments
     // where default ADC resolution might fail for the exporter.
-    Credentials credentials = DatastoreOptions.getDefaultInstance().getCredentials();
-
-    TraceConfiguration.Builder traceConfigurationBuilder =
-        TraceConfiguration.builder().setProjectId(projectId);
-    if (credentials != null) {
-      traceConfigurationBuilder.setCredentials(credentials);
-    }
-    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
+    credentials = DatastoreOptions.getDefaultInstance().getCredentials();
 
     TraceServiceSettings.Builder clientBuilder = TraceServiceSettings.newBuilder();
     if (credentials != null) {
@@ -307,6 +302,13 @@ public class ITE2ETracingTest {
     // Set up OTel SDK
     Resource resource =
         Resource.getDefault().merge(Resource.builder().put(SERVICE_NAME, "Sparky").build());
+
+    TraceConfiguration.Builder traceConfigurationBuilder =
+        TraceConfiguration.builder().setProjectId(projectId);
+    if (credentials != null) {
+      traceConfigurationBuilder.setCredentials(credentials);
+    }
+    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
 
     if (isUsingGlobalOpenTelemetrySDK()) {
       openTelemetrySdk =
