@@ -37,6 +37,6 @@ jobs:
           git push origin $TAG_NAME
           if [ "${ARTIFACT_ID}" = "libraries-bom" ]; then
             echo "Creating GitHub Release for ${TAG_NAME}"
-            gh release create "${TAG_NAME}" --title "GCP Libraries BOM ${VERSION}" --notes "Release notes will be generated shortly."
+            gh release create "${TAG_NAME}" --title "GCP Libraries BOM ${VERSION}" --notes "libraries-bom release."
           fi
         done
