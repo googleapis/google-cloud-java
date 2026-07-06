@@ -889,8 +889,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-logging-logback</artifactId><!-- {x-version-update:google-cloud-logging-logback:current} -->
-        <version>0.143.0-alpha-SNAPSHOT</version>
+        <artifactId>google-cloud-logging-logback</artifactId>
+        <version>0.143.0-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
