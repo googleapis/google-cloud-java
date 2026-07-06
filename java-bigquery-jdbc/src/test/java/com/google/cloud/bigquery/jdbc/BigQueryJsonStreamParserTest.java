@@ -182,11 +182,11 @@ public class BigQueryJsonStreamParserTest {
 
   @Test
   public void testMemoryAllocationReduction() throws Exception {
-    ThreadMXBean baseBean = ManagementFactory.getThreadMXBean();
-    if (!(baseBean instanceof com.sun.management.ThreadMXBean)) {
+    java.lang.management.ThreadMXBean baseBean = ManagementFactory.getThreadMXBean();
+    if (!(baseBean instanceof ThreadMXBean)) {
       return;
     }
-    com.sun.management.ThreadMXBean threadBean = (com.sun.management.ThreadMXBean) baseBean;
+    ThreadMXBean threadBean = (ThreadMXBean) baseBean;
     long threadId = Thread.currentThread().getId();
 
     FieldList simpleFieldList =

@@ -111,12 +111,15 @@ class BigQueryJsonStreamParser {
     }
 
     try (JsonParser parser = JSON_FACTORY.createParser(inputStream)) {
-      while (!parser.isClosed()) {
-        JsonToken token = parser.nextToken();
+      JsonToken token;
+      while ((token = parser.nextToken()) != null && !parser.isClosed()) {
         if (token == JsonToken.FIELD_NAME && "rows".equals(parser.currentName())) {
           // Found "rows" array
           if (parser.nextToken() == JsonToken.START_ARRAY) {
-            while (parser.nextToken() != JsonToken.END_ARRAY && !parser.isClosed()) {
+            JsonToken rowToken;
+            while ((rowToken = parser.nextToken()) != null
+                && rowToken != JsonToken.END_ARRAY
+                && !parser.isClosed()) {
               Object[] row = parseSingleRow(parser);
               if (row != null) {
                 rows.add(row);
@@ -139,12 +142,18 @@ class BigQueryJsonStreamParser {
     int colCount = fieldList.size();
     Object[] row = new Object[colCount];
 
-    while (parser.nextToken() != JsonToken.END_OBJECT && !parser.isClosed()) {
+    JsonToken token;
+    while ((token = parser.nextToken()) != null
+        && token != JsonToken.END_OBJECT
+        && !parser.isClosed()) {
       String fieldName = parser.currentName();
       if ("f".equals(fieldName)) {
         if (parser.nextToken() == JsonToken.START_ARRAY) {
           int colIdx = 0;
-          while (parser.nextToken() != JsonToken.END_ARRAY && !parser.isClosed()) {
+          JsonToken cellToken;
+          while ((cellToken = parser.nextToken()) != null
+              && cellToken != JsonToken.END_ARRAY
+              && !parser.isClosed()) {
             if (colIdx < colCount) {
               row[colIdx] = parseCell(parser, colIdx);
             } else {
@@ -167,7 +176,10 @@ class BigQueryJsonStreamParser {
     }
 
     Object cellValue = null;
-    while (parser.nextToken() != JsonToken.END_OBJECT && !parser.isClosed()) {
+    JsonToken token;
+    while ((token = parser.nextToken()) != null
+        && token != JsonToken.END_OBJECT
+        && !parser.isClosed()) {
       String name = parser.currentName();
       if ("v".equals(name)) {
         parser.nextToken(); // move to value token
@@ -195,7 +207,10 @@ class BigQueryJsonStreamParser {
       List<FieldValue> elements = new ArrayList<>();
       if (parser.currentToken() == JsonToken.START_ARRAY) {
         Field elementField = field.toBuilder().setMode(Field.Mode.REQUIRED).build();
-        while (parser.nextToken() != JsonToken.END_ARRAY && !parser.isClosed()) {
+        JsonToken elemToken;
+        while ((elemToken = parser.nextToken()) != null
+            && elemToken != JsonToken.END_ARRAY
+            && !parser.isClosed()) {
           // element is { "v": ... }
           elements.add(parseComplexFieldValue(parser, elementField));
         }
@@ -206,25 +221,45 @@ class BigQueryJsonStreamParser {
       if (parser.currentToken() == JsonToken.START_OBJECT) {
         FieldList subFields = field.getSubFields();
         int subIdx = 0;
-        while (parser.nextToken() != JsonToken.END_OBJECT && !parser.isClosed()) {
-          if ("f".equals(parser.currentName()) && parser.nextToken() == JsonToken.START_ARRAY) {
-            while (parser.nextToken() != JsonToken.END_ARRAY && !parser.isClosed()) {
-              Field subField =
-                  subFields != null && subIdx < subFields.size() ? subFields.get(subIdx) : null;
-              fields.add(
-                  subField != null
-                      ? parseComplexFieldValue(parser, subField)
-                      : FieldValue.of(Attribute.PRIMITIVE, null));
-              subIdx++;
+        int depth = 1;
+        while (depth > 0 && !parser.isClosed()) {
+          JsonToken token = parser.nextToken();
+          if (token == null) {
+            break;
+          }
+          if (token == JsonToken.START_OBJECT) {
+            depth++;
+          } else if (token == JsonToken.END_OBJECT) {
+            depth--;
+          } else if (token == JsonToken.FIELD_NAME) {
+            if ("f".equals(parser.currentName()) && parser.nextToken() == JsonToken.START_ARRAY) {
+              JsonToken subToken;
+              while ((subToken = parser.nextToken()) != null
+                  && subToken != JsonToken.END_ARRAY
+                  && !parser.isClosed()) {
+                Field subField =
+                    subFields != null && subIdx < subFields.size() ? subFields.get(subIdx) : null;
+                fields.add(
+                    subField != null
+                        ? parseComplexFieldValue(parser, subField)
+                        : FieldValue.of(Attribute.PRIMITIVE, null));
+                subIdx++;
+              }
             }
           }
         }
+        if (subFields != null && fields.size() == subFields.size()) {
+          return FieldValue.of(Attribute.RECORD, FieldValueList.of(fields, subFields));
+        }
       }
-      return FieldValue.of(Attribute.RECORD, FieldValueList.of(fields, field.getSubFields()));
+      return FieldValue.of(Attribute.RECORD, FieldValueList.of(fields));
     } else {
       if (parser.currentToken() == JsonToken.START_OBJECT) {
         String val = null;
-        while (parser.nextToken() != JsonToken.END_OBJECT && !parser.isClosed()) {
+        JsonToken token;
+        while ((token = parser.nextToken()) != null
+            && token != JsonToken.END_OBJECT
+            && !parser.isClosed()) {
           if ("v".equals(parser.currentName())) {
             parser.nextToken();
             val = parser.currentToken() == JsonToken.VALUE_NULL ? null : parser.getText();
