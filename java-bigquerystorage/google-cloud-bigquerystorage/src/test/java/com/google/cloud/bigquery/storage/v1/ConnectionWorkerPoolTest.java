@@ -237,7 +237,17 @@ class ConnectionWorkerPoolTest {
     long appendCount = 20;
     CountDownLatch latch = new CountDownLatch(1);
     for (long i = 0; i < appendCount; i++) {
-      testBigQueryWrite.addResponse(new BlockingResponseSupplier(createAppendResponse(i), latch));
+      long offset = i;
+      testBigQueryWrite.addResponse(
+          () -> {
+            try {
+              latch.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+              throw new RuntimeException(e);
+            }
+            return new FakeBigQueryWriteImpl.Response(createAppendResponse(offset));
+          });
     }
     List<ApiFuture<?>> futures = new ArrayList<>();
 
@@ -401,27 +411,6 @@ class ConnectionWorkerPoolTest {
       failCount--;
       return new FakeBigQueryWriteImpl.Response(
           createAppendResponseWithError(errorCode, errorMessage));
-    }
-  }
-
-  private class BlockingResponseSupplier implements Supplier<FakeBigQueryWriteImpl.Response> {
-    private final AppendRowsResponse response;
-    private final CountDownLatch latch;
-
-    BlockingResponseSupplier(AppendRowsResponse response, CountDownLatch latch) {
-      this.response = response;
-      this.latch = latch;
-    }
-
-    @Override
-    public FakeBigQueryWriteImpl.Response get() {
-      try {
-        latch.await();
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        throw new RuntimeException(e);
-      }
-      return new FakeBigQueryWriteImpl.Response(response);
     }
   }
 
