@@ -1252,6 +1252,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         () -> { // producer thread populating the buffer
           try {
             Iterable<FieldValueList> fieldValueLists;
+            boolean[] isComplexColumn =
+                BigQueryFieldValueListWrapper.createComplexColumnFlags(
+                    schema != null ? schema.getFields() : null);
             // as we have to process the first page
             boolean hasRows = true;
             while (hasRows) {
@@ -1280,17 +1283,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
               long startTime = System.nanoTime();
               long results = 0;
-              BigQueryJsonStreamParser streamParser = new BigQueryJsonStreamParser(schema);
               for (FieldValueList fieldValueList : fieldValueLists) {
 
                 if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
                   // do not process further pages and shutdown (inner loop)
                   break;
                 }
-                Object[] rowArray = streamParser.unpackRow(fieldValueList);
                 Uninterruptibles.putUninterruptibly(
                     bigQueryFieldValueListWrapperBlockingQueue,
-                    BigQueryFieldValueListWrapper.ofRow(schema.getFields(), rowArray));
+                    BigQueryFieldValueListWrapper.ofUnpackedRow(
+                        schema.getFields(), fieldValueList, isComplexColumn));
                 results += 1;
               }
               LOG.fine(

@@ -16,6 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static com.google.cloud.bigquery.jdbc.BigQueryBaseArray.isArray;
+import static com.google.cloud.bigquery.jdbc.BigQueryBaseStruct.isStruct;
+
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
@@ -56,6 +60,44 @@ class BigQueryFieldValueListWrapper {
       FieldList fieldList, Object[] rowValues, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
     return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, isLastFlag, null);
+  }
+
+  public static boolean[] createComplexColumnFlags(FieldList fieldList) {
+    if (fieldList == null) {
+      return new boolean[0];
+    }
+    int size = fieldList.size();
+    boolean[] isComplex = new boolean[size];
+    for (int i = 0; i < size; i++) {
+      Field field = fieldList.get(i);
+      isComplex[i] = isArray(field) || isStruct(field);
+    }
+    return isComplex;
+  }
+
+  public static Object[] unpackRow(FieldValueList fieldValueList, boolean[] isComplexColumn) {
+    if (fieldValueList == null) {
+      return null;
+    }
+    int size = fieldValueList.size();
+    Object[] row = new Object[size];
+    for (int i = 0; i < size; i++) {
+      FieldValue fv = fieldValueList.get(i);
+      if (fv == null || fv.isNull()) {
+        row[i] = null;
+      } else if (i < isComplexColumn.length && isComplexColumn[i]) {
+        row[i] = fv;
+      } else {
+        row[i] = fv.getStringValue();
+      }
+    }
+    return row;
+  }
+
+  static BigQueryFieldValueListWrapper ofUnpackedRow(
+      FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
+    Object[] rowValues = unpackRow(fieldValueList, isComplexColumn);
+    return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, false, null);
   }
 
   static BigQueryFieldValueListWrapper getNestedFieldValueListWrapper(

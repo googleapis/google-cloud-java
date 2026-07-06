@@ -86,7 +86,8 @@ public class BigQueryJsonStreamParserTest {
             Field.of("org", StandardSQLTypeName.STRUCT, outerStructSchema));
 
     Schema schema = Schema.of(schemaFields);
-    BigQueryJsonStreamParser parser = new BigQueryJsonStreamParser(schema);
+    boolean[] isComplexColumn =
+        BigQueryFieldValueListWrapper.createComplexColumnFlags(schema.getFields());
 
     FieldValueList fvl =
         FieldValueList.of(
@@ -135,7 +136,7 @@ public class BigQueryJsonStreamParserTest {
                         outerStructSchema))),
             schemaFields);
 
-    Object[] row = parser.unpackRow(fvl);
+    Object[] row = BigQueryFieldValueListWrapper.unpackRow(fvl, isComplexColumn);
 
     assertThat(row[0]).isEqualTo("101");
     assertThat(row[1]).isEqualTo("Alice");
@@ -215,9 +216,10 @@ public class BigQueryJsonStreamParserTest {
             Field.of("col5", StandardSQLTypeName.TIMESTAMP));
 
     Schema simpleSchema = Schema.of(simpleFieldList);
-    BigQueryJsonStreamParser parser = new BigQueryJsonStreamParser(simpleSchema);
+    boolean[] isComplexColumn =
+        BigQueryFieldValueListWrapper.createComplexColumnFlags(simpleSchema.getFields());
 
-    int rowCount = 10000;
+    int rowCount = 100000;
     FieldValue fv1 = FieldValue.of(Attribute.PRIMITIVE, "100");
     FieldValue fv2 = FieldValue.of(Attribute.PRIMITIVE, "test_string");
     FieldValue fv3 = FieldValue.of(Attribute.PRIMITIVE, "123.456");
@@ -230,7 +232,7 @@ public class BigQueryJsonStreamParserTest {
     long bytesBefore = threadBean.getThreadAllocatedBytes(threadId);
     Object[][] rowBuffers = new Object[rowCount][];
     for (int i = 0; i < rowCount; i++) {
-      rowBuffers[i] = parser.unpackRow(sampleFvl);
+      rowBuffers[i] = BigQueryFieldValueListWrapper.unpackRow(sampleFvl, isComplexColumn);
     }
     long allocatedBytes = threadBean.getThreadAllocatedBytes(threadId) - bytesBefore;
 
