@@ -468,7 +468,18 @@ public class ITE2ETracingTest {
           .ignoreExceptionsInstanceOf(IndexOutOfBoundsException.class)
           .until(
               () -> {
-                retrievedTrace = traceClient.getTrace(projectId, traceId);
+                try {
+                  retrievedTrace = traceClient.getTrace(projectId, traceId);
+                } catch (Throwable t) {
+                  logger.log(
+                      Level.WARNING,
+                      "DEBUG: Caught in fetchAndValidateTrace: "
+                          + t.getClass().getName()
+                          + " CL: "
+                          + t.getClass().getClassLoader(),
+                      t);
+                  throw t;
+                }
                 assertEquals(traceId, retrievedTrace.getTraceId());
                 logger.info(
                     "expectedSpanCount="
@@ -549,17 +560,28 @@ public class ITE2ETracingTest {
           .ignoreExceptionsInstanceOf(StatusRuntimeException.class)
           .until(
               () -> {
-                Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
-                traceRespHolder.set(trace);
-                if (trace.getSpansCount() == expectedSpanCount) {
-                  logger.info("Success: Got " + expectedSpanCount + " spans.");
-                  return true;
+                try {
+                  Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
+                  traceRespHolder.set(trace);
+                  if (trace.getSpansCount() == expectedSpanCount) {
+                    logger.info("Success: Got " + expectedSpanCount + " spans.");
+                    return true;
+                  }
+                  logger.info(
+                      "Trace Found. The trace did not contain "
+                          + expectedSpanCount
+                          + " spans. Going to retry.");
+                  return false;
+                } catch (Throwable t) {
+                  logger.log(
+                      Level.WARNING,
+                      "DEBUG: Caught in traceContainerTest: "
+                          + t.getClass().getName()
+                          + " CL: "
+                          + t.getClass().getClassLoader(),
+                      t);
+                  throw t;
                 }
-                logger.info(
-                    "Trace Found. The trace did not contain "
-                        + expectedSpanCount
-                        + " spans. Going to retry.");
-                return false;
               });
     } catch (ConditionTimeoutException ignored) {
       // Ignore to let assertions below run and fail with descriptive messages
