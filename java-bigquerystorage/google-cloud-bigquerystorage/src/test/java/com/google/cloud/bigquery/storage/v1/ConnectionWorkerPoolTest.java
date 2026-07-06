@@ -267,11 +267,13 @@ class ConnectionWorkerPoolTest {
     }
 
     // At the end we should scale up to 10 connections.
-    assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
-    assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
-
-    // Release the latch to allow requests to complete.
-    latch.countDown();
+    try {
+      assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
+      assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
+    } finally {
+      // Release the latch to allow requests to complete.
+      latch.countDown();
+    }
 
     for (ApiFuture<?> future : futures) {
       future.get();
