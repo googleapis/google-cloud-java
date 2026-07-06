@@ -99,6 +99,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import org.awaitility.core.ConditionTimeoutException;
@@ -285,8 +286,7 @@ public abstract class AbstractITDatastoreTest {
     QueryResults<T> scResults = datastore.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
-    @SuppressWarnings("unchecked")
-    final List<T>[] finalResults = new List[1];
+    AtomicReference<List<T>> finalResults = new AtomicReference<>();
     try {
       await()
           .atMost(Duration.ofSeconds(10))
@@ -298,7 +298,7 @@ public abstract class AbstractITDatastoreTest {
                 Set<T> resultsSet = new HashSet<>(resultsCopy);
                 if (scResultsSet.size() == resultsSet.size()
                     && scResultsSet.containsAll(resultsSet)) {
-                  finalResults[0] = resultsCopy;
+                  finalResults.set(resultsCopy);
                   return true;
                 }
                 return false;
@@ -307,7 +307,7 @@ public abstract class AbstractITDatastoreTest {
       throw new RuntimeException(
           "reached max number of attempts to get strongly consistent results.", e);
     }
-    return finalResults[0].iterator();
+    return finalResults.get().iterator();
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {

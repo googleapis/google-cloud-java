@@ -91,6 +91,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.awaitility.core.ConditionTimeoutException;
@@ -460,7 +461,7 @@ public class ITE2ETracingTest {
 
     try {
       await()
-          .atMost(Duration.ofSeconds(GET_TRACE_RETRY_COUNT))
+          .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
           .ignoreExceptionsInstanceOf(NotFoundException.class)
           .ignoreExceptionsInstanceOf(DeadlineExceededException.class)
@@ -537,18 +538,18 @@ public class ITE2ETracingTest {
     }
     waitForTracesToComplete();
 
-    final Trace[] traceRespHolder = new Trace[1];
+    AtomicReference<Trace> traceRespHolder = new AtomicReference<>();
     int expectedSpanCount = 2;
 
     try {
       await()
-          .atMost(Duration.ofSeconds(GET_TRACE_RETRY_COUNT))
+          .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
           .ignoreExceptionsInstanceOf(NotFoundException.class)
           .until(
               () -> {
                 Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
-                traceRespHolder[0] = trace;
+                traceRespHolder.set(trace);
                 if (trace.getSpansCount() == expectedSpanCount) {
                   logger.info("Success: Got " + expectedSpanCount + " spans.");
                   return true;
@@ -562,7 +563,7 @@ public class ITE2ETracingTest {
     } catch (ConditionTimeoutException ignored) {
       // Ignore to let assertions below run and fail with descriptive messages
     }
-    Trace traceResp = traceRespHolder[0];
+    Trace traceResp = traceRespHolder.get();
 
     // Make sure we got as many spans as we expected.
     assertNotNull(traceResp);
