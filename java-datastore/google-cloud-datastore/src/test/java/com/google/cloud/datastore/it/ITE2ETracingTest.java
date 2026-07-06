@@ -393,10 +393,22 @@ public class ITE2ETracingTest {
     tracer = null;
     retrievedTrace = null;
     customSpanContext = null;
-    if (openTelemetrySdk != null) {
-      openTelemetrySdk.close();
+    try {
+      if (openTelemetrySdk != null) {
+        openTelemetrySdk.close();
+      }
+    } finally {
+      if (traceExporter != null) {
+        try {
+          // Attempt to shut down traceExporter.
+          traceExporter.shutdown();
+        } catch (Exception e) {
+          logger.log(Level.WARNING, "Failed to shut down traceExporter", e);
+        }
+      }
     }
     openTelemetrySdk = null;
+    traceExporter = null;
   }
 
   @AfterClass
@@ -440,6 +452,10 @@ public class ITE2ETracingTest {
   }
 
   protected void waitForTracesToComplete() throws Exception {
+    if (openTelemetrySdk == null) {
+      logger.warning("OpenTelemetrySdk is null, cannot flush traces");
+      return;
+    }
     logger.info("Flushing traces...");
     CompletableResultCode completableResultCode =
         openTelemetrySdk.getSdkTracerProvider().forceFlush();
