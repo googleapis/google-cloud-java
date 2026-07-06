@@ -744,7 +744,16 @@ public class CloudClientExecutor extends CloudExecutor {
             Level.INFO, String.format("executeBatchDml [%d]: %s", i + 1, stmts.get(i).toString()));
       }
       List<Options.UpdateOption> allOptions = new ArrayList<>(java.util.Arrays.asList(options));
-      allOptions.add(Options.tag("batch-update-transaction-tag"));
+      boolean hasTag = false;
+      for (Options.UpdateOption opt : options) {
+        if (opt.getClass().getSimpleName().equals("TagOption")) {
+          hasTag = true;
+          break;
+        }
+      }
+      if (!hasTag) {
+        allOptions.add(Options.tag("batch-update-tag"));
+      }
       return getTransactionForWrite()
           .batchUpdate(stmts, allOptions.toArray(new Options.UpdateOption[0]));
     }
@@ -863,7 +872,10 @@ public class CloudClientExecutor extends CloudExecutor {
       throws IOException {
     // Create a cloud spanner client
     Credentials credentials;
-    if (WorkerProxy.serviceKeyFile.isEmpty()) {
+    if (WorkerProxy.serviceKeyFile == null
+        || WorkerProxy.serviceKeyFile.isEmpty()
+        || !new File(WorkerProxy.serviceKeyFile).exists()
+        || new File(WorkerProxy.serviceKeyFile).isDirectory()) {
       credentials = NoCredentials.getInstance();
     } else {
       credentials =
@@ -945,7 +957,10 @@ public class CloudClientExecutor extends CloudExecutor {
     }
     // Create a trace service client
     Credentials credentials;
-    if (WorkerProxy.serviceKeyFile.isEmpty()) {
+    if (WorkerProxy.serviceKeyFile == null
+        || WorkerProxy.serviceKeyFile.isEmpty()
+        || !new File(WorkerProxy.serviceKeyFile).exists()
+        || new File(WorkerProxy.serviceKeyFile).isDirectory()) {
       credentials = NoCredentials.getInstance();
     } else {
       credentials =
@@ -2227,15 +2242,13 @@ public class CloudClientExecutor extends CloudExecutor {
     return null;
   }
 
-  @SuppressWarnings("unchecked")
-  private <T> void addSecureContextOption(
+  private void addSecureContextOption(
       Map<String, com.google.spanner.executor.v1.Value> secureContextMap,
-      List<T> optionsList,
-      Class<?> optionClass) {
+      List<? super Options.ReadQueryUpdateTransactionOption> optionsList) {
     Options.ReadQueryUpdateTransactionOption secureContextOption =
         buildSecureContextOption(secureContextMap);
-    if (secureContextOption != null && optionClass.isInstance(secureContextOption)) {
-      optionsList.add((T) secureContextOption);
+    if (secureContextOption != null) {
+      optionsList.add(secureContextOption);
     }
   }
 
@@ -2247,8 +2260,7 @@ public class CloudClientExecutor extends CloudExecutor {
       BatchReadOnlyTransaction batchTxn = executionContext.getBatchTxn();
       Statement.Builder stmt = Statement.newBuilder(action.getQuery().getSql());
       List<Options.QueryOption> queryOptions = new ArrayList<>();
-      addSecureContextOption(
-          action.getQuery().getSecureContextMap(), queryOptions, Options.QueryOption.class);
+      addSecureContextOption(action.getQuery().getSecureContextMap(), queryOptions);
       for (int i = 0; i < action.getQuery().getParamsCount(); ++i) {
         stmt.bind(action.getQuery().getParams(i).getName())
             .to(
@@ -2331,8 +2343,7 @@ public class CloudClientExecutor extends CloudExecutor {
       List<Options.UpdateOption> optionsList = new ArrayList<>();
       optionsList.add(Options.tag(options.getTag()));
       optionsList.add(Options.priority(RpcPriority.fromProto(options.getRpcPriority())));
-      addSecureContextOption(
-          action.getUpdate().getSecureContextMap(), optionsList, Options.UpdateOption.class);
+      addSecureContextOption(action.getUpdate().getSecureContextMap(), optionsList);
       Long count =
           dbClient.executePartitionedUpdate(
               Statement.of(action.getUpdate().getSql()),
@@ -2791,7 +2802,7 @@ public class CloudClientExecutor extends CloudExecutor {
               executionContext.getTransactionSeed()));
       List<Options.QueryOption> queryOptions = new ArrayList<>();
       queryOptions.add(Options.tag("query-tag"));
-      addSecureContextOption(action.getSecureContextMap(), queryOptions, Options.QueryOption.class);
+      addSecureContextOption(action.getSecureContextMap(), queryOptions);
       ResultSet result =
           txn.executeQuery(stmt.build(), queryOptions.toArray(new Options.QueryOption[0]));
       LOGGER.log(
@@ -2825,8 +2836,7 @@ public class CloudClientExecutor extends CloudExecutor {
       sender.initForQuery();
       List<Options.QueryOption> queryOptions = new ArrayList<>();
       queryOptions.add(Options.tag("dml-transaction-tag"));
-      addSecureContextOption(
-          action.getUpdate().getSecureContextMap(), queryOptions, Options.QueryOption.class);
+      addSecureContextOption(action.getUpdate().getSecureContextMap(), queryOptions);
       ResultSet result =
           executionContext
               .getTransactionForWrite()
@@ -2863,11 +2873,11 @@ public class CloudClientExecutor extends CloudExecutor {
       }
       Map<String, com.google.spanner.executor.v1.Value> secureContextMap =
           new java.util.HashMap<>();
-      for (int i = 0; i < action.getUpdatesCount(); ++i) {
-        secureContextMap.putAll(action.getUpdates(i).getSecureContextMap());
+      for (QueryAction update : action.getUpdatesList()) {
+        secureContextMap.putAll(update.getSecureContextMap());
       }
       List<Options.UpdateOption> optionsList = new ArrayList<>();
-      addSecureContextOption(secureContextMap, optionsList, Options.UpdateOption.class);
+      addSecureContextOption(secureContextMap, optionsList);
       long[] rowCounts =
           executionContext.executeBatchDml(
               queries, optionsList.toArray(new Options.UpdateOption[0]));
