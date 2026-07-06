@@ -3438,6 +3438,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
     }
 
+    // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     Runnable multiSchemaFetcher =
