@@ -148,8 +148,8 @@ public class BomContentTest {
   }
 
   /**
-   * Checks if the artifact exists in the local Maven repository cache.
-   * This is used as a fallback/bypass for reachability checks during release PRs.
+   * Checks if the artifact exists in the local Maven repository cache. This is used as a
+   * fallback/bypass for reachability checks during release PRs.
    */
   private static boolean existsLocally(Artifact artifact) {
     String localRepository = System.getProperty("maven.repo.local");
@@ -157,11 +157,13 @@ public class BomContentTest {
       // Standard default location for Maven local repository.
       localRepository = System.getProperty("user.home") + "/.m2/repository";
     }
-    Path localPath = Paths.get(localRepository,
-        artifact.getGroupId().replace('.', '/'),
-        artifact.getArtifactId(),
-        artifact.getVersion(),
-        artifact.getArtifactId() + "-" + artifact.getVersion() + ".pom");
+    Path localPath =
+        Paths.get(
+            localRepository,
+            artifact.getGroupId().replace('.', '/'),
+            artifact.getArtifactId(),
+            artifact.getVersion(),
+            artifact.getArtifactId() + "-" + artifact.getVersion() + ".pom");
     return Files.exists(localPath);
   }
 
