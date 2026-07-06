@@ -461,7 +461,7 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptions()
+          .ignoreExceptionsMatching(ITE2ETracingTest::isIgnoredException)
           .until(
               () -> {
                 retrievedTrace = traceClient.getTrace(projectId, traceId);
@@ -541,7 +541,7 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptions()
+          .ignoreExceptionsMatching(ITE2ETracingTest::isIgnoredException)
           .until(
               () -> {
                 Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
@@ -1024,5 +1024,13 @@ public class ITE2ETracingTest {
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_BEGIN_TRANSACTION),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_RUN_QUERY),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_TRANSACTION_COMMIT)));
+  }
+
+  private static boolean isIgnoredException(Throwable e) {
+    String name = e.getClass().getName();
+    return name.equals("com.google.api.gax.rpc.NotFoundException")
+        || name.equals("io.grpc.StatusRuntimeException")
+        || name.equals("com.google.api.gax.rpc.DeadlineExceededException")
+        || name.equals("java.lang.IndexOutOfBoundsException");
   }
 }
