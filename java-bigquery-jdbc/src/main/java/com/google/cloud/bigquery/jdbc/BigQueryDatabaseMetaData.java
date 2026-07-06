@@ -4800,6 +4800,28 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
+  private List<Dataset> fetchDatasetsForProject(
+      String project, String schemaPattern, Pattern schemaRegex) throws SQLException {
+    try {
+      List<Dataset> datasets =
+          findMatchingBigQueryObjects(
+              "Dataset",
+              () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+              (name) -> bigquery.getDataset(DatasetId.of(project, name)),
+              (ds) -> ds.getDatasetId().getDataset(),
+              schemaPattern,
+              schemaRegex,
+              LOG);
+      return datasets != null ? datasets : Collections.emptyList();
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new SQLException(
+          "Interrupted while fetching matching datasets for project " + project, e);
+    } catch (Exception e) {
+      throw new SQLException("Failed to fetch matching datasets for project " + project, e);
+    }
+  }
+
   private List<Dataset> fetchMatchingDatasets(
       String catalog, String schemaPattern, Pattern schemaRegex) throws SQLException {
     List<String> projects =
@@ -4809,62 +4831,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return Collections.emptyList();
     }
 
+    // Single project path
     if (projects.size() == 1) {
-      String project = projects.get(0);
-      try {
-        List<Dataset> datasets =
-            findMatchingBigQueryObjects(
-                "Dataset",
-                () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                (name) -> bigquery.getDataset(DatasetId.of(project, name)),
-                (ds) -> ds.getDatasetId().getDataset(),
-                schemaPattern,
-                schemaRegex,
-                LOG);
-        return datasets != null ? datasets : Collections.emptyList();
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        throw new SQLException("Interrupted while fetching matching datasets", e);
-      } catch (Exception e) {
-        throw new SQLException("Failed to fetch matching datasets for project " + project, e);
-      }
+      return fetchDatasetsForProject(projects.get(0), schemaPattern, schemaRegex);
     }
 
+    // Multi-project path
     final List<Dataset> allDatasets = Collections.synchronizedList(new ArrayList<>());
     final List<Future<?>> taskFutures = new ArrayList<>();
     ExecutorService executor = connection.getMetadataExecutor();
 
-    for (String project : projects) {
-      Callable<Void> task =
-          () -> {
-            try {
-              List<Dataset> datasets =
-                  findMatchingBigQueryObjects(
-                      "Dataset",
-                      () ->
-                          bigquery.listDatasets(
-                              project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                      (name) -> bigquery.getDataset(DatasetId.of(project, name)),
-                      (ds) -> ds.getDatasetId().getDataset(),
-                      schemaPattern,
-                      schemaRegex,
-                      LOG);
-              if (datasets != null) {
-                allDatasets.addAll(datasets);
-              }
-            } catch (InterruptedException e) {
-              Thread.currentThread().interrupt();
-              throw new SQLException(
-                  "Interrupted while fetching datasets for project " + project, e);
-            } catch (Exception e) {
-              throw new SQLException("Failed to fetch datasets for project " + project, e);
-            }
-            return null;
-          };
-      taskFutures.add(executor.submit(task));
-    }
-
     try {
+      for (String project : projects) {
+        Callable<Void> task =
+            () -> {
+              List<Dataset> datasets = fetchDatasetsForProject(project, schemaPattern, schemaRegex);
+              allDatasets.addAll(datasets);
+              return null;
+            };
+        taskFutures.add(executor.submit(task));
+      }
+
       waitForTasksCompletion(taskFutures);
       if (Thread.currentThread().isInterrupted()) {
         throw new SQLException("Interrupted while parallel-fetching matching datasets");
