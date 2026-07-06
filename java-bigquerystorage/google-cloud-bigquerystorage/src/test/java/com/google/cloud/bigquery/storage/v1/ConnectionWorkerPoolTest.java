@@ -273,8 +273,10 @@ class ConnectionWorkerPoolTest {
 
   @Test
   void testMultiStreamAppend_appendWhileClosing() throws Exception {
+    // Limit max connections to 5 (same as min connections) to prevent timing-dependent
+    // scale up during concurrent appends in this test, which expects exactly 5 connections.
     ConnectionWorkerPool.setOptions(
-        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
+        Settings.builder().setMaxConnectionsPerRegion(5).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(
             /* maxRequests= */ 3, /* maxBytes= */ 100000, java.time.Duration.ofSeconds(5));
