@@ -31,15 +31,13 @@ import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTI
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTION_RUN_QUERY;
 import static com.google.common.truth.Truth.assertThat;
 import static io.opentelemetry.semconv.resource.attributes.ResourceAttributes.SERVICE_NAME;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.awaitility.Awaitility.await;
 
-import java.time.Duration;
-import org.awaitility.core.ConditionTimeoutException;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.NotFoundException;
@@ -84,6 +82,7 @@ import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -94,6 +93,7 @@ import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.awaitility.core.ConditionTimeoutException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -474,7 +474,8 @@ public class ITE2ETracingTest {
                         + expectedSpanCount
                         + ", retrievedSpanCount="
                         + retrievedTrace.getSpansCount());
-                return retrievedTrace != null && expectedSpanCount == retrievedTrace.getSpansCount();
+                return retrievedTrace != null
+                    && expectedSpanCount == retrievedTrace.getSpansCount();
               });
     } catch (ConditionTimeoutException e) {
       throw new RuntimeException(
