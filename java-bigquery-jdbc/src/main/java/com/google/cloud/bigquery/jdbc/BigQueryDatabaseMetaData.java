@@ -4866,16 +4866,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     try {
       waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching matching datasets");
+      }
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
       if (cause instanceof SQLException) {
         throw (SQLException) cause;
       }
       throw new SQLException("Error parallel-fetching matching datasets", e);
-    }
-
-    if (Thread.currentThread().isInterrupted()) {
-      throw new SQLException("Interrupted while parallel-fetching matching datasets");
+    } finally {
+      taskFutures.forEach(f -> f.cancel(true));
     }
 
     return allDatasets;
