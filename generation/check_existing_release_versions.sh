@@ -47,7 +47,7 @@ for pom_file in $(find . -maxdepth 3 -name pom.xml|sort --dictionary-order); do
   # Exclude java-vertexai because it has been archived and replaced with a dummy POM.
   # We do not plan to release any new versions for it, so we don't want to check if its
   # version (which already exists) is a duplicate.
-  if [[ "${pom_file}" == *samples* || "${pom_file}" == *showcase* || "${pom_file}" == *coverage-report* || "${pom_file}" == *sdk-platform-java/pom.xml || "${pom_file}" == *java-vertexai* ]]; then
+  if [[ "${pom_file}" == *samples* || "${pom_file}" == *showcase* || "${pom_file}" == *coverage-report* || "${pom_file}" == *sdk-platform-java/pom.xml || "${pom_file}" == *java-vertexai* || "${pom_file}" == *storage-shared-benchmarking* || "${pom_file}" == *test-proxy* || "${pom_file}" == "./java-shared-config/pom.xml" ]]; then
       continue
   fi
   find_existing_version_pom "${pom_file}"
