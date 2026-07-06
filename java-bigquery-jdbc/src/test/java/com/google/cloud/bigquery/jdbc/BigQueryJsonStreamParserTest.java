@@ -77,6 +77,7 @@ public class BigQueryJsonStreamParserTest {
             Field.of("ts", StandardSQLTypeName.TIMESTAMP),
             Field.of("dt", StandardSQLTypeName.DATE),
             Field.of("tm", StandardSQLTypeName.TIME),
+            Field.of("range_col", StandardSQLTypeName.RANGE),
             Field.newBuilder("tags", StandardSQLTypeName.STRING)
                 .setMode(Field.Mode.REPEATED)
                 .build(),
@@ -106,6 +107,9 @@ public class BigQueryJsonStreamParserTest {
                 FieldValue.of(Attribute.PRIMITIVE, "1408452095.22"),
                 FieldValue.of(Attribute.PRIMITIVE, "2023-03-13"),
                 FieldValue.of(Attribute.PRIMITIVE, "23:59:59"),
+                FieldValue.of(
+                    Attribute.RANGE,
+                    com.google.cloud.bigquery.Range.of("[2020-01-01, 2020-01-31)")),
                 FieldValue.of(
                     Attribute.REPEATED,
                     Arrays.asList(
@@ -154,6 +158,7 @@ public class BigQueryJsonStreamParserTest {
     assertThat(row[13]).isInstanceOf(FieldValue.class);
     assertThat(row[14]).isInstanceOf(FieldValue.class);
     assertThat(row[15]).isInstanceOf(FieldValue.class);
+    assertThat(row[16]).isInstanceOf(FieldValue.class);
 
     // Verify ResultSet end-to-end JDBC Coercion
     BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingDeque<>();
@@ -179,6 +184,7 @@ public class BigQueryJsonStreamParserTest {
     assertThat(rs.getTimestamp("ts")).isNotNull();
     assertThat(rs.getDate("dt")).isEqualTo(Date.valueOf("2023-03-13"));
     assertThat(rs.getTime("tm")).isEqualTo(Time.valueOf("23:59:59"));
+    assertThat(rs.getString("range_col")).isEqualTo("[2020-01-01, 2020-01-31)");
 
     // Array of Primitives
     Array tagsArray = rs.getArray("tags");

@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.util.List;
 
 /**
@@ -70,7 +71,11 @@ class BigQueryFieldValueListWrapper {
     boolean[] isComplex = new boolean[size];
     for (int i = 0; i < size; i++) {
       Field field = fieldList.get(i);
-      isComplex[i] = isArray(field) || isStruct(field);
+      isComplex[i] =
+          isArray(field)
+              || isStruct(field)
+              || (field.getType() != null
+                  && field.getType().getStandardType() == StandardSQLTypeName.RANGE);
     }
     return isComplex;
   }
@@ -85,7 +90,8 @@ class BigQueryFieldValueListWrapper {
       FieldValue fv = fieldValueList.get(i);
       if (fv == null || fv.isNull()) {
         row[i] = null;
-      } else if (i < isComplexColumn.length && isComplexColumn[i]) {
+      } else if ((i < isComplexColumn.length && isComplexColumn[i])
+          || fv.getAttribute() != Attribute.PRIMITIVE) {
         row[i] = fv;
       } else {
         row[i] = fv.getStringValue();
