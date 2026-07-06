@@ -114,7 +114,9 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   }
 
   public ArrayList<Instant> getLatestRequestReceivedInstants() {
-    return requestReceivedInstants;
+    synchronized (requestReceivedInstants) {
+      return new ArrayList<>(requestReceivedInstants);
+    }
   }
 
   @Override
@@ -203,7 +205,9 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
         new StreamObserver<AppendRowsRequest>() {
           @Override
           public void onNext(AppendRowsRequest value) {
-            requestReceivedInstants.add(Instant.now());
+            synchronized (requestReceivedInstants) {
+              requestReceivedInstants.add(Instant.now());
+            }
             recordCount++;
             requests.add(value);
             long offset = value.getOffset().getValue();
