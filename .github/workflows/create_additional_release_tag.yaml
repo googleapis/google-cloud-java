@@ -22,8 +22,10 @@ jobs:
         git config --local user.name "GitHub Action"
     - name: Create additional tags
       shell: bash
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
-        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable')
+        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable' 'libraries-bom')
         for ARTIFACT_ID in "${ARTIFACT_IDS[@]}"; do
           VERSION=$(grep "^${ARTIFACT_ID}:" versions.txt | cut -d':' -f2 | tr -d '[:space:]')
           TAG_NAME="${ARTIFACT_ID}/v$VERSION"
@@ -33,4 +35,8 @@ jobs:
           fi
           git tag $TAG_NAME
           git push origin $TAG_NAME
+          if [ "${ARTIFACT_ID}" = "libraries-bom" ]; then
+            echo "Creating GitHub Release for ${TAG_NAME}"
+            gh release create "${TAG_NAME}" --title "GCP Libraries BOM ${VERSION}" --notes "Release notes will be generated shortly."
+          fi
         done
