@@ -20,8 +20,12 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
+import com.google.cloud.bigquery.BigQuery.RoutineField;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
+import com.google.cloud.bigquery.BigQuery.RoutineOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
+import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
@@ -1056,7 +1060,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
             getRoutineDetailsExecutor = connection.getMetadataExecutor();
             List<Routine> fullRoutines =
-                fetchFullRoutineDetailsForIds(procedureIdsToGet, getRoutineDetailsExecutor, LOG);
+                fetchFullRoutineDetailsForIds(
+                    procedureIdsToGet,
+                    getRoutineDetailsExecutor,
+                    LOG,
+                    RoutineOption.fields(
+                        RoutineField.ROUTINE_REFERENCE,
+                        RoutineField.ARGUMENTS,
+                        RoutineField.ROUTINE_TYPE));
             getRoutineDetailsExecutor = null;
 
             if (fullRoutines.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -1174,7 +1185,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   List<Routine> fetchFullRoutineDetailsForIds(
       List<RoutineId> procedureIdsToGet,
       ExecutorService getRoutineDetailsExecutor,
-      BigQueryJdbcCustomLogger logger)
+      BigQueryJdbcCustomLogger logger,
+      RoutineOption... options)
       throws InterruptedException, ExecutionException {
     logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
     final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
@@ -1191,7 +1203,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Callable<Routine> getCallable =
           () -> {
             try {
-              return bigquery.getRoutine(currentProcId);
+              return bigquery.getRoutine(currentProcId, options);
             } catch (Exception e) {
               logger.warning(
                   "Failed to get full details for routine "
@@ -1616,7 +1628,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                   TableId.of(
                                       currentDatasetId.getProject(),
                                       currentDatasetId.getDataset(),
-                                      name)),
+                                      name),
+                                  TableOption.fields(
+                                      TableField.TABLE_REFERENCE,
+                                      TableField.TYPE,
+                                      TableField.DESCRIPTION)),
                           (tbl) -> tbl.getTableId().getTable(),
                           tableNamePattern,
                           tableNameRegex,
@@ -1930,7 +1946,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                               datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
                       (name) ->
                           bigquery.getTable(
-                              TableId.of(datasetId.getProject(), datasetId.getDataset(), name)),
+                              TableId.of(datasetId.getProject(), datasetId.getDataset(), name),
+                              TableOption.fields(
+                                  TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA)),
                       (tbl) -> tbl.getTableId().getTable(),
                       tableNamePattern,
                       tableNameRegex,
@@ -1999,7 +2017,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             "Schema not included in table object for "
                 + tableId
                 + ", fetching full table details...");
-        Table fullTable = bigquery.getTable(tableId);
+        Table fullTable =
+            bigquery.getTable(
+                tableId,
+                TableOption.fields(TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
         if (fullTable != null) {
           definition = fullTable.getDefinition();
           tableSchema = (definition != null) ? definition.getSchema() : null;
@@ -3402,70 +3423,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineGetSchemasSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
-    if (catalog != null) {
-      // Single-Catalog Path: completely synchronous on caller thread
-      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
-      List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
-      List<FieldValueList> collectedResults = new ArrayList<>();
-      for (Dataset dataset : datasets) {
-        processSchemaInfo(dataset, collectedResults, resultSchemaFields);
-      }
-      Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
-      sortResults(collectedResults, comparator, "getSchemas", LOG);
-      populateQueue(collectedResults, queue, resultSchemaFields);
-      signalEndOfData(queue, resultSchemaFields);
-      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
-    }
-
-    // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Runnable multiSchemaFetcher =
+    Runnable schemaFetcher =
         () -> {
           final FieldList localResultSchemaFields = resultSchemaFields;
-          final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
-          final List<Dataset> collectedDatasets = new ArrayList<>();
           final List<FieldValueList> collectedResults = new ArrayList<>();
 
           try {
-            List<String> projectsToScanList = getAccessibleCatalogNames();
-
-            if (projectsToScanList.isEmpty()) {
-              LOG.info(
-                  "No valid projects to scan (primary, specified, or additional). Returning empty"
-                      + " resultset.");
-              return;
-            }
-
-            ExecutorService apiExecutor = connection.getMetadataExecutor();
-
-            LOG.fine("Submitting parallel fetchMatchingDatasets tasks...");
-            for (String currentProjectToScan : projectsToScanList) {
-              if (Thread.currentThread().isInterrupted()) {
-                LOG.warning("Fetcher interrupted during project iteration submission.");
-                break;
-              }
-
-              Callable<List<Dataset>> apiCallable =
-                  () -> fetchMatchingDatasets(currentProjectToScan, schemaPattern, schemaRegex);
-              Future<List<Dataset>> apiFuture = apiExecutor.submit(apiCallable);
-              apiFutures.add(apiFuture);
-            }
-            LOG.fine("Finished submitting " + apiFutures.size() + " fetchMatchingDatasets tasks.");
-
-            LOG.fine("Processing results from fetchMatchingDatasets tasks...");
-            for (Future<List<Dataset>> apiFuture : apiFutures) {
-              if (Thread.currentThread().isInterrupted()) {
-                LOG.warning("Fetcher interrupted while processing API futures.");
-                break;
-              }
-              List<Dataset> datasetsResult = apiFuture.get();
-              if (datasetsResult != null) {
-                collectedDatasets.addAll(datasetsResult);
-              }
-            }
-
-            for (Dataset dataset : collectedDatasets) {
+            List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+            for (Dataset dataset : datasets) {
               if (Thread.currentThread().isInterrupted()) {
                 break;
               }
@@ -3480,16 +3447,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             handleFetcherException(t, queue, "getSchemas");
           } finally {
-            apiFutures.forEach(f -> f.cancel(true));
-            finalizeFetcher(queue, localResultSchemaFields, "Multi-schema fetcher");
+            finalizeFetcher(queue, localResultSchemaFields, "Schema fetcher");
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(schemaFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
-    LOG.info("Submitted background task for multi-catalog getSchemas to query executor");
+    LOG.info("Submitted background task for getSchemas to query executor");
     return resultSet;
   }
 
@@ -4838,11 +4804,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String catalog, String schemaPattern, Pattern schemaRegex) throws SQLException {
     List<String> projects =
         (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
-    List<Dataset> allDatasets = new ArrayList<>();
-    for (String project : projects) {
-      if (Thread.currentThread().isInterrupted()) {
-        throw new SQLException("Interrupted while fetching matching datasets");
-      }
+
+    if (projects.isEmpty()) {
+      return Collections.emptyList();
+    }
+
+    if (projects.size() == 1) {
+      String project = projects.get(0);
       try {
         List<Dataset> datasets =
             findMatchingBigQueryObjects(
@@ -4853,9 +4821,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 schemaPattern,
                 schemaRegex,
                 LOG);
-        if (datasets != null) {
-          allDatasets.addAll(datasets);
-        }
+        return datasets != null ? datasets : Collections.emptyList();
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new SQLException("Interrupted while fetching matching datasets", e);
@@ -4863,6 +4829,55 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         throw new SQLException("Failed to fetch matching datasets for project " + project, e);
       }
     }
+
+    final List<Dataset> allDatasets = Collections.synchronizedList(new ArrayList<>());
+    final List<Future<?>> taskFutures = new ArrayList<>();
+    ExecutorService executor = connection.getMetadataExecutor();
+
+    for (String project : projects) {
+      Callable<Void> task =
+          () -> {
+            try {
+              List<Dataset> datasets =
+                  findMatchingBigQueryObjects(
+                      "Dataset",
+                      () ->
+                          bigquery.listDatasets(
+                              project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                      (name) -> bigquery.getDataset(DatasetId.of(project, name)),
+                      (ds) -> ds.getDatasetId().getDataset(),
+                      schemaPattern,
+                      schemaRegex,
+                      LOG);
+              if (datasets != null) {
+                allDatasets.addAll(datasets);
+              }
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+              throw new SQLException(
+                  "Interrupted while fetching datasets for project " + project, e);
+            } catch (Exception e) {
+              throw new SQLException("Failed to fetch datasets for project " + project, e);
+            }
+            return null;
+          };
+      taskFutures.add(executor.submit(task));
+    }
+
+    try {
+      waitForTasksCompletion(taskFutures);
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
+      throw new SQLException("Error parallel-fetching matching datasets", e);
+    }
+
+    if (Thread.currentThread().isInterrupted()) {
+      throw new SQLException("Interrupted while parallel-fetching matching datasets");
+    }
+
     return allDatasets;
   }
 
