@@ -235,6 +235,9 @@ class ConnectionWorkerPoolTest {
 
     // Try append 20 requests, at the end we should have 2 requests per connection.
     long appendCount = 20;
+    // Use a CountDownLatch to block mock server responses. This ensures all 20 requests
+    // remain in-flight simultaneously, forcing the ConnectionWorkerPool to scale up to
+    // 10 connections. Without this blocking, requests might finish early and prevent scaling.
     CountDownLatch latch = new CountDownLatch(1);
     for (long i = 0; i < appendCount; i++) {
       long offset = i;
