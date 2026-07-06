@@ -29,8 +29,6 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.common.collect.ImmutableList;
 import com.sun.management.ThreadMXBean;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.lang.management.ManagementFactory;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -38,6 +36,7 @@ import java.sql.Array;
 import java.sql.Date;
 import java.sql.Struct;
 import java.sql.Time;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
@@ -47,7 +46,7 @@ import org.junit.jupiter.api.Test;
 public class BigQueryJsonStreamParserTest {
 
   @Test
-  public void testStreamParsingAndCoercionAllTypes() throws Exception {
+  public void testUnpackRowAndCoercionAllTypes() throws Exception {
     FieldList profileSchema =
         FieldList.of(
             Field.of("pname", StandardSQLTypeName.STRING),
@@ -89,37 +88,55 @@ public class BigQueryJsonStreamParserTest {
     Schema schema = Schema.of(schemaFields);
     BigQueryJsonStreamParser parser = new BigQueryJsonStreamParser(schema);
 
-    String json =
-        "{\n"
-            + "  \"rows\": [\n"
-            + "    {\n"
-            + "      \"f\": [\n"
-            + "        { \"v\": \"101\" },\n"
-            + "        { \"v\": \"Alice\" },\n"
-            + "        { \"v\": \"98.5\" },\n"
-            + "        { \"v\": \"true\" },\n"
-            + "        { \"v\": \"POINT(-122.084 37.422)\" },\n"
-            + "        { \"v\": \"{\\\"key\\\": \\\"value\\\"}\" },\n"
-            + "        { \"v\": \"123456789.987654321\" },\n"
-            + "        { \"v\": \"99999999999999999999999999999999999999.999999999\" },\n"
-            + "        { \"v\": \"0-0 0 0:0:0\" },\n"
-            + "        { \"v\": \"SGVsbG8gV29ybGQ=\" },\n"
-            + "        { \"v\": \"1408452095.22\" },\n"
-            + "        { \"v\": \"2023-03-13\" },\n"
-            + "        { \"v\": \"23:59:59\" },\n"
-            + "        { \"v\": [ { \"v\": \"tag1\" }, { \"v\": \"tag2\" } ] },\n"
-            + "        { \"v\": [ { \"v\": { \"f\": [ { \"v\": \"Bob\" }, { \"v\": \"30\" } ] } } ] },\n"
-            + "        { \"v\": { \"f\": [ { \"v\": \"Acme Corp\" }, { \"v\": { \"f\": [ { \"v\": \"London\" }, { \"v\": \"UK\" } ] } } ] } }\n"
-            + "      ]\n"
-            + "    }\n"
-            + "  ]\n"
-            + "}";
+    FieldValueList fvl =
+        FieldValueList.of(
+            Arrays.asList(
+                FieldValue.of(Attribute.PRIMITIVE, "101"),
+                FieldValue.of(Attribute.PRIMITIVE, "Alice"),
+                FieldValue.of(Attribute.PRIMITIVE, "98.5"),
+                FieldValue.of(Attribute.PRIMITIVE, "true"),
+                FieldValue.of(Attribute.PRIMITIVE, "POINT(-122.084 37.422)"),
+                FieldValue.of(Attribute.PRIMITIVE, "{\"key\": \"value\"}"),
+                FieldValue.of(Attribute.PRIMITIVE, "123456789.987654321"),
+                FieldValue.of(
+                    Attribute.PRIMITIVE, "99999999999999999999999999999999999999.999999999"),
+                FieldValue.of(Attribute.PRIMITIVE, "0-0 0 0:0:0"),
+                FieldValue.of(Attribute.PRIMITIVE, "SGVsbG8gV29ybGQ="),
+                FieldValue.of(Attribute.PRIMITIVE, "1408452095.22"),
+                FieldValue.of(Attribute.PRIMITIVE, "2023-03-13"),
+                FieldValue.of(Attribute.PRIMITIVE, "23:59:59"),
+                FieldValue.of(
+                    Attribute.REPEATED,
+                    Arrays.asList(
+                        FieldValue.of(Attribute.PRIMITIVE, "tag1"),
+                        FieldValue.of(Attribute.PRIMITIVE, "tag2"))),
+                FieldValue.of(
+                    Attribute.REPEATED,
+                    Arrays.asList(
+                        FieldValue.of(
+                            Attribute.RECORD,
+                            FieldValueList.of(
+                                Arrays.asList(
+                                    FieldValue.of(Attribute.PRIMITIVE, "Bob"),
+                                    FieldValue.of(Attribute.PRIMITIVE, "30")),
+                                profileSchema)))),
+                FieldValue.of(
+                    Attribute.RECORD,
+                    FieldValueList.of(
+                        Arrays.asList(
+                            FieldValue.of(Attribute.PRIMITIVE, "Acme Corp"),
+                            FieldValue.of(
+                                Attribute.RECORD,
+                                FieldValueList.of(
+                                    Arrays.asList(
+                                        FieldValue.of(Attribute.PRIMITIVE, "London"),
+                                        FieldValue.of(Attribute.PRIMITIVE, "UK")),
+                                    innerStructSchema))),
+                        outerStructSchema))),
+            schemaFields);
 
-    InputStream stream = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
-    List<Object[]> rows = parser.parseStream(stream);
+    Object[] row = parser.unpackRow(fvl);
 
-    assertThat(rows).hasSize(1);
-    Object[] row = rows.get(0);
     assertThat(row[0]).isEqualTo("101");
     assertThat(row[1]).isEqualTo("Alice");
     assertThat(row[2]).isEqualTo("98.5");
