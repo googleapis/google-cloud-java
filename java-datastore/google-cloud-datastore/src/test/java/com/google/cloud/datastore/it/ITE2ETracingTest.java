@@ -36,7 +36,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.awaitility.Awaitility.await;
 
+import java.time.Duration;
+import org.awaitility.core.ConditionTimeoutException;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.NotFoundException;
@@ -474,44 +477,36 @@ public class ITE2ETracingTest {
   protected void fetchAndValidateTrace(
       String traceId, int numExpectedSpans, List<List<String>> callStackList)
       throws InterruptedException {
-    // Large enough count to accommodate eventually consistent Cloud Trace backend
-    int numRetries = GET_TRACE_RETRY_COUNT;
     // Account for rootSpanName
-    numExpectedSpans++;
+    final int expectedSpanCount = numExpectedSpans + 1;
 
-    // Fetch traces
-    do {
-      try {
-        retrievedTrace = traceClient.getTrace(projectId, traceId);
-        assertEquals(traceId, retrievedTrace.getTraceId());
-
-        logger.info(
-            "expectedSpanCount="
-                + numExpectedSpans
-                + ", retrievedSpanCount="
-                + retrievedTrace.getSpansCount());
-      } catch (NotFoundException | DeadlineExceededException e) {
-        logger.info(
-            "Trace not found or deadline exceeded, retrying in "
-                + GET_TRACE_RETRY_BACKOFF_MILLIS
-                + " ms");
-      } catch (IndexOutOfBoundsException outOfBoundsException) {
-        logger.info("Call stack not found in trace. Retrying.");
-      }
-      if (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()) {
-        Thread.sleep(GET_TRACE_RETRY_BACKOFF_MILLIS);
-      }
-    } while (numRetries-- > 0
-        && (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()));
-
-    if (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()) {
+    try {
+      await()
+          .atMost(Duration.ofSeconds(GET_TRACE_RETRY_COUNT))
+          .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .ignoreExceptionsInstanceOf(NotFoundException.class)
+          .ignoreExceptionsInstanceOf(DeadlineExceededException.class)
+          .ignoreExceptionsInstanceOf(IndexOutOfBoundsException.class)
+          .until(
+              () -> {
+                retrievedTrace = traceClient.getTrace(projectId, traceId);
+                assertEquals(traceId, retrievedTrace.getTraceId());
+                logger.info(
+                    "expectedSpanCount="
+                        + expectedSpanCount
+                        + ", retrievedSpanCount="
+                        + retrievedTrace.getSpansCount());
+                return retrievedTrace != null && expectedSpanCount == retrievedTrace.getSpansCount();
+              });
+    } catch (org.awaitility.core.ConditionTimeoutException e) {
       throw new RuntimeException(
           "Expected number of spans: "
-              + numExpectedSpans
+              + expectedSpanCount
               + ", Actual number of spans: "
               + (retrievedTrace != null
                   ? retrievedTrace.getSpansList().toString()
-                  : "Trace NOT_FOUND"));
+                  : "Trace NOT_FOUND"),
+          e);
     }
 
     TraceContainer traceContainer = new TraceContainer(rootSpanName, retrievedTrace);
@@ -563,27 +558,32 @@ public class ITE2ETracingTest {
     }
     waitForTracesToComplete();
 
-    Trace traceResp = null;
+    final Trace[] traceRespHolder = new Trace[1];
     int expectedSpanCount = 2;
 
-    int numRetries = GET_TRACE_RETRY_COUNT;
-    do {
-      try {
-        traceResp = traceClient.getTrace(projectId, customSpanContext.getTraceId());
-        if (traceResp.getSpansCount() == expectedSpanCount) {
-          logger.info("Success: Got " + expectedSpanCount + " spans.");
-          break;
-        }
-      } catch (NotFoundException notFoundException) {
-        Thread.sleep(GET_TRACE_RETRY_BACKOFF_MILLIS);
-        logger.info("Trace not found, retrying in " + GET_TRACE_RETRY_BACKOFF_MILLIS + " ms");
-      }
-      logger.info(
-          "Trace Found. The trace did not contain "
-              + expectedSpanCount
-              + " spans. Going to retry.");
-      numRetries--;
-    } while (numRetries > 0);
+    try {
+      await()
+          .atMost(Duration.ofSeconds(GET_TRACE_RETRY_COUNT))
+          .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .ignoreExceptionsInstanceOf(NotFoundException.class)
+          .until(
+              () -> {
+                Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
+                traceRespHolder[0] = trace;
+                if (trace.getSpansCount() == expectedSpanCount) {
+                  logger.info("Success: Got " + expectedSpanCount + " spans.");
+                  return true;
+                }
+                logger.info(
+                    "Trace Found. The trace did not contain "
+                        + expectedSpanCount
+                        + " spans. Going to retry.");
+                return false;
+              });
+    } catch (ConditionTimeoutException ignored) {
+      // Ignore to let assertions below run and fail with descriptive messages
+    }
+    Trace traceResp = traceRespHolder[0];
 
     // Make sure we got as many spans as we expected.
     assertNotNull(traceResp);

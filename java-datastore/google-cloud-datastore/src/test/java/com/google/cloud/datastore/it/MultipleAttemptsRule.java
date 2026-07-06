@@ -59,6 +59,9 @@ public final class MultipleAttemptsRule implements TestRule {
             return;
           } catch (Throwable t) {
             failures.add(t);
+            // Sleep before retrying the test. Awaitility is not used here because we are
+            // retrying the entire test execution statement, which is a structural JUnit
+            // operation rather than a state-based assertion check.
             Thread.sleep(retryIntervalMillis);
             retryIntervalMillis *= 1.5f;
           }
