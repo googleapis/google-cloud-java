@@ -3425,8 +3425,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     if (catalog != null) {
       // Single-Catalog Path: completely synchronous on caller thread
-      final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-          new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
       List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
       List<FieldValueList> collectedResults = new ArrayList<>();
       for (Dataset dataset : datasets) {
@@ -3441,7 +3440,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Runnable schemaFetcher =
+    Runnable multiSchemaFetcher =
         () -> {
           final FieldList localResultSchemaFields = resultSchemaFields;
           final List<FieldValueList> collectedResults = new ArrayList<>();
@@ -3463,15 +3462,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             handleFetcherException(t, queue, "getSchemas");
           } finally {
-            finalizeFetcher(queue, localResultSchemaFields, "Schema fetcher");
+            finalizeFetcher(queue, localResultSchemaFields, "Multi-schema fetcher");
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(schemaFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
-    LOG.info("Submitted background task for getSchemas to query executor");
+    LOG.info("Submitted background task for multi-catalog getSchemas to query executor");
     return resultSet;
   }
 
