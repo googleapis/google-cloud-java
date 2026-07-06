@@ -889,7 +889,7 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-logging-logback</artifactId>
+        <artifactId>google-cloud-logging-logback</artifactId><!-- {x-version-update:google-cloud-logging-logback:current} -->
         <version>0.143.0-alpha-SNAPSHOT</version>
       </dependency>
       <dependency>
