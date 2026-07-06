@@ -1548,18 +1548,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getTables(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
 
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
-
-    if ((effectiveCatalog != null && effectiveCatalog.isEmpty())
-        || (effectiveSchemaPattern != null && effectiveSchemaPattern.isEmpty())
+    if ((catalog != null && catalog.isEmpty())
+        || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
       return new BigQueryJsonResultSet();
     }
+
+    Tuple<String, String> effectiveIdentifiers =
+        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
+    String effectiveCatalog = effectiveIdentifiers.x();
+    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     LOG.info(
         "getTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, types: %s",
@@ -1865,19 +1865,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getColumns(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
 
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
-
-    if ((effectiveCatalog != null && effectiveCatalog.isEmpty())
-        || (effectiveSchemaPattern != null && effectiveSchemaPattern.isEmpty())
+    if ((catalog != null && catalog.isEmpty())
+        || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())
         || (columnNamePattern != null && columnNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
       return new BigQueryJsonResultSet();
     }
+
+    Tuple<String, String> effectiveIdentifiers =
+        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
+    String effectiveCatalog = effectiveIdentifiers.x();
+    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     LOG.info(
         "getColumns called for catalog: %s, schemaPattern: %s, tableNamePattern: %s,"
@@ -4429,28 +4429,25 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       // We only use the dataset part of the DefaultDataset for schema filtering
       String defaultSchemaFromConnection = this.connection.getDefaultDataset().getDataset();
 
-      boolean catalogIsNullOrEmptyOrWildcard =
-          (catalog == null || catalog.isEmpty() || catalog.equals("%"));
-      boolean schemaPatternIsNullOrEmptyOrWildcard =
-          (schemaPattern == null || schemaPattern.isEmpty() || schemaPattern.equals("%"));
+      boolean catalogIsUnspecified = (effectiveCatalog == null || effectiveCatalog.equals("%"));
+      boolean schemaIsUnspecified =
+          (effectiveSchemaPattern == null || effectiveSchemaPattern.equals("%"));
 
       final String logPrefix = "FilterTablesOnDefaultDatasetTrue: ";
-      if (catalogIsNullOrEmptyOrWildcard && schemaPatternIsNullOrEmptyOrWildcard) {
+      if (catalogIsUnspecified && schemaIsUnspecified) {
         effectiveCatalog = defaultProjectFromConnection;
         effectiveSchemaPattern = defaultSchemaFromConnection;
         LOG.info(
             logPrefix + "Using default catalog '%s' and default dataset '%s'.",
             effectiveCatalog,
             effectiveSchemaPattern);
-      } else if (catalogIsNullOrEmptyOrWildcard) {
-        effectiveCatalog = defaultProjectFromConnection;
+      } else if (catalogIsUnspecified) {
+        effectiveCatalog = null;
         LOG.info(
-            logPrefix
-                + "Using default catalog '%s' with user dataset '%s'. Default dataset '%s' ignored.",
-            effectiveCatalog,
+            logPrefix + "Using all catalogs with user dataset '%s'. Default dataset '%s' ignored.",
             effectiveSchemaPattern,
             defaultSchemaFromConnection);
-      } else if (schemaPatternIsNullOrEmptyOrWildcard) {
+      } else if (schemaIsUnspecified) {
         effectiveSchemaPattern = defaultSchemaFromConnection;
         LOG.info(
             logPrefix + "Using user catalog '%s' and default dataset '%s'.",
