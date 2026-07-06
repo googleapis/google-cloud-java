@@ -1280,15 +1280,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
               long startTime = System.nanoTime();
               long results = 0;
+              BigQueryJsonStreamParser streamParser = new BigQueryJsonStreamParser(schema);
               for (FieldValueList fieldValueList : fieldValueLists) {
 
                 if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
                   // do not process further pages and shutdown (inner loop)
                   break;
                 }
+                Object[] rowArray = streamParser.unpackRow(fieldValueList);
                 Uninterruptibles.putUninterruptibly(
                     bigQueryFieldValueListWrapperBlockingQueue,
-                    BigQueryFieldValueListWrapper.of(schema.getFields(), fieldValueList));
+                    BigQueryFieldValueListWrapper.ofRow(schema.getFields(), rowArray));
                 results += 1;
               }
               LOG.fine(

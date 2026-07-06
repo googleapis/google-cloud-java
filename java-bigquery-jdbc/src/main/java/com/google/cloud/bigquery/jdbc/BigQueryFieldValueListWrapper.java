@@ -18,12 +18,13 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
 import java.util.List;
 
 /**
  * Package-private, This class acts as a facade layer and wraps the FieldList(schema) and
- * FieldValueList
+ * FieldValueList or lightweight Object[] row buffers.
  */
 class BigQueryFieldValueListWrapper {
 
@@ -37,6 +38,9 @@ class BigQueryFieldValueListWrapper {
   // reference as a List<FieldValue> in case of an Array
   private final List<FieldValue> arrayFieldValueList;
 
+  // Lightweight row values buffer (Object[]) for streaming parsing
+  private final Object[] rowValues;
+
   // This flag marks the end of the stream for the ResultSet
   private boolean isLast = false;
   private final Exception exception;
@@ -44,29 +48,38 @@ class BigQueryFieldValueListWrapper {
   static BigQueryFieldValueListWrapper of(
       FieldList fieldList, FieldValueList fieldValueList, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryFieldValueListWrapper(fieldList, fieldValueList, null, isLastFlag, null);
+    return new BigQueryFieldValueListWrapper(
+        fieldList, fieldValueList, null, null, isLastFlag, null);
+  }
+
+  static BigQueryFieldValueListWrapper ofRow(
+      FieldList fieldList, Object[] rowValues, boolean... isLast) {
+    boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
+    return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, isLastFlag, null);
   }
 
   static BigQueryFieldValueListWrapper getNestedFieldValueListWrapper(
       FieldList fieldList, List<FieldValue> arrayFieldValueList, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
     return new BigQueryFieldValueListWrapper(
-        fieldList, null, arrayFieldValueList, isLastFlag, null);
+        fieldList, null, arrayFieldValueList, null, isLastFlag, null);
   }
 
   static BigQueryFieldValueListWrapper ofError(Exception exception) {
-    return new BigQueryFieldValueListWrapper(null, null, null, true, exception);
+    return new BigQueryFieldValueListWrapper(null, null, null, null, true, exception);
   }
 
   private BigQueryFieldValueListWrapper(
       FieldList fieldList,
       FieldValueList fieldValueList,
       List<FieldValue> arrayFieldValueList,
+      Object[] rowValues,
       boolean isLast,
       Exception exception) {
     this.fieldList = fieldList;
     this.fieldValueList = fieldValueList;
     this.arrayFieldValueList = arrayFieldValueList;
+    this.rowValues = rowValues;
     this.isLast = isLast;
     this.exception = exception;
   }
@@ -81,6 +94,30 @@ class BigQueryFieldValueListWrapper {
 
   public List<FieldValue> getArrayFieldValueList() {
     return this.arrayFieldValueList;
+  }
+
+  public Object[] getRowValues() {
+    return this.rowValues;
+  }
+
+  public FieldValue get(int index) {
+    if (this.fieldValueList != null) {
+      return this.fieldValueList.get(index);
+    }
+    if (this.arrayFieldValueList != null) {
+      return this.arrayFieldValueList.get(index);
+    }
+    if (this.rowValues != null && index >= 0 && index < this.rowValues.length) {
+      Object val = this.rowValues[index];
+      if (val == null) {
+        return FieldValue.of(Attribute.PRIMITIVE, null);
+      }
+      if (val instanceof FieldValue) {
+        return (FieldValue) val;
+      }
+      return FieldValue.of(Attribute.PRIMITIVE, val.toString());
+    }
+    return null;
   }
 
   public boolean isLast() {
