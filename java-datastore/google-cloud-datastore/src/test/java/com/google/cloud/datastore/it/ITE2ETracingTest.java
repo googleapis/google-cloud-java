@@ -233,8 +233,6 @@ public class ITE2ETracingTest {
 
   private static final int TRACE_FORCE_FLUSH_MILLIS = 5000;
 
-  private static final int TRACE_PROVIDER_SHUTDOWN_MILLIS = 1000;
-
   private static Key KEY1;
 
   private static Key KEY2;
@@ -394,10 +392,7 @@ public class ITE2ETracingTest {
     retrievedTrace = null;
     customSpanContext = null;
     if (openTelemetrySdk != null) {
-      openTelemetrySdk
-          .getSdkTracerProvider()
-          .shutdown()
-          .join(TRACE_PROVIDER_SHUTDOWN_MILLIS, TimeUnit.MILLISECONDS);
+      openTelemetrySdk.close();
     }
     openTelemetrySdk = null;
   }
