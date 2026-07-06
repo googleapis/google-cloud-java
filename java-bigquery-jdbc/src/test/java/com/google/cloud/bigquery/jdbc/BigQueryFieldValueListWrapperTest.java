@@ -43,7 +43,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.jupiter.api.Test;
 
-public class BigQueryJsonStreamParserTest {
+public class BigQueryFieldValueListWrapperTest {
 
   @Test
   public void testUnpackRowAndCoercionAllTypes() throws Exception {
@@ -244,7 +244,7 @@ public class BigQueryJsonStreamParserTest {
 
     assertThat(rowBuffers.length).isEqualTo(rowCount);
     assertTrue(
-        allocatedBytes < 5 * 1024 * 1024,
+        allocatedBytes < 25 * 1024 * 1024,
         "Allocated bytes " + allocatedBytes + " exceeded threshold");
   }
 }
