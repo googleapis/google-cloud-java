@@ -3423,6 +3423,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineGetSchemasSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
+    if (catalog != null) {
+      // Single-Catalog Path: completely synchronous on caller thread
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+          new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+      List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+      List<FieldValueList> collectedResults = new ArrayList<>();
+      for (Dataset dataset : datasets) {
+        processSchemaInfo(dataset, collectedResults, resultSchemaFields);
+      }
+      Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
+      sortResults(collectedResults, comparator, "getSchemas", LOG);
+      populateQueue(collectedResults, queue, resultSchemaFields);
+      signalEndOfData(queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+    }
+
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     Runnable schemaFetcher =
