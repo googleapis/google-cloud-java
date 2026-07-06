@@ -67,6 +67,7 @@ import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
 import com.google.testing.junit.testparameterinjector.TestParameter;
 import com.google.testing.junit.testparameterinjector.TestParameterInjector;
+import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
@@ -466,6 +467,7 @@ public class ITE2ETracingTest {
           .ignoreExceptionsInstanceOf(NotFoundException.class)
           .ignoreExceptionsInstanceOf(DeadlineExceededException.class)
           .ignoreExceptionsInstanceOf(IndexOutOfBoundsException.class)
+          .ignoreExceptionsInstanceOf(StatusRuntimeException.class)
           .until(
               () -> {
                 retrievedTrace = traceClient.getTrace(projectId, traceId);
@@ -546,6 +548,7 @@ public class ITE2ETracingTest {
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
           .ignoreExceptionsInstanceOf(NotFoundException.class)
+          .ignoreExceptionsInstanceOf(StatusRuntimeException.class)
           .until(
               () -> {
                 Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
