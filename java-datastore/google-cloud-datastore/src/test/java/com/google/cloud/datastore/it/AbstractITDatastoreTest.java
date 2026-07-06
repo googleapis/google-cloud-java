@@ -82,6 +82,7 @@ import com.google.cloud.datastore.models.ExecutionStats;
 import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.models.PlanSummary;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Range;
