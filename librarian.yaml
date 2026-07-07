@@ -49,6 +49,11 @@ tools:
       local_path: sdk-platform-java/hermetic_build/library_generation
 default:
   java:
+    custom_group_ids:
+      google/shopping: com.google.shopping
+      google/maps:      com.google.maps
+			google/ads:       com.google.api-ad
+			google/analytics: com.google.analytics
     libraries_bom_version: 26.83.0
 libraries:
   - name: accessapproval
@@ -86,7 +91,6 @@ libraries:
       api_description_override: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
       artifact_id: ad-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/ad-manager/latest/overview
-      group_id: com.google.api-ads
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Ad Manager API
       product_documentation_override: https://developers.google.com/ad-manager/api/beta
@@ -207,9 +211,7 @@ libraries:
       - path: google/analytics/admin/v1alpha
     java:
       api_description_override: allows you to manage Google Analytics accounts and properties.
-      artifact_id: google-analytics-admin
       codeowner_team: '@googleapis/analytics-dpe'
-      group_id: com.google.analytics
       name_pretty_override: Analytics Admin
       product_documentation_override: https://developers.google.com/analytics
       released_version: 0.104.0
@@ -221,9 +223,7 @@ libraries:
     java:
       api_id_override: analytics-data.googleapis.com
       api_description_override: provides programmatic methods to access report data in Google Analytics App+Web properties.
-      artifact_id: google-analytics-data
       codeowner_team: '@googleapis/analytics-dpe'
-      group_id: com.google.analytics
       name_pretty_override: Analytics Data
       product_documentation_override: https://developers.google.com/analytics/trusted-testing/analytics-data
       released_version: 0.105.0
@@ -1345,7 +1345,6 @@ libraries:
       api_description_override: A unified ingestion API for data partners, agencies and advertisers to connect first-party data across Google advertising products.
       artifact_id: data-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/data-manager/latest/overview
-      group_id: com.google.api-ads
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Manager API
       product_documentation_override: https://developers.google.com/data-manager
@@ -2245,7 +2244,6 @@ libraries:
       api_description_override: Programatically manage your Merchant Issues
       artifact_id: google-shopping-merchant-issue-resolution
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Issue Resolution API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -2260,7 +2258,6 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center Accounts
       artifact_id: google-shopping-merchant-order-tracking
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Order Tracking API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -2438,8 +2435,6 @@ libraries:
       api_id_override: addressvalidation.googleapis.com
       api_description_override: The Address Validation API allows developers to verify the accuracy of addresses. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed address.
       api_shortname_override: maps-addressvalidation
-      artifact_id: google-maps-addressvalidation
-      group_id: com.google.maps
       name_pretty_override: Address Validation API
       product_documentation_override: https://developers.google.com/maps/documentation/address-validation/
       released_version: 0.88.0
@@ -2451,9 +2446,7 @@ libraries:
       api_id_override: maps-area-insights.googleapis.com
       api_description_override: Places Insights API.
       api_shortname_override: maps-area-insights
-      artifact_id: google-maps-area-insights
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Places Insights API
       product_documentation_override: https://developers.google.com/maps/documentation/places-insights
@@ -2466,9 +2459,7 @@ libraries:
       api_id_override: maps-fleetengine.googleapis.com
       api_description_override: Enables Fleet Engine for access to the On Demand Rides and Deliveries and Last Mile Fleet Solution APIs.  Customer's use of Google Maps Content in the Cloud Logging Services is subject to the Google Maps Platform Terms of Service located at https://cloud.google.com/maps-platform/terms.
       api_shortname_override: maps-fleetengine
-      artifact_id: google-maps-fleetengine
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Local Rides and Deliveries API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
@@ -2481,9 +2472,7 @@ libraries:
       api_id_override: maps-fleetengine-delivery.googleapis.com
       api_description_override: Enables Fleet Engine for access to the On Demand Rides and Deliveries and Last Mile Fleet Solution APIs.  Customer's use of Google Maps Content in the Cloud Logging Services is subject to the Google Maps Platform Terms of Service located at https://cloud.google.com/maps-platform/terms.
       api_shortname_override: maps-fleetengine-delivery
-      artifact_id: google-maps-fleetengine-delivery
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Last Mile Fleet Solution Delivery API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
@@ -2495,9 +2484,7 @@ libraries:
     java:
       api_id_override: geocode.googleapis.com
       api_description_override: The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID.
-      artifact_id: google-maps-geocode
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-geocode/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
@@ -2509,9 +2496,7 @@ libraries:
     java:
       api_id_override: mapmanagement.googleapis.com
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
-      artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview
@@ -2526,8 +2511,6 @@ libraries:
         The Maps Platform Datasets API enables developers to ingest geospatially-tied datasets
             that they can use to enrich their experience of Maps Platform solutions (e.g. styling, routing).
       api_shortname_override: maps-mapsplatformdatasets
-      artifact_id: google-maps-mapsplatformdatasets
-      group_id: com.google.maps
       name_pretty_override: Maps Platform Datasets API
       product_documentation_override: https://developers.google.com/maps/documentation
       released_version: 0.83.0
@@ -2541,8 +2524,6 @@ libraries:
       api_id_override: places.googleapis.com
       api_description_override: The Places API allows developers to access a variety of search and retrieval endpoints for a Place.
       api_shortname_override: maps-places
-      artifact_id: google-maps-places
-      group_id: com.google.maps
       name_pretty_override: Places API (New)
       product_documentation_override: https://developers.google.com/maps/documentation/places/web-service/
       released_version: 0.65.0
@@ -2553,9 +2534,7 @@ libraries:
     java:
       api_id_override: routeoptimization.googleapis.com
       api_description_override: The Route Optimization API assigns tasks and routes to a vehicle fleet, optimizing against the objectives and constraints that you supply for your transportation goals.
-      artifact_id: google-maps-routeoptimization
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Route Optimization API
       product_documentation_override: https://developers.google.com/maps/documentation/route-optimization
@@ -2570,8 +2549,6 @@ libraries:
       api_id_override: routes.googleapis.com
       api_description_override: Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features.
       api_shortname_override: maps-routing
-      artifact_id: google-maps-routing
-      group_id: com.google.maps
       name_pretty_override: Routes API
       product_documentation_override: https://developers.google.com/maps/documentation/routes
       released_version: 1.79.0
@@ -2583,9 +2560,7 @@ libraries:
       api_id_override: maps-solar.googleapis.com
       api_description_override: The Solar API allows users to read details about the solar potential of over 60 million buildings. This includes measurements of the building's roof (e.g., size and tilt/azimuth), energy production for a range of sizes of solar installations, and financial costs and benefits.
       api_shortname_override: maps-solar
-      artifact_id: google-maps-solar
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Solar API
       product_documentation_override: https://developers.google.com/maps/documentation/solar/overview
@@ -3442,8 +3417,6 @@ libraries:
       - path: google/shopping/css/v1
     java:
       api_description_override: The CSS API is used to manage your CSS and control your CSS Products portfolio
-      artifact_id: google-shopping-css
-      group_id: com.google.shopping
       name_pretty_override: CSS API
       product_documentation_override: https://developers.google.com/comparison-shopping-services/api
       released_version: 0.62.0
@@ -3455,9 +3428,7 @@ libraries:
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-accounts
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3471,9 +3442,7 @@ libraries:
       api_id_override: shopping-merchant-conversions.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
       api_shortname_override: shopping-merchant-conversions
-      artifact_id: google-shopping-merchant-conversions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Conversions API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3486,9 +3455,7 @@ libraries:
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-datasources
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3500,8 +3467,6 @@ libraries:
       - path: google/shopping/merchant/inventories/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-inventories
-      group_id: com.google.shopping
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
       released_version: 1.22.0
@@ -3514,9 +3479,7 @@ libraries:
       api_id_override: shopping-merchant-lfp.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
       api_shortname_override: shopping-merchant-lfp
-      artifact_id: google-shopping-merchant-lfp
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant LFP API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3530,9 +3493,7 @@ libraries:
       api_id_override: shopping-merchant-notifications.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
       api_shortname_override: shopping-merchant-notifications
-      artifact_id: google-shopping-merchant-notifications
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Notifications API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3546,7 +3507,6 @@ libraries:
       api_description_override: Programmatically manage your products.
       artifact_id: google-shopping-merchant-productstudio
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-productstudio/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3559,9 +3519,7 @@ libraries:
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-products
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3574,9 +3532,7 @@ libraries:
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-promotions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3590,9 +3546,7 @@ libraries:
       api_id_override: shopping-merchant-quota.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
       api_shortname_override: shopping-merchant-quota
-      artifact_id: google-shopping-merchant-quota
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Quota API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3605,8 +3559,6 @@ libraries:
       - path: google/shopping/merchant/reports/v1alpha
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
-      artifact_id: google-shopping-merchant-reports
-      group_id: com.google.shopping
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
       released_version: 1.22.0
@@ -3616,9 +3568,7 @@ libraries:
       - path: google/shopping/merchant/reviews/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center Accounts.
-      artifact_id: google-shopping-merchant-reviews
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
