@@ -13,6 +13,5 @@
   "api_id": "iam.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
-  "excluded_dependencies": "google-iam-policy",
   "excluded_poms": "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1"
 }
