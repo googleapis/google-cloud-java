@@ -20,9 +20,8 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-notification</site.installationModule>
-  
-  <skipUnitTests>false</skipUnitTests>
-</properties>
+    <skipUnitTests>false</skipUnitTests>
+  </properties>
   <dependencyManagement>
     <dependencies>
     </dependencies>

@@ -56,9 +56,8 @@
     <project.protobuf-java.version>3.25.4</project.protobuf-java.version>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquerystorage-parent</site.installationModule>
-  
-  <skipUnitTests>false</skipUnitTests>
-</properties>
+    <skipUnitTests>false</skipUnitTests>
+  </properties>
 
   <pluginRepositories>
     <pluginRepository>
