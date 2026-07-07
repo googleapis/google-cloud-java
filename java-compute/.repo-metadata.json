@@ -13,6 +13,5 @@
   "api_id": "compute.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
-  "excluded_dependencies": "grpc-google-cloud-compute-v1",
   "excluded_poms": "grpc-google-cloud-compute-v1"
 }

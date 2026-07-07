@@ -29,7 +29,6 @@ import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManage
 import io.grpc.CallOptions;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
@@ -190,13 +189,12 @@ public class SwitchingChannelPool implements ChannelPool {
   private ChannelPool newChannelPoolFromProvider(
       ChannelProvider channelProvider, String logName, ClientInterceptor... interceptors) {
     if (channelProvider.isSingleEndpoint()) {
-      return new SingleChannelPool(
-          channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors));
+      return new SingleChannelPool(channelSupplier(channelProvider, interceptors));
     }
 
     if (logName != null) {
       return new ChannelPoolDpImpl(
-          channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors),
+          channelSupplier(channelProvider, interceptors),
           currentConfiguration,
           logName,
           metrics.getDebugTagTracer(),
@@ -204,14 +202,17 @@ public class SwitchingChannelPool implements ChannelPool {
     }
 
     return new ChannelPoolDpImpl(
-        channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors),
+        channelSupplier(channelProvider, interceptors),
         currentConfiguration,
         metrics.getDebugTagTracer(),
         backgroundExecutor);
   }
 
-  private Supplier<ManagedChannel> channelBuilderToSupplier(
-      ManagedChannelBuilder<?> channelBuilder, ClientInterceptor... interceptors) {
-    return () -> channelBuilder.intercept(interceptors).build();
+  // Each supplier invocation must produce a fresh ManagedChannelBuilder. Capturing one builder
+  // and calling .build() on it repeatedly lets anything that mutates the builder between builds
+  // accumulate — the Nth channel then ships with N copies of that interceptor.
+  private Supplier<ManagedChannel> channelSupplier(
+      ChannelProvider channelProvider, ClientInterceptor... interceptors) {
+    return () -> channelProvider.newChannelBuilder().intercept(interceptors).build();
   }
 }
