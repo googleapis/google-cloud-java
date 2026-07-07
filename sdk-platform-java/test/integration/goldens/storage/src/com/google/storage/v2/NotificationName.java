@@ -86,8 +86,7 @@ public class NotificationName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static NotificationName parse(String formattedString) {
+  public static @Nullable NotificationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

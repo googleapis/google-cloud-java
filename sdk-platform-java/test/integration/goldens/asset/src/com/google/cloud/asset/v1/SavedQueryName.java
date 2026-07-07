@@ -160,8 +160,7 @@ public class SavedQueryName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static SavedQueryName parse(String formattedString) {
+  public static @Nullable SavedQueryName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

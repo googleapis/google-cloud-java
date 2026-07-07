@@ -66,8 +66,7 @@ public class ProjectName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @Nullable
-  public static ProjectName parse(String formattedString) {
+  public static @Nullable ProjectName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -169,7 +169,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IAMPolicyClient implements BackgroundResource {
-  @Nullable private final IAMPolicySettings settings;
+  private final @Nullable IAMPolicySettings settings;
   private final IAMPolicyStub stub;
 
   /** Constructs an instance of IAMPolicyClient with default settings. */
@@ -207,8 +207,7 @@ public class IAMPolicyClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final IAMPolicySettings getSettings() {
+  public final @Nullable IAMPolicySettings getSettings() {
     return settings;
   }
 

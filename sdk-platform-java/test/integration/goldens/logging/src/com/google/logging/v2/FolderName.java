@@ -66,8 +66,7 @@ public class FolderName implements ResourceName {
     return newBuilder().setFolder(folder).build().toString();
   }
 
-  @Nullable
-  public static FolderName parse(String formattedString) {
+  public static @Nullable FolderName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -191,7 +191,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AddressesClient implements BackgroundResource {
-  @Nullable private final AddressesSettings settings;
+  private final @Nullable AddressesSettings settings;
   private final AddressesStub stub;
 
   /** Constructs an instance of AddressesClient with default settings. */
@@ -229,8 +229,7 @@ public class AddressesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final AddressesSettings getSettings() {
+  public final @Nullable AddressesSettings getSettings() {
     return settings;
   }
 

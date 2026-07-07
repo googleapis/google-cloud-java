@@ -361,7 +361,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ComplianceClient implements BackgroundResource {
-  @Nullable private final ComplianceSettings settings;
+  private final @Nullable ComplianceSettings settings;
   private final ComplianceStub stub;
 
   /** Constructs an instance of ComplianceClient with default settings. */
@@ -399,8 +399,7 @@ public class ComplianceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final ComplianceSettings getSettings() {
+  public final @Nullable ComplianceSettings getSettings() {
     return settings;
   }
 

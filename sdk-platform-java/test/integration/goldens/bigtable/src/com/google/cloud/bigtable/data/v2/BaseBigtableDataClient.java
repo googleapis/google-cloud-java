@@ -240,7 +240,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BaseBigtableDataClient implements BackgroundResource {
-  @Nullable private final BaseBigtableDataSettings settings;
+  private final @Nullable BaseBigtableDataSettings settings;
   private final BigtableStub stub;
 
   /** Constructs an instance of BaseBigtableDataClient with default settings. */
@@ -280,8 +280,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final BaseBigtableDataSettings getSettings() {
+  public final @Nullable BaseBigtableDataSettings getSettings() {
     return settings;
   }
 
@@ -389,10 +388,10 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MutateRowResponse mutateRow(
-      TableName tableName, ByteString rowKey, List<Mutation> mutations) {
+      @Nullable TableName tableName, ByteString rowKey, List<Mutation> mutations) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .build();
@@ -475,10 +474,13 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MutateRowResponse mutateRow(
-      TableName tableName, ByteString rowKey, List<Mutation> mutations, String appProfileId) {
+      @Nullable TableName tableName,
+      ByteString rowKey,
+      List<Mutation> mutations,
+      String appProfileId) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .setAppProfileId(appProfileId)
@@ -670,14 +672,14 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckAndMutateRowResponse checkAndMutateRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       RowFilter predicateFilter,
       List<Mutation> trueMutations,
       List<Mutation> falseMutations) {
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -789,7 +791,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckAndMutateRowResponse checkAndMutateRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       RowFilter predicateFilter,
       List<Mutation> trueMutations,
@@ -797,7 +799,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       String appProfileId) {
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -960,8 +962,9 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *     respond. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PingAndWarmResponse pingAndWarm(InstanceName name) {
-    PingAndWarmRequest request = PingAndWarmRequest.newBuilder().setName(name.toString()).build();
+  public final PingAndWarmResponse pingAndWarm(@Nullable InstanceName name) {
+    PingAndWarmRequest request =
+        PingAndWarmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pingAndWarm(request);
   }
 
@@ -1019,10 +1022,10 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *     "default" application profile will be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PingAndWarmResponse pingAndWarm(InstanceName name, String appProfileId) {
+  public final PingAndWarmResponse pingAndWarm(@Nullable InstanceName name, String appProfileId) {
     PingAndWarmRequest request =
         PingAndWarmRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setAppProfileId(appProfileId)
             .build();
     return pingAndWarm(request);
@@ -1155,10 +1158,10 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadModifyWriteRowResponse readModifyWriteRow(
-      TableName tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
+      @Nullable TableName tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .build();
@@ -1248,13 +1251,13 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadModifyWriteRowResponse readModifyWriteRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       List<ReadModifyWriteRule> rules,
       String appProfileId) {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .setAppProfileId(appProfileId)

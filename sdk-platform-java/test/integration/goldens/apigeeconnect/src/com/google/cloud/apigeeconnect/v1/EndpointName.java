@@ -73,8 +73,7 @@ public class EndpointName implements ResourceName {
     return newBuilder().setProject(project).setEndpoint(endpoint).build().toString();
   }
 
-  @Nullable
-  public static EndpointName parse(String formattedString) {
+  public static @Nullable EndpointName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -187,8 +187,7 @@ public class LogSinkName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static LogSinkName parse(String formattedString) {
+  public static @Nullable LogSinkName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

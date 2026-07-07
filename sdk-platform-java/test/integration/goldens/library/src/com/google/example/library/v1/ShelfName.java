@@ -66,8 +66,7 @@ public class ShelfName implements ResourceName {
     return newBuilder().setShelfId(shelfId).build().toString();
   }
 
-  @Nullable
-  public static ShelfName parse(String formattedString) {
+  public static @Nullable ShelfName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

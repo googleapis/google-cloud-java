@@ -147,7 +147,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConnectionServiceClient implements BackgroundResource {
-  @Nullable private final ConnectionServiceSettings settings;
+  private final @Nullable ConnectionServiceSettings settings;
   private final ConnectionServiceStub stub;
 
   /** Constructs an instance of ConnectionServiceClient with default settings. */
@@ -187,8 +187,7 @@ public class ConnectionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final ConnectionServiceSettings getSettings() {
+  public final @Nullable ConnectionServiceSettings getSettings() {
     return settings;
   }
 
@@ -220,9 +219,11 @@ public class ConnectionServiceClient implements BackgroundResource {
    *     project_id}/endpoints/{endpoint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(EndpointName parent) {
+  public final ListConnectionsPagedResponse listConnections(@Nullable EndpointName parent) {
     ListConnectionsRequest request =
-        ListConnectionsRequest.newBuilder().setParent(parent.toString()).build();
+        ListConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listConnections(request);
   }
 

@@ -73,8 +73,7 @@ public class SubscriptionName implements ResourceName {
     return newBuilder().setProject(project).setSubscription(subscription).build().toString();
   }
 
-  @Nullable
-  public static SubscriptionName parse(String formattedString) {
+  public static @Nullable SubscriptionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

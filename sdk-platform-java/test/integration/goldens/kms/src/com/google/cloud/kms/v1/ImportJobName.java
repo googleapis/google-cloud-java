@@ -100,8 +100,7 @@ public class ImportJobName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static ImportJobName parse(String formattedString) {
+  public static @Nullable ImportJobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

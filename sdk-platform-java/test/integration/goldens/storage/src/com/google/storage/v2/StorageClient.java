@@ -672,7 +672,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageClient implements BackgroundResource {
-  @Nullable private final StorageSettings settings;
+  private final @Nullable StorageSettings settings;
   private final StorageStub stub;
 
   /** Constructs an instance of StorageClient with default settings. */
@@ -710,8 +710,7 @@ public class StorageClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final StorageSettings getSettings() {
+  public final @Nullable StorageSettings getSettings() {
     return settings;
   }
 
@@ -740,8 +739,9 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBucket(BucketName name) {
-    DeleteBucketRequest request = DeleteBucketRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteBucket(@Nullable BucketName name) {
+    DeleteBucketRequest request =
+        DeleteBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBucket(request);
   }
 
@@ -851,8 +851,9 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket getBucket(BucketName name) {
-    GetBucketRequest request = GetBucketRequest.newBuilder().setName(name.toString()).build();
+  public final Bucket getBucket(@Nullable BucketName name) {
+    GetBucketRequest request =
+        GetBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBucket(request);
   }
 
@@ -972,10 +973,10 @@ public class StorageClient implements BackgroundResource {
    *     the name `projects/123456/buckets/foo`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket createBucket(ProjectName parent, Bucket bucket, String bucketId) {
+  public final Bucket createBucket(@Nullable ProjectName parent, Bucket bucket, String bucketId) {
     CreateBucketRequest request =
         CreateBucketRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBucket(bucket)
             .setBucketId(bucketId)
             .build();
@@ -1107,9 +1108,11 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. The project whose buckets we are listing.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(ProjectName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable ProjectName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listBuckets(request);
   }
 
@@ -1270,9 +1273,11 @@ public class StorageClient implements BackgroundResource {
    * @param bucket Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket lockBucketRetentionPolicy(BucketName bucket) {
+  public final Bucket lockBucketRetentionPolicy(@Nullable BucketName bucket) {
     LockBucketRetentionPolicyRequest request =
-        LockBucketRetentionPolicyRequest.newBuilder().setBucket(bucket.toString()).build();
+        LockBucketRetentionPolicyRequest.newBuilder()
+            .setBucket(bucket == null ? null : bucket.toString())
+            .build();
     return lockBucketRetentionPolicy(request);
   }
 
@@ -1387,9 +1392,11 @@ public class StorageClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
     return getIamPolicy(request);
   }
 
@@ -1517,9 +1524,12 @@ public class StorageClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
     return setIamPolicy(request);
   }
 
@@ -1656,10 +1666,10 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(resource.toString())
+            .setResource(resource == null ? null : resource.toString())
             .addAllPermissions(permissions)
             .build();
     return testIamPermissions(request);
@@ -1896,9 +1906,11 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. The parent bucket of the notification.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNotification(NotificationName name) {
+  public final void deleteNotification(@Nullable NotificationName name) {
     DeleteNotificationRequest request =
-        DeleteNotificationRequest.newBuilder().setName(name.toString()).build();
+        DeleteNotificationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deleteNotification(request);
   }
 
@@ -2006,9 +2018,9 @@ public class StorageClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/notificationConfigs/{notification}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Notification getNotification(BucketName name) {
+  public final Notification getNotification(@Nullable BucketName name) {
     GetNotificationRequest request =
-        GetNotificationRequest.newBuilder().setName(name.toString()).build();
+        GetNotificationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNotification(request);
   }
 
@@ -2119,10 +2131,11 @@ public class StorageClient implements BackgroundResource {
    * @param notification Required. Properties of the notification to be inserted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Notification createNotification(ProjectName parent, Notification notification) {
+  public final Notification createNotification(
+      @Nullable ProjectName parent, Notification notification) {
     CreateNotificationRequest request =
         CreateNotificationRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setNotification(notification)
             .build();
     return createNotification(request);
@@ -2247,9 +2260,11 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. Name of a Google Cloud Storage bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationsPagedResponse listNotifications(ProjectName parent) {
+  public final ListNotificationsPagedResponse listNotifications(@Nullable ProjectName parent) {
     ListNotificationsRequest request =
-        ListNotificationsRequest.newBuilder().setParent(parent.toString()).build();
+        ListNotificationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listNotifications(request);
   }
 
@@ -3073,9 +3088,11 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. Name of the bucket in which to look for objects.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListObjectsPagedResponse listObjects(ProjectName parent) {
+  public final ListObjectsPagedResponse listObjects(@Nullable ProjectName parent) {
     ListObjectsRequest request =
-        ListObjectsRequest.newBuilder().setParent(parent.toString()).build();
+        ListObjectsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listObjects(request);
   }
 
@@ -3535,9 +3552,11 @@ public class StorageClient implements BackgroundResource {
    *     &lt;projectIdentifier&gt; can be the project ID or project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceAccount getServiceAccount(ProjectName project) {
+  public final ServiceAccount getServiceAccount(@Nullable ProjectName project) {
     GetServiceAccountRequest request =
-        GetServiceAccountRequest.newBuilder().setProject(project.toString()).build();
+        GetServiceAccountRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
     return getServiceAccount(request);
   }
 
@@ -3651,10 +3670,10 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CreateHmacKeyResponse createHmacKey(
-      ProjectName project, String serviceAccountEmail) {
+      @Nullable ProjectName project, String serviceAccountEmail) {
     CreateHmacKeyRequest request =
         CreateHmacKeyRequest.newBuilder()
-            .setProject(project.toString())
+            .setProject(project == null ? null : project.toString())
             .setServiceAccountEmail(serviceAccountEmail)
             .build();
     return createHmacKey(request);
@@ -3777,11 +3796,11 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteHmacKey(String accessId, ProjectName project) {
+  public final void deleteHmacKey(String accessId, @Nullable ProjectName project) {
     DeleteHmacKeyRequest request =
         DeleteHmacKeyRequest.newBuilder()
             .setAccessId(accessId)
-            .setProject(project.toString())
+            .setProject(project == null ? null : project.toString())
             .build();
     deleteHmacKey(request);
   }
@@ -3899,9 +3918,12 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HmacKeyMetadata getHmacKey(String accessId, ProjectName project) {
+  public final HmacKeyMetadata getHmacKey(String accessId, @Nullable ProjectName project) {
     GetHmacKeyRequest request =
-        GetHmacKeyRequest.newBuilder().setAccessId(accessId).setProject(project.toString()).build();
+        GetHmacKeyRequest.newBuilder()
+            .setAccessId(accessId)
+            .setProject(project == null ? null : project.toString())
+            .build();
     return getHmacKey(request);
   }
 
@@ -4018,9 +4040,11 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHmacKeysPagedResponse listHmacKeys(ProjectName project) {
+  public final ListHmacKeysPagedResponse listHmacKeys(@Nullable ProjectName project) {
     ListHmacKeysRequest request =
-        ListHmacKeysRequest.newBuilder().setProject(project.toString()).build();
+        ListHmacKeysRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listHmacKeys(request);
   }
 

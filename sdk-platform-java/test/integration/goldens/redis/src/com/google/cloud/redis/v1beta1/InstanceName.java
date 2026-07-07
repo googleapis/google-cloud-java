@@ -86,8 +86,7 @@ public class InstanceName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static InstanceName parse(String formattedString) {
+  public static @Nullable InstanceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

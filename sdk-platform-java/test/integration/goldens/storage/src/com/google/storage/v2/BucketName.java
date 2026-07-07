@@ -73,8 +73,7 @@ public class BucketName implements ResourceName {
     return newBuilder().setProject(project).setBucket(bucket).build().toString();
   }
 
-  @Nullable
-  public static BucketName parse(String formattedString) {
+  public static @Nullable BucketName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

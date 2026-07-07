@@ -73,8 +73,7 @@ public class OrganizationLocationName implements ResourceName {
     return newBuilder().setOrganization(organization).setLocation(location).build().toString();
   }
 
-  @Nullable
-  public static OrganizationLocationName parse(String formattedString) {
+  public static @Nullable OrganizationLocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

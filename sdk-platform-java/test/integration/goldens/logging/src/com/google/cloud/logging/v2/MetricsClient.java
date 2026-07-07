@@ -212,7 +212,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MetricsClient implements BackgroundResource {
-  @Nullable private final MetricsSettings settings;
+  private final @Nullable MetricsSettings settings;
   private final MetricsServiceV2Stub stub;
 
   /** Constructs an instance of MetricsClient with default settings. */
@@ -250,8 +250,7 @@ public class MetricsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final MetricsSettings getSettings() {
+  public final @Nullable MetricsSettings getSettings() {
     return settings;
   }
 
@@ -283,9 +282,11 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogMetricsPagedResponse listLogMetrics(ProjectName parent) {
+  public final ListLogMetricsPagedResponse listLogMetrics(@Nullable ProjectName parent) {
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setParent(parent.toString()).build();
+        ListLogMetricsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listLogMetrics(request);
   }
 
@@ -443,9 +444,11 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric getLogMetric(LogMetricName metricName) {
+  public final LogMetric getLogMetric(@Nullable LogMetricName metricName) {
     GetLogMetricRequest request =
-        GetLogMetricRequest.newBuilder().setMetricName(metricName.toString()).build();
+        GetLogMetricRequest.newBuilder()
+            .setMetricName(metricName == null ? null : metricName.toString())
+            .build();
     return getLogMetric(request);
   }
 
@@ -558,9 +561,12 @@ public class MetricsClient implements BackgroundResource {
    *     already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric createLogMetric(ProjectName parent, LogMetric metric) {
+  public final LogMetric createLogMetric(@Nullable ProjectName parent, LogMetric metric) {
     CreateLogMetricRequest request =
-        CreateLogMetricRequest.newBuilder().setParent(parent.toString()).setMetric(metric).build();
+        CreateLogMetricRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMetric(metric)
+            .build();
     return createLogMetric(request);
   }
 
@@ -680,10 +686,10 @@ public class MetricsClient implements BackgroundResource {
    * @param metric Required. The updated metric.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric updateLogMetric(LogMetricName metricName, LogMetric metric) {
+  public final LogMetric updateLogMetric(@Nullable LogMetricName metricName, LogMetric metric) {
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
-            .setMetricName(metricName.toString())
+            .setMetricName(metricName == null ? null : metricName.toString())
             .setMetric(metric)
             .build();
     return updateLogMetric(request);
@@ -801,9 +807,11 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLogMetric(LogMetricName metricName) {
+  public final void deleteLogMetric(@Nullable LogMetricName metricName) {
     DeleteLogMetricRequest request =
-        DeleteLogMetricRequest.newBuilder().setMetricName(metricName.toString()).build();
+        DeleteLogMetricRequest.newBuilder()
+            .setMetricName(metricName == null ? null : metricName.toString())
+            .build();
     deleteLogMetric(request);
   }
 

@@ -93,8 +93,7 @@ public class AgentName implements ResourceName {
     return newProjectBuilder().setProject(project).build().toString();
   }
 
-  @Nullable
-  public static AgentName parse(String formattedString) {
+  public static @Nullable AgentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

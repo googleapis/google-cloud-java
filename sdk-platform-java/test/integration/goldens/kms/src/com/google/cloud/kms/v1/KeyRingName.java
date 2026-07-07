@@ -86,8 +86,7 @@ public class KeyRingName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static KeyRingName parse(String formattedString) {
+  public static @Nullable KeyRingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

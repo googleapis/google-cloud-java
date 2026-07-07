@@ -73,8 +73,7 @@ public class FolderLocationName implements ResourceName {
     return newBuilder().setFolder(folder).setLocation(location).build().toString();
   }
 
-  @Nullable
-  public static FolderLocationName parse(String formattedString) {
+  public static @Nullable FolderLocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

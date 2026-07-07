@@ -66,8 +66,7 @@ public class OrganizationName implements ResourceName {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
-  @Nullable
-  public static OrganizationName parse(String formattedString) {
+  public static @Nullable OrganizationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -58,8 +58,7 @@ public class BillingAccountLocationName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).setLocation(location).build().toString();
   }
 
-  @Nullable
-  public static BillingAccountLocationName parse(String formattedString) {
+  public static @Nullable BillingAccountLocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

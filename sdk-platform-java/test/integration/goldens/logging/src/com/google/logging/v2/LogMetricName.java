@@ -73,8 +73,7 @@ public class LogMetricName implements ResourceName {
     return newBuilder().setProject(project).setMetric(metric).build().toString();
   }
 
-  @Nullable
-  public static LogMetricName parse(String formattedString) {
+  public static @Nullable LogMetricName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

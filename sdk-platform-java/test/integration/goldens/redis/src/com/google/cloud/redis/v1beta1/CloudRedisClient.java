@@ -377,7 +377,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudRedisClient implements BackgroundResource {
-  @Nullable private final CloudRedisSettings settings;
+  private final @Nullable CloudRedisSettings settings;
   private final CloudRedisStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -423,8 +423,7 @@ public class CloudRedisClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @Nullable
-  public final CloudRedisSettings getSettings() {
+  public final @Nullable CloudRedisSettings getSettings() {
     return settings;
   }
 
@@ -483,9 +482,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
-        ListInstancesRequest.newBuilder().setParent(parent.toString()).build();
+        ListInstancesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listInstances(request);
   }
 
@@ -684,8 +685,9 @@ public class CloudRedisClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
-    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name.toString()).build();
+  public final Instance getInstance(@Nullable InstanceName name) {
+    GetInstanceRequest request =
+        GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
   }
 
@@ -796,9 +798,11 @@ public class CloudRedisClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InstanceAuthString getInstanceAuthString(InstanceName name) {
+  public final InstanceAuthString getInstanceAuthString(@Nullable InstanceName name) {
     GetInstanceAuthStringRequest request =
-        GetInstanceAuthStringRequest.newBuilder().setName(name.toString()).build();
+        GetInstanceAuthStringRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getInstanceAuthString(request);
   }
 
@@ -938,10 +942,10 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, Any> createInstanceAsync(
-      LocationName parent, String instanceId, Instance instance) {
+      @Nullable LocationName parent, String instanceId, Instance instance) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setInstanceId(instanceId)
             .setInstance(instance)
             .build();
@@ -1291,10 +1295,10 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, Any> upgradeInstanceAsync(
-      InstanceName name, String redisVersion) {
+      @Nullable InstanceName name, String redisVersion) {
     UpgradeInstanceRequest request =
         UpgradeInstanceRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setRedisVersion(redisVersion)
             .build();
     return upgradeInstanceAsync(request);
@@ -1730,10 +1734,10 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, Any> failoverInstanceAsync(
-      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+      @Nullable InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
     FailoverInstanceRequest request =
         FailoverInstanceRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setDataProtectionMode(dataProtectionMode)
             .build();
     return failoverInstanceAsync(request);
@@ -1888,9 +1892,9 @@ public class CloudRedisClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Any> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, Any> deleteInstanceAsync(@Nullable InstanceName name) {
     DeleteInstanceRequest request =
-        DeleteInstanceRequest.newBuilder().setName(name.toString()).build();
+        DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
   }
 
@@ -2038,12 +2042,12 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, Any> rescheduleMaintenanceAsync(
-      InstanceName name,
+      @Nullable InstanceName name,
       RescheduleMaintenanceRequest.RescheduleType rescheduleType,
       Timestamp scheduleTime) {
     RescheduleMaintenanceRequest request =
         RescheduleMaintenanceRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setRescheduleType(rescheduleType)
             .setScheduleTime(scheduleTime)
             .build();

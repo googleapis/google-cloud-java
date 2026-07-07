@@ -86,8 +86,7 @@ public class TableName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static TableName parse(String formattedString) {
+  public static @Nullable TableName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

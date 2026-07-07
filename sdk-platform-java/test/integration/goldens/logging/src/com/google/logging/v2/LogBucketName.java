@@ -238,8 +238,7 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static LogBucketName parse(String formattedString) {
+  public static @Nullable LogBucketName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

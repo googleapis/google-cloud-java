@@ -363,7 +363,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SchemaServiceClient implements BackgroundResource {
-  @Nullable private final SchemaServiceSettings settings;
+  private final @Nullable SchemaServiceSettings settings;
   private final SchemaServiceStub stub;
 
   /** Constructs an instance of SchemaServiceClient with default settings. */
@@ -403,8 +403,7 @@ public class SchemaServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final SchemaServiceSettings getSettings() {
+  public final @Nullable SchemaServiceSettings getSettings() {
     return settings;
   }
 
@@ -443,10 +442,10 @@ public class SchemaServiceClient implements BackgroundResource {
    *     constraints.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema createSchema(ProjectName parent, Schema schema, String schemaId) {
+  public final Schema createSchema(@Nullable ProjectName parent, Schema schema, String schemaId) {
     CreateSchemaRequest request =
         CreateSchemaRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSchema(schema)
             .setSchemaId(schemaId)
             .build();
@@ -575,8 +574,9 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/schemas/{schema}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema getSchema(SchemaName name) {
-    GetSchemaRequest request = GetSchemaRequest.newBuilder().setName(name.toString()).build();
+  public final Schema getSchema(@Nullable SchemaName name) {
+    GetSchemaRequest request =
+        GetSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSchema(request);
   }
 
@@ -688,9 +688,11 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchemasPagedResponse listSchemas(ProjectName parent) {
+  public final ListSchemasPagedResponse listSchemas(@Nullable ProjectName parent) {
     ListSchemasRequest request =
-        ListSchemasRequest.newBuilder().setParent(parent.toString()).build();
+        ListSchemasRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSchemas(request);
   }
 
@@ -851,9 +853,11 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param name Required. The name of the schema to list revisions for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(SchemaName name) {
+  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(@Nullable SchemaName name) {
     ListSchemaRevisionsRequest request =
-        ListSchemaRevisionsRequest.newBuilder().setName(name.toString()).build();
+        ListSchemaRevisionsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return listSchemaRevisions(request);
   }
 
@@ -1019,9 +1023,12 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param schema Required. The schema revision to commit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema commitSchema(SchemaName name, Schema schema) {
+  public final Schema commitSchema(@Nullable SchemaName name, Schema schema) {
     CommitSchemaRequest request =
-        CommitSchemaRequest.newBuilder().setName(name.toString()).setSchema(schema).build();
+        CommitSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSchema(schema)
+            .build();
     return commitSchema(request);
   }
 
@@ -1137,10 +1144,10 @@ public class SchemaServiceClient implements BackgroundResource {
    *     <p>Example: c7cfa2a8
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema rollbackSchema(SchemaName name, String revisionId) {
+  public final Schema rollbackSchema(@Nullable SchemaName name, String revisionId) {
     RollbackSchemaRequest request =
         RollbackSchemaRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setRevisionId(revisionId)
             .build();
     return rollbackSchema(request);
@@ -1261,10 +1268,10 @@ public class SchemaServiceClient implements BackgroundResource {
    *     <p>Example: c7cfa2a8
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema deleteSchemaRevision(SchemaName name, String revisionId) {
+  public final Schema deleteSchemaRevision(@Nullable SchemaName name, String revisionId) {
     DeleteSchemaRevisionRequest request =
         DeleteSchemaRevisionRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setRevisionId(revisionId)
             .build();
     return deleteSchemaRevision(request);
@@ -1383,8 +1390,9 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/schemas/{schema}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSchema(SchemaName name) {
-    DeleteSchemaRequest request = DeleteSchemaRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteSchema(@Nullable SchemaName name) {
+    DeleteSchemaRequest request =
+        DeleteSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSchema(request);
   }
 
@@ -1494,9 +1502,12 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param schema Required. The schema object to validate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ValidateSchemaResponse validateSchema(ProjectName parent, Schema schema) {
+  public final ValidateSchemaResponse validateSchema(@Nullable ProjectName parent, Schema schema) {
     ValidateSchemaRequest request =
-        ValidateSchemaRequest.newBuilder().setParent(parent.toString()).setSchema(schema).build();
+        ValidateSchemaRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSchema(schema)
+            .build();
     return validateSchema(request);
   }
 

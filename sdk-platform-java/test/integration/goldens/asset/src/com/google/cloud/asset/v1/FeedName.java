@@ -151,8 +151,7 @@ public class FeedName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static FeedName parse(String formattedString) {
+  public static @Nullable FeedName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -100,8 +100,7 @@ public class CryptoKeyName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static CryptoKeyName parse(String formattedString) {
+  public static @Nullable CryptoKeyName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

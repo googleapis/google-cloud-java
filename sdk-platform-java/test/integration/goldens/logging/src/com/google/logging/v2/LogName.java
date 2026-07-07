@@ -183,8 +183,7 @@ public class LogName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static LogName parse(String formattedString) {
+  public static @Nullable LogName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

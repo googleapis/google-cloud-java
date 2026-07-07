@@ -169,8 +169,7 @@ public class CmekSettingsName implements ResourceName {
     return newBillingAccountBuilder().setBillingAccount(billingAccount).build().toString();
   }
 
-  @Nullable
-  public static CmekSettingsName parse(String formattedString) {
+  public static @Nullable CmekSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

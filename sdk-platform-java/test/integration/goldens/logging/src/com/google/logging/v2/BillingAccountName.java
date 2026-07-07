@@ -66,8 +66,7 @@ public class BillingAccountName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).build().toString();
   }
 
-  @Nullable
-  public static BillingAccountName parse(String formattedString) {
+  public static @Nullable BillingAccountName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

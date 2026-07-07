@@ -267,8 +267,7 @@ public class LogViewName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static LogViewName parse(String formattedString) {
+  public static @Nullable LogViewName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

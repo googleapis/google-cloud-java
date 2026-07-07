@@ -110,8 +110,7 @@ public class CryptoKeyVersionName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static CryptoKeyVersionName parse(String formattedString) {
+  public static @Nullable CryptoKeyVersionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -73,8 +73,7 @@ public class SnapshotName implements ResourceName {
     return newBuilder().setProject(project).setSnapshot(snapshot).build().toString();
   }
 
-  @Nullable
-  public static SnapshotName parse(String formattedString) {
+  public static @Nullable SnapshotName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

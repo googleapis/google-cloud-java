@@ -105,8 +105,7 @@ public class TopicName implements ResourceName {
     return "_deleted-topic_";
   }
 
-  @Nullable
-  public static TopicName parse(String formattedString) {
+  public static @Nullable TopicName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

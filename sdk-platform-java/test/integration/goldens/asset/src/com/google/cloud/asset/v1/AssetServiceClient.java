@@ -487,7 +487,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  @Nullable private final AssetServiceSettings settings;
+  private final @Nullable AssetServiceSettings settings;
   private final AssetServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -534,8 +534,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @Nullable
-  public final AssetServiceSettings getSettings() {
+  public final @Nullable AssetServiceSettings getSettings() {
     return settings;
   }
 
@@ -707,8 +706,9 @@ public class AssetServiceClient implements BackgroundResource {
    *     (such as "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(ResourceName parent) {
-    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListAssetsPagedResponse listAssets(@Nullable ResourceName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
   }
 
@@ -1041,8 +1041,9 @@ public class AssetServiceClient implements BackgroundResource {
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Feed getFeed(FeedName name) {
-    GetFeedRequest request = GetFeedRequest.newBuilder().setName(name.toString()).build();
+  public final Feed getFeed(@Nullable FeedName name) {
+    GetFeedRequest request =
+        GetFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeed(request);
   }
 
@@ -1317,8 +1318,9 @@ public class AssetServiceClient implements BackgroundResource {
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFeed(FeedName name) {
-    DeleteFeedRequest request = DeleteFeedRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteFeed(@Nullable FeedName name) {
+    DeleteFeedRequest request =
+        DeleteFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFeed(request);
   }
 
@@ -2208,10 +2210,10 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SavedQuery createSavedQuery(
-      FolderName parent, SavedQuery savedQuery, String savedQueryId) {
+      @Nullable FolderName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2252,10 +2254,10 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SavedQuery createSavedQuery(
-      OrganizationName parent, SavedQuery savedQuery, String savedQueryId) {
+      @Nullable OrganizationName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2296,10 +2298,10 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SavedQuery createSavedQuery(
-      ProjectName parent, SavedQuery savedQuery, String savedQueryId) {
+      @Nullable ProjectName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2437,9 +2439,9 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SavedQuery getSavedQuery(SavedQueryName name) {
+  public final SavedQuery getSavedQuery(@Nullable SavedQueryName name) {
     GetSavedQueryRequest request =
-        GetSavedQueryRequest.newBuilder().setName(name.toString()).build();
+        GetSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSavedQuery(request);
   }
 
@@ -2557,9 +2559,11 @@ public class AssetServiceClient implements BackgroundResource {
    *     or a project ID (such as "projects/my-project-id").
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSavedQueriesPagedResponse listSavedQueries(FolderName parent) {
+  public final ListSavedQueriesPagedResponse listSavedQueries(@Nullable FolderName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
+        ListSavedQueriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSavedQueries(request);
   }
 
@@ -2588,9 +2592,11 @@ public class AssetServiceClient implements BackgroundResource {
    *     or a project ID (such as "projects/my-project-id").
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSavedQueriesPagedResponse listSavedQueries(OrganizationName parent) {
+  public final ListSavedQueriesPagedResponse listSavedQueries(@Nullable OrganizationName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
+        ListSavedQueriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSavedQueries(request);
   }
 
@@ -2619,9 +2625,11 @@ public class AssetServiceClient implements BackgroundResource {
    *     or a project ID (such as "projects/my-project-id").
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSavedQueriesPagedResponse listSavedQueries(ProjectName parent) {
+  public final ListSavedQueriesPagedResponse listSavedQueries(@Nullable ProjectName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
+        ListSavedQueriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSavedQueries(request);
   }
 
@@ -2889,9 +2897,9 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSavedQuery(SavedQueryName name) {
+  public final void deleteSavedQuery(@Nullable SavedQueryName name) {
     DeleteSavedQueryRequest request =
-        DeleteSavedQueryRequest.newBuilder().setName(name.toString()).build();
+        DeleteSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSavedQuery(request);
   }
 

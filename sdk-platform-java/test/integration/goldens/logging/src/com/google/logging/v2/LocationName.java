@@ -73,8 +73,7 @@ public class LocationName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  @Nullable
-  public static LocationName parse(String formattedString) {
+  public static @Nullable LocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

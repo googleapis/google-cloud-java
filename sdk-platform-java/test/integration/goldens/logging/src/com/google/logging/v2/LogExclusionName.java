@@ -196,8 +196,7 @@ public class LogExclusionName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static LogExclusionName parse(String formattedString) {
+  public static @Nullable LogExclusionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

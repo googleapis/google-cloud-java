@@ -73,8 +73,7 @@ public class SchemaName implements ResourceName {
     return newBuilder().setProject(project).setSchema(schema).build().toString();
   }
 
-  @Nullable
-  public static SchemaName parse(String formattedString) {
+  public static @Nullable SchemaName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

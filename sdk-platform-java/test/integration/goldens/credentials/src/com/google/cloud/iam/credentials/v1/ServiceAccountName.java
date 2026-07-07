@@ -73,8 +73,7 @@ public class ServiceAccountName implements ResourceName {
     return newBuilder().setProject(project).setServiceAccount(serviceAccount).build().toString();
   }
 
-  @Nullable
-  public static ServiceAccountName parse(String formattedString) {
+  public static @Nullable ServiceAccountName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

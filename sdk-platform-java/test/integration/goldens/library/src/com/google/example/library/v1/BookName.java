@@ -73,8 +73,7 @@ public class BookName implements ResourceName {
     return newBuilder().setShelf(shelf).setBook(book).build().toString();
   }
 
-  @Nullable
-  public static BookName parse(String formattedString) {
+  public static @Nullable BookName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

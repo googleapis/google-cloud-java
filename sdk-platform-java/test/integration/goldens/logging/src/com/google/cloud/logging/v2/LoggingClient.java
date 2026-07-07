@@ -233,7 +233,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LoggingClient implements BackgroundResource {
-  @Nullable private final LoggingSettings settings;
+  private final @Nullable LoggingSettings settings;
   private final LoggingServiceV2Stub stub;
 
   /** Constructs an instance of LoggingClient with default settings. */
@@ -271,8 +271,7 @@ public class LoggingClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final LoggingSettings getSettings() {
+  public final @Nullable LoggingSettings getSettings() {
     return settings;
   }
 
@@ -313,8 +312,11 @@ public class LoggingClient implements BackgroundResource {
    *     <p>For more information about log names, see [LogEntry][google.logging.v2.LogEntry].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLog(LogName logName) {
-    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName.toString()).build();
+  public final void deleteLog(@Nullable LogName logName) {
+    DeleteLogRequest request =
+        DeleteLogRequest.newBuilder()
+            .setLogName(logName == null ? null : logName.toString())
+            .build();
     deleteLog(request);
   }
 
@@ -493,7 +495,7 @@ public class LoggingClient implements BackgroundResource {
       List<LogEntry> entries) {
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
-            .setLogName(logName == null ? "" : logName.toString())
+            .setLogName(logName == null ? null : logName.toString())
             .setResource(resource)
             .putAllLabels(labels)
             .addAllEntries(entries)
@@ -975,8 +977,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(BillingAccountName parent) {
-    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListLogsPagedResponse listLogs(@Nullable BillingAccountName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
   }
 
@@ -1011,8 +1014,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(FolderName parent) {
-    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListLogsPagedResponse listLogs(@Nullable FolderName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
   }
 
@@ -1047,8 +1051,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(OrganizationName parent) {
-    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListLogsPagedResponse listLogs(@Nullable OrganizationName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
   }
 
@@ -1083,8 +1088,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(ProjectName parent) {
-    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListLogsPagedResponse listLogs(@Nullable ProjectName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
   }
 

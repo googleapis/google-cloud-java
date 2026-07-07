@@ -93,8 +93,7 @@ public class ResourceName implements com.google.api.resourcenames.ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static ResourceName parse(String formattedString) {
+  public static @Nullable ResourceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

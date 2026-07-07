@@ -141,7 +141,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionOperationsClient implements BackgroundResource {
-  @Nullable private final RegionOperationsSettings settings;
+  private final @Nullable RegionOperationsSettings settings;
   private final RegionOperationsStub stub;
 
   /** Constructs an instance of RegionOperationsClient with default settings. */
@@ -181,8 +181,7 @@ public class RegionOperationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final RegionOperationsSettings getSettings() {
+  public final @Nullable RegionOperationsSettings getSettings() {
     return settings;
   }
 

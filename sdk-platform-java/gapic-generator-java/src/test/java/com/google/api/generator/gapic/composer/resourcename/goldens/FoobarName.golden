@@ -165,8 +165,7 @@ public class FoobarName implements ResourceName {
     return newBarFooFoobarBuilder().setBarFoo(barFoo).setFoobar(foobar).build().toString();
   }
 
-  @Nullable
-  public static FoobarName parse(String formattedString) {
+  public static @Nullable FoobarName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

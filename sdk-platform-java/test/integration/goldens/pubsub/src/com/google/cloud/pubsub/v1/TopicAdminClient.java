@@ -339,7 +339,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TopicAdminClient implements BackgroundResource {
-  @Nullable private final TopicAdminSettings settings;
+  private final @Nullable TopicAdminSettings settings;
   private final PublisherStub stub;
 
   /** Constructs an instance of TopicAdminClient with default settings. */
@@ -377,8 +377,7 @@ public class TopicAdminClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final TopicAdminSettings getSettings() {
+  public final @Nullable TopicAdminSettings getSettings() {
     return settings;
   }
 
@@ -412,8 +411,8 @@ public class TopicAdminClient implements BackgroundResource {
    *     length, and it must not start with `"goog"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic createTopic(TopicName name) {
-    Topic request = Topic.newBuilder().setName(name.toString()).build();
+  public final Topic createTopic(@Nullable TopicName name) {
+    Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
     return createTopic(request);
   }
 
@@ -598,9 +597,12 @@ public class TopicAdminClient implements BackgroundResource {
    * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
+  public final PublishResponse publish(@Nullable TopicName topic, List<PubsubMessage> messages) {
     PublishRequest request =
-        PublishRequest.newBuilder().setTopic(topic.toString()).addAllMessages(messages).build();
+        PublishRequest.newBuilder()
+            .setTopic(topic == null ? null : topic.toString())
+            .addAllMessages(messages)
+            .build();
     return publish(request);
   }
 
@@ -713,8 +715,9 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic getTopic(TopicName topic) {
-    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic.toString()).build();
+  public final Topic getTopic(@Nullable TopicName topic) {
+    GetTopicRequest request =
+        GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     return getTopic(request);
   }
 
@@ -824,9 +827,11 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTopicsPagedResponse listTopics(ProjectName project) {
+  public final ListTopicsPagedResponse listTopics(@Nullable ProjectName project) {
     ListTopicsRequest request =
-        ListTopicsRequest.newBuilder().setProject(project.toString()).build();
+        ListTopicsRequest.newBuilder()
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listTopics(request);
   }
 
@@ -984,9 +989,12 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
+  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(
+      @Nullable TopicName topic) {
     ListTopicSubscriptionsRequest request =
-        ListTopicSubscriptionsRequest.newBuilder().setTopic(topic.toString()).build();
+        ListTopicSubscriptionsRequest.newBuilder()
+            .setTopic(topic == null ? null : topic.toString())
+            .build();
     return listTopicSubscriptions(request);
   }
 
@@ -1153,9 +1161,11 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTopicSnapshotsPagedResponse listTopicSnapshots(TopicName topic) {
+  public final ListTopicSnapshotsPagedResponse listTopicSnapshots(@Nullable TopicName topic) {
     ListTopicSnapshotsRequest request =
-        ListTopicSnapshotsRequest.newBuilder().setTopic(topic.toString()).build();
+        ListTopicSnapshotsRequest.newBuilder()
+            .setTopic(topic == null ? null : topic.toString())
+            .build();
     return listTopicSnapshots(request);
   }
 
@@ -1332,8 +1342,9 @@ public class TopicAdminClient implements BackgroundResource {
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTopic(TopicName topic) {
-    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic.toString()).build();
+  public final void deleteTopic(@Nullable TopicName topic) {
+    DeleteTopicRequest request =
+        DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
     deleteTopic(request);
   }
 

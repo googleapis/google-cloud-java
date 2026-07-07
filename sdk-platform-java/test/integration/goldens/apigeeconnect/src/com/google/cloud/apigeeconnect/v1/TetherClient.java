@@ -123,7 +123,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TetherClient implements BackgroundResource {
-  @Nullable private final TetherSettings settings;
+  private final @Nullable TetherSettings settings;
   private final TetherStub stub;
 
   /** Constructs an instance of TetherClient with default settings. */
@@ -161,8 +161,7 @@ public class TetherClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final TetherSettings getSettings() {
+  public final @Nullable TetherSettings getSettings() {
     return settings;
   }
 

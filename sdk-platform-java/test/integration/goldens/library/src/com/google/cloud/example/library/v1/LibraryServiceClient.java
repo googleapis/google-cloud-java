@@ -356,7 +356,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LibraryServiceClient implements BackgroundResource {
-  @Nullable private final LibraryServiceSettings settings;
+  private final @Nullable LibraryServiceSettings settings;
   private final LibraryServiceStub stub;
 
   /** Constructs an instance of LibraryServiceClient with default settings. */
@@ -396,8 +396,7 @@ public class LibraryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final LibraryServiceSettings getSettings() {
+  public final @Nullable LibraryServiceSettings getSettings() {
     return settings;
   }
 
@@ -503,8 +502,9 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the shelf to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf getShelf(ShelfName name) {
-    GetShelfRequest request = GetShelfRequest.newBuilder().setName(name.toString()).build();
+  public final Shelf getShelf(@Nullable ShelfName name) {
+    GetShelfRequest request =
+        GetShelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getShelf(request);
   }
 
@@ -708,8 +708,9 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the shelf to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteShelf(ShelfName name) {
-    DeleteShelfRequest request = DeleteShelfRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteShelf(@Nullable ShelfName name) {
+    DeleteShelfRequest request =
+        DeleteShelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteShelf(request);
   }
 
@@ -818,11 +819,11 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(ShelfName name, ShelfName otherShelf) {
+  public final Shelf mergeShelves(@Nullable ShelfName name, @Nullable ShelfName otherShelf) {
     MergeShelvesRequest request =
         MergeShelvesRequest.newBuilder()
-            .setName(name.toString())
-            .setOtherShelf(otherShelf.toString())
+            .setName(name == null ? null : name.toString())
+            .setOtherShelf(otherShelf == null ? null : otherShelf.toString())
             .build();
     return mergeShelves(request);
   }
@@ -855,9 +856,12 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(ShelfName name, String otherShelf) {
+  public final Shelf mergeShelves(@Nullable ShelfName name, String otherShelf) {
     MergeShelvesRequest request =
-        MergeShelvesRequest.newBuilder().setName(name.toString()).setOtherShelf(otherShelf).build();
+        MergeShelvesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setOtherShelf(otherShelf)
+            .build();
     return mergeShelves(request);
   }
 
@@ -889,9 +893,12 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(String name, ShelfName otherShelf) {
+  public final Shelf mergeShelves(String name, @Nullable ShelfName otherShelf) {
     MergeShelvesRequest request =
-        MergeShelvesRequest.newBuilder().setName(name).setOtherShelf(otherShelf.toString()).build();
+        MergeShelvesRequest.newBuilder()
+            .setName(name)
+            .setOtherShelf(otherShelf == null ? null : otherShelf.toString())
+            .build();
     return mergeShelves(request);
   }
 
@@ -1019,9 +1026,12 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param book The book to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book createBook(ShelfName parent, Book book) {
+  public final Book createBook(@Nullable ShelfName parent, Book book) {
     CreateBookRequest request =
-        CreateBookRequest.newBuilder().setParent(parent.toString()).setBook(book).build();
+        CreateBookRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBook(book)
+            .build();
     return createBook(request);
   }
 
@@ -1132,8 +1142,9 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the book to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book getBook(BookName name) {
-    GetBookRequest request = GetBookRequest.newBuilder().setName(name.toString()).build();
+  public final Book getBook(@Nullable BookName name) {
+    GetBookRequest request =
+        GetBookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBook(request);
   }
 
@@ -1239,8 +1250,9 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param parent The name of the shelf whose books we'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBooksPagedResponse listBooks(ShelfName parent) {
-    ListBooksRequest request = ListBooksRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListBooksPagedResponse listBooks(@Nullable ShelfName parent) {
+    ListBooksRequest request =
+        ListBooksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listBooks(request);
   }
 
@@ -1402,8 +1414,9 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the book to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBook(BookName name) {
-    DeleteBookRequest request = DeleteBookRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteBook(@Nullable BookName name) {
+    DeleteBookRequest request =
+        DeleteBookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBook(request);
   }
 
@@ -1601,11 +1614,11 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(BookName name, ShelfName otherShelfName) {
+  public final Book moveBook(@Nullable BookName name, @Nullable ShelfName otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
-            .setName(name.toString())
-            .setOtherShelfName(otherShelfName.toString())
+            .setName(name == null ? null : name.toString())
+            .setOtherShelfName(otherShelfName == null ? null : otherShelfName.toString())
             .build();
     return moveBook(request);
   }
@@ -1634,10 +1647,10 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(BookName name, String otherShelfName) {
+  public final Book moveBook(@Nullable BookName name, String otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setOtherShelfName(otherShelfName)
             .build();
     return moveBook(request);
@@ -1667,11 +1680,11 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(String name, ShelfName otherShelfName) {
+  public final Book moveBook(String name, @Nullable ShelfName otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
             .setName(name)
-            .setOtherShelfName(otherShelfName.toString())
+            .setOtherShelfName(otherShelfName == null ? null : otherShelfName.toString())
             .build();
     return moveBook(request);
   }

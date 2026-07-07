@@ -635,7 +635,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigClient implements BackgroundResource {
-  @Nullable private final ConfigSettings settings;
+  private final @Nullable ConfigSettings settings;
   private final ConfigServiceV2Stub stub;
   private final OperationsClient operationsClient;
 
@@ -676,8 +676,7 @@ public class ConfigClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @Nullable
-  public final ConfigSettings getSettings() {
+  public final @Nullable ConfigSettings getSettings() {
     return settings;
   }
 
@@ -723,9 +722,11 @@ public class ConfigClient implements BackgroundResource {
    *     character `-` in place of [LOCATION_ID] will return all buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(BillingAccountLocationName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable BillingAccountLocationName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listBuckets(request);
   }
 
@@ -758,9 +759,11 @@ public class ConfigClient implements BackgroundResource {
    *     character `-` in place of [LOCATION_ID] will return all buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(FolderLocationName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable FolderLocationName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listBuckets(request);
   }
 
@@ -793,9 +796,11 @@ public class ConfigClient implements BackgroundResource {
    *     character `-` in place of [LOCATION_ID] will return all buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(LocationName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable LocationName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listBuckets(request);
   }
 
@@ -828,9 +833,11 @@ public class ConfigClient implements BackgroundResource {
    *     character `-` in place of [LOCATION_ID] will return all buckets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(OrganizationLocationName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable OrganizationLocationName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listBuckets(request);
   }
 
@@ -1702,8 +1709,9 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSinksPagedResponse listSinks(BillingAccountName parent) {
-    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListSinksPagedResponse listSinks(@Nullable BillingAccountName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSinks(request);
   }
 
@@ -1732,8 +1740,9 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSinksPagedResponse listSinks(FolderName parent) {
-    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListSinksPagedResponse listSinks(@Nullable FolderName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSinks(request);
   }
 
@@ -1762,8 +1771,9 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSinksPagedResponse listSinks(OrganizationName parent) {
-    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListSinksPagedResponse listSinks(@Nullable OrganizationName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSinks(request);
   }
 
@@ -1792,8 +1802,9 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSinksPagedResponse listSinks(ProjectName parent) {
-    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListSinksPagedResponse listSinks(@Nullable ProjectName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSinks(request);
   }
 
@@ -1955,8 +1966,11 @@ public class ConfigClient implements BackgroundResource {
    *     <p>`"projects/my-project/sinks/my-sink"`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink getSink(LogSinkName sinkName) {
-    GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName.toString()).build();
+  public final LogSink getSink(@Nullable LogSinkName sinkName) {
+    GetSinkRequest request =
+        GetSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .build();
     return getSink(request);
   }
 
@@ -2078,9 +2092,12 @@ public class ConfigClient implements BackgroundResource {
    *     already in use.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink createSink(BillingAccountName parent, LogSink sink) {
+  public final LogSink createSink(@Nullable BillingAccountName parent, LogSink sink) {
     CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParent(parent.toString()).setSink(sink).build();
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
     return createSink(request);
   }
 
@@ -2115,9 +2132,12 @@ public class ConfigClient implements BackgroundResource {
    *     already in use.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink createSink(FolderName parent, LogSink sink) {
+  public final LogSink createSink(@Nullable FolderName parent, LogSink sink) {
     CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParent(parent.toString()).setSink(sink).build();
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
     return createSink(request);
   }
 
@@ -2152,9 +2172,12 @@ public class ConfigClient implements BackgroundResource {
    *     already in use.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink createSink(OrganizationName parent, LogSink sink) {
+  public final LogSink createSink(@Nullable OrganizationName parent, LogSink sink) {
     CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParent(parent.toString()).setSink(sink).build();
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
     return createSink(request);
   }
 
@@ -2189,9 +2212,12 @@ public class ConfigClient implements BackgroundResource {
    *     already in use.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink createSink(ProjectName parent, LogSink sink) {
+  public final LogSink createSink(@Nullable ProjectName parent, LogSink sink) {
     CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParent(parent.toString()).setSink(sink).build();
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
     return createSink(request);
   }
 
@@ -2332,9 +2358,12 @@ public class ConfigClient implements BackgroundResource {
    *     of `sink_name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink updateSink(LogSinkName sinkName, LogSink sink) {
+  public final LogSink updateSink(@Nullable LogSinkName sinkName, LogSink sink) {
     UpdateSinkRequest request =
-        UpdateSinkRequest.newBuilder().setSinkName(sinkName.toString()).setSink(sink).build();
+        UpdateSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .setSink(sink)
+            .build();
     return updateSink(request);
   }
 
@@ -2426,10 +2455,11 @@ public class ConfigClient implements BackgroundResource {
    *     <p>For example: `updateMask=filter`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink updateSink(LogSinkName sinkName, LogSink sink, FieldMask updateMask) {
+  public final LogSink updateSink(
+      @Nullable LogSinkName sinkName, LogSink sink, FieldMask updateMask) {
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
-            .setSinkName(sinkName.toString())
+            .setSinkName(sinkName == null ? null : sinkName.toString())
             .setSink(sink)
             .setUpdateMask(updateMask)
             .build();
@@ -2591,9 +2621,11 @@ public class ConfigClient implements BackgroundResource {
    *     <p>`"projects/my-project/sinks/my-sink"`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSink(LogSinkName sinkName) {
+  public final void deleteSink(@Nullable LogSinkName sinkName) {
     DeleteSinkRequest request =
-        DeleteSinkRequest.newBuilder().setSinkName(sinkName.toString()).build();
+        DeleteSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .build();
     deleteSink(request);
   }
 
@@ -2713,9 +2745,11 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExclusionsPagedResponse listExclusions(BillingAccountName parent) {
+  public final ListExclusionsPagedResponse listExclusions(@Nullable BillingAccountName parent) {
     ListExclusionsRequest request =
-        ListExclusionsRequest.newBuilder().setParent(parent.toString()).build();
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listExclusions(request);
   }
 
@@ -2744,9 +2778,11 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExclusionsPagedResponse listExclusions(FolderName parent) {
+  public final ListExclusionsPagedResponse listExclusions(@Nullable FolderName parent) {
     ListExclusionsRequest request =
-        ListExclusionsRequest.newBuilder().setParent(parent.toString()).build();
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listExclusions(request);
   }
 
@@ -2775,9 +2811,11 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExclusionsPagedResponse listExclusions(OrganizationName parent) {
+  public final ListExclusionsPagedResponse listExclusions(@Nullable OrganizationName parent) {
     ListExclusionsRequest request =
-        ListExclusionsRequest.newBuilder().setParent(parent.toString()).build();
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listExclusions(request);
   }
 
@@ -2806,9 +2844,11 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExclusionsPagedResponse listExclusions(ProjectName parent) {
+  public final ListExclusionsPagedResponse listExclusions(@Nullable ProjectName parent) {
     ListExclusionsRequest request =
-        ListExclusionsRequest.newBuilder().setParent(parent.toString()).build();
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listExclusions(request);
   }
 
@@ -2973,8 +3013,9 @@ public class ConfigClient implements BackgroundResource {
    *     <p>`"projects/my-project/exclusions/my-exclusion"`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion getExclusion(LogExclusionName name) {
-    GetExclusionRequest request = GetExclusionRequest.newBuilder().setName(name.toString()).build();
+  public final LogExclusion getExclusion(@Nullable LogExclusionName name) {
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExclusion(request);
   }
 
@@ -3096,10 +3137,11 @@ public class ConfigClient implements BackgroundResource {
    *     is not already used in the parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion createExclusion(BillingAccountName parent, LogExclusion exclusion) {
+  public final LogExclusion createExclusion(
+      @Nullable BillingAccountName parent, LogExclusion exclusion) {
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setExclusion(exclusion)
             .build();
     return createExclusion(request);
@@ -3134,10 +3176,10 @@ public class ConfigClient implements BackgroundResource {
    *     is not already used in the parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion createExclusion(FolderName parent, LogExclusion exclusion) {
+  public final LogExclusion createExclusion(@Nullable FolderName parent, LogExclusion exclusion) {
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setExclusion(exclusion)
             .build();
     return createExclusion(request);
@@ -3172,10 +3214,11 @@ public class ConfigClient implements BackgroundResource {
    *     is not already used in the parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion createExclusion(OrganizationName parent, LogExclusion exclusion) {
+  public final LogExclusion createExclusion(
+      @Nullable OrganizationName parent, LogExclusion exclusion) {
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setExclusion(exclusion)
             .build();
     return createExclusion(request);
@@ -3210,10 +3253,10 @@ public class ConfigClient implements BackgroundResource {
    *     is not already used in the parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion createExclusion(ProjectName parent, LogExclusion exclusion) {
+  public final LogExclusion createExclusion(@Nullable ProjectName parent, LogExclusion exclusion) {
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setExclusion(exclusion)
             .build();
     return createExclusion(request);
@@ -3351,10 +3394,10 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion updateExclusion(
-      LogExclusionName name, LogExclusion exclusion, FieldMask updateMask) {
+      @Nullable LogExclusionName name, LogExclusion exclusion, FieldMask updateMask) {
     UpdateExclusionRequest request =
         UpdateExclusionRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setExclusion(exclusion)
             .setUpdateMask(updateMask)
             .build();
@@ -3497,9 +3540,9 @@ public class ConfigClient implements BackgroundResource {
    *     <p>`"projects/my-project/exclusions/my-exclusion"`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteExclusion(LogExclusionName name) {
+  public final void deleteExclusion(@Nullable LogExclusionName name) {
     DeleteExclusionRequest request =
-        DeleteExclusionRequest.newBuilder().setName(name.toString()).build();
+        DeleteExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteExclusion(request);
   }
 
@@ -3782,8 +3825,9 @@ public class ConfigClient implements BackgroundResource {
    *     Cloud organization.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
-    GetSettingsRequest request = GetSettingsRequest.newBuilder().setName(name.toString()).build();
+  public final Settings getSettings(@Nullable SettingsName name) {
+    GetSettingsRequest request =
+        GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
   }
 

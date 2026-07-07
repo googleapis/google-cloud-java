@@ -169,8 +169,7 @@ public class SettingsName implements ResourceName {
     return newBillingAccountBuilder().setBillingAccount(billingAccount).build().toString();
   }
 
-  @Nullable
-  public static SettingsName parse(String formattedString) {
+  public static @Nullable SettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
