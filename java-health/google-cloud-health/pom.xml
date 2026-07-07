@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-health</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-health:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-health:current} -->
   <packaging>jar</packaging>
   <name>Google Google Health API</name>
   <description>Google Health API The Google Health API lets you view and manage health and fitness metrics and measurement data.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-health-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-health:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-health:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-health</site.installationModule>
