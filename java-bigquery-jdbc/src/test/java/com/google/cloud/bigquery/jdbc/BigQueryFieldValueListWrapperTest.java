@@ -45,102 +45,108 @@ import org.junit.jupiter.api.Test;
 
 public class BigQueryFieldValueListWrapperTest {
 
+  private static final FieldList PROFILE_SCHEMA =
+      FieldList.of(
+          Field.of("pname", StandardSQLTypeName.STRING),
+          Field.of("page", StandardSQLTypeName.INT64));
+
+  private static final FieldList INNER_STRUCT_SCHEMA =
+      FieldList.of(
+          Field.of("city", StandardSQLTypeName.STRING),
+          Field.of("country", StandardSQLTypeName.STRING));
+
+  private static final FieldList OUTER_STRUCT_SCHEMA =
+      FieldList.of(
+          Field.of("company", StandardSQLTypeName.STRING),
+          Field.of("location", StandardSQLTypeName.STRUCT, INNER_STRUCT_SCHEMA));
+
+  private static final FieldList ALL_TYPES_SCHEMA_FIELDS =
+      FieldList.of(
+          Field.of("id", StandardSQLTypeName.INT64),
+          Field.of("name", StandardSQLTypeName.STRING),
+          Field.of("score", StandardSQLTypeName.FLOAT64),
+          Field.of("active", StandardSQLTypeName.BOOL),
+          Field.of("geo", StandardSQLTypeName.GEOGRAPHY),
+          Field.of("json_col", StandardSQLTypeName.JSON),
+          Field.of("num", StandardSQLTypeName.NUMERIC),
+          Field.of("bignum", StandardSQLTypeName.BIGNUMERIC),
+          Field.of("interval_col", StandardSQLTypeName.INTERVAL),
+          Field.of("bytes_col", StandardSQLTypeName.BYTES),
+          Field.of("ts", StandardSQLTypeName.TIMESTAMP),
+          Field.of("dt", StandardSQLTypeName.DATE),
+          Field.of("tm", StandardSQLTypeName.TIME),
+          Field.of("range_col", StandardSQLTypeName.RANGE),
+          Field.newBuilder("tags", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.REPEATED)
+              .build(),
+          Field.newBuilder("profiles", StandardSQLTypeName.STRUCT, PROFILE_SCHEMA)
+              .setMode(Field.Mode.REPEATED)
+              .build(),
+          Field.of("org", StandardSQLTypeName.STRUCT, OUTER_STRUCT_SCHEMA));
+
+  private static final Schema ALL_TYPES_SCHEMA = Schema.of(ALL_TYPES_SCHEMA_FIELDS);
+
+  private static final FieldValue ID_FV = FieldValue.of(Attribute.PRIMITIVE, "101");
+  private static final FieldValue NAME_FV = FieldValue.of(Attribute.PRIMITIVE, "Alice");
+  private static final FieldValue SCORE_FV = FieldValue.of(Attribute.PRIMITIVE, "98.5");
+  private static final FieldValue ACTIVE_FV = FieldValue.of(Attribute.PRIMITIVE, "true");
+  private static final FieldValue GEO_FV = FieldValue.of(Attribute.PRIMITIVE, "POINT(-122.084 37.422)");
+  private static final FieldValue JSON_FV = FieldValue.of(Attribute.PRIMITIVE, "{\"key\": \"value\"}");
+  private static final FieldValue NUM_FV = FieldValue.of(Attribute.PRIMITIVE, "123456789.987654321");
+  private static final FieldValue BIGNUM_FV =
+      FieldValue.of(Attribute.PRIMITIVE, "99999999999999999999999999999999999999.999999999");
+  private static final FieldValue INTERVAL_FV = FieldValue.of(Attribute.PRIMITIVE, "0-0 0 0:0:0");
+  private static final FieldValue BYTES_FV = FieldValue.of(Attribute.PRIMITIVE, "SGVsbG8gV29ybGQ=");
+  private static final FieldValue TS_FV = FieldValue.of(Attribute.PRIMITIVE, "1408452095.22");
+  private static final FieldValue DT_FV = FieldValue.of(Attribute.PRIMITIVE, "2023-03-13");
+  private static final FieldValue TM_FV = FieldValue.of(Attribute.PRIMITIVE, "23:59:59");
+  private static final FieldValue RANGE_FV =
+      FieldValue.of(Attribute.RANGE, com.google.cloud.bigquery.Range.of("[2020-01-01, 2020-01-31)"));
+  private static final FieldValue TAGS_FV =
+      FieldValue.of(
+          Attribute.REPEATED,
+          Arrays.asList(
+              FieldValue.of(Attribute.PRIMITIVE, "tag1"),
+              FieldValue.of(Attribute.PRIMITIVE, "tag2")));
+  private static final FieldValue PROFILES_FV =
+      FieldValue.of(
+          Attribute.REPEATED,
+          Arrays.asList(
+              FieldValue.of(
+                  Attribute.RECORD,
+                  FieldValueList.of(
+                      Arrays.asList(
+                          FieldValue.of(Attribute.PRIMITIVE, "Bob"),
+                          FieldValue.of(Attribute.PRIMITIVE, "30")),
+                      PROFILE_SCHEMA))));
+  private static final FieldValue ORG_FV =
+      FieldValue.of(
+          Attribute.RECORD,
+          FieldValueList.of(
+              Arrays.asList(
+                  FieldValue.of(Attribute.PRIMITIVE, "Acme Corp"),
+                  FieldValue.of(
+                      Attribute.RECORD,
+                      FieldValueList.of(
+                          Arrays.asList(
+                              FieldValue.of(Attribute.PRIMITIVE, "London"),
+                              FieldValue.of(Attribute.PRIMITIVE, "UK")),
+                          INNER_STRUCT_SCHEMA))),
+              OUTER_STRUCT_SCHEMA));
+
+  private static final FieldValueList SAMPLE_ALL_TYPES_FVL =
+      FieldValueList.of(
+          Arrays.asList(
+              ID_FV, NAME_FV, SCORE_FV, ACTIVE_FV, GEO_FV, JSON_FV, NUM_FV, BIGNUM_FV,
+              INTERVAL_FV, BYTES_FV, TS_FV, DT_FV, TM_FV, RANGE_FV, TAGS_FV, PROFILES_FV, ORG_FV),
+          ALL_TYPES_SCHEMA_FIELDS);
+
   @Test
   public void testUnpackRowAndCoercionAllTypes() throws Exception {
-    FieldList profileSchema =
-        FieldList.of(
-            Field.of("pname", StandardSQLTypeName.STRING),
-            Field.of("page", StandardSQLTypeName.INT64));
-
-    FieldList innerStructSchema =
-        FieldList.of(
-            Field.of("city", StandardSQLTypeName.STRING),
-            Field.of("country", StandardSQLTypeName.STRING));
-
-    FieldList outerStructSchema =
-        FieldList.of(
-            Field.of("company", StandardSQLTypeName.STRING),
-            Field.of("location", StandardSQLTypeName.STRUCT, innerStructSchema));
-
-    FieldList schemaFields =
-        FieldList.of(
-            Field.of("id", StandardSQLTypeName.INT64),
-            Field.of("name", StandardSQLTypeName.STRING),
-            Field.of("score", StandardSQLTypeName.FLOAT64),
-            Field.of("active", StandardSQLTypeName.BOOL),
-            Field.of("geo", StandardSQLTypeName.GEOGRAPHY),
-            Field.of("json_col", StandardSQLTypeName.JSON),
-            Field.of("num", StandardSQLTypeName.NUMERIC),
-            Field.of("bignum", StandardSQLTypeName.BIGNUMERIC),
-            Field.of("interval_col", StandardSQLTypeName.INTERVAL),
-            Field.of("bytes_col", StandardSQLTypeName.BYTES),
-            Field.of("ts", StandardSQLTypeName.TIMESTAMP),
-            Field.of("dt", StandardSQLTypeName.DATE),
-            Field.of("tm", StandardSQLTypeName.TIME),
-            Field.of("range_col", StandardSQLTypeName.RANGE),
-            Field.newBuilder("tags", StandardSQLTypeName.STRING)
-                .setMode(Field.Mode.REPEATED)
-                .build(),
-            Field.newBuilder("profiles", StandardSQLTypeName.STRUCT, profileSchema)
-                .setMode(Field.Mode.REPEATED)
-                .build(),
-            Field.of("org", StandardSQLTypeName.STRUCT, outerStructSchema));
-
-    Schema schema = Schema.of(schemaFields);
     boolean[] isComplexColumn =
-        BigQueryFieldValueListWrapper.createComplexColumnFlags(schema.getFields());
+        BigQueryFieldValueListWrapper.createComplexColumnFlags(ALL_TYPES_SCHEMA.getFields());
 
-    FieldValueList fvl =
-        FieldValueList.of(
-            Arrays.asList(
-                FieldValue.of(Attribute.PRIMITIVE, "101"),
-                FieldValue.of(Attribute.PRIMITIVE, "Alice"),
-                FieldValue.of(Attribute.PRIMITIVE, "98.5"),
-                FieldValue.of(Attribute.PRIMITIVE, "true"),
-                FieldValue.of(Attribute.PRIMITIVE, "POINT(-122.084 37.422)"),
-                FieldValue.of(Attribute.PRIMITIVE, "{\"key\": \"value\"}"),
-                FieldValue.of(Attribute.PRIMITIVE, "123456789.987654321"),
-                FieldValue.of(
-                    Attribute.PRIMITIVE, "99999999999999999999999999999999999999.999999999"),
-                FieldValue.of(Attribute.PRIMITIVE, "0-0 0 0:0:0"),
-                FieldValue.of(Attribute.PRIMITIVE, "SGVsbG8gV29ybGQ="),
-                FieldValue.of(Attribute.PRIMITIVE, "1408452095.22"),
-                FieldValue.of(Attribute.PRIMITIVE, "2023-03-13"),
-                FieldValue.of(Attribute.PRIMITIVE, "23:59:59"),
-                FieldValue.of(
-                    Attribute.RANGE,
-                    com.google.cloud.bigquery.Range.of("[2020-01-01, 2020-01-31)")),
-                FieldValue.of(
-                    Attribute.REPEATED,
-                    Arrays.asList(
-                        FieldValue.of(Attribute.PRIMITIVE, "tag1"),
-                        FieldValue.of(Attribute.PRIMITIVE, "tag2"))),
-                FieldValue.of(
-                    Attribute.REPEATED,
-                    Arrays.asList(
-                        FieldValue.of(
-                            Attribute.RECORD,
-                            FieldValueList.of(
-                                Arrays.asList(
-                                    FieldValue.of(Attribute.PRIMITIVE, "Bob"),
-                                    FieldValue.of(Attribute.PRIMITIVE, "30")),
-                                profileSchema)))),
-                FieldValue.of(
-                    Attribute.RECORD,
-                    FieldValueList.of(
-                        Arrays.asList(
-                            FieldValue.of(Attribute.PRIMITIVE, "Acme Corp"),
-                            FieldValue.of(
-                                Attribute.RECORD,
-                                FieldValueList.of(
-                                    Arrays.asList(
-                                        FieldValue.of(Attribute.PRIMITIVE, "London"),
-                                        FieldValue.of(Attribute.PRIMITIVE, "UK")),
-                                    innerStructSchema))),
-                        outerStructSchema))),
-            schemaFields);
-
-    Object[] row = BigQueryFieldValueListWrapper.unpackRow(fvl, isComplexColumn);
+    Object[] row = BigQueryFieldValueListWrapper.unpackRow(SAMPLE_ALL_TYPES_FVL, isComplexColumn);
 
     assertThat(row[0]).isEqualTo("101");
     assertThat(row[1]).isEqualTo("Alice");
@@ -162,12 +168,12 @@ public class BigQueryFieldValueListWrapperTest {
 
     // Verify ResultSet end-to-end JDBC Coercion
     BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingDeque<>();
-    queue.add(BigQueryFieldValueListWrapper.ofRow(schemaFields, row));
+    queue.add(BigQueryFieldValueListWrapper.ofRow(ALL_TYPES_SCHEMA_FIELDS, row));
     queue.add(BigQueryFieldValueListWrapper.ofRow(null, null, true));
     BigQueryStatement statement = mock(BigQueryStatement.class);
     Future<?>[] workerTasks = {mock(Future.class)};
 
-    BigQueryJsonResultSet rs = BigQueryJsonResultSet.of(schema, 1L, queue, statement, workerTasks);
+    BigQueryJsonResultSet rs = BigQueryJsonResultSet.of(ALL_TYPES_SCHEMA, 1L, queue, statement, workerTasks);
     assertTrue(rs.next());
 
     assertThat(rs.getLong("id")).isEqualTo(101L);

@@ -63,7 +63,7 @@ class BigQueryFieldValueListWrapper {
     return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, isLastFlag, null);
   }
 
-  public static boolean[] createComplexColumnFlags(FieldList fieldList) {
+  static boolean[] createComplexColumnFlags(FieldList fieldList) {
     if (fieldList == null) {
       return new boolean[0];
     }
@@ -80,7 +80,7 @@ class BigQueryFieldValueListWrapper {
     return isComplex;
   }
 
-  public static Object[] unpackRow(FieldValueList fieldValueList, boolean[] isComplexColumn) {
+  static Object[] unpackRow(FieldValueList fieldValueList, boolean[] isComplexColumn) {
     if (fieldValueList == null) {
       return null;
     }
@@ -132,23 +132,23 @@ class BigQueryFieldValueListWrapper {
     this.exception = exception;
   }
 
-  public FieldList getFieldList() {
+  FieldList getFieldList() {
     return this.fieldList;
   }
 
-  public FieldValueList getFieldValueList() {
+  FieldValueList getFieldValueList() {
     return this.fieldValueList;
   }
 
-  public List<FieldValue> getArrayFieldValueList() {
+  List<FieldValue> getArrayFieldValueList() {
     return this.arrayFieldValueList;
   }
 
-  public Object[] getRowValues() {
+  Object[] getRowValues() {
     return this.rowValues;
   }
 
-  public FieldValue get(int index) {
+  FieldValue get(int index) {
     if (this.fieldValueList != null) {
       return this.fieldValueList.get(index);
     }
@@ -168,11 +168,11 @@ class BigQueryFieldValueListWrapper {
     return null;
   }
 
-  public boolean isLast() {
+  boolean isLast() {
     return this.isLast;
   }
 
-  public Exception getException() {
+  Exception getException() {
     return this.exception;
   }
 }
