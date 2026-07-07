@@ -16,7 +16,6 @@
 
 package com.google.cloud;
 
-import static com.google.common.collect.ImmutableList.toImmutableList;
 
 import com.google.cloud.tools.opensource.dependencies.Artifacts;
 import com.google.cloud.tools.opensource.dependencies.Bom;
@@ -27,13 +26,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.base.Verify;
-import com.google.common.base.VerifyException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
-import com.google.common.collect.Streams;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
@@ -41,8 +38,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,9 +56,6 @@ public class ReleaseNoteGeneration {
   private static final String cloudLibraryArtifactPrefix = "com.google.cloud:google-cloud-";
   private static final String RELEASE_NOTE_FILE_NAME = "release_note.md";
   private static final String GOOGLEAPIS_ORG = "googleapis";
-
-  private static final ImmutableSet<String> splitRepositoryLibraryNames =
-      ImmutableSet.of("bigtable", "firestore", "pubsub", "pubsublite");
 
   private static boolean clientLibraryFilter(String coordinates) {
     if (coordinates.contains("google-cloud-core")) {
@@ -305,11 +297,7 @@ public class ReleaseNoteGeneration {
     }
 
     report.append("# Notable Changes\n\n");
-    reportClientLibrariesNotableChangeLogs(
-        minorVersionBumpVersionlessCoordinates,
-        versionlessCoordinatesToVersionOld,
-        versionlessCoordinatesToVersionNew,
-        googleCloudJavaVersion);
+    reportClientLibrariesNotableChangeLogs(googleCloudJavaVersion);
 
     report.append("# Version Upgrades\n\n");
     if (!majorVersionBumpVersionlessCoordinates.isEmpty()) {
@@ -394,22 +382,11 @@ public class ReleaseNoteGeneration {
       ImmutableList<String> versionsForReleaseNotes =
           clientLibraryReleaseNoteVersions(versionlessCoordinates, previousVersion, currentVersion);
 
-      String libraryName = null;
-      if (artifactId.contains("google-cloud-")) {
-        libraryName = artifactId.replace("google-cloud-", "");
-      } else if (artifactId.contains("google-")) {
-        // Case of google-iam-admin
-        libraryName = artifactId.replace("google-", "");
-      }
-
       List<String> links = new ArrayList<>();
       for (String versionForReleaseNotes : versionsForReleaseNotes) {
         String[] versionAndQualifier = versionForReleaseNotes.split("-");
         String version = versionAndQualifier[0];
-        String releaseUrl =
-            splitRepositoryLibraryNames.contains(libraryName)
-                ? releaseUrlForSplitRepo(libraryName, version)
-                : releaseUrlForMonorepo(libraryName, googleCloudJavaVersion);
+        String releaseUrl = releaseUrlForMonorepo(googleCloudJavaVersion);
         links.add(String.format("[v%s](%s)", versionForReleaseNotes, releaseUrl));
       }
       line.append(Joiner.on(", ").join(links)).append(")");
@@ -418,13 +395,7 @@ public class ReleaseNoteGeneration {
     }
   }
 
-  private static String releaseUrlForSplitRepo(String libraryName, String version) {
-    return String.format(
-        "https://github.com/googleapis/java-%s/releases/tag/v%s", libraryName, version);
-  }
-
-  private static String releaseUrlForMonorepo(String libraryName, String version) {
-    // libraryName is unused for the monorepo release note as of Dec 2022
+  private static String releaseUrlForMonorepo(String version) {
     return String.format(
         "https://github.com/googleapis/google-cloud-java/releases/tag/v%s", version);
   }
@@ -499,59 +470,8 @@ public class ReleaseNoteGeneration {
    * in between the two versions, not including the old version.
    */
   @VisibleForTesting
-  void reportClientLibrariesNotableChangeLogs(
-      Iterable<String> artifactsInBothBoms,
-      Map<String, String> versionlessCoordinatesToVersionOld,
-      Map<String, String> versionlessCoordinatesToVersionNew,
-      String googleCloudJavaVersion)
+  void reportClientLibrariesNotableChangeLogs(String googleCloudJavaVersion)
       throws IOException, InterruptedException {
-
-    ImmutableList<String> sortedVersionlessCoordinates =
-        Streams.stream(artifactsInBothBoms).sorted().collect(toImmutableList());
-
-    for (String versionlessCoordinates : sortedVersionlessCoordinates) {
-      List<String> coordinates = Splitter.on(":").splitToList(versionlessCoordinates);
-      String artifactId = coordinates.get(1);
-      String previousVersion = versionlessCoordinatesToVersionOld.get(versionlessCoordinates);
-      String currentVersion = versionlessCoordinatesToVersionNew.get(versionlessCoordinates);
-      Optional<String> matchingSplitRepoName =
-          splitRepositoryLibraryNames.stream()
-              .map(libraryName -> artifactId.endsWith(libraryName) ? "java-" + libraryName : null)
-              .filter(Objects::nonNull)
-              .findFirst();
-      matchingSplitRepoName.ifPresent(
-          splitRepoName -> {
-            try {
-              ImmutableList<String> versionsForReleaseNotes =
-                  clientLibraryReleaseNoteVersions(
-                      versionlessCoordinates, previousVersion, currentVersion);
-              String changelog =
-                  fetchClientLibraryNotableChangeLog(splitRepoName, versionsForReleaseNotes);
-              if (!changelog.isEmpty()) {
-                // Only print library name when there are notable changes
-                report
-                    .append("## ")
-                    .append(artifactId)
-                    .append(" ")
-                    .append(currentVersion)
-                    .append(" (prev: ")
-                    .append(previousVersion)
-                    .append(")");
-                report.append(changelog).append("\n");
-              }
-            } catch (MavenRepositoryException | IOException | InterruptedException ex) {
-              throw new VerifyException(
-                  "Couldn't write notable changelog for "
-                      + versionlessCoordinates
-                      + "'s versions between "
-                      + previousVersion
-                      + " and "
-                      + currentVersion,
-                  ex);
-            }
-          });
-    }
-
     report.append("## Other libraries\n\n");
     String changelog =
         fetchClientLibraryNotableChangeLog(
