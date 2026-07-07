@@ -16,7 +16,6 @@
 
 package com.google.cloud;
 
-
 import com.google.cloud.tools.opensource.dependencies.Artifacts;
 import com.google.cloud.tools.opensource.dependencies.Bom;
 import com.google.cloud.tools.opensource.dependencies.MavenRepositoryException;
@@ -382,11 +381,9 @@ public class ReleaseNoteGeneration {
       ImmutableList<String> versionsForReleaseNotes =
           clientLibraryReleaseNoteVersions(versionlessCoordinates, previousVersion, currentVersion);
 
+      String releaseUrl = releaseUrlForMonorepo(googleCloudJavaVersion);
       List<String> links = new ArrayList<>();
       for (String versionForReleaseNotes : versionsForReleaseNotes) {
-        String[] versionAndQualifier = versionForReleaseNotes.split("-");
-        String version = versionAndQualifier[0];
-        String releaseUrl = releaseUrlForMonorepo(googleCloudJavaVersion);
         links.add(String.format("[v%s](%s)", versionForReleaseNotes, releaseUrl));
       }
       line.append(Joiner.on(", ").join(links)).append(")");
