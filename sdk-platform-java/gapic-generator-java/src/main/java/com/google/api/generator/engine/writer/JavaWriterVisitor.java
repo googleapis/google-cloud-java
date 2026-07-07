@@ -94,6 +94,7 @@ public class JavaWriterVisitor implements AstNodeVisitor {
   private static final String RIGHT_PAREN = ")";
   private static final String SEMICOLON = ";";
   private static final String ASTERISK = "*";
+  private static final String NULLABLE = "@Nullable ";
 
   private static final String ABSTRACT = "abstract";
   private static final String CATCH = "catch";
@@ -223,7 +224,7 @@ public class JavaWriterVisitor implements AstNodeVisitor {
     }
 
     if (reference.isNullable()) {
-      buffer.append("@Nullable ");
+      buffer.append(NULLABLE);
     }
 
     buffer.append(reference.simpleName());
@@ -260,7 +261,7 @@ public class JavaWriterVisitor implements AstNodeVisitor {
     }
 
     if (reference.isNullable()) {
-      buffer.append("@Nullable ");
+      buffer.append(NULLABLE);
     }
 
     // A null pointer exception will be thrown if reference is null, which is WAI.

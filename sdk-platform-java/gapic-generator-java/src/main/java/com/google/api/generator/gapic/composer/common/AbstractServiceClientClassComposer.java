@@ -48,7 +48,6 @@ import com.google.api.generator.engine.ast.ReferenceConstructorExpr;
 import com.google.api.generator.engine.ast.RelationalOperationExpr;
 import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
-import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.SuperObjectValue;
 import com.google.api.generator.engine.ast.TernaryExpr;
 import com.google.api.generator.engine.ast.ThisObjectValue;
@@ -724,7 +723,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     return javaMethods;
   }
 
-  // Mark resource name helper arguments as nullable since callers may pass null into the helper methods.
+  // Mark resource name helper arguments as nullable since callers may pass null into the helper
+  // methods.
   private static VariableExpr createMethodArgVariableExpr(MethodArgument methodArg) {
     TypeNode argType = methodArg.type();
     if (methodArg.isResourceNameHelper()) {
