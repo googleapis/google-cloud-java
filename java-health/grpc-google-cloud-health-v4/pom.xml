@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-health-v4</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-health-v4:current} -->
+  <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-health-v4:current} -->
   <name>grpc-google-cloud-health-v4</name>
   <description>GRPC library for google-cloud-health</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-health-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-health:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-health:current} -->
   </parent>
   <dependencies>
     <dependency>
