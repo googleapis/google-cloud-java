@@ -30,23 +30,20 @@ git checkout feat-pqc-tls
 go build ./cmd/gapic-showcase
 ```
 
-### Step 2.2: Generate TLS Certificates
-Generate self-signed testing certificates using `openssl` (saved to `~/pqc-certs`):
-```shell
-mkdir -p ~/pqc-certs
-openssl req -x509 -newkey rsa:4096 -keyout ~/pqc-certs/server.key -out ~/pqc-certs/server.crt -sha256 -days 365 -nodes -subj "/CN=localhost"
-openssl x509 -outform pem -in ~/pqc-certs/server.crt -out ~/pqc-certs/ca.crt
-```
+### Step 2.2: Run the Showcase Server with Auto-TLS (Recommended)
+Start the Showcase server in Auto-TLS mode. This automatically generates a CA certificate in-memory at startup and saves it to the target directory:
 
-### Step 2.3: Run the Showcase Server
-Start the Showcase server in TLS mode using the generated certificate:
 ```shell
 # Run on secure port 7470
 ./gapic-showcase run \
-  --tls-cert ~/pqc-certs/server.crt \
-  --tls-key ~/pqc-certs/server.key \
-  --port 7470
+  --port 7470 \
+  --tls \
+  --ca-cert-output-file /tmp/showcase-ca.pem
 ```
+
+*Note: The helper script `build-with-local-http-client.sh` will automatically launch and clean up this Showcase server if it finds the `gapic-showcase` repository cloned next to the `google-cloud-java` monorepo.*
+If running manually, execute the tests using:
+`mvn test -pl java-showcase/gapic-showcase -Dtest=ITPqc -Dshowcase.ca.cert.path=/tmp/showcase-ca.pem`
 
 ---
 

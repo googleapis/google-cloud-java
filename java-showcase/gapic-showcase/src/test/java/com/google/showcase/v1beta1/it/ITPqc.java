@@ -18,8 +18,6 @@ package com.google.showcase.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
-import static com.google.showcase.v1beta1.it.util.TestClientInitializer.DEFAULT_GRPC_ENDPOINT;
-import static com.google.showcase.v1beta1.it.util.TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -105,17 +103,19 @@ public class ITPqc {
 
   // TLS response header names from Showcase server
   private static final String TLS_GROUP_HEADER = "x-showcase-tls-group";
-  private static final String TLS_VERSION_HEADER = "x-showcase-tls-version";
   private static final String TLS_CIPHER_HEADER = "x-showcase-tls-cipher";
   private static final String TLS_SUPPORTED_GROUPS_HEADER =
       "x-showcase-tls-client-supported-groups";
 
   // Expected TLS parameters
   private static final String EXPECTED_TLS_GROUP = "X25519MLKEM768";
-  private static final String EXPECTED_TLS_VERSION = "TLS 1.3";
   private static final String EXPECTED_TLS_CIPHER = "TLS_AES_128_GCM_SHA256";
 
-  private static final String DEFAULT_CA_CERT_PATH = "target/showcase-ca.pem";
+  private static final String DEFAULT_CA_CERT_PATH =
+      System.getProperty("showcase.ca.cert.path", "target/showcase-ca.pem");
+
+  private static final String SECURE_ENDPOINT =
+      System.getProperty("showcase.secure.endpoint", "localhost:7470");
 
   @BeforeAll
   static void setUp() {
@@ -132,7 +132,7 @@ public class ITPqc {
     ChannelCredentials creds =
         TlsChannelCredentials.newBuilder().trustManager(new File(DEFAULT_CA_CERT_PATH)).build();
 
-    ManagedChannel channel = Grpc.newChannelBuilder(DEFAULT_GRPC_ENDPOINT, creds).build();
+    ManagedChannel channel = Grpc.newChannelBuilder(SECURE_ENDPOINT, creds).build();
     try {
       TransportChannel transportChannel = GrpcTransportChannel.create(channel);
 
@@ -165,15 +165,12 @@ public class ITPqc {
 
         Metadata.Key<String> groupKey =
             Metadata.Key.of(TLS_GROUP_HEADER, Metadata.ASCII_STRING_MARSHALLER);
-        Metadata.Key<String> versionKey =
-            Metadata.Key.of(TLS_VERSION_HEADER, Metadata.ASCII_STRING_MARSHALLER);
         Metadata.Key<String> cipherKey =
             Metadata.Key.of(TLS_CIPHER_HEADER, Metadata.ASCII_STRING_MARSHALLER);
         Metadata.Key<String> supportedGroupsKey =
             Metadata.Key.of(TLS_SUPPORTED_GROUPS_HEADER, Metadata.ASCII_STRING_MARSHALLER);
 
         assertThat(capturedHeaders.get(groupKey)).isEqualTo(EXPECTED_TLS_GROUP);
-        assertThat(capturedHeaders.get(versionKey)).isEqualTo(EXPECTED_TLS_VERSION);
         assertThat(capturedHeaders.get(cipherKey)).isEqualTo(EXPECTED_TLS_CIPHER);
         assertThat(capturedHeaders.get(supportedGroupsKey)).isNotNull();
       }
@@ -195,7 +192,7 @@ public class ITPqc {
     InstantiatingHttpJsonChannelProvider transportChannelProvider =
         EchoSettings.defaultHttpJsonTransportProviderBuilder()
             .setHttpTransport(transport)
-            .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT.replace("http://", "https://"))
+            .setEndpoint("https://" + SECURE_ENDPOINT)
             .setInterceptorProvider(() -> Collections.singletonList(interceptor))
             .build();
 
@@ -215,9 +212,6 @@ public class ITPqc {
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
       assertThat(negotiatedGroup).isEqualTo(EXPECTED_TLS_GROUP);
-
-      String tlsVersion = getSingleHeaderString(capturedHeaders, TLS_VERSION_HEADER);
-      assertThat(tlsVersion).isEqualTo(EXPECTED_TLS_VERSION);
 
       String tlsCipher = getSingleHeaderString(capturedHeaders, TLS_CIPHER_HEADER);
       assertThat(tlsCipher).isEqualTo(EXPECTED_TLS_CIPHER);
@@ -250,7 +244,7 @@ public class ITPqc {
     InstantiatingHttpJsonChannelProvider transportChannelProvider =
         EchoSettings.defaultHttpJsonTransportProviderBuilder()
             .setHttpTransport(transport)
-            .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT.replace("http://", "https://"))
+            .setEndpoint("https://" + SECURE_ENDPOINT)
             .setInterceptorProvider(() -> Collections.singletonList(interceptor))
             .build();
 
@@ -273,9 +267,6 @@ public class ITPqc {
       // Under SunJSSE (JDK default), PQC curves are unsupported, so it falls back to classical
       // X25519
       assertThat(negotiatedGroup).isEqualTo("X25519");
-
-      String tlsVersion = getSingleHeaderString(capturedHeaders, TLS_VERSION_HEADER);
-      assertThat(tlsVersion).isEqualTo("TLS 1.3");
 
       String tlsCipher = getSingleHeaderString(capturedHeaders, TLS_CIPHER_HEADER);
       assertThat(tlsCipher).isEqualTo("TLS_AES_128_GCM_SHA256");

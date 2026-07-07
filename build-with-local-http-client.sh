@@ -56,9 +56,39 @@ else
   popd
 fi
 
+SHOWCASE_DIR="${SHOWCASE_DIR:-${PARENT_DIR}/gapic-showcase}"
+SHOWCASE_BIN="${SHOWCASE_DIR}/gapic-showcase"
+
+if [ -f "${SHOWCASE_BIN}" ]; then
+  echo "========================================================================="
+  echo "Starting Showcase TLS server in background..."
+  echo "========================================================================="
+  
+  # Start showcase in Auto-TLS mode on port 7470
+  "${SHOWCASE_BIN}" run \
+    --port 7470 \
+    --tls \
+    --ca-cert-output-file /tmp/showcase-ca.pem > showcase-server.log 2>&1 &
+  SHOWCASE_PID=$!
+  
+  # Ensure we kill the background process on script exit
+  trap "echo 'Stopping Showcase...'; kill ${SHOWCASE_PID} 2>/dev/null || true; wait ${SHOWCASE_PID} 2>/dev/null || true; rm -f /tmp/showcase-ca.pem" EXIT
+  
+  # Wait a bit for the server to initialize and write the cert
+  sleep 2
+else
+  echo "========================================================================="
+  echo "Warning: gapic-showcase binary not found at: ${SHOWCASE_BIN}"
+  echo "Please ensure Showcase is running manually in TLS mode on port 7470,"
+  echo "and its CA certificate is written to /tmp/showcase-ca.pem."
+  echo "========================================================================="
+fi
+
 echo "========================================================================="
 echo "Building and verifying gapic-showcase with PQC in google-cloud-java..."
 echo "========================================================================="
 
-# Run the showcase tests
-mvn test -pl java-showcase/gapic-showcase -Dtest=ITPqc
+# Run the showcase tests using the secure endpoint and cert path
+mvn test -pl java-showcase/gapic-showcase -Dtest=ITPqc \
+  -Dshowcase.secure.endpoint=localhost:7470 \
+  -Dshowcase.ca.cert.path=/tmp/showcase-ca.pem
