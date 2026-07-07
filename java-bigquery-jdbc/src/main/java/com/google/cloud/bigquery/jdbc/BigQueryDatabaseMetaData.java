@@ -2466,7 +2466,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
-  Schema defineGetPrimaryKeysSchema() {
+  private Schema defineGetPrimaryKeysSchema() {
     List<Field> fields = new ArrayList<>(6);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -2495,7 +2495,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  void processPrimaryKey(
+  private void processPrimaryKey(
       TableConstraints constraints,
       TableId tableId,
       List<FieldValueList> collectedResults,
@@ -2505,20 +2505,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<String> pkColumns = pk.getColumns();
       for (int i = 0; i < pkColumns.size(); i++) {
         List<FieldValue> row = new ArrayList<>(6);
-        row.add(
-            FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getProject())); // 1. TABLE_CAT
-        row.add(
-            FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getDataset())); // 2. TABLE_SCHEM
-        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getTable())); // 3. TABLE_NAME
-        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, pkColumns.get(i))); // 4. COLUMN_NAME
-        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, String.valueOf(i + 1))); // 5. KEY_SEQ
-        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, null)); // 6. PK_NAME
+        row.add(createStringFieldValue(tableId.getProject())); // 1. TABLE_CAT
+        row.add(createStringFieldValue(tableId.getDataset())); // 2. TABLE_SCHEM
+        row.add(createStringFieldValue(tableId.getTable()));   // 3. TABLE_NAME
+        row.add(createStringFieldValue(pkColumns.get(i)));      // 4. COLUMN_NAME
+        row.add(createLongFieldValue((long) (i + 1)));         // 5. KEY_SEQ
+        row.add(createNullFieldValue());                       // 6. PK_NAME
         collectedResults.add(FieldValueList.of(row, resultSchemaFields));
       }
     }
   }
 
-  Comparator<FieldValueList> defineGetPrimaryKeysComparator(FieldList resultSchemaFields) {
+  private Comparator<FieldValueList> defineGetPrimaryKeysComparator(FieldList resultSchemaFields) {
     final int COLUMN_NAME_IDX = resultSchemaFields.getIndex("COLUMN_NAME");
     return Comparator.comparing(
         (FieldValueList fvl) -> getStringValueOrNull(fvl, COLUMN_NAME_IDX),
@@ -5117,7 +5115,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 }));
       }
       waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching metadata");
+      }
     } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
       throw new SQLException("Error while fetching metadata", e);
     } finally {
       taskFutures.forEach(future -> future.cancel(true));
