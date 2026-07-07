@@ -84,6 +84,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -100,6 +101,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -116,6 +118,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -129,6 +132,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -144,6 +148,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -159,11 +164,104 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
      */
     com.google.cloud.modelarmor.v1.RangeInfoOrBuilder getCodepointRangeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation> getContentLocationsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    com.google.cloud.modelarmor.v1.SdpContentLocation getContentLocations(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    int getContentLocationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    java.util.List<? extends com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>
+        getContentLocationsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder getContentLocationsOrBuilder(
+        int index);
   }
 
   /**
@@ -196,7 +294,9 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       super(builder);
     }
 
-    private SdpFindingLocation() {}
+    private SdpFindingLocation() {
+      contentLocations_ = java.util.Collections.emptyList();
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.modelarmor.v1.V1mainProto
@@ -225,6 +325,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -244,6 +345,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -265,6 +367,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -286,6 +389,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -304,6 +408,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -324,6 +429,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -333,6 +439,119 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       return codepointRange_ == null
           ? com.google.cloud.modelarmor.v1.RangeInfo.getDefaultInstance()
           : codepointRange_;
+    }
+
+    public static final int CONTENT_LOCATIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation> contentLocations_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation>
+        getContentLocationsList() {
+      return contentLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>
+        getContentLocationsOrBuilderList() {
+      return contentLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    @java.lang.Override
+    public int getContentLocationsCount() {
+      return contentLocations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.SdpContentLocation getContentLocations(int index) {
+      return contentLocations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of nested objects pointing to the precise location of the finding
+     * within an image, file or record.
+     *
+     * For example, a single finding might be detected in two
+     * separate bounding boxes within an image (e.g., if it wraps across
+     * a line or is partially obscured). In such cases, content_locations
+     * would contain two SdpContentLocation entries, each with an
+     * image_finding_location pointing to a different bounding box.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder getContentLocationsOrBuilder(
+        int index) {
+      return contentLocations_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -355,6 +574,9 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getCodepointRange());
       }
+      for (int i = 0; i < contentLocations_.size(); i++) {
+        output.writeMessage(3, contentLocations_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -369,6 +591,10 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCodepointRange());
+      }
+      for (int i = 0; i < contentLocations_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, contentLocations_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -394,6 +620,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       if (hasCodepointRange()) {
         if (!getCodepointRange().equals(other.getCodepointRange())) return false;
       }
+      if (!getContentLocationsList().equals(other.getContentLocationsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -412,6 +639,10 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       if (hasCodepointRange()) {
         hash = (37 * hash) + CODEPOINT_RANGE_FIELD_NUMBER;
         hash = (53 * hash) + getCodepointRange().hashCode();
+      }
+      if (getContentLocationsCount() > 0) {
+        hash = (37 * hash) + CONTENT_LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getContentLocationsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -557,6 +788,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetByteRangeFieldBuilder();
           internalGetCodepointRangeFieldBuilder();
+          internalGetContentLocationsFieldBuilder();
         }
       }
 
@@ -574,6 +806,13 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
           codepointRangeBuilder_.dispose();
           codepointRangeBuilder_ = null;
         }
+        if (contentLocationsBuilder_ == null) {
+          contentLocations_ = java.util.Collections.emptyList();
+        } else {
+          contentLocations_ = null;
+          contentLocationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -602,11 +841,25 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation buildPartial() {
         com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation result =
             new com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation result) {
+        if (contentLocationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.contentLocations_ = contentLocations_;
+        } else {
+          result.contentLocations_ = contentLocationsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -644,6 +897,33 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasCodepointRange()) {
           mergeCodepointRange(other.getCodepointRange());
+        }
+        if (contentLocationsBuilder_ == null) {
+          if (!other.contentLocations_.isEmpty()) {
+            if (contentLocations_.isEmpty()) {
+              contentLocations_ = other.contentLocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureContentLocationsIsMutable();
+              contentLocations_.addAll(other.contentLocations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.contentLocations_.isEmpty()) {
+            if (contentLocationsBuilder_.isEmpty()) {
+              contentLocationsBuilder_.dispose();
+              contentLocationsBuilder_ = null;
+              contentLocations_ = other.contentLocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              contentLocationsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetContentLocationsFieldBuilder()
+                      : null;
+            } else {
+              contentLocationsBuilder_.addAllMessages(other.contentLocations_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -685,6 +965,20 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  com.google.cloud.modelarmor.v1.SdpContentLocation m =
+                      input.readMessage(
+                          com.google.cloud.modelarmor.v1.SdpContentLocation.parser(),
+                          extensionRegistry);
+                  if (contentLocationsBuilder_ == null) {
+                    ensureContentLocationsIsMutable();
+                    contentLocations_.add(m);
+                  } else {
+                    contentLocationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -719,6 +1013,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -737,6 +1032,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -761,6 +1057,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -787,6 +1084,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -811,6 +1109,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -842,6 +1141,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -865,6 +1165,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -883,6 +1184,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -905,6 +1207,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo byte_range = 1;</code>
@@ -940,6 +1243,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -957,6 +1261,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -980,6 +1285,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1005,6 +1311,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1028,6 +1335,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1058,6 +1366,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1080,6 +1389,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1097,6 +1407,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1118,6 +1429,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1.RangeInfo codepoint_range = 2;</code>
@@ -1137,6 +1449,512 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
           codepointRange_ = null;
         }
         return codepointRangeBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation> contentLocations_ =
+          java.util.Collections.emptyList();
+
+      private void ensureContentLocationsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          contentLocations_ =
+              new java.util.ArrayList<com.google.cloud.modelarmor.v1.SdpContentLocation>(
+                  contentLocations_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.modelarmor.v1.SdpContentLocation,
+              com.google.cloud.modelarmor.v1.SdpContentLocation.Builder,
+              com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>
+          contentLocationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation>
+          getContentLocationsList() {
+        if (contentLocationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(contentLocations_);
+        } else {
+          return contentLocationsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public int getContentLocationsCount() {
+        if (contentLocationsBuilder_ == null) {
+          return contentLocations_.size();
+        } else {
+          return contentLocationsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public com.google.cloud.modelarmor.v1.SdpContentLocation getContentLocations(int index) {
+        if (contentLocationsBuilder_ == null) {
+          return contentLocations_.get(index);
+        } else {
+          return contentLocationsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder setContentLocations(
+          int index, com.google.cloud.modelarmor.v1.SdpContentLocation value) {
+        if (contentLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContentLocationsIsMutable();
+          contentLocations_.set(index, value);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder setContentLocations(
+          int index, com.google.cloud.modelarmor.v1.SdpContentLocation.Builder builderForValue) {
+        if (contentLocationsBuilder_ == null) {
+          ensureContentLocationsIsMutable();
+          contentLocations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          contentLocationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder addContentLocations(com.google.cloud.modelarmor.v1.SdpContentLocation value) {
+        if (contentLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContentLocationsIsMutable();
+          contentLocations_.add(value);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder addContentLocations(
+          int index, com.google.cloud.modelarmor.v1.SdpContentLocation value) {
+        if (contentLocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContentLocationsIsMutable();
+          contentLocations_.add(index, value);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder addContentLocations(
+          com.google.cloud.modelarmor.v1.SdpContentLocation.Builder builderForValue) {
+        if (contentLocationsBuilder_ == null) {
+          ensureContentLocationsIsMutable();
+          contentLocations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          contentLocationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder addContentLocations(
+          int index, com.google.cloud.modelarmor.v1.SdpContentLocation.Builder builderForValue) {
+        if (contentLocationsBuilder_ == null) {
+          ensureContentLocationsIsMutable();
+          contentLocations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          contentLocationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder addAllContentLocations(
+          java.lang.Iterable<? extends com.google.cloud.modelarmor.v1.SdpContentLocation> values) {
+        if (contentLocationsBuilder_ == null) {
+          ensureContentLocationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contentLocations_);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder clearContentLocations() {
+        if (contentLocationsBuilder_ == null) {
+          contentLocations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public Builder removeContentLocations(int index) {
+        if (contentLocationsBuilder_ == null) {
+          ensureContentLocationsIsMutable();
+          contentLocations_.remove(index);
+          onChanged();
+        } else {
+          contentLocationsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public com.google.cloud.modelarmor.v1.SdpContentLocation.Builder getContentLocationsBuilder(
+          int index) {
+        return internalGetContentLocationsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder
+          getContentLocationsOrBuilder(int index) {
+        if (contentLocationsBuilder_ == null) {
+          return contentLocations_.get(index);
+        } else {
+          return contentLocationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public java.util.List<? extends com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>
+          getContentLocationsOrBuilderList() {
+        if (contentLocationsBuilder_ != null) {
+          return contentLocationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(contentLocations_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public com.google.cloud.modelarmor.v1.SdpContentLocation.Builder
+          addContentLocationsBuilder() {
+        return internalGetContentLocationsFieldBuilder()
+            .addBuilder(com.google.cloud.modelarmor.v1.SdpContentLocation.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public com.google.cloud.modelarmor.v1.SdpContentLocation.Builder addContentLocationsBuilder(
+          int index) {
+        return internalGetContentLocationsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.modelarmor.v1.SdpContentLocation.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of nested objects pointing to the precise location of the finding
+       * within an image, file or record.
+       *
+       * For example, a single finding might be detected in two
+       * separate bounding boxes within an image (e.g., if it wraps across
+       * a line or is partially obscured). In such cases, content_locations
+       * would contain two SdpContentLocation entries, each with an
+       * image_finding_location pointing to a different bounding box.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.modelarmor.v1.SdpContentLocation content_locations = 3;</code>
+       */
+      public java.util.List<com.google.cloud.modelarmor.v1.SdpContentLocation.Builder>
+          getContentLocationsBuilderList() {
+        return internalGetContentLocationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.modelarmor.v1.SdpContentLocation,
+              com.google.cloud.modelarmor.v1.SdpContentLocation.Builder,
+              com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>
+          internalGetContentLocationsFieldBuilder() {
+        if (contentLocationsBuilder_ == null) {
+          contentLocationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.modelarmor.v1.SdpContentLocation,
+                  com.google.cloud.modelarmor.v1.SdpContentLocation.Builder,
+                  com.google.cloud.modelarmor.v1.SdpContentLocationOrBuilder>(
+                  contentLocations_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          contentLocations_ = null;
+        }
+        return contentLocationsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation)

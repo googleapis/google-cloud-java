@@ -76,9 +76,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated
+   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+   * service will overwrite the [attestor
+   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+   * the resource name in the request URL, in the format
+   * `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -96,9 +99,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated
+   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+   * service will overwrite the [attestor
+   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+   * the resource name in the request URL, in the format
+   * `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -118,9 +124,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated
+   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+   * service will overwrite the [attestor
+   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+   * the resource name in the request URL, in the format
+   * `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -484,9 +493,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -503,9 +515,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -528,9 +543,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -555,9 +573,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -580,9 +601,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -613,9 +637,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -637,9 +664,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -656,9 +686,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -679,9 +712,12 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
+     * service will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
+     * the resource name in the request URL, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>

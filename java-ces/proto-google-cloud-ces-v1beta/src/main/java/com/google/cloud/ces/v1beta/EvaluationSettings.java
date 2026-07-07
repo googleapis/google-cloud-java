@@ -707,6 +707,67 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int EVALUATION_RUN_CACHING_SETTINGS_FIELD_NUMBER = 7;
+  private com.google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluationRunCachingSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationRunCachingSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvaluationRunCachingSettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationRunCachingSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationRunCachingSettings
+      getEvaluationRunCachingSettings() {
+    return evaluationRunCachingSettings_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.getDefaultInstance()
+        : evaluationRunCachingSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder
+      getEvaluationRunCachingSettingsOrBuilder() {
+    return evaluationRunCachingSettings_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.getDefaultInstance()
+        : evaluationRunCachingSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -751,6 +812,9 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
             .SCENARIO_EXECUTION_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(6, scenarioExecutionMode_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getEvaluationRunCachingSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -797,6 +861,11 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scenarioExecutionMode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getEvaluationRunCachingSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -824,6 +893,11 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       if (!getMetricsConfig().equals(other.getMetricsConfig())) return false;
     }
     if (scenarioExecutionMode_ != other.scenarioExecutionMode_) return false;
+    if (hasEvaluationRunCachingSettings() != other.hasEvaluationRunCachingSettings()) return false;
+    if (hasEvaluationRunCachingSettings()) {
+      if (!getEvaluationRunCachingSettings().equals(other.getEvaluationRunCachingSettings()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -849,6 +923,10 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + SCENARIO_EXECUTION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + scenarioExecutionMode_;
+    if (hasEvaluationRunCachingSettings()) {
+      hash = (37 * hash) + EVALUATION_RUN_CACHING_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationRunCachingSettings().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -991,6 +1069,7 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetMetricsConfigFieldBuilder();
+        internalGetEvaluationRunCachingSettingsFieldBuilder();
       }
     }
 
@@ -1008,6 +1087,11 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
         metricsConfigBuilder_ = null;
       }
       scenarioExecutionMode_ = 0;
+      evaluationRunCachingSettings_ = null;
+      if (evaluationRunCachingSettingsBuilder_ != null) {
+        evaluationRunCachingSettingsBuilder_.dispose();
+        evaluationRunCachingSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1065,6 +1149,13 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.scenarioExecutionMode_ = scenarioExecutionMode_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.evaluationRunCachingSettings_ =
+            evaluationRunCachingSettingsBuilder_ == null
+                ? evaluationRunCachingSettings_
+                : evaluationRunCachingSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1099,6 +1190,9 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       }
       if (other.scenarioExecutionMode_ != 0) {
         setScenarioExecutionModeValue(other.getScenarioExecutionModeValue());
+      }
+      if (other.hasEvaluationRunCachingSettings()) {
+        mergeEvaluationRunCachingSettings(other.getEvaluationRunCachingSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1163,6 +1257,14 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                input.readMessage(
+                    internalGetEvaluationRunCachingSettingsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1962,6 +2064,225 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       scenarioExecutionMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluationRunCachingSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettings,
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.Builder,
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder>
+        evaluationRunCachingSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evaluationRunCachingSettings field is set.
+     */
+    public boolean hasEvaluationRunCachingSettings() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evaluationRunCachingSettings.
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRunCachingSettings
+        getEvaluationRunCachingSettings() {
+      if (evaluationRunCachingSettingsBuilder_ == null) {
+        return evaluationRunCachingSettings_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.getDefaultInstance()
+            : evaluationRunCachingSettings_;
+      } else {
+        return evaluationRunCachingSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationRunCachingSettings(
+        com.google.cloud.ces.v1beta.EvaluationRunCachingSettings value) {
+      if (evaluationRunCachingSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationRunCachingSettings_ = value;
+      } else {
+        evaluationRunCachingSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationRunCachingSettings(
+        com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.Builder builderForValue) {
+      if (evaluationRunCachingSettingsBuilder_ == null) {
+        evaluationRunCachingSettings_ = builderForValue.build();
+      } else {
+        evaluationRunCachingSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvaluationRunCachingSettings(
+        com.google.cloud.ces.v1beta.EvaluationRunCachingSettings value) {
+      if (evaluationRunCachingSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && evaluationRunCachingSettings_ != null
+            && evaluationRunCachingSettings_
+                != com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.getDefaultInstance()) {
+          getEvaluationRunCachingSettingsBuilder().mergeFrom(value);
+        } else {
+          evaluationRunCachingSettings_ = value;
+        }
+      } else {
+        evaluationRunCachingSettingsBuilder_.mergeFrom(value);
+      }
+      if (evaluationRunCachingSettings_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvaluationRunCachingSettings() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      evaluationRunCachingSettings_ = null;
+      if (evaluationRunCachingSettingsBuilder_ != null) {
+        evaluationRunCachingSettingsBuilder_.dispose();
+        evaluationRunCachingSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.Builder
+        getEvaluationRunCachingSettingsBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetEvaluationRunCachingSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder
+        getEvaluationRunCachingSettingsOrBuilder() {
+      if (evaluationRunCachingSettingsBuilder_ != null) {
+        return evaluationRunCachingSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return evaluationRunCachingSettings_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.getDefaultInstance()
+            : evaluationRunCachingSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caching settings to use for the evaluation run.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettings,
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.Builder,
+            com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder>
+        internalGetEvaluationRunCachingSettingsFieldBuilder() {
+      if (evaluationRunCachingSettingsBuilder_ == null) {
+        evaluationRunCachingSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationRunCachingSettings,
+                com.google.cloud.ces.v1beta.EvaluationRunCachingSettings.Builder,
+                com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder>(
+                getEvaluationRunCachingSettings(), getParentForChildren(), isClean());
+        evaluationRunCachingSettings_ = null;
+      }
+      return evaluationRunCachingSettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.EvaluationSettings)

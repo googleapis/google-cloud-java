@@ -889,11 +889,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-logging-logback</artifactId>
-        <version>0.143.0-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-lustre-bom</artifactId>
         <version>0.34.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-lustre:current} -->
         <type>pom</type>
