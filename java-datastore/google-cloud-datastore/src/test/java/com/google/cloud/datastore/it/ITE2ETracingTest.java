@@ -461,7 +461,20 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptionsInstanceOf(Throwable.class)
+          .ignoreExceptionsMatching(
+              e -> {
+                logger.log(
+                    Level.WARNING,
+                    "DEBUG: Awaitility evaluating exception: "
+                        + e.getClass().getName()
+                        + " CL: "
+                        + e.getClass().getClassLoader()
+                        + " cause: "
+                        + (e.getCause() != null ? e.getCause().getClass().getName() : "null"));
+                boolean ignore = Throwable.class.isAssignableFrom(e.getClass());
+                logger.log(Level.WARNING, "DEBUG: Decision: " + ignore);
+                return ignore;
+              })
           .until(
               () -> {
                 try {
@@ -552,7 +565,20 @@ public class ITE2ETracingTest {
       await()
           .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
           .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
-          .ignoreExceptionsInstanceOf(Throwable.class)
+          .ignoreExceptionsMatching(
+              e -> {
+                logger.log(
+                    Level.WARNING,
+                    "DEBUG: Awaitility evaluating exception: "
+                        + e.getClass().getName()
+                        + " CL: "
+                        + e.getClass().getClassLoader()
+                        + " cause: "
+                        + (e.getCause() != null ? e.getCause().getClass().getName() : "null"));
+                boolean ignore = Throwable.class.isAssignableFrom(e.getClass());
+                logger.log(Level.WARNING, "DEBUG: Decision: " + ignore);
+                return ignore;
+              })
           .until(
               () -> {
                 try {
