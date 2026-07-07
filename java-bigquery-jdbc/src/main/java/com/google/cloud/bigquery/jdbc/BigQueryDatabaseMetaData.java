@@ -2507,10 +2507,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         List<FieldValue> row = new ArrayList<>(6);
         row.add(createStringFieldValue(tableId.getProject())); // 1. TABLE_CAT
         row.add(createStringFieldValue(tableId.getDataset())); // 2. TABLE_SCHEM
-        row.add(createStringFieldValue(tableId.getTable()));   // 3. TABLE_NAME
-        row.add(createStringFieldValue(pkColumns.get(i)));      // 4. COLUMN_NAME
-        row.add(createLongFieldValue((long) (i + 1)));         // 5. KEY_SEQ
-        row.add(createNullFieldValue());                       // 6. PK_NAME
+        row.add(createStringFieldValue(tableId.getTable())); // 3. TABLE_NAME
+        row.add(createStringFieldValue(pkColumns.get(i))); // 4. COLUMN_NAME
+        row.add(createLongFieldValue((long) (i + 1))); // 5. KEY_SEQ
+        row.add(createNullFieldValue()); // 6. PK_NAME
         collectedResults.add(FieldValueList.of(row, resultSchemaFields));
       }
     }
