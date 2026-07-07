@@ -63,7 +63,7 @@ public class ReleaseNoteGeneration {
   private static final String GOOGLEAPIS_ORG = "googleapis";
 
   private static final ImmutableSet<String> splitRepositoryLibraryNames =
-      ImmutableSet.of("bigtable", "firestore", "pubsub", "pubsublite");
+      ImmutableSet.of();
 
   private static boolean clientLibraryFilter(String coordinates) {
     if (coordinates.contains("google-cloud-core")) {
@@ -521,7 +521,6 @@ public class ReleaseNoteGeneration {
               .findFirst();
       matchingSplitRepoName.ifPresent(
           splitRepoName -> {
-            System.out.println("DEBUG: Processing " + versionlessCoordinates + " (" + previousVersion + " -> " + currentVersion + ")");
             try {
               ImmutableList<String> versionsForReleaseNotes =
                   clientLibraryReleaseNoteVersions(
