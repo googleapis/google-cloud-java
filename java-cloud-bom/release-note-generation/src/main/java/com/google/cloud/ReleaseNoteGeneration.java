@@ -382,11 +382,11 @@ public class ReleaseNoteGeneration {
           clientLibraryReleaseNoteVersions(versionlessCoordinates, previousVersion, currentVersion);
 
       String releaseUrl = releaseUrlForMonorepo(googleCloudJavaVersion);
-      List<String> links = new ArrayList<>();
+      ImmutableList.Builder<String> links = ImmutableList.builder();
       for (String versionForReleaseNotes : versionsForReleaseNotes) {
         links.add(String.format("[v%s](%s)", versionForReleaseNotes, releaseUrl));
       }
-      line.append(Joiner.on(", ").join(links)).append(")");
+      line.append(Joiner.on(", ").join(links.build())).append(")");
 
       report.append(line).append("\n");
     }
