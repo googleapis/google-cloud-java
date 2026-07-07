@@ -61,7 +61,7 @@ jobs:
         mvn -B -ntp compile
 
         GOOGLE_CLOUD_JAVA_VERSION=$(grep -A1 'gapic-libraries-bom' \
-            ../google-cloud-bom/pom.xml |perl -nle 'print $1 if m/<version>(.+)</')
+            ../google-cloud-bom/pom.xml |perl -nle 'print $1 if m/<version>([^<]+)</')
 
         # This generates release_note.md file
         mvn -B -ntp exec:java \
