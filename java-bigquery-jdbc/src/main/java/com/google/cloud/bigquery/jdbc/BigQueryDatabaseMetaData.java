@@ -5078,8 +5078,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       FieldList resultSchemaFields,
       TableProcessor processor)
       throws SQLException {
-    Table bqTable =
-        bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+    Table bqTable;
+    try {
+      bqTable =
+          bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+    } catch (Exception e) {
+      throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
+    }
     if (bqTable != null && bqTable.getDefinition() != null) {
       processor.process(bqTable, collectedResults, resultSchemaFields);
     }
@@ -5101,20 +5106,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     ExecutorService executor = connection.getMetadataExecutor();
     List<Future<?>> taskFutures = new ArrayList<>();
 
-    for (DatasetId datasetId : targetDatasets) {
-      taskFutures.add(
-          executor.submit(
-              () -> {
-                processSingleTable(
-                    datasetId, tableName, collectedResults, resultSchemaFields, processor);
-                return null;
-              }));
-    }
-
     try {
+      for (DatasetId datasetId : targetDatasets) {
+        taskFutures.add(
+            executor.submit(
+                () -> {
+                  processSingleTable(
+                      datasetId, tableName, collectedResults, resultSchemaFields, processor);
+                  return null;
+                }));
+      }
       waitForTasksCompletion(taskFutures);
     } catch (ExecutionException e) {
       throw new SQLException("Error while fetching metadata", e);
+    } finally {
+      taskFutures.forEach(future -> future.cancel(true));
     }
   }
 }

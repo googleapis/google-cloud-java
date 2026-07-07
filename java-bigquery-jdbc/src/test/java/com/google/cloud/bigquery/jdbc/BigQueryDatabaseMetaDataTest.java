@@ -159,7 +159,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("Project", dbMetadata.getCatalogTerm());
   }
 
-
   @Test
   public void testNeedsListing() {
     assertTrue(dbMetadata.needsListing(null), "Null pattern should require listing");
@@ -3232,7 +3231,6 @@ public class BigQueryDatabaseMetaDataTest {
             BigQueryJdbcException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
-
 
   @ParameterizedTest
   @EnumSource(StandardSQLTypeName.class)
