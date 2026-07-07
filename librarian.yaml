@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.24.1-0.20260707150039-db37cc1a8f59
+version: v0.25.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -57,9 +57,9 @@ libraries:
       - path: google/cloud/accessapproval/v1
     java:
       api_description_override: enables controlling access to your organization's data by Google personnel.
+      released_version: 2.95.0
       name_pretty_override: Access Approval
       product_documentation_override: https://cloud.google.com/access-approval/docs/
-      released_version: 2.95.0
   - name: accesscontextmanager
     version: 1.95.0
     apis:
@@ -74,9 +74,9 @@ libraries:
     java:
       api_description_override: n/a
       artifact_id: google-identity-accesscontextmanager
+      released_version: 1.95.0
       name_pretty_override: Identity Access Context Manager
       product_documentation_override: n/a
-      released_version: 1.95.0
   - name: admanager
     version: 0.53.0
     apis:
@@ -87,10 +87,10 @@ libraries:
       artifact_id: ad-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/ad-manager/latest/overview
       group_id: com.google.api-ads
+      released_version: 0.53.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Ad Manager API
       product_documentation_override: https://developers.google.com/ad-manager/api/beta
-      released_version: 0.53.0
   - name: advisorynotifications
     version: 0.83.0
     apis:
@@ -99,9 +99,9 @@ libraries:
           omit_common_resources: true
     java:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
+      released_version: 0.83.0
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
-      released_version: 0.83.0
   - name: agentregistry
     version: 0.1.0
     apis:
@@ -139,11 +139,11 @@ libraries:
       - google-cloud-aiplatform/src/test/java/com/google/iam/v1/MockIAMPolicyImpl.java
     java:
       api_description_override: is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.
+      released_version: 3.95.0
       name_pretty_override: Vertex AI
       product_documentation_override: https://cloud.google.com/vertex-ai/docs
       rest_documentation: https://cloud.google.com/vertex-ai/docs/reference/rest
       rpc_documentation: https://cloud.google.com/vertex-ai/docs/reference/rpc
-      released_version: 3.95.0
   - name: alloydb
     version: 0.83.0
     apis:
@@ -164,10 +164,10 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: AlloyDB is a fully managed, PostgreSQL-compatible database service with industry-leading performance, availability, and scale.
+      released_version: 0.83.0
       name_pretty_override: AlloyDB
       product_documentation_override: https://cloud.google.com/alloydb/
       rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
-      released_version: 0.83.0
   - name: alloydb-connectors
     version: 0.72.0
     apis:
@@ -195,11 +195,11 @@ libraries:
     java:
       api_id_override: connectors.googleapis.com
       api_description_override: AlloyDB is a fully-managed, PostgreSQL-compatible database for demanding transactional workloads. It provides enterprise-grade performance and availability while maintaining 100% compatibility with open-source PostgreSQL.
+      released_version: 0.72.0
       name_pretty_override: AlloyDB connectors
       product_documentation_override: https://cloud.google.com/alloydb/docs
       rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
       transport_override: grpc
-      released_version: 0.72.0
   - name: analytics-admin
     version: 0.104.0
     apis:
@@ -210,9 +210,9 @@ libraries:
       artifact_id: google-analytics-admin
       codeowner_team: '@googleapis/analytics-dpe'
       group_id: com.google.analytics
+      released_version: 0.104.0
       name_pretty_override: Analytics Admin
       product_documentation_override: https://developers.google.com/analytics
-      released_version: 0.104.0
   - name: analytics-data
     version: 0.105.0
     apis:
@@ -224,18 +224,18 @@ libraries:
       artifact_id: google-analytics-data
       codeowner_team: '@googleapis/analytics-dpe'
       group_id: com.google.analytics
+      released_version: 0.105.0
       name_pretty_override: Analytics Data
       product_documentation_override: https://developers.google.com/analytics/trusted-testing/analytics-data
-      released_version: 0.105.0
   - name: analyticshub
     version: 0.91.0
     apis:
       - path: google/cloud/bigquery/analyticshub/v1
     java:
       api_description_override: TBD
+      released_version: 0.91.0
       name_pretty_override: Analytics Hub API
       product_documentation_override: https://cloud.google.com/bigquery/TBD
-      released_version: 0.91.0
   - name: api-gateway
     version: 2.94.0
     apis:
@@ -243,19 +243,19 @@ libraries:
     java:
       api_id_override: apigateway.googleapis.com
       api_description_override: enables you to provide secure access to your backend services through a well-defined REST API that is consistent across all of your services, regardless of the service implementation. Clients consume your REST APIS to implement standalone apps for a mobile device or tablet, through apps running in a browser, or through any other type of app that can make a request to an HTTP endpoint.
+      released_version: 2.94.0
       name_pretty_override: API Gateway
       product_documentation_override: https://cloud.google.com/api-gateway/docs
       rest_documentation: https://cloud.google.com/api-gateway/docs/reference/rest
-      released_version: 2.94.0
   - name: apigee-connect
     version: 2.94.0
     apis:
       - path: google/cloud/apigeeconnect/v1
     java:
       api_description_override: allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.
+      released_version: 2.94.0
       name_pretty_override: Apigee Connect
       product_documentation_override: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/
-      released_version: 2.94.0
   - name: apigee-registry
     version: 0.94.0
     apis:
@@ -268,9 +268,9 @@ libraries:
       api_id_override: apigeeregistry.googleapis.com
       api_description_override: allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.
       api_shortname_override: apigee-registry
+      released_version: 0.94.0
       name_pretty_override: Registry API
       product_documentation_override: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api
-      released_version: 0.94.0
   - name: apihub
     version: 0.47.0
     apis:
@@ -282,19 +282,19 @@ libraries:
       api_id_override: apihub.googleapis.com
       api_description_override: API hub lets you consolidate and organize information about all of the APIs     of interest to your organization. API hub lets you capture critical information about APIs that allows developers to discover and evaluate     them easily and leverage the work of other teams wherever possible. API     platform teams can use API hub to have visibility into and manage their portfolio of APIs.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-apihub/latest/overview
+      released_version: 0.47.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: API hub API
       product_documentation_override: https://cloud.google.com/apigee/docs/apihub/what-is-api-hub
-      released_version: 0.47.0
   - name: apikeys
     version: 0.92.0
     apis:
       - path: google/api/apikeys/v2
     java:
       api_description_override: API Keys lets you create and manage your API keys for your projects.
+      released_version: 0.92.0
       name_pretty_override: API Keys API
       product_documentation_override: https://cloud.google.com/api-keys/
-      released_version: 0.92.0
   - name: appengine-admin
     version: 2.94.0
     apis:
@@ -302,9 +302,9 @@ libraries:
     java:
       api_description_override: you to manage your App Engine applications.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 2.94.0
       name_pretty_override: App Engine Admin API
       product_documentation_override: https://cloud.google.com/appengine/docs/admin-api/
-      released_version: 2.94.0
   - name: apphub
     version: 0.58.0
     apis:
@@ -315,10 +315,10 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: App Hub simplifies the process of building, running, and managing applications on Google Cloud.
+      released_version: 0.58.0
       name_pretty_override: App Hub API
       product_documentation_override: https://cloud.google.com/app-hub/docs/overview
       rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
-      released_version: 0.58.0
   - name: appoptimize
     version: 0.4.0
     apis:
@@ -330,10 +330,10 @@ libraries:
       api_id_override: appoptimize.googleapis.com
       api_description_override: The App Optimize API provides developers and platform teams with tools to monitor, analyze, and improve the performance and cost-efficiency of their cloud applications.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-appoptimize/latest/overview
+      released_version: 0.4.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: App Optimize API
       product_documentation_override: https://docs.cloud.google.com/app-optimize/overview
-      released_version: 0.4.0
   - name: area120-tables
     version: 0.98.0
     apis:
@@ -342,9 +342,9 @@ libraries:
       api_description_override: provides programmatic methods to the Area 120 Tables API.
       artifact_id: google-area120-tables
       group_id: com.google.area120
+      released_version: 0.98.0
       name_pretty_override: Area 120 Tables
       product_documentation_override: https://area120.google.com/
-      released_version: 0.98.0
   - name: artifact-registry
     version: 1.93.0
     apis:
@@ -359,11 +359,11 @@ libraries:
     java:
       api_description_override: provides a single place for your organization to manage container images and language packages (such as Maven and npm). It is fully integrated with Google Cloud's tooling and runtimes and comes with support for native artifact protocols. This makes it simple to integrate it with your CI/CD tooling to set up automated pipelines.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 1.93.0
       name_pretty_override: Artifact Registry
       product_documentation_override: https://cloud.google.com/artifact-registry
       rest_documentation: https://cloud.google.com/artifact-registry/docs/reference/rest
       rpc_documentation: https://cloud.google.com/artifact-registry/docs/reference/rpc
-      released_version: 1.93.0
   - name: asset
     version: 3.98.0
     apis:
@@ -379,9 +379,9 @@ libraries:
       api_reference: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
       api_description_override: provides inventory services based on a time series database. This database keeps a five week history of Google Cloud asset metadata. The Cloud Asset Inventory export service allows you to export all asset metadata at a certain timestamp or export event change history during a timeframe.
       issue_tracker_override: https://issuetracker.google.com/issues/new?component=187210
+      released_version: 3.98.0
       name_pretty_override: Cloud Asset Inventory
       product_documentation_override: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
-      released_version: 3.98.0
   - name: assured-workloads
     version: 2.94.0
     apis:
@@ -389,10 +389,10 @@ libraries:
       - path: google/cloud/assuredworkloads/v1beta1
     java:
       api_description_override: allows you to secure your government workloads and accelerate your path to running compliant workloads on Google Cloud with Assured Workloads for Government.
+      released_version: 2.94.0
       name_pretty_override: Assured Workloads for Government
       product_documentation_override: https://cloud.google.com/assured-workloads/
       rest_documentation: https://cloud.google.com/assured-workloads/docs/reference/rest
-      released_version: 2.94.0
   - name: auditmanager
     version: 0.12.0
     apis:
@@ -404,10 +404,10 @@ libraries:
       api_id_override: auditmanager.googleapis.com
       api_description_override: Lists information about the supported locations for this service.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview
+      released_version: 0.12.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Audit Manager API
       product_documentation_override: https://cloud.google.com/audit-manager/docs
-      released_version: 0.12.0
   - name: automl
     version: 2.94.0
     apis:
@@ -416,11 +416,11 @@ libraries:
     java:
       api_description_override: makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559744
+      released_version: 2.94.0
       name_pretty_override: Cloud Auto ML
       product_documentation_override: https://cloud.google.com/automl/docs/
       rest_documentation: https://cloud.google.com/automl/docs/reference/rest
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
-      released_version: 2.94.0
   - name: backstory
     version: 0.2.0
     apis:
@@ -434,10 +434,10 @@ libraries:
       api_id_override: backstory.googleapis.com
       api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+      released_version: 0.2.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Malachite Common Protos
       product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
-      released_version: 0.2.0
   - name: backupdr
     version: 0.53.0
     apis:
@@ -450,10 +450,10 @@ libraries:
       api_id_override: backupdr.googleapis.com
       api_description_override: 'Backup and DR Service is a powerful, centralized, cloud-first backup and disaster recovery solution for cloud-based and hybrid workloads. '
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview
+      released_version: 0.53.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Backup and DR Service API
       product_documentation_override: https://cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr
-      released_version: 0.53.0
   - name: bare-metal-solution
     version: 0.94.0
     apis:
@@ -464,11 +464,11 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.
+      released_version: 0.94.0
       name_pretty_override: Bare Metal Solution
       product_documentation_override: https://cloud.google.com/bare-metal/docs
       rest_documentation: https://cloud.google.com/bare-metal/docs/reference/rest
       rpc_documentation: https://cloud.google.com/bare-metal/docs/reference/rpc
-      released_version: 0.94.0
   - name: batch
     version: 0.94.0
     apis:
@@ -483,9 +483,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: n/a
+      released_version: 0.94.0
       name_pretty_override: Cloud Batch
       product_documentation_override: https://cloud.google.com/
-      released_version: 0.94.0
   - name: beyondcorp-appconnections
     version: 0.92.0
     apis:
@@ -497,9 +497,9 @@ libraries:
     java:
       api_description_override: is Google's implementation of the zero trust model. It builds upon a decade of experience at Google, combined with ideas and best practices from the community. By shifting access controls from the network perimeter to individual users, BeyondCorp enables secure work from virtually any location without the need for a traditional VPN.
       api_shortname_override: beyondcorp-appconnections
+      released_version: 0.92.0
       name_pretty_override: BeyondCorp AppConnections
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
-      released_version: 0.92.0
   - name: beyondcorp-appconnectors
     version: 0.92.0
     apis:
@@ -511,9 +511,9 @@ libraries:
     java:
       api_description_override: provides methods to manage (create/read/update/delete) BeyondCorp AppConnectors.
       api_shortname_override: beyondcorp-appconnectors
+      released_version: 0.92.0
       name_pretty_override: BeyondCorp AppConnectors
       product_documentation_override: cloud.google.com/beyondcorp-enterprise/
-      released_version: 0.92.0
   - name: beyondcorp-appgateways
     version: 0.92.0
     apis:
@@ -526,9 +526,9 @@ libraries:
       api_id_override: beyondcorp.googleapis.com
       api_description_override: A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.
       api_shortname_override: beyondcorp-appgateways
+      released_version: 0.92.0
       name_pretty_override: BeyondCorp AppGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
-      released_version: 0.92.0
   - name: beyondcorp-clientconnectorservices
     version: 0.92.0
     apis:
@@ -541,9 +541,9 @@ libraries:
       api_id_override: beyondcorp.googleapis.com
       api_description_override: A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.
       api_shortname_override: beyondcorp-clientconnectorservices
+      released_version: 0.92.0
       name_pretty_override: BeyondCorp ClientConnectorServices
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
-      released_version: 0.92.0
   - name: beyondcorp-clientgateways
     version: 0.92.0
     apis:
@@ -556,9 +556,9 @@ libraries:
       api_id_override: beyondcorp.googleapis.com
       api_description_override: A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.
       api_shortname_override: beyondcorp-clientgateways
+      released_version: 0.92.0
       name_pretty_override: BeyondCorp ClientGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
-      released_version: 0.92.0
   - name: biglake
     version: 0.82.0
     apis:
@@ -580,9 +580,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: is a data exchange that allows you to efficiently and securely exchange data assets across organizations to address challenges of data reliability and cost.
+      released_version: 2.89.0
       name_pretty_override: Analytics Hub
       product_documentation_override: https://cloud.google.com/analytics-hub
-      released_version: 2.89.0
   - name: bigqueryconnection
     version: 2.96.0
     apis:
@@ -591,9 +591,9 @@ libraries:
     java:
       api_description_override: allows users to manage BigQuery connections to external data sources.
       client_documentation_override: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1
+      released_version: 2.96.0
       name_pretty_override: Cloud BigQuery Connection
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest
-      released_version: 2.96.0
   - name: bigquerydatapolicy
     version: 0.91.0
     apis:
@@ -603,9 +603,9 @@ libraries:
       - path: google/cloud/bigquery/datapolicies/v1beta1
     java:
       api_description_override: Allows users to manage BigQuery data policies.
+      released_version: 0.91.0
       name_pretty_override: BigQuery DataPolicy API
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/datapolicy/
-      released_version: 0.91.0
   - name: bigquerydatatransfer
     version: 2.94.0
     apis:
@@ -618,9 +618,9 @@ libraries:
     java:
       api_description_override: transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
+      released_version: 2.94.0
       name_pretty_override: BigQuery Data Transfer Service
       product_documentation_override: https://cloud.google.com/bigquery/transfer/
-      released_version: 2.94.0
   - name: bigquerymigration
     version: 0.97.0
     apis:
@@ -628,19 +628,19 @@ libraries:
       - path: google/cloud/bigquery/migration/v2alpha
     java:
       api_description_override: BigQuery Migration API
+      released_version: 0.97.0
       name_pretty_override: BigQuery Migration
       product_documentation_override: https://cloud.google.com/bigquery/docs
       rest_documentation: https://cloud.google.com/bigquery/docs/reference/rest
-      released_version: 0.97.0
   - name: bigqueryreservation
     version: 2.95.0
     apis:
       - path: google/cloud/bigquery/reservation/v1
     java:
       api_description_override: allows users to manage their flat-rate BigQuery reservations.
+      released_version: 2.95.0
       name_pretty_override: Cloud BigQuery Reservation
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/reservations/rpc
-      released_version: 2.95.0
   - name: bigquerystorage
     version: 3.30.0
     apis:
@@ -766,12 +766,12 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/history
       codeowner_team: '@googleapis/bigquery-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
+      released_version: 3.30.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: BigQuery Storage
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/storage/
       recommended_package: com.google.cloud.bigquery.storage.v1
       transport_override: grpc
-      released_version: 3.30.0
   - name: bigtable
     version: 2.80.0
     apis:
@@ -793,11 +793,11 @@ libraries:
         - google-cloud-bigtable-bom
       extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
+      released_version: 2.80.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Bigtable
       product_documentation_override: https://cloud.google.com/bigtable
       recommended_package: com.google.cloud.bigtable
-      released_version: 2.80.0
   - name: billing
     version: 2.94.0
     apis:
@@ -809,11 +809,11 @@ libraries:
     java:
       api_description_override: allows developers to manage their billing accounts or browse the catalog of SKUs and pricing.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559770
+      released_version: 2.94.0
       name_pretty_override: Cloud Billing
       product_documentation_override: https://cloud.google.com/billing/docs
       rest_documentation: https://cloud.google.com/billing/docs/reference/rest
       rpc_documentation: https://cloud.google.com/billing/docs/reference/rpc
-      released_version: 2.94.0
   - name: billingbudgets
     version: 2.94.0
     apis:
@@ -821,9 +821,9 @@ libraries:
       - path: google/cloud/billing/budgets/v1beta1
     java:
       api_description_override: allows you to avoid surprises on your bill by creating budgets to monitor all your Google Cloud charges in one place.
+      released_version: 2.94.0
       name_pretty_override: Cloud Billing Budgets
       product_documentation_override: https://cloud.google.com/billing/docs/how-to/budgets
-      released_version: 2.94.0
   - name: binary-authorization
     version: 1.93.0
     apis:
@@ -833,11 +833,11 @@ libraries:
       api_id_override: binaryauthorization.googleapis.com
       api_description_override: ' is a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware'
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 1.93.0
       name_pretty_override: Binary Authorization
       product_documentation_override: https://cloud.google.com/binary-authorization/docs
       rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest
       rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
-      released_version: 1.93.0
   - name: capacityplanner
     version: 0.17.0
     apis:
@@ -846,10 +846,10 @@ libraries:
       api_id_override: capacityplanner.googleapis.com
       api_description_override: Provides programmatic access to Capacity Planner features.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-capacityplanner/latest/overview
+      released_version: 0.17.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Capacity Planner API
       product_documentation_override: https://cloud.google.com/capacity-planner/docs
-      released_version: 0.17.0
   - name: certificate-manager
     version: 0.97.0
     apis:
@@ -860,9 +860,9 @@ libraries:
     java:
       api_id_override: certificatemanager.googleapis.com
       api_description_override: lets you acquire and manage TLS (SSL) certificates for use with Cloud Load Balancing.
+      released_version: 0.97.0
       name_pretty_override: Certificate Manager
       product_documentation_override: https://cloud.google.com/certificate-manager/docs
-      released_version: 0.97.0
   - name: ces
     version: 0.10.0
     apis:
@@ -878,32 +878,32 @@ libraries:
       api_id_override: ces.googleapis.com
       api_description_override: Customer Experience Agent Studio (CX Agent Studio) is a minimal code conversational agent builder.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-ces/latest/overview
+      released_version: 0.10.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Gemini Enterprise for Customer Experience API
       product_documentation_override: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps
       rpc_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc
-      released_version: 0.10.0
   - name: channel
     version: 3.98.0
     apis:
       - path: google/cloud/channel/v1
     java:
       api_description_override: With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.
+      released_version: 3.98.0
       name_pretty_override: Channel Services
       product_documentation_override: https://cloud.google.com/channel/docs
       rest_documentation: https://cloud.google.com/channel/docs/reference/rest
       rpc_documentation: https://cloud.google.com/channel/docs/reference/rpc
-      released_version: 3.98.0
   - name: chat
     version: 0.58.0
     apis:
       - path: google/chat/v1
     java:
       api_description_override: The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.
+      released_version: 0.58.0
       name_pretty_override: Google Chat API
       product_documentation_override: https://developers.google.com/chat/concepts
       rest_documentation: https://developers.google.com/chat/api/reference/rest
-      released_version: 0.58.0
   - name: chronicle
     version: 0.32.0
     apis:
@@ -912,10 +912,10 @@ libraries:
       api_id_override: chronicle.googleapis.com
       api_description_override: The Google Cloud Security Operations API, popularly known as the Chronicle API, serves endpoints that enable security analysts to analyze and mitigate a security threat throughout its lifecycle
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-chronicle/latest/overview
+      released_version: 0.32.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Chronicle API
       product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
-      released_version: 0.32.0
   - name: cloudapiregistry
     version: 0.13.0
     apis:
@@ -931,10 +931,10 @@ libraries:
       api_id_override: cloudapiregistry.googleapis.com
       api_description_override: Cloud API Registry lets you discover, govern, use, and monitor Model Context Protocol (MCP) servers and tools provided by Google, or by your organization through Apigee API hub.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-cloudapiregistry/latest/overview
+      released_version: 0.13.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud API Registry API
       product_documentation_override: https://docs.cloud.google.com/api-registry/docs/overview
-      released_version: 0.13.0
   - name: cloudbuild
     version: 3.96.0
     apis:
@@ -949,9 +949,9 @@ libraries:
       artifact_id: google-cloud-build
       codeowner_team: '@googleapis/aap-dpes'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5226584
+      released_version: 3.96.0
       name_pretty_override: Cloud Build
       product_documentation_override: https://cloud.google.com/cloud-build/
-      released_version: 3.96.0
   - name: cloudcommerceconsumerprocurement
     version: 0.92.0
     apis:
@@ -959,9 +959,9 @@ libraries:
       - path: google/cloud/commerce/consumer/procurement/v1alpha1
     java:
       api_description_override: Find top solutions integrated with Google Cloud to accelerate your digital transformation. Scale and simplify procurement for your organization with online discovery, flexible purchasing, and fulfillment of enterprise-grade cloud solutions.
+      released_version: 0.92.0
       name_pretty_override: Cloud Commerce Consumer Procurement
       product_documentation_override: https://cloud.google.com/marketplace/
-      released_version: 0.92.0
   - name: cloudcontrolspartner
     version: 0.58.0
     apis:
@@ -969,9 +969,9 @@ libraries:
       - path: google/cloud/cloudcontrolspartner/v1beta
     java:
       api_description_override: Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.
+      released_version: 0.58.0
       name_pretty_override: Cloud Controls Partner API
       product_documentation_override: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
-      released_version: 0.58.0
   - name: cloudquotas
     version: 0.62.0
     apis:
@@ -986,9 +986,9 @@ libraries:
         Cloud Quotas API provides GCP service consumers with management and
             observability for resource usage, quotas, and restrictions of the services
             they consume.
+      released_version: 0.62.0
       name_pretty_override: Cloud Quotas API
       product_documentation_override: https://cloud.google.com/cloudquotas/docs/
-      released_version: 0.62.0
   - name: cloudsecuritycompliance
     version: 0.21.0
     apis:
@@ -1000,10 +1000,10 @@ libraries:
       api_id_override: cloudsecuritycompliance.googleapis.com
       api_description_override: Compliance Manager uses software-defined controls that let you assess support for multiple compliance programs and security requirements within a Google Cloud organization
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-cloudsecuritycompliance/latest/overview
+      released_version: 0.21.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud Security Compliance API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/compliance-manager-overview
-      released_version: 0.21.0
   - name: cloudsupport
     version: 0.78.0
     apis:
@@ -1011,9 +1011,9 @@ libraries:
       - path: google/cloud/support/v2beta
     java:
       api_description_override: Manages Google Cloud technical support cases for Customer Care support offerings.
+      released_version: 0.78.0
       name_pretty_override: Google Cloud Support API
       product_documentation_override: https://cloud.google.com/support/docs/reference/support-api/
-      released_version: 0.78.0
   - name: common-protos
     version: 2.73.0
     apis:
@@ -1113,13 +1113,13 @@ libraries:
         - proto-google-common-protos-bom
         - proto-google-common-protos
       group_id: com.google.api.grpc
+      released_version: 2.73.0
       library_type_override: OTHER
       name_pretty_override: Common Protos
       product_documentation_override: https://github.com/googleapis/api-common-protos
       transport_override: grpc
       skip_pom_updates: true
       skip_api_id: true
-      released_version: 2.73.0
   - name: compute
     version: 1.104.0
     apis:
@@ -1136,9 +1136,9 @@ libraries:
       api_description_override: 'delivers virtual machines running in Google''s innovative data centers and worldwide fiber network. Compute Engine''s tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. '
       excluded_poms:
         - grpc-google-cloud-compute-v1
+      released_version: 1.104.0
       name_pretty_override: Compute Engine
       product_documentation_override: https://cloud.google.com/compute/
-      released_version: 1.104.0
   - name: confidentialcomputing
     version: 0.80.0
     apis:
@@ -1152,9 +1152,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Protect data in-use with Confidential VMs, Confidential GKE, Confidential Dataproc, and Confidential Space.
+      released_version: 0.80.0
       name_pretty_override: Confidential Computing API
       product_documentation_override: https://cloud.google.com/confidential-computing/
-      released_version: 0.80.0
   - name: configdelivery
     version: 0.28.0
     apis:
@@ -1170,11 +1170,11 @@ libraries:
       api_id_override: configdelivery.googleapis.com
       api_description_override: ConfigDelivery service manages the deployment of kubernetes configuration to a fleet of kubernetes clusters.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
+      released_version: 0.28.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Config Delivery API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
       rest_documentation: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
-      released_version: 0.28.0
   - name: connectgateway
     version: 0.46.0
     apis:
@@ -1183,10 +1183,10 @@ libraries:
       api_id_override: connectgateway.googleapis.com
       api_description_override: The Connect Gateway service allows connectivity from external parties to     connected Kubernetes clusters.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-connectgateway/latest/overview
+      released_version: 0.46.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Connect Gateway API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/enterprise/multicluster-management/gateway
-      released_version: 0.46.0
   - name: contact-center-insights
     version: 2.94.0
     apis:
@@ -1194,9 +1194,9 @@ libraries:
     java:
       api_description_override: ' helps users detect and visualize patterns in their contact center data.'
       codeowner_team: '@googleapis/api-contact-center-insights'
+      released_version: 2.94.0
       name_pretty_override: CCAI Insights
       product_documentation_override: https://cloud.google.com/dialogflow/priv/docs/insights/
-      released_version: 2.94.0
   - name: container
     version: 2.97.0
     apis:
@@ -1209,10 +1209,10 @@ libraries:
       api_description_override: is an enterprise-grade platform for containerized applications, including stateful and stateless, AI and ML, Linux and Windows, complex and simple web apps, API, and backend services. Leverage industry-first features like four-way auto-scaling and no-stress management. Optimize GPU and TPU provisioning, use integrated developer tools, and get multi-cluster support from SREs.
       codeowner_team: '@googleapis/cloud-sdk-java-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
+      released_version: 2.97.0
       name_pretty_override: Kubernetes Engine
       product_documentation_override: https://cloud.google.com/kubernetes-engine/
       rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
-      released_version: 2.97.0
   - name: containeranalysis
     version: 2.95.0
     apis:
@@ -1229,18 +1229,18 @@ libraries:
       api_description_override: is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.
       codeowner_team: '@googleapis/aap-dpes'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
+      released_version: 2.95.0
       name_pretty_override: Cloud Container Analysis
       product_documentation_override: https://cloud.google.com/container-registry/docs/container-analysis
-      released_version: 2.95.0
   - name: contentwarehouse
     version: 0.90.0
     apis:
       - path: google/cloud/contentwarehouse/v1
     java:
       api_description_override: Document AI Warehouse is an integrated cloud-native GCP platform to store, search, organize, govern and analyze documents and their structured metadata.
+      released_version: 0.90.0
       name_pretty_override: Document AI Warehouse
       product_documentation_override: https://cloud.google.com/document-warehouse/docs/overview
-      released_version: 0.90.0
   - name: data-fusion
     version: 1.94.0
     apis:
@@ -1248,10 +1248,10 @@ libraries:
       - path: google/cloud/datafusion/v1beta1
     java:
       api_description_override: is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.
+      released_version: 1.94.0
       name_pretty_override: Cloud Data Fusion
       product_documentation_override: https://cloud.google.com/data-fusion/docs
       rest_documentation: https://cloud.google.com/data-fusion/docs/reference/rest
-      released_version: 1.94.0
   - name: databasecenter
     version: 0.15.0
     apis:
@@ -1260,10 +1260,10 @@ libraries:
       api_id_override: databasecenter.googleapis.com
       api_description_override: Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center's fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview
+      released_version: 0.15.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Database Center API
       product_documentation_override: https://cloud.google.com/database-center/docs/overview
-      released_version: 0.15.0
   - name: datacatalog
     version: 1.100.0
     apis:
@@ -1279,20 +1279,20 @@ libraries:
       - proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java
     java:
       api_description_override: is a fully managed and highly scalable data discovery and metadata management service.
+      released_version: 1.100.0
       name_pretty_override: Data Catalog
       product_documentation_override: https://cloud.google.com/data-catalog
-      released_version: 1.100.0
   - name: dataflow
     version: 0.98.0
     apis:
       - path: google/dataflow/v1beta3
     java:
       api_description_override: is a managed service for executing a wide variety of data processing patterns.
+      released_version: 0.98.0
       name_pretty_override: Dataflow
       product_documentation_override: https://cloud.google.com/dataflow/docs
       rest_documentation: https://cloud.google.com/dataflow/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataflow/docs/reference/rpc
-      released_version: 0.98.0
   - name: dataform
     version: 0.93.0
     apis:
@@ -1308,9 +1308,9 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: Help analytics teams manage data inside BigQuery using SQL.
+      released_version: 0.93.0
       name_pretty_override: Cloud Dataform
       product_documentation_override: https://cloud.google.com/dataform/docs
-      released_version: 0.93.0
   - name: datalabeling
     version: 0.214.0
     apis:
@@ -1319,11 +1319,11 @@ libraries:
       - google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java
     java:
       api_description_override: is a service that lets you work with human labelers to generate highly accurate labels for a collection of data that you can use to train your machine learning models.
+      released_version: 0.214.0
       name_pretty_override: Data Labeling
       product_documentation_override: https://cloud.google.com/ai-platform/data-labeling/docs/
       rest_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest
       rpc_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rpc
-      released_version: 0.214.0
   - name: datalineage
     version: 0.86.0
     apis:
@@ -1331,9 +1331,9 @@ libraries:
       - path: google/cloud/datacatalog/lineage/configmanagement/v1
     java:
       api_description_override: Lineage is used to track data flows between assets over time.
+      released_version: 0.86.0
       name_pretty_override: Data Lineage
       product_documentation_override: https://cloud.google.com/dataplex/docs/about-data-lineage
-      released_version: 0.86.0
   - name: datamanager
     version: 0.15.0
     apis:
@@ -1344,11 +1344,11 @@ libraries:
       artifact_id: data-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/data-manager/latest/overview
       group_id: com.google.api-ads
+      released_version: 0.15.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Manager API
       product_documentation_override: https://developers.google.com/data-manager
       rpc_documentation: https://developers.google.com/data-manager/api/reference/rpc
-      released_version: 0.15.0
   - name: dataplex
     version: 1.92.0
     apis:
@@ -1359,11 +1359,11 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: provides intelligent data fabric that enables organizations to centrally manage, monitor, and govern their data across data lakes, data warehouses, and data marts with consistent controls, providing access to trusted data and powering analytics at scale.
+      released_version: 1.92.0
       name_pretty_override: Cloud Dataplex
       product_documentation_override: https://cloud.google.com/dataplex
       rest_documentation: https://cloud.google.com/dataplex/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataplex/docs/reference/rpc
-      released_version: 1.92.0
   - name: dataproc
     version: 4.91.0
     apis:
@@ -1375,11 +1375,11 @@ libraries:
       api_description_override: is a faster, easier, more cost-effective way to run Apache Spark and Apache Hadoop.
       codeowner_team: '@googleapis/api-dataproc'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559745
+      released_version: 4.91.0
       name_pretty_override: Dataproc
       product_documentation_override: https://cloud.google.com/dataproc
       rest_documentation: https://cloud.google.com/dataproc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataproc/docs/reference/rpc
-      released_version: 4.91.0
   - name: dataproc-metastore
     version: 2.95.0
     apis:
@@ -1400,11 +1400,11 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: is a fully managed, highly available, autoscaled, autohealing, OSS-native metastore service that greatly simplifies technical metadata management. Dataproc Metastore service is based on Apache Hive metastore and serves as a critical component towards enterprise data lakes.
+      released_version: 2.95.0
       name_pretty_override: Dataproc Metastore
       product_documentation_override: https://cloud.google.com/dataproc-metastore/docs
       rest_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rpc
-      released_version: 2.95.0
   - name: datastore
     version: 3.2.0
     apis:
@@ -1424,11 +1424,11 @@ libraries:
         - grpc-google-cloud-datastore-v1
       extra_versioned_modules: datastore-v1-proto-client
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559768
+      released_version: 3.2.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Datastore
       product_documentation_override: https://cloud.google.com/datastore
       recommended_package: com.google.cloud.datastore
-      released_version: 3.2.0
   - name: datastream
     version: 1.93.0
     apis:
@@ -1440,10 +1440,10 @@ libraries:
       - path: google/cloud/datastream/v1alpha1
     java:
       api_description_override: is a serverless and easy-to-use change data capture (CDC) and replication service. It allows you to synchronize data across heterogeneous databases and applications reliably, and with minimal latency and downtime.
+      released_version: 1.93.0
       name_pretty_override: Datastream
       product_documentation_override: https://cloud.google.com/datastream/docs
       rest_documentation: https://cloud.google.com/datastream/docs/reference/rest
-      released_version: 1.93.0
   - name: deploy
     version: 1.92.0
     apis:
@@ -1455,9 +1455,9 @@ libraries:
     java:
       api_description_override: is a service that automates delivery of your applications to a series of target environments in a defined sequence
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 1.92.0
       name_pretty_override: Google Cloud Deploy
       product_documentation_override: https://cloud.google.com/deploy/docs
-      released_version: 1.92.0
   - name: developerconnect
     version: 0.51.0
     apis:
@@ -1469,10 +1469,10 @@ libraries:
       api_id_override: developerconnect.googleapis.com
       api_description_override: Connect third-party source code management to Google
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview
+      released_version: 0.51.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Developer Connect API
       product_documentation_override: https://cloud.google.com/developer-connect/docs/overview
-      released_version: 0.51.0
   - name: developerknowledge
     version: 0.2.0
     apis:
@@ -1482,10 +1482,10 @@ libraries:
       api_description_override: The Developer Knowledge API provides access to Google's developer knowledge
       artifact_id: google-cloud-developer-knowledge
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
+      released_version: 0.2.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Developer Knowledge API
       product_documentation_override: https://developers.google.com/knowledge
-      released_version: 0.2.0
   - name: devicestreaming
     version: 0.34.0
     apis:
@@ -1494,10 +1494,10 @@ libraries:
       api_id_override: devicestreaming.googleapis.com
       api_description_override: The Cloud API for device streaming usage.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-devicestreaming/latest/overview
+      released_version: 0.34.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Device Streaming API
       product_documentation_override: https://cloud.google.com/device-streaming/docs
-      released_version: 0.34.0
   - name: dialogflow
     version: 4.100.0
     apis:
@@ -1521,9 +1521,9 @@ libraries:
     java:
       api_description_override: is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business. Dialogflow Enterprise Edition users have access to Google Cloud Support and a service level agreement (SLA) for production deployments.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5300385
+      released_version: 4.100.0
       name_pretty_override: Dialogflow API
       product_documentation_override: https://cloud.google.com/dialogflow-enterprise/
-      released_version: 4.100.0
   - name: dialogflow-cx
     version: 0.105.0
     apis:
@@ -1538,11 +1538,11 @@ libraries:
     java:
       api_description_override: provides a new way of designing agents, taking a state machine approach to agent design. This gives you clear and explicit control over a conversation, a better end-user experience, and a better development workflow.
       api_shortname_override: dialogflow-cx
+      released_version: 0.105.0
       name_pretty_override: Dialogflow CX
       product_documentation_override: https://cloud.google.com/dialogflow/cx/docs
       rest_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rpc
-      released_version: 0.105.0
   - name: discoveryengine
     version: 0.90.0
     apis:
@@ -1560,9 +1560,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.).
+      released_version: 0.90.0
       name_pretty_override: Discovery Engine API
       product_documentation_override: https://cloud.google.com/discovery-engine/media/docs
-      released_version: 0.90.0
   - name: distributedcloudedge
     version: 0.91.0
     apis:
@@ -1574,9 +1574,9 @@ libraries:
       api_id_override: edgecontainer.googleapis.com
       api_description_override: Google Distributed Cloud Edge allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.
       api_shortname_override: distributedcloudedge
+      released_version: 0.91.0
       name_pretty_override: Google Distributed Cloud Edge
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/
-      released_version: 0.91.0
   - name: dlp
     version: 3.98.0
     apis:
@@ -1599,11 +1599,11 @@ libraries:
     java:
       api_description_override: provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5548083
+      released_version: 3.98.0
       name_pretty_override: Cloud Data Loss Prevention
       product_documentation_override: https://cloud.google.com/dlp/docs/
       rest_documentation: https://cloud.google.com/dlp/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dlp/docs/reference/rpc
-      released_version: 3.98.0
   - name: dms
     version: 2.93.0
     apis:
@@ -1611,10 +1611,10 @@ libraries:
     java:
       api_id_override: datamigration.googleapis.com
       api_description_override: makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.
+      released_version: 2.93.0
       name_pretty_override: Database Migration Service
       product_documentation_override: https://cloud.google.com/database-migration/docs
       rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
-      released_version: 2.93.0
   - name: document-ai
     version: 2.98.0
     apis:
@@ -1629,9 +1629,9 @@ libraries:
     java:
       api_description_override: allows developers to unlock insights from your documents with machine learning.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559755
+      released_version: 2.98.0
       name_pretty_override: Document AI
       product_documentation_override: https://cloud.google.com/compute/docs/documentai/
-      released_version: 2.98.0
   - name: domains
     version: 1.91.0
     apis:
@@ -1640,9 +1640,9 @@ libraries:
       - path: google/cloud/domains/v1alpha2
     java:
       api_description_override: allows you to register and manage domains by using Cloud Domains.
+      released_version: 1.91.0
       name_pretty_override: Cloud Domains
       product_documentation_override: https://cloud.google.com/domains
-      released_version: 1.91.0
   - name: edgenetwork
     version: 0.62.0
     apis:
@@ -1652,18 +1652,18 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Network management API for Distributed Cloud Edge.
+      released_version: 0.62.0
       name_pretty_override: Distributed Cloud Edge Network API
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/docs/overview
-      released_version: 0.62.0
   - name: enterpriseknowledgegraph
     version: 0.90.0
     apis:
       - path: google/cloud/enterpriseknowledgegraph/v1
     java:
       api_description_override: Enterprise Knowledge Graph organizes siloed information into organizational knowledge, which involves consolidating, standardizing, and reconciling data in an efficient and useful way.
+      released_version: 0.90.0
       name_pretty_override: Enterprise Knowledge Graph
       product_documentation_override: https://cloud.google.com/enterprise-knowledge-graph/docs/overview
-      released_version: 0.90.0
   - name: errorreporting
     version: 0.215.0-beta
     apis:
@@ -1677,19 +1677,19 @@ libraries:
     java:
       api_description_override: 'counts, analyzes, and aggregates the crashes in your running cloud services. A centralized error management interface displays the results with sorting and filtering capabilities. A dedicated view shows the error details: time chart, occurrences, affected user count, first- and last-seen dates and a cleaned exception stack trace. Opt in to receive email and mobile alerts on new errors.'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559780
+      released_version: 0.215.0-beta
       name_pretty_override: Error Reporting
       product_documentation_override: https://cloud.google.com/error-reporting
       billing_not_required: true
-      released_version: 0.215.0-beta
   - name: essential-contacts
     version: 2.94.0
     apis:
       - path: google/cloud/essentialcontacts/v1
     java:
       api_description_override: helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.
+      released_version: 2.94.0
       name_pretty_override: Essential Contacts API
       product_documentation_override: https://cloud.google.com/resource-manager/docs/managing-notification-contacts/
-      released_version: 2.94.0
   - name: eventarc
     version: 1.94.0
     apis:
@@ -1701,11 +1701,11 @@ libraries:
     java:
       api_description_override: lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes. Eventarc requires no infrastructure management, you can optimize productivity and costs while building a modern, event-driven solution.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 1.94.0
       name_pretty_override: Eventarc
       product_documentation_override: https://cloud.google.com/eventarc/docs
       rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
-      released_version: 1.94.0
   - name: eventarc-publishing
     version: 0.94.0
     apis:
@@ -1713,11 +1713,11 @@ libraries:
     java:
       api_id_override: eventarc-publishing.googleapis.com
       api_description_override: lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.
+      released_version: 0.94.0
       name_pretty_override: Eventarc Publishing
       product_documentation_override: https://cloud.google.com/eventarc/docs
       rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
-      released_version: 0.94.0
   - name: filestore
     version: 1.95.0
     apis:
@@ -1733,10 +1733,10 @@ libraries:
               generate_proto_classes: true
     java:
       api_description_override: instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.
+      released_version: 1.95.0
       name_pretty_override: Cloud Filestore API
       product_documentation_override: https://cloud.google.com/filestore/docs
       rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
-      released_version: 1.95.0
   - name: financialservices
     version: 0.35.0
     apis:
@@ -1748,10 +1748,10 @@ libraries:
       api_id_override: financialservices.googleapis.com
       api_description_override: Google Cloud's Anti Money Laundering AI (AML AI) product is an API that scores AML risk. Use it to identify more risk, more defensibly, with fewer false positives and reduced time per review.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-financialservices/latest/overview
+      released_version: 0.35.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Financial Services API
       product_documentation_override: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
-      released_version: 0.35.0
   - name: firestore
     version: 3.44.0
     apis:
@@ -1828,11 +1828,11 @@ libraries:
     java:
       api_description_override: is a scalable pay as you go Functions-as-a-Service (FaaS) to run your code with zero server management.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 2.96.0
       name_pretty_override: Cloud Functions
       product_documentation_override: https://cloud.google.com/functions
       rest_documentation: https://cloud.google.com/functions/docs/reference/rest
       rpc_documentation: https://cloud.google.com/functions/docs/reference/rpc
-      released_version: 2.96.0
   - name: gdchardwaremanagement
     version: 0.49.0
     apis:
@@ -1844,11 +1844,11 @@ libraries:
       api_id_override: gdchardwaremanagement.googleapis.com
       api_description_override: Google Distributed Cloud connected allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview
+      released_version: 0.49.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: GDC Hardware Management API
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/docs
       rpc_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
-      released_version: 0.49.0
   - name: geminidataanalytics
     version: 0.22.0
     apis:
@@ -1864,11 +1864,11 @@ libraries:
       api_id_override: geminidataanalytics.googleapis.com
       api_description_override: Use Conversational Analytics API to build an artificial intelligence (AI)-powered chat interface, or data agent, that answers questions about structured data using natural language.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
+      released_version: 0.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Analytics API with Gemini
       product_documentation_override: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
       rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
-      released_version: 0.22.0
   - name: gke-backup
     version: 0.93.0
     apis:
@@ -1881,18 +1881,18 @@ libraries:
       api_id_override: gkebackup.googleapis.com
       api_description_override: is a service for backing up and restoring workloads in GKE.
       api_shortname_override: gke-backup
+      released_version: 0.93.0
       name_pretty_override: Backup for GKE
       product_documentation_override: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
-      released_version: 0.93.0
   - name: gke-connect-gateway
     version: 0.95.0
     apis:
       - path: google/cloud/gkeconnect/gateway/v1beta1
     java:
       api_description_override: builds on the power of fleets to let Anthos users connect to and run commands against registered Anthos clusters in a simple, consistent, and secured way, whether the clusters are on Google Cloud, other public clouds, or on premises, and makes it easier to automate DevOps processes across all your clusters.
+      released_version: 0.95.0
       name_pretty_override: Connect Gateway API
       product_documentation_override: https://cloud.google.com/anthos/multicluster-management/gateway/
-      released_version: 0.95.0
   - name: gke-multi-cloud
     version: 0.93.0
     apis:
@@ -1901,9 +1901,9 @@ libraries:
       api_id_override: gkemulticloud.googleapis.com
       api_description_override: enables you to provision and manage GKE clusters running on AWS and Azure infrastructure through a centralized Google Cloud backed control plane.
       api_shortname_override: gke-multi-cloud
+      released_version: 0.93.0
       name_pretty_override: Anthos Multicloud
       product_documentation_override: https://cloud.google.com/anthos/clusters/docs/multi-cloud
-      released_version: 0.93.0
   - name: gkehub
     version: 1.94.0
     apis:
@@ -1933,9 +1933,9 @@ libraries:
           samples: false
     java:
       api_description_override: provides a unified way to work with Kubernetes clusters as part of Anthos, extending GKE to work in multiple environments. You have consistent, unified, and secure infrastructure, cluster, and container management, whether you're using Anthos on Google Cloud (with traditional GKE), hybrid cloud, or multiple public clouds.
+      released_version: 1.94.0
       name_pretty_override: GKE Hub API
       product_documentation_override: https://cloud.google.com/anthos/gke/docs/
-      released_version: 1.94.0
   - name: gkerecommender
     version: 0.14.0
     apis:
@@ -1944,10 +1944,10 @@ libraries:
       api_id_override: gkerecommender.googleapis.com
       api_description_override: lets you analyze the performance and cost-efficiency of your inference workloads, and make data-driven decisions about resource allocation and model deployment strategies.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-gkerecommender/latest/overview
+      released_version: 0.14.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
-      released_version: 0.14.0
   - name: google-cloud-java
     version: 1.88.0
     skip_generate: true
@@ -1972,10 +1972,10 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/grafeas/latest/overview
       codeowner_team: '@googleapis/aap-dpes'
       group_id: io.grafeas
+      released_version: 2.95.0
       name_pretty_override: Grafeas
       product_documentation_override: https://grafeas.io
       skip_pom_updates: true
-      released_version: 2.95.0
   - name: gsuite-addons
     version: 2.94.0
     apis:
@@ -2030,9 +2030,9 @@ libraries:
           samples: false
     java:
       api_description_override: are customized applications that integrate with Google Workspace productivity applications.
+      released_version: 2.94.0
       name_pretty_override: Google Workspace Add-ons API
       product_documentation_override: https://developers.google.com/workspace/add-ons/overview
-      released_version: 2.94.0
   - name: health
     version: 0.3.0
     apis:
@@ -2041,11 +2041,11 @@ libraries:
       api_id_override: health.googleapis.com
       api_description_override: The Google Health API lets you view and manage health and fitness metrics and measurement data.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-health/latest/overview
+      released_version: 0.3.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Health API
       product_documentation_override: https://developers.google.com/health/api
       rpc_documentation: https://developers.google.com/health/api/reference/rpc
-      released_version: 0.3.0
   - name: hypercomputecluster
     version: 0.14.0
     apis:
@@ -2061,10 +2061,10 @@ libraries:
       api_id_override: hypercomputecluster.googleapis.com
       api_description_override: simplifies cluster management across compute, network, and storage
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview
+      released_version: 0.14.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cluster Director API
       product_documentation_override: https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
-      released_version: 0.14.0
   - name: iam
     version: 1.68.0
     apis:
@@ -2113,11 +2113,11 @@ libraries:
         - google-iam-policy
         - proto-google-iam-v1
       group_id: com.google.api.grpc
+      released_version: 1.68.0
       library_type_override: OTHER
       name_pretty_override: IAM
       product_documentation_override: https://cloud.google.com/iam
       skip_api_id: true
-      released_version: 1.68.0
   - name: iam-admin
     version: 3.89.0
     apis:
@@ -2127,9 +2127,9 @@ libraries:
       api_description_override: you to manage your Service Accounts and IAM bindings.
       api_shortname_override: iam-admin
       artifact_id: google-iam-admin
+      released_version: 3.89.0
       name_pretty_override: IAM Admin API
       product_documentation_override: https://cloud.google.com/iam/docs/apis
-      released_version: 3.89.0
   - name: iam-policy
     version: 1.91.0
     apis:
@@ -2171,9 +2171,9 @@ libraries:
         - proto-google-iam-v1-bom
         - google-iam-policy
         - proto-google-iam-v1
+      released_version: 1.91.0
       name_pretty_override: Cloud IAM Policy
       product_documentation_override: n/a
-      released_version: 1.91.0
   - name: iamcredentials
     version: 2.94.0
     apis:
@@ -2181,10 +2181,10 @@ libraries:
     java:
       api_description_override: creates short-lived, limited-privilege credentials for IAM service accounts.
       issue_tracker_override: https://issuetracker.google.com/issues/new?component=187161
+      released_version: 2.94.0
       name_pretty_override: IAM Service Account Credentials API
       product_documentation_override: https://cloud.google.com/iam/credentials/reference/rest/
       billing_not_required: true
-      released_version: 2.94.0
   - name: iap
     version: 0.50.0
     apis:
@@ -2193,19 +2193,19 @@ libraries:
       api_id_override: iap.googleapis.com
       api_description_override: Controls access to cloud applications running on Google Cloud Platform.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+      released_version: 0.50.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud Identity-Aware Proxy API
       product_documentation_override: https://cloud.google.com/iap
-      released_version: 0.50.0
   - name: ids
     version: 1.93.0
     apis:
       - path: google/cloud/ids/v1
     java:
       api_description_override: ' monitors your networks, and it alerts you when it detects malicious activity. Cloud IDS is powered by Palo Alto Networks.'
+      released_version: 1.93.0
       name_pretty_override: Intrusion Detection System
       product_documentation_override: https://cloud.google.com/intrusion-detection-system/docs
-      released_version: 1.93.0
   - name: infra-manager
     version: 0.71.0
     apis:
@@ -2217,9 +2217,9 @@ libraries:
     java:
       api_id_override: config.googleapis.com
       api_description_override: Creates and manages Google Cloud Platform resources and infrastructure.
+      released_version: 0.71.0
       name_pretty_override: Infrastructure Manager API
       product_documentation_override: https://cloud.google.com/infrastructure-manager/docs/overview
-      released_version: 0.71.0
   - name: iot
     version: 2.94.0
     apis:
@@ -2227,9 +2227,9 @@ libraries:
     java:
       api_description_override: is a complete set of tools to connect, process, store, and analyze data both at the edge and in the cloud. The platform consists of scalable, fully-managed cloud services; an integrated software stack for edge/on-premises computing with machine learning capabilities for all your IoT needs.
       issue_tracker_override: https://issuetracker.google.com/issues?q=status:open%20componentid:310170
+      released_version: 2.94.0
       name_pretty_override: Cloud Internet of Things (IoT) Core
       product_documentation_override: https://cloud.google.com/iot
-      released_version: 2.94.0
   - name: java-shopping-merchant-issue-resolution
     version: 1.22.0
     apis:
@@ -2241,10 +2241,10 @@ libraries:
       artifact_id: google-shopping-merchant-issue-resolution
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Issue Resolution API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: java-shopping-merchant-order-tracking
     version: 1.22.0
     apis:
@@ -2256,10 +2256,10 @@ libraries:
       artifact_id: google-shopping-merchant-order-tracking
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Order Tracking API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: kms
     version: 2.97.0
     apis:
@@ -2277,20 +2277,20 @@ libraries:
     java:
       api_description_override: a cloud-hosted key management service that lets you manage cryptographic keys for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit Logging so that you can manage permissions on individual keys and monitor how these are used. Use Cloud KMS to protect secrets and other sensitive data that you need to store in Google Cloud Platform.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5264932
+      released_version: 2.97.0
       name_pretty_override: Cloud Key Management Service
       product_documentation_override: https://cloud.google.com/kms
-      released_version: 2.97.0
   - name: kmsinventory
     version: 0.83.0
     apis:
       - path: google/cloud/kms/inventory/v1
     java:
       api_description_override: KMS Inventory API.
+      released_version: 0.83.0
       name_pretty_override: KMS Inventory API
       product_documentation_override: https://cloud.google.com/kms/docs/
       rest_documentation: https://cloud.google.com/kms/docs/reference/rest
       rpc_documentation: https://cloud.google.com/kms/docs/reference/rpc
-      released_version: 0.83.0
   - name: language
     version: 2.95.0
     apis:
@@ -2300,11 +2300,11 @@ libraries:
     java:
       api_description_override: provides natural language understanding technologies to developers, including sentiment analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis. This API is part of the larger Cloud Machine Learning API family.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559753
+      released_version: 2.95.0
       name_pretty_override: Natural Language
       product_documentation_override: https://cloud.google.com/natural-language/docs/
       rest_documentation: https://cloud.google.com/natural-language/docs/reference/rest
       rpc_documentation: https://cloud.google.com/natural-language/docs/reference/rpc
-      released_version: 2.95.0
   - name: licensemanager
     version: 0.27.0
     apis:
@@ -2316,10 +2316,10 @@ libraries:
       api_id_override: licensemanager.googleapis.com
       api_description_override: License Manager is a tool to manage and track third-party licenses on Google Cloud.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
+      released_version: 0.27.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: License Manager API
       product_documentation_override: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
-      released_version: 0.27.0
   - name: life-sciences
     version: 0.96.0
     apis:
@@ -2329,11 +2329,11 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: is a suite of services and tools for managing, processing, and transforming life sciences data.
+      released_version: 0.96.0
       name_pretty_override: Cloud Life Sciences
       product_documentation_override: https://cloud.google.com/life-sciences/docs
       rest_documentation: https://cloud.google.com/life-sciences/docs/reference/rest
       rpc_documentation: https://cloud.google.com/life-sciences/docs/reference/rpc
-      released_version: 0.96.0
   - name: locationfinder
     version: 0.19.0
     apis:
@@ -2342,11 +2342,11 @@ libraries:
       api_id_override: locationfinder.googleapis.com
       api_description_override: Cloud Location Finder is a public API that offers a repository of all Google Cloud and Google Distributed Cloud locations, as well as cloud locations for other cloud providers.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-locationfinder/latest/overview
+      released_version: 0.19.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud Location Finder API
       product_documentation_override: https://cloud.google.com/location-finder/docs/overview
       rpc_documentation: https://cloud.google.com/locationfinder/docs/reference/rest
-      released_version: 0.19.0
   - name: logging
     version: 3.35.0
     apis:
@@ -2359,12 +2359,12 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-logging/latest/history
       codeowner_team: '@googleapis/cloud-sdk-java-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559764
+      released_version: 3.35.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Logging
       product_documentation_override: https://cloud.google.com/logging/docs
       recommended_package: com.google.cloud.logging
       transport_override: grpc
-      released_version: 3.35.0
   - name: lustre
     version: 0.34.0
     apis:
@@ -2376,10 +2376,10 @@ libraries:
       api_id_override: lustre.googleapis.com
       api_description_override: Google Cloud Managed Lustre delivers a high-performance, fully managed parallel file system optimized for AI and HPC applications.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-lustre/latest/overview
+      released_version: 0.34.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Cloud Managed Lustre API
       product_documentation_override: https://cloud.google.com/managed-lustre/docs
-      released_version: 0.34.0
   - name: maintenance
     version: 0.28.0
     apis:
@@ -2395,11 +2395,11 @@ libraries:
       api_id_override: maintenance.googleapis.com
       api_description_override: The Maintenance API provides a centralized view of planned disruptive maintenance events across supported Google Cloud products.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+      released_version: 0.28.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Maintenance API
       product_documentation_override: https://cloud.google.com/unified-maintenance/docs/overview
       rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
-      released_version: 0.28.0
   - name: managed-identities
     version: 1.92.0
     apis:
@@ -2407,9 +2407,9 @@ libraries:
     java:
       api_id_override: managedidentities.googleapis.com
       api_description_override: is a highly available, hardened Google Cloud service running actual Microsoft AD that enables you to manage authentication and authorization for your AD-dependent workloads, automate AD server maintenance and security configuration, and connect your on-premises AD domain to the cloud.
+      released_version: 1.92.0
       name_pretty_override: Managed Service for Microsoft Active Directory
       product_documentation_override: https://cloud.google.com/managed-microsoft-ad/
-      released_version: 1.92.0
   - name: managedkafka
     version: 0.50.0
     apis:
@@ -2421,10 +2421,10 @@ libraries:
       api_id_override: managedkafka.googleapis.com
       api_description_override: Manage Apache Kafka clusters and resources.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+      released_version: 0.50.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Managed Service for Apache Kafka
       product_documentation_override: https://cloud.google.com/managed-kafka
-      released_version: 0.50.0
   - name: maps-addressvalidation
     version: 0.88.0
     apis:
@@ -2435,9 +2435,9 @@ libraries:
       api_shortname_override: maps-addressvalidation
       artifact_id: google-maps-addressvalidation
       group_id: com.google.maps
+      released_version: 0.88.0
       name_pretty_override: Address Validation API
       product_documentation_override: https://developers.google.com/maps/documentation/address-validation/
-      released_version: 0.88.0
   - name: maps-area-insights
     version: 0.45.0
     apis:
@@ -2449,10 +2449,10 @@ libraries:
       artifact_id: google-maps-area-insights
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
       group_id: com.google.maps
+      released_version: 0.45.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Places Insights API
       product_documentation_override: https://developers.google.com/maps/documentation/places-insights
-      released_version: 0.45.0
   - name: maps-fleetengine
     version: 0.41.0
     apis:
@@ -2464,10 +2464,10 @@ libraries:
       artifact_id: google-maps-fleetengine
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
       group_id: com.google.maps
+      released_version: 0.41.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Local Rides and Deliveries API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
-      released_version: 0.41.0
   - name: maps-fleetengine-delivery
     version: 0.41.0
     apis:
@@ -2479,10 +2479,10 @@ libraries:
       artifact_id: google-maps-fleetengine-delivery
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
       group_id: com.google.maps
+      released_version: 0.41.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Last Mile Fleet Solution Delivery API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
-      released_version: 0.41.0
   - name: maps-geocode
     version: 0.6.0
     apis:
@@ -2493,10 +2493,10 @@ libraries:
       artifact_id: google-maps-geocode
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-geocode/latest/overview
       group_id: com.google.maps
+      released_version: 0.6.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
-      released_version: 0.6.0
   - name: maps-mapmanagement
     version: 0.3.0
     apis:
@@ -2507,10 +2507,10 @@ libraries:
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
       group_id: com.google.maps
+      released_version: 0.3.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview
-      released_version: 0.3.0
   - name: maps-mapsplatformdatasets
     version: 0.83.0
     apis:
@@ -2523,9 +2523,9 @@ libraries:
       api_shortname_override: maps-mapsplatformdatasets
       artifact_id: google-maps-mapsplatformdatasets
       group_id: com.google.maps
+      released_version: 0.83.0
       name_pretty_override: Maps Platform Datasets API
       product_documentation_override: https://developers.google.com/maps/documentation
-      released_version: 0.83.0
   - name: maps-places
     version: 0.65.0
     apis:
@@ -2538,9 +2538,9 @@ libraries:
       api_shortname_override: maps-places
       artifact_id: google-maps-places
       group_id: com.google.maps
+      released_version: 0.65.0
       name_pretty_override: Places API (New)
       product_documentation_override: https://developers.google.com/maps/documentation/places/web-service/
-      released_version: 0.65.0
   - name: maps-routeoptimization
     version: 0.52.0
     apis:
@@ -2551,12 +2551,12 @@ libraries:
       artifact_id: google-maps-routeoptimization
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
       group_id: com.google.maps
+      released_version: 0.52.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Route Optimization API
       product_documentation_override: https://developers.google.com/maps/documentation/route-optimization
       rest_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rest/
       rpc_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rpc
-      released_version: 0.52.0
   - name: maps-routing
     version: 1.79.0
     apis:
@@ -2567,9 +2567,9 @@ libraries:
       api_shortname_override: maps-routing
       artifact_id: google-maps-routing
       group_id: com.google.maps
+      released_version: 1.79.0
       name_pretty_override: Routes API
       product_documentation_override: https://developers.google.com/maps/documentation/routes
-      released_version: 1.79.0
   - name: maps-solar
     version: 0.53.0
     apis:
@@ -2581,11 +2581,11 @@ libraries:
       artifact_id: google-maps-solar
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
       group_id: com.google.maps
+      released_version: 0.53.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Solar API
       product_documentation_override: https://developers.google.com/maps/documentation/solar/overview
       rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
-      released_version: 0.53.0
   - name: marketingplatformadminapi
     version: 0.43.0
     apis:
@@ -2598,20 +2598,20 @@ libraries:
       artifact_id: admin
       client_documentation_override: https://cloud.google.com/java/docs/reference/admin/latest/overview
       group_id: com.google.ads-marketingplatform
+      released_version: 0.43.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Marketing Platform Admin API
       product_documentation_override: https://developers.google.com/analytics/devguides/config/gmp/v1
-      released_version: 0.43.0
   - name: mediatranslation
     version: 0.100.0
     apis:
       - path: google/cloud/mediatranslation/v1beta1
     java:
       api_description_override: provides enterprise quality translation from/to various media types.
+      released_version: 0.100.0
       name_pretty_override: Media Translation API
       product_documentation_override: https://cloud.google.com/
       billing_not_required: true
-      released_version: 0.100.0
   - name: meet
     version: 0.61.0
     apis:
@@ -2619,9 +2619,9 @@ libraries:
       - path: google/apps/meet/v2beta
     java:
       api_description_override: The Google Meet REST API lets you create and manage meetings for Google Meet and offers entry points to your users directly from your app
+      released_version: 0.61.0
       name_pretty_override: Google Meet API
       product_documentation_override: https://developers.google.com/meet/api/guides/overview
-      released_version: 0.61.0
   - name: memcache
     version: 2.94.0
     apis:
@@ -2635,10 +2635,10 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: is a fully-managed in-memory data store service for Memcache.
+      released_version: 2.94.0
       name_pretty_override: Cloud Memcache
       product_documentation_override: https://cloud.google.com/memorystore/
       billing_not_required: true
-      released_version: 2.94.0
   - name: migrationcenter
     version: 0.76.0
     apis:
@@ -2648,9 +2648,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Google Cloud Migration Center is a unified platform that helps you accelerate your end-to-end cloud journey from your current on-premises or cloud environments to Google Cloud
+      released_version: 0.76.0
       name_pretty_override: Migration Center API
       product_documentation_override: https://cloud.google.com/migration-center/docs/migration-center-overview
-      released_version: 0.76.0
   - name: modelarmor
     version: 0.35.0
     apis:
@@ -2666,10 +2666,10 @@ libraries:
       api_id_override: modelarmor.googleapis.com
       api_description_override: Model Armor helps you protect against risks like prompt injection, harmful content, and data leakage in generative AI applications by letting you define policies that filter user prompts and model responses.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-modelarmor/latest/overview
+      released_version: 0.35.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Model Armor API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/model-armor-overview
-      released_version: 0.35.0
   - name: monitoring
     version: 3.95.0
     apis:
@@ -2679,9 +2679,9 @@ libraries:
     java:
       api_description_override: collects metrics, events, and metadata from Google Cloud, Amazon Web Services (AWS), hosted uptime probes, and application instrumentation. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premise systems, and hybrid cloud systems. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts. BindPlane is included with your Google Cloud project at no additional cost.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559785
+      released_version: 3.95.0
       name_pretty_override: Stackdriver Monitoring
       product_documentation_override: https://cloud.google.com/monitoring/docs
-      released_version: 3.95.0
   - name: monitoring-dashboards
     version: 2.96.0
     apis:
@@ -2691,9 +2691,9 @@ libraries:
       api_description_override: are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
       api_shortname_override: monitoring-dashboards
       artifact_id: google-cloud-monitoring-dashboard
+      released_version: 2.96.0
       name_pretty_override: Monitoring Dashboards
       product_documentation_override: https://cloud.google.com/monitoring/charts/dashboards
-      released_version: 2.96.0
   - name: monitoring-metricsscope
     version: 0.88.0
     apis:
@@ -2702,9 +2702,9 @@ libraries:
       api_id_override: monitoring.googleapis.com
       api_description_override: The metrics scope defines the set of Google Cloud projects whose metrics the current Google Cloud project can access.
       api_shortname_override: monitoring-metricsscope
+      released_version: 0.88.0
       name_pretty_override: Monitoring Metrics Scopes
       product_documentation_override: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
-      released_version: 0.88.0
   - name: netapp
     version: 0.73.0
     apis:
@@ -2714,9 +2714,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Google Cloud NetApp Volumes is a fully-managed, cloud-based data storage service that provides advanced data management capabilities and highly scalable performance with global availability.
+      released_version: 0.73.0
       name_pretty_override: NetApp API
       product_documentation_override: https://cloud.google.com/netapp/volumes/docs/discover/overview
-      released_version: 0.73.0
   - name: network-management
     version: 1.95.0
     apis:
@@ -2732,9 +2732,9 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: provides a collection of network performance monitoring and diagnostic capabilities.
+      released_version: 1.95.0
       name_pretty_override: Network Management API
       product_documentation_override: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
-      released_version: 1.95.0
   - name: network-security
     version: 0.97.0
     apis:
@@ -2750,9 +2750,9 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: n/a
+      released_version: 0.97.0
       name_pretty_override: Network Security API
       product_documentation_override: https://cloud.google.com/traffic-director/docs/reference/network-security/rest
-      released_version: 0.97.0
   - name: networkconnectivity
     version: 1.93.0
     apis:
@@ -2769,9 +2769,9 @@ libraries:
       - path: google/cloud/networkconnectivity/v1alpha1
     java:
       api_description_override: Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network
+      released_version: 1.93.0
       name_pretty_override: Network Connectivity Center
       product_documentation_override: https://cloud.google.com/network-connectivity/docs
-      released_version: 1.93.0
   - name: networkservices
     version: 0.50.0
     apis:
@@ -2784,10 +2784,10 @@ libraries:
       api_id_override: networkservices.googleapis.com
       api_description_override: Google Cloud offers a broad portfolio of networking services built on top of planet-scale infrastructure that leverages automation, advanced AI, and programmability, enabling enterprises to connect, scale, secure, modernize and optimize their infrastructure.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
+      released_version: 0.50.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Network Services API
       product_documentation_override: https://cloud.google.com/products/networking
-      released_version: 0.50.0
   - name: notebooks
     version: 1.92.0
     apis:
@@ -2808,20 +2808,20 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.
+      released_version: 1.92.0
       name_pretty_override: AI Platform Notebooks
       product_documentation_override: https://cloud.google.com/ai-platform-notebooks
-      released_version: 1.92.0
   - name: optimization
     version: 1.92.0
     apis:
       - path: google/cloud/optimization/v1
     java:
       api_description_override: is a managed routing service that takes your list of orders, vehicles, constraints, and objectives and returns the most efficient plan for your entire fleet in near real-time.
+      released_version: 1.92.0
       name_pretty_override: Cloud Fleet Routing
       product_documentation_override: https://cloud.google.com/optimization/docs
       rest_documentation: https://cloud.google.com/optimization/docs/reference/rest
       rpc_documentation: https://cloud.google.com/optimization/docs/reference/rpc
-      released_version: 1.92.0
   - name: oracledatabase
     version: 0.43.0
     apis:
@@ -2833,10 +2833,10 @@ libraries:
       api_id_override: oracledatabase.googleapis.com
       api_description_override: The Oracle Database@Google Cloud API provides a set of APIs to manage   Oracle database services, such as Exadata and Autonomous Databases.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-oracledatabase/latest/overview
+      released_version: 0.43.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Oracle Database@Google Cloud API
       product_documentation_override: https://cloud.google.com/oracle/database/docs
-      released_version: 0.43.0
   - name: orchestration-airflow
     version: 1.94.0
     apis:
@@ -2846,11 +2846,11 @@ libraries:
       api_id_override: composer.googleapis.com
       api_description_override: is a managed Apache Airflow service that helps you create, schedule, monitor and manage workflows. Cloud Composer automation helps you create Airflow environments quickly and use Airflow-native tools, such as the powerful Airflow web interface and command line tools, so you can focus on your workflows and not your infrastructure.
       api_shortname_override: orchestration-airflow
+      released_version: 1.94.0
       name_pretty_override: Cloud Composer
       product_documentation_override: https://cloud.google.com/composer/docs
       rest_documentation: https://cloud.google.com/composer/docs/reference/rest
       rpc_documentation: https://cloud.google.com/composer/docs/reference/rpc
-      released_version: 1.94.0
   - name: orgpolicy
     version: 2.94.0
     apis:
@@ -2864,9 +2864,9 @@ libraries:
     java:
       api_description_override: n/a
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
+      released_version: 2.94.0
       name_pretty_override: Cloud Organization Policy
       product_documentation_override: n/a
-      released_version: 2.94.0
   - name: os-config
     version: 2.96.0
     apis:
@@ -2876,10 +2876,10 @@ libraries:
     java:
       api_id_override: osconfig.googleapis.com
       api_description_override: provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.
+      released_version: 2.96.0
       name_pretty_override: OS Config API
       product_documentation_override: https://cloud.google.com/compute/docs/os-patch-management
       billing_not_required: true
-      released_version: 2.96.0
   - name: os-login
     version: 2.93.0
     apis:
@@ -2900,9 +2900,9 @@ libraries:
     java:
       api_description_override: manages OS login configuration for Directory API users.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559755
+      released_version: 2.93.0
       name_pretty_override: Cloud OS Login
       product_documentation_override: https://cloud.google.com/compute/docs/oslogin/
-      released_version: 2.93.0
   - name: parallelstore
     version: 0.57.0
     apis:
@@ -2918,10 +2918,10 @@ libraries:
       api_id_override: parallelstore.googleapis.com
       api_description_override: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater read throughput performance compared to competitive Lustre scratch offerings. '
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
+      released_version: 0.57.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Parallelstore API
       product_documentation_override: https://cloud/parallelstore?hl=en
-      released_version: 0.57.0
   - name: parametermanager
     version: 0.38.0
     apis:
@@ -2933,20 +2933,20 @@ libraries:
       api_id_override: parametermanager.googleapis.com
       api_description_override: (Public Preview) Parameter Manager is a single source of truth to store,     access and manage the lifecycle of your workload parameters. Parameter     Manager aims to make management of sensitive application parameters     effortless for customers without diminishing focus on security.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-parametermanager/latest/overview
+      released_version: 0.38.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Parameter Manager API
       product_documentation_override: https://cloud.google.com/secret-manager/parameter-manager/docs/overview
-      released_version: 0.38.0
   - name: phishingprotection
     version: 0.125.0
     apis:
       - path: google/cloud/phishingprotection/v1beta1
     java:
       api_description_override: helps prevent users from accessing phishing sites by identifying various signals associated with malicious content, including the use of your brand assets, classifying malicious content that uses your brand and reporting the unsafe URLs to Google Safe Browsing. Once a site is propagated to Safe Browsing, users will see warnings across more than 4 billion devices.
+      released_version: 0.125.0
       name_pretty_override: Phishing Protection
       product_documentation_override: https://cloud.google.com/phishing-protection/docs/
       billing_not_required: true
-      released_version: 0.125.0
   - name: policy-troubleshooter
     version: 1.93.0
     apis:
@@ -2955,18 +2955,18 @@ libraries:
     java:
       api_id_override: policytroubleshooter.googleapis.com
       api_description_override: makes it easier to understand why a user has access to a resource or doesn't have permission to call an API. Given an email, resource, and permission, Policy Troubleshooter examines all Identity and Access Management (IAM) policies that apply to the resource. It then reveals whether the member's roles include the permission on that resource and, if so, which policies bind the member to those roles.
+      released_version: 1.93.0
       name_pretty_override: IAM Policy Troubleshooter API
       product_documentation_override: https://cloud.google.com/iam/docs/troubleshooting-access
-      released_version: 1.93.0
   - name: policysimulator
     version: 0.73.0
     apis:
       - path: google/cloud/policysimulator/v1
     java:
       api_description_override: Policy Simulator is a collection of endpoints for creating, running, and viewing a Replay.
+      released_version: 0.73.0
       name_pretty_override: Policy Simulator API
       product_documentation_override: https://cloud.google.com/policysimulator/docs/overview
-      released_version: 0.73.0
   - name: private-catalog
     version: 0.96.0
     apis:
@@ -2974,9 +2974,9 @@ libraries:
     java:
       api_id_override: privatecatalog.googleapis.com
       api_description_override: allows developers and cloud admins to make their solutions discoverable to their internal enterprise users. Cloud admins can manage their solutions and ensure their users are always launching the latest versions.
+      released_version: 0.96.0
       name_pretty_override: Private Catalog
       product_documentation_override: https://cloud.google.com/private-catalog/docs
-      released_version: 0.96.0
   - name: privilegedaccessmanager
     version: 0.48.0
     apis:
@@ -2988,11 +2988,11 @@ libraries:
       api_id_override: privilegedaccessmanager.googleapis.com
       api_description_override: Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse orabuse. PAM allows you to shift from always-on standing privileges towards on-demand access with just-in-time, time-bound, and approval-based access elevations. PAM allows IAM administrators to create entitlements that can grant just-in-time, temporary access to any resource scope. Requesters can explore eligible entitlements and request the access needed for their task. Approvers are notified when approvals await their decision. Streamlined workflows facilitated by using PAM can support various use cases, including emergency access for incident responders, time-boxed access for developers for critical deployment or maintenance, temporary access for operators for data ingestion and audits, JIT access to service accounts for automated tasks, and more.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+      released_version: 0.48.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Privileged Access Manager API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
       rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
-      released_version: 0.48.0
   - name: profiler
     version: 2.94.0
     apis:
@@ -3000,9 +3000,9 @@ libraries:
     java:
       api_id_override: cloudprofiler.googleapis.com
       api_description_override: is a statistical, low-overhead profiler that continuously gathers CPU usage and memory-allocation information from your production applications. It attributes that information to the application's source code, helping you identify the parts of the application consuming the most resources, and otherwise illuminating the performance characteristics of the code.
+      released_version: 2.94.0
       name_pretty_override: Cloud Profiler
       product_documentation_override: https://cloud.google.com/profiler/docs
-      released_version: 2.94.0
   - name: publicca
     version: 0.91.0
     apis:
@@ -3010,10 +3010,10 @@ libraries:
       - path: google/cloud/security/publicca/v1beta1
     java:
       api_description_override: The Public Certificate Authority API may be used to create and manage ACME external account binding keys associated with Google Trust Services' publicly trusted certificate authority.
+      released_version: 0.91.0
       name_pretty_override: Public Certificate Authority API
       product_documentation_override: https://cloud.google.com/certificate-manager/docs/public-ca
       rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
-      released_version: 0.91.0
   - name: pubsub
     version: 1.152.0
     apis:
@@ -3079,11 +3079,11 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
       codeowner_team: '@googleapis/pubsub-team'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559741
+      released_version: 1.152.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Pub/Sub
       product_documentation_override: https://cloud.google.com/pubsub/docs/
       recommended_package: com.google.cloud.pubsub.v1
-      released_version: 1.152.0
   - name: rapidmigrationassessment
     version: 0.77.0
     apis:
@@ -3093,9 +3093,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Rapid Migration Assessment API
+      released_version: 0.77.0
       name_pretty_override: Rapid Migration Assessment API
       product_documentation_override: https://cloud.google.com/migration-center/docs
-      released_version: 0.77.0
   - name: recaptchaenterprise
     version: 3.91.0
     apis:
@@ -3103,21 +3103,21 @@ libraries:
       - path: google/cloud/recaptchaenterprise/v1beta1
     java:
       api_description_override: is a service that protects your site from spam and abuse.
+      released_version: 3.91.0
       name_pretty_override: reCAPTCHA Enterprise
       product_documentation_override: https://cloud.google.com/recaptcha-enterprise/docs/
       billing_not_required: true
       rest_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rest
       rpc_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rpc
-      released_version: 3.91.0
   - name: recommendations-ai
     version: 0.101.0
     apis:
       - path: google/cloud/recommendationengine/v1beta1
     java:
       api_description_override: delivers highly personalized product recommendations at scale.
+      released_version: 0.101.0
       name_pretty_override: Recommendations AI
       product_documentation_override: https://cloud.google.com/recommendations-ai/
-      released_version: 0.101.0
   - name: recommender
     version: 2.96.0
     apis:
@@ -3125,9 +3125,9 @@ libraries:
       - path: google/cloud/recommender/v1beta1
     java:
       api_description_override: delivers highly personalized product recommendations at scale.
+      released_version: 2.96.0
       name_pretty_override: Recommender
       product_documentation_override: https://cloud.google.com/recommendations/
-      released_version: 2.96.0
   - name: redis
     version: 2.97.0
     apis:
@@ -3139,9 +3139,9 @@ libraries:
     java:
       api_description_override: is a fully managed Redis service for the Google Cloud. Applications running on Google Cloud can achieve extreme performance by leveraging the highly scalable, available, secure Redis service without the burden of managing complex Redis deployments.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5169231
+      released_version: 2.97.0
       name_pretty_override: Cloud Redis
       product_documentation_override: https://cloud.google.com/memorystore/docs/redis/
-      released_version: 2.97.0
   - name: redis-cluster
     version: 0.66.0
     apis:
@@ -3156,9 +3156,9 @@ libraries:
     java:
       api_description_override: Creates and manages Redis instances on the Google Cloud Platform.
       api_shortname_override: redis-cluster
+      released_version: 0.66.0
       name_pretty_override: Google Cloud Memorystore for Redis API
       product_documentation_override: https://cloud.google.com/memorystore/docs/cluster
-      released_version: 0.66.0
   - name: resourcemanager
     version: 1.96.0
     apis:
@@ -3168,10 +3168,10 @@ libraries:
     java:
       api_description_override: enables you to programmatically manage resources by project, folder, and organization.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559757
+      released_version: 1.96.0
       name_pretty_override: Resource Manager API
       product_documentation_override: https://cloud.google.com/resource-manager
       billing_not_required: true
-      released_version: 1.96.0
   - name: retail
     version: 2.96.0
     apis:
@@ -3189,9 +3189,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Retail solutions API.
+      released_version: 2.96.0
       name_pretty_override: Cloud Retail
       product_documentation_override: https://cloud.google.com/solutions/retail
-      released_version: 2.96.0
   - name: run
     version: 0.94.0
     apis:
@@ -3201,11 +3201,11 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: is a managed compute platform that enables you to run containers that are invocable via requests or events.
+      released_version: 0.94.0
       name_pretty_override: Cloud Run
       product_documentation_override: https://cloud.google.com/run/docs
       rest_documentation: https://cloud.google.com/run/docs/reference/rest
       rpc_documentation: https://cloud.google.com/run/docs/reference/rpc
-      released_version: 0.94.0
   - name: saasservicemgmt
     version: 0.24.0
     apis:
@@ -3217,11 +3217,11 @@ libraries:
       api_id_override: saasservicemgmt.googleapis.com
       api_description_override: "Model, deploy, and operate your SaaS at scale.\t"
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview
+      released_version: 0.24.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: App Lifecycle Manager
       product_documentation_override: https://cloud.google.com/saas-runtime/docs/overview
       rpc_documentation: https://cloud.google.com/saas-runtime/docs/apis
-      released_version: 0.24.0
   - name: scheduler
     version: 2.94.0
     apis:
@@ -3239,12 +3239,12 @@ libraries:
     java:
       api_description_override: lets you set up scheduled units of work to be executed at defined times or regular intervals. These work units are commonly known as cron jobs. Typical use cases might include sending out a report email on a daily basis, updating some cached data every 10 minutes, or updating some summary information once an hour.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5411429
+      released_version: 2.94.0
       name_pretty_override: Google Cloud Scheduler
       product_documentation_override: https://cloud.google.com/scheduler/docs
       billing_not_required: true
       rest_documentation: https://cloud.google.com/scheduler/docs/reference/rest
       rpc_documentation: https://cloud.google.com/scheduler/docs/reference/rpc
-      released_version: 2.94.0
   - name: secretmanager
     version: 2.94.0
     apis:
@@ -3259,10 +3259,10 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: allows you to encrypt, store, manage, and audit infrastructure and application-level secrets.
+      released_version: 2.94.0
       name_pretty_override: Secret Management
       product_documentation_override: https://cloud.google.com/solutions/secrets-management/
       billing_not_required: true
-      released_version: 2.94.0
   - name: securesourcemanager
     version: 0.64.0
     apis:
@@ -3275,9 +3275,9 @@ libraries:
       api_description_override: |-
         Regionally deployed, single-tenant managed source code repository hosted on
             Google Cloud.
+      released_version: 0.64.0
       name_pretty_override: Secure Source Manager API
       product_documentation_override: https://cloud.google.com/secure-source-manager/docs/overview
-      released_version: 0.64.0
   - name: security-private-ca
     version: 2.96.0
     apis:
@@ -3290,11 +3290,11 @@ libraries:
     java:
       api_id_override: privateca.googleapis.com
       api_description_override: simplifies the deployment and management of private CAs without managing infrastructure.
+      released_version: 2.96.0
       name_pretty_override: Certificate Authority Service
       product_documentation_override: https://cloud.google.com/certificate-authority-service/docs
       rest_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rest
       rpc_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rpc
-      released_version: 2.96.0
   - name: securitycenter
     version: 2.102.0
     apis:
@@ -3311,11 +3311,11 @@ libraries:
     java:
       api_description_override: makes it easier for you to prevent, detect, and respond to threats. Identify security misconfigurations in virtual machines, networks, applications, and storage buckets from a centralized dashboard. Take action on them before they can potentially result in business damage or loss. Built-in capabilities can quickly surface suspicious activity in your Stackdriver security logs or indicate compromised virtual machines. Respond to threats by following actionable recommendations or exporting logs to your SIEM for further investigation.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559748
+      released_version: 2.102.0
       name_pretty_override: Security Command Center
       product_documentation_override: https://cloud.google.com/security-command-center
       billing_not_required: true
       rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
-      released_version: 2.102.0
   - name: securitycenter-settings
     version: 0.97.0
     apis:
@@ -3323,11 +3323,11 @@ libraries:
     java:
       api_id_override: securitycenter-settings.googleapis.com
       api_description_override: is the canonical security and data risk database for Google Cloud. Security Command Center enables you to understand your security and data attack surface by providing asset inventory, discovery, search, and management.
+      released_version: 0.97.0
       name_pretty_override: Security Command Center Settings API
       product_documentation_override: https://cloud.google.com/security-command-center/
       billing_not_required: true
       rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
-      released_version: 0.97.0
   - name: securitycentermanagement
     version: 0.62.0
     apis:
@@ -3337,9 +3337,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Security Center Management API
+      released_version: 0.62.0
       name_pretty_override: Security Center Management API
       product_documentation_override: https://cloud.google.com/securitycentermanagement/docs/overview
-      released_version: 0.62.0
   - name: securityposture
     version: 0.59.0
     apis:
@@ -3349,9 +3349,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Security Posture is a comprehensive framework of policy sets that empowers organizations to define, assess early, deploy, and monitor their security measures in a unified way and helps simplify governance and reduces administrative toil.
+      released_version: 0.59.0
       name_pretty_override: Security Posture API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/security-posture-overview
-      released_version: 0.59.0
   - name: service-control
     version: 1.94.0
     apis:
@@ -3359,9 +3359,9 @@ libraries:
       - path: google/api/servicecontrol/v1
     java:
       api_description_override: ' is a foundational platform for creating, managing, securing, and consuming APIs and services across organizations. It is used by Google APIs, Cloud APIs, Cloud Endpoints, and API Gateway.'
+      released_version: 1.94.0
       name_pretty_override: Service Control API
       product_documentation_override: https://cloud.google.com/service-infrastructure/docs/overview/
-      released_version: 1.94.0
   - name: service-management
     version: 3.92.0
     apis:
@@ -3374,9 +3374,9 @@ libraries:
     java:
       api_id_override: servicemanagement.googleapis.com
       api_description_override: is a foundational platform for creating, managing, securing, and consuming APIs and services across organizations. It is used by Google APIs, Cloud APIs, Cloud Endpoints, and API Gateway. Service Infrastructure provides a wide range of features to service consumers and service producers, including authentication, authorization, auditing, rate limiting, analytics, billing, logging, and monitoring.
+      released_version: 3.92.0
       name_pretty_override: Service Management API
       product_documentation_override: https://cloud.google.com/service-infrastructure/docs/overview/
-      released_version: 3.92.0
   - name: service-usage
     version: 2.94.0
     apis:
@@ -3384,9 +3384,9 @@ libraries:
       - path: google/api/serviceusage/v1beta1
     java:
       api_description_override: is an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects.
+      released_version: 2.94.0
       name_pretty_override: Service Usage
       product_documentation_override: https://cloud.google.com/service-usage/docs/overview
-      released_version: 2.94.0
   - name: servicedirectory
     version: 2.95.0
     apis:
@@ -3400,12 +3400,12 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: allows the registration and lookup of service endpoints.
+      released_version: 2.95.0
       name_pretty_override: Service Directory
       product_documentation_override: https://cloud.google.com/service-directory/
       billing_not_required: true
       rest_documentation: https://cloud.google.com/service-directory/docs/reference/rest
       rpc_documentation: https://cloud.google.com/service-directory/docs/reference/rpc
-      released_version: 2.95.0
   - name: servicehealth
     version: 0.61.0
     apis:
@@ -3415,10 +3415,10 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Personalized Service Health helps you gain visibility into disruptive events impacting Google Cloud products.
+      released_version: 0.61.0
       name_pretty_override: Service Health API
       product_documentation_override: https://cloud.google.com/service-health/docs/overview
       rpc_documentation: https://cloud.google.com/service-health/docs/reference/rpc
-      released_version: 0.61.0
   - name: shell
     version: 2.93.0
     apis:
@@ -3426,11 +3426,11 @@ libraries:
     java:
       api_description_override: is an interactive shell environment for Google Cloud that makes it easy for you to learn and experiment with Google Cloud and manage your projects and resources from your web browser.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 2.93.0
       name_pretty_override: Cloud Shell
       product_documentation_override: https://cloud.google.com/shell/docs
       rest_documentation: https://cloud.google.com/shell/docs/reference/rest
       rpc_documentation: https://cloud.google.com/shell/docs/reference/rpc
-      released_version: 2.93.0
   - name: shopping-css
     version: 0.62.0
     apis:
@@ -3439,9 +3439,9 @@ libraries:
       api_description_override: The CSS API is used to manage your CSS and control your CSS Products portfolio
       artifact_id: google-shopping-css
       group_id: com.google.shopping
+      released_version: 0.62.0
       name_pretty_override: CSS API
       product_documentation_override: https://developers.google.com/comparison-shopping-services/api
-      released_version: 0.62.0
   - name: shopping-merchant-accounts
     version: 1.22.0
     apis:
@@ -3453,10 +3453,10 @@ libraries:
       artifact_id: google-shopping-merchant-accounts
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-conversions
     version: 1.22.0
     apis:
@@ -3469,10 +3469,10 @@ libraries:
       artifact_id: google-shopping-merchant-conversions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Conversions API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-datasources
     version: 1.22.0
     apis:
@@ -3484,10 +3484,10 @@ libraries:
       artifact_id: google-shopping-merchant-datasources
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-inventories
     version: 1.22.0
     apis:
@@ -3497,9 +3497,9 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-inventories
       group_id: com.google.shopping
+      released_version: 1.22.0
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-lfp
     version: 1.22.0
     apis:
@@ -3512,10 +3512,10 @@ libraries:
       artifact_id: google-shopping-merchant-lfp
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant LFP API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-notifications
     version: 1.22.0
     apis:
@@ -3528,10 +3528,10 @@ libraries:
       artifact_id: google-shopping-merchant-notifications
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Notifications API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-product-studio
     version: 0.34.0
     apis:
@@ -3542,10 +3542,10 @@ libraries:
       artifact_id: google-shopping-merchant-productstudio
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-productstudio/latest/overview
       group_id: com.google.shopping
+      released_version: 0.34.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 0.34.0
   - name: shopping-merchant-products
     version: 1.22.0
     apis:
@@ -3557,10 +3557,10 @@ libraries:
       artifact_id: google-shopping-merchant-products
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-promotions
     version: 1.22.0
     apis:
@@ -3572,10 +3572,10 @@ libraries:
       artifact_id: google-shopping-merchant-promotions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-quota
     version: 1.22.0
     apis:
@@ -3588,10 +3588,10 @@ libraries:
       artifact_id: google-shopping-merchant-quota
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
       group_id: com.google.shopping
+      released_version: 1.22.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Quota API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-reports
     version: 1.22.0
     apis:
@@ -3602,9 +3602,9 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-reports
       group_id: com.google.shopping
+      released_version: 1.22.0
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 1.22.0
   - name: shopping-merchant-reviews
     version: 0.40.0
     apis:
@@ -3614,10 +3614,10 @@ libraries:
       artifact_id: google-shopping-merchant-reviews
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
       group_id: com.google.shopping
+      released_version: 0.40.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
-      released_version: 0.40.0
   - name: showcase
     version: 0.0.1-SNAPSHOT
     apis:
@@ -3679,13 +3679,13 @@ libraries:
         - google-cloud-spanner-bom
         - google-cloud-spanner
       issue_tracker_override: https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open
+      released_version: 6.119.0
       library_type_override: GAPIC_COMBO
       min_java_version: 8
       name_pretty_override: Cloud Spanner
       product_documentation_override: https://cloud.google.com/spanner/docs/
       recommended_package: com.google.cloud.spanner
       transport_override: grpc
-      released_version: 6.119.0
   - name: spanneradapter
     version: 0.30.0
     apis:
@@ -3695,10 +3695,10 @@ libraries:
       api_description_override: The Cloud Spanner Adapter service allows native drivers of supported     database dialects to interact directly with Cloud Spanner by wrapping the underlying     wire protocol used by the driver in a gRPC stream.
       api_shortname_override: spanneradapter
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
+      released_version: 0.30.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud Spanner Adapter API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
-      released_version: 0.30.0
   - name: speech
     version: 4.89.0
     apis:
@@ -3716,12 +3716,12 @@ libraries:
     java:
       api_description_override: enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559758
+      released_version: 4.89.0
       name_pretty_override: Cloud Speech
       product_documentation_override: https://cloud.google.com/speech-to-text/docs/
       billing_not_required: true
       rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
       rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
-      released_version: 4.89.0
   - name: storage
     version: 2.70.0
     apis:
@@ -3753,21 +3753,21 @@ libraries:
         - google-cloud-storage
       extra_versioned_modules: gapic-google-cloud-storage-v2
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559782
+      released_version: 2.70.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Storage
       product_documentation_override: https://cloud.google.com/storage
       recommended_package: com.google.cloud.storage
       transport_override: rest
-      released_version: 2.70.0
   - name: storage-transfer
     version: 1.94.0
     apis:
       - path: google/storagetransfer/v1
     java:
       api_description_override: Secure, low-cost services for transferring data from cloud or on-premises sources.
+      released_version: 1.94.0
       name_pretty_override: Storage Transfer Service
       product_documentation_override: https://cloud.google.com/storage-transfer-service
-      released_version: 1.94.0
   - name: storagebatchoperations
     version: 0.34.0
     apis:
@@ -3779,10 +3779,10 @@ libraries:
       api_id_override: storagebatchoperations.googleapis.com
       api_description_override: Storage batch operations is a Cloud Storage management feature that performs operations on billions of Cloud Storage objects in a serverless manner.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-storagebatchoperations/latest/overview
+      released_version: 0.34.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Storage Batch Operations API
       product_documentation_override: https://cloud.google.com/storage/docs/batch-operations/overview
-      released_version: 0.34.0
   - name: storageinsights
     version: 0.79.0
     apis:
@@ -3792,9 +3792,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Provides insights capability on Google Cloud Storage
+      released_version: 0.79.0
       name_pretty_override: Storage Insights API
       product_documentation_override: https://cloud.google.com/storage/docs/insights/storage-insights/
-      released_version: 0.79.0
   - name: talent
     version: 2.95.0
     apis:
@@ -3803,9 +3803,9 @@ libraries:
     java:
       api_description_override: allows you to transform your job search and candidate matching capabilities with Cloud Talent Solution, designed to support enterprise talent acquisition technology and evolve with your growing needs. This AI solution includes features such as Job Search and Profile Search (Beta) to provide candidates and employers with an enhanced talent acquisition experience. Learn more about Cloud Talent Solution from the product overview page.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559664
+      released_version: 2.95.0
       name_pretty_override: Talent Solution
       product_documentation_override: https://cloud.google.com/solutions/talent-solution/
-      released_version: 2.95.0
   - name: tasks
     version: 2.94.0
     apis:
@@ -3830,11 +3830,11 @@ libraries:
       api_description_override: a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint.
       codeowner_team: '@googleapis/aap-dpes'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5433985
+      released_version: 2.94.0
       name_pretty_override: Cloud Tasks
       product_documentation_override: https://cloud.google.com/tasks/docs/
       rest_documentation: https://cloud.google.com/tasks/docs/reference/rest
       rpc_documentation: https://cloud.google.com/tasks/docs/reference/rpc
-      released_version: 2.94.0
   - name: telcoautomation
     version: 0.64.0
     apis:
@@ -3848,9 +3848,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: APIs to automate 5G deployment and management of cloud infrastructure and network functions.
+      released_version: 0.64.0
       name_pretty_override: Telco Automation API
       product_documentation_override: https://cloud.google.com/telecom-network-automation
-      released_version: 0.64.0
   - name: texttospeech
     version: 2.95.0
     apis:
@@ -3862,12 +3862,12 @@ libraries:
     java:
       api_description_override: enables easy integration of Google text recognition technologies into developer applications. Send text and receive synthesized audio output from the Cloud Text-to-Speech API service.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5235428
+      released_version: 2.95.0
       name_pretty_override: Cloud Text-to-Speech
       product_documentation_override: https://cloud.google.com/text-to-speech
       billing_not_required: true
       rest_documentation: https://cloud.google.com/text-to-speech/docs/reference/rest
       rpc_documentation: https://cloud.google.com/text-to-speech/docs/reference/rpc
-      released_version: 2.95.0
   - name: tpu
     version: 2.95.0
     apis:
@@ -3885,10 +3885,10 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.
+      released_version: 2.95.0
       name_pretty_override: Cloud TPU
       product_documentation_override: https://cloud.google.com/tpu/docs
       rest_documentation: https://cloud.google.com/tpu/docs/reference/rest
-      released_version: 2.95.0
   - name: trace
     version: 2.94.0
     apis:
@@ -3899,10 +3899,10 @@ libraries:
       - google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java
     java:
       api_description_override: is a distributed tracing system that collects latency data from your applications and displays it in the Google Cloud Platform Console. You can track how requests propagate through your application and receive detailed near real-time performance insights.
+      released_version: 2.94.0
       name_pretty_override: Stackdriver Trace
       product_documentation_override: https://cloud.google.com/trace/docs/
       billing_not_required: true
-      released_version: 2.94.0
   - name: translate
     version: 2.94.0
     apis:
@@ -3912,11 +3912,11 @@ libraries:
       api_id_override: translate.googleapis.com
       api_description_override: can dynamically translate text between thousands of language pairs. Translation lets websites and programs programmatically integrate with the translation service.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559749
+      released_version: 2.94.0
       name_pretty_override: Cloud Translation
       product_documentation_override: https://cloud.google.com/translate/docs/
       rest_documentation: https://cloud.google.com/translate/docs/reference/rest
       rpc_documentation: https://cloud.google.com/translate/docs/reference/rpc
-      released_version: 2.94.0
   - name: valkey
     version: 0.40.0
     apis:
@@ -3932,11 +3932,11 @@ libraries:
       api_id_override: memorystore.googleapis.com
       api_description_override: Memorystore for Valkey is a fully managed Valkey Cluster service for Google Cloud.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-memorystore/latest/overview
+      released_version: 0.40.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Memorystore API
       product_documentation_override: https://cloud.google.com/memorystore/docs/valkey
       rest_documentation: https://cloud.google.com/memorystore/docs/valkey/reference/rest
-      released_version: 0.40.0
   - name: vectorsearch
     version: 0.16.0
     apis:
@@ -3952,10 +3952,10 @@ libraries:
       api_id_override: vectorsearch.googleapis.com
       api_description_override: The Vector Search API provides a fully-managed, highly performant, and scalable vector database designed to power next-generation search, recommendation, and generative AI applications. It allows you to store, index, and query your data and its corresponding vector embeddings through a simple, intuitive interface. With Vector Search, you can define custom schemas for your data, insert objects with associated metadata, automatically generate embeddings from your data, and perform fast approximate nearest neighbor (ANN) searches to find semantically similar items at scale.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-vectorsearch/latest/overview
+      released_version: 0.16.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Vector Search API
       product_documentation_override: https://docs.cloud.google.com/vertex-ai/docs/vector-search/overview
-      released_version: 0.16.0
   - name: video-intelligence
     version: 2.93.0
     apis:
@@ -3967,11 +3967,11 @@ libraries:
     java:
       api_description_override: allows developers to use Google video analysis technology as part of their applications.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5084810
+      released_version: 2.93.0
       name_pretty_override: Cloud Video Intelligence
       product_documentation_override: https://cloud.google.com/video-intelligence/docs/
       rest_documentation: https://cloud.google.com/video-intelligence/docs/reference/rest
       rpc_documentation: https://cloud.google.com/video-intelligence/docs/reference/rpc
-      released_version: 2.93.0
   - name: video-live-stream
     version: 0.96.0
     apis:
@@ -3982,18 +3982,18 @@ libraries:
     java:
       api_description_override: transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms.
       artifact_id: google-cloud-live-stream
+      released_version: 0.96.0
       name_pretty_override: Live Stream API
       product_documentation_override: https://cloud.google.com/livestream/
-      released_version: 0.96.0
   - name: video-stitcher
     version: 0.94.0
     apis:
       - path: google/cloud/video/stitcher/v1
     java:
       api_description_override: allows you to manipulate video content to dynamically insert ads prior to delivery to client devices.
+      released_version: 0.94.0
       name_pretty_override: Video Stitcher API
       product_documentation_override: https://cloud.google.com/video-stitcher/
-      released_version: 0.94.0
   - name: video-transcoder
     version: 1.93.0
     apis:
@@ -4001,11 +4001,11 @@ libraries:
     java:
       api_id_override: transcoder.googleapis.com
       api_description_override: allows you to transcode videos into a variety of formats. The Transcoder API benefits broadcasters, production companies, businesses, and individuals looking to transform their video content for use across a variety of user devices.
+      released_version: 1.93.0
       name_pretty_override: Video Transcoder
       product_documentation_override: https://cloud.google.com/transcoder/docs
       rest_documentation: https://cloud.google.com/transcoder/docs/reference/rest
       rpc_documentation: https://cloud.google.com/transcoder/docs/reference/rpc
-      released_version: 1.93.0
   - name: vision
     version: 3.92.0
     apis:
@@ -4027,11 +4027,11 @@ libraries:
     java:
       api_description_override: allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content.
       issue_tracker_override: https://issuetracker.google.com/issues?q=status:open%20componentid:187174
+      released_version: 3.92.0
       name_pretty_override: Cloud Vision
       product_documentation_override: https://cloud.google.com/vision/docs/
       rest_documentation: https://cloud.google.com/vision/docs/reference/rest
       rpc_documentation: https://cloud.google.com/vision/docs/reference/rpc
-      released_version: 3.92.0
   - name: visionai
     version: 0.51.0
     apis:
@@ -4044,11 +4044,11 @@ libraries:
       api_id_override: visionai.googleapis.com
       api_description_override: Vertex AI Vision is an AI-powered platform to ingest, analyze and store video data.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-visionai/latest/overview
+      released_version: 0.51.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Vision AI API
       product_documentation_override: https://cloud.google.com/vision-ai/docs
       rpc_documentation: https://cloud.google.com/vision-ai/docs/reference/rpc
-      released_version: 0.51.0
   - name: vmmigration
     version: 1.94.0
     apis:
@@ -4059,9 +4059,9 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: helps customers migrating VMs to GCP at no additional cost, as well as an extensive ecosystem of partners to help with discovery and assessment, planning, migration, special use cases, and more.
+      released_version: 1.94.0
       name_pretty_override: VM Migration
       product_documentation_override: n/a
-      released_version: 1.94.0
   - name: vmwareengine
     version: 0.88.0
     apis:
@@ -4072,10 +4072,10 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: Easily lift and shift your VMware-based applications to Google Cloud without changes to your apps, tools, or processes.
+      released_version: 0.88.0
       name_pretty_override: Google Cloud VMware Engine
       product_documentation_override: https://cloud.google.com/vmware-engine/
       rest_documentation: https://cloud.google.com/vmware-engine/docs/reference/rest
-      released_version: 0.88.0
   - name: vpcaccess
     version: 2.95.0
     apis:
@@ -4085,9 +4085,9 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: enables you to connect from a serverless environment on Google Cloud directly to your VPC network. This connection makes it possible for your serverless environment to access resources in your VPC network via internal IP addresses.
+      released_version: 2.95.0
       name_pretty_override: Serverless VPC Access
       product_documentation_override: https://cloud.google.com/vpc/docs/serverless-vpc-access
-      released_version: 2.95.0
   - name: webrisk
     version: 2.93.0
     apis:
@@ -4095,12 +4095,12 @@ libraries:
       - path: google/cloud/webrisk/v1beta1
     java:
       api_description_override: is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites - such as phishing and deceptive sites - and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.
+      released_version: 2.93.0
       name_pretty_override: Web Risk
       product_documentation_override: https://cloud.google.com/web-risk/docs/
       billing_not_required: true
       rest_documentation: https://cloud.google.com/web-risk/docs/reference/rest
       rpc_documentation: https://cloud.google.com/web-risk/docs/reference/rpc
-      released_version: 2.93.0
   - name: websecurityscanner
     version: 2.94.0
     apis:
@@ -4113,10 +4113,10 @@ libraries:
     java:
       api_description_override: identifies security vulnerabilities in your App Engine, Compute Engine, and Google Kubernetes Engine web applications. It crawls your application, following all links within the scope of your starting URLs, and attempts to exercise as many user inputs and event handlers as possible.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559748
+      released_version: 2.94.0
       name_pretty_override: Cloud Security Scanner
       product_documentation_override: https://cloud.google.com/security-scanner/docs/
       billing_not_required: true
-      released_version: 2.94.0
   - name: workflow-executions
     version: 2.94.0
     apis:
@@ -4125,10 +4125,10 @@ libraries:
     java:
       api_description_override: allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 2.94.0
       name_pretty_override: Cloud Workflow Executions
       product_documentation_override: https://cloud.google.com/workflows
       rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
-      released_version: 2.94.0
   - name: workflows
     version: 2.94.0
     apis:
@@ -4143,10 +4143,10 @@ libraries:
     java:
       api_description_override: allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.
       codeowner_team: '@googleapis/aap-dpes'
+      released_version: 2.94.0
       name_pretty_override: Cloud Workflows
       product_documentation_override: https://cloud.google.com/workflows
       rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
-      released_version: 2.94.0
   - name: workloadmanager
     version: 0.10.0
     apis:
@@ -4158,11 +4158,11 @@ libraries:
       api_id_override: workloadmanager.googleapis.com
       api_description_override: Workload Manager is a service that provides tooling for enterprise workloads to automate the deployment and validation of your workloads against best practices and recommendations.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-workloadmanager/latest/overview
+      released_version: 0.10.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Workload Manager API
       product_documentation_override: https://docs.cloud.google.com/workload-manager/docs
       rpc_documentation: https://docs.cloud.google.com/workload-manager/docs/reference/rest
-      released_version: 0.10.0
   - name: workspaceevents
     version: 0.58.0
     apis:
@@ -4170,10 +4170,10 @@ libraries:
       - path: google/apps/events/subscriptions/v1beta
     java:
       api_description_override: The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
+      released_version: 0.58.0
       name_pretty_override: Google Workspace Events API
       product_documentation_override: https://developers.google.com/workspace/events
       rest_documentation: https://developers.google.com/workspace/events/reference/rest
-      released_version: 0.58.0
   - name: workstations
     version: 0.82.0
     apis:
@@ -4189,8 +4189,8 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: Fully managed development environments built to meet the needs of security-sensitive enterprises. It enhances the security of development environments while accelerating developer onboarding and productivity.
+      released_version: 0.82.0
       name_pretty_override: Cloud Workstations
       product_documentation_override: https://cloud.google.com/workstations
       rest_documentation: https://cloud.google.com/workstations/docs/reference/rest
       rpc_documentation: https://cloud.google.com/workstations/docs/reference/rpc
-      released_version: 0.82.0
