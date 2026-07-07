@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
@@ -42,7 +43,9 @@ import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -2425,16 +2428,101 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
-    String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getPrimaryKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineGetPrimaryKeysSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        table,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = null;
+          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
+            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
+          }
+          processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
+        });
+
+    Comparator<FieldValueList> comparator = defineGetPrimaryKeysComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getPrimaryKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    populateQueue(collectedResults, queue, resultSchemaFields);
+    signalEndOfData(queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+  }
+
+  Schema defineGetPrimaryKeysSchema() {
+    List<Field> fields = new ArrayList<>(6);
+    fields.add(
+        Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    fields.add(
+        Field.newBuilder("TABLE_SCHEM", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    fields.add(
+        Field.newBuilder("TABLE_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("COLUMN_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("KEY_SEQ", StandardSQLTypeName.INT64)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("PK_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    return Schema.of(fields);
+  }
+
+  void processPrimaryKey(
+      TableConstraints constraints,
+      TableId tableId,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields) {
+    if (constraints != null && constraints.getPrimaryKey() != null) {
+      PrimaryKey pk = constraints.getPrimaryKey();
+      List<String> pkColumns = pk.getColumns();
+      for (int i = 0; i < pkColumns.size(); i++) {
+        List<FieldValue> row = new ArrayList<>(6);
+        row.add(
+            FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getProject())); // 1. TABLE_CAT
+        row.add(
+            FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getDataset())); // 2. TABLE_SCHEM
+        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, tableId.getTable())); // 3. TABLE_NAME
+        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, pkColumns.get(i))); // 4. COLUMN_NAME
+        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, String.valueOf(i + 1))); // 5. KEY_SEQ
+        row.add(FieldValue.of(FieldValue.Attribute.PRIMITIVE, null)); // 6. PK_NAME
+        collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+      }
+    }
+  }
+
+  Comparator<FieldValueList> defineGetPrimaryKeysComparator(FieldList resultSchemaFields) {
+    final int COLUMN_NAME_IDX = resultSchemaFields.getIndex("COLUMN_NAME");
+    return Comparator.comparing(
+        (FieldValueList fvl) -> getStringValueOrNull(fvl, COLUMN_NAME_IDX),
+        Comparator.nullsFirst(String::compareTo));
   }
 
   @Override
@@ -4948,6 +5036,85 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           Thread.currentThread().interrupt();
         }
       }
+    }
+  }
+
+  private List<DatasetId> getTargetDatasets(String catalog, String schema) throws SQLException {
+    if (schema == null) {
+      List<Dataset> datasets = fetchMatchingDatasets(catalog, null, null);
+      List<DatasetId> datasetIds = new ArrayList<>(datasets.size());
+      for (Dataset dataset : datasets) {
+        datasetIds.add(dataset.getDatasetId());
+      }
+      return datasetIds;
+    }
+
+    if (schema.isEmpty()) {
+      return Collections.emptyList();
+    }
+
+    List<String> projects = resolveTargetProjects(catalog);
+    List<DatasetId> datasetIds = new ArrayList<>(projects.size());
+    for (String project : projects) {
+      datasetIds.add(DatasetId.of(project, schema));
+    }
+    return datasetIds;
+  }
+
+  private List<String> resolveTargetProjects(String catalog) throws SQLException {
+    return (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
+  }
+
+  @FunctionalInterface
+  private interface TableProcessor {
+    void process(Table bqTable, List<FieldValueList> collectedResults, FieldList resultSchemaFields)
+        throws SQLException;
+  }
+
+  private void processSingleTable(
+      DatasetId datasetId,
+      String tableName,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields,
+      TableProcessor processor)
+      throws SQLException {
+    Table bqTable =
+        bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+    if (bqTable != null && bqTable.getDefinition() != null) {
+      processor.process(bqTable, collectedResults, resultSchemaFields);
+    }
+  }
+
+  private void processTargetTablesConcurrently(
+      List<DatasetId> targetDatasets,
+      String tableName,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields,
+      TableProcessor processor)
+      throws SQLException {
+    if (targetDatasets.size() == 1) {
+      processSingleTable(
+          targetDatasets.get(0), tableName, collectedResults, resultSchemaFields, processor);
+      return;
+    }
+
+    ExecutorService executor = connection.getMetadataExecutor();
+    List<Future<?>> taskFutures = new ArrayList<>();
+
+    for (DatasetId datasetId : targetDatasets) {
+      taskFutures.add(
+          executor.submit(
+              () -> {
+                processSingleTable(
+                    datasetId, tableName, collectedResults, resultSchemaFields, processor);
+                return null;
+              }));
+    }
+
+    try {
+      waitForTasksCompletion(taskFutures);
+    } catch (ExecutionException e) {
+      throw new SQLException("Error while fetching metadata", e);
     }
   }
 }
