@@ -34,23 +34,29 @@ jobs:
         path: google-cloud-java
         fetch-depth: 0
         persist-credentials: false
-    - name: Check for Open PR
+    - name: Close Existing PR and Branch
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
         set -x
         current_branch="update-librarian-googleapis-main"
         
         if [ "${{ github.event_name }}" = "pull_request" ]; then
-          echo "PR Test: Skipping open PR check."
+          echo "PR Test: Skipping cleanup."
         else
           # Try to find an open pull request associated with the branch
           pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
           
           if [ -n "${pr_num}" ]; then
-            echo "Error: An open Pull Request already exists for this update: PR #${pr_num}."
-            echo "Please merge or close the existing PR before running this workflow again."
-            exit 1 # Fails this step and the workflow
+            echo "Closing existing PR #${pr_num}..."
+            gh pr close "${pr_num}" --delete-branch || gh pr close "${pr_num}"
+          fi
+          
+          # Delete the remote branch if it still exists (e.g. if no PR was open)
+          echo "Checking if remote branch ${current_branch} exists..."
+          if gh api "repos/${{ github.repository }}/git/refs/heads/${current_branch}" --silent 2>/dev/null; then
+            echo "Deleting remote branch ${current_branch}..."
+            gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/${current_branch}" || true
           fi
         fi
     - name: Set up Go
