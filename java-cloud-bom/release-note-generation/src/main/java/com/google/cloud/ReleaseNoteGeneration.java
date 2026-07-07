@@ -521,6 +521,7 @@ public class ReleaseNoteGeneration {
               .findFirst();
       matchingSplitRepoName.ifPresent(
           splitRepoName -> {
+            System.out.println("DEBUG: Processing " + versionlessCoordinates + " (" + previousVersion + " -> " + currentVersion + ")");
             try {
               ImmutableList<String> versionsForReleaseNotes =
                   clientLibraryReleaseNoteVersions(
