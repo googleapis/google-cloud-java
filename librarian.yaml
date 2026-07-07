@@ -1050,7 +1050,6 @@ libraries:
       api_shortname_override: common-protos
       artifact_id: proto-google-common-protos
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
-      excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
       excluded_poms:
         - proto-google-common-protos-bom
         - proto-google-common-protos
@@ -1075,7 +1074,6 @@ libraries:
       - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/Util.java
     java:
       api_description_override: 'delivers virtual machines running in Google''s innovative data centers and worldwide fiber network. Compute Engine''s tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. '
-      excluded_dependencies: grpc-google-cloud-compute-v1
       excluded_poms:
         - grpc-google-cloud-compute-v1
       name_pretty_override: Compute Engine
@@ -1343,7 +1341,6 @@ libraries:
       api_id_override: datastore.googleapis.com
       api_description_override: is a fully managed, schemaless database for\nstoring non-relational data. Cloud Datastore automatically scales with\nyour users and supports ACID transactions, high availability of reads and\nwrites, strong consistency for reads and ancestor queries, and eventual\nconsistency for all other queries.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
-      excluded_dependencies: grpc-google-cloud-datastore-v1
       excluded_poms:
         - grpc-google-cloud-datastore-v1
       extra_versioned_modules: datastore-v1-proto-client
@@ -1996,7 +1993,6 @@ libraries:
       api_description_override: Manages access control for Google Cloud Platform resources
       artifact_id: proto-google-iam-v1
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
-      excluded_dependencies: grpc-google-iam-v1
       excluded_poms:
         - proto-google-iam-v1-bom
         - google-iam-policy
@@ -2054,7 +2050,6 @@ libraries:
       api_shortname_override: iam-policy
       artifact_id: google-iam-policy
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
-      excluded_dependencies: google-iam-policy
       excluded_poms:
         - proto-google-iam-v1-bom
         - google-iam-policy
