@@ -76,9 +76,7 @@ public class BigQueryFieldValueListWrapperTest {
           Field.of("dt", StandardSQLTypeName.DATE),
           Field.of("tm", StandardSQLTypeName.TIME),
           Field.of("range_col", StandardSQLTypeName.RANGE),
-          Field.newBuilder("tags", StandardSQLTypeName.STRING)
-              .setMode(Field.Mode.REPEATED)
-              .build(),
+          Field.newBuilder("tags", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build(),
           Field.newBuilder("profiles", StandardSQLTypeName.STRUCT, PROFILE_SCHEMA)
               .setMode(Field.Mode.REPEATED)
               .build(),
@@ -90,9 +88,12 @@ public class BigQueryFieldValueListWrapperTest {
   private static final FieldValue NAME_FV = FieldValue.of(Attribute.PRIMITIVE, "Alice");
   private static final FieldValue SCORE_FV = FieldValue.of(Attribute.PRIMITIVE, "98.5");
   private static final FieldValue ACTIVE_FV = FieldValue.of(Attribute.PRIMITIVE, "true");
-  private static final FieldValue GEO_FV = FieldValue.of(Attribute.PRIMITIVE, "POINT(-122.084 37.422)");
-  private static final FieldValue JSON_FV = FieldValue.of(Attribute.PRIMITIVE, "{\"key\": \"value\"}");
-  private static final FieldValue NUM_FV = FieldValue.of(Attribute.PRIMITIVE, "123456789.987654321");
+  private static final FieldValue GEO_FV =
+      FieldValue.of(Attribute.PRIMITIVE, "POINT(-122.084 37.422)");
+  private static final FieldValue JSON_FV =
+      FieldValue.of(Attribute.PRIMITIVE, "{\"key\": \"value\"}");
+  private static final FieldValue NUM_FV =
+      FieldValue.of(Attribute.PRIMITIVE, "123456789.987654321");
   private static final FieldValue BIGNUM_FV =
       FieldValue.of(Attribute.PRIMITIVE, "99999999999999999999999999999999999999.999999999");
   private static final FieldValue INTERVAL_FV = FieldValue.of(Attribute.PRIMITIVE, "0-0 0 0:0:0");
@@ -101,7 +102,8 @@ public class BigQueryFieldValueListWrapperTest {
   private static final FieldValue DT_FV = FieldValue.of(Attribute.PRIMITIVE, "2023-03-13");
   private static final FieldValue TM_FV = FieldValue.of(Attribute.PRIMITIVE, "23:59:59");
   private static final FieldValue RANGE_FV =
-      FieldValue.of(Attribute.RANGE, com.google.cloud.bigquery.Range.of("[2020-01-01, 2020-01-31)"));
+      FieldValue.of(
+          Attribute.RANGE, com.google.cloud.bigquery.Range.of("[2020-01-01, 2020-01-31)"));
   private static final FieldValue TAGS_FV =
       FieldValue.of(
           Attribute.REPEATED,
@@ -137,8 +139,23 @@ public class BigQueryFieldValueListWrapperTest {
   private static final FieldValueList SAMPLE_ALL_TYPES_FVL =
       FieldValueList.of(
           Arrays.asList(
-              ID_FV, NAME_FV, SCORE_FV, ACTIVE_FV, GEO_FV, JSON_FV, NUM_FV, BIGNUM_FV,
-              INTERVAL_FV, BYTES_FV, TS_FV, DT_FV, TM_FV, RANGE_FV, TAGS_FV, PROFILES_FV, ORG_FV),
+              ID_FV,
+              NAME_FV,
+              SCORE_FV,
+              ACTIVE_FV,
+              GEO_FV,
+              JSON_FV,
+              NUM_FV,
+              BIGNUM_FV,
+              INTERVAL_FV,
+              BYTES_FV,
+              TS_FV,
+              DT_FV,
+              TM_FV,
+              RANGE_FV,
+              TAGS_FV,
+              PROFILES_FV,
+              ORG_FV),
           ALL_TYPES_SCHEMA_FIELDS);
 
   @Test
@@ -173,7 +190,8 @@ public class BigQueryFieldValueListWrapperTest {
     BigQueryStatement statement = mock(BigQueryStatement.class);
     Future<?>[] workerTasks = {mock(Future.class)};
 
-    BigQueryJsonResultSet rs = BigQueryJsonResultSet.of(ALL_TYPES_SCHEMA, 1L, queue, statement, workerTasks);
+    BigQueryJsonResultSet rs =
+        BigQueryJsonResultSet.of(ALL_TYPES_SCHEMA, 1L, queue, statement, workerTasks);
     assertTrue(rs.next());
 
     assertThat(rs.getLong("id")).isEqualTo(101L);
