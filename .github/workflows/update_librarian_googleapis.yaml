@@ -139,7 +139,7 @@ jobs:
         PR_BODY: |
           Updated googleapis commitish in librarian.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}
 
-          💡 **Note:** Please merge or close this PR so that the daily update workflow can continue to run successfully the next day. Alternatively, you can manually trigger the workflow once this PR is merged or closed.
+          💡 **Note:** If this PR is still open when the daily update workflow runs next, it will be closed and replaced with a new PR containing the latest updates.
       run: |
         set -x
         
