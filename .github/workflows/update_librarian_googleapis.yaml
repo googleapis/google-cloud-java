@@ -56,7 +56,10 @@ jobs:
           echo "Checking if remote branch ${current_branch} exists..."
           if gh api "repos/${{ github.repository }}/git/refs/heads/${current_branch}" --silent 2>/dev/null; then
             echo "Deleting remote branch ${current_branch}..."
-            gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/${current_branch}" || true
+            gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/${current_branch}" || {
+              echo "Error: Failed to delete remote branch ${current_branch}."
+              exit 1
+            }
           fi
         fi
     - name: Set up Go
