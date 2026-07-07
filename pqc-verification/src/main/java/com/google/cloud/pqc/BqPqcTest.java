@@ -18,6 +18,7 @@ package com.google.cloud.pqc;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.util.SslUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -28,6 +29,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.security.Security;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
@@ -35,12 +37,16 @@ import org.conscrypt.Conscrypt;
 import org.conscrypt.OpenSSLSocketImpl;
 
 /**
- * A reproduction sample to trace TLS handshake details (protocol, cipher suite, and negotiated
- * curve) for Google Cloud BigQuery client calls, verifying that PQC (X25519MLKEM768) is negotiated.
- *
- * <p>This code requires Conscrypt on the classpath to enable and detect PQC algorithms.
+ * A verification sample to programmatically trace and assert TLS handshake details (protocol,
+ * cipher suite, and negotiated curve) for Google Cloud BigQuery client calls, verifying that PQC
+ * (X25519MLKEM768) is negotiated.
  */
 public class BqPqcTest {
+
+  private static final String EXPECTED_PQC_CURVE = "X25519MLKEM768";
+  private static final AtomicReference<String> negotiatedCurve = new AtomicReference<>();
+  private static final AtomicReference<String> negotiatedProtocol = new AtomicReference<>();
+  private static final AtomicReference<String> negotiatedCipherSuite = new AtomicReference<>();
 
   public static void main(String[] args) throws Exception {
     System.out.println("[DEBUG] Java Version: " + System.getProperty("java.version"));
@@ -51,24 +57,38 @@ public class BqPqcTest {
             + " ("
             + System.getProperty("java.vm.version")
             + ")");
-    try {
-      System.out.println("[DEBUG] Conscrypt Version: " + Conscrypt.version());
+
+    // Ensure Conscrypt is registered locally for our tracing context lookup
+    if (Security.getProvider("Conscrypt") == null) {
       Security.addProvider(Conscrypt.newProvider());
-      System.out.println("Registered Conscrypt provider.");
-    } catch (Throwable t) {
-      System.out.println("[DEBUG] Failed to register or get Conscrypt version: " + t.getMessage());
     }
 
-    // 1. Build custom HttpTransportFactory with Tracing SSLSocketFactory
-    HttpTransportFactory transportFactory = new TracingHttpTransportFactory();
+    String projectId = System.getProperty("project.id");
+    if (projectId == null || projectId.isEmpty()) {
+      projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
+    }
+    if (projectId == null || projectId.isEmpty()) {
+      try {
+        projectId = BigQueryOptions.getDefaultInstance().getProjectId();
+      } catch (Exception e) {
+        // Ignore if defaults are not configured
+      }
+    }
+    if (projectId == null || projectId.isEmpty()) {
+      System.err.println("Error: Google Cloud Project ID could not be resolved automatically.");
+      System.err.println(
+          "Please set the GOOGLE_CLOUD_PROJECT environment variable, or configure Application"
+              + " Default Credentials.");
+      System.exit(1);
+    }
 
+    // 1. Build custom HttpTransportFactory with Tracing SSLSocketFactory to capture the handshake
+    // curve
+    HttpTransportFactory transportFactory = new TracingHttpTransportFactory();
     HttpTransportOptions transportOptions =
         HttpTransportOptions.newBuilder().setHttpTransportFactory(transportFactory).build();
 
-    // 3. Initialize BigQuery client
-    String projectId = System.getProperty("project.id", "lawrence-test-project-2");
-    System.out.println("Initializing BigQuery client for project: " + projectId);
-
+    System.out.println("Initializing default BigQuery client for project: " + projectId);
     BigQuery bigquery =
         BigQueryOptions.newBuilder()
             .setProjectId(projectId)
@@ -76,39 +96,43 @@ public class BqPqcTest {
             .build()
             .getService();
 
-    // 4. Trigger a call to list datasets
-    System.out.println("Listing datasets using BigQuery Client with TLS tracing...");
+    System.out.println("Listing datasets using default BigQuery Client...");
     try {
       for (Dataset dataset : bigquery.listDatasets().iterateAll()) {
         System.out.println("- " + dataset.getDatasetId().getDataset());
       }
+      System.out.println("Success! BigQuery datasets retrieved successfully.");
     } catch (Exception e) {
       System.err.println("API call failed: " + e.getMessage());
       e.printStackTrace();
     }
-  }
 
-  private static void logHandshakeDetails(
-      String protocol,
-      String cipherSuite,
-      String curve,
-      String methodUsed,
-      String socketClassName) {
-    System.out.println("[TLS TRACE] Handshake Completed");
-    System.out.println("  Protocol   : " + protocol);
-    System.out.println("  CipherSuite: " + cipherSuite);
-    if (curve != null) {
-      System.out.println("  Curve Name : " + curve + " (via Conscrypt " + methodUsed + ")");
-      boolean isPqc =
-          curve.equalsIgnoreCase("X25519MLKEM768")
-              || curve.toLowerCase().contains("mlkem")
-              || curve.toLowerCase().contains("kyber");
-      System.out.println(
-          "  Is PQC?    : " + (isPqc ? "YES (Hybrid Post-Quantum)" : "NO (Classical)"));
+    // 2. Perform Programmatic Assertion on the Negotiated Curve
+    String curve = negotiatedCurve.get();
+    String protocol = negotiatedProtocol.get();
+    String cipherSuite = negotiatedCipherSuite.get();
+
+    System.out.println("\n==================================================");
+    System.out.println("TLS Handshake Verification Results:");
+    System.out.println("  Protocol      : " + protocol);
+    System.out.println("  Cipher Suite  : " + cipherSuite);
+    System.out.println("  Negotiated KEX: " + curve);
+    System.out.println("==================================================");
+
+    if (curve == null) {
+      System.err.println("ERROR: No TLS handshake was intercepted!");
+      System.exit(1);
+    }
+
+    if (EXPECTED_PQC_CURVE.equalsIgnoreCase(curve)) {
+      System.out.println("VERIFICATION SUCCESS: PQC Hybrid key exchange negotiated successfully!");
     } else {
-      System.out.println("  Curve Name : Unknown");
-      System.out.println("  Socket Class: " + socketClassName);
-      System.out.println("  Is PQC?    : UNKNOWN (Use Conscrypt to detect)");
+      System.err.println(
+          "VERIFICATION FAILED: Expected PQC Key Exchange "
+              + EXPECTED_PQC_CURVE
+              + " but negotiated: "
+              + curve);
+      System.exit(1);
     }
   }
 
@@ -116,12 +140,12 @@ public class BqPqcTest {
     @Override
     public HttpTransport create() {
       try {
-        // Build a standard Conscrypt-backed TLS context
-        SSLContext sslContext = SSLContext.getInstance("TLS", "Conscrypt");
-        sslContext.init(null, null, null);
+        // Obtain the default TLS SSLContext (which handles Conscrypt and TrustManager resolution by
+        // default)
+        SSLContext sslContext = SslUtils.getDefaultTlsSslContext();
         SSLSocketFactory conscryptFactory = sslContext.getSocketFactory();
 
-        // Wrap it in the tracing factory so we can log handshake outcomes
+        // Wrap the socket factory to intercept handshakes
         SSLSocketFactory tracingFactory = new TracingSSLSocketFactory(conscryptFactory);
 
         // NetHttpTransport automatically wraps our tracing factory to enforce PQC named groups
@@ -132,11 +156,6 @@ public class BqPqcTest {
     }
   }
 
-  /**
-   * A wrapper SSLSocketFactory that registers a handshake completion listener to intercept and
-   * print TLS metadata (protocol, cipher suite, and negotiated group/curve) for developer
-   * visibility and testing.
-   */
   private static class TracingSSLSocketFactory extends SSLSocketFactory {
     private final SSLSocketFactory delegate;
 
@@ -150,20 +169,13 @@ public class BqPqcTest {
         sslSocket.addHandshakeCompletedListener(
             event -> {
               try {
-                String cipherSuite = event.getCipherSuite();
-                String protocol = event.getSession().getProtocol();
+                negotiatedCipherSuite.set(event.getCipherSuite());
+                negotiatedProtocol.set(event.getSession().getProtocol());
                 Socket rawSocket = event.getSocket();
 
-                String curve = null;
-                String methodUsed = "";
-
                 if (rawSocket instanceof OpenSSLSocketImpl) {
-                  curve = ((OpenSSLSocketImpl) rawSocket).getCurveNameForTesting();
-                  methodUsed = "OpenSSLSocketImpl.getCurveNameForTesting";
+                  negotiatedCurve.set(((OpenSSLSocketImpl) rawSocket).getCurveNameForTesting());
                 }
-
-                logHandshakeDetails(
-                    protocol, cipherSuite, curve, methodUsed, rawSocket.getClass().getName());
               } catch (Exception e) {
                 System.err.println("Failed to log TLS handshake: " + e.getMessage());
               }

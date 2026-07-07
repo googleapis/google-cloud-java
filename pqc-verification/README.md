@@ -66,35 +66,38 @@ If successful, you will see `BUILD SUCCESS` and both `testGrpcPqc` and `testHttp
 
 ---
 
-## 4. Standalone BigQuery PQC Tracing Sample
+## 4. Standalone BigQuery PQC Verification Sample
 
-The class `BqPqcTest` runs a live connection to Google Cloud BigQuery, intercepts TLS sockets, and traces the negotiated curve/groups to verify `X25519MLKEM768` is used.
+The class `BqPqcTest` runs a live connection to Google Cloud BigQuery using the default client settings. Since the PQC changes are enabled by default in the underlying HTTP client transport, this sample does not require any custom PQC configurations.
 
-### Run with Maven
-To execute the BigQuery trace sample:
+### Run the Sample
+You can run the sample directly from your IDE, or via Maven. The project ID is resolved automatically via Application Default Credentials (ADC), and TLS/SSL handshake tracing is configured programmatically:
 
 ```shell
 cd pqc-verification
 
 # Run using exec-maven-plugin
-mvn clean compile exec:java -Dproject.id="your-gcp-project-id"
+mvn clean compile exec:java
 ```
 
 ### Expected Output
-If Conscrypt is configured correctly and your environment supports PQC, you will see output tracing the handshake:
+The program will automatically intercept the TLS handshake and assert on the negotiated curve. If successful, you will see a validation summary at the end of execution:
+
 ```
 [DEBUG] Java Version: 17.0.19
 [DEBUG] Java Runtime: 17.0.19+10
 [DEBUG] Java VM     : OpenJDK 64-Bit Server VM (17.0.19+10)
-[DEBUG] Conscrypt Version: 2.6.0
-Registered Conscrypt provider at position 1.
-Initializing BigQuery client for project: your-gcp-project-id
-Listing datasets using BigQuery Client with TLS tracing...
-[TLS TRACE] Handshake Completed
-  Protocol   : TLSv1.3
-  CipherSuite: TLS_AES_128_GCM_SHA256
-  Curve Name : X25519MLKEM768 (via Conscrypt OpenSSLSocketImpl.getCurveNameForTesting)
-  Is PQC?    : YES (Hybrid Post-Quantum)
+Initializing default BigQuery client for project: your-gcp-project-id
+Listing datasets using default BigQuery Client...
 - my_dataset1
 - my_dataset2
+Success! BigQuery datasets retrieved successfully.
+
+==================================================
+TLS Handshake Verification Results:
+  Protocol      : TLSv1.3
+  Cipher Suite  : TLS_AES_128_GCM_SHA256
+  Negotiated KEX: X25519MLKEM768
+==================================================
+VERIFICATION SUCCESS: PQC Hybrid key exchange negotiated successfully!
 ```
