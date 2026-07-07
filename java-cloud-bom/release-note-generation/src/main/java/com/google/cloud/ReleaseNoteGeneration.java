@@ -62,8 +62,7 @@ public class ReleaseNoteGeneration {
   private static final String RELEASE_NOTE_FILE_NAME = "release_note.md";
   private static final String GOOGLEAPIS_ORG = "googleapis";
 
-  private static final ImmutableSet<String> splitRepositoryLibraryNames =
-      ImmutableSet.of();
+  private static final ImmutableSet<String> splitRepositoryLibraryNames = ImmutableSet.of();
 
   private static boolean clientLibraryFilter(String coordinates) {
     if (coordinates.contains("google-cloud-core")) {
