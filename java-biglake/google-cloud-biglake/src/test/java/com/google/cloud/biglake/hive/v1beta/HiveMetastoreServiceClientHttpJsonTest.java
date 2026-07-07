@@ -90,6 +90,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -141,6 +143,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -192,6 +196,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -239,6 +245,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -386,6 +394,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -395,6 +405,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -430,6 +442,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setLocationUri("locationUri552310135")
               .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHiveCatalog(hiveCatalog, updateMask);
@@ -527,6 +541,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -578,6 +594,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -629,6 +647,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -676,6 +696,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -823,6 +845,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -832,6 +856,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -867,6 +893,8 @@ public class HiveMetastoreServiceClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setLocationUri("locationUri552310135")
               .putAllParameters(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHiveDatabase(hiveDatabase, updateMask);
@@ -966,7 +994,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1020,7 +1051,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1074,7 +1108,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1124,7 +1161,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1276,7 +1316,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1288,7 +1331,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1326,7 +1372,10 @@ public class HiveMetastoreServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .addAllPartitionKeys(new ArrayList<FieldSchema>())
               .putAllParameters(new HashMap<String, String>())
+              .setViewOriginalText("viewOriginalText1490924003")
+              .setViewExpandedText("viewExpandedText-1166335797")
               .setTableType("tableType-1988515800")
+              .setUpdateTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHiveTable(hiveTable, updateMask);

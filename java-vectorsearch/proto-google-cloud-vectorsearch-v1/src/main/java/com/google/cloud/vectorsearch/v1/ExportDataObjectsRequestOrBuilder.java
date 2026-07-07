@@ -105,5 +105,67 @@ public interface ExportDataObjectsRequestOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fieldFilter field is set.
+   */
+  boolean hasFieldFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fieldFilter.
+   */
+  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter getFieldFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder
+      getFieldFilterOrBuilder();
+
   com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.DestinationCase getDestinationCase();
 }

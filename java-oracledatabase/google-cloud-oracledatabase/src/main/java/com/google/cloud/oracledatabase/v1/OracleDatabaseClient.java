@@ -156,6 +156,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ConfigureExascaleCloudExadataInfrastructure</td>
+ *      <td><p> Configures Exascale for a single Exadata Infrastructure.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(ConfigureExascaleCloudExadataInfrastructureRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(CloudExadataInfrastructureName name, int totalStorageSizeGb)
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(String name, int totalStorageSizeGb)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureOperationCallable()
+ *           <li><p> configureExascaleCloudExadataInfrastructureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListCloudVmClusters</td>
  *      <td><p> Lists the VM Clusters in a given project and location.</td>
  *      <td>
@@ -2440,6 +2460,197 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<DeleteCloudExadataInfrastructureRequest, Operation>
       deleteCloudExadataInfrastructureCallable() {
     return stub.deleteCloudExadataInfrastructureCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudExadataInfrastructureName name =
+   *       CloudExadataInfrastructureName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+   *   int totalStorageSizeGb = 1493200154;
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud Exadata Infrastructure in the following format:
+   *     projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_infrastructure}.
+   * @param totalStorageSizeGb Required. The total storage to be allocated to Exascale in GBs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(
+          CloudExadataInfrastructureName name, int totalStorageSizeGb) {
+    ConfigureExascaleCloudExadataInfrastructureRequest request =
+        ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setTotalStorageSizeGb(totalStorageSizeGb)
+            .build();
+    return configureExascaleCloudExadataInfrastructureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       CloudExadataInfrastructureName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *           .toString();
+   *   int totalStorageSizeGb = 1493200154;
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud Exadata Infrastructure in the following format:
+   *     projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_infrastructure}.
+   * @param totalStorageSizeGb Required. The total storage to be allocated to Exascale in GBs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(String name, int totalStorageSizeGb) {
+    ConfigureExascaleCloudExadataInfrastructureRequest request =
+        ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+            .setName(name)
+            .setTotalStorageSizeGb(totalStorageSizeGb)
+            .build();
+    return configureExascaleCloudExadataInfrastructureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient.configureExascaleCloudExadataInfrastructureAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(
+          ConfigureExascaleCloudExadataInfrastructureRequest request) {
+    return configureExascaleCloudExadataInfrastructureOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CloudExadataInfrastructure, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CloudExadataInfrastructure response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    return stub.configureExascaleCloudExadataInfrastructureOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    return stub.configureExascaleCloudExadataInfrastructureCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
