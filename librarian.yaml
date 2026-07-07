@@ -1954,7 +1954,7 @@ libraries:
     java:
       released_version: 1.88.0
   - name: google-cloud-pom-parent
-    version: 1.88.0-SNAPSHOT
+    version: 1.88.0
     skip_generate: true
   - name: grafeas
     version: 2.95.0
