@@ -522,6 +522,7 @@ public class ITE2ETracingTest {
       logger.info("Checking if TraceContainer contains the callStack");
       String[] expectedCallList = new String[expectedCallStack.size()];
       if (!traceContainer.containsCallStack(expectedCallStack.toArray(expectedCallList))) {
+        logger.severe("CallStack not found in TraceContainer.");
         throw new RuntimeException(
             "Expected spans: "
                 + Arrays.toString(expectedCallList)
@@ -530,7 +531,6 @@ public class ITE2ETracingTest {
                     ? retrievedTrace.getSpansList().toString()
                     : "Trace NOT_FOUND"));
       }
-      logger.severe("CallStack not found in TraceContainer.");
     }
   }
 
