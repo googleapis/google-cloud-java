@@ -58,13 +58,13 @@ jobs:
       shell: bash
       run: |
         set -x
-        mvn -B -ntp compile -f java-cloud-bom/release-note-generation/pom.xml
+        mvn -B -ntp compile
 
         GOOGLE_CLOUD_JAVA_VERSION=$(grep -A1 'gapic-libraries-bom' \
             ../google-cloud-bom/pom.xml |perl -nle 'print $1 if m/<version>(.+)</')
 
         # This generates release_note.md file
-        mvn -B -ntp exec:java -f java-cloud-bom/release-note-generation/pom.xml \
+        mvn -B -ntp exec:java \
             -Dlibraries-bom.version="${LIBRARIES_BOM_VERSION}" \
             -Dgoogle-cloud-java.version="${GOOGLE_CLOUD_JAVA_VERSION}"
       working-directory: java-cloud-bom/release-note-generation
