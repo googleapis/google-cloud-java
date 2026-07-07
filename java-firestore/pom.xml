@@ -144,7 +144,9 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-firestore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-  </properties>
+  
+  <skipUnitTests>false</skipUnitTests>
+</properties>
 
   <dependencyManagement>
     <dependencies>

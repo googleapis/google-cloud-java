@@ -55,7 +55,9 @@
     <truth.version>1.4.5</truth.version>
     <mockito.version>4.11.0</mockito.version>
     <opencensus.version>0.31.1</opencensus.version>
-  </properties>
+  
+  <skipUnitTests>false</skipUnitTests>
+</properties>
 
   <dependencyManagement>
     <dependencies>

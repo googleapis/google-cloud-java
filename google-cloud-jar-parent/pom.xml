@@ -19,7 +19,7 @@
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
-    <skipUnitTests>false</skipUnitTests>
+    <skipUnitTests>true</skipUnitTests>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 

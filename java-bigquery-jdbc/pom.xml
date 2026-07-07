@@ -32,7 +32,9 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-jdbc</site.installationModule>
     <skipShade>false</skipShade>
-  </properties>
+  
+  <skipUnitTests>false</skipUnitTests>
+</properties>
 
   <build>
     <resources>

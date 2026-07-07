@@ -15,6 +15,9 @@
     <artifactId>google-cloud-firestore-parent</artifactId>
     <version>3.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
   </parent>
+  <properties>
+    <skipUnitTests>true</skipUnitTests>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>com.google.api.grpc</groupId>

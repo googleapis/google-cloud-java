@@ -56,7 +56,9 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-storage-parent</site.installationModule>
     <google.cloud.shared-dependencies.version>3.31.0</google.cloud.shared-dependencies.version>
-  </properties>
+  
+  <skipUnitTests>false</skipUnitTests>
+</properties>
 
   <dependencyManagement>
     <dependencies>
