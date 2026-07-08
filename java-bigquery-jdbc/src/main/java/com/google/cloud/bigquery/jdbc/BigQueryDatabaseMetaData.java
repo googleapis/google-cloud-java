@@ -45,7 +45,6 @@ import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
@@ -2530,7 +2529,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         || table == null
         || table.isEmpty()) {
       LOG.warning(
-          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
       return new BigQueryJsonResultSet();
     }
 
@@ -2600,7 +2599,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         || foreignTable == null
         || foreignTable.isEmpty()) {
       LOG.warning(
-          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
       return new BigQueryJsonResultSet();
     }
 
@@ -2622,8 +2621,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           if (constraints != null && constraints.getForeignKeys() != null) {
             for (ForeignKey fk : constraints.getForeignKeys()) {
               TableId pkTableId = fk.getReferencedTable();
-              if (matchesOrNullWildcard(parentCatalog, pkTableId.getProject())
-                  && matchesOrNullWildcard(parentSchema, pkTableId.getDataset())
+              if (equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
+                  && equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
                   && parentTable.equals(pkTableId.getTable())) {
                 processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
               }
@@ -5060,7 +5059,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return sortedCatalogs;
   }
 
-  private boolean matchesOrNullWildcard(String expected, String actual) {
+  private boolean equalsOrNullMatchesAll(String expected, String actual) {
     return expected == null || expected.equals(actual);
   }
 
@@ -5212,6 +5211,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       taskFutures.forEach(future -> future.cancel(true));
     }
   }
+
   private Schema defineForeignKeyResultSetSchema() {
     return Schema.of(
         Field.of("PKTABLE_CAT", StandardSQLTypeName.STRING),
@@ -5236,6 +5236,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       TableId fkTableId,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
+    if (pkTableId == null) {
+      LOG.warning(
+          String.format(
+              "Skipping foreign key '%s' on table '%s' because its referenced table ID is null.",
+              fk.getName() != null ? fk.getName() : "unnamed", fkTableId.getTable()));
+      return;
+    }
     List<ColumnReference> colRefs = fk.getColumnReferences();
     if (colRefs != null) {
       for (int i = 0; i < colRefs.size(); i++) {
