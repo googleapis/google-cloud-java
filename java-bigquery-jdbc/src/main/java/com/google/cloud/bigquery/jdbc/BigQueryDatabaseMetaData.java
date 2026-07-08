@@ -2548,11 +2548,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints != null && constraints.getForeignKeys() != null) {
-            for (ForeignKey fk : constraints.getForeignKeys()) {
-              TableId pkTableId = fk.getReferencedTable();
-              processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-            }
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
           }
         });
 
@@ -2618,15 +2619,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints != null && constraints.getForeignKeys() != null) {
-            for (ForeignKey fk : constraints.getForeignKeys()) {
-              TableId pkTableId = fk.getReferencedTable();
-              if (equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
-                  && equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
-                  && parentTable.equals(pkTableId.getTable())) {
-                processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-              }
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (!equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
+                || !parentTable.equals(pkTableId.getTable())) {
+              continue;
             }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
           }
         });
 
