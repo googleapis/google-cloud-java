@@ -45,7 +45,6 @@ import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
@@ -2448,10 +2447,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
-          TableConstraints constraints = null;
-          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
-            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
-          }
+          TableConstraints constraints = bqTable.getTableConstraints();
           processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
         });
 
@@ -2546,10 +2542,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
-          TableConstraints constraints = null;
-          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
-            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
-          }
+          TableConstraints constraints = bqTable.getTableConstraints();
           if (constraints != null && constraints.getForeignKeys() != null) {
             for (ForeignKey fk : constraints.getForeignKeys()) {
               TableId pkTableId = fk.getReferencedTable();
@@ -2617,10 +2610,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
-          TableConstraints constraints = null;
-          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
-            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
-          }
+          TableConstraints constraints = bqTable.getTableConstraints();
           if (constraints != null && constraints.getForeignKeys() != null) {
             for (ForeignKey fk : constraints.getForeignKeys()) {
               TableId pkTableId = fk.getReferencedTable();
