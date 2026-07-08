@@ -2443,11 +2443,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
 
+    boolean ignoreAccessErrors = (catalog == null);
     processTargetTablesConcurrently(
         targetDatasets,
         table,
         collectedResults,
         resultSchemaFields,
+        ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = null;
           if (bqTable.getDefinition() instanceof StandardTableDefinition) {
@@ -2500,19 +2502,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       TableId tableId,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
-    if (constraints != null && constraints.getPrimaryKey() != null) {
-      PrimaryKey pk = constraints.getPrimaryKey();
-      List<String> pkColumns = pk.getColumns();
-      for (int i = 0; i < pkColumns.size(); i++) {
-        List<FieldValue> row = new ArrayList<>(6);
-        row.add(createStringFieldValue(tableId.getProject())); // 1. TABLE_CAT
-        row.add(createStringFieldValue(tableId.getDataset())); // 2. TABLE_SCHEM
-        row.add(createStringFieldValue(tableId.getTable())); // 3. TABLE_NAME
-        row.add(createStringFieldValue(pkColumns.get(i))); // 4. COLUMN_NAME
-        row.add(createLongFieldValue((long) (i + 1))); // 5. KEY_SEQ
-        row.add(createNullFieldValue()); // 6. PK_NAME
-        collectedResults.add(FieldValueList.of(row, resultSchemaFields));
-      }
+    if (constraints == null || constraints.getPrimaryKey() == null) {
+      return;
+    }
+    PrimaryKey pk = constraints.getPrimaryKey();
+    List<String> pkColumns = pk.getColumns();
+    for (int i = 0; i < pkColumns.size(); i++) {
+      List<FieldValue> row = new ArrayList<>(6);
+      row.add(createStringFieldValue(tableId.getProject())); // 1. TABLE_CAT
+      row.add(createStringFieldValue(tableId.getDataset())); // 2. TABLE_SCHEM
+      row.add(createStringFieldValue(tableId.getTable())); // 3. TABLE_NAME
+      row.add(createStringFieldValue(pkColumns.get(i))); // 4. COLUMN_NAME
+      row.add(createLongFieldValue((long) (i + 1))); // 5. KEY_SEQ
+      row.add(createNullFieldValue()); // 6. PK_NAME
+      collectedResults.add(FieldValueList.of(row, resultSchemaFields));
     }
   }
 
@@ -5074,12 +5077,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String tableName,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
+      boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
     Table bqTable;
     try {
       bqTable =
           bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+    } catch (BigQueryException e) {
+      if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+        LOG.info(
+            "Table '%s' or dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+            tableName, datasetId.getDataset(), datasetId.getProject(), e.getCode());
+        bqTable = null;
+      } else {
+        throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
+      }
     } catch (Exception e) {
       throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
     }
@@ -5093,11 +5106,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String tableName,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
+      boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
     if (targetDatasets.size() == 1) {
       processSingleTable(
-          targetDatasets.get(0), tableName, collectedResults, resultSchemaFields, processor);
+          targetDatasets.get(0),
+          tableName,
+          collectedResults,
+          resultSchemaFields,
+          ignoreAccessErrors,
+          processor);
       return;
     }
 
@@ -5110,7 +5129,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             executor.submit(
                 () -> {
                   processSingleTable(
-                      datasetId, tableName, collectedResults, resultSchemaFields, processor);
+                      datasetId,
+                      tableName,
+                      collectedResults,
+                      resultSchemaFields,
+                      ignoreAccessErrors,
+                      processor);
                   return null;
                 }));
       }
