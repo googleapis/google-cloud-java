@@ -43,9 +43,7 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
-      EXTRA_PROFILE_OPTS=()
     else
-      EXTRA_PROFILE_OPTS=("-PbulkTests")
       # We do not need to install core modules or exclude them from the reactor.
       # Since we pass -Dmaven.test.skip=true, Maven skips test compilation globally,
       # which avoids any test-jar reactor resolution errors during compilation verification.
@@ -65,7 +63,7 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
+        ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -324,7 +322,6 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
-      EXTRA_PROFILE_OPTS=()
     else
       install_modules "sdk-platform-java"
     fi
