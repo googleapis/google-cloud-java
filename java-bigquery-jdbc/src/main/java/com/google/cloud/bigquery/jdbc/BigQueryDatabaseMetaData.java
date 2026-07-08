@@ -1812,8 +1812,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(catalogRows.isEmpty() ? 1 : catalogRows.size() + 1);
 
-    populateQueue(catalogRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    populateQueueAsync(catalogRows, queue, schemaFields);
 
     return BigQueryJsonResultSet.of(
         catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
@@ -1844,8 +1843,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(tableTypeRows.size() + 1);
 
-    populateQueue(tableTypeRows, queue, tableTypesSchema.getFields());
-    signalEndOfData(queue, tableTypesSchema.getFields());
+    populateQueueAsync(tableTypeRows, queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
         tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
@@ -2439,8 +2437,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
+    populateQueueAsync(collectedResults, queue, resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
@@ -2542,8 +2539,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
+    populateQueueAsync(collectedResults, queue, resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
@@ -2563,7 +2559,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final FieldList resultSchemaFields = resultSchema.getFields();
 
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
 
     boolean ignoreAccessErrors = (catalog == null);
     processTargetTablesConcurrently(
@@ -2592,8 +2588,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
+    populateQueueAsync(collectedResults, queue, resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
@@ -2651,8 +2646,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
+    populateQueueAsync(collectedResults, queue, resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
@@ -2669,8 +2663,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
-    populateQueue(typeInfoRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    populateQueueAsync(typeInfoRows, queue, schemaFields);
     return BigQueryJsonResultSet.of(
         typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
   }
@@ -3593,8 +3586,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
       Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
       sortResults(collectedResults, comparator, "getSchemas", LOG);
-      populateQueue(collectedResults, queue, resultSchemaFields);
-      signalEndOfData(queue, resultSchemaFields);
+      populateQueueAsync(collectedResults, queue, resultSchemaFields);
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
     }
 
@@ -4907,6 +4899,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info("Finished waiting for tasks.");
   }
 
+  private void populateQueueAsync(
+      List<FieldValueList> collectedResults,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue,
+      FieldList resultSchemaFields) {
+    connection
+        .getMetadataExecutor()
+        .submit(
+            () -> {
+              populateQueue(collectedResults, queue, resultSchemaFields);
+              signalEndOfData(queue, resultSchemaFields);
+            });
+  }
+
   private void populateQueue(
       List<FieldValueList> collectedResults,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
@@ -5196,35 +5201,36 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     return null;
                   }));
         } else {
-          Page<Table> tablesPage;
           try {
-            tablesPage =
+            Page<Table> tablesPage =
                 bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+            if (tablesPage != null) {
+              for (Table table : tablesPage.iterateAll()) {
+                if (table.getDefinition() != null
+                    && table.getDefinition().getType() == TableDefinition.Type.TABLE) {
+                  taskFutures.add(
+                      executor.submit(
+                          () -> {
+                            processSingleTable(
+                                datasetId,
+                                table.getTableId().getTable(),
+                                collectedResults,
+                                resultSchemaFields,
+                                ignoreAccessErrors,
+                                processor);
+                            return null;
+                          }));
+                }
+              }
+            }
           } catch (BigQueryException e) {
             if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
               LOG.info(
-                  String.format(
-                      "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
-                      datasetId.getDataset(), datasetId.getProject(), e.getCode()));
+                  "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+                  datasetId.getDataset(), datasetId.getProject(), e.getCode());
               continue;
             }
             throw new SQLException("Error while listing tables: " + e.getMessage(), e);
-          }
-          if (tablesPage != null) {
-            for (Table table : tablesPage.iterateAll()) {
-              taskFutures.add(
-                  executor.submit(
-                      () -> {
-                        processSingleTable(
-                            datasetId,
-                            table.getTableId().getTable(),
-                            collectedResults,
-                            resultSchemaFields,
-                            ignoreAccessErrors,
-                            processor);
-                        return null;
-                      }));
-            }
           }
         }
       }

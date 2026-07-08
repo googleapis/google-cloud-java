@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.cloud.ServiceOptions;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -47,7 +48,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
-  static final String PROJECT_ID = "bigquery-devtools-drivers";
+  static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -58,7 +59,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
-  private static final String DEFAULT_CATALOG = "bigquery-devtools-drivers";
+  private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static final String TABLE_NAME = "JDBC_DBMETADATA_TEST_TABLE" + randomNumber;
 
   @BeforeAll
