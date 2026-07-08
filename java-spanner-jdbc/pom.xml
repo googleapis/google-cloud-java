@@ -346,7 +346,7 @@
                 <argument>${project.basedir}/documentation/connection_properties.md</argument>
               </arguments>
               <classpathScope>test</classpathScope>
-              <skip>false</skip>
+              <skip>${maven.test.skip}</skip>
             </configuration>          </execution>
         </executions>
       </plugin>
