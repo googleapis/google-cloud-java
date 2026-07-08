@@ -47,6 +47,8 @@ tools:
     - name: synthtool
       version: ""
       local_path: sdk-platform-java/hermetic_build/library_generation
+  protoc:
+    version: "33.2"
 default:
   java:
     custom_group_ids:
@@ -2433,6 +2435,7 @@ libraries:
       api_description_override: The Address Validation API allows developers to verify the accuracy of addresses. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed address.
       api_shortname_override: maps-addressvalidation
       artifact_id: google-maps-addressvalidation
+      group_id: com.google.maps
       released_version: 0.88.0
       name_pretty_override: Address Validation API
       product_documentation_override: https://developers.google.com/maps/documentation/address-validation/
@@ -2446,6 +2449,7 @@ libraries:
       api_shortname_override: maps-area-insights
       artifact_id: google-maps-area-insights
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
+      group_id: com.google.maps
       released_version: 0.45.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Places Insights API
@@ -2460,6 +2464,7 @@ libraries:
       api_shortname_override: maps-fleetengine
       artifact_id: google-maps-fleetengine
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
+      group_id: com.google.maps
       released_version: 0.41.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Local Rides and Deliveries API
@@ -2474,6 +2479,7 @@ libraries:
       api_shortname_override: maps-fleetengine-delivery
       artifact_id: google-maps-fleetengine-delivery
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
+      group_id: com.google.maps
       released_version: 0.41.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Last Mile Fleet Solution Delivery API
@@ -2487,6 +2493,7 @@ libraries:
       api_description_override: The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID.
       artifact_id: google-maps-geocode
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-geocode/latest/overview
+      group_id: com.google.maps
       released_version: 0.6.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
@@ -2500,6 +2507,7 @@ libraries:
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
+      group_id: com.google.maps
       released_version: 0.3.0
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
