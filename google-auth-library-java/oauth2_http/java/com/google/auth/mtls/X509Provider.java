@@ -111,17 +111,22 @@ public class X509Provider implements MtlsProvider {
    */
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    // Attempt to load from resolved Config File
-    WorkloadCertificateConfiguration workloadCertConfig =
-        MtlsUtils.getWorkloadCertificateConfiguration(
-            envProvider, propProvider, certConfigPathOverride);
+    try {
+      // Attempt to load from resolved Config File
+      WorkloadCertificateConfiguration workloadCertConfig =
+          MtlsUtils.getWorkloadCertificateConfiguration(
+              envProvider, propProvider, certConfigPathOverride);
 
-    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
-        InputStream privateKeyStream =
-            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
-        SequenceInputStream certAndPrivateKeyStream =
-            new SequenceInputStream(certStream, privateKeyStream)) {
-      return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      try (InputStream certStream =
+              new FileInputStream(new File(workloadCertConfig.getCertPath()));
+          InputStream privateKeyStream =
+              new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+          SequenceInputStream certAndPrivateKeyStream =
+              new SequenceInputStream(certStream, privateKeyStream)) {
+        return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      }
+    } catch (CertificateSourceUnavailableException e) {
+      throw e;
     } catch (Exception e) {
       throw new IOException("X509Provider: Unexpected error loading from config file:", e);
     }

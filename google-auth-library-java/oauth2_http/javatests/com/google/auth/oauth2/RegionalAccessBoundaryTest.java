@@ -150,8 +150,7 @@ public class RegionalAccessBoundaryTest {
     HttpTransportFactory transportFactory = () -> transport;
 
     RegionalAccessBoundary rab =
-        RegionalAccessBoundary.refresh(
-            transportFactory, url, token, testClock, 1000, SystemEnvironmentProvider.getInstance());
+        RegionalAccessBoundary.refresh(transportFactory, url, token, testClock, 1000);
 
     assertEquals("encoded", rab.getEncodedLocations());
     assertTrue(mockResponse.isDisconnected(), "Response should have been disconnected");

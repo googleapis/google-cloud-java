@@ -50,8 +50,11 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 class X509ProviderTest {
+
+  @TempDir Path tempDir;
 
   private static final String TEST_CERT_PATH = "testresources/mtls/test_cert.pem";
   private static final String TEST_CONFIG_PATH = "testresources/mtls/certificate_config.json";
@@ -70,15 +73,16 @@ class X509ProviderTest {
 
   @Test
   void x509Provider_emptyFile_throws() throws IOException {
-    Path emptyConfig = Files.createTempFile("emptyConfig", ".txt");
-    emptyConfig.toFile().deleteOnExit();
+    Path emptyConfig = tempDir.resolve("emptyConfig.txt");
+    Files.createFile(emptyConfig);
 
     X509Provider testProvider = new X509Provider(emptyConfig.toString());
     String expectedErrorMessage = "no JSON input found";
 
-    IllegalArgumentException exception =
-        assertThrows(IllegalArgumentException.class, testProvider::getKeyStore);
-    assertTrue(exception.getMessage().contains(expectedErrorMessage));
+    IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+    assertNotNull(exception.getCause());
+    assertTrue(exception.getCause() instanceof IllegalArgumentException);
+    assertTrue(exception.getCause().getMessage().contains(expectedErrorMessage));
   }
 
   @Test
@@ -142,8 +146,8 @@ class X509ProviderTest {
   @Test
   void x509Provider_succeeds_withWindowsPath()
       throws IOException, KeyStoreException, CertificateException {
-    Path windowsTempDir = Files.createTempDirectory("windowsTempDir");
-    windowsTempDir.toFile().deleteOnExit();
+    Path windowsTempDir = tempDir.resolve("windowsTempDir");
+    Files.createDirectory(windowsTempDir);
     Path gcloudDir = windowsTempDir.resolve("gcloud");
     Files.createDirectory(gcloudDir);
     Path configPath = gcloudDir.resolve("certificate_config.json");
@@ -172,9 +176,8 @@ class X509ProviderTest {
 
   @Test
   void x509Provider_certFileDoesntExist_throws() throws IOException {
-    Path tempConfig = Files.createTempFile("config", ".json");
-    tempConfig.toFile().deleteOnExit();
-    Path nonExistentCert = tempConfig.getParent().resolve("non_existent_cert.pem");
+    Path tempConfig = tempDir.resolve("config_no_cert.json");
+    Path nonExistentCert = tempDir.resolve("non_existent_cert.pem");
 
     Files.write(
         tempConfig,
@@ -190,10 +193,8 @@ class X509ProviderTest {
 
   @Test
   void x509Provider_malformedCert_throws() throws IOException {
-    Path tempConfig = Files.createTempFile("config", ".json");
-    tempConfig.toFile().deleteOnExit();
-    Path malformedCert = Files.createTempFile("badcert", ".pem");
-    malformedCert.toFile().deleteOnExit();
+    Path tempConfig = tempDir.resolve("config_malformed_cert.json");
+    Path malformedCert = tempDir.resolve("badcert.pem");
 
     Files.write(malformedCert, "This is not a valid certificate".getBytes());
 
@@ -207,6 +208,36 @@ class X509ProviderTest {
     X509Provider testProvider = new X509Provider(tempConfig.toString());
 
     assertThrows(Exception.class, testProvider::getKeyStore);
+  }
+
+  @Test
+  void x509Provider_missingCertConfigs_throws() throws IOException {
+    Path tempConfig = tempDir.resolve("config_missing_configs.json");
+
+    Files.write(tempConfig, "{}".getBytes());
+
+    X509Provider testProvider = new X509Provider(tempConfig.toString());
+
+    IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+    assertNotNull(exception.getCause());
+    assertTrue(exception.getCause() instanceof IllegalArgumentException);
+    assertTrue(
+        exception.getCause().getMessage().contains("The cert_configs object must be provided"));
+  }
+
+  @Test
+  void x509Provider_missingCertPath_throws() throws IOException {
+    Path tempConfig = tempDir.resolve("config_missing_path.json");
+
+    Files.write(
+        tempConfig, "{\"cert_configs\":{\"workload\":{\"key_path\":\"key.pem\"}}}".getBytes());
+
+    X509Provider testProvider = new X509Provider(tempConfig.toString());
+
+    IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+    assertNotNull(exception.getCause());
+    assertTrue(exception.getCause() instanceof IllegalArgumentException);
+    assertTrue(exception.getCause().getMessage().contains("The cert_path field must be provided"));
   }
 
   // Failure Path: mTLS disabled (allowance = false) throws CertificateSourceUnavailableException

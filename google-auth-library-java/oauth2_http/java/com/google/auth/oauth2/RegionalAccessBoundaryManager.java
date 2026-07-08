@@ -201,17 +201,17 @@ final class RegionalAccessBoundaryManager {
                 skipRAB.set(true);
                 return;
               }
+              if (com.google.auth.mtls.MtlsUtils.canBeEnabled(envProvider, propProvider, null)) {
+                url =
+                    url.replace(
+                        "iamcredentials.googleapis.com", "iamcredentials.mtls.googleapis.com");
+              }
               HttpTransportFactory upgradedTransportFactory =
                   com.google.auth.mtls.MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
                       transportFactory, envProvider, propProvider, null);
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
-                      upgradedTransportFactory,
-                      url,
-                      accessToken,
-                      clock,
-                      maxRetryElapsedTimeMillis,
-                      envProvider);
+                      upgradedTransportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
               cachedRAB.set(newRAB);
               resetCooldown();
             } catch (Throwable e) {

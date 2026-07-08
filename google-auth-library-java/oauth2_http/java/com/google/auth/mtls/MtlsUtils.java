@@ -308,11 +308,9 @@ public class MtlsUtils {
     }
 
     if (baseTransportFactory != OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
-      // A user configured non-mTLS HttpTransportFactory was explicitly injected.
-      // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
-      throw new IOException(
-          "mTLS is enabled on the system, but a user configured non-mTLS HttpTransportFactory was provided: "
-              + baseTransportFactory.getClass().getName());
+      // A user configured HttpTransportFactory was explicitly injected.
+      // Trust the developer's custom factory and return it as-is.
+      return baseTransportFactory;
     }
 
     MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);

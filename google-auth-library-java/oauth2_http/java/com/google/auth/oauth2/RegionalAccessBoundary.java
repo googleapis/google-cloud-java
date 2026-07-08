@@ -45,7 +45,6 @@ import com.google.api.client.util.Clock;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.Key;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.auth.mtls.MtlsUtils;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
@@ -182,19 +181,12 @@ final class RegionalAccessBoundary implements Serializable {
       String url,
       AccessToken accessToken,
       Clock clock,
-      int maxRetryElapsedTimeMillis,
-      EnvironmentProvider envProvider)
+      int maxRetryElapsedTimeMillis)
       throws IOException {
     Preconditions.checkNotNull(accessToken, "The provided access token is null.");
     if (accessToken.getExpirationTimeMillis() != null
         && accessToken.getExpirationTimeMillis() < clock.currentTimeMillis()) {
       throw new IllegalArgumentException("The provided access token is expired.");
-    }
-
-    MtlsUtils.MtlsEndpointUsagePolicy policy = MtlsUtils.getMtlsEndpointUsagePolicy(envProvider);
-    if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory
-        || policy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
-      url = url.replace("iamcredentials.googleapis.com", "iamcredentials.mtls.googleapis.com");
     }
 
     HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
