@@ -31,6 +31,7 @@ import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTI
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTION_RUN_QUERY;
 import static com.google.common.truth.Truth.assertThat;
 import static io.opentelemetry.semconv.resource.attributes.ResourceAttributes.SERVICE_NAME;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -38,8 +39,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.rpc.DeadlineExceededException;
-import com.google.api.gax.rpc.NotFoundException;
 import com.google.auth.Credentials;
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResult;
@@ -81,6 +80,7 @@ import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -89,8 +89,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.awaitility.core.ConditionTimeoutException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -227,13 +229,11 @@ public class ITE2ETracingTest {
 
   private static final int NUM_SPAN_ID_BYTES = 16;
 
-  private static final int GET_TRACE_RETRY_COUNT = 60;
+  private static final int GET_TRACE_RETRY_COUNT = 120;
 
   private static final int GET_TRACE_RETRY_BACKOFF_MILLIS = 1000;
 
   private static final int TRACE_FORCE_FLUSH_MILLIS = 5000;
-
-  private static final int TRACE_PROVIDER_SHUTDOWN_MILLIS = 1000;
 
   private static Key KEY1;
 
@@ -246,22 +246,24 @@ public class ITE2ETracingTest {
   // Random int generator for trace ID and span ID
   private static Random random;
 
-  private static TraceExporter traceExporter;
+  private static Credentials credentials;
+
+  private TraceExporter traceExporter;
 
   // Required for reading back traces from Cloud Trace for validation
   private static TraceServiceClient traceClient;
 
   // Custom SpanContext for each test, required for TraceID injection
-  private static SpanContext customSpanContext;
+  private SpanContext customSpanContext;
 
   // Trace read back from Cloud Trace using traceClient for verification
-  private static Trace retrievedTrace;
+  private Trace retrievedTrace;
 
-  private static String rootSpanName;
-  private static Tracer tracer;
+  private String rootSpanName;
+  private Tracer tracer;
 
   // Required to set custom-root span
-  private static OpenTelemetrySdk openTelemetrySdk;
+  private OpenTelemetrySdk openTelemetrySdk;
 
   private static String projectId;
 
@@ -287,14 +289,7 @@ public class ITE2ETracingTest {
     // Share the same credentials used by Datastore client with the TraceExporter and
     // TraceServiceClient to ensure consistency and avoid auth issues in environments
     // where default ADC resolution might fail for the exporter.
-    Credentials credentials = DatastoreOptions.getDefaultInstance().getCredentials();
-
-    TraceConfiguration.Builder traceConfigurationBuilder =
-        TraceConfiguration.builder().setProjectId(projectId);
-    if (credentials != null) {
-      traceConfigurationBuilder.setCredentials(credentials);
-    }
-    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
+    credentials = DatastoreOptions.getDefaultInstance().getCredentials();
 
     TraceServiceSettings.Builder clientBuilder = TraceServiceSettings.newBuilder();
     if (credentials != null) {
@@ -309,6 +304,13 @@ public class ITE2ETracingTest {
     // Set up OTel SDK
     Resource resource =
         Resource.getDefault().merge(Resource.builder().put(SERVICE_NAME, "Sparky").build());
+
+    TraceConfiguration.Builder traceConfigurationBuilder =
+        TraceConfiguration.builder().setProjectId(projectId);
+    if (credentials != null) {
+      traceConfigurationBuilder.setCredentials(credentials);
+    }
+    traceExporter = TraceExporter.createWithConfiguration(traceConfigurationBuilder.build());
 
     if (isUsingGlobalOpenTelemetrySDK()) {
       openTelemetrySdk =
@@ -393,7 +395,22 @@ public class ITE2ETracingTest {
     tracer = null;
     retrievedTrace = null;
     customSpanContext = null;
+    try {
+      if (openTelemetrySdk != null) {
+        openTelemetrySdk.close();
+      }
+    } finally {
+      if (traceExporter != null) {
+        try {
+          // Attempt to shut down traceExporter.
+          traceExporter.shutdown();
+        } catch (Exception e) {
+          logger.log(Level.WARNING, "Failed to shut down traceExporter", e);
+        }
+      }
+    }
     openTelemetrySdk = null;
+    traceExporter = null;
   }
 
   @AfterClass
@@ -437,10 +454,17 @@ public class ITE2ETracingTest {
   }
 
   protected void waitForTracesToComplete() throws Exception {
+    if (openTelemetrySdk == null) {
+      logger.warning("OpenTelemetrySdk is null, cannot flush traces");
+      return;
+    }
     logger.info("Flushing traces...");
     CompletableResultCode completableResultCode =
         openTelemetrySdk.getSdkTracerProvider().forceFlush();
     completableResultCode.join(TRACE_FORCE_FLUSH_MILLIS, TimeUnit.MILLISECONDS);
+    if (!completableResultCode.isSuccess()) {
+      logger.warning("Force flush did not complete successfully");
+    }
   }
 
   // Validates `retrievedTrace`. Cloud Trace indexes traces w/ eventual consistency, even when
@@ -452,44 +476,35 @@ public class ITE2ETracingTest {
   protected void fetchAndValidateTrace(
       String traceId, int numExpectedSpans, List<List<String>> callStackList)
       throws InterruptedException {
-    // Large enough count to accommodate eventually consistent Cloud Trace backend
-    int numRetries = GET_TRACE_RETRY_COUNT;
     // Account for rootSpanName
-    numExpectedSpans++;
+    final int expectedSpanCount = numExpectedSpans + 1;
 
-    // Fetch traces
-    do {
-      try {
-        retrievedTrace = traceClient.getTrace(projectId, traceId);
-        assertEquals(traceId, retrievedTrace.getTraceId());
-
-        logger.info(
-            "expectedSpanCount="
-                + numExpectedSpans
-                + ", retrievedSpanCount="
-                + retrievedTrace.getSpansCount());
-      } catch (NotFoundException | DeadlineExceededException e) {
-        logger.info(
-            "Trace not found or deadline exceeded, retrying in "
-                + GET_TRACE_RETRY_BACKOFF_MILLIS
-                + " ms");
-      } catch (IndexOutOfBoundsException outOfBoundsException) {
-        logger.info("Call stack not found in trace. Retrying.");
-      }
-      if (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()) {
-        Thread.sleep(GET_TRACE_RETRY_BACKOFF_MILLIS);
-      }
-    } while (numRetries-- > 0
-        && (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()));
-
-    if (retrievedTrace == null || numExpectedSpans != retrievedTrace.getSpansCount()) {
+    try {
+      await()
+          .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .ignoreExceptionsInstanceOf(Throwable.class)
+          .until(
+              () -> {
+                retrievedTrace = traceClient.getTrace(projectId, traceId);
+                assertEquals(traceId, retrievedTrace.getTraceId());
+                logger.info(
+                    "expectedSpanCount="
+                        + expectedSpanCount
+                        + ", retrievedSpanCount="
+                        + retrievedTrace.getSpansCount());
+                return retrievedTrace != null
+                    && expectedSpanCount == retrievedTrace.getSpansCount();
+              });
+    } catch (ConditionTimeoutException e) {
       throw new RuntimeException(
           "Expected number of spans: "
-              + numExpectedSpans
+              + expectedSpanCount
               + ", Actual number of spans: "
               + (retrievedTrace != null
                   ? retrievedTrace.getSpansList().toString()
-                  : "Trace NOT_FOUND"));
+                  : "Trace NOT_FOUND"),
+          e);
     }
 
     TraceContainer traceContainer = new TraceContainer(rootSpanName, retrievedTrace);
@@ -505,6 +520,7 @@ public class ITE2ETracingTest {
       logger.info("Checking if TraceContainer contains the callStack");
       String[] expectedCallList = new String[expectedCallStack.size()];
       if (!traceContainer.containsCallStack(expectedCallStack.toArray(expectedCallList))) {
+        logger.severe("CallStack not found in TraceContainer.");
         throw new RuntimeException(
             "Expected spans: "
                 + Arrays.toString(expectedCallList)
@@ -513,7 +529,6 @@ public class ITE2ETracingTest {
                     ? retrievedTrace.getSpansList().toString()
                     : "Trace NOT_FOUND"));
       }
-      logger.severe("CallStack not found in TraceContainer.");
     }
   }
 
@@ -541,27 +556,32 @@ public class ITE2ETracingTest {
     }
     waitForTracesToComplete();
 
-    Trace traceResp = null;
+    AtomicReference<Trace> traceRespHolder = new AtomicReference<>();
     int expectedSpanCount = 2;
 
-    int numRetries = GET_TRACE_RETRY_COUNT;
-    do {
-      try {
-        traceResp = traceClient.getTrace(projectId, customSpanContext.getTraceId());
-        if (traceResp.getSpansCount() == expectedSpanCount) {
-          logger.info("Success: Got " + expectedSpanCount + " spans.");
-          break;
-        }
-      } catch (NotFoundException notFoundException) {
-        Thread.sleep(GET_TRACE_RETRY_BACKOFF_MILLIS);
-        logger.info("Trace not found, retrying in " + GET_TRACE_RETRY_BACKOFF_MILLIS + " ms");
-      }
-      logger.info(
-          "Trace Found. The trace did not contain "
-              + expectedSpanCount
-              + " spans. Going to retry.");
-      numRetries--;
-    } while (numRetries > 0);
+    try {
+      await()
+          .atMost(Duration.ofMillis((long) GET_TRACE_RETRY_COUNT * GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .pollInterval(Duration.ofMillis(GET_TRACE_RETRY_BACKOFF_MILLIS))
+          .ignoreExceptionsInstanceOf(Throwable.class)
+          .until(
+              () -> {
+                Trace trace = traceClient.getTrace(projectId, customSpanContext.getTraceId());
+                traceRespHolder.set(trace);
+                if (trace.getSpansCount() == expectedSpanCount) {
+                  logger.info("Success: Got " + expectedSpanCount + " spans.");
+                  return true;
+                }
+                logger.info(
+                    "Trace Found. The trace did not contain "
+                        + expectedSpanCount
+                        + " spans. Going to retry.");
+                return false;
+              });
+    } catch (ConditionTimeoutException ignored) {
+      // Ignore to let assertions below run and fail with descriptive messages
+    }
+    Trace traceResp = traceRespHolder.get();
 
     // Make sure we got as many spans as we expected.
     assertNotNull(traceResp);
