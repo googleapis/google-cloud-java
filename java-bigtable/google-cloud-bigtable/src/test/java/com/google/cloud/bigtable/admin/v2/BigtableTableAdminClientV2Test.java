@@ -35,7 +35,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -48,11 +47,10 @@ public class BigtableTableAdminClientV2Test {
   private static final String TABLE_NAME =
       "projects/my-project/instances/my-instance/tables/my-table";
 
-  @Mock private GrpcBigtableTableAdminStub mockStub;
+  private GrpcBigtableTableAdminStub mockStub;
 
-  @Mock private AwaitConsistencyCallableV2 mockAwaitConsistencyCallable;
+  private AwaitConsistencyCallableV2 mockAwaitConsistencyCallable;
 
-  @Mock
   private OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       mockOptimizeRestoredTableCallable;
 
@@ -60,6 +58,12 @@ public class BigtableTableAdminClientV2Test {
 
   @Before
   public void setUp() {
+    mockStub =
+        Mockito.mock(GrpcBigtableTableAdminStub.class, Mockito.withSettings().withoutAnnotations());
+    mockAwaitConsistencyCallable =
+        Mockito.mock(AwaitConsistencyCallableV2.class, Mockito.withSettings().withoutAnnotations());
+    mockOptimizeRestoredTableCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
     client =
         new BigtableTableAdminClientV2(
             mockStub, null, false, mockAwaitConsistencyCallable, mockOptimizeRestoredTableCallable);
