@@ -31,18 +31,14 @@ import com.google.protobuf.Empty;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class BigtableTableAdminClientV2Test {
-  @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
   private static final String TABLE_NAME =
       "projects/my-project/instances/my-instance/tables/my-table";

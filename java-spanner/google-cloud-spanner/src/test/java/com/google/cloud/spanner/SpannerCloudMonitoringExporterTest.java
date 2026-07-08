@@ -72,12 +72,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
 public class SpannerCloudMonitoringExporterTest {
 
@@ -90,7 +87,6 @@ public class SpannerCloudMonitoringExporterTest {
   private static final String clientHash = "spanner-test";
   private static final String instanceConfigId = "fake-instance-config-id";
 
-  @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
   private MetricServiceStub mockMetricServiceStub;
   private MetricServiceClient fakeMetricServiceClient;
