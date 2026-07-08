@@ -20,7 +20,14 @@
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
+    <!-- skipUnitTests controls unit test execution (surefire) -->
     <skipUnitTests>true</skipUnitTests>
+    <!--
+      We map maven.test.skip to skipUnitTests by default to skip both compilation
+      and execution of tests for libraries that skip unit tests (like GAPICs).
+      For integration test jobs that need compilation but skip unit tests,
+      pass -Dmaven.test.skip=false -DskipUnitTests=true.
+    -->
     <maven.test.skip>${skipUnitTests}</maven.test.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
