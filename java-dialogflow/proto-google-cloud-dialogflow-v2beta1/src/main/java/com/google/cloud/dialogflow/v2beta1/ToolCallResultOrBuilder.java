@@ -260,10 +260,12 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the error field is set.
    */
@@ -273,10 +275,12 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The error.
    */
@@ -286,10 +290,12 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.ToolCallResult.ErrorOrBuilder getErrorOrBuilder();
 
@@ -297,11 +303,11 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * Only populated if the response content is not utf-8 encoded.
+   * Optional. Only populated if the response content is not utf-8 encoded.
    * (by definition byte fields are base64 encoded).
    * </pre>
    *
-   * <code>bytes raw_content = 5;</code>
+   * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the rawContent field is set.
    */
@@ -311,11 +317,11 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * Only populated if the response content is not utf-8 encoded.
+   * Optional. Only populated if the response content is not utf-8 encoded.
    * (by definition byte fields are base64 encoded).
    * </pre>
    *
-   * <code>bytes raw_content = 5;</code>
+   * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rawContent.
    */
@@ -325,10 +331,10 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -338,10 +344,10 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -351,10 +357,10 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */

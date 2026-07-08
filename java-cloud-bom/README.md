@@ -17,7 +17,7 @@ To use it in Maven, add the following to your POM:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.84.0</version>
+      <version>26.85.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,7 +42,7 @@ The content of the Libraries BOM consists of 2 categories:
 This is the table of modules included in the latest libraries-bom release:
 
 <!--- {x-version-update-start:libraries-bom:released} -->
-### libraries-bom: v<version>26.84.0</version>
+### libraries-bom: v<version>26.85.0</version>
 <!--- {x-version-update-end} -->
 
 <!-- TABLE_START -->

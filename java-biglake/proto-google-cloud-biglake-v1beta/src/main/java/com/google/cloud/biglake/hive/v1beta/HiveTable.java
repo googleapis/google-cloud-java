@@ -57,6 +57,8 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     partitionKeys_ = java.util.Collections.emptyList();
+    viewOriginalText_ = "";
+    viewExpandedText_ = "";
     tableType_ = "";
   }
 
@@ -97,13 +99,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name.
+   * Identifier. The resource name.
    * Format:
    * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -125,13 +127,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name.
+   * Identifier. The resource name.
    * Format:
    * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -516,6 +518,116 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int VIEW_ORIGINAL_TEXT_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object viewOriginalText_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The original view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The viewOriginalText.
+   */
+  @java.lang.Override
+  public java.lang.String getViewOriginalText() {
+    java.lang.Object ref = viewOriginalText_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      viewOriginalText_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The original view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for viewOriginalText.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getViewOriginalTextBytes() {
+    java.lang.Object ref = viewOriginalText_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      viewOriginalText_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VIEW_EXPANDED_TEXT_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object viewExpandedText_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expanded view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The viewExpandedText.
+   */
+  @java.lang.Override
+  public java.lang.String getViewExpandedText() {
+    java.lang.Object ref = viewExpandedText_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      viewExpandedText_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expanded view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for viewExpandedText.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getViewExpandedTextBytes() {
+    java.lang.Object ref = viewExpandedText_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      viewExpandedText_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TABLE_TYPE_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -571,6 +683,58 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -602,8 +766,17 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 8);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(viewOriginalText_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, viewOriginalText_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(viewExpandedText_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, viewExpandedText_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tableType_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, tableType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(12, getUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -639,8 +812,17 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, parameters__);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(viewOriginalText_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, viewOriginalText_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(viewExpandedText_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, viewExpandedText_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tableType_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, tableType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -670,7 +852,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
     }
     if (!getPartitionKeysList().equals(other.getPartitionKeysList())) return false;
     if (!internalGetParameters().equals(other.internalGetParameters())) return false;
+    if (!getViewOriginalText().equals(other.getViewOriginalText())) return false;
+    if (!getViewExpandedText().equals(other.getViewExpandedText())) return false;
     if (!getTableType().equals(other.getTableType())) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -702,8 +890,16 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetParameters().hashCode();
     }
+    hash = (37 * hash) + VIEW_ORIGINAL_TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getViewOriginalText().hashCode();
+    hash = (37 * hash) + VIEW_EXPANDED_TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getViewExpandedText().hashCode();
     hash = (37 * hash) + TABLE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getTableType().hashCode();
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -872,6 +1068,7 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
         internalGetStorageDescriptorFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetPartitionKeysFieldBuilder();
+        internalGetUpdateTimeFieldBuilder();
       }
     }
 
@@ -899,7 +1096,14 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableParameters().clear();
+      viewOriginalText_ = "";
+      viewExpandedText_ = "";
       tableType_ = "";
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -972,7 +1176,17 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
         result.parameters_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.viewOriginalText_ = viewOriginalText_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.viewExpandedText_ = viewExpandedText_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.tableType_ = tableType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1034,10 +1248,23 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableParameters().mergeFrom(other.internalGetParameters());
       bitField0_ |= 0x00000020;
-      if (!other.getTableType().isEmpty()) {
-        tableType_ = other.tableType_;
+      if (!other.getViewOriginalText().isEmpty()) {
+        viewOriginalText_ = other.viewOriginalText_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (!other.getViewExpandedText().isEmpty()) {
+        viewExpandedText_ = other.viewExpandedText_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getTableType().isEmpty()) {
+        tableType_ = other.tableType_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1117,12 +1344,31 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                viewOriginalText_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
+            case 82:
+              {
+                viewExpandedText_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             case 90:
               {
                 tableType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1148,13 +1394,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name.
+     * Identifier. The resource name.
      * Format:
      * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The name.
@@ -1175,13 +1421,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name.
+     * Identifier. The resource name.
      * Format:
      * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for name.
@@ -1202,13 +1448,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name.
+     * Identifier. The resource name.
      * Format:
      * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The name to set.
@@ -1228,13 +1474,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name.
+     * Identifier. The resource name.
      * Format:
      * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -1250,13 +1496,13 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name.
+     * Identifier. The resource name.
      * Format:
      * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for name to set.
@@ -2416,6 +2662,238 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object viewOriginalText_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The original view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The viewOriginalText.
+     */
+    public java.lang.String getViewOriginalText() {
+      java.lang.Object ref = viewOriginalText_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        viewOriginalText_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The original view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for viewOriginalText.
+     */
+    public com.google.protobuf.ByteString getViewOriginalTextBytes() {
+      java.lang.Object ref = viewOriginalText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        viewOriginalText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The original view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The viewOriginalText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewOriginalText(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      viewOriginalText_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The original view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearViewOriginalText() {
+      viewOriginalText_ = getDefaultInstance().getViewOriginalText();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The original view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for viewOriginalText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewOriginalTextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      viewOriginalText_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object viewExpandedText_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expanded view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The viewExpandedText.
+     */
+    public java.lang.String getViewExpandedText() {
+      java.lang.Object ref = viewExpandedText_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        viewExpandedText_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expanded view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for viewExpandedText.
+     */
+    public com.google.protobuf.ByteString getViewExpandedTextBytes() {
+      java.lang.Object ref = viewExpandedText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        viewExpandedText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expanded view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The viewExpandedText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewExpandedText(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      viewExpandedText_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expanded view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearViewExpandedText() {
+      viewExpandedText_ = getDefaultInstance().getViewExpandedText();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expanded view text. Empty for non-view. The maximum size is
+     * 16MiB.
+     * </pre>
+     *
+     * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for viewExpandedText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewExpandedTextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      viewExpandedText_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object tableType_ = "";
 
     /**
@@ -2484,7 +2962,7 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       tableType_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2503,7 +2981,7 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTableType() {
       tableType_ = getDefaultInstance().getTableType();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2527,9 +3005,221 @@ public final class HiveTable extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       tableType_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The update time of the table.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.biglake.hive.v1beta.HiveTable)

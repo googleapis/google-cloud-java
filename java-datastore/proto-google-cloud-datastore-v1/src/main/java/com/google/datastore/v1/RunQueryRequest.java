@@ -584,6 +584,65 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
         : explainOptions_;
   }
 
+  public static final int REQUEST_OPTIONS_FIELD_NUMBER = 13;
+  private com.google.datastore.v1.RequestOptions requestOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestOptions() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.RequestOptions getRequestOptions() {
+    return requestOptions_ == null
+        ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+    return requestOptions_ == null
+        ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -622,6 +681,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(12, getExplainOptions());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(13, getRequestOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -659,6 +721,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getExplainOptions());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRequestOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -691,6 +756,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
     if (hasExplainOptions() != other.hasExplainOptions()) return false;
     if (hasExplainOptions()) {
       if (!getExplainOptions().equals(other.getExplainOptions())) return false;
+    }
+    if (hasRequestOptions() != other.hasRequestOptions()) return false;
+    if (hasRequestOptions()) {
+      if (!getRequestOptions().equals(other.getRequestOptions())) return false;
     }
     if (!getQueryTypeCase().equals(other.getQueryTypeCase())) return false;
     switch (queryTypeCase_) {
@@ -733,6 +802,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
     if (hasExplainOptions()) {
       hash = (37 * hash) + EXPLAIN_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExplainOptions().hashCode();
+    }
+    if (hasRequestOptions()) {
+      hash = (37 * hash) + REQUEST_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOptions().hashCode();
     }
     switch (queryTypeCase_) {
       case 3:
@@ -891,6 +964,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
         internalGetReadOptionsFieldBuilder();
         internalGetPropertyMaskFieldBuilder();
         internalGetExplainOptionsFieldBuilder();
+        internalGetRequestOptionsFieldBuilder();
       }
     }
 
@@ -925,6 +999,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
       if (explainOptionsBuilder_ != null) {
         explainOptionsBuilder_.dispose();
         explainOptionsBuilder_ = null;
+      }
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
       }
       queryTypeCase_ = 0;
       queryType_ = null;
@@ -992,6 +1071,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
             explainOptionsBuilder_ == null ? explainOptions_ : explainOptionsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.requestOptions_ =
+            requestOptionsBuilder_ == null ? requestOptions_ : requestOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1039,6 +1123,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasExplainOptions()) {
         mergeExplainOptions(other.getExplainOptions());
+      }
+      if (other.hasRequestOptions()) {
+        mergeRequestOptions(other.getRequestOptions());
       }
       switch (other.getQueryTypeCase()) {
         case QUERY:
@@ -1135,6 +1222,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    internalGetRequestOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2699,6 +2793,219 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessage
         explainOptions_ = null;
       }
       return explainOptionsBuilder_;
+    }
+
+    private com.google.datastore.v1.RequestOptions requestOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.datastore.v1.RequestOptions,
+            com.google.datastore.v1.RequestOptions.Builder,
+            com.google.datastore.v1.RequestOptionsOrBuilder>
+        requestOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestOptions field is set.
+     */
+    public boolean hasRequestOptions() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestOptions.
+     */
+    public com.google.datastore.v1.RequestOptions getRequestOptions() {
+      if (requestOptionsBuilder_ == null) {
+        return requestOptions_ == null
+            ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      } else {
+        return requestOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(com.google.datastore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestOptions_ = value;
+      } else {
+        requestOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(
+        com.google.datastore.v1.RequestOptions.Builder builderForValue) {
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = builderForValue.build();
+      } else {
+        requestOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRequestOptions(com.google.datastore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && requestOptions_ != null
+            && requestOptions_ != com.google.datastore.v1.RequestOptions.getDefaultInstance()) {
+          getRequestOptionsBuilder().mergeFrom(value);
+        } else {
+          requestOptions_ = value;
+        }
+      } else {
+        requestOptionsBuilder_.mergeFrom(value);
+      }
+      if (requestOptions_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRequestOptions() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.RequestOptions.Builder getRequestOptionsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetRequestOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+      if (requestOptionsBuilder_ != null) {
+        return requestOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestOptions_ == null
+            ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.datastore.v1.RequestOptions,
+            com.google.datastore.v1.RequestOptions.Builder,
+            com.google.datastore.v1.RequestOptionsOrBuilder>
+        internalGetRequestOptionsFieldBuilder() {
+      if (requestOptionsBuilder_ == null) {
+        requestOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.datastore.v1.RequestOptions,
+                com.google.datastore.v1.RequestOptions.Builder,
+                com.google.datastore.v1.RequestOptionsOrBuilder>(
+                getRequestOptions(), getParentForChildren(), isClean());
+        requestOptions_ = null;
+      }
+      return requestOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunQueryRequest)

@@ -42,6 +42,8 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_GR
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENCODED_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIME;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIMEOUT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionProperties.LENIENT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.MAX_COMMIT_DELAY;
@@ -278,6 +280,12 @@ public class ConnectionOptions {
    * OAuth token to use for authentication. Cannot be used in combination with a credentials file.
    */
   public static final String OAUTH_TOKEN_PROPERTY_NAME = "oauthToken";
+
+  /** Name of the 'grpcKeepAliveTime' connection property. */
+  public static final String GRPC_KEEPALIVE_TIME_PROPERTY_NAME = "grpcKeepAliveTime";
+
+  /** Name of the 'grpcKeepAliveTimeout' connection property. */
+  public static final String GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME = "grpcKeepAliveTimeout";
 
   /** Name of the 'minSessions' connection property. */
   public static final String MIN_SESSIONS_PROPERTY_NAME = "minSessions";
@@ -1081,6 +1089,16 @@ public class ConnectionOptions {
   /** The number of channels to use for the connection. */
   public Integer getNumChannels() {
     return getInitialConnectionPropertyValue(NUM_CHANNELS);
+  }
+
+  /** The gRPC keepalive time for this connection. */
+  public Duration getGrpcKeepAliveTime() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIME);
+  }
+
+  /** The gRPC keepalive timeout for this connection. */
+  public Duration getGrpcKeepAliveTimeout() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIMEOUT);
   }
 
   /** Whether dynamic channel pooling is enabled for this connection. */

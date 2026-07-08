@@ -1346,8 +1346,7 @@ import org.jspecify.annotations.NullMarked;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -2118,7 +2117,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   * @param teamFolder Required. Resource name of the TeamFolder to list contents for. Format:
    *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2152,7 +2151,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   * @param teamFolder Required. Resource name of the TeamFolder to list contents for. Format:
    *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3006,7 +3005,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param folder Required. Name of the folder whose contents to list. Format:
+   * @param folder Required. Resource name of the Folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;/folders/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3039,7 +3038,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param folder Required. Name of the folder whose contents to list. Format:
+   * @param folder Required. Resource name of the Folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;/folders/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3184,7 +3183,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param location Required. Location of the user root folder whose contents to list. Format:
+   * @param location Required. Location of the user root folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3218,7 +3217,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param location Required. Location of the user root folder whose contents to list. Format:
+   * @param location Required. Location of the user root folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -9558,9 +9557,8 @@ public class DataformClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -9604,9 +9602,8 @@ public class DataformClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -9650,9 +9647,8 @@ public class DataformClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled

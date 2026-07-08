@@ -26,6 +26,7 @@ import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.cloud.datastore.aggregation.Aggregation.sum;
 import static com.google.common.collect.Iterables.getOnlyElement;
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -79,6 +80,7 @@ import com.google.cloud.datastore.models.ExecutionStats;
 import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.models.PlanSummary;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Range;
@@ -97,8 +99,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import org.awaitility.core.ConditionTimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -282,21 +286,28 @@ public abstract class AbstractITDatastoreTest {
     QueryResults<T> scResults = datastore.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
-    int maxAttempts = 20;
-
-    while (maxAttempts > 0) {
-      --maxAttempts;
-      QueryResults<T> results = datastore.run(query);
-      List<T> resultsCopy = makeResultsCopy(results);
-      Set<T> resultsSet = new HashSet<>(resultsCopy);
-      if (scResultsSet.size() == resultsSet.size() && scResultsSet.containsAll(resultsSet)) {
-        return resultsCopy.iterator();
-      }
-      Thread.sleep(500);
+    AtomicReference<List<T>> finalResults = new AtomicReference<>();
+    try {
+      await()
+          .atMost(Duration.ofSeconds(10))
+          .pollInterval(Duration.ofMillis(500))
+          .until(
+              () -> {
+                QueryResults<T> results = datastore.run(query);
+                List<T> resultsCopy = makeResultsCopy(results);
+                Set<T> resultsSet = new HashSet<>(resultsCopy);
+                if (scResultsSet.size() == resultsSet.size()
+                    && scResultsSet.containsAll(resultsSet)) {
+                  finalResults.set(resultsCopy);
+                  return true;
+                }
+                return false;
+              });
+    } catch (ConditionTimeoutException e) {
+      throw new RuntimeException(
+          "reached max number of attempts to get strongly consistent results.", e);
     }
-
-    throw new RuntimeException(
-        "reached max number of attempts to get strongly consistent results.");
+    return finalResults.get().iterator();
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {
@@ -1331,8 +1342,12 @@ public abstract class AbstractITDatastoreTest {
             .build();
 
     datastore.put(entity1, entity2);
+    // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+    // after the commit time of entity1 and entity2.
     Thread.sleep(1000);
     Timestamp now = Timestamp.now();
+    // Sleep to ensure time passes so that the subsequent write of entity3 is strictly
+    // after 'now'. This allows testing ReadOption.readTime(now) deterministically.
     Thread.sleep(1000);
     datastore.put(entity3);
 
@@ -1784,8 +1799,12 @@ public abstract class AbstractITDatastoreTest {
     try {
       datastore.put(Entity.newBuilder(key).set("str", "old_str_value").build());
 
+      // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+      // after the commit time of the old entity value.
       Thread.sleep(1000);
       Timestamp now = Timestamp.now();
+      // Sleep to ensure time passes so that the subsequent write of the new entity value
+      // is strictly after 'now'. This allows testing ReadOption.readTime(now) deterministically.
       Thread.sleep(1000);
 
       datastore.put(Entity.newBuilder(key).set("str", "new_str_value").build());
@@ -2102,8 +2121,12 @@ public abstract class AbstractITDatastoreTest {
             .build();
 
     datastore.put(entity1, entity2);
+    // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+    // after the commit time of entity1 and entity2.
     Thread.sleep(1000);
     Timestamp now = Timestamp.now();
+    // Sleep to ensure time passes so that the subsequent write of entity3 is strictly
+    // after 'now'. This allows testing ReadOption.readTime(now) deterministically.
     Thread.sleep(1000);
     datastore.put(entity3);
 

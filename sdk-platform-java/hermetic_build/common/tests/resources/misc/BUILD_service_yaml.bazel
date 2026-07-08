@@ -1,3 +1,0 @@
-java_gapic_library(
-    service_yaml = "test_service_yaml.yaml"
-)

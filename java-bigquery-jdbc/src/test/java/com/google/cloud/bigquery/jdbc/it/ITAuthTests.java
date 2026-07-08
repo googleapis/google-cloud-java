@@ -25,12 +25,10 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
@@ -300,10 +298,10 @@ public class ITAuthTests extends ITBase {
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
-    InputStream stream =
-        new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8));
+
     GoogleCredentials credentials =
-        GoogleCredentials.fromStream(stream).createScoped(Arrays.asList(scope));
+        ((GoogleCredentials) bigQuery.getOptions().getCredentials())
+            .createScoped(Arrays.asList(scope));
     credentials.refresh();
     String accessToken = credentials.getAccessToken().getTokenValue();
 

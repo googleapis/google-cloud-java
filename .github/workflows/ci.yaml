@@ -155,6 +155,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-bigquerystorage:
             - 'java-bigquerystorage/**'
             - 'google-auth-library-java/**/*.java'
@@ -162,6 +165,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-datastore:
             - 'java-datastore/**'
             - 'google-auth-library-java/**/*.java'
@@ -169,6 +175,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-logging-logback:
             - 'java-logging-logback/**'
             - 'google-auth-library-java/**/*.java'
@@ -176,6 +185,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-logging:
             - 'java-logging/**'
             - 'google-auth-library-java/**/*.java'
@@ -183,6 +195,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-spanner:
             - 'java-spanner/**'
             - 'grpc-gcp-java/**'
@@ -191,6 +206,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-storage:
             - 'java-storage/**'
             - 'google-auth-library-java/**/*.java'
@@ -198,6 +216,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-pubsub:
             - 'java-pubsub/**'
             - 'google-auth-library-java/**/*.java'
@@ -205,6 +226,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-bigtable:
             - 'java-bigtable/**'
             - 'google-auth-library-java/**/*.java'
@@ -212,6 +236,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-firestore:
             - 'java-firestore/**'
             - 'google-auth-library-java/**/*.java'
@@ -219,6 +246,9 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'google-cloud-jar-parent/pom.xml'
+            - 'google-cloud-pom-parent/pom.xml'
+            - 'pom.xml'
           java-shared-config:
             - 'java-shared-config/**'
   split-units:

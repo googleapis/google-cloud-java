@@ -792,8 +792,10 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(rsNoMatch.next());
 
     // Test case 4: Get schemas with non-existent catalog
-    rsNoMatch = databaseMetaData.getSchemas("invalid-catalog", null);
-    Assertions.assertFalse(rsNoMatch.next());
+    Assertions.assertThrows(
+        SQLException.class,
+        () -> databaseMetaData.getSchemas("invalid-catalog", null),
+        "Should throw SQLException for non-existent catalog");
     connection.close();
   }
 
@@ -935,9 +937,9 @@ public class ITDatabaseMetadataTest extends ITBase {
         rsEmptyFunction.next(), "Empty function name pattern should return no results");
     rsEmptyFunction.close();
 
-    // Test 9: Null catalog
+    // Test 9: Null catalog should return all functions (spec-compliant)
     ResultSet rsNullCatalog = databaseMetaData.getFunctions(null, testSchema, null);
-    Assertions.assertFalse(rsNullCatalog.next(), "Null catalog should return no results");
+    Assertions.assertTrue(rsNullCatalog.next(), "Null catalog should return results");
     rsNullCatalog.close();
     connection.close();
   }

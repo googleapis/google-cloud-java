@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+  <version>3.2.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Datastore</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore-parent</artifactId>
-    <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>3.2.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datastore</site.installationModule>
@@ -212,12 +212,12 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>3.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+      <version>3.95.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-      <version>3.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+      <version>3.95.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
@@ -246,16 +246,22 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>4.3.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
       <scope>test</scope>
-      <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <version>2.94.0</version><!-- {x-version-update:google-cloud-trace:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
       <scope>test</scope>
-      <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+      <version>2.94.0</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
     </dependency>
   </dependencies>
 

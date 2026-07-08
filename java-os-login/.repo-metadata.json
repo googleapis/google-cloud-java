@@ -5,7 +5,7 @@
   "api_description": "manages OS login configuration for Directory API users.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-os-login/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-os-login",

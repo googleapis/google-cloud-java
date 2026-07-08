@@ -25,9 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
@@ -74,7 +72,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   private static String DATASET;
   private static final Object EXCEPTION_REPLACEMENT = "EXCEPTION-WAS-RAISED";
   static Connection bigQueryConnection;
-  static BigQuery bigQuery;
   static Statement bigQueryStatement;
   static Connection bigQueryConnectionNoReadApi;
   static Statement bigQueryStatementNoReadApi;
@@ -89,7 +86,6 @@ public class ITBigQueryJDBCTest extends ITBase {
     noReadApi.setProperty("EnableHighThroughputAPI", "0");
     bigQueryConnectionNoReadApi = DriverManager.getConnection(connection_uri, noReadApi);
     bigQueryStatementNoReadApi = bigQueryConnectionNoReadApi.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll

@@ -26,6 +26,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
+import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ManagedChannel;
@@ -246,8 +247,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
     channelWrapper.group.numStreams++;
     totalStreams++;
 
+    // DirectExecutor: gRPC/Netty delivers SessionStream.Listener callbacks directly on the
+    // I/O thread. All work must be fast and non-blocking; blocking work goes to sessionSyncContext.
     ClientCall<SessionRequest, SessionResponse> innerCall =
-        channelWrapper.channel.newCall(desc, callOptions);
+        channelWrapper.channel.newCall(
+            desc, callOptions.withExecutor(MoreExecutors.directExecutor()));
 
     return new SessionStreamImpl(innerCall) {
       // mark as null so that onClose can tell if onBeforeSessionStart was never called
@@ -569,7 +573,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
     @Override
     public int hashCode() {
-      return com.google.common.base.Objects.hashCode(id);
+      return Long.hashCode(id);
     }
 
     @Override

@@ -137,10 +137,10 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + ")google/cloud/ces/v1/session_service.pr"
           + "oto\022\023google.cloud.ces.v1\032\034google/api/ann"
           + "otations.proto\032\027google/api/client.proto\032"
-          + "\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/cloud/ces/v1/common.proto\032!google/cloud/ces/v1/examp"
-          + "le.proto\032,google/cloud/ces/v1/search_sug"
-          + "gestions.proto\032\034google/protobuf/struct.proto\"\231\001\n"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\032\030google/api/routing.proto\032"
+          + " google/cloud/ces/v1/common.proto\032!google/cloud/ces/v1/example.proto\032,goog"
+          + "le/cloud/ces/v1/search_suggestions.proto\032\034google/protobuf/struct.proto\"\231\001\n"
           + "\020InputAudioConfig\022?\n"
           + "\016audio_encoding\030\001"
           + " \001(\0162\".google.cloud.ces.v1.AudioEncodingB\003\340A\002\022\036\n"
@@ -153,10 +153,10 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "SessionConfig\0223\n"
           + "\007session\030\001 \001(\tB\"\340A\002\372A\034\n"
           + "\032ces.googleapis.com/Session\022F\n"
-          + "\022input_audio_config\030\002"
-          + " \001(\0132%.google.cloud.ces.v1.InputAudioConfigB\003\340A\001\022H\n"
-          + "\023output_audio_config\030\003"
-          + " \001(\0132&.google.cloud.ces.v1.OutputAudioConfigB\003\340A\001\022>\n"
+          + "\022input_audio_config\030\002 "
+          + "\001(\0132%.google.cloud.ces.v1.InputAudioConfigB\003\340A\001\022H\n"
+          + "\023output_audio_config\030\003 \001(\0132&.g"
+          + "oogle.cloud.ces.v1.OutputAudioConfigB\003\340A\001\022>\n"
           + "\023historical_contexts\030\005"
           + " \003(\0132\034.google.cloud.ces.v1.MessageB\003\340A\001\0225\n"
           + "\013entry_agent\030\014 \001(\tB \340A\001\372A\032\n"
@@ -164,20 +164,20 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "deployment\030\010 \001(\tB\003\340A\001\022\026\n"
           + "\ttime_zone\030\013 \001(\tB\003\340A\001\022\033\n"
           + "\016use_tool_fakes\030\016 \001(\010B\003\340A\001\022s\n"
-          + "\"remote_dialogflow_query_parameters\030\017 \001(\0132B.google.cloud.ces.v1.S"
-          + "essionConfig.RemoteDialogflowQueryParametersB\003\340A\001\022\"\n"
+          + "\"remote_dialogflow_query_parameters\030\017 \001"
+          + "(\0132B.google.cloud.ces.v1.SessionConfig.RemoteDialogflowQueryParametersB\003\340A\001\022\"\n"
           + "\025enable_text_streaming\030\022 \001(\010B\003\340A\001\032\266\002\n"
           + "\037RemoteDialogflowQueryParameters\022t\n"
-          + "\017webhook_headers\030\001 \003(\0132V.google.clou"
-          + "d.ces.v1.SessionConfig.RemoteDialogflowQ"
-          + "ueryParameters.WebhookHeadersEntryB\003\340A\001\022-\n"
+          + "\017webhook_headers\030\001 \003(\0132V.google.cloud.ces.v1.Sessi"
+          + "onConfig.RemoteDialogflowQueryParameters.WebhookHeadersEntryB\003\340A\001\022-\n"
           + "\007payload\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\0227\n"
           + "\021end_user_metadata\030\003"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\0325\n"
           + "\023WebhookHeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"C\n"
-          + "\tToolCalls\0226\n\n"
+          + "\tToolCalls\0226\n"
+          + "\n"
           + "tool_calls\030\001 \003(\0132\035.google.cloud.ces.v1.ToolCallB\003\340A\001\"O\n\r"
           + "ToolResponses\022>\n"
           + "\016tool_responses\030\001"
@@ -194,8 +194,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\004text\030\001 \001(\tB\003\340A\001H\000\022\023\n"
           + "\004dtmf\030\006 \001(\tB\003\340A\001H\000\022\024\n"
           + "\005audio\030\002 \001(\014B\003\340A\001H\000\022A\n"
-          + "\016tool_responses\030\003"
-          + " \001(\0132\".google.cloud.ces.v1.ToolResponsesB\003\340A\001H\000\0220\n"
+          + "\016tool_responses\030\003 "
+          + "\001(\0132\".google.cloud.ces.v1.ToolResponsesB\003\340A\001H\000\0220\n"
           + "\005image\030\004 \001(\0132\032.google.cloud.ces.v1.ImageB\003\340A\001H\000\022.\n"
           + "\004blob\030\007 \001(\0132\031.google.cloud.ces.v1.BlobB\003\340A\001H\000\0221\n"
           + "\tvariables\030\005 \001(\0132\027.google.protobuf.StructB\003\340A\001H\000\0220\n"
@@ -214,8 +214,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\007payload\030\013 \001(\0132\027.google.protobuf.StructH\000\022\022\n\n"
           + "turn_index\030\006 \001(\005\022\026\n"
           + "\016turn_completed\030\004 \001(\010\022O\n"
-          + "\017diagnostic_info\030\007 \001(\01321.google"
-          + ".cloud.ces.v1.SessionOutput.DiagnosticInfoB\003\340A\001\032n\n"
+          + "\017diagnostic_info\030\007"
+          + " \001(\01321.google.cloud.ces.v1.SessionOutput.DiagnosticInfoB\003\340A\001\032n\n"
           + "\016DiagnosticInfo\022.\n"
           + "\010messages\030\001 \003(\0132\034.google.cloud.ces.v1.Message\022,\n"
           + "\troot_span\030\003 \001(\0132\031.google.cloud.ces.v1.SpanB\r\n"
@@ -235,16 +235,16 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\030BidiSessionClientMessage\0229\n"
           + "\006config\030\001"
           + " \001(\0132\".google.cloud.ces.v1.SessionConfigB\003\340A\001H\000\022@\n"
-          + "\016realtime_input\030\002"
-          + " \001(\0132!.google.cloud.ces.v1.SessionInputB\003\340A\001H\000B\016\n"
+          + "\016realtime_input\030\002 \001(\013"
+          + "2!.google.cloud.ces.v1.SessionInputB\003\340A\001H\000B\016\n"
           + "\014message_type\"\367\002\n"
           + "\030BidiSessionServerMessage\022A\n"
           + "\016session_output\030\001"
           + " \001(\0132\".google.cloud.ces.v1.SessionOutputB\003\340A\001H\000\022I\n"
-          + "\022recognition_result\030\002 \001(\0132&.g"
-          + "oogle.cloud.ces.v1.RecognitionResultB\003\340A\001H\000\022K\n"
-          + "\023interruption_signal\030\003 \001(\0132\'.googl"
-          + "e.cloud.ces.v1.InterruptionSignalB\003\340A\001H\000\022;\n"
+          + "\022recognition_result\030\002"
+          + " \001(\0132&.google.cloud.ces.v1.RecognitionResultB\003\340A\001H\000\022K\n"
+          + "\023interruption_signal\030\003"
+          + " \001(\0132\'.google.cloud.ces.v1.InterruptionSignalB\003\340A\001H\000\022;\n"
           + "\013end_session\030\005"
           + " \001(\0132\037.google.cloud.ces.v1.EndSessionB\003\340A\001H\000\0223\n"
           + "\007go_away\030\006"
@@ -254,24 +254,25 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\032AUDIO_ENCODING_UNSPECIFIED\020\000\022\014\n"
           + "\010LINEAR16\020\001\022\t\n"
           + "\005MULAW\020\002\022\010\n"
-          + "\004ALAW\020\0032\352\004\n"
+          + "\004ALAW\020\0032\267\005\n"
           + "\016SessionService\022\262\001\n\n"
-          + "RunSession\022&.google.cloud.ces.v1.RunSessio"
-          + "nRequest\032\'.google.cloud.ces.v1.RunSessio"
-          + "nResponse\"S\202\323\344\223\002M\"H/v1/{config.session=p"
-          + "rojects/*/locations/*/apps/*/sessions/*}:runSession:\001*\022\300\001\n"
-          + "\020StreamRunSession\022&.google.cloud.ces.v1.RunSessionRequest\032\'.go"
-          + "ogle.cloud.ces.v1.RunSessionResponse\"Y\202\323"
-          + "\344\223\002S\"N/v1/{config.session=projects/*/loc"
-          + "ations/*/apps/*/sessions/*}:streamRunSession:\001*0\001\022t\n"
-          + "\016BidiRunSession\022-.google.cloud.ces.v1.BidiSessionClientMessage\032-.goo"
-          + "gle.cloud.ces.v1.BidiSessionServerMessag"
-          + "e\"\000(\0010\001\032j\312A\022ces.googleapis.com\322ARhttps:/"
-          + "/www.googleapis.com/auth/ces,https://www.googleapis.com/auth/cloud-platformB\301\001\n"
-          + "\027com.google.cloud.ces.v1B\023SessionServiceP"
-          + "rotoP\001Z)cloud.google.com/go/ces/apiv1/cespb;cespb\352Ac\n"
-          + "\032ces.googleapis.com/Session\022Eprojects/{project}/locations/{location"
-          + "}/apps/{app}/sessions/{session}b\006proto3"
+          + "RunSession\022&.google.cloud.ces.v1.RunSessionRequest\032\'.goo"
+          + "gle.cloud.ces.v1.RunSessionResponse\"S\202\323\344"
+          + "\223\002M\"H/v1/{config.session=projects/*/loca"
+          + "tions/*/apps/*/sessions/*}:runSession:\001*\022\300\001\n"
+          + "\020StreamRunSession\022&.google.cloud.ces.v1.RunSessionRequest\032\'.google.cloud.ces"
+          + ".v1.RunSessionResponse\"Y\202\323\344\223\002S\"N/v1/{con"
+          + "fig.session=projects/*/locations/*/apps/*/sessions/*}:streamRunSession:\001*0\001\022\300\001\n"
+          + "\016BidiRunSession\022-.google.cloud.ces.v1.Bid"
+          + "iSessionClientMessage\032-.google.cloud.ces.v1.BidiSessionServerMessage\"L\212\323\344\223\002F\022D\n"
+          + "\016config.session\0222{session=projects/*/loca"
+          + "tions/*/apps/*/sessions/*}(\0010\001\032j\312A\022ces.g"
+          + "oogleapis.com\322ARhttps://www.googleapis.c"
+          + "om/auth/ces,https://www.googleapis.com/auth/cloud-platformB\301\001\n"
+          + "\027com.google.cloud."
+          + "ces.v1B\023SessionServiceProtoP\001Z)cloud.google.com/go/ces/apiv1/cespb;cespb\352Ac\n"
+          + "\032ces.googleapis.com/Session\022Eprojects/{proje"
+          + "ct}/locations/{location}/apps/{app}/sessions/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -281,6 +282,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.ces.v1.CommonProto.getDescriptor(),
               com.google.cloud.ces.v1.ExampleProto.getDescriptor(),
               com.google.cloud.ces.v1.SearchSuggestionsProto.getDescriptor(),
@@ -484,6 +486,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.ces.v1.CommonProto.getDescriptor();
     com.google.cloud.ces.v1.ExampleProto.getDescriptor();
     com.google.cloud.ces.v1.SearchSuggestionsProto.getDescriptor();
@@ -496,6 +499,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.api.RoutingProto.routing);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

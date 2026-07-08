@@ -1597,4 +1597,44 @@ public class ConnectionOptionsTest {
     assertEquals(Integer.valueOf(15), options.getDcpMaxChannels());
     assertEquals(Integer.valueOf(5), options.getDcpInitialChannels());
   }
+
+  @Test
+  public void testGrpcKeepAliveTimeOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTime='20s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(20), options.getGrpcKeepAliveTime());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTime());
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeoutOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTimeout='15s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(15), options.getGrpcKeepAliveTimeout());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTimeout());
+  }
 }

@@ -14,16 +14,8 @@ setup(
     },
     package_data={
         "library_generation": [
-            "generate_library.sh",
-            "postprocess_library.sh",
-            "utils/utilities.sh",
-            "templates/*.j2",
-            "gapic-generator-java-wrapper",
             "owlbot/bin/*.sh",
             "owlbot/src/*.py",
-            "owlbot/src/poms/*.py",
-            "owlbot/templates/clirr/*.j2",
-            "owlbot/templates/poms/*.j2",
             "owlbot/templates/java_library/.github/**/*",
             "owlbot/templates/java_library/**/*",
             "owlbot/templates/java_library/.kokoro/build.sh",
