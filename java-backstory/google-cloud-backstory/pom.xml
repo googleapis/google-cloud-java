@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-backstory</artifactId>
-  <version>0.2.0</version><!-- {x-version-update:google-cloud-backstory:current} -->
+  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
   <packaging>jar</packaging>
   <name>Google Malachite Common Protos</name>
   <description>Malachite Common Protos Common Universal Data Model (UDM) and Entity protos used by Chronicle.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-backstory-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-backstory:current} -->
+    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-backstory</site.installationModule>
