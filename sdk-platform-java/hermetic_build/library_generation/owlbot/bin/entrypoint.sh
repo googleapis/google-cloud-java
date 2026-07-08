@@ -58,20 +58,6 @@ then
 fi
 echo "...done"
 
-# write or restore pom.xml files
-echo "Generating missing pom.xml..."
-python3 "${scripts_root}/owlbot/src/fix_poms.py" "${versions_file}" "${is_monorepo}"
-echo "...done"
-
-# write or restore clirr-ignored-differences.xml
-echo "Generating clirr-ignored-differences.xml..."
-"${scripts_root}"/owlbot/bin/write_clirr_ignore.sh "${scripts_root}"
-echo "...done"
-
-# fix license headers
-echo "Fixing missing license headers..."
-python3 "${scripts_root}/owlbot/src/fix-license-headers.py"
-echo "...done"
 
 echo "Reformatting source..."
 "${scripts_root}"/owlbot/bin/format_source.sh "${scripts_root}"

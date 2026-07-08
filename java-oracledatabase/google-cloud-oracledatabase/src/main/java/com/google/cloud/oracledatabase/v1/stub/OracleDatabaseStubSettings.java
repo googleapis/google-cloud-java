@@ -88,6 +88,7 @@ import com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet;
 import com.google.cloud.oracledatabase.v1.AutonomousDbVersion;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -332,6 +333,13 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationSettings;
+  private final UnaryCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureSettings;
+  private final OperationCallSettings<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationSettings;
   private final PagedCallSettings<
           ListCloudVmClustersRequest, ListCloudVmClustersResponse, ListCloudVmClustersPagedResponse>
       listCloudVmClustersSettings;
@@ -2642,6 +2650,27 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return deleteCloudExadataInfrastructureOperationSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public UnaryCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureSettings() {
+    return configureExascaleCloudExadataInfrastructureSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public OperationCallSettings<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationSettings() {
+    return configureExascaleCloudExadataInfrastructureOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listCloudVmClusters. */
   public PagedCallSettings<
           ListCloudVmClustersRequest, ListCloudVmClustersResponse, ListCloudVmClustersPagedResponse>
@@ -3466,6 +3495,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.deleteCloudExadataInfrastructureSettings().build();
     deleteCloudExadataInfrastructureOperationSettings =
         settingsBuilder.deleteCloudExadataInfrastructureOperationSettings().build();
+    configureExascaleCloudExadataInfrastructureSettings =
+        settingsBuilder.configureExascaleCloudExadataInfrastructureSettings().build();
+    configureExascaleCloudExadataInfrastructureOperationSettings =
+        settingsBuilder.configureExascaleCloudExadataInfrastructureOperationSettings().build();
     listCloudVmClustersSettings = settingsBuilder.listCloudVmClustersSettings().build();
     getCloudVmClusterSettings = settingsBuilder.getCloudVmClusterSettings().build();
     createCloudVmClusterSettings = settingsBuilder.createCloudVmClusterSettings().build();
@@ -3652,6 +3685,14 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
         deleteCloudExadataInfrastructureOperationSettings;
+    private final UnaryCallSettings.Builder<
+            ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureSettings;
+    private final OperationCallSettings.Builder<
+            ConfigureExascaleCloudExadataInfrastructureRequest,
+            CloudExadataInfrastructure,
+            OperationMetadata>
+        configureExascaleCloudExadataInfrastructureOperationSettings;
     private final PagedCallSettings.Builder<
             ListCloudVmClustersRequest,
             ListCloudVmClustersResponse,
@@ -4012,6 +4053,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createCloudExadataInfrastructureOperationSettings = OperationCallSettings.newBuilder();
       deleteCloudExadataInfrastructureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCloudExadataInfrastructureOperationSettings = OperationCallSettings.newBuilder();
+      configureExascaleCloudExadataInfrastructureSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      configureExascaleCloudExadataInfrastructureOperationSettings =
+          OperationCallSettings.newBuilder();
       listCloudVmClustersSettings =
           PagedCallSettings.newBuilder(LIST_CLOUD_VM_CLUSTERS_PAGE_STR_FACT);
       getCloudVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4145,6 +4190,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getCloudExadataInfrastructureSettings,
               createCloudExadataInfrastructureSettings,
               deleteCloudExadataInfrastructureSettings,
+              configureExascaleCloudExadataInfrastructureSettings,
               listCloudVmClustersSettings,
               getCloudVmClusterSettings,
               createCloudVmClusterSettings,
@@ -4238,6 +4284,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           settings.deleteCloudExadataInfrastructureSettings.toBuilder();
       deleteCloudExadataInfrastructureOperationSettings =
           settings.deleteCloudExadataInfrastructureOperationSettings.toBuilder();
+      configureExascaleCloudExadataInfrastructureSettings =
+          settings.configureExascaleCloudExadataInfrastructureSettings.toBuilder();
+      configureExascaleCloudExadataInfrastructureOperationSettings =
+          settings.configureExascaleCloudExadataInfrastructureOperationSettings.toBuilder();
       listCloudVmClustersSettings = settings.listCloudVmClustersSettings.toBuilder();
       getCloudVmClusterSettings = settings.getCloudVmClusterSettings.toBuilder();
       createCloudVmClusterSettings = settings.createCloudVmClusterSettings.toBuilder();
@@ -4394,6 +4444,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getCloudExadataInfrastructureSettings,
               createCloudExadataInfrastructureSettings,
               deleteCloudExadataInfrastructureSettings,
+              configureExascaleCloudExadataInfrastructureSettings,
               listCloudVmClustersSettings,
               getCloudVmClusterSettings,
               createCloudVmClusterSettings,
@@ -4513,6 +4564,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .deleteCloudExadataInfrastructureSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .configureExascaleCloudExadataInfrastructureSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -4940,6 +4996,32 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(432000000L))
+                      .build()));
+
+      builder
+          .configureExascaleCloudExadataInfrastructureOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ConfigureExascaleCloudExadataInfrastructureRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CloudExadataInfrastructure.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -5759,6 +5841,27 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
         deleteCloudExadataInfrastructureOperationSettings() {
       return deleteCloudExadataInfrastructureOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public UnaryCallSettings.Builder<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureSettings() {
+      return configureExascaleCloudExadataInfrastructureSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public OperationCallSettings.Builder<
+            ConfigureExascaleCloudExadataInfrastructureRequest,
+            CloudExadataInfrastructure,
+            OperationMetadata>
+        configureExascaleCloudExadataInfrastructureOperationSettings() {
+      return configureExascaleCloudExadataInfrastructureOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listCloudVmClusters. */

@@ -97,7 +97,7 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "\004word\030\003 \001(\t\022/\n"
           + "\014start_offset\030\001 \001(\0132\031.google.protobuf.Duration\022-\n\n"
           + "end_offset\030\002 \001(\0132\031.google.protobuf.Duration\022\022\n\n"
-          + "confidence\030\004 \001(\002\"\266\004\n"
+          + "confidence\030\004 \001(\002\"\341\004\n"
           + "\020InputAudioConfig\022F\n"
           + "\016audio_encoding\030\001"
           + " \001(\0162).google.cloud.dialogflow.v2.AudioEncodingB\003\340A\002\022\036\n"
@@ -111,7 +111,8 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "\005model\030\007 \001(\t\022E\n\r"
           + "model_variant\030\n"
           + " \001(\0162..google.cloud.dialogflow.v2.SpeechModelVariant\022\030\n"
-          + "\020single_utterance\030\010 \001(\010\022*\n"
+          + "\020single_utterance\030\010 \001(\010\022)\n"
+          + "\034enable_voice_activity_events\030\033 \001(\010B\003\340A\001\022*\n"
           + "\"disable_no_speech_recognized_event\030\016 \001(\010\022$\n"
           + "\034enable_automatic_punctuation\030\021 \001(\010\0229\n"
           + "\013phrase_sets\030\024 \003(\tB$\372A!\n"
@@ -132,19 +133,19 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + " \003(\01325.google.cloud.dialogflow.v2.CustomPronunciationParamsB\003\340A\001\"\226\002\n"
           + "\031CustomPronunciationParams\022\016\n"
           + "\006phrase\030\001 \001(\t\022a\n"
-          + "\021phonetic_encoding\030\002 \001(\0162F.google.cloud.di"
-          + "alogflow.v2.CustomPronunciationParams.PhoneticEncoding\022\025\n\r"
+          + "\021phonetic_encoding\030\002 \001(\0162F.google.cloud"
+          + ".dialogflow.v2.CustomPronunciationParams.PhoneticEncoding\022\025\n\r"
           + "pronunciation\030\003 \001(\t\"o\n"
           + "\020PhoneticEncoding\022!\n"
           + "\035PHONETIC_ENCODING_UNSPECIFIED\020\000\022\031\n"
           + "\025PHONETIC_ENCODING_IPA\020\001\022\035\n"
           + "\031PHONETIC_ENCODING_X_SAMPA\020\002\"\322\001\n"
           + "\021OutputAudioConfig\022L\n"
-          + "\016audio_encoding\030\001 \001(\0162/.g"
-          + "oogle.cloud.dialogflow.v2.OutputAudioEncodingB\003\340A\002\022\031\n"
+          + "\016audio_encoding\030\001 \001(\0162"
+          + "/.google.cloud.dialogflow.v2.OutputAudioEncodingB\003\340A\002\022\031\n"
           + "\021sample_rate_hertz\030\002 \001(\005\022T\n"
-          + "\030synthesize_speech_config\030\003 \001(\01322.google"
-          + ".cloud.dialogflow.v2.SynthesizeSpeechConfig\"U\n"
+          + "\030synthesize_speech_config\030\003 \001(\01322.goo"
+          + "gle.cloud.dialogflow.v2.SynthesizeSpeechConfig\"U\n"
           + "\023TelephonyDtmfEvents\022>\n"
           + "\013dtmf_events\030\001"
           + " \003(\0162).google.cloud.dialogflow.v2.TelephonyDtmf\"\342\002\n"
@@ -208,13 +209,13 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "\036OUTPUT_AUDIO_ENCODING_OGG_OPUS\020\003\022\037\n"
           + "\033OUTPUT_AUDIO_ENCODING_MULAW\020\005\022\036\n"
           + "\032OUTPUT_AUDIO_ENCODING_ALAW\020\006B\323\002\n"
-          + "\036com.google.cloud.dialogflow.v2B\020AudioConfigProtoP\001Z"
-          + ">cloud.google.com/go/dialogflow/apiv2/di"
-          + "alogflowpb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2\352AU\n"
-          + "\033automl.googleapis."
-          + "com/Model\0226projects/{project}/locations/{location}/models/{model}\352Ab\n"
-          + "\037speech.googleapis.com/PhraseSet\022?projects/{project"
-          + "}/locations/{location}/phraseSets/{phrase_set}b\006proto3"
+          + "\036com.google.cloud.dialogflow.v2B\020AudioConfigProto"
+          + "P\001Z>cloud.google.com/go/dialogflow/apiv2"
+          + "/dialogflowpb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2\352AU\n"
+          + "\033automl.googleap"
+          + "is.com/Model\0226projects/{project}/locations/{location}/models/{model}\352Ab\n"
+          + "\037speech.googleapis.com/PhraseSet\022?projects/{proj"
+          + "ect}/locations/{location}/phraseSets/{phrase_set}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -255,6 +256,7 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
               "Model",
               "ModelVariant",
               "SingleUtterance",
+              "EnableVoiceActivityEvents",
               "DisableNoSpeechRecognizedEvent",
               "EnableAutomaticPunctuation",
               "PhraseSets",

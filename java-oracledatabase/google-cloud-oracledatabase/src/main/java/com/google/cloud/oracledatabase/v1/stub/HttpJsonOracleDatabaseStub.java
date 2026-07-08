@@ -70,6 +70,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -393,6 +394,50 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
               .setOperationSnapshotFactory(
                   (DeleteCloudExadataInfrastructureRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureMethodDescriptor =
+          ApiMethodDescriptor
+              .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ConfigureExascaleCloudExadataInfrastructure")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ConfigureExascaleCloudExadataInfrastructureRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/cloudExadataInfrastructures/*}:configureExascale",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ConfigureExascaleCloudExadataInfrastructureRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ConfigureExascaleCloudExadataInfrastructureRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ConfigureExascaleCloudExadataInfrastructureRequest request,
+                      Operation response) -> HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
@@ -3409,6 +3454,13 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
       deleteCloudExadataInfrastructureCallable;
   private final OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable;
+  private final UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable;
+  private final OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
       listCloudVmClustersCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>
@@ -3817,6 +3869,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         deleteCloudExadataInfrastructureTransportSettings =
             HttpJsonCallSettings.<DeleteCloudExadataInfrastructureRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteCloudExadataInfrastructureMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureTransportSettings =
+            HttpJsonCallSettings
+                .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+                .setMethodDescriptor(configureExascaleCloudExadataInfrastructureMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -4877,6 +4943,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteCloudExadataInfrastructureOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.configureExascaleCloudExadataInfrastructureCallable =
+        callableFactory.createUnaryCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureSettings(),
+            clientContext);
+    this.configureExascaleCloudExadataInfrastructureOperationCallable =
+        callableFactory.createOperationCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCloudVmClustersCallable =
         callableFactory.createUnaryCallable(
             listCloudVmClustersTransportSettings,
@@ -5533,6 +5610,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(getCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(createCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(deleteCloudExadataInfrastructureMethodDescriptor);
+    methodDescriptors.add(configureExascaleCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(listCloudVmClustersMethodDescriptor);
     methodDescriptors.add(getCloudVmClusterMethodDescriptor);
     methodDescriptors.add(createCloudVmClusterMethodDescriptor);
@@ -5658,6 +5736,21 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable() {
     return deleteCloudExadataInfrastructureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    return configureExascaleCloudExadataInfrastructureCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    return configureExascaleCloudExadataInfrastructureOperationCallable;
   }
 
   @Override

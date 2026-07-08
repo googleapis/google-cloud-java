@@ -35,7 +35,7 @@ public enum DirectoryContentsView implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * The default / unset value. Defaults to DIRECTORY_CONTENTS_VIEW_BASIC.
+   * The default unset value. Defaults to DIRECTORY_CONTENTS_VIEW_BASIC.
    * </pre>
    *
    * <code>DIRECTORY_CONTENTS_VIEW_UNSPECIFIED = 0;</code>
@@ -79,7 +79,7 @@ public enum DirectoryContentsView implements com.google.protobuf.ProtocolMessage
    *
    *
    * <pre>
-   * The default / unset value. Defaults to DIRECTORY_CONTENTS_VIEW_BASIC.
+   * The default unset value. Defaults to DIRECTORY_CONTENTS_VIEW_BASIC.
    * </pre>
    *
    * <code>DIRECTORY_CONTENTS_VIEW_UNSPECIFIED = 0;</code>
