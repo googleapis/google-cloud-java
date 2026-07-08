@@ -2570,16 +2570,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints != null && constraints.getForeignKeys() != null) {
-            for (ForeignKey fk : constraints.getForeignKeys()) {
-              TableId pkTableId = fk.getReferencedTable();
-              if (pkTableId != null
-                  && equalsOrNullMatchesAll(catalog, pkTableId.getProject())
-                  && equalsOrNullMatchesAll(schema, pkTableId.getDataset())
-                  && table.equals(pkTableId.getTable())) {
-                processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-              }
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (pkTableId == null
+                || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                || !table.equals(pkTableId.getTable())) {
+              continue;
             }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
           }
         });
 
@@ -5200,39 +5202,41 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         processor);
                     return null;
                   }));
-        } else {
-          try {
-            Page<Table> tablesPage =
-                bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
-            if (tablesPage != null) {
-              for (Table table : tablesPage.iterateAll()) {
-                if (table.getDefinition() != null
-                    && table.getDefinition().getType() == TableDefinition.Type.TABLE) {
-                  taskFutures.add(
-                      executor.submit(
-                          () -> {
-                            processSingleTable(
-                                datasetId,
-                                table.getTableId().getTable(),
-                                collectedResults,
-                                resultSchemaFields,
-                                ignoreAccessErrors,
-                                processor);
-                            return null;
-                          }));
-                }
+          continue;
+        }
+
+        try {
+          Page<Table> tablesPage =
+              bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          if (tablesPage != null) {
+            for (Table table : tablesPage.iterateAll()) {
+              if (table.getDefinition() == null
+                  || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
+                continue;
               }
+              taskFutures.add(
+                  executor.submit(
+                      () -> {
+                        processSingleTable(
+                            datasetId,
+                            table.getTableId().getTable(),
+                            collectedResults,
+                            resultSchemaFields,
+                            ignoreAccessErrors,
+                            processor);
+                        return null;
+                      }));
             }
-          } catch (BigQueryException e) {
-            if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
-              LOG.info(
-                  "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
-                  datasetId.getDataset(), datasetId.getProject(), e.getCode());
-              continue;
-            }
-            taskFutures.forEach(future -> future.cancel(true));
-            throw new SQLException("Error while listing tables: " + e.getMessage(), e);
           }
+        } catch (BigQueryException e) {
+          if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+            LOG.info(
+                "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+                datasetId.getDataset(), datasetId.getProject(), e.getCode());
+            continue;
+          }
+          taskFutures.forEach(future -> future.cancel(true));
+          throw new SQLException("Error while listing tables: " + e.getMessage(), e);
         }
       }
       waitForTasksCompletion(taskFutures);
