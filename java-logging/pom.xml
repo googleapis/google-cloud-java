@@ -89,6 +89,7 @@
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
               <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>org.jspecify:jspecify</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
