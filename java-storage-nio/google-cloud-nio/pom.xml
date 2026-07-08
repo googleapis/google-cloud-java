@@ -189,6 +189,7 @@
 		  <!-- This dependency is used for its native image configuration in the test scope -->
           <ignoredUnusedDeclaredDependency>com.google.api:gax:jar</ignoredUnusedDeclaredDependency>
           <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+          <ignoredUnusedDeclaredDependency>org.jspecify:jspecify</ignoredUnusedDeclaredDependency>
 		</ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>

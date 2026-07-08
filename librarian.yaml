@@ -1845,7 +1845,7 @@ libraries:
     version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: google-cloud-pom-parent
-    version: 1.88.0
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: grafeas
     version: 2.96.0-SNAPSHOT
