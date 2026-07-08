@@ -21,6 +21,7 @@
   </parent>
   <properties>
     <skipUnitTests>true</skipUnitTests>
+    <maven.test.skip>${skipUnitTests}</maven.test.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
