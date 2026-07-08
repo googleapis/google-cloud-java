@@ -780,16 +780,6 @@ public class CloudClientExecutor extends CloudExecutor {
                   outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
                       Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
                 }
-                if (commitResponse.getReadLockMode() != null) {
-                  outcomeBuilder.setReadLockMode(
-                      com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.forNumber(
-                          commitResponse.getReadLockMode().getNumber()));
-                }
-                if (commitResponse.getIsolationLevel() != null) {
-                  outcomeBuilder.setIsolationLevel(
-                      com.google.spanner.v1.TransactionOptions.IsolationLevel.forNumber(
-                          commitResponse.getIsolationLevel().getNumber()));
-                }
               }
               clear();
             }
