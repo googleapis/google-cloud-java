@@ -87,7 +87,6 @@ public class SpannerCloudMonitoringExporterTest {
   private static final String clientHash = "spanner-test";
   private static final String instanceConfigId = "fake-instance-config-id";
 
-
   private MetricServiceStub mockMetricServiceStub;
   private MetricServiceClient fakeMetricServiceClient;
   private SpannerCloudMonitoringExporter exporter;
