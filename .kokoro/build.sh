@@ -44,13 +44,17 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       EXTRA_PROFILE_OPTS=()
-      MVN_ARGS=()
     else
       EXTRA_PROFILE_OPTS=("-PbulkTests")
       # We do not need to install core modules or exclude them from the reactor.
       # Since we pass -Dmaven.test.skip=true, Maven skips test compilation globally,
       # which avoids any test-jar reactor resolution errors during compilation verification.
-      MVN_ARGS=()
+      #
+      # We need both properties:
+      # - -Dmaven.test.skip=true is for core modules that do not use skipUnitTests.
+      # - -DskipUnitTests=true is for client libraries, because their surefire plugin configuration
+      #   explicitly overrides surefire skip parameter to ${skipUnitTests} which defaults to false
+      #   in handwritten libraries and would otherwise execute tests anyway.
       SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -Dmaven.test.skip=true"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
@@ -61,7 +65,6 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        "${MVN_ARGS[@]}" \
         ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
 
