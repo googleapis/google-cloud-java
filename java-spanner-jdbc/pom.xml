@@ -373,6 +373,7 @@
               <ignoredDependency>com.google.api.grpc:grpc-google-cloud-spanner-admin-database-v1</ignoredDependency>
               <ignoredDependency>io.opentelemetry:*</ignoredDependency>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>org.jspecify:jspecify</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
             <ignoredNonTestScopedDependencies>
               <ignoredDependency>io.opentelemetry:*</ignoredDependency>
