@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.ColumnReference;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Field;
@@ -34,6 +35,7 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.ForeignKey;
 import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
@@ -98,10 +100,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
-  private static final String GET_PRIMARY_KEYS_SQL = "DatabaseMetaData_GetPrimaryKeys.sql";
-  private static final String GET_IMPORTED_KEYS_SQL = "DatabaseMetaData_GetImportedKeys.sql";
   private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
-  private static final String GET_CROSS_REFERENCE_SQL = "DatabaseMetaData_GetCrossReference.sql";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   // Declared package-private for testing.
@@ -2526,16 +2525,47 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getImportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        table,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = null;
+          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
+            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
+          }
+          if (constraints != null && constraints.getForeignKeys() != null) {
+            for (ForeignKey fk : constraints.getForeignKeys()) {
+              TableId pkTableId = fk.getReferencedTable();
+              processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+            }
+          }
+        });
+
+    Comparator<FieldValueList> comparator = definePkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getImportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    populateQueue(collectedResults, queue, resultSchemaFields);
+    signalEndOfData(queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
   @Override
@@ -2562,24 +2592,55 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignSchema,
       String foreignTable)
       throws SQLException {
-    String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql =
-          replaceSqlParameters(
-              sql,
-              parentCatalog,
-              parentSchema,
-              parentTable,
-              foreignCatalog,
-              foreignSchema,
-              foreignTable);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getCrossReference", e);
+    if ((parentCatalog != null && parentCatalog.isEmpty())
+        || (parentSchema != null && parentSchema.isEmpty())
+        || parentTable == null
+        || parentTable.isEmpty()
+        || (foreignCatalog != null && foreignCatalog.isEmpty())
+        || (foreignSchema != null && foreignSchema.isEmpty())
+        || foreignTable == null
+        || foreignTable.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        foreignTable,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = null;
+          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
+            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
+          }
+          if (constraints != null && constraints.getForeignKeys() != null) {
+            for (ForeignKey fk : constraints.getForeignKeys()) {
+              TableId pkTableId = fk.getReferencedTable();
+              if (matchesOrNullWildcard(parentCatalog, pkTableId.getProject())
+                  && matchesOrNullWildcard(parentSchema, pkTableId.getDataset())
+                  && parentTable.equals(pkTableId.getTable())) {
+                processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+              }
+            }
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getCrossReference", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    populateQueue(collectedResults, queue, resultSchemaFields);
+    signalEndOfData(queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
   @Override
@@ -5001,6 +5062,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return sortedCatalogs;
   }
 
+  private boolean matchesOrNullWildcard(String expected, String actual) {
+    return expected == null || expected.equals(actual);
+  }
+
   static String readSqlFromFile(String filename) {
     InputStream in;
     in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
@@ -5127,5 +5192,92 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     } finally {
       taskFutures.forEach(future -> future.cancel(true));
     }
+  }
+
+  private Schema defineForeignKeyResultSetSchema() {
+    return Schema.of(
+        Field.of("PKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("PKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("KEY_SEQ", StandardSQLTypeName.INT64),
+        Field.of("UPDATE_RULE", StandardSQLTypeName.INT64),
+        Field.of("DELETE_RULE", StandardSQLTypeName.INT64),
+        Field.of("FK_NAME", StandardSQLTypeName.STRING),
+        Field.of("PK_NAME", StandardSQLTypeName.STRING),
+        Field.of("DEFERRABILITY", StandardSQLTypeName.INT64));
+  }
+
+  private void processForeignKey(
+      ForeignKey fk,
+      TableId pkTableId,
+      TableId fkTableId,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields) {
+    List<ColumnReference> colRefs = fk.getColumnReferences();
+    if (colRefs != null) {
+      for (int i = 0; i < colRefs.size(); i++) {
+        ColumnReference colRef = colRefs.get(i);
+        List<FieldValue> row = new ArrayList<>();
+        row.add(createStringFieldValue(pkTableId.getProject())); // PKTABLE_CAT
+        row.add(createStringFieldValue(pkTableId.getDataset())); // PKTABLE_SCHEM
+        row.add(createStringFieldValue(pkTableId.getTable())); // PKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencedColumn())); // PKCOLUMN_NAME
+        row.add(createStringFieldValue(fkTableId.getProject())); // FKTABLE_CAT
+        row.add(createStringFieldValue(fkTableId.getDataset())); // FKTABLE_SCHEM
+        row.add(createStringFieldValue(fkTableId.getTable())); // FKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencingColumn())); // FKCOLUMN_NAME
+        row.add(createLongFieldValue((long) (i + 1))); // KEY_SEQ
+        row.add(createNullFieldValue()); // UPDATE_RULE
+        row.add(createNullFieldValue()); // DELETE_RULE
+        row.add(createStringFieldValue(fk.getName())); // FK_NAME
+        row.add(createNullFieldValue()); // PK_NAME
+        row.add(createNullFieldValue()); // DEFERRABILITY
+
+        collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+      }
+    }
+  }
+
+  private Comparator<FieldValueList> definePkTableSortComparator(FieldList resultSchemaFields) {
+    final int PKTABLE_CAT_IDX = resultSchemaFields.getIndex("PKTABLE_CAT");
+    final int PKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("PKTABLE_SCHEM");
+    final int PKTABLE_NAME_IDX = resultSchemaFields.getIndex("PKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
+  }
+
+  private Comparator<FieldValueList> defineFkTableSortComparator(FieldList resultSchemaFields) {
+    final int FKTABLE_CAT_IDX = resultSchemaFields.getIndex("FKTABLE_CAT");
+    final int FKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("FKTABLE_SCHEM");
+    final int FKTABLE_NAME_IDX = resultSchemaFields.getIndex("FKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
   }
 }
