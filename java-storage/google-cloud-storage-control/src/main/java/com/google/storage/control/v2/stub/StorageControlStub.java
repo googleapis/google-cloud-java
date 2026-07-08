@@ -81,6 +81,7 @@ import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -88,6 +89,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class StorageControlStub implements BackgroundResource {
 

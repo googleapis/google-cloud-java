@@ -30,7 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore</artifactId>
-    <version>3.2.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>3.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </dependency>
 
 ```

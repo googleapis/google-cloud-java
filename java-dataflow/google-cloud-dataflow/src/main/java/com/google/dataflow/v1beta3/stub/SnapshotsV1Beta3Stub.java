@@ -26,6 +26,7 @@ import com.google.dataflow.v1beta3.ListSnapshotsRequest;
 import com.google.dataflow.v1beta3.ListSnapshotsResponse;
 import com.google.dataflow.v1beta3.Snapshot;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class SnapshotsV1Beta3Stub implements BackgroundResource {

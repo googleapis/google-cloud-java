@@ -48,7 +48,7 @@ public class BigtableTableAdminClientV2Test {
   private static final String TABLE_NAME =
       "projects/my-project/instances/my-instance/tables/my-table";
 
-  @Mock private GrpcBigtableTableAdminStub mockStub;
+  private GrpcBigtableTableAdminStub mockStub;
 
   @Mock private AwaitConsistencyCallableV2 mockAwaitConsistencyCallable;
 
@@ -60,6 +60,8 @@ public class BigtableTableAdminClientV2Test {
 
   @Before
   public void setUp() {
+    mockStub =
+        Mockito.mock(GrpcBigtableTableAdminStub.class, Mockito.withSettings().withoutAnnotations());
     client =
         new BigtableTableAdminClientV2(
             mockStub, null, false, mockAwaitConsistencyCallable, mockOptimizeRestoredTableCallable);

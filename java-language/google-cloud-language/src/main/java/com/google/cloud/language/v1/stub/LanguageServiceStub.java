@@ -33,6 +33,7 @@ import com.google.cloud.language.v1.ClassifyTextResponse;
 import com.google.cloud.language.v1.ModerateTextRequest;
 import com.google.cloud.language.v1.ModerateTextResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -40,6 +41,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class LanguageServiceStub implements BackgroundResource {
 
