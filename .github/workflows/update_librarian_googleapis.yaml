@@ -71,9 +71,10 @@ jobs:
       run: |
         version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
         echo "version=${version}" >> $GITHUB_OUTPUT
-    - name: Run librarian update
+    - name: Run librarian update & tidy
       run: |
         go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" update sources.googleapis
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" tidy
     - name: Get latest commit
       id: commit
       run: |
