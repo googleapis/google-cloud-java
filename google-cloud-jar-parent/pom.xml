@@ -12,6 +12,7 @@
     The parent for all client library JAR modules in the repository.
   </description>
 
+  
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
