@@ -50,7 +50,7 @@ tools:
 default:
   java:
     custom_group_ids:
-      google/ads: com.google.api-ad
+      google/ads: com.google.api-ads
       google/analytics: com.google.analytics
       google/maps: com.google.maps
       google/shopping: com.google.shopping
