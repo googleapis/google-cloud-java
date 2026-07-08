@@ -3,7 +3,7 @@
   "name_pretty": "Common Protos",
   "product_documentation": "https://github.com/googleapis/api-common-protos",
   "api_description": "Protobuf classes for Google's common protos.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
@@ -11,6 +11,5 @@
   "repo_short": "java-common-protos",
   "distribution_name": "com.google.api.grpc:proto-google-common-protos",
   "library_type": "OTHER",
-  "requires_billing": true,
-  "excluded_poms": "proto-google-common-protos-bom,proto-google-common-protos"
+  "requires_billing": true
 }

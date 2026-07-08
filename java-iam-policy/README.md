@@ -172,7 +172,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: n/a
-[javadocs]: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
+[javadocs]: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-iam-policy.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-iam-policy/1.91.0

@@ -311,7 +311,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/logging/docs/setup/java#logback_appender_for
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-logging-logback/latest/history
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-logging-logback/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging-logback.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-logging-logback/0.131.11-alpha

@@ -547,7 +547,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/spanner/docs/
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/history
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-spanner/6.119.0

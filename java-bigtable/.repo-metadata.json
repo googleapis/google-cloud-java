@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Bigtable",
   "product_documentation": "https://cloud.google.com/bigtable",
   "api_description": "API for reading and writing the contents of Bigtables associated with a cloud project.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
@@ -14,7 +14,6 @@
   "library_type": "GAPIC_COMBO",
   "requires_billing": true,
   "codeowner_team": "@googleapis/bigtable-team",
-  "excluded_poms": "google-cloud-bigtable-bom",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "extra_versioned_modules": "google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core",
   "recommended_package": "com.google.cloud.bigtable"
