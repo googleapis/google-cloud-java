@@ -44,7 +44,7 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       EXTRA_PROFILE_OPTS=()
-      MVN_ARGS=("--also-make")
+      MVN_ARGS=()
     else
       EXTRA_PROFILE_OPTS=("-PbulkTests")
       # We do not need to install core modules or exclude them from the reactor.
