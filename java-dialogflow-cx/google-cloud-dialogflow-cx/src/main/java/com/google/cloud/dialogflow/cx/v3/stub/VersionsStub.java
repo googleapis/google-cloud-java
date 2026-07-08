@@ -42,6 +42,7 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -49,6 +50,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class VersionsStub implements BackgroundResource {
 

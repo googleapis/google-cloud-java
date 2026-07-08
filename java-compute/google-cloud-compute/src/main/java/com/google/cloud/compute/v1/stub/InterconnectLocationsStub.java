@@ -25,6 +25,7 @@ import com.google.cloud.compute.v1.InterconnectLocation;
 import com.google.cloud.compute.v1.InterconnectLocationList;
 import com.google.cloud.compute.v1.ListInterconnectLocationsRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +33,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class InterconnectLocationsStub implements BackgroundResource {
 

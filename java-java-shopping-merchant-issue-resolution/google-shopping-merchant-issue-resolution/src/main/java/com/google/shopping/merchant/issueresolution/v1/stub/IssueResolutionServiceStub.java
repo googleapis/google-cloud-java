@@ -25,6 +25,7 @@ import com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesRespon
 import com.google.shopping.merchant.issueresolution.v1.TriggerActionRequest;
 import com.google.shopping.merchant.issueresolution.v1.TriggerActionResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +33,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class IssueResolutionServiceStub implements BackgroundResource {
 

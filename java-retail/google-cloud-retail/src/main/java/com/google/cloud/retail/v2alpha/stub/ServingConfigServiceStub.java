@@ -32,6 +32,7 @@ import com.google.cloud.retail.v2alpha.ServingConfig;
 import com.google.cloud.retail.v2alpha.UpdateServingConfigRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -39,6 +40,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ServingConfigServiceStub implements BackgroundResource {

@@ -26,6 +26,7 @@ import com.google.cloud.support.v2beta.GetAttachmentRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class CaseAttachmentServiceStub implements BackgroundResource {
