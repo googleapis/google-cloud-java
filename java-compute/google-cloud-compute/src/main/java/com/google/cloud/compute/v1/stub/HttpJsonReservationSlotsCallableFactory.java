@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Operation;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -38,6 +39,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonReservationSlotsCallableFactory
     implements HttpJsonStubCallableFactory<Operation, ZoneOperationsStub> {

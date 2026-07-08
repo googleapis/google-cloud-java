@@ -27,6 +27,7 @@ import com.google.cloud.iam.credentials.v1.SignBlobResponse;
 import com.google.cloud.iam.credentials.v1.SignJwtRequest;
 import com.google.cloud.iam.credentials.v1.SignJwtResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,6 +35,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class IamCredentialsStub implements BackgroundResource {
 

@@ -37,6 +37,7 @@ import com.google.cloud.visionai.v1.RenewLeaseRequest;
 import com.google.cloud.visionai.v1.SendPacketsRequest;
 import com.google.cloud.visionai.v1.SendPacketsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -44,6 +45,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class StreamingServiceStub implements BackgroundResource {
 

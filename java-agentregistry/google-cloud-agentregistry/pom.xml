@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-agentregistry</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
   <packaging>jar</packaging>
   <name>Google Agent Registry</name>
   <description>Agent Registry Agent Registry is a centralized, unified catalog that lets you store,
@@ -12,7 +12,7 @@ agents within Google Cloud.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-agentregistry-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-agentregistry</site.installationModule>
