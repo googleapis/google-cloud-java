@@ -53,7 +53,7 @@ case ${JOB_TYPE} in
       # This allows running 'mvn test' (no JAR packaging) without reactor resolution errors.
       # These excluded modules are resolved from the pre-installed .m2 cache instead.
       MVN_ARGS=("-pl" "!sdk-platform-java/gax-java/gax,!sdk-platform-java/gax-java/gax-grpc,!sdk-platform-java/gax-java/gax-httpjson,!sdk-platform-java/java-core/google-cloud-core")
-      SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true"
+      SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -Dmaven.test.skip=true"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
