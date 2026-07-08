@@ -244,20 +244,6 @@ libraries:
       api_description_override: allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.
       name_pretty_override: Apigee Connect
       product_documentation_override: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/
-  - name: apigee-registry
-    version: 0.95.0-SNAPSHOT
-    apis:
-      - path: google/cloud/apigeeregistry/v1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
-    java:
-      api_id_override: apigeeregistry.googleapis.com
-      api_description_override: allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.
-      api_shortname_override: apigee-registry
-      name_pretty_override: Registry API
-      product_documentation_override: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api
   - name: apihub
     version: 0.48.0-SNAPSHOT
     apis:
