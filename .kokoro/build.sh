@@ -45,15 +45,12 @@ case ${JOB_TYPE} in
       pushd "${BUILD_SUBDIR}"
     else
       # We do not need to install core modules or exclude them from the reactor.
-      # Since we pass -Dmaven.test.skip=true, Maven skips test compilation globally,
-      # which avoids any test-jar reactor resolution errors during compilation verification.
-      #
-      # We need both properties:
-      # - -Dmaven.test.skip=true is for core modules that do not use skipUnitTests.
-      # - -DskipUnitTests=true is for client libraries, because their surefire plugin configuration
-      #   explicitly overrides surefire skip parameter to ${skipUnitTests} which defaults to false
-      #   in handwritten libraries and would otherwise execute tests anyway.
-      SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -Dmaven.test.skip=true"
+      # We pass -DskipTests=true to skip running tests globally.
+      # We pass -DskipUnitTests=true which maps to -Dmaven.test.skip=true for client libraries
+      # (via google-cloud-jar-parent), skipping their test compilation to save time.
+      # Core modules do not inherit this mapping, so their tests are compiled, which is
+      # necessary to resolve testlib dependencies (like gax-grpc testlib) in the reactor.
+      SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -DskipTests=true"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
