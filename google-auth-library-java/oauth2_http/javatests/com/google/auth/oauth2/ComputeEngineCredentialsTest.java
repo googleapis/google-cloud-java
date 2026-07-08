@@ -1184,6 +1184,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     DefaultCredentialsProvider provider = new DefaultCredentialsProvider();
     boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
     assertFalse(isOnGce);
+    assertEquals(1, transportFactory.transport.getRequestCount());
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
