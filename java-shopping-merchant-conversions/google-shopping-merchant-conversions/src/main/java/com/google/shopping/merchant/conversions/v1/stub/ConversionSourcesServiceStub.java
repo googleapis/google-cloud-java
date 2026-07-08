@@ -30,6 +30,7 @@ import com.google.shopping.merchant.conversions.v1.ListConversionSourcesResponse
 import com.google.shopping.merchant.conversions.v1.UndeleteConversionSourceRequest;
 import com.google.shopping.merchant.conversions.v1.UpdateConversionSourceRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -37,6 +38,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ConversionSourcesServiceStub implements BackgroundResource {
 

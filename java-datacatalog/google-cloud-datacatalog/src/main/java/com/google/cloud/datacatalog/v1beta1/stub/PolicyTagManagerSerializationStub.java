@@ -24,6 +24,7 @@ import com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse;
 import com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -31,6 +32,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class PolicyTagManagerSerializationStub implements BackgroundResource {

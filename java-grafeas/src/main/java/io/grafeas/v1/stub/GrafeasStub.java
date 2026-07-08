@@ -45,6 +45,7 @@ import io.grafeas.v1.Occurrence;
 import io.grafeas.v1.UpdateNoteRequest;
 import io.grafeas.v1.UpdateOccurrenceRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -52,6 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class GrafeasStub implements BackgroundResource {
 

@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.retail.v2alpha.ConversationalSearchRequest;
 import com.google.cloud.retail.v2alpha.ConversationalSearchResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -29,6 +30,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ConversationalSearchServiceStub implements BackgroundResource {
