@@ -279,7 +279,7 @@ public class ContentLabelServiceStubSettings extends StubSettings<ContentLabelSe
   @Override
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
-        .setArtifactName("com.google.api-ads:ad-manager")
+        .setArtifactName("com.google.api-ad:ad-manager")
         .setRepository("googleapis/google-cloud-java")
         .setVersion(Version.VERSION)
         .build();

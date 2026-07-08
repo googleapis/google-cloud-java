@@ -60,18 +60,20 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
           + "roto\032$google/cloud/ces/v1beta/common.proto\032/google/cloud/ces/v1beta/connector_to"
           + "olset.proto\032#google/cloud/ces/v1beta/fakes.proto\032)google/cloud/ces/v1beta/mcp_to"
           + "olset.proto\032.google/cloud/ces/v1beta/ope"
-          + "n_api_toolset.proto\032\037google/protobuf/timestamp.proto\"\273\005\n"
+          + "n_api_toolset.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\037google/protobuf/timestamp.proto\"\354\005\n"
           + "\007Toolset\022?\n"
-          + "\013mcp_toolset\030\006"
-          + " \001(\0132#.google.cloud.ces.v1beta.McpToolsetB\003\340A\001H\000\022H\n"
-          + "\020open_api_toolset\030\007 \001(\0132\'.go"
-          + "ogle.cloud.ces.v1beta.OpenApiToolsetB\003\340A\001H\000\022K\n"
-          + "\021connector_toolset\030\010 \001(\0132).google."
-          + "cloud.ces.v1beta.ConnectorToolsetB\003\340A\001H\000\022\021\n"
+          + "\013mcp_toolset\030\006 \001(\0132#."
+          + "google.cloud.ces.v1beta.McpToolsetB\003\340A\001H\000\022H\n"
+          + "\020open_api_toolset\030\007"
+          + " \001(\0132\'.google.cloud.ces.v1beta.OpenApiToolsetB\003\340A\001H\000\022K\n"
+          + "\021connector_toolset\030\010"
+          + " \001(\0132).google.cloud.ces.v1beta.ConnectorToolsetB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\n"
-          + " \001(\tB\003\340A\001\0224\n"
+          + " \001(\tB\003\340A\001\022/\n"
+          + "\007timeout\030\014 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
@@ -80,11 +82,11 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0162&.google.cloud.ces.v1beta.ExecutionTypeB\003\340A\001\022F\n"
           + "\020tool_fake_config\030\013"
           + " \001(\0132\'.google.cloud.ces.v1beta.ToolFakeConfigB\003\340A\001:y\352Av\n"
-          + "\032ces.googleapis.com/Toolset\022Eprojects/{project}/locations/{"
-          + "location}/apps/{app}/toolsets/{toolset}*\010toolsets2\007toolsetB\016\n"
+          + "\032ces.googleapis.com/Toolset\022Eprojects/{project}/locations/"
+          + "{location}/apps/{app}/toolsets/{toolset}*\010toolsets2\007toolsetB\016\n"
           + "\014toolset_typeB\\\n"
-          + "\033com.google.cloud.ces.v1betaB\014ToolsetProtoP"
-          + "\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\014ToolsetProto"
+          + "P\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -97,6 +99,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
               com.google.cloud.ces.v1beta.FakesProto.getDescriptor(),
               com.google.cloud.ces.v1beta.McpToolsetProto.getDescriptor(),
               com.google.cloud.ces.v1beta.OpenApiToolsetProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1beta_Toolset_descriptor = getDescriptor().getMessageType(0);
@@ -110,6 +113,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
               "Name",
               "DisplayName",
               "Description",
+              "Timeout",
               "CreateTime",
               "UpdateTime",
               "Etag",
@@ -125,6 +129,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
     com.google.cloud.ces.v1beta.FakesProto.getDescriptor();
     com.google.cloud.ces.v1beta.McpToolsetProto.getDescriptor();
     com.google.cloud.ces.v1beta.OpenApiToolsetProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

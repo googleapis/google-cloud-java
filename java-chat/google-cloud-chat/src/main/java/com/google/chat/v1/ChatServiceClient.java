@@ -775,6 +775,103 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetAvailability</td>
+ *      <td><p> Returns availability information for a human user in Google Chat. For example, this can be used to check if a user is online or away, or to retrieve their custom status message.
+ * <p>  This method only retrieves the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability.readonly`   - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAvailability(GetAvailabilityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAvailability(AvailabilityName name)
+ *           <li><p> getAvailability(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAvailabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsActive</td>
+ *      <td><p> Marks user as `ACTIVE` in Google Chat.
+ * <p>  Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsActive(MarkAsActiveRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsActiveCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsAway</td>
+ *      <td><p> Marks user as `AWAY` in Google Chat.
+ * <p>  Sets the user's state to away and is not affected by the user's activity.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsAway(MarkAsAwayRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsAwayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsDoNotDisturb</td>
+ *      <td><p> Marks user as `DO_NOT_DISTURB` in Google Chat.
+ * <p>  Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsDoNotDisturb(MarkAsDoNotDisturbRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsDoNotDisturbCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAvailability</td>
+ *      <td><p> Updates availability information for a human user. Only the `custom_status` field can be updated through this method.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAvailability(UpdateAvailabilityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAvailability(Availability availability, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAvailabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetSpaceEvent</td>
  *      <td><p> Returns an event from a Google Chat space. The [event payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the resource that changed. For example, if you request an event about a new message but the message was later updated, the server returns the updated `Message` resource in the event payload.
  * <p>  Note: The `permissionSettings` field is not returned in the Space object of the Space event data for this request.
@@ -7050,6 +7147,524 @@ public class ChatServiceClient implements BackgroundResource {
   public final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable() {
     return stub.getThreadReadStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   AvailabilityName name = AvailabilityName.of("[USER]");
+   *   Availability response = chatServiceClient.getAvailability(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the availability to retrieve.
+   *     <p>Format: users/{user}/availability
+   *     <p>`{user}` is the id for the Person in the People API or Admin SDK directory API. For
+   *     example, `users/123456789`.
+   *     <p>The user's email address or `me` can also be used as an alias to refer to the caller.
+   *     For example, `users/user{@literal @}example.com` or `users/me`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(AvailabilityName name) {
+    GetAvailabilityRequest request =
+        GetAvailabilityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = AvailabilityName.of("[USER]").toString();
+   *   Availability response = chatServiceClient.getAvailability(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the availability to retrieve.
+   *     <p>Format: users/{user}/availability
+   *     <p>`{user}` is the id for the Person in the People API or Admin SDK directory API. For
+   *     example, `users/123456789`.
+   *     <p>The user's email address or `me` can also be used as an alias to refer to the caller.
+   *     For example, `users/user{@literal @}example.com` or `users/me`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(String name) {
+    GetAvailabilityRequest request = GetAvailabilityRequest.newBuilder().setName(name).build();
+    return getAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetAvailabilityRequest request =
+   *       GetAvailabilityRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.getAvailability(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(GetAvailabilityRequest request) {
+    return getAvailabilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetAvailabilityRequest request =
+   *       GetAvailabilityRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.getAvailabilityCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable() {
+    return stub.getAvailabilityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `ACTIVE` in Google Chat.
+   *
+   * <p>Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified
+   * expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively
+   * using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsActiveRequest request =
+   *       MarkAsActiveRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.markAsActive(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsActive(MarkAsActiveRequest request) {
+    return markAsActiveCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `ACTIVE` in Google Chat.
+   *
+   * <p>Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified
+   * expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively
+   * using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsActiveRequest request =
+   *       MarkAsActiveRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future = chatServiceClient.markAsActiveCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable() {
+    return stub.markAsActiveCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `AWAY` in Google Chat.
+   *
+   * <p>Sets the user's state to away and is not affected by the user's activity.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsAwayRequest request =
+   *       MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+   *   Availability response = chatServiceClient.markAsAway(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsAway(MarkAsAwayRequest request) {
+    return markAsAwayCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `AWAY` in Google Chat.
+   *
+   * <p>Sets the user's state to away and is not affected by the user's activity.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsAwayRequest request =
+   *       MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+   *   ApiFuture<Availability> future = chatServiceClient.markAsAwayCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable() {
+    return stub.markAsAwayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `DO_NOT_DISTURB` in Google Chat.
+   *
+   * <p>Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When
+   * in `DO_NOT_DISTURB`, users typically won't receive notifications.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsDoNotDisturbRequest request =
+   *       MarkAsDoNotDisturbRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.markAsDoNotDisturb(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsDoNotDisturb(MarkAsDoNotDisturbRequest request) {
+    return markAsDoNotDisturbCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `DO_NOT_DISTURB` in Google Chat.
+   *
+   * <p>Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When
+   * in `DO_NOT_DISTURB`, users typically won't receive notifications.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsDoNotDisturbRequest request =
+   *       MarkAsDoNotDisturbRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.markAsDoNotDisturbCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable() {
+    return stub.markAsDoNotDisturbCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   Availability availability = Availability.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Availability response = chatServiceClient.updateAvailability(availability, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param availability Required. The availability to update.
+   * @param updateMask Required. The list of fields to update. The only field that can be updated is
+   *     `custom_status`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability updateAvailability(Availability availability, FieldMask updateMask) {
+    UpdateAvailabilityRequest request =
+        UpdateAvailabilityRequest.newBuilder()
+            .setAvailability(availability)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateAvailabilityRequest request =
+   *       UpdateAvailabilityRequest.newBuilder()
+   *           .setAvailability(Availability.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Availability response = chatServiceClient.updateAvailability(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability updateAvailability(UpdateAvailabilityRequest request) {
+    return updateAvailabilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateAvailabilityRequest request =
+   *       UpdateAvailabilityRequest.newBuilder()
+   *           .setAvailability(Availability.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.updateAvailabilityCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable() {
+    return stub.updateAvailabilityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

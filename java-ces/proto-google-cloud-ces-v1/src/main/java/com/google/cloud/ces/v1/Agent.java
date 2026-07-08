@@ -70,6 +70,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     toolsets_ = java.util.Collections.emptyList();
     generatedSummary_ = "";
     transferRules_ = java.util.Collections.emptyList();
+    validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -743,6 +744,36 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * @return The respectResponseInterruptionSettings.
      */
     boolean getRespectResponseInterruptionSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the variable that contains the language code to be
+     * used for the Dialogflow session. If unspecified, the default language
+     * code of the Dialogflow agent will be used.
+     * </pre>
+     *
+     * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCodeVariable.
+     */
+    java.lang.String getLanguageCodeVariable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the variable that contains the language code to be
+     * used for the Dialogflow session. If unspecified, the default language
+     * code of the Dialogflow agent will be used.
+     * </pre>
+     *
+     * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCodeVariable.
+     */
+    com.google.protobuf.ByteString getLanguageCodeVariableBytes();
   }
 
   /**
@@ -784,6 +815,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       agent_ = "";
       flowId_ = "";
       environmentId_ = "";
+      languageCodeVariable_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1265,6 +1297,63 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       return respectResponseInterruptionSettings_;
     }
 
+    public static final int LANGUAGE_CODE_VARIABLE_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object languageCodeVariable_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the variable that contains the language code to be
+     * used for the Dialogflow session. If unspecified, the default language
+     * code of the Dialogflow agent will be used.
+     * </pre>
+     *
+     * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCodeVariable.
+     */
+    @java.lang.Override
+    public java.lang.String getLanguageCodeVariable() {
+      java.lang.Object ref = languageCodeVariable_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCodeVariable_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the variable that contains the language code to be
+     * used for the Dialogflow session. If unspecified, the default language
+     * code of the Dialogflow agent will be used.
+     * </pre>
+     *
+     * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCodeVariable.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLanguageCodeVariableBytes() {
+      java.lang.Object ref = languageCodeVariable_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCodeVariable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1300,6 +1389,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
           5);
       if (respectResponseInterruptionSettings_ != false) {
         output.writeBool(6, respectResponseInterruptionSettings_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCodeVariable_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, languageCodeVariable_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1345,6 +1437,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 6, respectResponseInterruptionSettings_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCodeVariable_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, languageCodeVariable_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1370,6 +1465,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         return false;
       if (getRespectResponseInterruptionSettings()
           != other.getRespectResponseInterruptionSettings()) return false;
+      if (!getLanguageCodeVariable().equals(other.getLanguageCodeVariable())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1399,6 +1495,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getRespectResponseInterruptionSettings());
+      hash = (37 * hash) + LANGUAGE_CODE_VARIABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCodeVariable().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1577,6 +1675,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         internalGetMutableInputVariableMapping().clear();
         internalGetMutableOutputVariableMapping().clear();
         respectResponseInterruptionSettings_ = false;
+        languageCodeVariable_ = "";
         return this;
       }
 
@@ -1633,6 +1732,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.respectResponseInterruptionSettings_ = respectResponseInterruptionSettings_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.languageCodeVariable_ = languageCodeVariable_;
+        }
       }
 
       @java.lang.Override
@@ -1670,6 +1772,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000010;
         if (other.getRespectResponseInterruptionSettings() != false) {
           setRespectResponseInterruptionSettings(other.getRespectResponseInterruptionSettings());
+        }
+        if (!other.getLanguageCodeVariable().isEmpty()) {
+          languageCodeVariable_ = other.languageCodeVariable_;
+          bitField0_ |= 0x00000040;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1749,6 +1856,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 48
+              case 58:
+                {
+                  languageCodeVariable_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2622,6 +2735,127 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       public Builder clearRespectResponseInterruptionSettings() {
         bitField0_ = (bitField0_ & ~0x00000020);
         respectResponseInterruptionSettings_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object languageCodeVariable_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the variable that contains the language code to be
+       * used for the Dialogflow session. If unspecified, the default language
+       * code of the Dialogflow agent will be used.
+       * </pre>
+       *
+       * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The languageCodeVariable.
+       */
+      public java.lang.String getLanguageCodeVariable() {
+        java.lang.Object ref = languageCodeVariable_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCodeVariable_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the variable that contains the language code to be
+       * used for the Dialogflow session. If unspecified, the default language
+       * code of the Dialogflow agent will be used.
+       * </pre>
+       *
+       * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for languageCodeVariable.
+       */
+      public com.google.protobuf.ByteString getLanguageCodeVariableBytes() {
+        java.lang.Object ref = languageCodeVariable_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCodeVariable_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the variable that contains the language code to be
+       * used for the Dialogflow session. If unspecified, the default language
+       * code of the Dialogflow agent will be used.
+       * </pre>
+       *
+       * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The languageCodeVariable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeVariable(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageCodeVariable_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the variable that contains the language code to be
+       * used for the Dialogflow session. If unspecified, the default language
+       * code of the Dialogflow agent will be used.
+       * </pre>
+       *
+       * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguageCodeVariable() {
+        languageCodeVariable_ = getDefaultInstance().getLanguageCodeVariable();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the variable that contains the language code to be
+       * used for the Dialogflow session. If unspecified, the default language
+       * code of the Dialogflow agent will be used.
+       * </pre>
+       *
+       * <code>string language_code_variable = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for languageCodeVariable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeVariableBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        languageCodeVariable_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5393,6 +5627,82 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     return transferRules_.get(index);
   }
 
+  public static final int VALIDATION_ERRORS_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList validationErrors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the validationErrors.
+   */
+  public com.google.protobuf.ProtocolStringList getValidationErrorsList() {
+    return validationErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of validationErrors.
+   */
+  public int getValidationErrorsCount() {
+    return validationErrors_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The validationErrors at the given index.
+   */
+  public java.lang.String getValidationErrors(int index) {
+    return validationErrors_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validationErrors at the given index.
+   */
+  public com.google.protobuf.ByteString getValidationErrorsBytes(int index) {
+    return validationErrors_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5472,6 +5782,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < transferRules_.size(); i++) {
       output.writeMessage(30, transferRules_.get(i));
+    }
+    for (int i = 0; i < validationErrors_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 32, validationErrors_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5575,6 +5888,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < transferRules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, transferRules_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < validationErrors_.size(); i++) {
+        dataSize += computeStringSizeNoTag(validationErrors_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getValidationErrorsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5619,6 +5940,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     if (!getToolsetsList().equals(other.getToolsetsList())) return false;
     if (!getGeneratedSummary().equals(other.getGeneratedSummary())) return false;
     if (!getTransferRulesList().equals(other.getTransferRulesList())) return false;
+    if (!getValidationErrorsList().equals(other.getValidationErrorsList())) return false;
     if (!getAgentTypeCase().equals(other.getAgentTypeCase())) return false;
     switch (agentTypeCase_) {
       case 26:
@@ -5708,6 +6030,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     if (getTransferRulesCount() > 0) {
       hash = (37 * hash) + TRANSFER_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getTransferRulesList().hashCode();
+    }
+    if (getValidationErrorsCount() > 0) {
+      hash = (37 * hash) + VALIDATION_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidationErrorsList().hashCode();
     }
     switch (agentTypeCase_) {
       case 26:
@@ -5965,6 +6291,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         transferRulesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00200000);
+      validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       agentTypeCase_ = 0;
       agentType_ = null;
       return this;
@@ -6122,6 +6449,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.generatedSummary_ = generatedSummary_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        validationErrors_.makeImmutable();
+        result.validationErrors_ = validationErrors_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6434,6 +6765,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (!other.validationErrors_.isEmpty()) {
+        if (validationErrors_.isEmpty()) {
+          validationErrors_ = other.validationErrors_;
+          bitField0_ |= 0x00400000;
+        } else {
+          ensureValidationErrorsIsMutable();
+          validationErrors_.addAll(other.validationErrors_);
+        }
+        onChanged();
+      }
       switch (other.getAgentTypeCase()) {
         case LLM_AGENT:
           {
@@ -6666,6 +7007,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 242
+            case 258:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureValidationErrorsIsMutable();
+                validationErrors_.add(s);
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12860,6 +13208,207 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         transferRules_ = null;
       }
       return transferRulesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList validationErrors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureValidationErrorsIsMutable() {
+      if (!validationErrors_.isModifiable()) {
+        validationErrors_ = new com.google.protobuf.LazyStringArrayList(validationErrors_);
+      }
+      bitField0_ |= 0x00400000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the validationErrors.
+     */
+    public com.google.protobuf.ProtocolStringList getValidationErrorsList() {
+      validationErrors_.makeImmutable();
+      return validationErrors_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of validationErrors.
+     */
+    public int getValidationErrorsCount() {
+      return validationErrors_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The validationErrors at the given index.
+     */
+    public java.lang.String getValidationErrors(int index) {
+      return validationErrors_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validationErrors at the given index.
+     */
+    public com.google.protobuf.ByteString getValidationErrorsBytes(int index) {
+      return validationErrors_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The validationErrors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidationErrors(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureValidationErrorsIsMutable();
+      validationErrors_.set(index, value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addValidationErrors(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureValidationErrorsIsMutable();
+      validationErrors_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllValidationErrors(java.lang.Iterable<java.lang.String> values) {
+      ensureValidationErrorsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validationErrors_);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidationErrors() {
+      validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or errors in the agent that may affect agent
+     * quality.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addValidationErrorsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureValidationErrorsIsMutable();
+      validationErrors_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.Agent)

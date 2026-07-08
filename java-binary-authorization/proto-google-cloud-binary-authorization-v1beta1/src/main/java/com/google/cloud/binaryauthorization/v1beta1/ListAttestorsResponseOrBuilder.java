@@ -87,8 +87,9 @@ public interface ListAttestorsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in the
-   * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest.page_token] field in the subsequent call to the
-   * `ListAttestors` method to retrieve the next page of results.
+   * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest.page_token]
+   * field in the subsequent call to the `ListAttestors` method to retrieve the
+   * next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -102,8 +103,9 @@ public interface ListAttestorsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in the
-   * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest.page_token] field in the subsequent call to the
-   * `ListAttestors` method to retrieve the next page of results.
+   * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest.page_token]
+   * field in the subsequent call to the `ListAttestors` method to retrieve the
+   * next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

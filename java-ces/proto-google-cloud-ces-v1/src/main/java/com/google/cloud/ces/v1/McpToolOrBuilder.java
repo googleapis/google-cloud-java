@@ -56,6 +56,34 @@ public interface McpToolOrBuilder
    *
    *
    * <pre>
+   * Optional. The name override of the MCP tool.
+   * This is populated if the name was overridden by a Toolset override.
+   * </pre>
+   *
+   * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The nameOverride.
+   */
+  java.lang.String getNameOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name override of the MCP tool.
+   * This is populated if the name was overridden by a Toolset override.
+   * </pre>
+   *
+   * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for nameOverride.
+   */
+  com.google.protobuf.ByteString getNameOverrideBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The description of the MCP tool.
    * </pre>
    *
@@ -424,4 +452,36 @@ public interface McpToolOrBuilder
    * </code>
    */
   java.lang.String getCustomHeadersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dynamic availability state of the tool on the external
+   * server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dynamic availability state of the tool on the external
+   * server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.ces.v1.McpTool.State getState();
 }
