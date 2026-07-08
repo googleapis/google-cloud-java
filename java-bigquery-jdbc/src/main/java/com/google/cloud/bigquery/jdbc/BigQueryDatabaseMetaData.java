@@ -52,15 +52,11 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +64,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -89,17 +84,14 @@ import javax.annotation.Nullable;
  *
  * @see BigQueryStatement
  */
-// TODO(neenu): test and verify after post MVP implementation.
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
   final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
-
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
-  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   // Declared package-private for testing.
@@ -2413,17 +2405,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  private void closeStatementIgnoreException(Statement statement) {
-    if (statement == null) {
-      return;
-    }
-    try {
-      statement.close();
-    } catch (SQLException e) {
-      // pass
-    }
-  }
-
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
@@ -2569,16 +2550,51 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    boolean ignoreAccessErrors = (catalog == null);
+    processTargetTablesConcurrently(
+        targetDatasets,
+        null,
+        collectedResults,
+        resultSchemaFields,
+        ignoreAccessErrors,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints != null && constraints.getForeignKeys() != null) {
+            for (ForeignKey fk : constraints.getForeignKeys()) {
+              TableId pkTableId = fk.getReferencedTable();
+              if (pkTableId != null
+                  && equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                  && equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                  && table.equals(pkTableId.getTable())) {
+                processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+              }
+            }
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    populateQueue(collectedResults, queue, resultSchemaFields);
+    signalEndOfData(queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
   }
 
   @Override
@@ -5063,24 +5079,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return expected == null || expected.equals(actual);
   }
 
-  static String readSqlFromFile(String filename) {
-    InputStream in;
-    in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-    }
-    return builder.toString();
-  }
-
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
-  }
-
   private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
     Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
     BigQueryFieldValueListWrapper element = BigQueryFieldValueListWrapper.ofError(ex);
@@ -5168,7 +5166,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
-    if (targetDatasets.size() == 1) {
+    if (targetDatasets.size() == 1 && tableName != null) {
       processSingleTable(
           targetDatasets.get(0),
           tableName,
@@ -5184,18 +5182,51 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     try {
       for (DatasetId datasetId : targetDatasets) {
-        taskFutures.add(
-            executor.submit(
-                () -> {
-                  processSingleTable(
-                      datasetId,
-                      tableName,
-                      collectedResults,
-                      resultSchemaFields,
-                      ignoreAccessErrors,
-                      processor);
-                  return null;
-                }));
+        if (tableName != null) {
+          taskFutures.add(
+              executor.submit(
+                  () -> {
+                    processSingleTable(
+                        datasetId,
+                        tableName,
+                        collectedResults,
+                        resultSchemaFields,
+                        ignoreAccessErrors,
+                        processor);
+                    return null;
+                  }));
+        } else {
+          Page<Table> tablesPage;
+          try {
+            tablesPage =
+                bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          } catch (BigQueryException e) {
+            if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+              LOG.info(
+                  String.format(
+                      "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+                      datasetId.getDataset(), datasetId.getProject(), e.getCode()));
+              continue;
+            }
+            throw new SQLException("Error while listing tables: " + e.getMessage(), e);
+          }
+          if (tablesPage != null) {
+            for (Table table : tablesPage.iterateAll()) {
+              taskFutures.add(
+                  executor.submit(
+                      () -> {
+                        processSingleTable(
+                            datasetId,
+                            table.getTableId().getTable(),
+                            collectedResults,
+                            resultSchemaFields,
+                            ignoreAccessErrors,
+                            processor);
+                        return null;
+                      }));
+            }
+          }
+        }
       }
       waitForTasksCompletion(taskFutures);
       if (Thread.currentThread().isInterrupted()) {
