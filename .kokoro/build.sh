@@ -47,12 +47,10 @@ case ${JOB_TYPE} in
       MVN_ARGS=("--also-make")
     else
       EXTRA_PROFILE_OPTS=("-PbulkTests")
-      install_modules "sdk-platform-java"
-      
-      # Exclude core modules that generate test-jars from the reactor.
-      # This allows running 'mvn test' (no JAR packaging) without reactor resolution errors.
-      # These excluded modules are resolved from the pre-installed .m2 cache instead.
-      MVN_ARGS=("-pl" "!sdk-platform-java/gax-java/gax,!sdk-platform-java/gax-java/gax-grpc,!sdk-platform-java/gax-java/gax-httpjson,!sdk-platform-java/java-core/google-cloud-core")
+      # We do not need to install core modules or exclude them from the reactor.
+      # Since we pass -Dmaven.test.skip=true, Maven skips test compilation globally,
+      # which avoids any test-jar reactor resolution errors during compilation verification.
+      MVN_ARGS=()
       SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -Dmaven.test.skip=true"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
