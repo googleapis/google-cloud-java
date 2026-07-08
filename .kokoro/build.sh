@@ -49,39 +49,10 @@ case ${JOB_TYPE} in
       EXTRA_PROFILE_OPTS=("-PbulkTests")
       install_modules "sdk-platform-java"
       
-      echo "Resolving test-enabled modules..."
-      TEST_MODULES=$(python3 -c "
-import xml.etree.ElementTree as ET
-import glob, os
-ns = {'m': 'http://maven.apache.org/POM/4.0.0'}
-ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-mods = []
-for pom in glob.glob('java-*/pom.xml'):
-    p_dir = os.path.dirname(pom)
-    try:
-        root = ET.parse(pom).getroot()
-        skip = root.find('.//m:properties/m:skipUnitTests', ns)
-        if skip is not None and skip.text == 'false':
-            modules = root.find('m:modules', ns)
-            if modules is not None:
-                for m in modules.findall('m:module', ns):
-                    child = os.path.join(p_dir, m.text)
-                    cpom = os.path.join(child, 'pom.xml')
-                    if os.path.exists(cpom):
-                        croot = ET.parse(cpom).getroot()
-                        cskip = croot.find('.//m:properties/m:skipUnitTests', ns)
-                        if cskip is not None and cskip.text == 'true': continue
-                        mods.append(child)
-            else: mods.append(p_dir)
-    except: pass
-print(','.join(mods))
-")
-      echo "Modules to test: ${TEST_MODULES}"
-      if [[ -z "${TEST_MODULES}" ]]; then
-        echo "No test-enabled modules found! Exiting."
-        exit 0
-      fi
-      MVN_ARGS=("-pl" "${TEST_MODULES}")
+      # Exclude core modules that generate test-jars from the reactor.
+      # This allows running 'mvn test' (no JAR packaging) without reactor resolution errors.
+      # These excluded modules are resolved from the pre-installed .m2 cache instead.
+      MVN_ARGS=("-pl" "!sdk-platform-java/gax-java/gax,!sdk-platform-java/gax-java/gax-grpc,!sdk-platform-java/gax-java/gax-httpjson,!sdk-platform-java/java-core/google-cloud-core")
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
