@@ -1177,6 +1177,15 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertEquals(0, transportFactory.transport.getRequestCount());
   }
 
+  @Test
+  void isOnGce_forbidden_doesNotRetry() {
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN);
+    DefaultCredentialsProvider provider = new DefaultCredentialsProvider();
+    boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
+    assertFalse(isOnGce);
+  }
+
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
 
     MockMetadataServerTransport transport =
