@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.AggregatedListAcceleratorTypesRequest;
 import com.google.cloud.compute.v1.GetAcceleratorTypeRequest;
 import com.google.cloud.compute.v1.ListAcceleratorTypesRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -35,6 +36,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class AcceleratorTypesStub implements BackgroundResource {
 
