@@ -74,9 +74,10 @@ jobs:
       run: |
         version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
         echo "version=${version}" >> $GITHUB_OUTPUT
-    - name: Run librarian update
+    - name: Run librarian update & tidy
       run: |
         go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" update sources.googleapis
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" tidy
       env:
         STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
     - name: Get latest commit
@@ -99,15 +100,6 @@ jobs:
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
-    - name: Install protoc
-      if: steps.detect_librarian.outputs.has_changes == 'true'
-      run: |
-        set -e
-        VERSION="33.2"
-        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
-        cd /usr/local
-        sudo unzip -o /tmp/protoc.zip
-        protoc --version
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       if: steps.detect_librarian.outputs.has_changes == 'true'
       with:
