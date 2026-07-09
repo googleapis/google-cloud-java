@@ -54,14 +54,6 @@ jobs:
         V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
         echo "Installing librarian version $V"
         go install github.com/googleapis/librarian/cmd/librarian@$V
-    - name: Install protoc
-      run: |
-        set -e
-        VERSION="33.2"
-        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
-        cd /usr/local
-        sudo unzip -o /tmp/protoc.zip
-        protoc --version
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         java-version: "17"
