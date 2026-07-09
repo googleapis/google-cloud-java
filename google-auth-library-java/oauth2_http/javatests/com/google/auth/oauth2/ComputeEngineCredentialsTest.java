@@ -1213,7 +1213,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
       }
       @Override
       String getOsName() {
-        return "Linux";
+        return "linux";
       }
       @Override
       java.io.InputStream readStream(java.io.File file) throws java.io.FileNotFoundException {
