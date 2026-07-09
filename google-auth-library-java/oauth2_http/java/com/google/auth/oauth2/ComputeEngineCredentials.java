@@ -673,9 +673,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
       } catch (SocketTimeoutException expected) {
         // Ignore logging timeouts which is the expected failure mode in non GCE environments.
       } catch (IOException e) {
-        if (e instanceof HttpResponseException
-            && ((HttpResponseException) e).getStatusCode() == 403) {
-          return false;
+        if (e instanceof HttpResponseException) {
+          int statusCode = ((HttpResponseException) e).getStatusCode();
+          if (statusCode >= 400 && statusCode < 500) {
+            return false;
+          }
         }
         LOGGER.log(
             Level.FINE,
