@@ -50,10 +50,7 @@ case ${JOB_TYPE} in
       # so we also pass plain -DskipTests=true to stop their tests from running. We
       # deliberately leave their test *compilation* alone, since other modules in the
       # reactor need testlib artifacts (like gax-grpc's) that only that compile step
-      # produces. We looked at pre-building those core modules separately so this second
-      # flag wouldn't be needed, but they turned out to have a real circular dependency on
-      # generated client code, so a single combined pass like this is the simplest thing
-      # that actually works.
+      # produces.
       EXTRA_MAVEN_OPTS="${EXTRA_MAVEN_OPTS} -DskipUnitTests=true -DskipTests=true"
     fi
     echo "EXTRA_MAVEN_OPTS: ${EXTRA_MAVEN_OPTS}"
