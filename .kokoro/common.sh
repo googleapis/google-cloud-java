@@ -311,14 +311,11 @@ function run_integration_tests() {
   parse_all_submodules "$1"
   printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
 
-  # This job needs integration tests to actually run, so plain -DskipTests=true is off the
-  # table here (it would skip those too). We only want unit tests skipped, hence two
-  # narrower flags instead: -DskipUnitTests=true for client-library modules (see
-  # google-cloud-jar-parent/pom.xml for how that's wired), and -PbulkTests for the handful
-  # of modules (google-auth-library-java, java-cloud-bom, java-shared-config,
-  # sdk-platform-java) that predate and sit outside that mechanism. We just pass both
-  # always rather than figure out per-module which one applies; Maven ignores whichever one
-  # a given module doesn't recognize.
+  # Skip only unit tests, not ITs: -DskipUnitTests=true for client-library modules (see
+  # google-cloud-jar-parent/pom.xml for how that's wired) and -PbulkTests for the handful of
+  # modules (google-auth-library-java, java-cloud-bom, java-shared-config,
+  # sdk-platform-java) that predate and sit outside that mechanism. Both flags are passed
+  # unconditionally; Maven ignores whichever one a given module doesn't recognize.
   mvn verify -Penable-integration-tests -Pquick-build --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \

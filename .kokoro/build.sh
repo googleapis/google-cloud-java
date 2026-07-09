@@ -44,12 +44,11 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
     else
-      # -DskipUnitTests=true is where the real time savings come from: it skips both
-      # compiling and running tests for most client-library modules. A few "core" modules
-      # (google-auth-library-java, grpc-gcp-java, sdk-platform-java) don't honor it though,
-      # so we also pass plain -DskipTests=true to stop their tests from running. We
-      # deliberately leave their test *compilation* alone, since other modules in the
-      # reactor need testlib artifacts (like gax-grpc's) that only that compile step
+      # -DskipUnitTests=true skips both compiling and running tests for most client-library
+      # modules. A few "core" modules (google-auth-library-java, grpc-gcp-java,
+      # sdk-platform-java) don't honor it, so -DskipTests=true is also passed to stop their
+      # tests from running, while leaving their test *compilation* alone since other modules
+      # in the reactor need testlib artifacts (like gax-grpc's) that only that compile step
       # produces.
       EXTRA_MAVEN_OPTS="${EXTRA_MAVEN_OPTS} -DskipUnitTests=true -DskipTests=true"
     fi
