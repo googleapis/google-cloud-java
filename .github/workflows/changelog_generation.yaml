@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 on:
   pull_request:
     types:
@@ -23,9 +26,10 @@ jobs:
       github.event.sender.login == 'release-please[bot]' && github.head_ref == 'release-please--branches--main' &&
       contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       with:
         ref: ${{ github.head_ref }}
+        persist-credentials: false
     - name: Show status of the branch checked out
       run: |
         git status
