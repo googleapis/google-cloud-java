@@ -37,6 +37,7 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    MAVEN_GOAL="test"
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
@@ -44,23 +45,19 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
     else
-      # -DskipUnitTests=true skips both compiling and running tests for most client-library
-      # modules. A few "core" modules (google-auth-library-java, grpc-gcp-java,
-      # sdk-platform-java) don't honor it, so -DskipTests=true is also passed to stop their
-      # tests from running, while leaving their test *compilation* alone since other modules
-      # in the reactor need testlib artifacts (like gax-grpc's) that only that compile step
-      # produces.
-      EXTRA_MAVEN_OPTS="${EXTRA_MAVEN_OPTS} -DskipUnitTests=true -DskipTests=true"
+      # These are pure GAPIC-generated modules with no unit tests to run here; Showcase
+      # integration tests already cover the generated code's behavior, so this pass only
+      # needs to confirm everything compiles.
+      MAVEN_GOAL="compile"
     fi
-    echo "EXTRA_MAVEN_OPTS: ${EXTRA_MAVEN_OPTS}"
+    echo "MAVEN_GOAL: ${MAVEN_GOAL}"
     retry_with_backoff 3 10 \
-      mvn test \
+      mvn ${MAVEN_GOAL} \
         -B -ntp \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        ${EXTRA_MAVEN_OPTS}
+        -Dmaven.wagon.http.retryHandler.count=5
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]

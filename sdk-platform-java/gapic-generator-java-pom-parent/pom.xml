@@ -25,18 +25,10 @@
       modules here (gax-java, gapic-generator-java, java-core, ...) have handwritten tests
       worth running by default.
 
-      skipUnitTests is wired only into surefire's <skip> below, not into maven.test.skip, so
-      -DskipUnitTests=true skips unit test *execution* but never compilation. That's
-      deliberate: gax-grpc's test-jar is a declared test-scope dependency of java-storage,
-      java-datastore, java-translate, java-resourcemanager, java-logging, and
-      java-spanner-jdbc, all of which build in the same root reactor as this hierarchy.
-      Skipping gax-grpc's test-compile would break their dependency resolution. Contrast
-      with google-cloud-jar-parent, where skipUnitTests skips compilation too, because GAPIC
-      test sources have no such cross-hierarchy consumers.
-
-      The enable-integration-tests profile below sets maven.test.skip=false explicitly, so
-      that flag has the same meaning as in google-cloud-jar-parent when that profile is
-      active in both hierarchies at once.
+      Wired only into surefire's <skip> below, not maven.test.skip, so -DskipUnitTests=true
+      skips unit test execution but never compilation: google-cloud-core's test-jar is a
+      test-scope dependency of several client libraries in the same root reactor, and
+      skipping its compilation would break their dependency resolution.
     -->
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
@@ -255,20 +247,13 @@
     </profile>
     <!--
       skip tests if bulkTests profile is enabled (when testing the rest of the monorepo).
-      Uses Maven's built-in skipTests, not skipUnitTests, since bulkTests wants everything
-      skipped (surefire and failsafe both honor skipTests natively) rather than just unit
-      tests.
+      Uses skipTests rather than skipUnitTests since both surefire and failsafe honor it,
+      skipping ITs along with unit tests.
     -->
     <profile>
       <id>bulkTests</id>
       <properties>
         <skipTests>true</skipTests>
-      </properties>
-    </profile>
-    <profile>
-      <id>enable-integration-tests</id>
-      <properties>
-        <maven.test.skip>false</maven.test.skip>
       </properties>
     </profile>
   </profiles>

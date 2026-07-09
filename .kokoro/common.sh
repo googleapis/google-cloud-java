@@ -421,6 +421,7 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      'grpc-gcp-java'
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
       'google-auth-library-java/appengine'

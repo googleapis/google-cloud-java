@@ -20,39 +20,19 @@
   </parent>
   <properties>
     <!--
-      Defaults to true because most modules under this parent are pure GAPIC-generated
-      clients, and their generated tests aren't worth the CI time they cost. Libraries with
-      handwritten tests worth running, like java-spanner, java-bigtable, or java-storage,
-      override this back to false in their own top-level pom.xml. Forget that override, and
-      the tests just quietly stop running.
+      Defaults to true: most modules under this parent are pure GAPIC-generated clients whose
+      generated tests aren't worth the CI time. Libraries with handwritten tests worth
+      running (java-spanner, java-bigtable, java-storage, ...) override this back to false in
+      their own top-level pom.xml.
 
-      java-common-protos, java-iam, and java-showcase don't extend this parent at all, so
-      their skipUnitTests only stops test execution, not compilation. That's an artifact of
-      the repo having two separate parent-POM hierarchies for the same idea, not a
-      deliberate design choice, so it should go away if those hierarchies are ever merged.
-
-      java-cloud-bom and sdk-platform-java are standalone reactors with no parent, and
-      google-auth-library-java pins its parent to a released google-cloud-shared-config
-      version rather than this monorepo's SNAPSHOT, so none of the three see any of this.
-      They skip tests via their own "bulkTests" profile instead (see .kokoro/common.sh).
-      java-shared-config, by contrast, *is* an ancestor of this hierarchy
-      (google-cloud-shared-config -> sdk-platform-java-config -> google-cloud-pom-parent ->
-      this pom), so its own skipITs/enable-integration-tests properties are inherited here
-      too, alongside the maven.test.skip override below.
-
-      skipUnitTests is intentionally a separate property from Maven's built-in skipTests:
-      skipTests is honored natively by both surefire and failsafe, so setting it would skip
-      ITs along with unit tests. skipUnitTests is only wired into surefire's <skip> (below),
-      so it can skip unit tests while leaving failsafe/ITs untouched. bulkTests (used by the
-      four modules above) uses skipTests instead, since those builds want everything
-      skipped, ITs included.
+      Wired only into surefire's <skip> (below), not Maven's built-in skipTests, so it skips
+      unit tests without also skipping failsafe/ITs.
     -->
     <skipUnitTests>true</skipUnitTests>
     <!--
-      maven.test.skip mirrors skipUnitTests by default, skipping both compilation and
-      execution of tests for libraries that skip unit tests (like GAPICs). The
-      enable-integration-tests profile below overrides this back to false so ITs can
-      compile and run while -DskipUnitTests=true still skips unit tests.
+      Mirrors skipUnitTests, so test compilation is skipped along with execution. The
+      enable-integration-tests profile overrides this to false so ITs still compile and run
+      when -DskipUnitTests=true is set.
     -->
     <maven.test.skip>${skipUnitTests}</maven.test.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
