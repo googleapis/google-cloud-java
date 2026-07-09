@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.24.1-0.20260707150039-db37cc1a8f59
+version: v0.25.1-0.20260708160859-939ae6f16e82
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -47,6 +47,9 @@ tools:
     - name: synthtool
       version: ""
       local_path: sdk-platform-java/hermetic_build/library_generation
+  protoc:
+    version: "33.2"
+    sha256: b24b53f87c151bfd48b112fe4c3a6e6574e5198874f38036aff41df3456b8caf
 default:
   java:
     custom_group_ids:
@@ -244,20 +247,6 @@ libraries:
       api_description_override: allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.
       name_pretty_override: Apigee Connect
       product_documentation_override: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/
-  - name: apigee-registry
-    version: 0.95.0-SNAPSHOT
-    apis:
-      - path: google/cloud/apigeeregistry/v1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
-    java:
-      api_id_override: apigeeregistry.googleapis.com
-      api_description_override: allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.
-      api_shortname_override: apigee-registry
-      name_pretty_override: Registry API
-      product_documentation_override: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api
   - name: apihub
     version: 0.48.0-SNAPSHOT
     apis:
@@ -1842,7 +1831,7 @@ libraries:
     version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: google-cloud-pom-parent
-    version: 1.88.0
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: grafeas
     version: 2.96.0-SNAPSHOT
