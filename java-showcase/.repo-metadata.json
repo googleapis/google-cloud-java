@@ -11,5 +11,6 @@
   "repo_short": "java-showcase",
   "distribution_name": "com.google.cloud:gapic-showcase",
   "library_type": "OTHER",
-  "requires_billing": true
+  "requires_billing": true,
+  "excluded_poms": "gapic-showcase-bom"
 }
