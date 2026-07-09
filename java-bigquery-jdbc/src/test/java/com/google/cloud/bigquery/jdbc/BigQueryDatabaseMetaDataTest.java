@@ -3424,19 +3424,25 @@ public class BigQueryDatabaseMetaDataTest {
 
     TableConstraints mockConstraints = mock(TableConstraints.class);
     PrimaryKey mockPk = mock(PrimaryKey.class);
-    when(mockPk.getColumns()).thenReturn(Arrays.asList("id_col"));
+    when(mockPk.getColumns()).thenReturn(Arrays.asList("id_col1", "id_col2"));
     when(mockConstraints.getPrimaryKey()).thenReturn(mockPk);
 
     mockTableWithConstraints(tableId, mockConstraints);
-    mockDatasetIteration(datasetId);
 
     try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
       assertTrue(rs.next());
       assertEquals("test-project", rs.getString("TABLE_CAT"));
       assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
       assertEquals("table_p", rs.getString("TABLE_NAME"));
-      assertEquals("id_col", rs.getString("COLUMN_NAME"));
+      assertEquals("id_col1", rs.getString("COLUMN_NAME"));
       assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertNull(rs.getString("PK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("TABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("TABLE_NAME"));
+      assertEquals("id_col2", rs.getString("COLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
       assertNull(rs.getString("PK_NAME"));
       assertFalse(rs.next());
     }
@@ -3448,7 +3454,6 @@ public class BigQueryDatabaseMetaDataTest {
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
 
     mockTableWithConstraints(tableId, null);
-    mockDatasetIteration(datasetId);
 
     try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
       assertFalse(rs.next());
@@ -3466,26 +3471,39 @@ public class BigQueryDatabaseMetaDataTest {
     when(mockFk.getReferencedTable())
         .thenReturn(TableId.of("test-project", "dataset_p", "ref_table"));
 
-    ColumnReference mockRef = mock(ColumnReference.class);
-    when(mockRef.getReferencingColumn()).thenReturn("fk_col");
-    when(mockRef.getReferencedColumn()).thenReturn("pk_col");
-    when(mockFk.getColumnReferences()).thenReturn(Collections.singletonList(mockRef));
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
 
     when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
     mockTableWithConstraints(tableId, mockConstraints);
-    mockDatasetIteration(datasetId);
 
     try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
       assertTrue(rs.next());
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
       assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
-      assertEquals("pk_col", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
       assertEquals("test-project", rs.getString("FKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
       assertEquals("table_p", rs.getString("FKTABLE_NAME"));
-      assertEquals("fk_col", rs.getString("FKCOLUMN_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
       assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
       assertEquals("fk_name", rs.getString("FK_NAME"));
       assertFalse(rs.next());
     }
@@ -3497,7 +3515,6 @@ public class BigQueryDatabaseMetaDataTest {
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
 
     mockTableWithConstraints(tableId, null);
-    mockDatasetIteration(datasetId);
 
     try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
       assertFalse(rs.next());
@@ -3514,10 +3531,13 @@ public class BigQueryDatabaseMetaDataTest {
     ForeignKey mockFk = mock(ForeignKey.class);
     when(mockFk.getName()).thenReturn("fk_name");
     when(mockFk.getReferencedTable()).thenReturn(refTableId);
-    ColumnReference mockRef = mock(ColumnReference.class);
-    when(mockRef.getReferencingColumn()).thenReturn("fk_col");
-    when(mockRef.getReferencedColumn()).thenReturn("pk_col");
-    when(mockFk.getColumnReferences()).thenReturn(Collections.singletonList(mockRef));
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
     when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
 
     Table mockTableP = mockTableWithConstraints(tableId, mockConstraints);
@@ -3529,12 +3549,23 @@ public class BigQueryDatabaseMetaDataTest {
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
       assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
-      assertEquals("pk_col", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
       assertEquals("test-project", rs.getString("FKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
       assertEquals("table_p", rs.getString("FKTABLE_NAME"));
-      assertEquals("fk_col", rs.getString("FKCOLUMN_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
       assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
       assertEquals("fk_name", rs.getString("FK_NAME"));
       assertFalse(rs.next());
     }
@@ -3564,10 +3595,13 @@ public class BigQueryDatabaseMetaDataTest {
     when(mockFk.getName()).thenReturn("fk_name");
     when(mockFk.getReferencedTable()).thenReturn(pkTableId);
 
-    ColumnReference mockRef = mock(ColumnReference.class);
-    when(mockRef.getReferencingColumn()).thenReturn("fk_col");
-    when(mockRef.getReferencedColumn()).thenReturn("pk_col");
-    when(mockFk.getColumnReferences()).thenReturn(Collections.singletonList(mockRef));
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
     when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
 
     mockTableWithConstraints(fkTableId, mockConstraints);
@@ -3579,12 +3613,23 @@ public class BigQueryDatabaseMetaDataTest {
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
       assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
-      assertEquals("pk_col", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
       assertEquals("test-project", rs.getString("FKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
       assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
-      assertEquals("fk_col", rs.getString("FKCOLUMN_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
       assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
       assertEquals("fk_name", rs.getString("FK_NAME"));
       assertFalse(rs.next());
     }
