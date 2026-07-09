@@ -1,0 +1,78 @@
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - 'release-note-generation/**'
+name: java-cloud-bom release-note-generation-test
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-cloud-bom/**'
+  test:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - name: Run test in release-note-generation
+      shell: bash
+      run: |
+        mvn -B -ntp verify -f java-cloud-bom/release-note-generation/pom.xml
+      working-directory: java-cloud-bom/release-note-generation
+      env:
+        GH_TOKEN: ${{ github.token }}
+
+  dry-run:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - name: Dry-run release-note-generation
+      shell: bash
+      run: |
+        mvn -B -ntp compile -f java-cloud-bom/release-note-generation/pom.xml
+        # This generates release_note.md file
+        mvn -B -ntp exec:java -f java-cloud-bom/release-note-generation/pom.xml \
+            -Dlibraries-bom.version="26.2.0" \
+            -Dgoogle-cloud-java.version="1.1.0"
+      working-directory: java-cloud-bom/release-note-generation
+      env:
+        GH_TOKEN: ${{ github.token }}
+    - name: Show generated release note
+      shell: bash
+      run: |
+        # This fails if the file does not exist
+        cat release_note.md
+      working-directory: java-cloud-bom/release-note-generation

@@ -144,7 +144,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   // Dynamic Channel Pool (DCP) default values and bounds
   /** Default max concurrent RPCs per channel before triggering scale up. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 90;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 25;
 
   /** Default min concurrent RPCs per channel for scale down check. */
   public static final int DEFAULT_DYNAMIC_POOL_MIN_RPC = 15;
@@ -153,13 +153,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL = Duration.ofMinutes(3);
 
   /** Default initial number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 4;
 
   /** Default max number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 256;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 10;
 
   /** Default min number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 2;
 
   /**
    * Default affinity key lifetime for dynamic channel pool. This is how long to keep an affinity
@@ -268,6 +268,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
   private final Duration partitionedDmlTimeout;
+  private final Duration grpcKeepAliveTime;
+  private final Duration grpcKeepAliveTimeout;
   private final boolean grpcGcpExtensionEnabled;
   private final GcpManagedChannelOptions grpcGcpOptions;
   private final boolean dynamicChannelPoolEnabled;
@@ -939,6 +941,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
     partitionedDmlTimeout = builder.partitionedDmlTimeout;
+    grpcKeepAliveTime = builder.grpcKeepAliveTime;
+    grpcKeepAliveTimeout = builder.grpcKeepAliveTimeout;
     grpcGcpExtensionEnabled = builder.grpcGcpExtensionEnabled;
     grpcGcpOptions = builder.grpcGcpOptions;
 
@@ -1317,6 +1321,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private Map<DatabaseId, QueryOptions> defaultQueryOptions = new HashMap<>();
     private boolean enableGrpcGcpOtelMetrics =
         SpannerOptions.environment.isEnableGrpcGcpOtelMetrics();
+    private Duration grpcKeepAliveTime = Duration.ofSeconds(120);
+    private Duration grpcKeepAliveTimeout = Duration.ofSeconds(20);
     private CallCredentialsProvider callCredentialsProvider;
     private CloseableExecutorProvider asyncExecutorProvider;
     private String compressorName;
@@ -1430,6 +1436,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.enableGrpcGcpOtelMetrics = options.enableGrpcGcpOtelMetrics;
       this.defaultQueryOptions = options.defaultQueryOptions;
       this.callCredentialsProvider = options.callCredentialsProvider;
+      this.grpcKeepAliveTime = options.grpcKeepAliveTime;
+      this.grpcKeepAliveTimeout = options.grpcKeepAliveTimeout;
       this.asyncExecutorProvider = options.asyncExecutorProvider;
       this.compressorName = options.compressorName;
       this.channelProvider = options.channelProvider;
@@ -1689,6 +1697,32 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setPartitionedDmlTimeoutDuration(Duration timeout) {
       this.partitionedDmlTimeout = timeout;
+      return this;
+    }
+
+    /**
+     * Sets the keep-alive time for gRPC connections. The default is 120 seconds. Note that the
+     * client-side keepalive time is clamped to a minimum of 10 seconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTime(Duration grpcKeepAliveTime) {
+      Preconditions.checkNotNull(grpcKeepAliveTime, "grpcKeepAliveTime cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTime.isNegative() && !grpcKeepAliveTime.isZero(),
+          "grpcKeepAliveTime must be positive");
+      this.grpcKeepAliveTime = grpcKeepAliveTime;
+      return this;
+    }
+
+    /**
+     * Sets the keep-alive timeout for gRPC connections. The default is 20 seconds. Note that the
+     * client-side keepalive timeout is clamped to a minimum of 20 milliseconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTimeout(Duration grpcKeepAliveTimeout) {
+      Preconditions.checkNotNull(grpcKeepAliveTimeout, "grpcKeepAliveTimeout cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTimeout.isNegative() && !grpcKeepAliveTimeout.isZero(),
+          "grpcKeepAliveTimeout must be positive");
+      this.grpcKeepAliveTimeout = grpcKeepAliveTimeout;
       return this;
     }
 
@@ -2491,6 +2525,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Duration getPartitionedDmlTimeoutDuration() {
     return partitionedDmlTimeout;
+  }
+
+  public Duration getGrpcKeepAliveTime() {
+    return grpcKeepAliveTime;
+  }
+
+  public Duration getGrpcKeepAliveTimeout() {
+    return grpcKeepAliveTimeout;
   }
 
   public boolean isGrpcGcpExtensionEnabled() {

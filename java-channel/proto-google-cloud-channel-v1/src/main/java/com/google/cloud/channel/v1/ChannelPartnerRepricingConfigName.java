@@ -25,8 +25,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ChannelPartnerRepricingConfigName implements ResourceName {
   private static final PathTemplate ACCOUNT_CHANNEL_PARTNER_CHANNEL_PARTNER_REPRICING_CONFIG =

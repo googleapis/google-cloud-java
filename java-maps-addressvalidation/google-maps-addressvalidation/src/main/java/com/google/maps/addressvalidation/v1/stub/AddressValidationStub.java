@@ -23,6 +23,7 @@ import com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse;
 import com.google.maps.addressvalidation.v1.ValidateAddressRequest;
 import com.google.maps.addressvalidation.v1.ValidateAddressResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -30,6 +31,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class AddressValidationStub implements BackgroundResource {
 

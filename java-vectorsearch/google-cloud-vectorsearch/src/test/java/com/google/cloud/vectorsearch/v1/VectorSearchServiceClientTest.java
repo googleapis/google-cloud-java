@@ -1052,6 +1052,7 @@ public class VectorSearchServiceClientTest {
     ExportDataObjectsRequest request =
         ExportDataObjectsRequest.newBuilder()
             .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+            .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
             .build();
 
     ExportDataObjectsResponse actualResponse = client.exportDataObjectsAsync(request).get();
@@ -1063,6 +1064,7 @@ public class VectorSearchServiceClientTest {
 
     Assert.assertEquals(request.getGcsDestination(), actualRequest.getGcsDestination());
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFieldFilter(), actualRequest.getFieldFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1078,6 +1080,7 @@ public class VectorSearchServiceClientTest {
       ExportDataObjectsRequest request =
           ExportDataObjectsRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
               .build();
       client.exportDataObjectsAsync(request).get();
       Assert.fail("No exception raised");

@@ -63,6 +63,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     odbNetwork_ = "";
     odbSubnet_ = "";
     backupOdbSubnet_ = "";
+    exascaleDbStorageVault_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -953,6 +954,67 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         : identityConnector_;
   }
 
+  public static final int EXASCALE_DB_STORAGE_VAULT_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object exascaleDbStorageVault_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of ExascaleDbStorageVault associated with the VM
+   * Cluster. Format:
+   * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+   * </pre>
+   *
+   * <code>
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The exascaleDbStorageVault.
+   */
+  @java.lang.Override
+  public java.lang.String getExascaleDbStorageVault() {
+    java.lang.Object ref = exascaleDbStorageVault_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      exascaleDbStorageVault_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of ExascaleDbStorageVault associated with the VM
+   * Cluster. Format:
+   * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+   * </pre>
+   *
+   * <code>
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for exascaleDbStorageVault.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExascaleDbStorageVaultBytes() {
+    java.lang.Object ref = exascaleDbStorageVault_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      exascaleDbStorageVault_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1007,6 +1069,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(16, getIdentityConnector());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exascaleDbStorageVault_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, exascaleDbStorageVault_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1066,6 +1131,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getIdentityConnector());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exascaleDbStorageVault_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, exascaleDbStorageVault_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1105,6 +1173,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (hasIdentityConnector()) {
       if (!getIdentityConnector().equals(other.getIdentityConnector())) return false;
     }
+    if (!getExascaleDbStorageVault().equals(other.getExascaleDbStorageVault())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1152,6 +1221,8 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + IDENTITY_CONNECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getIdentityConnector().hashCode();
     }
+    hash = (37 * hash) + EXASCALE_DB_STORAGE_VAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getExascaleDbStorageVault().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1352,6 +1423,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnectorBuilder_.dispose();
         identityConnectorBuilder_ = null;
       }
+      exascaleDbStorageVault_ = "";
       return this;
     }
 
@@ -1438,6 +1510,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
                 : identityConnectorBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.exascaleDbStorageVault_ = exascaleDbStorageVault_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1514,6 +1589,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasIdentityConnector()) {
         mergeIdentityConnector(other.getIdentityConnector());
+      }
+      if (!other.getExascaleDbStorageVault().isEmpty()) {
+        exascaleDbStorageVault_ = other.exascaleDbStorageVault_;
+        bitField0_ |= 0x00004000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1634,6 +1714,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 130
+            case 138:
+              {
+                exascaleDbStorageVault_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3711,6 +3797,137 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnector_ = null;
       }
       return identityConnectorBuilder_;
+    }
+
+    private java.lang.Object exascaleDbStorageVault_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of ExascaleDbStorageVault associated with the VM
+     * Cluster. Format:
+     * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+     * </pre>
+     *
+     * <code>
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The exascaleDbStorageVault.
+     */
+    public java.lang.String getExascaleDbStorageVault() {
+      java.lang.Object ref = exascaleDbStorageVault_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        exascaleDbStorageVault_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of ExascaleDbStorageVault associated with the VM
+     * Cluster. Format:
+     * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+     * </pre>
+     *
+     * <code>
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for exascaleDbStorageVault.
+     */
+    public com.google.protobuf.ByteString getExascaleDbStorageVaultBytes() {
+      java.lang.Object ref = exascaleDbStorageVault_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        exascaleDbStorageVault_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of ExascaleDbStorageVault associated with the VM
+     * Cluster. Format:
+     * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+     * </pre>
+     *
+     * <code>
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The exascaleDbStorageVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExascaleDbStorageVault(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      exascaleDbStorageVault_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of ExascaleDbStorageVault associated with the VM
+     * Cluster. Format:
+     * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+     * </pre>
+     *
+     * <code>
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExascaleDbStorageVault() {
+      exascaleDbStorageVault_ = getDefaultInstance().getExascaleDbStorageVault();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of ExascaleDbStorageVault associated with the VM
+     * Cluster. Format:
+     * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+     * </pre>
+     *
+     * <code>
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for exascaleDbStorageVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExascaleDbStorageVaultBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      exascaleDbStorageVault_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.oracledatabase.v1.CloudVmCluster)

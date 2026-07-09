@@ -160,25 +160,6 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testReadSqlFromFile() throws SQLException {
-    BigQueryDatabaseMetaData dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
-
-    String primaryKeysQuery =
-        BigQueryDatabaseMetaData.readSqlFromFile("DatabaseMetaData_GetPrimaryKeys.sql");
-    assertTrue(primaryKeysQuery.contains("pk$"));
-
-    try {
-      when(bigQueryConnection.prepareStatement(primaryKeysQuery)).thenCallRealMethod();
-      String sql =
-          dbMetadata.replaceSqlParameters(
-              primaryKeysQuery, "project_name", "dataset_name", "table_name");
-      assertTrue(sql.contains("project_name.dataset_name.INFORMATION_SCHEMA.KEY_COLUMN_USAGE"));
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  @Test
   public void testNeedsListing() {
     assertTrue(dbMetadata.needsListing(null), "Null pattern should require listing");
     assertTrue(dbMetadata.needsListing("abc%def"), "Pattern with % should require listing");
@@ -1017,7 +998,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = "proc_%";
@@ -1063,7 +1044,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = null;
@@ -1102,7 +1083,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() {
+  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String procNameExact = "exactprocname";
@@ -3249,36 +3230,6 @@ public class BigQueryDatabaseMetaDataTest {
         assertThrows(
             BigQueryJdbcException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
-  }
-
-  @Test
-  public void testMetadataMethodsDoNotInterfere() throws SQLException {
-    Statement mockStatement1 = mock(Statement.class);
-    Statement mockStatement2 = mock(Statement.class);
-    ResultSet mockResultSet1 = mock(ResultSet.class);
-    ResultSet mockResultSet2 = mock(ResultSet.class);
-
-    when(bigQueryConnection.createStatement())
-        .thenReturn(mockStatement1)
-        .thenReturn(mockStatement2);
-
-    when(mockStatement1.executeQuery(any())).thenReturn(mockResultSet1);
-    when(mockStatement2.executeQuery(any())).thenReturn(mockResultSet2);
-
-    // Call first metadata method
-    ResultSet rs1 = dbMetadata.getPrimaryKeys("cat", "schema", "table");
-    assertSame(mockResultSet1, rs1);
-
-    // Call second metadata method
-    ResultSet rs2 = dbMetadata.getImportedKeys("cat", "schema", "table");
-    assertSame(mockResultSet2, rs2);
-
-    // Verify closeOnCompletion was called on both statements
-    verify(mockStatement1).closeOnCompletion();
-    verify(mockStatement2).closeOnCompletion();
-
-    // Verify connection.createStatement() was called twice
-    verify(bigQueryConnection, times(2)).createStatement();
   }
 
   @ParameterizedTest

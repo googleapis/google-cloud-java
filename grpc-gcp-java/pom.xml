@@ -17,7 +17,7 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>grpc-gcp</artifactId>
-  <version>1.12.0-SNAPSHOT</version><!-- {x-version-update:grpc-gcp:current} -->
+  <version>1.13.0-SNAPSHOT</version><!-- {x-version-update:grpc-gcp:current} -->
   <packaging>jar</packaging>
 
   <name>gRPC extension library for Google Cloud Platform</name>
@@ -62,7 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <site.installationModule>grpc-gcp</site.installationModule>
-    <api-common.version>2.65.0-SNAPSHOT</api-common.version><!-- {x-version-update:api-common:current} -->
+    <api-common.version>2.66.0-SNAPSHOT</api-common.version><!-- {x-version-update:api-common:current} -->
     <auto-value.version>1.11.0</auto-value.version>
     <error-prone-annotations.version>2.48.0</error-prone-annotations.version>
     <google-http-client.version>2.1.1</google-http-client.version>
@@ -74,7 +74,7 @@
     <junit.version>4.13.2</junit.version>
     <opencensus.version>0.31.1</opencensus.version>
     <opentelemetry.version>1.62.0</opentelemetry.version>
-    <spanner.version>6.119.0-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <spanner.version>6.120.0-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
     <truth.version>1.4.5</truth.version>
     <mockito.version>4.11.0</mockito.version>
     <checkstyle.skip>true</checkstyle.skip>

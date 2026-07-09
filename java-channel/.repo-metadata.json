@@ -5,7 +5,7 @@
   "api_description": "With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-channel/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-channel",

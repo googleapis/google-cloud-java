@@ -147,6 +147,40 @@ class SessionListTest {
     assertThat(stats.getExpectedCapacity()).isEqualTo(1);
   }
 
+  // Pending vRPC drained but cancelled before attaching to a real call: bookkeeping must mirror
+  // the OK-completion path (session returned to AFE ready list, counters restored), but the
+  // picker's latency stats must NOT be updated since nothing actually ran on the wire.
+  @Test
+  void testReadyInUseToIdleOnPendingCancelled() {
+    SessionList list = new SessionList();
+    PoolStats stats = list.getStats();
+
+    fakeSession.state = SessionState.STARTING;
+    SessionHandle handle = list.newHandle(fakeSession);
+
+    fakeSession.state = SessionState.READY;
+    handle.onSessionStarted();
+
+    SessionList.AfeHandle afe = list.getAfesWithReadySessions().get(0);
+    double e2eCostBefore = afe.getE2eCost();
+    double transportCostBefore = afe.getTransportCost();
+
+    handle = list.checkoutSession(afe).get();
+    handle.onPendingVRpcCancelled();
+
+    // Same pool bookkeeping as the OK-completion path.
+    assertThat(list.getAfesWithReadySessions().get(0).sessions).containsExactly(handle);
+    assertThat(list.getAllSessions()).containsExactly(handle);
+    assertThat(stats.getStartingCount()).isEqualTo(0);
+    assertThat(stats.getReadyCount()).isEqualTo(1);
+    assertThat(stats.getInUseCount()).isEqualTo(0);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(1);
+
+    // No latency update.
+    assertThat(afe.getE2eCost()).isEqualTo(e2eCostBefore);
+    assertThat(afe.getTransportCost()).isEqualTo(transportCostBefore);
+  }
+
   @Test
   void testReadyIdleToSoftClosing() {
     SessionList list = new SessionList();

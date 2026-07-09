@@ -80,6 +80,7 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,6 +156,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings> {
 

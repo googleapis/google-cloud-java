@@ -25,8 +25,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CutoverJobName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_SOURCE_MIGRATING_VM_CUTOVER_JOB =

@@ -27,6 +27,7 @@ import com.google.monitoring.v3.ListSnoozesResponse;
 import com.google.monitoring.v3.Snooze;
 import com.google.monitoring.v3.UpdateSnoozeRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,6 +35,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SnoozeServiceStub implements BackgroundResource {
 

@@ -1,0 +1,71 @@
+# Copyright 2023 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Github action job to test core java library features on
+# downstream client libraries before they are released.
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: java-cloud-bom test for tests/validate-bom logic
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-cloud-bom/**'
+            - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+  test-invalid-bom:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - name: Fetch the bad protobuf-bom version 3.22.1
+      shell: bash
+      # 3.22.1 had a issue in their pom.xml
+      # https://github.com/protocolbuffers/protobuf/issues/12170
+      run: |
+        mkdir -p bad-protobuf-bom
+        curl https://repo1.maven.org/maven2/com/google/protobuf/protobuf-bom/3.22.1/protobuf-bom-3.22.1.pom \
+            --output bad-protobuf-bom/pom.xml
+    - name: Check the bad BOM
+      uses: ./java-cloud-bom/tests/validate-bom
+      id: validate-bom
+      with:
+        bom-path: bad-protobuf-bom/pom.xml
+      continue-on-error: true
+    - name: Ensure the validate-bom invalidated the bad BOM
+      shell: bash
+      if: steps.validate-bom.outcome != 'failure'
+      run: |
+        echo "The validate-bom check should have invalidated the bad BOM"
+        exit 1

@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.22.0
+version: v0.25.1-0.20260708160859-939ae6f16e82
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 4679f0c8e33ba14d27612bd607649e1f867a881c
-    sha256: 35131934f78f0eb4499feb17845ca0c060d3cfc506e0d1d626fbb1bce4d70e23
+    commit: 28476cc22e6b39ecaa1e171391b623f0ecb8cb89
+    sha256: c17ed78d71a7cd7614e9cbebb91a1b8d6b26f75cb74a5d6f607ff2e243db3187
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -47,12 +47,20 @@ tools:
     - name: synthtool
       version: ""
       local_path: sdk-platform-java/hermetic_build/library_generation
+  protoc:
+    version: "33.2"
+    sha256: b24b53f87c151bfd48b112fe4c3a6e6574e5198874f38036aff41df3456b8caf
 default:
   java:
+    custom_group_ids:
+      google/ads: com.google.api-ads
+      google/analytics: com.google.analytics
+      google/maps: com.google.maps
+      google/shopping: com.google.shopping
     libraries_bom_version: 26.83.0
 libraries:
   - name: accessapproval
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/accessapproval/v1
     java:
@@ -60,7 +68,7 @@ libraries:
       name_pretty_override: Access Approval
       product_documentation_override: https://cloud.google.com/access-approval/docs/
   - name: accesscontextmanager
-    version: 1.95.0-SNAPSHOT
+    version: 1.96.0-SNAPSHOT
     apis:
       - path: google/identity/accesscontextmanager/v1
       - path: google/identity/accesscontextmanager/type
@@ -76,7 +84,7 @@ libraries:
       name_pretty_override: Identity Access Context Manager
       product_documentation_override: n/a
   - name: admanager
-    version: 0.53.0-SNAPSHOT
+    version: 0.54.0-SNAPSHOT
     apis:
       - path: google/ads/admanager/v1
     java:
@@ -84,12 +92,11 @@ libraries:
       api_description_override: The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.
       artifact_id: ad-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/ad-manager/latest/overview
-      group_id: com.google.api-ads
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Ad Manager API
       product_documentation_override: https://developers.google.com/ad-manager/api/beta
   - name: advisorynotifications
-    version: 0.83.0-SNAPSHOT
+    version: 0.84.0-SNAPSHOT
     apis:
       - path: google/cloud/advisorynotifications/v1
         java:
@@ -99,14 +106,14 @@ libraries:
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
   - name: agentregistry
-    version: 0.1.0-SNAPSHOT
+    version: 0.2.0-SNAPSHOT
     apis:
       - path: google/cloud/agentregistry/v1
         java:
           additional_protos:
             - path: google/cloud/location/locations.proto
   - name: aiplatform
-    version: 3.95.0-SNAPSHOT
+    version: 3.96.0-SNAPSHOT
     apis:
       - path: google/cloud/aiplatform/v1
         java:
@@ -138,7 +145,7 @@ libraries:
       rest_documentation: https://cloud.google.com/vertex-ai/docs/reference/rest
       rpc_documentation: https://cloud.google.com/vertex-ai/docs/reference/rpc
   - name: alloydb
-    version: 0.83.0-SNAPSHOT
+    version: 0.84.0-SNAPSHOT
     apis:
       - path: google/cloud/alloydb/v1
         java:
@@ -161,7 +168,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/alloydb/
       rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
   - name: alloydb-connectors
-    version: 0.72.0-SNAPSHOT
+    version: 0.73.0-SNAPSHOT
     apis:
       - path: google/cloud/alloydb/connectors/v1
         java:
@@ -192,7 +199,7 @@ libraries:
       rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
       transport_override: grpc
   - name: analytics-admin
-    version: 0.104.0-SNAPSHOT
+    version: 0.105.0-SNAPSHOT
     apis:
       - path: google/analytics/admin/v1beta
       - path: google/analytics/admin/v1alpha
@@ -200,11 +207,10 @@ libraries:
       api_description_override: allows you to manage Google Analytics accounts and properties.
       artifact_id: google-analytics-admin
       codeowner_team: '@googleapis/analytics-dpe'
-      group_id: com.google.analytics
       name_pretty_override: Analytics Admin
       product_documentation_override: https://developers.google.com/analytics
   - name: analytics-data
-    version: 0.105.0-SNAPSHOT
+    version: 0.106.0-SNAPSHOT
     apis:
       - path: google/analytics/data/v1beta
       - path: google/analytics/data/v1alpha
@@ -213,11 +219,10 @@ libraries:
       api_description_override: provides programmatic methods to access report data in Google Analytics App+Web properties.
       artifact_id: google-analytics-data
       codeowner_team: '@googleapis/analytics-dpe'
-      group_id: com.google.analytics
       name_pretty_override: Analytics Data
       product_documentation_override: https://developers.google.com/analytics/trusted-testing/analytics-data
   - name: analyticshub
-    version: 0.91.0-SNAPSHOT
+    version: 0.92.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/analyticshub/v1
     java:
@@ -225,7 +230,7 @@ libraries:
       name_pretty_override: Analytics Hub API
       product_documentation_override: https://cloud.google.com/bigquery/TBD
   - name: api-gateway
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/apigateway/v1
     java:
@@ -235,29 +240,15 @@ libraries:
       product_documentation_override: https://cloud.google.com/api-gateway/docs
       rest_documentation: https://cloud.google.com/api-gateway/docs/reference/rest
   - name: apigee-connect
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/apigeeconnect/v1
     java:
       api_description_override: allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.
       name_pretty_override: Apigee Connect
       product_documentation_override: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/
-  - name: apigee-registry
-    version: 0.94.0-SNAPSHOT
-    apis:
-      - path: google/cloud/apigeeregistry/v1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
-    java:
-      api_id_override: apigeeregistry.googleapis.com
-      api_description_override: allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.
-      api_shortname_override: apigee-registry
-      name_pretty_override: Registry API
-      product_documentation_override: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api
   - name: apihub
-    version: 0.47.0-SNAPSHOT
+    version: 0.48.0-SNAPSHOT
     apis:
       - path: google/cloud/apihub/v1
         java:
@@ -271,7 +262,7 @@ libraries:
       name_pretty_override: API hub API
       product_documentation_override: https://cloud.google.com/apigee/docs/apihub/what-is-api-hub
   - name: apikeys
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/api/apikeys/v2
     java:
@@ -279,7 +270,7 @@ libraries:
       name_pretty_override: API Keys API
       product_documentation_override: https://cloud.google.com/api-keys/
   - name: appengine-admin
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/appengine/v1
     java:
@@ -288,7 +279,7 @@ libraries:
       name_pretty_override: App Engine Admin API
       product_documentation_override: https://cloud.google.com/appengine/docs/admin-api/
   - name: apphub
-    version: 0.58.0-SNAPSHOT
+    version: 0.59.0-SNAPSHOT
     apis:
       - path: google/cloud/apphub/v1
         java:
@@ -301,7 +292,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/app-hub/docs/overview
       rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
   - name: appoptimize
-    version: 0.4.0-SNAPSHOT
+    version: 0.5.0-SNAPSHOT
     apis:
       - path: google/cloud/appoptimize/v1beta
         java:
@@ -315,7 +306,7 @@ libraries:
       name_pretty_override: App Optimize API
       product_documentation_override: https://docs.cloud.google.com/app-optimize/overview
   - name: area120-tables
-    version: 0.98.0-SNAPSHOT
+    version: 0.99.0-SNAPSHOT
     apis:
       - path: google/area120/tables/v1alpha1
     java:
@@ -325,7 +316,7 @@ libraries:
       name_pretty_override: Area 120 Tables
       product_documentation_override: https://area120.google.com/
   - name: artifact-registry
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/devtools/artifactregistry/v1
         java:
@@ -343,7 +334,7 @@ libraries:
       rest_documentation: https://cloud.google.com/artifact-registry/docs/reference/rest
       rpc_documentation: https://cloud.google.com/artifact-registry/docs/reference/rpc
   - name: asset
-    version: 3.98.0-SNAPSHOT
+    version: 3.99.0-SNAPSHOT
     apis:
       - path: google/cloud/asset/v1
       - path: google/cloud/asset/v1p7beta1
@@ -360,7 +351,7 @@ libraries:
       name_pretty_override: Cloud Asset Inventory
       product_documentation_override: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
   - name: assured-workloads
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/assuredworkloads/v1
       - path: google/cloud/assuredworkloads/v1beta1
@@ -370,7 +361,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/assured-workloads/
       rest_documentation: https://cloud.google.com/assured-workloads/docs/reference/rest
   - name: auditmanager
-    version: 0.12.0-SNAPSHOT
+    version: 0.13.0-SNAPSHOT
     apis:
       - path: google/cloud/auditmanager/v1
         java:
@@ -384,7 +375,7 @@ libraries:
       name_pretty_override: Audit Manager API
       product_documentation_override: https://cloud.google.com/audit-manager/docs
   - name: automl
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/automl/v1
       - path: google/cloud/automl/v1beta1
@@ -396,7 +387,7 @@ libraries:
       rest_documentation: https://cloud.google.com/automl/docs/reference/rest
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
   - name: backstory
-    version: 0.2.0-SNAPSHOT
+    version: 0.3.0-SNAPSHOT
     apis:
       - path: backstory
         java:
@@ -412,7 +403,7 @@ libraries:
       name_pretty_override: Malachite Common Protos
       product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: backupdr
-    version: 0.53.0-SNAPSHOT
+    version: 0.54.0-SNAPSHOT
     apis:
       - path: google/cloud/backupdr/v1
         java:
@@ -427,7 +418,7 @@ libraries:
       name_pretty_override: Backup and DR Service API
       product_documentation_override: https://cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr
   - name: bare-metal-solution
-    version: 0.94.0-SNAPSHOT
+    version: 0.95.0-SNAPSHOT
     apis:
       - path: google/cloud/baremetalsolution/v2
         java:
@@ -441,7 +432,7 @@ libraries:
       rest_documentation: https://cloud.google.com/bare-metal/docs/reference/rest
       rpc_documentation: https://cloud.google.com/bare-metal/docs/reference/rpc
   - name: batch
-    version: 0.94.0-SNAPSHOT
+    version: 0.95.0-SNAPSHOT
     apis:
       - path: google/cloud/batch/v1
         java:
@@ -457,7 +448,7 @@ libraries:
       name_pretty_override: Cloud Batch
       product_documentation_override: https://cloud.google.com/
   - name: beyondcorp-appconnections
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/beyondcorp/appconnections/v1
         java:
@@ -470,7 +461,7 @@ libraries:
       name_pretty_override: BeyondCorp AppConnections
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: beyondcorp-appconnectors
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/beyondcorp/appconnectors/v1
         java:
@@ -483,7 +474,7 @@ libraries:
       name_pretty_override: BeyondCorp AppConnectors
       product_documentation_override: cloud.google.com/beyondcorp-enterprise/
   - name: beyondcorp-appgateways
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/beyondcorp/appgateways/v1
         java:
@@ -497,7 +488,7 @@ libraries:
       name_pretty_override: BeyondCorp AppGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: beyondcorp-clientconnectorservices
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/beyondcorp/clientconnectorservices/v1
         java:
@@ -511,7 +502,7 @@ libraries:
       name_pretty_override: BeyondCorp ClientConnectorServices
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: beyondcorp-clientgateways
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/beyondcorp/clientgateways/v1
         java:
@@ -525,7 +516,7 @@ libraries:
       name_pretty_override: BeyondCorp ClientGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: biglake
-    version: 0.82.0-SNAPSHOT
+    version: 0.83.0-SNAPSHOT
     apis:
       - path: google/cloud/biglake/v1
       - path: google/cloud/bigquery/biglake/v1
@@ -533,11 +524,10 @@ libraries:
       - path: google/cloud/bigquery/biglake/v1alpha1
     java:
       api_description_override: The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
-      released_version: 0.81.1
       name_pretty_override: BigLake
       product_documentation_override: https://cloud.google.com/biglake
   - name: bigquery-data-exchange
-    version: 2.89.0-SNAPSHOT
+    version: 2.90.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/dataexchange/v1beta1
         java:
@@ -548,7 +538,7 @@ libraries:
       name_pretty_override: Analytics Hub
       product_documentation_override: https://cloud.google.com/analytics-hub
   - name: bigqueryconnection
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/connection/v1
       - path: google/cloud/bigquery/connection/v1beta1
@@ -558,7 +548,7 @@ libraries:
       name_pretty_override: Cloud BigQuery Connection
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest
   - name: bigquerydatapolicy
-    version: 0.91.0-SNAPSHOT
+    version: 0.92.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/datapolicies/v2
       - path: google/cloud/bigquery/datapolicies/v1
@@ -569,7 +559,7 @@ libraries:
       name_pretty_override: BigQuery DataPolicy API
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/datapolicy/
   - name: bigquerydatatransfer
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/datatransfer/v1
         java:
@@ -583,7 +573,7 @@ libraries:
       name_pretty_override: BigQuery Data Transfer Service
       product_documentation_override: https://cloud.google.com/bigquery/transfer/
   - name: bigquerymigration
-    version: 0.97.0-SNAPSHOT
+    version: 0.98.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/migration/v2
       - path: google/cloud/bigquery/migration/v2alpha
@@ -593,7 +583,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/bigquery/docs
       rest_documentation: https://cloud.google.com/bigquery/docs/reference/rest
   - name: bigqueryreservation
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/reservation/v1
     java:
@@ -601,7 +591,7 @@ libraries:
       name_pretty_override: Cloud BigQuery Reservation
       product_documentation_override: https://cloud.google.com/bigquery/docs/reference/reservations/rpc
   - name: bigquerystorage
-    version: 3.30.0-SNAPSHOT
+    version: 3.31.0-SNAPSHOT
     apis:
       - path: google/cloud/bigquery/storage/v1
         java:
@@ -731,7 +721,7 @@ libraries:
       recommended_package: com.google.cloud.bigquery.storage.v1
       transport_override: grpc
   - name: bigtable
-    version: 2.80.0-SNAPSHOT
+    version: 2.81.0-SNAPSHOT
     apis:
       - path: google/bigtable/v2
         java:
@@ -756,7 +746,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/bigtable
       recommended_package: com.google.cloud.bigtable
   - name: billing
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/billing/v1
         java:
@@ -771,7 +761,7 @@ libraries:
       rest_documentation: https://cloud.google.com/billing/docs/reference/rest
       rpc_documentation: https://cloud.google.com/billing/docs/reference/rpc
   - name: billingbudgets
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/billing/budgets/v1
       - path: google/cloud/billing/budgets/v1beta1
@@ -780,7 +770,7 @@ libraries:
       name_pretty_override: Cloud Billing Budgets
       product_documentation_override: https://cloud.google.com/billing/docs/how-to/budgets
   - name: binary-authorization
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/binaryauthorization/v1
       - path: google/cloud/binaryauthorization/v1beta1
@@ -793,7 +783,7 @@ libraries:
       rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest
       rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
   - name: capacityplanner
-    version: 0.17.0-SNAPSHOT
+    version: 0.18.0-SNAPSHOT
     apis:
       - path: google/cloud/capacityplanner/v1beta
     java:
@@ -804,7 +794,7 @@ libraries:
       name_pretty_override: Capacity Planner API
       product_documentation_override: https://cloud.google.com/capacity-planner/docs
   - name: certificate-manager
-    version: 0.97.0-SNAPSHOT
+    version: 0.98.0-SNAPSHOT
     apis:
       - path: google/cloud/certificatemanager/v1
         java:
@@ -816,7 +806,7 @@ libraries:
       name_pretty_override: Certificate Manager
       product_documentation_override: https://cloud.google.com/certificate-manager/docs
   - name: ces
-    version: 0.10.0-SNAPSHOT
+    version: 0.11.0-SNAPSHOT
     apis:
       - path: google/cloud/ces/v1
         java:
@@ -835,7 +825,7 @@ libraries:
       product_documentation_override: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps
       rpc_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc
   - name: channel
-    version: 3.98.0-SNAPSHOT
+    version: 3.99.0-SNAPSHOT
     apis:
       - path: google/cloud/channel/v1
     java:
@@ -845,7 +835,7 @@ libraries:
       rest_documentation: https://cloud.google.com/channel/docs/reference/rest
       rpc_documentation: https://cloud.google.com/channel/docs/reference/rpc
   - name: chat
-    version: 0.58.0-SNAPSHOT
+    version: 0.59.0-SNAPSHOT
     apis:
       - path: google/chat/v1
     java:
@@ -854,7 +844,7 @@ libraries:
       product_documentation_override: https://developers.google.com/chat/concepts
       rest_documentation: https://developers.google.com/chat/api/reference/rest
   - name: chronicle
-    version: 0.32.0-SNAPSHOT
+    version: 0.33.0-SNAPSHOT
     apis:
       - path: google/cloud/chronicle/v1
     java:
@@ -865,7 +855,7 @@ libraries:
       name_pretty_override: Chronicle API
       product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: cloudapiregistry
-    version: 0.13.0-SNAPSHOT
+    version: 0.14.0-SNAPSHOT
     apis:
       - path: google/cloud/apiregistry/v1
         java:
@@ -883,7 +873,7 @@ libraries:
       name_pretty_override: Cloud API Registry API
       product_documentation_override: https://docs.cloud.google.com/api-registry/docs/overview
   - name: cloudbuild
-    version: 3.96.0-SNAPSHOT
+    version: 3.97.0-SNAPSHOT
     apis:
       - path: google/devtools/cloudbuild/v2
         java:
@@ -899,7 +889,7 @@ libraries:
       name_pretty_override: Cloud Build
       product_documentation_override: https://cloud.google.com/cloud-build/
   - name: cloudcommerceconsumerprocurement
-    version: 0.92.0-SNAPSHOT
+    version: 0.93.0-SNAPSHOT
     apis:
       - path: google/cloud/commerce/consumer/procurement/v1
       - path: google/cloud/commerce/consumer/procurement/v1alpha1
@@ -908,7 +898,7 @@ libraries:
       name_pretty_override: Cloud Commerce Consumer Procurement
       product_documentation_override: https://cloud.google.com/marketplace/
   - name: cloudcontrolspartner
-    version: 0.58.0-SNAPSHOT
+    version: 0.59.0-SNAPSHOT
     apis:
       - path: google/cloud/cloudcontrolspartner/v1
       - path: google/cloud/cloudcontrolspartner/v1beta
@@ -917,7 +907,7 @@ libraries:
       name_pretty_override: Cloud Controls Partner API
       product_documentation_override: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
   - name: cloudquotas
-    version: 0.62.0-SNAPSHOT
+    version: 0.63.0-SNAPSHOT
     apis:
       - path: google/api/cloudquotas/v1
         java:
@@ -933,7 +923,7 @@ libraries:
       name_pretty_override: Cloud Quotas API
       product_documentation_override: https://cloud.google.com/cloudquotas/docs/
   - name: cloudsecuritycompliance
-    version: 0.21.0-SNAPSHOT
+    version: 0.22.0-SNAPSHOT
     apis:
       - path: google/cloud/cloudsecuritycompliance/v1
         java:
@@ -947,7 +937,7 @@ libraries:
       name_pretty_override: Cloud Security Compliance API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/compliance-manager-overview
   - name: cloudsupport
-    version: 0.78.0-SNAPSHOT
+    version: 0.79.0-SNAPSHOT
     apis:
       - path: google/cloud/support/v2
       - path: google/cloud/support/v2beta
@@ -956,7 +946,7 @@ libraries:
       name_pretty_override: Google Cloud Support API
       product_documentation_override: https://cloud.google.com/support/docs/reference/support-api/
   - name: common-protos
-    version: 2.73.0-SNAPSHOT
+    version: 2.74.0-SNAPSHOT
     apis:
       - path: google/apps/card/v1
         java:
@@ -1050,7 +1040,6 @@ libraries:
       api_shortname_override: common-protos
       artifact_id: proto-google-common-protos
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
-      excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
       excluded_poms:
         - proto-google-common-protos-bom
         - proto-google-common-protos
@@ -1062,7 +1051,7 @@ libraries:
       skip_pom_updates: true
       skip_api_id: true
   - name: compute
-    version: 1.104.0-SNAPSHOT
+    version: 1.105.0-SNAPSHOT
     apis:
       - path: google/cloud/compute/v1
         java:
@@ -1075,13 +1064,12 @@ libraries:
       - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/Util.java
     java:
       api_description_override: 'delivers virtual machines running in Google''s innovative data centers and worldwide fiber network. Compute Engine''s tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. '
-      excluded_dependencies: grpc-google-cloud-compute-v1
       excluded_poms:
         - grpc-google-cloud-compute-v1
       name_pretty_override: Compute Engine
       product_documentation_override: https://cloud.google.com/compute/
   - name: confidentialcomputing
-    version: 0.80.0-SNAPSHOT
+    version: 0.81.0-SNAPSHOT
     apis:
       - path: google/cloud/confidentialcomputing/v1
         java:
@@ -1096,7 +1084,7 @@ libraries:
       name_pretty_override: Confidential Computing API
       product_documentation_override: https://cloud.google.com/confidential-computing/
   - name: configdelivery
-    version: 0.28.0-SNAPSHOT
+    version: 0.29.0-SNAPSHOT
     apis:
       - path: google/cloud/configdelivery/v1
         java:
@@ -1115,7 +1103,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
       rest_documentation: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
   - name: connectgateway
-    version: 0.46.0-SNAPSHOT
+    version: 0.47.0-SNAPSHOT
     apis:
       - path: google/cloud/gkeconnect/gateway/v1
     java:
@@ -1126,7 +1114,7 @@ libraries:
       name_pretty_override: Connect Gateway API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/enterprise/multicluster-management/gateway
   - name: contact-center-insights
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/contactcenterinsights/v1
     java:
@@ -1135,7 +1123,7 @@ libraries:
       name_pretty_override: CCAI Insights
       product_documentation_override: https://cloud.google.com/dialogflow/priv/docs/insights/
   - name: container
-    version: 2.97.0-SNAPSHOT
+    version: 2.98.0-SNAPSHOT
     apis:
       - path: google/container/v1
       - path: google/container/v1beta1
@@ -1150,7 +1138,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/kubernetes-engine/
       rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   - name: containeranalysis
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/devtools/containeranalysis/v1
         java:
@@ -1168,7 +1156,7 @@ libraries:
       name_pretty_override: Cloud Container Analysis
       product_documentation_override: https://cloud.google.com/container-registry/docs/container-analysis
   - name: contentwarehouse
-    version: 0.90.0-SNAPSHOT
+    version: 0.91.0-SNAPSHOT
     apis:
       - path: google/cloud/contentwarehouse/v1
     java:
@@ -1176,7 +1164,7 @@ libraries:
       name_pretty_override: Document AI Warehouse
       product_documentation_override: https://cloud.google.com/document-warehouse/docs/overview
   - name: data-fusion
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/cloud/datafusion/v1
       - path: google/cloud/datafusion/v1beta1
@@ -1186,7 +1174,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/data-fusion/docs
       rest_documentation: https://cloud.google.com/data-fusion/docs/reference/rest
   - name: databasecenter
-    version: 0.15.0-SNAPSHOT
+    version: 0.16.0-SNAPSHOT
     apis:
       - path: google/cloud/databasecenter/v1beta
     java:
@@ -1197,7 +1185,7 @@ libraries:
       name_pretty_override: Database Center API
       product_documentation_override: https://cloud.google.com/database-center/docs/overview
   - name: datacatalog
-    version: 1.100.0-SNAPSHOT
+    version: 1.101.0-SNAPSHOT
     apis:
       - path: google/cloud/datacatalog/v1
         java:
@@ -1214,7 +1202,7 @@ libraries:
       name_pretty_override: Data Catalog
       product_documentation_override: https://cloud.google.com/data-catalog
   - name: dataflow
-    version: 0.98.0-SNAPSHOT
+    version: 0.99.0-SNAPSHOT
     apis:
       - path: google/dataflow/v1beta3
     java:
@@ -1224,7 +1212,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dataflow/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataflow/docs/reference/rpc
   - name: dataform
-    version: 0.93.0-SNAPSHOT
+    version: 0.94.0-SNAPSHOT
     apis:
       - path: google/cloud/dataform/v1
         java:
@@ -1241,7 +1229,7 @@ libraries:
       name_pretty_override: Cloud Dataform
       product_documentation_override: https://cloud.google.com/dataform/docs
   - name: datalabeling
-    version: 0.214.0-SNAPSHOT
+    version: 0.215.0-SNAPSHOT
     apis:
       - path: google/cloud/datalabeling/v1beta1
     keep:
@@ -1253,7 +1241,7 @@ libraries:
       rest_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest
       rpc_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rpc
   - name: datalineage
-    version: 0.86.0-SNAPSHOT
+    version: 0.87.0-SNAPSHOT
     apis:
       - path: google/cloud/datacatalog/lineage/v1
       - path: google/cloud/datacatalog/lineage/configmanagement/v1
@@ -1262,7 +1250,7 @@ libraries:
       name_pretty_override: Data Lineage
       product_documentation_override: https://cloud.google.com/dataplex/docs/about-data-lineage
   - name: datamanager
-    version: 0.15.0-SNAPSHOT
+    version: 0.16.0-SNAPSHOT
     apis:
       - path: google/ads/datamanager/v1
     java:
@@ -1270,13 +1258,12 @@ libraries:
       api_description_override: A unified ingestion API for data partners, agencies and advertisers to connect first-party data across Google advertising products.
       artifact_id: data-manager
       client_documentation_override: https://cloud.google.com/java/docs/reference/data-manager/latest/overview
-      group_id: com.google.api-ads
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Manager API
       product_documentation_override: https://developers.google.com/data-manager
       rpc_documentation: https://developers.google.com/data-manager/api/reference/rpc
   - name: dataplex
-    version: 1.92.0-SNAPSHOT
+    version: 1.93.0-SNAPSHOT
     apis:
       - path: google/cloud/dataplex/v1
         java:
@@ -1290,7 +1277,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dataplex/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataplex/docs/reference/rpc
   - name: dataproc
-    version: 4.91.0-SNAPSHOT
+    version: 4.92.0-SNAPSHOT
     apis:
       - path: google/cloud/dataproc/v1
         java:
@@ -1305,7 +1292,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dataproc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataproc/docs/reference/rpc
   - name: dataproc-metastore
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/metastore/v1
         java:
@@ -1329,7 +1316,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rpc
   - name: datastore
-    version: 3.2.0-SNAPSHOT
+    version: 3.3.0-SNAPSHOT
     apis:
       - path: google/datastore/v1
         java:
@@ -1343,7 +1330,6 @@ libraries:
       api_id_override: datastore.googleapis.com
       api_description_override: is a fully managed, schemaless database for\nstoring non-relational data. Cloud Datastore automatically scales with\nyour users and supports ACID transactions, high availability of reads and\nwrites, strong consistency for reads and ancestor queries, and eventual\nconsistency for all other queries.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
-      excluded_dependencies: grpc-google-cloud-datastore-v1
       excluded_poms:
         - grpc-google-cloud-datastore-v1
       extra_versioned_modules: datastore-v1-proto-client
@@ -1353,7 +1339,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/datastore
       recommended_package: com.google.cloud.datastore
   - name: datastream
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/datastream/v1
         java:
@@ -1367,7 +1353,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/datastream/docs
       rest_documentation: https://cloud.google.com/datastream/docs/reference/rest
   - name: deploy
-    version: 1.92.0-SNAPSHOT
+    version: 1.93.0-SNAPSHOT
     apis:
       - path: google/cloud/deploy/v1
         java:
@@ -1380,7 +1366,7 @@ libraries:
       name_pretty_override: Google Cloud Deploy
       product_documentation_override: https://cloud.google.com/deploy/docs
   - name: developerconnect
-    version: 0.51.0-SNAPSHOT
+    version: 0.52.0-SNAPSHOT
     apis:
       - path: google/cloud/developerconnect/v1
         java:
@@ -1394,7 +1380,7 @@ libraries:
       name_pretty_override: Developer Connect API
       product_documentation_override: https://cloud.google.com/developer-connect/docs/overview
   - name: developerknowledge
-    version: 0.2.0-SNAPSHOT
+    version: 0.3.0-SNAPSHOT
     apis:
       - path: google/developers/knowledge/v1
     java:
@@ -1406,7 +1392,7 @@ libraries:
       name_pretty_override: Developer Knowledge API
       product_documentation_override: https://developers.google.com/knowledge
   - name: devicestreaming
-    version: 0.34.0-SNAPSHOT
+    version: 0.35.0-SNAPSHOT
     apis:
       - path: google/cloud/devicestreaming/v1
     java:
@@ -1417,7 +1403,7 @@ libraries:
       name_pretty_override: Device Streaming API
       product_documentation_override: https://cloud.google.com/device-streaming/docs
   - name: dialogflow
-    version: 4.100.0-SNAPSHOT
+    version: 4.101.0-SNAPSHOT
     apis:
       - path: google/cloud/dialogflow/v2
         java:
@@ -1442,7 +1428,7 @@ libraries:
       name_pretty_override: Dialogflow API
       product_documentation_override: https://cloud.google.com/dialogflow-enterprise/
   - name: dialogflow-cx
-    version: 0.105.0-SNAPSHOT
+    version: 0.106.0-SNAPSHOT
     apis:
       - path: google/cloud/dialogflow/cx/v3
         java:
@@ -1460,7 +1446,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rpc
   - name: discoveryengine
-    version: 0.90.0-SNAPSHOT
+    version: 0.91.0-SNAPSHOT
     apis:
       - path: google/cloud/discoveryengine/v1
         java:
@@ -1479,7 +1465,7 @@ libraries:
       name_pretty_override: Discovery Engine API
       product_documentation_override: https://cloud.google.com/discovery-engine/media/docs
   - name: distributedcloudedge
-    version: 0.91.0-SNAPSHOT
+    version: 0.92.0-SNAPSHOT
     apis:
       - path: google/cloud/edgecontainer/v1
         java:
@@ -1492,7 +1478,7 @@ libraries:
       name_pretty_override: Google Distributed Cloud Edge
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/
   - name: dlp
-    version: 3.98.0-SNAPSHOT
+    version: 3.99.0-SNAPSHOT
     apis:
       - path: google/privacy/dlp/v2
     keep:
@@ -1518,7 +1504,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dlp/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dlp/docs/reference/rpc
   - name: dms
-    version: 2.93.0-SNAPSHOT
+    version: 2.94.0-SNAPSHOT
     apis:
       - path: google/cloud/clouddms/v1
     java:
@@ -1528,7 +1514,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/database-migration/docs
       rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
   - name: document-ai
-    version: 2.98.0-SNAPSHOT
+    version: 2.99.0-SNAPSHOT
     apis:
       - path: google/cloud/documentai/v1
         java:
@@ -1544,7 +1530,7 @@ libraries:
       name_pretty_override: Document AI
       product_documentation_override: https://cloud.google.com/compute/docs/documentai/
   - name: domains
-    version: 1.91.0-SNAPSHOT
+    version: 1.92.0-SNAPSHOT
     apis:
       - path: google/cloud/domains/v1
       - path: google/cloud/domains/v1beta1
@@ -1554,7 +1540,7 @@ libraries:
       name_pretty_override: Cloud Domains
       product_documentation_override: https://cloud.google.com/domains
   - name: edgenetwork
-    version: 0.62.0-SNAPSHOT
+    version: 0.63.0-SNAPSHOT
     apis:
       - path: google/cloud/edgenetwork/v1
         java:
@@ -1565,7 +1551,7 @@ libraries:
       name_pretty_override: Distributed Cloud Edge Network API
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/docs/overview
   - name: enterpriseknowledgegraph
-    version: 0.90.0-SNAPSHOT
+    version: 0.91.0-SNAPSHOT
     apis:
       - path: google/cloud/enterpriseknowledgegraph/v1
     java:
@@ -1573,7 +1559,7 @@ libraries:
       name_pretty_override: Enterprise Knowledge Graph
       product_documentation_override: https://cloud.google.com/enterprise-knowledge-graph/docs/overview
   - name: errorreporting
-    version: 0.215.0-beta-SNAPSHOT
+    version: 0.216.0-beta-SNAPSHOT
     apis:
       - path: google/devtools/clouderrorreporting/v1beta1
         java:
@@ -1589,7 +1575,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/error-reporting
       billing_not_required: true
   - name: essential-contacts
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/essentialcontacts/v1
     java:
@@ -1597,7 +1583,7 @@ libraries:
       name_pretty_override: Essential Contacts API
       product_documentation_override: https://cloud.google.com/resource-manager/docs/managing-notification-contacts/
   - name: eventarc
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/cloud/eventarc/v1
         java:
@@ -1612,7 +1598,7 @@ libraries:
       rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
   - name: eventarc-publishing
-    version: 0.94.0-SNAPSHOT
+    version: 0.95.0-SNAPSHOT
     apis:
       - path: google/cloud/eventarc/publishing/v1
     java:
@@ -1623,7 +1609,7 @@ libraries:
       rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
       rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
   - name: filestore
-    version: 1.95.0-SNAPSHOT
+    version: 1.96.0-SNAPSHOT
     apis:
       - path: google/cloud/filestore/v1
         java:
@@ -1641,7 +1627,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/filestore/docs
       rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
   - name: financialservices
-    version: 0.35.0-SNAPSHOT
+    version: 0.36.0-SNAPSHOT
     apis:
       - path: google/cloud/financialservices/v1
         java:
@@ -1655,7 +1641,7 @@ libraries:
       name_pretty_override: Financial Services API
       product_documentation_override: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
   - name: firestore
-    version: 3.44.0-SNAPSHOT
+    version: 3.45.0-SNAPSHOT
     apis:
       - path: google/firestore/v1
         java:
@@ -1697,7 +1683,6 @@ libraries:
         - google-cloud-firestore
         - google-cloud-firestore-bom
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5337669
-      released_version: 3.43.1
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Firestore
       product_documentation_override: https://cloud.google.com/firestore
@@ -1705,7 +1690,7 @@ libraries:
       transport_override: grpc
       skip_pom_updates: true
   - name: functions
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/functions/v2
         java:
@@ -1735,7 +1720,7 @@ libraries:
       rest_documentation: https://cloud.google.com/functions/docs/reference/rest
       rpc_documentation: https://cloud.google.com/functions/docs/reference/rpc
   - name: gdchardwaremanagement
-    version: 0.49.0-SNAPSHOT
+    version: 0.50.0-SNAPSHOT
     apis:
       - path: google/cloud/gdchardwaremanagement/v1alpha
         java:
@@ -1750,7 +1735,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/docs
       rpc_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
   - name: geminidataanalytics
-    version: 0.22.0-SNAPSHOT
+    version: 0.23.0-SNAPSHOT
     apis:
       - path: google/cloud/geminidataanalytics/v1
         java:
@@ -1769,7 +1754,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
       rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
   - name: gke-backup
-    version: 0.93.0-SNAPSHOT
+    version: 0.94.0-SNAPSHOT
     apis:
       - path: google/cloud/gkebackup/v1
         java:
@@ -1783,7 +1768,7 @@ libraries:
       name_pretty_override: Backup for GKE
       product_documentation_override: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
   - name: gke-connect-gateway
-    version: 0.95.0-SNAPSHOT
+    version: 0.96.0-SNAPSHOT
     apis:
       - path: google/cloud/gkeconnect/gateway/v1beta1
     java:
@@ -1791,7 +1776,7 @@ libraries:
       name_pretty_override: Connect Gateway API
       product_documentation_override: https://cloud.google.com/anthos/multicluster-management/gateway/
   - name: gke-multi-cloud
-    version: 0.93.0-SNAPSHOT
+    version: 0.94.0-SNAPSHOT
     apis:
       - path: google/cloud/gkemulticloud/v1
     java:
@@ -1801,7 +1786,7 @@ libraries:
       name_pretty_override: Anthos Multicloud
       product_documentation_override: https://cloud.google.com/anthos/clusters/docs/multi-cloud
   - name: gkehub
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/cloud/gkehub/v1
       - path: google/cloud/gkehub/v1beta1
@@ -1832,7 +1817,7 @@ libraries:
       name_pretty_override: GKE Hub API
       product_documentation_override: https://cloud.google.com/anthos/gke/docs/
   - name: gkerecommender
-    version: 0.14.0-SNAPSHOT
+    version: 0.15.0-SNAPSHOT
     apis:
       - path: google/cloud/gkerecommender/v1
     java:
@@ -1843,13 +1828,13 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.88.0-SNAPSHOT
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: google-cloud-pom-parent
-    version: 1.88.0-SNAPSHOT
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: grafeas
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: grafeas/v1
         java:
@@ -1868,7 +1853,7 @@ libraries:
       product_documentation_override: https://grafeas.io
       skip_pom_updates: true
   - name: gsuite-addons
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/gsuiteaddons/v1
       - path: google/apps/script/type
@@ -1924,7 +1909,7 @@ libraries:
       name_pretty_override: Google Workspace Add-ons API
       product_documentation_override: https://developers.google.com/workspace/add-ons/overview
   - name: health
-    version: 0.3.0-SNAPSHOT
+    version: 0.4.0-SNAPSHOT
     apis:
       - path: google/devicesandservices/health/v4
     java:
@@ -1936,7 +1921,7 @@ libraries:
       product_documentation_override: https://developers.google.com/health/api
       rpc_documentation: https://developers.google.com/health/api/reference/rpc
   - name: hypercomputecluster
-    version: 0.14.0-SNAPSHOT
+    version: 0.15.0-SNAPSHOT
     apis:
       - path: google/cloud/hypercomputecluster/v1
         java:
@@ -1954,7 +1939,7 @@ libraries:
       name_pretty_override: Cluster Director API
       product_documentation_override: https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
   - name: iam
-    version: 1.68.0-SNAPSHOT
+    version: 1.69.0-SNAPSHOT
     apis:
       - path: google/iam/v3
         java:
@@ -1996,7 +1981,6 @@ libraries:
       api_description_override: Manages access control for Google Cloud Platform resources
       artifact_id: proto-google-iam-v1
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
-      excluded_dependencies: grpc-google-iam-v1
       excluded_poms:
         - proto-google-iam-v1-bom
         - google-iam-policy
@@ -2007,7 +1991,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/iam
       skip_api_id: true
   - name: iam-admin
-    version: 3.89.0-SNAPSHOT
+    version: 3.90.0-SNAPSHOT
     apis:
       - path: google/iam/admin/v1
     java:
@@ -2018,7 +2002,7 @@ libraries:
       name_pretty_override: IAM Admin API
       product_documentation_override: https://cloud.google.com/iam/docs/apis
   - name: iam-policy
-    version: 1.91.0-SNAPSHOT
+    version: 1.92.0-SNAPSHOT
     apis:
       - path: google/iam/v3
         java:
@@ -2054,7 +2038,6 @@ libraries:
       api_shortname_override: iam-policy
       artifact_id: google-iam-policy
       client_documentation_override: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
-      excluded_dependencies: google-iam-policy
       excluded_poms:
         - proto-google-iam-v1-bom
         - google-iam-policy
@@ -2062,7 +2045,7 @@ libraries:
       name_pretty_override: Cloud IAM Policy
       product_documentation_override: n/a
   - name: iamcredentials
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/iam/credentials/v1
     java:
@@ -2072,7 +2055,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/iam/credentials/reference/rest/
       billing_not_required: true
   - name: iap
-    version: 0.50.0-SNAPSHOT
+    version: 0.51.0-SNAPSHOT
     apis:
       - path: google/cloud/iap/v1
     java:
@@ -2083,7 +2066,7 @@ libraries:
       name_pretty_override: Cloud Identity-Aware Proxy API
       product_documentation_override: https://cloud.google.com/iap
   - name: ids
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/ids/v1
     java:
@@ -2091,7 +2074,7 @@ libraries:
       name_pretty_override: Intrusion Detection System
       product_documentation_override: https://cloud.google.com/intrusion-detection-system/docs
   - name: infra-manager
-    version: 0.71.0-SNAPSHOT
+    version: 0.72.0-SNAPSHOT
     apis:
       - path: google/cloud/config/v1
         java:
@@ -2104,7 +2087,7 @@ libraries:
       name_pretty_override: Infrastructure Manager API
       product_documentation_override: https://cloud.google.com/infrastructure-manager/docs/overview
   - name: iot
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/iot/v1
     java:
@@ -2113,7 +2096,7 @@ libraries:
       name_pretty_override: Cloud Internet of Things (IoT) Core
       product_documentation_override: https://cloud.google.com/iot
   - name: java-shopping-merchant-issue-resolution
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/issueresolution/v1
       - path: google/shopping/merchant/issueresolution/v1beta
@@ -2122,12 +2105,11 @@ libraries:
       api_description_override: Programatically manage your Merchant Issues
       artifact_id: google-shopping-merchant-issue-resolution
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Issue Resolution API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: java-shopping-merchant-order-tracking
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/ordertracking/v1
       - path: google/shopping/merchant/ordertracking/v1beta
@@ -2136,12 +2118,11 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center Accounts
       artifact_id: google-shopping-merchant-order-tracking
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Order Tracking API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: kms
-    version: 2.97.0-SNAPSHOT
+    version: 2.98.0-SNAPSHOT
     apis:
       - path: google/cloud/kms/v1
         java:
@@ -2160,7 +2141,7 @@ libraries:
       name_pretty_override: Cloud Key Management Service
       product_documentation_override: https://cloud.google.com/kms
   - name: kmsinventory
-    version: 0.83.0-SNAPSHOT
+    version: 0.84.0-SNAPSHOT
     apis:
       - path: google/cloud/kms/inventory/v1
     java:
@@ -2170,7 +2151,7 @@ libraries:
       rest_documentation: https://cloud.google.com/kms/docs/reference/rest
       rpc_documentation: https://cloud.google.com/kms/docs/reference/rpc
   - name: language
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/language/v2
       - path: google/cloud/language/v1
@@ -2183,7 +2164,7 @@ libraries:
       rest_documentation: https://cloud.google.com/natural-language/docs/reference/rest
       rpc_documentation: https://cloud.google.com/natural-language/docs/reference/rpc
   - name: licensemanager
-    version: 0.27.0-SNAPSHOT
+    version: 0.28.0-SNAPSHOT
     apis:
       - path: google/cloud/licensemanager/v1
         java:
@@ -2197,7 +2178,7 @@ libraries:
       name_pretty_override: License Manager API
       product_documentation_override: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
   - name: life-sciences
-    version: 0.96.0-SNAPSHOT
+    version: 0.97.0-SNAPSHOT
     apis:
       - path: google/cloud/lifesciences/v2beta
         java:
@@ -2210,7 +2191,7 @@ libraries:
       rest_documentation: https://cloud.google.com/life-sciences/docs/reference/rest
       rpc_documentation: https://cloud.google.com/life-sciences/docs/reference/rpc
   - name: locationfinder
-    version: 0.19.0-SNAPSHOT
+    version: 0.20.0-SNAPSHOT
     apis:
       - path: google/cloud/locationfinder/v1
     java:
@@ -2222,7 +2203,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/location-finder/docs/overview
       rpc_documentation: https://cloud.google.com/locationfinder/docs/reference/rest
   - name: logging
-    version: 3.35.0-SNAPSHOT
+    version: 3.36.0-SNAPSHOT
     apis:
       - path: google/logging/v2
         java:
@@ -2239,7 +2220,7 @@ libraries:
       recommended_package: com.google.cloud.logging
       transport_override: grpc
   - name: lustre
-    version: 0.34.0-SNAPSHOT
+    version: 0.35.0-SNAPSHOT
     apis:
       - path: google/cloud/lustre/v1
         java:
@@ -2253,7 +2234,7 @@ libraries:
       name_pretty_override: Google Cloud Managed Lustre API
       product_documentation_override: https://cloud.google.com/managed-lustre/docs
   - name: maintenance
-    version: 0.28.0-SNAPSHOT
+    version: 0.29.0-SNAPSHOT
     apis:
       - path: google/cloud/maintenance/api/v1
         java:
@@ -2272,7 +2253,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/unified-maintenance/docs/overview
       rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
   - name: managed-identities
-    version: 1.92.0-SNAPSHOT
+    version: 1.93.0-SNAPSHOT
     apis:
       - path: google/cloud/managedidentities/v1
     java:
@@ -2281,7 +2262,7 @@ libraries:
       name_pretty_override: Managed Service for Microsoft Active Directory
       product_documentation_override: https://cloud.google.com/managed-microsoft-ad/
   - name: managedkafka
-    version: 0.50.0-SNAPSHOT
+    version: 0.51.0-SNAPSHOT
     apis:
       - path: google/cloud/managedkafka/v1
         java:
@@ -2295,7 +2276,7 @@ libraries:
       name_pretty_override: Managed Service for Apache Kafka
       product_documentation_override: https://cloud.google.com/managed-kafka
   - name: maps-addressvalidation
-    version: 0.88.0-SNAPSHOT
+    version: 0.89.0-SNAPSHOT
     apis:
       - path: google/maps/addressvalidation/v1
     java:
@@ -2303,11 +2284,10 @@ libraries:
       api_description_override: The Address Validation API allows developers to verify the accuracy of addresses. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed address.
       api_shortname_override: maps-addressvalidation
       artifact_id: google-maps-addressvalidation
-      group_id: com.google.maps
       name_pretty_override: Address Validation API
       product_documentation_override: https://developers.google.com/maps/documentation/address-validation/
   - name: maps-area-insights
-    version: 0.45.0-SNAPSHOT
+    version: 0.46.0-SNAPSHOT
     apis:
       - path: google/maps/areainsights/v1
     java:
@@ -2316,12 +2296,11 @@ libraries:
       api_shortname_override: maps-area-insights
       artifact_id: google-maps-area-insights
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-area-insights/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Places Insights API
       product_documentation_override: https://developers.google.com/maps/documentation/places-insights
   - name: maps-fleetengine
-    version: 0.41.0-SNAPSHOT
+    version: 0.42.0-SNAPSHOT
     apis:
       - path: google/maps/fleetengine/v1
     java:
@@ -2330,12 +2309,11 @@ libraries:
       api_shortname_override: maps-fleetengine
       artifact_id: google-maps-fleetengine
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Local Rides and Deliveries API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
   - name: maps-fleetengine-delivery
-    version: 0.41.0-SNAPSHOT
+    version: 0.42.0-SNAPSHOT
     apis:
       - path: google/maps/fleetengine/delivery/v1
     java:
@@ -2344,12 +2322,11 @@ libraries:
       api_shortname_override: maps-fleetengine-delivery
       artifact_id: google-maps-fleetengine-delivery
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-fleetengine-delivery/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Last Mile Fleet Solution Delivery API
       product_documentation_override: https://developers.google.com/maps/documentation/transportation-logistics/mobility
   - name: maps-geocode
-    version: 0.6.0-SNAPSHOT
+    version: 0.7.0-SNAPSHOT
     apis:
       - path: google/maps/geocode/v4
     java:
@@ -2357,12 +2334,11 @@ libraries:
       api_description_override: The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID.
       artifact_id: google-maps-geocode
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-geocode/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
   - name: maps-mapmanagement
-    version: 0.3.0-SNAPSHOT
+    version: 0.4.0-SNAPSHOT
     apis:
       - path: google/maps/mapmanagement/v2beta
     java:
@@ -2370,12 +2346,11 @@ libraries:
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview
   - name: maps-mapsplatformdatasets
-    version: 0.83.0-SNAPSHOT
+    version: 0.84.0-SNAPSHOT
     apis:
       - path: google/maps/mapsplatformdatasets/v1
     java:
@@ -2385,11 +2360,10 @@ libraries:
             that they can use to enrich their experience of Maps Platform solutions (e.g. styling, routing).
       api_shortname_override: maps-mapsplatformdatasets
       artifact_id: google-maps-mapsplatformdatasets
-      group_id: com.google.maps
       name_pretty_override: Maps Platform Datasets API
       product_documentation_override: https://developers.google.com/maps/documentation
   - name: maps-places
-    version: 0.65.0-SNAPSHOT
+    version: 0.66.0-SNAPSHOT
     apis:
       - path: google/maps/places/v1
         java:
@@ -2399,11 +2373,10 @@ libraries:
       api_description_override: The Places API allows developers to access a variety of search and retrieval endpoints for a Place.
       api_shortname_override: maps-places
       artifact_id: google-maps-places
-      group_id: com.google.maps
       name_pretty_override: Places API (New)
       product_documentation_override: https://developers.google.com/maps/documentation/places/web-service/
   - name: maps-routeoptimization
-    version: 0.52.0-SNAPSHOT
+    version: 0.53.0-SNAPSHOT
     apis:
       - path: google/maps/routeoptimization/v1
     java:
@@ -2411,14 +2384,13 @@ libraries:
       api_description_override: The Route Optimization API assigns tasks and routes to a vehicle fleet, optimizing against the objectives and constraints that you supply for your transportation goals.
       artifact_id: google-maps-routeoptimization
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Route Optimization API
       product_documentation_override: https://developers.google.com/maps/documentation/route-optimization
       rest_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rest/
       rpc_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rpc
   - name: maps-routing
-    version: 1.79.0-SNAPSHOT
+    version: 1.80.0-SNAPSHOT
     apis:
       - path: google/maps/routing/v2
     java:
@@ -2426,11 +2398,10 @@ libraries:
       api_description_override: Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features.
       api_shortname_override: maps-routing
       artifact_id: google-maps-routing
-      group_id: com.google.maps
       name_pretty_override: Routes API
       product_documentation_override: https://developers.google.com/maps/documentation/routes
   - name: maps-solar
-    version: 0.53.0-SNAPSHOT
+    version: 0.54.0-SNAPSHOT
     apis:
       - path: google/maps/solar/v1
     java:
@@ -2439,13 +2410,12 @@ libraries:
       api_shortname_override: maps-solar
       artifact_id: google-maps-solar
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
-      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Solar API
       product_documentation_override: https://developers.google.com/maps/documentation/solar/overview
       rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
   - name: marketingplatformadminapi
-    version: 0.43.0-SNAPSHOT
+    version: 0.44.0-SNAPSHOT
     apis:
       - path: google/marketingplatform/admin/v1alpha
         java:
@@ -2460,7 +2430,7 @@ libraries:
       name_pretty_override: Google Marketing Platform Admin API
       product_documentation_override: https://developers.google.com/analytics/devguides/config/gmp/v1
   - name: mediatranslation
-    version: 0.100.0-SNAPSHOT
+    version: 0.101.0-SNAPSHOT
     apis:
       - path: google/cloud/mediatranslation/v1beta1
     java:
@@ -2469,7 +2439,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/
       billing_not_required: true
   - name: meet
-    version: 0.61.0-SNAPSHOT
+    version: 0.62.0-SNAPSHOT
     apis:
       - path: google/apps/meet/v2
       - path: google/apps/meet/v2beta
@@ -2478,7 +2448,7 @@ libraries:
       name_pretty_override: Google Meet API
       product_documentation_override: https://developers.google.com/meet/api/guides/overview
   - name: memcache
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/memcache/v1
         java:
@@ -2494,7 +2464,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/memorystore/
       billing_not_required: true
   - name: migrationcenter
-    version: 0.76.0-SNAPSHOT
+    version: 0.77.0-SNAPSHOT
     apis:
       - path: google/cloud/migrationcenter/v1
         java:
@@ -2505,7 +2475,7 @@ libraries:
       name_pretty_override: Migration Center API
       product_documentation_override: https://cloud.google.com/migration-center/docs/migration-center-overview
   - name: modelarmor
-    version: 0.35.0-SNAPSHOT
+    version: 0.36.0-SNAPSHOT
     apis:
       - path: google/cloud/modelarmor/v1
         java:
@@ -2523,7 +2493,7 @@ libraries:
       name_pretty_override: Model Armor API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/model-armor-overview
   - name: monitoring
-    version: 3.95.0-SNAPSHOT
+    version: 3.96.0-SNAPSHOT
     apis:
       - path: google/monitoring/v3
     keep:
@@ -2534,7 +2504,7 @@ libraries:
       name_pretty_override: Stackdriver Monitoring
       product_documentation_override: https://cloud.google.com/monitoring/docs
   - name: monitoring-dashboards
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/monitoring/dashboard/v1
     java:
@@ -2545,7 +2515,7 @@ libraries:
       name_pretty_override: Monitoring Dashboards
       product_documentation_override: https://cloud.google.com/monitoring/charts/dashboards
   - name: monitoring-metricsscope
-    version: 0.88.0-SNAPSHOT
+    version: 0.89.0-SNAPSHOT
     apis:
       - path: google/monitoring/metricsscope/v1
     java:
@@ -2555,7 +2525,7 @@ libraries:
       name_pretty_override: Monitoring Metrics Scopes
       product_documentation_override: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
   - name: netapp
-    version: 0.73.0-SNAPSHOT
+    version: 0.74.0-SNAPSHOT
     apis:
       - path: google/cloud/netapp/v1
         java:
@@ -2566,7 +2536,7 @@ libraries:
       name_pretty_override: NetApp API
       product_documentation_override: https://cloud.google.com/netapp/volumes/docs/discover/overview
   - name: network-management
-    version: 1.95.0-SNAPSHOT
+    version: 1.96.0-SNAPSHOT
     apis:
       - path: google/cloud/networkmanagement/v1
         java:
@@ -2583,7 +2553,7 @@ libraries:
       name_pretty_override: Network Management API
       product_documentation_override: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
   - name: network-security
-    version: 0.97.0-SNAPSHOT
+    version: 0.98.0-SNAPSHOT
     apis:
       - path: google/cloud/networksecurity/v1
         java:
@@ -2600,7 +2570,7 @@ libraries:
       name_pretty_override: Network Security API
       product_documentation_override: https://cloud.google.com/traffic-director/docs/reference/network-security/rest
   - name: networkconnectivity
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/networkconnectivity/v1
         java:
@@ -2618,7 +2588,7 @@ libraries:
       name_pretty_override: Network Connectivity Center
       product_documentation_override: https://cloud.google.com/network-connectivity/docs
   - name: networkservices
-    version: 0.50.0-SNAPSHOT
+    version: 0.51.0-SNAPSHOT
     apis:
       - path: google/cloud/networkservices/v1
         java:
@@ -2633,7 +2603,7 @@ libraries:
       name_pretty_override: Network Services API
       product_documentation_override: https://cloud.google.com/products/networking
   - name: notebooks
-    version: 1.92.0-SNAPSHOT
+    version: 1.93.0-SNAPSHOT
     apis:
       - path: google/cloud/notebooks/v2
         java:
@@ -2655,7 +2625,7 @@ libraries:
       name_pretty_override: AI Platform Notebooks
       product_documentation_override: https://cloud.google.com/ai-platform-notebooks
   - name: optimization
-    version: 1.92.0-SNAPSHOT
+    version: 1.93.0-SNAPSHOT
     apis:
       - path: google/cloud/optimization/v1
     java:
@@ -2665,7 +2635,7 @@ libraries:
       rest_documentation: https://cloud.google.com/optimization/docs/reference/rest
       rpc_documentation: https://cloud.google.com/optimization/docs/reference/rpc
   - name: oracledatabase
-    version: 0.43.0-SNAPSHOT
+    version: 0.44.0-SNAPSHOT
     apis:
       - path: google/cloud/oracledatabase/v1
         java:
@@ -2679,7 +2649,7 @@ libraries:
       name_pretty_override: Oracle Database@Google Cloud API
       product_documentation_override: https://cloud.google.com/oracle/database/docs
   - name: orchestration-airflow
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/cloud/orchestration/airflow/service/v1
       - path: google/cloud/orchestration/airflow/service/v1beta1
@@ -2692,7 +2662,7 @@ libraries:
       rest_documentation: https://cloud.google.com/composer/docs/reference/rest
       rpc_documentation: https://cloud.google.com/composer/docs/reference/rpc
   - name: orgpolicy
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/orgpolicy/v2
       - path: google/cloud/orgpolicy/v1
@@ -2707,7 +2677,7 @@ libraries:
       name_pretty_override: Cloud Organization Policy
       product_documentation_override: n/a
   - name: os-config
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/osconfig/v1
       - path: google/cloud/osconfig/v1beta
@@ -2719,7 +2689,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/compute/docs/os-patch-management
       billing_not_required: true
   - name: os-login
-    version: 2.93.0-SNAPSHOT
+    version: 2.94.0-SNAPSHOT
     apis:
       - path: google/cloud/oslogin/v1
         java:
@@ -2741,7 +2711,7 @@ libraries:
       name_pretty_override: Cloud OS Login
       product_documentation_override: https://cloud.google.com/compute/docs/oslogin/
   - name: parallelstore
-    version: 0.57.0-SNAPSHOT
+    version: 0.58.0-SNAPSHOT
     apis:
       - path: google/cloud/parallelstore/v1
         java:
@@ -2759,7 +2729,7 @@ libraries:
       name_pretty_override: Parallelstore API
       product_documentation_override: https://cloud/parallelstore?hl=en
   - name: parametermanager
-    version: 0.38.0-SNAPSHOT
+    version: 0.39.0-SNAPSHOT
     apis:
       - path: google/cloud/parametermanager/v1
         java:
@@ -2773,7 +2743,7 @@ libraries:
       name_pretty_override: Parameter Manager API
       product_documentation_override: https://cloud.google.com/secret-manager/parameter-manager/docs/overview
   - name: phishingprotection
-    version: 0.125.0-SNAPSHOT
+    version: 0.126.0-SNAPSHOT
     apis:
       - path: google/cloud/phishingprotection/v1beta1
     java:
@@ -2782,7 +2752,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/phishing-protection/docs/
       billing_not_required: true
   - name: policy-troubleshooter
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/policytroubleshooter/v1
       - path: google/cloud/policytroubleshooter/iam/v3
@@ -2792,7 +2762,7 @@ libraries:
       name_pretty_override: IAM Policy Troubleshooter API
       product_documentation_override: https://cloud.google.com/iam/docs/troubleshooting-access
   - name: policysimulator
-    version: 0.73.0-SNAPSHOT
+    version: 0.74.0-SNAPSHOT
     apis:
       - path: google/cloud/policysimulator/v1
     java:
@@ -2800,7 +2770,7 @@ libraries:
       name_pretty_override: Policy Simulator API
       product_documentation_override: https://cloud.google.com/policysimulator/docs/overview
   - name: private-catalog
-    version: 0.96.0-SNAPSHOT
+    version: 0.97.0-SNAPSHOT
     apis:
       - path: google/cloud/privatecatalog/v1beta1
     java:
@@ -2809,7 +2779,7 @@ libraries:
       name_pretty_override: Private Catalog
       product_documentation_override: https://cloud.google.com/private-catalog/docs
   - name: privilegedaccessmanager
-    version: 0.48.0-SNAPSHOT
+    version: 0.49.0-SNAPSHOT
     apis:
       - path: google/cloud/privilegedaccessmanager/v1
         java:
@@ -2824,7 +2794,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
       rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
   - name: profiler
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/devtools/cloudprofiler/v2
     java:
@@ -2833,7 +2803,7 @@ libraries:
       name_pretty_override: Cloud Profiler
       product_documentation_override: https://cloud.google.com/profiler/docs
   - name: publicca
-    version: 0.91.0-SNAPSHOT
+    version: 0.92.0-SNAPSHOT
     apis:
       - path: google/cloud/security/publicca/v1
       - path: google/cloud/security/publicca/v1beta1
@@ -2843,7 +2813,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/certificate-manager/docs/public-ca
       rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
   - name: pubsub
-    version: 1.152.0-SNAPSHOT
+    version: 1.153.0-SNAPSHOT
     apis:
       - path: google/pubsub/v1
         java:
@@ -2912,7 +2882,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/pubsub/docs/
       recommended_package: com.google.cloud.pubsub.v1
   - name: rapidmigrationassessment
-    version: 0.77.0-SNAPSHOT
+    version: 0.78.0-SNAPSHOT
     apis:
       - path: google/cloud/rapidmigrationassessment/v1
         java:
@@ -2923,7 +2893,7 @@ libraries:
       name_pretty_override: Rapid Migration Assessment API
       product_documentation_override: https://cloud.google.com/migration-center/docs
   - name: recaptchaenterprise
-    version: 3.91.0-SNAPSHOT
+    version: 3.92.0-SNAPSHOT
     apis:
       - path: google/cloud/recaptchaenterprise/v1
       - path: google/cloud/recaptchaenterprise/v1beta1
@@ -2935,7 +2905,7 @@ libraries:
       rest_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rest
       rpc_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rpc
   - name: recommendations-ai
-    version: 0.101.0-SNAPSHOT
+    version: 0.102.0-SNAPSHOT
     apis:
       - path: google/cloud/recommendationengine/v1beta1
     java:
@@ -2943,7 +2913,7 @@ libraries:
       name_pretty_override: Recommendations AI
       product_documentation_override: https://cloud.google.com/recommendations-ai/
   - name: recommender
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/recommender/v1
       - path: google/cloud/recommender/v1beta1
@@ -2952,7 +2922,7 @@ libraries:
       name_pretty_override: Recommender
       product_documentation_override: https://cloud.google.com/recommendations/
   - name: redis
-    version: 2.97.0-SNAPSHOT
+    version: 2.98.0-SNAPSHOT
     apis:
       - path: google/cloud/redis/v1
         java:
@@ -2965,7 +2935,7 @@ libraries:
       name_pretty_override: Cloud Redis
       product_documentation_override: https://cloud.google.com/memorystore/docs/redis/
   - name: redis-cluster
-    version: 0.66.0-SNAPSHOT
+    version: 0.67.0-SNAPSHOT
     apis:
       - path: google/cloud/redis/cluster/v1
         java:
@@ -2981,7 +2951,7 @@ libraries:
       name_pretty_override: Google Cloud Memorystore for Redis API
       product_documentation_override: https://cloud.google.com/memorystore/docs/cluster
   - name: resourcemanager
-    version: 1.96.0-SNAPSHOT
+    version: 1.97.0-SNAPSHOT
     apis:
       - path: google/cloud/resourcemanager/v3
         java:
@@ -2993,7 +2963,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/resource-manager
       billing_not_required: true
   - name: retail
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/retail/v2
         java:
@@ -3012,7 +2982,7 @@ libraries:
       name_pretty_override: Cloud Retail
       product_documentation_override: https://cloud.google.com/solutions/retail
   - name: run
-    version: 0.94.0-SNAPSHOT
+    version: 0.95.0-SNAPSHOT
     apis:
       - path: google/cloud/run/v2
         java:
@@ -3025,7 +2995,7 @@ libraries:
       rest_documentation: https://cloud.google.com/run/docs/reference/rest
       rpc_documentation: https://cloud.google.com/run/docs/reference/rpc
   - name: saasservicemgmt
-    version: 0.24.0-SNAPSHOT
+    version: 0.25.0-SNAPSHOT
     apis:
       - path: google/cloud/saasplatform/saasservicemgmt/v1beta1
         java:
@@ -3040,7 +3010,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/saas-runtime/docs/overview
       rpc_documentation: https://cloud.google.com/saas-runtime/docs/apis
   - name: scheduler
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/scheduler/v1
         java:
@@ -3062,7 +3032,7 @@ libraries:
       rest_documentation: https://cloud.google.com/scheduler/docs/reference/rest
       rpc_documentation: https://cloud.google.com/scheduler/docs/reference/rpc
   - name: secretmanager
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/secretmanager/v1
       - path: google/cloud/secretmanager/v1beta2
@@ -3079,7 +3049,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/solutions/secrets-management/
       billing_not_required: true
   - name: securesourcemanager
-    version: 0.64.0-SNAPSHOT
+    version: 0.65.0-SNAPSHOT
     apis:
       - path: google/cloud/securesourcemanager/v1
         java:
@@ -3093,7 +3063,7 @@ libraries:
       name_pretty_override: Secure Source Manager API
       product_documentation_override: https://cloud.google.com/secure-source-manager/docs/overview
   - name: security-private-ca
-    version: 2.96.0-SNAPSHOT
+    version: 2.97.0-SNAPSHOT
     apis:
       - path: google/cloud/security/privateca/v1
         java:
@@ -3109,7 +3079,7 @@ libraries:
       rest_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rest
       rpc_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rpc
   - name: securitycenter
-    version: 2.102.0-SNAPSHOT
+    version: 2.103.0-SNAPSHOT
     apis:
       - path: google/cloud/securitycenter/v2
       - path: google/cloud/securitycenter/v1
@@ -3129,7 +3099,7 @@ libraries:
       billing_not_required: true
       rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   - name: securitycenter-settings
-    version: 0.97.0-SNAPSHOT
+    version: 0.98.0-SNAPSHOT
     apis:
       - path: google/cloud/securitycenter/settings/v1beta1
     java:
@@ -3140,7 +3110,7 @@ libraries:
       billing_not_required: true
       rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   - name: securitycentermanagement
-    version: 0.62.0-SNAPSHOT
+    version: 0.63.0-SNAPSHOT
     apis:
       - path: google/cloud/securitycentermanagement/v1
         java:
@@ -3151,7 +3121,7 @@ libraries:
       name_pretty_override: Security Center Management API
       product_documentation_override: https://cloud.google.com/securitycentermanagement/docs/overview
   - name: securityposture
-    version: 0.59.0-SNAPSHOT
+    version: 0.60.0-SNAPSHOT
     apis:
       - path: google/cloud/securityposture/v1
         java:
@@ -3162,7 +3132,7 @@ libraries:
       name_pretty_override: Security Posture API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/security-posture-overview
   - name: service-control
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/api/servicecontrol/v2
       - path: google/api/servicecontrol/v1
@@ -3171,7 +3141,7 @@ libraries:
       name_pretty_override: Service Control API
       product_documentation_override: https://cloud.google.com/service-infrastructure/docs/overview/
   - name: service-management
-    version: 3.92.0-SNAPSHOT
+    version: 3.93.0-SNAPSHOT
     apis:
       - path: google/api/servicemanagement/v1
         java:
@@ -3185,7 +3155,7 @@ libraries:
       name_pretty_override: Service Management API
       product_documentation_override: https://cloud.google.com/service-infrastructure/docs/overview/
   - name: service-usage
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/api/serviceusage/v1
       - path: google/api/serviceusage/v1beta1
@@ -3194,7 +3164,7 @@ libraries:
       name_pretty_override: Service Usage
       product_documentation_override: https://cloud.google.com/service-usage/docs/overview
   - name: servicedirectory
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/servicedirectory/v1
         java:
@@ -3212,7 +3182,7 @@ libraries:
       rest_documentation: https://cloud.google.com/service-directory/docs/reference/rest
       rpc_documentation: https://cloud.google.com/service-directory/docs/reference/rpc
   - name: servicehealth
-    version: 0.61.0-SNAPSHOT
+    version: 0.62.0-SNAPSHOT
     apis:
       - path: google/cloud/servicehealth/v1
         java:
@@ -3224,7 +3194,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/service-health/docs/overview
       rpc_documentation: https://cloud.google.com/service-health/docs/reference/rpc
   - name: shell
-    version: 2.93.0-SNAPSHOT
+    version: 2.94.0-SNAPSHOT
     apis:
       - path: google/cloud/shell/v1
     java:
@@ -3235,17 +3205,16 @@ libraries:
       rest_documentation: https://cloud.google.com/shell/docs/reference/rest
       rpc_documentation: https://cloud.google.com/shell/docs/reference/rpc
   - name: shopping-css
-    version: 0.62.0-SNAPSHOT
+    version: 0.63.0-SNAPSHOT
     apis:
       - path: google/shopping/css/v1
     java:
       api_description_override: The CSS API is used to manage your CSS and control your CSS Products portfolio
       artifact_id: google-shopping-css
-      group_id: com.google.shopping
       name_pretty_override: CSS API
       product_documentation_override: https://developers.google.com/comparison-shopping-services/api
   - name: shopping-merchant-accounts
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/accounts/v1
       - path: google/shopping/merchant/accounts/v1beta
@@ -3254,12 +3223,11 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-accounts
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-conversions
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/conversions/v1
       - path: google/shopping/merchant/conversions/v1beta
@@ -3269,12 +3237,11 @@ libraries:
       api_shortname_override: shopping-merchant-conversions
       artifact_id: google-shopping-merchant-conversions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Conversions API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-datasources
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/datasources/v1
       - path: google/shopping/merchant/datasources/v1beta
@@ -3283,23 +3250,21 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-datasources
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-inventories
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/inventories/v1
       - path: google/shopping/merchant/inventories/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-inventories
-      group_id: com.google.shopping
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-lfp
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/lfp/v1
       - path: google/shopping/merchant/lfp/v1beta
@@ -3309,12 +3274,11 @@ libraries:
       api_shortname_override: shopping-merchant-lfp
       artifact_id: google-shopping-merchant-lfp
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant LFP API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-notifications
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/notifications/v1
       - path: google/shopping/merchant/notifications/v1beta
@@ -3324,12 +3288,11 @@ libraries:
       api_shortname_override: shopping-merchant-notifications
       artifact_id: google-shopping-merchant-notifications
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Notifications API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-product-studio
-    version: 0.34.0-SNAPSHOT
+    version: 0.35.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/productstudio/v1alpha
     java:
@@ -3337,12 +3300,11 @@ libraries:
       api_description_override: Programmatically manage your products.
       artifact_id: google-shopping-merchant-productstudio
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-productstudio/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-products
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/products/v1
       - path: google/shopping/merchant/products/v1beta
@@ -3351,12 +3313,11 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-products
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-promotions
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/promotions/v1
       - path: google/shopping/merchant/promotions/v1beta
@@ -3365,12 +3326,11 @@ libraries:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-promotions
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-quota
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/quota/v1
       - path: google/shopping/merchant/quota/v1beta
@@ -3380,12 +3340,11 @@ libraries:
       api_shortname_override: shopping-merchant-quota
       artifact_id: google-shopping-merchant-quota
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Quota API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-reports
-    version: 1.22.0-SNAPSHOT
+    version: 1.23.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/reports/v1
       - path: google/shopping/merchant/reports/v1beta
@@ -3393,18 +3352,16 @@ libraries:
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-reports
-      group_id: com.google.shopping
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: shopping-merchant-reviews
-    version: 0.40.0-SNAPSHOT
+    version: 0.41.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/reviews/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center Accounts.
       artifact_id: google-shopping-merchant-reviews
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
-      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
@@ -3435,7 +3392,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/dummy
       skip_api_id: true
   - name: spanner
-    version: 6.119.0-SNAPSHOT
+    version: 6.120.0-SNAPSHOT
     apis:
       - path: google/spanner/v1
         java:
@@ -3476,7 +3433,7 @@ libraries:
       recommended_package: com.google.cloud.spanner
       transport_override: grpc
   - name: spanneradapter
-    version: 0.30.0-SNAPSHOT
+    version: 0.31.0-SNAPSHOT
     apis:
       - path: google/spanner/adapter/v1
     java:
@@ -3488,7 +3445,7 @@ libraries:
       name_pretty_override: Cloud Spanner Adapter API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview
   - name: speech
-    version: 4.89.0-SNAPSHOT
+    version: 4.90.0-SNAPSHOT
     apis:
       - path: google/cloud/speech/v2
         java:
@@ -3510,7 +3467,7 @@ libraries:
       rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
       rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
   - name: storage
-    version: 2.70.0-SNAPSHOT
+    version: 2.71.0-SNAPSHOT
     apis:
       - path: google/storage/v2
         java:
@@ -3546,7 +3503,7 @@ libraries:
       recommended_package: com.google.cloud.storage
       transport_override: rest
   - name: storage-transfer
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/storagetransfer/v1
     java:
@@ -3554,7 +3511,7 @@ libraries:
       name_pretty_override: Storage Transfer Service
       product_documentation_override: https://cloud.google.com/storage-transfer-service
   - name: storagebatchoperations
-    version: 0.34.0-SNAPSHOT
+    version: 0.35.0-SNAPSHOT
     apis:
       - path: google/cloud/storagebatchoperations/v1
         java:
@@ -3568,7 +3525,7 @@ libraries:
       name_pretty_override: Storage Batch Operations API
       product_documentation_override: https://cloud.google.com/storage/docs/batch-operations/overview
   - name: storageinsights
-    version: 0.79.0-SNAPSHOT
+    version: 0.80.0-SNAPSHOT
     apis:
       - path: google/cloud/storageinsights/v1
         java:
@@ -3579,7 +3536,7 @@ libraries:
       name_pretty_override: Storage Insights API
       product_documentation_override: https://cloud.google.com/storage/docs/insights/storage-insights/
   - name: talent
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/talent/v4
       - path: google/cloud/talent/v4beta1
@@ -3589,7 +3546,7 @@ libraries:
       name_pretty_override: Talent Solution
       product_documentation_override: https://cloud.google.com/solutions/talent-solution/
   - name: tasks
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/tasks/v2
         java:
@@ -3617,7 +3574,7 @@ libraries:
       rest_documentation: https://cloud.google.com/tasks/docs/reference/rest
       rpc_documentation: https://cloud.google.com/tasks/docs/reference/rpc
   - name: telcoautomation
-    version: 0.64.0-SNAPSHOT
+    version: 0.65.0-SNAPSHOT
     apis:
       - path: google/cloud/telcoautomation/v1
         java:
@@ -3632,7 +3589,7 @@ libraries:
       name_pretty_override: Telco Automation API
       product_documentation_override: https://cloud.google.com/telecom-network-automation
   - name: texttospeech
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/texttospeech/v1
       - path: google/cloud/texttospeech/v1beta1
@@ -3648,7 +3605,7 @@ libraries:
       rest_documentation: https://cloud.google.com/text-to-speech/docs/reference/rest
       rpc_documentation: https://cloud.google.com/text-to-speech/docs/reference/rpc
   - name: tpu
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/tpu/v2
         java:
@@ -3668,7 +3625,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/tpu/docs
       rest_documentation: https://cloud.google.com/tpu/docs/reference/rest
   - name: trace
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/devtools/cloudtrace/v2
       - path: google/devtools/cloudtrace/v1
@@ -3681,7 +3638,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/trace/docs/
       billing_not_required: true
   - name: translate
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/translate/v3
       - path: google/cloud/translate/v3beta1
@@ -3694,7 +3651,7 @@ libraries:
       rest_documentation: https://cloud.google.com/translate/docs/reference/rest
       rpc_documentation: https://cloud.google.com/translate/docs/reference/rpc
   - name: valkey
-    version: 0.40.0-SNAPSHOT
+    version: 0.41.0-SNAPSHOT
     apis:
       - path: google/cloud/memorystore/v1
         java:
@@ -3713,7 +3670,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/memorystore/docs/valkey
       rest_documentation: https://cloud.google.com/memorystore/docs/valkey/reference/rest
   - name: vectorsearch
-    version: 0.16.0-SNAPSHOT
+    version: 0.17.0-SNAPSHOT
     apis:
       - path: google/cloud/vectorsearch/v1
         java:
@@ -3731,7 +3688,7 @@ libraries:
       name_pretty_override: Vector Search API
       product_documentation_override: https://docs.cloud.google.com/vertex-ai/docs/vector-search/overview
   - name: video-intelligence
-    version: 2.93.0-SNAPSHOT
+    version: 2.94.0-SNAPSHOT
     apis:
       - path: google/cloud/videointelligence/v1
       - path: google/cloud/videointelligence/v1p3beta1
@@ -3746,7 +3703,7 @@ libraries:
       rest_documentation: https://cloud.google.com/video-intelligence/docs/reference/rest
       rpc_documentation: https://cloud.google.com/video-intelligence/docs/reference/rpc
   - name: video-live-stream
-    version: 0.96.0-SNAPSHOT
+    version: 0.97.0-SNAPSHOT
     apis:
       - path: google/cloud/video/livestream/v1
         java:
@@ -3758,7 +3715,7 @@ libraries:
       name_pretty_override: Live Stream API
       product_documentation_override: https://cloud.google.com/livestream/
   - name: video-stitcher
-    version: 0.94.0-SNAPSHOT
+    version: 0.95.0-SNAPSHOT
     apis:
       - path: google/cloud/video/stitcher/v1
     java:
@@ -3766,7 +3723,7 @@ libraries:
       name_pretty_override: Video Stitcher API
       product_documentation_override: https://cloud.google.com/video-stitcher/
   - name: video-transcoder
-    version: 1.93.0-SNAPSHOT
+    version: 1.94.0-SNAPSHOT
     apis:
       - path: google/cloud/video/transcoder/v1
     java:
@@ -3777,7 +3734,7 @@ libraries:
       rest_documentation: https://cloud.google.com/transcoder/docs/reference/rest
       rpc_documentation: https://cloud.google.com/transcoder/docs/reference/rpc
   - name: vision
-    version: 3.92.0-SNAPSHOT
+    version: 3.93.0-SNAPSHOT
     apis:
       - path: google/cloud/vision/v1
       - path: google/cloud/vision/v1p4beta1
@@ -3802,7 +3759,7 @@ libraries:
       rest_documentation: https://cloud.google.com/vision/docs/reference/rest
       rpc_documentation: https://cloud.google.com/vision/docs/reference/rpc
   - name: visionai
-    version: 0.51.0-SNAPSHOT
+    version: 0.52.0-SNAPSHOT
     apis:
       - path: google/cloud/visionai/v1
         java:
@@ -3818,7 +3775,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/vision-ai/docs
       rpc_documentation: https://cloud.google.com/vision-ai/docs/reference/rpc
   - name: vmmigration
-    version: 1.94.0-SNAPSHOT
+    version: 1.95.0-SNAPSHOT
     apis:
       - path: google/cloud/vmmigration/v1
         java:
@@ -3830,7 +3787,7 @@ libraries:
       name_pretty_override: VM Migration
       product_documentation_override: n/a
   - name: vmwareengine
-    version: 0.88.0-SNAPSHOT
+    version: 0.89.0-SNAPSHOT
     apis:
       - path: google/cloud/vmwareengine/v1
         java:
@@ -3843,7 +3800,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/vmware-engine/
       rest_documentation: https://cloud.google.com/vmware-engine/docs/reference/rest
   - name: vpcaccess
-    version: 2.95.0-SNAPSHOT
+    version: 2.96.0-SNAPSHOT
     apis:
       - path: google/cloud/vpcaccess/v1
         java:
@@ -3854,7 +3811,7 @@ libraries:
       name_pretty_override: Serverless VPC Access
       product_documentation_override: https://cloud.google.com/vpc/docs/serverless-vpc-access
   - name: webrisk
-    version: 2.93.0-SNAPSHOT
+    version: 2.94.0-SNAPSHOT
     apis:
       - path: google/cloud/webrisk/v1
       - path: google/cloud/webrisk/v1beta1
@@ -3866,7 +3823,7 @@ libraries:
       rest_documentation: https://cloud.google.com/web-risk/docs/reference/rest
       rpc_documentation: https://cloud.google.com/web-risk/docs/reference/rpc
   - name: websecurityscanner
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/websecurityscanner/v1
       - path: google/cloud/websecurityscanner/v1beta
@@ -3881,7 +3838,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/security-scanner/docs/
       billing_not_required: true
   - name: workflow-executions
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/workflows/executions/v1
       - path: google/cloud/workflows/executions/v1beta
@@ -3892,7 +3849,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/workflows
       rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
   - name: workflows
-    version: 2.94.0-SNAPSHOT
+    version: 2.95.0-SNAPSHOT
     apis:
       - path: google/cloud/workflows/v1
         java:
@@ -3909,7 +3866,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/workflows
       rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
   - name: workloadmanager
-    version: 0.10.0-SNAPSHOT
+    version: 0.11.0-SNAPSHOT
     apis:
       - path: google/cloud/workloadmanager/v1
         java:
@@ -3924,7 +3881,7 @@ libraries:
       product_documentation_override: https://docs.cloud.google.com/workload-manager/docs
       rpc_documentation: https://docs.cloud.google.com/workload-manager/docs/reference/rest
   - name: workspaceevents
-    version: 0.58.0-SNAPSHOT
+    version: 0.59.0-SNAPSHOT
     apis:
       - path: google/apps/events/subscriptions/v1
       - path: google/apps/events/subscriptions/v1beta
@@ -3934,7 +3891,7 @@ libraries:
       product_documentation_override: https://developers.google.com/workspace/events
       rest_documentation: https://developers.google.com/workspace/events/reference/rest
   - name: workstations
-    version: 0.82.0-SNAPSHOT
+    version: 0.83.0-SNAPSHOT
     apis:
       - path: google/cloud/workstations/v1
         java:
