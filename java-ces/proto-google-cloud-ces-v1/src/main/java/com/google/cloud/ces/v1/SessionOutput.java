@@ -51,7 +51,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     super(builder);
   }
 
-  private SessionOutput() {}
+  private SessionOutput() {
+    context_ = java.util.Collections.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.ces.v1.SessionServiceProto
@@ -1926,6 +1928,81 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         : diagnosticInfo_;
   }
 
+  public static final int CONTEXT_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.protobuf.Any> context_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.protobuf.Any> getContextList() {
+    return context_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getContextOrBuilderList() {
+    return context_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  @java.lang.Override
+  public int getContextCount() {
+    return context_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Any getContext(int index) {
+    return context_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.AnyOrBuilder getContextOrBuilder(int index) {
+    return context_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1969,6 +2046,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     }
     if (outputTypeCase_ == 11) {
       output.writeMessage(11, (com.google.protobuf.Struct) outputType_);
+    }
+    for (int i = 0; i < context_.size(); i++) {
+      output.writeMessage(12, context_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2021,6 +2101,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.protobuf.Struct) outputType_);
     }
+    for (int i = 0; i < context_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, context_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2042,6 +2125,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     if (hasDiagnosticInfo()) {
       if (!getDiagnosticInfo().equals(other.getDiagnosticInfo())) return false;
     }
+    if (!getContextList().equals(other.getContextList())) return false;
     if (!getOutputTypeCase().equals(other.getOutputTypeCase())) return false;
     switch (outputTypeCase_) {
       case 1:
@@ -2086,6 +2170,10 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     if (hasDiagnosticInfo()) {
       hash = (37 * hash) + DIAGNOSTIC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticInfo().hashCode();
+    }
+    if (getContextCount() > 0) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContextList().hashCode();
     }
     switch (outputTypeCase_) {
       case 1:
@@ -2260,6 +2348,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetDiagnosticInfoFieldBuilder();
+        internalGetContextFieldBuilder();
       }
     }
 
@@ -2289,6 +2378,13 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         diagnosticInfoBuilder_.dispose();
         diagnosticInfoBuilder_ = null;
       }
+      if (contextBuilder_ == null) {
+        context_ = java.util.Collections.emptyList();
+      } else {
+        context_ = null;
+        contextBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       outputTypeCase_ = 0;
       outputType_ = null;
       return this;
@@ -2318,12 +2414,25 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.ces.v1.SessionOutput buildPartial() {
       com.google.cloud.ces.v1.SessionOutput result =
           new com.google.cloud.ces.v1.SessionOutput(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.ces.v1.SessionOutput result) {
+      if (contextBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          context_ = java.util.Collections.unmodifiableList(context_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.context_ = context_;
+      } else {
+        result.context_ = contextBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.ces.v1.SessionOutput result) {
@@ -2383,6 +2492,33 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDiagnosticInfo()) {
         mergeDiagnosticInfo(other.getDiagnosticInfo());
+      }
+      if (contextBuilder_ == null) {
+        if (!other.context_.isEmpty()) {
+          if (context_.isEmpty()) {
+            context_ = other.context_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureContextIsMutable();
+            context_.addAll(other.context_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.context_.isEmpty()) {
+          if (contextBuilder_.isEmpty()) {
+            contextBuilder_.dispose();
+            contextBuilder_ = null;
+            context_ = other.context_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            contextBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetContextFieldBuilder()
+                    : null;
+          } else {
+            contextBuilder_.addAllMessages(other.context_);
+          }
+        }
       }
       switch (other.getOutputTypeCase()) {
         case TEXT:
@@ -2520,6 +2656,18 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
                 outputTypeCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.protobuf.Any m =
+                    input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+                if (contextBuilder_ == null) {
+                  ensureContextIsMutable();
+                  context_.add(m);
+                } else {
+                  contextBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4218,6 +4366,366 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         diagnosticInfo_ = null;
       }
       return diagnosticInfoBuilder_;
+    }
+
+    private java.util.List<com.google.protobuf.Any> context_ = java.util.Collections.emptyList();
+
+    private void ensureContextIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        context_ = new java.util.ArrayList<com.google.protobuf.Any>(context_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        contextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public java.util.List<com.google.protobuf.Any> getContextList() {
+      if (contextBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(context_);
+      } else {
+        return contextBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public int getContextCount() {
+      if (contextBuilder_ == null) {
+        return context_.size();
+      } else {
+        return contextBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public com.google.protobuf.Any getContext(int index) {
+      if (contextBuilder_ == null) {
+        return context_.get(index);
+      } else {
+        return contextBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder setContext(int index, com.google.protobuf.Any value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextIsMutable();
+        context_.set(index, value);
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder setContext(int index, com.google.protobuf.Any.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        ensureContextIsMutable();
+        context_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder addContext(com.google.protobuf.Any value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextIsMutable();
+        context_.add(value);
+        onChanged();
+      } else {
+        contextBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder addContext(int index, com.google.protobuf.Any value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextIsMutable();
+        context_.add(index, value);
+        onChanged();
+      } else {
+        contextBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder addContext(com.google.protobuf.Any.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        ensureContextIsMutable();
+        context_.add(builderForValue.build());
+        onChanged();
+      } else {
+        contextBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder addContext(int index, com.google.protobuf.Any.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        ensureContextIsMutable();
+        context_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder addAllContext(java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+      if (contextBuilder_ == null) {
+        ensureContextIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, context_);
+        onChanged();
+      } else {
+        contextBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder clearContext() {
+      if (contextBuilder_ == null) {
+        context_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        contextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public Builder removeContext(int index) {
+      if (contextBuilder_ == null) {
+        ensureContextIsMutable();
+        context_.remove(index);
+        onChanged();
+      } else {
+        contextBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public com.google.protobuf.Any.Builder getContextBuilder(int index) {
+      return internalGetContextFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getContextOrBuilder(int index) {
+      if (contextBuilder_ == null) {
+        return context_.get(index);
+      } else {
+        return contextBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getContextOrBuilderList() {
+      if (contextBuilder_ != null) {
+        return contextBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(context_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public com.google.protobuf.Any.Builder addContextBuilder() {
+      return internalGetContextFieldBuilder()
+          .addBuilder(com.google.protobuf.Any.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public com.google.protobuf.Any.Builder addContextBuilder(int index) {
+      return internalGetContextFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context messages for external supervision guardrails.
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Any context = 12;</code>
+     */
+    public java.util.List<com.google.protobuf.Any.Builder> getContextBuilderList() {
+      return internalGetContextFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        internalGetContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        contextBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.protobuf.Any,
+                com.google.protobuf.Any.Builder,
+                com.google.protobuf.AnyOrBuilder>(
+                context_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+        context_ = null;
+      }
+      return contextBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.SessionOutput)

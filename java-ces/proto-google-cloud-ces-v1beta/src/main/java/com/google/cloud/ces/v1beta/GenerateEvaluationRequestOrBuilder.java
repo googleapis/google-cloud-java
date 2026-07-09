@@ -73,7 +73,7 @@ public interface GenerateEvaluationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
    * @return The enum numeric value on the wire for source.
    */
   @java.lang.Deprecated
@@ -92,9 +92,41 @@ public interface GenerateEvaluationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
    * @return The source.
    */
   @java.lang.Deprecated
   com.google.cloud.ces.v1beta.Conversation.Source getSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+   * unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for evaluationType.
+   */
+  int getEvaluationTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+   * unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationType.
+   */
+  com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType getEvaluationType();
 }

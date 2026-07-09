@@ -92,7 +92,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Pending state. Experiment is pending and not valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>PENDING = 1;</code>
@@ -112,7 +112,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Done state. Experiment is done and no longer valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>DONE = 3;</code>
@@ -122,7 +122,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Expired state. Experiment is expired and no longer valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>EXPIRED = 4;</code>
@@ -156,7 +156,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Pending state. Experiment is pending and not valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>PENDING = 1;</code>
@@ -178,7 +178,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Done state. Experiment is done and no longer valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>DONE = 3;</code>
@@ -189,7 +189,7 @@ public final class ExperimentConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Expired state. Experiment is expired and no longer valid.
+     * Deprecated: This state is no longer used.
      * </pre>
      *
      * <code>EXPIRED = 4;</code>

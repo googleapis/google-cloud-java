@@ -90,6 +90,7 @@ import org.jspecify.annotations.NullMarked;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
@@ -302,6 +303,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
@@ -373,6 +375,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
@@ -444,6 +447,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   while (true) {
@@ -531,6 +535,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element :
@@ -613,6 +618,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
@@ -694,6 +700,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   while (true) {

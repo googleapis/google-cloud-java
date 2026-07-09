@@ -71,7 +71,7 @@ public interface ListBackupCollectionsRequestOrBuilder
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the page_size value, the response may include a partial list
    * and a caller should only rely on response's
-   * [`next_page_token`][google.cloud.memorystore.v1.ListBackupCollectionsResponse.next_page_token]
+   * `next_page_token`
    * to determine if there are more clusters left to be queried.
    * </pre>
    *
@@ -86,7 +86,7 @@ public interface ListBackupCollectionsRequestOrBuilder
    *
    * <pre>
    * Optional. The `next_page_token` value returned from a previous
-   * [ListBackupCollections] request, if any.
+   * `ListBackupCollections` request, if any.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -100,7 +100,7 @@ public interface ListBackupCollectionsRequestOrBuilder
    *
    * <pre>
    * Optional. The `next_page_token` value returned from a previous
-   * [ListBackupCollections] request, if any.
+   * `ListBackupCollections` request, if any.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

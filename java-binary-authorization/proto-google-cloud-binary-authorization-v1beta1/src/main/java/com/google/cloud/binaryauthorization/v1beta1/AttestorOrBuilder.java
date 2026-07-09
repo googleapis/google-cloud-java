@@ -166,5 +166,35 @@ public interface AttestorOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the attestor has an up-to-date value before attempting
+   * to update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the attestor has an up-to-date value before attempting
+   * to update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
   com.google.cloud.binaryauthorization.v1beta1.Attestor.AttestorTypeCase getAttestorTypeCase();
 }
