@@ -58,10 +58,15 @@ public class BoundStatement {
 
   private final PreparedStatementImpl preparedStatement;
   private final Map<String, Value> params;
+  private final Map<String, Value> viewParameters;
 
-  private BoundStatement(PreparedStatementImpl preparedStatement, Map<String, Value> params) {
+  private BoundStatement(
+      PreparedStatementImpl preparedStatement,
+      Map<String, Value> params,
+      Map<String, Value> viewParameters) {
     this.preparedStatement = preparedStatement;
     this.params = params;
+    this.viewParameters = viewParameters;
   }
 
   /**
@@ -78,6 +83,7 @@ public class BoundStatement {
     private final PreparedStatementImpl preparedStatement;
     private final Map<String, SqlType<?>> paramTypes;
     private final Map<String, Value> params;
+    private final Map<String, Value> viewParameters;
 
     /**
      * Creates a builder from a {@link PreparedStatement}
@@ -90,6 +96,7 @@ public class BoundStatement {
       this.preparedStatement = preparedStatement;
       this.paramTypes = paramTypes;
       this.params = new HashMap<>();
+      this.viewParameters = new HashMap<>();
     }
 
     /** Builds a {@link BoundStatement} from the builder */
@@ -101,7 +108,34 @@ public class BoundStatement {
               "Attempting to build BoundStatement without binding parameter: " + paramName);
         }
       }
-      return new BoundStatement(preparedStatement, ImmutableMap.copyOf(params));
+      return new BoundStatement(
+          preparedStatement,
+          ImmutableMap.copyOf(params),
+          ImmutableMap.copyOf(viewParameters));
+    }
+
+    /**
+     * Sets a view parameter with the name {@code name} and the Value {@code value}.
+     */
+    public Builder setViewParameter(String name, Value value) {
+      Preconditions.checkNotNull(name, "name cannot be null");
+      Preconditions.checkNotNull(value, "value cannot be null");
+      Preconditions.checkArgument(
+          value.getKindCase() == Value.KindCase.STRING_VALUE,
+          "Currently only String typed view parameters are supported");
+      viewParameters.put(name, value);
+      return this;
+    }
+
+    /**
+     * Sets view parameters from a map.
+     */
+    public Builder setViewParameters(Map<String, Value> viewParameters) {
+      Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
+      for (Map.Entry<String, Value> entry : viewParameters.entrySet()) {
+        setViewParameter(entry.getKey(), entry.getValue());
+      }
+      return this;
     }
 
     /**
@@ -372,7 +406,8 @@ public class BoundStatement {
                     requestContext.getProjectId(), requestContext.getInstanceId()))
             .setAppProfileId(requestContext.getAppProfileId())
             .setPreparedQuery(preparedQuery)
-            .putAllParams(params);
+            .putAllParams(params)
+            .putAllViewParameters(viewParameters);
 
     if (resumeToken != null) {
       requestBuilder.setResumeToken(resumeToken);

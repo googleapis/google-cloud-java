@@ -869,4 +869,90 @@ public class BoundStatementTest {
     assertThat(e.getMessage())
         .contains("Attempting to build BoundStatement without binding parameter: bytesParam");
   }
+
+  @Test
+  public void statementWithViewParameters() {
+    Value stringVal = Value.newBuilder().setType(stringType()).setStringValue("alice").build();
+    Value locationVal = Value.newBuilder().setType(stringType()).setStringValue("us-east1").build();
+    HashMap<String, Value> viewParams = new HashMap<>();
+    viewParams.put("user_id", stringVal);
+    viewParams.put("location", locationVal);
+
+    BoundStatement s = boundStatementBuilder()
+        .setViewParameters(viewParams)
+        .build();
+
+    assertThat(s.toProto(EXPECTED_PREPARED_QUERY, REQUEST_CONTEXT, NO_RESUME_TOKEN))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setPreparedQuery(EXPECTED_PREPARED_QUERY)
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .putViewParameters("user_id", stringVal)
+                .putViewParameters("location", locationVal)
+                .build());
+  }
+
+  @Test
+  public void setViewParameterRejectsNonStringValues() {
+    BoundStatement.Builder builder = boundStatementBuilder();
+    Value intVal = Value.newBuilder().setType(int64Type()).setIntValue(42).build();
+    Value boolVal = Value.newBuilder().setType(boolType()).setBoolValue(true).build();
+    Value unsetVal = Value.newBuilder().setType(stringType()).build();
+    Value arrayVal = arrayValue(stringValue("foo"), stringValue("bar"));
+
+    IllegalArgumentException eInt =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setViewParameter("age", intVal));
+    assertThat(eInt.getMessage())
+        .contains("Currently only String typed view parameters are supported");
+
+    IllegalArgumentException eBool =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setViewParameter("active", boolVal));
+    assertThat(eBool.getMessage())
+        .contains("Currently only String typed view parameters are supported");
+
+    IllegalArgumentException eUnset =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setViewParameter("unset", unsetVal));
+    assertThat(eUnset.getMessage())
+        .contains("Currently only String typed view parameters are supported");
+
+    IllegalArgumentException eArray =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setViewParameter("tags", arrayVal));
+    assertThat(eArray.getMessage())
+        .contains("Currently only String typed view parameters are supported");
+
+    HashMap<String, Value> viewParams = new HashMap<>();
+    viewParams.put(
+        "user_id", Value.newBuilder().setType(stringType()).setStringValue("alice").build());
+    viewParams.put("age", intVal);
+
+    IllegalArgumentException eMap =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setViewParameters(viewParams));
+    assertThat(eMap.getMessage())
+        .contains("Currently only String typed view parameters are supported");
+
+    // Empty map should succeed without error
+    builder.setViewParameters(Collections.emptyMap());
+
+    // Null checks
+    assertThrows(
+        NullPointerException.class,
+        () -> builder.setViewParameter(null, stringValue("alice")));
+    assertThrows(
+        NullPointerException.class,
+        () -> builder.setViewParameter("user_id", null));
+    assertThrows(
+        NullPointerException.class,
+        () -> builder.setViewParameters(null));
+  }
 }

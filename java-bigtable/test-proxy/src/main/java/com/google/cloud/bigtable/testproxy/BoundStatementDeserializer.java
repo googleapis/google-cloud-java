@@ -128,6 +128,7 @@ public class BoundStatementDeserializer {
           throw new IllegalArgumentException("Unexpected query param type in param: " + value);
       }
     }
+    boundStatementBuilder.setViewParameters(request.getRequest().getViewParametersMap());
     return boundStatementBuilder.build();
   }
 
