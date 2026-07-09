@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: java-cloud-bom Update README with libraries-bom table
 # Run this workflow upon published release
 
@@ -15,8 +18,10 @@ jobs:
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
       id: filter
       with:
         filters: |
@@ -31,10 +36,12 @@ jobs:
       pull-requests: write
     steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
 
     - name: Set up Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
       with:
         python-version: '3.9'
 
