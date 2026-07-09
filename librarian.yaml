@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.24.1-0.20260707150039-db37cc1a8f59
+version: v0.25.1-0.20260708160859-939ae6f16e82
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -47,6 +47,9 @@ tools:
     - name: synthtool
       version: ""
       local_path: sdk-platform-java/hermetic_build/library_generation
+  protoc:
+    version: "33.2"
+    sha256: b24b53f87c151bfd48b112fe4c3a6e6574e5198874f38036aff41df3456b8caf
 default:
   java:
     custom_group_ids:
@@ -1842,7 +1845,7 @@ libraries:
     version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: google-cloud-pom-parent
-    version: 1.88.0
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: grafeas
     version: 2.96.0-SNAPSHOT

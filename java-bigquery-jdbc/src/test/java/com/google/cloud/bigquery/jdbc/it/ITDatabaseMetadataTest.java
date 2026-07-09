@@ -330,6 +330,64 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  public void testGetExportedKeys_multipleKeys() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+
+      // Table 2 exports keys to Table
+      ResultSet exportedKeys2 =
+          metaData.getExportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME2);
+      Assertions.assertTrue(exportedKeys2.next());
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME2, exportedKeys2.getString(3)); // PKTABLE_NAME
+      Assertions.assertEquals("first_name", exportedKeys2.getString(4)); // PKCOLUMN_NAME
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME, exportedKeys2.getString(7)); // FKTABLE_NAME
+      Assertions.assertEquals("name", exportedKeys2.getString(8)); // FKCOLUMN_NAME
+      Assertions.assertEquals(1, exportedKeys2.getInt(9)); // KEY_SEQ
+      Assertions.assertEquals("my_fk", exportedKeys2.getString(12)); // FK_NAME
+
+      Assertions.assertTrue(exportedKeys2.next());
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME2, exportedKeys2.getString(3));
+      Assertions.assertEquals("last_name", exportedKeys2.getString(4));
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME, exportedKeys2.getString(7));
+      Assertions.assertEquals("second_name", exportedKeys2.getString(8));
+      Assertions.assertEquals(2, exportedKeys2.getInt(9));
+      Assertions.assertEquals("my_fk", exportedKeys2.getString(12));
+      Assertions.assertFalse(exportedKeys2.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_singleKey() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+
+      // Table 3 exports keys to Table
+      ResultSet exportedKeys3 =
+          metaData.getExportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME3);
+      Assertions.assertTrue(exportedKeys3.next());
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME3, exportedKeys3.getString(3));
+      Assertions.assertEquals("address", exportedKeys3.getString(4));
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME, exportedKeys3.getString(7));
+      Assertions.assertEquals("address", exportedKeys3.getString(8));
+      Assertions.assertEquals(1, exportedKeys3.getInt(9));
+      Assertions.assertEquals("my_fk2", exportedKeys3.getString(12));
+      Assertions.assertFalse(exportedKeys3.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_noKeys() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+
+      // Table does not export keys to anything (it only imports them)
+      ResultSet exportedKeys1 =
+          metaData.getExportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
+      Assertions.assertFalse(exportedKeys1.next());
+    }
+  }
+
+  @Test
   public void testMetadataResultSetsDoNotInterfere() throws SQLException {
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
