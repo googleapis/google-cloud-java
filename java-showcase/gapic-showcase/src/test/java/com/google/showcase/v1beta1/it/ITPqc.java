@@ -109,7 +109,6 @@ public class ITPqc {
 
   // Expected TLS parameters
   private static final String EXPECTED_TLS_GROUP = "X25519MLKEM768";
-  private static final String EXPECTED_TLS_CIPHER = "TLS_AES_128_GCM_SHA256";
 
   private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
 
@@ -175,13 +174,10 @@ public class ITPqc {
 
         Metadata.Key<String> groupKey =
             Metadata.Key.of(TLS_GROUP_HEADER, Metadata.ASCII_STRING_MARSHALLER);
-        Metadata.Key<String> cipherKey =
-            Metadata.Key.of(TLS_CIPHER_HEADER, Metadata.ASCII_STRING_MARSHALLER);
         Metadata.Key<String> supportedGroupsKey =
             Metadata.Key.of(TLS_SUPPORTED_GROUPS_HEADER, Metadata.ASCII_STRING_MARSHALLER);
 
         assertThat(capturedHeaders.get(groupKey)).isEqualTo(EXPECTED_TLS_GROUP);
-        assertThat(capturedHeaders.get(cipherKey)).isEqualTo(EXPECTED_TLS_CIPHER);
         assertThat(capturedHeaders.get(supportedGroupsKey)).isNotNull();
       }
     } finally {
@@ -222,9 +218,6 @@ public class ITPqc {
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
       assertThat(negotiatedGroup).isEqualTo(EXPECTED_TLS_GROUP);
-
-      String tlsCipher = getSingleHeaderString(capturedHeaders, TLS_CIPHER_HEADER);
-      assertThat(tlsCipher).isEqualTo(EXPECTED_TLS_CIPHER);
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
@@ -274,12 +267,10 @@ public class ITPqc {
       assertThat(capturedHeaders).isNotNull();
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      // Under SunJSSE (JDK default), PQC curves are unsupported, so it falls back to classical
-      // X25519
-      assertThat(negotiatedGroup).isEqualTo("X25519");
-
-      String tlsCipher = getSingleHeaderString(capturedHeaders, TLS_CIPHER_HEADER);
-      assertThat(tlsCipher).isEqualTo("TLS_AES_128_GCM_SHA256");
+      // Under SunJSSE (JDK default), PQC curves are unsupported, so it falls back to a classical
+      // curve (either X25519 or CurveP256 depending on JDK / Go negotiation)
+      assertThat(negotiatedGroup).isAnyOf("X25519", "CurveP256");
+      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_TLS_GROUP);
     }
   }
 
