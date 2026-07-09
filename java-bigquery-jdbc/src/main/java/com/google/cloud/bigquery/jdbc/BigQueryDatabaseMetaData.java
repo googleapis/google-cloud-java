@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.ColumnReference;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Field;
@@ -34,6 +35,7 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.ForeignKey;
 import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
@@ -43,7 +45,6 @@ import com.google.cloud.bigquery.StandardSQLDataType;
 import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
@@ -51,15 +52,11 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,7 +64,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -88,20 +84,14 @@ import javax.annotation.Nullable;
  *
  * @see BigQueryStatement
  */
-// TODO(neenu): test and verify after post MVP implementation.
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
   final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
-
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
-  private static final String GET_PRIMARY_KEYS_SQL = "DatabaseMetaData_GetPrimaryKeys.sql";
-  private static final String GET_IMPORTED_KEYS_SQL = "DatabaseMetaData_GetImportedKeys.sql";
-  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
-  private static final String GET_CROSS_REFERENCE_SQL = "DatabaseMetaData_GetCrossReference.sql";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   // Declared package-private for testing.
@@ -1822,11 +1812,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(catalogRows.isEmpty() ? 1 : catalogRows.size() + 1);
 
-    populateQueue(catalogRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(catalogRows, queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(
-        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
+    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -1854,11 +1842,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(tableTypeRows.size() + 1);
 
-    populateQueue(tableTypeRows, queue, tableTypesSchema.getFields());
-    signalEndOfData(queue, tableTypesSchema.getFields());
+    Future<?> fetcherFuture =
+        populateQueueAsync(tableTypeRows, queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, fetcherFuture);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -2415,17 +2403,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  private void closeStatementIgnoreException(Statement statement) {
-    if (statement == null) {
-      return;
-    }
-    try {
-      statement.close();
-    } catch (SQLException e) {
-      // pass
-    }
-  }
-
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
@@ -2451,10 +2428,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         resultSchemaFields,
         ignoreAccessErrors,
         (bqTable, results, fields) -> {
-          TableConstraints constraints = null;
-          if (bqTable.getDefinition() instanceof StandardTableDefinition) {
-            constraints = ((StandardTableDefinition) bqTable.getDefinition()).getTableConstraints();
-          }
+          TableConstraints constraints = bqTable.getTableConstraints();
           processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
         });
 
@@ -2463,9 +2437,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
-    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   private Schema defineGetPrimaryKeysSchema() {
@@ -2529,31 +2502,97 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getImportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    boolean ignoreAccessErrors = (catalog == null);
+    processTargetTablesConcurrently(
+        targetDatasets,
+        table,
+        collectedResults,
+        resultSchemaFields,
+        ignoreAccessErrors,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = definePkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getImportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
+
+    boolean ignoreAccessErrors = (catalog == null);
+    processTargetTablesConcurrently(
+        targetDatasets,
+        null,
+        collectedResults,
+        resultSchemaFields,
+        ignoreAccessErrors,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (pkTableId == null
+                || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                || !table.equals(pkTableId.getTable())) {
+              continue;
+            }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
@@ -2565,24 +2604,55 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignSchema,
       String foreignTable)
       throws SQLException {
-    String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql =
-          replaceSqlParameters(
-              sql,
-              parentCatalog,
-              parentSchema,
-              parentTable,
-              foreignCatalog,
-              foreignSchema,
-              foreignTable);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getCrossReference", e);
+    if ((parentCatalog != null && parentCatalog.isEmpty())
+        || (parentSchema != null && parentSchema.isEmpty())
+        || parentTable == null
+        || parentTable.isEmpty()
+        || (foreignCatalog != null && foreignCatalog.isEmpty())
+        || (foreignSchema != null && foreignSchema.isEmpty())
+        || foreignTable == null
+        || foreignTable.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema);
+
+    boolean ignoreAccessErrors = (foreignCatalog == null);
+    processTargetTablesConcurrently(
+        targetDatasets,
+        foreignTable,
+        collectedResults,
+        resultSchemaFields,
+        ignoreAccessErrors,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (!equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
+                || !parentTable.equals(pkTableId.getTable())) {
+              continue;
+            }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getCrossReference", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
@@ -2598,10 +2668,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
-    populateQueue(typeInfoRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(typeInfoRows, queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3522,9 +3591,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
       Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
       sortResults(collectedResults, comparator, "getSchemas", LOG);
-      populateQueue(collectedResults, queue, resultSchemaFields);
-      signalEndOfData(queue, resultSchemaFields);
-      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
     }
 
     // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
@@ -4836,6 +4904,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info("Finished waiting for tasks.");
   }
 
+  private Future<?> populateQueueAsync(
+      List<FieldValueList> collectedResults,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue,
+      FieldList resultSchemaFields) {
+    return connection
+        .getMetadataExecutor()
+        .submit(
+            () -> {
+              populateQueue(collectedResults, queue, resultSchemaFields);
+              signalEndOfData(queue, resultSchemaFields);
+            });
+  }
+
   private void populateQueue(
       List<FieldValueList> collectedResults,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
@@ -5004,22 +5085,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return sortedCatalogs;
   }
 
-  static String readSqlFromFile(String filename) {
-    InputStream in;
-    in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-    }
-    return builder.toString();
-  }
-
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
+  private boolean equalsOrNullMatchesAll(String expected, String actual) {
+    return expected == null || expected.equals(actual);
   }
 
   private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
@@ -5109,7 +5176,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
-    if (targetDatasets.size() == 1) {
+    if (targetDatasets.size() == 1 && tableName != null) {
       processSingleTable(
           targetDatasets.get(0),
           tableName,
@@ -5124,19 +5191,59 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Future<?>> taskFutures = new ArrayList<>();
 
     try {
+      List<Callable<Void>> tasks = new ArrayList<>();
       for (DatasetId datasetId : targetDatasets) {
-        taskFutures.add(
-            executor.submit(
+        if (tableName != null) {
+          tasks.add(
+              () -> {
+                processSingleTable(
+                    datasetId,
+                    tableName,
+                    collectedResults,
+                    resultSchemaFields,
+                    ignoreAccessErrors,
+                    processor);
+                return null;
+              });
+          continue;
+        }
+
+        try {
+          Page<Table> tablesPage =
+              bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          if (tablesPage == null) {
+            continue;
+          }
+          for (Table table : tablesPage.iterateAll()) {
+            if (table.getDefinition() == null
+                || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
+              continue;
+            }
+            tasks.add(
                 () -> {
                   processSingleTable(
                       datasetId,
-                      tableName,
+                      table.getTableId().getTable(),
                       collectedResults,
                       resultSchemaFields,
                       ignoreAccessErrors,
                       processor);
                   return null;
-                }));
+                });
+          }
+        } catch (BigQueryException e) {
+          if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+            LOG.info(
+                "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+                datasetId.getDataset(), datasetId.getProject(), e.getCode());
+            continue;
+          }
+          throw new SQLException("Error while listing tables: " + e.getMessage(), e);
+        }
+      }
+
+      for (Callable<Void> task : tasks) {
+        taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
       if (Thread.currentThread().isInterrupted()) {
@@ -5151,5 +5258,99 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     } finally {
       taskFutures.forEach(future -> future.cancel(true));
     }
+  }
+
+  private Schema defineForeignKeyResultSetSchema() {
+    return Schema.of(
+        Field.of("PKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("PKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("KEY_SEQ", StandardSQLTypeName.INT64),
+        Field.of("UPDATE_RULE", StandardSQLTypeName.INT64),
+        Field.of("DELETE_RULE", StandardSQLTypeName.INT64),
+        Field.of("FK_NAME", StandardSQLTypeName.STRING),
+        Field.of("PK_NAME", StandardSQLTypeName.STRING),
+        Field.of("DEFERRABILITY", StandardSQLTypeName.INT64));
+  }
+
+  private void processForeignKey(
+      ForeignKey fk,
+      TableId pkTableId,
+      TableId fkTableId,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields) {
+    if (pkTableId == null) {
+      LOG.warning(
+          String.format(
+              "Skipping foreign key '%s' on table '%s' because its referenced table ID is null.",
+              fk.getName() != null ? fk.getName() : "unnamed", fkTableId.getTable()));
+      return;
+    }
+    List<ColumnReference> colRefs = fk.getColumnReferences();
+    if (colRefs != null) {
+      for (int i = 0; i < colRefs.size(); i++) {
+        ColumnReference colRef = colRefs.get(i);
+        List<FieldValue> row = new ArrayList<>();
+        row.add(createStringFieldValue(pkTableId.getProject())); // PKTABLE_CAT
+        row.add(createStringFieldValue(pkTableId.getDataset())); // PKTABLE_SCHEM
+        row.add(createStringFieldValue(pkTableId.getTable())); // PKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencedColumn())); // PKCOLUMN_NAME
+        row.add(createStringFieldValue(fkTableId.getProject())); // FKTABLE_CAT
+        row.add(createStringFieldValue(fkTableId.getDataset())); // FKTABLE_SCHEM
+        row.add(createStringFieldValue(fkTableId.getTable())); // FKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencingColumn())); // FKCOLUMN_NAME
+        row.add(createLongFieldValue((long) (i + 1))); // KEY_SEQ
+        row.add(createNullFieldValue()); // UPDATE_RULE
+        row.add(createNullFieldValue()); // DELETE_RULE
+        row.add(createStringFieldValue(fk.getName())); // FK_NAME
+        row.add(createNullFieldValue()); // PK_NAME
+        row.add(createNullFieldValue()); // DEFERRABILITY
+
+        collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+      }
+    }
+  }
+
+  private Comparator<FieldValueList> definePkTableSortComparator(FieldList resultSchemaFields) {
+    final int PKTABLE_CAT_IDX = resultSchemaFields.getIndex("PKTABLE_CAT");
+    final int PKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("PKTABLE_SCHEM");
+    final int PKTABLE_NAME_IDX = resultSchemaFields.getIndex("PKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
+  }
+
+  private Comparator<FieldValueList> defineFkTableSortComparator(FieldList resultSchemaFields) {
+    final int FKTABLE_CAT_IDX = resultSchemaFields.getIndex("FKTABLE_CAT");
+    final int FKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("FKTABLE_SCHEM");
+    final int FKTABLE_NAME_IDX = resultSchemaFields.getIndex("FKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
   }
 }
