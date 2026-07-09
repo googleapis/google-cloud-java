@@ -40,6 +40,18 @@ jobs:
           java-version: 11
           distribution: temurin
           cache: maven
+      - name: Checkout google-http-java-client (pqc-support-conscrypt branch)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: googleapis/google-http-java-client
+          ref: pqc-support-conscrypt
+          path: google-http-java-client
+          persist-credentials: false
+      - name: Build and install local google-http-java-client snapshot
+        working-directory: google-http-java-client
+        run: |
+          mvn install -DskipTests -Dmaven.javadoc.skip=true -Dclirr.skip=true -B -ntp
+          cd .. && rm -rf google-http-java-client
       - name: Install all modules using Java 11
         shell: bash
         run: .kokoro/build.sh
@@ -118,6 +130,18 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: temurin
       - run: mvn -version
+      - name: Checkout google-http-java-client (pqc-support-conscrypt branch)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: googleapis/google-http-java-client
+          ref: pqc-support-conscrypt
+          path: google-http-java-client
+          persist-credentials: false
+      - name: Build and install local google-http-java-client snapshot
+        working-directory: google-http-java-client
+        run: |
+          mvn install -DskipTests -Dmaven.javadoc.skip=true -Dclirr.skip=true -B -ntp
+          cd .. && rm -rf google-http-java-client
       - name: Install Maven modules
         shell: bash
         run: .kokoro/build.sh
@@ -225,6 +249,18 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: maven
+      - name: Checkout google-http-java-client (pqc-support-conscrypt branch)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: googleapis/google-http-java-client
+          ref: pqc-support-conscrypt
+          path: google-http-java-client
+          persist-credentials: false
+      - name: Build and install local google-http-java-client snapshot
+        working-directory: google-http-java-client
+        run: |
+          mvn install -DskipTests -Dmaven.javadoc.skip=true -Dclirr.skip=true -B -ntp
+          cd .. && rm -rf google-http-java-client
       - name: Install Maven modules
         shell: bash
         run: .kokoro/build.sh
