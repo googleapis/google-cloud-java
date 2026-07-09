@@ -189,12 +189,6 @@
       </modules>
     </profile>
     <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
-    <profile>
       <!--
         Logback 1.5.x requires Java 11+. To support running tests on Java 8,
         we downgrade to 1.3.x when running in a Java 8 environment.

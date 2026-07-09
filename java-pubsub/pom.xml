@@ -144,13 +144,4 @@
     <!-- {x-generated-modules-end} -->
     <module>google-cloud-pubsub-bom</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
-  </profiles>
 </project>

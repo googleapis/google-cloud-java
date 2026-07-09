@@ -248,11 +248,5 @@
         </plugins>
       </build>
     </profile>
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
   </profiles>
 </project>

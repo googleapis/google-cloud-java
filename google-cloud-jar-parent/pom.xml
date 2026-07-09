@@ -19,7 +19,22 @@
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
-    <!-- skipUnitTests controls unit test execution (surefire) -->
+    <!--
+      Defaults to true because most modules under this parent are pure GAPIC-generated
+      clients, and their generated tests aren't worth the CI time they cost. Libraries with
+      handwritten tests worth running, like java-spanner, java-bigtable, or java-storage,
+      override this back to false in their own top-level pom.xml. Forget that override, and
+      the tests just quietly stop running.
+
+      java-common-protos, java-iam, and java-showcase don't extend this parent at all, so
+      their skipUnitTests only stops test execution, not compilation. That's an artifact of
+      the repo having two separate parent-POM hierarchies for the same idea, not a
+      deliberate design choice, so it should go away if those hierarchies are ever merged.
+
+      google-auth-library-java, java-cloud-bom, java-shared-config, and sdk-platform-java
+      are unrelated to all of this: they don't extend either hierarchy and skip tests via
+      their own "bulkTests" profile instead (see .kokoro/common.sh).
+    -->
     <skipUnitTests>true</skipUnitTests>
     <!--
       We map maven.test.skip to skipUnitTests by default to skip both compilation

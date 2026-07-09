@@ -44,15 +44,19 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
     else
-      # We do not need to install core modules or exclude them from the reactor.
-      # We pass -DskipTests=true to skip running tests globally.
-      # We pass -DskipUnitTests=true which maps to -Dmaven.test.skip=true for client libraries
-      # (via google-cloud-jar-parent), skipping their test compilation to save time.
-      # Core modules do not inherit this mapping, so their tests are compiled, which is
-      # necessary to resolve testlib dependencies (like gax-grpc testlib) in the reactor.
-      SUREFIRE_JVM_OPT="${SUREFIRE_JVM_OPT} -DskipUnitTests=true -DskipTests=true"
+      # -DskipUnitTests=true is where the real time savings come from: it skips both
+      # compiling and running tests for most client-library modules. A few "core" modules
+      # (google-auth-library-java, grpc-gcp-java, sdk-platform-java) don't honor it though,
+      # so we also pass plain -DskipTests=true to stop their tests from running. We
+      # deliberately leave their test *compilation* alone, since other modules in the
+      # reactor need testlib artifacts (like gax-grpc's) that only that compile step
+      # produces. We looked at pre-building those core modules separately so this second
+      # flag wouldn't be needed, but they turned out to have a real circular dependency on
+      # generated client code, so a single combined pass like this is the simplest thing
+      # that actually works.
+      EXTRA_MAVEN_OPTS="${EXTRA_MAVEN_OPTS} -DskipUnitTests=true -DskipTests=true"
     fi
-    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+    echo "EXTRA_MAVEN_OPTS: ${EXTRA_MAVEN_OPTS}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -60,7 +64,7 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        ${SUREFIRE_JVM_OPT}
+        ${EXTRA_MAVEN_OPTS}
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
