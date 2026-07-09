@@ -77,9 +77,9 @@ jobs:
     - name: Run librarian update & tidy
       run: |
         go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" update sources.googleapis
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" tidy
       env:
         STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
-        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" tidy
     - name: Get latest commit
       id: commit
       run: |
