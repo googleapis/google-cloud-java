@@ -288,6 +288,7 @@ def java_gapic_library(
             "@com_google_api_api_common//jar",
             "@com_google_guava_guava//jar",
             "@javax_annotation_javax_annotation_api//jar",
+            "@org_jspecify_jspecify//jar",
         ],
         **kwargs
     )
@@ -307,6 +308,7 @@ def java_gapic_library(
         "@com_google_auth_google_auth_library_oauth2_http//jar",
         "@com_google_http_client_google_http_client//jar",
         "@javax_annotation_javax_annotation_api//jar",
+        "@org_jspecify_jspecify//jar",
     ]
 
     if not transport or transport == "grpc":

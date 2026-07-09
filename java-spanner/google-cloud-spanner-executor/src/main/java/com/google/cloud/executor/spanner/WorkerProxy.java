@@ -84,6 +84,18 @@ public class WorkerProxy {
   private static final double MIN_RATIO = 0.0, MAX_RATIO = 1.0, TRACE_SAMPLING_RATE = 0.01;
 
   public static OpenTelemetrySdk setupOpenTelemetrySdk() throws Exception {
+    if (serviceKeyFile == null
+        || serviceKeyFile.isEmpty()
+        || !new File(serviceKeyFile).exists()
+        || new File(serviceKeyFile).isDirectory()) {
+      LOGGER.log(
+          Level.WARNING,
+          "serviceKeyFile is empty or invalid; starting without OpenTelemetry trace export: "
+              + serviceKeyFile);
+      return OpenTelemetrySdk.builder()
+          .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
+          .build();
+    }
     // Read credentials from the serviceKeyFile.
     HttpTransportFactory HTTP_TRANSPORT_FACTORY = NetHttpTransport::new;
     Credentials credentials =
