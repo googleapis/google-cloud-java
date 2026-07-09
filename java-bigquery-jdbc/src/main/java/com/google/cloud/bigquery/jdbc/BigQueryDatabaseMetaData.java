@@ -52,15 +52,11 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +64,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -89,17 +84,14 @@ import javax.annotation.Nullable;
  *
  * @see BigQueryStatement
  */
-// TODO(neenu): test and verify after post MVP implementation.
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
   final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
-
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
-  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   // Declared package-private for testing.
@@ -1820,11 +1812,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(catalogRows.isEmpty() ? 1 : catalogRows.size() + 1);
 
-    populateQueue(catalogRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(catalogRows, queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(
-        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
+    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -1852,11 +1842,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(tableTypeRows.size() + 1);
 
-    populateQueue(tableTypeRows, queue, tableTypesSchema.getFields());
-    signalEndOfData(queue, tableTypesSchema.getFields());
+    Future<?> fetcherFuture =
+        populateQueueAsync(tableTypeRows, queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, fetcherFuture);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -2413,17 +2403,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  private void closeStatementIgnoreException(Statement statement) {
-    if (statement == null) {
-      return;
-    }
-    try {
-      statement.close();
-    } catch (SQLException e) {
-      // pass
-    }
-  }
-
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
@@ -2458,9 +2437,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
-    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   private Schema defineGetPrimaryKeysSchema() {
@@ -2562,24 +2540,59 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
-    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
+
+    boolean ignoreAccessErrors = (catalog == null);
+    processTargetTablesConcurrently(
+        targetDatasets,
+        null,
+        collectedResults,
+        resultSchemaFields,
+        ignoreAccessErrors,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (pkTableId == null
+                || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                || !table.equals(pkTableId.getTable())) {
+              continue;
+            }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
@@ -2638,9 +2651,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    populateQueue(collectedResults, queue, resultSchemaFields);
-    signalEndOfData(queue, resultSchemaFields);
-    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
@@ -2656,10 +2668,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
-    populateQueue(typeInfoRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(typeInfoRows, queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3580,9 +3591,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
       Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
       sortResults(collectedResults, comparator, "getSchemas", LOG);
-      populateQueue(collectedResults, queue, resultSchemaFields);
-      signalEndOfData(queue, resultSchemaFields);
-      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
     }
 
     // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
@@ -4894,6 +4904,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info("Finished waiting for tasks.");
   }
 
+  private Future<?> populateQueueAsync(
+      List<FieldValueList> collectedResults,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue,
+      FieldList resultSchemaFields) {
+    return connection
+        .getMetadataExecutor()
+        .submit(
+            () -> {
+              populateQueue(collectedResults, queue, resultSchemaFields);
+              signalEndOfData(queue, resultSchemaFields);
+            });
+  }
+
   private void populateQueue(
       List<FieldValueList> collectedResults,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
@@ -5066,24 +5089,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return expected == null || expected.equals(actual);
   }
 
-  static String readSqlFromFile(String filename) {
-    InputStream in;
-    in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-    }
-    return builder.toString();
-  }
-
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
-  }
-
   private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
     Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
     BigQueryFieldValueListWrapper element = BigQueryFieldValueListWrapper.ofError(ex);
@@ -5171,7 +5176,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
-    if (targetDatasets.size() == 1) {
+    if (targetDatasets.size() == 1 && tableName != null) {
       processSingleTable(
           targetDatasets.get(0),
           tableName,
@@ -5186,19 +5191,59 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Future<?>> taskFutures = new ArrayList<>();
 
     try {
+      List<Callable<Void>> tasks = new ArrayList<>();
       for (DatasetId datasetId : targetDatasets) {
-        taskFutures.add(
-            executor.submit(
+        if (tableName != null) {
+          tasks.add(
+              () -> {
+                processSingleTable(
+                    datasetId,
+                    tableName,
+                    collectedResults,
+                    resultSchemaFields,
+                    ignoreAccessErrors,
+                    processor);
+                return null;
+              });
+          continue;
+        }
+
+        try {
+          Page<Table> tablesPage =
+              bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          if (tablesPage == null) {
+            continue;
+          }
+          for (Table table : tablesPage.iterateAll()) {
+            if (table.getDefinition() == null
+                || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
+              continue;
+            }
+            tasks.add(
                 () -> {
                   processSingleTable(
                       datasetId,
-                      tableName,
+                      table.getTableId().getTable(),
                       collectedResults,
                       resultSchemaFields,
                       ignoreAccessErrors,
                       processor);
                   return null;
-                }));
+                });
+          }
+        } catch (BigQueryException e) {
+          if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+            LOG.info(
+                "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
+                datasetId.getDataset(), datasetId.getProject(), e.getCode());
+            continue;
+          }
+          throw new SQLException("Error while listing tables: " + e.getMessage(), e);
+        }
+      }
+
+      for (Callable<Void> task : tasks) {
+        taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
       if (Thread.currentThread().isInterrupted()) {
