@@ -5188,45 +5188,45 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Future<?>> taskFutures = new ArrayList<>();
 
     try {
+      List<Callable<Void>> tasks = new ArrayList<>();
       for (DatasetId datasetId : targetDatasets) {
         if (tableName != null) {
-          taskFutures.add(
-              executor.submit(
-                  () -> {
-                    processSingleTable(
-                        datasetId,
-                        tableName,
-                        collectedResults,
-                        resultSchemaFields,
-                        ignoreAccessErrors,
-                        processor);
-                    return null;
-                  }));
+          tasks.add(
+              () -> {
+                processSingleTable(
+                    datasetId,
+                    tableName,
+                    collectedResults,
+                    resultSchemaFields,
+                    ignoreAccessErrors,
+                    processor);
+                return null;
+              });
           continue;
         }
 
         try {
           Page<Table> tablesPage =
               bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
-          if (tablesPage != null) {
-            for (Table table : tablesPage.iterateAll()) {
-              if (table.getDefinition() == null
-                  || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
-                continue;
-              }
-              taskFutures.add(
-                  executor.submit(
-                      () -> {
-                        processSingleTable(
-                            datasetId,
-                            table.getTableId().getTable(),
-                            collectedResults,
-                            resultSchemaFields,
-                            ignoreAccessErrors,
-                            processor);
-                        return null;
-                      }));
+          if (tablesPage == null) {
+            continue;
+          }
+          for (Table table : tablesPage.iterateAll()) {
+            if (table.getDefinition() == null
+                || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
+              continue;
             }
+            tasks.add(
+                () -> {
+                  processSingleTable(
+                      datasetId,
+                      table.getTableId().getTable(),
+                      collectedResults,
+                      resultSchemaFields,
+                      ignoreAccessErrors,
+                      processor);
+                  return null;
+                });
           }
         } catch (BigQueryException e) {
           if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
@@ -5235,9 +5235,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 datasetId.getDataset(), datasetId.getProject(), e.getCode());
             continue;
           }
-          taskFutures.forEach(future -> future.cancel(true));
           throw new SQLException("Error while listing tables: " + e.getMessage(), e);
         }
+      }
+
+      for (Callable<Void> task : tasks) {
+        taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
       if (Thread.currentThread().isInterrupted()) {

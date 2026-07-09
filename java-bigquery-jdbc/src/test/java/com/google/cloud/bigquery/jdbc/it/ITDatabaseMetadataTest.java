@@ -330,7 +330,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  public void testGetExportedKeys() throws SQLException {
+  public void testGetExportedKeys_multipleKeys() throws SQLException {
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
 
@@ -353,6 +353,13 @@ public class ITDatabaseMetadataTest extends ITBase {
       Assertions.assertEquals(2, exportedKeys2.getInt(9));
       Assertions.assertEquals("my_fk", exportedKeys2.getString(12));
       Assertions.assertFalse(exportedKeys2.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_singleKey() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
 
       // Table 3 exports keys to Table
       ResultSet exportedKeys3 =
@@ -365,6 +372,13 @@ public class ITDatabaseMetadataTest extends ITBase {
       Assertions.assertEquals(1, exportedKeys3.getInt(9));
       Assertions.assertEquals("my_fk2", exportedKeys3.getString(12));
       Assertions.assertFalse(exportedKeys3.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_noKeys() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
 
       // Table does not export keys to anything (it only imports them)
       ResultSet exportedKeys1 =
