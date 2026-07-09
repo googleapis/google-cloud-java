@@ -1263,6 +1263,19 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  public void regionalAccessBoundary_shouldSkipRefreshForRegionalEndpoints_caseInsensitive() throws IOException {
+
+    MockTokenServerTransport transport = new MockTokenServerTransport();
+    GoogleCredentials credentials = createTestCredentials(transport);
+
+    URI regionalUri = URI.create("https://storage.us-central1.REP.GOOGLEAPIS.COM/v1/b/foo");
+    credentials.getRequestMetadata(regionalUri);
+
+    // Should not have triggered any lookup.
+    assertEquals(0, transport.getRegionalAccessBoundaryRequestCount());
+  }
+
+  @Test
   public void getRequestMetadata_ignoresRabRefreshException() throws IOException {
     GoogleCredentials credentials =
         new GoogleCredentials() {

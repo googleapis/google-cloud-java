@@ -379,7 +379,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
     // Skip refresh for regional endpoints.
     if (uri != null && uri.getHost() != null) {
-      String host = uri.getHost();
+      String host = uri.getHost().toLowerCase(java.util.Locale.US);
       if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
         return;
       }
@@ -536,7 +536,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
           .put(QUOTA_PROJECT_ID_HEADER_KEY, Collections.singletonList(quotaProjectId))
           .build();
     }
-    return requestMetadata;
+    return Collections.unmodifiableMap(requestMetadata);
   }
 
   /**
@@ -552,7 +552,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     Preconditions.checkNotNull(requestMetadata);
 
     if (uri != null && uri.getHost() != null) {
-      String host = uri.getHost();
+      String host = uri.getHost().toLowerCase(java.util.Locale.US);
       if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
         return requestMetadata;
       }
@@ -566,13 +566,13 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       newMetadata.put(
           RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY,
           Collections.singletonList(rab.getEncodedLocations()));
-      return ImmutableMap.copyOf(newMetadata);
+      return Collections.unmodifiableMap(newMetadata);
     } else if (requestMetadata.containsKey(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY)) {
       // If RAB is null but the header exists (e.g., from a serialized cache), we must strip it
       // to prevent sending stale data to the server.
       Map<String, List<String>> newMetadata = new HashMap<>(requestMetadata);
       newMetadata.remove(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY);
-      return ImmutableMap.copyOf(newMetadata);
+      return Collections.unmodifiableMap(newMetadata);
     }
     return requestMetadata;
   }
