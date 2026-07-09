@@ -34,6 +34,7 @@ import com.google.shopping.merchant.promotions.v1beta.stub.PromotionsServiceStub
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -85,6 +86,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PromotionsServiceSettings extends ClientSettings<PromotionsServiceSettings> {
