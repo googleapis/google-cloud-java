@@ -23,6 +23,7 @@ import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
 import com.google.bigtable.v2.Mutation.MergeToCell;
 import com.google.bigtable.v2.Mutation.SetCell;
+import com.google.bigtable.v2.Mutation.TimestampOrigin;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -32,6 +33,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -154,9 +157,10 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @Override
   public Mutation setCell(
       @Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value) {
-    long timestamp = System.currentTimeMillis() * 1_000;
+    long timestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
 
-    return setCell(familyName, qualifier, timestamp, value);
+    return setCell(
+        familyName, qualifier, timestamp, value, TimestampOrigin.CLIENT_AUTO_GENERATED);
   }
 
   @Override
@@ -165,6 +169,16 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
       @Nonnull ByteString qualifier,
       long timestamp,
       @Nonnull ByteString value) {
+    return setCell(
+        familyName, qualifier, timestamp, value, TimestampOrigin.USER_SPECIFIED);
+  }
+
+  private Mutation setCell(
+      @Nonnull String familyName,
+      @Nonnull ByteString qualifier,
+      long timestamp,
+      @Nonnull ByteString value,
+      TimestampOrigin timestampOrigin) {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
@@ -182,6 +196,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
                     .setTimestampMicros(timestamp)
                     .setValue(value)
                     .build())
+            .setTimestampOrigin(timestampOrigin)
             .build());
 
     return this;

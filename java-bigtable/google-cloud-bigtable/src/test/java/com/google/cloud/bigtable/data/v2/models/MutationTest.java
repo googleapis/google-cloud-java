@@ -22,9 +22,12 @@ import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
 import com.google.bigtable.v2.Mutation.MergeToCell;
+import com.google.bigtable.v2.Mutation.TimestampOrigin;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -48,7 +51,7 @@ public class MutationTest {
 
   @Test
   public void setCellTest() {
-    long minTimestamp = System.currentTimeMillis() * 1_000;
+    long minTimestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
 
     mutation
         .setCell(
@@ -65,7 +68,7 @@ public class MutationTest {
 
     List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
-    long maxTimestamp = System.currentTimeMillis() * 1_000;
+    long maxTimestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
     com.google.common.collect.Range<Long> expectedTimestampRange =
         com.google.common.collect.Range.closed(minTimestamp, maxTimestamp);
 
@@ -77,6 +80,7 @@ public class MutationTest {
     assertThat(actual.get(0).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value"));
     assertThat(actual.get(0).getSetCell().getTimestampMicros()).isEqualTo(1_000);
+    assertThat(actual.get(0).getTimestampOrigin()).isEqualTo(TimestampOrigin.USER_SPECIFIED);
 
     assertThat(actual.get(1).getSetCell().getFamilyName()).isEqualTo("fake-family");
     assertThat(actual.get(1).getSetCell().getColumnQualifier())
@@ -84,6 +88,7 @@ public class MutationTest {
     assertThat(actual.get(1).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value"));
     assertThat(actual.get(1).getSetCell().getTimestampMicros()).isIn(expectedTimestampRange);
+    assertThat(actual.get(1).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
 
     assertThat(actual.get(2).getSetCell().getFamilyName()).isEqualTo("fake-family2");
     assertThat(actual.get(2).getSetCell().getColumnQualifier())
@@ -91,6 +96,7 @@ public class MutationTest {
     assertThat(actual.get(2).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value2"));
     assertThat(actual.get(2).getSetCell().getTimestampMicros()).isEqualTo(1_000);
+    assertThat(actual.get(2).getTimestampOrigin()).isEqualTo(TimestampOrigin.USER_SPECIFIED);
 
     assertThat(actual.get(3).getSetCell().getFamilyName()).isEqualTo("fake-family2");
     assertThat(actual.get(3).getSetCell().getColumnQualifier())
@@ -98,6 +104,7 @@ public class MutationTest {
     assertThat(actual.get(3).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value2"));
     assertThat(actual.get(3).getSetCell().getTimestampMicros()).isIn(expectedTimestampRange);
+    assertThat(actual.get(3).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
 
     assertThat(Mutation.fromProtoUnsafe(actual).getMutations()).isEqualTo(actual);
   }
@@ -113,6 +120,7 @@ public class MutationTest {
     List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
     assertThat(actual.get(0).getSetCell().getTimestampMicros())
         .isEqualTo(Mutation.SERVER_SIDE_TIMESTAMP);
+    assertThat(actual.get(0).getTimestampOrigin()).isEqualTo(TimestampOrigin.USER_SPECIFIED);
   }
 
   @Test
@@ -276,6 +284,8 @@ public class MutationTest {
 
     assertThat(actualMutation.getSetCell().getValue())
         .isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
+    assertThat(mutations.get(0).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
+    assertThat(mutations.get(1).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
 
     assertThat(mutations.get(2).getSetCell())
         .isEqualTo(
@@ -285,6 +295,7 @@ public class MutationTest {
                 .setTimestampMicros(30_000L)
                 .setValue(ByteString.copyFrom(Longs.toByteArray(20_000L)))
                 .build());
+    assertThat(mutations.get(2).getTimestampOrigin()).isEqualTo(TimestampOrigin.USER_SPECIFIED);
   }
 
   @Test
