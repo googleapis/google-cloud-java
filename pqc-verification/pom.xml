@@ -29,7 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <bigquery.version>2.68.0-SNAPSHOT</bigquery.version>
         <http-client.version>2.1.2-SNAPSHOT</http-client.version>
-        <conscrypt.version>2.6-alpha5</conscrypt.version>
+        <conscrypt.version>2.6.0</conscrypt.version>
     </properties>
 
     <dependencies>
