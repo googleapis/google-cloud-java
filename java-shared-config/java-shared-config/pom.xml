@@ -145,6 +145,7 @@
           <configuration>
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>org.jspecify:jspecify</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
             <!-- TODO: Try to remove these exclusions by updating handwritten libs -->
             <ignoredNonTestScopedDependencies>
