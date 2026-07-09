@@ -1263,7 +1263,8 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  public void regionalAccessBoundary_shouldSkipRefreshForRegionalEndpoints_caseInsensitive() throws IOException {
+  public void regionalAccessBoundary_shouldSkipRefreshForRegionalEndpoints_caseInsensitive()
+      throws IOException {
 
     MockTokenServerTransport transport = new MockTokenServerTransport();
     GoogleCredentials credentials = createTestCredentials(transport);
