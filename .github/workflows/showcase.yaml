@@ -74,6 +74,8 @@ jobs:
                 cd /usr/src/showcase/
                 tar -xf showcase-*
                 ./gapic-showcase run &
+                ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
+                sleep 2
                 cd -
       - name: Showcase integration tests
         working-directory: java-showcase
@@ -191,6 +193,8 @@ jobs:
           cd /usr/src/showcase/
           tar -xf showcase-*
           ./gapic-showcase run &
+          ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
+          sleep 2
           cd -
       - name: Showcase integration tests
         working-directory: java-showcase

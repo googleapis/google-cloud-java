@@ -111,8 +111,18 @@ public class ITPqc {
   private static final String EXPECTED_TLS_GROUP = "X25519MLKEM768";
   private static final String EXPECTED_TLS_CIPHER = "TLS_AES_128_GCM_SHA256";
 
-  private static final String DEFAULT_CA_CERT_PATH =
-      System.getProperty("showcase.ca.cert.path", "target/showcase-ca.pem");
+  private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
+
+  private static String getCaCertPath() {
+    String prop = System.getProperty("showcase.ca.cert.path");
+    if (prop != null) {
+      return prop;
+    }
+    if (new File("/tmp/showcase-ca.pem").isFile()) {
+      return "/tmp/showcase-ca.pem";
+    }
+    return "target/showcase-ca.pem";
+  }
 
   private static final String SECURE_ENDPOINT =
       System.getProperty("showcase.secure.endpoint", "localhost:7470");
