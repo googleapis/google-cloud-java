@@ -33,10 +33,10 @@ public class DriverEnvironmentBuilderTest {
 
   @Test
   public void testBuildDriverEnvironment() {
-    DriverEnvironment env = DriverEnvironmentBuilder.build("1.2.0-SNAPSHOT");
+    DriverEnvironment env = DriverEnvironmentBuilder.build();
     assertNotNull(env);
-    assertEquals("google-bigquery-jdbc", env.getDriverName());
-    assertEquals("1.2", env.getDriverVersion());
+    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertNotNull(env.getDriverVersion());
     assertEquals("java", env.getClientLanguage());
     assertNotNull(env.getClientLanguageVersion());
     assertNotNull(env.getOsType());
@@ -45,12 +45,17 @@ public class DriverEnvironmentBuilderTest {
   }
 
   @Test
-  public void testSanitizeVersion() {
-    assertEquals("1.2", DriverEnvironmentBuilder.sanitizeVersion("1.2.0-SNAPSHOT"));
-    assertEquals("2.5", DriverEnvironmentBuilder.sanitizeVersion("2.5"));
-    assertEquals("0.0", DriverEnvironmentBuilder.sanitizeVersion(null));
-    assertEquals("0.0", DriverEnvironmentBuilder.sanitizeVersion("   "));
-    assertEquals("single", DriverEnvironmentBuilder.sanitizeVersion("single"));
+  public void testBuildDriverEnvironmentCustomTagPath(@TempDir Path tempDir) {
+    Path tagFile = tempDir.resolve("telemetry-tag");
+    DriverEnvironment env = DriverEnvironmentBuilder.build(tagFile);
+    assertNotNull(env);
+    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertNotNull(env.getDriverVersion());
+    assertEquals("java", env.getClientLanguage());
+    assertNotNull(env.getClientLanguageVersion());
+    assertNotNull(env.getOsType());
+    assertNotNull(env.getOsVersion());
+    assertEquals(env.getTelemetryTag(), DriverEnvironmentBuilder.getOrCreateTelemetryTag(tagFile));
   }
 
   @Test

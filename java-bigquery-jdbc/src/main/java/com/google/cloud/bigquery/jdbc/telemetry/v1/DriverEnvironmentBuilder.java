@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -29,42 +30,29 @@ import java.util.logging.Logger;
 final class DriverEnvironmentBuilder {
   private static final Logger logger = Logger.getLogger(DriverEnvironmentBuilder.class.getName());
 
-  static final String DRIVER_NAME = "google-bigquery-jdbc";
+  static final String DRIVER_NAME = "google-bigquery-jdbc-driver";
   static final String CLIENT_LANGUAGE = "java";
   static final String DEFAULT_TELEMETRY_TAG_DIR = ".bigquery-jdbc";
   static final String DEFAULT_TELEMETRY_TAG_FILE = "telemetry-tag";
   static final String UNKNOWN = "unknown";
   static final String RESTRICTED = "restricted";
-  static final String DEFAULT_VERSION = "0.0";
 
   private DriverEnvironmentBuilder() {}
 
-  static DriverEnvironment build(String driverVersion) {
-    return build(driverVersion, null);
+  static DriverEnvironment build() {
+    return build(null);
   }
 
-  static DriverEnvironment build(String driverVersion, Path customTelemetryTagPath) {
+  static DriverEnvironment build(Path customTelemetryTagPath) {
     return DriverEnvironment.newBuilder()
         .setDriverName(DRIVER_NAME)
-        .setDriverVersion(sanitizeVersion(driverVersion))
+        .setDriverVersion(BigQueryJdbcVersionUtility.getSanitizedDriverVersion())
         .setClientLanguage(CLIENT_LANGUAGE)
         .setClientLanguageVersion(getMajorJavaVersion())
         .setOsType(detectOsType())
         .setOsVersion(getMajorOsVersion())
         .setTelemetryTag(getOrCreateTelemetryTag(customTelemetryTagPath))
         .build();
-  }
-
-  static String sanitizeVersion(String version) {
-    if (version == null || version.trim().isEmpty()) {
-      return DEFAULT_VERSION;
-    }
-    String trimmed = version.trim();
-    String[] parts = trimmed.split("\\.");
-    if (parts.length >= 2) {
-      return parts[0] + "." + parts[1];
-    }
-    return trimmed;
   }
 
   static String getMajorJavaVersion() {
@@ -109,10 +97,10 @@ final class DriverEnvironmentBuilder {
       return DriverEnvironment.OsType.OS_TYPE_UNKNOWN;
     }
     String osName = osNameProperty.toLowerCase();
-    if (osName.contains("win")) {
-      return DriverEnvironment.OsType.OS_TYPE_WINDOWS;
-    } else if (osName.contains("mac") || osName.contains("darwin")) {
+    if (osName.contains("mac") || osName.contains("darwin")) {
       return DriverEnvironment.OsType.OS_TYPE_MACOS;
+    } else if (osName.contains("win")) {
+      return DriverEnvironment.OsType.OS_TYPE_WINDOWS;
     } else if (osName.contains("nux") || osName.contains("nix")) {
       return DriverEnvironment.OsType.OS_TYPE_LINUX;
     } else if (osName.contains("solaris") || osName.contains("sunos")) {
