@@ -16,8 +16,8 @@ version: v0.25.1-0.20260708160859-939ae6f16e82
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 28476cc22e6b39ecaa1e171391b623f0ecb8cb89
-    sha256: c17ed78d71a7cd7614e9cbebb91a1b8d6b26f75cb74a5d6f607ff2e243db3187
+    commit: bb9551666256aa929ffe1bbe7ad17db1342f0214
+    sha256: 35f265bda422b6b86be36f0b18949722c5af13be7a313f025749863b1c5b853b
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
