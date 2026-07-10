@@ -254,18 +254,31 @@ public class JavaWriterVisitor implements AstNodeVisitor {
     if (reference.useFullName() || importWriterVisitor.collidesWithImport(pakkage, shortName)) {
       buffer.append(pakkage);
       buffer.append(DOT);
-      if (reference.hasEnclosingClass()) {
-        buffer.append(String.join(DOT, reference.enclosingClassNames()));
-        buffer.append(DOT);
-      }
+    }
+
+    if (reference.hasEnclosingClass() && !reference.isStaticImport()) {
+      buffer.append(String.join(DOT, reference.enclosingClassNames()));
+      buffer.append(DOT);
     }
 
     if (reference.isNullable()) {
       buffer.append(NULLABLE);
     }
 
-    // A null pointer exception will be thrown if reference is null, which is WAI.
-    buffer.append(shortName);
+    buffer.append(reference.simpleName());
+
+    if (!reference.generics().isEmpty()) {
+      buffer.append(LEFT_ANGLE);
+      for (int i = 0; i < reference.generics().size(); i++) {
+        Reference r = reference.generics().get(i);
+        r.accept(this);
+        if (i < reference.generics().size() - 1) {
+          buffer.append(COMMA);
+          buffer.append(SPACE);
+        }
+      }
+      buffer.append(RIGHT_ANGLE);
+    }
   }
 
   /** =============================== EXPRESSIONS =============================== */
