@@ -150,7 +150,14 @@ public abstract class VaporReference implements Reference {
   }
 
   // Private.
-  abstract Builder toBuilder();
+  abstract Builder autoToBuilder();
+
+  // Resets builder name back to simpleName to prevent double-prepending enclosing classes during builder copying.
+  public Builder toBuilder() {
+    Builder builder = autoToBuilder();
+    builder.setName(simpleName());
+    return builder;
+  }
 
   @AutoValue.Builder
   public abstract static class Builder {
