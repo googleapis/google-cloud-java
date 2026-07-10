@@ -143,12 +143,9 @@ class ITClientShutdown {
     // check that everything is properly terminated after close() is called.
     echoClient.close();
 
-    // Loop until the client has terminated successfully. For tests that use this,
-    // try to ensure there is a timeout associated, otherwise this may run forever.
-    // Future enhancement: Use awaitility instead of busy waiting
-    while (!echoClient.isTerminated()) {
-      Thread.sleep(500L);
-    }
+    org.awaitility.Awaitility.await()
+        .atMost(java.time.Duration.ofMillis(DEFAULT_CLIENT_TERMINATION_MS))
+        .until(echoClient::isTerminated);
     // The busy-wait time won't be accurate, so account for a bit of buffer
     long end = System.currentTimeMillis();
 

@@ -83,6 +83,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -290,24 +291,29 @@ class ITOtelMetrics {
   }
 
   /**
-   * Attempts to retrieve the metrics from a custom InMemoryMetricsReader. Sleep every second for at
-   * most 10s to try and retrieve all the metrics available. If it is unable to retrieve all the
-   * metrics, fail the test.
+   * Attempts to retrieve the metrics from a custom InMemoryMetricsReader. Polls for at most 10s to
+   * try and retrieve all the metrics available. If it is unable to retrieve all the metrics, fail
+   * the test.
    */
   private List<MetricData> getMetricDataList(InMemoryMetricReader metricReader)
       throws InterruptedException {
-    for (int i = 0; i < NUM_DEFAULT_FLUSH_ATTEMPTS; i++) {
-      Thread.sleep(1000L);
-      List<MetricData> metricData = new ArrayList<>(metricReader.collectAllMetrics());
-      // Depending on the OpenTelemetry instance (i.e. OpenTelemetry, GrpcOpenTelemetry, etc.)
-      // there may be additional metrics recorded. Only check to ensure the Gax Metrics
-      // are recorded properly. Any additional metrics are fine to be passed.
-      if (metricData.size() >= NUM_GAX_OTEL_METRICS && areAllGaxMetricsRecorded(metricData)) {
-        return metricData;
-      }
+    try {
+      Awaitility.await()
+          .atMost(java.time.Duration.ofSeconds(NUM_DEFAULT_FLUSH_ATTEMPTS))
+          .until(
+              () -> {
+                List<MetricData> metricData = new ArrayList<>(metricReader.collectAllMetrics());
+                // Depending on the OpenTelemetry instance (i.e. OpenTelemetry, GrpcOpenTelemetry,
+                // etc.)
+                // there may be additional metrics recorded. Only check to ensure the Gax Metrics
+                // are recorded properly. Any additional metrics are fine to be passed.
+                return metricData.size() >= NUM_GAX_OTEL_METRICS
+                    && areAllGaxMetricsRecorded(metricData);
+              });
+    } catch (org.awaitility.core.ConditionTimeoutException e) {
+      Assertions.fail("Unable to collect all the GAX metrics required for the test");
     }
-    Assertions.fail("Unable to collect all the GAX metrics required for the test");
-    return new ArrayList<>();
+    return new ArrayList<>(metricReader.collectAllMetrics());
   }
 
   private boolean areAllGaxMetricsRecorded(List<MetricData> metricData) {
@@ -370,7 +376,7 @@ class ITOtelMetrics {
     UnaryCallable<BlockRequest, BlockResponse> blockCallable = grpcClient.blockCallable();
     ApiFuture<BlockResponse> blockResponseApiFuture = blockCallable.futureCall(blockRequest);
     // Sleep 1s before cancelling to let the request go through
-    Thread.sleep(1000);
+    Awaitility.await().pollDelay(java.time.Duration.ofSeconds(1)).until(() -> true);
     blockResponseApiFuture.cancel(true);
 
     List<MetricData> actualMetricDataList = getMetricDataList();
@@ -397,7 +403,7 @@ class ITOtelMetrics {
     UnaryCallable<BlockRequest, BlockResponse> blockCallable = httpClient.blockCallable();
     ApiFuture<BlockResponse> blockResponseApiFuture = blockCallable.futureCall(blockRequest);
     // Sleep 1s before cancelling to let the request go through
-    Thread.sleep(1000);
+    Awaitility.await().pollDelay(java.time.Duration.ofSeconds(1)).until(() -> true);
     blockResponseApiFuture.cancel(true);
 
     List<MetricData> actualMetricDataList = getMetricDataList();
