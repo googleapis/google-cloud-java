@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -598,7 +599,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceGroupManagersClient implements BackgroundResource {
-  private final InstanceGroupManagersSettings settings;
+  private final @Nullable InstanceGroupManagersSettings settings;
   private final InstanceGroupManagersStub stub;
 
   /** Constructs an instance of InstanceGroupManagersClient with default settings. */
@@ -638,7 +639,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InstanceGroupManagersSettings getSettings() {
+  public final @Nullable InstanceGroupManagersSettings getSettings() {
     return settings;
   }
 
@@ -5064,12 +5065,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupManagersRequest,
                 InstanceGroupManagerAggregatedList,
                 Map.Entry<String, InstanceGroupManagersScopedList>>
             context,
-        InstanceGroupManagerAggregatedList response) {
+        @Nullable InstanceGroupManagerAggregatedList response) {
       super(context, response);
     }
 
@@ -5079,18 +5081,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupManagersRequest,
                 InstanceGroupManagerAggregatedList,
                 Map.Entry<String, InstanceGroupManagersScopedList>>
             context,
-        InstanceGroupManagerAggregatedList response) {
+        @Nullable InstanceGroupManagerAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupManagersRequest,
                 InstanceGroupManagerAggregatedList,
                 Map.Entry<String, InstanceGroupManagersScopedList>>
@@ -5108,7 +5112,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5118,7 +5123,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5155,10 +5160,11 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>
             context,
-        InstanceGroupManagerList response) {
+        @Nullable InstanceGroupManagerList response) {
       super(context, response);
     }
 
@@ -5168,16 +5174,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>
             context,
-        InstanceGroupManagerList response) {
+        @Nullable InstanceGroupManagerList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagersRequest, InstanceGroupManagerList, InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -5193,7 +5201,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5202,7 +5210,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5241,12 +5250,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListErrorsPage> {
 
     private ListErrorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsInstanceGroupManagersRequest,
                 InstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
             context,
-        InstanceGroupManagersListErrorsResponse response) {
+        @Nullable InstanceGroupManagersListErrorsResponse response) {
       super(context, response);
     }
 
@@ -5256,18 +5266,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListErrorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsInstanceGroupManagersRequest,
                 InstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
             context,
-        InstanceGroupManagersListErrorsResponse response) {
+        @Nullable InstanceGroupManagersListErrorsResponse response) {
       return new ListErrorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListErrorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsInstanceGroupManagersRequest,
                 InstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
@@ -5285,7 +5297,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListErrorsPage,
           ListErrorsFixedSizeCollection> {
 
-    private ListErrorsFixedSizeCollection(List<ListErrorsPage> pages, int collectionSize) {
+    private ListErrorsFixedSizeCollection(
+        @Nullable List<ListErrorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5295,7 +5308,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListErrorsFixedSizeCollection createCollection(
-        List<ListErrorsPage> pages, int collectionSize) {
+        @Nullable List<ListErrorsPage> pages, int collectionSize) {
       return new ListErrorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5336,12 +5349,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListManagedInstancesPage> {
 
     private ListManagedInstancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesInstanceGroupManagersRequest,
                 InstanceGroupManagersListManagedInstancesResponse,
                 ManagedInstance>
             context,
-        InstanceGroupManagersListManagedInstancesResponse response) {
+        @Nullable InstanceGroupManagersListManagedInstancesResponse response) {
       super(context, response);
     }
 
@@ -5351,18 +5365,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListManagedInstancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesInstanceGroupManagersRequest,
                 InstanceGroupManagersListManagedInstancesResponse,
                 ManagedInstance>
             context,
-        InstanceGroupManagersListManagedInstancesResponse response) {
+        @Nullable InstanceGroupManagersListManagedInstancesResponse response) {
       return new ListManagedInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagedInstancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesInstanceGroupManagersRequest,
                 InstanceGroupManagersListManagedInstancesResponse,
                 ManagedInstance>
@@ -5381,7 +5397,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListManagedInstancesFixedSizeCollection> {
 
     private ListManagedInstancesFixedSizeCollection(
-        List<ListManagedInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListManagedInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5391,7 +5407,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListManagedInstancesFixedSizeCollection createCollection(
-        List<ListManagedInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListManagedInstancesPage> pages, int collectionSize) {
       return new ListManagedInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5432,12 +5448,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListPerInstanceConfigsPage> {
 
     private ListPerInstanceConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsInstanceGroupManagersRequest,
                 InstanceGroupManagersListPerInstanceConfigsResp,
                 PerInstanceConfig>
             context,
-        InstanceGroupManagersListPerInstanceConfigsResp response) {
+        @Nullable InstanceGroupManagersListPerInstanceConfigsResp response) {
       super(context, response);
     }
 
@@ -5447,18 +5464,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPerInstanceConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsInstanceGroupManagersRequest,
                 InstanceGroupManagersListPerInstanceConfigsResp,
                 PerInstanceConfig>
             context,
-        InstanceGroupManagersListPerInstanceConfigsResp response) {
+        @Nullable InstanceGroupManagersListPerInstanceConfigsResp response) {
       return new ListPerInstanceConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPerInstanceConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsInstanceGroupManagersRequest,
                 InstanceGroupManagersListPerInstanceConfigsResp,
                 PerInstanceConfig>
@@ -5477,7 +5496,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
           ListPerInstanceConfigsFixedSizeCollection> {
 
     private ListPerInstanceConfigsFixedSizeCollection(
-        List<ListPerInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListPerInstanceConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5487,7 +5506,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPerInstanceConfigsFixedSizeCollection createCollection(
-        List<ListPerInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListPerInstanceConfigsPage> pages, int collectionSize) {
       return new ListPerInstanceConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

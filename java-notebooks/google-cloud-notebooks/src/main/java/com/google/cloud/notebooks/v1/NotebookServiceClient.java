@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -781,7 +782,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NotebookServiceClient implements BackgroundResource {
-  private final NotebookServiceSettings settings;
+  private final @Nullable NotebookServiceSettings settings;
   private final NotebookServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -824,7 +825,7 @@ public class NotebookServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final NotebookServiceSettings getSettings() {
+  public final @Nullable NotebookServiceSettings getSettings() {
     return settings;
   }
 
@@ -2307,7 +2308,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetInstanceHealthResponse getInstanceHealth(InstanceName name) {
+  public final GetInstanceHealthResponse getInstanceHealth(@Nullable InstanceName name) {
     GetInstanceHealthRequest request =
         GetInstanceHealthRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2602,7 +2603,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> diagnoseInstanceAsync(
-      InstanceName name, DiagnosticConfig diagnosticConfig) {
+      @Nullable InstanceName name, DiagnosticConfig diagnosticConfig) {
     DiagnoseInstanceRequest request =
         DiagnoseInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3305,7 +3306,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * @param parent Required. Format: `parent=projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchedulesPagedResponse listSchedules(ScheduleName parent) {
+  public final ListSchedulesPagedResponse listSchedules(@Nullable ScheduleName parent) {
     ListSchedulesRequest request =
         ListSchedulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3473,7 +3474,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schedule getSchedule(ScheduleName name) {
+  public final Schedule getSchedule(@Nullable ScheduleName name) {
     GetScheduleRequest request =
         GetScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSchedule(request);
@@ -3583,7 +3584,8 @@ public class NotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteScheduleAsync(ScheduleName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteScheduleAsync(
+      @Nullable ScheduleName name) {
     DeleteScheduleRequest request =
         DeleteScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteScheduleAsync(request);
@@ -3729,7 +3731,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Schedule, OperationMetadata> createScheduleAsync(
-      ScheduleName parent, Schedule schedule, String scheduleId) {
+      @Nullable ScheduleName parent, Schedule schedule, String scheduleId) {
     CreateScheduleRequest request =
         CreateScheduleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3977,7 +3979,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * @param parent Required. Format: `parent=projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExecutionsPagedResponse listExecutions(ExecutionName parent) {
+  public final ListExecutionsPagedResponse listExecutions(@Nullable ExecutionName parent) {
     ListExecutionsRequest request =
         ListExecutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4146,7 +4148,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/executions/{execution_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Execution getExecution(ExecutionName name) {
+  public final Execution getExecution(@Nullable ExecutionName name) {
     GetExecutionRequest request =
         GetExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExecution(request);
@@ -4257,7 +4259,8 @@ public class NotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/executions/{execution_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteExecutionAsync(ExecutionName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteExecutionAsync(
+      @Nullable ExecutionName name) {
     DeleteExecutionRequest request =
         DeleteExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteExecutionAsync(request);
@@ -4403,7 +4406,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, OperationMetadata> createExecutionAsync(
-      ExecutionName parent, Execution execution, String executionId) {
+      @Nullable ExecutionName parent, Execution execution, String executionId) {
     CreateExecutionRequest request =
         CreateExecutionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4948,8 +4951,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -4959,14 +4962,14 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4980,7 +4983,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4990,7 +4994,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5024,8 +5028,9 @@ public class NotebookServiceClient implements BackgroundResource {
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage> {
 
     private ListEnvironmentsPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       super(context, response);
     }
 
@@ -5035,14 +5040,16 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsPage createPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       return new ListEnvironmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnvironmentsPage> createPageAsync(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
         ApiFuture<ListEnvironmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5057,7 +5064,7 @@ public class NotebookServiceClient implements BackgroundResource {
           ListEnvironmentsFixedSizeCollection> {
 
     private ListEnvironmentsFixedSizeCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5067,7 +5074,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsFixedSizeCollection createCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5101,8 +5108,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListSchedulesRequest, ListSchedulesResponse, Schedule, ListSchedulesPage> {
 
     private ListSchedulesPage(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
-        ListSchedulesResponse response) {
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable ListSchedulesResponse response) {
       super(context, response);
     }
 
@@ -5112,14 +5119,14 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchedulesPage createPage(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
-        ListSchedulesResponse response) {
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable ListSchedulesResponse response) {
       return new ListSchedulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSchedulesPage> createPageAsync(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
         ApiFuture<ListSchedulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5133,7 +5140,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListSchedulesPage,
           ListSchedulesFixedSizeCollection> {
 
-    private ListSchedulesFixedSizeCollection(List<ListSchedulesPage> pages, int collectionSize) {
+    private ListSchedulesFixedSizeCollection(
+        @Nullable List<ListSchedulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5143,7 +5151,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchedulesFixedSizeCollection createCollection(
-        List<ListSchedulesPage> pages, int collectionSize) {
+        @Nullable List<ListSchedulesPage> pages, int collectionSize) {
       return new ListSchedulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5177,8 +5185,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage> {
 
     private ListExecutionsPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       super(context, response);
     }
 
@@ -5188,14 +5196,14 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsPage createPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       return new ListExecutionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExecutionsPage> createPageAsync(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
         ApiFuture<ListExecutionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5209,7 +5217,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
-    private ListExecutionsFixedSizeCollection(List<ListExecutionsPage> pages, int collectionSize) {
+    private ListExecutionsFixedSizeCollection(
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5219,7 +5228,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsFixedSizeCollection createCollection(
-        List<ListExecutionsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       return new ListExecutionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5253,8 +5262,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5264,14 +5273,14 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5285,7 +5294,8 @@ public class NotebookServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5295,7 +5305,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

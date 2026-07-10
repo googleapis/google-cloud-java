@@ -21,10 +21,13 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -126,7 +129,7 @@ public class DataSourceName implements ResourceName {
         .toString();
   }
 
-  public static DataSourceName parse(String formattedString) {
+  public static @Nullable DataSourceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -139,6 +142,18 @@ public class DataSourceName implements ResourceName {
           matchMap.get("project"), matchMap.get("location"), matchMap.get("data_source"));
     }
     throw new ValidationException("DataSourceName.parse: formattedString not in valid format");
+  }
+
+  public static List<String> toStringList(List<@Nullable DataSourceName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (DataSourceName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -178,7 +193,7 @@ public class DataSourceName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -665,7 +666,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class VertexRagDataServiceClient implements BackgroundResource {
-  private final VertexRagDataServiceSettings settings;
+  private final @Nullable VertexRagDataServiceSettings settings;
   private final VertexRagDataServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -708,7 +709,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final VertexRagDataServiceSettings getSettings() {
+  public final @Nullable VertexRagDataServiceSettings getSettings() {
     return settings;
   }
 
@@ -750,7 +751,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RagCorpus, CreateRagCorpusOperationMetadata> createRagCorpusAsync(
-      LocationName parent, RagCorpus ragCorpus) {
+      @Nullable LocationName parent, RagCorpus ragCorpus) {
     CreateRagCorpusRequest request =
         CreateRagCorpusRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1020,7 +1021,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RagCorpus getRagCorpus(RagCorpusName name) {
+  public final RagCorpus getRagCorpus(@Nullable RagCorpusName name) {
     GetRagCorpusRequest request =
         GetRagCorpusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRagCorpus(request);
@@ -1137,7 +1138,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRagCorporaPagedResponse listRagCorpora(LocationName parent) {
+  public final ListRagCorporaPagedResponse listRagCorpora(@Nullable LocationName parent) {
     ListRagCorporaRequest request =
         ListRagCorporaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1307,7 +1308,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteRagCorpusAsync(
-      RagCorpusName name) {
+      @Nullable RagCorpusName name) {
     DeleteRagCorpusRequest request =
         DeleteRagCorpusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRagCorpusAsync(request);
@@ -1467,7 +1468,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadRagFileResponse uploadRagFile(
-      RagCorpusName parent, RagFile ragFile, UploadRagFileConfig uploadRagFileConfig) {
+      @Nullable RagCorpusName parent, RagFile ragFile, UploadRagFileConfig uploadRagFileConfig) {
     UploadRagFileRequest request =
         UploadRagFileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1609,7 +1610,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportRagFilesResponse, ImportRagFilesOperationMetadata>
-      importRagFilesAsync(RagCorpusName parent, ImportRagFilesConfig importRagFilesConfig) {
+      importRagFilesAsync(
+          @Nullable RagCorpusName parent, ImportRagFilesConfig importRagFilesConfig) {
     ImportRagFilesRequest request =
         ImportRagFilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1773,7 +1775,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RagFile getRagFile(RagFileName name) {
+  public final RagFile getRagFile(@Nullable RagFileName name) {
     GetRagFileRequest request =
         GetRagFileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRagFile(request);
@@ -1895,7 +1897,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRagFilesPagedResponse listRagFiles(RagCorpusName parent) {
+  public final ListRagFilesPagedResponse listRagFiles(@Nullable RagCorpusName parent) {
     ListRagFilesRequest request =
         ListRagFilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2064,7 +2066,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteRagFileAsync(
-      RagFileName name) {
+      @Nullable RagFileName name) {
     DeleteRagFileRequest request =
         DeleteRagFileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRagFileAsync(request);
@@ -2344,7 +2346,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragEngineConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RagEngineConfig getRagEngineConfig(RagEngineConfigName name) {
+  public final RagEngineConfig getRagEngineConfig(@Nullable RagEngineConfigName name) {
     GetRagEngineConfigRequest request =
         GetRagEngineConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2473,7 +2475,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RagDataSchema createRagDataSchema(
-      RagCorpusName parent, RagDataSchema ragDataSchema, String ragDataSchemaId) {
+      @Nullable RagCorpusName parent, RagDataSchema ragDataSchema, String ragDataSchemaId) {
     CreateRagDataSchemaRequest request =
         CreateRagDataSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2714,7 +2716,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RagDataSchema getRagDataSchema(RagDataSchemaName name) {
+  public final RagDataSchema getRagDataSchema(@Nullable RagDataSchemaName name) {
     GetRagDataSchemaRequest request =
         GetRagDataSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRagDataSchema(request);
@@ -2840,7 +2842,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     RagDataSchemas. Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRagDataSchemasPagedResponse listRagDataSchemas(RagCorpusName parent) {
+  public final ListRagDataSchemasPagedResponse listRagDataSchemas(@Nullable RagCorpusName parent) {
     ListRagDataSchemasRequest request =
         ListRagDataSchemasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3014,7 +3016,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRagDataSchema(RagDataSchemaName name) {
+  public final void deleteRagDataSchema(@Nullable RagDataSchemaName name) {
     DeleteRagDataSchemaRequest request =
         DeleteRagDataSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3245,7 +3247,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RagMetadata createRagMetadata(
-      RagFileName parent, RagMetadata ragMetadata, String ragMetadataId) {
+      @Nullable RagFileName parent, RagMetadata ragMetadata, String ragMetadataId) {
     CreateRagMetadataRequest request =
         CreateRagMetadataRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3583,7 +3585,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RagMetadata getRagMetadata(RagMetadataName name) {
+  public final RagMetadata getRagMetadata(@Nullable RagMetadataName name) {
     GetRagMetadataRequest request =
         GetRagMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRagMetadata(request);
@@ -3710,7 +3712,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRagMetadataPagedResponse listRagMetadata(RagFileName parent) {
+  public final ListRagMetadataPagedResponse listRagMetadata(@Nullable RagFileName parent) {
     ListRagMetadataRequest request =
         ListRagMetadataRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3889,7 +3891,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRagMetadata(RagMetadataName name) {
+  public final void deleteRagMetadata(@Nullable RagMetadataName name) {
     DeleteRagMetadataRequest request =
         DeleteRagMetadataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4529,8 +4531,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus, ListRagCorporaPage> {
 
     private ListRagCorporaPage(
-        PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
-        ListRagCorporaResponse response) {
+        @Nullable PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
+        @Nullable ListRagCorporaResponse response) {
       super(context, response);
     }
 
@@ -4540,14 +4542,14 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagCorporaPage createPage(
-        PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
-        ListRagCorporaResponse response) {
+        @Nullable PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
+        @Nullable ListRagCorporaResponse response) {
       return new ListRagCorporaPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRagCorporaPage> createPageAsync(
-        PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
+        @Nullable PageContext<ListRagCorporaRequest, ListRagCorporaResponse, RagCorpus> context,
         ApiFuture<ListRagCorporaResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4561,7 +4563,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagCorporaPage,
           ListRagCorporaFixedSizeCollection> {
 
-    private ListRagCorporaFixedSizeCollection(List<ListRagCorporaPage> pages, int collectionSize) {
+    private ListRagCorporaFixedSizeCollection(
+        @Nullable List<ListRagCorporaPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4571,7 +4574,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagCorporaFixedSizeCollection createCollection(
-        List<ListRagCorporaPage> pages, int collectionSize) {
+        @Nullable List<ListRagCorporaPage> pages, int collectionSize) {
       return new ListRagCorporaFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4604,8 +4607,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
       extends AbstractPage<ListRagFilesRequest, ListRagFilesResponse, RagFile, ListRagFilesPage> {
 
     private ListRagFilesPage(
-        PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
-        ListRagFilesResponse response) {
+        @Nullable PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
+        @Nullable ListRagFilesResponse response) {
       super(context, response);
     }
 
@@ -4615,14 +4618,14 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagFilesPage createPage(
-        PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
-        ListRagFilesResponse response) {
+        @Nullable PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
+        @Nullable ListRagFilesResponse response) {
       return new ListRagFilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRagFilesPage> createPageAsync(
-        PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
+        @Nullable PageContext<ListRagFilesRequest, ListRagFilesResponse, RagFile> context,
         ApiFuture<ListRagFilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4636,7 +4639,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagFilesPage,
           ListRagFilesFixedSizeCollection> {
 
-    private ListRagFilesFixedSizeCollection(List<ListRagFilesPage> pages, int collectionSize) {
+    private ListRagFilesFixedSizeCollection(
+        @Nullable List<ListRagFilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4646,7 +4650,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagFilesFixedSizeCollection createCollection(
-        List<ListRagFilesPage> pages, int collectionSize) {
+        @Nullable List<ListRagFilesPage> pages, int collectionSize) {
       return new ListRagFilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4683,8 +4687,9 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagDataSchemasPage> {
 
     private ListRagDataSchemasPage(
-        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
-        ListRagDataSchemasResponse response) {
+        @Nullable PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema>
+            context,
+        @Nullable ListRagDataSchemasResponse response) {
       super(context, response);
     }
 
@@ -4694,14 +4699,16 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagDataSchemasPage createPage(
-        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
-        ListRagDataSchemasResponse response) {
+        @Nullable PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema>
+            context,
+        @Nullable ListRagDataSchemasResponse response) {
       return new ListRagDataSchemasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRagDataSchemasPage> createPageAsync(
-        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
+        @Nullable PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema>
+            context,
         ApiFuture<ListRagDataSchemasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4716,7 +4723,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagDataSchemasFixedSizeCollection> {
 
     private ListRagDataSchemasFixedSizeCollection(
-        List<ListRagDataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListRagDataSchemasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4726,7 +4733,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagDataSchemasFixedSizeCollection createCollection(
-        List<ListRagDataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListRagDataSchemasPage> pages, int collectionSize) {
       return new ListRagDataSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4760,8 +4767,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata, ListRagMetadataPage> {
 
     private ListRagMetadataPage(
-        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
-        ListRagMetadataResponse response) {
+        @Nullable PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        @Nullable ListRagMetadataResponse response) {
       super(context, response);
     }
 
@@ -4771,14 +4778,14 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagMetadataPage createPage(
-        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
-        ListRagMetadataResponse response) {
+        @Nullable PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        @Nullable ListRagMetadataResponse response) {
       return new ListRagMetadataPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRagMetadataPage> createPageAsync(
-        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        @Nullable PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
         ApiFuture<ListRagMetadataResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4793,7 +4800,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListRagMetadataFixedSizeCollection> {
 
     private ListRagMetadataFixedSizeCollection(
-        List<ListRagMetadataPage> pages, int collectionSize) {
+        @Nullable List<ListRagMetadataPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4803,7 +4810,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListRagMetadataFixedSizeCollection createCollection(
-        List<ListRagMetadataPage> pages, int collectionSize) {
+        @Nullable List<ListRagMetadataPage> pages, int collectionSize) {
       return new ListRagMetadataFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4837,8 +4844,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4848,14 +4855,14 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4869,7 +4876,8 @@ public class VertexRagDataServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4879,7 +4887,7 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

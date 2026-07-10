@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -401,7 +402,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataTableServiceClient implements BackgroundResource {
-  private final DataTableServiceSettings settings;
+  private final @Nullable DataTableServiceSettings settings;
   private final DataTableServiceStub stub;
 
   /** Constructs an instance of DataTableServiceClient with default settings. */
@@ -441,7 +442,7 @@ public class DataTableServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataTableServiceSettings getSettings() {
+  public final @Nullable DataTableServiceSettings getSettings() {
     return settings;
   }
 
@@ -478,7 +479,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataTable createDataTable(
-      InstanceName parent, DataTable dataTable, String dataTableId) {
+      @Nullable InstanceName parent, DataTable dataTable, String dataTableId) {
     CreateDataTableRequest request =
         CreateDataTableRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -610,7 +611,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataTablesPagedResponse listDataTables(InstanceName parent) {
+  public final ListDataTablesPagedResponse listDataTables(@Nullable InstanceName parent) {
     ListDataTablesRequest request =
         ListDataTablesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -778,7 +779,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instances}/dataTables/{data_table}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataTable getDataTable(DataTableName name) {
+  public final DataTable getDataTable(@Nullable DataTableName name) {
     GetDataTableRequest request =
         GetDataTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataTable(request);
@@ -992,7 +993,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     (Otherwise, the request will only work if the data table has no rows.)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataTable(DataTableName name, boolean force) {
+  public final void deleteDataTable(@Nullable DataTableName name, boolean force) {
     DeleteDataTableRequest request =
         DeleteDataTableRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1120,7 +1121,8 @@ public class DataTableServiceClient implements BackgroundResource {
    * @param dataTableRow Required. The data table row to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataTableRow createDataTableRow(DataTableName parent, DataTableRow dataTableRow) {
+  public final DataTableRow createDataTableRow(
+      @Nullable DataTableName parent, DataTableRow dataTableRow) {
     CreateDataTableRowRequest request =
         CreateDataTableRowRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1343,7 +1345,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{locations}/instances/{instance}/dataTables/{data_table}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataTableRowsPagedResponse listDataTableRows(DataTableName parent) {
+  public final ListDataTableRowsPagedResponse listDataTableRows(@Nullable DataTableName parent) {
     ListDataTableRowsRequest request =
         ListDataTableRowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1523,7 +1525,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/dataTables/{data_table}/dataTableRows/{data_table_row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataTableRow getDataTableRow(DataTableRowName name) {
+  public final DataTableRow getDataTableRow(@Nullable DataTableRowName name) {
     GetDataTableRowRequest request =
         GetDataTableRowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataTableRow(request);
@@ -1653,7 +1655,7 @@ public class DataTableServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/dataTables/{data_table}/dataTableRows/{data_table_row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataTableRow(DataTableRowName name) {
+  public final void deleteDataTableRow(@Nullable DataTableRowName name) {
     DeleteDataTableRowRequest request =
         DeleteDataTableRowRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1791,7 +1793,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BulkCreateDataTableRowsResponse bulkCreateDataTableRows(
-      DataTableName parent, List<CreateDataTableRowRequest> requests) {
+      @Nullable DataTableName parent, List<CreateDataTableRowRequest> requests) {
     BulkCreateDataTableRowsRequest request =
         BulkCreateDataTableRowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1930,7 +1932,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BulkGetDataTableRowsResponse bulkGetDataTableRows(
-      DataTableName parent, List<GetDataTableRowRequest> requests) {
+      @Nullable DataTableName parent, List<GetDataTableRowRequest> requests) {
     BulkGetDataTableRowsRequest request =
         BulkGetDataTableRowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2065,7 +2067,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BulkReplaceDataTableRowsResponse bulkReplaceDataTableRows(
-      DataTableName parent, List<CreateDataTableRowRequest> requests) {
+      @Nullable DataTableName parent, List<CreateDataTableRowRequest> requests) {
     BulkReplaceDataTableRowsRequest request =
         BulkReplaceDataTableRowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2205,7 +2207,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BulkUpdateDataTableRowsResponse bulkUpdateDataTableRows(
-      DataTableName parent, List<UpdateDataTableRowRequest> requests) {
+      @Nullable DataTableName parent, List<UpdateDataTableRowRequest> requests) {
     BulkUpdateDataTableRowsRequest request =
         BulkUpdateDataTableRowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2341,7 +2343,7 @@ public class DataTableServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataTableOperationErrors getDataTableOperationErrors(
-      DataTableOperationErrorsName name) {
+      @Nullable DataTableOperationErrorsName name) {
     GetDataTableOperationErrorsRequest request =
         GetDataTableOperationErrorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2504,8 +2506,8 @@ public class DataTableServiceClient implements BackgroundResource {
           ListDataTablesRequest, ListDataTablesResponse, DataTable, ListDataTablesPage> {
 
     private ListDataTablesPage(
-        PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
-        ListDataTablesResponse response) {
+        @Nullable PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
+        @Nullable ListDataTablesResponse response) {
       super(context, response);
     }
 
@@ -2515,14 +2517,14 @@ public class DataTableServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTablesPage createPage(
-        PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
-        ListDataTablesResponse response) {
+        @Nullable PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
+        @Nullable ListDataTablesResponse response) {
       return new ListDataTablesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataTablesPage> createPageAsync(
-        PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
+        @Nullable PageContext<ListDataTablesRequest, ListDataTablesResponse, DataTable> context,
         ApiFuture<ListDataTablesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2536,7 +2538,8 @@ public class DataTableServiceClient implements BackgroundResource {
           ListDataTablesPage,
           ListDataTablesFixedSizeCollection> {
 
-    private ListDataTablesFixedSizeCollection(List<ListDataTablesPage> pages, int collectionSize) {
+    private ListDataTablesFixedSizeCollection(
+        @Nullable List<ListDataTablesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2546,7 +2549,7 @@ public class DataTableServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTablesFixedSizeCollection createCollection(
-        List<ListDataTablesPage> pages, int collectionSize) {
+        @Nullable List<ListDataTablesPage> pages, int collectionSize) {
       return new ListDataTablesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2583,8 +2586,9 @@ public class DataTableServiceClient implements BackgroundResource {
           ListDataTableRowsPage> {
 
     private ListDataTableRowsPage(
-        PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow> context,
-        ListDataTableRowsResponse response) {
+        @Nullable PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow>
+            context,
+        @Nullable ListDataTableRowsResponse response) {
       super(context, response);
     }
 
@@ -2594,14 +2598,16 @@ public class DataTableServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTableRowsPage createPage(
-        PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow> context,
-        ListDataTableRowsResponse response) {
+        @Nullable PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow>
+            context,
+        @Nullable ListDataTableRowsResponse response) {
       return new ListDataTableRowsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataTableRowsPage> createPageAsync(
-        PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow> context,
+        @Nullable PageContext<ListDataTableRowsRequest, ListDataTableRowsResponse, DataTableRow>
+            context,
         ApiFuture<ListDataTableRowsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2616,7 +2622,7 @@ public class DataTableServiceClient implements BackgroundResource {
           ListDataTableRowsFixedSizeCollection> {
 
     private ListDataTableRowsFixedSizeCollection(
-        List<ListDataTableRowsPage> pages, int collectionSize) {
+        @Nullable List<ListDataTableRowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2626,7 +2632,7 @@ public class DataTableServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTableRowsFixedSizeCollection createCollection(
-        List<ListDataTableRowsPage> pages, int collectionSize) {
+        @Nullable List<ListDataTableRowsPage> pages, int collectionSize) {
       return new ListDataTableRowsFixedSizeCollection(pages, collectionSize);
     }
   }

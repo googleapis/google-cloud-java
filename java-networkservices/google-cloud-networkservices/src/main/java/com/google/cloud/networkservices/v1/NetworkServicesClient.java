@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1449,7 +1450,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkServicesClient implements BackgroundResource {
-  private final NetworkServicesSettings settings;
+  private final @Nullable NetworkServicesSettings settings;
   private final NetworkServicesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1497,7 +1498,7 @@ public class NetworkServicesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final NetworkServicesSettings getSettings() {
+  public final @Nullable NetworkServicesSettings getSettings() {
     return settings;
   }
 
@@ -1547,7 +1548,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointPoliciesPagedResponse listEndpointPolicies(LocationName parent) {
+  public final ListEndpointPoliciesPagedResponse listEndpointPolicies(
+      @Nullable LocationName parent) {
     ListEndpointPoliciesRequest request =
         ListEndpointPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1719,7 +1721,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/endpointPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EndpointPolicy getEndpointPolicy(EndpointPolicyName name) {
+  public final EndpointPolicy getEndpointPolicy(@Nullable EndpointPolicyName name) {
     GetEndpointPolicyRequest request =
         GetEndpointPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1844,7 +1846,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EndpointPolicy, OperationMetadata> createEndpointPolicyAsync(
-      LocationName parent, EndpointPolicy endpointPolicy, String endpointPolicyId) {
+      @Nullable LocationName parent, EndpointPolicy endpointPolicy, String endpointPolicyId) {
     CreateEndpointPolicyRequest request =
         CreateEndpointPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2139,7 +2141,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEndpointPolicyAsync(
-      EndpointPolicyName name) {
+      @Nullable EndpointPolicyName name) {
     DeleteEndpointPolicyRequest request =
         DeleteEndpointPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2292,7 +2294,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWasmPluginVersionsPagedResponse listWasmPluginVersions(WasmPluginName parent) {
+  public final ListWasmPluginVersionsPagedResponse listWasmPluginVersions(
+      @Nullable WasmPluginName parent) {
     ListWasmPluginVersionsRequest request =
         ListWasmPluginVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2463,7 +2466,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}/versions/{wasm_plugin_version}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WasmPluginVersion getWasmPluginVersion(WasmPluginVersionName name) {
+  public final WasmPluginVersion getWasmPluginVersion(@Nullable WasmPluginVersionName name) {
     GetWasmPluginVersionRequest request =
         GetWasmPluginVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2596,7 +2599,9 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WasmPluginVersion, OperationMetadata> createWasmPluginVersionAsync(
-      WasmPluginName parent, WasmPluginVersion wasmPluginVersion, String wasmPluginVersionId) {
+      @Nullable WasmPluginName parent,
+      WasmPluginVersion wasmPluginVersion,
+      String wasmPluginVersionId) {
     CreateWasmPluginVersionRequest request =
         CreateWasmPluginVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2768,7 +2773,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginVersionAsync(
-      WasmPluginVersionName name) {
+      @Nullable WasmPluginVersionName name) {
     DeleteWasmPluginVersionRequest request =
         DeleteWasmPluginVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2928,7 +2933,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     listed, specified in the following format: `projects/{project}/locations/global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWasmPluginsPagedResponse listWasmPlugins(LocationName parent) {
+  public final ListWasmPluginsPagedResponse listWasmPlugins(@Nullable LocationName parent) {
     ListWasmPluginsRequest request =
         ListWasmPluginsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3092,7 +3097,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WasmPlugin getWasmPlugin(WasmPluginName name) {
+  public final WasmPlugin getWasmPlugin(@Nullable WasmPluginName name) {
     GetWasmPluginRequest request =
         GetWasmPluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWasmPlugin(request);
@@ -3211,7 +3216,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WasmPlugin, OperationMetadata> createWasmPluginAsync(
-      LocationName parent, WasmPlugin wasmPlugin, String wasmPluginId) {
+      @Nullable LocationName parent, WasmPlugin wasmPlugin, String wasmPluginId) {
     CreateWasmPluginRequest request =
         CreateWasmPluginRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3503,7 +3508,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginAsync(
-      WasmPluginName name) {
+      @Nullable WasmPluginName name) {
     DeleteWasmPluginRequest request =
         DeleteWasmPluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteWasmPluginAsync(request);
@@ -3646,7 +3651,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGatewaysPagedResponse listGateways(LocationName parent) {
+  public final ListGatewaysPagedResponse listGateways(@Nullable LocationName parent) {
     ListGatewaysRequest request =
         ListGatewaysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3808,7 +3813,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/gateways/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Gateway getGateway(GatewayName name) {
+  public final Gateway getGateway(@Nullable GatewayName name) {
     GetGatewayRequest request =
         GetGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGateway(request);
@@ -3923,7 +3928,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Gateway, OperationMetadata> createGatewayAsync(
-      LocationName parent, Gateway gateway, String gatewayId) {
+      @Nullable LocationName parent, Gateway gateway, String gatewayId) {
     CreateGatewayRequest request =
         CreateGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4206,7 +4211,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/gateways/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAsync(GatewayName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAsync(
+      @Nullable GatewayName name) {
     DeleteGatewayRequest request =
         DeleteGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGatewayAsync(request);
@@ -4349,7 +4355,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGrpcRoutesPagedResponse listGrpcRoutes(LocationName parent) {
+  public final ListGrpcRoutesPagedResponse listGrpcRoutes(@Nullable LocationName parent) {
     ListGrpcRoutesRequest request =
         ListGrpcRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4516,7 +4522,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GrpcRoute getGrpcRoute(GrpcRouteName name) {
+  public final GrpcRoute getGrpcRoute(@Nullable GrpcRouteName name) {
     GetGrpcRouteRequest request =
         GetGrpcRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGrpcRoute(request);
@@ -4633,7 +4639,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GrpcRoute, OperationMetadata> createGrpcRouteAsync(
-      LocationName parent, GrpcRoute grpcRoute, String grpcRouteId) {
+      @Nullable LocationName parent, GrpcRoute grpcRoute, String grpcRouteId) {
     CreateGrpcRouteRequest request =
         CreateGrpcRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4920,7 +4926,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGrpcRouteAsync(GrpcRouteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGrpcRouteAsync(
+      @Nullable GrpcRouteName name) {
     DeleteGrpcRouteRequest request =
         DeleteGrpcRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGrpcRouteAsync(request);
@@ -5063,7 +5070,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHttpRoutesPagedResponse listHttpRoutes(LocationName parent) {
+  public final ListHttpRoutesPagedResponse listHttpRoutes(@Nullable LocationName parent) {
     ListHttpRoutesRequest request =
         ListHttpRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5233,7 +5240,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HttpRoute getHttpRoute(HttpRouteName name) {
+  public final HttpRoute getHttpRoute(@Nullable HttpRouteName name) {
     GetHttpRouteRequest request =
         GetHttpRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHttpRoute(request);
@@ -5350,7 +5357,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<HttpRoute, OperationMetadata> createHttpRouteAsync(
-      LocationName parent, HttpRoute httpRoute, String httpRouteId) {
+      @Nullable LocationName parent, HttpRoute httpRoute, String httpRouteId) {
     CreateHttpRouteRequest request =
         CreateHttpRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5640,7 +5647,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteHttpRouteAsync(HttpRouteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteHttpRouteAsync(
+      @Nullable HttpRouteName name) {
     DeleteHttpRouteRequest request =
         DeleteHttpRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteHttpRouteAsync(request);
@@ -5783,7 +5791,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTcpRoutesPagedResponse listTcpRoutes(LocationName parent) {
+  public final ListTcpRoutesPagedResponse listTcpRoutes(@Nullable LocationName parent) {
     ListTcpRoutesRequest request =
         ListTcpRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5949,7 +5957,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TcpRoute getTcpRoute(TcpRouteName name) {
+  public final TcpRoute getTcpRoute(@Nullable TcpRouteName name) {
     GetTcpRouteRequest request =
         GetTcpRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTcpRoute(request);
@@ -6065,7 +6073,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TcpRoute, OperationMetadata> createTcpRouteAsync(
-      LocationName parent, TcpRoute tcpRoute, String tcpRouteId) {
+      @Nullable LocationName parent, TcpRoute tcpRoute, String tcpRouteId) {
     CreateTcpRouteRequest request =
         CreateTcpRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6349,7 +6357,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteTcpRouteAsync(TcpRouteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteTcpRouteAsync(
+      @Nullable TcpRouteName name) {
     DeleteTcpRouteRequest request =
         DeleteTcpRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTcpRouteAsync(request);
@@ -6492,7 +6501,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTlsRoutesPagedResponse listTlsRoutes(LocationName parent) {
+  public final ListTlsRoutesPagedResponse listTlsRoutes(@Nullable LocationName parent) {
     ListTlsRoutesRequest request =
         ListTlsRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6658,7 +6667,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TlsRoute getTlsRoute(TlsRouteName name) {
+  public final TlsRoute getTlsRoute(@Nullable TlsRouteName name) {
     GetTlsRouteRequest request =
         GetTlsRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTlsRoute(request);
@@ -6774,7 +6783,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TlsRoute, OperationMetadata> createTlsRouteAsync(
-      LocationName parent, TlsRoute tlsRoute, String tlsRouteId) {
+      @Nullable LocationName parent, TlsRoute tlsRoute, String tlsRouteId) {
     CreateTlsRouteRequest request =
         CreateTlsRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7058,7 +7067,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteTlsRouteAsync(TlsRouteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteTlsRouteAsync(
+      @Nullable TlsRouteName name) {
     DeleteTlsRouteRequest request =
         DeleteTlsRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTlsRouteAsync(request);
@@ -7202,7 +7212,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServiceBindingsPagedResponse listServiceBindings(LocationName parent) {
+  public final ListServiceBindingsPagedResponse listServiceBindings(@Nullable LocationName parent) {
     ListServiceBindingsRequest request =
         ListServiceBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7371,7 +7381,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/serviceBindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceBinding getServiceBinding(ServiceBindingName name) {
+  public final ServiceBinding getServiceBinding(@Nullable ServiceBindingName name) {
     GetServiceBindingRequest request =
         GetServiceBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7495,7 +7505,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServiceBinding, OperationMetadata> createServiceBindingAsync(
-      LocationName parent, ServiceBinding serviceBinding, String serviceBindingId) {
+      @Nullable LocationName parent, ServiceBinding serviceBinding, String serviceBindingId) {
     CreateServiceBindingRequest request =
         CreateServiceBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7789,7 +7799,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceBindingAsync(
-      ServiceBindingName name) {
+      @Nullable ServiceBindingName name) {
     DeleteServiceBindingRequest request =
         DeleteServiceBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7940,7 +7950,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMeshesPagedResponse listMeshes(LocationName parent) {
+  public final ListMeshesPagedResponse listMeshes(@Nullable LocationName parent) {
     ListMeshesRequest request =
         ListMeshesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listMeshes(request);
@@ -8101,7 +8111,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Mesh getMesh(MeshName name) {
+  public final Mesh getMesh(@Nullable MeshName name) {
     GetMeshRequest request =
         GetMeshRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMesh(request);
@@ -8216,7 +8226,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Mesh, OperationMetadata> createMeshAsync(
-      LocationName parent, Mesh mesh, String meshId) {
+      @Nullable LocationName parent, Mesh mesh, String meshId) {
     CreateMeshRequest request =
         CreateMeshRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8491,7 +8501,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteMeshAsync(MeshName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteMeshAsync(@Nullable MeshName name) {
     DeleteMeshRequest request =
         DeleteMeshRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMeshAsync(request);
@@ -8634,7 +8644,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     listed, specified in the format `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServiceLbPoliciesPagedResponse listServiceLbPolicies(LocationName parent) {
+  public final ListServiceLbPoliciesPagedResponse listServiceLbPolicies(
+      @Nullable LocationName parent) {
     ListServiceLbPoliciesRequest request =
         ListServiceLbPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8803,7 +8814,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/serviceLbPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceLbPolicy getServiceLbPolicy(ServiceLbPolicyName name) {
+  public final ServiceLbPolicy getServiceLbPolicy(@Nullable ServiceLbPolicyName name) {
     GetServiceLbPolicyRequest request =
         GetServiceLbPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8934,7 +8945,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServiceLbPolicy, OperationMetadata> createServiceLbPolicyAsync(
-      LocationName parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId) {
+      @Nullable LocationName parent, ServiceLbPolicy serviceLbPolicy, String serviceLbPolicyId) {
     CreateServiceLbPolicyRequest request =
         CreateServiceLbPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9231,7 +9242,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceLbPolicyAsync(
-      ServiceLbPolicyName name) {
+      @Nullable ServiceLbPolicyName name) {
     DeleteServiceLbPolicyRequest request =
         DeleteServiceLbPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9384,7 +9395,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/gateways/{gateway}/routeViews/{route_view}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GatewayRouteView getGatewayRouteView(GatewayRouteViewName name) {
+  public final GatewayRouteView getGatewayRouteView(@Nullable GatewayRouteViewName name) {
     GetGatewayRouteViewRequest request =
         GetGatewayRouteViewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9506,7 +9517,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/meshes/{mesh}/routeViews/{route_view}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MeshRouteView getMeshRouteView(MeshRouteViewName name) {
+  public final MeshRouteView getMeshRouteView(@Nullable MeshRouteViewName name) {
     GetMeshRouteViewRequest request =
         GetMeshRouteViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMeshRouteView(request);
@@ -9625,7 +9636,8 @@ public class NetworkServicesClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/gateways/{gateway}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGatewayRouteViewsPagedResponse listGatewayRouteViews(GatewayName parent) {
+  public final ListGatewayRouteViewsPagedResponse listGatewayRouteViews(
+      @Nullable GatewayName parent) {
     ListGatewayRouteViewsRequest request =
         ListGatewayRouteViewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9795,7 +9807,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/meshes/{mesh}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMeshRouteViewsPagedResponse listMeshRouteViews(MeshName parent) {
+  public final ListMeshRouteViewsPagedResponse listMeshRouteViews(@Nullable MeshName parent) {
     ListMeshRouteViewsRequest request =
         ListMeshRouteViewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9963,7 +9975,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAgentGatewaysPagedResponse listAgentGateways(LocationName parent) {
+  public final ListAgentGatewaysPagedResponse listAgentGateways(@Nullable LocationName parent) {
     ListAgentGatewaysRequest request =
         ListAgentGatewaysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10131,7 +10143,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/agentGateways/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AgentGateway getAgentGateway(AgentGatewayName name) {
+  public final AgentGateway getAgentGateway(@Nullable AgentGatewayName name) {
     GetAgentGatewayRequest request =
         GetAgentGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAgentGateway(request);
@@ -10248,7 +10260,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AgentGateway, OperationMetadata> createAgentGatewayAsync(
-      LocationName parent, AgentGateway agentGateway, String agentGatewayId) {
+      @Nullable LocationName parent, AgentGateway agentGateway, String agentGatewayId) {
     CreateAgentGatewayRequest request =
         CreateAgentGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10537,7 +10549,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAgentGatewayAsync(
-      AgentGatewayName name) {
+      @Nullable AgentGatewayName name) {
     DeleteAgentGatewayRequest request =
         DeleteAgentGatewayRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11078,9 +11090,10 @@ public class NetworkServicesClient implements BackgroundResource {
           ListEndpointPoliciesPage> {
 
     private ListEndpointPoliciesPage(
-        PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
+        @Nullable
+            PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
             context,
-        ListEndpointPoliciesResponse response) {
+        @Nullable ListEndpointPoliciesResponse response) {
       super(context, response);
     }
 
@@ -11090,15 +11103,17 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListEndpointPoliciesPage createPage(
-        PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
+        @Nullable
+            PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
             context,
-        ListEndpointPoliciesResponse response) {
+        @Nullable ListEndpointPoliciesResponse response) {
       return new ListEndpointPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEndpointPoliciesPage> createPageAsync(
-        PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
+        @Nullable
+            PageContext<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse, EndpointPolicy>
             context,
         ApiFuture<ListEndpointPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11114,7 +11129,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListEndpointPoliciesFixedSizeCollection> {
 
     private ListEndpointPoliciesFixedSizeCollection(
-        List<ListEndpointPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11124,7 +11139,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListEndpointPoliciesFixedSizeCollection createCollection(
-        List<ListEndpointPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointPoliciesPage> pages, int collectionSize) {
       return new ListEndpointPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11163,10 +11178,11 @@ public class NetworkServicesClient implements BackgroundResource {
           ListWasmPluginVersionsPage> {
 
     private ListWasmPluginVersionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
             context,
-        ListWasmPluginVersionsResponse response) {
+        @Nullable ListWasmPluginVersionsResponse response) {
       super(context, response);
     }
 
@@ -11176,16 +11192,18 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListWasmPluginVersionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
             context,
-        ListWasmPluginVersionsResponse response) {
+        @Nullable ListWasmPluginVersionsResponse response) {
       return new ListWasmPluginVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWasmPluginVersionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
             context,
         ApiFuture<ListWasmPluginVersionsResponse> futureResponse) {
@@ -11202,7 +11220,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListWasmPluginVersionsFixedSizeCollection> {
 
     private ListWasmPluginVersionsFixedSizeCollection(
-        List<ListWasmPluginVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListWasmPluginVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11212,7 +11230,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListWasmPluginVersionsFixedSizeCollection createCollection(
-        List<ListWasmPluginVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListWasmPluginVersionsPage> pages, int collectionSize) {
       return new ListWasmPluginVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11246,8 +11264,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin, ListWasmPluginsPage> {
 
     private ListWasmPluginsPage(
-        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
-        ListWasmPluginsResponse response) {
+        @Nullable PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        @Nullable ListWasmPluginsResponse response) {
       super(context, response);
     }
 
@@ -11257,14 +11275,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListWasmPluginsPage createPage(
-        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
-        ListWasmPluginsResponse response) {
+        @Nullable PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        @Nullable ListWasmPluginsResponse response) {
       return new ListWasmPluginsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWasmPluginsPage> createPageAsync(
-        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        @Nullable PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
         ApiFuture<ListWasmPluginsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11279,7 +11297,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListWasmPluginsFixedSizeCollection> {
 
     private ListWasmPluginsFixedSizeCollection(
-        List<ListWasmPluginsPage> pages, int collectionSize) {
+        @Nullable List<ListWasmPluginsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11289,7 +11307,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListWasmPluginsFixedSizeCollection createCollection(
-        List<ListWasmPluginsPage> pages, int collectionSize) {
+        @Nullable List<ListWasmPluginsPage> pages, int collectionSize) {
       return new ListWasmPluginsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11322,8 +11340,8 @@ public class NetworkServicesClient implements BackgroundResource {
       extends AbstractPage<ListGatewaysRequest, ListGatewaysResponse, Gateway, ListGatewaysPage> {
 
     private ListGatewaysPage(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
-        ListGatewaysResponse response) {
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable ListGatewaysResponse response) {
       super(context, response);
     }
 
@@ -11333,14 +11351,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGatewaysPage createPage(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
-        ListGatewaysResponse response) {
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable ListGatewaysResponse response) {
       return new ListGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGatewaysPage> createPageAsync(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
         ApiFuture<ListGatewaysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11354,7 +11372,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListGatewaysPage,
           ListGatewaysFixedSizeCollection> {
 
-    private ListGatewaysFixedSizeCollection(List<ListGatewaysPage> pages, int collectionSize) {
+    private ListGatewaysFixedSizeCollection(
+        @Nullable List<ListGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11364,7 +11383,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGatewaysFixedSizeCollection createCollection(
-        List<ListGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListGatewaysPage> pages, int collectionSize) {
       return new ListGatewaysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11398,8 +11417,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute, ListGrpcRoutesPage> {
 
     private ListGrpcRoutesPage(
-        PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
-        ListGrpcRoutesResponse response) {
+        @Nullable PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
+        @Nullable ListGrpcRoutesResponse response) {
       super(context, response);
     }
 
@@ -11409,14 +11428,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGrpcRoutesPage createPage(
-        PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
-        ListGrpcRoutesResponse response) {
+        @Nullable PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
+        @Nullable ListGrpcRoutesResponse response) {
       return new ListGrpcRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGrpcRoutesPage> createPageAsync(
-        PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
+        @Nullable PageContext<ListGrpcRoutesRequest, ListGrpcRoutesResponse, GrpcRoute> context,
         ApiFuture<ListGrpcRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11430,7 +11449,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListGrpcRoutesPage,
           ListGrpcRoutesFixedSizeCollection> {
 
-    private ListGrpcRoutesFixedSizeCollection(List<ListGrpcRoutesPage> pages, int collectionSize) {
+    private ListGrpcRoutesFixedSizeCollection(
+        @Nullable List<ListGrpcRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11440,7 +11460,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGrpcRoutesFixedSizeCollection createCollection(
-        List<ListGrpcRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListGrpcRoutesPage> pages, int collectionSize) {
       return new ListGrpcRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11474,8 +11494,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute, ListHttpRoutesPage> {
 
     private ListHttpRoutesPage(
-        PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
-        ListHttpRoutesResponse response) {
+        @Nullable PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
+        @Nullable ListHttpRoutesResponse response) {
       super(context, response);
     }
 
@@ -11485,14 +11505,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListHttpRoutesPage createPage(
-        PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
-        ListHttpRoutesResponse response) {
+        @Nullable PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
+        @Nullable ListHttpRoutesResponse response) {
       return new ListHttpRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHttpRoutesPage> createPageAsync(
-        PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
+        @Nullable PageContext<ListHttpRoutesRequest, ListHttpRoutesResponse, HttpRoute> context,
         ApiFuture<ListHttpRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11506,7 +11526,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListHttpRoutesPage,
           ListHttpRoutesFixedSizeCollection> {
 
-    private ListHttpRoutesFixedSizeCollection(List<ListHttpRoutesPage> pages, int collectionSize) {
+    private ListHttpRoutesFixedSizeCollection(
+        @Nullable List<ListHttpRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11516,7 +11537,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListHttpRoutesFixedSizeCollection createCollection(
-        List<ListHttpRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListHttpRoutesPage> pages, int collectionSize) {
       return new ListHttpRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11550,8 +11571,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute, ListTcpRoutesPage> {
 
     private ListTcpRoutesPage(
-        PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
-        ListTcpRoutesResponse response) {
+        @Nullable PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
+        @Nullable ListTcpRoutesResponse response) {
       super(context, response);
     }
 
@@ -11561,14 +11582,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListTcpRoutesPage createPage(
-        PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
-        ListTcpRoutesResponse response) {
+        @Nullable PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
+        @Nullable ListTcpRoutesResponse response) {
       return new ListTcpRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTcpRoutesPage> createPageAsync(
-        PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
+        @Nullable PageContext<ListTcpRoutesRequest, ListTcpRoutesResponse, TcpRoute> context,
         ApiFuture<ListTcpRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11582,7 +11603,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListTcpRoutesPage,
           ListTcpRoutesFixedSizeCollection> {
 
-    private ListTcpRoutesFixedSizeCollection(List<ListTcpRoutesPage> pages, int collectionSize) {
+    private ListTcpRoutesFixedSizeCollection(
+        @Nullable List<ListTcpRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11592,7 +11614,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListTcpRoutesFixedSizeCollection createCollection(
-        List<ListTcpRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListTcpRoutesPage> pages, int collectionSize) {
       return new ListTcpRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11626,8 +11648,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute, ListTlsRoutesPage> {
 
     private ListTlsRoutesPage(
-        PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
-        ListTlsRoutesResponse response) {
+        @Nullable PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
+        @Nullable ListTlsRoutesResponse response) {
       super(context, response);
     }
 
@@ -11637,14 +11659,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListTlsRoutesPage createPage(
-        PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
-        ListTlsRoutesResponse response) {
+        @Nullable PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
+        @Nullable ListTlsRoutesResponse response) {
       return new ListTlsRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTlsRoutesPage> createPageAsync(
-        PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
+        @Nullable PageContext<ListTlsRoutesRequest, ListTlsRoutesResponse, TlsRoute> context,
         ApiFuture<ListTlsRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11658,7 +11680,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListTlsRoutesPage,
           ListTlsRoutesFixedSizeCollection> {
 
-    private ListTlsRoutesFixedSizeCollection(List<ListTlsRoutesPage> pages, int collectionSize) {
+    private ListTlsRoutesFixedSizeCollection(
+        @Nullable List<ListTlsRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11668,7 +11691,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListTlsRoutesFixedSizeCollection createCollection(
-        List<ListTlsRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListTlsRoutesPage> pages, int collectionSize) {
       return new ListTlsRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11706,9 +11729,10 @@ public class NetworkServicesClient implements BackgroundResource {
           ListServiceBindingsPage> {
 
     private ListServiceBindingsPage(
-        PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
+        @Nullable
+            PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
             context,
-        ListServiceBindingsResponse response) {
+        @Nullable ListServiceBindingsResponse response) {
       super(context, response);
     }
 
@@ -11718,15 +11742,17 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListServiceBindingsPage createPage(
-        PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
+        @Nullable
+            PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
             context,
-        ListServiceBindingsResponse response) {
+        @Nullable ListServiceBindingsResponse response) {
       return new ListServiceBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceBindingsPage> createPageAsync(
-        PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
+        @Nullable
+            PageContext<ListServiceBindingsRequest, ListServiceBindingsResponse, ServiceBinding>
             context,
         ApiFuture<ListServiceBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11742,7 +11768,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListServiceBindingsFixedSizeCollection> {
 
     private ListServiceBindingsFixedSizeCollection(
-        List<ListServiceBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11752,7 +11778,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListServiceBindingsFixedSizeCollection createCollection(
-        List<ListServiceBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceBindingsPage> pages, int collectionSize) {
       return new ListServiceBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11783,8 +11809,8 @@ public class NetworkServicesClient implements BackgroundResource {
       extends AbstractPage<ListMeshesRequest, ListMeshesResponse, Mesh, ListMeshesPage> {
 
     private ListMeshesPage(
-        PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
-        ListMeshesResponse response) {
+        @Nullable PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
+        @Nullable ListMeshesResponse response) {
       super(context, response);
     }
 
@@ -11794,14 +11820,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListMeshesPage createPage(
-        PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
-        ListMeshesResponse response) {
+        @Nullable PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
+        @Nullable ListMeshesResponse response) {
       return new ListMeshesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMeshesPage> createPageAsync(
-        PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
+        @Nullable PageContext<ListMeshesRequest, ListMeshesResponse, Mesh> context,
         ApiFuture<ListMeshesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11815,7 +11841,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListMeshesPage,
           ListMeshesFixedSizeCollection> {
 
-    private ListMeshesFixedSizeCollection(List<ListMeshesPage> pages, int collectionSize) {
+    private ListMeshesFixedSizeCollection(
+        @Nullable List<ListMeshesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11825,7 +11852,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListMeshesFixedSizeCollection createCollection(
-        List<ListMeshesPage> pages, int collectionSize) {
+        @Nullable List<ListMeshesPage> pages, int collectionSize) {
       return new ListMeshesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11863,9 +11890,11 @@ public class NetworkServicesClient implements BackgroundResource {
           ListServiceLbPoliciesPage> {
 
     private ListServiceLbPoliciesPage(
-        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+        @Nullable
+            PageContext<
+                ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
             context,
-        ListServiceLbPoliciesResponse response) {
+        @Nullable ListServiceLbPoliciesResponse response) {
       super(context, response);
     }
 
@@ -11875,15 +11904,19 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListServiceLbPoliciesPage createPage(
-        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+        @Nullable
+            PageContext<
+                ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
             context,
-        ListServiceLbPoliciesResponse response) {
+        @Nullable ListServiceLbPoliciesResponse response) {
       return new ListServiceLbPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceLbPoliciesPage> createPageAsync(
-        PageContext<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
+        @Nullable
+            PageContext<
+                ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse, ServiceLbPolicy>
             context,
         ApiFuture<ListServiceLbPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11899,7 +11932,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListServiceLbPoliciesFixedSizeCollection> {
 
     private ListServiceLbPoliciesFixedSizeCollection(
-        List<ListServiceLbPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceLbPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11909,7 +11942,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListServiceLbPoliciesFixedSizeCollection createCollection(
-        List<ListServiceLbPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceLbPoliciesPage> pages, int collectionSize) {
       return new ListServiceLbPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11947,9 +11980,11 @@ public class NetworkServicesClient implements BackgroundResource {
           ListGatewayRouteViewsPage> {
 
     private ListGatewayRouteViewsPage(
-        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+        @Nullable
+            PageContext<
+                ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
             context,
-        ListGatewayRouteViewsResponse response) {
+        @Nullable ListGatewayRouteViewsResponse response) {
       super(context, response);
     }
 
@@ -11959,15 +11994,19 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGatewayRouteViewsPage createPage(
-        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+        @Nullable
+            PageContext<
+                ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
             context,
-        ListGatewayRouteViewsResponse response) {
+        @Nullable ListGatewayRouteViewsResponse response) {
       return new ListGatewayRouteViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGatewayRouteViewsPage> createPageAsync(
-        PageContext<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
+        @Nullable
+            PageContext<
+                ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse, GatewayRouteView>
             context,
         ApiFuture<ListGatewayRouteViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11983,7 +12022,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListGatewayRouteViewsFixedSizeCollection> {
 
     private ListGatewayRouteViewsFixedSizeCollection(
-        List<ListGatewayRouteViewsPage> pages, int collectionSize) {
+        @Nullable List<ListGatewayRouteViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11993,7 +12032,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListGatewayRouteViewsFixedSizeCollection createCollection(
-        List<ListGatewayRouteViewsPage> pages, int collectionSize) {
+        @Nullable List<ListGatewayRouteViewsPage> pages, int collectionSize) {
       return new ListGatewayRouteViewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12030,8 +12069,9 @@ public class NetworkServicesClient implements BackgroundResource {
           ListMeshRouteViewsPage> {
 
     private ListMeshRouteViewsPage(
-        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
-        ListMeshRouteViewsResponse response) {
+        @Nullable PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>
+            context,
+        @Nullable ListMeshRouteViewsResponse response) {
       super(context, response);
     }
 
@@ -12041,14 +12081,16 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListMeshRouteViewsPage createPage(
-        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
-        ListMeshRouteViewsResponse response) {
+        @Nullable PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>
+            context,
+        @Nullable ListMeshRouteViewsResponse response) {
       return new ListMeshRouteViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMeshRouteViewsPage> createPageAsync(
-        PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView> context,
+        @Nullable PageContext<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, MeshRouteView>
+            context,
         ApiFuture<ListMeshRouteViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -12063,7 +12105,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListMeshRouteViewsFixedSizeCollection> {
 
     private ListMeshRouteViewsFixedSizeCollection(
-        List<ListMeshRouteViewsPage> pages, int collectionSize) {
+        @Nullable List<ListMeshRouteViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12073,7 +12115,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListMeshRouteViewsFixedSizeCollection createCollection(
-        List<ListMeshRouteViewsPage> pages, int collectionSize) {
+        @Nullable List<ListMeshRouteViewsPage> pages, int collectionSize) {
       return new ListMeshRouteViewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12110,8 +12152,9 @@ public class NetworkServicesClient implements BackgroundResource {
           ListAgentGatewaysPage> {
 
     private ListAgentGatewaysPage(
-        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
-        ListAgentGatewaysResponse response) {
+        @Nullable PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>
+            context,
+        @Nullable ListAgentGatewaysResponse response) {
       super(context, response);
     }
 
@@ -12121,14 +12164,16 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListAgentGatewaysPage createPage(
-        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
-        ListAgentGatewaysResponse response) {
+        @Nullable PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>
+            context,
+        @Nullable ListAgentGatewaysResponse response) {
       return new ListAgentGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAgentGatewaysPage> createPageAsync(
-        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
+        @Nullable PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>
+            context,
         ApiFuture<ListAgentGatewaysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -12143,7 +12188,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListAgentGatewaysFixedSizeCollection> {
 
     private ListAgentGatewaysFixedSizeCollection(
-        List<ListAgentGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListAgentGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12153,7 +12198,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListAgentGatewaysFixedSizeCollection createCollection(
-        List<ListAgentGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListAgentGatewaysPage> pages, int collectionSize) {
       return new ListAgentGatewaysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12187,8 +12232,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -12198,14 +12243,14 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -12219,7 +12264,8 @@ public class NetworkServicesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12229,7 +12275,7 @@ public class NetworkServicesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

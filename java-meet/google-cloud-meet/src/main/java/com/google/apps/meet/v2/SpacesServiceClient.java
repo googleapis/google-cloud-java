@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -191,7 +192,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SpacesServiceClient implements BackgroundResource {
-  private final SpacesServiceSettings settings;
+  private final @Nullable SpacesServiceSettings settings;
   private final SpacesServiceStub stub;
 
   /** Constructs an instance of SpacesServiceClient with default settings. */
@@ -231,7 +232,7 @@ public class SpacesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SpacesServiceSettings getSettings() {
+  public final @Nullable SpacesServiceSettings getSettings() {
     return settings;
   }
 
@@ -352,7 +353,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Space getSpace(SpaceName name) {
+  public final Space getSpace(@Nullable SpaceName name) {
     GetSpaceRequest request =
         GetSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpace(request);
@@ -582,7 +583,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void endActiveConference(SpaceName name) {
+  public final void endActiveConference(@Nullable SpaceName name) {
     EndActiveConferenceRequest request =
         EndActiveConferenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())

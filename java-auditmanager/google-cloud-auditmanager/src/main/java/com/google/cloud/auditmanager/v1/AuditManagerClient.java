@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -313,7 +314,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AuditManagerClient implements BackgroundResource {
-  private final AuditManagerSettings settings;
+  private final @Nullable AuditManagerSettings settings;
   private final AuditManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -360,7 +361,7 @@ public class AuditManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AuditManagerSettings getSettings() {
+  public final @Nullable AuditManagerSettings getSettings() {
     return settings;
   }
 
@@ -767,7 +768,8 @@ public class AuditManagerClient implements BackgroundResource {
    * @param parent Required. The parent scope for which to list the reports.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAuditReportsPagedResponse listAuditReports(EnrollmentStatusScopeName parent) {
+  public final ListAuditReportsPagedResponse listAuditReports(
+      @Nullable EnrollmentStatusScopeName parent) {
     ListAuditReportsRequest request =
         ListAuditReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -798,7 +800,7 @@ public class AuditManagerClient implements BackgroundResource {
    * @param parent Required. The parent scope for which to list the reports.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAuditReportsPagedResponse listAuditReports(LocationName parent) {
+  public final ListAuditReportsPagedResponse listAuditReports(@Nullable LocationName parent) {
     ListAuditReportsRequest request =
         ListAuditReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -965,7 +967,7 @@ public class AuditManagerClient implements BackgroundResource {
    *     folders/{folder}/locations/{location}/auditReports/{audit_report}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AuditReport getAuditReport(AuditReportName name) {
+  public final AuditReport getAuditReport(@Nullable AuditReportName name) {
     GetAuditReportRequest request =
         GetAuditReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAuditReport(request);
@@ -1091,7 +1093,7 @@ public class AuditManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResourceEnrollmentStatus getResourceEnrollmentStatus(
-      ResourceEnrollmentStatusName name) {
+      @Nullable ResourceEnrollmentStatusName name) {
     GetResourceEnrollmentStatusRequest request =
         GetResourceEnrollmentStatusRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1223,7 +1225,7 @@ public class AuditManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceEnrollmentStatusesPagedResponse listResourceEnrollmentStatuses(
-      EnrollmentStatusScopeName parent) {
+      @Nullable EnrollmentStatusScopeName parent) {
     ListResourceEnrollmentStatusesRequest request =
         ListResourceEnrollmentStatusesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1408,7 +1410,7 @@ public class AuditManagerClient implements BackgroundResource {
    *     folders/{folder}/locations/{location}/standards/{standard}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListControlsPagedResponse listControls(StandardName parent) {
+  public final ListControlsPagedResponse listControls(@Nullable StandardName parent) {
     ListControlsRequest request =
         ListControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1791,8 +1793,9 @@ public class AuditManagerClient implements BackgroundResource {
           ListAuditReportsRequest, ListAuditReportsResponse, AuditReport, ListAuditReportsPage> {
 
     private ListAuditReportsPage(
-        PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport> context,
-        ListAuditReportsResponse response) {
+        @Nullable PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport>
+            context,
+        @Nullable ListAuditReportsResponse response) {
       super(context, response);
     }
 
@@ -1802,14 +1805,16 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListAuditReportsPage createPage(
-        PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport> context,
-        ListAuditReportsResponse response) {
+        @Nullable PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport>
+            context,
+        @Nullable ListAuditReportsResponse response) {
       return new ListAuditReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAuditReportsPage> createPageAsync(
-        PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport> context,
+        @Nullable PageContext<ListAuditReportsRequest, ListAuditReportsResponse, AuditReport>
+            context,
         ApiFuture<ListAuditReportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1824,7 +1829,7 @@ public class AuditManagerClient implements BackgroundResource {
           ListAuditReportsFixedSizeCollection> {
 
     private ListAuditReportsFixedSizeCollection(
-        List<ListAuditReportsPage> pages, int collectionSize) {
+        @Nullable List<ListAuditReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1834,7 +1839,7 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListAuditReportsFixedSizeCollection createCollection(
-        List<ListAuditReportsPage> pages, int collectionSize) {
+        @Nullable List<ListAuditReportsPage> pages, int collectionSize) {
       return new ListAuditReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1876,12 +1881,13 @@ public class AuditManagerClient implements BackgroundResource {
           ListResourceEnrollmentStatusesPage> {
 
     private ListResourceEnrollmentStatusesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceEnrollmentStatusesRequest,
                 ListResourceEnrollmentStatusesResponse,
                 ResourceEnrollmentStatus>
             context,
-        ListResourceEnrollmentStatusesResponse response) {
+        @Nullable ListResourceEnrollmentStatusesResponse response) {
       super(context, response);
     }
 
@@ -1891,18 +1897,20 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListResourceEnrollmentStatusesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceEnrollmentStatusesRequest,
                 ListResourceEnrollmentStatusesResponse,
                 ResourceEnrollmentStatus>
             context,
-        ListResourceEnrollmentStatusesResponse response) {
+        @Nullable ListResourceEnrollmentStatusesResponse response) {
       return new ListResourceEnrollmentStatusesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceEnrollmentStatusesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceEnrollmentStatusesRequest,
                 ListResourceEnrollmentStatusesResponse,
                 ResourceEnrollmentStatus>
@@ -1921,7 +1929,7 @@ public class AuditManagerClient implements BackgroundResource {
           ListResourceEnrollmentStatusesFixedSizeCollection> {
 
     private ListResourceEnrollmentStatusesFixedSizeCollection(
-        List<ListResourceEnrollmentStatusesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceEnrollmentStatusesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1931,7 +1939,7 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListResourceEnrollmentStatusesFixedSizeCollection createCollection(
-        List<ListResourceEnrollmentStatusesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceEnrollmentStatusesPage> pages, int collectionSize) {
       return new ListResourceEnrollmentStatusesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1964,8 +1972,8 @@ public class AuditManagerClient implements BackgroundResource {
       extends AbstractPage<ListControlsRequest, ListControlsResponse, Control, ListControlsPage> {
 
     private ListControlsPage(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
-        ListControlsResponse response) {
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable ListControlsResponse response) {
       super(context, response);
     }
 
@@ -1975,14 +1983,14 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListControlsPage createPage(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
-        ListControlsResponse response) {
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable ListControlsResponse response) {
       return new ListControlsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListControlsPage> createPageAsync(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
         ApiFuture<ListControlsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1996,7 +2004,8 @@ public class AuditManagerClient implements BackgroundResource {
           ListControlsPage,
           ListControlsFixedSizeCollection> {
 
-    private ListControlsFixedSizeCollection(List<ListControlsPage> pages, int collectionSize) {
+    private ListControlsFixedSizeCollection(
+        @Nullable List<ListControlsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2006,7 +2015,7 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListControlsFixedSizeCollection createCollection(
-        List<ListControlsPage> pages, int collectionSize) {
+        @Nullable List<ListControlsPage> pages, int collectionSize) {
       return new ListControlsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2040,8 +2049,8 @@ public class AuditManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2051,14 +2060,14 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2072,7 +2081,8 @@ public class AuditManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2082,7 +2092,7 @@ public class AuditManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

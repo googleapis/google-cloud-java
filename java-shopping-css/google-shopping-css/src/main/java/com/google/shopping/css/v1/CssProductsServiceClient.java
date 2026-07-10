@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,7 +166,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CssProductsServiceClient implements BackgroundResource {
-  private final CssProductsServiceSettings settings;
+  private final @Nullable CssProductsServiceSettings settings;
   private final CssProductsServiceStub stub;
 
   /** Constructs an instance of CssProductsServiceClient with default settings. */
@@ -205,7 +206,7 @@ public class CssProductsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CssProductsServiceSettings getSettings() {
+  public final @Nullable CssProductsServiceSettings getSettings() {
     return settings;
   }
 
@@ -237,7 +238,7 @@ public class CssProductsServiceClient implements BackgroundResource {
    *     `accounts/{account}/cssProducts/{css_product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CssProduct getCssProduct(CssProductName name) {
+  public final CssProduct getCssProduct(@Nullable CssProductName name) {
     GetCssProductRequest request =
         GetCssProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCssProduct(request);
@@ -361,7 +362,7 @@ public class CssProductsServiceClient implements BackgroundResource {
    *     accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCssProductsPagedResponse listCssProducts(AccountName parent) {
+  public final ListCssProductsPagedResponse listCssProducts(@Nullable AccountName parent) {
     ListCssProductsRequest request =
         ListCssProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -582,8 +583,8 @@ public class CssProductsServiceClient implements BackgroundResource {
           ListCssProductsRequest, ListCssProductsResponse, CssProduct, ListCssProductsPage> {
 
     private ListCssProductsPage(
-        PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
-        ListCssProductsResponse response) {
+        @Nullable PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
+        @Nullable ListCssProductsResponse response) {
       super(context, response);
     }
 
@@ -593,14 +594,14 @@ public class CssProductsServiceClient implements BackgroundResource {
 
     @Override
     protected ListCssProductsPage createPage(
-        PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
-        ListCssProductsResponse response) {
+        @Nullable PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
+        @Nullable ListCssProductsResponse response) {
       return new ListCssProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCssProductsPage> createPageAsync(
-        PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
+        @Nullable PageContext<ListCssProductsRequest, ListCssProductsResponse, CssProduct> context,
         ApiFuture<ListCssProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -615,7 +616,7 @@ public class CssProductsServiceClient implements BackgroundResource {
           ListCssProductsFixedSizeCollection> {
 
     private ListCssProductsFixedSizeCollection(
-        List<ListCssProductsPage> pages, int collectionSize) {
+        @Nullable List<ListCssProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -625,7 +626,7 @@ public class CssProductsServiceClient implements BackgroundResource {
 
     @Override
     protected ListCssProductsFixedSizeCollection createCollection(
-        List<ListCssProductsPage> pages, int collectionSize) {
+        @Nullable List<ListCssProductsPage> pages, int collectionSize) {
       return new ListCssProductsFixedSizeCollection(pages, collectionSize);
     }
   }

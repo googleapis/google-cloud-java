@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1537,7 +1538,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ContactCenterInsightsClient implements BackgroundResource {
-  private final ContactCenterInsightsSettings settings;
+  private final @Nullable ContactCenterInsightsSettings settings;
   private final ContactCenterInsightsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1585,7 +1586,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ContactCenterInsightsSettings getSettings() {
+  public final @Nullable ContactCenterInsightsSettings getSettings() {
     return settings;
   }
 
@@ -1643,7 +1644,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(
-      LocationName parent, Conversation conversation, String conversationId) {
+      @Nullable LocationName parent, Conversation conversation, String conversationId) {
     CreateConversationRequest request =
         CreateConversationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1996,7 +1997,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the conversation to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -2123,7 +2124,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the conversation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(LocationName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable LocationName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2304,7 +2305,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the conversation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversation(ConversationName name) {
+  public final void deleteConversation(@Nullable ConversationName name) {
     DeleteConversationRequest request =
         DeleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2436,7 +2437,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Analysis, CreateAnalysisOperationMetadata> createAnalysisAsync(
-      ConversationName parent, Analysis analysis) {
+      @Nullable ConversationName parent, Analysis analysis) {
     CreateAnalysisRequest request =
         CreateAnalysisRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2604,7 +2605,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the analysis to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Analysis getAnalysis(AnalysisName name) {
+  public final Analysis getAnalysis(@Nullable AnalysisName name) {
     GetAnalysisRequest request =
         GetAnalysisRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnalysis(request);
@@ -2730,7 +2731,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the analyses.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnalysesPagedResponse listAnalyses(ConversationName parent) {
+  public final ListAnalysesPagedResponse listAnalyses(@Nullable ConversationName parent) {
     ListAnalysesRequest request =
         ListAnalysesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2913,7 +2914,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the analysis to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAnalysis(AnalysisName name) {
+  public final void deleteAnalysis(@Nullable AnalysisName name) {
     DeleteAnalysisRequest request =
         DeleteAnalysisRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAnalysis(request);
@@ -3044,7 +3045,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkAnalyzeConversationsResponse, BulkAnalyzeConversationsMetadata>
-      bulkAnalyzeConversationsAsync(LocationName parent, String filter, float analysisPercentage) {
+      bulkAnalyzeConversationsAsync(
+          @Nullable LocationName parent, String filter, float analysisPercentage) {
     BulkAnalyzeConversationsRequest request =
         BulkAnalyzeConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3227,7 +3229,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>
-      bulkDeleteConversationsAsync(LocationName parent, String filter) {
+      bulkDeleteConversationsAsync(@Nullable LocationName parent, String filter) {
     BulkDeleteConversationsRequest request =
         BulkDeleteConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3398,7 +3400,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<IngestConversationsResponse, IngestConversationsMetadata>
-      ingestConversationsAsync(LocationName parent) {
+      ingestConversationsAsync(@Nullable LocationName parent) {
     IngestConversationsRequest request =
         IngestConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3566,7 +3568,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportInsightsDataResponse, ExportInsightsDataMetadata>
-      exportInsightsDataAsync(LocationName parent) {
+      exportInsightsDataAsync(@Nullable LocationName parent) {
     ExportInsightsDataRequest request =
         ExportInsightsDataRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3727,7 +3729,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<IssueModel, CreateIssueModelMetadata> createIssueModelAsync(
-      LocationName parent, IssueModel issueModel) {
+      @Nullable LocationName parent, IssueModel issueModel) {
     CreateIssueModelRequest request =
         CreateIssueModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3975,7 +3977,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the issue model to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IssueModel getIssueModel(IssueModelName name) {
+  public final IssueModel getIssueModel(@Nullable IssueModelName name) {
     GetIssueModelRequest request =
         GetIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIssueModel(request);
@@ -4088,7 +4090,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the issue model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIssueModelsResponse listIssueModels(LocationName parent) {
+  public final ListIssueModelsResponse listIssueModels(@Nullable LocationName parent) {
     ListIssueModelsRequest request =
         ListIssueModelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4205,7 +4207,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteIssueModelMetadata> deleteIssueModelAsync(
-      IssueModelName name) {
+      @Nullable IssueModelName name) {
     DeleteIssueModelRequest request =
         DeleteIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteIssueModelAsync(request);
@@ -4352,7 +4354,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployIssueModelResponse, DeployIssueModelMetadata>
-      deployIssueModelAsync(IssueModelName name) {
+      deployIssueModelAsync(@Nullable IssueModelName name) {
     DeployIssueModelRequest request =
         DeployIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deployIssueModelAsync(request);
@@ -4507,7 +4509,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeployIssueModelResponse, UndeployIssueModelMetadata>
-      undeployIssueModelAsync(IssueModelName name) {
+      undeployIssueModelAsync(@Nullable IssueModelName name) {
     UndeployIssueModelRequest request =
         UndeployIssueModelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4664,7 +4666,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportIssueModelResponse, ExportIssueModelMetadata>
-      exportIssueModelAsync(IssueModelName name) {
+      exportIssueModelAsync(@Nullable IssueModelName name) {
     ExportIssueModelRequest request =
         ExportIssueModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return exportIssueModelAsync(request);
@@ -4814,7 +4816,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportIssueModelResponse, ImportIssueModelMetadata>
-      importIssueModelAsync(LocationName parent) {
+      importIssueModelAsync(@Nullable LocationName parent) {
     ImportIssueModelRequest request =
         ImportIssueModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4968,7 +4970,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the issue to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Issue getIssue(IssueName name) {
+  public final Issue getIssue(@Nullable IssueName name) {
     GetIssueRequest request =
         GetIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIssue(request);
@@ -5082,7 +5084,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the issue.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIssuesResponse listIssues(IssueModelName parent) {
+  public final ListIssuesResponse listIssues(@Nullable IssueModelName parent) {
     ListIssuesRequest request =
         ListIssuesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listIssues(request);
@@ -5285,7 +5287,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the issue to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteIssue(IssueName name) {
+  public final void deleteIssue(@Nullable IssueName name) {
     DeleteIssueRequest request =
         DeleteIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIssue(request);
@@ -5402,7 +5404,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CalculateIssueModelStatsResponse calculateIssueModelStats(
-      IssueModelName issueModel) {
+      @Nullable IssueModelName issueModel) {
     CalculateIssueModelStatsRequest request =
         CalculateIssueModelStatsRequest.newBuilder()
             .setIssueModel(issueModel == null ? null : issueModel.toString())
@@ -5529,7 +5531,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param phraseMatcher Required. The phrase matcher resource to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PhraseMatcher createPhraseMatcher(LocationName parent, PhraseMatcher phraseMatcher) {
+  public final PhraseMatcher createPhraseMatcher(
+      @Nullable LocationName parent, PhraseMatcher phraseMatcher) {
     CreatePhraseMatcherRequest request =
         CreatePhraseMatcherRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5657,7 +5660,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the phrase matcher to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PhraseMatcher getPhraseMatcher(PhraseMatcherName name) {
+  public final PhraseMatcher getPhraseMatcher(@Nullable PhraseMatcherName name) {
     GetPhraseMatcherRequest request =
         GetPhraseMatcherRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPhraseMatcher(request);
@@ -5775,7 +5778,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the phrase matcher.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPhraseMatchersPagedResponse listPhraseMatchers(LocationName parent) {
+  public final ListPhraseMatchersPagedResponse listPhraseMatchers(@Nullable LocationName parent) {
     ListPhraseMatchersRequest request =
         ListPhraseMatchersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5949,7 +5952,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the phrase matcher to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePhraseMatcher(PhraseMatcherName name) {
+  public final void deletePhraseMatcher(@Nullable PhraseMatcherName name) {
     DeletePhraseMatcherRequest request =
         DeletePhraseMatcherRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6163,7 +6166,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param location Required. The location of the conversations.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CalculateStatsResponse calculateStats(LocationName location) {
+  public final CalculateStatsResponse calculateStats(@Nullable LocationName location) {
     CalculateStatsRequest request =
         CalculateStatsRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -6282,7 +6285,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the settings resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
+  public final Settings getSettings(@Nullable SettingsName name) {
     GetSettingsRequest request =
         GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
@@ -6489,7 +6492,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param analysisRule Required. The analysis rule resource to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnalysisRule createAnalysisRule(LocationName parent, AnalysisRule analysisRule) {
+  public final AnalysisRule createAnalysisRule(
+      @Nullable LocationName parent, AnalysisRule analysisRule) {
     CreateAnalysisRuleRequest request =
         CreateAnalysisRuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6615,7 +6619,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the AnalysisRule to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnalysisRule getAnalysisRule(AnalysisRuleName name) {
+  public final AnalysisRule getAnalysisRule(@Nullable AnalysisRuleName name) {
     GetAnalysisRuleRequest request =
         GetAnalysisRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnalysisRule(request);
@@ -6731,7 +6735,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the analysis rules.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnalysisRulesPagedResponse listAnalysisRules(LocationName parent) {
+  public final ListAnalysisRulesPagedResponse listAnalysisRules(@Nullable LocationName parent) {
     ListAnalysisRulesRequest request =
         ListAnalysisRulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6996,7 +7000,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the analysis rule to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAnalysisRule(AnalysisRuleName name) {
+  public final void deleteAnalysisRule(@Nullable AnalysisRuleName name) {
     DeleteAnalysisRuleRequest request =
         DeleteAnalysisRuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7112,7 +7116,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the encryption spec resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EncryptionSpec getEncryptionSpec(EncryptionSpecName name) {
+  public final EncryptionSpec getEncryptionSpec(@Nullable EncryptionSpecName name) {
     GetEncryptionSpecRequest request =
         GetEncryptionSpecRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7372,7 +7376,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param view Required. The view resource to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final View createView(LocationName parent, View view) {
+  public final View createView(@Nullable LocationName parent, View view) {
     CreateViewRequest request =
         CreateViewRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7494,7 +7498,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the view to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final View getView(ViewName name) {
+  public final View getView(@Nullable ViewName name) {
     GetViewRequest request =
         GetViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getView(request);
@@ -7608,7 +7612,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the views.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListViewsPagedResponse listViews(LocationName parent) {
+  public final ListViewsPagedResponse listViews(@Nullable LocationName parent) {
     ListViewsRequest request =
         ListViewsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listViews(request);
@@ -7859,7 +7863,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the view to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteView(ViewName name) {
+  public final void deleteView(@Nullable ViewName name) {
     DeleteViewRequest request =
         DeleteViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteView(request);
@@ -8081,7 +8085,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QaQuestion createQaQuestion(
-      QaScorecardRevisionName parent, QaQuestion qaQuestion, String qaQuestionId) {
+      @Nullable QaScorecardRevisionName parent, QaQuestion qaQuestion, String qaQuestionId) {
     CreateQaQuestionRequest request =
         CreateQaQuestionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8227,7 +8231,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaQuestion to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QaQuestion getQaQuestion(QaQuestionName name) {
+  public final QaQuestion getQaQuestion(@Nullable QaQuestionName name) {
     GetQaQuestionRequest request =
         GetQaQuestionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQaQuestion(request);
@@ -8462,7 +8466,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaQuestion to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQaQuestion(QaQuestionName name) {
+  public final void deleteQaQuestion(@Nullable QaQuestionName name) {
     DeleteQaQuestionRequest request =
         DeleteQaQuestionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteQaQuestion(request);
@@ -8595,7 +8599,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the questions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQaQuestionsPagedResponse listQaQuestions(QaScorecardRevisionName parent) {
+  public final ListQaQuestionsPagedResponse listQaQuestions(
+      @Nullable QaScorecardRevisionName parent) {
     ListQaQuestionsRequest request =
         ListQaQuestionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8783,7 +8788,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QaScorecard createQaScorecard(
-      LocationName parent, QaScorecard qaScorecard, String qaScorecardId) {
+      @Nullable LocationName parent, QaScorecard qaScorecard, String qaScorecardId) {
     CreateQaScorecardRequest request =
         CreateQaScorecardRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8919,7 +8924,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaScorecard to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QaScorecard getQaScorecard(QaScorecardName name) {
+  public final QaScorecard getQaScorecard(@Nullable QaScorecardName name) {
     GetQaScorecardRequest request =
         GetQaScorecardRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQaScorecard(request);
@@ -9131,7 +9136,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaScorecard to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQaScorecard(QaScorecardName name) {
+  public final void deleteQaScorecard(@Nullable QaScorecardName name) {
     DeleteQaScorecardRequest request =
         DeleteQaScorecardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9251,7 +9256,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the scorecards.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQaScorecardsPagedResponse listQaScorecards(LocationName parent) {
+  public final ListQaScorecardsPagedResponse listQaScorecards(@Nullable LocationName parent) {
     ListQaScorecardsRequest request =
         ListQaScorecardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9432,7 +9437,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QaScorecardRevision createQaScorecardRevision(
-      QaScorecardName parent,
+      @Nullable QaScorecardName parent,
       QaScorecardRevision qaScorecardRevision,
       String qaScorecardRevisionId) {
     CreateQaScorecardRevisionRequest request =
@@ -9574,7 +9579,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaScorecardRevision to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QaScorecardRevision getQaScorecardRevision(QaScorecardRevisionName name) {
+  public final QaScorecardRevision getQaScorecardRevision(@Nullable QaScorecardRevisionName name) {
     GetQaScorecardRevisionRequest request =
         GetQaScorecardRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9714,7 +9719,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final OperationFuture<TuneQaScorecardRevisionResponse, TuneQaScorecardRevisionMetadata>
       tuneQaScorecardRevisionAsync(
-          QaScorecardRevisionName parent, String filter, boolean validateOnly) {
+          @Nullable QaScorecardRevisionName parent, String filter, boolean validateOnly) {
     TuneQaScorecardRevisionRequest request =
         TuneQaScorecardRevisionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10038,7 +10043,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the QaScorecardRevision to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQaScorecardRevision(QaScorecardRevisionName name) {
+  public final void deleteQaScorecardRevision(@Nullable QaScorecardRevisionName name) {
     DeleteQaScorecardRevisionRequest request =
         DeleteQaScorecardRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10170,7 +10175,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListQaScorecardRevisionsPagedResponse listQaScorecardRevisions(
-      QaScorecardName parent) {
+      @Nullable QaScorecardName parent) {
     ListQaScorecardRevisionsRequest request =
         ListQaScorecardRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10354,7 +10359,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FeedbackLabel createFeedbackLabel(
-      ConversationName parent, FeedbackLabel feedbackLabel, String feedbackLabelId) {
+      @Nullable ConversationName parent, FeedbackLabel feedbackLabel, String feedbackLabelId) {
     CreateFeedbackLabelRequest request =
         CreateFeedbackLabelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10502,7 +10507,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of the feedback labels.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeedbackLabelsPagedResponse listFeedbackLabels(ConversationName parent) {
+  public final ListFeedbackLabelsPagedResponse listFeedbackLabels(
+      @Nullable ConversationName parent) {
     ListFeedbackLabelsRequest request =
         ListFeedbackLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10690,7 +10696,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the feedback label to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeedbackLabel getFeedbackLabel(FeedbackLabelName name) {
+  public final FeedbackLabel getFeedbackLabel(@Nullable FeedbackLabelName name) {
     GetFeedbackLabelRequest request =
         GetFeedbackLabelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeedbackLabel(request);
@@ -10910,7 +10916,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param name Required. The name of the feedback label to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFeedbackLabel(FeedbackLabelName name) {
+  public final void deleteFeedbackLabel(@Nullable FeedbackLabelName name) {
     DeleteFeedbackLabelRequest request =
         DeleteFeedbackLabelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11038,7 +11044,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @param parent Required. The parent resource of all feedback labels per project.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAllFeedbackLabelsPagedResponse listAllFeedbackLabels(LocationName parent) {
+  public final ListAllFeedbackLabelsPagedResponse listAllFeedbackLabels(
+      @Nullable LocationName parent) {
     ListAllFeedbackLabelsRequest request =
         ListAllFeedbackLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -11214,7 +11221,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkUploadFeedbackLabelsResponse, BulkUploadFeedbackLabelsMetadata>
-      bulkUploadFeedbackLabelsAsync(LocationName parent) {
+      bulkUploadFeedbackLabelsAsync(@Nullable LocationName parent) {
     BulkUploadFeedbackLabelsRequest request =
         BulkUploadFeedbackLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -11376,7 +11383,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final OperationFuture<
           BulkDownloadFeedbackLabelsResponse, BulkDownloadFeedbackLabelsMetadata>
-      bulkDownloadFeedbackLabelsAsync(LocationName parent) {
+      bulkDownloadFeedbackLabelsAsync(@Nullable LocationName parent) {
     BulkDownloadFeedbackLabelsRequest request =
         BulkDownloadFeedbackLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -11587,8 +11594,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -11598,14 +11606,16 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11620,7 +11630,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11630,7 +11640,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11663,8 +11673,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
       extends AbstractPage<ListAnalysesRequest, ListAnalysesResponse, Analysis, ListAnalysesPage> {
 
     private ListAnalysesPage(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
-        ListAnalysesResponse response) {
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable ListAnalysesResponse response) {
       super(context, response);
     }
 
@@ -11674,14 +11684,14 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysesPage createPage(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
-        ListAnalysesResponse response) {
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable ListAnalysesResponse response) {
       return new ListAnalysesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnalysesPage> createPageAsync(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
         ApiFuture<ListAnalysesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11695,7 +11705,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAnalysesPage,
           ListAnalysesFixedSizeCollection> {
 
-    private ListAnalysesFixedSizeCollection(List<ListAnalysesPage> pages, int collectionSize) {
+    private ListAnalysesFixedSizeCollection(
+        @Nullable List<ListAnalysesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11705,7 +11716,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysesFixedSizeCollection createCollection(
-        List<ListAnalysesPage> pages, int collectionSize) {
+        @Nullable List<ListAnalysesPage> pages, int collectionSize) {
       return new ListAnalysesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11742,8 +11753,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListPhraseMatchersPage> {
 
     private ListPhraseMatchersPage(
-        PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher> context,
-        ListPhraseMatchersResponse response) {
+        @Nullable PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher>
+            context,
+        @Nullable ListPhraseMatchersResponse response) {
       super(context, response);
     }
 
@@ -11753,14 +11765,16 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListPhraseMatchersPage createPage(
-        PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher> context,
-        ListPhraseMatchersResponse response) {
+        @Nullable PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher>
+            context,
+        @Nullable ListPhraseMatchersResponse response) {
       return new ListPhraseMatchersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPhraseMatchersPage> createPageAsync(
-        PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher> context,
+        @Nullable PageContext<ListPhraseMatchersRequest, ListPhraseMatchersResponse, PhraseMatcher>
+            context,
         ApiFuture<ListPhraseMatchersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11775,7 +11789,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListPhraseMatchersFixedSizeCollection> {
 
     private ListPhraseMatchersFixedSizeCollection(
-        List<ListPhraseMatchersPage> pages, int collectionSize) {
+        @Nullable List<ListPhraseMatchersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11785,7 +11799,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListPhraseMatchersFixedSizeCollection createCollection(
-        List<ListPhraseMatchersPage> pages, int collectionSize) {
+        @Nullable List<ListPhraseMatchersPage> pages, int collectionSize) {
       return new ListPhraseMatchersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11822,8 +11836,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAnalysisRulesPage> {
 
     private ListAnalysisRulesPage(
-        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
-        ListAnalysisRulesResponse response) {
+        @Nullable PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule>
+            context,
+        @Nullable ListAnalysisRulesResponse response) {
       super(context, response);
     }
 
@@ -11833,14 +11848,16 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysisRulesPage createPage(
-        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
-        ListAnalysisRulesResponse response) {
+        @Nullable PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule>
+            context,
+        @Nullable ListAnalysisRulesResponse response) {
       return new ListAnalysisRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnalysisRulesPage> createPageAsync(
-        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
+        @Nullable PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule>
+            context,
         ApiFuture<ListAnalysisRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11855,7 +11872,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAnalysisRulesFixedSizeCollection> {
 
     private ListAnalysisRulesFixedSizeCollection(
-        List<ListAnalysisRulesPage> pages, int collectionSize) {
+        @Nullable List<ListAnalysisRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11865,7 +11882,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysisRulesFixedSizeCollection createCollection(
-        List<ListAnalysisRulesPage> pages, int collectionSize) {
+        @Nullable List<ListAnalysisRulesPage> pages, int collectionSize) {
       return new ListAnalysisRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11892,8 +11909,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
       extends AbstractPage<ListViewsRequest, ListViewsResponse, View, ListViewsPage> {
 
     private ListViewsPage(
-        PageContext<ListViewsRequest, ListViewsResponse, View> context,
-        ListViewsResponse response) {
+        @Nullable PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        @Nullable ListViewsResponse response) {
       super(context, response);
     }
 
@@ -11903,14 +11920,14 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListViewsPage createPage(
-        PageContext<ListViewsRequest, ListViewsResponse, View> context,
-        ListViewsResponse response) {
+        @Nullable PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        @Nullable ListViewsResponse response) {
       return new ListViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListViewsPage> createPageAsync(
-        PageContext<ListViewsRequest, ListViewsResponse, View> context,
+        @Nullable PageContext<ListViewsRequest, ListViewsResponse, View> context,
         ApiFuture<ListViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11920,7 +11937,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListViewsRequest, ListViewsResponse, View, ListViewsPage, ListViewsFixedSizeCollection> {
 
-    private ListViewsFixedSizeCollection(List<ListViewsPage> pages, int collectionSize) {
+    private ListViewsFixedSizeCollection(@Nullable List<ListViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11930,7 +11947,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListViewsFixedSizeCollection createCollection(
-        List<ListViewsPage> pages, int collectionSize) {
+        @Nullable List<ListViewsPage> pages, int collectionSize) {
       return new ListViewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11964,8 +11981,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion, ListQaQuestionsPage> {
 
     private ListQaQuestionsPage(
-        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
-        ListQaQuestionsResponse response) {
+        @Nullable PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        @Nullable ListQaQuestionsResponse response) {
       super(context, response);
     }
 
@@ -11975,14 +11992,14 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaQuestionsPage createPage(
-        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
-        ListQaQuestionsResponse response) {
+        @Nullable PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        @Nullable ListQaQuestionsResponse response) {
       return new ListQaQuestionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQaQuestionsPage> createPageAsync(
-        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        @Nullable PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
         ApiFuture<ListQaQuestionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11997,7 +12014,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaQuestionsFixedSizeCollection> {
 
     private ListQaQuestionsFixedSizeCollection(
-        List<ListQaQuestionsPage> pages, int collectionSize) {
+        @Nullable List<ListQaQuestionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12007,7 +12024,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaQuestionsFixedSizeCollection createCollection(
-        List<ListQaQuestionsPage> pages, int collectionSize) {
+        @Nullable List<ListQaQuestionsPage> pages, int collectionSize) {
       return new ListQaQuestionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12041,8 +12058,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard, ListQaScorecardsPage> {
 
     private ListQaScorecardsPage(
-        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
-        ListQaScorecardsResponse response) {
+        @Nullable PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard>
+            context,
+        @Nullable ListQaScorecardsResponse response) {
       super(context, response);
     }
 
@@ -12052,14 +12070,16 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaScorecardsPage createPage(
-        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
-        ListQaScorecardsResponse response) {
+        @Nullable PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard>
+            context,
+        @Nullable ListQaScorecardsResponse response) {
       return new ListQaScorecardsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQaScorecardsPage> createPageAsync(
-        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
+        @Nullable PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard>
+            context,
         ApiFuture<ListQaScorecardsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -12074,7 +12094,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaScorecardsFixedSizeCollection> {
 
     private ListQaScorecardsFixedSizeCollection(
-        List<ListQaScorecardsPage> pages, int collectionSize) {
+        @Nullable List<ListQaScorecardsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12084,7 +12104,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaScorecardsFixedSizeCollection createCollection(
-        List<ListQaScorecardsPage> pages, int collectionSize) {
+        @Nullable List<ListQaScorecardsPage> pages, int collectionSize) {
       return new ListQaScorecardsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12125,12 +12145,13 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaScorecardRevisionsPage> {
 
     private ListQaScorecardRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListQaScorecardRevisionsRequest,
                 ListQaScorecardRevisionsResponse,
                 QaScorecardRevision>
             context,
-        ListQaScorecardRevisionsResponse response) {
+        @Nullable ListQaScorecardRevisionsResponse response) {
       super(context, response);
     }
 
@@ -12140,18 +12161,20 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaScorecardRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListQaScorecardRevisionsRequest,
                 ListQaScorecardRevisionsResponse,
                 QaScorecardRevision>
             context,
-        ListQaScorecardRevisionsResponse response) {
+        @Nullable ListQaScorecardRevisionsResponse response) {
       return new ListQaScorecardRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQaScorecardRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListQaScorecardRevisionsRequest,
                 ListQaScorecardRevisionsResponse,
                 QaScorecardRevision>
@@ -12170,7 +12193,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListQaScorecardRevisionsFixedSizeCollection> {
 
     private ListQaScorecardRevisionsFixedSizeCollection(
-        List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12180,7 +12203,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListQaScorecardRevisionsFixedSizeCollection createCollection(
-        List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
       return new ListQaScorecardRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12217,8 +12240,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListFeedbackLabelsPage> {
 
     private ListFeedbackLabelsPage(
-        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
-        ListFeedbackLabelsResponse response) {
+        @Nullable PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        @Nullable ListFeedbackLabelsResponse response) {
       super(context, response);
     }
 
@@ -12228,14 +12252,16 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListFeedbackLabelsPage createPage(
-        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
-        ListFeedbackLabelsResponse response) {
+        @Nullable PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        @Nullable ListFeedbackLabelsResponse response) {
       return new ListFeedbackLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeedbackLabelsPage> createPageAsync(
-        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
+        @Nullable PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel>
+            context,
         ApiFuture<ListFeedbackLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -12250,7 +12276,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListFeedbackLabelsFixedSizeCollection> {
 
     private ListFeedbackLabelsFixedSizeCollection(
-        List<ListFeedbackLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListFeedbackLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12260,7 +12286,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListFeedbackLabelsFixedSizeCollection createCollection(
-        List<ListFeedbackLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListFeedbackLabelsPage> pages, int collectionSize) {
       return new ListFeedbackLabelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -12298,9 +12324,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAllFeedbackLabelsPage> {
 
     private ListAllFeedbackLabelsPage(
-        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+        @Nullable
+            PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
             context,
-        ListAllFeedbackLabelsResponse response) {
+        @Nullable ListAllFeedbackLabelsResponse response) {
       super(context, response);
     }
 
@@ -12310,15 +12337,17 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAllFeedbackLabelsPage createPage(
-        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+        @Nullable
+            PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
             context,
-        ListAllFeedbackLabelsResponse response) {
+        @Nullable ListAllFeedbackLabelsResponse response) {
       return new ListAllFeedbackLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAllFeedbackLabelsPage> createPageAsync(
-        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+        @Nullable
+            PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
             context,
         ApiFuture<ListAllFeedbackLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -12334,7 +12363,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
           ListAllFeedbackLabelsFixedSizeCollection> {
 
     private ListAllFeedbackLabelsFixedSizeCollection(
-        List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -12344,7 +12373,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
     @Override
     protected ListAllFeedbackLabelsFixedSizeCollection createCollection(
-        List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
       return new ListAllFeedbackLabelsFixedSizeCollection(pages, collectionSize);
     }
   }
