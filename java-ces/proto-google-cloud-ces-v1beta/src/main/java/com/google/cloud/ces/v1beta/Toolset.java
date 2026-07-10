@@ -483,6 +483,61 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TIMEOUT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Duration timeout_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeout() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTimeout() {
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -500,7 +555,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -552,7 +607,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -703,7 +758,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasToolFakeConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -764,10 +819,10 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getUpdateTime());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
@@ -789,8 +844,11 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, description_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getToolFakeConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(12, getTimeout());
     }
     getUnknownFields().writeTo(output);
   }
@@ -807,10 +865,10 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
@@ -838,8 +896,11 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, description_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getToolFakeConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getTimeout());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -859,6 +920,10 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasTimeout() != other.hasTimeout()) return false;
+    if (hasTimeout()) {
+      if (!getTimeout().equals(other.getTimeout())) return false;
+    }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -904,6 +969,10 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasTimeout()) {
+      hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeout().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1077,6 +1146,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetTimeoutFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetToolFakeConfigFieldBuilder();
@@ -1099,6 +1169,11 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       name_ = "";
       displayName_ = "";
       description_ = "";
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1165,23 +1240,27 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.etag_ = etag_;
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.executionType_ = executionType_;
+        result.etag_ = etag_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.executionType_ = executionType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.toolFakeConfig_ =
             toolFakeConfigBuilder_ == null ? toolFakeConfig_ : toolFakeConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1227,6 +1306,9 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasTimeout()) {
+        mergeTimeout(other.getTimeout());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1235,7 +1317,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.executionType_ != 0) {
@@ -1307,20 +1389,20 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
@@ -1347,7 +1429,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
             case 72:
               {
                 executionType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 72
             case 82:
@@ -1360,9 +1442,15 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetToolFakeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(internalGetTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2478,6 +2566,223 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.Duration timeout_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        timeoutBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timeout field is set.
+     */
+    public boolean hasTimeout() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timeout.
+     */
+    public com.google.protobuf.Duration getTimeout() {
+      if (timeoutBuilder_ == null) {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      } else {
+        return timeoutBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timeout_ = value;
+      } else {
+        timeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (timeoutBuilder_ == null) {
+        timeout_ = builderForValue.build();
+      } else {
+        timeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
+        } else {
+          timeout_ = value;
+        }
+      } else {
+        timeoutBuilder_.mergeFrom(value);
+      }
+      if (timeout_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTimeout() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetTimeoutFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+      if (timeoutBuilder_ != null) {
+        return timeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the toolset execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+     * `ASYNCHRONOUS` toolsets.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetTimeoutFieldBuilder() {
+      if (timeoutBuilder_ == null) {
+        timeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTimeout(), getParentForChildren(), isClean());
+        timeout_ = null;
+      }
+      return timeoutBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -2499,7 +2804,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2545,7 +2850,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2567,7 +2872,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2585,7 +2890,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2596,7 +2901,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2614,7 +2919,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2636,7 +2941,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2711,7 +3016,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2757,7 +3062,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2779,7 +3084,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2797,7 +3102,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2808,7 +3113,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2826,7 +3131,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2848,7 +3153,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2973,7 +3278,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2993,7 +3298,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3018,7 +3323,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3059,7 +3364,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExecutionTypeValue(int value) {
       executionType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3102,7 +3407,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       executionType_ = value.getNumber();
       onChanged();
       return this;
@@ -3122,7 +3427,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       executionType_ = 0;
       onChanged();
       return this;
@@ -3149,7 +3454,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * @return Whether the toolFakeConfig field is set.
      */
     public boolean hasToolFakeConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3195,7 +3500,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3218,7 +3523,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3236,7 +3541,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeToolFakeConfig(com.google.cloud.ces.v1beta.ToolFakeConfig value) {
       if (toolFakeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && toolFakeConfig_ != null
             && toolFakeConfig_ != com.google.cloud.ces.v1beta.ToolFakeConfig.getDefaultInstance()) {
           getToolFakeConfigBuilder().mergeFrom(value);
@@ -3247,7 +3552,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
         toolFakeConfigBuilder_.mergeFrom(value);
       }
       if (toolFakeConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3265,7 +3570,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearToolFakeConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       toolFakeConfig_ = null;
       if (toolFakeConfigBuilder_ != null) {
         toolFakeConfigBuilder_.dispose();
@@ -3287,7 +3592,7 @@ public final class Toolset extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.ToolFakeConfig.Builder getToolFakeConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetToolFakeConfigFieldBuilder().getBuilder();
     }

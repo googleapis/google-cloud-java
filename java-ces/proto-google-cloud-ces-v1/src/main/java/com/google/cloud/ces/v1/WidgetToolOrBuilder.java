@@ -233,5 +233,48 @@ public interface WidgetToolOrBuilder
    */
   com.google.cloud.ces.v1.WidgetTool.DataMappingOrBuilder getDataMappingOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the textResponseConfig field is set.
+   */
+  boolean hasTextResponseConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The textResponseConfig.
+   */
+  com.google.cloud.ces.v1.WidgetTool.TextResponseConfig getTextResponseConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.WidgetTool.TextResponseConfigOrBuilder getTextResponseConfigOrBuilder();
+
   com.google.cloud.ces.v1.WidgetTool.InputCase getInputCase();
 }

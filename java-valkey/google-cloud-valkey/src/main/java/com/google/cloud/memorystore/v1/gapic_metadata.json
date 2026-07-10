@@ -25,6 +25,9 @@
             "ExportBackup": {
               "methods": ["exportBackupAsync", "exportBackupOperationCallable", "exportBackupCallable"]
             },
+            "FinishMigration": {
+              "methods": ["finishMigrationAsync", "finishMigrationAsync", "finishMigrationAsync", "finishMigrationOperationCallable", "finishMigrationCallable"]
+            },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
             },
@@ -57,6 +60,9 @@
             },
             "RescheduleMaintenance": {
               "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]
+            },
+            "StartMigration": {
+              "methods": ["startMigrationAsync", "startMigrationOperationCallable", "startMigrationCallable"]
             },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
