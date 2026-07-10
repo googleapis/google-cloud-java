@@ -2311,7 +2311,7 @@ public class OsConfigServiceClient implements BackgroundResource {
             PageContext<
                 PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
             context,
-        @Nullable PatchJobs.ListPatchJobsResponse response) {
+        PatchJobs.@Nullable ListPatchJobsResponse response) {
       super(context, response);
     }
 
@@ -2325,7 +2325,7 @@ public class OsConfigServiceClient implements BackgroundResource {
             PageContext<
                 PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
             context,
-        @Nullable PatchJobs.ListPatchJobsResponse response) {
+        PatchJobs.@Nullable ListPatchJobsResponse response) {
       return new ListPatchJobsPage(context, response);
     }
 
@@ -2407,7 +2407,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 PatchJobs.ListPatchJobInstanceDetailsResponse,
                 PatchJobs.PatchJobInstanceDetails>
             context,
-        @Nullable PatchJobs.ListPatchJobInstanceDetailsResponse response) {
+        PatchJobs.@Nullable ListPatchJobInstanceDetailsResponse response) {
       super(context, response);
     }
 
@@ -2423,7 +2423,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 PatchJobs.ListPatchJobInstanceDetailsResponse,
                 PatchJobs.PatchJobInstanceDetails>
             context,
-        @Nullable PatchJobs.ListPatchJobInstanceDetailsResponse response) {
+        PatchJobs.@Nullable ListPatchJobInstanceDetailsResponse response) {
       return new ListPatchJobInstanceDetailsPage(context, response);
     }
 
@@ -2506,7 +2506,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 PatchDeployments.ListPatchDeploymentsResponse,
                 PatchDeployments.PatchDeployment>
             context,
-        @Nullable PatchDeployments.ListPatchDeploymentsResponse response) {
+        PatchDeployments.@Nullable ListPatchDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -2522,7 +2522,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 PatchDeployments.ListPatchDeploymentsResponse,
                 PatchDeployments.PatchDeployment>
             context,
-        @Nullable PatchDeployments.ListPatchDeploymentsResponse response) {
+        PatchDeployments.@Nullable ListPatchDeploymentsResponse response) {
       return new ListPatchDeploymentsPage(context, response);
     }
 
@@ -2605,7 +2605,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 GuestPolicies.ListGuestPoliciesResponse,
                 GuestPolicies.GuestPolicy>
             context,
-        @Nullable GuestPolicies.ListGuestPoliciesResponse response) {
+        GuestPolicies.@Nullable ListGuestPoliciesResponse response) {
       super(context, response);
     }
 
@@ -2621,7 +2621,7 @@ public class OsConfigServiceClient implements BackgroundResource {
                 GuestPolicies.ListGuestPoliciesResponse,
                 GuestPolicies.GuestPolicy>
             context,
-        @Nullable GuestPolicies.ListGuestPoliciesResponse response) {
+        GuestPolicies.@Nullable ListGuestPoliciesResponse response) {
       return new ListGuestPoliciesPage(context, response);
     }
 

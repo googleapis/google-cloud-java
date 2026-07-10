@@ -1306,7 +1306,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
             PageContext<
                 Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
             context,
-        @Nullable Service.ListAttestorsResponse response) {
+        Service.@Nullable ListAttestorsResponse response) {
       super(context, response);
     }
 
@@ -1320,7 +1320,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
             PageContext<
                 Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
             context,
-        @Nullable Service.ListAttestorsResponse response) {
+        Service.@Nullable ListAttestorsResponse response) {
       return new ListAttestorsPage(context, response);
     }
 
