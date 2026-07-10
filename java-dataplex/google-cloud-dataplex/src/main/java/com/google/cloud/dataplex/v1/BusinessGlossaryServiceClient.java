@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -506,7 +507,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BusinessGlossaryServiceClient implements BackgroundResource {
-  private final BusinessGlossaryServiceSettings settings;
+  private final @Nullable BusinessGlossaryServiceSettings settings;
   private final BusinessGlossaryServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -555,7 +556,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BusinessGlossaryServiceSettings getSettings() {
+  public final @Nullable BusinessGlossaryServiceSettings getSettings() {
     return settings;
   }
 
@@ -610,7 +611,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Glossary, OperationMetadata> createGlossaryAsync(
-      LocationName parent, Glossary glossary, String glossaryId) {
+      @Nullable LocationName parent, Glossary glossary, String glossaryId) {
     CreateGlossaryRequest request =
         CreateGlossaryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -911,7 +912,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGlossaryAsync(GlossaryName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGlossaryAsync(
+      @Nullable GlossaryName name) {
     DeleteGlossaryRequest request =
         DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGlossaryAsync(request);
@@ -1064,7 +1066,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Glossary getGlossary(GlossaryName name) {
+  public final Glossary getGlossary(@Nullable GlossaryName name) {
     GetGlossaryRequest request =
         GetGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossary(request);
@@ -1182,7 +1184,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossariesPagedResponse listGlossaries(LocationName parent) {
+  public final ListGlossariesPagedResponse listGlossaries(@Nullable LocationName parent) {
     ListGlossariesRequest request =
         ListGlossariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1365,7 +1367,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GlossaryCategory createGlossaryCategory(
-      GlossaryName parent, GlossaryCategory category, String categoryId) {
+      @Nullable GlossaryName parent, GlossaryCategory category, String categoryId) {
     CreateGlossaryCategoryRequest request =
         CreateGlossaryCategoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1602,7 +1604,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/categories/{category_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGlossaryCategory(GlossaryCategoryName name) {
+  public final void deleteGlossaryCategory(@Nullable GlossaryCategoryName name) {
     DeleteGlossaryCategoryRequest request =
         DeleteGlossaryCategoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1736,7 +1738,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/categories/{category_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GlossaryCategory getGlossaryCategory(GlossaryCategoryName name) {
+  public final GlossaryCategory getGlossaryCategory(@Nullable GlossaryCategoryName name) {
     GetGlossaryCategoryRequest request =
         GetGlossaryCategoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1867,7 +1869,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     is the Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossaryCategoriesPagedResponse listGlossaryCategories(GlossaryName parent) {
+  public final ListGlossaryCategoriesPagedResponse listGlossaryCategories(
+      @Nullable GlossaryName parent) {
     ListGlossaryCategoriesRequest request =
         ListGlossaryCategoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2054,7 +2057,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GlossaryTerm createGlossaryTerm(
-      GlossaryName parent, GlossaryTerm term, String termId) {
+      @Nullable GlossaryName parent, GlossaryTerm term, String termId) {
     CreateGlossaryTermRequest request =
         CreateGlossaryTermRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2281,7 +2284,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/terms/{term_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGlossaryTerm(GlossaryTermName name) {
+  public final void deleteGlossaryTerm(@Nullable GlossaryTermName name) {
     DeleteGlossaryTermRequest request =
         DeleteGlossaryTermRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2406,7 +2409,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/terms/{term_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GlossaryTerm getGlossaryTerm(GlossaryTermName name) {
+  public final GlossaryTerm getGlossaryTerm(@Nullable GlossaryTermName name) {
     GetGlossaryTermRequest request =
         GetGlossaryTermRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossaryTerm(request);
@@ -2531,7 +2534,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
    *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossaryTermsPagedResponse listGlossaryTerms(GlossaryName parent) {
+  public final ListGlossaryTermsPagedResponse listGlossaryTerms(@Nullable GlossaryName parent) {
     ListGlossaryTermsRequest request =
         ListGlossaryTermsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3144,8 +3147,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossariesRequest, ListGlossariesResponse, Glossary, ListGlossariesPage> {
 
     private ListGlossariesPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       super(context, response);
     }
 
@@ -3155,14 +3158,14 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesPage createPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       return new ListGlossariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossariesPage> createPageAsync(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
         ApiFuture<ListGlossariesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3176,7 +3179,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossariesPage,
           ListGlossariesFixedSizeCollection> {
 
-    private ListGlossariesFixedSizeCollection(List<ListGlossariesPage> pages, int collectionSize) {
+    private ListGlossariesFixedSizeCollection(
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3186,7 +3190,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesFixedSizeCollection createCollection(
-        List<ListGlossariesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       return new ListGlossariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3224,9 +3228,11 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossaryCategoriesPage> {
 
     private ListGlossaryCategoriesPage(
-        PageContext<ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
+        @Nullable
+            PageContext<
+                ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
             context,
-        ListGlossaryCategoriesResponse response) {
+        @Nullable ListGlossaryCategoriesResponse response) {
       super(context, response);
     }
 
@@ -3236,15 +3242,19 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryCategoriesPage createPage(
-        PageContext<ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
+        @Nullable
+            PageContext<
+                ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
             context,
-        ListGlossaryCategoriesResponse response) {
+        @Nullable ListGlossaryCategoriesResponse response) {
       return new ListGlossaryCategoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossaryCategoriesPage> createPageAsync(
-        PageContext<ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
+        @Nullable
+            PageContext<
+                ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse, GlossaryCategory>
             context,
         ApiFuture<ListGlossaryCategoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3260,7 +3270,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossaryCategoriesFixedSizeCollection> {
 
     private ListGlossaryCategoriesFixedSizeCollection(
-        List<ListGlossaryCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryCategoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3270,7 +3280,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryCategoriesFixedSizeCollection createCollection(
-        List<ListGlossaryCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryCategoriesPage> pages, int collectionSize) {
       return new ListGlossaryCategoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3307,8 +3317,9 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossaryTermsPage> {
 
     private ListGlossaryTermsPage(
-        PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm> context,
-        ListGlossaryTermsResponse response) {
+        @Nullable PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm>
+            context,
+        @Nullable ListGlossaryTermsResponse response) {
       super(context, response);
     }
 
@@ -3318,14 +3329,16 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryTermsPage createPage(
-        PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm> context,
-        ListGlossaryTermsResponse response) {
+        @Nullable PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm>
+            context,
+        @Nullable ListGlossaryTermsResponse response) {
       return new ListGlossaryTermsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossaryTermsPage> createPageAsync(
-        PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm> context,
+        @Nullable PageContext<ListGlossaryTermsRequest, ListGlossaryTermsResponse, GlossaryTerm>
+            context,
         ApiFuture<ListGlossaryTermsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3340,7 +3353,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListGlossaryTermsFixedSizeCollection> {
 
     private ListGlossaryTermsFixedSizeCollection(
-        List<ListGlossaryTermsPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryTermsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3350,7 +3363,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryTermsFixedSizeCollection createCollection(
-        List<ListGlossaryTermsPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryTermsPage> pages, int collectionSize) {
       return new ListGlossaryTermsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3384,8 +3397,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3395,14 +3408,14 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3416,7 +3429,8 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3426,7 +3440,7 @@ public class BusinessGlossaryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

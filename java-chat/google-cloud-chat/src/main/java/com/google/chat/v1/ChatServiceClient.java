@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1071,7 +1072,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ChatServiceClient implements BackgroundResource {
-  private final ChatServiceSettings settings;
+  private final @Nullable ChatServiceSettings settings;
   private final ChatServiceStub stub;
 
   /** Constructs an instance of ChatServiceClient with default settings. */
@@ -1110,7 +1111,7 @@ public class ChatServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ChatServiceSettings getSettings() {
+  public final @Nullable ChatServiceSettings getSettings() {
     return settings;
   }
 
@@ -1192,7 +1193,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Message createMessage(SpaceName parent, Message message, String messageId) {
+  public final Message createMessage(
+      @Nullable SpaceName parent, Message message, String messageId) {
     CreateMessageRequest request =
         CreateMessageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1470,7 +1472,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMessagesPagedResponse listMessages(SpaceName parent) {
+  public final ListMessagesPagedResponse listMessages(@Nullable SpaceName parent) {
     ListMessagesRequest request =
         ListMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1753,7 +1755,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: spaces/{space}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembershipsPagedResponse listMemberships(SpaceName parent) {
+  public final ListMembershipsPagedResponse listMemberships(@Nullable SpaceName parent) {
     ListMembershipsRequest request =
         ListMembershipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2063,7 +2065,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     is the email of the Google Chat user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership getMembership(MembershipName name) {
+  public final Membership getMembership(@Nullable MembershipName name) {
     GetMembershipRequest request =
         GetMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMembership(request);
@@ -2266,7 +2268,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Message getMessage(MessageName name) {
+  public final Message getMessage(@Nullable MessageName name) {
     GetMessageRequest request =
         GetMessageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMessage(request);
@@ -2619,7 +2621,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMessage(MessageName name) {
+  public final void deleteMessage(@Nullable MessageName name) {
     DeleteMessageRequest request =
         DeleteMessageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteMessage(request);
@@ -2795,7 +2797,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attachment getAttachment(AttachmentName name) {
+  public final Attachment getAttachment(@Nullable AttachmentName name) {
     GetAttachmentRequest request =
         GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAttachment(request);
@@ -3427,7 +3429,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Space getSpace(SpaceName name) {
+  public final Space getSpace(@Nullable SpaceName name) {
     GetSpaceRequest request =
         GetSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpace(request);
@@ -4202,7 +4204,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSpace(SpaceName name) {
+  public final void deleteSpace(@Nullable SpaceName name) {
     DeleteSpaceRequest request =
         DeleteSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSpace(request);
@@ -4769,7 +4771,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     `users/app`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership createMembership(SpaceName parent, Membership membership) {
+  public final Membership createMembership(@Nullable SpaceName parent, Membership membership) {
     CreateMembershipRequest request =
         CreateMembershipRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5213,7 +5215,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership deleteMembership(MembershipName name) {
+  public final Membership deleteMembership(@Nullable MembershipName name) {
     DeleteMembershipRequest request =
         DeleteMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMembership(request);
@@ -5433,7 +5435,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @param reaction Required. The reaction to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Reaction createReaction(MessageName parent, Reaction reaction) {
+  public final Reaction createReaction(@Nullable MessageName parent, Reaction reaction) {
     CreateReactionRequest request =
         CreateReactionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5597,7 +5599,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReactionsPagedResponse listReactions(MessageName parent) {
+  public final ListReactionsPagedResponse listReactions(@Nullable MessageName parent) {
     ListReactionsRequest request =
         ListReactionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5816,7 +5818,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReaction(ReactionName name) {
+  public final void deleteReaction(@Nullable ReactionName name) {
     DeleteReactionRequest request =
         DeleteReactionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteReaction(request);
@@ -6091,7 +6093,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     emoji.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomEmoji getCustomEmoji(CustomEmojiName name) {
+  public final CustomEmoji getCustomEmoji(@Nullable CustomEmojiName name) {
     GetCustomEmojiRequest request =
         GetCustomEmojiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomEmoji(request);
@@ -6446,7 +6448,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     emoji.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomEmoji(CustomEmojiName name) {
+  public final void deleteCustomEmoji(@Nullable CustomEmojiName name) {
     DeleteCustomEmojiRequest request =
         DeleteCustomEmojiRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6622,7 +6624,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: users/{user}/spaces/{space}/spaceReadState
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpaceReadState getSpaceReadState(SpaceReadStateName name) {
+  public final SpaceReadState getSpaceReadState(@Nullable SpaceReadStateName name) {
     GetSpaceReadStateRequest request =
         GetSpaceReadStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6923,7 +6925,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: users/{user}/spaces/{space}/threads/{thread}/threadReadState
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ThreadReadState getThreadReadState(ThreadReadStateName name) {
+  public final ThreadReadState getThreadReadState(@Nullable ThreadReadStateName name) {
     GetThreadReadStateRequest request =
         GetThreadReadStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7115,7 +7117,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/spaceEvents/{spaceEvent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpaceEvent getSpaceEvent(SpaceEventName name) {
+  public final SpaceEvent getSpaceEvent(@Nullable SpaceEventName name) {
     GetSpaceEventRequest request =
         GetSpaceEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpaceEvent(request);
@@ -7413,7 +7415,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSpaceEventsPagedResponse listSpaceEvents(SpaceName parent, String filter) {
+  public final ListSpaceEventsPagedResponse listSpaceEvents(
+      @Nullable SpaceName parent, String filter) {
     ListSpaceEventsRequest request =
         ListSpaceEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7774,7 +7777,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpaceNotificationSetting getSpaceNotificationSetting(
-      SpaceNotificationSettingName name) {
+      @Nullable SpaceNotificationSettingName name) {
     GetSpaceNotificationSettingRequest request =
         GetSpaceNotificationSettingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8055,7 +8058,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @param section Required. The section to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Section createSection(UserName parent, Section section) {
+  public final Section createSection(@Nullable UserName parent, Section section) {
     CreateSectionRequest request =
         CreateSectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8216,7 +8219,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSection(SectionName name) {
+  public final void deleteSection(@Nullable SectionName name) {
     DeleteSectionRequest request =
         DeleteSectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSection(request);
@@ -8494,7 +8497,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSectionsPagedResponse listSections(UserName parent) {
+  public final ListSectionsPagedResponse listSections(@Nullable UserName parent) {
     ListSectionsRequest request =
         ListSectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8789,7 +8792,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSectionItemsPagedResponse listSectionItems(SectionName parent) {
+  public final ListSectionItemsPagedResponse listSectionItems(@Nullable SectionName parent) {
     ListSectionItemsRequest request =
         ListSectionItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9017,7 +9020,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MoveSectionItemResponse moveSectionItem(
-      SectionItemName name, SectionName targetSection) {
+      @Nullable SectionItemName name, @Nullable SectionName targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9060,7 +9063,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MoveSectionItemResponse moveSectionItem(SectionItemName name, String targetSection) {
+  public final MoveSectionItemResponse moveSectionItem(
+      @Nullable SectionItemName name, String targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9103,7 +9107,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MoveSectionItemResponse moveSectionItem(String name, SectionName targetSection) {
+  public final MoveSectionItemResponse moveSectionItem(
+      String name, @Nullable SectionName targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name)
@@ -9287,8 +9292,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListMessagesRequest, ListMessagesResponse, Message, ListMessagesPage> {
 
     private ListMessagesPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       super(context, response);
     }
 
@@ -9298,14 +9303,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesPage createPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       return new ListMessagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessagesPage> createPageAsync(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
         ApiFuture<ListMessagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9319,7 +9324,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
-    private ListMessagesFixedSizeCollection(List<ListMessagesPage> pages, int collectionSize) {
+    private ListMessagesFixedSizeCollection(
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9329,7 +9335,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesFixedSizeCollection createCollection(
-        List<ListMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       return new ListMessagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9363,8 +9369,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListMembershipsRequest, ListMembershipsResponse, Membership, ListMembershipsPage> {
 
     private ListMembershipsPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       super(context, response);
     }
 
@@ -9374,14 +9380,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsPage createPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       return new ListMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipsPage> createPageAsync(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
         ApiFuture<ListMembershipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9396,7 +9402,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListMembershipsFixedSizeCollection> {
 
     private ListMembershipsFixedSizeCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9406,7 +9412,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsFixedSizeCollection createCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       return new ListMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9437,8 +9443,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListSpacesRequest, ListSpacesResponse, Space, ListSpacesPage> {
 
     private ListSpacesPage(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
-        ListSpacesResponse response) {
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable ListSpacesResponse response) {
       super(context, response);
     }
 
@@ -9448,14 +9454,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpacesPage createPage(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
-        ListSpacesResponse response) {
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable ListSpacesResponse response) {
       return new ListSpacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpacesPage> createPageAsync(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
         ApiFuture<ListSpacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9469,7 +9475,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpacesPage,
           ListSpacesFixedSizeCollection> {
 
-    private ListSpacesFixedSizeCollection(List<ListSpacesPage> pages, int collectionSize) {
+    private ListSpacesFixedSizeCollection(
+        @Nullable List<ListSpacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9479,7 +9486,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpacesFixedSizeCollection createCollection(
-        List<ListSpacesPage> pages, int collectionSize) {
+        @Nullable List<ListSpacesPage> pages, int collectionSize) {
       return new ListSpacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9512,8 +9519,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<SearchSpacesRequest, SearchSpacesResponse, Space, SearchSpacesPage> {
 
     private SearchSpacesPage(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
-        SearchSpacesResponse response) {
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable SearchSpacesResponse response) {
       super(context, response);
     }
 
@@ -9523,14 +9530,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected SearchSpacesPage createPage(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
-        SearchSpacesResponse response) {
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable SearchSpacesResponse response) {
       return new SearchSpacesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchSpacesPage> createPageAsync(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
         ApiFuture<SearchSpacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9544,7 +9551,8 @@ public class ChatServiceClient implements BackgroundResource {
           SearchSpacesPage,
           SearchSpacesFixedSizeCollection> {
 
-    private SearchSpacesFixedSizeCollection(List<SearchSpacesPage> pages, int collectionSize) {
+    private SearchSpacesFixedSizeCollection(
+        @Nullable List<SearchSpacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9554,7 +9562,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected SearchSpacesFixedSizeCollection createCollection(
-        List<SearchSpacesPage> pages, int collectionSize) {
+        @Nullable List<SearchSpacesPage> pages, int collectionSize) {
       return new SearchSpacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9588,8 +9596,8 @@ public class ChatServiceClient implements BackgroundResource {
           FindGroupChatsRequest, FindGroupChatsResponse, Space, FindGroupChatsPage> {
 
     private FindGroupChatsPage(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
-        FindGroupChatsResponse response) {
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable FindGroupChatsResponse response) {
       super(context, response);
     }
 
@@ -9599,14 +9607,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected FindGroupChatsPage createPage(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
-        FindGroupChatsResponse response) {
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable FindGroupChatsResponse response) {
       return new FindGroupChatsPage(context, response);
     }
 
     @Override
     public ApiFuture<FindGroupChatsPage> createPageAsync(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
         ApiFuture<FindGroupChatsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9620,7 +9628,8 @@ public class ChatServiceClient implements BackgroundResource {
           FindGroupChatsPage,
           FindGroupChatsFixedSizeCollection> {
 
-    private FindGroupChatsFixedSizeCollection(List<FindGroupChatsPage> pages, int collectionSize) {
+    private FindGroupChatsFixedSizeCollection(
+        @Nullable List<FindGroupChatsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9630,7 +9639,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected FindGroupChatsFixedSizeCollection createCollection(
-        List<FindGroupChatsPage> pages, int collectionSize) {
+        @Nullable List<FindGroupChatsPage> pages, int collectionSize) {
       return new FindGroupChatsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9664,8 +9673,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListReactionsRequest, ListReactionsResponse, Reaction, ListReactionsPage> {
 
     private ListReactionsPage(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
-        ListReactionsResponse response) {
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable ListReactionsResponse response) {
       super(context, response);
     }
 
@@ -9675,14 +9684,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListReactionsPage createPage(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
-        ListReactionsResponse response) {
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable ListReactionsResponse response) {
       return new ListReactionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReactionsPage> createPageAsync(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
         ApiFuture<ListReactionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9696,7 +9705,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListReactionsPage,
           ListReactionsFixedSizeCollection> {
 
-    private ListReactionsFixedSizeCollection(List<ListReactionsPage> pages, int collectionSize) {
+    private ListReactionsFixedSizeCollection(
+        @Nullable List<ListReactionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9706,7 +9716,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListReactionsFixedSizeCollection createCollection(
-        List<ListReactionsPage> pages, int collectionSize) {
+        @Nullable List<ListReactionsPage> pages, int collectionSize) {
       return new ListReactionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9740,8 +9750,9 @@ public class ChatServiceClient implements BackgroundResource {
           ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji, ListCustomEmojisPage> {
 
     private ListCustomEmojisPage(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
-        ListCustomEmojisResponse response) {
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
+        @Nullable ListCustomEmojisResponse response) {
       super(context, response);
     }
 
@@ -9751,14 +9762,16 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomEmojisPage createPage(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
-        ListCustomEmojisResponse response) {
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
+        @Nullable ListCustomEmojisResponse response) {
       return new ListCustomEmojisPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomEmojisPage> createPageAsync(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
         ApiFuture<ListCustomEmojisResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9773,7 +9786,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListCustomEmojisFixedSizeCollection> {
 
     private ListCustomEmojisFixedSizeCollection(
-        List<ListCustomEmojisPage> pages, int collectionSize) {
+        @Nullable List<ListCustomEmojisPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9783,7 +9796,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomEmojisFixedSizeCollection createCollection(
-        List<ListCustomEmojisPage> pages, int collectionSize) {
+        @Nullable List<ListCustomEmojisPage> pages, int collectionSize) {
       return new ListCustomEmojisFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9817,8 +9830,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent, ListSpaceEventsPage> {
 
     private ListSpaceEventsPage(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
-        ListSpaceEventsResponse response) {
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable ListSpaceEventsResponse response) {
       super(context, response);
     }
 
@@ -9828,14 +9841,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpaceEventsPage createPage(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
-        ListSpaceEventsResponse response) {
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable ListSpaceEventsResponse response) {
       return new ListSpaceEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpaceEventsPage> createPageAsync(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
         ApiFuture<ListSpaceEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9850,7 +9863,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpaceEventsFixedSizeCollection> {
 
     private ListSpaceEventsFixedSizeCollection(
-        List<ListSpaceEventsPage> pages, int collectionSize) {
+        @Nullable List<ListSpaceEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9860,7 +9873,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpaceEventsFixedSizeCollection createCollection(
-        List<ListSpaceEventsPage> pages, int collectionSize) {
+        @Nullable List<ListSpaceEventsPage> pages, int collectionSize) {
       return new ListSpaceEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9893,8 +9906,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListSectionsRequest, ListSectionsResponse, Section, ListSectionsPage> {
 
     private ListSectionsPage(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
-        ListSectionsResponse response) {
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable ListSectionsResponse response) {
       super(context, response);
     }
 
@@ -9904,14 +9917,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionsPage createPage(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
-        ListSectionsResponse response) {
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable ListSectionsResponse response) {
       return new ListSectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSectionsPage> createPageAsync(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
         ApiFuture<ListSectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9925,7 +9938,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionsPage,
           ListSectionsFixedSizeCollection> {
 
-    private ListSectionsFixedSizeCollection(List<ListSectionsPage> pages, int collectionSize) {
+    private ListSectionsFixedSizeCollection(
+        @Nullable List<ListSectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9935,7 +9949,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionsFixedSizeCollection createCollection(
-        List<ListSectionsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionsPage> pages, int collectionSize) {
       return new ListSectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9969,8 +9983,9 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionItemsRequest, ListSectionItemsResponse, SectionItem, ListSectionItemsPage> {
 
     private ListSectionItemsPage(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
-        ListSectionItemsResponse response) {
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
+        @Nullable ListSectionItemsResponse response) {
       super(context, response);
     }
 
@@ -9980,14 +9995,16 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionItemsPage createPage(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
-        ListSectionItemsResponse response) {
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
+        @Nullable ListSectionItemsResponse response) {
       return new ListSectionItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSectionItemsPage> createPageAsync(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
         ApiFuture<ListSectionItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10002,7 +10019,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionItemsFixedSizeCollection> {
 
     private ListSectionItemsFixedSizeCollection(
-        List<ListSectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10012,7 +10029,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionItemsFixedSizeCollection createCollection(
-        List<ListSectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionItemsPage> pages, int collectionSize) {
       return new ListSectionItemsFixedSizeCollection(pages, collectionSize);
     }
   }

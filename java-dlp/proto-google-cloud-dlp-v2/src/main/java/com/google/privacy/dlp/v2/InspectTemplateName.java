@@ -21,10 +21,13 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -211,7 +214,7 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  public static InspectTemplateName parse(String formattedString) {
+  public static @Nullable InspectTemplateName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -233,6 +236,18 @@ public class InspectTemplateName implements ResourceName {
           matchMap.get("project"), matchMap.get("location"), matchMap.get("inspect_template"));
     }
     throw new ValidationException("InspectTemplateName.parse: formattedString not in valid format");
+  }
+
+  public static List<String> toStringList(List<@Nullable InspectTemplateName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (InspectTemplateName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -277,7 +292,7 @@ public class InspectTemplateName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

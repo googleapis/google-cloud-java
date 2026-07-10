@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -183,7 +184,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MerchantCenterAccountLinkServiceClient implements BackgroundResource {
-  private final MerchantCenterAccountLinkServiceSettings settings;
+  private final @Nullable MerchantCenterAccountLinkServiceSettings settings;
   private final MerchantCenterAccountLinkServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -236,7 +237,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final MerchantCenterAccountLinkServiceSettings getSettings() {
+  public final @Nullable MerchantCenterAccountLinkServiceSettings getSettings() {
     return settings;
   }
 
@@ -287,7 +288,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMerchantCenterAccountLinksResponse listMerchantCenterAccountLinks(
-      CatalogName parent) {
+      @Nullable CatalogName parent) {
     ListMerchantCenterAccountLinksRequest request =
         ListMerchantCenterAccountLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -429,7 +430,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    */
   public final OperationFuture<MerchantCenterAccountLink, CreateMerchantCenterAccountLinkMetadata>
       createMerchantCenterAccountLinkAsync(
-          CatalogName parent, MerchantCenterAccountLink merchantCenterAccountLink) {
+          @Nullable CatalogName parent, MerchantCenterAccountLink merchantCenterAccountLink) {
     CreateMerchantCenterAccountLinkRequest request =
         CreateMerchantCenterAccountLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -613,7 +614,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMerchantCenterAccountLink(MerchantCenterAccountLinkName name) {
+  public final void deleteMerchantCenterAccountLink(@Nullable MerchantCenterAccountLinkName name) {
     DeleteMerchantCenterAccountLinkRequest request =
         DeleteMerchantCenterAccountLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())

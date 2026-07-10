@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -340,7 +341,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudBillingClient implements BackgroundResource {
-  private final CloudBillingSettings settings;
+  private final @Nullable CloudBillingSettings settings;
   private final CloudBillingStub stub;
 
   /** Constructs an instance of CloudBillingClient with default settings. */
@@ -379,7 +380,7 @@ public class CloudBillingClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudBillingSettings getSettings() {
+  public final @Nullable CloudBillingSettings getSettings() {
     return settings;
   }
 
@@ -410,7 +411,7 @@ public class CloudBillingClient implements BackgroundResource {
    *     `billingAccounts/012345-567890-ABCDEF`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BillingAccount getBillingAccount(BillingAccountName name) {
+  public final BillingAccount getBillingAccount(@Nullable BillingAccountName name) {
     GetBillingAccountRequest request =
         GetBillingAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -704,7 +705,7 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BillingAccount updateBillingAccount(
-      BillingAccountName name, BillingAccount account) {
+      @Nullable BillingAccountName name, BillingAccount account) {
     UpdateBillingAccountRequest request =
         UpdateBillingAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1013,7 +1014,8 @@ public class CloudBillingClient implements BackgroundResource {
    *     that you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProjectBillingInfoPagedResponse listProjectBillingInfo(BillingAccountName name) {
+  public final ListProjectBillingInfoPagedResponse listProjectBillingInfo(
+      @Nullable BillingAccountName name) {
     ListProjectBillingInfoRequest request =
         ListProjectBillingInfoRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1192,7 +1194,7 @@ public class CloudBillingClient implements BackgroundResource {
    *     retrieved. For example, `projects/tokyo-rain-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProjectBillingInfo getProjectBillingInfo(ProjectName name) {
+  public final ProjectBillingInfo getProjectBillingInfo(@Nullable ProjectName name) {
     GetProjectBillingInfoRequest request =
         GetProjectBillingInfoRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1498,7 +1500,7 @@ public class CloudBillingClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1625,7 +1627,7 @@ public class CloudBillingClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1764,7 +1766,7 @@ public class CloudBillingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1997,9 +1999,10 @@ public class CloudBillingClient implements BackgroundResource {
           ListBillingAccountsPage> {
 
     private ListBillingAccountsPage(
-        PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
+        @Nullable
+            PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
             context,
-        ListBillingAccountsResponse response) {
+        @Nullable ListBillingAccountsResponse response) {
       super(context, response);
     }
 
@@ -2009,15 +2012,17 @@ public class CloudBillingClient implements BackgroundResource {
 
     @Override
     protected ListBillingAccountsPage createPage(
-        PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
+        @Nullable
+            PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
             context,
-        ListBillingAccountsResponse response) {
+        @Nullable ListBillingAccountsResponse response) {
       return new ListBillingAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBillingAccountsPage> createPageAsync(
-        PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
+        @Nullable
+            PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
             context,
         ApiFuture<ListBillingAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2033,7 +2038,7 @@ public class CloudBillingClient implements BackgroundResource {
           ListBillingAccountsFixedSizeCollection> {
 
     private ListBillingAccountsFixedSizeCollection(
-        List<ListBillingAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListBillingAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2043,7 +2048,7 @@ public class CloudBillingClient implements BackgroundResource {
 
     @Override
     protected ListBillingAccountsFixedSizeCollection createCollection(
-        List<ListBillingAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListBillingAccountsPage> pages, int collectionSize) {
       return new ListBillingAccountsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2082,10 +2087,11 @@ public class CloudBillingClient implements BackgroundResource {
           ListProjectBillingInfoPage> {
 
     private ListProjectBillingInfoPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo>
             context,
-        ListProjectBillingInfoResponse response) {
+        @Nullable ListProjectBillingInfoResponse response) {
       super(context, response);
     }
 
@@ -2095,16 +2101,18 @@ public class CloudBillingClient implements BackgroundResource {
 
     @Override
     protected ListProjectBillingInfoPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo>
             context,
-        ListProjectBillingInfoResponse response) {
+        @Nullable ListProjectBillingInfoResponse response) {
       return new ListProjectBillingInfoPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProjectBillingInfoPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo>
             context,
         ApiFuture<ListProjectBillingInfoResponse> futureResponse) {
@@ -2121,7 +2129,7 @@ public class CloudBillingClient implements BackgroundResource {
           ListProjectBillingInfoFixedSizeCollection> {
 
     private ListProjectBillingInfoFixedSizeCollection(
-        List<ListProjectBillingInfoPage> pages, int collectionSize) {
+        @Nullable List<ListProjectBillingInfoPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2131,7 +2139,7 @@ public class CloudBillingClient implements BackgroundResource {
 
     @Override
     protected ListProjectBillingInfoFixedSizeCollection createCollection(
-        List<ListProjectBillingInfoPage> pages, int collectionSize) {
+        @Nullable List<ListProjectBillingInfoPage> pages, int collectionSize) {
       return new ListProjectBillingInfoFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -158,7 +159,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AutofeedSettingsServiceClient implements BackgroundResource {
-  private final AutofeedSettingsServiceSettings settings;
+  private final @Nullable AutofeedSettingsServiceSettings settings;
   private final AutofeedSettingsServiceStub stub;
 
   /** Constructs an instance of AutofeedSettingsServiceClient with default settings. */
@@ -199,7 +200,7 @@ public class AutofeedSettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AutofeedSettingsServiceSettings getSettings() {
+  public final @Nullable AutofeedSettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -230,7 +231,7 @@ public class AutofeedSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}/autofeedSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AutofeedSettings getAutofeedSettings(AutofeedSettingsName name) {
+  public final AutofeedSettings getAutofeedSettings(@Nullable AutofeedSettingsName name) {
     GetAutofeedSettingsRequest request =
         GetAutofeedSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())

@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -240,7 +241,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FirewallsClient implements BackgroundResource {
-  private final FirewallsSettings settings;
+  private final @Nullable FirewallsSettings settings;
   private final FirewallsStub stub;
 
   /** Constructs an instance of FirewallsClient with default settings. */
@@ -278,7 +279,7 @@ public class FirewallsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FirewallsSettings getSettings() {
+  public final @Nullable FirewallsSettings getSettings() {
     return settings;
   }
 
@@ -1174,7 +1175,8 @@ public class FirewallsClient implements BackgroundResource {
       extends AbstractPage<ListFirewallsRequest, FirewallList, Firewall, ListPage> {
 
     private ListPage(
-        PageContext<ListFirewallsRequest, FirewallList, Firewall> context, FirewallList response) {
+        @Nullable PageContext<ListFirewallsRequest, FirewallList, Firewall> context,
+        @Nullable FirewallList response) {
       super(context, response);
     }
 
@@ -1184,13 +1186,14 @@ public class FirewallsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListFirewallsRequest, FirewallList, Firewall> context, FirewallList response) {
+        @Nullable PageContext<ListFirewallsRequest, FirewallList, Firewall> context,
+        @Nullable FirewallList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListFirewallsRequest, FirewallList, Firewall> context,
+        @Nullable PageContext<ListFirewallsRequest, FirewallList, Firewall> context,
         ApiFuture<FirewallList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1200,7 +1203,7 @@ public class FirewallsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListFirewallsRequest, FirewallList, Firewall, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1209,7 +1212,8 @@ public class FirewallsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

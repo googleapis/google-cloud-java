@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -359,7 +360,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OsConfigServiceClient implements BackgroundResource {
-  private final OsConfigServiceSettings settings;
+  private final @Nullable OsConfigServiceSettings settings;
   private final OsConfigServiceStub stub;
 
   /** Constructs an instance of OsConfigServiceClient with default settings. */
@@ -399,7 +400,7 @@ public class OsConfigServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OsConfigServiceSettings getSettings() {
+  public final @Nullable OsConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -500,7 +501,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @param name Required. Name of the patch in the form `projects/&#42;/patchJobs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PatchJobs.PatchJob getPatchJob(PatchJobName name) {
+  public final PatchJobs.PatchJob getPatchJob(@Nullable PatchJobName name) {
     PatchJobs.GetPatchJobRequest request =
         PatchJobs.GetPatchJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -675,7 +676,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @param parent Required. In the form of `projects/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPatchJobsPagedResponse listPatchJobs(ProjectName parent) {
+  public final ListPatchJobsPagedResponse listPatchJobs(@Nullable ProjectName parent) {
     PatchJobs.ListPatchJobsRequest request =
         PatchJobs.ListPatchJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -846,7 +847,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPatchJobInstanceDetailsPagedResponse listPatchJobInstanceDetails(
-      PatchJobName parent) {
+      @Nullable PatchJobName parent) {
     PatchJobs.ListPatchJobInstanceDetailsRequest request =
         PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1037,7 +1038,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PatchDeployments.PatchDeployment createPatchDeployment(
-      ProjectName parent,
+      @Nullable ProjectName parent,
       PatchDeployments.PatchDeployment patchDeployment,
       String patchDeploymentId) {
     PatchDeployments.CreatePatchDeploymentRequest request =
@@ -1183,7 +1184,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PatchDeployments.PatchDeployment getPatchDeployment(PatchDeploymentName name) {
+  public final PatchDeployments.PatchDeployment getPatchDeployment(
+      @Nullable PatchDeploymentName name) {
     PatchDeployments.GetPatchDeploymentRequest request =
         PatchDeployments.GetPatchDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1302,7 +1304,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent in the form `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPatchDeploymentsPagedResponse listPatchDeployments(ProjectName parent) {
+  public final ListPatchDeploymentsPagedResponse listPatchDeployments(
+      @Nullable ProjectName parent) {
     PatchDeployments.ListPatchDeploymentsRequest request =
         PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1472,7 +1475,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePatchDeployment(PatchDeploymentName name) {
+  public final void deletePatchDeployment(@Nullable PatchDeploymentName name) {
     PatchDeployments.DeletePatchDeploymentRequest request =
         PatchDeployments.DeletePatchDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1686,7 +1689,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PatchDeployments.PatchDeployment pausePatchDeployment(PatchDeploymentName name) {
+  public final PatchDeployments.PatchDeployment pausePatchDeployment(
+      @Nullable PatchDeploymentName name) {
     PatchDeployments.PausePatchDeploymentRequest request =
         PatchDeployments.PausePatchDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1808,7 +1812,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PatchDeployments.PatchDeployment resumePatchDeployment(PatchDeploymentName name) {
+  public final PatchDeployments.PatchDeployment resumePatchDeployment(
+      @Nullable PatchDeploymentName name) {
     PatchDeployments.ResumePatchDeploymentRequest request =
         PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1971,10 +1976,11 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchJobsPage> {
 
     private ListPatchJobsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
             context,
-        PatchJobs.ListPatchJobsResponse response) {
+        @Nullable PatchJobs.ListPatchJobsResponse response) {
       super(context, response);
     }
 
@@ -1984,16 +1990,18 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchJobsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
             context,
-        PatchJobs.ListPatchJobsResponse response) {
+        @Nullable PatchJobs.ListPatchJobsResponse response) {
       return new ListPatchJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPatchJobsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
             context,
         ApiFuture<PatchJobs.ListPatchJobsResponse> futureResponse) {
@@ -2009,7 +2017,8 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchJobsPage,
           ListPatchJobsFixedSizeCollection> {
 
-    private ListPatchJobsFixedSizeCollection(List<ListPatchJobsPage> pages, int collectionSize) {
+    private ListPatchJobsFixedSizeCollection(
+        @Nullable List<ListPatchJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2019,7 +2028,7 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchJobsFixedSizeCollection createCollection(
-        List<ListPatchJobsPage> pages, int collectionSize) {
+        @Nullable List<ListPatchJobsPage> pages, int collectionSize) {
       return new ListPatchJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2061,12 +2070,13 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchJobInstanceDetailsPage> {
 
     private ListPatchJobInstanceDetailsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
                 PatchJobs.ListPatchJobInstanceDetailsResponse,
                 PatchJobs.PatchJobInstanceDetails>
             context,
-        PatchJobs.ListPatchJobInstanceDetailsResponse response) {
+        @Nullable PatchJobs.ListPatchJobInstanceDetailsResponse response) {
       super(context, response);
     }
 
@@ -2076,18 +2086,20 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchJobInstanceDetailsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
                 PatchJobs.ListPatchJobInstanceDetailsResponse,
                 PatchJobs.PatchJobInstanceDetails>
             context,
-        PatchJobs.ListPatchJobInstanceDetailsResponse response) {
+        @Nullable PatchJobs.ListPatchJobInstanceDetailsResponse response) {
       return new ListPatchJobInstanceDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPatchJobInstanceDetailsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
                 PatchJobs.ListPatchJobInstanceDetailsResponse,
                 PatchJobs.PatchJobInstanceDetails>
@@ -2106,7 +2118,7 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchJobInstanceDetailsFixedSizeCollection> {
 
     private ListPatchJobInstanceDetailsFixedSizeCollection(
-        List<ListPatchJobInstanceDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListPatchJobInstanceDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2116,7 +2128,7 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchJobInstanceDetailsFixedSizeCollection createCollection(
-        List<ListPatchJobInstanceDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListPatchJobInstanceDetailsPage> pages, int collectionSize) {
       return new ListPatchJobInstanceDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2157,12 +2169,13 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchDeploymentsPage> {
 
     private ListPatchDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
                 PatchDeployments.ListPatchDeploymentsResponse,
                 PatchDeployments.PatchDeployment>
             context,
-        PatchDeployments.ListPatchDeploymentsResponse response) {
+        @Nullable PatchDeployments.ListPatchDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -2172,18 +2185,20 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
                 PatchDeployments.ListPatchDeploymentsResponse,
                 PatchDeployments.PatchDeployment>
             context,
-        PatchDeployments.ListPatchDeploymentsResponse response) {
+        @Nullable PatchDeployments.ListPatchDeploymentsResponse response) {
       return new ListPatchDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPatchDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
                 PatchDeployments.ListPatchDeploymentsResponse,
                 PatchDeployments.PatchDeployment>
@@ -2202,7 +2217,7 @@ public class OsConfigServiceClient implements BackgroundResource {
           ListPatchDeploymentsFixedSizeCollection> {
 
     private ListPatchDeploymentsFixedSizeCollection(
-        List<ListPatchDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListPatchDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2212,7 +2227,7 @@ public class OsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListPatchDeploymentsFixedSizeCollection createCollection(
-        List<ListPatchDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListPatchDeploymentsPage> pages, int collectionSize) {
       return new ListPatchDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }

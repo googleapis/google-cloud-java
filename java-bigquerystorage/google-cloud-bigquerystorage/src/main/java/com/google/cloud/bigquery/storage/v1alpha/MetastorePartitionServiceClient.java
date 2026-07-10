@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -185,7 +186,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MetastorePartitionServiceClient implements BackgroundResource {
-  private final MetastorePartitionServiceSettings settings;
+  private final @Nullable MetastorePartitionServiceSettings settings;
   private final MetastorePartitionServiceStub stub;
 
   /** Constructs an instance of MetastorePartitionServiceClient with default settings. */
@@ -227,7 +228,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetastorePartitionServiceSettings getSettings() {
+  public final @Nullable MetastorePartitionServiceSettings getSettings() {
     return settings;
   }
 
@@ -462,7 +463,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *     the format of projects/{project}/locations/{location}/datasets/{dataset}/tables/{table}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetastorePartitionsResponse listMetastorePartitions(TableName parent) {
+  public final ListMetastorePartitionsResponse listMetastorePartitions(@Nullable TableName parent) {
     ListMetastorePartitionsRequest request =
         ListMetastorePartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
