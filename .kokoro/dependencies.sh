@@ -48,6 +48,8 @@ function determineMavenOpts() {
 
 export MAVEN_OPTS=$(determineMavenOpts)
 
+install_http_client_snapshot
+
 if [[ -n "${BUILD_SUBDIR}" ]]
 then
   echo "Compiling and building all modules for ${BUILD_SUBDIR}"

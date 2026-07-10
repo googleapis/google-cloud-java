@@ -46,6 +46,20 @@ excluded_modules=(
   'java-iam'
 )
 
+function install_http_client_snapshot {
+  if [ -d "${HOME}/.m2/repository/com/google/http-client/google-http-client-bom/2.1.2-SNAPSHOT" ]; then
+    echo "google-http-client 2.1.2-SNAPSHOT already exists in local cache."
+    return 0
+  fi
+  echo "Installing local snapshot of google-http-java-client (pqc-support-conscrypt branch)..."
+  HTTP_CLIENT_TMP_DIR=$(mktemp -d)
+  git clone --depth 1 --branch pqc-support-conscrypt https://github.com/googleapis/google-http-java-client.git "${HTTP_CLIENT_TMP_DIR}"
+  pushd "${HTTP_CLIENT_TMP_DIR}"
+    mvn install -DskipTests -Dmaven.javadoc.skip=true -Dclirr.skip=true -B -ntp
+  popd
+  rm -rf "${HTTP_CLIENT_TMP_DIR}"
+}
+
 function retry_with_backoff {
   attempts_left=$1
   sleep_seconds=$2

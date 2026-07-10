@@ -31,6 +31,9 @@ scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 ## cd to the parent directory, i.e. the root of the git repo
 cd "${scriptDir}/../.."
 
+source "${scriptDir}/../common.sh"
+install_http_client_snapshot
+
 # Build and install the entire monorepo to local cache (including the under-test java-shared-config)
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
 
