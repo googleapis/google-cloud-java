@@ -1702,7 +1702,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
                 TransferProto.ListTransferJobsResponse,
                 TransferTypes.TransferJob>
             context,
-        @Nullable TransferProto.ListTransferJobsResponse response) {
+        TransferProto.@Nullable ListTransferJobsResponse response) {
       super(context, response);
     }
 
@@ -1718,7 +1718,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
                 TransferProto.ListTransferJobsResponse,
                 TransferTypes.TransferJob>
             context,
-        @Nullable TransferProto.ListTransferJobsResponse response) {
+        TransferProto.@Nullable ListTransferJobsResponse response) {
       return new ListTransferJobsPage(context, response);
     }
 
@@ -1801,7 +1801,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
                 TransferProto.ListAgentPoolsResponse,
                 TransferTypes.AgentPool>
             context,
-        @Nullable TransferProto.ListAgentPoolsResponse response) {
+        TransferProto.@Nullable ListAgentPoolsResponse response) {
       super(context, response);
     }
 
@@ -1817,7 +1817,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
                 TransferProto.ListAgentPoolsResponse,
                 TransferTypes.AgentPool>
             context,
-        @Nullable TransferProto.ListAgentPoolsResponse response) {
+        TransferProto.@Nullable ListAgentPoolsResponse response) {
       return new ListAgentPoolsPage(context, response);
     }
 
