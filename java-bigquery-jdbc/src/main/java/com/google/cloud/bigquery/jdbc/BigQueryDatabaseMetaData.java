@@ -2565,7 +2565,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
-    // Early return for PCNT catalog schemas (containing '.') as they do not support table constraints.
+    // Early return for PCNT catalog schemas (containing '.') as they do not support table
+    // constraints.
     if (schema != null && schema.contains(".")) {
       final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
       signalEndOfData(queue, resultSchemaFields);
