@@ -61,6 +61,26 @@ class BigLakeConfigurationTest {
         BIG_LAKE_CONFIGURATION, BigLakeConfiguration.fromPb(BIG_LAKE_CONFIGURATION_PB));
   }
 
+  @Test
+  void testNullFields() {
+    BigLakeConfiguration configuration = BigLakeConfiguration.newBuilder().build();
+    assertEquals(null, configuration.getConnectionId());
+    assertEquals(null, configuration.getFileFormat());
+    assertEquals(null, configuration.getStorageUri());
+    assertEquals(null, configuration.getTableFormat());
+  }
+
+  @Test
+  void testFromPbWithNullFields() {
+    com.google.api.services.bigquery.model.BigLakeConfiguration pb =
+        new com.google.api.services.bigquery.model.BigLakeConfiguration();
+    BigLakeConfiguration configuration = BigLakeConfiguration.fromPb(pb);
+    assertEquals(null, configuration.getConnectionId());
+    assertEquals(null, configuration.getFileFormat());
+    assertEquals(null, configuration.getStorageUri());
+    assertEquals(null, configuration.getTableFormat());
+  }
+
   private static void assertBigLakeConfiguration(
       BigLakeConfiguration expected, BigLakeConfiguration actual) {
     assertEquals(expected.getConnectionId(), actual.getConnectionId());
