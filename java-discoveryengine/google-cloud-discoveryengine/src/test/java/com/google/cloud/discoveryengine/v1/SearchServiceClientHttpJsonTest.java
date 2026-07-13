@@ -132,6 +132,7 @@ public class SearchServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
@@ -209,6 +210,7 @@ public class SearchServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.search(request);
@@ -271,6 +273,7 @@ public class SearchServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
@@ -348,6 +351,7 @@ public class SearchServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.searchLite(request);
