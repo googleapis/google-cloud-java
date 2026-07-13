@@ -14,58 +14,20 @@
  * limitations under the License.
  */
 
-SELECT PKTABLE_CAT,
-       PKTABLE_SCHEM,
-       PKTABLE_NAME,
-       PRIMARY.column_name        AS PKCOLUMN_NAME,
-       FOREIGN.constraint_catalog AS FKTABLE_CAT,
-       FOREIGN.constraint_schema  AS FKTABLE_SCHEM,
-       FOREIGN.table_name         AS FKTABLE_NAME,
-       FOREIGN.column_name        AS FKCOLUMN_NAME,
-       FOREIGN.ordinal_position   AS KEY_SEQ,
-       NULL                       AS UPDATE_RULE,
-       NULL                       AS DELETE_RULE,
-       FOREIGN.constraint_name    AS FK_NAME,
-       PRIMARY.constraint_name    AS PK_NAME,
-       NULL                       AS DEFERRABILITY
-FROM (SELECT DISTINCT CCU.table_catalog AS PKTABLE_CAT,
-                      CCU.table_schema  AS PKTABLE_SCHEM,
-                      CCU.table_name    AS PKTABLE_NAME,
-                      TC.constraint_catalog,
-                      TC.constraint_schema,
-                      TC.constraint_name,
-                      TC.table_catalog,
-                      TC.table_schema,
-                      TC.table_name,
-                      TC.constraint_type,
-                      KCU.column_name,
-                      KCU.ordinal_position,
-                      KCU.position_in_unique_constraint
-      FROM `%1$s.%2$s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS` TC
-               INNER JOIN
-           `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` KCU
-           USING
-               (constraint_catalog,
-                constraint_schema,
-                constraint_name,
-                table_catalog,
-                table_schema,
-                table_name)
-               INNER JOIN
-           `%1$s.%2$s.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE` CCU
-           USING
-               (constraint_catalog,
-                constraint_schema,
-                constraint_name)
-      WHERE constraint_type = 'FOREIGN KEY') FOREIGN
-         INNER JOIN (SELECT *
-                     FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`
-                     WHERE position_in_unique_constraint IS NULL
-                       AND table_name = ?) PRIMARY
-ON
-    FOREIGN.PKTABLE_CAT = PRIMARY.table_catalog
-    AND FOREIGN.PKTABLE_SCHEM = PRIMARY.table_schema
-    AND FOREIGN.PKTABLE_NAME = PRIMARY.table_name
-    AND FOREIGN.position_in_unique_constraint =
-    PRIMARY.ordinal_position
+SELECT referenced_table_catalog AS PKTABLE_CAT,
+       referenced_table_schema  AS PKTABLE_SCHEM,
+       referenced_table_name    AS PKTABLE_NAME,
+       referenced_column_name   AS PKCOLUMN_NAME,
+       table_catalog            AS FKTABLE_CAT,
+       table_schema             AS FKTABLE_SCHEM,
+       table_name               AS FKTABLE_NAME,
+       column_name              AS FKCOLUMN_NAME,
+       ordinal_position         AS KEY_SEQ,
+       NULL                     AS UPDATE_RULE,
+       NULL                     AS DELETE_RULE,
+       constraint_name          AS FK_NAME,
+       NULL                     AS PK_NAME,
+       NULL                     AS DEFERRABILITY
+FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`
+WHERE referenced_table_name = ?
 ORDER BY FKTABLE_CAT, FKTABLE_SCHEM, FKTABLE_NAME, KEY_SEQ
