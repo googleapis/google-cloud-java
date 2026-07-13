@@ -21,6 +21,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * A cache for bucket metadata (resource and location) used by App-Centric Observability (ACO).
+ *
+ * <p>To prevent blocking the application's critical path, bucket metadata resolution is done
+ * asynchronously. When a cache miss occurs, a placeholder entry is created in the cache with {@code
+ * fetchPending = true}. This prevents concurrent threads from submitting duplicate fetch requests
+ * for the same bucket. Once the asynchronous fetch completes, the cache is updated with the
+ * resolved metadata and {@code fetchPending} is set to {@code false}.
+ */
 final class BucketMetadataCache {
 
   private static final int DEFAULT_CAPACITY = 10000;
@@ -59,6 +68,15 @@ final class BucketMetadataCache {
     }
   }
 
+  /**
+   * Puts bucket metadata into the cache.
+   *
+   * @param bucketName the name of the bucket
+   * @param resource the resource path associated with the bucket
+   * @param location the location of the bucket
+   * @param pending whether a fetch for this bucket's metadata is currently pending (used to prevent
+   *     duplicate background fetches)
+   */
   void put(String bucketName, String resource, String location, boolean pending) {
     lock.lock();
     try {
@@ -68,6 +86,14 @@ final class BucketMetadataCache {
     }
   }
 
+  /**
+   * Puts bucket metadata into the cache using a layout tuple containing resource and location.
+   *
+   * @param bucketName the name of the bucket
+   * @param layout a tuple containing (resource, location)
+   * @param pending whether a fetch for this bucket's metadata is currently pending (used to prevent
+   *     duplicate background fetches)
+   */
   void put(String bucketName, Tuple<String, String> layout, boolean pending) {
     lock.lock();
     try {
@@ -104,6 +130,17 @@ final class BucketMetadataCache {
     }
   }
 
+  /**
+   * Atomically checks if the bucket is present in the cache. If absent, inserts a placeholder
+   * metadata entry with {@code fetchPending = true} and returns {@code true} to signal that a
+   * background fetch task should be initiated.
+   *
+   * @param bucketName the name of the bucket
+   * @param resource the placeholder resource prefix to use until resolved
+   * @param location the placeholder location to use until resolved
+   * @return {@code true} if the entry was absent and placeholder was inserted; {@code false} if the
+   *     entry was already present (meaning a fetch is either pending or completed)
+   */
   boolean putPendingIfAbsent(String bucketName, String resource, String location) {
     lock.lock();
     try {
@@ -120,6 +157,12 @@ final class BucketMetadataCache {
   static final class BucketMetadata {
     final String resource;
     final String location;
+
+    /**
+     * Whether a background metadata fetch is currently pending/in-progress for this bucket (used to
+     * prevent duplicate background fetches). While {@code true}, the resource and location fields
+     * contain temporary placeholder values.
+     */
     final boolean fetchPending;
 
     BucketMetadata(String resource, String location, boolean fetchPending) {
