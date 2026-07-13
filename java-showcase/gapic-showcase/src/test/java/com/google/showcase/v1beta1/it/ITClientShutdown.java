@@ -24,6 +24,7 @@ import com.google.showcase.v1beta1.BlockResponse;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.threeten.bp.Duration;
@@ -143,7 +144,7 @@ class ITClientShutdown {
     // check that everything is properly terminated after close() is called.
     echoClient.close();
 
-    org.awaitility.Awaitility.await()
+    Awaitility.await()
         .atMost(java.time.Duration.ofMillis(DEFAULT_CLIENT_TERMINATION_MS))
         .until(echoClient::isTerminated);
     // The busy-wait time won't be accurate, so account for a bit of buffer

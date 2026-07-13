@@ -84,6 +84,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import org.awaitility.Awaitility;
+import org.awaitility.core.ConditionTimeoutException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -310,7 +311,7 @@ class ITOtelMetrics {
                 return metricData.size() >= NUM_GAX_OTEL_METRICS
                     && areAllGaxMetricsRecorded(metricData);
               });
-    } catch (org.awaitility.core.ConditionTimeoutException e) {
+    } catch (ConditionTimeoutException e) {
       Assertions.fail("Unable to collect all the GAX metrics required for the test");
     }
     return new ArrayList<>(metricReader.collectAllMetrics());
