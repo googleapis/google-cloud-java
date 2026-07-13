@@ -58,7 +58,12 @@ import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.net.URI;
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -1221,9 +1226,9 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
           }
 
           @Override
-          java.io.InputStream readStream(java.io.File file) throws java.io.FileNotFoundException {
-            return new java.io.ByteArrayInputStream(
-                "Google Compute Engine".getBytes(java.nio.charset.StandardCharsets.UTF_8));
+          InputStream readStream(File file) throws FileNotFoundException {
+            return new ByteArrayInputStream(
+                "Google Compute Engine".getBytes(StandardCharsets.UTF_8));
           }
         };
     boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
