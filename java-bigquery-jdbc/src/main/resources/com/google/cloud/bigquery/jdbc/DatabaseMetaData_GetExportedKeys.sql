@@ -61,7 +61,7 @@ FROM (SELECT DISTINCT CCU.table_catalog AS PKTABLE_CAT,
          INNER JOIN (SELECT *
                      FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`
                      WHERE position_in_unique_constraint IS NULL
-                       AND RTRIM(table_name) = '%3$s') PRIMARY
+                       AND RTRIM(table_name) = ?) PRIMARY
 ON
     FOREIGN.PKTABLE_CAT = PRIMARY.table_catalog
     AND FOREIGN.PKTABLE_SCHEM = PRIMARY.table_schema

@@ -52,11 +52,13 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
@@ -68,7 +70,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -2573,12 +2574,49 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
     }
 
+    // Fallback Path: If catalog or schema is null, fall back to REST API metadata scan.
+    if (catalog == null || schema == null) {
+      final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+      List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+      boolean ignoreAccessErrors = (catalog == null);
+      processTargetTablesConcurrently(
+          targetDatasets,
+          null,
+          collectedResults,
+          resultSchemaFields,
+          ignoreAccessErrors,
+          (bqTable, results, fields) -> {
+            TableConstraints constraints = bqTable.getTableConstraints();
+            if (constraints != null && constraints.getForeignKeys() != null) {
+              for (ForeignKey fk : constraints.getForeignKeys()) {
+                TableId pkTableId = fk.getReferencedTable();
+                if (pkTableId != null
+                    && equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                    && equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                    && table.equals(pkTableId.getTable())) {
+                  processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+                }
+              }
+            }
+          });
+
+      Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+      sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+          new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
+    }
+
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
+    String formattedSql = replaceSqlParameters(sql, catalog, schema);
+    PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
     try {
       stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
+      stmt.setString(1, table);
+      return stmt.executeQuery();
     } catch (SQLException e) {
       closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
@@ -5345,19 +5383,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   static String readSqlFromFile(String filename) {
-    InputStream in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
-    if (in == null) {
-      throw new IllegalArgumentException("SQL file not found: " + filename);
-    }
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
+    try (InputStream in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename)) {
+      if (in == null) {
+        throw new IllegalArgumentException("SQL file not found: " + filename);
       }
+      ByteArrayOutputStream result = new ByteArrayOutputStream();
+      byte[] buffer = new byte[1024];
+      int length;
+      while ((length = in.read(buffer)) != -1) {
+        result.write(buffer, 0, length);
+      }
+      return result.toString(StandardCharsets.UTF_8.name());
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to read SQL file: " + filename, e);
     }
-    return builder.toString();
   }
 
   String replaceSqlParameters(String sql, String... params) throws SQLException {

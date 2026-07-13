@@ -391,9 +391,9 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetPrimaryKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
-      DatabaseMetaData metaData = connection.getMetaData();
-      ResultSet primaryKeys = metaData.getPrimaryKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        ResultSet primaryKeys =
+            connection.getMetaData().getPrimaryKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
       Assertions.assertNotNull(primaryKeys);
       ResultSetMetaData pkMetaData = primaryKeys.getMetaData();
       Assertions.assertEquals(6, pkMetaData.getColumnCount());
@@ -403,9 +403,9 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetImportedKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
-      DatabaseMetaData metaData = connection.getMetaData();
-      ResultSet importedKeys = metaData.getImportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        ResultSet importedKeys =
+            connection.getMetaData().getImportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
       Assertions.assertNotNull(importedKeys);
       ResultSetMetaData ikMetaData = importedKeys.getMetaData();
       Assertions.assertEquals(14, ikMetaData.getColumnCount());
@@ -415,9 +415,9 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetExportedKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
-      DatabaseMetaData metaData = connection.getMetaData();
-      ResultSet exportedKeys = metaData.getExportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        ResultSet exportedKeys =
+            connection.getMetaData().getExportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
       Assertions.assertNotNull(exportedKeys);
       ResultSetMetaData ekMetaData = exportedKeys.getMetaData();
       Assertions.assertEquals(14, ekMetaData.getColumnCount());
@@ -427,11 +427,17 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetCrossReference_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
-      DatabaseMetaData metaData = connection.getMetaData();
-      ResultSet crossReference =
-          metaData.getCrossReference(
-              PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME, PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        ResultSet crossReference =
+            connection
+                .getMetaData()
+                .getCrossReference(
+                    PROJECT_ID,
+                    PCNT_SCHEMA,
+                    PCNT_TABLE_NAME,
+                    PROJECT_ID,
+                    PCNT_SCHEMA,
+                    PCNT_TABLE_NAME)) {
       Assertions.assertNotNull(crossReference);
       ResultSetMetaData crMetaData = crossReference.getMetaData();
       Assertions.assertEquals(14, crMetaData.getColumnCount());
