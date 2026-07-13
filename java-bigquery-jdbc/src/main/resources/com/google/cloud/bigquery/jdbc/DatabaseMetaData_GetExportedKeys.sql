@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ FROM (SELECT DISTINCT CCU.table_catalog AS PKTABLE_CAT,
          INNER JOIN (SELECT *
                      FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`
                      WHERE position_in_unique_constraint IS NULL
-                       AND RTRIM(table_name) = ?) PRIMARY
+                       AND table_name = ?) PRIMARY
 ON
     FOREIGN.PKTABLE_CAT = PRIMARY.table_catalog
     AND FOREIGN.PKTABLE_SCHEM = PRIMARY.table_schema

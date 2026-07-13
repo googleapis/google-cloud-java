@@ -101,6 +101,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
+  private static String exportedKeysSqlContent;
   // Declared package-private for testing.
   static final String GOOGLE_SQL_QUOTED_IDENTIFIER = "`";
   // Does not include SQL:2003 Keywords as per JDBC spec.
@@ -2588,16 +2589,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           ignoreAccessErrors,
           (bqTable, results, fields) -> {
             TableConstraints constraints = bqTable.getTableConstraints();
-            if (constraints != null && constraints.getForeignKeys() != null) {
-              for (ForeignKey fk : constraints.getForeignKeys()) {
-                TableId pkTableId = fk.getReferencedTable();
-                if (pkTableId != null
-                    && equalsOrNullMatchesAll(catalog, pkTableId.getProject())
-                    && equalsOrNullMatchesAll(schema, pkTableId.getDataset())
-                    && table.equals(pkTableId.getTable())) {
-                  processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-                }
+            if (constraints == null || constraints.getForeignKeys() == null) {
+              return;
+            }
+            for (ForeignKey fk : constraints.getForeignKeys()) {
+              TableId pkTableId = fk.getReferencedTable();
+              if (pkTableId == null
+                  || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                  || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                  || !table.equals(pkTableId.getTable())) {
+                continue;
               }
+              processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
             }
           });
 
@@ -2610,7 +2613,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
     }
 
-    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    String sql = getExportedKeysSqlContent();
     String formattedSql = replaceSqlParameters(sql, catalog, schema);
     PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
     try {
@@ -5382,6 +5385,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Comparator.nullsFirst(Long::compareTo));
   }
 
+  private static synchronized String getExportedKeysSqlContent() {
+    if (exportedKeysSqlContent == null) {
+      exportedKeysSqlContent = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    }
+    return exportedKeysSqlContent;
+  }
+
   static String readSqlFromFile(String filename) {
     try (InputStream in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename)) {
       if (in == null) {
@@ -5404,12 +5414,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private void closeStatementIgnoreException(Statement stmt) {
-    if (stmt != null) {
-      try {
-        stmt.close();
-      } catch (SQLException e) {
-        // ignore
-      }
+    if (stmt == null) {
+      return;
+    }
+    try {
+      stmt.close();
+    } catch (SQLException e) {
+      // ignore
     }
   }
 }
