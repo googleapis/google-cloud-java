@@ -5,7 +5,7 @@
   "api_description": "Programmatically manage your Merchant Center accounts.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-shopping-merchant-notifications",

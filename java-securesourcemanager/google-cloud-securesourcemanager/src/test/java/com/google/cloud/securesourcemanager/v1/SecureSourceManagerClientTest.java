@@ -601,6 +601,8 @@ public class SecureSourceManagerClientTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -647,6 +649,8 @@ public class SecureSourceManagerClientTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -693,6 +697,8 @@ public class SecureSourceManagerClientTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -754,6 +760,8 @@ public class SecureSourceManagerClientTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -815,6 +823,8 @@ public class SecureSourceManagerClientTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -149,7 +149,7 @@ public class BigtableTableAdminClientTests {
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
 
   private BigtableTableAdminClient adminClient;
-  @Mock private EnhancedBigtableTableAdminStub mockStub;
+  private EnhancedBigtableTableAdminStub mockStub;
 
   @Mock
   private UnaryCallable<
@@ -290,6 +290,9 @@ public class BigtableTableAdminClientTests {
 
   @Before
   public void setUp() {
+    mockStub =
+        Mockito.mock(
+            EnhancedBigtableTableAdminStub.class, Mockito.withSettings().withoutAnnotations());
     adminClient = BigtableTableAdminClient.create(PROJECT_ID, INSTANCE_ID, mockStub);
   }
 

@@ -32,6 +32,7 @@ import com.google.cloud.channel.v1.RunReportJobResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -41,6 +42,7 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public abstract class CloudChannelReportsServiceStub implements BackgroundResource {

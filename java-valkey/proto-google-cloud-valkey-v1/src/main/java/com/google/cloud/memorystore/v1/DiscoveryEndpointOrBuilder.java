@@ -71,7 +71,7 @@ public interface DiscoveryEndpointOrBuilder
    * <pre>
    * Output only. The network where the IP address of the discovery endpoint
    * will be reserved, in the form of
-   * projects/{network_project}/global/networks/{network_id}.
+   * projects/{network_project}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface DiscoveryEndpointOrBuilder
    * <pre>
    * Output only. The network where the IP address of the discovery endpoint
    * will be reserved, in the form of
-   * projects/{network_project}/global/networks/{network_id}.
+   * projects/{network_project}/global/networks/{network_name}.
    * </pre>
    *
    * <code>

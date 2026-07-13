@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.google.cloud</groupId>
+  <artifactId>invalid-libraries-bom</artifactId>
+  <version>25.3.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>GCP Library Invalid Bom</name>
+  <description>
+    This is a sample bom with an invalid artifact (guava-invalid) to create a 404
+  </description>
+  <url>https://cloud.google.com/java/docs/bom</url>
+  <organization>
+    <name>Google LLC</name>
+    <url>https://cloud.google.com</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava-invalid</artifactId>
+        <version>31.1-jre</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

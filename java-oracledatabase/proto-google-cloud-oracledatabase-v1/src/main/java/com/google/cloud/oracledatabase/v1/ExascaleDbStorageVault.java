@@ -57,6 +57,7 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
     displayName_ = "";
     gcpOracleZone_ = "";
     entitlementId_ = "";
+    exadataInfrastructure_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -532,6 +533,69 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
     return map.get(key);
   }
 
+  public static final int EXADATA_INFRASTRUCTURE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object exadataInfrastructure_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Exadata Infrastructure resource on which
+   * ExascaleDbStorageVault
+   * resource is created, in the following format:
+   * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+   * </pre>
+   *
+   * <code>
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The exadataInfrastructure.
+   */
+  @java.lang.Override
+  public java.lang.String getExadataInfrastructure() {
+    java.lang.Object ref = exadataInfrastructure_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      exadataInfrastructure_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Exadata Infrastructure resource on which
+   * ExascaleDbStorageVault
+   * resource is created, in the following format:
+   * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+   * </pre>
+   *
+   * <code>
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for exadataInfrastructure.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExadataInfrastructureBytes() {
+    java.lang.Object ref = exadataInfrastructure_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      exadataInfrastructure_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -566,6 +630,9 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exadataInfrastructure_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, exadataInfrastructure_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -603,6 +670,9 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exadataInfrastructure_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, exadataInfrastructure_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -632,6 +702,7 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
     }
     if (!getEntitlementId().equals(other.getEntitlementId())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getExadataInfrastructure().equals(other.getExadataInfrastructure())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -663,6 +734,8 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + EXADATA_INFRASTRUCTURE_FIELD_NUMBER;
+    hash = (53 * hash) + getExadataInfrastructure().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -852,6 +925,7 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
       }
       entitlementId_ = "";
       internalGetMutableLabels().clear();
+      exadataInfrastructure_ = "";
       return this;
     }
 
@@ -913,6 +987,9 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.exadataInfrastructure_ = exadataInfrastructure_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -957,6 +1034,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000040;
+      if (!other.getExadataInfrastructure().isEmpty()) {
+        exadataInfrastructure_ = other.exadataInfrastructure_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1033,6 +1115,12 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                exadataInfrastructure_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2134,6 +2222,142 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private java.lang.Object exadataInfrastructure_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Exadata Infrastructure resource on which
+     * ExascaleDbStorageVault
+     * resource is created, in the following format:
+     * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+     * </pre>
+     *
+     * <code>
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The exadataInfrastructure.
+     */
+    public java.lang.String getExadataInfrastructure() {
+      java.lang.Object ref = exadataInfrastructure_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        exadataInfrastructure_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Exadata Infrastructure resource on which
+     * ExascaleDbStorageVault
+     * resource is created, in the following format:
+     * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+     * </pre>
+     *
+     * <code>
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for exadataInfrastructure.
+     */
+    public com.google.protobuf.ByteString getExadataInfrastructureBytes() {
+      java.lang.Object ref = exadataInfrastructure_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        exadataInfrastructure_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Exadata Infrastructure resource on which
+     * ExascaleDbStorageVault
+     * resource is created, in the following format:
+     * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+     * </pre>
+     *
+     * <code>
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The exadataInfrastructure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExadataInfrastructure(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      exadataInfrastructure_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Exadata Infrastructure resource on which
+     * ExascaleDbStorageVault
+     * resource is created, in the following format:
+     * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+     * </pre>
+     *
+     * <code>
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExadataInfrastructure() {
+      exadataInfrastructure_ = getDefaultInstance().getExadataInfrastructure();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Exadata Infrastructure resource on which
+     * ExascaleDbStorageVault
+     * resource is created, in the following format:
+     * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
+     * </pre>
+     *
+     * <code>
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for exadataInfrastructure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExadataInfrastructureBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      exadataInfrastructure_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
 

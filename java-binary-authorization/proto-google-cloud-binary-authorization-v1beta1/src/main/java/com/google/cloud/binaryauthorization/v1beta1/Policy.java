@@ -24,7 +24,8 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary Authorization.
+ * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary
+ * Authorization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Policy}
@@ -56,6 +57,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     description_ = "";
     globalPolicyEvaluationMode_ = 0;
     admissionWhitelistPatterns_ = java.util.Collections.emptyList();
+    etag_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -720,7 +722,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -748,7 +751,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -766,7 +770,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -792,7 +797,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -1213,6 +1219,63 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int ETAG_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the policy has an up-to-date value before attempting to
+   * update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the policy has an up-to-date value before attempting to
+   * update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1268,6 +1331,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         internalGetKubernetesNamespaceAdmissionRules(),
         KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry,
         10);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1359,6 +1425,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, kubernetesNamespaceAdmissionRules__);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, etag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1396,6 +1465,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1441,6 +1511,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1546,7 +1618,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary Authorization.
+   * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for Binary
+   * Authorization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Policy}
@@ -1650,6 +1723,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      etag_ = "";
       return this;
     }
 
@@ -1742,6 +1816,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.etag_ = etag_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1814,6 +1891,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1957,6 +2039,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 90:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3193,7 +3281,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3222,7 +3311,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3241,7 +3331,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3270,7 +3361,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3303,7 +3395,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3332,7 +3425,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3357,7 +3451,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -3384,7 +3479,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
      * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
@@ -4450,6 +4546,127 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.Policy)

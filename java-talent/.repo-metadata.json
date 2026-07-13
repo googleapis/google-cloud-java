@@ -5,7 +5,7 @@
   "api_description": "allows you to transform your job search and candidate matching capabilities with Cloud Talent Solution, designed to support enterprise talent acquisition technology and evolve with your growing needs. This AI solution includes features such as Job Search and Profile Search (Beta) to provide candidates and employers with an enhanced talent acquisition experience. Learn more about Cloud Talent Solution from the product overview page.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-talent/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-talent",

@@ -232,6 +232,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -313,6 +314,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -394,6 +396,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -484,6 +487,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -574,6 +578,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -623,6 +628,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -693,6 +699,7 @@ public class MemorystoreClientHttpJsonTest {
               .setAllowFewerZonesDeployment(true)
               .setServerCaPool("serverCaPool1433802429")
               .setRotateServerCertificate(true)
+              .setMigrationConfig(MigrationConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1012,6 +1019,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1105,6 +1113,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1794,6 +1803,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1880,6 +1890,7 @@ public class MemorystoreClientHttpJsonTest {
             .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1919,6 +1930,277 @@ public class MemorystoreClientHttpJsonTest {
     try {
       String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
       client.backupInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startMigrationTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    StartMigrationRequest request =
+        StartMigrationRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .build();
+
+    Instance actualResponse = client.startMigrationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startMigrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StartMigrationRequest request =
+          StartMigrationRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .build();
+      client.startMigrationAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void finishMigrationTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("finishMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    boolean force = true;
+
+    Instance actualResponse = client.finishMigrationAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void finishMigrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      boolean force = true;
+      client.finishMigrationAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void finishMigrationTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("finishMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+    boolean force = true;
+
+    Instance actualResponse = client.finishMigrationAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void finishMigrationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+      boolean force = true;
+      client.finishMigrationAsync(name, force).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

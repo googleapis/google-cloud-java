@@ -224,6 +224,56 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the unredactedBigqueryExportSettings field is set.
+   */
+  boolean hasUnredactedBigqueryExportSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The unredactedBigqueryExportSettings.
+   */
+  com.google.cloud.ces.v1beta.BigQueryExportSettings getUnredactedBigqueryExportSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder
+      getUnredactedBigqueryExportSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Settings to describe the Cloud Logging behaviors for the app.
    * </pre>
    *

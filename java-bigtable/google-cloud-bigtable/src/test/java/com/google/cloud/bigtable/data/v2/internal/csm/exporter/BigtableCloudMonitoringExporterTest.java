@@ -64,7 +64,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -81,7 +81,7 @@ public class BigtableCloudMonitoringExporterTest {
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  @Mock private MetricServiceStub mockMetricServiceStub;
+  private MetricServiceStub mockMetricServiceStub;
   private MetricServiceClient fakeMetricServiceClient;
   private BigtableCloudMonitoringExporter exporter;
 
@@ -107,6 +107,8 @@ public class BigtableCloudMonitoringExporterTest {
 
   @Before
   public void setUp() {
+    mockMetricServiceStub =
+        Mockito.mock(MetricServiceStub.class, Mockito.withSettings().withoutAnnotations());
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
 
     exporter =

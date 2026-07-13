@@ -2761,6 +2761,298 @@ public class ChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getAvailabilityTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AvailabilityName name = AvailabilityName.of("[USER]");
+
+    Availability actualResponse = client.getAvailability(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAvailabilityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AvailabilityName name = AvailabilityName.of("[USER]");
+      client.getAvailability(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAvailabilityTest2() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-3694/availability";
+
+    Availability actualResponse = client.getAvailability(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAvailabilityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-3694/availability";
+      client.getAvailability(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsActiveTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MarkAsActiveRequest request =
+        MarkAsActiveRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+
+    Availability actualResponse = client.markAsActive(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void markAsActiveExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MarkAsActiveRequest request =
+          MarkAsActiveRequest.newBuilder()
+              .setName(AvailabilityName.of("[USER]").toString())
+              .build();
+      client.markAsActive(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsAwayTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MarkAsAwayRequest request =
+        MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+
+    Availability actualResponse = client.markAsAway(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void markAsAwayExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MarkAsAwayRequest request =
+          MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+      client.markAsAway(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsDoNotDisturbTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MarkAsDoNotDisturbRequest request =
+        MarkAsDoNotDisturbRequest.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .build();
+
+    Availability actualResponse = client.markAsDoNotDisturb(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void markAsDoNotDisturbExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MarkAsDoNotDisturbRequest request =
+          MarkAsDoNotDisturbRequest.newBuilder()
+              .setName(AvailabilityName.of("[USER]").toString())
+              .build();
+      client.markAsDoNotDisturb(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAvailabilityTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Availability availability =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Availability actualResponse = client.updateAvailability(availability, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAvailabilityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Availability availability =
+          Availability.newBuilder()
+              .setName(AvailabilityName.of("[USER]").toString())
+              .setCustomStatus(CustomStatus.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAvailability(availability, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getSpaceEventTest() throws Exception {
     SpaceEvent expectedResponse =
         SpaceEvent.newBuilder()

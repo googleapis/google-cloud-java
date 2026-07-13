@@ -5,7 +5,7 @@
   "api_description": "The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-chat/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-chat",

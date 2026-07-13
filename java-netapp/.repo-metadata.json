@@ -5,7 +5,7 @@
   "api_description": "Google Cloud NetApp Volumes is a fully-managed, cloud-based data storage service that provides advanced data management capabilities and highly scalable performance with global availability.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-netapp/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-netapp",

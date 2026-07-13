@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java</artifactId>
-  <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.75.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
   <name>GAPIC Generator Java</name>
   <description>GAPIC generator Java</description>
 
@@ -23,7 +23,7 @@
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.75.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -32,7 +32,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gapic-generator-java-bom</artifactId>
-        <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+        <version>2.75.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -406,7 +406,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>2.65.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
+      <version>2.66.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -432,7 +432,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>2.73.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
+      <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat;
 
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.StubSettings;
@@ -45,8 +46,10 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
@@ -54,6 +57,9 @@ import io.grpc.stub.MetadataUtils;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Optional;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -160,6 +166,10 @@ public class ShimImpl implements Shim {
       featureFlags = featureFlags.toBuilder().setSessionsRequired(true).build();
     }
 
+    Resource<Executor> userCallbackExecutor =
+        selectUserCallbackExecutor(
+            stubSettings.getTransportChannelProvider(), stubSettings.getExecutorProvider());
+
     Client client =
         new Client(
             clientChannelProvider.updateFeatureFlags(featureFlags),
@@ -167,7 +177,8 @@ public class ShimImpl implements Shim {
             clientChannelProvider,
             Resource.createShared(metrics),
             Resource.createShared(configManager),
-            Resource.createShared(bgExecutor));
+            Resource.createShared(bgExecutor),
+            userCallbackExecutor);
 
     return new ShimImpl(configManager, client);
   }
@@ -178,6 +189,34 @@ public class ShimImpl implements Shim {
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
+  }
+
+  // If the user configured an executor — either via InstantiatingGrpcChannelProvider#setExecutor
+  // or the legacy StubSettings#setExecutorProvider — reuse it for user-callback dispatch so the
+  // transport pool and callback pool are the same. Ownership: transport-set is borrowed by
+  // convention; legacy provider honors shouldAutoClose(). Otherwise allocate a dedicated cached
+  // pool that this Client owns.
+  @VisibleForTesting
+  static Resource<Executor> selectUserCallbackExecutor(
+      TransportChannelProvider transportProvider, @Nullable ExecutorProvider executorProvider) {
+    Executor transportExecutor = transportProvider.getExecutor();
+    if (transportExecutor != null) {
+      return Resource.createShared(transportExecutor);
+    }
+    if (executorProvider != null) {
+      ScheduledExecutorService executor = executorProvider.getExecutor();
+      if (executorProvider.shouldAutoClose()) {
+        return Resource.createOwned(executor, () -> Client.shutdownAndAwait(executor));
+      }
+      return Resource.createShared(executor);
+    }
+    ExecutorService owned =
+        Executors.newCachedThreadPool(
+            new ThreadFactoryBuilder()
+                .setNameFormat("bigtable-callback-shim-%d")
+                .setDaemon(true)
+                .build());
+    return Resource.createOwned(owned, () -> Client.shutdownAndAwait(owned));
   }
 
   private static ChannelProvider configureChannelProvider(

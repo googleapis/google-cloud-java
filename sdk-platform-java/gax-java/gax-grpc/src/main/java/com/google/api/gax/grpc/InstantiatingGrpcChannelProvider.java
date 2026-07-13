@@ -264,6 +264,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return executor == null;
   }
 
+  @Nullable
+  @Override
+  public Executor getExecutor() {
+    return executor;
+  }
+
   @Deprecated
   @Override
   public TransportChannelProvider withExecutor(ScheduledExecutorService executor) {

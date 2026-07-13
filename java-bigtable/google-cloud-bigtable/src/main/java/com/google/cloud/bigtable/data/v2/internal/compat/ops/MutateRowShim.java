@@ -22,28 +22,26 @@ import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
 import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
-import com.google.cloud.bigtable.data.v2.internal.compat.Util;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
-import com.google.common.cache.LoadingCache;
 import io.grpc.Deadline;
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 public class MutateRowShim implements UnaryShim<RowMutation, Void> {
 
-  private final LoadingCache<TableId, TableAsync> tables;
-  private final LoadingCache<AuthorizedViewId, AuthorizedViewAsync> authViews;
+  private final SessionPoolMap<TableId, TableAsync> tables;
+  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
 
   public MutateRowShim(Client client) {
     tables =
-        Util.createSessionMap(
+        new SessionPoolMap<>(
             k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_WRITE));
     authViews =
-        Util.createSessionMap(
+        new SessionPoolMap<>(
             k ->
                 client.openAuthorizedViewAsync(
                     k.getTableId(),
@@ -63,9 +61,9 @@ public class MutateRowShim implements UnaryShim<RowMutation, Void> {
     SessionPool<?> pool;
     // TODO: avoid double lookup
     if (targetId instanceof TableId) {
-      pool = tables.getUnchecked((TableId) targetId).getSessionPool();
+      pool = tables.get((TableId) targetId).getSessionPool();
     } else if (targetId instanceof AuthorizedViewId) {
-      pool = authViews.getUnchecked((AuthorizedViewId) targetId).getSessionPool();
+      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
     } else {
       return false;
     }
@@ -83,16 +81,12 @@ public class MutateRowShim implements UnaryShim<RowMutation, Void> {
     SessionMutateRowRequest innerReq = request.toSessionProto();
 
     if (targetId instanceof TableId) {
-      return tables
-          .getUnchecked((TableId) targetId)
-          .mutateRow(innerReq, deadline)
-          .thenApply(r -> null);
+      return tables.apply(
+          (TableId) targetId, t -> t.mutateRow(innerReq, deadline).thenApply(r -> null));
     }
     if (targetId instanceof AuthorizedViewId) {
-      return authViews
-          .getUnchecked((AuthorizedViewId) targetId)
-          .mutateRow(innerReq, deadline)
-          .thenApply(r -> null);
+      return authViews.apply(
+          (AuthorizedViewId) targetId, v -> v.mutateRow(innerReq, deadline).thenApply(r -> null));
     }
 
     CompletableFuture<Void> f = new CompletableFuture<>();

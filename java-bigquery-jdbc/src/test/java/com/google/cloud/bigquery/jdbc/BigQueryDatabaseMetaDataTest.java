@@ -44,14 +44,12 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -62,18 +60,29 @@ public class BigQueryDatabaseMetaDataTest {
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
   private BigQuery bigqueryClient;
+  private ExecutorService metadataExecutor;
 
   @BeforeEach
   public void setUp() throws SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
     bigqueryClient = mock(BigQuery.class);
     Statement mockStatement = mock(Statement.class);
+    metadataExecutor = Executors.newCachedThreadPool();
 
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
+    when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+  }
+
+  @AfterEach
+  public void tearDown() {
+    if (metadataExecutor != null) {
+      metadataExecutor.shutdownNow();
+    }
   }
 
   private Table mockBigQueryTable(
@@ -148,25 +157,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("Dataset", dbMetadata.getSchemaTerm());
     assertEquals("Procedure", dbMetadata.getProcedureTerm());
     assertEquals("Project", dbMetadata.getCatalogTerm());
-  }
-
-  @Test
-  public void testReadSqlFromFile() throws SQLException {
-    BigQueryDatabaseMetaData dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
-
-    String primaryKeysQuery =
-        BigQueryDatabaseMetaData.readSqlFromFile("DatabaseMetaData_GetPrimaryKeys.sql");
-    assertTrue(primaryKeysQuery.contains("pk$"));
-
-    try {
-      when(bigQueryConnection.prepareStatement(primaryKeysQuery)).thenCallRealMethod();
-      String sql =
-          dbMetadata.replaceSqlParameters(
-              primaryKeysQuery, "project_name", "dataset_name", "table_name");
-      assertTrue(sql.contains("project_name.dataset_name.INFORMATION_SCHEMA.KEY_COLUMN_USAGE"));
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   @Test
@@ -1008,7 +998,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = "proc_%";
@@ -1054,7 +1044,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = null;
@@ -1093,7 +1083,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() {
+  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String procNameExact = "exactprocname";
@@ -1598,7 +1588,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testSubmitProcedureArgumentProcessingJobs_Basic() throws InterruptedException {
+  public void testProcessProcedureArgumentsSequentially_Basic() throws InterruptedException {
     String catalog = "p";
     String schemaName = "d";
     RoutineArgument arg1 = mockRoutineArgument("arg1_name", StandardSQLTypeName.STRING, "IN");
@@ -1623,32 +1613,13 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultSchemaFields = resultSchema.getFields();
 
-    ExecutorService mockExecutor = mock(ExecutorService.class);
-    List<Future<?>> processingTaskFutures = new ArrayList<>();
+    dbMetadata.processProcedureArgumentsSequentially(
+        fullRoutines, columnNameRegex, collectedResults, resultSchemaFields, dbMetadata.LOG);
 
-    // Capture the runnable submitted to the executor
-    List<Runnable> submittedRunnables = new ArrayList<>();
-    doAnswer(
-            invocation -> {
-              Runnable runnable = invocation.getArgument(0);
-              submittedRunnables.add(runnable);
-              Future<?> future = mock(Future.class);
-              return future;
-            })
-        .when(mockExecutor)
-        .submit(any(Runnable.class));
-
-    dbMetadata.submitProcedureArgumentProcessingJobs(
-        fullRoutines,
-        columnNameRegex,
-        collectedResults,
-        resultSchemaFields,
-        mockExecutor,
-        processingTaskFutures,
-        dbMetadata.LOG);
-
-    verify(mockExecutor, times(2)).submit(any(Runnable.class));
-    assertEquals(2, processingTaskFutures.size());
+    // Only proc1 has arguments, so collectedResults should contain 1 row.
+    assertEquals(1, collectedResults.size());
+    FieldValueList row = collectedResults.get(0);
+    assertEquals("arg1_name", row.get("COLUMN_NAME").getStringValue());
   }
 
   @Test
@@ -3261,36 +3232,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 
-  @Test
-  public void testMetadataMethodsDoNotInterfere() throws SQLException {
-    Statement mockStatement1 = mock(Statement.class);
-    Statement mockStatement2 = mock(Statement.class);
-    ResultSet mockResultSet1 = mock(ResultSet.class);
-    ResultSet mockResultSet2 = mock(ResultSet.class);
-
-    when(bigQueryConnection.createStatement())
-        .thenReturn(mockStatement1)
-        .thenReturn(mockStatement2);
-
-    when(mockStatement1.executeQuery(any())).thenReturn(mockResultSet1);
-    when(mockStatement2.executeQuery(any())).thenReturn(mockResultSet2);
-
-    // Call first metadata method
-    ResultSet rs1 = dbMetadata.getPrimaryKeys("cat", "schema", "table");
-    assertSame(mockResultSet1, rs1);
-
-    // Call second metadata method
-    ResultSet rs2 = dbMetadata.getImportedKeys("cat", "schema", "table");
-    assertSame(mockResultSet2, rs2);
-
-    // Verify closeOnCompletion was called on both statements
-    verify(mockStatement1).closeOnCompletion();
-    verify(mockStatement2).closeOnCompletion();
-
-    // Verify connection.createStatement() was called twice
-    verify(bigQueryConnection, times(2)).createStatement();
-  }
-
   @ParameterizedTest
   @EnumSource(StandardSQLTypeName.class)
   public void testMetadataAndResultSetMetadataTypeMappingConsistency(StandardSQLTypeName type) {
@@ -3435,126 +3376,5 @@ public class BigQueryDatabaseMetaDataTest {
 
     verify(bigqueryClient, never())
         .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class));
-  }
-
-  @Test
-  public void testWrapThread_NullThread() {
-    assertNull(BigQueryDatabaseMetaData.wrapThread(null));
-  }
-
-  @Test
-  public void testWrapThread_BasicLifecycle() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    CountDownLatch finishLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              try {
-                startLatch.countDown();
-                finishLatch.await();
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
-
-    Future<?>[] futures = BigQueryDatabaseMetaData.wrapThread(t);
-    assertNotNull(futures);
-    assertEquals(1, futures.length);
-    Future<?> f = futures[0];
-
-    // Thread is NEW (not started yet).
-    assertFalse(f.isDone());
-    assertFalse(f.isCancelled());
-
-    t.start();
-    startLatch.await();
-
-    // Thread is running.
-    assertFalse(f.isDone());
-    assertFalse(f.isCancelled());
-
-    finishLatch.countDown();
-    t.join();
-
-    // Thread is terminated.
-    assertTrue(f.isDone());
-    assertFalse(f.isCancelled());
-    assertNull(f.get());
-  }
-
-  @Test
-  public void testWrapThread_CancelBeforeStart() throws Exception {
-    Thread t =
-        new Thread(
-            () -> {
-              try {
-                Thread.sleep(1000);
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
-
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertTrue(f.cancel(true));
-    assertTrue(f.isCancelled());
-    assertTrue(f.isDone());
-
-    // cancel on already cancelled should return false
-    assertFalse(f.cancel(true));
-
-    assertThrows(CancellationException.class, () -> f.get());
-    assertThrows(CancellationException.class, () -> f.get(1, TimeUnit.SECONDS));
-  }
-
-  @Test
-  public void testWrapThread_CancelRunningWithInterrupt() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    CountDownLatch interruptedLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              startLatch.countDown();
-              try {
-                Thread.sleep(10000);
-              } catch (InterruptedException e) {
-                interruptedLatch.countDown();
-              }
-            });
-
-    t.start();
-    startLatch.await();
-
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertTrue(f.cancel(true));
-    assertTrue(f.isCancelled());
-    assertTrue(f.isDone());
-
-    assertTrue(interruptedLatch.await(5, TimeUnit.SECONDS));
-    assertThrows(CancellationException.class, () -> f.get());
-  }
-
-  @Test
-  public void testWrapThread_GetTimeout() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              startLatch.countDown();
-              try {
-                Thread.sleep(10000);
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
-
-    t.start();
-    startLatch.await();
-
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertThrows(TimeoutException.class, () -> f.get(100, TimeUnit.MILLISECONDS));
-
-    // Cleanup: stop the thread
-    t.interrupt();
-    t.join();
   }
 }

@@ -290,4 +290,80 @@ public interface McpToolsetOrBuilder
    * </code>
    */
   java.lang.String getCustomHeadersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.ces.v1.McpToolOverride> getToolOverridesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.McpToolOverride getToolOverrides(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getToolOverridesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.ces.v1.McpToolOverrideOrBuilder>
+      getToolOverridesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.McpToolOverrideOrBuilder getToolOverridesOrBuilder(int index);
 }

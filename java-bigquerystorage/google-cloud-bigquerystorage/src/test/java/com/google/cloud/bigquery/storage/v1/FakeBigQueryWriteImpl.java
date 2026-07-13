@@ -27,11 +27,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 
@@ -59,11 +61,11 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
 
   private long numberTimesToClose = 0;
   private long closeAfter = 0;
-  private long recordCount = 0;
-  private long connectionCount = 0;
+  private final AtomicLong recordCount = new AtomicLong(0);
+  private final AtomicLong connectionCount = new AtomicLong(0);
   private long closeForeverAfter = 0;
-  private int responseIndex = 0;
-  private long expectedOffset = 0;
+  private final AtomicInteger responseIndex = new AtomicInteger(0);
+  private final AtomicLong expectedOffset = new AtomicLong(0);
   private boolean verifyOffset = false;
   private boolean returnErrorDuringExclusiveStreamRetry = false;
   private boolean returnErrorUntilRetrySuccess = false;
@@ -74,7 +76,8 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private final Map<StreamObserver<AppendRowsResponse>, Boolean> connectionToFirstRequest =
       new ConcurrentHashMap<>();
   private Status failedStatus = Status.ABORTED;
-  private ArrayList<Instant> requestReceivedInstants = new ArrayList<>();
+  private final CopyOnWriteArrayList<Instant> requestReceivedInstants =
+      new CopyOnWriteArrayList<>();
 
   /** Class used to save the state of a possible response. */
   public static class Response {
@@ -114,7 +117,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   }
 
   public ArrayList<Instant> getLatestRequestReceivedInstants() {
-    return requestReceivedInstants;
+    return new ArrayList<>(requestReceivedInstants);
   }
 
   @Override
@@ -153,7 +156,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
 
   /* Return the number of times the stream was connected. */
   public long getConnectionCount() {
-    return connectionCount;
+    return connectionCount.get();
   }
 
   void setFailedStatus(Status failedStatus) {
@@ -197,20 +200,23 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   @Override
   public StreamObserver<AppendRowsRequest> appendRows(
       final StreamObserver<AppendRowsResponse> responseObserver) {
-    this.connectionCount++;
+    connectionCount.incrementAndGet();
     connectionToFirstRequest.put(responseObserver, true);
     StreamObserver<AppendRowsRequest> requestObserver =
         new StreamObserver<AppendRowsRequest>() {
           @Override
           public void onNext(AppendRowsRequest value) {
             requestReceivedInstants.add(Instant.now());
-            recordCount++;
+            long currentRecordCount = recordCount.incrementAndGet();
+            int currentResponseIndex = responseIndex.getAndIncrement();
+            int responseIndexAfterIncrement = currentResponseIndex + 1;
+            long currentConnectionCount = connectionCount.get();
+
             requests.add(value);
             long offset = value.getOffset().getValue();
             if (offset == -1 || !value.hasOffset()) {
-              offset = responseIndex;
+              offset = currentResponseIndex;
             }
-            responseIndex++;
             if (responseSleep.compareTo(Duration.ZERO) > 0) {
               LOG.info("Sleeping before response for " + responseSleep.toString());
               Uninterruptibles.sleepUninterruptibly(
@@ -233,12 +239,12 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
             }
             connectionToFirstRequest.put(responseObserver, false);
             if (closeAfter > 0
-                && responseIndex % closeAfter == 0
-                && recordCount % closeAfter == 0
-                && (numberTimesToClose == 0 || connectionCount <= numberTimesToClose)) {
+                && responseIndexAfterIncrement % closeAfter == 0
+                && currentRecordCount % closeAfter == 0
+                && (numberTimesToClose == 0 || currentConnectionCount <= numberTimesToClose)) {
               LOG.info("Shutting down connection from test...");
               responseObserver.onError(failedStatus.asException());
-            } else if (closeForeverAfter > 0 && recordCount > closeForeverAfter) {
+            } else if (closeForeverAfter > 0 && currentRecordCount > closeForeverAfter) {
               LOG.info("Shutting down connection from test...");
               responseObserver.onError(failedStatus.asException());
             } else {
@@ -246,20 +252,25 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
               if (verifyOffset
                   && !response.getResponse().hasError()
                   && response.getResponse().getAppendResult().getOffset().getValue() > -1) {
-                // No error and offset is present; verify order
-                if (response.getResponse().getAppendResult().getOffset().getValue()
-                    != expectedOffset) {
+                long responseOffset =
+                    response.getResponse().getAppendResult().getOffset().getValue();
+                // Atomically verify that the response offset matches the expected offset
+                // and increment the expected offset for the next request. This avoids
+                // using a synchronized block while ensuring thread safety across concurrent
+                // streams.
+                if (!expectedOffset.compareAndSet(responseOffset, responseOffset + 1)) {
+                  LOG.info(
+                      String.format(
+                          "Offset mismatch: expected %s, got %s",
+                          expectedOffset.get(), responseOffset));
                   com.google.rpc.Status status =
                       com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL_VALUE).build();
                   response = new Response(AppendRowsResponse.newBuilder().setError(status).build());
                 } else {
                   LOG.info(
                       String.format(
-                          "asserted offset: %s expected: %s",
-                          response.getResponse().getAppendResult().getOffset().getValue(),
-                          expectedOffset));
+                          "asserted offset: %s expected: %s", responseOffset, responseOffset));
                   LOG.info(String.format("sending response: %s", response.getResponse()));
-                  expectedOffset++;
                 }
               }
               sendResponse(response, responseObserver);

@@ -191,6 +191,8 @@ public abstract class AbstractMockServerTest {
             .addService(mockDatabaseAdmin)
             .addService(mockOperations)
             .intercept(interceptor)
+            .permitKeepAliveTime(10, TimeUnit.MILLISECONDS)
+            .permitKeepAliveWithoutCalls(true)
             .build()
             .start();
     mockSpanner.putStatementResult(

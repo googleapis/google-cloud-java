@@ -5,7 +5,7 @@
   "api_description": "The CSS API is used to manage your CSS and control your CSS Products portfolio",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-css/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-shopping-css",

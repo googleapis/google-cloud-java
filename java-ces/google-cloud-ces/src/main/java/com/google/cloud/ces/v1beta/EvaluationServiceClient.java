@@ -43,6 +43,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -848,6 +849,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
@@ -1015,6 +1017,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   RunEvaluationResponse response = evaluationServiceClient.runEvaluationAsync(request).get();
    * }
@@ -1062,6 +1065,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata> future =
    *       evaluationServiceClient.runEvaluationOperationCallable().futureCall(request);
@@ -1110,6 +1114,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       evaluationServiceClient.runEvaluationCallable().futureCall(request);

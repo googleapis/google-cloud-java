@@ -1794,7 +1794,7 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertEquals(CLIENT_EMAIL, signature.getPayload().getSubject());
     if (expectedScopeClaim != null) {
       assertEquals(expectedScopeClaim, signature.getPayload().get("scope"));
-      assertFalse(signature.getPayload().containsKey("aud"));
+      assertNull(signature.getPayload().getAudience());
     } else {
       assertEquals(JWT_AUDIENCE, signature.getPayload().getAudience());
       assertFalse(signature.getPayload().containsKey("scope"));
