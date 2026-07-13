@@ -92,15 +92,15 @@ class ClearcutTransport {
           } else if (isRetryableStatusCode(statusCode)) {
             logger.log(
                 Level.WARNING,
-                "Clearcut upload returned retryable status code: "
-                    + statusCode
-                    + " on attempt "
-                    + attempt);
+                String.format(
+                    "Clearcut upload returned retryable status code: %d on attempt %d",
+                    statusCode, attempt));
             retryable = true;
           } else {
             logger.log(
                 Level.WARNING,
-                "Clearcut upload failed with non-retryable status code: " + statusCode);
+                String.format(
+                    "Clearcut upload failed with non-retryable status code: %d", statusCode));
             return false;
           }
         } finally {
@@ -111,7 +111,8 @@ class ClearcutTransport {
       } catch (IOException e) {
         logger.log(
             Level.WARNING,
-            "IOException sending telemetry payload to Clearcut on attempt " + attempt,
+            String.format(
+                "IOException sending telemetry payload to Clearcut on attempt %d", attempt),
             e);
         retryable = true;
       }
@@ -130,7 +131,8 @@ class ClearcutTransport {
 
     logger.log(
         Level.SEVERE,
-        "Failed to upload telemetry payload to Clearcut after " + maxAttempts + " attempts");
+        String.format(
+            "Failed to upload telemetry payload to Clearcut after %d attempts", maxAttempts));
     return false;
   }
 
