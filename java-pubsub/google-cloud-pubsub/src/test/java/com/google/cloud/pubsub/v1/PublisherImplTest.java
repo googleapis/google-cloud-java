@@ -64,7 +64,6 @@ import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -513,19 +512,20 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
+  /*
+  Temporarily disabled due to https://github.com/googleapis/java-pubsub/issues/1861.
+  TODO(maitrimangal): Enable once resolved.
   @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
                     .setElementCountThreshold(2L)
                     .build())
             .setEnableMessageOrdering(true)
             .build();
-
-    testPublisherServiceImpl.setExecutor(fakeExecutor);
 
     ApiFuture<String> future1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
     ApiFuture<String> future2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
@@ -536,6 +536,7 @@ public class PublisherImplTest {
 
     // This exception should stop future publishing to the same key
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+
     fakeExecutor.advanceTime(Duration.ZERO);
 
     try {
@@ -575,8 +576,8 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(
         PublishResponse.newBuilder().addMessageIds("5").addMessageIds("6"));
 
-    assertEquals("5", future5.get());
-    assertEquals("6", future6.get());
+    Assert.assertEquals("5", future5.get());
+    Assert.assertEquals("6", future6.get());
 
     // Resume publishing of "orderA", which should now succeed
     publisher.resumePublish("orderA");
@@ -587,19 +588,20 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(
         PublishResponse.newBuilder().addMessageIds("7").addMessageIds("8"));
 
-    assertEquals("7", future7.get());
-    assertEquals("8", future8.get());
+    Assert.assertEquals("7", future7.get());
+    Assert.assertEquals("8", future8.get());
 
     shutdownTestPublisher(publisher);
   }
 
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
   @Test
   public void testPublishThrowExceptionForUnsubmittedOrderingKeyMessage() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
                     .setElementCountThreshold(2L)
                     .setDelayThresholdDuration(Duration.ofSeconds(500))
                     .build())
@@ -642,6 +644,7 @@ public class PublisherImplTest {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
   }
+  */
 
   private ApiFuture<String> sendTestMessageWithOrderingKey(
       Publisher publisher, String data, String orderingKey) {
@@ -1337,6 +1340,29 @@ public class PublisherImplTest {
         .hasKind(SpanKind.PRODUCER)
         .hasNoParent()
         .hasEnded();
+  }
+
+  @Test
+  public void testPublisherWithHedgeSettings() throws Exception {
+    HedgeSettings hedgeSettings =
+        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(50)).build();
+    Publisher publisher = getTestPublisherBuilder().setHedgeSettings(hedgeSettings).build();
+
+    assertThat(publisher.getHedgeSettings()).isEqualTo(hedgeSettings);
+    assertThat(publisher.getHedgeTokenBucket()).isNotNull();
+    assertThat(publisher.getHedgeTokenBucket().getTokens()).isWithin(0.0001f).of(100.0f);
+
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testPublisherWithoutHedgeSettings() throws Exception {
+    Publisher publisher = getTestPublisherBuilder().build();
+
+    assertThat(publisher.getHedgeSettings()).isNull();
+    assertThat(publisher.getHedgeTokenBucket()).isNull();
+
+    shutdownTestPublisher(publisher);
   }
 
   private Builder getTestPublisherBuilder() {

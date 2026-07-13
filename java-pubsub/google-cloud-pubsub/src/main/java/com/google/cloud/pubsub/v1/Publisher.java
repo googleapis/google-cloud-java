@@ -138,6 +138,9 @@ public class Publisher implements PublisherInterface {
   private final OpenTelemetry openTelemetry;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
+  private final HedgeSettings hedgeSettings;
+  private final HedgeTokenBucket hedgeTokenBucket;
+
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
     return 1000L;
@@ -230,6 +233,9 @@ public class Publisher implements PublisherInterface {
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new Waiter();
+    this.hedgeSettings = builder.hedgeSettings;
+    this.hedgeTokenBucket =
+        this.hedgeSettings != null ? new HedgeTokenBucket(this.hedgeSettings) : null;
     this.publishContext = GrpcCallContext.createDefault();
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
@@ -244,6 +250,15 @@ public class Publisher implements PublisherInterface {
   /** Topic which the publisher publishes to. */
   public String getTopicNameString() {
     return topicName;
+  }
+
+  /** Returns the configured hedging settings, or null if hedging is disabled. */
+  public HedgeSettings getHedgeSettings() {
+    return hedgeSettings;
+  }
+
+  HedgeTokenBucket getHedgeTokenBucket() {
+    return hedgeTokenBucket;
   }
 
   /**
@@ -814,6 +829,7 @@ public class Publisher implements PublisherInterface {
 
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
+    private HedgeSettings hedgeSettings = null;
 
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -963,6 +979,12 @@ public class Publisher implements PublisherInterface {
     /** Sets the instance of OpenTelemetry for the Publisher class. */
     public Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       this.openTelemetry = openTelemetry;
+      return this;
+    }
+
+    /** Configures the Publisher's hedging parameters. */
+    public Builder setHedgeSettings(HedgeSettings hedgeSettings) {
+      this.hedgeSettings = hedgeSettings;
       return this;
     }
 
