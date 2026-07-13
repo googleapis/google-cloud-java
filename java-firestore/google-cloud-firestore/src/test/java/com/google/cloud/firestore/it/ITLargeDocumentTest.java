@@ -18,7 +18,6 @@ package com.google.cloud.firestore.it;
 
 import static com.google.cloud.firestore.LocalFirestoreHelper.autoId;
 import static com.google.cloud.firestore.it.ITQueryTest.map;
-import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -32,14 +31,10 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.FieldPath;
 import com.google.cloud.firestore.FieldValue;
-import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
-import io.grpc.Status;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -188,7 +183,8 @@ public class ITLargeDocumentTest extends ITBaseTest {
             transaction -> {
               DocumentSnapshot snapshot = transaction.get(docRef).get();
               assertTrue(snapshot.exists());
-              transaction.update(docRef, map("transaction_timestamp", FieldValue.serverTimestamp()));
+              transaction.update(
+                  docRef, map("transaction_timestamp", FieldValue.serverTimestamp()));
               return null;
             })
         .get(60, TimeUnit.SECONDS);
@@ -198,22 +194,27 @@ public class ITLargeDocumentTest extends ITBaseTest {
   public void testPaginateLargeDocuments() throws Exception {
     CollectionReference colRef = firestore.collection(collectionName);
     com.google.cloud.firestore.Query q =
-        colRef.whereIn(FieldPath.documentId(), Arrays.asList("doc_a", "doc_b")).orderBy(FieldPath.documentId());
+        colRef
+            .whereIn(FieldPath.documentId(), Arrays.asList("doc_a", "doc_b"))
+            .orderBy(FieldPath.documentId());
 
     QuerySnapshot firstPage = q.limit(1).get().get();
     assertEquals(1, firstPage.size());
     DocumentSnapshot doc1 = firstPage.getDocuments().get(0);
+    assertEquals("doc_a", doc1.getId());
     assertEquals(asciiPayload, doc1.getString("chunk"));
 
     QuerySnapshot secondPage = q.startAfter(doc1).limit(1).get().get();
     assertEquals(1, secondPage.size());
     DocumentSnapshot doc2 = secondPage.getDocuments().get(0);
+    assertEquals("doc_b", doc2.getId());
     assertEquals(asciiPayload, doc2.getString("chunk"));
   }
 
   @Test
   public void testOversizedPayloadRejection() {
-    DocumentReference oversizedDoc = firestore.collection(collectionName).document("temp_oversized_doc");
+    DocumentReference oversizedDoc =
+        firestore.collection(collectionName).document("temp_oversized_doc");
     int targetBytes = 16 * 1024 * 1024 + 102400;
     char[] chars = new char[targetBytes];
     Arrays.fill(chars, 'a');
