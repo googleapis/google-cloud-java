@@ -24,8 +24,9 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [attestor public key][google.cloud.binaryauthorization.v1beta1.AttestorPublicKey] that will be used to verify
- * attestations signed by this attestor.
+ * An [attestor public
+ * key][google.cloud.binaryauthorization.v1beta1.AttestorPublicKey] that will be
+ * used to verify attestations signed by this attestor.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.AttestorPublicKey}
@@ -617,8 +618,9 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An [attestor public key][google.cloud.binaryauthorization.v1beta1.AttestorPublicKey] that will be used to verify
-   * attestations signed by this attestor.
+   * An [attestor public
+   * key][google.cloud.binaryauthorization.v1beta1.AttestorPublicKey] that will be
+   * used to verify attestations signed by this attestor.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.AttestorPublicKey}

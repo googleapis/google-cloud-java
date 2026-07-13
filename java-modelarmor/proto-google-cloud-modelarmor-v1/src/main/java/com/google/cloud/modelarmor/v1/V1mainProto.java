@@ -205,6 +205,18 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_modelarmor_v1_SdpDeidentifyResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_SdpBoundingBox_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_SdpBoundingBox_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_modelarmor_v1_SdpContentLocation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_modelarmor_v1_SdpContentLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_modelarmor_v1_SdpFinding_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_modelarmor_v1_SdpFinding_fieldAccessorTable;
@@ -212,6 +224,10 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_modelarmor_v1_SdpFinding_SdpFindingLocation_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_modelarmor_v1_SdpFinding_SdpFindingLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_modelarmor_v1_SdpRedactResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_modelarmor_v1_SdpRedactResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_modelarmor_v1_PiAndJailbreakFilterResult_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -261,7 +277,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "google/api/field_info.proto\032\031google/api/"
           + "resource.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\032\026google/type/date.proto\"\365\t\n"
+          + "oogle/protobuf/timestamp.proto\032\026google/type/date.proto\"\264\n\n"
           + "\010Template\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -271,7 +287,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "filter_config\030\005"
           + " \001(\0132(.google.cloud.modelarmor.v1.FilterConfigB\003\340A\002\022U\n"
           + "\021template_metadata\030\006 \001"
-          + "(\01325.google.cloud.modelarmor.v1.Template.TemplateMetadataB\003\340A\001\032\332\005\n"
+          + "(\01325.google.cloud.modelarmor.v1.Template.TemplateMetadataB\003\340A\001\032\231\006\n"
           + "\020TemplateMetadata\022/\n"
           + "\"ignore_partial_invocation_failures\030\001 \001(\010B\003\340A\001\022,\n"
           + "\037custom_prompt_safety_error_code\030\002 \001(\005B\003\340A\001\022/\n"
@@ -283,7 +299,9 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\020enforcement_type\030\010 \001(\0162E.g"
           + "oogle.cloud.modelarmor.v1.Template.TemplateMetadata.EnforcementTypeB\003\340A\001\022s\n"
           + "\030multi_language_detection\030\t \001(\0132L.google.clou"
-          + "d.modelarmor.v1.Template.TemplateMetadata.MultiLanguageDetectionB\003\340A\001\032F\n"
+          + "d.modelarmor.v1.Template.TemplateMetadata.MultiLanguageDetectionB\003\340A\001\022=\n\n"
+          + "modalities\030\013"
+          + " \003(\0162$.google.cloud.modelarmor.v1.ModalityB\003\340A\001\032F\n"
           + "\026MultiLanguageDetection\022,\n"
           + "\037enable_multi_language_detection\030\001 \001(\010B\003\340A\002\"\\\n"
           + "\017EnforcementType\022 \n"
@@ -293,35 +311,34 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:z\352Aw\n"
-          + "\"modelarmor.googleapis.com/Templ"
-          + "ate\022<projects/{project}/locations/{location}/templates/{template}*"
-          + "\ttemplates2\010template\"\213\t\n"
+          + "\"modelarmor.googleapis.com/Template\022<projects/{pr"
+          + "oject}/locations/{location}/templates/{template}*\ttemplates2\010template\"\213\t\n"
           + "\014FloorSetting\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022D\n\r"
-          + "filter_config\030\004"
-          + " \001(\0132(.google.cloud.modelarmor.v1.FilterConfigB\003\340A\002\0222\n"
+          + "filter_config\030\004 \001(\0132(.g"
+          + "oogle.cloud.modelarmor.v1.FilterConfigB\003\340A\002\0222\n"
           + " enable_floor_setting_enforcement\030\005"
           + " \001(\010B\003\340A\001H\000\210\001\001\022\\\n"
-          + "\023integrated_services\030\006 \003(\0162:.google.cloud.mod"
-          + "elarmor.v1.FloorSetting.IntegratedServiceB\003\340A\001\022_\n"
-          + "\031ai_platform_floor_setting\030\007 \001("
-          + "\01322.google.cloud.modelarmor.v1.AiPlatformFloorSettingB\003\340A\001H\001\210\001\001\022b\n"
-          + "\026floor_setting_metadata\030\010 \001(\0132=.google.cloud.modelarmo"
-          + "r.v1.FloorSetting.FloorSettingMetadataB\003\340A\001\032\333\001\n"
+          + "\023integrated_services\030\006"
+          + " \003(\0162:.google.cloud.modelarmor.v1.FloorSetting.IntegratedServiceB\003\340A\001\022_\n"
+          + "\031ai_platform_floor_setting\030\007 \001(\01322.google.cloud."
+          + "modelarmor.v1.AiPlatformFloorSettingB\003\340A\001H\001\210\001\001\022b\n"
+          + "\026floor_setting_metadata\030\010 \001(\0132="
+          + ".google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadataB\003\340A\001\032\333\001\n"
           + "\024FloorSettingMetadata\022{\n"
-          + "\030multi_language_detection\030\001 \001(\0132T.google.cloud.mo"
-          + "delarmor.v1.FloorSetting.FloorSettingMetadata.MultiLanguageDetectionB\003\340A\001\032F\n"
+          + "\030multi_language_detection\030\001 \001(\0132T.google.cloud.modelarmor.v1.Floor"
+          + "Setting.FloorSettingMetadata.MultiLanguageDetectionB\003\340A\001\032F\n"
           + "\026MultiLanguageDetection\022,\n"
           + "\037enable_multi_language_detection\030\001 \001(\010B\003\340A\002\"H\n"
           + "\021IntegratedService\022\"\n"
           + "\036INTEGRATED_SERVICE_UNSPECIFIED\020\000\022\017\n"
           + "\013AI_PLATFORM\020\001:\363\001\352A\357\001\n"
-          + "&modelarmor.googleapis.com/FloorSetting\0224projects/{pr"
-          + "oject}/locations/{location}/floorSetting\0222folders/{folder}/locations/{location}/"
-          + "floorSetting\022>organizations/{organization}/locations/{location}/floorSetting*\r"
+          + "&modelarmor.googleapis.com/FloorSetting\0224projects/{project}/locations/"
+          + "{location}/floorSetting\0222folders/{folder}/locations/{location}/floorSetting\022>org"
+          + "anizations/{organization}/locations/{location}/floorSetting*\r"
           + "floorSettings2\014floorSettingB#\n"
           + "!_enable_floor_setting_enforcementB\034\n"
           + "\032_ai_platform_floor_setting\"\216\001\n"
@@ -331,8 +348,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\024enable_cloud_logging\030\003 \001(\010B\003\340A\001B\022\n"
           + "\020enforcement_type\"\257\001\n"
           + "\024ListTemplatesRequest\022:\n"
-          + "\006parent\030\001 \001(\tB*"
-          + "\340A\002\372A$\022\"modelarmor.googleapis.com/Template\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB*\340A\002\372A$\022\"modelarmor.googleapis.com/Template\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -363,55 +380,53 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\026GetFloorSettingRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&modelarmor.googleapis.com/FloorSetting\"\227\001\n"
-          + "\031UpdateFloorSettingRequest\022D\n"
-          + "\r"
-          + "floor_setting\030\001"
-          + " \001(\0132(.google.cloud.modelarmor.v1.FloorSettingB\003\340A\002\0224\n"
+          + "\031UpdateFloorSettingRequest\022D\n\r"
+          + "floor_setting\030\001 "
+          + "\001(\0132(.google.cloud.modelarmor.v1.FloorSettingB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\357\002\n"
           + "\014FilterConfig\022H\n"
-          + "\014rai_settings\030\001 \001(\013"
-          + "2-.google.cloud.modelarmor.v1.RaiFilterSettingsB\003\340A\001\022H\n"
-          + "\014sdp_settings\030\002 \001(\0132-.goo"
-          + "gle.cloud.modelarmor.v1.SdpFilterSettingsB\003\340A\001\022g\n"
-          + " pi_and_jailbreak_filter_settings\030\003"
-          + " \001(\01328.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettingsB\003\340A\001\022b\n"
-          + "\035malicious_uri_filter_settings\030\004 \001(\01326.google."
-          + "cloud.modelarmor.v1.MaliciousUriFilterSettingsB\003\340A\001\"\341\002\n"
+          + "\014rai_settings\030\001"
+          + " \001(\0132-.google.cloud.modelarmor.v1.RaiFilterSettingsB\003\340A\001\022H\n"
+          + "\014sdp_settings\030\002"
+          + " \001(\0132-.google.cloud.modelarmor.v1.SdpFilterSettingsB\003\340A\001\022g\n"
+          + " pi_and_jailbreak_filter_settings\030\003 \001(\01328.google"
+          + ".cloud.modelarmor.v1.PiAndJailbreakFilterSettingsB\003\340A\001\022b\n"
+          + "\035malicious_uri_filter_settings\030\004"
+          + " \001(\01326.google.cloud.modelarmor.v1.MaliciousUriFilterSettingsB\003\340A\001\"\341\002\n"
           + "\034PiAndJailbreakFilterSettings\022y\n"
-          + "\022filter_enforcement\030\001 \001(\0162X.googl"
-          + "e.cloud.modelarmor.v1.PiAndJailbreakFilt"
-          + "erSettings.PiAndJailbreakFilterEnforcementB\003\340A\001\022S\n"
-          + "\020confidence_level\030\003 \001(\01624.goog"
-          + "le.cloud.modelarmor.v1.DetectionConfidenceLevelB\003\340A\001\"q\n"
+          + "\022filter_enforcement\030\001 \001(\0162X.google.cloud.modelarmo"
+          + "r.v1.PiAndJailbreakFilterSettings.PiAndJailbreakFilterEnforcementB\003\340A\001\022S\n"
+          + "\020confidence_level\030\003"
+          + " \001(\01624.google.cloud.modelarmor.v1.DetectionConfidenceLevelB\003\340A\001\"q\n"
           + "\037PiAndJailbreakFilterEnforcement\0223\n"
           + "/PI_AND_JAILBREAK_FILTER_ENFORCEMENT_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\014\n"
           + "\010DISABLED\020\002\"\201\002\n"
           + "\032MaliciousUriFilterSettings\022u\n"
-          + "\022filter_enforcement\030\001 \001(\0162T.google.clou"
-          + "d.modelarmor.v1.MaliciousUriFilterSettings.MaliciousUriFilterEnforcementB\003\340A\001\"l\n"
+          + "\022filter_enforcement\030\001 \001(\0162T.google.cloud.modelarmor.v1.M"
+          + "aliciousUriFilterSettings.MaliciousUriFilterEnforcementB\003\340A\001\"l\n"
           + "\035MaliciousUriFilterEnforcement\0220\n"
           + ",MALICIOUS_URI_FILTER_ENFORCEMENT_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\014\n"
           + "\010DISABLED\020\002\"\216\002\n"
           + "\021RaiFilterSettings\022Q\n"
-          + "\013rai_filters\030\001 \003(\01327.google."
-          + "cloud.modelarmor.v1.RaiFilterSettings.RaiFilterB\003\340A\002\032\245\001\n"
+          + "\013rai_filters\030\001"
+          + " \003(\01327.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilterB\003\340A\002\032\245\001\n"
           + "\tRaiFilter\022C\n"
-          + "\013filter_type\030\001"
-          + " \001(\0162).google.cloud.modelarmor.v1.RaiFilterTypeB\003\340A\002\022S\n"
-          + "\020confidence_level\030\002 \001("
-          + "\01624.google.cloud.modelarmor.v1.DetectionConfidenceLevelB\003\340A\001\"\300\001\n"
+          + "\013filter_type\030\001 \001(\0162).google."
+          + "cloud.modelarmor.v1.RaiFilterTypeB\003\340A\002\022S\n"
+          + "\020confidence_level\030\002 \001(\01624.google.cloud."
+          + "modelarmor.v1.DetectionConfidenceLevelB\003\340A\001\"\300\001\n"
           + "\021SdpFilterSettings\022G\n"
           + "\014basic_config\030\001"
           + " \001(\0132*.google.cloud.modelarmor.v1.SdpBasicConfigB\003\340A\001H\000\022M\n"
-          + "\017advanced_config\030\002"
-          + " \001(\0132-.google.cloud.modelarmor.v1.SdpAdvancedConfigB\003\340A\001H\000B\023\n"
+          + "\017advanced_config\030\002 "
+          + "\001(\0132-.google.cloud.modelarmor.v1.SdpAdvancedConfigB\003\340A\001H\000B\023\n"
           + "\021sdp_configuration\"\335\001\n"
           + "\016SdpBasicConfig\022e\n"
-          + "\022filter_enforcement\030\003 \001(\0162D.google.cloud.mo"
-          + "delarmor.v1.SdpBasicConfig.SdpBasicConfigEnforcementB\003\340A\001\"d\n"
+          + "\022filter_enforcement\030\003 \001(\0162D.google.cloud.modelarmor.v1.SdpBa"
+          + "sicConfig.SdpBasicConfigEnforcementB\003\340A\001\"d\n"
           + "\031SdpBasicConfigEnforcement\022,\n"
           + "(SDP_BASIC_CONFIG_ENFORCEMENT_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\014\n"
@@ -422,12 +437,12 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\031SanitizeUserPromptRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"modelarmor.googleapis.com/Template\022C\n"
-          + "\020user_prompt_data\030\002 \001(\0132"
-          + "$.google.cloud.modelarmor.v1.DataItemB\003\340A\002\022j\n"
-          + "!multi_language_detection_metadata\030\006"
-          + " \001(\0132:.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadataB\003\340A\001\022K\n"
-          + "\016streaming_mode\030\007"
-          + " \001(\0162).google.cloud.modelarmor.v1.StreamingModeB\003\340A\001H\000\210\001\001B\021\n"
+          + "\020user_prompt_data\030\002"
+          + " \001(\0132$.google.cloud.modelarmor.v1.DataItemB\003\340A\002\022j\n"
+          + "!multi_language_detection_metadata\030\006 \001(\0132:.google.cl"
+          + "oud.modelarmor.v1.MultiLanguageDetectionMetadataB\003\340A\001\022K\n"
+          + "\016streaming_mode\030\007 \001(\0162)."
+          + "google.cloud.modelarmor.v1.StreamingModeB\003\340A\001H\000\210\001\001B\021\n"
           + "\017_streaming_mode\"\206\003\n"
           + "\034SanitizeModelResponseRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
@@ -435,26 +450,26 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\023model_response_data\030\002"
           + " \001(\0132$.google.cloud.modelarmor.v1.DataItemB\003\340A\002\022\030\n"
           + "\013user_prompt\030\004 \001(\tB\003\340A\001\022j\n"
-          + "!multi_language_detection_metadata\030\007 \001(\0132:"
-          + ".google.cloud.modelarmor.v1.MultiLanguageDetectionMetadataB\003\340A\001\022K\n"
-          + "\016streaming_mode\030\010"
-          + " \001(\0162).google.cloud.modelarmor.v1.StreamingModeB\003\340A\001H\000\210\001\001B\021\n"
+          + "!multi_language_detection_metadata\030\007 \001(\0132:.google.cloud.mod"
+          + "elarmor.v1.MultiLanguageDetectionMetadataB\003\340A\001\022K\n"
+          + "\016streaming_mode\030\010 \001(\0162).google."
+          + "cloud.modelarmor.v1.StreamingModeB\003\340A\001H\000\210\001\001B\021\n"
           + "\017_streaming_mode\"n\n"
           + "\032SanitizeUserPromptResponse\022P\n"
-          + "\023sanitization_result\030\001"
-          + " \001(\0132..google.cloud.modelarmor.v1.SanitizationResultB\003\340A\003\"q\n"
+          + "\023sanitization_result\030\001 \001("
+          + "\0132..google.cloud.modelarmor.v1.SanitizationResultB\003\340A\003\"q\n"
           + "\035SanitizeModelResponseResponse\022P\n"
-          + "\023sanitization_result\030\001"
-          + " \001(\0132..google.cloud.modelarmor.v1.SanitizationResultB\003\340A\003\"\225\005\n"
+          + "\023sanitization_result\030\001 \001(\0132..g"
+          + "oogle.cloud.modelarmor.v1.SanitizationResultB\003\340A\003\"\225\005\n"
           + "\022SanitizationResult\022M\n"
-          + "\022filter_match_state\030\001 \001(\0162,."
-          + "google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022^\n"
-          + "\016filter_results\030\002 \003(\0132A.googl"
-          + "e.cloud.modelarmor.v1.SanitizationResult.FilterResultsEntryB\003\340A\003\022L\n"
-          + "\021invocation_result\030\004"
-          + " \001(\0162,.google.cloud.modelarmor.v1.InvocationResultB\003\340A\003\022g\n"
-          + "\025sanitization_metadata\030\003 \001(\0132C.google.cloud.modelarmor."
-          + "v1.SanitizationResult.SanitizationMetadataB\003\340A\003\032\270\001\n"
+          + "\022filter_match_state\030\001"
+          + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022^\n"
+          + "\016filter_results\030\002 \003(\0132A.google.cloud.modelarmo"
+          + "r.v1.SanitizationResult.FilterResultsEntryB\003\340A\003\022L\n"
+          + "\021invocation_result\030\004 \001(\0162,.goo"
+          + "gle.cloud.modelarmor.v1.InvocationResultB\003\340A\003\022g\n"
+          + "\025sanitization_metadata\030\003 \001(\0132C.g"
+          + "oogle.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadataB\003\340A\003\032\270\001\n"
           + "\024SanitizationMetadata\022\022\n\n"
           + "error_code\030\001 \001(\003\022\025\n\r"
           + "error_message\030\002 \001(\t\022*\n"
@@ -470,57 +485,60 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\014FilterResult\022H\n"
           + "\021rai_filter_result\030\001"
           + " \001(\0132+.google.cloud.modelarmor.v1.RaiFilterResultH\000\022H\n"
-          + "\021sdp_filter_result\030\002 \001(\0132+"
-          + ".google.cloud.modelarmor.v1.SdpFilterResultH\000\022`\n"
-          + "\036pi_and_jailbreak_filter_result\030\003"
-          + " \001(\01326.google.cloud.modelarmor.v1.PiAndJailbreakFilterResultH\000\022[\n"
-          + "\033malicious_uri_filter_result\030\004"
-          + " \001(\01324.google.cloud.modelarmor.v1.MaliciousUriFilterResultH\000\022Q\n"
-          + "\031csam_filter_filter_result\030\005 \001(\0132,.google"
-          + ".cloud.modelarmor.v1.CsamFilterResultH\000\022U\n"
-          + "\030virus_scan_filter_result\030\006 \001(\01321.goog"
-          + "le.cloud.modelarmor.v1.VirusScanFilterResultH\000B\017\n\r"
+          + "\021sdp_filter_result\030\002"
+          + " \001(\0132+.google.cloud.modelarmor.v1.SdpFilterResultH\000\022`\n"
+          + "\036pi_and_jailbreak_filter_result\030\003 \001(\01326.google.cl"
+          + "oud.modelarmor.v1.PiAndJailbreakFilterResultH\000\022[\n"
+          + "\033malicious_uri_filter_result\030\004 "
+          + "\001(\01324.google.cloud.modelarmor.v1.MaliciousUriFilterResultH\000\022Q\n"
+          + "\031csam_filter_filter_result\030\005"
+          + " \001(\0132,.google.cloud.modelarmor.v1.CsamFilterResultH\000\022U\n"
+          + "\030virus_scan_filter_result\030\006"
+          + " \001(\01321.google.cloud.modelarmor.v1.VirusScanFilterResultH\000B\017\n\r"
           + "filter_result\"\277\005\n"
           + "\017RaiFilterResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.google.cl"
-          + "oud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001"
+          + " \001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
-          + "\013match_state\030\003"
-          + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022f\n"
-          + "\027rai_filter_type_results\030\004 \003(\0132E.google.cloud.modelarmor.v"
-          + "1.RaiFilterResult.RaiFilterTypeResultsEntry\032\355\001\n"
+          + "\013match_state\030\003 \001(\0162,.google"
+          + ".cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022f\n"
+          + "\027rai_filter_type_results\030\004 \003(\0132E.go"
+          + "ogle.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResultsEntry\032\355\001\n"
           + "\023RaiFilterTypeResult\022>\n"
           + "\013filter_type\030\001 \001(\0162).google.cloud.modelarmor.v1.RaiFilterType\022N\n"
-          + "\020confidence_level\030\002 \001(\01624."
-          + "google.cloud.modelarmor.v1.DetectionConfidenceLevel\022F\n"
-          + "\013match_state\030\003 \001(\0162,.googl"
-          + "e.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\032|\n"
+          + "\020confidence_level\030\002"
+          + " \001(\01624.google.cloud.modelarmor.v1.DetectionConfidenceLevel\022F\n"
+          + "\013match_state\030\003"
+          + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\032|\n"
           + "\031RaiFilterTypeResultsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022N\n"
-          + "\005value\030\002 \001(\0132?.google.cloud.mode"
-          + "larmor.v1.RaiFilterResult.RaiFilterTypeResult:\0028\001\"\261\001\n"
+          + "\005value\030\002 "
+          + "\001(\0132?.google.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResult:\0028\001\"\367\001\n"
           + "\017SdpFilterResult\022F\n"
-          + "\016inspect_result\030\001"
-          + " \001(\0132,.google.cloud.modelarmor.v1.SdpInspectResultH\000\022L\n"
-          + "\021deidentify_result\030\002"
-          + " \001(\0132/.google.cloud.modelarmor.v1.SdpDeidentifyResultH\000B\010\n"
-          + "\006result\"\300\002\n"
+          + "\016inspect_result\030\001 \001(\0132,.g"
+          + "oogle.cloud.modelarmor.v1.SdpInspectResultH\000\022L\n"
+          + "\021deidentify_result\030\002 \001(\0132/.google"
+          + ".cloud.modelarmor.v1.SdpDeidentifyResultH\000\022D\n\r"
+          + "redact_result\030\003"
+          + " \001(\0132+.google.cloud.modelarmor.v1.SdpRedactResultH\000B\010\n"
+          + "\006result\"\336\002\n"
           + "\020SdpInspectResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.go"
-          + "ogle.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001"
+          + " \001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
-          + "\013match_state\030\003"
-          + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\0228\n"
+          + "\013match_state\030\003 \001(\0162,.google.cl"
+          + "oud.modelarmor.v1.FilterMatchStateB\003\340A\003\0228\n"
           + "\010findings\030\004 \003(\0132&.google.cloud.modelarmor.v1.SdpFinding\022\032\n"
-          + "\022findings_truncated\030\005 \001(\010\"f\n"
+          + "\022findings_truncated\030\005 \001(\010\022\034\n"
+          + "\024extracted_image_text\030\006 \001(\t\"f\n"
           + "\010DataItem\022\016\n"
           + "\004text\030\001 \001(\tH\000\022=\n"
           + "\tbyte_item\030\002 \001(\0132(.google.cloud.modelarmor.v1.ByteDataItemH\000B\013\n"
-          + "\tdata_item\"\232\002\n"
+          + "\tdata_item\"\245\002\n"
           + "\014ByteDataItem\022R\n"
-          + "\016byte_data_type\030\001"
-          + " \001(\01625.google.cloud.modelarmor.v1.ByteDataItem.ByteItemTypeB\003\340A\002\022\026\n"
-          + "\tbyte_data\030\002 \001(\014B\003\340A\002\"\235\001\n"
+          + "\016byte_data_type\030\001 \001(\01625.google.cloud.mode"
+          + "larmor.v1.ByteDataItem.ByteItemTypeB\003\340A\002\022\026\n"
+          + "\tbyte_data\030\002 \001(\014B\003\340A\002\"\250\001\n"
           + "\014ByteItemType\022\036\n"
           + "\032BYTE_ITEM_TYPE_UNSPECIFIED\020\000\022\022\n"
           + "\016PLAINTEXT_UTF8\020\001\022\007\n"
@@ -529,52 +547,80 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\016EXCEL_DOCUMENT\020\004\022\027\n"
           + "\023POWERPOINT_DOCUMENT\020\005\022\007\n"
           + "\003TXT\020\006\022\007\n"
-          + "\003CSV\020\007\"\320\002\n"
+          + "\003CSV\020\007\022\t\n"
+          + "\005IMAGE\020\010\"\320\002\n"
           + "\023SdpDeidentifyResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.google."
-          + "cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001"
+          + " \001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
           + "\013match_state\030\003"
           + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\0222\n"
           + "\004data\030\004 \001(\0132$.google.cloud.modelarmor.v1.DataItem\022\031\n"
           + "\021transformed_bytes\030\005 \001(\003\022\022\n\n"
-          + "info_types\030\006 \003(\t\"\304\002\n\n"
+          + "info_types\030\006 \003(\t\"\301\001\n"
+          + "\027SdpImageFindingLocation\022Z\n"
+          + "\016bounding_boxes\030\001 \003(\0132B.google.clou"
+          + "d.modelarmor.v1.SdpImageFindingLocation.SdpBoundingBox\032J\n"
+          + "\016SdpBoundingBox\022\013\n"
+          + "\003top\030\001 \001(\005\022\014\n"
+          + "\004left\030\002 \001(\005\022\r\n"
+          + "\005width\030\003 \001(\005\022\016\n"
+          + "\006height\030\004 \001(\005\"\217\001\n"
+          + "\022SdpContentLocation\022U\n"
+          + "\026image_finding_location\030\002 \001(\01323.google.cloud"
+          + ".modelarmor.v1.SdpImageFindingLocationH\000\022\026\n"
+          + "\016container_name\030\001 \001(\tB\n\n"
+          + "\010location\"\217\003\n"
+          + "\n"
           + "SdpFinding\022\021\n"
           + "\tinfo_type\030\001 \001(\t\022D\n\n"
           + "likelihood\030\002 \001(\01620.google.cloud.modelarmor.v1.SdpFindingLikelihood\022K\n"
-          + "\010location\030\003 \001"
-          + "(\01329.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation\032\217\001\n"
+          + "\010location\030\003 \001(\01329"
+          + ".google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation\032\332\001\n"
           + "\022SdpFindingLocation\0229\n\n"
           + "byte_range\030\001 \001(\0132%.google.cloud.modelarmor.v1.RangeInfo\022>\n"
-          + "\017codepoint_range\030\002"
-          + " \001(\0132%.google.cloud.modelarmor.v1.RangeInfo\"\304\002\n"
+          + "\017codepoint_range\030\002 \001(\0132%.google.cloud.modelarmor.v1.RangeInfo\022I\n"
+          + "\021content_locations\030\003 \003(\0132..google."
+          + "cloud.modelarmor.v1.SdpContentLocation\"\350\002\n"
+          + "\017SdpRedactResult\022N\n"
+          + "\017execution_state\030\001 "
+          + "\001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022C\n\r"
+          + "message_items\030\002 \003("
+          + "\0132\'.google.cloud.modelarmor.v1.MessageItemB\003\340A\003\022F\n"
+          + "\013match_state\030\003 \001(\0162,.google.cl"
+          + "oud.modelarmor.v1.FilterMatchStateB\003\340A\003\022\033\n"
+          + "\016redacted_image\030\004 \001(\014B\003\340A\003\022=\n"
+          + "\010findings\030\005"
+          + " \003(\0132&.google.cloud.modelarmor.v1.SdpFindingB\003\340A\003\022\034\n"
+          + "\024extracted_image_text\030\006 \001(\t\"\304\002\n"
           + "\032PiAndJailbreakFilterResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.google.cloud.m"
-          + "odelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001"
+          + " \001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
-          + "\013match_state\030\003 "
-          + "\001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022N\n"
-          + "\020confidence_level\030\005 \001(\016"
-          + "24.google.cloud.modelarmor.v1.DetectionConfidenceLevel\"\307\003\n"
+          + "\013match_state\030\003 \001(\0162,."
+          + "google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022N\n"
+          + "\020confidence_level\030\005 \001(\01624.goo"
+          + "gle.cloud.modelarmor.v1.DetectionConfidenceLevel\"\307\003\n"
           + "\030MaliciousUriFilterResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.google.cl"
-          + "oud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001"
+          + " \001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n"
+          + "\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
-          + "\013match_state\030\003"
-          + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022q\n"
-          + "\033malicious_uri_matched_items\030\004 \003(\0132L.google.cloud.modelarm"
-          + "or.v1.MaliciousUriFilterResult.MaliciousUriMatchedItem\032`\n"
+          + "\013match_state\030\003 \001"
+          + "(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022q\n"
+          + "\033malicious_uri_matched_items\030\004 \003(\0132L.google.cloud.modelarmor.v1."
+          + "MaliciousUriFilterResult.MaliciousUriMatchedItem\032`\n"
           + "\027MaliciousUriMatchedItem\022\013\n"
           + "\003uri\030\001 \001(\t\0228\n"
           + "\tlocations\030\002 \003(\0132%.google.cloud.modelarmor.v1.RangeInfo\"\240\004\n"
           + "\025VirusScanFilterResult\022N\n"
-          + "\017execution_state\030\001 "
-          + "\001(\01620.google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001 \001(\01620."
+          + "google.cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
           + "\013match_state\030\003"
           + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\022b\n"
-          + "\024scanned_content_type\030\004 \001(\0162D.google.cloud."
-          + "modelarmor.v1.VirusScanFilterResult.ScannedContentType\022\031\n"
+          + "\024scanned_content_type\030\004 \001(\0162D.google.cloud.modela"
+          + "rmor.v1.VirusScanFilterResult.ScannedContentType\022\031\n"
           + "\014scanned_size\030\005 \001(\003H\000\210\001\001\022>\n\r"
           + "virus_details\030\006 \003(\0132\'.google.cloud.modelarmor.v1.VirusDetail\"_\n"
           + "\022ScannedContentType\022$\n"
@@ -586,8 +632,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\013VirusDetail\022\016\n"
           + "\006vendor\030\001 \001(\t\022\r\n"
           + "\005names\030\002 \003(\t\022G\n"
-          + "\013threat_type\030\003"
-          + " \001(\01622.google.cloud.modelarmor.v1.VirusDetail.ThreatType\"\243\001\n\n"
+          + "\013threat_type\030\003 \001("
+          + "\01622.google.cloud.modelarmor.v1.VirusDetail.ThreatType\"\243\001\n\n"
           + "ThreatType\022\033\n"
           + "\027THREAT_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007UNKNOWN\020\001\022\021\n\r"
@@ -596,8 +642,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\033POTENTIALLY_HARMFUL_CONTENT\020\004\022 \n"
           + "\034POTENTIALLY_UNWANTED_CONTENT\020\005\"\352\001\n"
           + "\020CsamFilterResult\022N\n"
-          + "\017execution_state\030\001 \001(\01620.google"
-          + ".cloud.modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
+          + "\017execution_state\030\001 \001(\01620.google.cloud"
+          + ".modelarmor.v1.FilterExecutionStateB\003\340A\003\022>\n\r"
           + "message_items\030\002 \003(\0132\'.google.cloud.modelarmor.v1.MessageItem\022F\n"
           + "\013match_state\030\003"
           + " \001(\0162,.google.cloud.modelarmor.v1.FilterMatchStateB\003\340A\003\"\270\001\n"
@@ -649,59 +695,68 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "StreamingMode\022\036\n"
           + "\032STREAMING_MODE_UNSPECIFIED\020\000\022\033\n"
           + "\027STREAMING_MODE_BUFFERED\020\001\022\033\n"
-          + "\027STREAMING_MODE_REALTIME\020\0022\361\022\n\n"
+          + "\027STREAMING_MODE_REALTIME\020\002*K\n"
+          + "\010Modality\022\030\n"
+          + "\024MODALITY_UNSPECIFIED\020\000\022\021\n\r"
+          + "MODALITY_TEXT\020\001\022\022\n"
+          + "\016MODALITY_IMAGE\020\0022\361\022\n\n"
           + "ModelArmor\022\264\001\n\r"
-          + "ListTemplates\0220.google.cloud.modelarmor.v1.ListTemplatesRequest\0321.google."
-          + "cloud.modelarmor.v1.ListTemplatesRespons"
-          + "e\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/templates\022\241\001\n"
-          + "\013GetTemplate\022..google.cloud.modelarmor.v1.GetTempla"
-          + "teRequest\032$.google.cloud.modelarmor.v1.T"
-          + "emplate\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/templates/*}\022\310\001\n"
-          + "\016CreateTemplate\0221.google.cloud.modelarmor.v1.Cr"
-          + "eateTemplateRequest\032$.google.cloud.model"
-          + "armor.v1.Template\"]\332A\033parent,template,te"
-          + "mplate_id\202\323\344\223\0029\"-/v1/{parent=projects/*/locations/*}/templates:\010template\022\312\001\n"
-          + "\016UpdateTemplate\0221.google.cloud.modelarmor.v1"
-          + ".UpdateTemplateRequest\032$.google.cloud.mo"
-          + "delarmor.v1.Template\"_\332A\024template,update"
-          + "_mask\202\323\344\223\002B26/v1/{template.name=projects"
-          + "/*/locations/*/templates/*}:\010template\022\231\001\n"
-          + "\016DeleteTemplate\0221.google.cloud.modelarm"
-          + "or.v1.DeleteTemplateRequest\032\026.google.pro"
-          + "tobuf.Empty\"<\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/locations/*/templates/*}\022\230\002\n"
-          + "\017GetFloorSetting\0222.google.cloud.modelarmor."
-          + "v1.GetFloorSettingRequest\032(.google.cloud"
-          + ".modelarmor.v1.FloorSetting\"\246\001\332A\004name\202\323\344"
-          + "\223\002\230\001\022./v1/{name=projects/*/locations/*/f"
-          + "loorSetting}Z/\022-/v1/{name=folders/*/loca"
-          + "tions/*/floorSetting}Z5\0223/v1/{name=organizations/*/locations/*/floorSetting}\022\212\003\n"
-          + "\022UpdateFloorSetting\0225.google.cloud.model"
-          + "armor.v1.UpdateFloorSettingRequest\032(.goo"
-          + "gle.cloud.modelarmor.v1.FloorSetting\"\222\002\332"
-          + "A\031floor_setting,update_mask\202\323\344\223\002\357\0012</v1/"
-          + "{floor_setting.name=projects/*/locations/*/floorSetting}:\r"
+          + "ListTemplates\0220.google.cloud.modelarmor.v1"
+          + ".ListTemplatesRequest\0321.google.cloud.mod"
+          + "elarmor.v1.ListTemplatesResponse\">\332A\006par"
+          + "ent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/templates\022\241\001\n"
+          + "\013GetTemplate\022..google.cloud.modelarmor.v1.GetTemplateRequest"
+          + "\032$.google.cloud.modelarmor.v1.Template\"<"
+          + "\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/templates/*}\022\310\001\n"
+          + "\016CreateTemplate\0221.google.cloud.modelarmor.v1.CreateTempl"
+          + "ateRequest\032$.google.cloud.modelarmor.v1."
+          + "Template\"]\332A\033parent,template,template_id"
+          + "\202\323\344\223\0029\"-/v1/{parent=projects/*/locations/*}/templates:\010template\022\312\001\n"
+          + "\016UpdateTemplate\0221.google.cloud.modelarmor.v1.UpdateTe"
+          + "mplateRequest\032$.google.cloud.modelarmor."
+          + "v1.Template\"_\332A\024template,update_mask\202\323\344\223"
+          + "\002B26/v1/{template.name=projects/*/locations/*/templates/*}:\010template\022\231\001\n"
+          + "\016DeleteTemplate\0221.google.cloud.modelarmor.v1.Del"
+          + "eteTemplateRequest\032\026.google.protobuf.Emp"
+          + "ty\"<\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/locations/*/templates/*}\022\230\002\n"
+          + "\017GetFloorSetting\0222.google.cloud.modelarmor.v1.GetFlo"
+          + "orSettingRequest\032(.google.cloud.modelarm"
+          + "or.v1.FloorSetting\"\246\001\332A\004name\202\323\344\223\002\230\001\022./v1"
+          + "/{name=projects/*/locations/*/floorSetting}Z/\022-/v1/{name=folders/*/locations/*/f"
+          + "loorSetting}Z5\0223/v1/{name=organizations/*/locations/*/floorSetting}\022\212\003\n"
+          + "\022UpdateFloorSetting\0225.google.cloud.modelarmor.v1."
+          + "UpdateFloorSettingRequest\032(.google.cloud"
+          + ".modelarmor.v1.FloorSetting\"\222\002\332A\031floor_s"
+          + "etting,update_mask\202\323\344\223\002\357\0012</v1/{floor_se"
+          + "tting.name=projects/*/locations/*/floorSetting}:\r"
           + "floor_settingZL2;/v1/{floor_setting.name=folders/*/locations/*/floorSetting}:\r"
           + "floor_settingZR2A/v1/{floor_setting.name=organizations/*/locations/*/floorSetting}:\r"
           + "floor_setting\022\320\001\n"
-          + "\022SanitizeUserPrompt\0225.google.cloud.modelarm"
-          + "or.v1.SanitizeUserPromptRequest\0326.google.cloud.modelarmor.v1.SanitizeUserPromptR"
-          + "esponse\"K\202\323\344\223\002E\"@/v1/{name=projects/*/lo"
-          + "cations/*/templates/*}:sanitizeUserPrompt:\001*\022\334\001\n"
-          + "\025SanitizeModelResponse\0228.google.cloud.modelarmor.v1.SanitizeModelRespons"
-          + "eRequest\0329.google.cloud.modelarmor.v1.Sa"
-          + "nitizeModelResponseResponse\"N\202\323\344\223\002H\"C/v1"
-          + "/{name=projects/*/locations/*/templates/*}:sanitizeModelResponse:\001*\022\217\001\n"
-          + "\030StreamSanitizeUserPrompt\0225.google.cloud.modelarm"
-          + "or.v1.SanitizeUserPromptRequest\0326.google"
-          + ".cloud.modelarmor.v1.SanitizeUserPromptResponse\"\000(\0010\001\022\230\001\n"
-          + "\033StreamSanitizeModelResponse\0228.google.cloud.modelarmor.v1.Sanit"
-          + "izeModelResponseRequest\0329.google.cloud.modelarmor.v1.SanitizeModelResponseRespon"
-          + "se\"\000(\0010\001\032M\312A\031modelarmor.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-platformB\251\001\n"
-          + "\036com.google.cloud.modelarmor.v1B\013V1mainProtoP\001Z>cloud.google.com/go/m"
-          + "odelarmor/apiv1/modelarmorpb;modelarmorp"
-          + "b\252\002\032Google.Cloud.ModelArmor.V1\312\002\032Google\\"
-          + "Cloud\\ModelArmor\\V1b\006proto3"
+          + "\022SanitizeUserPrompt\0225.google.cloud.modelarmor.v1.San"
+          + "itizeUserPromptRequest\0326.google.cloud.mo",
+      "delarmor.v1.SanitizeUserPromptResponse\"K"
+          + "\202\323\344\223\002E\"@/v1/{name=projects/*/locations/*"
+          + "/templates/*}:sanitizeUserPrompt:\001*\022\334\001\n\025"
+          + "SanitizeModelResponse\0228.google.cloud.mod"
+          + "elarmor.v1.SanitizeModelResponseRequest\032"
+          + "9.google.cloud.modelarmor.v1.SanitizeMod"
+          + "elResponseResponse\"N\202\323\344\223\002H\"C/v1/{name=pr"
+          + "ojects/*/locations/*/templates/*}:saniti"
+          + "zeModelResponse:\001*\022\217\001\n\030StreamSanitizeUse"
+          + "rPrompt\0225.google.cloud.modelarmor.v1.San"
+          + "itizeUserPromptRequest\0326.google.cloud.mo"
+          + "delarmor.v1.SanitizeUserPromptResponse\"\000"
+          + "(\0010\001\022\230\001\n\033StreamSanitizeModelResponse\0228.g"
+          + "oogle.cloud.modelarmor.v1.SanitizeModelR"
+          + "esponseRequest\0329.google.cloud.modelarmor"
+          + ".v1.SanitizeModelResponseResponse\"\000(\0010\001\032"
+          + "M\312A\031modelarmor.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\251"
+          + "\001\n\036com.google.cloud.modelarmor.v1B\013V1mai"
+          + "nProtoP\001Z>cloud.google.com/go/modelarmor"
+          + "/apiv1/modelarmorpb;modelarmorpb\252\002\032Googl"
+          + "e.Cloud.ModelArmor.V1\312\002\032Google\\Cloud\\Mod"
+          + "elArmor\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -740,6 +795,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "LogSanitizeOperations",
               "EnforcementType",
               "MultiLanguageDetection",
+              "Modalities",
             });
     internal_static_google_cloud_modelarmor_v1_Template_TemplateMetadata_MultiLanguageDetection_descriptor =
         internal_static_google_cloud_modelarmor_v1_Template_TemplateMetadata_descriptor
@@ -1044,7 +1100,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_SdpFilterResult_descriptor,
             new java.lang.String[] {
-              "InspectResult", "DeidentifyResult", "Result",
+              "InspectResult", "DeidentifyResult", "RedactResult", "Result",
             });
     internal_static_google_cloud_modelarmor_v1_SdpInspectResult_descriptor =
         getDescriptor().getMessageType(27);
@@ -1052,7 +1108,12 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_SdpInspectResult_descriptor,
             new java.lang.String[] {
-              "ExecutionState", "MessageItems", "MatchState", "Findings", "FindingsTruncated",
+              "ExecutionState",
+              "MessageItems",
+              "MatchState",
+              "Findings",
+              "FindingsTruncated",
+              "ExtractedImageText",
             });
     internal_static_google_cloud_modelarmor_v1_DataItem_descriptor =
         getDescriptor().getMessageType(28);
@@ -1083,8 +1144,33 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "TransformedBytes",
               "InfoTypes",
             });
-    internal_static_google_cloud_modelarmor_v1_SdpFinding_descriptor =
+    internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_descriptor =
         getDescriptor().getMessageType(31);
+    internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_descriptor,
+            new java.lang.String[] {
+              "BoundingBoxes",
+            });
+    internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_SdpBoundingBox_descriptor =
+        internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_descriptor.getNestedType(
+            0);
+    internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_SdpBoundingBox_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_modelarmor_v1_SdpImageFindingLocation_SdpBoundingBox_descriptor,
+            new java.lang.String[] {
+              "Top", "Left", "Width", "Height",
+            });
+    internal_static_google_cloud_modelarmor_v1_SdpContentLocation_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_cloud_modelarmor_v1_SdpContentLocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_modelarmor_v1_SdpContentLocation_descriptor,
+            new java.lang.String[] {
+              "ImageFindingLocation", "ContainerName", "Location",
+            });
+    internal_static_google_cloud_modelarmor_v1_SdpFinding_descriptor =
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_modelarmor_v1_SdpFinding_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_SdpFinding_descriptor,
@@ -1097,10 +1183,23 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_SdpFinding_SdpFindingLocation_descriptor,
             new java.lang.String[] {
-              "ByteRange", "CodepointRange",
+              "ByteRange", "CodepointRange", "ContentLocations",
+            });
+    internal_static_google_cloud_modelarmor_v1_SdpRedactResult_descriptor =
+        getDescriptor().getMessageType(34);
+    internal_static_google_cloud_modelarmor_v1_SdpRedactResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_modelarmor_v1_SdpRedactResult_descriptor,
+            new java.lang.String[] {
+              "ExecutionState",
+              "MessageItems",
+              "MatchState",
+              "RedactedImage",
+              "Findings",
+              "ExtractedImageText",
             });
     internal_static_google_cloud_modelarmor_v1_PiAndJailbreakFilterResult_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_modelarmor_v1_PiAndJailbreakFilterResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_PiAndJailbreakFilterResult_descriptor,
@@ -1108,7 +1207,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "ExecutionState", "MessageItems", "MatchState", "ConfidenceLevel",
             });
     internal_static_google_cloud_modelarmor_v1_MaliciousUriFilterResult_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_modelarmor_v1_MaliciousUriFilterResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_MaliciousUriFilterResult_descriptor,
@@ -1125,7 +1224,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Uri", "Locations",
             });
     internal_static_google_cloud_modelarmor_v1_VirusScanFilterResult_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_modelarmor_v1_VirusScanFilterResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_VirusScanFilterResult_descriptor,
@@ -1138,7 +1237,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "VirusDetails",
             });
     internal_static_google_cloud_modelarmor_v1_VirusDetail_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_modelarmor_v1_VirusDetail_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_VirusDetail_descriptor,
@@ -1146,7 +1245,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Vendor", "Names", "ThreatType",
             });
     internal_static_google_cloud_modelarmor_v1_CsamFilterResult_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_modelarmor_v1_CsamFilterResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_CsamFilterResult_descriptor,
@@ -1154,7 +1253,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "ExecutionState", "MessageItems", "MatchState",
             });
     internal_static_google_cloud_modelarmor_v1_MessageItem_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_modelarmor_v1_MessageItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_MessageItem_descriptor,
@@ -1162,7 +1261,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "MessageType", "Message",
             });
     internal_static_google_cloud_modelarmor_v1_RangeInfo_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_modelarmor_v1_RangeInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_modelarmor_v1_RangeInfo_descriptor,
