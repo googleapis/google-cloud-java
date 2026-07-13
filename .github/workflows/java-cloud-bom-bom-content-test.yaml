@@ -1,0 +1,82 @@
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: java-cloud-bom ci
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-cloud-bom/**'
+            - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+  bom-content-test:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - name: Pre-install all BOM modules to populate local cache
+      run: bash java-cloud-bom/tests/pre-install.sh
+      shell: bash
+    - name: Install BOMs
+      run: |
+        mvn -B -V -ntp install -f java-cloud-bom/pom.xml -DskipTests
+    - name: Ensure the members of the Libraries BOM exist in Maven Central
+      uses: ./java-cloud-bom/tests/validate-bom
+      with:
+        bom-path: java-cloud-bom/libraries-bom/pom.xml
+    - name: Ensure the BOM has valid content (at releases)
+      if: github.head_ref == 'release-please--branches--main'
+      run: |
+        mvn -B -V -ntp verify -Dtest="BomContentTest#testLibrariesBom"
+      working-directory: java-cloud-bom/tests
+
+  bom-assertion-test:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis' }}
+    name: BomContentAssertionsTest (Test for assertion logic in BomContentTest)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - name: Pre-install all BOM modules to populate local cache
+      run: bash java-cloud-bom/tests/pre-install.sh
+      shell: bash
+    - name: Install BOMs
+      run: |
+        mvn -B -V -ntp install -f java-cloud-bom/pom.xml -DskipTests
+    - run: |
+        mvn -B -V -ntp verify -Dtest="BomContentAssertionsTest"
+      working-directory: java-cloud-bom/tests
+

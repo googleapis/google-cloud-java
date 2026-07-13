@@ -53,6 +53,7 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -66,6 +67,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.crypto.tink.util.SecretBytes;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
@@ -142,7 +144,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   // Dynamic Channel Pool (DCP) default values and bounds
   /** Default max concurrent RPCs per channel before triggering scale up. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 90;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 25;
 
   /** Default min concurrent RPCs per channel for scale down check. */
   public static final int DEFAULT_DYNAMIC_POOL_MIN_RPC = 15;
@@ -151,13 +153,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL = Duration.ofMinutes(3);
 
   /** Default initial number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 4;
 
   /** Default max number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 256;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 10;
 
   /** Default min number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 2;
 
   /**
    * Default affinity key lifetime for dynamic channel pool. This is how long to keep an affinity
@@ -266,6 +268,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
   private final Duration partitionedDmlTimeout;
+  private final Duration grpcKeepAliveTime;
+  private final Duration grpcKeepAliveTimeout;
   private final boolean grpcGcpExtensionEnabled;
   private final GcpManagedChannelOptions grpcGcpOptions;
   private final boolean dynamicChannelPoolEnabled;
@@ -937,6 +941,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
     partitionedDmlTimeout = builder.partitionedDmlTimeout;
+    grpcKeepAliveTime = builder.grpcKeepAliveTime;
+    grpcKeepAliveTimeout = builder.grpcKeepAliveTimeout;
     grpcGcpExtensionEnabled = builder.grpcGcpExtensionEnabled;
     grpcGcpOptions = builder.grpcGcpOptions;
 
@@ -1239,8 +1245,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           builder.sessionPoolOptions =
               builder.sessionPoolOptions.toBuilder().setExperimentalHost().build();
         }
-        if (builder.credentials == null) {
-          builder.setCredentials(environment.getDefaultSpannerOmniCredentials());
+        if (builder.username != null && builder.secretBytes != null) {
+          builder.setCredentials(
+              new SpannerOmniCredentials(builder.username, builder.secretBytes, builder.host));
+        } else if (builder.credentials == null) {
+          GoogleCredentials defaultCreds = environment.getDefaultSpannerOmniCredentials();
+          if (defaultCreds != null) {
+            builder.setCredentials(defaultCreds);
+          }
+        }
+        if (builder.credentials instanceof SpannerOmniCredentials) {
+          ((SpannerOmniCredentials) builder.credentials)
+              .initChannel(builder.usePlainText, builder.mTLSContext);
+        }
+      } else {
+        if (builder.username != null || builder.secretBytes != null) {
+          throw new IllegalStateException("login() can only be used with InstanceType.OMNI.");
         }
       }
       return builder;
@@ -1296,9 +1316,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         DEFAULT_ADMIN_REQUESTS_LIMIT_EXCEEDED_RETRY_SETTINGS;
     private boolean autoThrottleAdministrativeRequests = false;
     private boolean trackTransactionStarter = false;
+    private String username;
+    private SecretBytes secretBytes;
     private Map<DatabaseId, QueryOptions> defaultQueryOptions = new HashMap<>();
     private boolean enableGrpcGcpOtelMetrics =
         SpannerOptions.environment.isEnableGrpcGcpOtelMetrics();
+    private Duration grpcKeepAliveTime = Duration.ofSeconds(120);
+    private Duration grpcKeepAliveTimeout = Duration.ofSeconds(20);
     private CallCredentialsProvider callCredentialsProvider;
     private CloseableExecutorProvider asyncExecutorProvider;
     private String compressorName;
@@ -1412,6 +1436,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.enableGrpcGcpOtelMetrics = options.enableGrpcGcpOtelMetrics;
       this.defaultQueryOptions = options.defaultQueryOptions;
       this.callCredentialsProvider = options.callCredentialsProvider;
+      this.grpcKeepAliveTime = options.grpcKeepAliveTime;
+      this.grpcKeepAliveTimeout = options.grpcKeepAliveTimeout;
       this.asyncExecutorProvider = options.asyncExecutorProvider;
       this.compressorName = options.compressorName;
       this.channelProvider = options.channelProvider;
@@ -1675,6 +1701,32 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets the keep-alive time for gRPC connections. The default is 120 seconds. Note that the
+     * client-side keepalive time is clamped to a minimum of 10 seconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTime(Duration grpcKeepAliveTime) {
+      Preconditions.checkNotNull(grpcKeepAliveTime, "grpcKeepAliveTime cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTime.isNegative() && !grpcKeepAliveTime.isZero(),
+          "grpcKeepAliveTime must be positive");
+      this.grpcKeepAliveTime = grpcKeepAliveTime;
+      return this;
+    }
+
+    /**
+     * Sets the keep-alive timeout for gRPC connections. The default is 20 seconds. Note that the
+     * client-side keepalive timeout is clamped to a minimum of 20 milliseconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTimeout(Duration grpcKeepAliveTimeout) {
+      Preconditions.checkNotNull(grpcKeepAliveTimeout, "grpcKeepAliveTimeout cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTimeout.isNegative() && !grpcKeepAliveTimeout.isZero(),
+          "grpcKeepAliveTimeout must be positive");
+      this.grpcKeepAliveTimeout = grpcKeepAliveTimeout;
+      return this;
+    }
+
+    /**
      * Instructs the client library to automatically throttle the number of administrative requests
      * if the rate of administrative requests generated by this {@link Spanner} instance will exceed
      * the administrative limits Cloud Spanner. The default behavior is to not throttle any
@@ -1907,6 +1959,28 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setType(InstanceType instanceType) {
       this.instanceType = instanceType;
+      return this;
+    }
+
+    /**
+     * Authenticates to Spanner Omni using the provided username and password, and configures the
+     * resulting token for use in subsequent Spanner API calls.
+     *
+     * <p>Note: The provided {@code password} array will be cleared (zeroed out) by this method for
+     * security purposes.
+     *
+     * @param username The username for login.
+     * @param password The password for login.
+     * @return this builder
+     */
+    public Builder login(String username, char[] password) {
+      Preconditions.checkArgument(
+          username != null && !username.isEmpty(), "username cannot be null or empty");
+      Preconditions.checkArgument(
+          password != null && password.length > 0, "password cannot be null or empty");
+
+      this.username = username;
+      this.secretBytes = SpannerOmniCredentials.convertToSecretBytes(password);
       return this;
     }
 
@@ -2451,6 +2525,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Duration getPartitionedDmlTimeoutDuration() {
     return partitionedDmlTimeout;
+  }
+
+  public Duration getGrpcKeepAliveTime() {
+    return grpcKeepAliveTime;
+  }
+
+  public Duration getGrpcKeepAliveTimeout() {
+    return grpcKeepAliveTimeout;
   }
 
   public boolean isGrpcGcpExtensionEnabled() {

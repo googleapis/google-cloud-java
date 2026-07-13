@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -61,6 +62,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,6 +70,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonConversationalSearchServiceStub extends ConversationalSearchServiceStub {
@@ -361,6 +364,49 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryMethodDescriptor =
+          ApiMethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ConversationalSearchService/StreamAnswerQuery")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnswerQueryRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{servingConfig=projects/*/locations/*/dataStores/*/servingConfigs/*}:streamAnswer",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "servingConfig", request.getServingConfig());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:streamAnswer",
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:streamAnswer")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerQueryResponse>newBuilder()
+                      .setDefaultInstance(AnswerQueryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
       ApiMethodDescriptor.<GetAnswerRequest, Answer>newBuilder()
           .setFullMethodName(
@@ -424,6 +470,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSessionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "sessionId", request.getSessionId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -612,6 +659,8 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
   private final UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable;
   private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
+  private final ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable;
   private final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable;
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
   private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
@@ -755,6 +804,19 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                 })
             .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
+    HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse>
+        streamAnswerQueryTransportSettings =
+            HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+                .setMethodDescriptor(streamAnswerQueryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getServingConfig())
+                .build();
     HttpJsonCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         HttpJsonCallSettings.<GetAnswerRequest, Answer>newBuilder()
             .setMethodDescriptor(getAnswerMethodDescriptor)
@@ -863,6 +925,11 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
     this.answerQueryCallable =
         callableFactory.createUnaryCallable(
             answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
+    this.streamAnswerQueryCallable =
+        callableFactory.createServerStreamingCallable(
+            streamAnswerQueryTransportSettings,
+            settings.streamAnswerQuerySettings(),
+            clientContext);
     this.getAnswerCallable =
         callableFactory.createUnaryCallable(
             getAnswerTransportSettings, settings.getAnswerSettings(), clientContext);
@@ -899,6 +966,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
     methodDescriptors.add(answerQueryMethodDescriptor);
+    methodDescriptors.add(streamAnswerQueryMethodDescriptor);
     methodDescriptors.add(getAnswerMethodDescriptor);
     methodDescriptors.add(createSessionMethodDescriptor);
     methodDescriptors.add(deleteSessionMethodDescriptor);
@@ -949,6 +1017,12 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
   @Override
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     return answerQueryCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    return streamAnswerQueryCallable;
   }
 
   @Override

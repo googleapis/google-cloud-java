@@ -5,7 +5,7 @@
   "api_description": "Storage batch operations is a Cloud Storage management feature that performs operations on billions of Cloud Storage objects in a serverless manner.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storagebatchoperations/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-storagebatchoperations",

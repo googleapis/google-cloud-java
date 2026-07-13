@@ -44,10 +44,13 @@ import com.google.cloud.chronicle.v1.Rule;
 import com.google.cloud.chronicle.v1.RuleDeployment;
 import com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest;
 import com.google.cloud.chronicle.v1.UpdateRuleRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -55,6 +58,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RuleServiceStub implements BackgroundResource {
 
@@ -88,6 +92,10 @@ public abstract class RuleServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRuleCallable()");
+  }
+
+  public UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyRuleTextCallable()");
   }
 
   public UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsPagedResponse>

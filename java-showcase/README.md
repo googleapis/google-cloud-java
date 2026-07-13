@@ -7,7 +7,7 @@ the Showcase API which can communicate with a local Showcase server to perform i
 
 ## Requirements
 
-* Install [Go](https://go.dev) in your `PATH`.
+* Install [Go](https://go.dev) in your `PATH` (version 1.20 or later).
 
 ## Installing the Server
 
@@ -73,19 +73,40 @@ mvn verify -P enable-integration-tests
 
 ## Running the Golden tests
 
-**NOTE** This requires Docker to be installed in your machine.
-Open a new terminal window in the root project directory.
+This verify check compares the current checked-in files in `java-showcase` against a newly generated client.
+
+### Prerequisites (One-time Setup)
+Make sure you have **Go** installed and available in your `PATH` (see the [Requirements](#requirements) section), then run the following setup steps from the repository root:
+
+```shell
+# Setup and activate Python virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Configure pip for external sources
+pip config --venv set global.extra-index-url https://pypi.org/simple
+
+# Install and configure Java tools (takes around 5 mins)
+V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+go run github.com/googleapis/librarian/cmd/librarian@${V} install
+```
+
+### Running the tests
+Once the prerequisites are installed and the virtual environment is activated, run:
 
 ```shell
 cd java-showcase
 mvn verify -P enable-golden-tests
 ```
 
+> [!IMPORTANT]
+> The golden tests run the generator and compare the entire `java-showcase` directory against the newly generated state using `git diff`. For these tests to pass, you must have a completely clean git tree within the `java-showcase` directory before running them. Any uncommitted changes or untracked files will cause the tests to fail.
 
 ## Update the Golden Showcase Files
 
-**NOTE** This requires Docker to be installed in your machine.
-Open a new terminal window in the root project directory.
+To regenerate the showcase library files and update them in place:
+
+Make sure the Python virtual environment is activated, then run:
 
 ```shell
 # In repository's root directory

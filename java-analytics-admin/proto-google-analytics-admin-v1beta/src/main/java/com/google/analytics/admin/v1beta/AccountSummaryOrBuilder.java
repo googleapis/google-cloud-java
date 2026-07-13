@@ -30,12 +30,12 @@ public interface AccountSummaryOrBuilder
    *
    *
    * <pre>
-   * Resource name for this account summary.
+   * Identifier. Resource name for this account summary.
    * Format: accountSummaries/{account_id}
    * Example: "accountSummaries/1000"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface AccountSummaryOrBuilder
    *
    *
    * <pre>
-   * Resource name for this account summary.
+   * Identifier. Resource name for this account summary.
    * Format: accountSummaries/{account_id}
    * Example: "accountSummaries/1000"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

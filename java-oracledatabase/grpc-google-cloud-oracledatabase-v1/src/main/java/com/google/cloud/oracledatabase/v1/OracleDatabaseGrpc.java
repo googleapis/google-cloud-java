@@ -248,6 +248,63 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getConfigureExascaleCloudExadataInfrastructureMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ConfigureExascaleCloudExadataInfrastructure",
+      requestType =
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+              .class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getConfigureExascaleCloudExadataInfrastructureMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+            com.google.longrunning.Operation>
+        getConfigureExascaleCloudExadataInfrastructureMethod;
+    if ((getConfigureExascaleCloudExadataInfrastructureMethod =
+            OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getConfigureExascaleCloudExadataInfrastructureMethod =
+                OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod)
+            == null) {
+          OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod =
+              getConfigureExascaleCloudExadataInfrastructureMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .ConfigureExascaleCloudExadataInfrastructureRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ConfigureExascaleCloudExadataInfrastructure"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .ConfigureExascaleCloudExadataInfrastructureRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "ConfigureExascaleCloudExadataInfrastructure"))
+                      .build();
+        }
+      }
+    }
+    return getConfigureExascaleCloudExadataInfrastructureMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest,
           com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse>
       getListCloudVmClustersMethod;
@@ -3309,59 +3366,6 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-      getGetGoldengateDeploymentVersionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetGoldengateDeploymentVersion",
-      requestType = com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest.class,
-      responseType = com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-      getGetGoldengateDeploymentVersionMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest,
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-        getGetGoldengateDeploymentVersionMethod;
-    if ((getGetGoldengateDeploymentVersionMethod =
-            OracleDatabaseGrpc.getGetGoldengateDeploymentVersionMethod)
-        == null) {
-      synchronized (OracleDatabaseGrpc.class) {
-        if ((getGetGoldengateDeploymentVersionMethod =
-                OracleDatabaseGrpc.getGetGoldengateDeploymentVersionMethod)
-            == null) {
-          OracleDatabaseGrpc.getGetGoldengateDeploymentVersionMethod =
-              getGetGoldengateDeploymentVersionMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest,
-                          com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetGoldengateDeploymentVersion"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1
-                                  .GetGoldengateDeploymentVersionRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new OracleDatabaseMethodDescriptorSupplier(
-                              "GetGoldengateDeploymentVersion"))
-                      .build();
-        }
-      }
-    }
-    return getGetGoldengateDeploymentVersionMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest,
           com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsResponse>
       getListGoldengateDeploymentVersionsMethod;
@@ -3418,58 +3422,6 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-      getGetGoldengateDeploymentTypeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetGoldengateDeploymentType",
-      requestType = com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest.class,
-      responseType = com.google.cloud.oracledatabase.v1.GoldengateDeploymentType.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-      getGetGoldengateDeploymentTypeMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest,
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-        getGetGoldengateDeploymentTypeMethod;
-    if ((getGetGoldengateDeploymentTypeMethod =
-            OracleDatabaseGrpc.getGetGoldengateDeploymentTypeMethod)
-        == null) {
-      synchronized (OracleDatabaseGrpc.class) {
-        if ((getGetGoldengateDeploymentTypeMethod =
-                OracleDatabaseGrpc.getGetGoldengateDeploymentTypeMethod)
-            == null) {
-          OracleDatabaseGrpc.getGetGoldengateDeploymentTypeMethod =
-              getGetGoldengateDeploymentTypeMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest,
-                          com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetGoldengateDeploymentType"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GoldengateDeploymentType
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new OracleDatabaseMethodDescriptorSupplier("GetGoldengateDeploymentType"))
-                      .build();
-        }
-      }
-    }
-    return getGetGoldengateDeploymentTypeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesRequest,
           com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesResponse>
       getListGoldengateDeploymentTypesMethod;
@@ -3520,62 +3472,6 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getListGoldengateDeploymentTypesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-      getGetGoldengateDeploymentEnvironmentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetGoldengateDeploymentEnvironment",
-      requestType =
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest.class,
-      responseType = com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-      getGetGoldengateDeploymentEnvironmentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest,
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-        getGetGoldengateDeploymentEnvironmentMethod;
-    if ((getGetGoldengateDeploymentEnvironmentMethod =
-            OracleDatabaseGrpc.getGetGoldengateDeploymentEnvironmentMethod)
-        == null) {
-      synchronized (OracleDatabaseGrpc.class) {
-        if ((getGetGoldengateDeploymentEnvironmentMethod =
-                OracleDatabaseGrpc.getGetGoldengateDeploymentEnvironmentMethod)
-            == null) {
-          OracleDatabaseGrpc.getGetGoldengateDeploymentEnvironmentMethod =
-              getGetGoldengateDeploymentEnvironmentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.oracledatabase.v1
-                              .GetGoldengateDeploymentEnvironmentRequest,
-                          com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              SERVICE_NAME, "GetGoldengateDeploymentEnvironment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1
-                                  .GetGoldengateDeploymentEnvironmentRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new OracleDatabaseMethodDescriptorSupplier(
-                              "GetGoldengateDeploymentEnvironment"))
-                      .build();
-        }
-      }
-    }
-    return getGetGoldengateDeploymentEnvironmentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -3636,58 +3532,6 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getListGoldengateDeploymentEnvironmentsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-      getGetGoldengateConnectionTypeMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetGoldengateConnectionType",
-      requestType = com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest.class,
-      responseType = com.google.cloud.oracledatabase.v1.GoldengateConnectionType.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest,
-          com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-      getGetGoldengateConnectionTypeMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest,
-            com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-        getGetGoldengateConnectionTypeMethod;
-    if ((getGetGoldengateConnectionTypeMethod =
-            OracleDatabaseGrpc.getGetGoldengateConnectionTypeMethod)
-        == null) {
-      synchronized (OracleDatabaseGrpc.class) {
-        if ((getGetGoldengateConnectionTypeMethod =
-                OracleDatabaseGrpc.getGetGoldengateConnectionTypeMethod)
-            == null) {
-          OracleDatabaseGrpc.getGetGoldengateConnectionTypeMethod =
-              getGetGoldengateConnectionTypeMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest,
-                          com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetGoldengateConnectionType"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.oracledatabase.v1.GoldengateConnectionType
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new OracleDatabaseMethodDescriptorSupplier("GetGoldengateConnectionType"))
-                      .build();
-        }
-      }
-    }
-    return getGetGoldengateConnectionTypeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -4244,6 +4088,21 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteCloudExadataInfrastructureMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    default void configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getConfigureExascaleCloudExadataInfrastructureMethod(), responseObserver);
     }
 
     /**
@@ -5169,21 +5028,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentVersion.
-     * </pre>
-     */
-    default void getGoldengateDeploymentVersion(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetGoldengateDeploymentVersionMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentVersions in a given project and location.
      * </pre>
      */
@@ -5194,21 +5038,6 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListGoldengateDeploymentVersionsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldenGateDeploymentType.
-     * </pre>
-     */
-    default void getGoldengateDeploymentType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetGoldengateDeploymentTypeMethod(), responseObserver);
     }
 
     /**
@@ -5231,22 +5060,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentEnvironment.
-     * </pre>
-     */
-    default void getGoldengateDeploymentEnvironment(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetGoldengateDeploymentEnvironmentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentEnvironments in a given project and location.
      * </pre>
      */
@@ -5257,21 +5070,6 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListGoldengateDeploymentEnvironmentsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldengateConnectionType.
-     * </pre>
-     */
-    default void getGoldengateConnectionType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetGoldengateConnectionTypeMethod(), responseObserver);
     }
 
     /**
@@ -5496,6 +5294,24 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCloudExadataInfrastructureMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public void configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getConfigureExascaleCloudExadataInfrastructureMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6547,23 +6363,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentVersion.
-     * </pre>
-     */
-    public void getGoldengateDeploymentVersion(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentVersionMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentVersions in a given project and location.
      * </pre>
      */
@@ -6574,23 +6373,6 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGoldengateDeploymentVersionsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldenGateDeploymentType.
-     * </pre>
-     */
-    public void getGoldengateDeploymentType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6617,24 +6399,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentEnvironment.
-     * </pre>
-     */
-    public void getGoldengateDeploymentEnvironment(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentEnvironmentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentEnvironments in a given project and location.
      * </pre>
      */
@@ -6645,23 +6409,6 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGoldengateDeploymentEnvironmentsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldengateConnectionType.
-     * </pre>
-     */
-    public void getGoldengateConnectionType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetGoldengateConnectionTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6882,6 +6629,24 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCloudExadataInfrastructureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getConfigureExascaleCloudExadataInfrastructureMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -7775,21 +7540,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentVersion.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion
-        getGoldengateDeploymentVersion(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest request)
-            throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
-          getChannel(), getGetGoldengateDeploymentVersionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentVersions in a given project and location.
      * </pre>
      */
@@ -7799,20 +7549,6 @@ public final class OracleDatabaseGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGoldengateDeploymentVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldenGateDeploymentType.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentType getGoldengateDeploymentType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest request)
-        throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
-          getChannel(), getGetGoldengateDeploymentTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7834,21 +7570,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentEnvironment.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment
-        getGoldengateDeploymentEnvironment(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest request)
-            throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
-          getChannel(), getGetGoldengateDeploymentEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentEnvironments in a given project and location.
      * </pre>
      */
@@ -7858,20 +7579,6 @@ public final class OracleDatabaseGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGoldengateDeploymentEnvironmentsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldengateConnectionType.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateConnectionType getGoldengateConnectionType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest request)
-        throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
-          getChannel(), getGetGoldengateConnectionTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8064,6 +7771,23 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCloudExadataInfrastructureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getConfigureExascaleCloudExadataInfrastructureMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -8895,20 +8619,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentVersion.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion
-        getGoldengateDeploymentVersion(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGoldengateDeploymentVersionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentVersions in a given project and location.
      * </pre>
      */
@@ -8917,19 +8627,6 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGoldengateDeploymentVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldenGateDeploymentType.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentType getGoldengateDeploymentType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGoldengateDeploymentTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8950,20 +8647,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentEnvironment.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment
-        getGoldengateDeploymentEnvironment(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGoldengateDeploymentEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentEnvironments in a given project and location.
      * </pre>
      */
@@ -8973,19 +8656,6 @@ public final class OracleDatabaseGrpc {
                 request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGoldengateDeploymentEnvironmentsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldengateConnectionType.
-     * </pre>
-     */
-    public com.google.cloud.oracledatabase.v1.GoldengateConnectionType getGoldengateConnectionType(
-        com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGoldengateConnectionTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9177,6 +8847,23 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCloudExadataInfrastructureMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        configureExascaleCloudExadataInfrastructure(
+            com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getConfigureExascaleCloudExadataInfrastructureMethod(), getCallOptions()),
           request);
     }
 
@@ -10076,22 +9763,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentVersion.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersion(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentVersionMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentVersions in a given project and location.
      * </pre>
      */
@@ -10102,21 +9773,6 @@ public final class OracleDatabaseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGoldengateDeploymentVersionsMethod(), getCallOptions()),
           request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldenGateDeploymentType.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>
-        getGoldengateDeploymentType(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentTypeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10139,22 +9795,6 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
-     * Gets details of a single GoldengateDeploymentEnvironment.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironment(
-            com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetGoldengateDeploymentEnvironmentMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Lists GoldengateDeploymentEnvironments in a given project and location.
      * </pre>
      */
@@ -10166,21 +9806,6 @@ public final class OracleDatabaseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGoldengateDeploymentEnvironmentsMethod(), getCallOptions()),
           request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single GoldengateConnectionType.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.oracledatabase.v1.GoldengateConnectionType>
-        getGoldengateConnectionType(
-            com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetGoldengateConnectionTypeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10314,83 +9939,80 @@ public final class OracleDatabaseGrpc {
   private static final int METHODID_GET_CLOUD_EXADATA_INFRASTRUCTURE = 1;
   private static final int METHODID_CREATE_CLOUD_EXADATA_INFRASTRUCTURE = 2;
   private static final int METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE = 3;
-  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 4;
-  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 5;
-  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 6;
-  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 7;
-  private static final int METHODID_LIST_ENTITLEMENTS = 8;
-  private static final int METHODID_LIST_DB_SERVERS = 9;
-  private static final int METHODID_LIST_DB_NODES = 10;
-  private static final int METHODID_LIST_GI_VERSIONS = 11;
-  private static final int METHODID_LIST_MINOR_VERSIONS = 12;
-  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 13;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 14;
-  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 15;
-  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 16;
-  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 17;
-  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 18;
-  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 19;
-  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 20;
-  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 21;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 22;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 23;
-  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 24;
-  private static final int METHODID_START_AUTONOMOUS_DATABASE = 25;
-  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 26;
-  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 27;
-  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 28;
-  private static final int METHODID_LIST_ODB_NETWORKS = 29;
-  private static final int METHODID_GET_ODB_NETWORK = 30;
-  private static final int METHODID_CREATE_ODB_NETWORK = 31;
-  private static final int METHODID_DELETE_ODB_NETWORK = 32;
-  private static final int METHODID_LIST_ODB_SUBNETS = 33;
-  private static final int METHODID_GET_ODB_SUBNET = 34;
-  private static final int METHODID_CREATE_ODB_SUBNET = 35;
-  private static final int METHODID_DELETE_ODB_SUBNET = 36;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 37;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 38;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 39;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 40;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 41;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 42;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 43;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 44;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 45;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 46;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 47;
-  private static final int METHODID_LIST_DATABASES = 48;
-  private static final int METHODID_GET_DATABASE = 49;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 50;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 51;
-  private static final int METHODID_LIST_DB_SYSTEMS = 52;
-  private static final int METHODID_GET_DB_SYSTEM = 53;
-  private static final int METHODID_CREATE_DB_SYSTEM = 54;
-  private static final int METHODID_DELETE_DB_SYSTEM = 55;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 56;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 57;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 58;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 59;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 60;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 61;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 62;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 63;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 64;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 65;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT_VERSION = 66;
+  private static final int METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE = 4;
+  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 5;
+  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 6;
+  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 7;
+  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 8;
+  private static final int METHODID_LIST_ENTITLEMENTS = 9;
+  private static final int METHODID_LIST_DB_SERVERS = 10;
+  private static final int METHODID_LIST_DB_NODES = 11;
+  private static final int METHODID_LIST_GI_VERSIONS = 12;
+  private static final int METHODID_LIST_MINOR_VERSIONS = 13;
+  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 14;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 15;
+  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 16;
+  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 17;
+  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 18;
+  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 19;
+  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 20;
+  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 21;
+  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 22;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 23;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 24;
+  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 25;
+  private static final int METHODID_START_AUTONOMOUS_DATABASE = 26;
+  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 27;
+  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 28;
+  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 29;
+  private static final int METHODID_LIST_ODB_NETWORKS = 30;
+  private static final int METHODID_GET_ODB_NETWORK = 31;
+  private static final int METHODID_CREATE_ODB_NETWORK = 32;
+  private static final int METHODID_DELETE_ODB_NETWORK = 33;
+  private static final int METHODID_LIST_ODB_SUBNETS = 34;
+  private static final int METHODID_GET_ODB_SUBNET = 35;
+  private static final int METHODID_CREATE_ODB_SUBNET = 36;
+  private static final int METHODID_DELETE_ODB_SUBNET = 37;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 38;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 39;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 40;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 41;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 42;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 43;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 44;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 45;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 46;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 47;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 48;
+  private static final int METHODID_LIST_DATABASES = 49;
+  private static final int METHODID_GET_DATABASE = 50;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 51;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 52;
+  private static final int METHODID_LIST_DB_SYSTEMS = 53;
+  private static final int METHODID_GET_DB_SYSTEM = 54;
+  private static final int METHODID_CREATE_DB_SYSTEM = 55;
+  private static final int METHODID_DELETE_DB_SYSTEM = 56;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 57;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 58;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 59;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 60;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 61;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 62;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 63;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 64;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 65;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 66;
   private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 67;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT_TYPE = 68;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 69;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT_ENVIRONMENT = 70;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 71;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_TYPE = 72;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 73;
-  private static final int METHODID_LIST_DB_VERSIONS = 74;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 75;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 76;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 78;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 79;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 80;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 68;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 69;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 70;
+  private static final int METHODID_LIST_DB_VERSIONS = 71;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 72;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 73;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 74;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 75;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10431,6 +10053,13 @@ public final class OracleDatabaseGrpc {
         case METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE:
           serviceImpl.deleteCloudExadataInfrastructure(
               (com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE:
+          serviceImpl.configureExascaleCloudExadataInfrastructure(
+              (com.google.cloud.oracledatabase.v1
+                      .ConfigureExascaleCloudExadataInfrastructureRequest)
+                  request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_CLOUD_VM_CLUSTERS:
@@ -10801,25 +10430,11 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_GET_GOLDENGATE_DEPLOYMENT_VERSION:
-          serviceImpl.getGoldengateDeploymentVersion(
-              (com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>)
-                  responseObserver);
-          break;
         case METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS:
           serviceImpl.listGoldengateDeploymentVersions(
               (com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsResponse>)
-                  responseObserver);
-          break;
-        case METHODID_GET_GOLDENGATE_DEPLOYMENT_TYPE:
-          serviceImpl.getGoldengateDeploymentType(
-              (com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>)
                   responseObserver);
           break;
         case METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES:
@@ -10829,14 +10444,6 @@ public final class OracleDatabaseGrpc {
                       com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesResponse>)
                   responseObserver);
           break;
-        case METHODID_GET_GOLDENGATE_DEPLOYMENT_ENVIRONMENT:
-          serviceImpl.getGoldengateDeploymentEnvironment(
-              (com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest)
-                  request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>)
-                  responseObserver);
-          break;
         case METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS:
           serviceImpl.listGoldengateDeploymentEnvironments(
               (com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentEnvironmentsRequest)
@@ -10844,13 +10451,6 @@ public final class OracleDatabaseGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.oracledatabase.v1
                           .ListGoldengateDeploymentEnvironmentsResponse>)
-                  responseObserver);
-          break;
-        case METHODID_GET_GOLDENGATE_CONNECTION_TYPE:
-          serviceImpl.getGoldengateConnectionType(
-              (com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.oracledatabase.v1.GoldengateConnectionType>)
                   responseObserver);
           break;
         case METHODID_LIST_GOLDENGATE_CONNECTION_TYPES:
@@ -10957,6 +10557,14 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE)))
+        .addMethod(
+            getConfigureExascaleCloudExadataInfrastructureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1
+                        .ConfigureExascaleCloudExadataInfrastructureRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE)))
         .addMethod(
             getListCloudVmClustersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11377,26 +10985,12 @@ public final class OracleDatabaseGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_GOLDENGATE_CONNECTION)))
         .addMethod(
-            getGetGoldengateDeploymentVersionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest,
-                    com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion>(
-                    service, METHODID_GET_GOLDENGATE_DEPLOYMENT_VERSION)))
-        .addMethod(
             getListGoldengateDeploymentVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest,
                     com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsResponse>(
                     service, METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS)))
-        .addMethod(
-            getGetGoldengateDeploymentTypeMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest,
-                    com.google.cloud.oracledatabase.v1.GoldengateDeploymentType>(
-                    service, METHODID_GET_GOLDENGATE_DEPLOYMENT_TYPE)))
         .addMethod(
             getListGoldengateDeploymentTypesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11405,13 +10999,6 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesResponse>(
                     service, METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES)))
         .addMethod(
-            getGetGoldengateDeploymentEnvironmentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest,
-                    com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment>(
-                    service, METHODID_GET_GOLDENGATE_DEPLOYMENT_ENVIRONMENT)))
-        .addMethod(
             getListGoldengateDeploymentEnvironmentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11419,13 +11006,6 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1
                         .ListGoldengateDeploymentEnvironmentsResponse>(
                     service, METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS)))
-        .addMethod(
-            getGetGoldengateConnectionTypeMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest,
-                    com.google.cloud.oracledatabase.v1.GoldengateConnectionType>(
-                    service, METHODID_GET_GOLDENGATE_CONNECTION_TYPE)))
         .addMethod(
             getListGoldengateConnectionTypesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11537,6 +11117,7 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getGetCloudExadataInfrastructureMethod())
                       .addMethod(getCreateCloudExadataInfrastructureMethod())
                       .addMethod(getDeleteCloudExadataInfrastructureMethod())
+                      .addMethod(getConfigureExascaleCloudExadataInfrastructureMethod())
                       .addMethod(getListCloudVmClustersMethod())
                       .addMethod(getGetCloudVmClusterMethod())
                       .addMethod(getCreateCloudVmClusterMethod())
@@ -11599,13 +11180,9 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getGetGoldengateConnectionMethod())
                       .addMethod(getCreateGoldengateConnectionMethod())
                       .addMethod(getDeleteGoldengateConnectionMethod())
-                      .addMethod(getGetGoldengateDeploymentVersionMethod())
                       .addMethod(getListGoldengateDeploymentVersionsMethod())
-                      .addMethod(getGetGoldengateDeploymentTypeMethod())
                       .addMethod(getListGoldengateDeploymentTypesMethod())
-                      .addMethod(getGetGoldengateDeploymentEnvironmentMethod())
                       .addMethod(getListGoldengateDeploymentEnvironmentsMethod())
-                      .addMethod(getGetGoldengateConnectionTypeMethod())
                       .addMethod(getListGoldengateConnectionTypesMethod())
                       .addMethod(getListDbVersionsMethod())
                       .addMethod(getListDatabaseCharacterSetsMethod())

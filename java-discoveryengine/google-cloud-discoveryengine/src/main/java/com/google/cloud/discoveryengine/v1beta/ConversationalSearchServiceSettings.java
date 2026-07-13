@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1beta.stub.ConversationalSearchServiceStubSettings;
@@ -36,6 +37,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -89,6 +91,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversationalSearchServiceSettings
@@ -135,6 +138,13 @@ public class ConversationalSearchServiceSettings
   /** Returns the object with the settings used for calls to answerQuery. */
   public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
     return ((ConversationalSearchServiceStubSettings) getStubSettings()).answerQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamAnswerQuery. */
+  public ServerStreamingCallSettings<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQuerySettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings())
+        .streamAnswerQuerySettings();
   }
 
   /** Returns the object with the settings used for calls to getAnswer. */
@@ -322,6 +332,12 @@ public class ConversationalSearchServiceSettings
     public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
         answerQuerySettings() {
       return getStubSettingsBuilder().answerQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamAnswerQuery. */
+    public ServerStreamingCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        streamAnswerQuerySettings() {
+      return getStubSettingsBuilder().streamAnswerQuerySettings();
     }
 
     /** Returns the builder for the settings used for calls to getAnswer. */

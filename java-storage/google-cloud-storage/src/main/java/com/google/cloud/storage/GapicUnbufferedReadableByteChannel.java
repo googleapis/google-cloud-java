@@ -49,6 +49,7 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
 import java.util.Locale;
+import java.util.OptionalLong;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -91,7 +92,15 @@ final class GapicUnbufferedReadableByteChannel
     this.result = result;
     this.read = read;
     this.req = req;
-    this.hasher = hasher;
+    this.hasher =
+        (req.getReadOffset() == 0)
+            ? new CumulativeHasher(
+                hasher,
+                0,
+                req.getReadLimit() <= 0
+                    ? OptionalLong.empty()
+                    : OptionalLong.of(req.getReadLimit()))
+            : hasher;
     this.fetchOffset = new AtomicLong(req.getReadOffset());
     this.blobOffset = req.getReadOffset();
     this.retrier = retrier;
@@ -154,7 +163,7 @@ final class GapicUnbufferedReadableByteChannel
       if (take instanceof IOException) {
         IOException ioe = (IOException) take;
         if (alg.shouldRetry(ioe, null)) {
-          readObjectObserver = null;
+          cancelAndDrainCurrentObserver();
           continue;
         } else {
           ioe.addSuppressed(new AsyncStorageTaskException());
@@ -165,7 +174,7 @@ final class GapicUnbufferedReadableByteChannel
         Throwable throwable = (Throwable) take;
         BaseServiceException coalesce = StorageException.coalesce(throwable);
         if (alg.shouldRetry(coalesce, null)) {
-          readObjectObserver = null;
+          cancelAndDrainCurrentObserver();
           continue;
         } else {
           close();
@@ -174,6 +183,7 @@ final class GapicUnbufferedReadableByteChannel
       }
       if (take == EOF_MARKER) {
         complete = true;
+        validateCumulativeChecksum();
         break;
       }
 
@@ -199,37 +209,50 @@ final class GapicUnbufferedReadableByteChannel
 
   @Override
   public void close() throws IOException {
-    open = false;
     try {
-      if (leftovers != null) {
-        leftovers.close();
-      }
-      ReadObjectObserver obs = readObjectObserver;
-      if (obs != null && !obs.cancellation.isDone()) {
-        obs.cancel();
-        drainQueue();
-        try {
-          // make sure our waiting doesn't lockup permanently
-          obs.cancellation.get(1, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          InterruptedIOException ioe = new InterruptedIOException();
-          ioe.initCause(e);
-          ioe.addSuppressed(new AsyncStorageTaskException());
-          throw ioe;
-        } catch (ExecutionException e) {
-          Throwable cause = e;
-          if (e.getCause() != null) {
-            cause = e.getCause();
-          }
-          IOException ioException = new IOException(cause);
-          ioException.addSuppressed(new AsyncStorageTaskException());
-          throw ioException;
-        } catch (TimeoutException ignore) {
-        }
+      long readLimit = req.getReadLimit();
+      long receivedBytes = fetchOffset.get() - req.getReadOffset();
+      if (readLimit > 0 && receivedBytes > readLimit) {
+        java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName())
+            .warning(
+                String.format(
+                    "storage: received %d more bytes than requested from GCS for bucket '%s',"
+                        + " object '%s'",
+                    receivedBytes - readLimit, req.getBucket(), req.getObject()));
       }
     } finally {
-      drainQueue();
+      open = false;
+      try {
+        if (leftovers != null) {
+          leftovers.close();
+        }
+        ReadObjectObserver obs = readObjectObserver;
+        if (obs != null && !obs.cancellation.isDone()) {
+          obs.cancel();
+          drainQueue();
+          try {
+            // make sure our waiting doesn't lockup permanently
+            obs.cancellation.get(1, TimeUnit.SECONDS);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            InterruptedIOException ioe = new InterruptedIOException();
+            ioe.initCause(e);
+            ioe.addSuppressed(new AsyncStorageTaskException());
+            throw ioe;
+          } catch (ExecutionException e) {
+            Throwable cause = e;
+            if (e.getCause() != null) {
+              cause = e.getCause();
+            }
+            IOException ioException = new IOException(cause);
+            ioException.addSuppressed(new AsyncStorageTaskException());
+            throw ioException;
+          } catch (TimeoutException ignore) {
+          }
+        }
+      } finally {
+        drainQueue();
+      }
     }
   }
 
@@ -240,7 +263,9 @@ final class GapicUnbufferedReadableByteChannel
       while (queue.nonEmpty()) {
         try {
           java.lang.Object queueValue = queue.poll();
-          if (queueValue instanceof ReadObjectResponse) {
+          if (queueValue instanceof java.io.Closeable) {
+            ((java.io.Closeable) queueValue).close();
+          } else if (queueValue instanceof ReadObjectResponse) {
             ReadObjectResponse resp = (ReadObjectResponse) queueValue;
             ResponseContentLifecycleHandle<ReadObjectResponse> handle =
                 read.getResponseContentLifecycleManager().get(resp);
@@ -270,6 +295,19 @@ final class GapicUnbufferedReadableByteChannel
       if (shouldInterupt) {
         Thread.currentThread().interrupt();
       }
+    }
+  }
+
+  private void cancelAndDrainCurrentObserver() {
+    if (readObjectObserver != null) {
+      readObjectObserver.cancel();
+      try {
+        drainQueue();
+      } catch (IOException e) {
+        // drainQueue() in this context can be ignored because we are resetting the
+        // stream.
+      }
+      readObjectObserver = null;
     }
   }
 
@@ -311,14 +349,27 @@ final class GapicUnbufferedReadableByteChannel
     return new IOException(message, cause);
   }
 
+  private void validateCumulativeChecksum() throws IOException {
+    if (hasher instanceof CumulativeHasher) {
+      CumulativeHasher cumulativeHasher = (CumulativeHasher) hasher;
+      try {
+        cumulativeHasher.validateCumulativeChecksum(metadata);
+      } catch (UncheckedCumulativeChecksumMismatchException exception) {
+        throw new IOException(StorageException.coalesce(exception));
+      }
+    }
+  }
+
   private final class ReadObjectObserver extends StateCheckingResponseObserver<ReadObjectResponse> {
 
     private final SettableApiFuture<Void> open = SettableApiFuture.create();
     private final SettableApiFuture<Throwable> cancellation = SettableApiFuture.create();
 
     private volatile StreamController controller;
+    private volatile boolean cancelled = false;
 
     void cancel() {
+      cancelled = true;
       controller.cancel();
     }
 
@@ -331,10 +382,13 @@ final class GapicUnbufferedReadableByteChannel
 
     @Override
     protected void onResponseImpl(ReadObjectResponse response) {
-      controller.request(1);
-      open.set(null);
       try (ResponseContentLifecycleHandle<ReadObjectResponse> handle =
           read.getResponseContentLifecycleManager().get(response)) {
+        if (cancelled) {
+          return;
+        }
+        controller.request(1);
+        open.set(null);
         ChecksummedData checksummedData = response.getChecksummedData();
         ByteString content = checksummedData.getContent();
         int contentSize = content.size();
@@ -348,6 +402,8 @@ final class GapicUnbufferedReadableByteChannel
             queue.offer(e);
             return;
           }
+        } else if (hasher instanceof CumulativeHasher) {
+          hasher.validateUnchecked(null, content);
         }
         if (response.hasMetadata()) {
           Object respMetadata = response.getMetadata();
@@ -380,6 +436,12 @@ final class GapicUnbufferedReadableByteChannel
 
     @Override
     protected void onErrorImpl(Throwable t) {
+      if (t instanceof CancellationException) {
+        cancellation.set(t);
+      }
+      if (cancelled) {
+        return;
+      }
       if (t instanceof OutOfRangeException) {
         try {
           queue.offer(EOF_MARKER);
@@ -389,17 +451,15 @@ final class GapicUnbufferedReadableByteChannel
           throw Code.ABORTED.toStatus().withCause(e).asRuntimeException();
         }
       }
-      if (t instanceof CancellationException) {
-        cancellation.set(t);
-      }
       if (!open.isDone()) {
         open.setException(t);
-      }
-      try {
-        queue.offer(t);
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        throw Code.ABORTED.toStatus().withCause(e).asRuntimeException();
+      } else {
+        try {
+          queue.offer(t);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw Code.ABORTED.toStatus().withCause(e).asRuntimeException();
+        }
       }
     }
 

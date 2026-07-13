@@ -40,6 +40,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -115,6 +116,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
 
@@ -142,6 +144,11 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
   /** Returns the object with the settings used for calls to deleteRule. */
   public UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings() {
     return ((RuleServiceStubSettings) getStubSettings()).deleteRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyRuleText. */
+  public UnaryCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextSettings() {
+    return ((RuleServiceStubSettings) getStubSettings()).verifyRuleTextSettings();
   }
 
   /** Returns the object with the settings used for calls to listRuleRevisions. */
@@ -327,6 +334,12 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteRule. */
     public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
       return getStubSettingsBuilder().deleteRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyRuleText. */
+    public UnaryCallSettings.Builder<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextSettings() {
+      return getStubSettingsBuilder().verifyRuleTextSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRuleRevisions. */

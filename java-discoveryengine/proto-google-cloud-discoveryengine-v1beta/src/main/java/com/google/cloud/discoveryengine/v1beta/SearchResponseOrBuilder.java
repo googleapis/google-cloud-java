@@ -345,6 +345,40 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Corrected query with low confidence, AKA did you mean query.
+   * Compared with corrected_query, this field is set when SpellCorrector
+   * returned a response, but FPR(full page replacement) is not triggered
+   * because the corrction is of low confidence(eg, reversed because there are
+   * matches of the original query in document corpus).
+   * </pre>
+   *
+   * <code>string suggested_query = 24;</code>
+   *
+   * @return The suggestedQuery.
+   */
+  java.lang.String getSuggestedQuery();
+
+  /**
+   *
+   *
+   * <pre>
+   * Corrected query with low confidence, AKA did you mean query.
+   * Compared with corrected_query, this field is set when SpellCorrector
+   * returned a response, but FPR(full page replacement) is not triggered
+   * because the corrction is of low confidence(eg, reversed because there are
+   * matches of the original query in document corpus).
+   * </pre>
+   *
+   * <code>string suggested_query = 24;</code>
+   *
+   * @return The bytes for suggestedQuery.
+   */
+  com.google.protobuf.ByteString getSuggestedQueryBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A summary as part of the search results.
    * This field is only returned if
    * [SearchRequest.ContentSearchSpec.summary_spec][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.summary_spec]
@@ -530,11 +564,12 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
@@ -545,11 +580,12 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The naturalLanguageQueryUnderstandingInfo.
@@ -561,11 +597,12 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse
@@ -695,4 +732,102 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder
       getOneBoxResultsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+      getSearchLinkPromotionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion getSearchLinkPromotions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  int getSearchLinkPromotionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>
+      getSearchLinkPromotionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder
+      getSearchLinkPromotionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for semanticState.
+   */
+  int getSemanticStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The semanticState.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState getSemanticState();
 }

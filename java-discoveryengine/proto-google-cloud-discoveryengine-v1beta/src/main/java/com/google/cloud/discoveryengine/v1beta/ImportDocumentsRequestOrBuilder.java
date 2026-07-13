@@ -585,7 +585,6 @@ public interface ImportDocumentsRequestOrBuilder
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
@@ -631,7 +630,6 @@ public interface ImportDocumentsRequestOrBuilder
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
@@ -640,6 +638,23 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The bytes for idField.
    */
   com.google.protobuf.ByteString getIdFieldBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to force refresh the unstructured content of the
+   * documents.
+   *
+   * If set to `true`, the content part of the documents will be refreshed
+   * regardless of the update status of the referencing content.
+   * </pre>
+   *
+   * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The forceRefreshContent.
+   */
+  boolean getForceRefreshContent();
 
   com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.SourceCase getSourceCase();
 }

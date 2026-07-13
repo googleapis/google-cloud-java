@@ -34,6 +34,7 @@ import com.google.cloud.chronicle.v1.stub.ReferenceListServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -86,6 +87,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReferenceListServiceSettings extends ClientSettings<ReferenceListServiceSettings> {
 
@@ -111,6 +113,12 @@ public class ReferenceListServiceSettings extends ClientSettings<ReferenceListSe
   public UnaryCallSettings<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListSettings() {
     return ((ReferenceListServiceStubSettings) getStubSettings()).updateReferenceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyReferenceList. */
+  public UnaryCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListSettings() {
+    return ((ReferenceListServiceStubSettings) getStubSettings()).verifyReferenceListSettings();
   }
 
   public static final ReferenceListServiceSettings create(ReferenceListServiceStubSettings stub)
@@ -249,6 +257,12 @@ public class ReferenceListServiceSettings extends ClientSettings<ReferenceListSe
     public UnaryCallSettings.Builder<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListSettings() {
       return getStubSettingsBuilder().updateReferenceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyReferenceList. */
+    public UnaryCallSettings.Builder<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListSettings() {
+      return getStubSettingsBuilder().verifyReferenceListSettings();
     }
 
     @Override

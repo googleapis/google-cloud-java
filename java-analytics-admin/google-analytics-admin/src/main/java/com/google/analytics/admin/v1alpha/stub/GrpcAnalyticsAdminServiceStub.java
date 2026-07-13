@@ -271,6 +271,7 @@ import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -291,6 +292,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -298,6 +300,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
@@ -2326,6 +2329,22 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsMethodDescriptor =
+          MethodDescriptor
+              .<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateReportingIdentitySettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateReportingIdentitySettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingIdentitySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
           GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
       getUserProvidedDataSettingsMethodDescriptor =
           MethodDescriptor
@@ -2686,6 +2705,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       getSubpropertySyncConfigCallable;
   private final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable;
+  private final UnaryCallable<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsCallable;
   private final UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
       getUserProvidedDataSettingsCallable;
 
@@ -4573,6 +4594,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsTransportSettings =
+            GrpcCallSettings
+                .<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>newBuilder()
+                .setMethodDescriptor(updateReportingIdentitySettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reporting_identity_settings.name",
+                          String.valueOf(request.getReportingIdentitySettings().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
         getUserProvidedDataSettingsTransportSettings =
             GrpcCallSettings
@@ -5423,6 +5458,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             getReportingIdentitySettingsTransportSettings,
             settings.getReportingIdentitySettingsSettings(),
+            clientContext);
+    this.updateReportingIdentitySettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateReportingIdentitySettingsTransportSettings,
+            settings.updateReportingIdentitySettingsSettings(),
             clientContext);
     this.getUserProvidedDataSettingsCallable =
         callableFactory.createUnaryCallable(
@@ -6488,6 +6528,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable() {
     return getReportingIdentitySettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsCallable() {
+    return updateReportingIdentitySettingsCallable;
   }
 
   @Override

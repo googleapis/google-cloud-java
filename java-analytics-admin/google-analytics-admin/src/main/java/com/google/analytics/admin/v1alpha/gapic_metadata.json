@@ -463,6 +463,9 @@
             "UpdateReportingDataAnnotation": {
               "methods": ["updateReportingDataAnnotation", "updateReportingDataAnnotation", "updateReportingDataAnnotationCallable"]
             },
+            "UpdateReportingIdentitySettings": {
+              "methods": ["updateReportingIdentitySettings", "updateReportingIdentitySettings", "updateReportingIdentitySettingsCallable"]
+            },
             "UpdateSKAdNetworkConversionValueSchema": {
               "methods": ["updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchemaCallable"]
             },

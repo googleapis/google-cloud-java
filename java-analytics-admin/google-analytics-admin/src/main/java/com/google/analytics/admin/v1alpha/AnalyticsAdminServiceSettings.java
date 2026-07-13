@@ -63,6 +63,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -116,6 +117,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdminServiceSettings> {
@@ -1166,6 +1168,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       getReportingIdentitySettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .getReportingIdentitySettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateReportingIdentitySettings. */
+  public UnaryCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateReportingIdentitySettingsSettings();
   }
 
   /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
@@ -2337,6 +2346,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings() {
       return getStubSettingsBuilder().getReportingIdentitySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<
+            UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsSettings() {
+      return getStubSettingsBuilder().updateReportingIdentitySettingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */

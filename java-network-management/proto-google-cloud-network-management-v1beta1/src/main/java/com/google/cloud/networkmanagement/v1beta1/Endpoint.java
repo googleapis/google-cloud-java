@@ -64,6 +64,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     redisInstance_ = "";
     redisCluster_ = "";
     gkePod_ = "";
+    dmsPrivateConnection_ = "";
     cloudRunJob_ = "";
     network_ = "";
     networkType_ = 0;
@@ -3438,6 +3439,65 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DMS_PRIVATE_CONNECTION_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dmsPrivateConnection_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  @java.lang.Override
+  public java.lang.String getDmsPrivateConnection() {
+    java.lang.Object ref = dmsPrivateConnection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dmsPrivateConnection_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The bytes for dmsPrivateConnection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDmsPrivateConnectionBytes() {
+    java.lang.Object ref = dmsPrivateConnection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dmsPrivateConnection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 10;
   private com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint cloudFunction_;
 
@@ -3933,6 +3993,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gkePod_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 21, gkePod_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dmsPrivateConnection_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, dmsPrivateConnection_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cloudRunJob_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 24, cloudRunJob_);
     }
@@ -4004,6 +4067,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gkePod_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(21, gkePod_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dmsPrivateConnection_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(22, dmsPrivateConnection_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cloudRunJob_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(24, cloudRunJob_);
     }
@@ -4045,6 +4111,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     if (!getRedisInstance().equals(other.getRedisInstance())) return false;
     if (!getRedisCluster().equals(other.getRedisCluster())) return false;
     if (!getGkePod().equals(other.getGkePod())) return false;
+    if (!getDmsPrivateConnection().equals(other.getDmsPrivateConnection())) return false;
     if (hasCloudFunction() != other.hasCloudFunction()) return false;
     if (hasCloudFunction()) {
       if (!getCloudFunction().equals(other.getCloudFunction())) return false;
@@ -4104,6 +4171,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getRedisCluster().hashCode();
     hash = (37 * hash) + GKE_POD_FIELD_NUMBER;
     hash = (53 * hash) + getGkePod().hashCode();
+    hash = (37 * hash) + DMS_PRIVATE_CONNECTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDmsPrivateConnection().hashCode();
     if (hasCloudFunction()) {
       hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
       hash = (53 * hash) + getCloudFunction().hashCode();
@@ -4288,6 +4357,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       redisInstance_ = "";
       redisCluster_ = "";
       gkePod_ = "";
+      dmsPrivateConnection_ = "";
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -4387,30 +4457,33 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         result.gkePod_ = gkePod_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.dmsPrivateConnection_ = dmsPrivateConnection_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.cloudFunction_ =
             cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.appEngineVersion_ =
             appEngineVersionBuilder_ == null ? appEngineVersion_ : appEngineVersionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.cloudRunRevision_ =
             cloudRunRevisionBuilder_ == null ? cloudRunRevision_ : cloudRunRevisionBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.cloudRunJob_ = cloudRunJob_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.networkType_ = networkType_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.projectId_ = projectId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4488,6 +4561,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (!other.getDmsPrivateConnection().isEmpty()) {
+        dmsPrivateConnection_ = other.dmsPrivateConnection_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasCloudFunction()) {
         mergeCloudFunction(other.getCloudFunction());
       }
@@ -4499,12 +4577,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getCloudRunJob().isEmpty()) {
         cloudRunJob_ = other.cloudRunJob_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -4512,7 +4590,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4562,19 +4640,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 50
             case 58:
@@ -4593,21 +4671,21 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetAppEngineVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetCloudRunRevisionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 98
             case 106:
@@ -4658,10 +4736,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 170
+            case 178:
+              {
+                dmsPrivateConnection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 178
             case 194:
               {
                 cloudRunJob_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 194
             default:
@@ -6198,6 +6282,132 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object dmsPrivateConnection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A [DMS Private
+     * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+     * name format:
+     * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+     * </pre>
+     *
+     * <code>string dms_private_connection = 22;</code>
+     *
+     * @return The dmsPrivateConnection.
+     */
+    public java.lang.String getDmsPrivateConnection() {
+      java.lang.Object ref = dmsPrivateConnection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dmsPrivateConnection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [DMS Private
+     * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+     * name format:
+     * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+     * </pre>
+     *
+     * <code>string dms_private_connection = 22;</code>
+     *
+     * @return The bytes for dmsPrivateConnection.
+     */
+    public com.google.protobuf.ByteString getDmsPrivateConnectionBytes() {
+      java.lang.Object ref = dmsPrivateConnection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dmsPrivateConnection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [DMS Private
+     * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+     * name format:
+     * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+     * </pre>
+     *
+     * <code>string dms_private_connection = 22;</code>
+     *
+     * @param value The dmsPrivateConnection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDmsPrivateConnection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dmsPrivateConnection_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [DMS Private
+     * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+     * name format:
+     * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+     * </pre>
+     *
+     * <code>string dms_private_connection = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDmsPrivateConnection() {
+      dmsPrivateConnection_ = getDefaultInstance().getDmsPrivateConnection();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [DMS Private
+     * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+     * name format:
+     * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+     * </pre>
+     *
+     * <code>string dms_private_connection = 22;</code>
+     *
+     * @param value The bytes for dmsPrivateConnection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDmsPrivateConnectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dmsPrivateConnection_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint
         cloudFunction_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -6221,7 +6431,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * @return Whether the cloudFunction field is set.
      */
     public boolean hasCloudFunction() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6272,7 +6482,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6297,7 +6507,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6317,7 +6527,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     public Builder mergeCloudFunction(
         com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint value) {
       if (cloudFunctionBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && cloudFunction_ != null
             && cloudFunction_
                 != com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint
@@ -6330,7 +6540,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         cloudFunctionBuilder_.mergeFrom(value);
       }
       if (cloudFunction_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6349,7 +6559,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCloudFunction() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -6373,7 +6583,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint.Builder
         getCloudFunctionBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetCloudFunctionFieldBuilder().getBuilder();
     }
@@ -6455,7 +6665,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * @return Whether the appEngineVersion field is set.
      */
     public boolean hasAppEngineVersion() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6508,7 +6718,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         appEngineVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6534,7 +6744,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         appEngineVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6555,7 +6765,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     public Builder mergeAppEngineVersion(
         com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint value) {
       if (appEngineVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && appEngineVersion_ != null
             && appEngineVersion_
                 != com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint
@@ -6568,7 +6778,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         appEngineVersionBuilder_.mergeFrom(value);
       }
       if (appEngineVersion_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6588,7 +6798,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAppEngineVersion() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       appEngineVersion_ = null;
       if (appEngineVersionBuilder_ != null) {
         appEngineVersionBuilder_.dispose();
@@ -6613,7 +6823,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint.Builder
         getAppEngineVersionBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetAppEngineVersionFieldBuilder().getBuilder();
     }
@@ -6699,7 +6909,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * @return Whether the cloudRunRevision field is set.
      */
     public boolean hasCloudRunRevision() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6752,7 +6962,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         cloudRunRevisionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6778,7 +6988,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       } else {
         cloudRunRevisionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6799,7 +7009,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
     public Builder mergeCloudRunRevision(
         com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint value) {
       if (cloudRunRevisionBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && cloudRunRevision_ != null
             && cloudRunRevision_
                 != com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint
@@ -6812,7 +7022,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         cloudRunRevisionBuilder_.mergeFrom(value);
       }
       if (cloudRunRevision_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6832,7 +7042,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCloudRunRevision() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       cloudRunRevision_ = null;
       if (cloudRunRevisionBuilder_ != null) {
         cloudRunRevisionBuilder_.dispose();
@@ -6857,7 +7067,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint.Builder
         getCloudRunRevisionBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetCloudRunRevisionFieldBuilder().getBuilder();
     }
@@ -6996,7 +7206,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       cloudRunJob_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7018,7 +7228,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCloudRunJob() {
       cloudRunJob_ = getDefaultInstance().getCloudRunJob();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -7045,7 +7255,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       cloudRunJob_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7124,7 +7334,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7145,7 +7355,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7171,7 +7381,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7210,7 +7420,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7254,7 +7464,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -7273,7 +7483,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       networkType_ = 0;
       onChanged();
       return this;
@@ -7347,7 +7557,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7366,7 +7576,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7390,7 +7600,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

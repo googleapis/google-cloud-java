@@ -26,6 +26,7 @@ import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
@@ -33,7 +34,7 @@ import io.grpc.CallOptions;
 import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Executor;
 
 public class TableAsync implements AutoCloseable, Closeable {
   private final TableBase base;
@@ -47,7 +48,9 @@ public class TableAsync implements AutoCloseable, Closeable {
       String tableId,
       Permission permission,
       Metrics metrics,
-      ScheduledExecutorService executorService) {
+      BigtableTimer timer,
+      Executor backgroundExecutor,
+      Executor userCallbackExecutor) {
 
     TableName tableName =
         TableName.builder()
@@ -76,7 +79,9 @@ public class TableAsync implements AutoCloseable, Closeable {
             callOptions,
             tableId,
             metrics,
-            executorService);
+            timer,
+            backgroundExecutor,
+            userCallbackExecutor);
 
     return new TableAsync(base);
   }

@@ -5,7 +5,7 @@
   "api_description": "The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-maps-mapmanagement",

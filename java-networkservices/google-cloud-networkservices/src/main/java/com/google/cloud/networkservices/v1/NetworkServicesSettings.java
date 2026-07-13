@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -59,6 +60,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -137,6 +139,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkServicesSettings extends ClientSettings<NetworkServicesSettings> {
 
@@ -669,6 +672,51 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
           ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsSettings() {
     return ((NetworkServicesStubSettings) getStubSettings()).listMeshRouteViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAgentGateways. */
+  public PagedCallSettings<
+          ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).listAgentGatewaysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAgentGateway. */
+  public UnaryCallSettings<GetAgentGatewayRequest, AgentGateway> getAgentGatewaySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).getAgentGatewaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAgentGateway. */
+  public UnaryCallSettings<CreateAgentGatewayRequest, Operation> createAgentGatewaySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createAgentGatewaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAgentGateway. */
+  public OperationCallSettings<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).createAgentGatewayOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentGateway. */
+  public UnaryCallSettings<UpdateAgentGatewayRequest, Operation> updateAgentGatewaySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateAgentGatewaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentGateway. */
+  public OperationCallSettings<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).updateAgentGatewayOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentGateway. */
+  public UnaryCallSettings<DeleteAgentGatewayRequest, Operation> deleteAgentGatewaySettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteAgentGatewaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentGateway. */
+  public OperationCallSettings<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationSettings() {
+    return ((NetworkServicesStubSettings) getStubSettings()).deleteAgentGatewayOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1352,6 +1400,55 @@ public class NetworkServicesSettings extends ClientSettings<NetworkServicesSetti
             ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
         listMeshRouteViewsSettings() {
       return getStubSettingsBuilder().listMeshRouteViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAgentGateways. */
+    public PagedCallSettings.Builder<
+            ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+        listAgentGatewaysSettings() {
+      return getStubSettingsBuilder().listAgentGatewaysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentGateway. */
+    public UnaryCallSettings.Builder<GetAgentGatewayRequest, AgentGateway>
+        getAgentGatewaySettings() {
+      return getStubSettingsBuilder().getAgentGatewaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentGateway. */
+    public UnaryCallSettings.Builder<CreateAgentGatewayRequest, Operation>
+        createAgentGatewaySettings() {
+      return getStubSettingsBuilder().createAgentGatewaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentGateway. */
+    public OperationCallSettings.Builder<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        createAgentGatewayOperationSettings() {
+      return getStubSettingsBuilder().createAgentGatewayOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentGateway. */
+    public UnaryCallSettings.Builder<UpdateAgentGatewayRequest, Operation>
+        updateAgentGatewaySettings() {
+      return getStubSettingsBuilder().updateAgentGatewaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentGateway. */
+    public OperationCallSettings.Builder<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        updateAgentGatewayOperationSettings() {
+      return getStubSettingsBuilder().updateAgentGatewayOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentGateway. */
+    public UnaryCallSettings.Builder<DeleteAgentGatewayRequest, Operation>
+        deleteAgentGatewaySettings() {
+      return getStubSettingsBuilder().deleteAgentGatewaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentGateway. */
+    public OperationCallSettings.Builder<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+        deleteAgentGatewayOperationSettings() {
+      return getStubSettingsBuilder().deleteAgentGatewayOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1960,6 +1960,68 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relevanceFilterSpec field is set.
+   */
+  boolean hasRelevanceFilterSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relevanceFilterSpec.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec getRelevanceFilterSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder
+      getRelevanceFilterSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The specification for returning the relevance score.
    * </pre>
    *

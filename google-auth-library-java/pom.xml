@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.auth</groupId>
   <artifactId>google-auth-library-parent</artifactId>
-  <version>1.48.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+  <version>1.50.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Auth Library for Java</name>
   <description>Client libraries providing authentication and
@@ -74,7 +74,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.google.http.version>2.1.0</project.google.http.version>
+    <project.google.http.version>2.1.1</project.google.http.version>
     <project.junit.version>5.11.4</project.junit.version>
     <project.guava.version>33.5.0-jre</project.guava.version>
     <project.appengine.version>2.0.33</project.appengine.version>
@@ -86,7 +86,8 @@
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
     <project.gson.version>2.13.2</project.gson.version>
-    <project.api-common.version>2.64.0</project.api-common.version><!-- {x-version-update:api-common:current} -->
+    <project.api-common.version>2.66.0-SNAPSHOT</project.api-common.version><!-- {x-version-update:api-common:current} -->
+    <project.commons-codec.version>1.18.0</project.commons-codec.version>
     <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
   </properties>
@@ -182,6 +183,11 @@
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <version>${project.error-prone.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${project.commons-codec.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -206,6 +207,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
@@ -767,9 +769,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    *
    * @param evaluation Required. The evaluation resource name, such as
    *     `projects/{project}/locations/{location}/evaluations/{evaluation}`.
-   *     <p>If the caller does not have permission to list [EvaluationResult][] under this
-   *     evaluation, regardless of whether or not this evaluation set exists, a `PERMISSION_DENIED`
-   *     error is returned.
+   *     <p>If the caller does not have permission to list
+   *     [ListEvaluationResultsResponse.EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]
+   *     under this evaluation, regardless of whether or not this evaluation set exists, a
+   *     `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEvaluationResultsPagedResponse listEvaluationResults(EvaluationName evaluation) {
@@ -804,9 +807,10 @@ public class EvaluationServiceClient implements BackgroundResource {
    *
    * @param evaluation Required. The evaluation resource name, such as
    *     `projects/{project}/locations/{location}/evaluations/{evaluation}`.
-   *     <p>If the caller does not have permission to list [EvaluationResult][] under this
-   *     evaluation, regardless of whether or not this evaluation set exists, a `PERMISSION_DENIED`
-   *     error is returned.
+   *     <p>If the caller does not have permission to list
+   *     [ListEvaluationResultsResponse.EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]
+   *     under this evaluation, regardless of whether or not this evaluation set exists, a
+   *     `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEvaluationResultsPagedResponse listEvaluationResults(String evaluation) {

@@ -33,6 +33,7 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,6 +112,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CompletionServiceSettings extends ClientSettings<CompletionServiceSettings> {
@@ -191,6 +193,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
       purgeCompletionSuggestionsOperationSettings() {
     return ((CompletionServiceStubSettings) getStubSettings())
         .purgeCompletionSuggestionsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeSuggestion. */
+  public UnaryCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).removeSuggestionSettings();
   }
 
   public static final CompletionServiceSettings create(CompletionServiceStubSettings stub)
@@ -375,6 +383,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
             PurgeCompletionSuggestionsMetadata>
         purgeCompletionSuggestionsOperationSettings() {
       return getStubSettingsBuilder().purgeCompletionSuggestionsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeSuggestion. */
+    public UnaryCallSettings.Builder<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionSettings() {
+      return getStubSettingsBuilder().removeSuggestionSettings();
     }
 
     @Override

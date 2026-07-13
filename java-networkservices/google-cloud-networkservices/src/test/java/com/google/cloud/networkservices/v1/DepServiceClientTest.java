@@ -1607,6 +1607,7 @@ public class DepServiceClientTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     mockDepService.addResponse(expectedResponse);
@@ -1659,6 +1660,7 @@ public class DepServiceClientTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     mockDepService.addResponse(expectedResponse);
@@ -1710,6 +1712,7 @@ public class DepServiceClientTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =
@@ -1777,6 +1780,7 @@ public class DepServiceClientTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =
@@ -1844,6 +1848,7 @@ public class DepServiceClientTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =

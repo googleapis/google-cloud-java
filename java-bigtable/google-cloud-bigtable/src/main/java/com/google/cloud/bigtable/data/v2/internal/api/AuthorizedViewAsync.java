@@ -25,6 +25,7 @@ import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
@@ -32,7 +33,7 @@ import io.grpc.CallOptions;
 import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Executor;
 
 public class AuthorizedViewAsync implements AutoCloseable, Closeable {
 
@@ -48,7 +49,9 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
       String viewId,
       Permission permission,
       Metrics metrics,
-      ScheduledExecutorService executorService) {
+      BigtableTimer timer,
+      Executor backgroundExecutor,
+      Executor userCallbackExecutor) {
 
     AuthorizedViewName viewName =
         AuthorizedViewName.builder()
@@ -78,7 +81,9 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
             callOptions,
             viewName.toString(),
             metrics,
-            executorService);
+            timer,
+            backgroundExecutor,
+            userCallbackExecutor);
 
     return new AuthorizedViewAsync(base);
   }

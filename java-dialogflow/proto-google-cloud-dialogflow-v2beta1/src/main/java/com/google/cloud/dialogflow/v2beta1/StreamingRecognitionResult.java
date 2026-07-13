@@ -44,20 +44,24 @@ package com.google.cloud.dialogflow.v2beta1;
  * finalized transcript values received for the series of results.
  *
  * In the following example, single utterance is enabled. In the case where
- * single utterance is not enabled, result 7 would not occur.
+ * single utterance is not enabled, result 8 would not occur.
  *
  * ```
- * Num | transcript              | message_type            | is_final
- * --- | ----------------------- | ----------------------- | --------
- * 1   | "tube"                  | TRANSCRIPT              | false
- * 2   | "to be a"               | TRANSCRIPT              | false
- * 3   | "to be"                 | TRANSCRIPT              | false
- * 4   | "to be or not to be"    | TRANSCRIPT              | true
- * 5   | "that's"                | TRANSCRIPT              | false
- * 6   | "that is                | TRANSCRIPT              | false
- * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
- * 8   | " that is the question" | TRANSCRIPT              | true
+ * Num | transcript               | message_type            | is_final
+ * --- | ------------------------ | ----------------------- | --------
+ * 1   | "tube"                   | TRANSCRIPT              | false
+ * 2   | "to be a"                | TRANSCRIPT              | false
+ * 3   | "to be"                  | TRANSCRIPT              | false
+ * 4   | "to be or not to be"     | TRANSCRIPT              | true
+ * 5   | "that's"                 | TRANSCRIPT              | false
+ * 6   | "that is                 | TRANSCRIPT              | false
+ * 7   | " that is the question"  | TRANSCRIPT              | true
+ * 8   | unset                    | END_OF_SINGLE_UTTERANCE | unset
+ * 9   | ". Whether 'tis nobler"  | TRANSCRIPT              | true
+ * 10  | " in the mind"           | TRANSCRIPT              | false
+ * 11  | " in the mind to suffer" | TRANSCRIPT              | true
  * ```
+ *
  * Concatenating the finalized transcripts with `is_final` set to true,
  * the complete utterance becomes "to be or not to be that is the question".
  * </pre>
@@ -176,6 +180,30 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>PARTIAL_DTMF_DIGITS = 4;</code>
      */
     PARTIAL_DTMF_DIGITS(4),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    SPEECH_ACTIVITY_BEGIN(5),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    SPEECH_ACTIVITY_END(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -252,6 +280,32 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      */
     public static final int PARTIAL_DTMF_DIGITS_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    public static final int SPEECH_ACTIVITY_BEGIN_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    public static final int SPEECH_ACTIVITY_END_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -286,6 +340,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           return DTMF_DIGITS;
         case 4:
           return PARTIAL_DTMF_DIGITS;
+        case 5:
+          return SPEECH_ACTIVITY_BEGIN;
+        case 6:
+          return SPEECH_ACTIVITY_END;
         default:
           return null;
       }
@@ -1045,20 +1103,24 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * finalized transcript values received for the series of results.
    *
    * In the following example, single utterance is enabled. In the case where
-   * single utterance is not enabled, result 7 would not occur.
+   * single utterance is not enabled, result 8 would not occur.
    *
    * ```
-   * Num | transcript              | message_type            | is_final
-   * --- | ----------------------- | ----------------------- | --------
-   * 1   | "tube"                  | TRANSCRIPT              | false
-   * 2   | "to be a"               | TRANSCRIPT              | false
-   * 3   | "to be"                 | TRANSCRIPT              | false
-   * 4   | "to be or not to be"    | TRANSCRIPT              | true
-   * 5   | "that's"                | TRANSCRIPT              | false
-   * 6   | "that is                | TRANSCRIPT              | false
-   * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
-   * 8   | " that is the question" | TRANSCRIPT              | true
+   * Num | transcript               | message_type            | is_final
+   * --- | ------------------------ | ----------------------- | --------
+   * 1   | "tube"                   | TRANSCRIPT              | false
+   * 2   | "to be a"                | TRANSCRIPT              | false
+   * 3   | "to be"                  | TRANSCRIPT              | false
+   * 4   | "to be or not to be"     | TRANSCRIPT              | true
+   * 5   | "that's"                 | TRANSCRIPT              | false
+   * 6   | "that is                 | TRANSCRIPT              | false
+   * 7   | " that is the question"  | TRANSCRIPT              | true
+   * 8   | unset                    | END_OF_SINGLE_UTTERANCE | unset
+   * 9   | ". Whether 'tis nobler"  | TRANSCRIPT              | true
+   * 10  | " in the mind"           | TRANSCRIPT              | false
+   * 11  | " in the mind to suffer" | TRANSCRIPT              | true
    * ```
+   *
    * Concatenating the finalized transcripts with `is_final` set to true,
    * the complete utterance becomes "to be or not to be that is the question".
    * </pre>

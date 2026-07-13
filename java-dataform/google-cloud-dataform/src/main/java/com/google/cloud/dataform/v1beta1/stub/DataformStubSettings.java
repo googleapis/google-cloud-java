@@ -86,9 +86,15 @@ import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningResponse;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
@@ -204,6 +210,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -256,7 +263,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for moveFolder:
+ * configure the RetrySettings for deleteTeamFolderTree:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -279,6 +286,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -294,6 +302,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderSettings;
   private final UnaryCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderSettings;
   private final UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings;
+  private final UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeSettings;
+  private final OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings;
   private final PagedCallSettings<
           QueryTeamFolderContentsRequest,
           QueryTeamFolderContentsResponse,
@@ -306,6 +318,9 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateFolderRequest, Folder> createFolderSettings;
   private final UnaryCallSettings<UpdateFolderRequest, Folder> updateFolderSettings;
   private final UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings;
+  private final UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings;
+  private final OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings;
   private final PagedCallSettings<
           QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
       queryFolderContentsSettings;
@@ -324,6 +339,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateRepositoryRequest, Repository> createRepositorySettings;
   private final UnaryCallSettings<UpdateRepositoryRequest, Repository> updateRepositorySettings;
   private final UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings;
+  private final UnaryCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningSettings;
+  private final OperationCallSettings<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationSettings;
   private final UnaryCallSettings<MoveRepositoryRequest, Operation> moveRepositorySettings;
   private final OperationCallSettings<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
       moveRepositoryOperationSettings;
@@ -1579,6 +1601,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return deleteTeamFolderSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeSettings() {
+    return deleteTeamFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings() {
+    return deleteTeamFolderTreeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to queryTeamFolderContents. */
   public PagedCallSettings<
           QueryTeamFolderContentsRequest,
@@ -1613,6 +1646,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to deleteFolder. */
   public UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings() {
     return deleteFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings() {
+    return deleteFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings() {
+    return deleteFolderTreeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to queryFolderContents. */
@@ -1667,6 +1711,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
     return deleteRepositorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public UnaryCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningSettings() {
+    return deleteRepositoryLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public OperationCallSettings<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationSettings() {
+    return deleteRepositoryLongRunningOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to moveRepository. */
@@ -2121,12 +2180,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     createTeamFolderSettings = settingsBuilder.createTeamFolderSettings().build();
     updateTeamFolderSettings = settingsBuilder.updateTeamFolderSettings().build();
     deleteTeamFolderSettings = settingsBuilder.deleteTeamFolderSettings().build();
+    deleteTeamFolderTreeSettings = settingsBuilder.deleteTeamFolderTreeSettings().build();
+    deleteTeamFolderTreeOperationSettings =
+        settingsBuilder.deleteTeamFolderTreeOperationSettings().build();
     queryTeamFolderContentsSettings = settingsBuilder.queryTeamFolderContentsSettings().build();
     searchTeamFoldersSettings = settingsBuilder.searchTeamFoldersSettings().build();
     getFolderSettings = settingsBuilder.getFolderSettings().build();
     createFolderSettings = settingsBuilder.createFolderSettings().build();
     updateFolderSettings = settingsBuilder.updateFolderSettings().build();
     deleteFolderSettings = settingsBuilder.deleteFolderSettings().build();
+    deleteFolderTreeSettings = settingsBuilder.deleteFolderTreeSettings().build();
+    deleteFolderTreeOperationSettings = settingsBuilder.deleteFolderTreeOperationSettings().build();
     queryFolderContentsSettings = settingsBuilder.queryFolderContentsSettings().build();
     queryUserRootContentsSettings = settingsBuilder.queryUserRootContentsSettings().build();
     moveFolderSettings = settingsBuilder.moveFolderSettings().build();
@@ -2136,6 +2200,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     createRepositorySettings = settingsBuilder.createRepositorySettings().build();
     updateRepositorySettings = settingsBuilder.updateRepositorySettings().build();
     deleteRepositorySettings = settingsBuilder.deleteRepositorySettings().build();
+    deleteRepositoryLongRunningSettings =
+        settingsBuilder.deleteRepositoryLongRunningSettings().build();
+    deleteRepositoryLongRunningOperationSettings =
+        settingsBuilder.deleteRepositoryLongRunningOperationSettings().build();
     moveRepositorySettings = settingsBuilder.moveRepositorySettings().build();
     moveRepositoryOperationSettings = settingsBuilder.moveRepositoryOperationSettings().build();
     commitRepositoryChangesSettings = settingsBuilder.commitRepositoryChangesSettings().build();
@@ -2217,6 +2285,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateTeamFolderSettings;
     private final UnaryCallSettings.Builder<DeleteTeamFolderRequest, Empty>
         deleteTeamFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings;
     private final PagedCallSettings.Builder<
             QueryTeamFolderContentsRequest,
             QueryTeamFolderContentsResponse,
@@ -2229,6 +2302,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     private final UnaryCallSettings.Builder<CreateFolderRequest, Folder> createFolderSettings;
     private final UnaryCallSettings.Builder<UpdateFolderRequest, Folder> updateFolderSettings;
     private final UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings;
     private final PagedCallSettings.Builder<
             QueryFolderContentsRequest,
             QueryFolderContentsResponse,
@@ -2252,6 +2330,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateRepositorySettings;
     private final UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty>
         deleteRepositorySettings;
+    private final UnaryCallSettings.Builder<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRepositoryLongRunningRequest,
+            DeleteRepositoryLongRunningResponse,
+            DeleteRepositoryLongRunningMetadata>
+        deleteRepositoryLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<MoveRepositoryRequest, Operation>
         moveRepositorySettings;
     private final OperationCallSettings.Builder<
@@ -2420,6 +2505,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeOperationSettings = OperationCallSettings.newBuilder();
       queryTeamFolderContentsSettings =
           PagedCallSettings.newBuilder(QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_FACT);
       searchTeamFoldersSettings = PagedCallSettings.newBuilder(SEARCH_TEAM_FOLDERS_PAGE_STR_FACT);
@@ -2427,6 +2514,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeOperationSettings = OperationCallSettings.newBuilder();
       queryFolderContentsSettings =
           PagedCallSettings.newBuilder(QUERY_FOLDER_CONTENTS_PAGE_STR_FACT);
       queryUserRootContentsSettings =
@@ -2438,6 +2527,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRepositoryLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRepositoryLongRunningOperationSettings = OperationCallSettings.newBuilder();
       moveRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveRepositoryOperationSettings = OperationCallSettings.newBuilder();
       commitRepositoryChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2509,12 +2600,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createTeamFolderSettings,
               updateTeamFolderSettings,
               deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
               queryTeamFolderContentsSettings,
               searchTeamFoldersSettings,
               getFolderSettings,
               createFolderSettings,
               updateFolderSettings,
               deleteFolderSettings,
+              deleteFolderTreeSettings,
               queryFolderContentsSettings,
               queryUserRootContentsSettings,
               moveFolderSettings,
@@ -2523,6 +2616,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              deleteRepositoryLongRunningSettings,
               moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
@@ -2588,12 +2682,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createTeamFolderSettings = settings.createTeamFolderSettings.toBuilder();
       updateTeamFolderSettings = settings.updateTeamFolderSettings.toBuilder();
       deleteTeamFolderSettings = settings.deleteTeamFolderSettings.toBuilder();
+      deleteTeamFolderTreeSettings = settings.deleteTeamFolderTreeSettings.toBuilder();
+      deleteTeamFolderTreeOperationSettings =
+          settings.deleteTeamFolderTreeOperationSettings.toBuilder();
       queryTeamFolderContentsSettings = settings.queryTeamFolderContentsSettings.toBuilder();
       searchTeamFoldersSettings = settings.searchTeamFoldersSettings.toBuilder();
       getFolderSettings = settings.getFolderSettings.toBuilder();
       createFolderSettings = settings.createFolderSettings.toBuilder();
       updateFolderSettings = settings.updateFolderSettings.toBuilder();
       deleteFolderSettings = settings.deleteFolderSettings.toBuilder();
+      deleteFolderTreeSettings = settings.deleteFolderTreeSettings.toBuilder();
+      deleteFolderTreeOperationSettings = settings.deleteFolderTreeOperationSettings.toBuilder();
       queryFolderContentsSettings = settings.queryFolderContentsSettings.toBuilder();
       queryUserRootContentsSettings = settings.queryUserRootContentsSettings.toBuilder();
       moveFolderSettings = settings.moveFolderSettings.toBuilder();
@@ -2603,6 +2702,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = settings.createRepositorySettings.toBuilder();
       updateRepositorySettings = settings.updateRepositorySettings.toBuilder();
       deleteRepositorySettings = settings.deleteRepositorySettings.toBuilder();
+      deleteRepositoryLongRunningSettings =
+          settings.deleteRepositoryLongRunningSettings.toBuilder();
+      deleteRepositoryLongRunningOperationSettings =
+          settings.deleteRepositoryLongRunningOperationSettings.toBuilder();
       moveRepositorySettings = settings.moveRepositorySettings.toBuilder();
       moveRepositoryOperationSettings = settings.moveRepositoryOperationSettings.toBuilder();
       commitRepositoryChangesSettings = settings.commitRepositoryChangesSettings.toBuilder();
@@ -2670,12 +2773,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createTeamFolderSettings,
               updateTeamFolderSettings,
               deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
               queryTeamFolderContentsSettings,
               searchTeamFoldersSettings,
               getFolderSettings,
               createFolderSettings,
               updateFolderSettings,
               deleteFolderSettings,
+              deleteFolderTreeSettings,
               queryFolderContentsSettings,
               queryUserRootContentsSettings,
               moveFolderSettings,
@@ -2684,6 +2789,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              deleteRepositoryLongRunningSettings,
               moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
@@ -2787,6 +2893,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deleteTeamFolderTreeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .queryTeamFolderContentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2813,6 +2924,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFolderTreeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2853,6 +2969,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteRepositorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteRepositoryLongRunningSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3132,6 +3253,54 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deleteTeamFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTeamFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .moveFolderOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<MoveFolderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -3142,6 +3311,33 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(MoveFolderMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRepositoryLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRepositoryLongRunningRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  DeleteRepositoryLongRunningResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteRepositoryLongRunningMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -3218,6 +3414,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return deleteTeamFolderSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings() {
+      return deleteTeamFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings() {
+      return deleteTeamFolderTreeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to queryTeamFolderContents. */
     public PagedCallSettings.Builder<
             QueryTeamFolderContentsRequest,
@@ -3252,6 +3461,18 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to deleteFolder. */
     public UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings() {
       return deleteFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings() {
+      return deleteFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public OperationCallSettings.Builder<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings() {
+      return deleteFolderTreeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to queryFolderContents. */
@@ -3310,6 +3531,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
       return deleteRepositorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public UnaryCallSettings.Builder<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningSettings() {
+      return deleteRepositoryLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public OperationCallSettings.Builder<
+            DeleteRepositoryLongRunningRequest,
+            DeleteRepositoryLongRunningResponse,
+            DeleteRepositoryLongRunningMetadata>
+        deleteRepositoryLongRunningOperationSettings() {
+      return deleteRepositoryLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to moveRepository. */

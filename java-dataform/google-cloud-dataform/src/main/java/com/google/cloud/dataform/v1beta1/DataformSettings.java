@@ -62,6 +62,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -114,7 +115,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for moveFolder:
+ * configure the RetrySettings for deleteTeamFolderTree:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -137,6 +138,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataformSettings extends ClientSettings<DataformSettings> {
@@ -159,6 +161,17 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to deleteTeamFolder. */
   public UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings() {
     return ((DataformStubSettings) getStubSettings()).deleteTeamFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteTeamFolderTreeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteTeamFolderTreeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to queryTeamFolderContents. */
@@ -195,6 +208,17 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to deleteFolder. */
   public UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings() {
     return ((DataformStubSettings) getStubSettings()).deleteFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteFolderTreeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteFolderTreeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to queryFolderContents. */
@@ -249,6 +273,22 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
     return ((DataformStubSettings) getStubSettings()).deleteRepositorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public UnaryCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteRepositoryLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public OperationCallSettings<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationSettings() {
+    return ((DataformStubSettings) getStubSettings())
+        .deleteRepositoryLongRunningOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to moveRepository. */
@@ -723,6 +763,19 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
       return getStubSettingsBuilder().deleteTeamFolderSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings() {
+      return getStubSettingsBuilder().deleteTeamFolderTreeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings() {
+      return getStubSettingsBuilder().deleteTeamFolderTreeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to queryTeamFolderContents. */
     public PagedCallSettings.Builder<
             QueryTeamFolderContentsRequest,
@@ -757,6 +810,18 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     /** Returns the builder for the settings used for calls to deleteFolder. */
     public UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings() {
       return getStubSettingsBuilder().deleteFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings() {
+      return getStubSettingsBuilder().deleteFolderTreeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public OperationCallSettings.Builder<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings() {
+      return getStubSettingsBuilder().deleteFolderTreeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryFolderContents. */
@@ -815,6 +880,21 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
       return getStubSettingsBuilder().deleteRepositorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public UnaryCallSettings.Builder<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningSettings() {
+      return getStubSettingsBuilder().deleteRepositoryLongRunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public OperationCallSettings.Builder<
+            DeleteRepositoryLongRunningRequest,
+            DeleteRepositoryLongRunningResponse,
+            DeleteRepositoryLongRunningMetadata>
+        deleteRepositoryLongRunningOperationSettings() {
+      return getStubSettingsBuilder().deleteRepositoryLongRunningOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to moveRepository. */

@@ -60,6 +60,7 @@ public class SyncAnswerQuery {
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
               .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
     }

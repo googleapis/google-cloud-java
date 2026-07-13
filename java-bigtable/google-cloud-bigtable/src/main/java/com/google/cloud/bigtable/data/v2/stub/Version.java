@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-bigtable:current}
-  static final String VERSION = "2.79.0";
+  static final String VERSION = "2.81.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

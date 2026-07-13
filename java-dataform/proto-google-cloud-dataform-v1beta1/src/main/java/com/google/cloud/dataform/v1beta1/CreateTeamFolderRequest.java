@@ -199,15 +199,20 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the TeamFolder, which will become the final component of
    * the TeamFolder's resource name.
    * </pre>
    *
-   * <code>string team_folder_id = 3;</code>
+   * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=3864
    * @return The teamFolderId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getTeamFolderId() {
     java.lang.Object ref = teamFolderId_;
     if (ref instanceof java.lang.String) {
@@ -224,15 +229,20 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the TeamFolder, which will become the final component of
    * the TeamFolder's resource name.
    * </pre>
    *
-   * <code>string team_folder_id = 3;</code>
+   * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=3864
    * @return The bytes for teamFolderId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getTeamFolderIdBytes() {
     java.lang.Object ref = teamFolderId_;
     if (ref instanceof java.lang.String) {
@@ -969,14 +979,19 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is not used. The resource name is generated
+     * automatically.
      * The ID to use for the TeamFolder, which will become the final component of
      * the TeamFolder's resource name.
      * </pre>
      *
-     * <code>string team_folder_id = 3;</code>
+     * <code>string team_folder_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=3864
      * @return The teamFolderId.
      */
+    @java.lang.Deprecated
     public java.lang.String getTeamFolderId() {
       java.lang.Object ref = teamFolderId_;
       if (!(ref instanceof java.lang.String)) {
@@ -993,14 +1008,19 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is not used. The resource name is generated
+     * automatically.
      * The ID to use for the TeamFolder, which will become the final component of
      * the TeamFolder's resource name.
      * </pre>
      *
-     * <code>string team_folder_id = 3;</code>
+     * <code>string team_folder_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=3864
      * @return The bytes for teamFolderId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getTeamFolderIdBytes() {
       java.lang.Object ref = teamFolderId_;
       if (ref instanceof String) {
@@ -1017,15 +1037,20 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is not used. The resource name is generated
+     * automatically.
      * The ID to use for the TeamFolder, which will become the final component of
      * the TeamFolder's resource name.
      * </pre>
      *
-     * <code>string team_folder_id = 3;</code>
+     * <code>string team_folder_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=3864
      * @param value The teamFolderId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTeamFolderId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1040,14 +1065,19 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is not used. The resource name is generated
+     * automatically.
      * The ID to use for the TeamFolder, which will become the final component of
      * the TeamFolder's resource name.
      * </pre>
      *
-     * <code>string team_folder_id = 3;</code>
+     * <code>string team_folder_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=3864
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTeamFolderId() {
       teamFolderId_ = getDefaultInstance().getTeamFolderId();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1059,15 +1089,20 @@ public final class CreateTeamFolderRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Deprecated: This field is not used. The resource name is generated
+     * automatically.
      * The ID to use for the TeamFolder, which will become the final component of
      * the TeamFolder's resource name.
      * </pre>
      *
-     * <code>string team_folder_id = 3;</code>
+     * <code>string team_folder_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=3864
      * @param value The bytes for teamFolderId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTeamFolderIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "OracleDatabaseClient",
           "rpcs": {
+            "ConfigureExascaleCloudExadataInfrastructure": {
+              "methods": ["configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureOperationCallable", "configureExascaleCloudExadataInfrastructureCallable"]
+            },
             "CreateAutonomousDatabase": {
               "methods": ["createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseOperationCallable", "createAutonomousDatabaseCallable"]
             },
@@ -109,20 +112,8 @@
             "GetGoldengateConnectionAssignment": {
               "methods": ["getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignmentCallable"]
             },
-            "GetGoldengateConnectionType": {
-              "methods": ["getGoldengateConnectionType", "getGoldengateConnectionType", "getGoldengateConnectionType", "getGoldengateConnectionTypeCallable"]
-            },
             "GetGoldengateDeployment": {
               "methods": ["getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeploymentCallable"]
-            },
-            "GetGoldengateDeploymentEnvironment": {
-              "methods": ["getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironmentCallable"]
-            },
-            "GetGoldengateDeploymentType": {
-              "methods": ["getGoldengateDeploymentType", "getGoldengateDeploymentType", "getGoldengateDeploymentType", "getGoldengateDeploymentTypeCallable"]
-            },
-            "GetGoldengateDeploymentVersion": {
-              "methods": ["getGoldengateDeploymentVersion", "getGoldengateDeploymentVersion", "getGoldengateDeploymentVersion", "getGoldengateDeploymentVersionCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]

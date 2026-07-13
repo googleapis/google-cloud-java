@@ -44,6 +44,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -119,6 +120,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
 
@@ -251,6 +253,28 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
   public OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationSettings() {
     return ((MemorystoreStubSettings) getStubSettings()).backupInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -505,6 +529,28 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
         backupInstanceOperationSettings() {
       return getStubSettingsBuilder().backupInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public UnaryCallSettings.Builder<StartMigrationRequest, Operation> startMigrationSettings() {
+      return getStubSettingsBuilder().startMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings() {
+      return getStubSettingsBuilder().startMigrationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public UnaryCallSettings.Builder<FinishMigrationRequest, Operation> finishMigrationSettings() {
+      return getStubSettingsBuilder().finishMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings() {
+      return getStubSettingsBuilder().finishMigrationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

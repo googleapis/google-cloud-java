@@ -180,4 +180,44 @@ public interface SearchKnowledgeDebugInfoOrBuilder
    * <code>.google.cloud.dialogflow.v2.ServiceLatency service_latency = 4;</code>
    */
   com.google.cloud.dialogflow.v2.ServiceLatencyOrBuilder getServiceLatencyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cesDebugInfo field is set.
+   */
+  boolean hasCesDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cesDebugInfo.
+   */
+  com.google.protobuf.Struct getCesDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder();
 }

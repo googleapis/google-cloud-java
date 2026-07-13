@@ -101,13 +101,18 @@ public class StreamingSubscriberConnectionTest {
   @Before
   public void setUp() {
     systemExecutor = new FakeScheduledExecutorService();
+    executor = new FakeScheduledExecutorService();
     clock = systemExecutor.getClock();
-    mockSubscriberStub = mock(SubscriberStub.class, RETURNS_DEEP_STUBS);
+    mockSubscriberStub =
+        mock(
+            SubscriberStub.class,
+            withSettings().withoutAnnotations().defaultAnswer(RETURNS_DEEP_STUBS));
   }
 
   @After
   public void tearDown() {
     systemExecutor.shutdown();
+    executor.shutdown();
   }
 
   @Test
@@ -126,7 +131,8 @@ public class StreamingSubscriberConnectionTest {
     SubscriberShutdownSettings shutdownSettings =
         SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofSeconds(10)).build();
     StreamingSubscriberConnection.Builder builder =
-        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+        StreamingSubscriberConnection.newBuilder(
+            mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations()));
     builder.setSubscriberShutdownSettings(shutdownSettings);
     StreamingSubscriberConnection streamingSubscriberConnection =
         getStreamingSubscriberConnectionFromBuilder(builder);
@@ -147,7 +153,8 @@ public class StreamingSubscriberConnectionTest {
     SubscriberShutdownSettings shutdownSettings =
         SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofSeconds(2)).build();
     StreamingSubscriberConnection.Builder builder =
-        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+        StreamingSubscriberConnection.newBuilder(
+            mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations()));
     StreamingSubscriberConnection streamingSubscriberConnection =
         getStreamingSubscriberConnectionFromBuilder(builder, shutdownSettings);
     streamingSubscriberConnection.setExactlyOnceDeliveryEnabled(true);
@@ -197,11 +204,13 @@ public class StreamingSubscriberConnectionTest {
             .setMode(SubscriberShutdownSettings.ShutdownMode.NACK_IMMEDIATELY)
             .build();
 
-    MessageDispatcher mockMessageDispatcher = mock(MessageDispatcher.class);
+    MessageDispatcher mockMessageDispatcher =
+        mock(MessageDispatcher.class, withSettings().withoutAnnotations());
     when(mockMessageDispatcher.getNackImmediatelyShutdownInProgress()).thenReturn(true);
 
     StreamingSubscriberConnection.Builder builder =
-        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+        StreamingSubscriberConnection.newBuilder(
+            mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations()));
     StreamingSubscriberConnection streamingSubscriberConnection =
         getStreamingSubscriberConnectionFromBuilder(builder, shutdownSettings);
 
@@ -685,8 +694,9 @@ public class StreamingSubscriberConnectionTest {
   @Test
   public void testClientPinger_pingSent() {
     BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class);
-    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
+    ClientStream<StreamingPullRequest> mockClientStream =
+        mock(ClientStream.class, withSettings().withoutAnnotations());
     when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
         .thenReturn(mockClientStream);
@@ -728,8 +738,9 @@ public class StreamingSubscriberConnectionTest {
   @Test
   public void testClientPinger_pingsNotSentWhenDisabled() {
     BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class);
-    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
+    ClientStream<StreamingPullRequest> mockClientStream =
+        mock(ClientStream.class, withSettings().withoutAnnotations());
     when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
         .thenReturn(mockClientStream);
@@ -753,8 +764,9 @@ public class StreamingSubscriberConnectionTest {
   @Test
   public void testServerMonitor_timesOut() {
     BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class);
-    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
+    ClientStream<StreamingPullRequest> mockClientStream =
+        mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
         ArgumentCaptor.forClass(ResponseObserver.class);
     when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
@@ -784,7 +796,8 @@ public class StreamingSubscriberConnectionTest {
     streamingSubscriberConnection.awaitRunning();
 
     ResponseObserver<StreamingPullResponse> observer = observerCaptor.getValue();
-    StreamController mockController = mock(StreamController.class);
+    StreamController mockController =
+        mock(StreamController.class, withSettings().withoutAnnotations());
     observer.onStart(mockController);
 
     systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
@@ -801,8 +814,9 @@ public class StreamingSubscriberConnectionTest {
   @Test
   public void testServerMonitor_doesNotTimeOutIfResponseReceived() {
     BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class);
-    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
+    ClientStream<StreamingPullRequest> mockClientStream =
+        mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
         ArgumentCaptor.forClass(ResponseObserver.class);
     when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
@@ -816,7 +830,8 @@ public class StreamingSubscriberConnectionTest {
     streamingSubscriberConnection.awaitRunning();
 
     ResponseObserver<StreamingPullResponse> observer = observerCaptor.getValue();
-    StreamController mockController = mock(StreamController.class);
+    StreamController mockController =
+        mock(StreamController.class, withSettings().withoutAnnotations());
     observer.onStart(mockController);
 
     // t=30s: ping sent.
@@ -835,7 +850,8 @@ public class StreamingSubscriberConnectionTest {
       boolean exactlyOnceDeliveryEnabled) {
     StreamingSubscriberConnection streamingSubscriberConnection =
         getStreamingSubscriberConnectionFromBuilder(
-            StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class)));
+            StreamingSubscriberConnection.newBuilder(
+                mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations())));
 
     // This would normally be set from the streaming pull response
     streamingSubscriberConnection.setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabled);
@@ -846,7 +862,8 @@ public class StreamingSubscriberConnectionTest {
   private StreamingSubscriberConnection getKeepaliveStreamingSubscriberConnection() {
     StreamingSubscriberConnection streamingSubscriberConnection =
         getStreamingSubscriberConnectionFromBuilder(
-            StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class))
+            StreamingSubscriberConnection.newBuilder(
+                    mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations()))
                 .setProtocolVersion(KEEP_ALIVE_SUPPORT_VERSION));
 
     return streamingSubscriberConnection;
@@ -858,11 +875,12 @@ public class StreamingSubscriberConnectionTest {
         .setSubscription(MOCK_SUBSCRIPTION_NAME)
         .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT_DURATION)
         .setMaxAckExtensionPeriod(MAX_ACK_EXTENSION_PERIOD)
-        .setAckLatencyDistribution(mock(Distribution.class))
+        .setAckLatencyDistribution(mock(Distribution.class, withSettings().withoutAnnotations()))
         .setSubscriberStub(mockSubscriberStub)
         .setChannelAffinity(0)
-        .setFlowControlSettings(mock(FlowControlSettings.class))
-        .setFlowController(mock(FlowController.class))
+        .setFlowControlSettings(
+            mock(FlowControlSettings.class, withSettings().withoutAnnotations()))
+        .setFlowController(mock(FlowController.class, withSettings().withoutAnnotations()))
         .setExecutor(executor)
         .setSystemExecutor(systemExecutor)
         .setClock(clock)
@@ -879,11 +897,12 @@ public class StreamingSubscriberConnectionTest {
     return builder
         .setSubscription(MOCK_SUBSCRIPTION_NAME)
         .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT_DURATION)
-        .setAckLatencyDistribution(mock(Distribution.class))
+        .setAckLatencyDistribution(mock(Distribution.class, withSettings().withoutAnnotations()))
         .setSubscriberStub(mockSubscriberStub)
         .setChannelAffinity(0)
-        .setFlowControlSettings(mock(FlowControlSettings.class))
-        .setFlowController(mock(FlowController.class))
+        .setFlowControlSettings(
+            mock(FlowControlSettings.class, withSettings().withoutAnnotations()))
+        .setFlowController(mock(FlowController.class, withSettings().withoutAnnotations()))
         .setExecutor(executor)
         .setSystemExecutor(systemExecutor)
         .setClock(clock)

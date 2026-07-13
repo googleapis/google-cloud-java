@@ -70,21 +70,28 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Answers;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+@Timeout(30)
 @ExtendWith(MockitoExtension.class)
 public class SessionImplTest {
   private ScheduledExecutorService executor;
+  private BigtableTimer timer;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private Metrics metrics;
@@ -98,6 +105,7 @@ public class SessionImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
+    timer = new HashedWheelTimer("session-impl-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
@@ -128,12 +136,13 @@ public class SessionImplTest {
   void tearDown() {
     channelPool.close();
     server.shutdownNow();
+    timer.stop();
     executor.shutdownNow();
   }
 
   @Test
   void sessionSendAndCloseTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -163,7 +172,7 @@ public class SessionImplTest {
 
   @Test
   void sessionCloseBeforeInit() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -180,7 +189,7 @@ public class SessionImplTest {
 
   @Test
   void sessionGoAwayTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     Duration goAwayDelay = Duration.ofMillis(500);
     FakeSessionListener sessionListener = new FakeSessionListener();
@@ -268,7 +277,7 @@ public class SessionImplTest {
 
   @Test
   void streamErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     Status.Code actualCode = Status.Code.INTERNAL;
@@ -337,7 +346,7 @@ public class SessionImplTest {
 
   @Test
   void rpcErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     com.google.rpc.Status expectedRpcStatus =
         com.google.rpc.Status.newBuilder()
@@ -404,7 +413,7 @@ public class SessionImplTest {
 
   @Test
   void localErrorTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     session.start(
@@ -451,7 +460,8 @@ public class SessionImplTest {
 
     Instant time = clock.instant();
 
-    SessionImpl session = new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session =
+        new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew(), timer);
 
     int keepAliveDurationMs = 150;
 
@@ -490,8 +500,14 @@ public class SessionImplTest {
         VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
         f);
 
-    assertThat(session.getNextHeartbeat())
-        .isEqualTo(time.plus(Duration.ofMillis(keepAliveDurationMs)));
+    // startRpc() is now async; poll until sessionSyncContext processes it.
+    Instant expectedHeartbeat = time.plus(Duration.ofMillis(keepAliveDurationMs));
+    Stopwatch sw = Stopwatch.createStarted();
+    while (!session.getNextHeartbeat().equals(expectedHeartbeat)
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getNextHeartbeat()).isEqualTo(expectedHeartbeat);
 
     assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
 
@@ -507,7 +523,7 @@ public class SessionImplTest {
 
   @Test
   void testCancel() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     int responseDelayMs = 200;
     // Configure the fake service to delay the response, giving us time to cancel it
@@ -558,5 +574,282 @@ public class SessionImplTest {
 
     session.close(CloseSessionRequest.getDefaultInstance());
     sessionListener.popUntil(Status.class);
+  }
+
+  // Regression test: a READY session with no in-flight vRPC must not have the heartbeat tick
+  // armed on the wheel. Without this, every idle session burns periodic wheel wake-ups, and a
+  // server heartbeat resetting nextHeartbeat to a near-future deadline can force-close a healthy
+  // idle session if subsequent heartbeats are briefly delayed.
+  @Test
+  void testHeartbeatNotScheduledWithoutVRpc() throws Exception {
+    CountingBigtableTimer counting = new CountingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), counting);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    // After session is READY with no vRPC, no Timeout should ever have been scheduled. Wait a
+    // bit so that any background tick (none expected) would have shown up.
+    Thread.sleep(50);
+    assertWithMessage("no heartbeat timer should be armed before any vRPC starts")
+        .that(counting.scheduleCount.get())
+        .isEqualTo(0);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test closed session")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // Verifies the lifecycle: timer is armed exactly when a vRPC starts and cancelled when it
+  // completes. Paired with testHeartbeatNotScheduledWithoutVRpc, this locks in "scheduled iff
+  // active vRPC".
+  @Test
+  void testHeartbeatScheduledOnlyDuringVRpc() throws Exception {
+    CountingBigtableTimer counting = new CountingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), counting);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    OpenSessionRequest openSessionRequest =
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder()
+                    .putVrpcActions(
+                        0,
+                        ActionList.newBuilder()
+                            .addActions(
+                                Action.newBuilder()
+                                    .setResponse(VirtualRpcResponse.getDefaultInstance())
+                                    .build())
+                            .build())
+                    .build()
+                    .toByteString())
+            .build();
+    session.start(openSessionRequest, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    assertThat(counting.scheduleCount.get()).isEqualTo(0);
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        f);
+    assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
+
+    int schedulesAfterRpc = counting.scheduleCount.get();
+    int cancelsAfterRpc = counting.cancelCount.get();
+    assertWithMessage("startRpc must arm at least one heartbeat tick")
+        .that(schedulesAfterRpc)
+        .isAtLeast(1);
+    assertWithMessage("vRPC completion must cancel the heartbeat tick")
+        .that(cancelsAfterRpc)
+        .isAtLeast(1);
+
+    // After completion no further schedules should happen — wait past one HEARTBEAT_CHECK_INTERVAL
+    // to give a stray tick a chance to re-arm itself if the cancel were ineffective.
+    Thread.sleep(SessionImpl.HEARTBEAT_CHECK_INTERVAL.toMillis() + 50);
+    assertWithMessage("no further heartbeat schedules after vRPC completes")
+        .that(counting.scheduleCount.get())
+        .isEqualTo(schedulesAfterRpc);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test closed session")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // region uncaught-exception abort behaviors
+
+  @Test
+  void abortFiresWhenListenerOnReadyThrows() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    CountDownLatch onCloseLatch = new CountDownLatch(1);
+    AtomicReference<Status> capturedStatus = new AtomicReference<>();
+
+    Session.Listener throwingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            throw new RuntimeException("simulated onReady failure");
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            capturedStatus.set(status);
+            onCloseLatch.countDown();
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        throwingListener);
+
+    // The abort path must drive the session to CLOSED and notify the listener via onClose, even
+    // though the original onReady threw.
+    assertWithMessage("listener.onClose must be invoked after onReady throws")
+        .that(onCloseLatch.await(5, TimeUnit.SECONDS))
+        .isTrue();
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+    assertThat(capturedStatus.get().getCode()).isEqualTo(Status.Code.INTERNAL);
+  }
+
+  @Test
+  void abortDoesNotHangWhenListenerOnCloseThrows() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    CountDownLatch onReadyLatch = new CountDownLatch(1);
+    CountDownLatch onCloseLatch = new CountDownLatch(1);
+
+    Session.Listener throwingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            onReadyLatch.countDown();
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            onCloseLatch.countDown();
+            throw new RuntimeException("simulated onClose failure");
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        throwingListener);
+
+    assertThat(onReadyLatch.await(5, TimeUnit.SECONDS)).isTrue();
+
+    // Close normally. The listener's onClose throws — the local guard inside notifyTerminalClose
+    // must swallow it so the SyncContext drain doesn't recurse infinitely or hang.
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test")
+            .build());
+
+    assertWithMessage("listener.onClose should be invoked exactly once during normal close")
+        .that(onCloseLatch.await(5, TimeUnit.SECONDS))
+        .isTrue();
+
+    // The session should reach CLOSED state cleanly within the test timeout.
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getState() != Session.SessionState.CLOSED && sw.elapsed().getSeconds() < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  @Test
+  void abortDoesNotInfiniteLoopWhenRecoveryListenerAlsoThrows() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    CountDownLatch onCloseInvoked = new CountDownLatch(1);
+
+    Session.Listener doublyThrowingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            throw new RuntimeException("simulated onReady failure");
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            onCloseInvoked.countDown();
+            throw new RuntimeException("simulated onClose failure during abort");
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        doublyThrowingListener);
+
+    // onReady throws → abort fires → abort calls onClose, which also throws → Guard 4 swallows
+    // and isAborting prevents the handler from re-driving abort. The session must reach CLOSED
+    // without hanging (the @Timeout(30) on the class is the safety net for infinite loops).
+    assertThat(onCloseInvoked.await(5, TimeUnit.SECONDS)).isTrue();
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getState() != Session.SessionState.CLOSED && sw.elapsed().getSeconds() < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  // endregion
+
+  // Wraps a real BigtableTimer and counts newTimeout / cancel calls. Used to assert that the
+  // heartbeat tick is only armed while a vRPC is in flight.
+  private static final class CountingBigtableTimer implements BigtableTimer {
+    private final BigtableTimer delegate;
+    final AtomicInteger scheduleCount = new AtomicInteger();
+    final AtomicInteger cancelCount = new AtomicInteger();
+
+    CountingBigtableTimer(BigtableTimer delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit) {
+      scheduleCount.incrementAndGet();
+      Timeout inner = delegate.newTimeout(task, executor, delay, unit);
+      return new Timeout() {
+        @Override
+        public boolean cancel() {
+          cancelCount.incrementAndGet();
+          return inner.cancel();
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return inner.isCancelled();
+        }
+      };
+    }
+
+    @Override
+    public Registration onStop(Runnable hook) {
+      return delegate.onStop(hook);
+    }
+
+    @Override
+    public void stop() {
+      delegate.stop();
+    }
   }
 }

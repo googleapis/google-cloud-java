@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.stub.RegionHealthCheckServicesStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -112,6 +113,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionHealthCheckServicesSettings
     extends ClientSettings<RegionHealthCheckServicesSettings> {
