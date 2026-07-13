@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
@@ -64,10 +65,10 @@ class BigLakeConfigurationTest {
   @Test
   void testNullFields() {
     BigLakeConfiguration configuration = BigLakeConfiguration.newBuilder().build();
-    assertEquals(null, configuration.getConnectionId());
-    assertEquals(null, configuration.getFileFormat());
-    assertEquals(null, configuration.getStorageUri());
-    assertEquals(null, configuration.getTableFormat());
+    assertNull(configuration.getConnectionId());
+    assertNull(configuration.getFileFormat());
+    assertNull(configuration.getStorageUri());
+    assertNull(configuration.getTableFormat());
   }
 
   @Test
@@ -75,10 +76,10 @@ class BigLakeConfigurationTest {
     com.google.api.services.bigquery.model.BigLakeConfiguration pb =
         new com.google.api.services.bigquery.model.BigLakeConfiguration();
     BigLakeConfiguration configuration = BigLakeConfiguration.fromPb(pb);
-    assertEquals(null, configuration.getConnectionId());
-    assertEquals(null, configuration.getFileFormat());
-    assertEquals(null, configuration.getStorageUri());
-    assertEquals(null, configuration.getTableFormat());
+    assertNull(configuration.getConnectionId());
+    assertNull(configuration.getFileFormat());
+    assertNull(configuration.getStorageUri());
+    assertNull(configuration.getTableFormat());
   }
 
   private static void assertBigLakeConfiguration(
