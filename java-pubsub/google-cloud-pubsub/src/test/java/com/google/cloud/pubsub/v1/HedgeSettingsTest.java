@@ -61,8 +61,6 @@ public class HedgeSettingsTest {
 
   @Test
   public void testNullDelayThrows() {
-    assertThrows(
-        NullPointerException.class,
-        () -> HedgeSettings.newBuilder().setHedgeDelay(null));
+    assertThrows(NullPointerException.class, () -> HedgeSettings.newBuilder().setHedgeDelay(null));
   }
 }

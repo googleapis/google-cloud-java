@@ -23,15 +23,19 @@ import java.time.Duration;
 public final class HedgeSettings {
   /** Default hedging delay. */
   private static final Duration DEFAULT_DELAY = Duration.ofMillis(100);
+
   /** Default maximum number of tokens in the bucket. */
   private static final int DEFAULT_MAX_TOKENS = 100;
+
   /** Default refill rate (tokens per successful request). */
   private static final float DEFAULT_REFILL = 0.1f;
 
   /** Hedging delay. */
   private final Duration hedgeDelay;
+
   /** Maximum tokens. */
   private final int maxTokens;
+
   /** Refill rate. */
   private final float refill;
 
@@ -71,12 +75,16 @@ public final class HedgeSettings {
   public static final class Builder {
     /** Hedging delay. */
     private Duration hedgeDelay = DEFAULT_DELAY;
+
     /** Maximum tokens. */
     private int maxTokens = DEFAULT_MAX_TOKENS;
+
     /** Refill rate. */
     private float refill = DEFAULT_REFILL;
 
-    private Builder() { }
+    private Builder() {
+      super();
+    }
 
     /**
      * Allows hedging delay to be configurable.
@@ -86,9 +94,9 @@ public final class HedgeSettings {
      */
     public Builder setHedgeDelay(final Duration delay) {
       Preconditions.checkNotNull(delay);
-      Preconditions.checkArgument(
-          !delay.isNegative() && !delay.isZero(),
-          "hedgeDelay must be positive");
+      if (delay.isNegative() || delay.isZero()) {
+        throw new IllegalArgumentException("delay must be positive");
+      }
       this.hedgeDelay = delay;
       return this;
     }

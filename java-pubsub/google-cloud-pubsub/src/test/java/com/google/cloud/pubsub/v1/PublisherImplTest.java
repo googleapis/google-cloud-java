@@ -1339,6 +1339,29 @@ public class PublisherImplTest {
         .hasEnded();
   }
 
+  @Test
+  public void testPublisherWithHedgeSettings() throws Exception {
+    HedgeSettings hedgeSettings =
+        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(50)).build();
+    Publisher publisher = getTestPublisherBuilder().setHedgeSettings(hedgeSettings).build();
+
+    assertThat(publisher.getHedgeSettings()).isEqualTo(hedgeSettings);
+    assertThat(publisher.getHedgeTokenBucket()).isNotNull();
+    assertThat(publisher.getHedgeTokenBucket().getTokens()).isWithin(0.0001f).of(100.0f);
+
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testPublisherWithoutHedgeSettings() throws Exception {
+    Publisher publisher = getTestPublisherBuilder().build();
+
+    assertThat(publisher.getHedgeSettings()).isNull();
+    assertThat(publisher.getHedgeTokenBucket()).isNull();
+
+    shutdownTestPublisher(publisher);
+  }
+
   private Builder getTestPublisherBuilder() {
     return Publisher.newBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
