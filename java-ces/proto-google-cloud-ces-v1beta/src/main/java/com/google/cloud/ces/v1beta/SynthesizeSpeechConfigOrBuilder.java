@@ -66,6 +66,42 @@ public interface SynthesizeSpeechConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+   * audio sample should be a mono-channel, 24kHz WAV file.
+   *
+   * Note: Please make sure the CES service agent
+   * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+   * `storage.objects.get` permission to the Cloud Storage object.
+   * </pre>
+   *
+   * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The voiceSampleGcsUri.
+   */
+  java.lang.String getVoiceSampleGcsUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+   * audio sample should be a mono-channel, 24kHz WAV file.
+   *
+   * Note: Please make sure the CES service agent
+   * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+   * `storage.objects.get` permission to the Cloud Storage object.
+   * </pre>
+   *
+   * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for voiceSampleGcsUri.
+   */
+  com.google.protobuf.ByteString getVoiceSampleGcsUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The speaking rate/speed in the range [0.25, 2.0]. 1.0 is the
    * normal native speed supported by the specific voice. 2.0 is twice as fast,
    * and 0.5 is half as fast. Values outside of the range [0.25, 2.0] will
@@ -77,4 +113,64 @@ public interface SynthesizeSpeechConfigOrBuilder
    * @return The speakingRate.
    */
   double getSpeakingRate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model used to synthesize audio.
+   * Currently supported values:
+   * - "gemini-3.1-flash-tts-preview"
+   * If empty, Chirp3-HD is used.
+   * </pre>
+   *
+   * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model used to synthesize audio.
+   * Currently supported values:
+   * - "gemini-3.1-flash-tts-preview"
+   * If empty, Chirp3-HD is used.
+   * </pre>
+   *
+   * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instruction used to synthesize speech when using a generative
+   * model.
+   * </pre>
+   *
+   * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The instruction.
+   */
+  java.lang.String getInstruction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instruction used to synthesize speech when using a generative
+   * model.
+   * </pre>
+   *
+   * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for instruction.
+   */
+  com.google.protobuf.ByteString getInstructionBytes();
 }

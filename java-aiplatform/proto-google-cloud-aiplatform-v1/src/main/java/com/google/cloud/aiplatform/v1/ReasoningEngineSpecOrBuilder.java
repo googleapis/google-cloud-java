@@ -358,5 +358,41 @@ public interface ReasoningEngineSpecOrBuilder
    */
   com.google.protobuf.ByteString getAgentFrameworkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity type to use for the Reasoning Engine. If not
+   * specified, the `service_account` field will be used if set, otherwise the
+   * default Vertex AI Reasoning Engine Service Agent in the project will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for identityType.
+   */
+  int getIdentityTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity type to use for the Reasoning Engine. If not
+   * specified, the `service_account` field will be used if set, otherwise the
+   * default Vertex AI Reasoning Engine Service Agent in the project will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The identityType.
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.IdentityType getIdentityType();
+
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSourceCase getDeploymentSourceCase();
 }
