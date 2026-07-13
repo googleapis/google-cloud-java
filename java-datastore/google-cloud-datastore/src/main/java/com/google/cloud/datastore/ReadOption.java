@@ -21,6 +21,7 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.ExplainOptions;
+import com.google.datastore.v1.RequestOptions;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
 import java.util.Collections;
@@ -142,21 +143,32 @@ public abstract class ReadOption implements Serializable {
     return builder.buildOrThrow();
   }
 
+  /** Configuration for executing a query containing options like explain or request options. */
   @InternalApi
   public static class QueryConfig<Q extends Query<?>> {
 
     Q query;
     List<ReadOption> readOptions;
     ExplainOptions explainOptions;
+    RequestOptions requestOptions;
 
     private QueryConfig(Q query, ExplainOptions explainOptions, List<ReadOption> readOptions) {
-      this.query = query;
-      this.explainOptions = explainOptions;
-      this.readOptions = readOptions;
+      this(query, explainOptions, readOptions, null);
     }
 
     private QueryConfig(Q query, ExplainOptions explainOptions) {
-      this(query, explainOptions, Collections.emptyList());
+      this(query, explainOptions, Collections.emptyList(), null);
+    }
+
+    private QueryConfig(
+        Q query,
+        ExplainOptions explainOptions,
+        List<ReadOption> readOptions,
+        RequestOptions requestOptions) {
+      this.query = query;
+      this.explainOptions = explainOptions;
+      this.readOptions = readOptions;
+      this.requestOptions = requestOptions;
     }
 
     public Q getQuery() {
@@ -171,6 +183,10 @@ public abstract class ReadOption implements Serializable {
       return readOptions;
     }
 
+    public RequestOptions getRequestOptions() {
+      return requestOptions;
+    }
+
     public static <Q extends Query<?>> QueryConfig<Q> create(
         Q query, ExplainOptions explainOptions) {
       return new QueryConfig<>(query, explainOptions);
@@ -179,6 +195,14 @@ public abstract class ReadOption implements Serializable {
     public static <Q extends Query<?>> QueryConfig<Q> create(
         Q query, ExplainOptions explainOptions, List<ReadOption> readOptions) {
       return new QueryConfig<>(query, explainOptions, readOptions);
+    }
+
+    public static <Q extends Query<?>> QueryConfig<Q> create(
+        Q query,
+        ExplainOptions explainOptions,
+        List<ReadOption> readOptions,
+        RequestOptions requestOptions) {
+      return new QueryConfig<>(query, explainOptions, readOptions, requestOptions);
     }
   }
 }

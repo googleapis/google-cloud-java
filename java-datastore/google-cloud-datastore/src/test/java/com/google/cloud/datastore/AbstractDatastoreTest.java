@@ -1399,4 +1399,193 @@ public abstract class AbstractDatastoreTest {
                 .get(0)
                 .getAlias());
   }
+
+  @Test
+  public void testRunQueryWithRequestOptions() {
+    com.google.datastore.v1.RequestOptions requestOptions =
+        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+
+    PartitionId partitionId =
+        PartitionId.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId(options.getDatabaseId())
+            .setNamespaceId(options.getNamespace())
+            .build();
+
+    com.google.datastore.v1.Query queryPb =
+        com.google.datastore.v1.Query.newBuilder()
+            .addKind(com.google.datastore.v1.KindExpression.newBuilder().setName(KIND1))
+            .build();
+
+    // 1. RunQueryRequest for run(query, requestOptions)
+    RunQueryRequest expectedRequest1 =
+        RunQueryRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setPartitionId(partitionId)
+            .setQuery(queryPb)
+            .setRequestOptions(requestOptions)
+            .build();
+
+    // 2. RunQueryRequest for run(query, requestOptions, ReadOption)
+    RunQueryRequest expectedRequest2 =
+        RunQueryRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setPartitionId(partitionId)
+            .setQuery(queryPb)
+            .setReadOptions(
+                ReadOptions.newBuilder().setReadConsistency(ReadConsistency.EVENTUAL).build())
+            .setRequestOptions(requestOptions)
+            .build();
+
+    // 3. RunQueryRequest for run(query, explainOptions, requestOptions, ReadOption)
+    RunQueryRequest expectedRequest3 =
+        RunQueryRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setPartitionId(partitionId)
+            .setQuery(queryPb)
+            .setReadOptions(
+                ReadOptions.newBuilder().setReadConsistency(ReadConsistency.EVENTUAL).build())
+            .setExplainOptions(
+                com.google.datastore.v1.ExplainOptions.newBuilder().setAnalyze(true).build())
+            .setRequestOptions(requestOptions)
+            .build();
+
+    RunQueryResponse response =
+        RunQueryResponse.newBuilder()
+            .setBatch(
+                com.google.datastore.v1.QueryResultBatch.newBuilder()
+                    .addEntityResults(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+                    .build())
+            .build();
+
+    EasyMock.expect(rpcMock.runQuery(expectedRequest1)).andReturn(response);
+    EasyMock.expect(rpcMock.runQuery(expectedRequest2)).andReturn(response);
+    EasyMock.expect(rpcMock.runQuery(expectedRequest3)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    Datastore targetDatastore = rpcMockOptions.getService();
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
+
+    // Test 1: run(query, requestOptions)
+    QueryResults<Entity> results1 = targetDatastore.run(query, requestOptions);
+    assertTrue(results1.hasNext());
+    assertEquals(ENTITY1, results1.next());
+
+    // Test 2: run(query, requestOptions, readOptions)
+    QueryResults<Entity> results2 =
+        targetDatastore.run(query, requestOptions, ReadOption.eventualConsistency());
+    assertTrue(results2.hasNext());
+    assertEquals(ENTITY1, results2.next());
+
+    // Test 3: run(query, explainOptions, requestOptions, readOptions)
+    QueryResults<Entity> results3 =
+        targetDatastore.run(
+            query,
+            com.google.cloud.datastore.models.ExplainOptions.newBuilder().setAnalyze(true).build(),
+            requestOptions,
+            ReadOption.eventualConsistency());
+    assertTrue(results3.hasNext());
+    assertEquals(ENTITY1, results3.next());
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRunAggregationQueryWithRequestOptions() {
+    com.google.datastore.v1.RequestOptions requestOptions =
+        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("agg-test-tag").build();
+
+    RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
+
+    // 1. runAggregation(query, requestOptions)
+    EasyMock.expect(
+            rpcMock.runAggregationQuery(
+                matches(
+                    aggregationQueryWithAliasAndRequestOptions(
+                        "total_count", requestOptions, false, false))))
+        .andReturn(aggregationQueryResponse);
+
+    // 2. runAggregation(query, requestOptions, options)
+    EasyMock.expect(
+            rpcMock.runAggregationQuery(
+                matches(
+                    aggregationQueryWithAliasAndRequestOptions(
+                        "total_count", requestOptions, true, false))))
+        .andReturn(aggregationQueryResponse);
+
+    // 3. runAggregation(query, explainOptions, requestOptions)
+    EasyMock.expect(
+            rpcMock.runAggregationQuery(
+                matches(
+                    aggregationQueryWithAliasAndRequestOptions(
+                        "total_count", requestOptions, false, true))))
+        .andReturn(aggregationQueryResponse);
+
+    // 4. runAggregation(query, explainOptions, requestOptions, options)
+    EasyMock.expect(
+            rpcMock.runAggregationQuery(
+                matches(
+                    aggregationQueryWithAliasAndRequestOptions(
+                        "total_count", requestOptions, true, true))))
+        .andReturn(aggregationQueryResponse);
+
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    EntityQuery selectAllQuery = Query.newEntityQueryBuilder().build();
+    AggregationQuery getCountQuery =
+        Query.newAggregationQueryBuilder()
+            .addAggregation(count().as("total_count"))
+            .over(selectAllQuery)
+            .build();
+
+    com.google.cloud.datastore.models.ExplainOptions explainOptions =
+        com.google.cloud.datastore.models.ExplainOptions.newBuilder().setAnalyze(true).build();
+
+    // Test 1
+    AggregationResult result1 =
+        getOnlyElement(mockDatastore.runAggregation(getCountQuery, requestOptions));
+    assertThat(result1.getLong("total_count")).isEqualTo(209L);
+
+    // Test 2
+    AggregationResult result2 =
+        getOnlyElement(
+            mockDatastore.runAggregation(
+                getCountQuery, requestOptions, ReadOption.eventualConsistency()));
+    assertThat(result2.getLong("total_count")).isEqualTo(209L);
+
+    // Test 3
+    AggregationResult result3 =
+        getOnlyElement(mockDatastore.runAggregation(getCountQuery, explainOptions, requestOptions));
+    assertThat(result3.getLong("total_count")).isEqualTo(209L);
+
+    // Test 4
+    AggregationResult result4 =
+        getOnlyElement(
+            mockDatastore.runAggregation(
+                getCountQuery, explainOptions, requestOptions, ReadOption.eventualConsistency()));
+    assertThat(result4.getLong("total_count")).isEqualTo(209L);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  private Predicate<RunAggregationQueryRequest> aggregationQueryWithAliasAndRequestOptions(
+      String alias,
+      com.google.datastore.v1.RequestOptions requestOptions,
+      boolean checkEventual,
+      boolean checkExplain) {
+    return req -> {
+      boolean match =
+          alias.equals(req.getAggregationQuery().getAggregationsList().get(0).getAlias())
+              && requestOptions.equals(req.getRequestOptions());
+      if (checkEventual) {
+        match = match && req.getReadOptions().getReadConsistency() == ReadConsistency.EVENTUAL;
+      }
+      if (checkExplain) {
+        match = match && req.hasExplainOptions();
+      }
+      return match;
+    };
+  }
 }

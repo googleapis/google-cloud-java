@@ -25,6 +25,7 @@ import com.google.cloud.datastore.execution.request.AggregationQueryRequestProto
 import com.google.cloud.datastore.execution.response.AggregationQueryResponseTransformer;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import java.util.Arrays;
@@ -50,9 +51,20 @@ public class AggregationQueryExecutor
   @Override
   public AggregationResults execute(
       AggregationQuery query, ExplainOptions explainOptions, ReadOption... readOptions) {
+    return execute(query, explainOptions, null, readOptions);
+  }
+
+  public AggregationResults execute(
+      AggregationQuery query,
+      ExplainOptions explainOptions,
+      RequestOptions requestOptions,
+      ReadOption... readOptions) {
     RunAggregationQueryRequest runAggregationQueryRequest =
         getRunAggregationQueryRequest(
-            query, explainOptions == null ? null : explainOptions.toPb(), readOptions);
+            query,
+            explainOptions == null ? null : explainOptions.toPb(),
+            requestOptions,
+            readOptions);
     RunAggregationQueryResponse runAggregationQueryResponse =
         this.datastoreRpc.runAggregationQuery(runAggregationQueryRequest);
     return this.responseTransformer.transform(runAggregationQueryResponse);
@@ -61,11 +73,13 @@ public class AggregationQueryExecutor
   private RunAggregationQueryRequest getRunAggregationQueryRequest(
       AggregationQuery query,
       com.google.datastore.v1.ExplainOptions explainOptions,
+      RequestOptions requestOptions,
       ReadOption... readOptions) {
     QueryConfig<AggregationQuery> queryConfig =
         readOptions == null
-            ? QueryConfig.create(query, explainOptions)
-            : QueryConfig.create(query, explainOptions, Arrays.asList(readOptions));
+            ? QueryConfig.create(
+                query, explainOptions, java.util.Collections.emptyList(), requestOptions)
+            : QueryConfig.create(query, explainOptions, Arrays.asList(readOptions), requestOptions);
     return this.protoPreparer.prepare(queryConfig);
   }
 }

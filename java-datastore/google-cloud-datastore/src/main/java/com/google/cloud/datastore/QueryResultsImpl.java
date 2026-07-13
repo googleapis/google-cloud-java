@@ -21,9 +21,14 @@ import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
+import com.google.datastore.v1.EntityResult;
 import com.google.datastore.v1.ExplainOptions;
+import com.google.datastore.v1.PartitionId;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.datastore.v1.ReadOptions;
+import com.google.datastore.v1.RequestOptions;
+import com.google.datastore.v1.RunQueryRequest;
+import com.google.datastore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 import java.util.Iterator;
 import java.util.Objects;
@@ -33,32 +38,45 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
 
   private final DatastoreImpl datastore;
   private final Optional<ReadOptions> readOptionsPb;
-  private final com.google.datastore.v1.PartitionId partitionIdPb;
+  private final PartitionId partitionIdPb;
   private final ResultType<T> queryResultType;
   private RecordQuery<T> query;
   private ResultType<?> actualResultType;
-  private com.google.datastore.v1.RunQueryResponse runQueryResponsePb;
+  private RunQueryResponse runQueryResponsePb;
   private com.google.datastore.v1.Query mostRecentQueryPb;
   private boolean lastBatch;
-  private Iterator<com.google.datastore.v1.EntityResult> entityResultPbIter;
+  private Iterator<EntityResult> entityResultPbIter;
   private ByteString cursor;
   private MoreResultsType moreResults;
   private final ExplainOptions explainOptions;
   private ExplainMetrics explainMetrics;
+  private final RequestOptions requestOptions;
 
+  /** Creates a QueryResultsImpl. */
   QueryResultsImpl(
       DatastoreImpl datastore,
       Optional<ReadOptions> readOptionsPb,
       RecordQuery<T> query,
       String namespace,
       ExplainOptions explainOptions) {
+    this(datastore, readOptionsPb, query, namespace, explainOptions, null);
+  }
+
+  /** Creates a QueryResultsImpl with RequestOptions. */
+  QueryResultsImpl(
+      DatastoreImpl datastore,
+      Optional<ReadOptions> readOptionsPb,
+      RecordQuery<T> query,
+      String namespace,
+      ExplainOptions explainOptions,
+      RequestOptions requestOptions) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
     queryResultType = query.getType();
     this.explainOptions = explainOptions;
-    com.google.datastore.v1.PartitionId.Builder pbBuilder =
-        com.google.datastore.v1.PartitionId.newBuilder();
+    this.requestOptions = requestOptions;
+    PartitionId.Builder pbBuilder = PartitionId.newBuilder();
     pbBuilder.setProjectId(datastore.getOptions().getProjectId());
     pbBuilder.setDatabaseId(datastore.getOptions().getDatabaseId());
     if (namespace != null) {
@@ -76,14 +94,17 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   }
 
   private void sendRequest() {
-    com.google.datastore.v1.RunQueryRequest.Builder requestPb =
-        com.google.datastore.v1.RunQueryRequest.newBuilder();
+    RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     readOptionsPb.ifPresent(requestPb::setReadOptions);
     requestPb.setPartitionId(partitionIdPb);
     requestPb.setProjectId(datastore.getOptions().getProjectId());
     requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
     if (explainOptions != null) {
       requestPb.setExplainOptions(explainOptions);
+    }
+    if (requestOptions != null) {
+      requestPb.setRequestOptions(
+          RequestOptionsHelper.createRequestOptions(datastore.getOptions(), requestOptions));
     }
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());
@@ -102,11 +123,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
             && !explainOptions.getAnalyze();
     Preconditions.checkState(
         queryResultType.isAssignableFrom(actualResultType) || isExplain,
-        "Unexpected result type or explain options set "
-            + actualResultType
-            + " vs "
-            + queryResultType
-            + ", explain options = false");
+        "Unexpected result type or explain options set %s vs %s, explain options = false",
+        actualResultType,
+        queryResultType);
     if (runQueryResponsePb.hasExplainMetrics()) {
       this.explainMetrics = new ExplainMetrics(runQueryResponsePb.getExplainMetrics());
     }
@@ -122,8 +141,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       cursor = runQueryResponsePb.getBatch().getEndCursor();
       return endOfData();
     }
-    com.google.datastore.v1.EntityResult entityResultPb = entityResultPbIter.next();
+    EntityResult entityResultPb = entityResultPbIter.next();
     cursor = entityResultPb.getCursor();
+    // Safe because we verify actualResultType compatibility in sendRequest().
     @SuppressWarnings("unchecked")
     T result = (T) actualResultType.convert(entityResultPb.getEntity());
     return result;

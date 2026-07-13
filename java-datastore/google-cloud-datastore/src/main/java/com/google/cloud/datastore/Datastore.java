@@ -20,6 +20,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.Service;
 import com.google.cloud.datastore.models.ExplainOptions;
+import com.google.common.collect.ImmutableList;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.TransactionOptions;
 import java.util.Iterator;
 import java.util.List;
@@ -493,6 +495,30 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
+   * Submits a {@link Query} with specified {@link com.google.datastore.v1.RequestOptions} and
+   * returns its result.
+   */
+  <T> QueryResults<T> run(Query<T> query, RequestOptions requestOptions);
+
+  /**
+   * Submits a {@link Query} with specified {@link com.google.datastore.v1.RequestOptions} and
+   * returns its result. {@link ReadOption}s can be specified if desired.
+   */
+  <T> QueryResults<T> run(Query<T> query, RequestOptions requestOptions, ReadOption... options);
+
+  /**
+   * Submits a {@link Query} with specified {@link com.google.cloud.datastore.models.ExplainOptions}
+   * and {@link com.google.datastore.v1.RequestOptions} and returns its result. {@link ReadOption}s
+   * can be specified if desired.
+   */
+  @BetaApi
+  <T> QueryResults<T> run(
+      Query<T> query,
+      ExplainOptions explainOptions,
+      RequestOptions requestOptions,
+      ReadOption... options);
+
+  /**
    * Submits a {@link AggregationQuery} and returns {@link AggregationResults}. {@link ReadOption}s
    * can be specified if desired.
    *
@@ -538,6 +564,20 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   AggregationResults runAggregation(AggregationQuery query, ReadOption... options);
 
   /**
+   * Submits an {@link AggregationQuery} with specified {@link
+   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}.
+   */
+  AggregationResults runAggregation(AggregationQuery query, RequestOptions requestOptions);
+
+  /**
+   * Submits an {@link AggregationQuery} with specified {@link
+   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}. {@link
+   * ReadOption}s can be specified if desired.
+   */
+  AggregationResults runAggregation(
+      AggregationQuery query, RequestOptions requestOptions, ReadOption... options);
+
+  /**
    * Submits a {@link AggregationQuery} with specified {@link
    * com.google.cloud.datastore.models.ExplainOptions} and returns {@link AggregationResults}.
    * {@link ReadOption}s can be specified if desired.
@@ -565,6 +605,28 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
       AggregationQuery query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
+   * Submits an {@link AggregationQuery} with specified {@link
+   * com.google.cloud.datastore.models.ExplainOptions} and {@link
+   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}.
+   */
+  @BetaApi
+  AggregationResults runAggregation(
+      AggregationQuery query, ExplainOptions explainOptions, RequestOptions requestOptions);
+
+  /**
+   * Submits an {@link AggregationQuery} with specified {@link
+   * com.google.cloud.datastore.models.ExplainOptions} and {@link
+   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}. {@link
+   * ReadOption}s can be specified if desired.
+   */
+  @BetaApi
+  AggregationResults runAggregation(
+      AggregationQuery query,
+      ExplainOptions explainOptions,
+      RequestOptions requestOptions,
+      ReadOption... options);
+
+  /**
    * Closes the gRPC channels associated with this instance and frees up their resources. This
    * method blocks until all channels are closed. Once this method is called, this Datastore client
    * is no longer usable.
@@ -574,4 +636,27 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
 
   /** Returns true if this background resource has been shut down. */
   boolean isClosed();
+
+  /**
+   * Returns a new Datastore client with the specified request tags added.
+   *
+   * @param requestTags the request tags to append to existing ones
+   */
+  default Datastore withRequestTags(String... requestTags) {
+    ImmutableList.Builder<String> builder = ImmutableList.builder();
+    builder.addAll(getOptions().getRequestTags()).add(requestTags);
+    return getOptions().toBuilder().setTags(builder.build()).build().getService();
+  }
+
+  /**
+   * Returns a new Datastore client with the specified request tags added.
+   *
+   * @param requestTags the request tags to append to existing ones
+   */
+  default Datastore withRequestTags(List<String> requestTags) {
+    ImmutableList.Builder<String> builder = ImmutableList.builder();
+    builder.addAll(getOptions().getRequestTags());
+    builder.addAll(requestTags);
+    return getOptions().toBuilder().setTags(builder.build()).build().getService();
+  }
 }

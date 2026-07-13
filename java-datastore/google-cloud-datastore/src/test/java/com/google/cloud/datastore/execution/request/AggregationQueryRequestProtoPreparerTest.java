@@ -41,6 +41,7 @@ import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.ExplainOptions;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import java.util.HashMap;
 import org.junit.Test;
@@ -212,5 +213,21 @@ public class AggregationQueryRequestProtoPreparerTest {
 
   private RunAggregationQueryRequest prepareQuery(AggregationQuery query, ReadOption readOption) {
     return protoPreparer.prepare(QueryConfig.create(query, null, singletonList(readOption)));
+  }
+
+  @Test
+  public void shouldPrepareAggregationQueryRequestWithRequestOptions() {
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("aggregation-tag").build();
+
+    RunAggregationQueryRequest request =
+        protoPreparer.prepare(
+            QueryConfig.create(
+                AGGREGATION_OVER_STRUCTURED_QUERY,
+                /* explainOptions= */ null,
+                /* readOptions= */ java.util.Collections.emptyList(),
+                requestOptions));
+
+    assertThat(request.getRequestOptions().getRequestTagsList()).containsExactly("aggregation-tag");
   }
 }

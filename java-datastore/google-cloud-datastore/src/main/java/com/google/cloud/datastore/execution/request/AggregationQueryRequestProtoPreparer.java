@@ -16,6 +16,7 @@
 package com.google.cloud.datastore.execution.request;
 
 import static com.google.cloud.datastore.AggregationQuery.Mode.GQL;
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.datastore.AggregationQuery;
@@ -72,6 +73,12 @@ public class AggregationQueryRequestProtoPreparer
     }
     Optional<ReadOptions> readOptionsPb = readOptionProtoPreparer.prepare(readOptions);
     readOptionsPb.ifPresent(aggregationQueryRequestBuilder::setReadOptions);
+
+    // add request options to the request.
+    if (queryConfig.getRequestOptions() != null) {
+      aggregationQueryRequestBuilder.setRequestOptions(
+          createRequestOptions(datastoreOptions, queryConfig.getRequestOptions()));
+    }
     return aggregationQueryRequestBuilder.build();
   }
 
