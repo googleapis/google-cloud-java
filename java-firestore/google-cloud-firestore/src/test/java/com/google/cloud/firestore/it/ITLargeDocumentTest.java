@@ -221,7 +221,7 @@ public class ITLargeDocumentTest extends ITBaseTest {
     String largePayload = new String(chars);
 
     try {
-      oversizedDoc.set(data).get(60, TimeUnit.SECONDS);
+      oversizedDoc.set(map("chunk", largePayload)).get(60, TimeUnit.SECONDS);
       fail("Setting a document exceeding the 16MB limit should fail.");
     } catch (Exception e) {
       Throwable cause = e.getCause();
