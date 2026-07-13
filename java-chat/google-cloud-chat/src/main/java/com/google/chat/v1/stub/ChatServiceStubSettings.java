@@ -55,6 +55,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
+import com.google.chat.v1.Availability;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
@@ -74,6 +75,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.FindGroupChatsRequest;
 import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetAvailabilityRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
@@ -98,6 +100,9 @@ import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
+import com.google.chat.v1.MarkAsActiveRequest;
+import com.google.chat.v1.MarkAsAwayRequest;
+import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MoveSectionItemRequest;
@@ -115,6 +120,7 @@ import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateAvailabilityRequest;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSectionRequest;
@@ -221,6 +227,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.spaces")
           .add("https://www.googleapis.com/auth/chat.spaces.create")
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.availability")
+          .add("https://www.googleapis.com/auth/chat.users.availability.readonly")
           .add("https://www.googleapis.com/auth/chat.users.readstate")
           .add("https://www.googleapis.com/auth/chat.users.readstate.readonly")
           .add("https://www.googleapis.com/auth/chat.users.sections")
@@ -278,6 +286,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       updateSpaceReadStateSettings;
   private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings;
+  private final UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings;
+  private final UnaryCallSettings<MarkAsActiveRequest, Availability> markAsActiveSettings;
+  private final UnaryCallSettings<MarkAsAwayRequest, Availability> markAsAwaySettings;
+  private final UnaryCallSettings<MarkAsDoNotDisturbRequest, Availability>
+      markAsDoNotDisturbSettings;
+  private final UnaryCallSettings<UpdateAvailabilityRequest, Availability>
+      updateAvailabilitySettings;
   private final UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
   private final PagedCallSettings<
           ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
@@ -1003,6 +1018,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return getThreadReadStateSettings;
   }
 
+  /** Returns the object with the settings used for calls to getAvailability. */
+  public UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings() {
+    return getAvailabilitySettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsActive. */
+  public UnaryCallSettings<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+    return markAsActiveSettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsAway. */
+  public UnaryCallSettings<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+    return markAsAwaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsDoNotDisturb. */
+  public UnaryCallSettings<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbSettings() {
+    return markAsDoNotDisturbSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAvailability. */
+  public UnaryCallSettings<UpdateAvailabilityRequest, Availability> updateAvailabilitySettings() {
+    return updateAvailabilitySettings;
+  }
+
   /** Returns the object with the settings used for calls to getSpaceEvent. */
   public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
     return getSpaceEventSettings;
@@ -1210,6 +1250,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
     updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
+    getAvailabilitySettings = settingsBuilder.getAvailabilitySettings().build();
+    markAsActiveSettings = settingsBuilder.markAsActiveSettings().build();
+    markAsAwaySettings = settingsBuilder.markAsAwaySettings().build();
+    markAsDoNotDisturbSettings = settingsBuilder.markAsDoNotDisturbSettings().build();
+    updateAvailabilitySettings = settingsBuilder.updateAvailabilitySettings().build();
     getSpaceEventSettings = settingsBuilder.getSpaceEventSettings().build();
     listSpaceEventsSettings = settingsBuilder.listSpaceEventsSettings().build();
     getSpaceNotificationSettingSettings =
@@ -1295,6 +1340,14 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         updateSpaceReadStateSettings;
     private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings;
+    private final UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
+        getAvailabilitySettings;
+    private final UnaryCallSettings.Builder<MarkAsActiveRequest, Availability> markAsActiveSettings;
+    private final UnaryCallSettings.Builder<MarkAsAwayRequest, Availability> markAsAwaySettings;
+    private final UnaryCallSettings.Builder<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbSettings;
+    private final UnaryCallSettings.Builder<UpdateAvailabilityRequest, Availability>
+        updateAvailabilitySettings;
     private final UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
     private final PagedCallSettings.Builder<
             ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
@@ -1388,6 +1441,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAvailabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsActiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsAwaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsDoNotDisturbSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAvailabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpaceEventsSettings = PagedCallSettings.newBuilder(LIST_SPACE_EVENTS_PAGE_STR_FACT);
       getSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1434,6 +1492,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
+              getAvailabilitySettings,
+              markAsActiveSettings,
+              markAsAwaySettings,
+              markAsDoNotDisturbSettings,
+              updateAvailabilitySettings,
               getSpaceEventSettings,
               listSpaceEventsSettings,
               getSpaceNotificationSettingSettings,
@@ -1483,6 +1546,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
       updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
+      getAvailabilitySettings = settings.getAvailabilitySettings.toBuilder();
+      markAsActiveSettings = settings.markAsActiveSettings.toBuilder();
+      markAsAwaySettings = settings.markAsAwaySettings.toBuilder();
+      markAsDoNotDisturbSettings = settings.markAsDoNotDisturbSettings.toBuilder();
+      updateAvailabilitySettings = settings.updateAvailabilitySettings.toBuilder();
       getSpaceEventSettings = settings.getSpaceEventSettings.toBuilder();
       listSpaceEventsSettings = settings.listSpaceEventsSettings.toBuilder();
       getSpaceNotificationSettingSettings =
@@ -1531,6 +1599,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
+              getAvailabilitySettings,
+              markAsActiveSettings,
+              markAsAwaySettings,
+              markAsDoNotDisturbSettings,
+              updateAvailabilitySettings,
               getSpaceEventSettings,
               listSpaceEventsSettings,
               getSpaceNotificationSettingSettings,
@@ -1726,6 +1799,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .getThreadReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAvailabilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsActiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsAwaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsDoNotDisturbSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAvailabilitySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1982,6 +2080,34 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings() {
       return getThreadReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAvailability. */
+    public UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
+        getAvailabilitySettings() {
+      return getAvailabilitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsActive. */
+    public UnaryCallSettings.Builder<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+      return markAsActiveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsAway. */
+    public UnaryCallSettings.Builder<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+      return markAsAwaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsDoNotDisturb. */
+    public UnaryCallSettings.Builder<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbSettings() {
+      return markAsDoNotDisturbSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAvailability. */
+    public UnaryCallSettings.Builder<UpdateAvailabilityRequest, Availability>
+        updateAvailabilitySettings() {
+      return updateAvailabilitySettings;
     }
 
     /** Returns the builder for the settings used for calls to getSpaceEvent. */

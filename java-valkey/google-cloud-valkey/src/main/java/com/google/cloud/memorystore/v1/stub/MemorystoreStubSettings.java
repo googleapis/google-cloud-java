@@ -64,6 +64,7 @@ import com.google.cloud.memorystore.v1.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.FinishMigrationRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
@@ -79,6 +80,7 @@ import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -175,7 +177,11 @@ import org.jspecify.annotations.Nullable;
 public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/memorystore.read-only")
+          .add("https://www.googleapis.com/auth/memorystore.read-write")
+          .build();
 
   private final PagedCallSettings<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -218,6 +224,12 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   private final UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings;
   private final OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationSettings;
+  private final UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings;
+  private final OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings;
+  private final UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings;
+  private final OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -569,6 +581,28 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return backupInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to startMigration. */
+  public UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings() {
+    return startMigrationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings() {
+    return startMigrationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings() {
+    return finishMigrationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings() {
+    return finishMigrationOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -715,6 +749,10 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     exportBackupOperationSettings = settingsBuilder.exportBackupOperationSettings().build();
     backupInstanceSettings = settingsBuilder.backupInstanceSettings().build();
     backupInstanceOperationSettings = settingsBuilder.backupInstanceOperationSettings().build();
+    startMigrationSettings = settingsBuilder.startMigrationSettings().build();
+    startMigrationOperationSettings = settingsBuilder.startMigrationOperationSettings().build();
+    finishMigrationSettings = settingsBuilder.finishMigrationSettings().build();
+    finishMigrationOperationSettings = settingsBuilder.finishMigrationOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -778,6 +816,14 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         backupInstanceSettings;
     private final OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
         backupInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<StartMigrationRequest, Operation>
+        startMigrationSettings;
+    private final OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings;
+    private final UnaryCallSettings.Builder<FinishMigrationRequest, Operation>
+        finishMigrationSettings;
+    private final OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -857,6 +903,10 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       exportBackupOperationSettings = OperationCallSettings.newBuilder();
       backupInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       backupInstanceOperationSettings = OperationCallSettings.newBuilder();
+      startMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startMigrationOperationSettings = OperationCallSettings.newBuilder();
+      finishMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      finishMigrationOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -877,6 +927,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               deleteBackupSettings,
               exportBackupSettings,
               backupInstanceSettings,
+              startMigrationSettings,
+              finishMigrationSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -909,6 +961,10 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       exportBackupOperationSettings = settings.exportBackupOperationSettings.toBuilder();
       backupInstanceSettings = settings.backupInstanceSettings.toBuilder();
       backupInstanceOperationSettings = settings.backupInstanceOperationSettings.toBuilder();
+      startMigrationSettings = settings.startMigrationSettings.toBuilder();
+      startMigrationOperationSettings = settings.startMigrationOperationSettings.toBuilder();
+      finishMigrationSettings = settings.finishMigrationSettings.toBuilder();
+      finishMigrationOperationSettings = settings.finishMigrationOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -929,6 +985,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               deleteBackupSettings,
               exportBackupSettings,
               backupInstanceSettings,
+              startMigrationSettings,
+              finishMigrationSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1030,6 +1088,16 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
 
       builder
           .backupInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .startMigrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .finishMigrationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1211,6 +1279,54 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .startMigrationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartMigrationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .finishMigrationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<FinishMigrationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1359,6 +1475,28 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
         backupInstanceOperationSettings() {
       return backupInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public UnaryCallSettings.Builder<StartMigrationRequest, Operation> startMigrationSettings() {
+      return startMigrationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings() {
+      return startMigrationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public UnaryCallSettings.Builder<FinishMigrationRequest, Operation> finishMigrationSettings() {
+      return finishMigrationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings() {
+      return finishMigrationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

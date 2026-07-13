@@ -256,6 +256,28 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     return ((MemorystoreStubSettings) getStubSettings()).backupInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to startMigration. */
+  public UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -508,6 +530,28 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
         backupInstanceOperationSettings() {
       return getStubSettingsBuilder().backupInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public UnaryCallSettings.Builder<StartMigrationRequest, Operation> startMigrationSettings() {
+      return getStubSettingsBuilder().startMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings() {
+      return getStubSettingsBuilder().startMigrationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public UnaryCallSettings.Builder<FinishMigrationRequest, Operation> finishMigrationSettings() {
+      return getStubSettingsBuilder().finishMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings() {
+      return getStubSettingsBuilder().finishMigrationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

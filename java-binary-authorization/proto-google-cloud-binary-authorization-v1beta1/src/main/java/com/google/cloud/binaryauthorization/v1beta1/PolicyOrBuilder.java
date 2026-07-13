@@ -307,7 +307,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -321,7 +322,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -340,7 +342,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -355,7 +358,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -374,7 +378,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
+   * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+   * format:
    * `[a-z.-]+`, e.g. `some-namespace`
    * </pre>
    *
@@ -650,4 +655,34 @@ public interface PolicyOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the policy has an up-to-date value before attempting to
+   * update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the policy has an up-to-date value before attempting to
+   * update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

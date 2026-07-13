@@ -138,6 +138,7 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
@@ -189,6 +190,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceFilterSpec(), actualRequest.getRelevanceFilterSpec());
     Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -245,6 +247,7 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.search(request);
@@ -307,6 +310,7 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
@@ -358,6 +362,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceFilterSpec(), actualRequest.getRelevanceFilterSpec());
     Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -414,6 +419,7 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.searchLite(request);

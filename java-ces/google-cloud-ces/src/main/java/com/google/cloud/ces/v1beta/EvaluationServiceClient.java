@@ -1018,6 +1018,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   RunEvaluationResponse response = evaluationServiceClient.runEvaluationAsync(request).get();
    * }
@@ -1065,6 +1066,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata> future =
    *       evaluationServiceClient.runEvaluationOperationCallable().futureCall(request);
@@ -1113,6 +1115,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       evaluationServiceClient.runEvaluationCallable().futureCall(request);
