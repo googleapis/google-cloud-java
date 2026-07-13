@@ -7203,7 +7203,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     For example, `users/user{@literal @}example.com` or `users/me`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Availability getAvailability(AvailabilityName name) {
+  public final Availability getAvailability(@Nullable AvailabilityName name) {
     GetAvailabilityRequest request =
         GetAvailabilityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAvailability(request);

@@ -2874,7 +2874,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> finishMigrationAsync(
-      InstanceName name, boolean force) {
+      @Nullable InstanceName name, boolean force) {
     FinishMigrationRequest request =
         FinishMigrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())

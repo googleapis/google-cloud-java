@@ -21,8 +21,6 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -236,18 +234,6 @@ public class InspectTemplateName implements ResourceName {
           matchMap.get("project"), matchMap.get("location"), matchMap.get("inspect_template"));
     }
     throw new ValidationException("InspectTemplateName.parse: formattedString not in valid format");
-  }
-
-  public static List<String> toStringList(List<@Nullable InspectTemplateName> values) {
-    List<String> list = new ArrayList<>(values.size());
-    for (InspectTemplateName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
