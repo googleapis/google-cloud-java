@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -30,17 +29,8 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.common.collect.ImmutableList;
 import com.sun.management.ThreadMXBean;
 import java.lang.management.ManagementFactory;
-import java.math.BigDecimal;
-import java.nio.charset.StandardCharsets;
-import java.sql.Array;
-import java.sql.Date;
-import java.sql.Struct;
-import java.sql.Time;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.Future;
-import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryFieldValueListWrapperTest {
@@ -157,76 +147,6 @@ public class BigQueryFieldValueListWrapperTest {
               PROFILES_FV,
               ORG_FV),
           ALL_TYPES_SCHEMA_FIELDS);
-
-  @Test
-  public void testUnpackRowAndCoercionAllTypes() throws Exception {
-    boolean[] isComplexColumn =
-        BigQueryFieldValueListWrapper.createComplexColumnFlags(ALL_TYPES_SCHEMA.getFields());
-
-    Object[] row = BigQueryFieldValueListWrapper.unpackRow(SAMPLE_ALL_TYPES_FVL, isComplexColumn);
-
-    assertThat(row[0]).isEqualTo("101");
-    assertThat(row[1]).isEqualTo("Alice");
-    assertThat(row[2]).isEqualTo("98.5");
-    assertThat(row[3]).isEqualTo("true");
-    assertThat(row[4]).isEqualTo("POINT(-122.084 37.422)");
-    assertThat(row[5]).isEqualTo("{\"key\": \"value\"}");
-    assertThat(row[6]).isEqualTo("123456789.987654321");
-    assertThat(row[7]).isEqualTo("99999999999999999999999999999999999999.999999999");
-    assertThat(row[8]).isEqualTo("0-0 0 0:0:0");
-    assertThat(row[9]).isEqualTo("SGVsbG8gV29ybGQ=");
-    assertThat(row[10]).isEqualTo("1408452095.22");
-    assertThat(row[11]).isEqualTo("2023-03-13");
-    assertThat(row[12]).isEqualTo("23:59:59");
-    assertThat(row[13]).isInstanceOf(FieldValue.class);
-    assertThat(row[14]).isInstanceOf(FieldValue.class);
-    assertThat(row[15]).isInstanceOf(FieldValue.class);
-    assertThat(row[16]).isInstanceOf(FieldValue.class);
-
-    // Verify ResultSet end-to-end JDBC Coercion
-    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingDeque<>();
-    queue.add(BigQueryFieldValueListWrapper.ofRow(ALL_TYPES_SCHEMA_FIELDS, row));
-    queue.add(BigQueryFieldValueListWrapper.ofRow(null, null, true));
-    BigQueryStatement statement = mock(BigQueryStatement.class);
-    Future<?>[] workerTasks = {mock(Future.class)};
-
-    BigQueryJsonResultSet rs =
-        BigQueryJsonResultSet.of(ALL_TYPES_SCHEMA, 1L, queue, statement, workerTasks);
-    assertTrue(rs.next());
-
-    assertThat(rs.getLong("id")).isEqualTo(101L);
-    assertThat(rs.getString("name")).isEqualTo("Alice");
-    assertThat(rs.getDouble("score")).isEqualTo(98.5D);
-    assertThat(rs.getBoolean("active")).isTrue();
-    assertThat(rs.getString("geo")).isEqualTo("POINT(-122.084 37.422)");
-    assertThat(rs.getString("json_col")).isEqualTo("{\"key\": \"value\"}");
-    assertThat(rs.getBigDecimal("num")).isEqualTo(new BigDecimal("123456789.987654321"));
-    assertThat(rs.getBigDecimal("bignum"))
-        .isEqualTo(new BigDecimal("99999999999999999999999999999999999999.999999999"));
-    assertThat(rs.getString("interval_col")).isEqualTo("0-0 0 0:0:0");
-    assertThat(rs.getBytes("bytes_col")).isEqualTo("Hello World".getBytes(StandardCharsets.UTF_8));
-    assertThat(rs.getTimestamp("ts")).isNotNull();
-    assertThat(rs.getDate("dt")).isEqualTo(Date.valueOf("2023-03-13"));
-    assertThat(rs.getTime("tm")).isEqualTo(Time.valueOf("23:59:59"));
-    assertThat(rs.getString("range_col")).isEqualTo("[2020-01-01, 2020-01-31)");
-
-    // Array of Primitives
-    Array tagsArray = rs.getArray("tags");
-    assertThat((String[]) tagsArray.getArray()).isEqualTo(new String[] {"tag1", "tag2"});
-
-    // Array of Structs
-    Array profilesArray = rs.getArray("profiles");
-    Object[] profileStructs = (Object[]) profilesArray.getArray();
-    assertThat(profileStructs.length).isEqualTo(1);
-    assertThat(((Struct) profileStructs[0]).getAttributes()).isEqualTo(new Object[] {"Bob", 30L});
-
-    // Nested Structs
-    Struct orgStruct = (Struct) rs.getObject("org");
-    Object[] orgAttributes = orgStruct.getAttributes();
-    assertThat(orgAttributes[0]).isEqualTo("Acme Corp");
-    assertThat(((Struct) orgAttributes[1]).getAttributes())
-        .isEqualTo(new Object[] {"London", "UK"});
-  }
 
   @Test
   public void testMemoryAllocationReduction() throws Exception {

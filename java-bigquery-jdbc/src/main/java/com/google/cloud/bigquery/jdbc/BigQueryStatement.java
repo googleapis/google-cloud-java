@@ -1291,7 +1291,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                 }
                 Uninterruptibles.putUninterruptibly(
                     bigQueryFieldValueListWrapperBlockingQueue,
-                    BigQueryFieldValueListWrapper.ofUnpackedRow(
+                    BigQueryFieldValueListWrapper.of(
                         schema.getFields(), fieldValueList, isComplexColumn));
                 results += 1;
               }
@@ -1750,6 +1750,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
+    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null));
   }
 }

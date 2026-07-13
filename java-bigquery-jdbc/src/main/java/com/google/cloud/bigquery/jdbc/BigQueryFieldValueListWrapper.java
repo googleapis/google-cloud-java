@@ -50,17 +50,19 @@ class BigQueryFieldValueListWrapper {
   private boolean isLast = false;
   private final Exception exception;
 
-  static BigQueryFieldValueListWrapper of(
-      FieldList fieldList, FieldValueList fieldValueList, boolean... isLast) {
-    boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryFieldValueListWrapper(
-        fieldList, fieldValueList, null, null, isLastFlag, null);
+  static BigQueryFieldValueListWrapper of(FieldList fieldList, FieldValueList fieldValueList) {
+    return of(fieldList, fieldValueList, (boolean[]) null);
   }
 
-  static BigQueryFieldValueListWrapper ofRow(
-      FieldList fieldList, Object[] rowValues, boolean... isLast) {
-    boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, isLastFlag, null);
+  static BigQueryFieldValueListWrapper of(
+      FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
+    if (fieldValueList == null) {
+      return new BigQueryFieldValueListWrapper(fieldList, null, null, null, true, null);
+    }
+    boolean[] flags =
+        isComplexColumn != null ? isComplexColumn : createComplexColumnFlags(fieldList);
+    Object[] rowValues = unpackRow(fieldValueList, flags);
+    return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, false, null);
   }
 
   static boolean[] createComplexColumnFlags(FieldList fieldList) {
@@ -98,12 +100,6 @@ class BigQueryFieldValueListWrapper {
       }
     }
     return row;
-  }
-
-  static BigQueryFieldValueListWrapper ofUnpackedRow(
-      FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
-    Object[] rowValues = unpackRow(fieldValueList, isComplexColumn);
-    return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, false, null);
   }
 
   static BigQueryFieldValueListWrapper getNestedFieldValueListWrapper(

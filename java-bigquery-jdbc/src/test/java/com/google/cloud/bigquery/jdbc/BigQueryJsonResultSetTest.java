@@ -164,11 +164,12 @@ public class BigQueryJsonResultSetTest {
 
   @BeforeEach
   public void setUp() {
+    boolean[] isComplexColumn = BigQueryFieldValueListWrapper.createComplexColumnFlags(fieldList);
     // Buffer with one row
     buffer = new LinkedBlockingDeque<>(2);
     statement = mock(BigQueryStatement.class);
-    buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    buffer.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
+    buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    buffer.add(BigQueryFieldValueListWrapper.of(null, null)); // last marker
     Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
         BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
@@ -176,9 +177,11 @@ public class BigQueryJsonResultSetTest {
     // Buffer with 2 rows.
     bufferWithTwoRows = new LinkedBlockingDeque<>(3);
     statementForTwoRows = mock(BigQueryStatement.class);
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
+    bufferWithTwoRows.add(
+        BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    bufferWithTwoRows.add(
+        BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(null, null)); // last marker
 
     // values for nested types
     Field fieldEight = fieldList.get("eight");
