@@ -57,6 +57,8 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
+  private static final String PCNT_SCHEMA = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
+  private static final String PCNT_TABLE_NAME = "PCNT_TEST_TABLE";
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
@@ -384,6 +386,56 @@ public class ITDatabaseMetadataTest extends ITBase {
       ResultSet exportedKeys1 =
           metaData.getExportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
       Assertions.assertFalse(exportedKeys1.next());
+    }
+  }
+
+  @Test
+  public void testGetPrimaryKeys_pcntTable() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      ResultSet primaryKeys = metaData.getPrimaryKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+      Assertions.assertNotNull(primaryKeys);
+      ResultSetMetaData pkMetaData = primaryKeys.getMetaData();
+      Assertions.assertEquals(6, pkMetaData.getColumnCount());
+      Assertions.assertFalse(primaryKeys.next());
+    }
+  }
+
+  @Test
+  public void testGetImportedKeys_pcntTable() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      ResultSet importedKeys = metaData.getImportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+      Assertions.assertNotNull(importedKeys);
+      ResultSetMetaData ikMetaData = importedKeys.getMetaData();
+      Assertions.assertEquals(14, ikMetaData.getColumnCount());
+      Assertions.assertFalse(importedKeys.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntTable() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      ResultSet exportedKeys = metaData.getExportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+      Assertions.assertNotNull(exportedKeys);
+      ResultSetMetaData ekMetaData = exportedKeys.getMetaData();
+      Assertions.assertEquals(14, ekMetaData.getColumnCount());
+      Assertions.assertFalse(exportedKeys.next());
+    }
+  }
+
+  @Test
+  public void testGetCrossReference_pcntTable() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      ResultSet crossReference =
+          metaData.getCrossReference(
+              PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME, PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME);
+      Assertions.assertNotNull(crossReference);
+      ResultSetMetaData crMetaData = crossReference.getMetaData();
+      Assertions.assertEquals(14, crMetaData.getColumnCount());
+      Assertions.assertFalse(crossReference.next());
     }
   }
 

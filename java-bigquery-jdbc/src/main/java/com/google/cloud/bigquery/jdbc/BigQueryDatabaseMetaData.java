@@ -52,11 +52,15 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,6 +68,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -94,6 +99,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final String PROCEDURE_TERM = "Procedure";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
+  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
   // Declared package-private for testing.
   static final String GOOGLE_SQL_QUOTED_IDENTIFIER = "`";
   // Does not include SQL:2003 Keywords as per JDBC spec.
@@ -2559,40 +2565,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
+    // Early return for PCNT catalog schemas (containing '.') as they do not support table constraints.
+    if (schema != null && schema.contains(".")) {
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
+      signalEndOfData(queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    }
 
-    boolean ignoreAccessErrors = (catalog == null);
-    processTargetTablesConcurrently(
-        targetDatasets,
-        null,
-        collectedResults,
-        resultSchemaFields,
-        ignoreAccessErrors,
-        (bqTable, results, fields) -> {
-          TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints == null || constraints.getForeignKeys() == null) {
-            return;
-          }
-          for (ForeignKey fk : constraints.getForeignKeys()) {
-            TableId pkTableId = fk.getReferencedTable();
-            if (pkTableId == null
-                || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
-                || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
-                || !table.equals(pkTableId.getTable())) {
-              continue;
-            }
-            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-          }
-        });
-
-    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getExportedKeys", LOG);
-
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
-    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
+    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
+    try {
+      stmt.closeOnCompletion();
+      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
+      return stmt.executeQuery(formattedSql);
+    } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
+      throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    }
   }
 
   @Override
@@ -5352,5 +5341,35 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         .thenComparing(
             (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
             Comparator.nullsFirst(Long::compareTo));
+  }
+
+  static String readSqlFromFile(String filename) {
+    InputStream in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
+    if (in == null) {
+      throw new IllegalArgumentException("SQL file not found: " + filename);
+    }
+    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    StringBuilder builder = new StringBuilder();
+    try (Scanner scanner = new Scanner(reader)) {
+      while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        builder.append(line).append("\n");
+      }
+    }
+    return builder.toString();
+  }
+
+  String replaceSqlParameters(String sql, String... params) throws SQLException {
+    return String.format(sql, (Object[]) params);
+  }
+
+  private void closeStatementIgnoreException(Statement stmt) {
+    if (stmt != null) {
+      try {
+        stmt.close();
+      } catch (SQLException e) {
+        // ignore
+      }
+    }
   }
 }
