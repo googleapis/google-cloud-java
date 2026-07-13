@@ -1401,6 +1401,51 @@ public abstract class AbstractDatastoreTest {
   }
 
   @Test
+  public void testRunQueryWithInstanceLevelRequestTags() {
+    DatastoreOptions optionsWithTags = options.toBuilder().setTags("instance-tag").build();
+    Datastore datastoreWithTags = optionsWithTags.getService();
+
+    PartitionId partitionId =
+        PartitionId.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId(options.getDatabaseId())
+            .setNamespaceId(options.getNamespace())
+            .build();
+
+    com.google.datastore.v1.Query queryPb =
+        com.google.datastore.v1.Query.newBuilder()
+            .addKind(com.google.datastore.v1.KindExpression.newBuilder().setName(KIND1))
+            .build();
+
+    RunQueryRequest expectedRequest =
+        RunQueryRequest.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setPartitionId(partitionId)
+            .setQuery(queryPb)
+            .setRequestOptions(
+                com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("instance-tag").build())
+            .build();
+
+    RunQueryResponse response =
+        RunQueryResponse.newBuilder()
+            .setBatch(
+                com.google.datastore.v1.QueryResultBatch.newBuilder()
+                    .addEntityResults(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+                    .build())
+            .build();
+
+    EasyMock.expect(rpcMock.runQuery(expectedRequest)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
+    QueryResults<Entity> results = datastoreWithTags.run(query);
+    assertTrue(results.hasNext());
+    assertEquals(ENTITY1, results.next());
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
   public void testRunQueryWithRequestOptions() {
     com.google.datastore.v1.RequestOptions requestOptions =
         com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();

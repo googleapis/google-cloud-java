@@ -643,9 +643,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @param requestTags the request tags to append to existing ones
    */
   default Datastore withRequestTags(String... requestTags) {
-    ImmutableList.Builder<String> builder = ImmutableList.builder();
-    builder.addAll(getOptions().getRequestTags()).add(requestTags);
-    return getOptions().toBuilder().setTags(builder.build()).build().getService();
+    return withRequestTags(java.util.Arrays.asList(requestTags));
   }
 
   /**

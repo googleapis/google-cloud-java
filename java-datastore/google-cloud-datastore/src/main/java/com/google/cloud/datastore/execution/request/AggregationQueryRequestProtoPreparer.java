@@ -75,7 +75,7 @@ public class AggregationQueryRequestProtoPreparer
     readOptionsPb.ifPresent(aggregationQueryRequestBuilder::setReadOptions);
 
     // add request options to the request.
-    if (queryConfig.getRequestOptions() != null) {
+    if (queryConfig.getRequestOptions() != null || !datastoreOptions.getRequestTags().isEmpty()) {
       aggregationQueryRequestBuilder.setRequestOptions(
           createRequestOptions(datastoreOptions, queryConfig.getRequestOptions()));
     }
