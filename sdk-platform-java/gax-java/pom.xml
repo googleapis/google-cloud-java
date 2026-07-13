@@ -181,6 +181,11 @@
         <version>${awaitility.version}</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>org.conscrypt</groupId>
+        <artifactId>conscrypt-openjdk-uber</artifactId>
+        <version>${conscrypt.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

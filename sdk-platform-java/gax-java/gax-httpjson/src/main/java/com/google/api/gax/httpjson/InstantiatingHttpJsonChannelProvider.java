@@ -51,6 +51,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+import org.conscrypt.Conscrypt;
 
 /**
  * InstantiatingHttpJsonChannelProvider is a TransportChannelProvider which constructs a {@link
@@ -69,6 +70,9 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
+
+  private static final String[] PQC_GROUPS =
+      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519Kyber768Draft00", "X25519"};
 
   private final Executor executor;
   private final HeaderProvider headerProvider;
@@ -191,16 +195,20 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null) {
-      return null;
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    try {
+      builder.setSecurityProvider(Conscrypt.newProvider());
+      builder.setNamedGroups(PQC_GROUPS);
+    } catch (Throwable t) {
+      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
     }
-    if (certificateBasedAccess.useMtlsClientCertificate()) {
+    if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
       if (mtlsKeyStore != null) {
-        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
+        builder.trustCertificates(null, mtlsKeyStore, "");
       }
     }
-    return null;
+    return builder.build();
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
@@ -364,7 +372,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize."
+                    + " Falling back to non-mTLS channel.");
           }
         }
       }

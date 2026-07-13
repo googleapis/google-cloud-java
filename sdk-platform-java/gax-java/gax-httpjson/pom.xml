@@ -104,6 +104,10 @@
       <artifactId>error_prone_annotations</artifactId>
       <version>${errorprone.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.conscrypt</groupId>
+      <artifactId>conscrypt-openjdk-uber</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
