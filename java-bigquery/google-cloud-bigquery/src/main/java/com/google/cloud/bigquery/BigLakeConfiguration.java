@@ -52,7 +52,7 @@ public abstract class BigLakeConfiguration implements Serializable {
   public abstract String getStorageUri();
 
   /**
-   * Open source file format that the table data is stored in. Currently only PARQUET is supported.
+   * Open source table format that the table data is stored in. Currently only ICEBERG is supported.
    *
    * @return value or {@code null} for none
    */
@@ -68,32 +68,32 @@ public abstract class BigLakeConfiguration implements Serializable {
   @AutoValue.Builder
   public abstract static class Builder {
     /**
-     * Immutable. Credential reference for accessing external storage
-     * system. Normalized as project_id.location_id.connection_id.
+     * Immutable. Credential reference for accessing external storage system. Normalized as
+     * project_id.location_id.connection_id.
      *
      * @param connectionId connectionId or {@code null} for none
      */
     public abstract Builder setConnectionId(@Nullable String connectionId);
 
     /**
-     * Immutable. Open source file format that the table data is stored in.
-     * Currently only PARQUET is supported.
+     * Immutable. Open source file format that the table data is stored in. Currently only PARQUET
+     * is supported.
      *
      * @param fileFormat fileFormat or {@code null} for none
      */
     public abstract Builder setFileFormat(@Nullable String fileFormat);
 
     /**
-     * Immutable. Fully qualified location prefix of the external folder
-     * where data is stored. Starts with "gs://" and ends with "/". Does not contain "*".
+     * Immutable. Fully qualified location prefix of the external folder where data is stored.
+     * Starts with "gs://" and ends with "/". Does not contain "*".
      *
      * @param storageUri storageUri or {@code null} for none
      */
     public abstract Builder setStorageUri(@Nullable String storageUri);
 
     /**
-     * Immutable. Open source file format that the table data is stored in.
-     * Currently only PARQUET is supported.
+     * Immutable. Open source table format that the table data is stored in. Currently only ICEBERG
+     * is supported.
      *
      * @param tableFormat tableFormat or {@code null} for none
      */
