@@ -95,6 +95,8 @@ public class ToolServiceClientTest {
         ExecuteToolResponse.newBuilder()
             .setResponse(Struct.newBuilder().build())
             .setVariables(Struct.newBuilder().build())
+            .setCitations(Citations.newBuilder().build())
+            .setGoogleSearchSuggestions(GoogleSearchSuggestions.newBuilder().build())
             .build();
     mockToolService.addResponse(expectedResponse);
 
@@ -102,6 +104,7 @@ public class ToolServiceClientTest {
         ExecuteToolRequest.newBuilder()
             .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
             .setArgs(Struct.newBuilder().build())
+            .setMockConfig(MockConfig.newBuilder().build())
             .build();
 
     ExecuteToolResponse actualResponse = client.executeTool(request);
@@ -117,6 +120,7 @@ public class ToolServiceClientTest {
     Assert.assertEquals(request.getContext(), actualRequest.getContext());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getArgs(), actualRequest.getArgs());
+    Assert.assertEquals(request.getMockConfig(), actualRequest.getMockConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,6 +137,7 @@ public class ToolServiceClientTest {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       client.executeTool(request);
       Assert.fail("No exception raised");
@@ -198,6 +203,7 @@ public class ToolServiceClientTest {
         RetrieveToolsRequest.newBuilder()
             .setToolset(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .addAllToolIds(new ArrayList<String>())
+            .setBypassPersistenceConfig(true)
             .build();
 
     RetrieveToolsResponse actualResponse = client.retrieveTools(request);
@@ -209,6 +215,8 @@ public class ToolServiceClientTest {
 
     Assert.assertEquals(request.getToolset(), actualRequest.getToolset());
     Assert.assertEquals(request.getToolIdsList(), actualRequest.getToolIdsList());
+    Assert.assertEquals(
+        request.getBypassPersistenceConfig(), actualRequest.getBypassPersistenceConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -226,6 +234,7 @@ public class ToolServiceClientTest {
               .setToolset(
                   ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
               .addAllToolIds(new ArrayList<String>())
+              .setBypassPersistenceConfig(true)
               .build();
       client.retrieveTools(request);
       Assert.fail("No exception raised");

@@ -53,6 +53,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
   private GroundingMetadata() {
     webSearchQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    retrievalQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     groundingChunks_ = java.util.Collections.emptyList();
     groundingSupports_ = java.util.Collections.emptyList();
     googleMapsWidgetContextToken_ = "";
@@ -1065,6 +1066,82 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         : searchEntryPoint_;
   }
 
+  public static final int RETRIEVAL_QUERIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList retrievalQueries_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the retrievalQueries.
+   */
+  public com.google.protobuf.ProtocolStringList getRetrievalQueriesList() {
+    return retrievalQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of retrievalQueries.
+   */
+  public int getRetrievalQueriesCount() {
+    return retrievalQueries_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The retrievalQueries at the given index.
+   */
+  public java.lang.String getRetrievalQueries(int index) {
+    return retrievalQueries_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the retrievalQueries at the given index.
+   */
+  public com.google.protobuf.ByteString getRetrievalQueriesBytes(int index) {
+    return retrievalQueries_.getByteString(index);
+  }
+
   public static final int GROUNDING_CHUNKS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -1483,6 +1560,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < webSearchQueries_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, webSearchQueries_.getRaw(i));
     }
+    for (int i = 0; i < retrievalQueries_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, retrievalQueries_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getSearchEntryPoint());
     }
@@ -1517,6 +1597,14 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       size += dataSize;
       size += 1 * getWebSearchQueriesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < retrievalQueries_.size(); i++) {
+        dataSize += computeStringSizeNoTag(retrievalQueries_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRetrievalQueriesList().size();
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSearchEntryPoint());
@@ -1560,6 +1648,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (hasSearchEntryPoint()) {
       if (!getSearchEntryPoint().equals(other.getSearchEntryPoint())) return false;
     }
+    if (!getRetrievalQueriesList().equals(other.getRetrievalQueriesList())) return false;
     if (!getGroundingChunksList().equals(other.getGroundingChunksList())) return false;
     if (!getGroundingSupportsList().equals(other.getGroundingSupportsList())) return false;
     if (hasRetrievalMetadata() != other.hasRetrievalMetadata()) return false;
@@ -1590,6 +1679,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (hasSearchEntryPoint()) {
       hash = (37 * hash) + SEARCH_ENTRY_POINT_FIELD_NUMBER;
       hash = (53 * hash) + getSearchEntryPoint().hashCode();
+    }
+    if (getRetrievalQueriesCount() > 0) {
+      hash = (37 * hash) + RETRIEVAL_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getRetrievalQueriesList().hashCode();
     }
     if (getGroundingChunksCount() > 0) {
       hash = (37 * hash) + GROUNDING_CHUNKS_FIELD_NUMBER;
@@ -1770,20 +1863,21 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         searchEntryPointBuilder_.dispose();
         searchEntryPointBuilder_ = null;
       }
+      retrievalQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (groundingChunksBuilder_ == null) {
         groundingChunks_ = java.util.Collections.emptyList();
       } else {
         groundingChunks_ = null;
         groundingChunksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (groundingSupportsBuilder_ == null) {
         groundingSupports_ = java.util.Collections.emptyList();
       } else {
         groundingSupports_ = null;
         groundingSupportsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       retrievalMetadata_ = null;
       if (retrievalMetadataBuilder_ != null) {
         retrievalMetadataBuilder_.dispose();
@@ -1796,7 +1890,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         sourceFlaggingUris_ = null;
         sourceFlaggingUrisBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1835,27 +1929,27 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.GroundingMetadata result) {
       if (groundingChunksBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           groundingChunks_ = java.util.Collections.unmodifiableList(groundingChunks_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.groundingChunks_ = groundingChunks_;
       } else {
         result.groundingChunks_ = groundingChunksBuilder_.build();
       }
       if (groundingSupportsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           groundingSupports_ = java.util.Collections.unmodifiableList(groundingSupports_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.groundingSupports_ = groundingSupports_;
       } else {
         result.groundingSupports_ = groundingSupportsBuilder_.build();
       }
       if (sourceFlaggingUrisBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           sourceFlaggingUris_ = java.util.Collections.unmodifiableList(sourceFlaggingUris_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.sourceFlaggingUris_ = sourceFlaggingUris_;
       } else {
@@ -1875,14 +1969,18 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             searchEntryPointBuilder_ == null ? searchEntryPoint_ : searchEntryPointBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        retrievalQueries_.makeImmutable();
+        result.retrievalQueries_ = retrievalQueries_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.retrievalMetadata_ =
             retrievalMetadataBuilder_ == null
                 ? retrievalMetadata_
                 : retrievalMetadataBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.googleMapsWidgetContextToken_ = googleMapsWidgetContextToken_;
         to_bitField0_ |= 0x00000004;
       }
@@ -1915,11 +2013,21 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       if (other.hasSearchEntryPoint()) {
         mergeSearchEntryPoint(other.getSearchEntryPoint());
       }
+      if (!other.retrievalQueries_.isEmpty()) {
+        if (retrievalQueries_.isEmpty()) {
+          retrievalQueries_ = other.retrievalQueries_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureRetrievalQueriesIsMutable();
+          retrievalQueries_.addAll(other.retrievalQueries_);
+        }
+        onChanged();
+      }
       if (groundingChunksBuilder_ == null) {
         if (!other.groundingChunks_.isEmpty()) {
           if (groundingChunks_.isEmpty()) {
             groundingChunks_ = other.groundingChunks_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureGroundingChunksIsMutable();
             groundingChunks_.addAll(other.groundingChunks_);
@@ -1932,7 +2040,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             groundingChunksBuilder_.dispose();
             groundingChunksBuilder_ = null;
             groundingChunks_ = other.groundingChunks_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             groundingChunksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetGroundingChunksFieldBuilder()
@@ -1946,7 +2054,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         if (!other.groundingSupports_.isEmpty()) {
           if (groundingSupports_.isEmpty()) {
             groundingSupports_ = other.groundingSupports_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureGroundingSupportsIsMutable();
             groundingSupports_.addAll(other.groundingSupports_);
@@ -1959,7 +2067,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             groundingSupportsBuilder_.dispose();
             groundingSupportsBuilder_ = null;
             groundingSupports_ = other.groundingSupports_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             groundingSupportsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetGroundingSupportsFieldBuilder()
@@ -1974,14 +2082,14 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasGoogleMapsWidgetContextToken()) {
         googleMapsWidgetContextToken_ = other.googleMapsWidgetContextToken_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (sourceFlaggingUrisBuilder_ == null) {
         if (!other.sourceFlaggingUris_.isEmpty()) {
           if (sourceFlaggingUris_.isEmpty()) {
             sourceFlaggingUris_ = other.sourceFlaggingUris_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureSourceFlaggingUrisIsMutable();
             sourceFlaggingUris_.addAll(other.sourceFlaggingUris_);
@@ -1994,7 +2102,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             sourceFlaggingUrisBuilder_.dispose();
             sourceFlaggingUrisBuilder_ = null;
             sourceFlaggingUris_ = other.sourceFlaggingUris_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             sourceFlaggingUrisBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSourceFlaggingUrisFieldBuilder()
@@ -2037,6 +2145,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 webSearchQueries_.add(s);
                 break;
               } // case 10
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRetrievalQueriesIsMutable();
+                retrievalQueries_.add(s);
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(
@@ -2075,13 +2190,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetRetrievalMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 googleMapsWidgetContextToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -2523,15 +2638,216 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       return searchEntryPointBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList retrievalQueries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRetrievalQueriesIsMutable() {
+      if (!retrievalQueries_.isModifiable()) {
+        retrievalQueries_ = new com.google.protobuf.LazyStringArrayList(retrievalQueries_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the retrievalQueries.
+     */
+    public com.google.protobuf.ProtocolStringList getRetrievalQueriesList() {
+      retrievalQueries_.makeImmutable();
+      return retrievalQueries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of retrievalQueries.
+     */
+    public int getRetrievalQueriesCount() {
+      return retrievalQueries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The retrievalQueries at the given index.
+     */
+    public java.lang.String getRetrievalQueries(int index) {
+      return retrievalQueries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the retrievalQueries at the given index.
+     */
+    public com.google.protobuf.ByteString getRetrievalQueriesBytes(int index) {
+      return retrievalQueries_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The retrievalQueries to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRetrievalQueries(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRetrievalQueriesIsMutable();
+      retrievalQueries_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The retrievalQueries to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRetrievalQueries(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRetrievalQueriesIsMutable();
+      retrievalQueries_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The retrievalQueries to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRetrievalQueries(java.lang.Iterable<java.lang.String> values) {
+      ensureRetrievalQueriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, retrievalQueries_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRetrievalQueries() {
+      retrievalQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The queries that were executed by the retrieval tools.
+     * This field is populated only when the grounding source is a retrieval tool,
+     * such as Vertex AI Search.
+     * </pre>
+     *
+     * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the retrievalQueries to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRetrievalQueriesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRetrievalQueriesIsMutable();
+      retrievalQueries_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1.GroundingChunk> groundingChunks_ =
         java.util.Collections.emptyList();
 
     private void ensureGroundingChunksIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         groundingChunks_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.GroundingChunk>(
                 groundingChunks_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2759,7 +3075,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clearGroundingChunks() {
       if (groundingChunksBuilder_ == null) {
         groundingChunks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         groundingChunksBuilder_.clear();
@@ -2892,7 +3208,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1.GroundingChunk.Builder,
                 com.google.cloud.aiplatform.v1.GroundingChunkOrBuilder>(
                 groundingChunks_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         groundingChunks_ = null;
@@ -2904,11 +3220,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureGroundingSupportsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         groundingSupports_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.GroundingSupport>(
                 groundingSupports_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3159,7 +3475,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clearGroundingSupports() {
       if (groundingSupportsBuilder_ == null) {
         groundingSupports_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         groundingSupportsBuilder_.clear();
@@ -3306,7 +3622,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1.GroundingSupport.Builder,
                 com.google.cloud.aiplatform.v1.GroundingSupportOrBuilder>(
                 groundingSupports_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         groundingSupports_ = null;
@@ -3335,7 +3651,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the retrievalMetadata field is set.
      */
     public boolean hasRetrievalMetadata() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3381,7 +3697,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         retrievalMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3404,7 +3720,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         retrievalMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3422,7 +3738,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeRetrievalMetadata(com.google.cloud.aiplatform.v1.RetrievalMetadata value) {
       if (retrievalMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && retrievalMetadata_ != null
             && retrievalMetadata_
                 != com.google.cloud.aiplatform.v1.RetrievalMetadata.getDefaultInstance()) {
@@ -3434,7 +3750,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         retrievalMetadataBuilder_.mergeFrom(value);
       }
       if (retrievalMetadata_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3452,7 +3768,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRetrievalMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       retrievalMetadata_ = null;
       if (retrievalMetadataBuilder_ != null) {
         retrievalMetadataBuilder_.dispose();
@@ -3474,7 +3790,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.aiplatform.v1.RetrievalMetadata.Builder getRetrievalMetadataBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetRetrievalMetadataFieldBuilder().getBuilder();
     }
@@ -3547,7 +3863,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the googleMapsWidgetContextToken field is set.
      */
     public boolean hasGoogleMapsWidgetContextToken() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -3625,7 +3941,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       googleMapsWidgetContextToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3647,7 +3963,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearGoogleMapsWidgetContextToken() {
       googleMapsWidgetContextToken_ = getDefaultInstance().getGoogleMapsWidgetContextToken();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3674,7 +3990,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       googleMapsWidgetContextToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3683,12 +3999,12 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         sourceFlaggingUris_ = java.util.Collections.emptyList();
 
     private void ensureSourceFlaggingUrisIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         sourceFlaggingUris_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri>(
                 sourceFlaggingUris_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3959,7 +4275,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clearSourceFlaggingUris() {
       if (sourceFlaggingUrisBuilder_ == null) {
         sourceFlaggingUris_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         sourceFlaggingUrisBuilder_.clear();
@@ -4121,7 +4437,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri.Builder,
                 com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUriOrBuilder>(
                 sourceFlaggingUris_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         sourceFlaggingUris_ = null;

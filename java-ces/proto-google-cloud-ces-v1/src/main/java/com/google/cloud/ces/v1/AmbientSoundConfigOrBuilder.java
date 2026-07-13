@@ -39,7 +39,7 @@ public interface AmbientSoundConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1.AmbientSoundConfig.prebuilt_ambient_noise is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=293
+   *     google/cloud/ces/v1/app.proto;l=300
    * @return Whether the prebuiltAmbientNoise field is set.
    */
   @java.lang.Deprecated
@@ -58,7 +58,7 @@ public interface AmbientSoundConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1.AmbientSoundConfig.prebuilt_ambient_noise is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=293
+   *     google/cloud/ces/v1/app.proto;l=300
    * @return The enum numeric value on the wire for prebuiltAmbientNoise.
    */
   @java.lang.Deprecated
@@ -77,7 +77,7 @@ public interface AmbientSoundConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1.AmbientSoundConfig.prebuilt_ambient_noise is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=293
+   *     google/cloud/ces/v1/app.proto;l=300
    * @return The prebuiltAmbientNoise.
    */
   @java.lang.Deprecated

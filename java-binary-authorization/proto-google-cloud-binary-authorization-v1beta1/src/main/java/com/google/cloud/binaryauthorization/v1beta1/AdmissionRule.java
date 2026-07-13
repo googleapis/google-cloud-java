@@ -24,12 +24,14 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule] specifies either that all container images
- * used in a pod creation request must be attested to by one or more
- * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
- * pod creations will be denied.
+ * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule]
+ * specifies either that all container images used in a pod creation request
+ * must be attested to by one or more
+ * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod
+ * creations will be allowed, or that all pod creations will be denied.
  *
- * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+ * Images matching an [admission allowlist
+ * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
  * are exempted from admission rules and will never block a pod creation.
  * </pre>
  *
@@ -272,6 +274,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * TODO(wietse) re-word this text to 'per-image' instead of 'per-pod' and to
+   * allow for three-way evaluation (allow, deny, delegate).
    * Defines the possible actions when a pod creation is denied by an admission
    * rule.
    * </pre>
@@ -496,19 +500,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.LazyStringArrayList.emptyList();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -519,19 +510,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -542,19 +520,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -566,19 +531,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -836,12 +788,14 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule] specifies either that all container images
-   * used in a pod creation request must be attested to by one or more
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
-   * pod creations will be denied.
+   * An [admission rule][google.cloud.binaryauthorization.v1beta1.AdmissionRule]
+   * specifies either that all container images used in a pod creation request
+   * must be attested to by one or more
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod
+   * creations will be allowed, or that all pod creations will be denied.
    *
-   * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+   * Images matching an [admission allowlist
+   * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
    * are exempted from admission rules and will never block a pod creation.
    * </pre>
    *
@@ -1143,19 +1097,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1167,19 +1108,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1190,19 +1118,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1214,19 +1129,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1238,19 +1140,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1270,19 +1159,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1301,19 +1177,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1329,19 +1192,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
@@ -1356,19 +1206,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. The resource names of the attestors that must attest to
-     * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-     * attestor must exist before a policy can reference it.  To add an attestor
-     * to a policy the principal issuing the policy change request must be able
-     * to read the attestor resource.
-     *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
-     * </pre>
-     *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *

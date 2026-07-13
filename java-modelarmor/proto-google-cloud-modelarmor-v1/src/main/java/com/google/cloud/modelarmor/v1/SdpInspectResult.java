@@ -56,6 +56,7 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     messageItems_ = java.util.Collections.emptyList();
     matchState_ = 0;
     findings_ = java.util.Collections.emptyList();
+    extractedImageText_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,6 +354,59 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     return findingsTruncated_;
   }
 
+  public static final int EXTRACTED_IMAGE_TEXT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object extractedImageText_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains text extracted from the image, if applicable.
+   * </pre>
+   *
+   * <code>string extracted_image_text = 6;</code>
+   *
+   * @return The extractedImageText.
+   */
+  @java.lang.Override
+  public java.lang.String getExtractedImageText() {
+    java.lang.Object ref = extractedImageText_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      extractedImageText_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains text extracted from the image, if applicable.
+   * </pre>
+   *
+   * <code>string extracted_image_text = 6;</code>
+   *
+   * @return The bytes for extractedImageText.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExtractedImageTextBytes() {
+    java.lang.Object ref = extractedImageText_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      extractedImageText_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -386,6 +440,9 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     if (findingsTruncated_ != false) {
       output.writeBool(5, findingsTruncated_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(extractedImageText_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, extractedImageText_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -414,6 +471,9 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     if (findingsTruncated_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, findingsTruncated_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(extractedImageText_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, extractedImageText_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -435,6 +495,7 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     if (matchState_ != other.matchState_) return false;
     if (!getFindingsList().equals(other.getFindingsList())) return false;
     if (getFindingsTruncated() != other.getFindingsTruncated()) return false;
+    if (!getExtractedImageText().equals(other.getExtractedImageText())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -460,6 +521,8 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + FINDINGS_TRUNCATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFindingsTruncated());
+    hash = (37 * hash) + EXTRACTED_IMAGE_TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getExtractedImageText().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -617,6 +680,7 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       findingsTruncated_ = false;
+      extractedImageText_ = "";
       return this;
     }
 
@@ -684,6 +748,9 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.findingsTruncated_ = findingsTruncated_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.extractedImageText_ = extractedImageText_;
       }
     }
 
@@ -763,6 +830,11 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       if (other.getFindingsTruncated() != false) {
         setFindingsTruncated(other.getFindingsTruncated());
       }
+      if (!other.getExtractedImageText().isEmpty()) {
+        extractedImageText_ = other.extractedImageText_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -833,6 +905,12 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                extractedImageText_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1931,6 +2009,117 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public Builder clearFindingsTruncated() {
       bitField0_ = (bitField0_ & ~0x00000010);
       findingsTruncated_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object extractedImageText_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains text extracted from the image, if applicable.
+     * </pre>
+     *
+     * <code>string extracted_image_text = 6;</code>
+     *
+     * @return The extractedImageText.
+     */
+    public java.lang.String getExtractedImageText() {
+      java.lang.Object ref = extractedImageText_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extractedImageText_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains text extracted from the image, if applicable.
+     * </pre>
+     *
+     * <code>string extracted_image_text = 6;</code>
+     *
+     * @return The bytes for extractedImageText.
+     */
+    public com.google.protobuf.ByteString getExtractedImageTextBytes() {
+      java.lang.Object ref = extractedImageText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        extractedImageText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains text extracted from the image, if applicable.
+     * </pre>
+     *
+     * <code>string extracted_image_text = 6;</code>
+     *
+     * @param value The extractedImageText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtractedImageText(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      extractedImageText_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains text extracted from the image, if applicable.
+     * </pre>
+     *
+     * <code>string extracted_image_text = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExtractedImageText() {
+      extractedImageText_ = getDefaultInstance().getExtractedImageText();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains text extracted from the image, if applicable.
+     * </pre>
+     *
+     * <code>string extracted_image_text = 6;</code>
+     *
+     * @param value The bytes for extractedImageText to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtractedImageTextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      extractedImageText_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

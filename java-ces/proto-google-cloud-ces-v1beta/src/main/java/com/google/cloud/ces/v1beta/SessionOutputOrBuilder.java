@@ -360,5 +360,60 @@ public interface SessionOutputOrBuilder
    */
   com.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfoOrBuilder getDiagnosticInfoOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  java.util.List<com.google.protobuf.Any> getContextList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  com.google.protobuf.Any getContext(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  int getContextCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  java.util.List<? extends com.google.protobuf.AnyOrBuilder> getContextOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Context messages for external supervision guardrails.
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Any context = 12;</code>
+   */
+  com.google.protobuf.AnyOrBuilder getContextOrBuilder(int index);
+
   com.google.cloud.ces.v1beta.SessionOutput.OutputTypeCase getOutputTypeCase();
 }
