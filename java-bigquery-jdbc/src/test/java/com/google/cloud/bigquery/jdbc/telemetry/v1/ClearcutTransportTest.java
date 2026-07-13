@@ -106,6 +106,33 @@ public class ClearcutTransportTest {
   }
 
   @Test
+  public void testSendNonRetryableStatusCodeFailsImmediately() {
+    AtomicInteger requestCount = new AtomicInteger(0);
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestCount.incrementAndGet();
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(400);
+                return response;
+              }
+            };
+          }
+        };
+
+    TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
+    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
+
+    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result);
+    assertEquals(1, requestCount.get());
+  }
+
+  @Test
   public void testSendIOExceptionRetries() {
     AtomicInteger requestCount = new AtomicInteger(0);
     MockHttpTransport mockTransport =

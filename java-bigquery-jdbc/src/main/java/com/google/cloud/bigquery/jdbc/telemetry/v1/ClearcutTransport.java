@@ -24,12 +24,14 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class ClearcutTransport {
-  private static final Logger logger = Logger.getLogger(ClearcutTransport.class.getName());
+  private static final Logger logger =
+      new BigQueryJdbcCustomLogger(ClearcutTransport.class.getName());
   private static final String CONTENT_TYPE_PROTOBUF = "application/x-protobuf";
 
   private final HttpTransport httpTransport;
@@ -74,39 +76,65 @@ class ClearcutTransport {
 
     while (attempt < maxAttempts) {
       attempt++;
+      boolean retryable = false;
+
       try {
         HttpRequest request = requestFactory.buildPostRequest(url, content);
-        HttpResponse response = request.execute();
+        request.setThrowExceptionOnExecuteError(false);
 
+        HttpResponse response = null;
         try {
+          response = request.execute();
           int statusCode = response.getStatusCode();
           if (statusCode >= 200 && statusCode < 300) {
             logger.log(Level.FINE, "Successfully uploaded telemetry payload to Clearcut");
             return true;
+          } else if (isRetryableStatusCode(statusCode)) {
+            logger.log(
+                Level.WARNING,
+                "Clearcut upload returned retryable status code: "
+                    + statusCode
+                    + " on attempt "
+                    + attempt);
+            retryable = true;
           } else {
-            logger.log(Level.WARNING, "Clearcut upload returned status code: " + statusCode);
+            logger.log(
+                Level.WARNING,
+                "Clearcut upload failed with non-retryable status code: " + statusCode);
+            return false;
           }
         } finally {
-          response.disconnect();
+          if (response != null) {
+            response.disconnect();
+          }
         }
       } catch (IOException e) {
-        logger.log(Level.WARNING, "Error sending telemetry payload on attempt " + attempt, e);
-        if (attempt >= maxAttempts) {
-          break;
-        }
+        logger.log(
+            Level.WARNING,
+            "IOException sending telemetry payload to Clearcut on attempt " + attempt,
+            e);
+        retryable = true;
+      }
+
+      if (retryable && attempt < maxAttempts) {
         try {
           Thread.sleep(backoffMs);
           backoffMs *= 2;
         } catch (InterruptedException ie) {
           Thread.currentThread().interrupt();
           logger.log(Level.WARNING, "Backoff thread interrupted", ie);
-          break;
+          return false;
         }
       }
     }
+
     logger.log(
         Level.SEVERE,
         "Failed to upload telemetry payload to Clearcut after " + maxAttempts + " attempts");
     return false;
+  }
+
+  private static boolean isRetryableStatusCode(int statusCode) {
+    return statusCode == 429 || (statusCode >= 500 && statusCode < 600);
   }
 }
