@@ -21,21 +21,31 @@ import java.time.Duration;
 
 /** Settings for configuring publish hedging. */
 public final class HedgeSettings {
+  /** Default hedging delay. */
   private static final Duration DEFAULT_DELAY = Duration.ofMillis(100);
+  /** Default maximum number of tokens in the bucket. */
   private static final int DEFAULT_MAX_TOKENS = 100;
+  /** Default refill rate (tokens per successful request). */
   private static final float DEFAULT_REFILL = 0.1f;
 
+  /** Hedging delay. */
   private final Duration hedgeDelay;
+  /** Maximum tokens. */
   private final int maxTokens;
+  /** Refill rate. */
   private final float refill;
 
-  private HedgeSettings(Builder builder) {
+  private HedgeSettings(final Builder builder) {
     this.hedgeDelay = builder.hedgeDelay;
     this.maxTokens = builder.maxTokens;
     this.refill = builder.refill;
   }
 
-  /** Returns the configured hedging delay. */
+  /**
+   * Returns the configured hedging delay.
+   *
+   * @return the hedging delay.
+   */
   public Duration getHedgeDelay() {
     return hedgeDelay;
   }
@@ -48,28 +58,46 @@ public final class HedgeSettings {
     return refill;
   }
 
-  /** Returns a new builder for {@code HedgeSettings}. */
+  /**
+   * Returns a new builder for {@code HedgeSettings}.
+   *
+   * @return a new builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /** Builder for {@code HedgeSettings}. */
   public static final class Builder {
+    /** Hedging delay. */
     private Duration hedgeDelay = DEFAULT_DELAY;
+    /** Maximum tokens. */
     private int maxTokens = DEFAULT_MAX_TOKENS;
+    /** Refill rate. */
     private float refill = DEFAULT_REFILL;
 
-    private Builder() {}
+    private Builder() { }
 
-    /** Allows hedging delay to be configurable. */
-    public Builder setHedgeDelay(Duration hedgeDelay) {
-      Preconditions.checkNotNull(hedgeDelay);
-      Preconditions.checkArgument(!hedgeDelay.isNegative() && !hedgeDelay.isZero(), "hedgeDelay must be positive");
-      this.hedgeDelay = hedgeDelay;
+    /**
+     * Allows hedging delay to be configurable.
+     *
+     * @param delay the hedging delay, must be positive.
+     * @return this builder.
+     */
+    public Builder setHedgeDelay(final Duration delay) {
+      Preconditions.checkNotNull(delay);
+      Preconditions.checkArgument(
+          !delay.isNegative() && !delay.isZero(),
+          "hedgeDelay must be positive");
+      this.hedgeDelay = delay;
       return this;
     }
 
-    /** Builds an instance of {@code HedgeSettings}. */
+    /**
+     * Builds an instance of {@code HedgeSettings}.
+     *
+     * @return the built {@code HedgeSettings} instance.
+     */
     public HedgeSettings build() {
       return new HedgeSettings(this);
     }
