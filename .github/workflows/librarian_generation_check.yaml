@@ -29,6 +29,7 @@ on:
     branches:
     - main
   workflow_dispatch:
+  pull_requests:
 
 jobs:
   library_generation:
