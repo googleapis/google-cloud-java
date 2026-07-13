@@ -1750,6 +1750,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null));
+    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
   }
 }

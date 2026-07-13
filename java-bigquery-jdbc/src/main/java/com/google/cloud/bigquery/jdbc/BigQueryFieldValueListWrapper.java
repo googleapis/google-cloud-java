@@ -50,15 +50,12 @@ class BigQueryFieldValueListWrapper {
   private boolean isLast = false;
   private final Exception exception;
 
-  static BigQueryFieldValueListWrapper of(FieldList fieldList, FieldValueList fieldValueList) {
-    return of(fieldList, fieldValueList, (boolean[]) null);
+  static BigQueryFieldValueListWrapper ofEndOfStream(FieldList fieldList) {
+    return new BigQueryFieldValueListWrapper(fieldList, null, null, null, true, null);
   }
 
   static BigQueryFieldValueListWrapper of(
       FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
-    if (fieldValueList == null) {
-      return new BigQueryFieldValueListWrapper(fieldList, null, null, null, true, null);
-    }
     boolean[] flags =
         isComplexColumn != null ? isComplexColumn : createComplexColumnFlags(fieldList);
     Object[] rowValues = unpackRow(fieldValueList, flags);

@@ -169,7 +169,7 @@ public class BigQueryJsonResultSetTest {
     buffer = new LinkedBlockingDeque<>(2);
     statement = mock(BigQueryStatement.class);
     buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
-    buffer.add(BigQueryFieldValueListWrapper.of(null, null)); // last marker
+    buffer.add(BigQueryFieldValueListWrapper.ofEndOfStream(null)); // last marker
     Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
         BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
@@ -181,7 +181,7 @@ public class BigQueryJsonResultSetTest {
         BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
     bufferWithTwoRows.add(
         BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(null, null)); // last marker
+    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.ofEndOfStream(null)); // last marker
 
     // values for nested types
     Field fieldEight = fieldList.get("eight");

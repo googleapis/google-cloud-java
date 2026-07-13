@@ -4817,7 +4817,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       LOG.info("Adding end signal to queue.");
       BigQueryFieldValueListWrapper element =
-          BigQueryFieldValueListWrapper.of(resultSchemaFields, null);
+          BigQueryFieldValueListWrapper.ofEndOfStream(resultSchemaFields);
       if (!queue.offer(element)) {
         boolean wasInterrupted = Thread.interrupted();
         try {
