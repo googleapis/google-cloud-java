@@ -126,6 +126,8 @@ In [AnalyzeSentiment.java](https://github.com/googleapis/google-cloud-java/blob/
 
 
 
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -179,8 +181,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
