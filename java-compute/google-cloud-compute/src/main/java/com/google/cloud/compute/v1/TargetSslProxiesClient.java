@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -300,7 +301,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TargetSslProxiesClient implements BackgroundResource {
-  private final TargetSslProxiesSettings settings;
+  private final @Nullable TargetSslProxiesSettings settings;
   private final TargetSslProxiesStub stub;
 
   /** Constructs an instance of TargetSslProxiesClient with default settings. */
@@ -340,7 +341,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TargetSslProxiesSettings getSettings() {
+  public final @Nullable TargetSslProxiesSettings getSettings() {
     return settings;
   }
 
@@ -1706,8 +1707,9 @@ public class TargetSslProxiesClient implements BackgroundResource {
           ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy, ListPage> {
 
     private ListPage(
-        PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy> context,
-        TargetSslProxyList response) {
+        @Nullable PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy>
+            context,
+        @Nullable TargetSslProxyList response) {
       super(context, response);
     }
 
@@ -1717,14 +1719,16 @@ public class TargetSslProxiesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy> context,
-        TargetSslProxyList response) {
+        @Nullable PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy>
+            context,
+        @Nullable TargetSslProxyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy> context,
+        @Nullable PageContext<ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy>
+            context,
         ApiFuture<TargetSslProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1738,7 +1742,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1747,7 +1751,8 @@ public class TargetSslProxiesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

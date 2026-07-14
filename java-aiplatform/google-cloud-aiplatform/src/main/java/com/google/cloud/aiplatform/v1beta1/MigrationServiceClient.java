@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -238,7 +239,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MigrationServiceClient implements BackgroundResource {
-  private final MigrationServiceSettings settings;
+  private final @Nullable MigrationServiceSettings settings;
   private final MigrationServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -281,7 +282,7 @@ public class MigrationServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final MigrationServiceSettings getSettings() {
+  public final @Nullable MigrationServiceSettings getSettings() {
     return settings;
   }
 
@@ -325,7 +326,7 @@ public class MigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchMigratableResourcesPagedResponse searchMigratableResources(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     SearchMigratableResourcesRequest request =
         SearchMigratableResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -511,7 +512,7 @@ public class MigrationServiceClient implements BackgroundResource {
   public final OperationFuture<
           BatchMigrateResourcesResponse, BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesAsync(
-          LocationName parent, List<MigrateResourceRequest> migrateResourceRequests) {
+          @Nullable LocationName parent, List<MigrateResourceRequest> migrateResourceRequests) {
     BatchMigrateResourcesRequest request =
         BatchMigrateResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1090,12 +1091,13 @@ public class MigrationServiceClient implements BackgroundResource {
           SearchMigratableResourcesPage> {
 
     private SearchMigratableResourcesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchMigratableResourcesRequest,
                 SearchMigratableResourcesResponse,
                 MigratableResource>
             context,
-        SearchMigratableResourcesResponse response) {
+        @Nullable SearchMigratableResourcesResponse response) {
       super(context, response);
     }
 
@@ -1105,18 +1107,20 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchMigratableResourcesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchMigratableResourcesRequest,
                 SearchMigratableResourcesResponse,
                 MigratableResource>
             context,
-        SearchMigratableResourcesResponse response) {
+        @Nullable SearchMigratableResourcesResponse response) {
       return new SearchMigratableResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchMigratableResourcesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchMigratableResourcesRequest,
                 SearchMigratableResourcesResponse,
                 MigratableResource>
@@ -1135,7 +1139,7 @@ public class MigrationServiceClient implements BackgroundResource {
           SearchMigratableResourcesFixedSizeCollection> {
 
     private SearchMigratableResourcesFixedSizeCollection(
-        List<SearchMigratableResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchMigratableResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1145,7 +1149,7 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchMigratableResourcesFixedSizeCollection createCollection(
-        List<SearchMigratableResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchMigratableResourcesPage> pages, int collectionSize) {
       return new SearchMigratableResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1179,8 +1183,8 @@ public class MigrationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1190,14 +1194,14 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1211,7 +1215,8 @@ public class MigrationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1221,7 +1226,7 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

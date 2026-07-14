@@ -21,8 +21,8 @@
 package com.google.backstory;
 
 @com.google.protobuf.Generated
-public final class Udm extends com.google.protobuf.GeneratedFile {
-  private Udm() {}
+public final class UdmProto extends com.google.protobuf.GeneratedFile {
+  private UdmProto() {}
 
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -31,7 +31,7 @@ public final class Udm extends com.google.protobuf.GeneratedFile {
         /* minor= */ 33,
         /* patch= */ 2,
         /* suffix= */ "",
-        "Udm");
+        "UdmProto");
   }
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}

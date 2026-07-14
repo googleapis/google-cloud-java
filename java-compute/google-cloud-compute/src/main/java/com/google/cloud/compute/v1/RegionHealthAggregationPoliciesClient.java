@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -248,7 +249,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionHealthAggregationPoliciesClient implements BackgroundResource {
-  private final RegionHealthAggregationPoliciesSettings settings;
+  private final @Nullable RegionHealthAggregationPoliciesSettings settings;
   private final RegionHealthAggregationPoliciesStub stub;
 
   /** Constructs an instance of RegionHealthAggregationPoliciesClient with default settings. */
@@ -293,7 +294,7 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
     this.stub = stub;
   }
 
-  public final RegionHealthAggregationPoliciesSettings getSettings() {
+  public final @Nullable RegionHealthAggregationPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -1359,12 +1360,13 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyAggregatedList,
                 Map.Entry<String, HealthAggregationPoliciesScopedList>>
             context,
-        HealthAggregationPolicyAggregatedList response) {
+        @Nullable HealthAggregationPolicyAggregatedList response) {
       super(context, response);
     }
 
@@ -1374,18 +1376,20 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyAggregatedList,
                 Map.Entry<String, HealthAggregationPoliciesScopedList>>
             context,
-        HealthAggregationPolicyAggregatedList response) {
+        @Nullable HealthAggregationPolicyAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyAggregatedList,
                 Map.Entry<String, HealthAggregationPoliciesScopedList>>
@@ -1403,7 +1407,8 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1413,7 +1418,7 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1452,12 +1457,13 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyList,
                 HealthAggregationPolicy>
             context,
-        HealthAggregationPolicyList response) {
+        @Nullable HealthAggregationPolicyList response) {
       super(context, response);
     }
 
@@ -1467,18 +1473,20 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyList,
                 HealthAggregationPolicy>
             context,
-        HealthAggregationPolicyList response) {
+        @Nullable HealthAggregationPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionHealthAggregationPoliciesRequest,
                 HealthAggregationPolicyList,
                 HealthAggregationPolicy>
@@ -1496,7 +1504,7 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1505,7 +1513,8 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -391,7 +392,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConversationalSearchServiceClient implements BackgroundResource {
-  private final ConversationalSearchServiceSettings settings;
+  private final @Nullable ConversationalSearchServiceSettings settings;
   private final ConversationalSearchServiceStub stub;
 
   /** Constructs an instance of ConversationalSearchServiceClient with default settings. */
@@ -434,7 +435,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConversationalSearchServiceSettings getSettings() {
+  public final @Nullable ConversationalSearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -475,7 +476,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConverseConversationResponse converseConversation(
-      ConversationName name, TextInput query) {
+      @Nullable ConversationName name, TextInput query) {
     ConverseConversationRequest request =
         ConverseConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -642,7 +643,8 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * @param conversation Required. The conversation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation createConversation(DataStoreName parent, Conversation conversation) {
+  public final Conversation createConversation(
+      @Nullable DataStoreName parent, Conversation conversation) {
     CreateConversationRequest request =
         CreateConversationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -791,7 +793,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversation(ConversationName name) {
+  public final void deleteConversation(@Nullable ConversationName name) {
     DeleteConversationRequest request =
         DeleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1041,7 +1043,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -1169,7 +1171,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(DataStoreName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable DataStoreName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1510,7 +1512,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Answer getAnswer(AnswerName name) {
+  public final Answer getAnswer(@Nullable AnswerName name) {
     GetAnswerRequest request =
         GetAnswerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnswer(request);
@@ -1640,7 +1642,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session createSession(DataStoreName parent, Session session) {
+  public final Session createSession(@Nullable DataStoreName parent, Session session) {
     CreateSessionRequest request =
         CreateSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1785,7 +1787,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSession(SessionName name) {
+  public final void deleteSession(@Nullable SessionName name) {
     DeleteSessionRequest request =
         DeleteSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSession(request);
@@ -2028,7 +2030,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session getSession(SessionName name) {
+  public final Session getSession(@Nullable SessionName name) {
     GetSessionRequest request =
         GetSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSession(request);
@@ -2157,7 +2159,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSessionsPagedResponse listSessions(DataStoreName parent) {
+  public final ListSessionsPagedResponse listSessions(@Nullable DataStoreName parent) {
     ListSessionsRequest request =
         ListSessionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2381,8 +2383,9 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -2392,14 +2395,16 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2414,7 +2419,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2424,7 +2429,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2457,8 +2462,8 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
       extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
 
     private ListSessionsPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       super(context, response);
     }
 
@@ -2468,14 +2473,14 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListSessionsPage createPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       return new ListSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionsPage> createPageAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
         ApiFuture<ListSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2489,7 +2494,8 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
           ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
-    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
+    private ListSessionsFixedSizeCollection(
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2499,7 +2505,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListSessionsFixedSizeCollection createCollection(
-        List<ListSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -61,13 +61,13 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Attribute_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Attribute_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Attribute_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Attribute_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Attribute.class, com.google.backstory.Attribute.Builder.class);
   }
@@ -718,13 +718,13 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Attribute)
       com.google.backstory.AttributeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Attribute_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Attribute_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Attribute_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Attribute_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Attribute.class, com.google.backstory.Attribute.Builder.class);
     }
@@ -795,7 +795,7 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Attribute_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Attribute_descriptor;
     }
 
     @java.lang.Override

@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -203,7 +204,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UserEventServiceClient implements BackgroundResource {
-  private final UserEventServiceSettings settings;
+  private final @Nullable UserEventServiceSettings settings;
   private final UserEventServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -251,7 +252,7 @@ public class UserEventServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final UserEventServiceSettings getSettings() {
+  public final @Nullable UserEventServiceSettings getSettings() {
     return settings;
   }
 

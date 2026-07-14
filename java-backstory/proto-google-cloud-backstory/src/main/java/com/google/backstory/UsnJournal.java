@@ -60,13 +60,13 @@ public final class UsnJournal extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_UsnJournal_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_UsnJournal_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_UsnJournal_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_UsnJournal_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.UsnJournal.class, com.google.backstory.UsnJournal.Builder.class);
   }
@@ -2012,13 +2012,13 @@ public final class UsnJournal extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.UsnJournal)
       com.google.backstory.UsnJournalOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_UsnJournal_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_UsnJournal_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_UsnJournal_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_UsnJournal_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.UsnJournal.class, com.google.backstory.UsnJournal.Builder.class);
     }
@@ -2045,7 +2045,7 @@ public final class UsnJournal extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_UsnJournal_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_UsnJournal_descriptor;
     }
 
     @java.lang.Override

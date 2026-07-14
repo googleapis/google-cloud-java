@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -225,7 +226,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionSslPoliciesClient implements BackgroundResource {
-  private final RegionSslPoliciesSettings settings;
+  private final @Nullable RegionSslPoliciesSettings settings;
   private final RegionSslPoliciesStub stub;
 
   /** Constructs an instance of RegionSslPoliciesClient with default settings. */
@@ -265,7 +266,7 @@ public class RegionSslPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionSslPoliciesSettings getSettings() {
+  public final @Nullable RegionSslPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -1082,8 +1083,8 @@ public class RegionSslPoliciesClient implements BackgroundResource {
       extends AbstractPage<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
-        SslPoliciesList response) {
+        @Nullable PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable SslPoliciesList response) {
       super(context, response);
     }
 
@@ -1093,14 +1094,14 @@ public class RegionSslPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
-        SslPoliciesList response) {
+        @Nullable PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable SslPoliciesList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable PageContext<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
         ApiFuture<SslPoliciesList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1114,7 +1115,7 @@ public class RegionSslPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1123,7 +1124,8 @@ public class RegionSslPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

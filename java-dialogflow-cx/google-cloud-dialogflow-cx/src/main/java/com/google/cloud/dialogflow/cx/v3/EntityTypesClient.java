@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -291,7 +292,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EntityTypesClient implements BackgroundResource {
-  private final EntityTypesSettings settings;
+  private final @Nullable EntityTypesSettings settings;
   private final EntityTypesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -338,7 +339,7 @@ public class EntityTypesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EntityTypesSettings getSettings() {
+  public final @Nullable EntityTypesSettings getSettings() {
     return settings;
   }
 
@@ -386,7 +387,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType getEntityType(EntityTypeName name) {
+  public final EntityType getEntityType(@Nullable EntityTypeName name) {
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
@@ -508,7 +509,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType createEntityType(AgentName parent, EntityType entityType) {
+  public final EntityType createEntityType(@Nullable AgentName parent, EntityType entityType) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -743,7 +744,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEntityType(EntityTypeName name) {
+  public final void deleteEntityType(@Nullable EntityTypeName name) {
     DeleteEntityTypeRequest request =
         DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntityType(request);
@@ -871,7 +872,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
+  public final ListEntityTypesPagedResponse listEntityTypes(@Nullable AgentName parent) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1455,8 +1456,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage> {
 
     private ListEntityTypesPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       super(context, response);
     }
 
@@ -1466,14 +1467,14 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesPage createPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       return new ListEntityTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntityTypesPage> createPageAsync(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
         ApiFuture<ListEntityTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1488,7 +1489,7 @@ public class EntityTypesClient implements BackgroundResource {
           ListEntityTypesFixedSizeCollection> {
 
     private ListEntityTypesFixedSizeCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1498,7 +1499,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesFixedSizeCollection createCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       return new ListEntityTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1532,8 +1533,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1543,14 +1544,14 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1564,7 +1565,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1574,7 +1576,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

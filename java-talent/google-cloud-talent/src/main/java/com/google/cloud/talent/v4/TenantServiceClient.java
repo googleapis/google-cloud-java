@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,7 +219,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TenantServiceClient implements BackgroundResource {
-  private final TenantServiceSettings settings;
+  private final @Nullable TenantServiceSettings settings;
   private final TenantServiceStub stub;
 
   /** Constructs an instance of TenantServiceClient with default settings. */
@@ -258,7 +259,7 @@ public class TenantServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TenantServiceSettings getSettings() {
+  public final @Nullable TenantServiceSettings getSettings() {
     return settings;
   }
 
@@ -290,7 +291,7 @@ public class TenantServiceClient implements BackgroundResource {
    * @param tenant Required. The tenant to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tenant createTenant(ProjectName parent, Tenant tenant) {
+  public final Tenant createTenant(@Nullable ProjectName parent, Tenant tenant) {
     CreateTenantRequest request =
         CreateTenantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -409,7 +410,7 @@ public class TenantServiceClient implements BackgroundResource {
    *     "projects/foo/tenants/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tenant getTenant(TenantName name) {
+  public final Tenant getTenant(@Nullable TenantName name) {
     GetTenantRequest request =
         GetTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTenant(request);
@@ -612,7 +613,7 @@ public class TenantServiceClient implements BackgroundResource {
    *     "projects/foo/tenants/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTenant(TenantName name) {
+  public final void deleteTenant(@Nullable TenantName name) {
     DeleteTenantRequest request =
         DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTenant(request);
@@ -725,7 +726,7 @@ public class TenantServiceClient implements BackgroundResource {
    *     <p>The format is "projects/{project_id}", for example, "projects/foo".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTenantsPagedResponse listTenants(ProjectName parent) {
+  public final ListTenantsPagedResponse listTenants(@Nullable ProjectName parent) {
     ListTenantsRequest request =
         ListTenantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -920,8 +921,8 @@ public class TenantServiceClient implements BackgroundResource {
       extends AbstractPage<ListTenantsRequest, ListTenantsResponse, Tenant, ListTenantsPage> {
 
     private ListTenantsPage(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
-        ListTenantsResponse response) {
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable ListTenantsResponse response) {
       super(context, response);
     }
 
@@ -931,14 +932,14 @@ public class TenantServiceClient implements BackgroundResource {
 
     @Override
     protected ListTenantsPage createPage(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
-        ListTenantsResponse response) {
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable ListTenantsResponse response) {
       return new ListTenantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTenantsPage> createPageAsync(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
         ApiFuture<ListTenantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -952,7 +953,8 @@ public class TenantServiceClient implements BackgroundResource {
           ListTenantsPage,
           ListTenantsFixedSizeCollection> {
 
-    private ListTenantsFixedSizeCollection(List<ListTenantsPage> pages, int collectionSize) {
+    private ListTenantsFixedSizeCollection(
+        @Nullable List<ListTenantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -962,7 +964,7 @@ public class TenantServiceClient implements BackgroundResource {
 
     @Override
     protected ListTenantsFixedSizeCollection createCollection(
-        List<ListTenantsPage> pages, int collectionSize) {
+        @Nullable List<ListTenantsPage> pages, int collectionSize) {
       return new ListTenantsFixedSizeCollection(pages, collectionSize);
     }
   }

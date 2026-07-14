@@ -45,6 +45,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -748,7 +749,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageControlClient implements BackgroundResource {
-  private final StorageControlSettings settings;
+  private final @Nullable StorageControlSettings settings;
   private final StorageControlStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -796,7 +797,7 @@ public class StorageControlClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StorageControlSettings getSettings() {
+  public final @Nullable StorageControlSettings getSettings() {
     return settings;
   }
 
@@ -853,7 +854,7 @@ public class StorageControlClient implements BackgroundResource {
    *     "books/" folder.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder createFolder(BucketName parent, Folder folder, String folderId) {
+  public final Folder createFolder(@Nullable BucketName parent, Folder folder, String folderId) {
     CreateFolderRequest request =
         CreateFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -993,7 +994,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/folders/{folder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFolder(FolderName name) {
+  public final void deleteFolder(@Nullable FolderName name) {
     DeleteFolderRequest request =
         DeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFolder(request);
@@ -1113,7 +1114,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/folders/{folder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder getFolder(FolderName name) {
+  public final Folder getFolder(@Nullable FolderName name) {
     GetFolderRequest request =
         GetFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFolder(request);
@@ -1235,7 +1236,7 @@ public class StorageControlClient implements BackgroundResource {
    *     hierarchical namespace enabled bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFoldersPagedResponse listFolders(BucketName parent) {
+  public final ListFoldersPagedResponse listFolders(@Nullable BucketName parent) {
     ListFoldersRequest request =
         ListFoldersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1421,7 +1422,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, RenameFolderMetadata> renameFolderAsync(
-      FolderName name, String destinationFolderId) {
+      @Nullable FolderName name, String destinationFolderId) {
     RenameFolderRequest request =
         RenameFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1593,7 +1594,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteFolderRecursiveMetadata> deleteFolderRecursiveAsync(
-      FolderName name) {
+      @Nullable FolderName name) {
     DeleteFolderRecursiveRequest request =
         DeleteFolderRecursiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1752,7 +1753,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/storageLayout`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StorageLayout getStorageLayout(StorageLayoutName name) {
+  public final StorageLayout getStorageLayout(@Nullable StorageLayoutName name) {
     GetStorageLayoutRequest request =
         GetStorageLayoutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStorageLayout(request);
@@ -1875,7 +1876,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ManagedFolder createManagedFolder(
-      BucketName parent, ManagedFolder managedFolder, String managedFolderId) {
+      @Nullable BucketName parent, ManagedFolder managedFolder, String managedFolderId) {
     CreateManagedFolderRequest request =
         CreateManagedFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2010,7 +2011,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/managedFolders/{managedFolder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteManagedFolder(ManagedFolderName name) {
+  public final void deleteManagedFolder(@Nullable ManagedFolderName name) {
     DeleteManagedFolderRequest request =
         DeleteManagedFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2132,7 +2133,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/managedFolders/{managedFolder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ManagedFolder getManagedFolder(ManagedFolderName name) {
+  public final ManagedFolder getManagedFolder(@Nullable ManagedFolderName name) {
     GetManagedFolderRequest request =
         GetManagedFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getManagedFolder(request);
@@ -2250,7 +2251,7 @@ public class StorageControlClient implements BackgroundResource {
    * @param parent Required. Name of the bucket this managed folder belongs to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListManagedFoldersPagedResponse listManagedFolders(BucketName parent) {
+  public final ListManagedFoldersPagedResponse listManagedFolders(@Nullable BucketName parent) {
     ListManagedFoldersRequest request =
         ListManagedFoldersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2427,7 +2428,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnywhereCache, CreateAnywhereCacheMetadata> createAnywhereCacheAsync(
-      BucketName parent, AnywhereCache anywhereCache) {
+      @Nullable BucketName parent, AnywhereCache anywhereCache) {
     CreateAnywhereCacheRequest request =
         CreateAnywhereCacheRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2722,7 +2723,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache disableAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache disableAnywhereCache(@Nullable AnywhereCacheName name) {
     DisableAnywhereCacheRequest request =
         DisableAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2845,7 +2846,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache pauseAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache pauseAnywhereCache(@Nullable AnywhereCacheName name) {
     PauseAnywhereCacheRequest request =
         PauseAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2962,7 +2963,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache resumeAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache resumeAnywhereCache(@Nullable AnywhereCacheName name) {
     ResumeAnywhereCacheRequest request =
         ResumeAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3079,7 +3080,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache getAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache getAnywhereCache(@Nullable AnywhereCacheName name) {
     GetAnywhereCacheRequest request =
         GetAnywhereCacheRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnywhereCache(request);
@@ -3193,7 +3194,7 @@ public class StorageControlClient implements BackgroundResource {
    * @param parent Required. The bucket to which this cache belongs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnywhereCachesPagedResponse listAnywhereCaches(BucketName parent) {
+  public final ListAnywhereCachesPagedResponse listAnywhereCaches(@Nullable BucketName parent) {
     ListAnywhereCachesRequest request =
         ListAnywhereCachesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3363,7 +3364,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `projects/{id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getProjectIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getProjectIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetProjectIntelligenceConfigRequest request =
         GetProjectIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3585,7 +3587,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `folders/{id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getFolderIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getFolderIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetFolderIntelligenceConfigRequest request =
         GetFolderIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3804,7 +3807,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `organizations/{org_id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getOrganizationIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getOrganizationIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetOrganizationIntelligenceConfigRequest request =
         GetOrganizationIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4023,7 +4027,7 @@ public class StorageControlClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4149,7 +4153,7 @@ public class StorageControlClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4287,7 +4291,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4428,7 +4432,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceFinding getIntelligenceFinding(IntelligenceFindingName name) {
+  public final IntelligenceFinding getIntelligenceFinding(@Nullable IntelligenceFindingName name) {
     GetIntelligenceFindingRequest request =
         GetIntelligenceFindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4553,7 +4557,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(LocationName parent) {
+  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(
+      @Nullable LocationName parent) {
     ListIntelligenceFindingsRequest request =
         ListIntelligenceFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4873,7 +4878,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IntelligenceFindingRevision getIntelligenceFindingRevision(
-      IntelligenceFindingRevisionName name) {
+      @Nullable IntelligenceFindingRevisionName name) {
     GetIntelligenceFindingRevisionRequest request =
         GetIntelligenceFindingRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5005,7 +5010,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntelligenceFindingRevisionsPagedResponse listIntelligenceFindingRevisions(
-      IntelligenceFindingName parent) {
+      @Nullable IntelligenceFindingName parent) {
     ListIntelligenceFindingRevisionsRequest request =
         ListIntelligenceFindingRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5218,8 +5223,8 @@ public class StorageControlClient implements BackgroundResource {
       extends AbstractPage<ListFoldersRequest, ListFoldersResponse, Folder, ListFoldersPage> {
 
     private ListFoldersPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       super(context, response);
     }
 
@@ -5229,14 +5234,14 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListFoldersPage createPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       return new ListFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFoldersPage> createPageAsync(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
         ApiFuture<ListFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5250,7 +5255,8 @@ public class StorageControlClient implements BackgroundResource {
           ListFoldersPage,
           ListFoldersFixedSizeCollection> {
 
-    private ListFoldersFixedSizeCollection(List<ListFoldersPage> pages, int collectionSize) {
+    private ListFoldersFixedSizeCollection(
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5260,7 +5266,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListFoldersFixedSizeCollection createCollection(
-        List<ListFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       return new ListFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5297,8 +5303,9 @@ public class StorageControlClient implements BackgroundResource {
           ListManagedFoldersPage> {
 
     private ListManagedFoldersPage(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
-        ListManagedFoldersResponse response) {
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
+        @Nullable ListManagedFoldersResponse response) {
       super(context, response);
     }
 
@@ -5308,14 +5315,16 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListManagedFoldersPage createPage(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
-        ListManagedFoldersResponse response) {
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
+        @Nullable ListManagedFoldersResponse response) {
       return new ListManagedFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagedFoldersPage> createPageAsync(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
         ApiFuture<ListManagedFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5330,7 +5339,7 @@ public class StorageControlClient implements BackgroundResource {
           ListManagedFoldersFixedSizeCollection> {
 
     private ListManagedFoldersFixedSizeCollection(
-        List<ListManagedFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListManagedFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5340,7 +5349,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListManagedFoldersFixedSizeCollection createCollection(
-        List<ListManagedFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListManagedFoldersPage> pages, int collectionSize) {
       return new ListManagedFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5377,8 +5386,9 @@ public class StorageControlClient implements BackgroundResource {
           ListAnywhereCachesPage> {
 
     private ListAnywhereCachesPage(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
-        ListAnywhereCachesResponse response) {
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
+        @Nullable ListAnywhereCachesResponse response) {
       super(context, response);
     }
 
@@ -5388,14 +5398,16 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListAnywhereCachesPage createPage(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
-        ListAnywhereCachesResponse response) {
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
+        @Nullable ListAnywhereCachesResponse response) {
       return new ListAnywhereCachesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnywhereCachesPage> createPageAsync(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
         ApiFuture<ListAnywhereCachesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5410,7 +5422,7 @@ public class StorageControlClient implements BackgroundResource {
           ListAnywhereCachesFixedSizeCollection> {
 
     private ListAnywhereCachesFixedSizeCollection(
-        List<ListAnywhereCachesPage> pages, int collectionSize) {
+        @Nullable List<ListAnywhereCachesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5420,7 +5432,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListAnywhereCachesFixedSizeCollection createCollection(
-        List<ListAnywhereCachesPage> pages, int collectionSize) {
+        @Nullable List<ListAnywhereCachesPage> pages, int collectionSize) {
       return new ListAnywhereCachesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5461,12 +5473,13 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingsPage> {
 
     private ListIntelligenceFindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
             context,
-        ListIntelligenceFindingsResponse response) {
+        @Nullable ListIntelligenceFindingsResponse response) {
       super(context, response);
     }
 
@@ -5476,18 +5489,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
             context,
-        ListIntelligenceFindingsResponse response) {
+        @Nullable ListIntelligenceFindingsResponse response) {
       return new ListIntelligenceFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntelligenceFindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
@@ -5506,7 +5521,7 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingsFixedSizeCollection> {
 
     private ListIntelligenceFindingsFixedSizeCollection(
-        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5516,7 +5531,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingsFixedSizeCollection createCollection(
-        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingsPage> pages, int collectionSize) {
       return new ListIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5558,12 +5573,13 @@ public class StorageControlClient implements BackgroundResource {
           SummarizeIntelligenceFindingsPage> {
 
     private SummarizeIntelligenceFindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
             context,
-        SummarizeIntelligenceFindingsResponse response) {
+        @Nullable SummarizeIntelligenceFindingsResponse response) {
       super(context, response);
     }
 
@@ -5573,18 +5589,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected SummarizeIntelligenceFindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
             context,
-        SummarizeIntelligenceFindingsResponse response) {
+        @Nullable SummarizeIntelligenceFindingsResponse response) {
       return new SummarizeIntelligenceFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SummarizeIntelligenceFindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
@@ -5603,7 +5621,7 @@ public class StorageControlClient implements BackgroundResource {
           SummarizeIntelligenceFindingsFixedSizeCollection> {
 
     private SummarizeIntelligenceFindingsFixedSizeCollection(
-        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5613,7 +5631,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected SummarizeIntelligenceFindingsFixedSizeCollection createCollection(
-        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
       return new SummarizeIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5656,12 +5674,13 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingRevisionsPage> {
 
     private ListIntelligenceFindingRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
             context,
-        ListIntelligenceFindingRevisionsResponse response) {
+        @Nullable ListIntelligenceFindingRevisionsResponse response) {
       super(context, response);
     }
 
@@ -5671,18 +5690,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
             context,
-        ListIntelligenceFindingRevisionsResponse response) {
+        @Nullable ListIntelligenceFindingRevisionsResponse response) {
       return new ListIntelligenceFindingRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntelligenceFindingRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
@@ -5701,7 +5722,7 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingRevisionsFixedSizeCollection> {
 
     private ListIntelligenceFindingRevisionsFixedSizeCollection(
-        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5711,7 +5732,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingRevisionsFixedSizeCollection createCollection(
-        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
       return new ListIntelligenceFindingRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }

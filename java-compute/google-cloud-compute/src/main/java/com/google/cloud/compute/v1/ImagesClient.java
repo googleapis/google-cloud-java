@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -313,7 +314,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ImagesClient implements BackgroundResource {
-  private final ImagesSettings settings;
+  private final @Nullable ImagesSettings settings;
   private final ImagesStub stub;
 
   /** Constructs an instance of ImagesClient with default settings. */
@@ -351,7 +352,7 @@ public class ImagesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ImagesSettings getSettings() {
+  public final @Nullable ImagesSettings getSettings() {
     return settings;
   }
 
@@ -1670,7 +1671,9 @@ public class ImagesClient implements BackgroundResource {
 
   public static class ListPage extends AbstractPage<ListImagesRequest, ImageList, Image, ListPage> {
 
-    private ListPage(PageContext<ListImagesRequest, ImageList, Image> context, ImageList response) {
+    private ListPage(
+        @Nullable PageContext<ListImagesRequest, ImageList, Image> context,
+        @Nullable ImageList response) {
       super(context, response);
     }
 
@@ -1680,13 +1683,14 @@ public class ImagesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListImagesRequest, ImageList, Image> context, ImageList response) {
+        @Nullable PageContext<ListImagesRequest, ImageList, Image> context,
+        @Nullable ImageList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListImagesRequest, ImageList, Image> context,
+        @Nullable PageContext<ListImagesRequest, ImageList, Image> context,
         ApiFuture<ImageList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1696,7 +1700,7 @@ public class ImagesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListImagesRequest, ImageList, Image, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1705,7 +1709,8 @@ public class ImagesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

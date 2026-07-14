@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -143,7 +144,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ExportServiceClient implements BackgroundResource {
-  private final ExportServiceSettings settings;
+  private final @Nullable ExportServiceSettings settings;
   private final ExportServiceStub stub;
 
   /** Constructs an instance of ExportServiceClient with default settings. */
@@ -183,7 +184,7 @@ public class ExportServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ExportServiceSettings getSettings() {
+  public final @Nullable ExportServiceSettings getSettings() {
     return settings;
   }
 
@@ -216,7 +217,7 @@ public class ExportServiceClient implements BackgroundResource {
    *     projects/{user_project_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProfilesPagedResponse listProfiles(ProjectName parent) {
+  public final ListProfilesPagedResponse listProfiles(@Nullable ProjectName parent) {
     ListProfilesRequest request =
         ListProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -418,8 +419,8 @@ public class ExportServiceClient implements BackgroundResource {
       extends AbstractPage<ListProfilesRequest, ListProfilesResponse, Profile, ListProfilesPage> {
 
     private ListProfilesPage(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ListProfilesResponse response) {
+        @Nullable PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        @Nullable ListProfilesResponse response) {
       super(context, response);
     }
 
@@ -429,14 +430,14 @@ public class ExportServiceClient implements BackgroundResource {
 
     @Override
     protected ListProfilesPage createPage(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
-        ListProfilesResponse response) {
+        @Nullable PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        @Nullable ListProfilesResponse response) {
       return new ListProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProfilesPage> createPageAsync(
-        PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
+        @Nullable PageContext<ListProfilesRequest, ListProfilesResponse, Profile> context,
         ApiFuture<ListProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -450,7 +451,8 @@ public class ExportServiceClient implements BackgroundResource {
           ListProfilesPage,
           ListProfilesFixedSizeCollection> {
 
-    private ListProfilesFixedSizeCollection(List<ListProfilesPage> pages, int collectionSize) {
+    private ListProfilesFixedSizeCollection(
+        @Nullable List<ListProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -460,7 +462,7 @@ public class ExportServiceClient implements BackgroundResource {
 
     @Override
     protected ListProfilesFixedSizeCollection createCollection(
-        List<ListProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListProfilesPage> pages, int collectionSize) {
       return new ListProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
