@@ -181,6 +181,17 @@ public class SecretManagerServiceSettings extends ClientSettings<SecretManagerSe
     return ((SecretManagerServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to enableManagedRotation. */
+  public UnaryCallSettings<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationSettings() {
+    return ((SecretManagerServiceStubSettings) getStubSettings()).enableManagedRotationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rotateSecret. */
+  public UnaryCallSettings<RotateSecretRequest, SecretVersion> rotateSecretSettings() {
+    return ((SecretManagerServiceStubSettings) getStubSettings()).rotateSecretSettings();
+  }
+
   public static final SecretManagerServiceSettings create(SecretManagerServiceStubSettings stub)
       throws IOException {
     return new SecretManagerServiceSettings.Builder(stub.toBuilder()).build();
@@ -378,6 +389,17 @@ public class SecretManagerServiceSettings extends ClientSettings<SecretManagerSe
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableManagedRotation. */
+    public UnaryCallSettings.Builder<EnableManagedRotationRequest, SecretVersion>
+        enableManagedRotationSettings() {
+      return getStubSettingsBuilder().enableManagedRotationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rotateSecret. */
+    public UnaryCallSettings.Builder<RotateSecretRequest, SecretVersion> rotateSecretSettings() {
+      return getStubSettingsBuilder().rotateSecretSettings();
     }
 
     @Override

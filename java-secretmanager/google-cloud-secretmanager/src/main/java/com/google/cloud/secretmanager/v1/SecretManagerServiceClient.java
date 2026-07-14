@@ -361,6 +361,44 @@ import org.jspecify.annotations.NullMarked;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> EnableManagedRotation</td>
+ *      <td><p> Enables the managed rotation feature for a [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be triggered once for a secret. In order to do further rotations, RotateSecret should be used. This method will add a secret version and update the password in Cloud SQL.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableManagedRotation(EnableManagedRotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> enableManagedRotation(SecretName parent, EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials)
+ *           <li><p> enableManagedRotation(String parent, EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableManagedRotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RotateSecret</td>
+ *      <td><p> Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret]. This can only be triggered after Managed rotation has been enabled. This method will add a secret version and update the password in Cloud SQL.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rotateSecret(RotateSecretRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> rotateSecret(SecretName parent)
+ *           <li><p> rotateSecret(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rotateSecretCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -2481,6 +2519,280 @@ public class SecretManagerServiceClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the managed rotation feature for a [Secret][google.cloud.secretmanager.v1.Secret]. This
+   * method can only be triggered once for a secret. In order to do further rotations, RotateSecret
+   * should be used. This method will add a secret version and update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+   *   EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+   *       EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+   *   SecretVersion response =
+   *       secretManagerServiceClient.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
+   *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
+   *     format `projects/&#42;/secrets/&#42;` or `projects/&#42;/locations/&#42;/secrets/&#42;`.
+   * @param cloudSqlSingleUserCredentials Credentials required for Cloud SQL DB for Single user
+   *     Managed Rotation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion enableManagedRotation(
+      SecretName parent,
+      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials) {
+    EnableManagedRotationRequest request =
+        EnableManagedRotationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCloudSqlSingleUserCredentials(cloudSqlSingleUserCredentials)
+            .build();
+    return enableManagedRotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the managed rotation feature for a [Secret][google.cloud.secretmanager.v1.Secret]. This
+   * method can only be triggered once for a secret. In order to do further rotations, RotateSecret
+   * should be used. This method will add a secret version and update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString();
+   *   EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+   *       EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+   *   SecretVersion response =
+   *       secretManagerServiceClient.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
+   *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
+   *     format `projects/&#42;/secrets/&#42;` or `projects/&#42;/locations/&#42;/secrets/&#42;`.
+   * @param cloudSqlSingleUserCredentials Credentials required for Cloud SQL DB for Single user
+   *     Managed Rotation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion enableManagedRotation(
+      String parent,
+      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials) {
+    EnableManagedRotationRequest request =
+        EnableManagedRotationRequest.newBuilder()
+            .setParent(parent)
+            .setCloudSqlSingleUserCredentials(cloudSqlSingleUserCredentials)
+            .build();
+    return enableManagedRotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the managed rotation feature for a [Secret][google.cloud.secretmanager.v1.Secret]. This
+   * method can only be triggered once for a secret. In order to do further rotations, RotateSecret
+   * should be used. This method will add a secret version and update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   EnableManagedRotationRequest request =
+   *       EnableManagedRotationRequest.newBuilder()
+   *           .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.enableManagedRotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion enableManagedRotation(EnableManagedRotationRequest request) {
+    return enableManagedRotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the managed rotation feature for a [Secret][google.cloud.secretmanager.v1.Secret]. This
+   * method can only be triggered once for a secret. In order to do further rotations, RotateSecret
+   * should be used. This method will add a secret version and update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   EnableManagedRotationRequest request =
+   *       EnableManagedRotationRequest.newBuilder()
+   *           .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.enableManagedRotationCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable() {
+    return stub.enableManagedRotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret]. This can only be
+   * triggered after Managed rotation has been enabled. This method will add a secret version and
+   * update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+   *   SecretVersion response = secretManagerServiceClient.rotateSecret(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
+   *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
+   *     format `projects/&#42;/secrets/&#42;` or `projects/&#42;/locations/&#42;/secrets/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion rotateSecret(SecretName parent) {
+    RotateSecretRequest request =
+        RotateSecretRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return rotateSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret]. This can only be
+   * triggered after Managed rotation has been enabled. This method will add a secret version and
+   * update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString();
+   *   SecretVersion response = secretManagerServiceClient.rotateSecret(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
+   *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
+   *     format `projects/&#42;/secrets/&#42;` or `projects/&#42;/locations/&#42;/secrets/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion rotateSecret(String parent) {
+    RotateSecretRequest request = RotateSecretRequest.newBuilder().setParent(parent).build();
+    return rotateSecret(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret]. This can only be
+   * triggered after Managed rotation has been enabled. This method will add a secret version and
+   * update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   RotateSecretRequest request =
+   *       RotateSecretRequest.newBuilder()
+   *           .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.rotateSecret(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecretVersion rotateSecret(RotateSecretRequest request) {
+    return rotateSecretCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret]. This can only be
+   * triggered after Managed rotation has been enabled. This method will add a secret version and
+   * update the password in Cloud SQL.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   RotateSecretRequest request =
+   *       RotateSecretRequest.newBuilder()
+   *           .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.rotateSecretCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable() {
+    return stub.rotateSecretCallable();
   }
 
   @Override

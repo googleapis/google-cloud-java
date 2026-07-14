@@ -53,6 +53,7 @@ import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
 import com.google.cloud.secretmanager.v1.DestroySecretVersionRequest;
 import com.google.cloud.secretmanager.v1.DisableSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.EnableManagedRotationRequest;
 import com.google.cloud.secretmanager.v1.EnableSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.GetSecretRequest;
 import com.google.cloud.secretmanager.v1.GetSecretVersionRequest;
@@ -60,6 +61,7 @@ import com.google.cloud.secretmanager.v1.ListSecretVersionsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretVersionsResponse;
 import com.google.cloud.secretmanager.v1.ListSecretsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretsResponse;
+import com.google.cloud.secretmanager.v1.RotateSecretRequest;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
@@ -162,6 +164,9 @@ public class SecretManagerServiceStubSettings
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationSettings;
+  private final UnaryCallSettings<RotateSecretRequest, SecretVersion> rotateSecretSettings;
 
   private static final PagedListDescriptor<ListSecretsRequest, ListSecretsResponse, Secret>
       LIST_SECRETS_PAGE_STR_DESC =
@@ -356,6 +361,17 @@ public class SecretManagerServiceStubSettings
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to enableManagedRotation. */
+  public UnaryCallSettings<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationSettings() {
+    return enableManagedRotationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rotateSecret. */
+  public UnaryCallSettings<RotateSecretRequest, SecretVersion> rotateSecretSettings() {
+    return rotateSecretSettings;
+  }
+
   public SecretManagerServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -482,6 +498,8 @@ public class SecretManagerServiceStubSettings
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    enableManagedRotationSettings = settingsBuilder.enableManagedRotationSettings().build();
+    rotateSecretSettings = settingsBuilder.rotateSecretSettings().build();
   }
 
   @Override
@@ -523,6 +541,10 @@ public class SecretManagerServiceStubSettings
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<EnableManagedRotationRequest, SecretVersion>
+        enableManagedRotationSettings;
+    private final UnaryCallSettings.Builder<RotateSecretRequest, SecretVersion>
+        rotateSecretSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -536,6 +558,7 @@ public class SecretManagerServiceStubSettings
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.RESOURCE_EXHAUSTED)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -563,6 +586,8 @@ public class SecretManagerServiceStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -588,6 +613,8 @@ public class SecretManagerServiceStubSettings
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableManagedRotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rotateSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -605,7 +632,9 @@ public class SecretManagerServiceStubSettings
               destroySecretVersionSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              enableManagedRotationSettings,
+              rotateSecretSettings);
       initDefaults(this);
     }
 
@@ -627,6 +656,8 @@ public class SecretManagerServiceStubSettings
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      enableManagedRotationSettings = settings.enableManagedRotationSettings.toBuilder();
+      rotateSecretSettings = settings.rotateSecretSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -644,7 +675,9 @@ public class SecretManagerServiceStubSettings
               destroySecretVersionSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              enableManagedRotationSettings,
+              rotateSecretSettings);
     }
 
     private static Builder createDefault() {
@@ -746,6 +779,16 @@ public class SecretManagerServiceStubSettings
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .enableManagedRotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rotateSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -849,6 +892,17 @@ public class SecretManagerServiceStubSettings
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to enableManagedRotation. */
+    public UnaryCallSettings.Builder<EnableManagedRotationRequest, SecretVersion>
+        enableManagedRotationSettings() {
+      return enableManagedRotationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rotateSecret. */
+    public UnaryCallSettings.Builder<RotateSecretRequest, SecretVersion> rotateSecretSettings() {
+      return rotateSecretSettings;
     }
 
     @Override

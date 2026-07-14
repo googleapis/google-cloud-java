@@ -60,6 +60,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     name_ = "";
     topics_ = java.util.Collections.emptyList();
     etag_ = "";
+    secretType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -93,6 +94,250 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.secretmanager.v1.Secret.class,
             com.google.cloud.secretmanager.v1.Secret.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This defines the various values of the type of secret can be.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.secretmanager.v1.Secret.SecretType}
+   */
+  public enum SecretType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to all secrets which do not have any restriction on the
+     * SecretVersions.
+     * </pre>
+     *
+     * <code>SECRET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SECRET_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets which are used for the managed rotation feature
+     * for Cloud SQL Single User.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_DB_CREDENTIALS = 1;</code>
+     */
+    CLOUD_SQL_DB_CREDENTIALS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains an access key.
+     * </pre>
+     *
+     * <code>ACCESS_KEY = 2;</code>
+     */
+    ACCESS_KEY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains a certificate.
+     * </pre>
+     *
+     * <code>CERTIFICATE = 3;</code>
+     */
+    CERTIFICATE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains database credentials.
+     * </pre>
+     *
+     * <code>OTHER_DB_CREDENTIALS = 4;</code>
+     */
+    OTHER_DB_CREDENTIALS(4),
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets whose type doesn't belong to any of the above
+     * defined types.
+     * </pre>
+     *
+     * <code>OTHER = 50;</code>
+     */
+    OTHER(50),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SecretType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to all secrets which do not have any restriction on the
+     * SecretVersions.
+     * </pre>
+     *
+     * <code>SECRET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SECRET_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets which are used for the managed rotation feature
+     * for Cloud SQL Single User.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_DB_CREDENTIALS = 1;</code>
+     */
+    public static final int CLOUD_SQL_DB_CREDENTIALS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains an access key.
+     * </pre>
+     *
+     * <code>ACCESS_KEY = 2;</code>
+     */
+    public static final int ACCESS_KEY_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains a certificate.
+     * </pre>
+     *
+     * <code>CERTIFICATE = 3;</code>
+     */
+    public static final int CERTIFICATE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets where the payload contains database credentials.
+     * </pre>
+     *
+     * <code>OTHER_DB_CREDENTIALS = 4;</code>
+     */
+    public static final int OTHER_DB_CREDENTIALS_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Applicable to secrets whose type doesn't belong to any of the above
+     * defined types.
+     * </pre>
+     *
+     * <code>OTHER = 50;</code>
+     */
+    public static final int OTHER_VALUE = 50;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SecretType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SecretType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SECRET_TYPE_UNSPECIFIED;
+        case 1:
+          return CLOUD_SQL_DB_CREDENTIALS;
+        case 2:
+          return ACCESS_KEY;
+        case 3:
+          return CERTIFICATE;
+        case 4:
+          return OTHER_DB_CREDENTIALS;
+        case 50:
+          return OTHER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SecretType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SecretType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SecretType>() {
+          public SecretType findValueByNumber(int number) {
+            return SecretType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.secretmanager.v1.Secret.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SecretType[] VALUES = values();
+
+    public static SecretType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SecretType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.secretmanager.v1.Secret.SecretType)
   }
 
   private int bitField0_;
@@ -1412,6 +1657,120 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int SECRET_TYPE_FIELD_NUMBER = 17;
+  private int secretType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This defines the type of the secret.
+   * Enforces certain structural requirements on the
+   * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+   * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for secretType.
+   */
+  @java.lang.Override
+  public int getSecretTypeValue() {
+    return secretType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This defines the type of the secret.
+   * Enforces certain structural requirements on the
+   * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+   * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretType.
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Secret.SecretType getSecretType() {
+    com.google.cloud.secretmanager.v1.Secret.SecretType result =
+        com.google.cloud.secretmanager.v1.Secret.SecretType.forNumber(secretType_);
+    return result == null
+        ? com.google.cloud.secretmanager.v1.Secret.SecretType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int POLICY_MEMBER_FIELD_NUMBER = 18;
+  private com.google.iam.v1.ResourcePolicyMember policyMember_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the policyMember field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolicyMember() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The policyMember.
+   */
+  @java.lang.Override
+  public com.google.iam.v1.ResourcePolicyMember getPolicyMember() {
+    return policyMember_ == null
+        ? com.google.iam.v1.ResourcePolicyMember.getDefaultInstance()
+        : policyMember_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder() {
+    return policyMember_ == null
+        ? com.google.iam.v1.ResourcePolicyMember.getDefaultInstance()
+        : policyMember_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1464,6 +1823,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 16);
+    if (secretType_
+        != com.google.cloud.secretmanager.v1.Secret.SecretType.SECRET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, secretType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(18, getPolicyMember());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1549,6 +1916,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, tags__);
     }
+    if (secretType_
+        != com.google.cloud.secretmanager.v1.Secret.SecretType.SECRET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, secretType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getPolicyMember());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1592,6 +1967,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         return false;
     }
     if (!internalGetTags().equals(other.internalGetTags())) return false;
+    if (secretType_ != other.secretType_) return false;
+    if (hasPolicyMember() != other.hasPolicyMember()) return false;
+    if (hasPolicyMember()) {
+      if (!getPolicyMember().equals(other.getPolicyMember())) return false;
+    }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -1657,6 +2037,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     if (!internalGetTags().getMap().isEmpty()) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTags().hashCode();
+    }
+    hash = (37 * hash) + SECRET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + secretType_;
+    if (hasPolicyMember()) {
+      hash = (37 * hash) + POLICY_MEMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyMember().hashCode();
     }
     switch (expirationCase_) {
       case 6:
@@ -1856,6 +2242,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         internalGetRotationFieldBuilder();
         internalGetVersionDestroyTtlFieldBuilder();
         internalGetCustomerManagedEncryptionFieldBuilder();
+        internalGetPolicyMemberFieldBuilder();
       }
     }
 
@@ -1907,6 +2294,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         customerManagedEncryptionBuilder_ = null;
       }
       internalGetMutableTags().clear();
+      secretType_ = 0;
+      policyMember_ = null;
+      if (policyMemberBuilder_ != null) {
+        policyMemberBuilder_.dispose();
+        policyMemberBuilder_ = null;
+      }
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -2009,6 +2402,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.secretType_ = secretType_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.policyMember_ =
+            policyMemberBuilder_ == null ? policyMember_ : policyMemberBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2095,6 +2496,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
       bitField0_ |= 0x00002000;
+      if (other.secretType_ != 0) {
+        setSecretTypeValue(other.getSecretTypeValue());
+      }
+      if (other.hasPolicyMember()) {
+        mergePolicyMember(other.getPolicyMember());
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -2256,6 +2663,19 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 130
+            case 136:
+              {
+                secretType_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    internalGetPolicyMemberFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5637,6 +6057,358 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
       internalGetMutableTags().getMutableMap().putAll(values);
       bitField0_ |= 0x00002000;
       return this;
+    }
+
+    private int secretType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This defines the type of the secret.
+     * Enforces certain structural requirements on the
+     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for secretType.
+     */
+    @java.lang.Override
+    public int getSecretTypeValue() {
+      return secretType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This defines the type of the secret.
+     * Enforces certain structural requirements on the
+     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for secretType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretTypeValue(int value) {
+      secretType_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This defines the type of the secret.
+     * Enforces certain structural requirements on the
+     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretType.
+     */
+    @java.lang.Override
+    public com.google.cloud.secretmanager.v1.Secret.SecretType getSecretType() {
+      com.google.cloud.secretmanager.v1.Secret.SecretType result =
+          com.google.cloud.secretmanager.v1.Secret.SecretType.forNumber(secretType_);
+      return result == null
+          ? com.google.cloud.secretmanager.v1.Secret.SecretType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This defines the type of the secret.
+     * Enforces certain structural requirements on the
+     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The secretType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretType(com.google.cloud.secretmanager.v1.Secret.SecretType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      secretType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This defines the type of the secret.
+     * Enforces certain structural requirements on the
+     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecretType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      secretType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.iam.v1.ResourcePolicyMember policyMember_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.iam.v1.ResourcePolicyMember,
+            com.google.iam.v1.ResourcePolicyMember.Builder,
+            com.google.iam.v1.ResourcePolicyMemberOrBuilder>
+        policyMemberBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the policyMember field is set.
+     */
+    public boolean hasPolicyMember() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The policyMember.
+     */
+    public com.google.iam.v1.ResourcePolicyMember getPolicyMember() {
+      if (policyMemberBuilder_ == null) {
+        return policyMember_ == null
+            ? com.google.iam.v1.ResourcePolicyMember.getDefaultInstance()
+            : policyMember_;
+      } else {
+        return policyMemberBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPolicyMember(com.google.iam.v1.ResourcePolicyMember value) {
+      if (policyMemberBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyMember_ = value;
+      } else {
+        policyMemberBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPolicyMember(com.google.iam.v1.ResourcePolicyMember.Builder builderForValue) {
+      if (policyMemberBuilder_ == null) {
+        policyMember_ = builderForValue.build();
+      } else {
+        policyMemberBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePolicyMember(com.google.iam.v1.ResourcePolicyMember value) {
+      if (policyMemberBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && policyMember_ != null
+            && policyMember_ != com.google.iam.v1.ResourcePolicyMember.getDefaultInstance()) {
+          getPolicyMemberBuilder().mergeFrom(value);
+        } else {
+          policyMember_ = value;
+        }
+      } else {
+        policyMemberBuilder_.mergeFrom(value);
+      }
+      if (policyMember_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPolicyMember() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      policyMember_ = null;
+      if (policyMemberBuilder_ != null) {
+        policyMemberBuilder_.dispose();
+        policyMemberBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.iam.v1.ResourcePolicyMember.Builder getPolicyMemberBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetPolicyMemberFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder() {
+      if (policyMemberBuilder_ != null) {
+        return policyMemberBuilder_.getMessageOrBuilder();
+      } else {
+        return policyMember_ == null
+            ? com.google.iam.v1.ResourcePolicyMember.getDefaultInstance()
+            : policyMember_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the policy member for the secret.
+     * This will be used to check if the caller has the permission to perform
+     * certain operations on the typed secret.
+     * </pre>
+     *
+     * <code>
+     * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.iam.v1.ResourcePolicyMember,
+            com.google.iam.v1.ResourcePolicyMember.Builder,
+            com.google.iam.v1.ResourcePolicyMemberOrBuilder>
+        internalGetPolicyMemberFieldBuilder() {
+      if (policyMemberBuilder_ == null) {
+        policyMemberBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.iam.v1.ResourcePolicyMember,
+                com.google.iam.v1.ResourcePolicyMember.Builder,
+                com.google.iam.v1.ResourcePolicyMemberOrBuilder>(
+                getPolicyMember(), getParentForChildren(), isClean());
+        policyMember_ = null;
+      }
+      return policyMemberBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Secret)
