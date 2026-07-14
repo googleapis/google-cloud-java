@@ -64,7 +64,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ValidateAttestationOccurrence</td>
- *      <td><p> Returns whether the given Attestation for the given image URI was signed by the given Attestor</td>
+ *      <td><p> Returns whether the given `Attestation` for the given image URI was signed by the given `Attestor`</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,7 +187,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns whether the given Attestation for the given image URI was signed by the given Attestor
+   * Returns whether the given `Attestation` for the given image URI was signed by the given
+   * `Attestor`
    *
    * <p>Sample code:
    *
@@ -220,7 +221,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns whether the given Attestation for the given image URI was signed by the given Attestor
+   * Returns whether the given `Attestation` for the given image URI was signed by the given
+   * `Attestor`
    *
    * <p>Sample code:
    *

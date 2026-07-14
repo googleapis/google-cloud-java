@@ -87,6 +87,7 @@ public class SystemPolicyV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -139,6 +140,7 @@ public class SystemPolicyV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 

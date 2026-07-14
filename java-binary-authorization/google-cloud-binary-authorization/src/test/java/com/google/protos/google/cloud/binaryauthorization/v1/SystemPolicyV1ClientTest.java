@@ -93,6 +93,7 @@ public class SystemPolicyV1ClientTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSystemPolicyV1.addResponse(expectedResponse);
 
@@ -142,6 +143,7 @@ public class SystemPolicyV1ClientTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSystemPolicyV1.addResponse(expectedResponse);
 
