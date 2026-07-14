@@ -22,8 +22,8 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -51,13 +51,12 @@ final class TelemetryBatcher implements AutoCloseable {
   private final boolean ownsExecutor;
   private final ReentrantLock flushLock = new ReentrantLock();
 
-  private final ConcurrentLinkedQueue<ConnectionAttempt> connectionAttemptQueue =
-      new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<StatementExecution> statementExecutionQueue =
-      new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<ErrorMetric> errorMetricQueue = new ConcurrentLinkedQueue<>();
-  private final ConcurrentLinkedQueue<FeatureUsage> featureUsageQueue =
-      new ConcurrentLinkedQueue<>();
+  private final Queue<ConnectionAttempt> connectionAttemptQueue =
+      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final Queue<StatementExecution> statementExecutionQueue =
+      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final Queue<ErrorMetric> errorMetricQueue = new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final Queue<FeatureUsage> featureUsageQueue = new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
 
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
@@ -109,13 +108,11 @@ final class TelemetryBatcher implements AutoCloseable {
     offerMetric(featureUsageQueue, featureUsage, "Feature usage");
   }
 
-  private <T> void offerMetric(ConcurrentLinkedQueue<T> queue, T item, String metricName) {
+  private <T> void offerMetric(Queue<T> queue, T item, String metricName) {
     if (isClosed.get() || !isConfigured() || item == null) {
       return;
     }
-    if (queue.size() < MAX_QUEUE_SIZE) {
-      queue.offer(item);
-    } else {
+    if (!queue.offer(item)) {
       logger.log(Level.WARNING, metricName + " telemetry queue full. Dropping metric.");
     }
   }
