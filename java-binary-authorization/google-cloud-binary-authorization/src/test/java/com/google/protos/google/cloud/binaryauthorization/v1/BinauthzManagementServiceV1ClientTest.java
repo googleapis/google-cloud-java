@@ -98,6 +98,7 @@ public class BinauthzManagementServiceV1ClientTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -146,6 +147,7 @@ public class BinauthzManagementServiceV1ClientTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -194,6 +196,7 @@ public class BinauthzManagementServiceV1ClientTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -235,6 +238,7 @@ public class BinauthzManagementServiceV1ClientTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -282,6 +286,7 @@ public class BinauthzManagementServiceV1ClientTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -329,6 +334,7 @@ public class BinauthzManagementServiceV1ClientTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -369,6 +375,7 @@ public class BinauthzManagementServiceV1ClientTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 
@@ -409,6 +416,7 @@ public class BinauthzManagementServiceV1ClientTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockBinauthzManagementServiceV1.addResponse(expectedResponse);
 

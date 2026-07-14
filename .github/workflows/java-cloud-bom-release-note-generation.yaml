@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
@@ -13,6 +16,7 @@ name: java-cloud-bom release-notes
 env:
   BUILD_SUBDIR: java-cloud-bom
 jobs:
+
   release-note-generation:
     if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/') }}
     runs-on: ubuntu-latest
@@ -20,8 +24,11 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v5
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
+      # zizmor: ignore[cache-poisoning]
       with:
         distribution: temurin
         java-version: 11
