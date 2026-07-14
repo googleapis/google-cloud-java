@@ -25,8 +25,10 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class GapicContext {
   // Keep a non-AutoValue reference to GapicMetadata, since we need to update
@@ -69,8 +71,7 @@ public abstract class GapicContext {
   @Nullable
   public abstract GapicServiceConfig serviceConfig();
 
-  @Nullable
-  public abstract com.google.api.Service serviceYamlProto();
+  public abstract com.google.api.@Nullable Service serviceYamlProto();
 
   @Nullable
   public abstract String repo();

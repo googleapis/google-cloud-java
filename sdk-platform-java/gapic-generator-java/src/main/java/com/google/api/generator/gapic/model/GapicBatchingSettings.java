@@ -17,8 +17,10 @@ package com.google.api.generator.gapic.model;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class GapicBatchingSettings {
   public enum FlowControlLimitExceededBehavior {

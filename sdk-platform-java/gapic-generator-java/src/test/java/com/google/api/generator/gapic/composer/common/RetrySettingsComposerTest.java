@@ -53,9 +53,12 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+@NullMarked
 class RetrySettingsComposerTest {
   private static final VariableExpr RETRY_PARAM_DEFINITIONS_VAR_EXPR =
       createRetryParamDefinitionsVarExpr();
@@ -462,7 +465,7 @@ class RetrySettingsComposerTest {
     assertEquals(expected, writerVisitor.write());
   }
 
-  private static Method findMethod(Service service, String methodName) {
+  private static @Nullable Method findMethod(Service service, String methodName) {
     for (Method m : service.methods()) {
       if (m.name().equals(methodName)) {
         return m;

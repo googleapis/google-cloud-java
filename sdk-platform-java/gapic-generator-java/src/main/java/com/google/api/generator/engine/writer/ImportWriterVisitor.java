@@ -69,9 +69,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ImportWriterVisitor implements AstNodeVisitor {
   private static final String DOT = ".";
   private static final String PKG_JAVA_LANG = "java.lang";
@@ -91,12 +93,12 @@ public class ImportWriterVisitor implements AstNodeVisitor {
     importShortNames.clear();
   }
 
-  public void initialize(@Nonnull String currentPackage) {
+  public void initialize(@NonNull String currentPackage) {
     this.currentPackage = currentPackage;
     currentClassName = null;
   }
 
-  public void initialize(@Nonnull String currentPackage, @Nonnull String currentClassName) {
+  public void initialize(@NonNull String currentPackage, @NonNull String currentClassName) {
     this.currentPackage = currentPackage;
     this.currentClassName = currentClassName;
   }

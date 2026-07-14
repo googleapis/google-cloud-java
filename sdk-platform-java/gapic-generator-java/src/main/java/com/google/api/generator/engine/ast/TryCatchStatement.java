@@ -20,9 +20,11 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class TryCatchStatement implements Statement {
 
@@ -61,7 +63,7 @@ public abstract class TryCatchStatement implements Statement {
 
     public abstract Builder setIsSampleCode(boolean isSampleCode);
 
-    public Builder addCatch(@Nonnull VariableExpr variableExpr, List<Statement> body) {
+    public Builder addCatch(@NonNull VariableExpr variableExpr, List<Statement> body) {
       List<VariableExpr> catchVarExprs = new ArrayList<>(catchVariableExprs());
       catchVarExprs.add(variableExpr);
       setCatchVariableExprs(catchVarExprs);

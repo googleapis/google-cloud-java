@@ -16,8 +16,10 @@ package com.google.api.generator.engine.ast;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public interface Reference extends AstNode {
   @Override
   void accept(AstNodeVisitor visitor);
@@ -38,11 +40,9 @@ public interface Reference extends AstNode {
   // The nested types in left-to-right order, if any.
   // Example: com.google.Foo.Bar.Car.ThisType will have the outer types listed in the order
   // [Foo, Bar, Car].
-  @Nullable
-  ImmutableList<String> enclosingClassNames();
+  @Nullable ImmutableList<String> enclosingClassNames();
 
-  @Nullable
-  Reference wildcardUpperBound();
+  @Nullable Reference wildcardUpperBound();
 
   Reference copyAndSetGenerics(List<Reference> generics);
 

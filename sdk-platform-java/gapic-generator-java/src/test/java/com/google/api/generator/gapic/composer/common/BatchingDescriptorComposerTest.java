@@ -48,9 +48,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+@NullMarked
 class BatchingDescriptorComposerTest {
   private JavaWriterVisitor writerVisitor;
 
@@ -178,7 +181,7 @@ class BatchingDescriptorComposerTest {
     Assert.assertCodeEquals(goldenFilePath, writerVisitor.write());
   }
 
-  private static Method findMethod(Service service, String methodName) {
+  private static @Nullable Method findMethod(Service service, String methodName) {
     return service.methods().stream()
         .filter(m -> m.name().equals(methodName))
         .findFirst()

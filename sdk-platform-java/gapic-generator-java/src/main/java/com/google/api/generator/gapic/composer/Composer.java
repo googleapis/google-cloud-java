@@ -43,7 +43,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class Composer {
   public static List<GapicClass> composeServiceClasses(GapicContext context) {
     List<GapicClass> clazzes = new ArrayList<>();
@@ -53,7 +56,7 @@ public class Composer {
     return addApacheLicense(prepareExecutableSamples(clazzes));
   }
 
-  public static GapicPackageInfo composePackageInfo(GapicContext context) {
+  public static @Nullable GapicPackageInfo composePackageInfo(GapicContext context) {
     if (!context.containsServices()) {
       return null;
     }

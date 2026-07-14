@@ -62,7 +62,10 @@ import java.util.Queue;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class MockServiceImplClassComposer implements ClassComposer {
   private static final MockServiceImplClassComposer INSTANCE = new MockServiceImplClassComposer();
   private static final String IMPL_BASE_PATTERN = "%sImplBase";
@@ -464,7 +467,7 @@ public class MockServiceImplClassComposer implements ClassComposer {
 
   private static Statement createHandleObjectStatement(
       Method protoMethod,
-      VariableExpr requestArgVarExpr,
+      @Nullable VariableExpr requestArgVarExpr,
       VariableExpr responseObserverVarExpr,
       VariableExpr localResponseVarExpr) {
     List<Expr> ifBodyExprs = new ArrayList<>();
