@@ -63,13 +63,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Resource_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Resource_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Resource_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Resource_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Resource.class, com.google.backstory.Resource.Builder.class);
   }
@@ -2104,13 +2104,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Resource)
       com.google.backstory.ResourceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Resource_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Resource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Resource_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Resource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Resource.class, com.google.backstory.Resource.Builder.class);
     }
@@ -2188,7 +2188,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Resource_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Resource_descriptor;
     }
 
     @java.lang.Override

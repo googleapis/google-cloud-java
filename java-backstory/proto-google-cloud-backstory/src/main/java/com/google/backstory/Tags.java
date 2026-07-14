@@ -59,13 +59,13 @@ public final class Tags extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Tags_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Tags_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Tags_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Tags_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Tags.class, com.google.backstory.Tags.Builder.class);
   }
@@ -388,13 +388,13 @@ public final class Tags extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Tags)
       com.google.backstory.TagsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Tags_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Tags_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Tags_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Tags_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Tags.class, com.google.backstory.Tags.Builder.class);
     }
@@ -417,7 +417,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Tags_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Tags_descriptor;
     }
 
     @java.lang.Override
