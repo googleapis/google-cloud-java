@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked
@@ -64,7 +63,7 @@ public class TypeParser {
           .put(JavaType.BYTE_STRING, REFERENCE_BYTE_STRING)
           .build();
 
-  public static TypeNode parseType(@NonNull FieldDescriptor field) {
+  public static TypeNode parseType(FieldDescriptor field) {
     if (field.isMapField()) {
       return createMapType(field);
     }
@@ -85,11 +84,11 @@ public class TypeParser {
     return TypeNode.withReference(parseFieldReference(field));
   }
 
-  public static TypeNode parseType(@NonNull Descriptor messageDescriptor) {
+  public static TypeNode parseType(Descriptor messageDescriptor) {
     return TypeNode.withReference(parseMessageReference(messageDescriptor));
   }
 
-  public static TypeNode parseType(@NonNull EnumDescriptor enumDescriptor) {
+  public static TypeNode parseType(EnumDescriptor enumDescriptor) {
     return TypeNode.withReference(parseEnumReference(enumDescriptor));
   }
 
@@ -121,7 +120,7 @@ public class TypeParser {
   }
 
   @VisibleForTesting
-  static Reference parseMessageReference(@NonNull Descriptor messageDescriptor) {
+  static Reference parseMessageReference(Descriptor messageDescriptor) {
     List<String> outerNestedTypeNames = new ArrayList<>();
     FileOptions fileOptions = messageDescriptor.getFile().getOptions();
     String javaOuterClassname =
@@ -181,7 +180,7 @@ public class TypeParser {
   }
 
   @VisibleForTesting
-  static Reference parseEnumReference(@NonNull EnumDescriptor enumDescriptor) {
+  static Reference parseEnumReference(EnumDescriptor enumDescriptor) {
     // This is similar to parseMessageReference, but we make it a separate method because
     // EnumDescriptor and Descriptor are sibling types.
     FileOptions fileOptions = enumDescriptor.getFile().getOptions();

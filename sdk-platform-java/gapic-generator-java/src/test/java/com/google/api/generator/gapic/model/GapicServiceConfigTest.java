@@ -34,11 +34,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 
-@NullMarked
 class GapicServiceConfigTest {
 
   private static final double EPSILON = 1e-4;

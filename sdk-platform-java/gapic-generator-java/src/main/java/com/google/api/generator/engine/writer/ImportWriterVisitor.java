@@ -69,7 +69,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
-import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -93,12 +92,12 @@ public class ImportWriterVisitor implements AstNodeVisitor {
     importShortNames.clear();
   }
 
-  public void initialize(@NonNull String currentPackage) {
+  public void initialize(String currentPackage) {
     this.currentPackage = currentPackage;
     currentClassName = null;
   }
 
-  public void initialize(@NonNull String currentPackage, @NonNull String currentClassName) {
+  public void initialize(String currentPackage, String currentClassName) {
     this.currentPackage = currentPackage;
     this.currentClassName = currentClassName;
   }
