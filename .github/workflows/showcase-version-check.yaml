@@ -41,7 +41,7 @@ jobs:
               - 'java-showcase/gapic-showcase/pom.xml'
               - '.github/workflows/showcase-version-check.yaml'
 
-  check-version:
+  check-showcase-version:
     needs: filter
     if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
