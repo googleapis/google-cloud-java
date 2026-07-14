@@ -70,13 +70,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Asset_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Asset_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Asset_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Asset_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Asset.class, com.google.backstory.Asset.Builder.class);
   }
@@ -2493,13 +2493,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Asset)
       com.google.backstory.AssetOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Asset_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Asset_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Asset_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Asset_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Asset.class, com.google.backstory.Asset.Builder.class);
     }
@@ -2630,7 +2630,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Asset_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Asset_descriptor;
     }
 
     @java.lang.Override

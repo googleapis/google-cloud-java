@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -100,7 +101,7 @@ public class ManagementDnsZoneBindingName implements ResourceName {
         .toString();
   }
 
-  public static ManagementDnsZoneBindingName parse(String formattedString) {
+  public static @Nullable ManagementDnsZoneBindingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -123,7 +124,7 @@ public class ManagementDnsZoneBindingName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ManagementDnsZoneBindingName> values) {
+  public static List<String> toStringList(List<@Nullable ManagementDnsZoneBindingName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ManagementDnsZoneBindingName value : values) {
       if (value == null) {
@@ -182,7 +183,7 @@ public class ManagementDnsZoneBindingName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

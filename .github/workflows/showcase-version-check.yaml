@@ -22,13 +22,28 @@ on:
     - cron: '30 3 * * *' # Run daily at 3:30 AM UTC
   workflow_dispatch: # Allow manual trigger
   pull_request:
-    paths:
-      - 'librarian.yaml'
-      - 'java-showcase/gapic-showcase/pom.xml'
-      - '.github/workflows/showcase-version-check.yaml'
 
 jobs:
-  check-version:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.filter.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+        id: filter
+        with:
+          filters: |
+            should_run:
+              - 'librarian.yaml'
+              - 'java-showcase/gapic-showcase/pom.xml'
+              - '.github/workflows/showcase-version-check.yaml'
+
+  check-showcase-version:
+    needs: filter
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -190,7 +191,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PrivateCatalogClient implements BackgroundResource {
-  private final PrivateCatalogSettings settings;
+  private final @Nullable PrivateCatalogSettings settings;
   private final PrivateCatalogStub stub;
 
   /** Constructs an instance of PrivateCatalogClient with default settings. */
@@ -230,7 +231,7 @@ public class PrivateCatalogClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PrivateCatalogSettings getSettings() {
+  public final @Nullable PrivateCatalogSettings getSettings() {
     return settings;
   }
 
@@ -630,8 +631,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchCatalogsRequest, SearchCatalogsResponse, Catalog, SearchCatalogsPage> {
 
     private SearchCatalogsPage(
-        PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
-        SearchCatalogsResponse response) {
+        @Nullable PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
+        @Nullable SearchCatalogsResponse response) {
       super(context, response);
     }
 
@@ -641,14 +642,14 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchCatalogsPage createPage(
-        PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
-        SearchCatalogsResponse response) {
+        @Nullable PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
+        @Nullable SearchCatalogsResponse response) {
       return new SearchCatalogsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchCatalogsPage> createPageAsync(
-        PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
+        @Nullable PageContext<SearchCatalogsRequest, SearchCatalogsResponse, Catalog> context,
         ApiFuture<SearchCatalogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -662,7 +663,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchCatalogsPage,
           SearchCatalogsFixedSizeCollection> {
 
-    private SearchCatalogsFixedSizeCollection(List<SearchCatalogsPage> pages, int collectionSize) {
+    private SearchCatalogsFixedSizeCollection(
+        @Nullable List<SearchCatalogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -672,7 +674,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchCatalogsFixedSizeCollection createCollection(
-        List<SearchCatalogsPage> pages, int collectionSize) {
+        @Nullable List<SearchCatalogsPage> pages, int collectionSize) {
       return new SearchCatalogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -706,8 +708,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchProductsRequest, SearchProductsResponse, Product, SearchProductsPage> {
 
     private SearchProductsPage(
-        PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
-        SearchProductsResponse response) {
+        @Nullable PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
+        @Nullable SearchProductsResponse response) {
       super(context, response);
     }
 
@@ -717,14 +719,14 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchProductsPage createPage(
-        PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
-        SearchProductsResponse response) {
+        @Nullable PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
+        @Nullable SearchProductsResponse response) {
       return new SearchProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchProductsPage> createPageAsync(
-        PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
+        @Nullable PageContext<SearchProductsRequest, SearchProductsResponse, Product> context,
         ApiFuture<SearchProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -738,7 +740,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchProductsPage,
           SearchProductsFixedSizeCollection> {
 
-    private SearchProductsFixedSizeCollection(List<SearchProductsPage> pages, int collectionSize) {
+    private SearchProductsFixedSizeCollection(
+        @Nullable List<SearchProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -748,7 +751,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchProductsFixedSizeCollection createCollection(
-        List<SearchProductsPage> pages, int collectionSize) {
+        @Nullable List<SearchProductsPage> pages, int collectionSize) {
       return new SearchProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -782,8 +785,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchVersionsRequest, SearchVersionsResponse, Version, SearchVersionsPage> {
 
     private SearchVersionsPage(
-        PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
-        SearchVersionsResponse response) {
+        @Nullable PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
+        @Nullable SearchVersionsResponse response) {
       super(context, response);
     }
 
@@ -793,14 +796,14 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchVersionsPage createPage(
-        PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
-        SearchVersionsResponse response) {
+        @Nullable PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
+        @Nullable SearchVersionsResponse response) {
       return new SearchVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchVersionsPage> createPageAsync(
-        PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
+        @Nullable PageContext<SearchVersionsRequest, SearchVersionsResponse, Version> context,
         ApiFuture<SearchVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -814,7 +817,8 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchVersionsPage,
           SearchVersionsFixedSizeCollection> {
 
-    private SearchVersionsFixedSizeCollection(List<SearchVersionsPage> pages, int collectionSize) {
+    private SearchVersionsFixedSizeCollection(
+        @Nullable List<SearchVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -824,7 +828,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchVersionsFixedSizeCollection createCollection(
-        List<SearchVersionsPage> pages, int collectionSize) {
+        @Nullable List<SearchVersionsPage> pages, int collectionSize) {
       return new SearchVersionsFixedSizeCollection(pages, collectionSize);
     }
   }

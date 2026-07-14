@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -263,7 +264,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundResource {
-  private final ReasoningEngineRuntimeRevisionServiceSettings settings;
+  private final @Nullable ReasoningEngineRuntimeRevisionServiceSettings settings;
   private final ReasoningEngineRuntimeRevisionServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -315,7 +316,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ReasoningEngineRuntimeRevisionServiceSettings getSettings() {
+  public final @Nullable ReasoningEngineRuntimeRevisionServiceSettings getSettings() {
     return settings;
   }
 
@@ -358,7 +359,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReasoningEngineRuntimeRevision getReasoningEngineRuntimeRevision(
-      ReasoningEngineRuntimeRevisionName name) {
+      @Nullable ReasoningEngineRuntimeRevisionName name) {
     GetReasoningEngineRuntimeRevisionRequest request =
         GetReasoningEngineRuntimeRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -500,7 +501,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListReasoningEngineRuntimeRevisionsPagedResponse listReasoningEngineRuntimeRevisions(
-      ReasoningEngineName parent) {
+      @Nullable ReasoningEngineName parent) {
     ListReasoningEngineRuntimeRevisionsRequest request =
         ListReasoningEngineRuntimeRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -703,7 +704,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteReasoningEngineRuntimeRevisionOperationMetadata>
-      deleteReasoningEngineRuntimeRevisionAsync(ReasoningEngineRuntimeRevisionName name) {
+      deleteReasoningEngineRuntimeRevisionAsync(@Nullable ReasoningEngineRuntimeRevisionName name) {
     DeleteReasoningEngineRuntimeRevisionRequest request =
         DeleteReasoningEngineRuntimeRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1309,12 +1310,13 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
           ListReasoningEngineRuntimeRevisionsPage> {
 
     private ListReasoningEngineRuntimeRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReasoningEngineRuntimeRevisionsRequest,
                 ListReasoningEngineRuntimeRevisionsResponse,
                 ReasoningEngineRuntimeRevision>
             context,
-        ListReasoningEngineRuntimeRevisionsResponse response) {
+        @Nullable ListReasoningEngineRuntimeRevisionsResponse response) {
       super(context, response);
     }
 
@@ -1324,18 +1326,20 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
 
     @Override
     protected ListReasoningEngineRuntimeRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReasoningEngineRuntimeRevisionsRequest,
                 ListReasoningEngineRuntimeRevisionsResponse,
                 ReasoningEngineRuntimeRevision>
             context,
-        ListReasoningEngineRuntimeRevisionsResponse response) {
+        @Nullable ListReasoningEngineRuntimeRevisionsResponse response) {
       return new ListReasoningEngineRuntimeRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReasoningEngineRuntimeRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReasoningEngineRuntimeRevisionsRequest,
                 ListReasoningEngineRuntimeRevisionsResponse,
                 ReasoningEngineRuntimeRevision>
@@ -1354,7 +1358,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
           ListReasoningEngineRuntimeRevisionsFixedSizeCollection> {
 
     private ListReasoningEngineRuntimeRevisionsFixedSizeCollection(
-        List<ListReasoningEngineRuntimeRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListReasoningEngineRuntimeRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1364,7 +1368,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
 
     @Override
     protected ListReasoningEngineRuntimeRevisionsFixedSizeCollection createCollection(
-        List<ListReasoningEngineRuntimeRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListReasoningEngineRuntimeRevisionsPage> pages, int collectionSize) {
       return new ListReasoningEngineRuntimeRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1398,8 +1402,8 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1409,14 +1413,14 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1430,7 +1434,8 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1440,7 +1445,7 @@ public class ReasoningEngineRuntimeRevisionServiceClient implements BackgroundRe
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

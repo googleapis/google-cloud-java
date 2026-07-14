@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -439,7 +440,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PrivilegedAccessManagerClient implements BackgroundResource {
-  private final PrivilegedAccessManagerSettings settings;
+  private final @Nullable PrivilegedAccessManagerSettings settings;
   private final PrivilegedAccessManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -488,7 +489,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PrivilegedAccessManagerSettings getSettings() {
+  public final @Nullable PrivilegedAccessManagerSettings getSettings() {
     return settings;
   }
 
@@ -601,7 +602,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param parent Required. The parent which owns the entitlement resources.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitlementsPagedResponse listEntitlements(FolderLocationName parent) {
+  public final ListEntitlementsPagedResponse listEntitlements(@Nullable FolderLocationName parent) {
     ListEntitlementsRequest request =
         ListEntitlementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -634,7 +635,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param parent Required. The parent which owns the entitlement resources.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitlementsPagedResponse listEntitlements(LocationName parent) {
+  public final ListEntitlementsPagedResponse listEntitlements(@Nullable LocationName parent) {
     ListEntitlementsRequest request =
         ListEntitlementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -667,7 +668,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param parent Required. The parent which owns the entitlement resources.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitlementsPagedResponse listEntitlements(OrganizationLocationName parent) {
+  public final ListEntitlementsPagedResponse listEntitlements(
+      @Nullable OrganizationLocationName parent) {
     ListEntitlementsRequest request =
         ListEntitlementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -958,7 +960,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entitlement getEntitlement(EntitlementName name) {
+  public final Entitlement getEntitlement(@Nullable EntitlementName name) {
     GetEntitlementRequest request =
         GetEntitlementRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntitlement(request);
@@ -1098,7 +1100,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Entitlement, OperationMetadata> createEntitlementAsync(
-      FolderLocationName parent, Entitlement entitlement, String entitlementId) {
+      @Nullable FolderLocationName parent, Entitlement entitlement, String entitlementId) {
     CreateEntitlementRequest request =
         CreateEntitlementRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1148,7 +1150,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Entitlement, OperationMetadata> createEntitlementAsync(
-      LocationName parent, Entitlement entitlement, String entitlementId) {
+      @Nullable LocationName parent, Entitlement entitlement, String entitlementId) {
     CreateEntitlementRequest request =
         CreateEntitlementRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1198,7 +1200,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Entitlement, OperationMetadata> createEntitlementAsync(
-      OrganizationLocationName parent, Entitlement entitlement, String entitlementId) {
+      @Nullable OrganizationLocationName parent, Entitlement entitlement, String entitlementId) {
     CreateEntitlementRequest request =
         CreateEntitlementRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1382,7 +1384,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Entitlement, OperationMetadata> deleteEntitlementAsync(
-      EntitlementName name) {
+      @Nullable EntitlementName name) {
     DeleteEntitlementRequest request =
         DeleteEntitlementRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1736,7 +1738,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param parent Required. The parent resource which owns the grants.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGrantsPagedResponse listGrants(EntitlementName parent) {
+  public final ListGrantsPagedResponse listGrants(@Nullable EntitlementName parent) {
     ListGrantsRequest request =
         ListGrantsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listGrants(request);
@@ -2038,7 +2040,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Grant getGrant(GrantName name) {
+  public final Grant getGrant(@Nullable GrantName name) {
     GetGrantRequest request =
         GetGrantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGrant(request);
@@ -2164,7 +2166,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
    * @param grant Required. The resource being created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Grant createGrant(EntitlementName parent, Grant grant) {
+  public final Grant createGrant(@Nullable EntitlementName parent, Grant grant) {
     CreateGrantRequest request =
         CreateGrantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2735,8 +2737,9 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           ListEntitlementsRequest, ListEntitlementsResponse, Entitlement, ListEntitlementsPage> {
 
     private ListEntitlementsPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       super(context, response);
     }
 
@@ -2746,14 +2749,16 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsPage createPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       return new ListEntitlementsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitlementsPage> createPageAsync(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
         ApiFuture<ListEntitlementsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2768,7 +2773,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           ListEntitlementsFixedSizeCollection> {
 
     private ListEntitlementsFixedSizeCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2778,7 +2783,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsFixedSizeCollection createCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       return new ListEntitlementsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2815,8 +2820,9 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           SearchEntitlementsPage> {
 
     private SearchEntitlementsPage(
-        PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement> context,
-        SearchEntitlementsResponse response) {
+        @Nullable PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement>
+            context,
+        @Nullable SearchEntitlementsResponse response) {
       super(context, response);
     }
 
@@ -2826,14 +2832,16 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected SearchEntitlementsPage createPage(
-        PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement> context,
-        SearchEntitlementsResponse response) {
+        @Nullable PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement>
+            context,
+        @Nullable SearchEntitlementsResponse response) {
       return new SearchEntitlementsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchEntitlementsPage> createPageAsync(
-        PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement> context,
+        @Nullable PageContext<SearchEntitlementsRequest, SearchEntitlementsResponse, Entitlement>
+            context,
         ApiFuture<SearchEntitlementsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2848,7 +2856,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           SearchEntitlementsFixedSizeCollection> {
 
     private SearchEntitlementsFixedSizeCollection(
-        List<SearchEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<SearchEntitlementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2858,7 +2866,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected SearchEntitlementsFixedSizeCollection createCollection(
-        List<SearchEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<SearchEntitlementsPage> pages, int collectionSize) {
       return new SearchEntitlementsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2889,8 +2897,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
       extends AbstractPage<ListGrantsRequest, ListGrantsResponse, Grant, ListGrantsPage> {
 
     private ListGrantsPage(
-        PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
-        ListGrantsResponse response) {
+        @Nullable PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
+        @Nullable ListGrantsResponse response) {
       super(context, response);
     }
 
@@ -2900,14 +2908,14 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListGrantsPage createPage(
-        PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
-        ListGrantsResponse response) {
+        @Nullable PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
+        @Nullable ListGrantsResponse response) {
       return new ListGrantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGrantsPage> createPageAsync(
-        PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
+        @Nullable PageContext<ListGrantsRequest, ListGrantsResponse, Grant> context,
         ApiFuture<ListGrantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2921,7 +2929,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           ListGrantsPage,
           ListGrantsFixedSizeCollection> {
 
-    private ListGrantsFixedSizeCollection(List<ListGrantsPage> pages, int collectionSize) {
+    private ListGrantsFixedSizeCollection(
+        @Nullable List<ListGrantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2931,7 +2940,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListGrantsFixedSizeCollection createCollection(
-        List<ListGrantsPage> pages, int collectionSize) {
+        @Nullable List<ListGrantsPage> pages, int collectionSize) {
       return new ListGrantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2964,8 +2973,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
       extends AbstractPage<SearchGrantsRequest, SearchGrantsResponse, Grant, SearchGrantsPage> {
 
     private SearchGrantsPage(
-        PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
-        SearchGrantsResponse response) {
+        @Nullable PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
+        @Nullable SearchGrantsResponse response) {
       super(context, response);
     }
 
@@ -2975,14 +2984,14 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected SearchGrantsPage createPage(
-        PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
-        SearchGrantsResponse response) {
+        @Nullable PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
+        @Nullable SearchGrantsResponse response) {
       return new SearchGrantsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchGrantsPage> createPageAsync(
-        PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
+        @Nullable PageContext<SearchGrantsRequest, SearchGrantsResponse, Grant> context,
         ApiFuture<SearchGrantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2996,7 +3005,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           SearchGrantsPage,
           SearchGrantsFixedSizeCollection> {
 
-    private SearchGrantsFixedSizeCollection(List<SearchGrantsPage> pages, int collectionSize) {
+    private SearchGrantsFixedSizeCollection(
+        @Nullable List<SearchGrantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3006,7 +3016,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected SearchGrantsFixedSizeCollection createCollection(
-        List<SearchGrantsPage> pages, int collectionSize) {
+        @Nullable List<SearchGrantsPage> pages, int collectionSize) {
       return new SearchGrantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3040,8 +3050,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3051,14 +3061,14 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3072,7 +3082,8 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3082,7 +3093,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -58,13 +58,13 @@ public final class Srum extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Srum_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Srum_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Srum_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Srum_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Srum.class, com.google.backstory.Srum.Builder.class);
   }
@@ -564,13 +564,13 @@ public final class Srum extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Srum)
       com.google.backstory.SrumOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Srum_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Srum_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Srum_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Srum_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Srum.class, com.google.backstory.Srum.Builder.class);
     }
@@ -600,7 +600,7 @@ public final class Srum extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Srum_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Srum_descriptor;
     }
 
     @java.lang.Override

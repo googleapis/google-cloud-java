@@ -74,13 +74,13 @@ public final class Authentication extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Authentication_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Authentication_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_Authentication_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Authentication.class,
@@ -1760,13 +1760,13 @@ public final class Authentication extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Authentication)
       com.google.backstory.AuthenticationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Authentication_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Authentication_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_Authentication_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Authentication.class,
@@ -1793,7 +1793,7 @@ public final class Authentication extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Authentication_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Authentication_descriptor;
     }
 
     @java.lang.Override

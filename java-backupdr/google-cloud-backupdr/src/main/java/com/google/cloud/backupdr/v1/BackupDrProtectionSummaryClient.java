@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -227,7 +228,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BackupDrProtectionSummaryClient implements BackgroundResource {
-  private final BackupDrProtectionSummarySettings settings;
+  private final @Nullable BackupDrProtectionSummarySettings settings;
   private final BackupDrProtectionSummaryStub stub;
 
   /** Constructs an instance of BackupDrProtectionSummaryClient with default settings. */
@@ -269,7 +270,7 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BackupDrProtectionSummarySettings getSettings() {
+  public final @Nullable BackupDrProtectionSummarySettings getSettings() {
     return settings;
   }
 
@@ -309,7 +310,7 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceBackupConfigsPagedResponse listResourceBackupConfigs(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListResourceBackupConfigsRequest request =
         ListResourceBackupConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -913,12 +914,13 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
           ListResourceBackupConfigsPage> {
 
     private ListResourceBackupConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceBackupConfigsRequest,
                 ListResourceBackupConfigsResponse,
                 ResourceBackupConfig>
             context,
-        ListResourceBackupConfigsResponse response) {
+        @Nullable ListResourceBackupConfigsResponse response) {
       super(context, response);
     }
 
@@ -928,18 +930,20 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
 
     @Override
     protected ListResourceBackupConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceBackupConfigsRequest,
                 ListResourceBackupConfigsResponse,
                 ResourceBackupConfig>
             context,
-        ListResourceBackupConfigsResponse response) {
+        @Nullable ListResourceBackupConfigsResponse response) {
       return new ListResourceBackupConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceBackupConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceBackupConfigsRequest,
                 ListResourceBackupConfigsResponse,
                 ResourceBackupConfig>
@@ -958,7 +962,7 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
           ListResourceBackupConfigsFixedSizeCollection> {
 
     private ListResourceBackupConfigsFixedSizeCollection(
-        List<ListResourceBackupConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceBackupConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -968,7 +972,7 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
 
     @Override
     protected ListResourceBackupConfigsFixedSizeCollection createCollection(
-        List<ListResourceBackupConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceBackupConfigsPage> pages, int collectionSize) {
       return new ListResourceBackupConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1002,8 +1006,8 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1013,14 +1017,14 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1034,7 +1038,8 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1044,7 +1049,7 @@ public class BackupDrProtectionSummaryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

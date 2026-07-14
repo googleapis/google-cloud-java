@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -456,7 +457,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource {
-  private final FeatureOnlineStoreAdminServiceSettings settings;
+  private final @Nullable FeatureOnlineStoreAdminServiceSettings settings;
   private final FeatureOnlineStoreAdminServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -504,7 +505,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final FeatureOnlineStoreAdminServiceSettings getSettings() {
+  public final @Nullable FeatureOnlineStoreAdminServiceSettings getSettings() {
     return settings;
   }
 
@@ -556,7 +557,9 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    */
   public final OperationFuture<FeatureOnlineStore, CreateFeatureOnlineStoreOperationMetadata>
       createFeatureOnlineStoreAsync(
-          LocationName parent, FeatureOnlineStore featureOnlineStore, String featureOnlineStoreId) {
+          @Nullable LocationName parent,
+          FeatureOnlineStore featureOnlineStore,
+          String featureOnlineStoreId) {
     CreateFeatureOnlineStoreRequest request =
         CreateFeatureOnlineStoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -740,7 +743,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    * @param name Required. The name of the FeatureOnlineStore resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureOnlineStore getFeatureOnlineStore(FeatureOnlineStoreName name) {
+  public final FeatureOnlineStore getFeatureOnlineStore(@Nullable FeatureOnlineStoreName name) {
     GetFeatureOnlineStoreRequest request =
         GetFeatureOnlineStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -868,7 +871,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeatureOnlineStoresPagedResponse listFeatureOnlineStores(LocationName parent) {
+  public final ListFeatureOnlineStoresPagedResponse listFeatureOnlineStores(
+      @Nullable LocationName parent) {
     ListFeatureOnlineStoresRequest request =
         ListFeatureOnlineStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1202,7 +1206,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureOnlineStoreAsync(
-      FeatureOnlineStoreName name, boolean force) {
+      @Nullable FeatureOnlineStoreName name, boolean force) {
     DeleteFeatureOnlineStoreRequest request =
         DeleteFeatureOnlineStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1387,7 +1391,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    */
   public final OperationFuture<FeatureView, CreateFeatureViewOperationMetadata>
       createFeatureViewAsync(
-          FeatureOnlineStoreName parent, FeatureView featureView, String featureViewId) {
+          @Nullable FeatureOnlineStoreName parent, FeatureView featureView, String featureViewId) {
     CreateFeatureViewRequest request =
         CreateFeatureViewRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1576,7 +1580,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureView getFeatureView(FeatureViewName name) {
+  public final FeatureView getFeatureView(@Nullable FeatureViewName name) {
     GetFeatureViewRequest request =
         GetFeatureViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeatureView(request);
@@ -1704,7 +1708,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeatureViewsPagedResponse listFeatureViews(FeatureOnlineStoreName parent) {
+  public final ListFeatureViewsPagedResponse listFeatureViews(
+      @Nullable FeatureOnlineStoreName parent) {
     ListFeatureViewsRequest request =
         ListFeatureViewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2036,7 +2041,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureViewAsync(
-      FeatureViewName name) {
+      @Nullable FeatureViewName name) {
     DeleteFeatureViewRequest request =
         DeleteFeatureViewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2199,7 +2204,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SyncFeatureViewResponse syncFeatureView(FeatureViewName featureView) {
+  public final SyncFeatureViewResponse syncFeatureView(@Nullable FeatureViewName featureView) {
     SyncFeatureViewRequest request =
         SyncFeatureViewRequest.newBuilder()
             .setFeatureView(featureView == null ? null : featureView.toString())
@@ -2330,7 +2335,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureViewSync getFeatureViewSync(FeatureViewSyncName name) {
+  public final FeatureViewSync getFeatureViewSync(@Nullable FeatureViewSyncName name) {
     GetFeatureViewSyncRequest request =
         GetFeatureViewSyncRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2462,7 +2467,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeatureViewSyncsPagedResponse listFeatureViewSyncs(FeatureViewName parent) {
+  public final ListFeatureViewSyncsPagedResponse listFeatureViewSyncs(
+      @Nullable FeatureViewName parent) {
     ListFeatureViewSyncsRequest request =
         ListFeatureViewSyncsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3076,10 +3082,11 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureOnlineStoresPage> {
 
     private ListFeatureOnlineStoresPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureOnlineStoresRequest, ListFeatureOnlineStoresResponse, FeatureOnlineStore>
             context,
-        ListFeatureOnlineStoresResponse response) {
+        @Nullable ListFeatureOnlineStoresResponse response) {
       super(context, response);
     }
 
@@ -3089,16 +3096,18 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureOnlineStoresPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureOnlineStoresRequest, ListFeatureOnlineStoresResponse, FeatureOnlineStore>
             context,
-        ListFeatureOnlineStoresResponse response) {
+        @Nullable ListFeatureOnlineStoresResponse response) {
       return new ListFeatureOnlineStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureOnlineStoresPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureOnlineStoresRequest, ListFeatureOnlineStoresResponse, FeatureOnlineStore>
             context,
         ApiFuture<ListFeatureOnlineStoresResponse> futureResponse) {
@@ -3115,7 +3124,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureOnlineStoresFixedSizeCollection> {
 
     private ListFeatureOnlineStoresFixedSizeCollection(
-        List<ListFeatureOnlineStoresPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureOnlineStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3125,7 +3134,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureOnlineStoresFixedSizeCollection createCollection(
-        List<ListFeatureOnlineStoresPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureOnlineStoresPage> pages, int collectionSize) {
       return new ListFeatureOnlineStoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3159,8 +3168,9 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView, ListFeatureViewsPage> {
 
     private ListFeatureViewsPage(
-        PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView> context,
-        ListFeatureViewsResponse response) {
+        @Nullable PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView>
+            context,
+        @Nullable ListFeatureViewsResponse response) {
       super(context, response);
     }
 
@@ -3170,14 +3180,16 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureViewsPage createPage(
-        PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView> context,
-        ListFeatureViewsResponse response) {
+        @Nullable PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView>
+            context,
+        @Nullable ListFeatureViewsResponse response) {
       return new ListFeatureViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureViewsPage> createPageAsync(
-        PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView> context,
+        @Nullable PageContext<ListFeatureViewsRequest, ListFeatureViewsResponse, FeatureView>
+            context,
         ApiFuture<ListFeatureViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3192,7 +3204,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureViewsFixedSizeCollection> {
 
     private ListFeatureViewsFixedSizeCollection(
-        List<ListFeatureViewsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3202,7 +3214,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureViewsFixedSizeCollection createCollection(
-        List<ListFeatureViewsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureViewsPage> pages, int collectionSize) {
       return new ListFeatureViewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3240,9 +3252,10 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureViewSyncsPage> {
 
     private ListFeatureViewSyncsPage(
-        PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
+        @Nullable
+            PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
             context,
-        ListFeatureViewSyncsResponse response) {
+        @Nullable ListFeatureViewSyncsResponse response) {
       super(context, response);
     }
 
@@ -3252,15 +3265,17 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureViewSyncsPage createPage(
-        PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
+        @Nullable
+            PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
             context,
-        ListFeatureViewSyncsResponse response) {
+        @Nullable ListFeatureViewSyncsResponse response) {
       return new ListFeatureViewSyncsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureViewSyncsPage> createPageAsync(
-        PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
+        @Nullable
+            PageContext<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse, FeatureViewSync>
             context,
         ApiFuture<ListFeatureViewSyncsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3276,7 +3291,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListFeatureViewSyncsFixedSizeCollection> {
 
     private ListFeatureViewSyncsFixedSizeCollection(
-        List<ListFeatureViewSyncsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureViewSyncsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3286,7 +3301,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListFeatureViewSyncsFixedSizeCollection createCollection(
-        List<ListFeatureViewSyncsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureViewSyncsPage> pages, int collectionSize) {
       return new ListFeatureViewSyncsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3320,8 +3335,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3331,14 +3346,14 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3352,7 +3367,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3362,7 +3378,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
