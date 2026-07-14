@@ -162,6 +162,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>DELETING = 4;</code>
      */
     DELETING(4),
+    /**
+     *
+     *
+     * <pre>
+     * Instance is being migrated.
+     * </pre>
+     *
+     * <code>MIGRATING = 6;</code>
+     */
+    MIGRATING(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -230,6 +240,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public static final int DELETING_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Instance is being migrated.
+     * </pre>
+     *
+     * <code>MIGRATING = 6;</code>
+     */
+    public static final int MIGRATING_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -264,6 +285,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           return UPDATING;
         case 4:
           return DELETING;
+        case 6:
+          return MIGRATING;
         default:
           return null;
       }
@@ -767,7 +790,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * High memory 2x large.
+     * High memory 2xlarge.
      * </pre>
      *
      * <code>HIGHMEM_2XLARGE = 9;</code>
@@ -899,7 +922,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * High memory 2x large.
+     * High memory 2xlarge.
      * </pre>
      *
      * <code>HIGHMEM_2XLARGE = 9;</code>
@@ -8909,11 +8932,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for mode.
@@ -8927,11 +8950,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The mode.
@@ -8997,7 +9020,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=604
+   *     google/cloud/memorystore/v1/memorystore.proto;l=655
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Override
@@ -9018,7 +9041,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=604
+   *     google/cloud/memorystore/v1/memorystore.proto;l=655
    * @return The ondemandMaintenance.
    */
   @java.lang.Override
@@ -9861,7 +9884,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=685
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=736
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Override
@@ -10051,6 +10074,65 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     return rotateServerCertificate_;
   }
 
+  public static final int MIGRATION_CONFIG_FIELD_NUMBER = 59;
+  private com.google.cloud.memorystore.v1.MigrationConfig migrationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the migrationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMigrationConfig() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The migrationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MigrationConfig getMigrationConfig() {
+    return migrationConfig_ == null
+        ? com.google.cloud.memorystore.v1.MigrationConfig.getDefaultInstance()
+        : migrationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MigrationConfigOrBuilder getMigrationConfigOrBuilder() {
+    return migrationConfig_ == null
+        ? com.google.cloud.memorystore.v1.MigrationConfig.getDefaultInstance()
+        : migrationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10203,6 +10285,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x01000000) != 0)) {
       output.writeBool(58, rotateServerCertificate_);
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      output.writeMessage(59, getMigrationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -10386,6 +10471,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(58, rotateServerCertificate_);
     }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(59, getMigrationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10523,6 +10611,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasRotateServerCertificate() != other.hasRotateServerCertificate()) return false;
     if (hasRotateServerCertificate()) {
       if (getRotateServerCertificate() != other.getRotateServerCertificate()) return false;
+    }
+    if (hasMigrationConfig() != other.hasMigrationConfig()) return false;
+    if (hasMigrationConfig()) {
+      if (!getMigrationConfig().equals(other.getMigrationConfig())) return false;
     }
     if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
     switch (importSourcesCase_) {
@@ -10696,6 +10788,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasRotateServerCertificate()) {
       hash = (37 * hash) + ROTATE_SERVER_CERTIFICATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRotateServerCertificate());
+    }
+    if (hasMigrationConfig()) {
+      hash = (37 * hash) + MIGRATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMigrationConfig().hashCode();
     }
     switch (importSourcesCase_) {
       case 23:
@@ -10891,6 +10987,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         internalGetCrossInstanceReplicationConfigFieldBuilder();
         internalGetEncryptionInfoFieldBuilder();
         internalGetAutomatedBackupConfigFieldBuilder();
+        internalGetMigrationConfigFieldBuilder();
       }
     }
 
@@ -11015,6 +11112,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       serverCaMode_ = 0;
       serverCaPool_ = "";
       rotateServerCertificate_ = false;
+      migrationConfig_ = null;
+      if (migrationConfigBuilder_ != null) {
+        migrationConfigBuilder_.dispose();
+        migrationConfigBuilder_ = null;
+      }
       importSourcesCase_ = 0;
       importSources_ = null;
       return this;
@@ -11264,6 +11366,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (((from_bitField1_ & 0x00000800) != 0)) {
         result.rotateServerCertificate_ = rotateServerCertificate_;
         to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
+        result.migrationConfig_ =
+            migrationConfigBuilder_ == null ? migrationConfig_ : migrationConfigBuilder_.build();
+        to_bitField0_ |= 0x02000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -11533,6 +11640,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRotateServerCertificate()) {
         setRotateServerCertificate(other.getRotateServerCertificate());
+      }
+      if (other.hasMigrationConfig()) {
+        mergeMigrationConfig(other.getMigrationConfig());
       }
       switch (other.getImportSourcesCase()) {
         case GCS_SOURCE:
@@ -11900,6 +12010,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00000800;
                 break;
               } // case 464
+            case 474:
+              {
+                input.readMessage(
+                    internalGetMigrationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00001000;
+                break;
+              } // case 474
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16913,11 +17030,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mode config for the instance.
+     * Optional. Immutable. The mode config for the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for mode.
@@ -16931,11 +17048,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mode config for the instance.
+     * Optional. Immutable. The mode config for the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for mode to set.
@@ -16952,11 +17069,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mode config for the instance.
+     * Optional. Immutable. The mode config for the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The mode.
@@ -16972,11 +17089,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mode config for the instance.
+     * Optional. Immutable. The mode config for the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The mode to set.
@@ -16996,11 +17113,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The mode config for the instance.
+     * Optional. Immutable. The mode config for the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -17106,7 +17223,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=604
+     *     google/cloud/memorystore/v1/memorystore.proto;l=655
      * @return Whether the ondemandMaintenance field is set.
      */
     @java.lang.Override
@@ -17127,7 +17244,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=604
+     *     google/cloud/memorystore/v1/memorystore.proto;l=655
      * @return The ondemandMaintenance.
      */
     @java.lang.Override
@@ -17148,7 +17265,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=604
+     *     google/cloud/memorystore/v1/memorystore.proto;l=655
      * @param value The ondemandMaintenance to set.
      * @return This builder for chaining.
      */
@@ -17173,7 +17290,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=604
+     *     google/cloud/memorystore/v1/memorystore.proto;l=655
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19335,7 +19452,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=685
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
      * @return The allowFewerZonesDeployment.
      */
     @java.lang.Override
@@ -19356,7 +19473,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=685
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
      * @param value The allowFewerZonesDeployment to set.
      * @return This builder for chaining.
      */
@@ -19381,7 +19498,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=685
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19745,6 +19862,220 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       rotateServerCertificate_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.memorystore.v1.MigrationConfig migrationConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.memorystore.v1.MigrationConfig,
+            com.google.cloud.memorystore.v1.MigrationConfig.Builder,
+            com.google.cloud.memorystore.v1.MigrationConfigOrBuilder>
+        migrationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the migrationConfig field is set.
+     */
+    public boolean hasMigrationConfig() {
+      return ((bitField1_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The migrationConfig.
+     */
+    public com.google.cloud.memorystore.v1.MigrationConfig getMigrationConfig() {
+      if (migrationConfigBuilder_ == null) {
+        return migrationConfig_ == null
+            ? com.google.cloud.memorystore.v1.MigrationConfig.getDefaultInstance()
+            : migrationConfig_;
+      } else {
+        return migrationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMigrationConfig(com.google.cloud.memorystore.v1.MigrationConfig value) {
+      if (migrationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        migrationConfig_ = value;
+      } else {
+        migrationConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMigrationConfig(
+        com.google.cloud.memorystore.v1.MigrationConfig.Builder builderForValue) {
+      if (migrationConfigBuilder_ == null) {
+        migrationConfig_ = builderForValue.build();
+      } else {
+        migrationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMigrationConfig(com.google.cloud.memorystore.v1.MigrationConfig value) {
+      if (migrationConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00001000) != 0)
+            && migrationConfig_ != null
+            && migrationConfig_
+                != com.google.cloud.memorystore.v1.MigrationConfig.getDefaultInstance()) {
+          getMigrationConfigBuilder().mergeFrom(value);
+        } else {
+          migrationConfig_ = value;
+        }
+      } else {
+        migrationConfigBuilder_.mergeFrom(value);
+      }
+      if (migrationConfig_ != null) {
+        bitField1_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMigrationConfig() {
+      bitField1_ = (bitField1_ & ~0x00001000);
+      migrationConfig_ = null;
+      if (migrationConfigBuilder_ != null) {
+        migrationConfigBuilder_.dispose();
+        migrationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MigrationConfig.Builder getMigrationConfigBuilder() {
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return internalGetMigrationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MigrationConfigOrBuilder getMigrationConfigOrBuilder() {
+      if (migrationConfigBuilder_ != null) {
+        return migrationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return migrationConfig_ == null
+            ? com.google.cloud.memorystore.v1.MigrationConfig.getDefaultInstance()
+            : migrationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Migration config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.memorystore.v1.MigrationConfig,
+            com.google.cloud.memorystore.v1.MigrationConfig.Builder,
+            com.google.cloud.memorystore.v1.MigrationConfigOrBuilder>
+        internalGetMigrationConfigFieldBuilder() {
+      if (migrationConfigBuilder_ == null) {
+        migrationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.memorystore.v1.MigrationConfig,
+                com.google.cloud.memorystore.v1.MigrationConfig.Builder,
+                com.google.cloud.memorystore.v1.MigrationConfigOrBuilder>(
+                getMigrationConfig(), getParentForChildren(), isClean());
+        migrationConfig_ = null;
+      }
+      return migrationConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.memorystore.v1.Instance)

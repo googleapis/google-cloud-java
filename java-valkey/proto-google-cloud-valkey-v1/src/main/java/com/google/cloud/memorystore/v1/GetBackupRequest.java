@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Request for [GetBackup].
+ * Request for `GetBackup`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.GetBackupRequest}
@@ -293,7 +293,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request for [GetBackup].
+   * Request for `GetBackup`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.GetBackupRequest}

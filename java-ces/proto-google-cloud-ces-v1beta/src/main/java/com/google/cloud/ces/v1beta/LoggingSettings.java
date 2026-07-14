@@ -329,6 +329,72 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         : bigqueryExportSettings_;
   }
 
+  public static final int UNREDACTED_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.ces.v1beta.BigQueryExportSettings unredactedBigqueryExportSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the unredactedBigqueryExportSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnredactedBigqueryExportSettings() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The unredactedBigqueryExportSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.BigQueryExportSettings getUnredactedBigqueryExportSettings() {
+    return unredactedBigqueryExportSettings_ == null
+        ? com.google.cloud.ces.v1beta.BigQueryExportSettings.getDefaultInstance()
+        : unredactedBigqueryExportSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app.
+   * The unredacted conversation data will be exported to BigQuery tables if it
+   * is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder
+      getUnredactedBigqueryExportSettingsOrBuilder() {
+    return unredactedBigqueryExportSettings_ == null
+        ? com.google.cloud.ces.v1beta.BigQueryExportSettings.getDefaultInstance()
+        : unredactedBigqueryExportSettings_;
+  }
+
   public static final int CLOUD_LOGGING_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.ces.v1beta.CloudLoggingSettings cloudLoggingSettings_;
 
@@ -347,7 +413,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCloudLoggingSettings() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -408,7 +474,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConversationLoggingSettings() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -472,7 +538,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEvaluationAudioRecordingConfig() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -537,7 +603,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMetricAnalysisSettings() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -604,20 +670,23 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(3, getBigqueryExportSettings());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(4, getCloudLoggingSettings());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(5, getConversationLoggingSettings());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(6, getEvaluationAudioRecordingConfig());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(7, getMetricAnalysisSettings());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getUnredactedAudioRecordingConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(9, getUnredactedBigqueryExportSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -639,21 +708,21 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBigqueryExportSettings());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCloudLoggingSettings());
-    }
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              5, getConversationLoggingSettings());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCloudLoggingSettings());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              6, getEvaluationAudioRecordingConfig());
+              5, getConversationLoggingSettings());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getEvaluationAudioRecordingConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMetricAnalysisSettings());
     }
@@ -661,6 +730,11 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getUnredactedAudioRecordingConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getUnredactedBigqueryExportSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -695,6 +769,12 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     if (hasBigqueryExportSettings() != other.hasBigqueryExportSettings()) return false;
     if (hasBigqueryExportSettings()) {
       if (!getBigqueryExportSettings().equals(other.getBigqueryExportSettings())) return false;
+    }
+    if (hasUnredactedBigqueryExportSettings() != other.hasUnredactedBigqueryExportSettings())
+      return false;
+    if (hasUnredactedBigqueryExportSettings()) {
+      if (!getUnredactedBigqueryExportSettings()
+          .equals(other.getUnredactedBigqueryExportSettings())) return false;
     }
     if (hasCloudLoggingSettings() != other.hasCloudLoggingSettings()) return false;
     if (hasCloudLoggingSettings()) {
@@ -741,6 +821,10 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     if (hasBigqueryExportSettings()) {
       hash = (37 * hash) + BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getBigqueryExportSettings().hashCode();
+    }
+    if (hasUnredactedBigqueryExportSettings()) {
+      hash = (37 * hash) + UNREDACTED_BIGQUERY_EXPORT_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUnredactedBigqueryExportSettings().hashCode();
     }
     if (hasCloudLoggingSettings()) {
       hash = (37 * hash) + CLOUD_LOGGING_SETTINGS_FIELD_NUMBER;
@@ -903,6 +987,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         internalGetAudioRecordingConfigFieldBuilder();
         internalGetUnredactedAudioRecordingConfigFieldBuilder();
         internalGetBigqueryExportSettingsFieldBuilder();
+        internalGetUnredactedBigqueryExportSettingsFieldBuilder();
         internalGetCloudLoggingSettingsFieldBuilder();
         internalGetConversationLoggingSettingsFieldBuilder();
         internalGetEvaluationAudioRecordingConfigFieldBuilder();
@@ -933,6 +1018,11 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       if (bigqueryExportSettingsBuilder_ != null) {
         bigqueryExportSettingsBuilder_.dispose();
         bigqueryExportSettingsBuilder_ = null;
+      }
+      unredactedBigqueryExportSettings_ = null;
+      if (unredactedBigqueryExportSettingsBuilder_ != null) {
+        unredactedBigqueryExportSettingsBuilder_.dispose();
+        unredactedBigqueryExportSettingsBuilder_ = null;
       }
       cloudLoggingSettings_ = null;
       if (cloudLoggingSettingsBuilder_ != null) {
@@ -1018,32 +1108,39 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.unredactedBigqueryExportSettings_ =
+            unredactedBigqueryExportSettingsBuilder_ == null
+                ? unredactedBigqueryExportSettings_
+                : unredactedBigqueryExportSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.cloudLoggingSettings_ =
             cloudLoggingSettingsBuilder_ == null
                 ? cloudLoggingSettings_
                 : cloudLoggingSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.conversationLoggingSettings_ =
             conversationLoggingSettingsBuilder_ == null
                 ? conversationLoggingSettings_
                 : conversationLoggingSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.evaluationAudioRecordingConfig_ =
             evaluationAudioRecordingConfigBuilder_ == null
                 ? evaluationAudioRecordingConfig_
                 : evaluationAudioRecordingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.metricAnalysisSettings_ =
             metricAnalysisSettingsBuilder_ == null
                 ? metricAnalysisSettings_
                 : metricAnalysisSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1071,6 +1168,9 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasBigqueryExportSettings()) {
         mergeBigqueryExportSettings(other.getBigqueryExportSettings());
+      }
+      if (other.hasUnredactedBigqueryExportSettings()) {
+        mergeUnredactedBigqueryExportSettings(other.getUnredactedBigqueryExportSettings());
       }
       if (other.hasCloudLoggingSettings()) {
         mergeCloudLoggingSettings(other.getCloudLoggingSettings());
@@ -1136,7 +1236,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCloudLoggingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
@@ -1144,7 +1244,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetConversationLoggingSettingsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -1152,7 +1252,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetEvaluationAudioRecordingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
@@ -1160,7 +1260,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetMetricAnalysisSettingsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -1171,6 +1271,14 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetUnredactedBigqueryExportSettingsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2120,6 +2228,243 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       return bigqueryExportSettingsBuilder_;
     }
 
+    private com.google.cloud.ces.v1beta.BigQueryExportSettings unredactedBigqueryExportSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.BigQueryExportSettings,
+            com.google.cloud.ces.v1beta.BigQueryExportSettings.Builder,
+            com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder>
+        unredactedBigqueryExportSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the unredactedBigqueryExportSettings field is set.
+     */
+    public boolean hasUnredactedBigqueryExportSettings() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The unredactedBigqueryExportSettings.
+     */
+    public com.google.cloud.ces.v1beta.BigQueryExportSettings
+        getUnredactedBigqueryExportSettings() {
+      if (unredactedBigqueryExportSettingsBuilder_ == null) {
+        return unredactedBigqueryExportSettings_ == null
+            ? com.google.cloud.ces.v1beta.BigQueryExportSettings.getDefaultInstance()
+            : unredactedBigqueryExportSettings_;
+      } else {
+        return unredactedBigqueryExportSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUnredactedBigqueryExportSettings(
+        com.google.cloud.ces.v1beta.BigQueryExportSettings value) {
+      if (unredactedBigqueryExportSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unredactedBigqueryExportSettings_ = value;
+      } else {
+        unredactedBigqueryExportSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUnredactedBigqueryExportSettings(
+        com.google.cloud.ces.v1beta.BigQueryExportSettings.Builder builderForValue) {
+      if (unredactedBigqueryExportSettingsBuilder_ == null) {
+        unredactedBigqueryExportSettings_ = builderForValue.build();
+      } else {
+        unredactedBigqueryExportSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUnredactedBigqueryExportSettings(
+        com.google.cloud.ces.v1beta.BigQueryExportSettings value) {
+      if (unredactedBigqueryExportSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && unredactedBigqueryExportSettings_ != null
+            && unredactedBigqueryExportSettings_
+                != com.google.cloud.ces.v1beta.BigQueryExportSettings.getDefaultInstance()) {
+          getUnredactedBigqueryExportSettingsBuilder().mergeFrom(value);
+        } else {
+          unredactedBigqueryExportSettings_ = value;
+        }
+      } else {
+        unredactedBigqueryExportSettingsBuilder_.mergeFrom(value);
+      }
+      if (unredactedBigqueryExportSettings_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUnredactedBigqueryExportSettings() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      unredactedBigqueryExportSettings_ = null;
+      if (unredactedBigqueryExportSettingsBuilder_ != null) {
+        unredactedBigqueryExportSettingsBuilder_.dispose();
+        unredactedBigqueryExportSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.BigQueryExportSettings.Builder
+        getUnredactedBigqueryExportSettingsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetUnredactedBigqueryExportSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder
+        getUnredactedBigqueryExportSettingsOrBuilder() {
+      if (unredactedBigqueryExportSettingsBuilder_ != null) {
+        return unredactedBigqueryExportSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return unredactedBigqueryExportSettings_ == null
+            ? com.google.cloud.ces.v1beta.BigQueryExportSettings.getDefaultInstance()
+            : unredactedBigqueryExportSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the BigQuery export behaviors for the app.
+     * The unredacted conversation data will be exported to BigQuery tables if it
+     * is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.BigQueryExportSettings unredacted_bigquery_export_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.BigQueryExportSettings,
+            com.google.cloud.ces.v1beta.BigQueryExportSettings.Builder,
+            com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder>
+        internalGetUnredactedBigqueryExportSettingsFieldBuilder() {
+      if (unredactedBigqueryExportSettingsBuilder_ == null) {
+        unredactedBigqueryExportSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.BigQueryExportSettings,
+                com.google.cloud.ces.v1beta.BigQueryExportSettings.Builder,
+                com.google.cloud.ces.v1beta.BigQueryExportSettingsOrBuilder>(
+                getUnredactedBigqueryExportSettings(), getParentForChildren(), isClean());
+        unredactedBigqueryExportSettings_ = null;
+      }
+      return unredactedBigqueryExportSettingsBuilder_;
+    }
+
     private com.google.cloud.ces.v1beta.CloudLoggingSettings cloudLoggingSettings_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.ces.v1beta.CloudLoggingSettings,
@@ -2141,7 +2486,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the cloudLoggingSettings field is set.
      */
     public boolean hasCloudLoggingSettings() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2187,7 +2532,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         cloudLoggingSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2210,7 +2555,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         cloudLoggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2229,7 +2574,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeCloudLoggingSettings(
         com.google.cloud.ces.v1beta.CloudLoggingSettings value) {
       if (cloudLoggingSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && cloudLoggingSettings_ != null
             && cloudLoggingSettings_
                 != com.google.cloud.ces.v1beta.CloudLoggingSettings.getDefaultInstance()) {
@@ -2241,7 +2586,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         cloudLoggingSettingsBuilder_.mergeFrom(value);
       }
       if (cloudLoggingSettings_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2259,7 +2604,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCloudLoggingSettings() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       cloudLoggingSettings_ = null;
       if (cloudLoggingSettingsBuilder_ != null) {
         cloudLoggingSettingsBuilder_.dispose();
@@ -2282,7 +2627,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.CloudLoggingSettings.Builder
         getCloudLoggingSettingsBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetCloudLoggingSettingsFieldBuilder().getBuilder();
     }
@@ -2359,7 +2704,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the conversationLoggingSettings field is set.
      */
     public boolean hasConversationLoggingSettings() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2409,7 +2754,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         conversationLoggingSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2433,7 +2778,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         conversationLoggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2453,7 +2798,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeConversationLoggingSettings(
         com.google.cloud.ces.v1beta.ConversationLoggingSettings value) {
       if (conversationLoggingSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && conversationLoggingSettings_ != null
             && conversationLoggingSettings_
                 != com.google.cloud.ces.v1beta.ConversationLoggingSettings.getDefaultInstance()) {
@@ -2465,7 +2810,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         conversationLoggingSettingsBuilder_.mergeFrom(value);
       }
       if (conversationLoggingSettings_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2484,7 +2829,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearConversationLoggingSettings() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       conversationLoggingSettings_ = null;
       if (conversationLoggingSettingsBuilder_ != null) {
         conversationLoggingSettingsBuilder_.dispose();
@@ -2508,7 +2853,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.ConversationLoggingSettings.Builder
         getConversationLoggingSettingsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetConversationLoggingSettingsFieldBuilder().getBuilder();
     }
@@ -2588,7 +2933,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the evaluationAudioRecordingConfig field is set.
      */
     public boolean hasEvaluationAudioRecordingConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2639,7 +2984,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         evaluationAudioRecordingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2664,7 +3009,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         evaluationAudioRecordingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2685,7 +3030,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeEvaluationAudioRecordingConfig(
         com.google.cloud.ces.v1beta.AudioRecordingConfig value) {
       if (evaluationAudioRecordingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && evaluationAudioRecordingConfig_ != null
             && evaluationAudioRecordingConfig_
                 != com.google.cloud.ces.v1beta.AudioRecordingConfig.getDefaultInstance()) {
@@ -2697,7 +3042,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         evaluationAudioRecordingConfigBuilder_.mergeFrom(value);
       }
       if (evaluationAudioRecordingConfig_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2717,7 +3062,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEvaluationAudioRecordingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       evaluationAudioRecordingConfig_ = null;
       if (evaluationAudioRecordingConfigBuilder_ != null) {
         evaluationAudioRecordingConfigBuilder_.dispose();
@@ -2742,7 +3087,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.AudioRecordingConfig.Builder
         getEvaluationAudioRecordingConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetEvaluationAudioRecordingConfigFieldBuilder().getBuilder();
     }
@@ -2823,7 +3168,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the metricAnalysisSettings field is set.
      */
     public boolean hasMetricAnalysisSettings() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2872,7 +3217,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         metricAnalysisSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2896,7 +3241,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       } else {
         metricAnalysisSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2916,7 +3261,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeMetricAnalysisSettings(
         com.google.cloud.ces.v1beta.MetricAnalysisSettings value) {
       if (metricAnalysisSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && metricAnalysisSettings_ != null
             && metricAnalysisSettings_
                 != com.google.cloud.ces.v1beta.MetricAnalysisSettings.getDefaultInstance()) {
@@ -2928,7 +3273,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         metricAnalysisSettingsBuilder_.mergeFrom(value);
       }
       if (metricAnalysisSettings_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2947,7 +3292,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMetricAnalysisSettings() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       metricAnalysisSettings_ = null;
       if (metricAnalysisSettingsBuilder_ != null) {
         metricAnalysisSettingsBuilder_.dispose();
@@ -2971,7 +3316,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.MetricAnalysisSettings.Builder
         getMetricAnalysisSettingsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetMetricAnalysisSettingsFieldBuilder().getBuilder();
     }

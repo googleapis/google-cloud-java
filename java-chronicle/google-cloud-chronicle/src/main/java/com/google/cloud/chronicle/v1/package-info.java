@@ -164,6 +164,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= FindingsRefinementServiceClient =======================
+ *
+ * <p>Service Description: FindingsRefinementService provides an interface for filtering out
+ * findings that are unlikely to be real threats to prevent them from triggering alerts or
+ * notifications.
+ *
+ * <p>Sample for FindingsRefinementServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FindingsRefinementServiceClient findingsRefinementServiceClient =
+ *     FindingsRefinementServiceClient.create()) {
+ *   FindingsRefinementName name =
+ *       FindingsRefinementName.of(
+ *           "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FINDINGS_REFINEMENT]");
+ *   FindingsRefinement response = findingsRefinementServiceClient.getFindingsRefinement(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= InstanceServiceClient =======================
  *
  * <p>Service Description: InstanceService provides the entry interface for the Chronicle API.

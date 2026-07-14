@@ -59,18 +59,20 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
           + " google/cloud/ces/v1/common.proto\032+google/c"
           + "loud/ces/v1/connector_toolset.proto\032\037goo"
           + "gle/cloud/ces/v1/fakes.proto\032%google/cloud/ces/v1/mcp_toolset.proto\032*google/clou"
-          + "d/ces/v1/open_api_toolset.proto\032\037google/protobuf/timestamp.proto\"\247\005\n"
+          + "d/ces/v1/open_api_toolset.proto\032\036google/"
+          + "protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\330\005\n"
           + "\007Toolset\022;\n"
           + "\013mcp_toolset\030\006"
           + " \001(\0132\037.google.cloud.ces.v1.McpToolsetB\003\340A\001H\000\022D\n"
-          + "\020open_api_toolset\030\007 "
-          + "\001(\0132#.google.cloud.ces.v1.OpenApiToolsetB\003\340A\001H\000\022G\n"
-          + "\021connector_toolset\030\010 \001(\0132%.goo"
-          + "gle.cloud.ces.v1.ConnectorToolsetB\003\340A\001H\000\022\021\n"
+          + "\020open_api_toolset\030\007 \001(\0132#.go"
+          + "ogle.cloud.ces.v1.OpenApiToolsetB\003\340A\001H\000\022G\n"
+          + "\021connector_toolset\030\010"
+          + " \001(\0132%.google.cloud.ces.v1.ConnectorToolsetB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\n"
-          + " \001(\tB\003\340A\001\0224\n"
+          + " \001(\tB\003\340A\001\022/\n"
+          + "\007timeout\030\014 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
@@ -79,11 +81,11 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0162\".google.cloud.ces.v1.ExecutionTypeB\003\340A\001\022B\n"
           + "\020tool_fake_config\030\013"
           + " \001(\0132#.google.cloud.ces.v1.ToolFakeConfigB\003\340A\001:y\352Av\n"
-          + "\032ces.googleapis.com/Toolset\022Eprojects/{project}/locations/{location"
-          + "}/apps/{app}/toolsets/{toolset}*\010toolsets2\007toolsetB\016\n"
+          + "\032ces.googleapis.com/Toolset\022Eprojects/{project}/locations/{locatio"
+          + "n}/apps/{app}/toolsets/{toolset}*\010toolsets2\007toolsetB\016\n"
           + "\014toolset_typeBT\n"
-          + "\027com.google.cloud.ces.v1B\014ToolsetProtoP\001Z)cloud.goo"
-          + "gle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\014ToolsetProtoP\001Z)cloud.go"
+          + "ogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -96,6 +98,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
               com.google.cloud.ces.v1.FakesProto.getDescriptor(),
               com.google.cloud.ces.v1.McpToolsetProto.getDescriptor(),
               com.google.cloud.ces.v1.OpenApiToolsetProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1_Toolset_descriptor = getDescriptor().getMessageType(0);
@@ -109,6 +112,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
               "Name",
               "DisplayName",
               "Description",
+              "Timeout",
               "CreateTime",
               "UpdateTime",
               "Etag",
@@ -124,6 +128,7 @@ public final class ToolsetProto extends com.google.protobuf.GeneratedFile {
     com.google.cloud.ces.v1.FakesProto.getDescriptor();
     com.google.cloud.ces.v1.McpToolsetProto.getDescriptor();
     com.google.cloud.ces.v1.OpenApiToolsetProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
