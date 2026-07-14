@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,7 +200,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PartnerLinkServiceClient implements BackgroundResource {
-  private final PartnerLinkServiceSettings settings;
+  private final @Nullable PartnerLinkServiceSettings settings;
   private final PartnerLinkServiceStub stub;
 
   /** Constructs an instance of PartnerLinkServiceClient with default settings. */
@@ -239,7 +240,7 @@ public class PartnerLinkServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PartnerLinkServiceSettings getSettings() {
+  public final @Nullable PartnerLinkServiceSettings getSettings() {
     return settings;
   }
 
@@ -282,7 +283,8 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    * @param partnerLink Required. The partner link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PartnerLink createPartnerLink(AccountName parent, PartnerLink partnerLink) {
+  public final PartnerLink createPartnerLink(
+      @Nullable AccountName parent, PartnerLink partnerLink) {
     CreatePartnerLinkRequest request =
         CreatePartnerLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -445,7 +447,7 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *     accountTypes/{account_type}/accounts/{account}/partnerLinks/{partner_link}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePartnerLink(PartnerLinkName name) {
+  public final void deletePartnerLink(@Nullable PartnerLinkName name) {
     DeletePartnerLinkRequest request =
         DeletePartnerLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -608,7 +610,7 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *     <p>Format: `accountTypes/{account_type}/accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchPartnerLinksPagedResponse searchPartnerLinks(AccountName parent) {
+  public final SearchPartnerLinksPagedResponse searchPartnerLinks(@Nullable AccountName parent) {
     SearchPartnerLinksRequest request =
         SearchPartnerLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -864,8 +866,9 @@ public class PartnerLinkServiceClient implements BackgroundResource {
           SearchPartnerLinksPage> {
 
     private SearchPartnerLinksPage(
-        PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink> context,
-        SearchPartnerLinksResponse response) {
+        @Nullable PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink>
+            context,
+        @Nullable SearchPartnerLinksResponse response) {
       super(context, response);
     }
 
@@ -875,14 +878,16 @@ public class PartnerLinkServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPartnerLinksPage createPage(
-        PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink> context,
-        SearchPartnerLinksResponse response) {
+        @Nullable PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink>
+            context,
+        @Nullable SearchPartnerLinksResponse response) {
       return new SearchPartnerLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPartnerLinksPage> createPageAsync(
-        PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink> context,
+        @Nullable PageContext<SearchPartnerLinksRequest, SearchPartnerLinksResponse, PartnerLink>
+            context,
         ApiFuture<SearchPartnerLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -897,7 +902,7 @@ public class PartnerLinkServiceClient implements BackgroundResource {
           SearchPartnerLinksFixedSizeCollection> {
 
     private SearchPartnerLinksFixedSizeCollection(
-        List<SearchPartnerLinksPage> pages, int collectionSize) {
+        @Nullable List<SearchPartnerLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -907,7 +912,7 @@ public class PartnerLinkServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPartnerLinksFixedSizeCollection createCollection(
-        List<SearchPartnerLinksPage> pages, int collectionSize) {
+        @Nullable List<SearchPartnerLinksPage> pages, int collectionSize) {
       return new SearchPartnerLinksFixedSizeCollection(pages, collectionSize);
     }
   }

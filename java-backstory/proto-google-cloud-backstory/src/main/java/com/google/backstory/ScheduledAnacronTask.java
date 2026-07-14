@@ -59,14 +59,14 @@ public final class ScheduledAnacronTask extends com.google.protobuf.GeneratedMes
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_ScheduledAnacronTask_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_ScheduledAnacronTask_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.ScheduledAnacronTask.class,
@@ -516,14 +516,14 @@ public final class ScheduledAnacronTask extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(builder_implements:google.backstory.ScheduledAnacronTask)
       com.google.backstory.ScheduledAnacronTaskOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_ScheduledAnacronTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_ScheduledAnacronTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.ScheduledAnacronTask.class,
@@ -551,7 +551,7 @@ public final class ScheduledAnacronTask extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_ScheduledAnacronTask_descriptor;
     }
 

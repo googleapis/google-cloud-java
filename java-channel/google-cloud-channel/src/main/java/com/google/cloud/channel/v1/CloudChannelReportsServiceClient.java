@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -213,7 +214,7 @@ import org.jspecify.annotations.NullMarked;
 @Deprecated
 @Generated("by gapic-generator-java")
 public class CloudChannelReportsServiceClient implements BackgroundResource {
-  private final CloudChannelReportsServiceSettings settings;
+  private final @Nullable CloudChannelReportsServiceSettings settings;
   private final CloudChannelReportsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -263,7 +264,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudChannelReportsServiceSettings getSettings() {
+  public final @Nullable CloudChannelReportsServiceSettings getSettings() {
     return settings;
   }
 
@@ -509,7 +510,8 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final FetchReportResultsPagedResponse fetchReportResults(ReportJobName reportJob) {
+  public final FetchReportResultsPagedResponse fetchReportResults(
+      @Nullable ReportJobName reportJob) {
     FetchReportResultsRequest request =
         FetchReportResultsRequest.newBuilder()
             .setReportJob(reportJob == null ? null : reportJob.toString())
@@ -914,8 +916,8 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
           FetchReportResultsRequest, FetchReportResultsResponse, Row, FetchReportResultsPage> {
 
     private FetchReportResultsPage(
-        PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
-        FetchReportResultsResponse response) {
+        @Nullable PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
+        @Nullable FetchReportResultsResponse response) {
       super(context, response);
     }
 
@@ -925,14 +927,14 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
 
     @Override
     protected FetchReportResultsPage createPage(
-        PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
-        FetchReportResultsResponse response) {
+        @Nullable PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
+        @Nullable FetchReportResultsResponse response) {
       return new FetchReportResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchReportResultsPage> createPageAsync(
-        PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
+        @Nullable PageContext<FetchReportResultsRequest, FetchReportResultsResponse, Row> context,
         ApiFuture<FetchReportResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -947,7 +949,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
           FetchReportResultsFixedSizeCollection> {
 
     private FetchReportResultsFixedSizeCollection(
-        List<FetchReportResultsPage> pages, int collectionSize) {
+        @Nullable List<FetchReportResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -957,7 +959,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
 
     @Override
     protected FetchReportResultsFixedSizeCollection createCollection(
-        List<FetchReportResultsPage> pages, int collectionSize) {
+        @Nullable List<FetchReportResultsPage> pages, int collectionSize) {
       return new FetchReportResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -988,8 +990,8 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
       extends AbstractPage<ListReportsRequest, ListReportsResponse, Report, ListReportsPage> {
 
     private ListReportsPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       super(context, response);
     }
 
@@ -999,14 +1001,14 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
 
     @Override
     protected ListReportsPage createPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       return new ListReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportsPage> createPageAsync(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
         ApiFuture<ListReportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1020,7 +1022,8 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
           ListReportsPage,
           ListReportsFixedSizeCollection> {
 
-    private ListReportsFixedSizeCollection(List<ListReportsPage> pages, int collectionSize) {
+    private ListReportsFixedSizeCollection(
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1030,7 +1033,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
 
     @Override
     protected ListReportsFixedSizeCollection createCollection(
-        List<ListReportsPage> pages, int collectionSize) {
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       return new ListReportsFixedSizeCollection(pages, collectionSize);
     }
   }

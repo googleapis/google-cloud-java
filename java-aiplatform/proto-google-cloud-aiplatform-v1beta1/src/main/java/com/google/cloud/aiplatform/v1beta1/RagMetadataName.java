@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -109,7 +110,7 @@ public class RagMetadataName implements ResourceName {
         .toString();
   }
 
-  public static RagMetadataName parse(String formattedString) {
+  public static @Nullable RagMetadataName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -132,7 +133,7 @@ public class RagMetadataName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RagMetadataName> values) {
+  public static List<String> toStringList(List<@Nullable RagMetadataName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RagMetadataName value : values) {
       if (value == null) {
@@ -196,7 +197,7 @@ public class RagMetadataName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

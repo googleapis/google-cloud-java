@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -263,7 +264,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CaseServiceClient implements BackgroundResource {
-  private final CaseServiceSettings settings;
+  private final @Nullable CaseServiceSettings settings;
   private final CaseServiceStub stub;
 
   /** Constructs an instance of CaseServiceClient with default settings. */
@@ -302,7 +303,7 @@ public class CaseServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CaseServiceSettings getSettings() {
+  public final @Nullable CaseServiceSettings getSettings() {
     return settings;
   }
 
@@ -331,7 +332,7 @@ public class CaseServiceClient implements BackgroundResource {
    * @param name Required. The full name of a case to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Case getCase(CaseName name) {
+  public final Case getCase(@Nullable CaseName name) {
     GetCaseRequest request =
         GetCaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCase(request);
@@ -445,7 +446,7 @@ public class CaseServiceClient implements BackgroundResource {
    * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCasesPagedResponse listCases(OrganizationName parent) {
+  public final ListCasesPagedResponse listCases(@Nullable OrganizationName parent) {
     ListCasesRequest request =
         ListCasesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listCases(request);
@@ -478,7 +479,7 @@ public class CaseServiceClient implements BackgroundResource {
    * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCasesPagedResponse listCases(ProjectName parent) {
+  public final ListCasesPagedResponse listCases(@Nullable ProjectName parent) {
     ListCasesRequest request =
         ListCasesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listCases(request);
@@ -767,7 +768,7 @@ public class CaseServiceClient implements BackgroundResource {
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Case createCase(OrganizationName parent, Case case_) {
+  public final Case createCase(@Nullable OrganizationName parent, Case case_) {
     CreateCaseRequest request =
         CreateCaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -803,7 +804,7 @@ public class CaseServiceClient implements BackgroundResource {
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Case createCase(ProjectName parent, Case case_) {
+  public final Case createCase(@Nullable ProjectName parent, Case case_) {
     CreateCaseRequest request =
         CreateCaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1308,8 +1309,8 @@ public class CaseServiceClient implements BackgroundResource {
       extends AbstractPage<ListCasesRequest, ListCasesResponse, Case, ListCasesPage> {
 
     private ListCasesPage(
-        PageContext<ListCasesRequest, ListCasesResponse, Case> context,
-        ListCasesResponse response) {
+        @Nullable PageContext<ListCasesRequest, ListCasesResponse, Case> context,
+        @Nullable ListCasesResponse response) {
       super(context, response);
     }
 
@@ -1319,14 +1320,14 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected ListCasesPage createPage(
-        PageContext<ListCasesRequest, ListCasesResponse, Case> context,
-        ListCasesResponse response) {
+        @Nullable PageContext<ListCasesRequest, ListCasesResponse, Case> context,
+        @Nullable ListCasesResponse response) {
       return new ListCasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCasesPage> createPageAsync(
-        PageContext<ListCasesRequest, ListCasesResponse, Case> context,
+        @Nullable PageContext<ListCasesRequest, ListCasesResponse, Case> context,
         ApiFuture<ListCasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1336,7 +1337,7 @@ public class CaseServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListCasesRequest, ListCasesResponse, Case, ListCasesPage, ListCasesFixedSizeCollection> {
 
-    private ListCasesFixedSizeCollection(List<ListCasesPage> pages, int collectionSize) {
+    private ListCasesFixedSizeCollection(@Nullable List<ListCasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1346,7 +1347,7 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected ListCasesFixedSizeCollection createCollection(
-        List<ListCasesPage> pages, int collectionSize) {
+        @Nullable List<ListCasesPage> pages, int collectionSize) {
       return new ListCasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1377,8 +1378,8 @@ public class CaseServiceClient implements BackgroundResource {
       extends AbstractPage<SearchCasesRequest, SearchCasesResponse, Case, SearchCasesPage> {
 
     private SearchCasesPage(
-        PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
-        SearchCasesResponse response) {
+        @Nullable PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
+        @Nullable SearchCasesResponse response) {
       super(context, response);
     }
 
@@ -1388,14 +1389,14 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchCasesPage createPage(
-        PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
-        SearchCasesResponse response) {
+        @Nullable PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
+        @Nullable SearchCasesResponse response) {
       return new SearchCasesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchCasesPage> createPageAsync(
-        PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
+        @Nullable PageContext<SearchCasesRequest, SearchCasesResponse, Case> context,
         ApiFuture<SearchCasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1409,7 +1410,8 @@ public class CaseServiceClient implements BackgroundResource {
           SearchCasesPage,
           SearchCasesFixedSizeCollection> {
 
-    private SearchCasesFixedSizeCollection(List<SearchCasesPage> pages, int collectionSize) {
+    private SearchCasesFixedSizeCollection(
+        @Nullable List<SearchCasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1419,7 +1421,7 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchCasesFixedSizeCollection createCollection(
-        List<SearchCasesPage> pages, int collectionSize) {
+        @Nullable List<SearchCasesPage> pages, int collectionSize) {
       return new SearchCasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1460,12 +1462,13 @@ public class CaseServiceClient implements BackgroundResource {
           SearchCaseClassificationsPage> {
 
     private SearchCaseClassificationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchCaseClassificationsRequest,
                 SearchCaseClassificationsResponse,
                 CaseClassification>
             context,
-        SearchCaseClassificationsResponse response) {
+        @Nullable SearchCaseClassificationsResponse response) {
       super(context, response);
     }
 
@@ -1475,18 +1478,20 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchCaseClassificationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchCaseClassificationsRequest,
                 SearchCaseClassificationsResponse,
                 CaseClassification>
             context,
-        SearchCaseClassificationsResponse response) {
+        @Nullable SearchCaseClassificationsResponse response) {
       return new SearchCaseClassificationsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchCaseClassificationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchCaseClassificationsRequest,
                 SearchCaseClassificationsResponse,
                 CaseClassification>
@@ -1505,7 +1510,7 @@ public class CaseServiceClient implements BackgroundResource {
           SearchCaseClassificationsFixedSizeCollection> {
 
     private SearchCaseClassificationsFixedSizeCollection(
-        List<SearchCaseClassificationsPage> pages, int collectionSize) {
+        @Nullable List<SearchCaseClassificationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1515,7 +1520,7 @@ public class CaseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchCaseClassificationsFixedSizeCollection createCollection(
-        List<SearchCaseClassificationsPage> pages, int collectionSize) {
+        @Nullable List<SearchCaseClassificationsPage> pages, int collectionSize) {
       return new SearchCaseClassificationsFixedSizeCollection(pages, collectionSize);
     }
   }

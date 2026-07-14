@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -269,7 +270,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConversationDatasetsClient implements BackgroundResource {
-  private final ConversationDatasetsSettings settings;
+  private final @Nullable ConversationDatasetsSettings settings;
   private final ConversationDatasetsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -317,7 +318,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConversationDatasetsSettings getSettings() {
+  public final @Nullable ConversationDatasetsSettings getSettings() {
     return settings;
   }
 
@@ -535,7 +536,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/conversationDatasets/&lt;Conversation Dataset ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConversationDataset getConversationDataset(ConversationDatasetName name) {
+  public final ConversationDataset getConversationDataset(@Nullable ConversationDatasetName name) {
     GetConversationDatasetRequest request =
         GetConversationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -663,7 +664,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationDatasetsPagedResponse listConversationDatasets(LocationName parent) {
+  public final ListConversationDatasetsPagedResponse listConversationDatasets(
+      @Nullable LocationName parent) {
     ListConversationDatasetsRequest request =
         ListConversationDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -847,7 +849,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteConversationDatasetOperationMetadata>
-      deleteConversationDatasetAsync(ConversationDatasetName name) {
+      deleteConversationDatasetAsync(@Nullable ConversationDatasetName name) {
     DeleteConversationDatasetRequest request =
         DeleteConversationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1424,12 +1426,13 @@ public class ConversationDatasetsClient implements BackgroundResource {
           ListConversationDatasetsPage> {
 
     private ListConversationDatasetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationDatasetsRequest,
                 ListConversationDatasetsResponse,
                 ConversationDataset>
             context,
-        ListConversationDatasetsResponse response) {
+        @Nullable ListConversationDatasetsResponse response) {
       super(context, response);
     }
 
@@ -1439,18 +1442,20 @@ public class ConversationDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListConversationDatasetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationDatasetsRequest,
                 ListConversationDatasetsResponse,
                 ConversationDataset>
             context,
-        ListConversationDatasetsResponse response) {
+        @Nullable ListConversationDatasetsResponse response) {
       return new ListConversationDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationDatasetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationDatasetsRequest,
                 ListConversationDatasetsResponse,
                 ConversationDataset>
@@ -1469,7 +1474,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
           ListConversationDatasetsFixedSizeCollection> {
 
     private ListConversationDatasetsFixedSizeCollection(
-        List<ListConversationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1479,7 +1484,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListConversationDatasetsFixedSizeCollection createCollection(
-        List<ListConversationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationDatasetsPage> pages, int collectionSize) {
       return new ListConversationDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1513,8 +1518,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1524,14 +1529,14 @@ public class ConversationDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1545,7 +1550,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1555,7 +1561,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

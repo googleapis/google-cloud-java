@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -298,7 +299,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StoragePoolsClient implements BackgroundResource {
-  private final StoragePoolsSettings settings;
+  private final @Nullable StoragePoolsSettings settings;
   private final StoragePoolsStub stub;
 
   /** Constructs an instance of StoragePoolsClient with default settings. */
@@ -337,7 +338,7 @@ public class StoragePoolsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final StoragePoolsSettings getSettings() {
+  public final @Nullable StoragePoolsSettings getSettings() {
     return settings;
   }
 
@@ -1702,12 +1703,13 @@ public class StoragePoolsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListStoragePoolsRequest,
                 StoragePoolAggregatedList,
                 Map.Entry<String, StoragePoolsScopedList>>
             context,
-        StoragePoolAggregatedList response) {
+        @Nullable StoragePoolAggregatedList response) {
       super(context, response);
     }
 
@@ -1717,18 +1719,20 @@ public class StoragePoolsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListStoragePoolsRequest,
                 StoragePoolAggregatedList,
                 Map.Entry<String, StoragePoolsScopedList>>
             context,
-        StoragePoolAggregatedList response) {
+        @Nullable StoragePoolAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListStoragePoolsRequest,
                 StoragePoolAggregatedList,
                 Map.Entry<String, StoragePoolsScopedList>>
@@ -1746,7 +1750,8 @@ public class StoragePoolsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1756,7 +1761,7 @@ public class StoragePoolsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1787,8 +1792,8 @@ public class StoragePoolsClient implements BackgroundResource {
       extends AbstractPage<ListStoragePoolsRequest, StoragePoolList, StoragePool, ListPage> {
 
     private ListPage(
-        PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
-        StoragePoolList response) {
+        @Nullable PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
+        @Nullable StoragePoolList response) {
       super(context, response);
     }
 
@@ -1798,14 +1803,14 @@ public class StoragePoolsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
-        StoragePoolList response) {
+        @Nullable PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
+        @Nullable StoragePoolList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
+        @Nullable PageContext<ListStoragePoolsRequest, StoragePoolList, StoragePool> context,
         ApiFuture<StoragePoolList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1819,7 +1824,7 @@ public class StoragePoolsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1828,7 +1833,8 @@ public class StoragePoolsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1860,8 +1866,9 @@ public class StoragePoolsClient implements BackgroundResource {
           ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk, ListDisksPage> {
 
     private ListDisksPage(
-        PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk> context,
-        StoragePoolListDisks response) {
+        @Nullable PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk>
+            context,
+        @Nullable StoragePoolListDisks response) {
       super(context, response);
     }
 
@@ -1871,14 +1878,16 @@ public class StoragePoolsClient implements BackgroundResource {
 
     @Override
     protected ListDisksPage createPage(
-        PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk> context,
-        StoragePoolListDisks response) {
+        @Nullable PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk>
+            context,
+        @Nullable StoragePoolListDisks response) {
       return new ListDisksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDisksPage> createPageAsync(
-        PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk> context,
+        @Nullable PageContext<ListDisksStoragePoolsRequest, StoragePoolListDisks, StoragePoolDisk>
+            context,
         ApiFuture<StoragePoolListDisks> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1892,7 +1901,7 @@ public class StoragePoolsClient implements BackgroundResource {
           ListDisksPage,
           ListDisksFixedSizeCollection> {
 
-    private ListDisksFixedSizeCollection(List<ListDisksPage> pages, int collectionSize) {
+    private ListDisksFixedSizeCollection(@Nullable List<ListDisksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1902,7 +1911,7 @@ public class StoragePoolsClient implements BackgroundResource {
 
     @Override
     protected ListDisksFixedSizeCollection createCollection(
-        List<ListDisksPage> pages, int collectionSize) {
+        @Nullable List<ListDisksPage> pages, int collectionSize) {
       return new ListDisksFixedSizeCollection(pages, collectionSize);
     }
   }

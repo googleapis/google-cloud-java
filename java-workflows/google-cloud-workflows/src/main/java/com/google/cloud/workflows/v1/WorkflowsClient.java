@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -273,7 +274,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class WorkflowsClient implements BackgroundResource {
-  private final WorkflowsSettings settings;
+  private final @Nullable WorkflowsSettings settings;
   private final WorkflowsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -319,7 +320,7 @@ public class WorkflowsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WorkflowsSettings getSettings() {
+  public final @Nullable WorkflowsSettings getSettings() {
     return settings;
   }
 
@@ -368,7 +369,7 @@ public class WorkflowsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkflowsPagedResponse listWorkflows(LocationName parent) {
+  public final ListWorkflowsPagedResponse listWorkflows(@Nullable LocationName parent) {
     ListWorkflowsRequest request =
         ListWorkflowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -535,7 +536,7 @@ public class WorkflowsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workflow getWorkflow(WorkflowName name) {
+  public final Workflow getWorkflow(@Nullable WorkflowName name) {
     GetWorkflowRequest request =
         GetWorkflowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkflow(request);
@@ -663,7 +664,7 @@ public class WorkflowsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workflow, OperationMetadata> createWorkflowAsync(
-      LocationName parent, Workflow workflow, String workflowId) {
+      @Nullable LocationName parent, Workflow workflow, String workflowId) {
     CreateWorkflowRequest request =
         CreateWorkflowRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -841,7 +842,8 @@ public class WorkflowsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteWorkflowAsync(WorkflowName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteWorkflowAsync(
+      @Nullable WorkflowName name) {
     DeleteWorkflowRequest request =
         DeleteWorkflowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteWorkflowAsync(request);
@@ -1409,8 +1411,8 @@ public class WorkflowsClient implements BackgroundResource {
           ListWorkflowsRequest, ListWorkflowsResponse, Workflow, ListWorkflowsPage> {
 
     private ListWorkflowsPage(
-        PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
-        ListWorkflowsResponse response) {
+        @Nullable PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
+        @Nullable ListWorkflowsResponse response) {
       super(context, response);
     }
 
@@ -1420,14 +1422,14 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowsPage createPage(
-        PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
-        ListWorkflowsResponse response) {
+        @Nullable PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
+        @Nullable ListWorkflowsResponse response) {
       return new ListWorkflowsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkflowsPage> createPageAsync(
-        PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
+        @Nullable PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> context,
         ApiFuture<ListWorkflowsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1441,7 +1443,8 @@ public class WorkflowsClient implements BackgroundResource {
           ListWorkflowsPage,
           ListWorkflowsFixedSizeCollection> {
 
-    private ListWorkflowsFixedSizeCollection(List<ListWorkflowsPage> pages, int collectionSize) {
+    private ListWorkflowsFixedSizeCollection(
+        @Nullable List<ListWorkflowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1451,7 +1454,7 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowsFixedSizeCollection createCollection(
-        List<ListWorkflowsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowsPage> pages, int collectionSize) {
       return new ListWorkflowsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1488,8 +1491,9 @@ public class WorkflowsClient implements BackgroundResource {
           ListWorkflowRevisionsPage> {
 
     private ListWorkflowRevisionsPage(
-        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
-        ListWorkflowRevisionsResponse response) {
+        @Nullable PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>
+            context,
+        @Nullable ListWorkflowRevisionsResponse response) {
       super(context, response);
     }
 
@@ -1499,14 +1503,16 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowRevisionsPage createPage(
-        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
-        ListWorkflowRevisionsResponse response) {
+        @Nullable PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>
+            context,
+        @Nullable ListWorkflowRevisionsResponse response) {
       return new ListWorkflowRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkflowRevisionsPage> createPageAsync(
-        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
+        @Nullable PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>
+            context,
         ApiFuture<ListWorkflowRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1521,7 +1527,7 @@ public class WorkflowsClient implements BackgroundResource {
           ListWorkflowRevisionsFixedSizeCollection> {
 
     private ListWorkflowRevisionsFixedSizeCollection(
-        List<ListWorkflowRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1531,7 +1537,7 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowRevisionsFixedSizeCollection createCollection(
-        List<ListWorkflowRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowRevisionsPage> pages, int collectionSize) {
       return new ListWorkflowRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1565,8 +1571,8 @@ public class WorkflowsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1576,14 +1582,14 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1597,7 +1603,8 @@ public class WorkflowsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1607,7 +1614,7 @@ public class WorkflowsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

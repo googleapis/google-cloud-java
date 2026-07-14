@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,7 +219,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RuleSetServiceClient implements BackgroundResource {
-  private final RuleSetServiceSettings settings;
+  private final @Nullable RuleSetServiceSettings settings;
   private final RuleSetServiceStub stub;
 
   /** Constructs an instance of RuleSetServiceClient with default settings. */
@@ -258,7 +259,7 @@ public class RuleSetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RuleSetServiceSettings getSettings() {
+  public final @Nullable RuleSetServiceSettings getSettings() {
     return settings;
   }
 
@@ -290,7 +291,7 @@ public class RuleSetServiceClient implements BackgroundResource {
    * @param ruleSet Required. The rule set to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RuleSet createRuleSet(LocationName parent, RuleSet ruleSet) {
+  public final RuleSet createRuleSet(@Nullable LocationName parent, RuleSet ruleSet) {
     CreateRuleSetRequest request =
         CreateRuleSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -408,7 +409,7 @@ public class RuleSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/ruleSets/{rule_set_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RuleSet getRuleSet(RuleSetName name) {
+  public final RuleSet getRuleSet(@Nullable RuleSetName name) {
     GetRuleSetRequest request =
         GetRuleSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRuleSet(request);
@@ -521,7 +522,7 @@ public class RuleSetServiceClient implements BackgroundResource {
    * @param ruleSet Required. The rule set to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RuleSet updateRuleSet(RuleSetName name, RuleSet ruleSet) {
+  public final RuleSet updateRuleSet(@Nullable RuleSetName name, RuleSet ruleSet) {
     UpdateRuleSetRequest request =
         UpdateRuleSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -642,7 +643,7 @@ public class RuleSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/ruleSets/{rule_set_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRuleSet(RuleSetName name) {
+  public final void deleteRuleSet(@Nullable RuleSetName name) {
     DeleteRuleSetRequest request =
         DeleteRuleSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRuleSet(request);
@@ -754,7 +755,7 @@ public class RuleSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuleSetsPagedResponse listRuleSets(LocationName parent) {
+  public final ListRuleSetsPagedResponse listRuleSets(@Nullable LocationName parent) {
     ListRuleSetsRequest request =
         ListRuleSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -952,8 +953,8 @@ public class RuleSetServiceClient implements BackgroundResource {
       extends AbstractPage<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet, ListRuleSetsPage> {
 
     private ListRuleSetsPage(
-        PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
-        ListRuleSetsResponse response) {
+        @Nullable PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
+        @Nullable ListRuleSetsResponse response) {
       super(context, response);
     }
 
@@ -963,14 +964,14 @@ public class RuleSetServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleSetsPage createPage(
-        PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
-        ListRuleSetsResponse response) {
+        @Nullable PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
+        @Nullable ListRuleSetsResponse response) {
       return new ListRuleSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuleSetsPage> createPageAsync(
-        PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
+        @Nullable PageContext<ListRuleSetsRequest, ListRuleSetsResponse, RuleSet> context,
         ApiFuture<ListRuleSetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -984,7 +985,8 @@ public class RuleSetServiceClient implements BackgroundResource {
           ListRuleSetsPage,
           ListRuleSetsFixedSizeCollection> {
 
-    private ListRuleSetsFixedSizeCollection(List<ListRuleSetsPage> pages, int collectionSize) {
+    private ListRuleSetsFixedSizeCollection(
+        @Nullable List<ListRuleSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -994,7 +996,7 @@ public class RuleSetServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleSetsFixedSizeCollection createCollection(
-        List<ListRuleSetsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleSetsPage> pages, int collectionSize) {
       return new ListRuleSetsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,7 +149,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LinkedDeviceServiceClient implements BackgroundResource {
-  private final LinkedDeviceServiceSettings settings;
+  private final @Nullable LinkedDeviceServiceSettings settings;
   private final LinkedDeviceServiceStub stub;
 
   /** Constructs an instance of LinkedDeviceServiceClient with default settings. */
@@ -188,7 +189,7 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LinkedDeviceServiceSettings getSettings() {
+  public final @Nullable LinkedDeviceServiceSettings getSettings() {
     return settings;
   }
 
@@ -218,7 +219,7 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
    *     `networks/{network_code}/linkedDevices/{linked_device_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LinkedDevice getLinkedDevice(LinkedDeviceName name) {
+  public final LinkedDevice getLinkedDevice(@Nullable LinkedDeviceName name) {
     GetLinkedDeviceRequest request =
         GetLinkedDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLinkedDevice(request);
@@ -332,7 +333,7 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLinkedDevicesPagedResponse listLinkedDevices(NetworkName parent) {
+  public final ListLinkedDevicesPagedResponse listLinkedDevices(@Nullable NetworkName parent) {
     ListLinkedDevicesRequest request =
         ListLinkedDevicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -548,8 +549,9 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
           ListLinkedDevicesPage> {
 
     private ListLinkedDevicesPage(
-        PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice> context,
-        ListLinkedDevicesResponse response) {
+        @Nullable PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice>
+            context,
+        @Nullable ListLinkedDevicesResponse response) {
       super(context, response);
     }
 
@@ -559,14 +561,16 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLinkedDevicesPage createPage(
-        PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice> context,
-        ListLinkedDevicesResponse response) {
+        @Nullable PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice>
+            context,
+        @Nullable ListLinkedDevicesResponse response) {
       return new ListLinkedDevicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLinkedDevicesPage> createPageAsync(
-        PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice> context,
+        @Nullable PageContext<ListLinkedDevicesRequest, ListLinkedDevicesResponse, LinkedDevice>
+            context,
         ApiFuture<ListLinkedDevicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -581,7 +585,7 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
           ListLinkedDevicesFixedSizeCollection> {
 
     private ListLinkedDevicesFixedSizeCollection(
-        List<ListLinkedDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListLinkedDevicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -591,7 +595,7 @@ public class LinkedDeviceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLinkedDevicesFixedSizeCollection createCollection(
-        List<ListLinkedDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListLinkedDevicesPage> pages, int collectionSize) {
       return new ListLinkedDevicesFixedSizeCollection(pages, collectionSize);
     }
   }

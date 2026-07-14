@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,7 +66,7 @@ public class GoogleSignalsSettingsName implements ResourceName {
     return newBuilder().setProperty(property).build().toString();
   }
 
-  public static GoogleSignalsSettingsName parse(String formattedString) {
+  public static @Nullable GoogleSignalsSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -84,7 +85,7 @@ public class GoogleSignalsSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GoogleSignalsSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable GoogleSignalsSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GoogleSignalsSettingsName value : values) {
       if (value == null) {
@@ -126,7 +127,7 @@ public class GoogleSignalsSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

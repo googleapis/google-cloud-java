@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -92,7 +93,7 @@ public class GoldengateDeploymentEnvironmentName implements ResourceName {
         .toString();
   }
 
-  public static GoldengateDeploymentEnvironmentName parse(String formattedString) {
+  public static @Nullable GoldengateDeploymentEnvironmentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -114,7 +115,8 @@ public class GoldengateDeploymentEnvironmentName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GoldengateDeploymentEnvironmentName> values) {
+  public static List<String> toStringList(
+      List<@Nullable GoldengateDeploymentEnvironmentName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GoldengateDeploymentEnvironmentName value : values) {
       if (value == null) {
@@ -169,7 +171,7 @@ public class GoldengateDeploymentEnvironmentName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

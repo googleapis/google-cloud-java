@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -343,7 +344,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EkmServiceClient implements BackgroundResource {
-  private final EkmServiceSettings settings;
+  private final @Nullable EkmServiceSettings settings;
   private final EkmServiceStub stub;
 
   /** Constructs an instance of EkmServiceClient with default settings. */
@@ -381,7 +382,7 @@ public class EkmServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EkmServiceSettings getSettings() {
+  public final @Nullable EkmServiceSettings getSettings() {
     return settings;
   }
 
@@ -414,7 +415,7 @@ public class EkmServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEkmConnectionsPagedResponse listEkmConnections(LocationName parent) {
+  public final ListEkmConnectionsPagedResponse listEkmConnections(@Nullable LocationName parent) {
     ListEkmConnectionsRequest request =
         ListEkmConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -587,7 +588,7 @@ public class EkmServiceClient implements BackgroundResource {
    *     [EkmConnection][google.cloud.kms.v1.EkmConnection] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EkmConnection getEkmConnection(EkmConnectionName name) {
+  public final EkmConnection getEkmConnection(@Nullable EkmConnectionName name) {
     GetEkmConnectionRequest request =
         GetEkmConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEkmConnection(request);
@@ -710,7 +711,7 @@ public class EkmServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EkmConnection createEkmConnection(
-      LocationName parent, String ekmConnectionId, EkmConnection ekmConnection) {
+      @Nullable LocationName parent, String ekmConnectionId, EkmConnection ekmConnection) {
     CreateEkmConnectionRequest request =
         CreateEkmConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -941,7 +942,7 @@ public class EkmServiceClient implements BackgroundResource {
    *     [EkmConfig][google.cloud.kms.v1.EkmConfig] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EkmConfig getEkmConfig(EkmConfigName name) {
+  public final EkmConfig getEkmConfig(@Nullable EkmConfigName name) {
     GetEkmConfigRequest request =
         GetEkmConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEkmConfig(request);
@@ -1149,7 +1150,7 @@ public class EkmServiceClient implements BackgroundResource {
    *     [EkmConnection][google.cloud.kms.v1.EkmConnection] to verify.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VerifyConnectivityResponse verifyConnectivity(EkmConnectionName name) {
+  public final VerifyConnectivityResponse verifyConnectivity(@Nullable EkmConnectionName name) {
     VerifyConnectivityRequest request =
         VerifyConnectivityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1709,8 +1710,9 @@ public class EkmServiceClient implements BackgroundResource {
           ListEkmConnectionsPage> {
 
     private ListEkmConnectionsPage(
-        PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection> context,
-        ListEkmConnectionsResponse response) {
+        @Nullable PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection>
+            context,
+        @Nullable ListEkmConnectionsResponse response) {
       super(context, response);
     }
 
@@ -1720,14 +1722,16 @@ public class EkmServiceClient implements BackgroundResource {
 
     @Override
     protected ListEkmConnectionsPage createPage(
-        PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection> context,
-        ListEkmConnectionsResponse response) {
+        @Nullable PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection>
+            context,
+        @Nullable ListEkmConnectionsResponse response) {
       return new ListEkmConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEkmConnectionsPage> createPageAsync(
-        PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection> context,
+        @Nullable PageContext<ListEkmConnectionsRequest, ListEkmConnectionsResponse, EkmConnection>
+            context,
         ApiFuture<ListEkmConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1742,7 +1746,7 @@ public class EkmServiceClient implements BackgroundResource {
           ListEkmConnectionsFixedSizeCollection> {
 
     private ListEkmConnectionsFixedSizeCollection(
-        List<ListEkmConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListEkmConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1752,7 +1756,7 @@ public class EkmServiceClient implements BackgroundResource {
 
     @Override
     protected ListEkmConnectionsFixedSizeCollection createCollection(
-        List<ListEkmConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListEkmConnectionsPage> pages, int collectionSize) {
       return new ListEkmConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1786,8 +1790,8 @@ public class EkmServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1797,14 +1801,14 @@ public class EkmServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1818,7 +1822,8 @@ public class EkmServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1828,7 +1833,7 @@ public class EkmServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

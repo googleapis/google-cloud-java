@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ReportErrorsServiceClient implements BackgroundResource {
-  private final ReportErrorsServiceSettings settings;
+  private final @Nullable ReportErrorsServiceSettings settings;
   private final ReportErrorsServiceStub stub;
 
   /** Constructs an instance of ReportErrorsServiceClient with default settings. */
@@ -189,7 +190,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReportErrorsServiceSettings getSettings() {
+  public final @Nullable ReportErrorsServiceSettings getSettings() {
     return settings;
   }
 
@@ -246,7 +247,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(
-      ProjectName projectName, ReportedErrorEvent event) {
+      @Nullable ProjectName projectName, ReportedErrorEvent event) {
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
