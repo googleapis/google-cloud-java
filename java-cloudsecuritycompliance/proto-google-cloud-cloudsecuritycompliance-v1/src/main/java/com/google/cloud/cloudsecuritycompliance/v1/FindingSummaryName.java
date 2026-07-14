@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -202,7 +201,7 @@ public class FindingSummaryName implements ResourceName {
         .toString();
   }
 
-  public static @Nullable FindingSummaryName parse(String formattedString) {
+  public static FindingSummaryName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -230,7 +229,7 @@ public class FindingSummaryName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<@Nullable FindingSummaryName> values) {
+  public static List<String> toStringList(List<FindingSummaryName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FindingSummaryName value : values) {
       if (value == null) {
@@ -286,7 +285,7 @@ public class FindingSummaryName implements ResourceName {
   }
 
   @Override
-  public boolean equals(@Nullable Object o) {
+  public boolean equals(Object o) {
     if (o == this) {
       return true;
     }

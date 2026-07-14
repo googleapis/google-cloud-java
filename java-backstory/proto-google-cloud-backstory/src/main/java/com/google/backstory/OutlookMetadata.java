@@ -58,13 +58,13 @@ public final class OutlookMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_OutlookMetadata_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_OutlookMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_OutlookMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.OutlookMetadata.class,
@@ -449,13 +449,13 @@ public final class OutlookMetadata extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.OutlookMetadata)
       com.google.backstory.OutlookMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_OutlookMetadata_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_OutlookMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_OutlookMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.OutlookMetadata.class,
@@ -482,7 +482,7 @@ public final class OutlookMetadata extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_OutlookMetadata_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_OutlookMetadata_descriptor;
     }
 
     @java.lang.Override

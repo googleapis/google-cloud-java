@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -285,7 +284,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeploymentClient implements BackgroundResource {
-  private final @Nullable DeploymentSettings settings;
+  private final DeploymentSettings settings;
   private final DeploymentStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -331,7 +330,7 @@ public class DeploymentClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final @Nullable DeploymentSettings getSettings() {
+  public final DeploymentSettings getSettings() {
     return settings;
   }
 
@@ -391,7 +390,7 @@ public class DeploymentClient implements BackgroundResource {
    */
   public final OperationFuture<FrameworkDeployment, OperationMetadata>
       createFrameworkDeploymentAsync(
-          @Nullable LocationName parent,
+          LocationName parent,
           FrameworkDeployment frameworkDeployment,
           String frameworkDeploymentId) {
     CreateFrameworkDeploymentRequest request =
@@ -438,7 +437,7 @@ public class DeploymentClient implements BackgroundResource {
    */
   public final OperationFuture<FrameworkDeployment, OperationMetadata>
       createFrameworkDeploymentAsync(
-          @Nullable OrganizationLocationName parent,
+          OrganizationLocationName parent,
           FrameworkDeployment frameworkDeployment,
           String frameworkDeploymentId) {
     CreateFrameworkDeploymentRequest request =
@@ -623,7 +622,7 @@ public class DeploymentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteFrameworkDeploymentAsync(
-      @Nullable FrameworkDeploymentName name) {
+      FrameworkDeploymentName name) {
     DeleteFrameworkDeploymentRequest request =
         DeleteFrameworkDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -791,7 +790,7 @@ public class DeploymentClient implements BackgroundResource {
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FrameworkDeployment getFrameworkDeployment(@Nullable FrameworkDeploymentName name) {
+  public final FrameworkDeployment getFrameworkDeployment(FrameworkDeploymentName name) {
     GetFrameworkDeploymentRequest request =
         GetFrameworkDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -921,8 +920,7 @@ public class DeploymentClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`. The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(
-      @Nullable LocationName parent) {
+  public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(LocationName parent) {
     ListFrameworkDeploymentsRequest request =
         ListFrameworkDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -957,7 +955,7 @@ public class DeploymentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(
-      @Nullable OrganizationLocationName parent) {
+      OrganizationLocationName parent) {
     ListFrameworkDeploymentsRequest request =
         ListFrameworkDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1137,8 +1135,7 @@ public class DeploymentClient implements BackgroundResource {
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloudControlDeployment getCloudControlDeployment(
-      @Nullable CloudControlDeploymentName name) {
+  public final CloudControlDeployment getCloudControlDeployment(CloudControlDeploymentName name) {
     GetCloudControlDeploymentRequest request =
         GetCloudControlDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1271,7 +1268,7 @@ public class DeploymentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(
-      @Nullable LocationName parent) {
+      LocationName parent) {
     ListCloudControlDeploymentsRequest request =
         ListCloudControlDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1306,7 +1303,7 @@ public class DeploymentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(
-      @Nullable OrganizationLocationName parent) {
+      OrganizationLocationName parent) {
     ListCloudControlDeploymentsRequest request =
         ListCloudControlDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1718,13 +1715,12 @@ public class DeploymentClient implements BackgroundResource {
           ListFrameworkDeploymentsPage> {
 
     private ListFrameworkDeploymentsPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkDeploymentsRequest,
                 ListFrameworkDeploymentsResponse,
                 FrameworkDeployment>
             context,
-        @Nullable ListFrameworkDeploymentsResponse response) {
+        ListFrameworkDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -1734,20 +1730,18 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkDeploymentsPage createPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkDeploymentsRequest,
                 ListFrameworkDeploymentsResponse,
                 FrameworkDeployment>
             context,
-        @Nullable ListFrameworkDeploymentsResponse response) {
+        ListFrameworkDeploymentsResponse response) {
       return new ListFrameworkDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFrameworkDeploymentsPage> createPageAsync(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkDeploymentsRequest,
                 ListFrameworkDeploymentsResponse,
                 FrameworkDeployment>
@@ -1766,7 +1760,7 @@ public class DeploymentClient implements BackgroundResource {
           ListFrameworkDeploymentsFixedSizeCollection> {
 
     private ListFrameworkDeploymentsFixedSizeCollection(
-        @Nullable List<ListFrameworkDeploymentsPage> pages, int collectionSize) {
+        List<ListFrameworkDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1776,7 +1770,7 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkDeploymentsFixedSizeCollection createCollection(
-        @Nullable List<ListFrameworkDeploymentsPage> pages, int collectionSize) {
+        List<ListFrameworkDeploymentsPage> pages, int collectionSize) {
       return new ListFrameworkDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1818,13 +1812,12 @@ public class DeploymentClient implements BackgroundResource {
           ListCloudControlDeploymentsPage> {
 
     private ListCloudControlDeploymentsPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListCloudControlDeploymentsRequest,
                 ListCloudControlDeploymentsResponse,
                 CloudControlDeployment>
             context,
-        @Nullable ListCloudControlDeploymentsResponse response) {
+        ListCloudControlDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -1834,20 +1827,18 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListCloudControlDeploymentsPage createPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListCloudControlDeploymentsRequest,
                 ListCloudControlDeploymentsResponse,
                 CloudControlDeployment>
             context,
-        @Nullable ListCloudControlDeploymentsResponse response) {
+        ListCloudControlDeploymentsResponse response) {
       return new ListCloudControlDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloudControlDeploymentsPage> createPageAsync(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListCloudControlDeploymentsRequest,
                 ListCloudControlDeploymentsResponse,
                 CloudControlDeployment>
@@ -1866,7 +1857,7 @@ public class DeploymentClient implements BackgroundResource {
           ListCloudControlDeploymentsFixedSizeCollection> {
 
     private ListCloudControlDeploymentsFixedSizeCollection(
-        @Nullable List<ListCloudControlDeploymentsPage> pages, int collectionSize) {
+        List<ListCloudControlDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1876,7 +1867,7 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListCloudControlDeploymentsFixedSizeCollection createCollection(
-        @Nullable List<ListCloudControlDeploymentsPage> pages, int collectionSize) {
+        List<ListCloudControlDeploymentsPage> pages, int collectionSize) {
       return new ListCloudControlDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1910,8 +1901,8 @@ public class DeploymentClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1921,14 +1912,14 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1942,8 +1933,7 @@ public class DeploymentClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1953,7 +1943,7 @@ public class DeploymentClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+        List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
