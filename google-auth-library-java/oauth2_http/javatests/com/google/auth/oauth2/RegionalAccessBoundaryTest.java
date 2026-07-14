@@ -300,9 +300,9 @@ public class RegionalAccessBoundaryTest {
 
     extraManager.triggerAsyncRefresh(transportFactory, provider, token);
 
-    assertFalse(
+    assertTrue(
         extraManager.isCooldownActive(),
-        "106th task should NOT have entered cooldown on scheduling failure");
+        "106th task should have entered cooldown on scheduling failure");
 
     latch.countDown();
     testExecutor.shutdownNow();

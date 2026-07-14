@@ -204,7 +204,7 @@ final class RegionalAccessBoundaryManager {
                       transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
               cachedRAB.set(newRAB);
               resetCooldown();
-            } catch (Exception e) {
+            } catch (Throwable e) {
               handleRefreshFailure(e);
             } finally {
               // Open the gate again for future refresh requests.
@@ -224,12 +224,13 @@ final class RegionalAccessBoundaryManager {
             "Could not submit background refresh task for Regional Access Boundary. "
                 + "This is non-blocking and the library will attempt to refresh on the next access. Error: "
                 + e.getMessage());
+        handleRefreshFailure(e);
         isRefreshing.set(false);
       }
     }
   }
 
-  private void handleRefreshFailure(Exception e) {
+  private void handleRefreshFailure(Throwable e) {
     CooldownState currentCooldownState = cooldownState.get();
     CooldownState next;
     if (currentCooldownState.expiryTime == 0) {
