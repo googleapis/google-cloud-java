@@ -46,8 +46,30 @@ public class ClearcutTransportTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(false).build();
     ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
 
-    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
-    assertFalse(result);
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
+    assertEquals(0, requestCount.get());
+  }
+
+  @Test
+  public void testSendNullPayloadFailsSilently() {
+    AtomicInteger requestCount = new AtomicInteger(0);
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestCount.incrementAndGet();
+            return new MockLowLevelHttpRequest();
+          }
+        };
+
+    TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
+    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
+
+    TransportResult result = transport.send(null);
+    assertFalse(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
     assertEquals(0, requestCount.get());
   }
 
@@ -73,13 +95,14 @@ public class ClearcutTransportTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
     ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
 
-    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
-    assertTrue(result);
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertTrue(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
     assertEquals(1, requestCount.get());
   }
 
   @Test
-  public void testSendServerErrorStatusCodeRetries() {
+  public void testSendServerErrorStatusCodeReturnsFalse() {
     AtomicInteger requestCount = new AtomicInteger(0);
     MockHttpTransport mockTransport =
         new MockHttpTransport() {
@@ -100,13 +123,14 @@ public class ClearcutTransportTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
     ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
 
-    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
-    assertFalse(result);
-    assertEquals(3, requestCount.get());
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
+    assertEquals(1, requestCount.get());
   }
 
   @Test
-  public void testSendNonRetryableStatusCodeFailsImmediately() {
+  public void testSendClientErrorStatusCodeReturnsFalse() {
     AtomicInteger requestCount = new AtomicInteger(0);
     MockHttpTransport mockTransport =
         new MockHttpTransport() {
@@ -127,13 +151,14 @@ public class ClearcutTransportTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
     ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
 
-    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
-    assertFalse(result);
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
     assertEquals(1, requestCount.get());
   }
 
   @Test
-  public void testSendIOExceptionRetries() {
+  public void testSendIOExceptionReturnsFalse() {
     AtomicInteger requestCount = new AtomicInteger(0);
     MockHttpTransport mockTransport =
         new MockHttpTransport() {
@@ -147,8 +172,40 @@ public class ClearcutTransportTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
     ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
 
-    boolean result = transport.send(TelemetryPayload.getDefaultInstance());
-    assertFalse(result);
-    assertEquals(3, requestCount.get());
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result.isSuccess());
+    assertEquals(-1, result.getNextRequestWaitMillis());
+    assertEquals(1, requestCount.get());
+  }
+
+  @Test
+  public void testSendServerErrorWithNextRequestWaitMillis() {
+    AtomicInteger requestCount = new AtomicInteger(0);
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestCount.incrementAndGet();
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(429);
+                LogResponse logResponse =
+                    LogResponse.newBuilder().setNextRequestWaitMillis(10).build();
+                response.setContent(logResponse.toByteArray());
+                return response;
+              }
+            };
+          }
+        };
+
+    TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
+    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
+
+    TransportResult result = transport.send(TelemetryPayload.getDefaultInstance());
+    assertFalse(result.isSuccess());
+    assertEquals(1, requestCount.get());
+    assertEquals(10, result.getNextRequestWaitMillis());
   }
 }
