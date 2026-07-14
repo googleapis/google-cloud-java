@@ -35,6 +35,7 @@ import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.testing.http.MockHttpTransport;
@@ -154,6 +155,23 @@ public class RegionalAccessBoundaryTest {
 
     assertEquals("encoded", rab.getEncodedLocations());
     assertTrue(mockResponse.isDisconnected(), "Response should have been disconnected");
+  }
+
+  @Test
+  public void testRefreshThrowsIOExceptionOnExpiringToken() {
+    final String url = "https://example.com/rab";
+    final AccessToken token =
+        new AccessToken(
+            "token", new java.util.Date(testClock.currentTimeMillis() + 120_000L)); // 2 minutes, within 3 min skew
+
+    MockHttpTransport transport = new MockHttpTransport.Builder().build();
+    HttpTransportFactory transportFactory = () -> transport;
+
+    assertThrows(
+        IOException.class,
+        () -> {
+          RegionalAccessBoundary.refresh(transportFactory, url, token, testClock, 1000);
+        });
   }
 
   @Test
@@ -410,4 +428,91 @@ public class RegionalAccessBoundaryTest {
     // Verify that MtlsHttpTransportFactory.create() was called to retrieve the mTLS transport
     Mockito.verify(mockMtlsFactory, Mockito.times(2)).create();
   }
+
+  @Test
+  public void
+      regionalAccessBoundary_withMtlsEnabledButInitializationFailed_shouldFallbackToNonMtlsEndpoint()
+          throws IOException, InterruptedException {
+
+    MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+
+    // Configure the environment provider to enable mTLS.
+    // X509Provider will use the invalid certificate config.
+    TestEnvironmentProvider testEnvProvider = new TestEnvironmentProvider();
+    testEnvProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    testEnvProvider.setEnv(
+        "GOOGLE_API_CERTIFICATE_CONFIG",
+        new File("testresources/mtls/invalid_certificate_config.json").getAbsolutePath());
+
+    final String url =
+        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/default:allowedLocations";
+    final AccessToken token =
+        new AccessToken(
+            "token", new java.util.Date(System.currentTimeMillis() + 10 * 3600000L));
+
+    RegionalAccessBoundaryProvider provider = () -> url;
+
+    // Use default OAuth2Utils.HTTP_TRANSPORT_FACTORY
+    HttpTransportFactory transportFactory = OAuth2Utils.HTTP_TRANSPORT_FACTORY;
+
+    RegionalAccessBoundaryManager manager =
+        new RegionalAccessBoundaryManager(
+            testClock,
+            RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
+            com.google.common.util.concurrent.MoreExecutors.newDirectExecutorService());
+
+    // Mock static RegionalAccessBoundary.refresh method to intercept the call
+    try (org.mockito.MockedStatic<RegionalAccessBoundary> rabMock =
+        org.mockito.Mockito.mockStatic(RegionalAccessBoundary.class)) {
+
+      RegionalAccessBoundary mockRab =
+          new RegionalAccessBoundary(
+              "fallback-encoded", Arrays.asList("fallback-loc"), testClock.currentTimeMillis(), testClock);
+
+      rabMock
+          .when(
+              () ->
+                  RegionalAccessBoundary.refresh(
+                      org.mockito.ArgumentMatchers.any(),
+                      org.mockito.ArgumentMatchers.any(),
+                      org.mockito.ArgumentMatchers.any(),
+                      org.mockito.ArgumentMatchers.any(),
+                      org.mockito.ArgumentMatchers.anyInt()))
+          .thenReturn(mockRab);
+
+      // Trigger refresh
+      manager.triggerAsyncRefresh(
+          transportFactory,
+          provider,
+          token,
+          testEnvProvider,
+          SystemPropertyProvider.getInstance());
+
+      // Verify it was cached
+      assertEquals("fallback-encoded", manager.getCachedRAB().getEncodedLocations());
+
+      final org.mockito.ArgumentCaptor<String> urlCaptor =
+          org.mockito.ArgumentCaptor.forClass(String.class);
+      final org.mockito.ArgumentCaptor<HttpTransportFactory> factoryCaptor =
+          org.mockito.ArgumentCaptor.forClass(HttpTransportFactory.class);
+
+      // Verify static call and capture arguments
+      rabMock.verify(
+          () ->
+              RegionalAccessBoundary.refresh(
+                  factoryCaptor.capture(),
+                  urlCaptor.capture(),
+                  org.mockito.ArgumentMatchers.any(),
+                  org.mockito.ArgumentMatchers.any(),
+                  org.mockito.ArgumentMatchers.anyInt()),
+          org.mockito.Mockito.times(1));
+
+      // Verify the URL passed to refresh did NOT get changed to the mTLS endpoint
+      assertEquals(url, urlCaptor.getValue());
+      // Verify that the transport factory used is the default one
+      assertEquals(OAuth2Utils.HTTP_TRANSPORT_FACTORY, factoryCaptor.getValue());
+    }
+  }
 }
+
