@@ -381,13 +381,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       Query<T> query,
       ExplainOptions explainOptions,
       RequestOptions requestOptions) {
-    return new QueryResultsImpl<T>(
-        this,
-        readOptionsPb,
-        (RecordQuery<T>) query,
-        query.getNamespace(),
-        explainOptions,
-        requestOptions);
+    return new QueryResultsImpl.Builder<T>()
+        .setDatastore(this)
+        .setReadOptionsPb(readOptionsPb)
+        .setQuery((RecordQuery<T>) query)
+        .setNamespace(query.getNamespace())
+        .setExplainOptions(explainOptions)
+        .setRequestOptions(requestOptions)
+        .build();
   }
 
   @Override

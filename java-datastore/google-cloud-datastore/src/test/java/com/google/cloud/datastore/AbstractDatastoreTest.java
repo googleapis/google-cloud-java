@@ -1402,7 +1402,7 @@ public abstract class AbstractDatastoreTest {
 
   @Test
   public void testRunQueryWithInstanceLevelRequestTags() {
-    DatastoreOptions optionsWithTags = options.toBuilder().setTags("instance-tag").build();
+    DatastoreOptions optionsWithTags = options.toBuilder().setRequestTags("instance-tag").build();
     Datastore datastoreWithTags = optionsWithTags.getService();
 
     PartitionId partitionId =
@@ -1423,7 +1423,9 @@ public abstract class AbstractDatastoreTest {
             .setPartitionId(partitionId)
             .setQuery(queryPb)
             .setRequestOptions(
-                com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("instance-tag").build())
+                com.google.datastore.v1.RequestOptions.newBuilder()
+                    .addRequestTags("instance-tag")
+                    .build())
             .build();
 
     RunQueryResponse response =
@@ -1531,6 +1533,38 @@ public abstract class AbstractDatastoreTest {
             ReadOption.eventualConsistency());
     assertTrue(results3.hasNext());
     assertEquals(ENTITY1, results3.next());
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRunAggregationQueryWithInstanceLevelRequestTags() {
+    DatastoreOptions optionsWithTags = options.toBuilder().setRequestTags("instance-tag").build();
+    Datastore datastoreWithTags = optionsWithTags.getService();
+
+    com.google.datastore.v1.RequestOptions requestOptions =
+        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+
+    RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
+
+    EasyMock.expect(
+            rpcMock.runAggregationQuery(
+                matches(
+                    aggregationQueryWithAliasAndRequestOptions(
+                        "total_count", requestOptions, false, false))))
+        .andReturn(aggregationQueryResponse);
+
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    EntityQuery selectAllQuery = Query.newEntityQueryBuilder().build();
+    AggregationQuery getCountQuery =
+        Query.newAggregationQueryBuilder()
+            .addAggregation(count().as("total_count"))
+            .over(selectAllQuery)
+            .build();
+
+    AggregationResult result = getOnlyElement(datastoreWithTags.runAggregation(getCountQuery));
+    assertThat(result.getLong("total_count")).isEqualTo(209L);
 
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }

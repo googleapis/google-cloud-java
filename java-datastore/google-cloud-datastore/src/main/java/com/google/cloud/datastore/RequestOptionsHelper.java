@@ -16,9 +16,11 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalApi;
 import com.google.datastore.v1.RequestOptions;
 
 /** Helper class for building and merging Datastore request options. */
+@InternalApi
 public final class RequestOptionsHelper {
 
   private RequestOptionsHelper() {}

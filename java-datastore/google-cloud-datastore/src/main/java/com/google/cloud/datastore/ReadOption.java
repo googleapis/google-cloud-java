@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.ExplainOptions;
 import com.google.datastore.v1.RequestOptions;
@@ -152,14 +153,6 @@ public abstract class ReadOption implements Serializable {
     ExplainOptions explainOptions;
     RequestOptions requestOptions;
 
-    private QueryConfig(Q query, ExplainOptions explainOptions, List<ReadOption> readOptions) {
-      this(query, explainOptions, readOptions, null);
-    }
-
-    private QueryConfig(Q query, ExplainOptions explainOptions) {
-      this(query, explainOptions, Collections.emptyList(), null);
-    }
-
     private QueryConfig(
         Q query,
         ExplainOptions explainOptions,
@@ -189,12 +182,16 @@ public abstract class ReadOption implements Serializable {
 
     public static <Q extends Query<?>> QueryConfig<Q> create(
         Q query, ExplainOptions explainOptions) {
-      return new QueryConfig<>(query, explainOptions);
+      return QueryConfig.<Q>newBuilder().setQuery(query).setExplainOptions(explainOptions).build();
     }
 
     public static <Q extends Query<?>> QueryConfig<Q> create(
         Q query, ExplainOptions explainOptions, List<ReadOption> readOptions) {
-      return new QueryConfig<>(query, explainOptions, readOptions);
+      return QueryConfig.<Q>newBuilder()
+          .setQuery(query)
+          .setExplainOptions(explainOptions)
+          .setReadOptions(readOptions)
+          .build();
     }
 
     public static <Q extends Query<?>> QueryConfig<Q> create(
@@ -202,7 +199,52 @@ public abstract class ReadOption implements Serializable {
         ExplainOptions explainOptions,
         List<ReadOption> readOptions,
         RequestOptions requestOptions) {
-      return new QueryConfig<>(query, explainOptions, readOptions, requestOptions);
+      return QueryConfig.<Q>newBuilder()
+          .setQuery(query)
+          .setExplainOptions(explainOptions)
+          .setReadOptions(readOptions)
+          .setRequestOptions(requestOptions)
+          .build();
+    }
+
+    /** Creates a new builder for {@link QueryConfig}. */
+    public static <Q extends Query<?>> Builder<Q> newBuilder() {
+      return new Builder<>();
+    }
+
+    /** Builder for {@link QueryConfig}. */
+    public static class Builder<Q extends Query<?>> {
+      private Q query;
+      private List<ReadOption> readOptions = Collections.emptyList();
+      private ExplainOptions explainOptions;
+      private RequestOptions requestOptions;
+
+      private Builder() {}
+
+      public Builder<Q> setQuery(Q query) {
+        this.query = query;
+        return this;
+      }
+
+      public Builder<Q> setReadOptions(List<ReadOption> readOptions) {
+        this.readOptions = readOptions;
+        return this;
+      }
+
+      public Builder<Q> setExplainOptions(ExplainOptions explainOptions) {
+        this.explainOptions = explainOptions;
+        return this;
+      }
+
+      public Builder<Q> setRequestOptions(RequestOptions requestOptions) {
+        this.requestOptions = requestOptions;
+        return this;
+      }
+
+      public QueryConfig<Q> build() {
+        Preconditions.checkNotNull(query, "query cannot be null");
+        return new QueryConfig<>(query, explainOptions, readOptions, requestOptions);
+      }
     }
   }
 }

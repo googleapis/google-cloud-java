@@ -205,6 +205,20 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testRequestTags() {
+    assertTrue(options.build().getRequestTags().isEmpty());
+    assertThat(options.setRequestTags("tag1", "tag2").build().getRequestTags())
+        .containsExactly("tag1", "tag2")
+        .inOrder();
+    assertThat(
+            options
+                .setRequestTags(com.google.common.collect.ImmutableList.of("tag3"))
+                .build()
+                .getRequestTags())
+        .containsExactly("tag3");
+  }
+
+  @Test
   public void testDatastore() {
     assertSame(datastoreRpc, options.build().getRpc());
   }

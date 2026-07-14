@@ -256,12 +256,26 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return this;
     }
 
-    public Builder setTags(ImmutableList<String> requestTags) {
+    /**
+     * Sets the request tags to be associated with all requests sent by this client.
+     *
+     * @param requestTags the list of request tags to set
+     * @return the builder object
+     */
+    public Builder setRequestTags(ImmutableList<String> requestTags) {
+      Preconditions.checkNotNull(requestTags, "Request tags cannot be null");
       this.requestTags = requestTags;
       return this;
     }
 
-    public Builder setTags(String... requestTags) {
+    /**
+     * Sets the request tags to be associated with all requests sent by this client.
+     *
+     * @param requestTags the request tags to set
+     * @return the builder object
+     */
+    public Builder setRequestTags(String... requestTags) {
+      Preconditions.checkNotNull(requestTags, "Request tags cannot be null");
       this.requestTags = ImmutableList.copyOf(requestTags);
       return this;
     }
@@ -386,6 +400,11 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     return this.databaseId;
   }
 
+  /**
+   * Returns the request tags to be associated with all requests sent by this client.
+   *
+   * @return the request tags
+   */
   public ImmutableList<String> getRequestTags() {
     return requestTags;
   }

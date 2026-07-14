@@ -642,19 +642,10 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    *
    * @param requestTags the request tags to append to existing ones
    */
-  default Datastore withRequestTags(String... requestTags) {
-    return withRequestTags(java.util.Arrays.asList(requestTags));
-  }
-
-  /**
-   * Returns a new Datastore client with the specified request tags added.
-   *
-   * @param requestTags the request tags to append to existing ones
-   */
   default Datastore withRequestTags(List<String> requestTags) {
     ImmutableList.Builder<String> builder = ImmutableList.builder();
     builder.addAll(getOptions().getRequestTags());
     builder.addAll(requestTags);
-    return getOptions().toBuilder().setTags(builder.build()).build().getService();
+    return getOptions().toBuilder().setRequestTags(builder.build()).build().getService();
   }
 }
