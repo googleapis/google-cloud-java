@@ -59,14 +59,14 @@ public final class FileMetadataPeResourceInfo extends com.google.protobuf.Genera
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_FileMetadataPeResourceInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_FileMetadataPeResourceInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.FileMetadataPeResourceInfo.class,
@@ -524,14 +524,14 @@ public final class FileMetadataPeResourceInfo extends com.google.protobuf.Genera
       // @@protoc_insertion_point(builder_implements:google.backstory.FileMetadataPeResourceInfo)
       com.google.backstory.FileMetadataPeResourceInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataPeResourceInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataPeResourceInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.FileMetadataPeResourceInfo.class,
@@ -559,7 +559,7 @@ public final class FileMetadataPeResourceInfo extends com.google.protobuf.Genera
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataPeResourceInfo_descriptor;
     }
 

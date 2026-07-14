@@ -235,7 +235,7 @@ public enum Priority implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.backstory.Udm.getDescriptor().getEnumTypes().get(3);
+    return com.google.backstory.UdmProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final Priority[] VALUES = values();
