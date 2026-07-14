@@ -58,13 +58,13 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_AttackDetails_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_AttackDetails_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_AttackDetails_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.AttackDetails.class,
@@ -165,14 +165,14 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AttackDetails_Tactic_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AttackDetails_Tactic_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.AttackDetails.Tactic.class,
@@ -468,14 +468,14 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.AttackDetails.Tactic)
         com.google.backstory.AttackDetails.TacticOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Tactic_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Tactic_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.AttackDetails.Tactic.class,
@@ -500,7 +500,7 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Tactic_descriptor;
       }
 
@@ -1040,14 +1040,14 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AttackDetails_Technique_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AttackDetails_Technique_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.AttackDetails.Technique.class,
@@ -1467,14 +1467,14 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.AttackDetails.Technique)
         com.google.backstory.AttackDetails.TechniqueOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Technique_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Technique_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.AttackDetails.Technique.class,
@@ -1501,7 +1501,7 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_AttackDetails_Technique_descriptor;
       }
 
@@ -2542,13 +2542,13 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.AttackDetails)
       com.google.backstory.AttackDetailsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_AttackDetails_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_AttackDetails_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AttackDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.AttackDetails.class,
@@ -2586,7 +2586,7 @@ public final class AttackDetails extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_AttackDetails_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_AttackDetails_descriptor;
     }
 
     @java.lang.Override

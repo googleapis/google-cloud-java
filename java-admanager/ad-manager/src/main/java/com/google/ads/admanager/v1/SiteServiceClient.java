@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -253,7 +254,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SiteServiceClient implements BackgroundResource {
-  private final SiteServiceSettings settings;
+  private final @Nullable SiteServiceSettings settings;
   private final SiteServiceStub stub;
 
   /** Constructs an instance of SiteServiceClient with default settings. */
@@ -292,7 +293,7 @@ public class SiteServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SiteServiceSettings getSettings() {
+  public final @Nullable SiteServiceSettings getSettings() {
     return settings;
   }
 
@@ -322,7 +323,7 @@ public class SiteServiceClient implements BackgroundResource {
    *     `networks/{network_code}/sites/{site_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Site getSite(SiteName name) {
+  public final Site getSite(@Nullable SiteName name) {
     GetSiteRequest request =
         GetSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSite(request);
@@ -434,7 +435,7 @@ public class SiteServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSitesPagedResponse listSites(NetworkName parent) {
+  public final ListSitesPagedResponse listSites(@Nullable NetworkName parent) {
     ListSitesRequest request =
         ListSitesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSites(request);
@@ -603,7 +604,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @param site Required. The `Site` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Site createSite(NetworkName parent, Site site) {
+  public final Site createSite(@Nullable NetworkName parent, Site site) {
     CreateSiteRequest request =
         CreateSiteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -725,7 +726,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateSitesResponse batchCreateSites(
-      NetworkName parent, List<CreateSiteRequest> requests) {
+      @Nullable NetworkName parent, List<CreateSiteRequest> requests) {
     BatchCreateSitesRequest request =
         BatchCreateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -938,7 +939,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateSitesResponse batchUpdateSites(
-      NetworkName parent, List<UpdateSiteRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateSiteRequest> requests) {
     BatchUpdateSitesRequest request =
         BatchUpdateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1062,7 +1063,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateSitesResponse batchDeactivateSites(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateSitesRequest request =
         BatchDeactivateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1186,7 +1187,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchSubmitSitesForApprovalResponse batchSubmitSitesForApproval(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchSubmitSitesForApprovalRequest request =
         BatchSubmitSitesForApprovalRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1343,8 +1344,8 @@ public class SiteServiceClient implements BackgroundResource {
       extends AbstractPage<ListSitesRequest, ListSitesResponse, Site, ListSitesPage> {
 
     private ListSitesPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       super(context, response);
     }
 
@@ -1354,14 +1355,14 @@ public class SiteServiceClient implements BackgroundResource {
 
     @Override
     protected ListSitesPage createPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       return new ListSitesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSitesPage> createPageAsync(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
         ApiFuture<ListSitesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1371,7 +1372,7 @@ public class SiteServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSitesRequest, ListSitesResponse, Site, ListSitesPage, ListSitesFixedSizeCollection> {
 
-    private ListSitesFixedSizeCollection(List<ListSitesPage> pages, int collectionSize) {
+    private ListSitesFixedSizeCollection(@Nullable List<ListSitesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1381,7 +1382,7 @@ public class SiteServiceClient implements BackgroundResource {
 
     @Override
     protected ListSitesFixedSizeCollection createCollection(
-        List<ListSitesPage> pages, int collectionSize) {
+        @Nullable List<ListSitesPage> pages, int collectionSize) {
       return new ListSitesFixedSizeCollection(pages, collectionSize);
     }
   }

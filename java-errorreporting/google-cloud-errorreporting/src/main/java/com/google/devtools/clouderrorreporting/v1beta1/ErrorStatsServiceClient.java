@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -186,7 +187,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ErrorStatsServiceClient implements BackgroundResource {
-  private final ErrorStatsServiceSettings settings;
+  private final @Nullable ErrorStatsServiceSettings settings;
   private final ErrorStatsServiceStub stub;
 
   /** Constructs an instance of ErrorStatsServiceClient with default settings. */
@@ -226,7 +227,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ErrorStatsServiceSettings getSettings() {
+  public final @Nullable ErrorStatsServiceSettings getSettings() {
     return settings;
   }
 
@@ -280,7 +281,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGroupStatsPagedResponse listGroupStats(
-      ProjectName projectName, QueryTimeRange timeRange) {
+      @Nullable ProjectName projectName, QueryTimeRange timeRange) {
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
@@ -507,7 +508,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *     Notice](https://cloud.google.com/terms/cloud-privacy-notice).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
+  public final ListEventsPagedResponse listEvents(
+      @Nullable ProjectName projectName, String groupId) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
@@ -698,7 +700,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *     when unspecified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
+  public final DeleteEventsResponse deleteEvents(@Nullable ProjectName projectName) {
     DeleteEventsRequest request =
         DeleteEventsRequest.newBuilder()
             .setProjectName(projectName == null ? null : projectName.toString())
@@ -855,8 +857,9 @@ public class ErrorStatsServiceClient implements BackgroundResource {
           ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage> {
 
     private ListGroupStatsPage(
-        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
-        ListGroupStatsResponse response) {
+        @Nullable PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+            context,
+        @Nullable ListGroupStatsResponse response) {
       super(context, response);
     }
 
@@ -866,14 +869,16 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupStatsPage createPage(
-        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
-        ListGroupStatsResponse response) {
+        @Nullable PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+            context,
+        @Nullable ListGroupStatsResponse response) {
       return new ListGroupStatsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupStatsPage> createPageAsync(
-        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        @Nullable PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+            context,
         ApiFuture<ListGroupStatsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -887,7 +892,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
           ListGroupStatsPage,
           ListGroupStatsFixedSizeCollection> {
 
-    private ListGroupStatsFixedSizeCollection(List<ListGroupStatsPage> pages, int collectionSize) {
+    private ListGroupStatsFixedSizeCollection(
+        @Nullable List<ListGroupStatsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -897,7 +903,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupStatsFixedSizeCollection createCollection(
-        List<ListGroupStatsPage> pages, int collectionSize) {
+        @Nullable List<ListGroupStatsPage> pages, int collectionSize) {
       return new ListGroupStatsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -928,8 +934,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
       extends AbstractPage<ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage> {
 
     private ListEventsPage(
-        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        @Nullable ListEventsResponse response) {
       super(context, response);
     }
 
@@ -939,14 +945,14 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsPage createPage(
-        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        @Nullable ListEventsResponse response) {
       return new ListEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventsPage> createPageAsync(
-        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -960,7 +966,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
           ListEventsPage,
           ListEventsFixedSizeCollection> {
 
-    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+    private ListEventsFixedSizeCollection(
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -970,7 +977,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsFixedSizeCollection createCollection(
-        List<ListEventsPage> pages, int collectionSize) {
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -192,7 +193,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FulfillmentsClient implements BackgroundResource {
-  private final FulfillmentsSettings settings;
+  private final @Nullable FulfillmentsSettings settings;
   private final FulfillmentsStub stub;
 
   /** Constructs an instance of FulfillmentsClient with default settings. */
@@ -231,7 +232,7 @@ public class FulfillmentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FulfillmentsSettings getSettings() {
+  public final @Nullable FulfillmentsSettings getSettings() {
     return settings;
   }
 
@@ -261,7 +262,7 @@ public class FulfillmentsClient implements BackgroundResource {
    *     ID&gt;/agent/fulfillment`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Fulfillment getFulfillment(FulfillmentName name) {
+  public final Fulfillment getFulfillment(@Nullable FulfillmentName name) {
     GetFulfillmentRequest request =
         GetFulfillmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFulfillment(request);
@@ -691,8 +692,8 @@ public class FulfillmentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -702,14 +703,14 @@ public class FulfillmentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -723,7 +724,8 @@ public class FulfillmentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -733,7 +735,7 @@ public class FulfillmentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

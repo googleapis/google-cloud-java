@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -322,7 +323,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataAccessControlServiceClient implements BackgroundResource {
-  private final DataAccessControlServiceSettings settings;
+  private final @Nullable DataAccessControlServiceSettings settings;
   private final DataAccessControlServiceStub stub;
 
   /** Constructs an instance of DataAccessControlServiceClient with default settings. */
@@ -364,7 +365,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataAccessControlServiceSettings getSettings() {
+  public final @Nullable DataAccessControlServiceSettings getSettings() {
     return settings;
   }
 
@@ -408,7 +409,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataAccessLabel createDataAccessLabel(
-      InstanceName parent, DataAccessLabel dataAccessLabel, String dataAccessLabelId) {
+      @Nullable InstanceName parent, DataAccessLabel dataAccessLabel, String dataAccessLabelId) {
     CreateDataAccessLabelRequest request =
         CreateDataAccessLabelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -557,7 +558,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/dataAccessLabels/{data_access_label}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataAccessLabel getDataAccessLabel(DataAccessLabelName name) {
+  public final DataAccessLabel getDataAccessLabel(@Nullable DataAccessLabelName name) {
     GetDataAccessLabelRequest request =
         GetDataAccessLabelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -687,7 +688,8 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataAccessLabelsPagedResponse listDataAccessLabels(InstanceName parent) {
+  public final ListDataAccessLabelsPagedResponse listDataAccessLabels(
+      @Nullable InstanceName parent) {
     ListDataAccessLabelsRequest request =
         ListDataAccessLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -966,7 +968,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/dataAccessLabels/{data_access_label}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataAccessLabel(DataAccessLabelName name) {
+  public final void deleteDataAccessLabel(@Nullable DataAccessLabelName name) {
     DeleteDataAccessLabelRequest request =
         DeleteDataAccessLabelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1106,7 +1108,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataAccessScope createDataAccessScope(
-      InstanceName parent, DataAccessScope dataAccessScope, String dataAccessScopeId) {
+      @Nullable InstanceName parent, DataAccessScope dataAccessScope, String dataAccessScopeId) {
     CreateDataAccessScopeRequest request =
         CreateDataAccessScopeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1253,7 +1255,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/dataAccessScopes/{data_access_scope}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataAccessScope getDataAccessScope(DataAccessScopeName name) {
+  public final DataAccessScope getDataAccessScope(@Nullable DataAccessScopeName name) {
     GetDataAccessScopeRequest request =
         GetDataAccessScopeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1383,7 +1385,8 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataAccessScopesPagedResponse listDataAccessScopes(InstanceName parent) {
+  public final ListDataAccessScopesPagedResponse listDataAccessScopes(
+      @Nullable InstanceName parent) {
     ListDataAccessScopesRequest request =
         ListDataAccessScopesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1661,7 +1664,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/dataAccessScopes/{data_access_scope}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataAccessScope(DataAccessScopeName name) {
+  public final void deleteDataAccessScope(@Nullable DataAccessScopeName name) {
     DeleteDataAccessScopeRequest request =
         DeleteDataAccessScopeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1827,9 +1830,10 @@ public class DataAccessControlServiceClient implements BackgroundResource {
           ListDataAccessLabelsPage> {
 
     private ListDataAccessLabelsPage(
-        PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
+        @Nullable
+            PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
             context,
-        ListDataAccessLabelsResponse response) {
+        @Nullable ListDataAccessLabelsResponse response) {
       super(context, response);
     }
 
@@ -1839,15 +1843,17 @@ public class DataAccessControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAccessLabelsPage createPage(
-        PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
+        @Nullable
+            PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
             context,
-        ListDataAccessLabelsResponse response) {
+        @Nullable ListDataAccessLabelsResponse response) {
       return new ListDataAccessLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAccessLabelsPage> createPageAsync(
-        PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
+        @Nullable
+            PageContext<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse, DataAccessLabel>
             context,
         ApiFuture<ListDataAccessLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1863,7 +1869,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
           ListDataAccessLabelsFixedSizeCollection> {
 
     private ListDataAccessLabelsFixedSizeCollection(
-        List<ListDataAccessLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAccessLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1873,7 +1879,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAccessLabelsFixedSizeCollection createCollection(
-        List<ListDataAccessLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAccessLabelsPage> pages, int collectionSize) {
       return new ListDataAccessLabelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1911,9 +1917,10 @@ public class DataAccessControlServiceClient implements BackgroundResource {
           ListDataAccessScopesPage> {
 
     private ListDataAccessScopesPage(
-        PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
+        @Nullable
+            PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
             context,
-        ListDataAccessScopesResponse response) {
+        @Nullable ListDataAccessScopesResponse response) {
       super(context, response);
     }
 
@@ -1923,15 +1930,17 @@ public class DataAccessControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAccessScopesPage createPage(
-        PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
+        @Nullable
+            PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
             context,
-        ListDataAccessScopesResponse response) {
+        @Nullable ListDataAccessScopesResponse response) {
       return new ListDataAccessScopesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAccessScopesPage> createPageAsync(
-        PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
+        @Nullable
+            PageContext<ListDataAccessScopesRequest, ListDataAccessScopesResponse, DataAccessScope>
             context,
         ApiFuture<ListDataAccessScopesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1947,7 +1956,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
           ListDataAccessScopesFixedSizeCollection> {
 
     private ListDataAccessScopesFixedSizeCollection(
-        List<ListDataAccessScopesPage> pages, int collectionSize) {
+        @Nullable List<ListDataAccessScopesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1957,7 +1966,7 @@ public class DataAccessControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAccessScopesFixedSizeCollection createCollection(
-        List<ListDataAccessScopesPage> pages, int collectionSize) {
+        @Nullable List<ListDataAccessScopesPage> pages, int collectionSize) {
       return new ListDataAccessScopesFixedSizeCollection(pages, collectionSize);
     }
   }

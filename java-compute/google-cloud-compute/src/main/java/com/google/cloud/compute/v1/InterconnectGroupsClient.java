@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -297,7 +298,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class InterconnectGroupsClient implements BackgroundResource {
-  private final InterconnectGroupsSettings settings;
+  private final @Nullable InterconnectGroupsSettings settings;
   private final InterconnectGroupsStub stub;
 
   /** Constructs an instance of InterconnectGroupsClient with default settings. */
@@ -337,7 +338,7 @@ public class InterconnectGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InterconnectGroupsSettings getSettings() {
+  public final @Nullable InterconnectGroupsSettings getSettings() {
     return settings;
   }
 
@@ -1563,10 +1564,11 @@ public class InterconnectGroupsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectGroupsRequest, InterconnectGroupsListResponse, InterconnectGroup>
             context,
-        InterconnectGroupsListResponse response) {
+        @Nullable InterconnectGroupsListResponse response) {
       super(context, response);
     }
 
@@ -1576,16 +1578,18 @@ public class InterconnectGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectGroupsRequest, InterconnectGroupsListResponse, InterconnectGroup>
             context,
-        InterconnectGroupsListResponse response) {
+        @Nullable InterconnectGroupsListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectGroupsRequest, InterconnectGroupsListResponse, InterconnectGroup>
             context,
         ApiFuture<InterconnectGroupsListResponse> futureResponse) {
@@ -1601,7 +1605,7 @@ public class InterconnectGroupsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1610,7 +1614,8 @@ public class InterconnectGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

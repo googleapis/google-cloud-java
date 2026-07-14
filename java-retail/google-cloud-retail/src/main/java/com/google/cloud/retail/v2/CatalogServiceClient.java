@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -328,7 +329,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CatalogServiceClient implements BackgroundResource {
-  private final CatalogServiceSettings settings;
+  private final @Nullable CatalogServiceSettings settings;
   private final CatalogServiceStub stub;
 
   /** Constructs an instance of CatalogServiceClient with default settings. */
@@ -368,7 +369,7 @@ public class CatalogServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CatalogServiceSettings getSettings() {
+  public final @Nullable CatalogServiceSettings getSettings() {
     return settings;
   }
 
@@ -402,7 +403,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     not this location exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCatalogsPagedResponse listCatalogs(LocationName parent) {
+  public final ListCatalogsPagedResponse listCatalogs(@Nullable LocationName parent) {
     ListCatalogsRequest request =
         ListCatalogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -688,7 +689,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void setDefaultBranch(CatalogName catalog) {
+  public final void setDefaultBranch(@Nullable CatalogName catalog) {
     SetDefaultBranchRequest request =
         SetDefaultBranchRequest.newBuilder()
             .setCatalog(catalog == null ? null : catalog.toString())
@@ -898,7 +899,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetDefaultBranchResponse getDefaultBranch(CatalogName catalog) {
+  public final GetDefaultBranchResponse getDefaultBranch(@Nullable CatalogName catalog) {
     GetDefaultBranchRequest request =
         GetDefaultBranchRequest.newBuilder()
             .setCatalog(catalog == null ? null : catalog.toString())
@@ -1019,7 +1020,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CompletionConfig getCompletionConfig(CompletionConfigName name) {
+  public final CompletionConfig getCompletionConfig(@Nullable CompletionConfigName name) {
     GetCompletionConfigRequest request =
         GetCompletionConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1242,7 +1243,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AttributesConfig getAttributesConfig(AttributesConfigName name) {
+  public final AttributesConfig getAttributesConfig(@Nullable AttributesConfigName name) {
     GetAttributesConfigRequest request =
         GetAttributesConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1722,8 +1723,8 @@ public class CatalogServiceClient implements BackgroundResource {
       extends AbstractPage<ListCatalogsRequest, ListCatalogsResponse, Catalog, ListCatalogsPage> {
 
     private ListCatalogsPage(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
-        ListCatalogsResponse response) {
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable ListCatalogsResponse response) {
       super(context, response);
     }
 
@@ -1733,14 +1734,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogsPage createPage(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
-        ListCatalogsResponse response) {
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable ListCatalogsResponse response) {
       return new ListCatalogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCatalogsPage> createPageAsync(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
         ApiFuture<ListCatalogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1754,7 +1755,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListCatalogsPage,
           ListCatalogsFixedSizeCollection> {
 
-    private ListCatalogsFixedSizeCollection(List<ListCatalogsPage> pages, int collectionSize) {
+    private ListCatalogsFixedSizeCollection(
+        @Nullable List<ListCatalogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1764,7 +1766,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogsFixedSizeCollection createCollection(
-        List<ListCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListCatalogsPage> pages, int collectionSize) {
       return new ListCatalogsFixedSizeCollection(pages, collectionSize);
     }
   }

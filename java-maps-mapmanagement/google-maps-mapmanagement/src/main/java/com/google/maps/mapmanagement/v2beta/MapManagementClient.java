@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -425,7 +426,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MapManagementClient implements BackgroundResource {
-  private final MapManagementSettings settings;
+  private final @Nullable MapManagementSettings settings;
   private final MapManagementStub stub;
 
   /** Constructs an instance of MapManagementClient with default settings. */
@@ -465,7 +466,7 @@ public class MapManagementClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MapManagementSettings getSettings() {
+  public final @Nullable MapManagementSettings getSettings() {
     return settings;
   }
 
@@ -497,7 +498,7 @@ public class MapManagementClient implements BackgroundResource {
    * @param mapConfig Required. The MapConfig to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MapConfig createMapConfig(ProjectName parent, MapConfig mapConfig) {
+  public final MapConfig createMapConfig(@Nullable ProjectName parent, MapConfig mapConfig) {
     CreateMapConfigRequest request =
         CreateMapConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -616,7 +617,7 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/mapConfigs/{map_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MapConfig getMapConfig(MapConfigName name) {
+  public final MapConfig getMapConfig(@Nullable MapConfigName name) {
     GetMapConfigRequest request =
         GetMapConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMapConfig(request);
@@ -727,7 +728,7 @@ public class MapManagementClient implements BackgroundResource {
    * @param parent Required. Parent project that owns the MapConfigs. Format: `projects/{project}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMapConfigsPagedResponse listMapConfigs(ProjectName parent) {
+  public final ListMapConfigsPagedResponse listMapConfigs(@Nullable ProjectName parent) {
     ListMapConfigsRequest request =
         ListMapConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -992,7 +993,7 @@ public class MapManagementClient implements BackgroundResource {
    *     deleted. (Otherwise, the request will only work if the MapConfig has no MapContextConfigs.)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMapConfig(MapConfigName name, boolean force) {
+  public final void deleteMapConfig(@Nullable MapConfigName name, boolean force) {
     DeleteMapConfigRequest request =
         DeleteMapConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1113,7 +1114,8 @@ public class MapManagementClient implements BackgroundResource {
    * @param styleConfig Required. The StyleConfig to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StyleConfig createStyleConfig(ProjectName parent, StyleConfig styleConfig) {
+  public final StyleConfig createStyleConfig(
+      @Nullable ProjectName parent, StyleConfig styleConfig) {
     CreateStyleConfigRequest request =
         CreateStyleConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1232,7 +1234,7 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/styleConfigs/{style_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StyleConfig getStyleConfig(StyleConfigName name) {
+  public final StyleConfig getStyleConfig(@Nullable StyleConfigName name) {
     GetStyleConfigRequest request =
         GetStyleConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStyleConfig(request);
@@ -1344,7 +1346,7 @@ public class MapManagementClient implements BackgroundResource {
    * @param parent Required. Parent project that owns the StyleConfigs. Format: `projects/{project}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStyleConfigsPagedResponse listStyleConfigs(ProjectName parent) {
+  public final ListStyleConfigsPagedResponse listStyleConfigs(@Nullable ProjectName parent) {
     ListStyleConfigsRequest request =
         ListStyleConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1613,7 +1615,7 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/styleConfigs/{style_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteStyleConfig(StyleConfigName name) {
+  public final void deleteStyleConfig(@Nullable StyleConfigName name) {
     DeleteStyleConfigRequest request =
         DeleteStyleConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1729,7 +1731,7 @@ public class MapManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MapContextConfig createMapContextConfig(
-      MapConfigName parent, MapContextConfig mapContextConfig) {
+      @Nullable MapConfigName parent, MapContextConfig mapContextConfig) {
     CreateMapContextConfigRequest request =
         CreateMapContextConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1855,7 +1857,7 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/mapConfigs/{map_config}/mapContextConfigs/{map_context_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MapContextConfig getMapContextConfig(MapContextConfigName name) {
+  public final MapContextConfig getMapContextConfig(@Nullable MapContextConfigName name) {
     GetMapContextConfigRequest request =
         GetMapContextConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1978,7 +1980,8 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/mapConfigs/{map_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMapContextConfigsPagedResponse listMapContextConfigs(MapConfigName parent) {
+  public final ListMapContextConfigsPagedResponse listMapContextConfigs(
+      @Nullable MapConfigName parent) {
     ListMapContextConfigsRequest request =
         ListMapContextConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2251,7 +2254,7 @@ public class MapManagementClient implements BackgroundResource {
    *     `projects/{project}/mapConfigs/{map_config}/mapContextConfigs/{map_context_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMapContextConfig(MapContextConfigName name) {
+  public final void deleteMapContextConfig(@Nullable MapContextConfigName name) {
     DeleteMapContextConfigRequest request =
         DeleteMapContextConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2408,8 +2411,8 @@ public class MapManagementClient implements BackgroundResource {
           ListMapConfigsRequest, ListMapConfigsResponse, MapConfig, ListMapConfigsPage> {
 
     private ListMapConfigsPage(
-        PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
-        ListMapConfigsResponse response) {
+        @Nullable PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
+        @Nullable ListMapConfigsResponse response) {
       super(context, response);
     }
 
@@ -2419,14 +2422,14 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListMapConfigsPage createPage(
-        PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
-        ListMapConfigsResponse response) {
+        @Nullable PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
+        @Nullable ListMapConfigsResponse response) {
       return new ListMapConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMapConfigsPage> createPageAsync(
-        PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
+        @Nullable PageContext<ListMapConfigsRequest, ListMapConfigsResponse, MapConfig> context,
         ApiFuture<ListMapConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2440,7 +2443,8 @@ public class MapManagementClient implements BackgroundResource {
           ListMapConfigsPage,
           ListMapConfigsFixedSizeCollection> {
 
-    private ListMapConfigsFixedSizeCollection(List<ListMapConfigsPage> pages, int collectionSize) {
+    private ListMapConfigsFixedSizeCollection(
+        @Nullable List<ListMapConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2450,7 +2454,7 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListMapConfigsFixedSizeCollection createCollection(
-        List<ListMapConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMapConfigsPage> pages, int collectionSize) {
       return new ListMapConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2484,8 +2488,9 @@ public class MapManagementClient implements BackgroundResource {
           ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig, ListStyleConfigsPage> {
 
     private ListStyleConfigsPage(
-        PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig> context,
-        ListStyleConfigsResponse response) {
+        @Nullable PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig>
+            context,
+        @Nullable ListStyleConfigsResponse response) {
       super(context, response);
     }
 
@@ -2495,14 +2500,16 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListStyleConfigsPage createPage(
-        PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig> context,
-        ListStyleConfigsResponse response) {
+        @Nullable PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig>
+            context,
+        @Nullable ListStyleConfigsResponse response) {
       return new ListStyleConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStyleConfigsPage> createPageAsync(
-        PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig> context,
+        @Nullable PageContext<ListStyleConfigsRequest, ListStyleConfigsResponse, StyleConfig>
+            context,
         ApiFuture<ListStyleConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2517,7 +2524,7 @@ public class MapManagementClient implements BackgroundResource {
           ListStyleConfigsFixedSizeCollection> {
 
     private ListStyleConfigsFixedSizeCollection(
-        List<ListStyleConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListStyleConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2527,7 +2534,7 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListStyleConfigsFixedSizeCollection createCollection(
-        List<ListStyleConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListStyleConfigsPage> pages, int collectionSize) {
       return new ListStyleConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2565,9 +2572,11 @@ public class MapManagementClient implements BackgroundResource {
           ListMapContextConfigsPage> {
 
     private ListMapContextConfigsPage(
-        PageContext<ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
+        @Nullable
+            PageContext<
+                ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
             context,
-        ListMapContextConfigsResponse response) {
+        @Nullable ListMapContextConfigsResponse response) {
       super(context, response);
     }
 
@@ -2577,15 +2586,19 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListMapContextConfigsPage createPage(
-        PageContext<ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
+        @Nullable
+            PageContext<
+                ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
             context,
-        ListMapContextConfigsResponse response) {
+        @Nullable ListMapContextConfigsResponse response) {
       return new ListMapContextConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMapContextConfigsPage> createPageAsync(
-        PageContext<ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
+        @Nullable
+            PageContext<
+                ListMapContextConfigsRequest, ListMapContextConfigsResponse, MapContextConfig>
             context,
         ApiFuture<ListMapContextConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2601,7 +2614,7 @@ public class MapManagementClient implements BackgroundResource {
           ListMapContextConfigsFixedSizeCollection> {
 
     private ListMapContextConfigsFixedSizeCollection(
-        List<ListMapContextConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMapContextConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2611,7 +2624,7 @@ public class MapManagementClient implements BackgroundResource {
 
     @Override
     protected ListMapContextConfigsFixedSizeCollection createCollection(
-        List<ListMapContextConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMapContextConfigsPage> pages, int collectionSize) {
       return new ListMapContextConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

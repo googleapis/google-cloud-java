@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -275,7 +276,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MarketingplatformAdminServiceClient implements BackgroundResource {
-  private final MarketingplatformAdminServiceSettings settings;
+  private final @Nullable MarketingplatformAdminServiceSettings settings;
   private final MarketingplatformAdminServiceStub stub;
 
   /** Constructs an instance of MarketingplatformAdminServiceClient with default settings. */
@@ -319,7 +320,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MarketingplatformAdminServiceSettings getSettings() {
+  public final @Nullable MarketingplatformAdminServiceSettings getSettings() {
     return settings;
   }
 
@@ -349,7 +350,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
    * @param name Required. The name of the Organization to retrieve. Format: organizations/{org_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Organization getOrganization(OrganizationName name) {
+  public final Organization getOrganization(@Nullable OrganizationName name) {
     GetOrganizationRequest request =
         GetOrganizationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOrganization(request);
@@ -646,7 +647,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnalyticsAccountLinksPagedResponse listAnalyticsAccountLinks(
-      OrganizationName parent) {
+      @Nullable OrganizationName parent) {
     ListAnalyticsAccountLinksRequest request =
         ListAnalyticsAccountLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -835,7 +836,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyticsAccountLink createAnalyticsAccountLink(
-      OrganizationName parent, AnalyticsAccountLink analyticsAccountLink) {
+      @Nullable OrganizationName parent, AnalyticsAccountLink analyticsAccountLink) {
     CreateAnalyticsAccountLinkRequest request =
         CreateAnalyticsAccountLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -986,7 +987,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
    *     organizations/{org_id}/analyticsAccountLinks/{analytics_account_link_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAnalyticsAccountLink(AnalyticsAccountLinkName name) {
+  public final void deleteAnalyticsAccountLink(@Nullable AnalyticsAccountLinkName name) {
     DeleteAnalyticsAccountLinkRequest request =
         DeleteAnalyticsAccountLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1374,8 +1375,9 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
           ListOrganizationsPage> {
 
     private ListOrganizationsPage(
-        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
-        ListOrganizationsResponse response) {
+        @Nullable PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization>
+            context,
+        @Nullable ListOrganizationsResponse response) {
       super(context, response);
     }
 
@@ -1385,14 +1387,16 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationsPage createPage(
-        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
-        ListOrganizationsResponse response) {
+        @Nullable PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization>
+            context,
+        @Nullable ListOrganizationsResponse response) {
       return new ListOrganizationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrganizationsPage> createPageAsync(
-        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
+        @Nullable PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization>
+            context,
         ApiFuture<ListOrganizationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1407,7 +1411,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
           ListOrganizationsFixedSizeCollection> {
 
     private ListOrganizationsFixedSizeCollection(
-        List<ListOrganizationsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1417,7 +1421,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationsFixedSizeCollection createCollection(
-        List<ListOrganizationsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationsPage> pages, int collectionSize) {
       return new ListOrganizationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1458,12 +1462,13 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
           ListAnalyticsAccountLinksPage> {
 
     private ListAnalyticsAccountLinksPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnalyticsAccountLinksRequest,
                 ListAnalyticsAccountLinksResponse,
                 AnalyticsAccountLink>
             context,
-        ListAnalyticsAccountLinksResponse response) {
+        @Nullable ListAnalyticsAccountLinksResponse response) {
       super(context, response);
     }
 
@@ -1473,18 +1478,20 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnalyticsAccountLinksPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnalyticsAccountLinksRequest,
                 ListAnalyticsAccountLinksResponse,
                 AnalyticsAccountLink>
             context,
-        ListAnalyticsAccountLinksResponse response) {
+        @Nullable ListAnalyticsAccountLinksResponse response) {
       return new ListAnalyticsAccountLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnalyticsAccountLinksPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnalyticsAccountLinksRequest,
                 ListAnalyticsAccountLinksResponse,
                 AnalyticsAccountLink>
@@ -1503,7 +1510,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
           ListAnalyticsAccountLinksFixedSizeCollection> {
 
     private ListAnalyticsAccountLinksFixedSizeCollection(
-        List<ListAnalyticsAccountLinksPage> pages, int collectionSize) {
+        @Nullable List<ListAnalyticsAccountLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1513,7 +1520,7 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnalyticsAccountLinksFixedSizeCollection createCollection(
-        List<ListAnalyticsAccountLinksPage> pages, int collectionSize) {
+        @Nullable List<ListAnalyticsAccountLinksPage> pages, int collectionSize) {
       return new ListAnalyticsAccountLinksFixedSizeCollection(pages, collectionSize);
     }
   }

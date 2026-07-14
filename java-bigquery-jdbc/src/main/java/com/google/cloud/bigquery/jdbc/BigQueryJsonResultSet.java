@@ -299,7 +299,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     // non nested, return the value
     else {
       // SQL Index to 0 based index
-      value = this.cursor.getFieldValueList().get(columnIndex - 1);
+      value = this.cursor.get(columnIndex - 1);
     }
     setWasNull(value.getValue());
     return value;

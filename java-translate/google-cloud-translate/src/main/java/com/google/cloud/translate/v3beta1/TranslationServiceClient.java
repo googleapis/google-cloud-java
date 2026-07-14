@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -336,7 +337,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TranslationServiceClient implements BackgroundResource {
-  private final TranslationServiceSettings settings;
+  private final @Nullable TranslationServiceSettings settings;
   private final TranslationServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -384,7 +385,7 @@ public class TranslationServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TranslationServiceSettings getSettings() {
+  public final @Nullable TranslationServiceSettings getSettings() {
     return settings;
   }
 
@@ -518,7 +519,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetectLanguageResponse detectLanguage(
-      LocationName parent, String model, String mimeType) {
+      @Nullable LocationName parent, String model, String mimeType) {
     DetectLanguageRequest request =
         DetectLanguageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -682,7 +683,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportedLanguages getSupportedLanguages(
-      LocationName parent, String displayLanguageCode, String model) {
+      @Nullable LocationName parent, String displayLanguageCode, String model) {
     GetSupportedLanguagesRequest request =
         GetSupportedLanguagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1061,7 +1062,7 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
       batchTranslateDocumentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           String sourceLanguageCode,
           List<String> targetLanguageCodes,
           List<BatchDocumentInputConfig> inputConfigs,
@@ -1312,7 +1313,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Glossary, CreateGlossaryMetadata> createGlossaryAsync(
-      LocationName parent, Glossary glossary) {
+      @Nullable LocationName parent, Glossary glossary) {
     CreateGlossaryRequest request =
         CreateGlossaryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1481,7 +1482,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     language set will be picked. If missing, no filtering is performed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossariesPagedResponse listGlossaries(LocationName parent, String filter) {
+  public final ListGlossariesPagedResponse listGlossaries(
+      @Nullable LocationName parent, String filter) {
     ListGlossariesRequest request =
         ListGlossariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1662,7 +1664,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The name of the glossary to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Glossary getGlossary(GlossaryName name) {
+  public final Glossary getGlossary(@Nullable GlossaryName name) {
     GetGlossaryRequest request =
         GetGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossary(request);
@@ -1773,7 +1775,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
-      GlossaryName name) {
+      @Nullable GlossaryName name) {
     DeleteGlossaryRequest request =
         DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGlossaryAsync(request);
@@ -2018,8 +2020,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossariesRequest, ListGlossariesResponse, Glossary, ListGlossariesPage> {
 
     private ListGlossariesPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       super(context, response);
     }
 
@@ -2029,14 +2031,14 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesPage createPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       return new ListGlossariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossariesPage> createPageAsync(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
         ApiFuture<ListGlossariesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2050,7 +2052,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossariesPage,
           ListGlossariesFixedSizeCollection> {
 
-    private ListGlossariesFixedSizeCollection(List<ListGlossariesPage> pages, int collectionSize) {
+    private ListGlossariesFixedSizeCollection(
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2060,7 +2063,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesFixedSizeCollection createCollection(
-        List<ListGlossariesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       return new ListGlossariesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,7 +158,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DashboardChartServiceClient implements BackgroundResource {
-  private final DashboardChartServiceSettings settings;
+  private final @Nullable DashboardChartServiceSettings settings;
   private final DashboardChartServiceStub stub;
 
   /** Constructs an instance of DashboardChartServiceClient with default settings. */
@@ -197,7 +198,7 @@ public class DashboardChartServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DashboardChartServiceSettings getSettings() {
+  public final @Nullable DashboardChartServiceSettings getSettings() {
     return settings;
   }
 
@@ -229,7 +230,7 @@ public class DashboardChartServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/dashboardCharts/{chart}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DashboardChart getDashboardChart(DashboardChartName name) {
+  public final DashboardChart getDashboardChart(@Nullable DashboardChartName name) {
     GetDashboardChartRequest request =
         GetDashboardChartRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -356,7 +357,7 @@ public class DashboardChartServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetDashboardChartsResponse batchGetDashboardCharts(
-      InstanceName parent, List<String> names) {
+      @Nullable InstanceName parent, List<String> names) {
     BatchGetDashboardChartsRequest request =
         BatchGetDashboardChartsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

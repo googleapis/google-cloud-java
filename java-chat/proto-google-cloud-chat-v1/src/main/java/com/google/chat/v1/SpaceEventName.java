@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -72,7 +73,7 @@ public class SpaceEventName implements ResourceName {
     return newBuilder().setSpace(space).setSpaceEvent(spaceEvent).build().toString();
   }
 
-  public static SpaceEventName parse(String formattedString) {
+  public static @Nullable SpaceEventName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -90,7 +91,7 @@ public class SpaceEventName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SpaceEventName> values) {
+  public static List<String> toStringList(List<@Nullable SpaceEventName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SpaceEventName value : values) {
       if (value == null) {
@@ -135,7 +136,7 @@ public class SpaceEventName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }
