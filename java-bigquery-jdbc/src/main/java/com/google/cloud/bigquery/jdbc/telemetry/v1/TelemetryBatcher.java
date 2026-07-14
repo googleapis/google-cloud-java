@@ -28,6 +28,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -47,6 +48,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final DriverEnvironment driverEnvironment;
   private final ScheduledExecutorService executorService;
   private final boolean ownsExecutor;
+  private final ReentrantLock flushLock = new ReentrantLock();
 
   private final ConcurrentLinkedQueue<ConnectionAttempt> connectionAttemptQueue =
       new ConcurrentLinkedQueue<>();
@@ -117,92 +119,109 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
-  synchronized TransportResult flush() {
-    if (!isConfigured() || isEmpty()) {
-      return TransportResult.disabled();
-    }
-
-    int maxTotalBatchSize =
-        config != null
-            ? config.getBatchSizeThreshold()
-            : TelemetryConfiguration.DEFAULT_BATCH_SIZE_THRESHOLD;
-
-    List<ConnectionAttempt> connectionAttempts = new ArrayList<>();
-    List<StatementExecution> statementExecutions = new ArrayList<>();
-    List<ErrorMetric> errorMetrics = new ArrayList<>();
-    List<FeatureUsage> featureUsages = new ArrayList<>();
-
-    int remainingQuota = maxTotalBatchSize;
-    remainingQuota -= drainQueue(connectionAttemptQueue, connectionAttempts, remainingQuota);
-    remainingQuota -= drainQueue(statementExecutionQueue, statementExecutions, remainingQuota);
-    remainingQuota -= drainQueue(errorMetricQueue, errorMetrics, remainingQuota);
-    remainingQuota -= drainQueue(featureUsageQueue, featureUsages, remainingQuota);
-
-    if (connectionAttempts.isEmpty()
-        && statementExecutions.isEmpty()
-        && errorMetrics.isEmpty()
-        && featureUsages.isEmpty()) {
-      return TransportResult.disabled();
-    }
-
-    Instant now = Instant.now();
-    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(now.getEpochSecond()).setNanos(now.getNano()).build();
-
-    TelemetryPayload.Builder payloadBuilder = TelemetryPayload.newBuilder().setEventTime(timestamp);
-    if (driverEnvironment != null) {
-      payloadBuilder.setDriverEnvironment(driverEnvironment);
-    }
-    payloadBuilder.addAllConnectionAttempts(connectionAttempts);
-    payloadBuilder.addAllStatementExecutions(statementExecutions);
-    payloadBuilder.addAllErrors(errorMetrics);
-    payloadBuilder.addAllFeatureUsages(featureUsages);
-
-    TelemetryPayload payload = payloadBuilder.build();
-
-    // Enforce MAX_PAYLOAD_BYTES (512 KB) by trimming excess items if needed
-    while (payload.getSerializedSize() > MAX_PAYLOAD_BYTES) {
-      if (!featureUsages.isEmpty()) {
-        featureUsageQueue.offer(featureUsages.remove(featureUsages.size() - 1));
-        payloadBuilder.clearFeatureUsages().addAllFeatureUsages(featureUsages);
-      } else if (!errorMetrics.isEmpty()) {
-        errorMetricQueue.offer(errorMetrics.remove(errorMetrics.size() - 1));
-        payloadBuilder.clearErrors().addAllErrors(errorMetrics);
-      } else if (!statementExecutions.isEmpty()) {
-        statementExecutionQueue.offer(statementExecutions.remove(statementExecutions.size() - 1));
-        payloadBuilder.clearStatementExecutions().addAllStatementExecutions(statementExecutions);
-      } else if (!connectionAttempts.isEmpty()) {
-        connectionAttemptQueue.offer(connectionAttempts.remove(connectionAttempts.size() - 1));
-        payloadBuilder.clearConnectionAttempts().addAllConnectionAttempts(connectionAttempts);
-      } else {
-        break;
-      }
-      payload = payloadBuilder.build();
-    }
-
-    TransportResult result;
+  TransportResult flush() {
+    flushLock.lock();
     try {
-      result = transport.send(payload);
-    } catch (Throwable t) {
-      logger.log(Level.WARNING, "Unexpected exception during telemetry flush", t);
-      result = new TransportResult(false, -1);
+      if (!isConfigured() || isEmpty()) {
+        return TransportResult.disabled();
+      }
+
+      int maxTotalBatchSize =
+          config != null
+              ? config.getBatchSizeThreshold()
+              : TelemetryConfiguration.DEFAULT_BATCH_SIZE_THRESHOLD;
+
+      List<ConnectionAttempt> connectionAttempts = new ArrayList<>();
+      List<StatementExecution> statementExecutions = new ArrayList<>();
+      List<ErrorMetric> errorMetrics = new ArrayList<>();
+      List<FeatureUsage> featureUsages = new ArrayList<>();
+
+      int remainingQuota = maxTotalBatchSize;
+      remainingQuota -= drainQueue(connectionAttemptQueue, connectionAttempts, remainingQuota);
+      remainingQuota -= drainQueue(statementExecutionQueue, statementExecutions, remainingQuota);
+      remainingQuota -= drainQueue(errorMetricQueue, errorMetrics, remainingQuota);
+      remainingQuota -= drainQueue(featureUsageQueue, featureUsages, remainingQuota);
+
+      if (connectionAttempts.isEmpty()
+          && statementExecutions.isEmpty()
+          && errorMetrics.isEmpty()
+          && featureUsages.isEmpty()) {
+        return TransportResult.disabled();
+      }
+
+      Instant now = Instant.now();
+      Timestamp timestamp =
+          Timestamp.newBuilder().setSeconds(now.getEpochSecond()).setNanos(now.getNano()).build();
+
+      TelemetryPayload.Builder payloadBuilder =
+          TelemetryPayload.newBuilder().setEventTime(timestamp);
+      if (driverEnvironment != null) {
+        payloadBuilder.setDriverEnvironment(driverEnvironment);
+      }
+      payloadBuilder.addAllConnectionAttempts(connectionAttempts);
+      payloadBuilder.addAllStatementExecutions(statementExecutions);
+      payloadBuilder.addAllErrors(errorMetrics);
+      payloadBuilder.addAllFeatureUsages(featureUsages);
+
+      TelemetryPayload payload = payloadBuilder.build();
+
+      // Enforce MAX_PAYLOAD_BYTES (512 KB) by estimating bulk trim with safety padding
+      int currentSize = payload.getSerializedSize();
+      if (currentSize > MAX_PAYLOAD_BYTES) {
+        int totalItems =
+            connectionAttempts.size()
+                + statementExecutions.size()
+                + errorMetrics.size()
+                + featureUsages.size();
+        if (totalItems > 0) {
+          double avgBytesPerItem = (double) currentSize / totalItems;
+          int excessBytes = currentSize - MAX_PAYLOAD_BYTES;
+          // Add +5 items safety pad to guarantee 100% single-pass size compliance
+          int itemsToTrim =
+              Math.min(totalItems, (int) Math.ceil(excessBytes / avgBytesPerItem) + 5);
+
+          trimExcessItemsBulk(
+              itemsToTrim, connectionAttempts, statementExecutions, errorMetrics, featureUsages);
+
+          payloadBuilder
+              .clearConnectionAttempts()
+              .addAllConnectionAttempts(connectionAttempts)
+              .clearStatementExecutions()
+              .addAllStatementExecutions(statementExecutions)
+              .clearErrors()
+              .addAllErrors(errorMetrics)
+              .clearFeatureUsages()
+              .addAllFeatureUsages(featureUsages);
+          payload = payloadBuilder.build();
+        }
+      }
+
+      TransportResult result;
+      try {
+        result = transport.send(payload);
+      } catch (Throwable t) {
+        logger.log(Level.WARNING, "Unexpected exception during telemetry flush", t);
+        result = new TransportResult(false, -1);
+      }
+
+      if (!result.isSuccess()) {
+        requeueItems(connectionAttemptQueue, connectionAttempts);
+        requeueItems(statementExecutionQueue, statementExecutions);
+        requeueItems(errorMetricQueue, errorMetrics);
+        requeueItems(featureUsageQueue, featureUsages);
+      }
+
+      long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
+      long newDelayMs =
+          result.getNextRequestWaitMillis() > 0
+              ? Math.max(uploadIntervalMs, result.getNextRequestWaitMillis())
+              : uploadIntervalMs;
+      reschedule(newDelayMs);
+
+      return result;
+    } finally {
+      flushLock.unlock();
     }
-
-    if (!result.isSuccess()) {
-      requeueItems(connectionAttemptQueue, connectionAttempts);
-      requeueItems(statementExecutionQueue, statementExecutions);
-      requeueItems(errorMetricQueue, errorMetrics);
-      requeueItems(featureUsageQueue, featureUsages);
-    }
-
-    long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
-    long newDelayMs =
-        result.getNextRequestWaitMillis() > 0
-            ? Math.max(uploadIntervalMs, result.getNextRequestWaitMillis())
-            : uploadIntervalMs;
-    reschedule(newDelayMs);
-
-    return result;
   }
 
   @Override
@@ -211,10 +230,13 @@ final class TelemetryBatcher implements AutoCloseable {
       return;
     }
 
-    synchronized (this) {
+    flushLock.lock();
+    try {
       if (scheduledTask != null) {
         scheduledTask.cancel(false);
       }
+    } finally {
+      flushLock.unlock();
     }
 
     try {
@@ -254,34 +276,66 @@ final class TelemetryBatcher implements AutoCloseable {
     return config != null && config.isEnabled() && transport != null;
   }
 
-  private synchronized void reschedule(long delayMs) {
+  private void reschedule(long delayMs) {
     if (isClosed.get() || executorService == null || executorService.isShutdown()) {
       return;
     }
     long effectiveDelay = Math.max(1L, delayMs);
-    if (currentScheduleDelayMs.get() == effectiveDelay
-        && scheduledTask != null
-        && !scheduledTask.isDone()) {
-      return;
-    }
 
-    if (scheduledTask != null) {
-      scheduledTask.cancel(false);
-    }
+    flushLock.lock();
+    try {
+      if (currentScheduleDelayMs.get() == effectiveDelay
+          && scheduledTask != null
+          && !scheduledTask.isDone()) {
+        return;
+      }
 
-    currentScheduleDelayMs.set(effectiveDelay);
-    scheduledTask =
-        executorService.scheduleWithFixedDelay(
-            () -> {
-              try {
-                flush();
-              } catch (Throwable t) {
-                logger.log(Level.WARNING, "Periodic telemetry flush encountered an exception", t);
-              }
-            },
-            effectiveDelay,
-            effectiveDelay,
-            TimeUnit.MILLISECONDS);
+      if (scheduledTask != null) {
+        scheduledTask.cancel(false);
+      }
+
+      currentScheduleDelayMs.set(effectiveDelay);
+      scheduledTask =
+          executorService.scheduleWithFixedDelay(
+              () -> {
+                try {
+                  flush();
+                } catch (Throwable t) {
+                  logger.log(Level.WARNING, "Periodic telemetry flush encountered an exception", t);
+                }
+              },
+              effectiveDelay,
+              effectiveDelay,
+              TimeUnit.MILLISECONDS);
+    } finally {
+      flushLock.unlock();
+    }
+  }
+
+  private void trimExcessItemsBulk(
+      int itemsToTrim,
+      List<ConnectionAttempt> connectionAttempts,
+      List<StatementExecution> statementExecutions,
+      List<ErrorMetric> errorMetrics,
+      List<FeatureUsage> featureUsages) {
+    int remainingToTrim = itemsToTrim;
+
+    while (remainingToTrim > 0 && !featureUsages.isEmpty()) {
+      featureUsageQueue.offer(featureUsages.remove(featureUsages.size() - 1));
+      remainingToTrim--;
+    }
+    while (remainingToTrim > 0 && !errorMetrics.isEmpty()) {
+      errorMetricQueue.offer(errorMetrics.remove(errorMetrics.size() - 1));
+      remainingToTrim--;
+    }
+    while (remainingToTrim > 0 && !statementExecutions.isEmpty()) {
+      statementExecutionQueue.offer(statementExecutions.remove(statementExecutions.size() - 1));
+      remainingToTrim--;
+    }
+    while (remainingToTrim > 0 && !connectionAttempts.isEmpty()) {
+      connectionAttemptQueue.offer(connectionAttempts.remove(connectionAttempts.size() - 1));
+      remainingToTrim--;
+    }
   }
 
   private <T> int drainQueue(ConcurrentLinkedQueue<T> queue, List<T> targetList, int maxItems) {
