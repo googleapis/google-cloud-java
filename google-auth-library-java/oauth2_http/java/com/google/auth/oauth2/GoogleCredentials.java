@@ -36,6 +36,8 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.Preconditions;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.Credentials;
+import com.google.auth.RequestMetadataCallback;
+import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
@@ -46,6 +48,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Collection;
@@ -105,6 +109,9 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
   private final String universeDomain;
   private final boolean isExplicitUniverseDomain;
+
+  transient RegionalAccessBoundaryManager regionalAccessBoundaryManager =
+      new RegionalAccessBoundaryManager(clock);
 
   protected final String quotaProjectId;
 
@@ -348,6 +355,139 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   /**
+   * Returns the currently cached regional access boundary, or null if none is available or if it
+   * has expired.
+   *
+   * @return The cached regional access boundary, or null.
+   */
+  final RegionalAccessBoundary getRegionalAccessBoundary() {
+    return regionalAccessBoundaryManager.getCachedRAB();
+  }
+
+  /**
+   * Refreshes the Regional Access Boundary if it is expired or not yet fetched.
+   *
+   * @param uri The URI of the outbound request.
+   * @param token The access token to use for the refresh.
+   * @throws IOException If getting the universe domain fails.
+   */
+  void refreshRegionalAccessBoundaryIfExpired(@Nullable URI uri, @Nullable AccessToken token)
+      throws IOException {
+    if (!(this instanceof RegionalAccessBoundaryProvider) || !isDefaultUniverseDomain()) {
+      return;
+    }
+
+    // Skip refresh for regional endpoints.
+    if (uri != null && uri.getHost() != null) {
+      String host = uri.getHost().toLowerCase(java.util.Locale.US);
+      if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
+        return;
+      }
+    }
+
+    // We need a valid access token for the refresh.
+    if (token == null
+        || (token.getExpirationTimeMillis() != null
+            && token.getExpirationTimeMillis() < clock.currentTimeMillis())) {
+      return;
+    }
+
+    HttpTransportFactory transportFactory = getTransportFactory();
+    if (transportFactory == null) {
+      return;
+    }
+
+    regionalAccessBoundaryManager.triggerAsyncRefresh(
+        transportFactory, (RegionalAccessBoundaryProvider) this, token);
+  }
+
+  /**
+   * Extracts the self-signed JWT from the request metadata and triggers a Regional Access Boundary
+   * refresh if expired.
+   *
+   * @param uri The URI of the outbound request.
+   * @param requestMetadata The request metadata containing the authorization header.
+   */
+  void refreshRegionalAccessBoundaryWithSelfSignedJwtIfExpired(
+      @Nullable URI uri, Map<String, List<String>> requestMetadata) {
+    List<String> authHeaders = requestMetadata.get(AuthHttpConstants.AUTHORIZATION);
+    if (authHeaders != null && !authHeaders.isEmpty()) {
+      String authHeader = authHeaders.get(0);
+      if (authHeader.startsWith(AuthHttpConstants.BEARER + " ")) {
+        String tokenValue = authHeader.substring((AuthHttpConstants.BEARER + " ").length());
+        // Use a null expiration as JWTs are short-lived anyway.
+        AccessToken wrappedToken = new AccessToken(tokenValue, null);
+        try {
+          refreshRegionalAccessBoundaryIfExpired(uri, wrappedToken);
+        } catch (IOException e) {
+          // Ignore failure in async refresh trigger.
+        }
+      }
+    }
+  }
+
+  /**
+   * Synchronously provides the request metadata.
+   *
+   * <p>This method is blocking and will wait for a token refresh if necessary. It also ensures any
+   * available Regional Access Boundary information is included in the metadata.
+   *
+   * @param uri The URI of the request.
+   * @return The request metadata containing the authorization header and potentially regional
+   *     access boundary.
+   * @throws IOException If an error occurs while fetching the token.
+   */
+  @Override
+  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+    Map<String, List<String>> metadata = super.getRequestMetadata(uri);
+    metadata = addRegionalAccessBoundaryToRequestMetadata(uri, metadata);
+    try {
+      // Sets off an async refresh for request-metadata.
+      refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
+    } catch (IOException e) {
+      // Ignore failure in async refresh trigger.
+    }
+    return metadata;
+  }
+
+  /**
+   * Asynchronously provides the request metadata.
+   *
+   * <p>This method is non-blocking. It ensures any available Regional Access Boundary information
+   * is included in the metadata.
+   *
+   * @param uri The URI of the request.
+   * @param executor The executor to use for any required background tasks.
+   * @param callback The callback to receive the metadata or any error.
+   */
+  @Override
+  public void getRequestMetadata(
+      final URI uri,
+      final java.util.concurrent.Executor executor,
+      final RequestMetadataCallback callback) {
+    super.getRequestMetadata(
+        uri,
+        executor,
+        new RequestMetadataCallback() {
+          @Override
+          public void onSuccess(Map<String, List<String>> metadata) {
+            metadata = addRegionalAccessBoundaryToRequestMetadata(uri, metadata);
+            try {
+              refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
+            } catch (IOException e) {
+              // Ignore failure in async refresh trigger.
+            }
+            callback.onSuccess(metadata);
+          }
+
+          @Override
+          public void onFailure(Throwable exception) {
+            callback.onFailure(exception);
+          }
+        });
+  }
+
+  /**
    * Gets the universe domain for the credential.
    *
    * @return An explicit universe domain if it was explicitly provided, invokes the super
@@ -390,22 +530,59 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   static Map<String, List<String>> addQuotaProjectIdToRequestMetadata(
       String quotaProjectId, Map<String, List<String>> requestMetadata) {
     Preconditions.checkNotNull(requestMetadata);
-    Map<String, List<String>> newRequestMetadata = new HashMap<>(requestMetadata);
     if (quotaProjectId != null && !requestMetadata.containsKey(QUOTA_PROJECT_ID_HEADER_KEY)) {
-      newRequestMetadata.put(
-          QUOTA_PROJECT_ID_HEADER_KEY, Collections.singletonList(quotaProjectId));
+      return ImmutableMap.<String, List<String>>builder()
+          .putAll(requestMetadata)
+          .put(QUOTA_PROJECT_ID_HEADER_KEY, Collections.singletonList(quotaProjectId))
+          .build();
     }
-    return Collections.unmodifiableMap(newRequestMetadata);
+    return Collections.unmodifiableMap(requestMetadata);
+  }
+
+  /**
+   * Adds Regional Access Boundary header to requestMetadata if available. Overwrites if present. If
+   * the current RAB is null, it removes any stale header that might have survived serialization.
+   *
+   * @param uri The URI of the request.
+   * @param requestMetadata The request metadata.
+   * @return a new map with Regional Access Boundary header added, updated, or removed
+   */
+  Map<String, List<String>> addRegionalAccessBoundaryToRequestMetadata(
+      URI uri, Map<String, List<String>> requestMetadata) {
+    Preconditions.checkNotNull(requestMetadata);
+
+    if (uri != null && uri.getHost() != null) {
+      String host = uri.getHost().toLowerCase(java.util.Locale.US);
+      if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
+        return requestMetadata;
+      }
+    }
+
+    RegionalAccessBoundary rab = getRegionalAccessBoundary();
+    if (rab != null) {
+      // Overwrite the header to ensure the most recent async update is used,
+      // preventing staleness if the token itself hasn't expired yet.
+      Map<String, List<String>> newMetadata = new HashMap<>(requestMetadata);
+      newMetadata.put(
+          RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY,
+          Collections.singletonList(rab.getEncodedLocations()));
+      return Collections.unmodifiableMap(newMetadata);
+    } else if (requestMetadata.containsKey(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY)) {
+      // If RAB is null but the header exists (e.g., from a serialized cache), we must strip it
+      // to prevent sending stale data to the server.
+      Map<String, List<String>> newMetadata = new HashMap<>(requestMetadata);
+      newMetadata.remove(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY);
+      return Collections.unmodifiableMap(newMetadata);
+    }
+    return requestMetadata;
   }
 
   @Override
   protected Map<String, List<String>> getAdditionalHeaders() {
-    Map<String, List<String>> headers = super.getAdditionalHeaders();
+    Map<String, List<String>> headers = new HashMap<>(super.getAdditionalHeaders());
+
     String quotaProjectId = this.getQuotaProjectId();
-    if (quotaProjectId != null) {
-      return addQuotaProjectIdToRequestMetadata(quotaProjectId, headers);
-    }
-    return headers;
+    return addQuotaProjectIdToRequestMetadata(quotaProjectId, headers);
   }
 
   /** Default constructor. */
@@ -514,6 +691,11 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   @Override
   public int hashCode() {
     return Objects.hash(this.quotaProjectId, this.universeDomain, this.isExplicitUniverseDomain);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    regionalAccessBoundaryManager = new RegionalAccessBoundaryManager(clock);
   }
 
   public static Builder newBuilder() {
@@ -649,6 +831,16 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       infoMap.put("Principal", principal);
     }
     return ImmutableMap.copyOf(infoMap);
+  }
+
+  /**
+   * Returns the transport factory used by the credential.
+   *
+   * @return the transport factory, or null if not available.
+   */
+  @Nullable
+  HttpTransportFactory getTransportFactory() {
+    return null;
   }
 
   public static class Builder extends OAuth2Credentials.Builder {
