@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -179,7 +180,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CssProductInputsServiceClient implements BackgroundResource {
-  private final CssProductInputsServiceSettings settings;
+  private final @Nullable CssProductInputsServiceSettings settings;
   private final CssProductInputsServiceStub stub;
 
   /** Constructs an instance of CssProductInputsServiceClient with default settings. */
@@ -220,7 +221,7 @@ public class CssProductInputsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CssProductInputsServiceSettings getSettings() {
+  public final @Nullable CssProductInputsServiceSettings getSettings() {
     return settings;
   }
 
@@ -443,7 +444,7 @@ public class CssProductInputsServiceClient implements BackgroundResource {
    *     accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCssProductInput(CssProductInputName name) {
+  public final void deleteCssProductInput(@Nullable CssProductInputName name) {
     DeleteCssProductInputRequest request =
         DeleteCssProductInputRequest.newBuilder()
             .setName(name == null ? null : name.toString())

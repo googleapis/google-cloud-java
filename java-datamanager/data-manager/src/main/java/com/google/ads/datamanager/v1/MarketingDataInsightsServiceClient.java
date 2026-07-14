@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -146,7 +147,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MarketingDataInsightsServiceClient implements BackgroundResource {
-  private final MarketingDataInsightsServiceSettings settings;
+  private final @Nullable MarketingDataInsightsServiceSettings settings;
   private final MarketingDataInsightsServiceStub stub;
 
   /** Constructs an instance of MarketingDataInsightsServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class MarketingDataInsightsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MarketingDataInsightsServiceSettings getSettings() {
+  public final @Nullable MarketingDataInsightsServiceSettings getSettings() {
     return settings;
   }
 

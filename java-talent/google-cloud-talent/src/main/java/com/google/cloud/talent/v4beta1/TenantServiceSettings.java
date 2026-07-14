@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -173,7 +174,7 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -193,7 +194,7 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(TenantServiceStubSettings.newBuilder(clientContext));
     }
 

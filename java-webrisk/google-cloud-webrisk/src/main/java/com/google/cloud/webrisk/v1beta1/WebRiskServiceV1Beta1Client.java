@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1Client implements BackgroundResource {
-  private final WebRiskServiceV1Beta1Settings settings;
+  private final @Nullable WebRiskServiceV1Beta1Settings settings;
   private final WebRiskServiceV1Beta1Stub stub;
 
   /** Constructs an instance of WebRiskServiceV1Beta1Client with default settings. */
@@ -227,7 +228,7 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WebRiskServiceV1Beta1Settings getSettings() {
+  public final @Nullable WebRiskServiceV1Beta1Settings getSettings() {
     return settings;
   }
 

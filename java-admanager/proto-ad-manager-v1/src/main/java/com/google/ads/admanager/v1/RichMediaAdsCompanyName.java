@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -80,7 +81,7 @@ public class RichMediaAdsCompanyName implements ResourceName {
         .toString();
   }
 
-  public static RichMediaAdsCompanyName parse(String formattedString) {
+  public static @Nullable RichMediaAdsCompanyName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -98,7 +99,7 @@ public class RichMediaAdsCompanyName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RichMediaAdsCompanyName> values) {
+  public static List<String> toStringList(List<@Nullable RichMediaAdsCompanyName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RichMediaAdsCompanyName value : values) {
       if (value == null) {
@@ -144,7 +145,7 @@ public class RichMediaAdsCompanyName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1028,7 +1029,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BareMetalSolutionClient implements BackgroundResource {
-  private final BareMetalSolutionSettings settings;
+  private final @Nullable BareMetalSolutionSettings settings;
   private final BareMetalSolutionStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1076,7 +1077,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BareMetalSolutionSettings getSettings() {
+  public final @Nullable BareMetalSolutionSettings getSettings() {
     return settings;
   }
 
@@ -1124,7 +1125,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInstancesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1288,7 +1289,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1523,7 +1524,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param newInstanceId Required. The new `id` of the instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance renameInstance(InstanceName name, String newInstanceId) {
+  public final Instance renameInstance(@Nullable InstanceName name, String newInstanceId) {
     RenameInstanceRequest request =
         RenameInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1646,7 +1647,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ResetInstanceResponse, OperationMetadata> resetInstanceAsync(
-      InstanceName name) {
+      @Nullable InstanceName name) {
     ResetInstanceRequest request =
         ResetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resetInstanceAsync(request);
@@ -1791,7 +1792,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StartInstanceResponse, OperationMetadata> startInstanceAsync(
-      InstanceName name) {
+      @Nullable InstanceName name) {
     StartInstanceRequest request =
         StartInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startInstanceAsync(request);
@@ -1932,7 +1933,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StopInstanceResponse, OperationMetadata> stopInstanceAsync(
-      InstanceName name) {
+      @Nullable InstanceName name) {
     StopInstanceRequest request =
         StopInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopInstanceAsync(request);
@@ -2074,7 +2075,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EnableInteractiveSerialConsoleResponse, OperationMetadata>
-      enableInteractiveSerialConsoleAsync(InstanceName name) {
+      enableInteractiveSerialConsoleAsync(@Nullable InstanceName name) {
     EnableInteractiveSerialConsoleRequest request =
         EnableInteractiveSerialConsoleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2227,7 +2228,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DisableInteractiveSerialConsoleResponse, OperationMetadata>
-      disableInteractiveSerialConsoleAsync(InstanceName name) {
+      disableInteractiveSerialConsoleAsync(@Nullable InstanceName name) {
     DisableInteractiveSerialConsoleRequest request =
         DisableInteractiveSerialConsoleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2381,7 +2382,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
-      InstanceName instance, LunName lun) {
+      @Nullable InstanceName instance, @Nullable LunName lun) {
     DetachLunRequest request =
         DetachLunRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2414,7 +2415,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
-      InstanceName instance, String lun) {
+      @Nullable InstanceName instance, String lun) {
     DetachLunRequest request =
         DetachLunRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -2447,7 +2448,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
-      String instance, LunName lun) {
+      String instance, @Nullable LunName lun) {
     DetachLunRequest request =
         DetachLunRequest.newBuilder()
             .setInstance(instance)
@@ -2602,7 +2603,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     the location is "global".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSSHKeysPagedResponse listSSHKeys(LocationName parent) {
+  public final ListSSHKeysPagedResponse listSSHKeys(@Nullable LocationName parent) {
     ListSSHKeysRequest request =
         ListSSHKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2774,7 +2775,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     <p>This value must match the regex: [a-zA-Z0-9{@literal @}.\\-_]{1,64}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SSHKey createSSHKey(LocationName parent, SSHKey sshKey, String sshKeyId) {
+  public final SSHKey createSSHKey(@Nullable LocationName parent, SSHKey sshKey, String sshKeyId) {
     CreateSSHKeyRequest request =
         CreateSSHKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2905,7 +2906,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     the location is "global".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSSHKey(SshKeyName name) {
+  public final void deleteSSHKey(@Nullable SshKeyName name) {
     DeleteSSHKeyRequest request =
         DeleteSSHKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSSHKey(request);
@@ -3016,7 +3017,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListVolumesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVolumesPagedResponse listVolumes(LocationName parent) {
+  public final ListVolumesPagedResponse listVolumes(@Nullable LocationName parent) {
     ListVolumesRequest request =
         ListVolumesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3179,7 +3180,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Volume getVolume(VolumeName name) {
+  public final Volume getVolume(@Nullable VolumeName name) {
     GetVolumeRequest request =
         GetVolumeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVolume(request);
@@ -3413,7 +3414,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param newVolumeId Required. The new `id` of the volume.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Volume renameVolume(VolumeName name, String newVolumeId) {
+  public final Volume renameVolume(@Nullable VolumeName name, String newVolumeId) {
     RenameVolumeRequest request =
         RenameVolumeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3533,7 +3534,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. The name of the Volume.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> evictVolumeAsync(VolumeName name) {
+  public final OperationFuture<Empty, OperationMetadata> evictVolumeAsync(
+      @Nullable VolumeName name) {
     EvictVolumeRequest request =
         EvictVolumeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return evictVolumeAsync(request);
@@ -3675,7 +3677,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> resizeVolumeAsync(
-      VolumeName volume, long sizeGib) {
+      @Nullable VolumeName volume, long sizeGib) {
     ResizeVolumeRequest request =
         ResizeVolumeRequest.newBuilder()
             .setVolume(volume == null ? null : volume.toString())
@@ -3826,7 +3828,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListNetworksRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworksPagedResponse listNetworks(LocationName parent) {
+  public final ListNetworksPagedResponse listNetworks(@Nullable LocationName parent) {
     ListNetworksRequest request =
         ListNetworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3991,7 +3993,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param location Required. Parent value (project and location).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworkUsageResponse listNetworkUsage(LocationName location) {
+  public final ListNetworkUsageResponse listNetworkUsage(@Nullable LocationName location) {
     ListNetworkUsageRequest request =
         ListNetworkUsageRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -4107,7 +4109,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Network getNetwork(NetworkName name) {
+  public final Network getNetwork(@Nullable NetworkName name) {
     GetNetworkRequest request =
         GetNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNetwork(request);
@@ -4341,7 +4343,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VolumeSnapshot createVolumeSnapshot(
-      VolumeName parent, VolumeSnapshot volumeSnapshot) {
+      @Nullable VolumeName parent, VolumeSnapshot volumeSnapshot) {
     CreateVolumeSnapshotRequest request =
         CreateVolumeSnapshotRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4468,7 +4470,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
-      VolumeSnapshotName volumeSnapshot) {
+      @Nullable VolumeSnapshotName volumeSnapshot) {
     RestoreVolumeSnapshotRequest request =
         RestoreVolumeSnapshotRequest.newBuilder()
             .setVolumeSnapshot(volumeSnapshot == null ? null : volumeSnapshot.toString())
@@ -4626,7 +4628,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. The name of the snapshot to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteVolumeSnapshot(VolumeSnapshotName name) {
+  public final void deleteVolumeSnapshot(@Nullable VolumeSnapshotName name) {
     DeleteVolumeSnapshotRequest request =
         DeleteVolumeSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4745,7 +4747,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. The name of the snapshot.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VolumeSnapshot getVolumeSnapshot(VolumeSnapshotName name) {
+  public final VolumeSnapshot getVolumeSnapshot(@Nullable VolumeSnapshotName name) {
     GetVolumeSnapshotRequest request =
         GetVolumeSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4868,7 +4870,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListVolumesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(VolumeName parent) {
+  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(@Nullable VolumeName parent) {
     ListVolumeSnapshotsRequest request =
         ListVolumeSnapshotsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5038,7 +5040,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Lun getLun(LunName name) {
+  public final Lun getLun(@Nullable LunName name) {
     GetLunRequest request =
         GetLunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLun(request);
@@ -5148,7 +5150,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListLunsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLunsPagedResponse listLuns(VolumeName parent) {
+  public final ListLunsPagedResponse listLuns(@Nullable VolumeName parent) {
     ListLunsRequest request =
         ListLunsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLuns(request);
@@ -5304,7 +5306,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. The name of the lun.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> evictLunAsync(LunName name) {
+  public final OperationFuture<Empty, OperationMetadata> evictLunAsync(@Nullable LunName name) {
     EvictLunRequest request =
         EvictLunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return evictLunAsync(request);
@@ -5441,7 +5443,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NfsShare getNfsShare(NFSShareName name) {
+  public final NfsShare getNfsShare(@Nullable NFSShareName name) {
     GetNfsShareRequest request =
         GetNfsShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNfsShare(request);
@@ -5552,7 +5554,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListNfsSharesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNfsSharesPagedResponse listNfsShares(LocationName parent) {
+  public final ListNfsSharesPagedResponse listNfsShares(@Nullable LocationName parent) {
     ListNfsSharesRequest request =
         ListNfsSharesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5841,7 +5843,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NfsShare, OperationMetadata> createNfsShareAsync(
-      LocationName parent, NfsShare nfsShare) {
+      @Nullable LocationName parent, NfsShare nfsShare) {
     CreateNfsShareRequest request =
         CreateNfsShareRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5994,7 +5996,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param newNfsshareId Required. The new `id` of the nfsshare.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NfsShare renameNfsShare(NFSShareName name, String newNfsshareId) {
+  public final NfsShare renameNfsShare(@Nullable NFSShareName name, String newNfsshareId) {
     RenameNfsShareRequest request =
         RenameNfsShareRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6115,7 +6117,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. The name of the NFS share to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteNfsShareAsync(NFSShareName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteNfsShareAsync(
+      @Nullable NFSShareName name) {
     DeleteNfsShareRequest request =
         DeleteNfsShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteNfsShareAsync(request);
@@ -6257,7 +6260,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListProvisioningQuotasRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProvisioningQuotasPagedResponse listProvisioningQuotas(LocationName parent) {
+  public final ListProvisioningQuotasPagedResponse listProvisioningQuotas(
+      @Nullable LocationName parent) {
     ListProvisioningQuotasRequest request =
         ListProvisioningQuotasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6427,7 +6431,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SubmitProvisioningConfigResponse submitProvisioningConfig(
-      LocationName parent, ProvisioningConfig provisioningConfig) {
+      @Nullable LocationName parent, ProvisioningConfig provisioningConfig) {
     SubmitProvisioningConfigRequest request =
         SubmitProvisioningConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6555,7 +6559,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param name Required. Name of the ProvisioningConfig.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProvisioningConfig getProvisioningConfig(ProvisioningConfigName name) {
+  public final ProvisioningConfig getProvisioningConfig(@Nullable ProvisioningConfigName name) {
     GetProvisioningConfigRequest request =
         GetProvisioningConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6677,7 +6681,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProvisioningConfig createProvisioningConfig(
-      LocationName parent, ProvisioningConfig provisioningConfig) {
+      @Nullable LocationName parent, ProvisioningConfig provisioningConfig) {
     CreateProvisioningConfigRequest request =
         CreateProvisioningConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6903,7 +6907,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param newNetworkId Required. The new `id` of the network.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Network renameNetwork(NetworkName name, String newNetworkId) {
+  public final Network renameNetwork(@Nullable NetworkName name, String newNetworkId) {
     RenameNetworkRequest request =
         RenameNetworkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7026,7 +7030,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * @param parent Required. Parent value for ListProvisioningQuotasRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOSImagesPagedResponse listOSImages(LocationName parent) {
+  public final ListOSImagesPagedResponse listOSImages(@Nullable LocationName parent) {
     ListOSImagesRequest request =
         ListOSImagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7382,8 +7386,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -7393,14 +7397,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7414,7 +7418,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7424,7 +7429,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7455,8 +7460,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractPage<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey, ListSSHKeysPage> {
 
     private ListSSHKeysPage(
-        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
-        ListSSHKeysResponse response) {
+        @Nullable PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        @Nullable ListSSHKeysResponse response) {
       super(context, response);
     }
 
@@ -7466,14 +7471,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListSSHKeysPage createPage(
-        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
-        ListSSHKeysResponse response) {
+        @Nullable PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        @Nullable ListSSHKeysResponse response) {
       return new ListSSHKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSSHKeysPage> createPageAsync(
-        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        @Nullable PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
         ApiFuture<ListSSHKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7487,7 +7492,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListSSHKeysPage,
           ListSSHKeysFixedSizeCollection> {
 
-    private ListSSHKeysFixedSizeCollection(List<ListSSHKeysPage> pages, int collectionSize) {
+    private ListSSHKeysFixedSizeCollection(
+        @Nullable List<ListSSHKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7497,7 +7503,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListSSHKeysFixedSizeCollection createCollection(
-        List<ListSSHKeysPage> pages, int collectionSize) {
+        @Nullable List<ListSSHKeysPage> pages, int collectionSize) {
       return new ListSSHKeysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7528,8 +7534,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractPage<ListVolumesRequest, ListVolumesResponse, Volume, ListVolumesPage> {
 
     private ListVolumesPage(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
-        ListVolumesResponse response) {
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable ListVolumesResponse response) {
       super(context, response);
     }
 
@@ -7539,14 +7545,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListVolumesPage createPage(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
-        ListVolumesResponse response) {
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable ListVolumesResponse response) {
       return new ListVolumesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVolumesPage> createPageAsync(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
         ApiFuture<ListVolumesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7560,7 +7566,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListVolumesPage,
           ListVolumesFixedSizeCollection> {
 
-    private ListVolumesFixedSizeCollection(List<ListVolumesPage> pages, int collectionSize) {
+    private ListVolumesFixedSizeCollection(
+        @Nullable List<ListVolumesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7570,7 +7577,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListVolumesFixedSizeCollection createCollection(
-        List<ListVolumesPage> pages, int collectionSize) {
+        @Nullable List<ListVolumesPage> pages, int collectionSize) {
       return new ListVolumesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7603,8 +7610,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, ListNetworksResponse, Network, ListNetworksPage> {
 
     private ListNetworksPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       super(context, response);
     }
 
@@ -7614,14 +7621,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListNetworksPage createPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       return new ListNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworksPage> createPageAsync(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
         ApiFuture<ListNetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7635,7 +7642,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListNetworksPage,
           ListNetworksFixedSizeCollection> {
 
-    private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
+    private ListNetworksFixedSizeCollection(
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7645,7 +7653,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListNetworksFixedSizeCollection createCollection(
-        List<ListNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7683,9 +7691,10 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListVolumeSnapshotsPage> {
 
     private ListVolumeSnapshotsPage(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+        @Nullable
+            PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
             context,
-        ListVolumeSnapshotsResponse response) {
+        @Nullable ListVolumeSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -7695,15 +7704,17 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListVolumeSnapshotsPage createPage(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+        @Nullable
+            PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
             context,
-        ListVolumeSnapshotsResponse response) {
+        @Nullable ListVolumeSnapshotsResponse response) {
       return new ListVolumeSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVolumeSnapshotsPage> createPageAsync(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+        @Nullable
+            PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
             context,
         ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7719,7 +7730,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListVolumeSnapshotsFixedSizeCollection> {
 
     private ListVolumeSnapshotsFixedSizeCollection(
-        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7729,7 +7740,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListVolumeSnapshotsFixedSizeCollection createCollection(
-        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeSnapshotsPage> pages, int collectionSize) {
       return new ListVolumeSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7756,7 +7767,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractPage<ListLunsRequest, ListLunsResponse, Lun, ListLunsPage> {
 
     private ListLunsPage(
-        PageContext<ListLunsRequest, ListLunsResponse, Lun> context, ListLunsResponse response) {
+        @Nullable PageContext<ListLunsRequest, ListLunsResponse, Lun> context,
+        @Nullable ListLunsResponse response) {
       super(context, response);
     }
 
@@ -7766,13 +7778,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListLunsPage createPage(
-        PageContext<ListLunsRequest, ListLunsResponse, Lun> context, ListLunsResponse response) {
+        @Nullable PageContext<ListLunsRequest, ListLunsResponse, Lun> context,
+        @Nullable ListLunsResponse response) {
       return new ListLunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLunsPage> createPageAsync(
-        PageContext<ListLunsRequest, ListLunsResponse, Lun> context,
+        @Nullable PageContext<ListLunsRequest, ListLunsResponse, Lun> context,
         ApiFuture<ListLunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7782,7 +7795,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListLunsRequest, ListLunsResponse, Lun, ListLunsPage, ListLunsFixedSizeCollection> {
 
-    private ListLunsFixedSizeCollection(List<ListLunsPage> pages, int collectionSize) {
+    private ListLunsFixedSizeCollection(@Nullable List<ListLunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7792,7 +7805,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListLunsFixedSizeCollection createCollection(
-        List<ListLunsPage> pages, int collectionSize) {
+        @Nullable List<ListLunsPage> pages, int collectionSize) {
       return new ListLunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7826,8 +7839,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListNfsSharesRequest, ListNfsSharesResponse, NfsShare, ListNfsSharesPage> {
 
     private ListNfsSharesPage(
-        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
-        ListNfsSharesResponse response) {
+        @Nullable PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        @Nullable ListNfsSharesResponse response) {
       super(context, response);
     }
 
@@ -7837,14 +7850,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListNfsSharesPage createPage(
-        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
-        ListNfsSharesResponse response) {
+        @Nullable PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        @Nullable ListNfsSharesResponse response) {
       return new ListNfsSharesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNfsSharesPage> createPageAsync(
-        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        @Nullable PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
         ApiFuture<ListNfsSharesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7858,7 +7871,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListNfsSharesPage,
           ListNfsSharesFixedSizeCollection> {
 
-    private ListNfsSharesFixedSizeCollection(List<ListNfsSharesPage> pages, int collectionSize) {
+    private ListNfsSharesFixedSizeCollection(
+        @Nullable List<ListNfsSharesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7868,7 +7882,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListNfsSharesFixedSizeCollection createCollection(
-        List<ListNfsSharesPage> pages, int collectionSize) {
+        @Nullable List<ListNfsSharesPage> pages, int collectionSize) {
       return new ListNfsSharesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7907,10 +7921,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListProvisioningQuotasPage> {
 
     private ListProvisioningQuotasPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
             context,
-        ListProvisioningQuotasResponse response) {
+        @Nullable ListProvisioningQuotasResponse response) {
       super(context, response);
     }
 
@@ -7920,16 +7935,18 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListProvisioningQuotasPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
             context,
-        ListProvisioningQuotasResponse response) {
+        @Nullable ListProvisioningQuotasResponse response) {
       return new ListProvisioningQuotasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProvisioningQuotasPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
             context,
         ApiFuture<ListProvisioningQuotasResponse> futureResponse) {
@@ -7946,7 +7963,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListProvisioningQuotasFixedSizeCollection> {
 
     private ListProvisioningQuotasFixedSizeCollection(
-        List<ListProvisioningQuotasPage> pages, int collectionSize) {
+        @Nullable List<ListProvisioningQuotasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7956,7 +7973,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListProvisioningQuotasFixedSizeCollection createCollection(
-        List<ListProvisioningQuotasPage> pages, int collectionSize) {
+        @Nullable List<ListProvisioningQuotasPage> pages, int collectionSize) {
       return new ListProvisioningQuotasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7989,8 +8006,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
       extends AbstractPage<ListOSImagesRequest, ListOSImagesResponse, OSImage, ListOSImagesPage> {
 
     private ListOSImagesPage(
-        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
-        ListOSImagesResponse response) {
+        @Nullable PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        @Nullable ListOSImagesResponse response) {
       super(context, response);
     }
 
@@ -8000,14 +8017,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListOSImagesPage createPage(
-        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
-        ListOSImagesResponse response) {
+        @Nullable PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        @Nullable ListOSImagesResponse response) {
       return new ListOSImagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOSImagesPage> createPageAsync(
-        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        @Nullable PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
         ApiFuture<ListOSImagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8021,7 +8038,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListOSImagesPage,
           ListOSImagesFixedSizeCollection> {
 
-    private ListOSImagesFixedSizeCollection(List<ListOSImagesPage> pages, int collectionSize) {
+    private ListOSImagesFixedSizeCollection(
+        @Nullable List<ListOSImagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8031,7 +8049,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListOSImagesFixedSizeCollection createCollection(
-        List<ListOSImagesPage> pages, int collectionSize) {
+        @Nullable List<ListOSImagesPage> pages, int collectionSize) {
       return new ListOSImagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8065,8 +8083,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -8076,14 +8094,14 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8097,7 +8115,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8107,7 +8126,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1376,7 +1377,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudChannelServiceClient implements BackgroundResource {
-  private final CloudChannelServiceSettings settings;
+  private final @Nullable CloudChannelServiceSettings settings;
   private final CloudChannelServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1424,7 +1425,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudChannelServiceSettings getSettings() {
+  public final @Nullable CloudChannelServiceSettings getSettings() {
     return settings;
   }
 
@@ -1623,7 +1624,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *     accounts/{account_id}/customers/{customer_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Customer getCustomer(CustomerName name) {
+  public final Customer getCustomer(@Nullable CustomerName name) {
     GetCustomerRequest request =
         GetCustomerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomer(request);
@@ -2047,7 +2048,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the customer to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomer(CustomerName name) {
+  public final void deleteCustomer(@Nullable CustomerName name) {
     DeleteCustomerRequest request =
         DeleteCustomerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCustomer(request);
@@ -5111,7 +5112,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomerRepricingConfig getCustomerRepricingConfig(
-      CustomerRepricingConfigName name) {
+      @Nullable CustomerRepricingConfigName name) {
     GetCustomerRepricingConfigRequest request =
         GetCustomerRepricingConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5310,7 +5311,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomerRepricingConfigsPagedResponse listCustomerRepricingConfigs(
-      CustomerName parent) {
+      @Nullable CustomerName parent) {
     ListCustomerRepricingConfigsRequest request =
         ListCustomerRepricingConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5627,7 +5628,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomerRepricingConfig createCustomerRepricingConfig(
-      CustomerName parent, CustomerRepricingConfig customerRepricingConfig) {
+      @Nullable CustomerName parent, CustomerRepricingConfig customerRepricingConfig) {
     CreateCustomerRepricingConfigRequest request =
         CreateCustomerRepricingConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6078,7 +6079,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *     Format: accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomerRepricingConfig(CustomerRepricingConfigName name) {
+  public final void deleteCustomerRepricingConfig(@Nullable CustomerRepricingConfigName name) {
     DeleteCustomerRepricingConfigRequest request =
         DeleteCustomerRepricingConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6267,7 +6268,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig(
-      ChannelPartnerRepricingConfigName name) {
+      @Nullable ChannelPartnerRepricingConfigName name) {
     GetChannelPartnerRepricingConfigRequest request =
         GetChannelPartnerRepricingConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6477,7 +6478,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListChannelPartnerRepricingConfigsPagedResponse listChannelPartnerRepricingConfigs(
-      ChannelPartnerLinkName parent) {
+      @Nullable ChannelPartnerLinkName parent) {
     ListChannelPartnerRepricingConfigsRequest request =
         ListChannelPartnerRepricingConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6810,7 +6811,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ChannelPartnerRepricingConfig createChannelPartnerRepricingConfig(
-      ChannelPartnerLinkName parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig) {
+      @Nullable ChannelPartnerLinkName parent,
+      ChannelPartnerRepricingConfig channelPartnerRepricingConfig) {
     CreateChannelPartnerRepricingConfigRequest request =
         CreateChannelPartnerRepricingConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7279,7 +7281,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the channel partner repricing config rule to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name) {
+  public final void deleteChannelPartnerRepricingConfig(
+      @Nullable ChannelPartnerRepricingConfigName name) {
     DeleteChannelPartnerRepricingConfigRequest request =
         DeleteChannelPartnerRepricingConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7675,7 +7678,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *     accounts/{account}/skuGroups/{sku_group}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(SkuGroupName parent) {
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(
+      @Nullable SkuGroupName parent) {
     ListSkuGroupBillableSkusRequest request =
         ListSkuGroupBillableSkusRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9110,7 +9114,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *     accounts/{account_id}/customers/{customer_id}/entitlements/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitlementChangesPagedResponse listEntitlementChanges(EntitlementName parent) {
+  public final ListEntitlementChangesPagedResponse listEntitlementChanges(
+      @Nullable EntitlementName parent) {
     ListEntitlementChangesRequest request =
         ListEntitlementChangesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9384,8 +9389,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListCustomersRequest, ListCustomersResponse, Customer, ListCustomersPage> {
 
     private ListCustomersPage(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
-        ListCustomersResponse response) {
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable ListCustomersResponse response) {
       super(context, response);
     }
 
@@ -9395,14 +9400,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomersPage createPage(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
-        ListCustomersResponse response) {
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable ListCustomersResponse response) {
       return new ListCustomersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomersPage> createPageAsync(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
         ApiFuture<ListCustomersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9416,7 +9421,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListCustomersPage,
           ListCustomersFixedSizeCollection> {
 
-    private ListCustomersFixedSizeCollection(List<ListCustomersPage> pages, int collectionSize) {
+    private ListCustomersFixedSizeCollection(
+        @Nullable List<ListCustomersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9426,7 +9432,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomersFixedSizeCollection createCollection(
-        List<ListCustomersPage> pages, int collectionSize) {
+        @Nullable List<ListCustomersPage> pages, int collectionSize) {
       return new ListCustomersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9460,8 +9466,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListEntitlementsRequest, ListEntitlementsResponse, Entitlement, ListEntitlementsPage> {
 
     private ListEntitlementsPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       super(context, response);
     }
 
@@ -9471,14 +9478,16 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsPage createPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       return new ListEntitlementsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitlementsPage> createPageAsync(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
         ApiFuture<ListEntitlementsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9493,7 +9502,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListEntitlementsFixedSizeCollection> {
 
     private ListEntitlementsFixedSizeCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9503,7 +9512,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsFixedSizeCollection createCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       return new ListEntitlementsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9541,9 +9550,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableSkusPage> {
 
     private ListTransferableSkusPage(
-        PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
+        @Nullable
+            PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
             context,
-        ListTransferableSkusResponse response) {
+        @Nullable ListTransferableSkusResponse response) {
       super(context, response);
     }
 
@@ -9553,15 +9563,17 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferableSkusPage createPage(
-        PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
+        @Nullable
+            PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
             context,
-        ListTransferableSkusResponse response) {
+        @Nullable ListTransferableSkusResponse response) {
       return new ListTransferableSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferableSkusPage> createPageAsync(
-        PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
+        @Nullable
+            PageContext<ListTransferableSkusRequest, ListTransferableSkusResponse, TransferableSku>
             context,
         ApiFuture<ListTransferableSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -9577,7 +9589,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableSkusFixedSizeCollection> {
 
     private ListTransferableSkusFixedSizeCollection(
-        List<ListTransferableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListTransferableSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9587,7 +9599,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferableSkusFixedSizeCollection createCollection(
-        List<ListTransferableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListTransferableSkusPage> pages, int collectionSize) {
       return new ListTransferableSkusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9626,10 +9638,11 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableOffersPage> {
 
     private ListTransferableOffersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTransferableOffersRequest, ListTransferableOffersResponse, TransferableOffer>
             context,
-        ListTransferableOffersResponse response) {
+        @Nullable ListTransferableOffersResponse response) {
       super(context, response);
     }
 
@@ -9639,16 +9652,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferableOffersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTransferableOffersRequest, ListTransferableOffersResponse, TransferableOffer>
             context,
-        ListTransferableOffersResponse response) {
+        @Nullable ListTransferableOffersResponse response) {
       return new ListTransferableOffersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferableOffersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTransferableOffersRequest, ListTransferableOffersResponse, TransferableOffer>
             context,
         ApiFuture<ListTransferableOffersResponse> futureResponse) {
@@ -9665,7 +9680,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListTransferableOffersFixedSizeCollection> {
 
     private ListTransferableOffersFixedSizeCollection(
-        List<ListTransferableOffersPage> pages, int collectionSize) {
+        @Nullable List<ListTransferableOffersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9675,7 +9690,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferableOffersFixedSizeCollection createCollection(
-        List<ListTransferableOffersPage> pages, int collectionSize) {
+        @Nullable List<ListTransferableOffersPage> pages, int collectionSize) {
       return new ListTransferableOffersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9714,10 +9729,11 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListChannelPartnerLinksPage> {
 
     private ListChannelPartnerLinksPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse, ChannelPartnerLink>
             context,
-        ListChannelPartnerLinksResponse response) {
+        @Nullable ListChannelPartnerLinksResponse response) {
       super(context, response);
     }
 
@@ -9727,16 +9743,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelPartnerLinksPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse, ChannelPartnerLink>
             context,
-        ListChannelPartnerLinksResponse response) {
+        @Nullable ListChannelPartnerLinksResponse response) {
       return new ListChannelPartnerLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChannelPartnerLinksPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse, ChannelPartnerLink>
             context,
         ApiFuture<ListChannelPartnerLinksResponse> futureResponse) {
@@ -9753,7 +9771,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListChannelPartnerLinksFixedSizeCollection> {
 
     private ListChannelPartnerLinksFixedSizeCollection(
-        List<ListChannelPartnerLinksPage> pages, int collectionSize) {
+        @Nullable List<ListChannelPartnerLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9763,7 +9781,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelPartnerLinksFixedSizeCollection createCollection(
-        List<ListChannelPartnerLinksPage> pages, int collectionSize) {
+        @Nullable List<ListChannelPartnerLinksPage> pages, int collectionSize) {
       return new ListChannelPartnerLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9805,12 +9823,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListCustomerRepricingConfigsPage> {
 
     private ListCustomerRepricingConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomerRepricingConfigsRequest,
                 ListCustomerRepricingConfigsResponse,
                 CustomerRepricingConfig>
             context,
-        ListCustomerRepricingConfigsResponse response) {
+        @Nullable ListCustomerRepricingConfigsResponse response) {
       super(context, response);
     }
 
@@ -9820,18 +9839,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomerRepricingConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomerRepricingConfigsRequest,
                 ListCustomerRepricingConfigsResponse,
                 CustomerRepricingConfig>
             context,
-        ListCustomerRepricingConfigsResponse response) {
+        @Nullable ListCustomerRepricingConfigsResponse response) {
       return new ListCustomerRepricingConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomerRepricingConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomerRepricingConfigsRequest,
                 ListCustomerRepricingConfigsResponse,
                 CustomerRepricingConfig>
@@ -9850,7 +9871,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListCustomerRepricingConfigsFixedSizeCollection> {
 
     private ListCustomerRepricingConfigsFixedSizeCollection(
-        List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9860,7 +9881,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomerRepricingConfigsFixedSizeCollection createCollection(
-        List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
       return new ListCustomerRepricingConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9903,12 +9924,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListChannelPartnerRepricingConfigsPage> {
 
     private ListChannelPartnerRepricingConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerRepricingConfigsRequest,
                 ListChannelPartnerRepricingConfigsResponse,
                 ChannelPartnerRepricingConfig>
             context,
-        ListChannelPartnerRepricingConfigsResponse response) {
+        @Nullable ListChannelPartnerRepricingConfigsResponse response) {
       super(context, response);
     }
 
@@ -9918,18 +9940,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelPartnerRepricingConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerRepricingConfigsRequest,
                 ListChannelPartnerRepricingConfigsResponse,
                 ChannelPartnerRepricingConfig>
             context,
-        ListChannelPartnerRepricingConfigsResponse response) {
+        @Nullable ListChannelPartnerRepricingConfigsResponse response) {
       return new ListChannelPartnerRepricingConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChannelPartnerRepricingConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelPartnerRepricingConfigsRequest,
                 ListChannelPartnerRepricingConfigsResponse,
                 ChannelPartnerRepricingConfig>
@@ -9948,7 +9972,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListChannelPartnerRepricingConfigsFixedSizeCollection> {
 
     private ListChannelPartnerRepricingConfigsFixedSizeCollection(
-        List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9958,7 +9982,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelPartnerRepricingConfigsFixedSizeCollection createCollection(
-        List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
       return new ListChannelPartnerRepricingConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9992,8 +10016,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup, ListSkuGroupsPage> {
 
     private ListSkuGroupsPage(
-        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
-        ListSkuGroupsResponse response) {
+        @Nullable PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        @Nullable ListSkuGroupsResponse response) {
       super(context, response);
     }
 
@@ -10003,14 +10027,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkuGroupsPage createPage(
-        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
-        ListSkuGroupsResponse response) {
+        @Nullable PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        @Nullable ListSkuGroupsResponse response) {
       return new ListSkuGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSkuGroupsPage> createPageAsync(
-        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        @Nullable PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
         ApiFuture<ListSkuGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10024,7 +10048,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSkuGroupsPage,
           ListSkuGroupsFixedSizeCollection> {
 
-    private ListSkuGroupsFixedSizeCollection(List<ListSkuGroupsPage> pages, int collectionSize) {
+    private ListSkuGroupsFixedSizeCollection(
+        @Nullable List<ListSkuGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10034,7 +10059,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkuGroupsFixedSizeCollection createCollection(
-        List<ListSkuGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListSkuGroupsPage> pages, int collectionSize) {
       return new ListSkuGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10072,9 +10097,11 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSkuGroupBillableSkusPage> {
 
     private ListSkuGroupBillableSkusPage(
-        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+        @Nullable
+            PageContext<
+                ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
             context,
-        ListSkuGroupBillableSkusResponse response) {
+        @Nullable ListSkuGroupBillableSkusResponse response) {
       super(context, response);
     }
 
@@ -10084,15 +10111,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkuGroupBillableSkusPage createPage(
-        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+        @Nullable
+            PageContext<
+                ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
             context,
-        ListSkuGroupBillableSkusResponse response) {
+        @Nullable ListSkuGroupBillableSkusResponse response) {
       return new ListSkuGroupBillableSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSkuGroupBillableSkusPage> createPageAsync(
-        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+        @Nullable
+            PageContext<
+                ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
             context,
         ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10108,7 +10139,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSkuGroupBillableSkusFixedSizeCollection> {
 
     private ListSkuGroupBillableSkusFixedSizeCollection(
-        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10118,7 +10149,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkuGroupBillableSkusFixedSizeCollection createCollection(
-        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
       return new ListSkuGroupBillableSkusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10151,8 +10182,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
       extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
 
     private ListProductsPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       super(context, response);
     }
 
@@ -10162,14 +10193,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsPage createPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       return new ListProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsPage> createPageAsync(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
         ApiFuture<ListProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10183,7 +10214,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListProductsPage,
           ListProductsFixedSizeCollection> {
 
-    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+    private ListProductsFixedSizeCollection(
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10193,7 +10225,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsFixedSizeCollection createCollection(
-        List<ListProductsPage> pages, int collectionSize) {
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       return new ListProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10220,7 +10252,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
       extends AbstractPage<ListSkusRequest, ListSkusResponse, Sku, ListSkusPage> {
 
     private ListSkusPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       super(context, response);
     }
 
@@ -10230,13 +10263,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkusPage createPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       return new ListSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSkusPage> createPageAsync(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
         ApiFuture<ListSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10246,7 +10280,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSkusRequest, ListSkusResponse, Sku, ListSkusPage, ListSkusFixedSizeCollection> {
 
-    private ListSkusFixedSizeCollection(List<ListSkusPage> pages, int collectionSize) {
+    private ListSkusFixedSizeCollection(@Nullable List<ListSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10256,7 +10290,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSkusFixedSizeCollection createCollection(
-        List<ListSkusPage> pages, int collectionSize) {
+        @Nullable List<ListSkusPage> pages, int collectionSize) {
       return new ListSkusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10287,8 +10321,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
       extends AbstractPage<ListOffersRequest, ListOffersResponse, Offer, ListOffersPage> {
 
     private ListOffersPage(
-        PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
-        ListOffersResponse response) {
+        @Nullable PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
+        @Nullable ListOffersResponse response) {
       super(context, response);
     }
 
@@ -10298,14 +10332,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListOffersPage createPage(
-        PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
-        ListOffersResponse response) {
+        @Nullable PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
+        @Nullable ListOffersResponse response) {
       return new ListOffersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOffersPage> createPageAsync(
-        PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
+        @Nullable PageContext<ListOffersRequest, ListOffersResponse, Offer> context,
         ApiFuture<ListOffersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10319,7 +10353,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListOffersPage,
           ListOffersFixedSizeCollection> {
 
-    private ListOffersFixedSizeCollection(List<ListOffersPage> pages, int collectionSize) {
+    private ListOffersFixedSizeCollection(
+        @Nullable List<ListOffersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10329,7 +10364,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListOffersFixedSizeCollection createCollection(
-        List<ListOffersPage> pages, int collectionSize) {
+        @Nullable List<ListOffersPage> pages, int collectionSize) {
       return new ListOffersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10367,9 +10402,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableSkusPage> {
 
     private ListPurchasableSkusPage(
-        PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
+        @Nullable
+            PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
             context,
-        ListPurchasableSkusResponse response) {
+        @Nullable ListPurchasableSkusResponse response) {
       super(context, response);
     }
 
@@ -10379,15 +10415,17 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListPurchasableSkusPage createPage(
-        PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
+        @Nullable
+            PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
             context,
-        ListPurchasableSkusResponse response) {
+        @Nullable ListPurchasableSkusResponse response) {
       return new ListPurchasableSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPurchasableSkusPage> createPageAsync(
-        PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
+        @Nullable
+            PageContext<ListPurchasableSkusRequest, ListPurchasableSkusResponse, PurchasableSku>
             context,
         ApiFuture<ListPurchasableSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10403,7 +10441,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableSkusFixedSizeCollection> {
 
     private ListPurchasableSkusFixedSizeCollection(
-        List<ListPurchasableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListPurchasableSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10413,7 +10451,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListPurchasableSkusFixedSizeCollection createCollection(
-        List<ListPurchasableSkusPage> pages, int collectionSize) {
+        @Nullable List<ListPurchasableSkusPage> pages, int collectionSize) {
       return new ListPurchasableSkusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10451,9 +10489,11 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableOffersPage> {
 
     private ListPurchasableOffersPage(
-        PageContext<ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
+        @Nullable
+            PageContext<
+                ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
             context,
-        ListPurchasableOffersResponse response) {
+        @Nullable ListPurchasableOffersResponse response) {
       super(context, response);
     }
 
@@ -10463,15 +10503,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListPurchasableOffersPage createPage(
-        PageContext<ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
+        @Nullable
+            PageContext<
+                ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
             context,
-        ListPurchasableOffersResponse response) {
+        @Nullable ListPurchasableOffersResponse response) {
       return new ListPurchasableOffersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPurchasableOffersPage> createPageAsync(
-        PageContext<ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
+        @Nullable
+            PageContext<
+                ListPurchasableOffersRequest, ListPurchasableOffersResponse, PurchasableOffer>
             context,
         ApiFuture<ListPurchasableOffersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10487,7 +10531,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListPurchasableOffersFixedSizeCollection> {
 
     private ListPurchasableOffersFixedSizeCollection(
-        List<ListPurchasableOffersPage> pages, int collectionSize) {
+        @Nullable List<ListPurchasableOffersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10497,7 +10541,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListPurchasableOffersFixedSizeCollection createCollection(
-        List<ListPurchasableOffersPage> pages, int collectionSize) {
+        @Nullable List<ListPurchasableOffersPage> pages, int collectionSize) {
       return new ListPurchasableOffersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10531,8 +10575,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSubscribersRequest, ListSubscribersResponse, String, ListSubscribersPage> {
 
     private ListSubscribersPage(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
-        ListSubscribersResponse response) {
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        @Nullable ListSubscribersResponse response) {
       super(context, response);
     }
 
@@ -10542,14 +10586,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscribersPage createPage(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
-        ListSubscribersResponse response) {
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        @Nullable ListSubscribersResponse response) {
       return new ListSubscribersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscribersPage> createPageAsync(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
         ApiFuture<ListSubscribersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10564,7 +10608,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListSubscribersFixedSizeCollection> {
 
     private ListSubscribersFixedSizeCollection(
-        List<ListSubscribersPage> pages, int collectionSize) {
+        @Nullable List<ListSubscribersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10574,7 +10618,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscribersFixedSizeCollection createCollection(
-        List<ListSubscribersPage> pages, int collectionSize) {
+        @Nullable List<ListSubscribersPage> pages, int collectionSize) {
       return new ListSubscribersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10613,10 +10657,11 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListEntitlementChangesPage> {
 
     private ListEntitlementChangesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
             context,
-        ListEntitlementChangesResponse response) {
+        @Nullable ListEntitlementChangesResponse response) {
       super(context, response);
     }
 
@@ -10626,16 +10671,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementChangesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
             context,
-        ListEntitlementChangesResponse response) {
+        @Nullable ListEntitlementChangesResponse response) {
       return new ListEntitlementChangesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitlementChangesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
             context,
         ApiFuture<ListEntitlementChangesResponse> futureResponse) {
@@ -10652,7 +10699,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
           ListEntitlementChangesFixedSizeCollection> {
 
     private ListEntitlementChangesFixedSizeCollection(
-        List<ListEntitlementChangesPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementChangesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10662,7 +10709,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementChangesFixedSizeCollection createCollection(
-        List<ListEntitlementChangesPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementChangesPage> pages, int collectionSize) {
       return new ListEntitlementChangesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -150,7 +151,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ProgrammaticBuyerServiceClient implements BackgroundResource {
-  private final ProgrammaticBuyerServiceSettings settings;
+  private final @Nullable ProgrammaticBuyerServiceSettings settings;
   private final ProgrammaticBuyerServiceStub stub;
 
   /** Constructs an instance of ProgrammaticBuyerServiceClient with default settings. */
@@ -192,7 +193,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProgrammaticBuyerServiceSettings getSettings() {
+  public final @Nullable ProgrammaticBuyerServiceSettings getSettings() {
     return settings;
   }
 
@@ -224,7 +225,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
    *     `networks/{network_code}/programmaticBuyers/{buyer_account_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProgrammaticBuyer getProgrammaticBuyer(ProgrammaticBuyerName name) {
+  public final ProgrammaticBuyer getProgrammaticBuyer(@Nullable ProgrammaticBuyerName name) {
     GetProgrammaticBuyerRequest request =
         GetProgrammaticBuyerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -348,7 +349,8 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProgrammaticBuyersPagedResponse listProgrammaticBuyers(NetworkName parent) {
+  public final ListProgrammaticBuyersPagedResponse listProgrammaticBuyers(
+      @Nullable NetworkName parent) {
     ListProgrammaticBuyersRequest request =
         ListProgrammaticBuyersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -571,10 +573,11 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
           ListProgrammaticBuyersPage> {
 
     private ListProgrammaticBuyersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProgrammaticBuyersRequest, ListProgrammaticBuyersResponse, ProgrammaticBuyer>
             context,
-        ListProgrammaticBuyersResponse response) {
+        @Nullable ListProgrammaticBuyersResponse response) {
       super(context, response);
     }
 
@@ -584,16 +587,18 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
     @Override
     protected ListProgrammaticBuyersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProgrammaticBuyersRequest, ListProgrammaticBuyersResponse, ProgrammaticBuyer>
             context,
-        ListProgrammaticBuyersResponse response) {
+        @Nullable ListProgrammaticBuyersResponse response) {
       return new ListProgrammaticBuyersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProgrammaticBuyersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProgrammaticBuyersRequest, ListProgrammaticBuyersResponse, ProgrammaticBuyer>
             context,
         ApiFuture<ListProgrammaticBuyersResponse> futureResponse) {
@@ -610,7 +615,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
           ListProgrammaticBuyersFixedSizeCollection> {
 
     private ListProgrammaticBuyersFixedSizeCollection(
-        List<ListProgrammaticBuyersPage> pages, int collectionSize) {
+        @Nullable List<ListProgrammaticBuyersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -620,7 +625,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
     @Override
     protected ListProgrammaticBuyersFixedSizeCollection createCollection(
-        List<ListProgrammaticBuyersPage> pages, int collectionSize) {
+        @Nullable List<ListProgrammaticBuyersPage> pages, int collectionSize) {
       return new ListProgrammaticBuyersFixedSizeCollection(pages, collectionSize);
     }
   }

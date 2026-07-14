@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ContentBundleServiceClient implements BackgroundResource {
-  private final ContentBundleServiceSettings settings;
+  private final @Nullable ContentBundleServiceSettings settings;
   private final ContentBundleServiceStub stub;
 
   /** Constructs an instance of ContentBundleServiceClient with default settings. */
@@ -189,7 +190,7 @@ public class ContentBundleServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContentBundleServiceSettings getSettings() {
+  public final @Nullable ContentBundleServiceSettings getSettings() {
     return settings;
   }
 
@@ -220,7 +221,7 @@ public class ContentBundleServiceClient implements BackgroundResource {
    *     `networks/{network_code}/contentBundles/{content_bundle_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ContentBundle getContentBundle(ContentBundleName name) {
+  public final ContentBundle getContentBundle(@Nullable ContentBundleName name) {
     GetContentBundleRequest request =
         GetContentBundleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContentBundle(request);
@@ -338,7 +339,7 @@ public class ContentBundleServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContentBundlesPagedResponse listContentBundles(NetworkName parent) {
+  public final ListContentBundlesPagedResponse listContentBundles(@Nullable NetworkName parent) {
     ListContentBundlesRequest request =
         ListContentBundlesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -559,8 +560,9 @@ public class ContentBundleServiceClient implements BackgroundResource {
           ListContentBundlesPage> {
 
     private ListContentBundlesPage(
-        PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle> context,
-        ListContentBundlesResponse response) {
+        @Nullable PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle>
+            context,
+        @Nullable ListContentBundlesResponse response) {
       super(context, response);
     }
 
@@ -570,14 +572,16 @@ public class ContentBundleServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentBundlesPage createPage(
-        PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle> context,
-        ListContentBundlesResponse response) {
+        @Nullable PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle>
+            context,
+        @Nullable ListContentBundlesResponse response) {
       return new ListContentBundlesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContentBundlesPage> createPageAsync(
-        PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle> context,
+        @Nullable PageContext<ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle>
+            context,
         ApiFuture<ListContentBundlesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -592,7 +596,7 @@ public class ContentBundleServiceClient implements BackgroundResource {
           ListContentBundlesFixedSizeCollection> {
 
     private ListContentBundlesFixedSizeCollection(
-        List<ListContentBundlesPage> pages, int collectionSize) {
+        @Nullable List<ListContentBundlesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -602,7 +606,7 @@ public class ContentBundleServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentBundlesFixedSizeCollection createCollection(
-        List<ListContentBundlesPage> pages, int collectionSize) {
+        @Nullable List<ListContentBundlesPage> pages, int collectionSize) {
       return new ListContentBundlesFixedSizeCollection(pages, collectionSize);
     }
   }

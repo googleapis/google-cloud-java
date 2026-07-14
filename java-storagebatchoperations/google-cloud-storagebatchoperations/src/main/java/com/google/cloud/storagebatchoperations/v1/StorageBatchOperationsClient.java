@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -302,7 +303,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageBatchOperationsClient implements BackgroundResource {
-  private final StorageBatchOperationsSettings settings;
+  private final @Nullable StorageBatchOperationsSettings settings;
   private final StorageBatchOperationsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -351,7 +352,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StorageBatchOperationsSettings getSettings() {
+  public final @Nullable StorageBatchOperationsSettings getSettings() {
     return settings;
   }
 
@@ -400,7 +401,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * @param parent Required. Format: projects/{project_id}/locations/global.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(LocationName parent) {
+  public final ListJobsPagedResponse listJobs(@Nullable LocationName parent) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listJobs(request);
@@ -569,7 +570,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -689,7 +690,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, OperationMetadata> createJobAsync(
-      LocationName parent, Job job, String jobId) {
+      @Nullable LocationName parent, Job job, String jobId) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -854,7 +855,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(JobName name) {
+  public final void deleteJob(@Nullable JobName name) {
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -973,7 +974,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *     projects/{project_id}/locations/global/jobs/{job_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CancelJobResponse cancelJob(JobName name) {
+  public final CancelJobResponse cancelJob(@Nullable JobName name) {
     CancelJobRequest request =
         CancelJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelJob(request);
@@ -1092,7 +1093,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * @param parent Required. Format: projects/{project_id}/locations/global/jobs/{job_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketOperationsPagedResponse listBucketOperations(JobName parent) {
+  public final ListBucketOperationsPagedResponse listBucketOperations(@Nullable JobName parent) {
     ListBucketOperationsRequest request =
         ListBucketOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1271,7 +1272,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    *     projects/{project_id}/locations/global/jobs/{job_id}/bucketOperations/{bucket_operation_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BucketOperation getBucketOperation(BucketOperationName name) {
+  public final BucketOperation getBucketOperation(@Nullable BucketOperationName name) {
     GetBucketOperationRequest request =
         GetBucketOperationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1587,7 +1588,8 @@ public class StorageBatchOperationsClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1597,13 +1599,14 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1613,7 +1616,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1623,7 +1626,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1661,9 +1664,10 @@ public class StorageBatchOperationsClient implements BackgroundResource {
           ListBucketOperationsPage> {
 
     private ListBucketOperationsPage(
-        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+        @Nullable
+            PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
             context,
-        ListBucketOperationsResponse response) {
+        @Nullable ListBucketOperationsResponse response) {
       super(context, response);
     }
 
@@ -1673,15 +1677,17 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListBucketOperationsPage createPage(
-        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+        @Nullable
+            PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
             context,
-        ListBucketOperationsResponse response) {
+        @Nullable ListBucketOperationsResponse response) {
       return new ListBucketOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBucketOperationsPage> createPageAsync(
-        PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+        @Nullable
+            PageContext<ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
             context,
         ApiFuture<ListBucketOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1697,7 +1703,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
           ListBucketOperationsFixedSizeCollection> {
 
     private ListBucketOperationsFixedSizeCollection(
-        List<ListBucketOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListBucketOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1707,7 +1713,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListBucketOperationsFixedSizeCollection createCollection(
-        List<ListBucketOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListBucketOperationsPage> pages, int collectionSize) {
       return new ListBucketOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1741,8 +1747,8 @@ public class StorageBatchOperationsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1752,14 +1758,14 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1773,7 +1779,8 @@ public class StorageBatchOperationsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1783,7 +1790,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

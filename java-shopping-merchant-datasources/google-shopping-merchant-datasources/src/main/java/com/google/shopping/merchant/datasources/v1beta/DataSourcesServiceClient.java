@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -239,7 +240,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataSourcesServiceClient implements BackgroundResource {
-  private final DataSourcesServiceSettings settings;
+  private final @Nullable DataSourcesServiceSettings settings;
   private final DataSourcesServiceStub stub;
 
   /** Constructs an instance of DataSourcesServiceClient with default settings. */
@@ -279,7 +280,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataSourcesServiceSettings getSettings() {
+  public final @Nullable DataSourcesServiceSettings getSettings() {
     return settings;
   }
 
@@ -309,7 +310,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
    *     `accounts/{account}/dataSources/{datasource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSource getDataSource(DataSourceName name) {
+  public final DataSource getDataSource(@Nullable DataSourceName name) {
     GetDataSourceRequest request =
         GetDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataSource(request);
@@ -421,7 +422,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
    * @param parent Required. The account to list data sources for. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourcesPagedResponse listDataSources(AccountName parent) {
+  public final ListDataSourcesPagedResponse listDataSources(@Nullable AccountName parent) {
     ListDataSourcesRequest request =
         ListDataSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -586,7 +587,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
    * @param dataSource Required. The data source to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSource createDataSource(AccountName parent, DataSource dataSource) {
+  public final DataSource createDataSource(@Nullable AccountName parent, DataSource dataSource) {
     CreateDataSourceRequest request =
         CreateDataSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -801,7 +802,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
    *     `accounts/{account}/dataSources/{datasource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataSource(DataSourceName name) {
+  public final void deleteDataSource(@Nullable DataSourceName name) {
     DeleteDataSourceRequest request =
         DeleteDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataSource(request);
@@ -1011,8 +1012,8 @@ public class DataSourcesServiceClient implements BackgroundResource {
           ListDataSourcesRequest, ListDataSourcesResponse, DataSource, ListDataSourcesPage> {
 
     private ListDataSourcesPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       super(context, response);
     }
 
@@ -1022,14 +1023,14 @@ public class DataSourcesServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesPage createPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       return new ListDataSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataSourcesPage> createPageAsync(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
         ApiFuture<ListDataSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1044,7 +1045,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
           ListDataSourcesFixedSizeCollection> {
 
     private ListDataSourcesFixedSizeCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1054,7 +1055,7 @@ public class DataSourcesServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesFixedSizeCollection createCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       return new ListDataSourcesFixedSizeCollection(pages, collectionSize);
     }
   }

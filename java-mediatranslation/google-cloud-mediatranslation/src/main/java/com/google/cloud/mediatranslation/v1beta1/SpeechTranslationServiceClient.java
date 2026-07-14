@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -120,7 +121,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SpeechTranslationServiceClient implements BackgroundResource {
-  private final SpeechTranslationServiceSettings settings;
+  private final @Nullable SpeechTranslationServiceSettings settings;
   private final SpeechTranslationServiceStub stub;
 
   /** Constructs an instance of SpeechTranslationServiceClient with default settings. */
@@ -162,7 +163,7 @@ public class SpeechTranslationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SpeechTranslationServiceSettings getSettings() {
+  public final @Nullable SpeechTranslationServiceSettings getSettings() {
     return settings;
   }
 

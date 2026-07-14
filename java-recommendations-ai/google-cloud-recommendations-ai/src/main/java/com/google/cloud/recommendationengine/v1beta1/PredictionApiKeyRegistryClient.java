@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -194,7 +195,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionApiKeyRegistryClient implements BackgroundResource {
-  private final PredictionApiKeyRegistrySettings settings;
+  private final @Nullable PredictionApiKeyRegistrySettings settings;
   private final PredictionApiKeyRegistryStub stub;
 
   /** Constructs an instance of PredictionApiKeyRegistryClient with default settings. */
@@ -236,7 +237,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PredictionApiKeyRegistrySettings getSettings() {
+  public final @Nullable PredictionApiKeyRegistrySettings getSettings() {
     return settings;
   }
 
@@ -274,7 +275,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictionApiKeyRegistration createPredictionApiKeyRegistration(
-      EventStoreName parent, PredictionApiKeyRegistration predictionApiKeyRegistration) {
+      @Nullable EventStoreName parent, PredictionApiKeyRegistration predictionApiKeyRegistration) {
     CreatePredictionApiKeyRegistrationRequest request =
         CreatePredictionApiKeyRegistrationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -420,7 +421,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPredictionApiKeyRegistrationsPagedResponse listPredictionApiKeyRegistrations(
-      EventStoreName parent) {
+      @Nullable EventStoreName parent) {
     ListPredictionApiKeyRegistrationsRequest request =
         ListPredictionApiKeyRegistrationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -614,7 +615,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name) {
+  public final void deletePredictionApiKeyRegistration(
+      @Nullable PredictionApiKeyRegistrationName name) {
     DeletePredictionApiKeyRegistrationRequest request =
         DeletePredictionApiKeyRegistrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -802,12 +804,13 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
           ListPredictionApiKeyRegistrationsPage> {
 
     private ListPredictionApiKeyRegistrationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPredictionApiKeyRegistrationsRequest,
                 ListPredictionApiKeyRegistrationsResponse,
                 PredictionApiKeyRegistration>
             context,
-        ListPredictionApiKeyRegistrationsResponse response) {
+        @Nullable ListPredictionApiKeyRegistrationsResponse response) {
       super(context, response);
     }
 
@@ -817,18 +820,20 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
 
     @Override
     protected ListPredictionApiKeyRegistrationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPredictionApiKeyRegistrationsRequest,
                 ListPredictionApiKeyRegistrationsResponse,
                 PredictionApiKeyRegistration>
             context,
-        ListPredictionApiKeyRegistrationsResponse response) {
+        @Nullable ListPredictionApiKeyRegistrationsResponse response) {
       return new ListPredictionApiKeyRegistrationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPredictionApiKeyRegistrationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPredictionApiKeyRegistrationsRequest,
                 ListPredictionApiKeyRegistrationsResponse,
                 PredictionApiKeyRegistration>
@@ -847,7 +852,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
           ListPredictionApiKeyRegistrationsFixedSizeCollection> {
 
     private ListPredictionApiKeyRegistrationsFixedSizeCollection(
-        List<ListPredictionApiKeyRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListPredictionApiKeyRegistrationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -857,7 +862,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
 
     @Override
     protected ListPredictionApiKeyRegistrationsFixedSizeCollection createCollection(
-        List<ListPredictionApiKeyRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListPredictionApiKeyRegistrationsPage> pages, int collectionSize) {
       return new ListPredictionApiKeyRegistrationsFixedSizeCollection(pages, collectionSize);
     }
   }

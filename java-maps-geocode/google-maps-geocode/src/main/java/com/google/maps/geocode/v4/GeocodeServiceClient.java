@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -159,7 +160,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class GeocodeServiceClient implements BackgroundResource {
-  private final GeocodeServiceSettings settings;
+  private final @Nullable GeocodeServiceSettings settings;
   private final GeocodeServiceStub stub;
 
   /** Constructs an instance of GeocodeServiceClient with default settings. */
@@ -199,7 +200,7 @@ public class GeocodeServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GeocodeServiceSettings getSettings() {
+  public final @Nullable GeocodeServiceSettings getSettings() {
     return settings;
   }
 

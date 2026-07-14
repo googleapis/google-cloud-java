@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -352,7 +353,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeliveryServiceClient implements BackgroundResource {
-  private final DeliveryServiceSettings settings;
+  private final @Nullable DeliveryServiceSettings settings;
   private final DeliveryServiceStub stub;
 
   /** Constructs an instance of DeliveryServiceClient with default settings. */
@@ -392,7 +393,7 @@ public class DeliveryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeliveryServiceSettings getSettings() {
+  public final @Nullable DeliveryServiceSettings getSettings() {
     return settings;
   }
 
@@ -541,7 +542,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeliveryVehicle getDeliveryVehicle(DeliveryVehicleName name) {
+  public final DeliveryVehicle getDeliveryVehicle(@Nullable DeliveryVehicleName name) {
     GetDeliveryVehicleRequest request =
         GetDeliveryVehicleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -662,7 +663,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeliveryVehicle(DeliveryVehicleName name) {
+  public final void deleteDeliveryVehicle(@Nullable DeliveryVehicleName name) {
     DeleteDeliveryVehicleRequest request =
         DeleteDeliveryVehicleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1080,7 +1081,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     must be the Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -1194,7 +1195,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     must be the Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTask(TaskName name) {
+  public final void deleteTask(@Nullable TaskName name) {
     DeleteTaskRequest request =
         DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTask(request);
@@ -1412,7 +1413,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     the Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(ProviderName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable ProviderName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -1579,7 +1580,7 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     `providers/sample-cloud-project/taskTrackingInfo/sample-tracking-id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TaskTrackingInfo getTaskTrackingInfo(TaskTrackingInfoName name) {
+  public final TaskTrackingInfo getTaskTrackingInfo(@Nullable TaskTrackingInfoName name) {
     GetTaskTrackingInfoRequest request =
         GetTaskTrackingInfoRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1702,7 +1703,8 @@ public class DeliveryServiceClient implements BackgroundResource {
    *     the Google Cloud Project ID. For example, `sample-cloud-project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeliveryVehiclesPagedResponse listDeliveryVehicles(ProviderName parent) {
+  public final ListDeliveryVehiclesPagedResponse listDeliveryVehicles(
+      @Nullable ProviderName parent) {
     ListDeliveryVehiclesRequest request =
         ListDeliveryVehiclesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1909,8 +1911,8 @@ public class DeliveryServiceClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -1920,14 +1922,14 @@ public class DeliveryServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1937,7 +1939,7 @@ public class DeliveryServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1947,7 +1949,7 @@ public class DeliveryServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1985,9 +1987,10 @@ public class DeliveryServiceClient implements BackgroundResource {
           ListDeliveryVehiclesPage> {
 
     private ListDeliveryVehiclesPage(
-        PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
+        @Nullable
+            PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
             context,
-        ListDeliveryVehiclesResponse response) {
+        @Nullable ListDeliveryVehiclesResponse response) {
       super(context, response);
     }
 
@@ -1997,15 +2000,17 @@ public class DeliveryServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeliveryVehiclesPage createPage(
-        PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
+        @Nullable
+            PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
             context,
-        ListDeliveryVehiclesResponse response) {
+        @Nullable ListDeliveryVehiclesResponse response) {
       return new ListDeliveryVehiclesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeliveryVehiclesPage> createPageAsync(
-        PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
+        @Nullable
+            PageContext<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse, DeliveryVehicle>
             context,
         ApiFuture<ListDeliveryVehiclesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2021,7 +2026,7 @@ public class DeliveryServiceClient implements BackgroundResource {
           ListDeliveryVehiclesFixedSizeCollection> {
 
     private ListDeliveryVehiclesFixedSizeCollection(
-        List<ListDeliveryVehiclesPage> pages, int collectionSize) {
+        @Nullable List<ListDeliveryVehiclesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2031,7 +2036,7 @@ public class DeliveryServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeliveryVehiclesFixedSizeCollection createCollection(
-        List<ListDeliveryVehiclesPage> pages, int collectionSize) {
+        @Nullable List<ListDeliveryVehiclesPage> pages, int collectionSize) {
       return new ListDeliveryVehiclesFixedSizeCollection(pages, collectionSize);
     }
   }

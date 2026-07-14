@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -275,7 +276,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AutoscalingPolicyServiceClient implements BackgroundResource {
-  private final AutoscalingPolicyServiceSettings settings;
+  private final @Nullable AutoscalingPolicyServiceSettings settings;
   private final AutoscalingPolicyServiceStub stub;
 
   /** Constructs an instance of AutoscalingPolicyServiceClient with default settings. */
@@ -317,7 +318,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AutoscalingPolicyServiceSettings getSettings() {
+  public final @Nullable AutoscalingPolicyServiceSettings getSettings() {
     return settings;
   }
 
@@ -361,7 +362,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
-      LocationName parent, AutoscalingPolicy policy) {
+      @Nullable LocationName parent, AutoscalingPolicy policy) {
     CreateAutoscalingPolicyRequest request =
         CreateAutoscalingPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -406,7 +407,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy createAutoscalingPolicy(
-      RegionName parent, AutoscalingPolicy policy) {
+      @Nullable RegionName parent, AutoscalingPolicy policy) {
     CreateAutoscalingPolicyRequest request =
         CreateAutoscalingPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -646,7 +647,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AutoscalingPolicy getAutoscalingPolicy(AutoscalingPolicyName name) {
+  public final AutoscalingPolicy getAutoscalingPolicy(@Nullable AutoscalingPolicyName name) {
     GetAutoscalingPolicyRequest request =
         GetAutoscalingPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -797,7 +798,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(LocationName parent) {
+  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(
+      @Nullable LocationName parent) {
     ListAutoscalingPoliciesRequest request =
         ListAutoscalingPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -840,7 +842,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(RegionName parent) {
+  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(
+      @Nullable RegionName parent) {
     ListAutoscalingPoliciesRequest request =
         ListAutoscalingPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1036,7 +1039,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAutoscalingPolicy(AutoscalingPolicyName name) {
+  public final void deleteAutoscalingPolicy(@Nullable AutoscalingPolicyName name) {
     DeleteAutoscalingPolicyRequest request =
         DeleteAutoscalingPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1437,10 +1440,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
           ListAutoscalingPoliciesPage> {
 
     private ListAutoscalingPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
             context,
-        ListAutoscalingPoliciesResponse response) {
+        @Nullable ListAutoscalingPoliciesResponse response) {
       super(context, response);
     }
 
@@ -1450,16 +1454,18 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListAutoscalingPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
             context,
-        ListAutoscalingPoliciesResponse response) {
+        @Nullable ListAutoscalingPoliciesResponse response) {
       return new ListAutoscalingPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAutoscalingPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
             context,
         ApiFuture<ListAutoscalingPoliciesResponse> futureResponse) {
@@ -1476,7 +1482,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
           ListAutoscalingPoliciesFixedSizeCollection> {
 
     private ListAutoscalingPoliciesFixedSizeCollection(
-        List<ListAutoscalingPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAutoscalingPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1486,7 +1492,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListAutoscalingPoliciesFixedSizeCollection createCollection(
-        List<ListAutoscalingPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAutoscalingPoliciesPage> pages, int collectionSize) {
       return new ListAutoscalingPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

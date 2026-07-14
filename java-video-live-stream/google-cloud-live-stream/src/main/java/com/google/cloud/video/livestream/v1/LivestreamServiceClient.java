@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -833,7 +834,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LivestreamServiceClient implements BackgroundResource {
-  private final LivestreamServiceSettings settings;
+  private final @Nullable LivestreamServiceSettings settings;
   private final LivestreamServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -881,7 +882,7 @@ public class LivestreamServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final LivestreamServiceSettings getSettings() {
+  public final @Nullable LivestreamServiceSettings getSettings() {
     return settings;
   }
 
@@ -937,7 +938,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
-      LocationName parent, Channel channel, String channelId) {
+      @Nullable LocationName parent, Channel channel, String channelId) {
     CreateChannelRequest request =
         CreateChannelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1107,7 +1108,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChannelsPagedResponse listChannels(LocationName parent) {
+  public final ListChannelsPagedResponse listChannels(@Nullable LocationName parent) {
     ListChannelsRequest request =
         ListChannelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1276,7 +1277,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Channel getChannel(ChannelName name) {
+  public final Channel getChannel(@Nullable ChannelName name) {
     GetChannelRequest request =
         GetChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getChannel(request);
@@ -1386,7 +1387,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteChannelAsync(ChannelName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteChannelAsync(
+      @Nullable ChannelName name) {
     DeleteChannelRequest request =
         DeleteChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteChannelAsync(request);
@@ -1675,7 +1677,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelOperationResponse, OperationMetadata> startChannelAsync(
-      ChannelName name) {
+      @Nullable ChannelName name) {
     StartChannelRequest request =
         StartChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startChannelAsync(request);
@@ -1826,7 +1828,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelOperationResponse, OperationMetadata> stopChannelAsync(
-      ChannelName name) {
+      @Nullable ChannelName name) {
     StopChannelRequest request =
         StopChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopChannelAsync(request);
@@ -1982,7 +1984,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelOperationResponse, OperationMetadata> startDistributionAsync(
-      ChannelName name, List<String> distributionKeys) {
+      @Nullable ChannelName name, List<String> distributionKeys) {
     StartDistributionRequest request =
         StartDistributionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2154,7 +2156,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelOperationResponse, OperationMetadata> stopDistributionAsync(
-      ChannelName name, List<String> distributionKeys) {
+      @Nullable ChannelName name, List<String> distributionKeys) {
     StopDistributionRequest request =
         StopDistributionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2324,7 +2326,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Input, OperationMetadata> createInputAsync(
-      LocationName parent, Input input, String inputId) {
+      @Nullable LocationName parent, Input input, String inputId) {
     CreateInputRequest request =
         CreateInputRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2493,7 +2495,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInputsPagedResponse listInputs(LocationName parent) {
+  public final ListInputsPagedResponse listInputs(@Nullable LocationName parent) {
     ListInputsRequest request =
         ListInputsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listInputs(request);
@@ -2658,7 +2660,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/inputs/{inputId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Input getInput(InputName name) {
+  public final Input getInput(@Nullable InputName name) {
     GetInputRequest request =
         GetInputRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInput(request);
@@ -2768,7 +2770,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/inputs/{inputId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInputAsync(InputName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInputAsync(
+      @Nullable InputName name) {
     DeleteInputRequest request =
         DeleteInputRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInputAsync(request);
@@ -3045,7 +3048,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/inputs/{inputId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PreviewInputResponse previewInput(InputName name) {
+  public final PreviewInputResponse previewInput(@Nullable InputName name) {
     PreviewInputRequest request =
         PreviewInputRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return previewInput(request);
@@ -3163,7 +3166,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     the following regex: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Event createEvent(ChannelName parent, Event event, String eventId) {
+  public final Event createEvent(@Nullable ChannelName parent, Event event, String eventId) {
     CreateEventRequest request =
         CreateEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3297,7 +3300,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(ChannelName parent) {
+  public final ListEventsPagedResponse listEvents(@Nullable ChannelName parent) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listEvents(request);
@@ -3462,7 +3465,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}/events/{eventId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Event getEvent(EventName name) {
+  public final Event getEvent(@Nullable EventName name) {
     GetEventRequest request =
         GetEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvent(request);
@@ -3572,7 +3575,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}/events/{eventId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvent(EventName name) {
+  public final void deleteEvent(@Nullable EventName name) {
     DeleteEventRequest request =
         DeleteEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEvent(request);
@@ -3685,7 +3688,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListClipsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClipsPagedResponse listClips(ChannelName parent) {
+  public final ListClipsPagedResponse listClips(@Nullable ChannelName parent) {
     ListClipsRequest request =
         ListClipsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listClips(request);
@@ -3848,7 +3851,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channel}/clips/{clip}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Clip getClip(ClipName name) {
+  public final Clip getClip(@Nullable ClipName name) {
     GetClipRequest request =
         GetClipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getClip(request);
@@ -3966,7 +3969,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Clip, OperationMetadata> createClipAsync(
-      ChannelName parent, Clip clip, String clipId) {
+      @Nullable ChannelName parent, Clip clip, String clipId) {
     CreateClipRequest request =
         CreateClipRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4129,7 +4132,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClipAsync(ClipName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClipAsync(@Nullable ClipName name) {
     DeleteClipRequest request =
         DeleteClipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClipAsync(request);
@@ -4286,7 +4289,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DvrSession, OperationMetadata> createDvrSessionAsync(
-      ChannelName parent, DvrSession dvrSession, String dvrSessionId) {
+      @Nullable ChannelName parent, DvrSession dvrSession, String dvrSessionId) {
     CreateDvrSessionRequest request =
         CreateDvrSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4455,7 +4458,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListDvrSessionsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDvrSessionsPagedResponse listDvrSessions(ChannelName parent) {
+  public final ListDvrSessionsPagedResponse listDvrSessions(@Nullable ChannelName parent) {
     ListDvrSessionsRequest request =
         ListDvrSessionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4625,7 +4628,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/channels/{channelId}/dvrSessions/{dvrSessionId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DvrSession getDvrSession(DvrSessionName name) {
+  public final DvrSession getDvrSession(@Nullable DvrSessionName name) {
     GetDvrSessionRequest request =
         GetDvrSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDvrSession(request);
@@ -4743,7 +4746,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDvrSessionAsync(
-      DvrSessionName name) {
+      @Nullable DvrSessionName name) {
     DeleteDvrSessionRequest request =
         DeleteDvrSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDvrSessionAsync(request);
@@ -5034,7 +5037,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
-      LocationName parent, Asset asset, String assetId) {
+      @Nullable LocationName parent, Asset asset, String assetId) {
     CreateAssetRequest request =
         CreateAssetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5201,7 +5204,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/assets/{assetId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(AssetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(
+      @Nullable AssetName name) {
     DeleteAssetRequest request =
         DeleteAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAssetAsync(request);
@@ -5345,7 +5349,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/assets/{asset}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Asset getAsset(AssetName name) {
+  public final Asset getAsset(@Nullable AssetName name) {
     GetAssetRequest request =
         GetAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAsset(request);
@@ -5457,7 +5461,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(LocationName parent) {
+  public final ListAssetsPagedResponse listAssets(@Nullable LocationName parent) {
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
@@ -5622,7 +5626,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/pools/{poolId}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Pool getPool(PoolName name) {
+  public final Pool getPool(@Nullable PoolName name) {
     GetPoolRequest request =
         GetPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPool(request);
@@ -6052,8 +6056,8 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractPage<ListChannelsRequest, ListChannelsResponse, Channel, ListChannelsPage> {
 
     private ListChannelsPage(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
-        ListChannelsResponse response) {
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable ListChannelsResponse response) {
       super(context, response);
     }
 
@@ -6063,14 +6067,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelsPage createPage(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
-        ListChannelsResponse response) {
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable ListChannelsResponse response) {
       return new ListChannelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChannelsPage> createPageAsync(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
         ApiFuture<ListChannelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6084,7 +6088,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListChannelsPage,
           ListChannelsFixedSizeCollection> {
 
-    private ListChannelsFixedSizeCollection(List<ListChannelsPage> pages, int collectionSize) {
+    private ListChannelsFixedSizeCollection(
+        @Nullable List<ListChannelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6094,7 +6099,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListChannelsFixedSizeCollection createCollection(
-        List<ListChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelsPage> pages, int collectionSize) {
       return new ListChannelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6125,8 +6130,8 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractPage<ListInputsRequest, ListInputsResponse, Input, ListInputsPage> {
 
     private ListInputsPage(
-        PageContext<ListInputsRequest, ListInputsResponse, Input> context,
-        ListInputsResponse response) {
+        @Nullable PageContext<ListInputsRequest, ListInputsResponse, Input> context,
+        @Nullable ListInputsResponse response) {
       super(context, response);
     }
 
@@ -6136,14 +6141,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListInputsPage createPage(
-        PageContext<ListInputsRequest, ListInputsResponse, Input> context,
-        ListInputsResponse response) {
+        @Nullable PageContext<ListInputsRequest, ListInputsResponse, Input> context,
+        @Nullable ListInputsResponse response) {
       return new ListInputsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInputsPage> createPageAsync(
-        PageContext<ListInputsRequest, ListInputsResponse, Input> context,
+        @Nullable PageContext<ListInputsRequest, ListInputsResponse, Input> context,
         ApiFuture<ListInputsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6157,7 +6162,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListInputsPage,
           ListInputsFixedSizeCollection> {
 
-    private ListInputsFixedSizeCollection(List<ListInputsPage> pages, int collectionSize) {
+    private ListInputsFixedSizeCollection(
+        @Nullable List<ListInputsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6167,7 +6173,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListInputsFixedSizeCollection createCollection(
-        List<ListInputsPage> pages, int collectionSize) {
+        @Nullable List<ListInputsPage> pages, int collectionSize) {
       return new ListInputsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6198,8 +6204,8 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractPage<ListEventsRequest, ListEventsResponse, Event, ListEventsPage> {
 
     private ListEventsPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       super(context, response);
     }
 
@@ -6209,14 +6215,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsPage createPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       return new ListEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventsPage> createPageAsync(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6230,7 +6236,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListEventsPage,
           ListEventsFixedSizeCollection> {
 
-    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+    private ListEventsFixedSizeCollection(
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6240,7 +6247,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsFixedSizeCollection createCollection(
-        List<ListEventsPage> pages, int collectionSize) {
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6267,8 +6274,8 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractPage<ListClipsRequest, ListClipsResponse, Clip, ListClipsPage> {
 
     private ListClipsPage(
-        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
-        ListClipsResponse response) {
+        @Nullable PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        @Nullable ListClipsResponse response) {
       super(context, response);
     }
 
@@ -6278,14 +6285,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListClipsPage createPage(
-        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
-        ListClipsResponse response) {
+        @Nullable PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        @Nullable ListClipsResponse response) {
       return new ListClipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClipsPage> createPageAsync(
-        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        @Nullable PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
         ApiFuture<ListClipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6295,7 +6302,7 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListClipsRequest, ListClipsResponse, Clip, ListClipsPage, ListClipsFixedSizeCollection> {
 
-    private ListClipsFixedSizeCollection(List<ListClipsPage> pages, int collectionSize) {
+    private ListClipsFixedSizeCollection(@Nullable List<ListClipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6305,7 +6312,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListClipsFixedSizeCollection createCollection(
-        List<ListClipsPage> pages, int collectionSize) {
+        @Nullable List<ListClipsPage> pages, int collectionSize) {
       return new ListClipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6339,8 +6346,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession, ListDvrSessionsPage> {
 
     private ListDvrSessionsPage(
-        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
-        ListDvrSessionsResponse response) {
+        @Nullable PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        @Nullable ListDvrSessionsResponse response) {
       super(context, response);
     }
 
@@ -6350,14 +6357,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListDvrSessionsPage createPage(
-        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
-        ListDvrSessionsResponse response) {
+        @Nullable PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        @Nullable ListDvrSessionsResponse response) {
       return new ListDvrSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDvrSessionsPage> createPageAsync(
-        PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
+        @Nullable PageContext<ListDvrSessionsRequest, ListDvrSessionsResponse, DvrSession> context,
         ApiFuture<ListDvrSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6372,7 +6379,7 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListDvrSessionsFixedSizeCollection> {
 
     private ListDvrSessionsFixedSizeCollection(
-        List<ListDvrSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListDvrSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6382,7 +6389,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListDvrSessionsFixedSizeCollection createCollection(
-        List<ListDvrSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListDvrSessionsPage> pages, int collectionSize) {
       return new ListDvrSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6413,8 +6420,8 @@ public class LivestreamServiceClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -6424,14 +6431,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6445,7 +6452,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6455,7 +6463,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6489,8 +6497,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6500,14 +6508,14 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6521,7 +6529,8 @@ public class LivestreamServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6531,7 +6540,7 @@ public class LivestreamServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
