@@ -130,7 +130,7 @@ public abstract class ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ResourceName)) {
       return false;
     }

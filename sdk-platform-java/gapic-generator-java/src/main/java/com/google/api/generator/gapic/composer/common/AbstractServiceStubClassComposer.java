@@ -55,6 +55,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 public abstract class AbstractServiceStubClassComposer implements ClassComposer {
 
@@ -214,7 +215,7 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
   }
 
   private List<MethodDefinition> createOperationsStubGetters(
-      TypeStore typeStore, TypeNode operationsStubType) {
+      TypeStore typeStore, @Nullable TypeNode operationsStubType) {
     List<MethodDefinition> getters = new ArrayList<>();
 
     Iterator<String> operationStubNameIt =

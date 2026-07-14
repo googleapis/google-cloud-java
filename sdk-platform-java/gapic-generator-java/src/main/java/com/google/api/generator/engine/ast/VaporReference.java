@@ -111,7 +111,7 @@ public abstract class VaporReference implements Reference {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof VaporReference)) {
       return false;
     }

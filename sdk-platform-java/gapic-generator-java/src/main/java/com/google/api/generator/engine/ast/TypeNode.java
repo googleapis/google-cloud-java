@@ -256,7 +256,7 @@ public abstract class TypeNode implements AstNode, Comparable<TypeNode> {
 
   // Java overrides.
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof TypeNode)) {
       return false;
     }

@@ -89,7 +89,7 @@ public abstract class Field {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof Field)) {
       return false;
     }

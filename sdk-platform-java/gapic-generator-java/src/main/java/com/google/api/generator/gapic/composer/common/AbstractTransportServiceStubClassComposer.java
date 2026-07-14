@@ -1985,7 +1985,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     return standards.stream().anyMatch(standard -> standard.equalsIgnoreCase(methodName));
   }
 
-  private static Set<String> extractLiteralSegments(String pattern) {
+  private static Set<String> extractLiteralSegments(@Nullable String pattern) {
     if (pattern == null || pattern.isEmpty()) {
       return new HashSet<>();
     }
@@ -1997,7 +1997,8 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     }
   }
 
-  private static String extractCanonicalResourceName(String pattern, Set<String> knownResources) {
+  private static String extractCanonicalResourceName(
+      @Nullable String pattern, @Nullable Set<String> knownResources) {
     if (pattern == null
         || pattern.isEmpty()
         || knownResources == null

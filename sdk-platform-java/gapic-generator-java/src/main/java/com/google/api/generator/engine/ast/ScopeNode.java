@@ -14,6 +14,8 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.Nullable;
+
 public class ScopeNode implements AstNode {
   private enum ScopeKind {
     LOCAL, // Placeholder for local scopes.
@@ -54,7 +56,7 @@ public class ScopeNode implements AstNode {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ScopeNode)) {
       return false;
     }

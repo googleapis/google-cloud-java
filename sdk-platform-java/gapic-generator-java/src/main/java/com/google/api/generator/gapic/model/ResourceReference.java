@@ -16,6 +16,7 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.gapic.utils.ResourceNameConstants;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.Nullable;
 
 @AutoValue
 public abstract class ResourceReference {
@@ -29,7 +30,7 @@ public abstract class ResourceReference {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ResourceReference)) {
       return false;
     }

@@ -178,7 +178,7 @@ public abstract class ConcreteReference implements Reference {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ConcreteReference)) {
       return false;
     }

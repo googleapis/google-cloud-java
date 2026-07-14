@@ -1888,7 +1888,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
   protected MethodDefinition createNestedClassCreateDefaultMethod(
       TypeStore typeStore,
       String methodName,
-      String defaultTransportChannelProvider,
+      @Nullable String defaultTransportChannelProvider,
       @Nullable String defaultTransportChannelProviderBuilder,
       String defaultApiClientHeaderProviderBuilder) {
     List<Statement> bodyStatements = new ArrayList<>();
