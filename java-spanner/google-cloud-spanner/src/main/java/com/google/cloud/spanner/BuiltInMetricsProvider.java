@@ -130,6 +130,16 @@ final class BuiltInMetricsProvider {
     return this.openTelemetry;
   }
 
+  /**
+   * Injects the Cloud Monitoring OpenTelemetry so that {@link #getOrCreateOpenTelemetry} returns it
+   * instead of building one backed by the live Cloud Monitoring exporter. Used to observe the
+   * reserved-namespace sink in-memory in tests.
+   */
+  @VisibleForTesting
+  synchronized void setOpenTelemetry(OpenTelemetry openTelemetry) {
+    this.openTelemetry = openTelemetry;
+  }
+
   synchronized String getProjectId() {
     return this.projectId;
   }
@@ -188,11 +198,22 @@ final class BuiltInMetricsProvider {
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain) {
+    enableGrpcMetrics(
+        channelProviderBuilder,
+        this.getOrCreateOpenTelemetry(projectId, credentials, monitoringHost, universeDomain));
+  }
+
+  /**
+   * Wires gRPC-layer metrics into the channel builder using the given OpenTelemetry instance
+   * instead of the process-wide Cloud Monitoring one. Used for {@link
+   * CustomOpenTelemetryMetricsProvider}; does not touch any state of this singleton.
+   */
+  void enableGrpcMetrics(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
+      OpenTelemetry openTelemetry) {
     GrpcOpenTelemetry grpcOpenTelemetry =
         GrpcOpenTelemetry.newBuilder()
-            .sdk(
-                this.getOrCreateOpenTelemetry(
-                    projectId, credentials, monitoringHost, universeDomain))
+            .sdk(openTelemetry)
             .enableMetrics(BuiltInMetricsConstant.GRPC_METRICS_TO_ENABLE)
             // Disable gRPCs default metrics as they are not needed for Spanner.
             .disableMetrics(BuiltInMetricsConstant.GRPC_METRICS_ENABLED_BY_DEFAULT)

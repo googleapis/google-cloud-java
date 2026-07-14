@@ -1300,12 +1300,62 @@ public class GapicSpannerRpcTest {
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
           InstantiatingGrpcChannelProvider.newBuilder();
 
-      options.enablegRPCMetrics(channelProviderBuilder);
+      options.enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
 
       assertNull(channelProviderBuilder.getChannelConfigurator());
     } finally {
       SpannerOptions.useDefaultEnvironment();
     }
+  }
+
+  @Test
+  public void testEmulatorSkipsGrpcBuiltInMetricsConfigurator() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableGRPCBuiltInMetrics() {
+              return true;
+            }
+          });
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("[PROJECT]")
+              .setCredentials(STATIC_CREDENTIALS)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ true);
+
+      assertNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testSetEmulatorHostIsDetectedWithoutEnvironmentVariable() throws Exception {
+    SpannerOptions emulatorOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("localhost:1234")
+            .build();
+    SpannerOptions localhostOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setHost("http://localhost:1234")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    java.lang.reflect.Method isEmulatorEnabled =
+        GapicSpannerRpc.class.getDeclaredMethod(
+            "isEmulatorEnabled", SpannerOptions.class, String.class);
+    isEmulatorEnabled.setAccessible(true);
+
+    assertTrue((boolean) isEmulatorEnabled.invoke(null, emulatorOptions, null));
+    assertFalse((boolean) isEmulatorEnabled.invoke(null, localhostOptions, null));
   }
 
   private static final class RecordingTransportChannelProvider implements TransportChannelProvider {

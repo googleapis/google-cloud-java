@@ -19,7 +19,11 @@ package com.google.cloud.spanner.spi.v1;
 import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.tracing.ApiTracer;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
+import com.google.cloud.spanner.CompositeTracer;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
@@ -626,6 +630,14 @@ final class KeyAwareChannel extends ManagedChannel {
         }
         selectedEndpoint = endpoint;
         selectedTargetEndpoint = endpoint.getAddress();
+        // Label built-in attempt metrics with the endpoint this attempt was routed to. Retries
+        // re-enter sendMessage with the same operation-scoped tracer, so every attempt overwrites
+        // the attribute with the endpoint it actually used.
+        ApiTracer tracer = callOptions.getOption(GrpcCallContext.TRACER_KEY);
+        if (tracer instanceof CompositeTracer) {
+          ((CompositeTracer) tracer)
+              .addAttributes(BuiltInMetricsConstant.ENDPOINT_KEY.getKey(), selectedTargetEndpoint);
+        }
         selectedDatabaseScope = databaseScope != null ? databaseScope : routingScope(finder);
         selectedOperationUid = operationUid;
         selectedPreferLeader = preferLeader;

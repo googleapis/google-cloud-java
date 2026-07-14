@@ -22,9 +22,17 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.tracing.BaseApiTracer;
+import com.google.api.gax.tracing.MethodName;
+import com.google.api.gax.tracing.MetricsRecorder;
+import com.google.api.gax.tracing.MetricsTracer;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
+import com.google.cloud.spanner.CompositeTracer;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.base.Ticker;
+import com.google.common.collect.ImmutableList;
 import com.google.common.testing.FakeTicker;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -1677,5 +1685,124 @@ public class KeyAwareChannelTest {
             EndpointLatencyRegistry.hasScore(
                 databaseScope, routedOperationUid, true, "server-b:1234"))
         .isFalse();
+  }
+
+  /** A gax {@link MetricsTracer} that records the attributes it receives. */
+  private static final class CapturingMetricsTracer extends MetricsTracer {
+    private final Map<String, String> capturedAttributes = new HashMap<>();
+
+    CapturingMetricsTracer() {
+      super(MethodName.of("Spanner", "ExecuteSql"), new MetricsRecorder() {});
+    }
+
+    @Override
+    public void addAttributes(String key, String value) {
+      super.addAttributes(key, value);
+      capturedAttributes.put(key, value);
+    }
+  }
+
+  private static CallOptions callOptionsWithCompositeTracer(CapturingMetricsTracer metricsTracer) {
+    CompositeTracer compositeTracer = new CompositeTracer(ImmutableList.of(metricsTracer));
+    return CallOptions.DEFAULT.withOption(GrpcCallContext.TRACER_KEY, compositeTracer);
+  }
+
+  @Test
+  public void sendMessageInjectsEndpointAttributeIntoCompositeTracer() throws Exception {
+    TestHarness harness = createHarness();
+    CapturingMetricsTracer metricsTracer = new CapturingMetricsTracer();
+
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(
+            SpannerGrpc.getExecuteSqlMethod(), callOptionsWithCompositeTracer(metricsTracer));
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(ExecuteSqlRequest.newBuilder().setSession(SESSION).build());
+
+    assertEquals(
+        DEFAULT_ADDRESS,
+        metricsTracer.capturedAttributes.get(BuiltInMetricsConstant.ENDPOINT_KEY.getKey()));
+  }
+
+  @Test
+  public void endpointAttributeIsOverwrittenWhenRetryRoutesToDifferentEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    CapturingMetricsTracer metricsTracer = new CapturingMetricsTracer();
+    CallOptions callOptions = callOptionsWithCompositeTracer(metricsTracer);
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("a")).build())
+            .build();
+
+    // First attempt: no routing information yet, routed to the default endpoint.
+    ClientCall<ExecuteSqlRequest, ResultSet> firstCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), callOptions);
+    firstCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    firstCall.sendMessage(request);
+    assertEquals(
+        DEFAULT_ADDRESS,
+        metricsTracer.capturedAttributes.get(BuiltInMetricsConstant.ENDPOINT_KEY.getKey()));
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> firstDelegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.defaultManagedChannel.latestCall();
+    firstDelegate.emitOnMessage(
+        ResultSet.newBuilder()
+            .setCacheUpdate(
+                CacheUpdate.newBuilder()
+                    .setDatabaseId(7L)
+                    .addRange(
+                        Range.newBuilder()
+                            .setStartKey(bytes("a"))
+                            .setLimitKey(bytes("z"))
+                            .setGroupUid(9L)
+                            .setSplitId(1L)
+                            .setGeneration(bytes("1")))
+                    .addGroup(
+                        Group.newBuilder()
+                            .setGroupUid(9L)
+                            .setGeneration(bytes("1"))
+                            .addTablets(
+                                Tablet.newBuilder()
+                                    .setTabletUid(3L)
+                                    .setServerAddress("routed:1234")
+                                    .setIncarnation(bytes("1"))
+                                    .setDistance(0)))
+                    .build())
+            .build());
+    harness.channel.awaitPendingCacheUpdates();
+
+    // Retry with the same operation-scoped tracer: now routed to the resolved endpoint, and the
+    // endpoint attribute is overwritten with the endpoint this attempt actually used.
+    ClientCall<ExecuteSqlRequest, ResultSet> secondCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), callOptions);
+    secondCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    secondCall.sendMessage(request);
+
+    assertEquals(
+        "routed:1234",
+        metricsTracer.capturedAttributes.get(BuiltInMetricsConstant.ENDPOINT_KEY.getKey()));
+  }
+
+  @Test
+  public void sendMessageWithoutCompositeTracerDoesNotFail() throws Exception {
+    TestHarness harness = createHarness();
+
+    // No tracer at all.
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(ExecuteSqlRequest.newBuilder().setSession(SESSION).build());
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+
+    // A tracer that is not a CompositeTracer.
+    ClientCall<ExecuteSqlRequest, ResultSet> callWithPlainTracer =
+        harness.channel.newCall(
+            SpannerGrpc.getExecuteSqlMethod(),
+            CallOptions.DEFAULT.withOption(GrpcCallContext.TRACER_KEY, new BaseApiTracer() {}));
+    callWithPlainTracer.start(new CapturingListener<ResultSet>(), new Metadata());
+    callWithPlainTracer.sendMessage(ExecuteSqlRequest.newBuilder().setSession(SESSION).build());
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
   }
 }
