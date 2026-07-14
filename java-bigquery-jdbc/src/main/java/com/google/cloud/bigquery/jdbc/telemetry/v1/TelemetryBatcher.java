@@ -21,6 +21,7 @@ import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -338,7 +339,7 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
-  private <T> int drainQueue(ConcurrentLinkedQueue<T> queue, List<T> targetList, int maxItems) {
+  private <T> int drainQueue(Queue<T> queue, List<T> targetList, int maxItems) {
     int count = 0;
     T item;
     while (count < maxItems && (item = queue.poll()) != null) {
@@ -348,11 +349,9 @@ final class TelemetryBatcher implements AutoCloseable {
     return count;
   }
 
-  private <T> void requeueItems(ConcurrentLinkedQueue<T> queue, List<T> items) {
-    for (T item : items) {
-      if (queue.size() < MAX_QUEUE_SIZE) {
-        queue.offer(item);
-      }
+  private <T> void requeueItems(Queue<T> queue, List<T> items) {
+    if (items != null && !items.isEmpty()) {
+      queue.addAll(items);
     }
   }
 }
