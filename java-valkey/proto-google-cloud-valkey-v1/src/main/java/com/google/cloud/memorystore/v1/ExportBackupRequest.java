@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Request for [ExportBackup].
+ * Request for `ExportBackup`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.ExportBackupRequest}
@@ -435,7 +435,7 @@ public final class ExportBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request for [ExportBackup].
+   * Request for `ExportBackup`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.ExportBackupRequest}

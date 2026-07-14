@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.stub.InstanceTemplatesStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,6 +112,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesSettings> {
 

@@ -89,6 +89,7 @@ public class SystemPolicyV1ClientHttpJsonTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -143,6 +144,7 @@ public class SystemPolicyV1ClientHttpJsonTest {
                 new HashMap<String, Resources.AdmissionRule>())
             .setDefaultAdmissionRule(Resources.AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 

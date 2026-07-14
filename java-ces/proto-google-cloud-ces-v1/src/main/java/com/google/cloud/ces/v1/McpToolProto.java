@@ -61,9 +61,11 @@ public final class McpToolProto extends com.google.protobuf.GeneratedFile {
           + "\"google/cloud/ces/v1/mcp_tool.proto\022\023go"
           + "ogle.cloud.ces.v1\032\037google/api/field_beha"
           + "vior.proto\032\036google/cloud/ces/v1/auth.proto\032"
-          + " google/cloud/ces/v1/common.proto\032 google/cloud/ces/v1/schema.proto\"\236\004\n"
+          + " google/cloud/ces/v1/common.proto\032 google/cloud/ces/v1/schema.proto\"\267\005\n"
           + "\007McpTool\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\032\n\r"
+          + "name_override\030\r"
+          + " \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\0226\n"
           + "\014input_schema\030\003"
           + " \001(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001\0227\n\r"
@@ -73,15 +75,21 @@ public final class McpToolProto extends com.google.protobuf.GeneratedFile {
           + "\022api_authentication\030\006"
           + " \001(\0132&.google.cloud.ces.v1.ApiAuthenticationB\003\340A\001\0227\n\n"
           + "tls_config\030\007 \001(\0132\036.google.cloud.ces.v1.TlsConfigB\003\340A\001\022R\n"
-          + "\030service_directory_config\030\010 \001(\0132+.goog"
-          + "le.cloud.ces.v1.ServiceDirectoryConfigB\003\340A\001\022L\n"
-          + "\016custom_headers\030\t \003(\0132/.google.clo"
-          + "ud.ces.v1.McpTool.CustomHeadersEntryB\003\340A\001\0324\n"
+          + "\030service_directory_config\030\010"
+          + " \001(\0132+.google.cloud.ces.v1.ServiceDirectoryConfigB\003\340A\001\022L\n"
+          + "\016custom_headers\030\t"
+          + " \003(\0132/.google.cloud.ces.v1.McpTool.CustomHeadersEntryB\003\340A\001\0226\n"
+          + "\005state\030\014 \001(\0162\".google.cloud.ces.v1.McpTool.StateB\003\340A\003\0324\n"
           + "\022CustomHeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001BT\n"
-          + "\027com.google.cloud.ces.v1B\014McpToolProtoP\001Z)cloud.google.com/go/"
-          + "ces/apiv1/cespb;cespbb\006proto3"
+          + "\005value\030\002 \001(\t:\0028\001\"C\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010INACTIVE\020\002\022\t\n"
+          + "\005STALE\020\003BT\n"
+          + "\027com.google.cloud.ces.v1B\014McpToolProtoP\001Z)cloud.google.com/go/ces/api"
+          + "v1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -98,6 +106,7 @@ public final class McpToolProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_ces_v1_McpTool_descriptor,
             new java.lang.String[] {
               "Name",
+              "NameOverride",
               "Description",
               "InputSchema",
               "OutputSchema",
@@ -106,6 +115,7 @@ public final class McpToolProto extends com.google.protobuf.GeneratedFile {
               "TlsConfig",
               "ServiceDirectoryConfig",
               "CustomHeaders",
+              "State",
             });
     internal_static_google_cloud_ces_v1_McpTool_CustomHeadersEntry_descriptor =
         internal_static_google_cloud_ces_v1_McpTool_descriptor.getNestedType(0);

@@ -26,6 +26,7 @@ import com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class VideoIntelligenceServiceStub implements BackgroundResource {

@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.storage.v1.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1.WriteStream;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -38,6 +39,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class BigQueryWriteStub implements BackgroundResource {
 

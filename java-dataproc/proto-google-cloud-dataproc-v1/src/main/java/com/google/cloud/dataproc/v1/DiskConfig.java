@@ -24,7 +24,8 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Specifies the config of disk options for a group of VM instances.
+ * Specifies the config of boot disk and attached disk options for a group of VM
+ * instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.DiskConfig}
@@ -54,6 +55,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
   private DiskConfig() {
     bootDiskType_ = "";
     localSsdInterface_ = "";
+    attachedDiskConfigs_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,10 +83,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-   * "pd-ssd" (Persistent Disk Solid State Drive),
-   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Optional. Type of the boot disk (default is `pd-standard`).
+   * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+   * `pd-ssd` (Persistent Disk Solid State Drive),
+   * or `pd-standard` (Persistent Disk Hard Disk Drive).
    * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
@@ -109,10 +111,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-   * "pd-ssd" (Persistent Disk Solid State Drive),
-   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Optional. Type of the boot disk (default is `pd-standard`).
+   * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+   * `pd-ssd` (Persistent Disk Solid State Drive),
+   * or `pd-standard` (Persistent Disk Hard Disk Drive).
    * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
@@ -188,9 +190,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Interface type of local SSDs (default is "scsi").
-   * Valid values: "scsi" (Small Computer System Interface),
-   * "nvme" (Non-Volatile Memory Express).
+   * Optional. Interface type of local SSDs (default is `scsi`).
+   * Valid values: `scsi` (Small Computer System Interface),
+   * `nvme` (Non-Volatile Memory Express).
    * See [local SSD
    * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
@@ -216,9 +218,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Interface type of local SSDs (default is "scsi").
-   * Valid values: "scsi" (Small Computer System Interface),
-   * "nvme" (Non-Volatile Memory Express).
+   * Optional. Interface type of local SSDs (default is `scsi`).
+   * Valid values: `scsi` (Small Computer System Interface),
+   * `nvme` (Non-Volatile Memory Express).
    * See [local SSD
    * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
@@ -248,8 +250,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Indicates how many IOPS to provision for the disk. This sets the
-   * number of I/O operations per second that the disk can handle. Note: This
-   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * number of I/O operations per second that the disk can handle.
+   * **This field is supported only if
+   * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -267,8 +271,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Indicates how many IOPS to provision for the disk. This sets the
-   * number of I/O operations per second that the disk can handle. Note: This
-   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * number of I/O operations per second that the disk can handle.
+   * **This field is supported only if
+   * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -290,8 +296,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Indicates how much throughput to provision for the disk. This
    * sets the number of throughput mb per second that the disk can handle.
-   * Values must be greater than or equal to 1. Note: This field is only
-   * supported if boot_disk_type is hyperdisk-balanced.
+   * Values must be greater than or equal to 1. **This field is supported only
+   * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>
@@ -311,8 +318,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Indicates how much throughput to provision for the disk. This
    * sets the number of throughput mb per second that the disk can handle.
-   * Values must be greater than or equal to 1. Note: This field is only
-   * supported if boot_disk_type is hyperdisk-balanced.
+   * Values must be greater than or equal to 1. **This field is supported only
+   * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>
@@ -324,6 +332,94 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public long getBootDiskProvisionedThroughput() {
     return bootDiskProvisionedThroughput_;
+  }
+
+  public static final int ATTACHED_DISK_CONFIGS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig> attachedDiskConfigs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig>
+      getAttachedDiskConfigsList() {
+    return attachedDiskConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>
+      getAttachedDiskConfigsOrBuilderList() {
+    return attachedDiskConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAttachedDiskConfigsCount() {
+    return attachedDiskConfigs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AttachedDiskConfig getAttachedDiskConfigs(int index) {
+    return attachedDiskConfigs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder getAttachedDiskConfigsOrBuilder(
+      int index) {
+    return attachedDiskConfigs_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -358,6 +454,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(6, bootDiskProvisionedThroughput_);
     }
+    for (int i = 0; i < attachedDiskConfigs_.size(); i++) {
+      output.writeMessage(7, attachedDiskConfigs_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -385,6 +484,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(6, bootDiskProvisionedThroughput_);
+    }
+    for (int i = 0; i < attachedDiskConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, attachedDiskConfigs_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -415,6 +518,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
       if (getBootDiskProvisionedThroughput() != other.getBootDiskProvisionedThroughput())
         return false;
     }
+    if (!getAttachedDiskConfigsList().equals(other.getAttachedDiskConfigsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -442,6 +546,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + BOOT_DISK_PROVISIONED_THROUGHPUT_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashLong(getBootDiskProvisionedThroughput());
+    }
+    if (getAttachedDiskConfigsCount() > 0) {
+      hash = (37 * hash) + ATTACHED_DISK_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachedDiskConfigsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -548,7 +656,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies the config of disk options for a group of VM instances.
+   * Specifies the config of boot disk and attached disk options for a group of VM
+   * instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.DiskConfig}
@@ -589,6 +698,13 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
       localSsdInterface_ = "";
       bootDiskProvisionedIops_ = 0L;
       bootDiskProvisionedThroughput_ = 0L;
+      if (attachedDiskConfigsBuilder_ == null) {
+        attachedDiskConfigs_ = java.util.Collections.emptyList();
+      } else {
+        attachedDiskConfigs_ = null;
+        attachedDiskConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -616,11 +732,24 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.DiskConfig buildPartial() {
       com.google.cloud.dataproc.v1.DiskConfig result =
           new com.google.cloud.dataproc.v1.DiskConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.DiskConfig result) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          attachedDiskConfigs_ = java.util.Collections.unmodifiableList(attachedDiskConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.attachedDiskConfigs_ = attachedDiskConfigs_;
+      } else {
+        result.attachedDiskConfigs_ = attachedDiskConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.DiskConfig result) {
@@ -682,6 +811,33 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasBootDiskProvisionedThroughput()) {
         setBootDiskProvisionedThroughput(other.getBootDiskProvisionedThroughput());
+      }
+      if (attachedDiskConfigsBuilder_ == null) {
+        if (!other.attachedDiskConfigs_.isEmpty()) {
+          if (attachedDiskConfigs_.isEmpty()) {
+            attachedDiskConfigs_ = other.attachedDiskConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureAttachedDiskConfigsIsMutable();
+            attachedDiskConfigs_.addAll(other.attachedDiskConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.attachedDiskConfigs_.isEmpty()) {
+          if (attachedDiskConfigsBuilder_.isEmpty()) {
+            attachedDiskConfigsBuilder_.dispose();
+            attachedDiskConfigsBuilder_ = null;
+            attachedDiskConfigs_ = other.attachedDiskConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            attachedDiskConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAttachedDiskConfigsFieldBuilder()
+                    : null;
+          } else {
+            attachedDiskConfigsBuilder_.addAllMessages(other.attachedDiskConfigs_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -745,6 +901,20 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                com.google.cloud.dataproc.v1.AttachedDiskConfig m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.AttachedDiskConfig.parser(),
+                        extensionRegistry);
+                if (attachedDiskConfigsBuilder_ == null) {
+                  ensureAttachedDiskConfigsIsMutable();
+                  attachedDiskConfigs_.add(m);
+                } else {
+                  attachedDiskConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -770,10 +940,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Type of the boot disk (default is "pd-standard").
-     * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-     * "pd-ssd" (Persistent Disk Solid State Drive),
-     * or "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Optional. Type of the boot disk (default is `pd-standard`).
+     * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+     * `pd-ssd` (Persistent Disk Solid State Drive),
+     * or `pd-standard` (Persistent Disk Hard Disk Drive).
      * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
      * </pre>
      *
@@ -797,10 +967,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Type of the boot disk (default is "pd-standard").
-     * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-     * "pd-ssd" (Persistent Disk Solid State Drive),
-     * or "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Optional. Type of the boot disk (default is `pd-standard`).
+     * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+     * `pd-ssd` (Persistent Disk Solid State Drive),
+     * or `pd-standard` (Persistent Disk Hard Disk Drive).
      * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
      * </pre>
      *
@@ -824,10 +994,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Type of the boot disk (default is "pd-standard").
-     * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-     * "pd-ssd" (Persistent Disk Solid State Drive),
-     * or "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Optional. Type of the boot disk (default is `pd-standard`).
+     * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+     * `pd-ssd` (Persistent Disk Solid State Drive),
+     * or `pd-standard` (Persistent Disk Hard Disk Drive).
      * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
      * </pre>
      *
@@ -850,10 +1020,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Type of the boot disk (default is "pd-standard").
-     * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-     * "pd-ssd" (Persistent Disk Solid State Drive),
-     * or "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Optional. Type of the boot disk (default is `pd-standard`).
+     * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+     * `pd-ssd` (Persistent Disk Solid State Drive),
+     * or `pd-standard` (Persistent Disk Hard Disk Drive).
      * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
      * </pre>
      *
@@ -872,10 +1042,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Type of the boot disk (default is "pd-standard").
-     * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-     * "pd-ssd" (Persistent Disk Solid State Drive),
-     * or "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Optional. Type of the boot disk (default is `pd-standard`).
+     * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+     * `pd-ssd` (Persistent Disk Solid State Drive),
+     * or `pd-standard` (Persistent Disk Hard Disk Drive).
      * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
      * </pre>
      *
@@ -1037,9 +1207,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Interface type of local SSDs (default is "scsi").
-     * Valid values: "scsi" (Small Computer System Interface),
-     * "nvme" (Non-Volatile Memory Express).
+     * Optional. Interface type of local SSDs (default is `scsi`).
+     * Valid values: `scsi` (Small Computer System Interface),
+     * `nvme` (Non-Volatile Memory Express).
      * See [local SSD
      * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
@@ -1064,9 +1234,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Interface type of local SSDs (default is "scsi").
-     * Valid values: "scsi" (Small Computer System Interface),
-     * "nvme" (Non-Volatile Memory Express).
+     * Optional. Interface type of local SSDs (default is `scsi`).
+     * Valid values: `scsi` (Small Computer System Interface),
+     * `nvme` (Non-Volatile Memory Express).
      * See [local SSD
      * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
@@ -1091,9 +1261,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Interface type of local SSDs (default is "scsi").
-     * Valid values: "scsi" (Small Computer System Interface),
-     * "nvme" (Non-Volatile Memory Express).
+     * Optional. Interface type of local SSDs (default is `scsi`).
+     * Valid values: `scsi` (Small Computer System Interface),
+     * `nvme` (Non-Volatile Memory Express).
      * See [local SSD
      * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
@@ -1117,9 +1287,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Interface type of local SSDs (default is "scsi").
-     * Valid values: "scsi" (Small Computer System Interface),
-     * "nvme" (Non-Volatile Memory Express).
+     * Optional. Interface type of local SSDs (default is `scsi`).
+     * Valid values: `scsi` (Small Computer System Interface),
+     * `nvme` (Non-Volatile Memory Express).
      * See [local SSD
      * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
@@ -1139,9 +1309,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Interface type of local SSDs (default is "scsi").
-     * Valid values: "scsi" (Small Computer System Interface),
-     * "nvme" (Non-Volatile Memory Express).
+     * Optional. Interface type of local SSDs (default is `scsi`).
+     * Valid values: `scsi` (Small Computer System Interface),
+     * `nvme` (Non-Volatile Memory Express).
      * See [local SSD
      * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
      * </pre>
@@ -1169,8 +1339,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Indicates how many IOPS to provision for the disk. This sets the
-     * number of I/O operations per second that the disk can handle. Note: This
-     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * number of I/O operations per second that the disk can handle.
+     * **This field is supported only if
+     * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1189,8 +1361,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Indicates how many IOPS to provision for the disk. This sets the
-     * number of I/O operations per second that the disk can handle. Note: This
-     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * number of I/O operations per second that the disk can handle.
+     * **This field is supported only if
+     * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1209,8 +1383,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Indicates how many IOPS to provision for the disk. This sets the
-     * number of I/O operations per second that the disk can handle. Note: This
-     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * number of I/O operations per second that the disk can handle.
+     * **This field is supported only if
+     * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1233,8 +1409,10 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Indicates how many IOPS to provision for the disk. This sets the
-     * number of I/O operations per second that the disk can handle. Note: This
-     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * number of I/O operations per second that the disk can handle.
+     * **This field is supported only if
+     * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1258,8 +1436,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Indicates how much throughput to provision for the disk. This
      * sets the number of throughput mb per second that the disk can handle.
-     * Values must be greater than or equal to 1. Note: This field is only
-     * supported if boot_disk_type is hyperdisk-balanced.
+     * Values must be greater than or equal to 1. **This field is supported only
+     * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1279,8 +1458,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Indicates how much throughput to provision for the disk. This
      * sets the number of throughput mb per second that the disk can handle.
-     * Values must be greater than or equal to 1. Note: This field is only
-     * supported if boot_disk_type is hyperdisk-balanced.
+     * Values must be greater than or equal to 1. **This field is supported only
+     * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1300,8 +1480,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Indicates how much throughput to provision for the disk. This
      * sets the number of throughput mb per second that the disk can handle.
-     * Values must be greater than or equal to 1. Note: This field is only
-     * supported if boot_disk_type is hyperdisk-balanced.
+     * Values must be greater than or equal to 1. **This field is supported only
+     * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1325,8 +1506,9 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Indicates how much throughput to provision for the disk. This
      * sets the number of throughput mb per second that the disk can handle.
-     * Values must be greater than or equal to 1. Note: This field is only
-     * supported if boot_disk_type is hyperdisk-balanced.
+     * Values must be greater than or equal to 1. **This field is supported only
+     * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+     * `hyperdisk-balanced`.**
      * </pre>
      *
      * <code>
@@ -1340,6 +1522,420 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessage
       bootDiskProvisionedThroughput_ = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig> attachedDiskConfigs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAttachedDiskConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        attachedDiskConfigs_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1.AttachedDiskConfig>(
+                attachedDiskConfigs_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dataproc.v1.AttachedDiskConfig,
+            com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder,
+            com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>
+        attachedDiskConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig>
+        getAttachedDiskConfigsList() {
+      if (attachedDiskConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(attachedDiskConfigs_);
+      } else {
+        return attachedDiskConfigsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAttachedDiskConfigsCount() {
+      if (attachedDiskConfigsBuilder_ == null) {
+        return attachedDiskConfigs_.size();
+      } else {
+        return attachedDiskConfigsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AttachedDiskConfig getAttachedDiskConfigs(int index) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        return attachedDiskConfigs_.get(index);
+      } else {
+        return attachedDiskConfigsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAttachedDiskConfigs(
+        int index, com.google.cloud.dataproc.v1.AttachedDiskConfig value) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.set(index, value);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAttachedDiskConfigs(
+        int index, com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder builderForValue) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAttachedDiskConfigs(com.google.cloud.dataproc.v1.AttachedDiskConfig value) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.add(value);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAttachedDiskConfigs(
+        int index, com.google.cloud.dataproc.v1.AttachedDiskConfig value) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.add(index, value);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAttachedDiskConfigs(
+        com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder builderForValue) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAttachedDiskConfigs(
+        int index, com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder builderForValue) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAttachedDiskConfigs(
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1.AttachedDiskConfig> values) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        ensureAttachedDiskConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, attachedDiskConfigs_);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAttachedDiskConfigs() {
+      if (attachedDiskConfigsBuilder_ == null) {
+        attachedDiskConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAttachedDiskConfigs(int index) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        ensureAttachedDiskConfigsIsMutable();
+        attachedDiskConfigs_.remove(index);
+        onChanged();
+      } else {
+        attachedDiskConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder getAttachedDiskConfigsBuilder(
+        int index) {
+      return internalGetAttachedDiskConfigsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder getAttachedDiskConfigsOrBuilder(
+        int index) {
+      if (attachedDiskConfigsBuilder_ == null) {
+        return attachedDiskConfigs_.get(index);
+      } else {
+        return attachedDiskConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>
+        getAttachedDiskConfigsOrBuilderList() {
+      if (attachedDiskConfigsBuilder_ != null) {
+        return attachedDiskConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(attachedDiskConfigs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder addAttachedDiskConfigsBuilder() {
+      return internalGetAttachedDiskConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1.AttachedDiskConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder addAttachedDiskConfigsBuilder(
+        int index) {
+      return internalGetAttachedDiskConfigsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1.AttachedDiskConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of attached disk configs for a group of VM instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder>
+        getAttachedDiskConfigsBuilderList() {
+      return internalGetAttachedDiskConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dataproc.v1.AttachedDiskConfig,
+            com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder,
+            com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>
+        internalGetAttachedDiskConfigsFieldBuilder() {
+      if (attachedDiskConfigsBuilder_ == null) {
+        attachedDiskConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dataproc.v1.AttachedDiskConfig,
+                com.google.cloud.dataproc.v1.AttachedDiskConfig.Builder,
+                com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>(
+                attachedDiskConfigs_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        attachedDiskConfigs_ = null;
+      }
+      return attachedDiskConfigsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.DiskConfig)

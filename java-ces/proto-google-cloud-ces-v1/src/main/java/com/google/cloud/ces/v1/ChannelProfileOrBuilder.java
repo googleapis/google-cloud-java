@@ -224,4 +224,90 @@ public interface ChannelProfileOrBuilder
    * @return The bytes for noiseSuppressionLevel.
    */
   com.google.protobuf.ByteString getNoiseSuppressionLevelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the whatsappConfig field is set.
+   */
+  boolean hasWhatsappConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The whatsappConfig.
+   */
+  com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getWhatsappConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder getWhatsappConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instagramConfig field is set.
+   */
+  boolean hasInstagramConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instagramConfig.
+   */
+  com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getInstagramConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder getInstagramConfigOrBuilder();
 }
