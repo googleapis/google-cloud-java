@@ -519,7 +519,7 @@ public final class MonitoringGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesResponse>
             responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      io.grpc.stub.ClientCalls.<com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesRequest, com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesResponse>asyncUnaryCall(
           getChannel().newCall(getListFindingSummariesMethod(), getCallOptions()),
           request,
           responseObserver);
