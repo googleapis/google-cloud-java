@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -388,7 +389,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ParticipantsClient implements BackgroundResource {
-  private final ParticipantsSettings settings;
+  private final @Nullable ParticipantsSettings settings;
   private final ParticipantsStub stub;
 
   /** Constructs an instance of ParticipantsClient with default settings. */
@@ -427,7 +428,7 @@ public class ParticipantsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ParticipantsSettings getSettings() {
+  public final @Nullable ParticipantsSettings getSettings() {
     return settings;
   }
 
@@ -461,7 +462,8 @@ public class ParticipantsClient implements BackgroundResource {
    * @param participant Required. The participant to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Participant createParticipant(ConversationName parent, Participant participant) {
+  public final Participant createParticipant(
+      @Nullable ConversationName parent, Participant participant) {
     CreateParticipantRequest request =
         CreateParticipantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -589,7 +591,7 @@ public class ParticipantsClient implements BackgroundResource {
    *     ID&gt;/participants/&lt;Participant ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Participant getParticipant(ParticipantName name) {
+  public final Participant getParticipant(@Nullable ParticipantName name) {
     GetParticipantRequest request =
         GetParticipantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getParticipant(request);
@@ -714,7 +716,7 @@ public class ParticipantsClient implements BackgroundResource {
    *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListParticipantsPagedResponse listParticipants(ConversationName parent) {
+  public final ListParticipantsPagedResponse listParticipants(@Nullable ConversationName parent) {
     ListParticipantsRequest request =
         ListParticipantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -987,7 +989,7 @@ public class ParticipantsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeContentResponse analyzeContent(
-      ParticipantName participant, AudioInput audioInput) {
+      @Nullable ParticipantName participant, AudioInput audioInput) {
     AnalyzeContentRequest request =
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
@@ -1028,7 +1030,7 @@ public class ParticipantsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeContentResponse analyzeContent(
-      ParticipantName participant, EventInput eventInput) {
+      @Nullable ParticipantName participant, EventInput eventInput) {
     AnalyzeContentRequest request =
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
@@ -1069,7 +1071,7 @@ public class ParticipantsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeContentResponse analyzeContent(
-      ParticipantName participant, TextInput textInput) {
+      @Nullable ParticipantName participant, TextInput textInput) {
     AnalyzeContentRequest request =
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
@@ -1401,7 +1403,7 @@ public class ParticipantsClient implements BackgroundResource {
    *     ID&gt;/participants/&lt;Participant ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SuggestArticlesResponse suggestArticles(ParticipantName parent) {
+  public final SuggestArticlesResponse suggestArticles(@Nullable ParticipantName parent) {
     SuggestArticlesRequest request =
         SuggestArticlesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1555,7 +1557,7 @@ public class ParticipantsClient implements BackgroundResource {
    *     ID&gt;/participants/&lt;Participant ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SuggestFaqAnswersResponse suggestFaqAnswers(ParticipantName parent) {
+  public final SuggestFaqAnswersResponse suggestFaqAnswers(@Nullable ParticipantName parent) {
     SuggestFaqAnswersRequest request =
         SuggestFaqAnswersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1695,7 +1697,7 @@ public class ParticipantsClient implements BackgroundResource {
    *     ID&gt;/participants/&lt;Participant ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SuggestSmartRepliesResponse suggestSmartReplies(ParticipantName parent) {
+  public final SuggestSmartRepliesResponse suggestSmartReplies(@Nullable ParticipantName parent) {
     SuggestSmartRepliesRequest request =
         SuggestSmartRepliesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2378,8 +2380,9 @@ public class ParticipantsClient implements BackgroundResource {
           ListParticipantsRequest, ListParticipantsResponse, Participant, ListParticipantsPage> {
 
     private ListParticipantsPage(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
-        ListParticipantsResponse response) {
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
+        @Nullable ListParticipantsResponse response) {
       super(context, response);
     }
 
@@ -2389,14 +2392,16 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListParticipantsPage createPage(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
-        ListParticipantsResponse response) {
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
+        @Nullable ListParticipantsResponse response) {
       return new ListParticipantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListParticipantsPage> createPageAsync(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
         ApiFuture<ListParticipantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2411,7 +2416,7 @@ public class ParticipantsClient implements BackgroundResource {
           ListParticipantsFixedSizeCollection> {
 
     private ListParticipantsFixedSizeCollection(
-        List<ListParticipantsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2421,7 +2426,7 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListParticipantsFixedSizeCollection createCollection(
-        List<ListParticipantsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantsPage> pages, int collectionSize) {
       return new ListParticipantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2455,8 +2460,8 @@ public class ParticipantsClient implements BackgroundResource {
           ListSuggestionsRequest, ListSuggestionsResponse, Suggestion, ListSuggestionsPage> {
 
     private ListSuggestionsPage(
-        PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
-        ListSuggestionsResponse response) {
+        @Nullable PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
+        @Nullable ListSuggestionsResponse response) {
       super(context, response);
     }
 
@@ -2466,14 +2471,14 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListSuggestionsPage createPage(
-        PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
-        ListSuggestionsResponse response) {
+        @Nullable PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
+        @Nullable ListSuggestionsResponse response) {
       return new ListSuggestionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSuggestionsPage> createPageAsync(
-        PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
+        @Nullable PageContext<ListSuggestionsRequest, ListSuggestionsResponse, Suggestion> context,
         ApiFuture<ListSuggestionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2488,7 +2493,7 @@ public class ParticipantsClient implements BackgroundResource {
           ListSuggestionsFixedSizeCollection> {
 
     private ListSuggestionsFixedSizeCollection(
-        List<ListSuggestionsPage> pages, int collectionSize) {
+        @Nullable List<ListSuggestionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2498,7 +2503,7 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListSuggestionsFixedSizeCollection createCollection(
-        List<ListSuggestionsPage> pages, int collectionSize) {
+        @Nullable List<ListSuggestionsPage> pages, int collectionSize) {
       return new ListSuggestionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2532,8 +2537,8 @@ public class ParticipantsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2543,14 +2548,14 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2564,7 +2569,8 @@ public class ParticipantsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2574,7 +2580,7 @@ public class ParticipantsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

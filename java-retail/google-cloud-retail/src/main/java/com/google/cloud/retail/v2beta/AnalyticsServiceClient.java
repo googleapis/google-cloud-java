@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,7 +146,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AnalyticsServiceClient implements BackgroundResource {
-  private final AnalyticsServiceSettings settings;
+  private final @Nullable AnalyticsServiceSettings settings;
   private final AnalyticsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -193,7 +194,7 @@ public class AnalyticsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AnalyticsServiceSettings getSettings() {
+  public final @Nullable AnalyticsServiceSettings getSettings() {
     return settings;
   }
 

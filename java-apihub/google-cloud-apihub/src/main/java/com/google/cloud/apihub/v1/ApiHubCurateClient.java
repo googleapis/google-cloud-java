@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,7 +245,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ApiHubCurateClient implements BackgroundResource {
-  private final ApiHubCurateSettings settings;
+  private final @Nullable ApiHubCurateSettings settings;
   private final ApiHubCurateStub stub;
 
   /** Constructs an instance of ApiHubCurateClient with default settings. */
@@ -283,7 +284,7 @@ public class ApiHubCurateClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ApiHubCurateSettings getSettings() {
+  public final @Nullable ApiHubCurateSettings getSettings() {
     return settings;
   }
 
@@ -325,7 +326,8 @@ public class ApiHubCurateClient implements BackgroundResource {
    *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Curation createCuration(LocationName parent, Curation curation, String curationId) {
+  public final Curation createCuration(
+      @Nullable LocationName parent, Curation curation, String curationId) {
     CreateCurationRequest request =
         CreateCurationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -462,7 +464,7 @@ public class ApiHubCurateClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/curations/{curation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Curation getCuration(CurationName name) {
+  public final Curation getCuration(@Nullable CurationName name) {
     GetCurationRequest request =
         GetCurationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCuration(request);
@@ -574,7 +576,7 @@ public class ApiHubCurateClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCurationsPagedResponse listCurations(LocationName parent) {
+  public final ListCurationsPagedResponse listCurations(@Nullable LocationName parent) {
     ListCurationsRequest request =
         ListCurationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -855,7 +857,7 @@ public class ApiHubCurateClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/curations/{curation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCuration(CurationName name) {
+  public final void deleteCuration(@Nullable CurationName name) {
     DeleteCurationRequest request =
         DeleteCurationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCuration(request);
@@ -1160,8 +1162,8 @@ public class ApiHubCurateClient implements BackgroundResource {
           ListCurationsRequest, ListCurationsResponse, Curation, ListCurationsPage> {
 
     private ListCurationsPage(
-        PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
-        ListCurationsResponse response) {
+        @Nullable PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
+        @Nullable ListCurationsResponse response) {
       super(context, response);
     }
 
@@ -1171,14 +1173,14 @@ public class ApiHubCurateClient implements BackgroundResource {
 
     @Override
     protected ListCurationsPage createPage(
-        PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
-        ListCurationsResponse response) {
+        @Nullable PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
+        @Nullable ListCurationsResponse response) {
       return new ListCurationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCurationsPage> createPageAsync(
-        PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
+        @Nullable PageContext<ListCurationsRequest, ListCurationsResponse, Curation> context,
         ApiFuture<ListCurationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1192,7 +1194,8 @@ public class ApiHubCurateClient implements BackgroundResource {
           ListCurationsPage,
           ListCurationsFixedSizeCollection> {
 
-    private ListCurationsFixedSizeCollection(List<ListCurationsPage> pages, int collectionSize) {
+    private ListCurationsFixedSizeCollection(
+        @Nullable List<ListCurationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1202,7 +1205,7 @@ public class ApiHubCurateClient implements BackgroundResource {
 
     @Override
     protected ListCurationsFixedSizeCollection createCollection(
-        List<ListCurationsPage> pages, int collectionSize) {
+        @Nullable List<ListCurationsPage> pages, int collectionSize) {
       return new ListCurationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1236,8 +1239,8 @@ public class ApiHubCurateClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1247,14 +1250,14 @@ public class ApiHubCurateClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1268,7 +1271,8 @@ public class ApiHubCurateClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1278,7 +1282,7 @@ public class ApiHubCurateClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

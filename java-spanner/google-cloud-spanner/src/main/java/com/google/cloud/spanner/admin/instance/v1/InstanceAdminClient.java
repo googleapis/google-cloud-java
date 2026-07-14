@@ -83,6 +83,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -660,7 +661,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceAdminClient implements BackgroundResource {
-  private final InstanceAdminSettings settings;
+  private final @Nullable InstanceAdminSettings settings;
   private final InstanceAdminStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -708,7 +709,7 @@ public class InstanceAdminClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final InstanceAdminSettings getSettings() {
+  public final @Nullable InstanceAdminSettings getSettings() {
     return settings;
   }
 
@@ -759,7 +760,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     configurations is requested. Values are of the form `projects/&lt;project&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstanceConfigsPagedResponse listInstanceConfigs(ProjectName parent) {
+  public final ListInstanceConfigsPagedResponse listInstanceConfigs(@Nullable ProjectName parent) {
     ListInstanceConfigsRequest request =
         ListInstanceConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -933,7 +934,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instanceConfigs/&lt;config&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InstanceConfig getInstanceConfig(InstanceConfigName name) {
+  public final InstanceConfig getInstanceConfig(@Nullable InstanceConfigName name) {
     GetInstanceConfigRequest request =
         GetInstanceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1093,7 +1094,7 @@ public class InstanceAdminClient implements BackgroundResource {
    */
   public final OperationFuture<InstanceConfig, CreateInstanceConfigMetadata>
       createInstanceConfigAsync(
-          ProjectName parent, InstanceConfig instanceConfig, String instanceConfigId) {
+          @Nullable ProjectName parent, InstanceConfig instanceConfig, String instanceConfigId) {
     CreateInstanceConfigRequest request =
         CreateInstanceConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1684,7 +1685,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     form `projects/&lt;project&gt;/instanceConfigs/&lt;instance_config&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInstanceConfig(InstanceConfigName name) {
+  public final void deleteInstanceConfig(@Nullable InstanceConfigName name) {
     DeleteInstanceConfigRequest request =
         DeleteInstanceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1831,7 +1832,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstanceConfigOperationsPagedResponse listInstanceConfigOperations(
-      ProjectName parent) {
+      @Nullable ProjectName parent) {
     ListInstanceConfigOperationsRequest request =
         ListInstanceConfigOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2035,7 +2036,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     Values are of the form `projects/&lt;project&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(ProjectName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable ProjectName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2208,7 +2209,8 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancePartitionsPagedResponse listInstancePartitions(InstanceName parent) {
+  public final ListInstancePartitionsPagedResponse listInstancePartitions(
+      @Nullable InstanceName parent) {
     ListInstancePartitionsRequest request =
         ListInstancePartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2381,7 +2383,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -2528,7 +2530,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
-      ProjectName parent, String instanceId, Instance instance) {
+      @Nullable ProjectName parent, String instanceId, Instance instance) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3059,7 +3061,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInstance(InstanceName name) {
+  public final void deleteInstance(@Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteInstance(request);
@@ -3203,7 +3205,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3338,7 +3340,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3474,7 +3476,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3614,7 +3616,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/instancePartitions/{instance_partition}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InstancePartition getInstancePartition(InstancePartitionName name) {
+  public final InstancePartition getInstancePartition(@Nullable InstancePartitionName name) {
     GetInstancePartitionRequest request =
         GetInstancePartitionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3775,7 +3777,9 @@ public class InstanceAdminClient implements BackgroundResource {
    */
   public final OperationFuture<InstancePartition, CreateInstancePartitionMetadata>
       createInstancePartitionAsync(
-          InstanceName parent, InstancePartition instancePartition, String instancePartitionId) {
+          @Nullable InstanceName parent,
+          InstancePartition instancePartition,
+          String instancePartitionId) {
     CreateInstancePartitionRequest request =
         CreateInstancePartitionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4063,7 +4067,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/instancePartitions/{instance_partition}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInstancePartition(InstancePartitionName name) {
+  public final void deleteInstancePartition(@Nullable InstancePartitionName name) {
     DeleteInstancePartitionRequest request =
         DeleteInstancePartitionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4475,7 +4479,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancePartitionOperationsPagedResponse listInstancePartitionOperations(
-      InstanceName parent) {
+      @Nullable InstanceName parent) {
     ListInstancePartitionOperationsRequest request =
         ListInstancePartitionOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4950,9 +4954,10 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstanceConfigsPage> {
 
     private ListInstanceConfigsPage(
-        PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
+        @Nullable
+            PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
             context,
-        ListInstanceConfigsResponse response) {
+        @Nullable ListInstanceConfigsResponse response) {
       super(context, response);
     }
 
@@ -4962,15 +4967,17 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstanceConfigsPage createPage(
-        PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
+        @Nullable
+            PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
             context,
-        ListInstanceConfigsResponse response) {
+        @Nullable ListInstanceConfigsResponse response) {
       return new ListInstanceConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstanceConfigsPage> createPageAsync(
-        PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
+        @Nullable
+            PageContext<ListInstanceConfigsRequest, ListInstanceConfigsResponse, InstanceConfig>
             context,
         ApiFuture<ListInstanceConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4986,7 +4993,7 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstanceConfigsFixedSizeCollection> {
 
     private ListInstanceConfigsFixedSizeCollection(
-        List<ListInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListInstanceConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4996,7 +5003,7 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstanceConfigsFixedSizeCollection createCollection(
-        List<ListInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListInstanceConfigsPage> pages, int collectionSize) {
       return new ListInstanceConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5038,12 +5045,13 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstanceConfigOperationsPage> {
 
     private ListInstanceConfigOperationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceConfigOperationsRequest,
                 ListInstanceConfigOperationsResponse,
                 Operation>
             context,
-        ListInstanceConfigOperationsResponse response) {
+        @Nullable ListInstanceConfigOperationsResponse response) {
       super(context, response);
     }
 
@@ -5053,18 +5061,20 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstanceConfigOperationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceConfigOperationsRequest,
                 ListInstanceConfigOperationsResponse,
                 Operation>
             context,
-        ListInstanceConfigOperationsResponse response) {
+        @Nullable ListInstanceConfigOperationsResponse response) {
       return new ListInstanceConfigOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstanceConfigOperationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceConfigOperationsRequest,
                 ListInstanceConfigOperationsResponse,
                 Operation>
@@ -5083,7 +5093,7 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstanceConfigOperationsFixedSizeCollection> {
 
     private ListInstanceConfigOperationsFixedSizeCollection(
-        List<ListInstanceConfigOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListInstanceConfigOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5093,7 +5103,7 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstanceConfigOperationsFixedSizeCollection createCollection(
-        List<ListInstanceConfigOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListInstanceConfigOperationsPage> pages, int collectionSize) {
       return new ListInstanceConfigOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5127,8 +5137,8 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -5138,14 +5148,14 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5159,7 +5169,8 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5169,7 +5180,7 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5208,10 +5219,11 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancePartitionsPage> {
 
     private ListInstancePartitionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionsRequest, ListInstancePartitionsResponse, InstancePartition>
             context,
-        ListInstancePartitionsResponse response) {
+        @Nullable ListInstancePartitionsResponse response) {
       super(context, response);
     }
 
@@ -5221,16 +5233,18 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancePartitionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionsRequest, ListInstancePartitionsResponse, InstancePartition>
             context,
-        ListInstancePartitionsResponse response) {
+        @Nullable ListInstancePartitionsResponse response) {
       return new ListInstancePartitionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancePartitionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionsRequest, ListInstancePartitionsResponse, InstancePartition>
             context,
         ApiFuture<ListInstancePartitionsResponse> futureResponse) {
@@ -5247,7 +5261,7 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancePartitionsFixedSizeCollection> {
 
     private ListInstancePartitionsFixedSizeCollection(
-        List<ListInstancePartitionsPage> pages, int collectionSize) {
+        @Nullable List<ListInstancePartitionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5257,7 +5271,7 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancePartitionsFixedSizeCollection createCollection(
-        List<ListInstancePartitionsPage> pages, int collectionSize) {
+        @Nullable List<ListInstancePartitionsPage> pages, int collectionSize) {
       return new ListInstancePartitionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5299,12 +5313,13 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancePartitionOperationsPage> {
 
     private ListInstancePartitionOperationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionOperationsRequest,
                 ListInstancePartitionOperationsResponse,
                 Operation>
             context,
-        ListInstancePartitionOperationsResponse response) {
+        @Nullable ListInstancePartitionOperationsResponse response) {
       super(context, response);
     }
 
@@ -5314,18 +5329,20 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancePartitionOperationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionOperationsRequest,
                 ListInstancePartitionOperationsResponse,
                 Operation>
             context,
-        ListInstancePartitionOperationsResponse response) {
+        @Nullable ListInstancePartitionOperationsResponse response) {
       return new ListInstancePartitionOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancePartitionOperationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancePartitionOperationsRequest,
                 ListInstancePartitionOperationsResponse,
                 Operation>
@@ -5344,7 +5361,7 @@ public class InstanceAdminClient implements BackgroundResource {
           ListInstancePartitionOperationsFixedSizeCollection> {
 
     private ListInstancePartitionOperationsFixedSizeCollection(
-        List<ListInstancePartitionOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListInstancePartitionOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5354,7 +5371,7 @@ public class InstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancePartitionOperationsFixedSizeCollection createCollection(
-        List<ListInstancePartitionOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListInstancePartitionOperationsPage> pages, int collectionSize) {
       return new ListInstancePartitionOperationsFixedSizeCollection(pages, collectionSize);
     }
   }

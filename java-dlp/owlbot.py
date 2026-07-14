@@ -28,7 +28,7 @@ for library in s.get_staging_dirs():
     )
     java.remove_method(
         "owl-bot-staging/v2/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java",
-        "public static List<String> toStringList(List<InspectTemplateName> values)"
+        "public static List<String> toStringList(List<@Nullable InspectTemplateName> values)"
     )
     java.remove_method(
         "owl-bot-staging/v2/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java",
@@ -36,7 +36,7 @@ for library in s.get_staging_dirs():
     )
     java.remove_method(
         "owl-bot-staging/v2/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java",
-        "public static List<String> toStringList(List<DeidentifyTemplateName> values)"
+        "public static List<String> toStringList(List<@Nullable DeidentifyTemplateName> values)"
     )
     java.remove_method(
         "owl-bot-staging/v2/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java",
@@ -44,7 +44,7 @@ for library in s.get_staging_dirs():
     )
     java.remove_method(
         "owl-bot-staging/v2/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java",
-        "public static List<String> toStringList(List<StoredInfoTypeName> values)"
+        "public static List<String> toStringList(List<@Nullable StoredInfoTypeName> values)"
     )
     s.move(library)
 

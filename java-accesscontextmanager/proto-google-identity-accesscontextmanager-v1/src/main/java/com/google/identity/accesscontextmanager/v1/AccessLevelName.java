@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -77,7 +78,7 @@ public class AccessLevelName implements ResourceName {
         .toString();
   }
 
-  public static AccessLevelName parse(String formattedString) {
+  public static @Nullable AccessLevelName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -95,7 +96,7 @@ public class AccessLevelName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AccessLevelName> values) {
+  public static List<String> toStringList(List<@Nullable AccessLevelName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AccessLevelName value : values) {
       if (value == null) {
@@ -141,7 +142,7 @@ public class AccessLevelName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

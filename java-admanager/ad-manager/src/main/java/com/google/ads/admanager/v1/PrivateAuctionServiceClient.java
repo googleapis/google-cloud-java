@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PrivateAuctionServiceClient implements BackgroundResource {
-  private final PrivateAuctionServiceSettings settings;
+  private final @Nullable PrivateAuctionServiceSettings settings;
   private final PrivateAuctionServiceStub stub;
 
   /** Constructs an instance of PrivateAuctionServiceClient with default settings. */
@@ -227,7 +228,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PrivateAuctionServiceSettings getSettings() {
+  public final @Nullable PrivateAuctionServiceSettings getSettings() {
     return settings;
   }
 
@@ -258,7 +259,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    *     `networks/{network_code}/privateAuctions/{private_auction_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateAuction getPrivateAuction(PrivateAuctionName name) {
+  public final PrivateAuction getPrivateAuction(@Nullable PrivateAuctionName name) {
     GetPrivateAuctionRequest request =
         GetPrivateAuctionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -378,7 +379,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateAuctionsPagedResponse listPrivateAuctions(NetworkName parent) {
+  public final ListPrivateAuctionsPagedResponse listPrivateAuctions(@Nullable NetworkName parent) {
     ListPrivateAuctionsRequest request =
         ListPrivateAuctionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -564,7 +565,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrivateAuction createPrivateAuction(
-      NetworkName parent, PrivateAuction privateAuction) {
+      @Nullable NetworkName parent, PrivateAuction privateAuction) {
     CreatePrivateAuctionRequest request =
         CreatePrivateAuctionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -829,9 +830,10 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
           ListPrivateAuctionsPage> {
 
     private ListPrivateAuctionsPage(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
-        ListPrivateAuctionsResponse response) {
+        @Nullable ListPrivateAuctionsResponse response) {
       super(context, response);
     }
 
@@ -841,15 +843,17 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateAuctionsPage createPage(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
-        ListPrivateAuctionsResponse response) {
+        @Nullable ListPrivateAuctionsResponse response) {
       return new ListPrivateAuctionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateAuctionsPage> createPageAsync(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
         ApiFuture<ListPrivateAuctionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -865,7 +869,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
           ListPrivateAuctionsFixedSizeCollection> {
 
     private ListPrivateAuctionsFixedSizeCollection(
-        List<ListPrivateAuctionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateAuctionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -875,7 +879,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateAuctionsFixedSizeCollection createCollection(
-        List<ListPrivateAuctionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateAuctionsPage> pages, int collectionSize) {
       return new ListPrivateAuctionsFixedSizeCollection(pages, collectionSize);
     }
   }

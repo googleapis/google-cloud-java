@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -450,7 +451,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ManagedNotebookServiceClient implements BackgroundResource {
-  private final ManagedNotebookServiceSettings settings;
+  private final @Nullable ManagedNotebookServiceSettings settings;
   private final ManagedNotebookServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -494,7 +495,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ManagedNotebookServiceSettings getSettings() {
+  public final @Nullable ManagedNotebookServiceSettings getSettings() {
     return settings;
   }
 
@@ -534,7 +535,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * @param parent Required. Format: `parent=projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuntimesPagedResponse listRuntimes(LocationName parent) {
+  public final ListRuntimesPagedResponse listRuntimes(@Nullable LocationName parent) {
     ListRuntimesRequest request =
         ListRuntimesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -701,7 +702,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Runtime getRuntime(RuntimeName name) {
+  public final Runtime getRuntime(@Nullable RuntimeName name) {
     GetRuntimeRequest request =
         GetRuntimeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRuntime(request);
@@ -821,7 +822,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Runtime, OperationMetadata> createRuntimeAsync(
-      RuntimeName parent, String runtimeId, Runtime runtime) {
+      @Nullable RuntimeName parent, String runtimeId, Runtime runtime) {
     CreateRuntimeRequest request =
         CreateRuntimeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1125,7 +1126,8 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRuntimeAsync(RuntimeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRuntimeAsync(
+      @Nullable RuntimeName name) {
     DeleteRuntimeRequest request =
         DeleteRuntimeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRuntimeAsync(request);
@@ -1897,7 +1899,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Runtime, OperationMetadata> reportRuntimeEventAsync(
-      RuntimeName name) {
+      @Nullable RuntimeName name) {
     ReportRuntimeEventRequest request =
         ReportRuntimeEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2058,7 +2060,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RefreshRuntimeTokenInternalResponse refreshRuntimeTokenInternal(
-      RuntimeName name, String vmId) {
+      @Nullable RuntimeName name, String vmId) {
     RefreshRuntimeTokenInternalRequest request =
         RefreshRuntimeTokenInternalRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2195,7 +2197,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Runtime, OperationMetadata> diagnoseRuntimeAsync(
-      RuntimeName name, DiagnosticConfig diagnosticConfig) {
+      @Nullable RuntimeName name, DiagnosticConfig diagnosticConfig) {
     DiagnoseRuntimeRequest request =
         DiagnoseRuntimeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2752,8 +2754,8 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
       extends AbstractPage<ListRuntimesRequest, ListRuntimesResponse, Runtime, ListRuntimesPage> {
 
     private ListRuntimesPage(
-        PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
-        ListRuntimesResponse response) {
+        @Nullable PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
+        @Nullable ListRuntimesResponse response) {
       super(context, response);
     }
 
@@ -2763,14 +2765,14 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuntimesPage createPage(
-        PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
-        ListRuntimesResponse response) {
+        @Nullable PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
+        @Nullable ListRuntimesResponse response) {
       return new ListRuntimesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuntimesPage> createPageAsync(
-        PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
+        @Nullable PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> context,
         ApiFuture<ListRuntimesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2784,7 +2786,8 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
           ListRuntimesPage,
           ListRuntimesFixedSizeCollection> {
 
-    private ListRuntimesFixedSizeCollection(List<ListRuntimesPage> pages, int collectionSize) {
+    private ListRuntimesFixedSizeCollection(
+        @Nullable List<ListRuntimesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2794,7 +2797,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuntimesFixedSizeCollection createCollection(
-        List<ListRuntimesPage> pages, int collectionSize) {
+        @Nullable List<ListRuntimesPage> pages, int collectionSize) {
       return new ListRuntimesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2828,8 +2831,8 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2839,14 +2842,14 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2860,7 +2863,8 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2870,7 +2874,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -135,7 +136,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BuildsClient implements BackgroundResource {
-  private final BuildsSettings settings;
+  private final @Nullable BuildsSettings settings;
   private final BuildsStub stub;
 
   /** Constructs an instance of BuildsClient with default settings. */
@@ -173,7 +174,7 @@ public class BuildsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BuildsSettings getSettings() {
+  public final @Nullable BuildsSettings getSettings() {
     return settings;
   }
 

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -254,7 +255,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GeneratorsClient implements BackgroundResource {
-  private final GeneratorsSettings settings;
+  private final @Nullable GeneratorsSettings settings;
   private final GeneratorsStub stub;
 
   /** Constructs an instance of GeneratorsClient with default settings. */
@@ -292,7 +293,7 @@ public class GeneratorsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GeneratorsSettings getSettings() {
+  public final @Nullable GeneratorsSettings getSettings() {
     return settings;
   }
 
@@ -324,7 +325,7 @@ public class GeneratorsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGeneratorsPagedResponse listGenerators(AgentName parent) {
+  public final ListGeneratorsPagedResponse listGenerators(@Nullable AgentName parent) {
     ListGeneratorsRequest request =
         ListGeneratorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -490,7 +491,7 @@ public class GeneratorsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Generator getGenerator(GeneratorName name) {
+  public final Generator getGenerator(@Nullable GeneratorName name) {
     GetGeneratorRequest request =
         GetGeneratorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGenerator(request);
@@ -607,7 +608,7 @@ public class GeneratorsClient implements BackgroundResource {
    * @param generator Required. The generator to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Generator createGenerator(AgentName parent, Generator generator) {
+  public final Generator createGenerator(@Nullable AgentName parent, Generator generator) {
     CreateGeneratorRequest request =
         CreateGeneratorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -819,7 +820,7 @@ public class GeneratorsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGenerator(GeneratorName name) {
+  public final void deleteGenerator(@Nullable GeneratorName name) {
     DeleteGeneratorRequest request =
         DeleteGeneratorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteGenerator(request);
@@ -1162,8 +1163,8 @@ public class GeneratorsClient implements BackgroundResource {
           ListGeneratorsRequest, ListGeneratorsResponse, Generator, ListGeneratorsPage> {
 
     private ListGeneratorsPage(
-        PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
-        ListGeneratorsResponse response) {
+        @Nullable PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
+        @Nullable ListGeneratorsResponse response) {
       super(context, response);
     }
 
@@ -1173,14 +1174,14 @@ public class GeneratorsClient implements BackgroundResource {
 
     @Override
     protected ListGeneratorsPage createPage(
-        PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
-        ListGeneratorsResponse response) {
+        @Nullable PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
+        @Nullable ListGeneratorsResponse response) {
       return new ListGeneratorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGeneratorsPage> createPageAsync(
-        PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
+        @Nullable PageContext<ListGeneratorsRequest, ListGeneratorsResponse, Generator> context,
         ApiFuture<ListGeneratorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1194,7 +1195,8 @@ public class GeneratorsClient implements BackgroundResource {
           ListGeneratorsPage,
           ListGeneratorsFixedSizeCollection> {
 
-    private ListGeneratorsFixedSizeCollection(List<ListGeneratorsPage> pages, int collectionSize) {
+    private ListGeneratorsFixedSizeCollection(
+        @Nullable List<ListGeneratorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1204,7 +1206,7 @@ public class GeneratorsClient implements BackgroundResource {
 
     @Override
     protected ListGeneratorsFixedSizeCollection createCollection(
-        List<ListGeneratorsPage> pages, int collectionSize) {
+        @Nullable List<ListGeneratorsPage> pages, int collectionSize) {
       return new ListGeneratorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1238,8 +1240,8 @@ public class GeneratorsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1249,14 +1251,14 @@ public class GeneratorsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1270,7 +1272,8 @@ public class GeneratorsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1280,7 +1283,7 @@ public class GeneratorsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

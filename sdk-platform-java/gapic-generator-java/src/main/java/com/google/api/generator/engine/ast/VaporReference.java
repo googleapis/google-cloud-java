@@ -137,16 +137,30 @@ public abstract class VaporReference implements Reference {
     return toBuilder().setGenerics(generics).build();
   }
 
+  @Override
+  public Reference copyAndSetNullable(boolean isNullable) {
+    return toBuilder().setIsNullable(isNullable).build();
+  }
+
   public static Builder builder() {
     return new AutoValue_VaporReference.Builder()
         .setUseFullName(false)
         .setGenerics(ImmutableList.of())
         .setIsStaticImport(false)
-        .setEnclosingClassNames(Collections.emptyList());
+        .setEnclosingClassNames(Collections.emptyList())
+        .setIsNullable(false);
   }
 
   // Private.
-  abstract Builder toBuilder();
+  abstract Builder autoToBuilder();
+
+  // Resets builder name back to simpleName to prevent double-prepending enclosing classes during
+  // builder copying.
+  public Builder toBuilder() {
+    Builder builder = autoToBuilder();
+    builder.setName(simpleName());
+    return builder;
+  }
 
   @AutoValue.Builder
   public abstract static class Builder {
@@ -169,6 +183,8 @@ public abstract class VaporReference implements Reference {
     public abstract Builder setEnclosingClassNames(List<String> enclosingClassNames);
 
     public abstract Builder setIsStaticImport(boolean isStaticImport);
+
+    public abstract Builder setIsNullable(boolean isNullable);
 
     public abstract Builder setSupertypeReference(Reference supertypeReference);
 

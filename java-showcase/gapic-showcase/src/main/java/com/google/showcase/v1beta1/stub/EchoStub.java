@@ -56,6 +56,7 @@ import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,11 +69,12 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class EchoStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 

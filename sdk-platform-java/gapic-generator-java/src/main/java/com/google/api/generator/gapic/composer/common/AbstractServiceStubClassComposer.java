@@ -314,9 +314,11 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
 
   protected MethodDefinition createOperationsStubGetterMethodDefinition(
       TypeNode returnType, String methodName, TypeStore typeStore) {
+    TypeNode annotatedReturnType =
+        TypeNode.withReference(returnType.reference().copyAndSetNullable(true));
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
-        .setReturnType(returnType)
+        .setReturnType(annotatedReturnType)
         .setName(methodName)
         .setBody(
             Arrays.asList(

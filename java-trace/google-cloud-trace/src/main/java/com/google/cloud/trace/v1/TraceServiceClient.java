@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -185,7 +186,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TraceServiceClient implements BackgroundResource {
-  private final TraceServiceSettings settings;
+  private final @Nullable TraceServiceSettings settings;
   private final TraceServiceStub stub;
 
   /** Constructs an instance of TraceServiceClient with default settings. */
@@ -224,7 +225,7 @@ public class TraceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TraceServiceSettings getSettings() {
+  public final @Nullable TraceServiceSettings getSettings() {
     return settings;
   }
 
@@ -610,8 +611,8 @@ public class TraceServiceClient implements BackgroundResource {
       extends AbstractPage<ListTracesRequest, ListTracesResponse, Trace, ListTracesPage> {
 
     private ListTracesPage(
-        PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
-        ListTracesResponse response) {
+        @Nullable PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
+        @Nullable ListTracesResponse response) {
       super(context, response);
     }
 
@@ -621,14 +622,14 @@ public class TraceServiceClient implements BackgroundResource {
 
     @Override
     protected ListTracesPage createPage(
-        PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
-        ListTracesResponse response) {
+        @Nullable PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
+        @Nullable ListTracesResponse response) {
       return new ListTracesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTracesPage> createPageAsync(
-        PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
+        @Nullable PageContext<ListTracesRequest, ListTracesResponse, Trace> context,
         ApiFuture<ListTracesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -642,7 +643,8 @@ public class TraceServiceClient implements BackgroundResource {
           ListTracesPage,
           ListTracesFixedSizeCollection> {
 
-    private ListTracesFixedSizeCollection(List<ListTracesPage> pages, int collectionSize) {
+    private ListTracesFixedSizeCollection(
+        @Nullable List<ListTracesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -652,7 +654,7 @@ public class TraceServiceClient implements BackgroundResource {
 
     @Override
     protected ListTracesFixedSizeCollection createCollection(
-        List<ListTracesPage> pages, int collectionSize) {
+        @Nullable List<ListTracesPage> pages, int collectionSize) {
       return new ListTracesFixedSizeCollection(pages, collectionSize);
     }
   }

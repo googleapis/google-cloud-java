@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -159,7 +160,7 @@ public class VpcFlowLogsConfigName implements ResourceName {
         .toString();
   }
 
-  public static VpcFlowLogsConfigName parse(String formattedString) {
+  public static @Nullable VpcFlowLogsConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -187,7 +188,7 @@ public class VpcFlowLogsConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<VpcFlowLogsConfigName> values) {
+  public static List<String> toStringList(List<@Nullable VpcFlowLogsConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (VpcFlowLogsConfigName value : values) {
       if (value == null) {
@@ -239,7 +240,7 @@ public class VpcFlowLogsConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

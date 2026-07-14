@@ -83,6 +83,7 @@ import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceSettingsClassComposer implements ClassComposer {
   private static final String BUILDER_CLASS_NAME = "Builder";
+  private static final String CLIENT_CONTEXT_CLASS_NAME = "ClientContext";
 
   protected static final TypeStore FIXED_TYPESTORE = createStaticTypes();
 
@@ -503,7 +504,12 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
         VariableExpr.withVariable(
             Variable.builder()
                 .setName("clientContext")
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .build());
 
     MethodDefinition newBuilderMethodTwo =
@@ -593,7 +599,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
                             .setType(builderType)
                             .setArguments(
                                 CastExpr.builder()
-                                    .setType(FIXED_TYPESTORE.get("ClientContext"))
+                                    .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_CLASS_NAME))
                                     .setExpr(ValueExpr.createNullExpr())
                                     .build())
                             .build())))
@@ -618,7 +624,12 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
         VariableExpr.withVariable(
             Variable.builder()
                 .setName("clientContext")
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .build());
     MethodDefinition clientContextCtor =
         ctorMakerFn.apply(

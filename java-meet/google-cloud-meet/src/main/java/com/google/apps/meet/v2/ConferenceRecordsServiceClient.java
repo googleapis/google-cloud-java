@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -356,7 +357,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConferenceRecordsServiceClient implements BackgroundResource {
-  private final ConferenceRecordsServiceSettings settings;
+  private final @Nullable ConferenceRecordsServiceSettings settings;
   private final ConferenceRecordsServiceStub stub;
 
   /** Constructs an instance of ConferenceRecordsServiceClient with default settings. */
@@ -398,7 +399,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConferenceRecordsServiceSettings getSettings() {
+  public final @Nullable ConferenceRecordsServiceSettings getSettings() {
     return settings;
   }
 
@@ -428,7 +429,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the conference.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConferenceRecord getConferenceRecord(ConferenceRecordName name) {
+  public final ConferenceRecord getConferenceRecord(@Nullable ConferenceRecordName name) {
     GetConferenceRecordRequest request =
         GetConferenceRecordRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -655,7 +656,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the participant.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Participant getParticipant(ParticipantName name) {
+  public final Participant getParticipant(@Nullable ParticipantName name) {
     GetParticipantRequest request =
         GetParticipantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getParticipant(request);
@@ -774,7 +775,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param parent Required. Format: `conferenceRecords/{conference_record}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListParticipantsPagedResponse listParticipants(ConferenceRecordName parent) {
+  public final ListParticipantsPagedResponse listParticipants(
+      @Nullable ConferenceRecordName parent) {
     ListParticipantsRequest request =
         ListParticipantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -961,7 +963,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the participant.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ParticipantSession getParticipantSession(ParticipantSessionName name) {
+  public final ParticipantSession getParticipantSession(@Nullable ParticipantSessionName name) {
     GetParticipantSessionRequest request =
         GetParticipantSessionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1094,7 +1096,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListParticipantSessionsPagedResponse listParticipantSessions(
-      ParticipantName parent) {
+      @Nullable ParticipantName parent) {
     ListParticipantSessionsRequest request =
         ListParticipantSessionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1281,7 +1283,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the recording.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recording getRecording(RecordingName name) {
+  public final Recording getRecording(@Nullable RecordingName name) {
     GetRecordingRequest request =
         GetRecordingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRecording(request);
@@ -1397,7 +1399,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param parent Required. Format: `conferenceRecords/{conference_record}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRecordingsPagedResponse listRecordings(ConferenceRecordName parent) {
+  public final ListRecordingsPagedResponse listRecordings(@Nullable ConferenceRecordName parent) {
     ListRecordingsRequest request =
         ListRecordingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1569,7 +1571,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the transcript.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Transcript getTranscript(TranscriptName name) {
+  public final Transcript getTranscript(@Nullable TranscriptName name) {
     GetTranscriptRequest request =
         GetTranscriptRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTranscript(request);
@@ -1686,7 +1688,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param parent Required. Format: `conferenceRecords/{conference_record}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTranscriptsPagedResponse listTranscripts(ConferenceRecordName parent) {
+  public final ListTranscriptsPagedResponse listTranscripts(@Nullable ConferenceRecordName parent) {
     ListTranscriptsRequest request =
         ListTranscriptsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1864,7 +1866,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the `TranscriptEntry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TranscriptEntry getTranscriptEntry(TranscriptEntryName name) {
+  public final TranscriptEntry getTranscriptEntry(@Nullable TranscriptEntryName name) {
     GetTranscriptEntryRequest request =
         GetTranscriptEntryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2007,7 +2009,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    *     `conferenceRecords/{conference_record}/transcripts/{transcript}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTranscriptEntriesPagedResponse listTranscriptEntries(TranscriptName parent) {
+  public final ListTranscriptEntriesPagedResponse listTranscriptEntries(
+      @Nullable TranscriptName parent) {
     ListTranscriptEntriesRequest request =
         ListTranscriptEntriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2240,9 +2243,11 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListConferenceRecordsPage> {
 
     private ListConferenceRecordsPage(
-        PageContext<ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
+        @Nullable
+            PageContext<
+                ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
             context,
-        ListConferenceRecordsResponse response) {
+        @Nullable ListConferenceRecordsResponse response) {
       super(context, response);
     }
 
@@ -2252,15 +2257,19 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListConferenceRecordsPage createPage(
-        PageContext<ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
+        @Nullable
+            PageContext<
+                ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
             context,
-        ListConferenceRecordsResponse response) {
+        @Nullable ListConferenceRecordsResponse response) {
       return new ListConferenceRecordsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConferenceRecordsPage> createPageAsync(
-        PageContext<ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
+        @Nullable
+            PageContext<
+                ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
             context,
         ApiFuture<ListConferenceRecordsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2276,7 +2285,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListConferenceRecordsFixedSizeCollection> {
 
     private ListConferenceRecordsFixedSizeCollection(
-        List<ListConferenceRecordsPage> pages, int collectionSize) {
+        @Nullable List<ListConferenceRecordsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2286,7 +2295,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListConferenceRecordsFixedSizeCollection createCollection(
-        List<ListConferenceRecordsPage> pages, int collectionSize) {
+        @Nullable List<ListConferenceRecordsPage> pages, int collectionSize) {
       return new ListConferenceRecordsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2320,8 +2329,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListParticipantsRequest, ListParticipantsResponse, Participant, ListParticipantsPage> {
 
     private ListParticipantsPage(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
-        ListParticipantsResponse response) {
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
+        @Nullable ListParticipantsResponse response) {
       super(context, response);
     }
 
@@ -2331,14 +2341,16 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListParticipantsPage createPage(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
-        ListParticipantsResponse response) {
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
+        @Nullable ListParticipantsResponse response) {
       return new ListParticipantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListParticipantsPage> createPageAsync(
-        PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant> context,
+        @Nullable PageContext<ListParticipantsRequest, ListParticipantsResponse, Participant>
+            context,
         ApiFuture<ListParticipantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2353,7 +2365,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListParticipantsFixedSizeCollection> {
 
     private ListParticipantsFixedSizeCollection(
-        List<ListParticipantsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2363,7 +2375,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListParticipantsFixedSizeCollection createCollection(
-        List<ListParticipantsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantsPage> pages, int collectionSize) {
       return new ListParticipantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2402,10 +2414,11 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListParticipantSessionsPage> {
 
     private ListParticipantSessionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListParticipantSessionsRequest, ListParticipantSessionsResponse, ParticipantSession>
             context,
-        ListParticipantSessionsResponse response) {
+        @Nullable ListParticipantSessionsResponse response) {
       super(context, response);
     }
 
@@ -2415,16 +2428,18 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListParticipantSessionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListParticipantSessionsRequest, ListParticipantSessionsResponse, ParticipantSession>
             context,
-        ListParticipantSessionsResponse response) {
+        @Nullable ListParticipantSessionsResponse response) {
       return new ListParticipantSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListParticipantSessionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListParticipantSessionsRequest, ListParticipantSessionsResponse, ParticipantSession>
             context,
         ApiFuture<ListParticipantSessionsResponse> futureResponse) {
@@ -2441,7 +2456,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListParticipantSessionsFixedSizeCollection> {
 
     private ListParticipantSessionsFixedSizeCollection(
-        List<ListParticipantSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2451,7 +2466,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListParticipantSessionsFixedSizeCollection createCollection(
-        List<ListParticipantSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListParticipantSessionsPage> pages, int collectionSize) {
       return new ListParticipantSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2485,8 +2500,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListRecordingsRequest, ListRecordingsResponse, Recording, ListRecordingsPage> {
 
     private ListRecordingsPage(
-        PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
-        ListRecordingsResponse response) {
+        @Nullable PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
+        @Nullable ListRecordingsResponse response) {
       super(context, response);
     }
 
@@ -2496,14 +2511,14 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListRecordingsPage createPage(
-        PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
-        ListRecordingsResponse response) {
+        @Nullable PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
+        @Nullable ListRecordingsResponse response) {
       return new ListRecordingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRecordingsPage> createPageAsync(
-        PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
+        @Nullable PageContext<ListRecordingsRequest, ListRecordingsResponse, Recording> context,
         ApiFuture<ListRecordingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2517,7 +2532,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListRecordingsPage,
           ListRecordingsFixedSizeCollection> {
 
-    private ListRecordingsFixedSizeCollection(List<ListRecordingsPage> pages, int collectionSize) {
+    private ListRecordingsFixedSizeCollection(
+        @Nullable List<ListRecordingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2527,7 +2543,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListRecordingsFixedSizeCollection createCollection(
-        List<ListRecordingsPage> pages, int collectionSize) {
+        @Nullable List<ListRecordingsPage> pages, int collectionSize) {
       return new ListRecordingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2561,8 +2577,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListTranscriptsRequest, ListTranscriptsResponse, Transcript, ListTranscriptsPage> {
 
     private ListTranscriptsPage(
-        PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
-        ListTranscriptsResponse response) {
+        @Nullable PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
+        @Nullable ListTranscriptsResponse response) {
       super(context, response);
     }
 
@@ -2572,14 +2588,14 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListTranscriptsPage createPage(
-        PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
-        ListTranscriptsResponse response) {
+        @Nullable PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
+        @Nullable ListTranscriptsResponse response) {
       return new ListTranscriptsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTranscriptsPage> createPageAsync(
-        PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
+        @Nullable PageContext<ListTranscriptsRequest, ListTranscriptsResponse, Transcript> context,
         ApiFuture<ListTranscriptsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2594,7 +2610,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListTranscriptsFixedSizeCollection> {
 
     private ListTranscriptsFixedSizeCollection(
-        List<ListTranscriptsPage> pages, int collectionSize) {
+        @Nullable List<ListTranscriptsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2604,7 +2620,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListTranscriptsFixedSizeCollection createCollection(
-        List<ListTranscriptsPage> pages, int collectionSize) {
+        @Nullable List<ListTranscriptsPage> pages, int collectionSize) {
       return new ListTranscriptsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2642,9 +2658,11 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListTranscriptEntriesPage> {
 
     private ListTranscriptEntriesPage(
-        PageContext<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
+        @Nullable
+            PageContext<
+                ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
             context,
-        ListTranscriptEntriesResponse response) {
+        @Nullable ListTranscriptEntriesResponse response) {
       super(context, response);
     }
 
@@ -2654,15 +2672,19 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListTranscriptEntriesPage createPage(
-        PageContext<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
+        @Nullable
+            PageContext<
+                ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
             context,
-        ListTranscriptEntriesResponse response) {
+        @Nullable ListTranscriptEntriesResponse response) {
       return new ListTranscriptEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTranscriptEntriesPage> createPageAsync(
-        PageContext<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
+        @Nullable
+            PageContext<
+                ListTranscriptEntriesRequest, ListTranscriptEntriesResponse, TranscriptEntry>
             context,
         ApiFuture<ListTranscriptEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2678,7 +2700,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
           ListTranscriptEntriesFixedSizeCollection> {
 
     private ListTranscriptEntriesFixedSizeCollection(
-        List<ListTranscriptEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListTranscriptEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2688,7 +2710,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
     @Override
     protected ListTranscriptEntriesFixedSizeCollection createCollection(
-        List<ListTranscriptEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListTranscriptEntriesPage> pages, int collectionSize) {
       return new ListTranscriptEntriesFixedSizeCollection(pages, collectionSize);
     }
   }

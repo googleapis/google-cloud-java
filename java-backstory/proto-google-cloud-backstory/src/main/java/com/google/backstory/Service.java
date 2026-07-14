@@ -60,13 +60,13 @@ public final class Service extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Service_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Service_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Service_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Service_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Service.class, com.google.backstory.Service.Builder.class);
   }
@@ -1361,13 +1361,13 @@ public final class Service extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Service)
       com.google.backstory.ServiceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Service_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Service_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Service_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Service_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Service.class, com.google.backstory.Service.Builder.class);
     }
@@ -1393,7 +1393,7 @@ public final class Service extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Service_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Service_descriptor;
     }
 
     @java.lang.Override

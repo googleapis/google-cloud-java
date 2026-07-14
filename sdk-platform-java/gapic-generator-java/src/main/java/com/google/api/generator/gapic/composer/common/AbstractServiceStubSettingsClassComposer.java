@@ -139,6 +139,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       "RETRYABLE_CODE_DEFINITIONS";
   private static final String NESTED_RETRY_PARAM_DEFINITIONS_VAR_NAME = "RETRY_PARAM_DEFINITIONS";
   private static final String DOT = ".";
+  private static final String CLIENT_CONTEXT_CLASS_NAME = "ClientContext";
 
   protected static final TypeStore FIXED_TYPESTORE = createStaticTypes();
 
@@ -1334,7 +1335,12 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     javaMethods.add(
@@ -1636,7 +1642,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                             .setType(builderType)
                             .setArguments(
                                 CastExpr.builder()
-                                    .setType(FIXED_TYPESTORE.get("ClientContext"))
+                                    .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_CLASS_NAME))
                                     .setExpr(ValueExpr.createNullExpr())
                                     .build())
                             .build())))
@@ -1646,7 +1652,12 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     Reference pagedSettingsBuilderRef =
@@ -1907,7 +1918,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                         .setType(builderType)
                         .setArguments(
                             CastExpr.builder()
-                                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                                .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_CLASS_NAME))
                                 .setExpr(ValueExpr.createNullExpr())
                                 .build())
                         .build())
