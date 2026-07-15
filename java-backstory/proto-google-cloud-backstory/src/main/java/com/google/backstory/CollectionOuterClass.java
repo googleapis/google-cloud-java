@@ -190,7 +190,7 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.backstory.EntityProto.getDescriptor(),
               com.google.backstory.IdOuterClass.getDescriptor(),
-              com.google.backstory.UdmProto.getDescriptor(),
+              com.google.backstory.Udm.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -289,7 +289,7 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
     descriptor.resolveAllFeaturesImmutable();
     com.google.backstory.EntityProto.getDescriptor();
     com.google.backstory.IdOuterClass.getDescriptor();
-    com.google.backstory.UdmProto.getDescriptor();
+    com.google.backstory.Udm.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
