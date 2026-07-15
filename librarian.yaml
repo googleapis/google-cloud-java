@@ -1050,6 +1050,14 @@ libraries:
       transport_override: grpc
       skip_pom_updates: true
       skip_api_id: true
+    keep:
+      - README.md
+    postprocess:
+      remove_file:
+        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
   - name: compute
     version: 1.105.0-SNAPSHOT
     apis:
@@ -1977,6 +1985,8 @@ libraries:
           proto_artifact_id_override: proto-google-iam-v2beta
           generate_gapic: false
           samples: false
+    keep:
+      - README.md
     java:
       api_description_override: Manages access control for Google Cloud Platform resources
       artifact_id: proto-google-iam-v1
@@ -3379,6 +3389,7 @@ libraries:
     keep:
       - gapic-showcase/src/main/java/com/google/showcase/v1beta1/Version.java
       - gapic-showcase/src/test
+      - README.md
     roots:
       - showcase
       - googleapis
