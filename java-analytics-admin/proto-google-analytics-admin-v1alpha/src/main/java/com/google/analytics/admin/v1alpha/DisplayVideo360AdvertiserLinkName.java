@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -82,7 +83,7 @@ public class DisplayVideo360AdvertiserLinkName implements ResourceName {
         .toString();
   }
 
-  public static DisplayVideo360AdvertiserLinkName parse(String formattedString) {
+  public static @Nullable DisplayVideo360AdvertiserLinkName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -101,7 +102,8 @@ public class DisplayVideo360AdvertiserLinkName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DisplayVideo360AdvertiserLinkName> values) {
+  public static List<String> toStringList(
+      List<@Nullable DisplayVideo360AdvertiserLinkName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DisplayVideo360AdvertiserLinkName value : values) {
       if (value == null) {
@@ -147,7 +149,7 @@ public class DisplayVideo360AdvertiserLinkName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

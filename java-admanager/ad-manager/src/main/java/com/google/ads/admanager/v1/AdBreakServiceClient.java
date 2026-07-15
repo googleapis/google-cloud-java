@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -210,7 +211,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AdBreakServiceClient implements BackgroundResource {
-  private final AdBreakServiceSettings settings;
+  private final @Nullable AdBreakServiceSettings settings;
   private final AdBreakServiceStub stub;
 
   /** Constructs an instance of AdBreakServiceClient with default settings. */
@@ -250,7 +251,7 @@ public class AdBreakServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdBreakServiceSettings getSettings() {
+  public final @Nullable AdBreakServiceSettings getSettings() {
     return settings;
   }
 
@@ -285,7 +286,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByCustomAssetKey/{custom_asset_key}/adBreaks/{ad_break_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdBreak getAdBreak(AdBreakName name) {
+  public final AdBreak getAdBreak(@Nullable AdBreakName name) {
     GetAdBreakRequest request =
         GetAdBreakRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAdBreak(request);
@@ -413,7 +414,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByCustomAssetKey/{custom_asset_key}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdBreaksPagedResponse listAdBreaks(LiveStreamEventName parent) {
+  public final ListAdBreaksPagedResponse listAdBreaks(@Nullable LiveStreamEventName parent) {
     ListAdBreaksRequest request =
         ListAdBreaksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -622,7 +623,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    * @param adBreak Required. The `AdBreak` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdBreak createAdBreak(LiveStreamEventName parent, AdBreak adBreak) {
+  public final AdBreak createAdBreak(@Nullable LiveStreamEventName parent, AdBreak adBreak) {
     CreateAdBreakRequest request =
         CreateAdBreakRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -896,7 +897,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByAssetKey/{asset_key}/adBreaks/{ad_break}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAdBreak(AdBreakName name) {
+  public final void deleteAdBreak(@Nullable AdBreakName name) {
     DeleteAdBreakRequest request =
         DeleteAdBreakRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAdBreak(request);
@@ -1061,8 +1062,8 @@ public class AdBreakServiceClient implements BackgroundResource {
       extends AbstractPage<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak, ListAdBreaksPage> {
 
     private ListAdBreaksPage(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
-        ListAdBreaksResponse response) {
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable ListAdBreaksResponse response) {
       super(context, response);
     }
 
@@ -1072,14 +1073,14 @@ public class AdBreakServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdBreaksPage createPage(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
-        ListAdBreaksResponse response) {
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable ListAdBreaksResponse response) {
       return new ListAdBreaksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdBreaksPage> createPageAsync(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
         ApiFuture<ListAdBreaksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1093,7 +1094,8 @@ public class AdBreakServiceClient implements BackgroundResource {
           ListAdBreaksPage,
           ListAdBreaksFixedSizeCollection> {
 
-    private ListAdBreaksFixedSizeCollection(List<ListAdBreaksPage> pages, int collectionSize) {
+    private ListAdBreaksFixedSizeCollection(
+        @Nullable List<ListAdBreaksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1103,7 +1105,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdBreaksFixedSizeCollection createCollection(
-        List<ListAdBreaksPage> pages, int collectionSize) {
+        @Nullable List<ListAdBreaksPage> pages, int collectionSize) {
       return new ListAdBreaksFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -188,7 +189,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class LocalInventoryServiceClient implements BackgroundResource {
-  private final LocalInventoryServiceSettings settings;
+  private final @Nullable LocalInventoryServiceSettings settings;
   private final LocalInventoryServiceStub stub;
 
   /** Constructs an instance of LocalInventoryServiceClient with default settings. */
@@ -228,7 +229,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LocalInventoryServiceSettings getSettings() {
+  public final @Nullable LocalInventoryServiceSettings getSettings() {
     return settings;
   }
 
@@ -266,7 +267,8 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     `accounts/{account}/products/{product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLocalInventoriesPagedResponse listLocalInventories(ProductName parent) {
+  public final ListLocalInventoriesPagedResponse listLocalInventories(
+      @Nullable ProductName parent) {
     ListLocalInventoriesRequest request =
         ListLocalInventoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -533,7 +535,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     `accounts/{account}/products/{product}/localInventories/{store_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLocalInventory(LocalInventoryName name) {
+  public final void deleteLocalInventory(@Nullable LocalInventoryName name) {
     DeleteLocalInventoryRequest request =
         DeleteLocalInventoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -700,9 +702,10 @@ public class LocalInventoryServiceClient implements BackgroundResource {
           ListLocalInventoriesPage> {
 
     private ListLocalInventoriesPage(
-        PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
+        @Nullable
+            PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
             context,
-        ListLocalInventoriesResponse response) {
+        @Nullable ListLocalInventoriesResponse response) {
       super(context, response);
     }
 
@@ -712,15 +715,17 @@ public class LocalInventoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocalInventoriesPage createPage(
-        PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
+        @Nullable
+            PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
             context,
-        ListLocalInventoriesResponse response) {
+        @Nullable ListLocalInventoriesResponse response) {
       return new ListLocalInventoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocalInventoriesPage> createPageAsync(
-        PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
+        @Nullable
+            PageContext<ListLocalInventoriesRequest, ListLocalInventoriesResponse, LocalInventory>
             context,
         ApiFuture<ListLocalInventoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -736,7 +741,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
           ListLocalInventoriesFixedSizeCollection> {
 
     private ListLocalInventoriesFixedSizeCollection(
-        List<ListLocalInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListLocalInventoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -746,7 +751,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocalInventoriesFixedSizeCollection createCollection(
-        List<ListLocalInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListLocalInventoriesPage> pages, int collectionSize) {
       return new ListLocalInventoriesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -507,7 +508,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class RegistrationServiceClient implements BackgroundResource {
-  private final RegistrationServiceSettings settings;
+  private final @Nullable RegistrationServiceSettings settings;
   private final RegistrationServiceStub stub;
 
   /** Constructs an instance of RegistrationServiceClient with default settings. */
@@ -547,7 +548,7 @@ public class RegistrationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegistrationServiceSettings getSettings() {
+  public final @Nullable RegistrationServiceSettings getSettings() {
     return settings;
   }
 
@@ -588,7 +589,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Namespace createNamespace(
-      LocationName parent, Namespace namespace, String namespaceId) {
+      @Nullable LocationName parent, Namespace namespace, String namespaceId) {
     CreateNamespaceRequest request =
         CreateNamespaceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -724,7 +725,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    *     like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNamespacesPagedResponse listNamespaces(LocationName parent) {
+  public final ListNamespacesPagedResponse listNamespaces(@Nullable LocationName parent) {
     ListNamespacesRequest request =
         ListNamespacesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -893,7 +894,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the namespace to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Namespace getNamespace(NamespaceName name) {
+  public final Namespace getNamespace(@Nullable NamespaceName name) {
     GetNamespaceRequest request =
         GetNamespaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNamespace(request);
@@ -1092,7 +1093,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the namespace to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNamespace(NamespaceName name) {
+  public final void deleteNamespace(@Nullable NamespaceName name) {
     DeleteNamespaceRequest request =
         DeleteNamespaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteNamespace(request);
@@ -1210,7 +1211,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    *     last character, which cannot be a dash.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service createService(NamespaceName parent, Service service, String serviceId) {
+  public final Service createService(
+      @Nullable NamespaceName parent, Service service, String serviceId) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1343,7 +1345,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the namespace whose services you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(NamespaceName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable NamespaceName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1510,7 +1512,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the service to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -1709,7 +1711,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the service to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteService(ServiceName name) {
+  public final void deleteService(@Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteService(request);
@@ -1830,7 +1832,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    *     last character, which cannot be a dash.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Endpoint createEndpoint(ServiceName parent, Endpoint endpoint, String endpointId) {
+  public final Endpoint createEndpoint(
+      @Nullable ServiceName parent, Endpoint endpoint, String endpointId) {
     CreateEndpointRequest request =
         CreateEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1966,7 +1969,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the service whose endpoints you'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointsPagedResponse listEndpoints(ServiceName parent) {
+  public final ListEndpointsPagedResponse listEndpoints(@Nullable ServiceName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2138,7 +2141,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the endpoint to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Endpoint getEndpoint(EndpointName name) {
+  public final Endpoint getEndpoint(@Nullable EndpointName name) {
     GetEndpointRequest request =
         GetEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEndpoint(request);
@@ -2343,7 +2346,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the endpoint to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEndpoint(EndpointName name) {
+  public final void deleteEndpoint(@Nullable EndpointName name) {
     DeleteEndpointRequest request =
         DeleteEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEndpoint(request);
@@ -2832,8 +2835,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListNamespacesRequest, ListNamespacesResponse, Namespace, ListNamespacesPage> {
 
     private ListNamespacesPage(
-        PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
-        ListNamespacesResponse response) {
+        @Nullable PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
+        @Nullable ListNamespacesResponse response) {
       super(context, response);
     }
 
@@ -2843,14 +2846,14 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListNamespacesPage createPage(
-        PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
-        ListNamespacesResponse response) {
+        @Nullable PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
+        @Nullable ListNamespacesResponse response) {
       return new ListNamespacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNamespacesPage> createPageAsync(
-        PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
+        @Nullable PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> context,
         ApiFuture<ListNamespacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2864,7 +2867,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListNamespacesPage,
           ListNamespacesFixedSizeCollection> {
 
-    private ListNamespacesFixedSizeCollection(List<ListNamespacesPage> pages, int collectionSize) {
+    private ListNamespacesFixedSizeCollection(
+        @Nullable List<ListNamespacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2874,7 +2878,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListNamespacesFixedSizeCollection createCollection(
-        List<ListNamespacesPage> pages, int collectionSize) {
+        @Nullable List<ListNamespacesPage> pages, int collectionSize) {
       return new ListNamespacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2907,8 +2911,8 @@ public class RegistrationServiceClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -2918,14 +2922,14 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2939,7 +2943,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2949,7 +2954,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2983,8 +2988,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage> {
 
     private ListEndpointsPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       super(context, response);
     }
 
@@ -2994,14 +2999,14 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsPage createPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       return new ListEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEndpointsPage> createPageAsync(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
         ApiFuture<ListEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3015,7 +3020,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
-    private ListEndpointsFixedSizeCollection(List<ListEndpointsPage> pages, int collectionSize) {
+    private ListEndpointsFixedSizeCollection(
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3025,7 +3031,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsFixedSizeCollection createCollection(
-        List<ListEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       return new ListEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3059,8 +3065,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3070,14 +3076,14 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3091,7 +3097,8 @@ public class RegistrationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3101,7 +3108,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

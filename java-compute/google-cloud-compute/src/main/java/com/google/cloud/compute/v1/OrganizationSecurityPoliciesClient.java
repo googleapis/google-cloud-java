@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -427,7 +428,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OrganizationSecurityPoliciesClient implements BackgroundResource {
-  private final OrganizationSecurityPoliciesSettings settings;
+  private final @Nullable OrganizationSecurityPoliciesSettings settings;
   private final OrganizationSecurityPoliciesStub stub;
 
   /** Constructs an instance of OrganizationSecurityPoliciesClient with default settings. */
@@ -471,7 +472,7 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OrganizationSecurityPoliciesSettings getSettings() {
+  public final @Nullable OrganizationSecurityPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -2686,9 +2687,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
           ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
+        @Nullable
+            PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
             context,
-        SecurityPolicyList response) {
+        @Nullable SecurityPolicyList response) {
       super(context, response);
     }
 
@@ -2698,15 +2700,17 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
+        @Nullable
+            PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
             context,
-        SecurityPolicyList response) {
+        @Nullable SecurityPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
+        @Nullable
+            PageContext<ListOrganizationSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
             context,
         ApiFuture<SecurityPolicyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2721,7 +2725,7 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2730,7 +2734,8 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

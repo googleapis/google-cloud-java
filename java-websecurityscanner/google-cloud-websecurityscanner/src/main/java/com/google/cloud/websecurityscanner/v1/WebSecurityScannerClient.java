@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -317,7 +318,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class WebSecurityScannerClient implements BackgroundResource {
-  private final WebSecurityScannerSettings settings;
+  private final @Nullable WebSecurityScannerSettings settings;
   private final WebSecurityScannerStub stub;
 
   /** Constructs an instance of WebSecurityScannerClient with default settings. */
@@ -357,7 +358,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WebSecurityScannerSettings getSettings() {
+  public final @Nullable WebSecurityScannerSettings getSettings() {
     return settings;
   }
 
@@ -1318,8 +1319,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig, ListScanConfigsPage> {
 
     private ListScanConfigsPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable ListScanConfigsResponse response) {
       super(context, response);
     }
 
@@ -1329,14 +1330,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanConfigsPage createPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable ListScanConfigsResponse response) {
       return new ListScanConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScanConfigsPage> createPageAsync(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
         ApiFuture<ListScanConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1351,7 +1352,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanConfigsFixedSizeCollection> {
 
     private ListScanConfigsFixedSizeCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListScanConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1361,7 +1362,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanConfigsFixedSizeCollection createCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListScanConfigsPage> pages, int collectionSize) {
       return new ListScanConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1394,8 +1395,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
       extends AbstractPage<ListScanRunsRequest, ListScanRunsResponse, ScanRun, ListScanRunsPage> {
 
     private ListScanRunsPage(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
-        ListScanRunsResponse response) {
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable ListScanRunsResponse response) {
       super(context, response);
     }
 
@@ -1405,14 +1406,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanRunsPage createPage(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
-        ListScanRunsResponse response) {
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable ListScanRunsResponse response) {
       return new ListScanRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScanRunsPage> createPageAsync(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
         ApiFuture<ListScanRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1426,7 +1427,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanRunsPage,
           ListScanRunsFixedSizeCollection> {
 
-    private ListScanRunsFixedSizeCollection(List<ListScanRunsPage> pages, int collectionSize) {
+    private ListScanRunsFixedSizeCollection(
+        @Nullable List<ListScanRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1436,7 +1438,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanRunsFixedSizeCollection createCollection(
-        List<ListScanRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScanRunsPage> pages, int collectionSize) {
       return new ListScanRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1470,8 +1472,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl, ListCrawledUrlsPage> {
 
     private ListCrawledUrlsPage(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
-        ListCrawledUrlsResponse response) {
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable ListCrawledUrlsResponse response) {
       super(context, response);
     }
 
@@ -1481,14 +1483,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListCrawledUrlsPage createPage(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
-        ListCrawledUrlsResponse response) {
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable ListCrawledUrlsResponse response) {
       return new ListCrawledUrlsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCrawledUrlsPage> createPageAsync(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
         ApiFuture<ListCrawledUrlsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1503,7 +1505,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListCrawledUrlsFixedSizeCollection> {
 
     private ListCrawledUrlsFixedSizeCollection(
-        List<ListCrawledUrlsPage> pages, int collectionSize) {
+        @Nullable List<ListCrawledUrlsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1513,7 +1515,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListCrawledUrlsFixedSizeCollection createCollection(
-        List<ListCrawledUrlsPage> pages, int collectionSize) {
+        @Nullable List<ListCrawledUrlsPage> pages, int collectionSize) {
       return new ListCrawledUrlsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1546,8 +1548,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
       extends AbstractPage<ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage> {
 
     private ListFindingsPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       super(context, response);
     }
 
@@ -1557,14 +1559,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListFindingsPage createPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       return new ListFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingsPage> createPageAsync(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
         ApiFuture<ListFindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1578,7 +1580,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
-    private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
+    private ListFindingsFixedSizeCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1588,7 +1591,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListFindingsFixedSizeCollection createCollection(
-        List<ListFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
     }
   }

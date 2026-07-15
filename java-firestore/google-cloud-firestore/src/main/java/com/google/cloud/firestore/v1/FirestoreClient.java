@@ -69,6 +69,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -413,7 +414,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FirestoreClient implements BackgroundResource {
-  private final FirestoreSettings settings;
+  private final @Nullable FirestoreSettings settings;
   private final FirestoreStub stub;
 
   /** Constructs an instance of FirestoreClient with default settings. */
@@ -451,7 +452,7 @@ public class FirestoreClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FirestoreSettings getSettings() {
+  public final @Nullable FirestoreSettings getSettings() {
     return settings;
   }
 
@@ -1722,8 +1723,8 @@ public class FirestoreClient implements BackgroundResource {
           ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage> {
 
     private ListDocumentsPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       super(context, response);
     }
 
@@ -1733,14 +1734,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsPage createPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       return new ListDocumentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDocumentsPage> createPageAsync(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
         ApiFuture<ListDocumentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1754,7 +1755,8 @@ public class FirestoreClient implements BackgroundResource {
           ListDocumentsPage,
           ListDocumentsFixedSizeCollection> {
 
-    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+    private ListDocumentsFixedSizeCollection(
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1764,7 +1766,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsFixedSizeCollection createCollection(
-        List<ListDocumentsPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       return new ListDocumentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1798,8 +1800,8 @@ public class FirestoreClient implements BackgroundResource {
           PartitionQueryRequest, PartitionQueryResponse, Cursor, PartitionQueryPage> {
 
     private PartitionQueryPage(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
-        PartitionQueryResponse response) {
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PartitionQueryResponse response) {
       super(context, response);
     }
 
@@ -1809,14 +1811,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected PartitionQueryPage createPage(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
-        PartitionQueryResponse response) {
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PartitionQueryResponse response) {
       return new PartitionQueryPage(context, response);
     }
 
     @Override
     public ApiFuture<PartitionQueryPage> createPageAsync(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
         ApiFuture<PartitionQueryResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1830,7 +1832,8 @@ public class FirestoreClient implements BackgroundResource {
           PartitionQueryPage,
           PartitionQueryFixedSizeCollection> {
 
-    private PartitionQueryFixedSizeCollection(List<PartitionQueryPage> pages, int collectionSize) {
+    private PartitionQueryFixedSizeCollection(
+        @Nullable List<PartitionQueryPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1840,7 +1843,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected PartitionQueryFixedSizeCollection createCollection(
-        List<PartitionQueryPage> pages, int collectionSize) {
+        @Nullable List<PartitionQueryPage> pages, int collectionSize) {
       return new PartitionQueryFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1874,8 +1877,8 @@ public class FirestoreClient implements BackgroundResource {
           ListCollectionIdsRequest, ListCollectionIdsResponse, String, ListCollectionIdsPage> {
 
     private ListCollectionIdsPage(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
-        ListCollectionIdsResponse response) {
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable ListCollectionIdsResponse response) {
       super(context, response);
     }
 
@@ -1885,14 +1888,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListCollectionIdsPage createPage(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
-        ListCollectionIdsResponse response) {
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable ListCollectionIdsResponse response) {
       return new ListCollectionIdsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCollectionIdsPage> createPageAsync(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
         ApiFuture<ListCollectionIdsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1907,7 +1910,7 @@ public class FirestoreClient implements BackgroundResource {
           ListCollectionIdsFixedSizeCollection> {
 
     private ListCollectionIdsFixedSizeCollection(
-        List<ListCollectionIdsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionIdsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1917,7 +1920,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListCollectionIdsFixedSizeCollection createCollection(
-        List<ListCollectionIdsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionIdsPage> pages, int collectionSize) {
       return new ListCollectionIdsFixedSizeCollection(pages, collectionSize);
     }
   }
