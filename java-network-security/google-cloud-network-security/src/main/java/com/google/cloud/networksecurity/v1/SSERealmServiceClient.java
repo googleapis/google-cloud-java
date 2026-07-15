@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -356,7 +357,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SSERealmServiceClient implements BackgroundResource {
-  private final SSERealmServiceSettings settings;
+  private final @Nullable SSERealmServiceSettings settings;
   private final SSERealmServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -399,7 +400,7 @@ public class SSERealmServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final SSERealmServiceSettings getSettings() {
+  public final @Nullable SSERealmServiceSettings getSettings() {
     return settings;
   }
 
@@ -438,7 +439,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    * @param parent Required. The parent, in the form `projects/{project}/locations/global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSACRealmsPagedResponse listSACRealms(LocationName parent) {
+  public final ListSACRealmsPagedResponse listSACRealms(@Nullable LocationName parent) {
     ListSACRealmsRequest request =
         ListSACRealmsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -606,7 +607,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/global/sacRealms/{sacRealm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SACRealm getSACRealm(SACRealmName name) {
+  public final SACRealm getSACRealm(@Nullable SACRealmName name) {
     GetSACRealmRequest request =
         GetSACRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSACRealm(request);
@@ -726,7 +727,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SACRealm, OperationMetadata> createSACRealmAsync(
-      LocationName parent, SACRealm sacRealm, String sacRealmId) {
+      @Nullable LocationName parent, SACRealm sacRealm, String sacRealmId) {
     CreateSACRealmRequest request =
         CreateSACRealmRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -895,7 +896,8 @@ public class SSERealmServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/global/sacRealms/{sacRealm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSACRealmAsync(SACRealmName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSACRealmAsync(
+      @Nullable SACRealmName name) {
     DeleteSACRealmRequest request =
         DeleteSACRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSACRealmAsync(request);
@@ -1040,7 +1042,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    * @param parent Required. The parent, in the form `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSACAttachmentsPagedResponse listSACAttachments(LocationName parent) {
+  public final ListSACAttachmentsPagedResponse listSACAttachments(@Nullable LocationName parent) {
     ListSACAttachmentsRequest request =
         ListSACAttachmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1211,7 +1213,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SACAttachment getSACAttachment(SACAttachmentName name) {
+  public final SACAttachment getSACAttachment(@Nullable SACAttachmentName name) {
     GetSACAttachmentRequest request =
         GetSACAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSACAttachment(request);
@@ -1336,7 +1338,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SACAttachment, OperationMetadata> createSACAttachmentAsync(
-      LocationName parent, SACAttachment sacAttachment, String sacAttachmentId) {
+      @Nullable LocationName parent, SACAttachment sacAttachment, String sacAttachmentId) {
     CreateSACAttachmentRequest request =
         CreateSACAttachmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1508,7 +1510,7 @@ public class SSERealmServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSACAttachmentAsync(
-      SACAttachmentName name) {
+      @Nullable SACAttachmentName name) {
     DeleteSACAttachmentRequest request =
         DeleteSACAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2096,8 +2098,8 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListSACRealmsRequest, ListSACRealmsResponse, SACRealm, ListSACRealmsPage> {
 
     private ListSACRealmsPage(
-        PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
-        ListSACRealmsResponse response) {
+        @Nullable PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
+        @Nullable ListSACRealmsResponse response) {
       super(context, response);
     }
 
@@ -2107,14 +2109,14 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListSACRealmsPage createPage(
-        PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
-        ListSACRealmsResponse response) {
+        @Nullable PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
+        @Nullable ListSACRealmsResponse response) {
       return new ListSACRealmsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSACRealmsPage> createPageAsync(
-        PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
+        @Nullable PageContext<ListSACRealmsRequest, ListSACRealmsResponse, SACRealm> context,
         ApiFuture<ListSACRealmsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2128,7 +2130,8 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListSACRealmsPage,
           ListSACRealmsFixedSizeCollection> {
 
-    private ListSACRealmsFixedSizeCollection(List<ListSACRealmsPage> pages, int collectionSize) {
+    private ListSACRealmsFixedSizeCollection(
+        @Nullable List<ListSACRealmsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2138,7 +2141,7 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListSACRealmsFixedSizeCollection createCollection(
-        List<ListSACRealmsPage> pages, int collectionSize) {
+        @Nullable List<ListSACRealmsPage> pages, int collectionSize) {
       return new ListSACRealmsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2175,8 +2178,9 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListSACAttachmentsPage> {
 
     private ListSACAttachmentsPage(
-        PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment> context,
-        ListSACAttachmentsResponse response) {
+        @Nullable PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment>
+            context,
+        @Nullable ListSACAttachmentsResponse response) {
       super(context, response);
     }
 
@@ -2186,14 +2190,16 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListSACAttachmentsPage createPage(
-        PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment> context,
-        ListSACAttachmentsResponse response) {
+        @Nullable PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment>
+            context,
+        @Nullable ListSACAttachmentsResponse response) {
       return new ListSACAttachmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSACAttachmentsPage> createPageAsync(
-        PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment> context,
+        @Nullable PageContext<ListSACAttachmentsRequest, ListSACAttachmentsResponse, SACAttachment>
+            context,
         ApiFuture<ListSACAttachmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2208,7 +2214,7 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListSACAttachmentsFixedSizeCollection> {
 
     private ListSACAttachmentsFixedSizeCollection(
-        List<ListSACAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListSACAttachmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2218,7 +2224,7 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListSACAttachmentsFixedSizeCollection createCollection(
-        List<ListSACAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListSACAttachmentsPage> pages, int collectionSize) {
       return new ListSACAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2252,8 +2258,8 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2263,14 +2269,14 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2284,7 +2290,8 @@ public class SSERealmServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2294,7 +2301,7 @@ public class SSERealmServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

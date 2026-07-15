@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+permissions:
+  contents: read
+
 name: Librarian - Showcase Version Check
 
 on:
@@ -19,18 +22,35 @@ on:
     - cron: '30 3 * * *' # Run daily at 3:30 AM UTC
   workflow_dispatch: # Allow manual trigger
   pull_request:
-    paths:
-      - 'librarian.yaml'
-      - 'java-showcase/gapic-showcase/pom.xml'
-      - '.github/workflows/showcase-version-check.yaml'
 
 jobs:
-  check-version:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.filter.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+        id: filter
+        with:
+          filters: |
+            should_run:
+              - 'librarian.yaml'
+              - 'java-showcase/gapic-showcase/pom.xml'
+              - '.github/workflows/showcase-version-check.yaml'
+
+  check-showcase-version:
+    needs: filter
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
       - name: Extract showcase version from pom.xml
         id: extract_version
         shell: bash
@@ -38,7 +58,7 @@ jobs:
           version=$(awk -F'[<>]' '/gapic-showcase.version/{print $3; exit}' java-showcase/gapic-showcase/pom.xml)
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
           go-version: '1.24'
       - name: Extract showcase commit from librarian.yaml
@@ -53,7 +73,7 @@ jobs:
         run: |
           # 1. Query the remote repository for the specific version tag
           REMOTE_URL="https://github.com/googleapis/gapic-showcase.git"
-          TAG_NAME="v${{ steps.extract_version.outputs.version }}"
+          TAG_NAME="v${STEPS_EXTRACT_VERSION_OUTPUTS_VERSION}"
           
           OUTPUT=$(git ls-remote "$REMOTE_URL" "refs/tags/$TAG_NAME")
           
@@ -66,16 +86,19 @@ jobs:
           EXPECTED_COMMIT=$(echo "$OUTPUT" | tail -n 1 | awk '{print $1}')
           
           echo "Expected commit for tag $TAG_NAME: $EXPECTED_COMMIT"
-          echo "Current librarian commit: ${{ steps.extract_commit.outputs.commit }}"
+          echo "Current librarian commit: ${STEPS_EXTRACT_COMMIT_OUTPUTS_COMMIT}"
           
           # 3. Cross-reference with librarian.yaml
-          if [ "${{ steps.extract_commit.outputs.commit }}" != "$EXPECTED_COMMIT" ]; then
-            echo "Mismatch: librarian.yaml has commit '${{ steps.extract_commit.outputs.commit }}', but tag '$TAG_NAME' is at commit '$EXPECTED_COMMIT'"
+          if [ "${STEPS_EXTRACT_COMMIT_OUTPUTS_COMMIT}" != "$EXPECTED_COMMIT" ]; then
+            echo "Mismatch: librarian.yaml has commit '${STEPS_EXTRACT_COMMIT_OUTPUTS_COMMIT}', but tag '$TAG_NAME' is at commit '$EXPECTED_COMMIT'"
             echo "MISMATCH=true" >> "$GITHUB_ENV"
             exit 2
           fi
           
           echo "Showcase version and commit are in sync!"
+        env:
+          STEPS_EXTRACT_VERSION_OUTPUTS_VERSION: ${{ steps.extract_version.outputs.version }}
+          STEPS_EXTRACT_COMMIT_OUTPUTS_COMMIT: ${{ steps.extract_commit.outputs.commit }}
       - name: Create issue on mismatch
         if: failure() && env.MISMATCH == 'true'
         env:

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -118,7 +119,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UserServiceClient implements BackgroundResource {
-  private final UserServiceSettings settings;
+  private final @Nullable UserServiceSettings settings;
   private final UserServiceStub stub;
 
   /** Constructs an instance of UserServiceClient with default settings. */
@@ -157,7 +158,7 @@ public class UserServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserServiceSettings getSettings() {
+  public final @Nullable UserServiceSettings getSettings() {
     return settings;
   }
 
@@ -189,7 +190,7 @@ public class UserServiceClient implements BackgroundResource {
    *     `networks/{network_code}/users/{user_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User getUser(UserName name) {
+  public final User getUser(@Nullable UserName name) {
     GetUserRequest request =
         GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUser(request);

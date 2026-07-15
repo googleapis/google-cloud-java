@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -435,7 +436,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataTransferServiceClient implements BackgroundResource {
-  private final DataTransferServiceSettings settings;
+  private final @Nullable DataTransferServiceSettings settings;
   private final DataTransferServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -478,7 +479,7 @@ public class DataTransferServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final DataTransferServiceSettings getSettings() {
+  public final @Nullable DataTransferServiceSettings getSettings() {
     return settings;
   }
 
@@ -519,7 +520,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMulticloudDataTransferConfigsPagedResponse listMulticloudDataTransferConfigs(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListMulticloudDataTransferConfigsRequest request =
         ListMulticloudDataTransferConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -704,7 +705,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MulticloudDataTransferConfig getMulticloudDataTransferConfig(
-      MulticloudDataTransferConfigName name) {
+      @Nullable MulticloudDataTransferConfigName name) {
     GetMulticloudDataTransferConfigRequest request =
         GetMulticloudDataTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -843,7 +844,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   public final OperationFuture<MulticloudDataTransferConfig, OperationMetadata>
       createMulticloudDataTransferConfigAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           MulticloudDataTransferConfig multicloudDataTransferConfig,
           String multicloudDataTransferConfigId) {
     CreateMulticloudDataTransferConfigRequest request =
@@ -1173,7 +1174,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMulticloudDataTransferConfigAsync(
-      MulticloudDataTransferConfigName name) {
+      @Nullable MulticloudDataTransferConfigName name) {
     DeleteMulticloudDataTransferConfigRequest request =
         DeleteMulticloudDataTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1345,7 +1346,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDestinationsPagedResponse listDestinations(
-      MulticloudDataTransferConfigName parent) {
+      @Nullable MulticloudDataTransferConfigName parent) {
     ListDestinationsRequest request =
         ListDestinationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1531,7 +1532,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param name Required. The name of the `Destination` resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Destination getDestination(DestinationName name) {
+  public final Destination getDestination(@Nullable DestinationName name) {
     GetDestinationRequest request =
         GetDestinationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDestination(request);
@@ -1666,7 +1667,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Destination, OperationMetadata> createDestinationAsync(
-      MulticloudDataTransferConfigName parent, Destination destination, String destinationId) {
+      @Nullable MulticloudDataTransferConfigName parent,
+      Destination destination,
+      String destinationId) {
     CreateDestinationRequest request =
         CreateDestinationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1976,7 +1979,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDestinationAsync(
-      DestinationName name) {
+      @Nullable DestinationName name) {
     DeleteDestinationRequest request =
         DeleteDestinationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2148,7 +2151,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MulticloudDataTransferSupportedService getMulticloudDataTransferSupportedService(
-      MulticloudDataTransferSupportedServiceName name) {
+      @Nullable MulticloudDataTransferSupportedServiceName name) {
     GetMulticloudDataTransferSupportedServiceRequest request =
         GetMulticloudDataTransferSupportedServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2283,7 +2286,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMulticloudDataTransferSupportedServicesPagedResponse
-      listMulticloudDataTransferSupportedServices(LocationName parent) {
+      listMulticloudDataTransferSupportedServices(@Nullable LocationName parent) {
     ListMulticloudDataTransferSupportedServicesRequest request =
         ListMulticloudDataTransferSupportedServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2861,12 +2864,13 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListMulticloudDataTransferConfigsPage> {
 
     private ListMulticloudDataTransferConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferConfigsRequest,
                 ListMulticloudDataTransferConfigsResponse,
                 MulticloudDataTransferConfig>
             context,
-        ListMulticloudDataTransferConfigsResponse response) {
+        @Nullable ListMulticloudDataTransferConfigsResponse response) {
       super(context, response);
     }
 
@@ -2876,18 +2880,20 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListMulticloudDataTransferConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferConfigsRequest,
                 ListMulticloudDataTransferConfigsResponse,
                 MulticloudDataTransferConfig>
             context,
-        ListMulticloudDataTransferConfigsResponse response) {
+        @Nullable ListMulticloudDataTransferConfigsResponse response) {
       return new ListMulticloudDataTransferConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMulticloudDataTransferConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferConfigsRequest,
                 ListMulticloudDataTransferConfigsResponse,
                 MulticloudDataTransferConfig>
@@ -2906,7 +2912,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListMulticloudDataTransferConfigsFixedSizeCollection> {
 
     private ListMulticloudDataTransferConfigsFixedSizeCollection(
-        List<ListMulticloudDataTransferConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMulticloudDataTransferConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2916,7 +2922,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListMulticloudDataTransferConfigsFixedSizeCollection createCollection(
-        List<ListMulticloudDataTransferConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMulticloudDataTransferConfigsPage> pages, int collectionSize) {
       return new ListMulticloudDataTransferConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2950,8 +2956,9 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListDestinationsRequest, ListDestinationsResponse, Destination, ListDestinationsPage> {
 
     private ListDestinationsPage(
-        PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination> context,
-        ListDestinationsResponse response) {
+        @Nullable PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination>
+            context,
+        @Nullable ListDestinationsResponse response) {
       super(context, response);
     }
 
@@ -2961,14 +2968,16 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListDestinationsPage createPage(
-        PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination> context,
-        ListDestinationsResponse response) {
+        @Nullable PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination>
+            context,
+        @Nullable ListDestinationsResponse response) {
       return new ListDestinationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDestinationsPage> createPageAsync(
-        PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination> context,
+        @Nullable PageContext<ListDestinationsRequest, ListDestinationsResponse, Destination>
+            context,
         ApiFuture<ListDestinationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2983,7 +2992,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListDestinationsFixedSizeCollection> {
 
     private ListDestinationsFixedSizeCollection(
-        List<ListDestinationsPage> pages, int collectionSize) {
+        @Nullable List<ListDestinationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2993,7 +3002,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListDestinationsFixedSizeCollection createCollection(
-        List<ListDestinationsPage> pages, int collectionSize) {
+        @Nullable List<ListDestinationsPage> pages, int collectionSize) {
       return new ListDestinationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3038,12 +3047,13 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListMulticloudDataTransferSupportedServicesPage> {
 
     private ListMulticloudDataTransferSupportedServicesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferSupportedServicesRequest,
                 ListMulticloudDataTransferSupportedServicesResponse,
                 MulticloudDataTransferSupportedService>
             context,
-        ListMulticloudDataTransferSupportedServicesResponse response) {
+        @Nullable ListMulticloudDataTransferSupportedServicesResponse response) {
       super(context, response);
     }
 
@@ -3053,18 +3063,20 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListMulticloudDataTransferSupportedServicesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferSupportedServicesRequest,
                 ListMulticloudDataTransferSupportedServicesResponse,
                 MulticloudDataTransferSupportedService>
             context,
-        ListMulticloudDataTransferSupportedServicesResponse response) {
+        @Nullable ListMulticloudDataTransferSupportedServicesResponse response) {
       return new ListMulticloudDataTransferSupportedServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMulticloudDataTransferSupportedServicesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMulticloudDataTransferSupportedServicesRequest,
                 ListMulticloudDataTransferSupportedServicesResponse,
                 MulticloudDataTransferSupportedService>
@@ -3083,7 +3095,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListMulticloudDataTransferSupportedServicesFixedSizeCollection> {
 
     private ListMulticloudDataTransferSupportedServicesFixedSizeCollection(
-        List<ListMulticloudDataTransferSupportedServicesPage> pages, int collectionSize) {
+        @Nullable List<ListMulticloudDataTransferSupportedServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3094,7 +3106,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListMulticloudDataTransferSupportedServicesFixedSizeCollection createCollection(
-        List<ListMulticloudDataTransferSupportedServicesPage> pages, int collectionSize) {
+        @Nullable List<ListMulticloudDataTransferSupportedServicesPage> pages, int collectionSize) {
       return new ListMulticloudDataTransferSupportedServicesFixedSizeCollection(
           pages, collectionSize);
     }
@@ -3129,8 +3141,8 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3140,14 +3152,14 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3161,7 +3173,8 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3171,7 +3184,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -49,6 +49,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1095,8 +1096,7 @@ import org.jspecify.annotations.NullMarked;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -1229,7 +1229,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SecureSourceManagerClient implements BackgroundResource {
-  private final SecureSourceManagerSettings settings;
+  private final @Nullable SecureSourceManagerSettings settings;
   private final SecureSourceManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1277,7 +1277,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SecureSourceManagerSettings getSettings() {
+  public final @Nullable SecureSourceManagerSettings getSettings() {
     return settings;
   }
 
@@ -1325,7 +1325,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInstancesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1492,7 +1492,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1607,7 +1607,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1770,7 +1770,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1920,7 +1921,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListRepositoriesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRepositoriesPagedResponse listRepositories(LocationName parent) {
+  public final ListRepositoriesPagedResponse listRepositories(@Nullable LocationName parent) {
     ListRepositoriesRequest request =
         ListRepositoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2102,7 +2103,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Repository getRepository(RepositoryName name) {
+  public final Repository getRepository(@Nullable RepositoryName name) {
     GetRepositoryRequest request =
         GetRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRepository(request);
@@ -2224,7 +2225,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
-      LocationName parent, Repository repository, String repositoryId) {
+      @Nullable LocationName parent, Repository repository, String repositoryId) {
     CreateRepositoryRequest request =
         CreateRepositoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2530,7 +2531,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRepositoryAsync(
-      RepositoryName name) {
+      @Nullable RepositoryName name) {
     DeleteRepositoryRequest request =
         DeleteRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRepositoryAsync(request);
@@ -2675,7 +2676,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListHooksRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHooksPagedResponse listHooks(RepositoryName parent) {
+  public final ListHooksPagedResponse listHooks(@Nullable RepositoryName parent) {
     ListHooksRequest request =
         ListHooksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listHooks(request);
@@ -2833,7 +2834,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Hook getHook(HookName name) {
+  public final Hook getHook(@Nullable HookName name) {
     GetHookRequest request =
         GetHookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHook(request);
@@ -2951,7 +2952,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hook, OperationMetadata> createHookAsync(
-      RepositoryName parent, Hook hook, String hookId) {
+      @Nullable RepositoryName parent, Hook hook, String hookId) {
     CreateHookRequest request =
         CreateHookRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3231,7 +3232,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteHookAsync(HookName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteHookAsync(@Nullable HookName name) {
     DeleteHookRequest request =
         DeleteHookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteHookAsync(request);
@@ -3372,7 +3373,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicyRepo(ResourceName resource) {
+  public final Policy getIamPolicyRepo(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3487,7 +3488,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicyRepo(ResourceName resource) {
+  public final Policy setIamPolicyRepo(@Nullable ResourceName resource) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3605,7 +3606,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestIamPermissionsResponse testIamPermissionsRepo(ResourceName resource) {
+  public final TestIamPermissionsResponse testIamPermissionsRepo(@Nullable ResourceName resource) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3730,7 +3731,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BranchRule, OperationMetadata> createBranchRuleAsync(
-      RepositoryName parent, BranchRule branchRule, String branchRuleId) {
+      @Nullable RepositoryName parent, BranchRule branchRule, String branchRuleId) {
     CreateBranchRuleRequest request =
         CreateBranchRuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3892,7 +3893,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @param parent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBranchRulesPagedResponse listBranchRules(RepositoryName parent) {
+  public final ListBranchRulesPagedResponse listBranchRules(@Nullable RepositoryName parent) {
     ListBranchRulesRequest request =
         ListBranchRulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4056,7 +4057,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BranchRule getBranchRule(BranchRuleName name) {
+  public final BranchRule getBranchRule(@Nullable BranchRuleName name) {
     GetBranchRuleRequest request =
         GetBranchRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBranchRule(request);
@@ -4302,7 +4303,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBranchRuleAsync(
-      BranchRuleName name) {
+      @Nullable BranchRuleName name) {
     DeleteBranchRuleRequest request =
         DeleteBranchRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBranchRuleAsync(request);
@@ -4456,7 +4457,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PullRequest, OperationMetadata> createPullRequestAsync(
-      RepositoryName parent, PullRequest pullRequest) {
+      @Nullable RepositoryName parent, PullRequest pullRequest) {
     CreatePullRequestRequest request =
         CreatePullRequestRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4609,7 +4610,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PullRequest getPullRequest(PullRequestName name) {
+  public final PullRequest getPullRequest(@Nullable PullRequestName name) {
     GetPullRequestRequest request =
         GetPullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPullRequest(request);
@@ -4728,7 +4729,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPullRequestsPagedResponse listPullRequests(RepositoryName parent) {
+  public final ListPullRequestsPagedResponse listPullRequests(@Nullable RepositoryName parent) {
     ListPullRequestsRequest request =
         ListPullRequestsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5021,7 +5022,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PullRequest, OperationMetadata> mergePullRequestAsync(
-      PullRequestName name) {
+      @Nullable PullRequestName name) {
     MergePullRequestRequest request =
         MergePullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return mergePullRequestAsync(request);
@@ -5172,7 +5173,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PullRequest, OperationMetadata> openPullRequestAsync(
-      PullRequestName name) {
+      @Nullable PullRequestName name) {
     OpenPullRequestRequest request =
         OpenPullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return openPullRequestAsync(request);
@@ -5323,7 +5324,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PullRequest, OperationMetadata> closePullRequestAsync(
-      PullRequestName name) {
+      @Nullable PullRequestName name) {
     ClosePullRequestRequest request =
         ClosePullRequestRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return closePullRequestAsync(request);
@@ -5477,7 +5478,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPullRequestFileDiffsPagedResponse listPullRequestFileDiffs(
-      PullRequestName name) {
+      @Nullable PullRequestName name) {
     ListPullRequestFileDiffsRequest request =
         ListPullRequestFileDiffsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5827,7 +5828,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Issue, OperationMetadata> createIssueAsync(
-      RepositoryName parent, Issue issue) {
+      @Nullable RepositoryName parent, Issue issue) {
     CreateIssueRequest request =
         CreateIssueRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5978,7 +5979,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Issue getIssue(IssueName name) {
+  public final Issue getIssue(@Nullable IssueName name) {
     GetIssueRequest request =
         GetIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIssue(request);
@@ -6092,7 +6093,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIssuesPagedResponse listIssues(RepositoryName parent) {
+  public final ListIssuesPagedResponse listIssues(@Nullable RepositoryName parent) {
     ListIssuesRequest request =
         ListIssuesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listIssues(request);
@@ -6376,7 +6377,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteIssueAsync(IssueName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteIssueAsync(
+      @Nullable IssueName name) {
     DeleteIssueRequest request =
         DeleteIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteIssueAsync(request);
@@ -6523,7 +6525,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Issue, OperationMetadata> openIssueAsync(IssueName name) {
+  public final OperationFuture<Issue, OperationMetadata> openIssueAsync(@Nullable IssueName name) {
     OpenIssueRequest request =
         OpenIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return openIssueAsync(request);
@@ -6669,7 +6671,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Issue, OperationMetadata> closeIssueAsync(IssueName name) {
+  public final OperationFuture<Issue, OperationMetadata> closeIssueAsync(@Nullable IssueName name) {
     CloseIssueRequest request =
         CloseIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return closeIssueAsync(request);
@@ -6818,7 +6820,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}/pullRequestComments/{comment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PullRequestComment getPullRequestComment(PullRequestCommentName name) {
+  public final PullRequestComment getPullRequestComment(@Nullable PullRequestCommentName name) {
     GetPullRequestCommentRequest request =
         GetPullRequestCommentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6947,7 +6949,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPullRequestCommentsPagedResponse listPullRequestComments(
-      PullRequestName parent) {
+      @Nullable PullRequestName parent) {
     ListPullRequestCommentsRequest request =
         ListPullRequestCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7131,7 +7133,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PullRequestComment, OperationMetadata> createPullRequestCommentAsync(
-      PullRequestName parent, PullRequestComment pullRequestComment) {
+      @Nullable PullRequestName parent, PullRequestComment pullRequestComment) {
     CreatePullRequestCommentRequest request =
         CreatePullRequestCommentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7441,7 +7443,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePullRequestCommentAsync(
-      PullRequestCommentName name) {
+      @Nullable PullRequestCommentName name) {
     DeletePullRequestCommentRequest request =
         DeletePullRequestCommentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7611,7 +7613,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    */
   public final OperationFuture<BatchCreatePullRequestCommentsResponse, OperationMetadata>
       batchCreatePullRequestCommentsAsync(
-          PullRequestName parent, List<CreatePullRequestCommentRequest> requests) {
+          @Nullable PullRequestName parent, List<CreatePullRequestCommentRequest> requests) {
     BatchCreatePullRequestCommentsRequest request =
         BatchCreatePullRequestCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7806,7 +7808,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ResolvePullRequestCommentsResponse, OperationMetadata>
-      resolvePullRequestCommentsAsync(PullRequestName parent, List<String> names) {
+      resolvePullRequestCommentsAsync(@Nullable PullRequestName parent, List<String> names) {
     ResolvePullRequestCommentsRequest request =
         ResolvePullRequestCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7993,7 +7995,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UnresolvePullRequestCommentsResponse, OperationMetadata>
-      unresolvePullRequestCommentsAsync(PullRequestName parent, List<String> names) {
+      unresolvePullRequestCommentsAsync(@Nullable PullRequestName parent, List<String> names) {
     UnresolvePullRequestCommentsRequest request =
         UnresolvePullRequestCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8180,7 +8182,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<IssueComment, OperationMetadata> createIssueCommentAsync(
-      IssueName parent, IssueComment issueComment) {
+      @Nullable IssueName parent, IssueComment issueComment) {
     CreateIssueCommentRequest request =
         CreateIssueCommentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8339,7 +8341,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}/issueComments/{comment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IssueComment getIssueComment(IssueCommentName name) {
+  public final IssueComment getIssueComment(@Nullable IssueCommentName name) {
     GetIssueCommentRequest request =
         GetIssueCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIssueComment(request);
@@ -8461,7 +8463,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/issues/{issue_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIssueCommentsPagedResponse listIssueComments(IssueName parent) {
+  public final ListIssueCommentsPagedResponse listIssueComments(@Nullable IssueName parent) {
     ListIssueCommentsRequest request =
         ListIssueCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8759,7 +8761,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteIssueCommentAsync(
-      IssueCommentName name) {
+      @Nullable IssueCommentName name) {
     DeleteIssueCommentRequest request =
         DeleteIssueCommentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8897,9 +8899,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -8943,9 +8944,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -8990,9 +8990,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -9340,8 +9339,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -9351,14 +9350,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9372,7 +9371,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9382,7 +9382,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9416,8 +9416,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListRepositoriesRequest, ListRepositoriesResponse, Repository, ListRepositoriesPage> {
 
     private ListRepositoriesPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -9427,14 +9428,16 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesPage createPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       return new ListRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRepositoriesPage> createPageAsync(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
         ApiFuture<ListRepositoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9449,7 +9452,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListRepositoriesFixedSizeCollection> {
 
     private ListRepositoriesFixedSizeCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9459,7 +9462,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesFixedSizeCollection createCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       return new ListRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9486,8 +9489,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
       extends AbstractPage<ListHooksRequest, ListHooksResponse, Hook, ListHooksPage> {
 
     private ListHooksPage(
-        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
-        ListHooksResponse response) {
+        @Nullable PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        @Nullable ListHooksResponse response) {
       super(context, response);
     }
 
@@ -9497,14 +9500,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListHooksPage createPage(
-        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
-        ListHooksResponse response) {
+        @Nullable PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        @Nullable ListHooksResponse response) {
       return new ListHooksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHooksPage> createPageAsync(
-        PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
+        @Nullable PageContext<ListHooksRequest, ListHooksResponse, Hook> context,
         ApiFuture<ListHooksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9514,7 +9517,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListHooksRequest, ListHooksResponse, Hook, ListHooksPage, ListHooksFixedSizeCollection> {
 
-    private ListHooksFixedSizeCollection(List<ListHooksPage> pages, int collectionSize) {
+    private ListHooksFixedSizeCollection(@Nullable List<ListHooksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9524,7 +9527,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListHooksFixedSizeCollection createCollection(
-        List<ListHooksPage> pages, int collectionSize) {
+        @Nullable List<ListHooksPage> pages, int collectionSize) {
       return new ListHooksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9558,8 +9561,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListBranchRulesRequest, ListBranchRulesResponse, BranchRule, ListBranchRulesPage> {
 
     private ListBranchRulesPage(
-        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
-        ListBranchRulesResponse response) {
+        @Nullable PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        @Nullable ListBranchRulesResponse response) {
       super(context, response);
     }
 
@@ -9569,14 +9572,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListBranchRulesPage createPage(
-        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
-        ListBranchRulesResponse response) {
+        @Nullable PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        @Nullable ListBranchRulesResponse response) {
       return new ListBranchRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBranchRulesPage> createPageAsync(
-        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        @Nullable PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
         ApiFuture<ListBranchRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9591,7 +9594,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListBranchRulesFixedSizeCollection> {
 
     private ListBranchRulesFixedSizeCollection(
-        List<ListBranchRulesPage> pages, int collectionSize) {
+        @Nullable List<ListBranchRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9601,7 +9604,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListBranchRulesFixedSizeCollection createCollection(
-        List<ListBranchRulesPage> pages, int collectionSize) {
+        @Nullable List<ListBranchRulesPage> pages, int collectionSize) {
       return new ListBranchRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9635,8 +9638,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestsRequest, ListPullRequestsResponse, PullRequest, ListPullRequestsPage> {
 
     private ListPullRequestsPage(
-        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
-        ListPullRequestsResponse response) {
+        @Nullable PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest>
+            context,
+        @Nullable ListPullRequestsResponse response) {
       super(context, response);
     }
 
@@ -9646,14 +9650,16 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestsPage createPage(
-        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
-        ListPullRequestsResponse response) {
+        @Nullable PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest>
+            context,
+        @Nullable ListPullRequestsResponse response) {
       return new ListPullRequestsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPullRequestsPage> createPageAsync(
-        PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest> context,
+        @Nullable PageContext<ListPullRequestsRequest, ListPullRequestsResponse, PullRequest>
+            context,
         ApiFuture<ListPullRequestsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9668,7 +9674,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestsFixedSizeCollection> {
 
     private ListPullRequestsFixedSizeCollection(
-        List<ListPullRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9678,7 +9684,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestsFixedSizeCollection createCollection(
-        List<ListPullRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestsPage> pages, int collectionSize) {
       return new ListPullRequestsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9716,9 +9722,10 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestFileDiffsPage> {
 
     private ListPullRequestFileDiffsPage(
-        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+        @Nullable
+            PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
             context,
-        ListPullRequestFileDiffsResponse response) {
+        @Nullable ListPullRequestFileDiffsResponse response) {
       super(context, response);
     }
 
@@ -9728,15 +9735,17 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestFileDiffsPage createPage(
-        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+        @Nullable
+            PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
             context,
-        ListPullRequestFileDiffsResponse response) {
+        @Nullable ListPullRequestFileDiffsResponse response) {
       return new ListPullRequestFileDiffsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPullRequestFileDiffsPage> createPageAsync(
-        PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
+        @Nullable
+            PageContext<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse, FileDiff>
             context,
         ApiFuture<ListPullRequestFileDiffsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -9752,7 +9761,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestFileDiffsFixedSizeCollection> {
 
     private ListPullRequestFileDiffsFixedSizeCollection(
-        List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9762,7 +9771,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestFileDiffsFixedSizeCollection createCollection(
-        List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestFileDiffsPage> pages, int collectionSize) {
       return new ListPullRequestFileDiffsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9793,8 +9802,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
       extends AbstractPage<FetchTreeRequest, FetchTreeResponse, TreeEntry, FetchTreePage> {
 
     private FetchTreePage(
-        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
-        FetchTreeResponse response) {
+        @Nullable PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        @Nullable FetchTreeResponse response) {
       super(context, response);
     }
 
@@ -9804,14 +9813,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected FetchTreePage createPage(
-        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
-        FetchTreeResponse response) {
+        @Nullable PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        @Nullable FetchTreeResponse response) {
       return new FetchTreePage(context, response);
     }
 
     @Override
     public ApiFuture<FetchTreePage> createPageAsync(
-        PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
+        @Nullable PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> context,
         ApiFuture<FetchTreeResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9825,7 +9834,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           FetchTreePage,
           FetchTreeFixedSizeCollection> {
 
-    private FetchTreeFixedSizeCollection(List<FetchTreePage> pages, int collectionSize) {
+    private FetchTreeFixedSizeCollection(@Nullable List<FetchTreePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9835,7 +9844,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected FetchTreeFixedSizeCollection createCollection(
-        List<FetchTreePage> pages, int collectionSize) {
+        @Nullable List<FetchTreePage> pages, int collectionSize) {
       return new FetchTreeFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9866,8 +9875,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
       extends AbstractPage<ListIssuesRequest, ListIssuesResponse, Issue, ListIssuesPage> {
 
     private ListIssuesPage(
-        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
-        ListIssuesResponse response) {
+        @Nullable PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        @Nullable ListIssuesResponse response) {
       super(context, response);
     }
 
@@ -9877,14 +9886,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListIssuesPage createPage(
-        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
-        ListIssuesResponse response) {
+        @Nullable PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        @Nullable ListIssuesResponse response) {
       return new ListIssuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIssuesPage> createPageAsync(
-        PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
+        @Nullable PageContext<ListIssuesRequest, ListIssuesResponse, Issue> context,
         ApiFuture<ListIssuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9898,7 +9907,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListIssuesPage,
           ListIssuesFixedSizeCollection> {
 
-    private ListIssuesFixedSizeCollection(List<ListIssuesPage> pages, int collectionSize) {
+    private ListIssuesFixedSizeCollection(
+        @Nullable List<ListIssuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9908,7 +9918,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListIssuesFixedSizeCollection createCollection(
-        List<ListIssuesPage> pages, int collectionSize) {
+        @Nullable List<ListIssuesPage> pages, int collectionSize) {
       return new ListIssuesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9947,10 +9957,11 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestCommentsPage> {
 
     private ListPullRequestCommentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
             context,
-        ListPullRequestCommentsResponse response) {
+        @Nullable ListPullRequestCommentsResponse response) {
       super(context, response);
     }
 
@@ -9960,16 +9971,18 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestCommentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
             context,
-        ListPullRequestCommentsResponse response) {
+        @Nullable ListPullRequestCommentsResponse response) {
       return new ListPullRequestCommentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPullRequestCommentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPullRequestCommentsRequest, ListPullRequestCommentsResponse, PullRequestComment>
             context,
         ApiFuture<ListPullRequestCommentsResponse> futureResponse) {
@@ -9986,7 +9999,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListPullRequestCommentsFixedSizeCollection> {
 
     private ListPullRequestCommentsFixedSizeCollection(
-        List<ListPullRequestCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestCommentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9996,7 +10009,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListPullRequestCommentsFixedSizeCollection createCollection(
-        List<ListPullRequestCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListPullRequestCommentsPage> pages, int collectionSize) {
       return new ListPullRequestCommentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10033,8 +10046,9 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListIssueCommentsPage> {
 
     private ListIssueCommentsPage(
-        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
-        ListIssueCommentsResponse response) {
+        @Nullable PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment>
+            context,
+        @Nullable ListIssueCommentsResponse response) {
       super(context, response);
     }
 
@@ -10044,14 +10058,16 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListIssueCommentsPage createPage(
-        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
-        ListIssueCommentsResponse response) {
+        @Nullable PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment>
+            context,
+        @Nullable ListIssueCommentsResponse response) {
       return new ListIssueCommentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIssueCommentsPage> createPageAsync(
-        PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment> context,
+        @Nullable PageContext<ListIssueCommentsRequest, ListIssueCommentsResponse, IssueComment>
+            context,
         ApiFuture<ListIssueCommentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10066,7 +10082,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListIssueCommentsFixedSizeCollection> {
 
     private ListIssueCommentsFixedSizeCollection(
-        List<ListIssueCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListIssueCommentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10076,7 +10092,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListIssueCommentsFixedSizeCollection createCollection(
-        List<ListIssueCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListIssueCommentsPage> pages, int collectionSize) {
       return new ListIssueCommentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10110,8 +10126,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -10121,14 +10137,14 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10142,7 +10158,8 @@ public class SecureSourceManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10152,7 +10169,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -50,7 +50,8 @@ class GrpcLongRunningClientTest {
 
   @Test
   void get() {
-    OperationsStub operationsStub = mock(OperationsStub.class);
+    OperationsStub operationsStub =
+        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(operationsStub.getOperationCallable())
         .thenReturn(
             new UnaryCallable<GetOperationRequest, Operation>() {
@@ -73,7 +74,8 @@ class GrpcLongRunningClientTest {
 
   @Test
   void cancel() {
-    OperationsStub operationsStub = mock(OperationsStub.class);
+    OperationsStub operationsStub =
+        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(operationsStub.cancelOperationCallable())
         .thenReturn(
             new UnaryCallable<CancelOperationRequest, Empty>() {
@@ -94,7 +96,8 @@ class GrpcLongRunningClientTest {
 
   @Test
   void delete() {
-    OperationsStub operationsStub = mock(OperationsStub.class);
+    OperationsStub operationsStub =
+        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(operationsStub.deleteOperationCallable())
         .thenReturn(
             new UnaryCallable<DeleteOperationRequest, Empty>() {

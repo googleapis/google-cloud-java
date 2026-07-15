@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -142,7 +143,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SqlTranslationServiceClient implements BackgroundResource {
-  private final SqlTranslationServiceSettings settings;
+  private final @Nullable SqlTranslationServiceSettings settings;
   private final SqlTranslationServiceStub stub;
 
   /** Constructs an instance of SqlTranslationServiceClient with default settings. */
@@ -182,7 +183,7 @@ public class SqlTranslationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SqlTranslationServiceSettings getSettings() {
+  public final @Nullable SqlTranslationServiceSettings getSettings() {
     return settings;
   }
 
@@ -220,7 +221,7 @@ public class SqlTranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateQueryResponse translateQuery(
-      LocationName parent,
+      @Nullable LocationName parent,
       TranslateQueryRequest.SqlTranslationSourceDialect sourceDialect,
       String query) {
     TranslateQueryRequest request =

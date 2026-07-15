@@ -83,6 +83,7 @@ to add `google-cloud-automl` as a dependency in your code.
 
 ## About Cloud Auto ML
 
+
 🔔 **AutoML API Java Client is now available in Vertex AI. Please visit** 
 [java-aiplatform](https://github.com/googleapis/java-aiplatform) **for the new Java Vertex AI client.** 
 Vertex AI is our next generation AI Platform, with many new features that are unavailable in the current platform. 
@@ -158,8 +159,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 

@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -211,7 +212,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MetricsClient implements BackgroundResource {
-  private final MetricsSettings settings;
+  private final @Nullable MetricsSettings settings;
   private final MetricsServiceV2Stub stub;
 
   /** Constructs an instance of MetricsClient with default settings. */
@@ -249,7 +250,7 @@ public class MetricsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetricsSettings getSettings() {
+  public final @Nullable MetricsSettings getSettings() {
     return settings;
   }
 
@@ -281,7 +282,7 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogMetricsPagedResponse listLogMetrics(ProjectName parent) {
+  public final ListLogMetricsPagedResponse listLogMetrics(@Nullable ProjectName parent) {
     ListLogMetricsRequest request =
         ListLogMetricsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -443,7 +444,7 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric getLogMetric(LogMetricName metricName) {
+  public final LogMetric getLogMetric(@Nullable LogMetricName metricName) {
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -560,7 +561,7 @@ public class MetricsClient implements BackgroundResource {
    *     already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric createLogMetric(ProjectName parent, LogMetric metric) {
+  public final LogMetric createLogMetric(@Nullable ProjectName parent, LogMetric metric) {
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -685,7 +686,7 @@ public class MetricsClient implements BackgroundResource {
    * @param metric Required. The updated metric.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric updateLogMetric(LogMetricName metricName, LogMetric metric) {
+  public final LogMetric updateLogMetric(@Nullable LogMetricName metricName, LogMetric metric) {
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -806,7 +807,7 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLogMetric(LogMetricName metricName) {
+  public final void deleteLogMetric(@Nullable LogMetricName metricName) {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder()
             .setMetricName(metricName == null ? null : metricName.toString())
@@ -956,8 +957,8 @@ public class MetricsClient implements BackgroundResource {
           ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage> {
 
     private ListLogMetricsPage(
-        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
-        ListLogMetricsResponse response) {
+        @Nullable PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        @Nullable ListLogMetricsResponse response) {
       super(context, response);
     }
 
@@ -967,14 +968,14 @@ public class MetricsClient implements BackgroundResource {
 
     @Override
     protected ListLogMetricsPage createPage(
-        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
-        ListLogMetricsResponse response) {
+        @Nullable PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        @Nullable ListLogMetricsResponse response) {
       return new ListLogMetricsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLogMetricsPage> createPageAsync(
-        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        @Nullable PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
         ApiFuture<ListLogMetricsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -988,7 +989,8 @@ public class MetricsClient implements BackgroundResource {
           ListLogMetricsPage,
           ListLogMetricsFixedSizeCollection> {
 
-    private ListLogMetricsFixedSizeCollection(List<ListLogMetricsPage> pages, int collectionSize) {
+    private ListLogMetricsFixedSizeCollection(
+        @Nullable List<ListLogMetricsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -998,7 +1000,7 @@ public class MetricsClient implements BackgroundResource {
 
     @Override
     protected ListLogMetricsFixedSizeCollection createCollection(
-        List<ListLogMetricsPage> pages, int collectionSize) {
+        @Nullable List<ListLogMetricsPage> pages, int collectionSize) {
       return new ListLogMetricsFixedSizeCollection(pages, collectionSize);
     }
   }

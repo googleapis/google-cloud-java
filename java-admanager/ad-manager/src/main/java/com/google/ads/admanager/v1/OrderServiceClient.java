@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -151,7 +152,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OrderServiceClient implements BackgroundResource {
-  private final OrderServiceSettings settings;
+  private final @Nullable OrderServiceSettings settings;
   private final OrderServiceStub stub;
 
   /** Constructs an instance of OrderServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class OrderServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OrderServiceSettings getSettings() {
+  public final @Nullable OrderServiceSettings getSettings() {
     return settings;
   }
 
@@ -220,7 +221,7 @@ public class OrderServiceClient implements BackgroundResource {
    *     `networks/{network_code}/orders/{order_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Order getOrder(OrderName name) {
+  public final Order getOrder(@Nullable OrderName name) {
     GetOrderRequest request =
         GetOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOrder(request);
@@ -340,7 +341,7 @@ public class OrderServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOrdersPagedResponse listOrders(NetworkName parent) {
+  public final ListOrdersPagedResponse listOrders(@Nullable NetworkName parent) {
     ListOrdersRequest request =
         ListOrdersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listOrders(request);
@@ -573,8 +574,8 @@ public class OrderServiceClient implements BackgroundResource {
       extends AbstractPage<ListOrdersRequest, ListOrdersResponse, Order, ListOrdersPage> {
 
     private ListOrdersPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       super(context, response);
     }
 
@@ -584,14 +585,14 @@ public class OrderServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrdersPage createPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       return new ListOrdersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrdersPage> createPageAsync(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
         ApiFuture<ListOrdersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -605,7 +606,8 @@ public class OrderServiceClient implements BackgroundResource {
           ListOrdersPage,
           ListOrdersFixedSizeCollection> {
 
-    private ListOrdersFixedSizeCollection(List<ListOrdersPage> pages, int collectionSize) {
+    private ListOrdersFixedSizeCollection(
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -615,7 +617,7 @@ public class OrderServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrdersFixedSizeCollection createCollection(
-        List<ListOrdersPage> pages, int collectionSize) {
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       return new ListOrdersFixedSizeCollection(pages, collectionSize);
     }
   }

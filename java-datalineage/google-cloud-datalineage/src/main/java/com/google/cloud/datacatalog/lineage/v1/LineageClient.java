@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -472,7 +473,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LineageClient implements BackgroundResource {
-  private final LineageSettings settings;
+  private final @Nullable LineageSettings settings;
   private final LineageStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -518,7 +519,7 @@ public class LineageClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final LineageSettings getSettings() {
+  public final @Nullable LineageSettings getSettings() {
     return settings;
   }
 
@@ -671,7 +672,7 @@ public class LineageClient implements BackgroundResource {
    * @param process Required. The process to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Process createProcess(LocationName parent, Process process) {
+  public final Process createProcess(@Nullable LocationName parent, Process process) {
     CreateProcessRequest request =
         CreateProcessRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -881,7 +882,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the process to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Process getProcess(ProcessName name) {
+  public final Process getProcess(@Nullable ProcessName name) {
     GetProcessRequest request =
         GetProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcess(request);
@@ -992,7 +993,7 @@ public class LineageClient implements BackgroundResource {
    *     processes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessesPagedResponse listProcesses(LocationName parent) {
+  public final ListProcessesPagedResponse listProcesses(@Nullable LocationName parent) {
     ListProcessesRequest request =
         ListProcessesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1152,7 +1153,8 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the process to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(ProcessName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(
+      @Nullable ProcessName name) {
     DeleteProcessRequest request =
         DeleteProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProcessAsync(request);
@@ -1295,7 +1297,7 @@ public class LineageClient implements BackgroundResource {
    * @param run Required. The run to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Run createRun(ProcessName parent, Run run) {
+  public final Run createRun(@Nullable ProcessName parent, Run run) {
     CreateRunRequest request =
         CreateRunRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1503,7 +1505,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the run to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Run getRun(RunName name) {
+  public final Run getRun(@Nullable RunName name) {
     GetRunRequest request =
         GetRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRun(request);
@@ -1613,7 +1615,7 @@ public class LineageClient implements BackgroundResource {
    * @param parent Required. The name of process that owns this collection of runs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRunsPagedResponse listRuns(ProcessName parent) {
+  public final ListRunsPagedResponse listRuns(@Nullable ProcessName parent) {
     ListRunsRequest request =
         ListRunsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRuns(request);
@@ -1769,7 +1771,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the run to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRunAsync(RunName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRunAsync(@Nullable RunName name) {
     DeleteRunRequest request =
         DeleteRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRunAsync(request);
@@ -1911,7 +1913,8 @@ public class LineageClient implements BackgroundResource {
    * @param lineageEvent Required. The lineage event to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageEvent createLineageEvent(RunName parent, LineageEvent lineageEvent) {
+  public final LineageEvent createLineageEvent(
+      @Nullable RunName parent, LineageEvent lineageEvent) {
     CreateLineageEventRequest request =
         CreateLineageEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2034,7 +2037,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the lineage event to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageEvent getLineageEvent(LineageEventName name) {
+  public final LineageEvent getLineageEvent(@Nullable LineageEventName name) {
     GetLineageEventRequest request =
         GetLineageEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLineageEvent(request);
@@ -2152,7 +2155,7 @@ public class LineageClient implements BackgroundResource {
    * @param parent Required. The name of the run that owns the collection of lineage events to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLineageEventsPagedResponse listLineageEvents(RunName parent) {
+  public final ListLineageEventsPagedResponse listLineageEvents(@Nullable RunName parent) {
     ListLineageEventsRequest request =
         ListLineageEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2316,7 +2319,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the lineage event to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLineageEvent(LineageEventName name) {
+  public final void deleteLineageEvent(@Nullable LineageEventName name) {
     DeleteLineageEventRequest request =
         DeleteLineageEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2798,8 +2801,8 @@ public class LineageClient implements BackgroundResource {
           ListProcessesRequest, ListProcessesResponse, Process, ListProcessesPage> {
 
     private ListProcessesPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       super(context, response);
     }
 
@@ -2809,14 +2812,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListProcessesPage createPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       return new ListProcessesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessesPage> createPageAsync(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
         ApiFuture<ListProcessesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2830,7 +2833,8 @@ public class LineageClient implements BackgroundResource {
           ListProcessesPage,
           ListProcessesFixedSizeCollection> {
 
-    private ListProcessesFixedSizeCollection(List<ListProcessesPage> pages, int collectionSize) {
+    private ListProcessesFixedSizeCollection(
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2840,7 +2844,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListProcessesFixedSizeCollection createCollection(
-        List<ListProcessesPage> pages, int collectionSize) {
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       return new ListProcessesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2867,7 +2871,8 @@ public class LineageClient implements BackgroundResource {
       extends AbstractPage<ListRunsRequest, ListRunsResponse, Run, ListRunsPage> {
 
     private ListRunsPage(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context, ListRunsResponse response) {
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable ListRunsResponse response) {
       super(context, response);
     }
 
@@ -2877,13 +2882,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListRunsPage createPage(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context, ListRunsResponse response) {
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable ListRunsResponse response) {
       return new ListRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRunsPage> createPageAsync(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
         ApiFuture<ListRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2893,7 +2899,7 @@ public class LineageClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRunsRequest, ListRunsResponse, Run, ListRunsPage, ListRunsFixedSizeCollection> {
 
-    private ListRunsFixedSizeCollection(List<ListRunsPage> pages, int collectionSize) {
+    private ListRunsFixedSizeCollection(@Nullable List<ListRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2903,7 +2909,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListRunsFixedSizeCollection createCollection(
-        List<ListRunsPage> pages, int collectionSize) {
+        @Nullable List<ListRunsPage> pages, int collectionSize) {
       return new ListRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2940,8 +2946,9 @@ public class LineageClient implements BackgroundResource {
           ListLineageEventsPage> {
 
     private ListLineageEventsPage(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
-        ListLineageEventsResponse response) {
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
+        @Nullable ListLineageEventsResponse response) {
       super(context, response);
     }
 
@@ -2951,14 +2958,16 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListLineageEventsPage createPage(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
-        ListLineageEventsResponse response) {
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
+        @Nullable ListLineageEventsResponse response) {
       return new ListLineageEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLineageEventsPage> createPageAsync(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
         ApiFuture<ListLineageEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2973,7 +2982,7 @@ public class LineageClient implements BackgroundResource {
           ListLineageEventsFixedSizeCollection> {
 
     private ListLineageEventsFixedSizeCollection(
-        List<ListLineageEventsPage> pages, int collectionSize) {
+        @Nullable List<ListLineageEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2983,7 +2992,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListLineageEventsFixedSizeCollection createCollection(
-        List<ListLineageEventsPage> pages, int collectionSize) {
+        @Nullable List<ListLineageEventsPage> pages, int collectionSize) {
       return new ListLineageEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3014,8 +3023,8 @@ public class LineageClient implements BackgroundResource {
       extends AbstractPage<SearchLinksRequest, SearchLinksResponse, Link, SearchLinksPage> {
 
     private SearchLinksPage(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
-        SearchLinksResponse response) {
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable SearchLinksResponse response) {
       super(context, response);
     }
 
@@ -3025,14 +3034,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected SearchLinksPage createPage(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
-        SearchLinksResponse response) {
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable SearchLinksResponse response) {
       return new SearchLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchLinksPage> createPageAsync(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
         ApiFuture<SearchLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3046,7 +3055,8 @@ public class LineageClient implements BackgroundResource {
           SearchLinksPage,
           SearchLinksFixedSizeCollection> {
 
-    private SearchLinksFixedSizeCollection(List<SearchLinksPage> pages, int collectionSize) {
+    private SearchLinksFixedSizeCollection(
+        @Nullable List<SearchLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3056,7 +3066,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected SearchLinksFixedSizeCollection createCollection(
-        List<SearchLinksPage> pages, int collectionSize) {
+        @Nullable List<SearchLinksPage> pages, int collectionSize) {
       return new SearchLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3094,9 +3104,11 @@ public class LineageClient implements BackgroundResource {
           BatchSearchLinkProcessesPage> {
 
     private BatchSearchLinkProcessesPage(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
-        BatchSearchLinkProcessesResponse response) {
+        @Nullable BatchSearchLinkProcessesResponse response) {
       super(context, response);
     }
 
@@ -3106,15 +3118,19 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected BatchSearchLinkProcessesPage createPage(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
-        BatchSearchLinkProcessesResponse response) {
+        @Nullable BatchSearchLinkProcessesResponse response) {
       return new BatchSearchLinkProcessesPage(context, response);
     }
 
     @Override
     public ApiFuture<BatchSearchLinkProcessesPage> createPageAsync(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
         ApiFuture<BatchSearchLinkProcessesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3130,7 +3146,7 @@ public class LineageClient implements BackgroundResource {
           BatchSearchLinkProcessesFixedSizeCollection> {
 
     private BatchSearchLinkProcessesFixedSizeCollection(
-        List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
+        @Nullable List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3140,7 +3156,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected BatchSearchLinkProcessesFixedSizeCollection createCollection(
-        List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
+        @Nullable List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
       return new BatchSearchLinkProcessesFixedSizeCollection(pages, collectionSize);
     }
   }

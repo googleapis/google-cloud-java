@@ -44,6 +44,7 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -55,11 +56,12 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class EntityTypesStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 

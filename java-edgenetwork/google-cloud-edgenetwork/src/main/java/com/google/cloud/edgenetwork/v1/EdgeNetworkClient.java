@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -670,7 +671,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EdgeNetworkClient implements BackgroundResource {
-  private final EdgeNetworkSettings settings;
+  private final @Nullable EdgeNetworkSettings settings;
   private final EdgeNetworkStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -717,7 +718,7 @@ public class EdgeNetworkClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EdgeNetworkSettings getSettings() {
+  public final @Nullable EdgeNetworkSettings getSettings() {
     return settings;
   }
 
@@ -763,7 +764,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. The name of the zone resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InitializeZoneResponse initializeZone(ZoneName name) {
+  public final InitializeZoneResponse initializeZone(@Nullable ZoneName name) {
     InitializeZoneRequest request =
         InitializeZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return initializeZone(request);
@@ -877,7 +878,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListZonesPagedResponse listZones(LocationName parent) {
+  public final ListZonesPagedResponse listZones(@Nullable LocationName parent) {
     ListZonesRequest request =
         ListZonesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listZones(request);
@@ -1051,7 +1052,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Zone getZone(ZoneName name) {
+  public final Zone getZone(@Nullable ZoneName name) {
     GetZoneRequest request =
         GetZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getZone(request);
@@ -1168,7 +1169,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param parent Required. Parent value for ListNetworksRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworksPagedResponse listNetworks(ZoneName parent) {
+  public final ListNetworksPagedResponse listNetworks(@Nullable ZoneName parent) {
     ListNetworksRequest request =
         ListNetworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1333,7 +1334,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Network getNetwork(NetworkName name) {
+  public final Network getNetwork(@Nullable NetworkName name) {
     GetNetworkRequest request =
         GetNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNetwork(request);
@@ -1441,7 +1442,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. The name of the network resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiagnoseNetworkResponse diagnoseNetwork(NetworkName name) {
+  public final DiagnoseNetworkResponse diagnoseNetwork(@Nullable NetworkName name) {
     DiagnoseNetworkRequest request =
         DiagnoseNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return diagnoseNetwork(request);
@@ -1557,7 +1558,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Network, OperationMetadata> createNetworkAsync(
-      ZoneName parent, Network network, String networkId) {
+      @Nullable ZoneName parent, Network network, String networkId) {
     CreateNetworkRequest request =
         CreateNetworkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1719,7 +1720,8 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteNetworkAsync(NetworkName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteNetworkAsync(
+      @Nullable NetworkName name) {
     DeleteNetworkRequest request =
         DeleteNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteNetworkAsync(request);
@@ -1862,7 +1864,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param parent Required. Parent value for ListSubnetsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubnetsPagedResponse listSubnets(ZoneName parent) {
+  public final ListSubnetsPagedResponse listSubnets(@Nullable ZoneName parent) {
     ListSubnetsRequest request =
         ListSubnetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2027,7 +2029,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Subnet getSubnet(SubnetName name) {
+  public final Subnet getSubnet(@Nullable SubnetName name) {
     GetSubnetRequest request =
         GetSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSubnet(request);
@@ -2141,7 +2143,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Subnet, OperationMetadata> createSubnetAsync(
-      ZoneName parent, Subnet subnet, String subnetId) {
+      @Nullable ZoneName parent, Subnet subnet, String subnetId) {
     CreateSubnetRequest request =
         CreateSubnetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2427,7 +2429,8 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSubnetAsync(SubnetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSubnetAsync(
+      @Nullable SubnetName name) {
     DeleteSubnetRequest request =
         DeleteSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSubnetAsync(request);
@@ -2570,7 +2573,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInterconnectsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInterconnectsPagedResponse listInterconnects(ZoneName parent) {
+  public final ListInterconnectsPagedResponse listInterconnects(@Nullable ZoneName parent) {
     ListInterconnectsRequest request =
         ListInterconnectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2740,7 +2743,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Interconnect getInterconnect(InterconnectName name) {
+  public final Interconnect getInterconnect(@Nullable InterconnectName name) {
     GetInterconnectRequest request =
         GetInterconnectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInterconnect(request);
@@ -2855,7 +2858,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. The name of the interconnect resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiagnoseInterconnectResponse diagnoseInterconnect(InterconnectName name) {
+  public final DiagnoseInterconnectResponse diagnoseInterconnect(@Nullable InterconnectName name) {
     DiagnoseInterconnectRequest request =
         DiagnoseInterconnectRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2978,7 +2981,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInterconnectAttachmentsPagedResponse listInterconnectAttachments(
-      ZoneName parent) {
+      @Nullable ZoneName parent) {
     ListInterconnectAttachmentsRequest request =
         ListInterconnectAttachmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3154,7 +3157,8 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InterconnectAttachment getInterconnectAttachment(InterconnectAttachmentName name) {
+  public final InterconnectAttachment getInterconnectAttachment(
+      @Nullable InterconnectAttachmentName name) {
     GetInterconnectAttachmentRequest request =
         GetInterconnectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3289,7 +3293,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    */
   public final OperationFuture<InterconnectAttachment, OperationMetadata>
       createInterconnectAttachmentAsync(
-          ZoneName parent,
+          @Nullable ZoneName parent,
           InterconnectAttachment interconnectAttachment,
           String interconnectAttachmentId) {
     CreateInterconnectAttachmentRequest request =
@@ -3468,7 +3472,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInterconnectAttachmentAsync(
-      InterconnectAttachmentName name) {
+      @Nullable InterconnectAttachmentName name) {
     DeleteInterconnectAttachmentRequest request =
         DeleteInterconnectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3629,7 +3633,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param parent Required. Parent value for ListRoutersRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRoutersPagedResponse listRouters(ZoneName parent) {
+  public final ListRoutersPagedResponse listRouters(@Nullable ZoneName parent) {
     ListRoutersRequest request =
         ListRoutersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3794,7 +3798,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Router getRouter(RouterName name) {
+  public final Router getRouter(@Nullable RouterName name) {
     GetRouterRequest request =
         GetRouterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRouter(request);
@@ -3902,7 +3906,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. The name of the router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiagnoseRouterResponse diagnoseRouter(RouterName name) {
+  public final DiagnoseRouterResponse diagnoseRouter(@Nullable RouterName name) {
     DiagnoseRouterRequest request =
         DiagnoseRouterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return diagnoseRouter(request);
@@ -4018,7 +4022,7 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Router, OperationMetadata> createRouterAsync(
-      ZoneName parent, Router router, String routerId) {
+      @Nullable ZoneName parent, Router router, String routerId) {
     CreateRouterRequest request =
         CreateRouterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4304,7 +4308,8 @@ public class EdgeNetworkClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRouterAsync(RouterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRouterAsync(
+      @Nullable RouterName name) {
     DeleteRouterRequest request =
         DeleteRouterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRouterAsync(request);
@@ -4631,8 +4636,8 @@ public class EdgeNetworkClient implements BackgroundResource {
       extends AbstractPage<ListZonesRequest, ListZonesResponse, Zone, ListZonesPage> {
 
     private ListZonesPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       super(context, response);
     }
 
@@ -4642,14 +4647,14 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListZonesPage createPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       return new ListZonesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListZonesPage> createPageAsync(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
         ApiFuture<ListZonesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4659,7 +4664,7 @@ public class EdgeNetworkClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListZonesRequest, ListZonesResponse, Zone, ListZonesPage, ListZonesFixedSizeCollection> {
 
-    private ListZonesFixedSizeCollection(List<ListZonesPage> pages, int collectionSize) {
+    private ListZonesFixedSizeCollection(@Nullable List<ListZonesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4669,7 +4674,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListZonesFixedSizeCollection createCollection(
-        List<ListZonesPage> pages, int collectionSize) {
+        @Nullable List<ListZonesPage> pages, int collectionSize) {
       return new ListZonesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4702,8 +4707,8 @@ public class EdgeNetworkClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, ListNetworksResponse, Network, ListNetworksPage> {
 
     private ListNetworksPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       super(context, response);
     }
 
@@ -4713,14 +4718,14 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListNetworksPage createPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       return new ListNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworksPage> createPageAsync(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
         ApiFuture<ListNetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4734,7 +4739,8 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListNetworksPage,
           ListNetworksFixedSizeCollection> {
 
-    private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
+    private ListNetworksFixedSizeCollection(
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4744,7 +4750,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListNetworksFixedSizeCollection createCollection(
-        List<ListNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4775,8 +4781,8 @@ public class EdgeNetworkClient implements BackgroundResource {
       extends AbstractPage<ListSubnetsRequest, ListSubnetsResponse, Subnet, ListSubnetsPage> {
 
     private ListSubnetsPage(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
-        ListSubnetsResponse response) {
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable ListSubnetsResponse response) {
       super(context, response);
     }
 
@@ -4786,14 +4792,14 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListSubnetsPage createPage(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
-        ListSubnetsResponse response) {
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable ListSubnetsResponse response) {
       return new ListSubnetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubnetsPage> createPageAsync(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
         ApiFuture<ListSubnetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4807,7 +4813,8 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListSubnetsPage,
           ListSubnetsFixedSizeCollection> {
 
-    private ListSubnetsFixedSizeCollection(List<ListSubnetsPage> pages, int collectionSize) {
+    private ListSubnetsFixedSizeCollection(
+        @Nullable List<ListSubnetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4817,7 +4824,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListSubnetsFixedSizeCollection createCollection(
-        List<ListSubnetsPage> pages, int collectionSize) {
+        @Nullable List<ListSubnetsPage> pages, int collectionSize) {
       return new ListSubnetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4854,8 +4861,9 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListInterconnectsPage> {
 
     private ListInterconnectsPage(
-        PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect> context,
-        ListInterconnectsResponse response) {
+        @Nullable PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect>
+            context,
+        @Nullable ListInterconnectsResponse response) {
       super(context, response);
     }
 
@@ -4865,14 +4873,16 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListInterconnectsPage createPage(
-        PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect> context,
-        ListInterconnectsResponse response) {
+        @Nullable PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect>
+            context,
+        @Nullable ListInterconnectsResponse response) {
       return new ListInterconnectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterconnectsPage> createPageAsync(
-        PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect> context,
+        @Nullable PageContext<ListInterconnectsRequest, ListInterconnectsResponse, Interconnect>
+            context,
         ApiFuture<ListInterconnectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4887,7 +4897,7 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListInterconnectsFixedSizeCollection> {
 
     private ListInterconnectsFixedSizeCollection(
-        List<ListInterconnectsPage> pages, int collectionSize) {
+        @Nullable List<ListInterconnectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4897,7 +4907,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListInterconnectsFixedSizeCollection createCollection(
-        List<ListInterconnectsPage> pages, int collectionSize) {
+        @Nullable List<ListInterconnectsPage> pages, int collectionSize) {
       return new ListInterconnectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4939,12 +4949,13 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListInterconnectAttachmentsPage> {
 
     private ListInterconnectAttachmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectAttachmentsRequest,
                 ListInterconnectAttachmentsResponse,
                 InterconnectAttachment>
             context,
-        ListInterconnectAttachmentsResponse response) {
+        @Nullable ListInterconnectAttachmentsResponse response) {
       super(context, response);
     }
 
@@ -4954,18 +4965,20 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListInterconnectAttachmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectAttachmentsRequest,
                 ListInterconnectAttachmentsResponse,
                 InterconnectAttachment>
             context,
-        ListInterconnectAttachmentsResponse response) {
+        @Nullable ListInterconnectAttachmentsResponse response) {
       return new ListInterconnectAttachmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterconnectAttachmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectAttachmentsRequest,
                 ListInterconnectAttachmentsResponse,
                 InterconnectAttachment>
@@ -4984,7 +4997,7 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListInterconnectAttachmentsFixedSizeCollection> {
 
     private ListInterconnectAttachmentsFixedSizeCollection(
-        List<ListInterconnectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListInterconnectAttachmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4994,7 +5007,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListInterconnectAttachmentsFixedSizeCollection createCollection(
-        List<ListInterconnectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListInterconnectAttachmentsPage> pages, int collectionSize) {
       return new ListInterconnectAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5025,8 +5038,8 @@ public class EdgeNetworkClient implements BackgroundResource {
       extends AbstractPage<ListRoutersRequest, ListRoutersResponse, Router, ListRoutersPage> {
 
     private ListRoutersPage(
-        PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
-        ListRoutersResponse response) {
+        @Nullable PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
+        @Nullable ListRoutersResponse response) {
       super(context, response);
     }
 
@@ -5036,14 +5049,14 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListRoutersPage createPage(
-        PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
-        ListRoutersResponse response) {
+        @Nullable PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
+        @Nullable ListRoutersResponse response) {
       return new ListRoutersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRoutersPage> createPageAsync(
-        PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
+        @Nullable PageContext<ListRoutersRequest, ListRoutersResponse, Router> context,
         ApiFuture<ListRoutersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5057,7 +5070,8 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListRoutersPage,
           ListRoutersFixedSizeCollection> {
 
-    private ListRoutersFixedSizeCollection(List<ListRoutersPage> pages, int collectionSize) {
+    private ListRoutersFixedSizeCollection(
+        @Nullable List<ListRoutersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5067,7 +5081,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListRoutersFixedSizeCollection createCollection(
-        List<ListRoutersPage> pages, int collectionSize) {
+        @Nullable List<ListRoutersPage> pages, int collectionSize) {
       return new ListRoutersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5101,8 +5115,8 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5112,14 +5126,14 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5133,7 +5147,8 @@ public class EdgeNetworkClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5143,7 +5158,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

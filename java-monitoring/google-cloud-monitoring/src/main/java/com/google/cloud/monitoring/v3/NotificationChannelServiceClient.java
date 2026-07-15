@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -337,7 +338,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NotificationChannelServiceClient implements BackgroundResource {
-  private final NotificationChannelServiceSettings settings;
+  private final @Nullable NotificationChannelServiceSettings settings;
   private final NotificationChannelServiceStub stub;
 
   /** Constructs an instance of NotificationChannelServiceClient with default settings. */
@@ -379,7 +380,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NotificationChannelServiceSettings getSettings() {
+  public final @Nullable NotificationChannelServiceSettings getSettings() {
     return settings;
   }
 
@@ -421,7 +422,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationChannelDescriptorsPagedResponse listNotificationChannelDescriptors(
-      ResourceName name) {
+      @Nullable ResourceName name) {
     ListNotificationChannelDescriptorsRequest request =
         ListNotificationChannelDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -463,7 +464,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationChannelDescriptorsPagedResponse listNotificationChannelDescriptors(
-      OrganizationName name) {
+      @Nullable OrganizationName name) {
     ListNotificationChannelDescriptorsRequest request =
         ListNotificationChannelDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -505,7 +506,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationChannelDescriptorsPagedResponse listNotificationChannelDescriptors(
-      ProjectName name) {
+      @Nullable ProjectName name) {
     ListNotificationChannelDescriptorsRequest request =
         ListNotificationChannelDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -703,7 +704,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannelDescriptor getNotificationChannelDescriptor(
-      NotificationChannelDescriptorName name) {
+      @Nullable NotificationChannelDescriptorName name) {
     GetNotificationChannelDescriptorRequest request =
         GetNotificationChannelDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -848,7 +849,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationChannelsPagedResponse listNotificationChannels(ResourceName name) {
+  public final ListNotificationChannelsPagedResponse listNotificationChannels(
+      @Nullable ResourceName name) {
     ListNotificationChannelsRequest request =
         ListNotificationChannelsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -889,7 +891,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationChannelsPagedResponse listNotificationChannels(
-      OrganizationName name) {
+      @Nullable OrganizationName name) {
     ListNotificationChannelsRequest request =
         ListNotificationChannelsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -929,7 +931,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationChannelsPagedResponse listNotificationChannels(ProjectName name) {
+  public final ListNotificationChannelsPagedResponse listNotificationChannels(
+      @Nullable ProjectName name) {
     ListNotificationChannelsRequest request =
         ListNotificationChannelsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1124,7 +1127,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NotificationChannel getNotificationChannel(NotificationChannelName name) {
+  public final NotificationChannel getNotificationChannel(@Nullable NotificationChannelName name) {
     GetNotificationChannelRequest request =
         GetNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1276,7 +1279,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
-      ResourceName name, NotificationChannel notificationChannel) {
+      @Nullable ResourceName name, NotificationChannel notificationChannel) {
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1322,7 +1325,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
-      OrganizationName name, NotificationChannel notificationChannel) {
+      @Nullable OrganizationName name, NotificationChannel notificationChannel) {
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1368,7 +1371,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
-      ProjectName name, NotificationChannel notificationChannel) {
+      @Nullable ProjectName name, NotificationChannel notificationChannel) {
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1642,7 +1645,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     will fail if the notification channel is referenced by existing alerting policies.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNotificationChannel(NotificationChannelName name, boolean force) {
+  public final void deleteNotificationChannel(
+      @Nullable NotificationChannelName name, boolean force) {
     DeleteNotificationChannelRequest request =
         DeleteNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1791,7 +1795,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @param name Required. The notification channel to which to send a verification code.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void sendNotificationChannelVerificationCode(NotificationChannelName name) {
+  public final void sendNotificationChannelVerificationCode(
+      @Nullable NotificationChannelName name) {
     SendNotificationChannelVerificationCodeRequest request =
         SendNotificationChannelVerificationCodeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1944,7 +1949,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GetNotificationChannelVerificationCodeResponse
-      getNotificationChannelVerificationCode(NotificationChannelName name) {
+      getNotificationChannelVerificationCode(@Nullable NotificationChannelName name) {
     GetNotificationChannelVerificationCodeRequest request =
         GetNotificationChannelVerificationCodeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2140,7 +2145,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel verifyNotificationChannel(
-      NotificationChannelName name, String code) {
+      @Nullable NotificationChannelName name, String code) {
     VerifyNotificationChannelRequest request =
         VerifyNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2328,12 +2333,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
           ListNotificationChannelDescriptorsPage> {
 
     private ListNotificationChannelDescriptorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelDescriptorsRequest,
                 ListNotificationChannelDescriptorsResponse,
                 NotificationChannelDescriptor>
             context,
-        ListNotificationChannelDescriptorsResponse response) {
+        @Nullable ListNotificationChannelDescriptorsResponse response) {
       super(context, response);
     }
 
@@ -2343,18 +2349,20 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationChannelDescriptorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelDescriptorsRequest,
                 ListNotificationChannelDescriptorsResponse,
                 NotificationChannelDescriptor>
             context,
-        ListNotificationChannelDescriptorsResponse response) {
+        @Nullable ListNotificationChannelDescriptorsResponse response) {
       return new ListNotificationChannelDescriptorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationChannelDescriptorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelDescriptorsRequest,
                 ListNotificationChannelDescriptorsResponse,
                 NotificationChannelDescriptor>
@@ -2373,7 +2381,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
           ListNotificationChannelDescriptorsFixedSizeCollection> {
 
     private ListNotificationChannelDescriptorsFixedSizeCollection(
-        List<ListNotificationChannelDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationChannelDescriptorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2383,7 +2391,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationChannelDescriptorsFixedSizeCollection createCollection(
-        List<ListNotificationChannelDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationChannelDescriptorsPage> pages, int collectionSize) {
       return new ListNotificationChannelDescriptorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2424,12 +2432,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
           ListNotificationChannelsPage> {
 
     private ListNotificationChannelsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelsRequest,
                 ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
-        ListNotificationChannelsResponse response) {
+        @Nullable ListNotificationChannelsResponse response) {
       super(context, response);
     }
 
@@ -2439,18 +2448,20 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationChannelsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelsRequest,
                 ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
-        ListNotificationChannelsResponse response) {
+        @Nullable ListNotificationChannelsResponse response) {
       return new ListNotificationChannelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationChannelsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationChannelsRequest,
                 ListNotificationChannelsResponse,
                 NotificationChannel>
@@ -2469,7 +2480,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
           ListNotificationChannelsFixedSizeCollection> {
 
     private ListNotificationChannelsFixedSizeCollection(
-        List<ListNotificationChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationChannelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2479,7 +2490,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationChannelsFixedSizeCollection createCollection(
-        List<ListNotificationChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationChannelsPage> pages, int collectionSize) {
       return new ListNotificationChannelsFixedSizeCollection(pages, collectionSize);
     }
   }

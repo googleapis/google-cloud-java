@@ -2368,6 +2368,259 @@ public class ChatServiceClientTest {
   }
 
   @Test
+  public void getAvailabilityTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    AvailabilityName name = AvailabilityName.of("[USER]");
+
+    Availability actualResponse = client.getAvailability(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAvailabilityRequest actualRequest = ((GetAvailabilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAvailabilityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      AvailabilityName name = AvailabilityName.of("[USER]");
+      client.getAvailability(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAvailabilityTest2() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Availability actualResponse = client.getAvailability(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAvailabilityRequest actualRequest = ((GetAvailabilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAvailabilityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAvailability(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsActiveTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    MarkAsActiveRequest request =
+        MarkAsActiveRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+
+    Availability actualResponse = client.markAsActive(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MarkAsActiveRequest actualRequest = ((MarkAsActiveRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getExpireTime(), actualRequest.getExpireTime());
+    Assert.assertEquals(request.getTtl(), actualRequest.getTtl());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void markAsActiveExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      MarkAsActiveRequest request =
+          MarkAsActiveRequest.newBuilder()
+              .setName(AvailabilityName.of("[USER]").toString())
+              .build();
+      client.markAsActive(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsAwayTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    MarkAsAwayRequest request =
+        MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+
+    Availability actualResponse = client.markAsAway(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MarkAsAwayRequest actualRequest = ((MarkAsAwayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void markAsAwayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      MarkAsAwayRequest request =
+          MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+      client.markAsAway(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markAsDoNotDisturbTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    MarkAsDoNotDisturbRequest request =
+        MarkAsDoNotDisturbRequest.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .build();
+
+    Availability actualResponse = client.markAsDoNotDisturb(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MarkAsDoNotDisturbRequest actualRequest = ((MarkAsDoNotDisturbRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getExpireTime(), actualRequest.getExpireTime());
+    Assert.assertEquals(request.getTtl(), actualRequest.getTtl());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void markAsDoNotDisturbExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      MarkAsDoNotDisturbRequest request =
+          MarkAsDoNotDisturbRequest.newBuilder()
+              .setName(AvailabilityName.of("[USER]").toString())
+              .build();
+      client.markAsDoNotDisturb(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAvailabilityTest() throws Exception {
+    Availability expectedResponse =
+        Availability.newBuilder()
+            .setName(AvailabilityName.of("[USER]").toString())
+            .setCustomStatus(CustomStatus.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    Availability availability = Availability.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Availability actualResponse = client.updateAvailability(availability, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAvailabilityRequest actualRequest = ((UpdateAvailabilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(availability, actualRequest.getAvailability());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAvailabilityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      Availability availability = Availability.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAvailability(availability, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getSpaceEventTest() throws Exception {
     SpaceEvent expectedResponse =
         SpaceEvent.newBuilder()

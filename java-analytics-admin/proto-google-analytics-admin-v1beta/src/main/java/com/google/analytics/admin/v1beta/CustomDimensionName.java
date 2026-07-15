@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -77,7 +78,7 @@ public class CustomDimensionName implements ResourceName {
         .toString();
   }
 
-  public static CustomDimensionName parse(String formattedString) {
+  public static @Nullable CustomDimensionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -95,7 +96,7 @@ public class CustomDimensionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CustomDimensionName> values) {
+  public static List<String> toStringList(List<@Nullable CustomDimensionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CustomDimensionName value : values) {
       if (value == null) {
@@ -141,7 +142,7 @@ public class CustomDimensionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

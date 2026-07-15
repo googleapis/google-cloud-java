@@ -45,6 +45,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -292,7 +293,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VertexRagServiceClient implements BackgroundResource {
-  private final VertexRagServiceSettings settings;
+  private final @Nullable VertexRagServiceSettings settings;
   private final VertexRagServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -335,7 +336,7 @@ public class VertexRagServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final VertexRagServiceSettings getSettings() {
+  public final @Nullable VertexRagServiceSettings getSettings() {
     return settings;
   }
 
@@ -376,7 +377,8 @@ public class VertexRagServiceClient implements BackgroundResource {
    * @param query Required. Single RAG retrieve query.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RetrieveContextsResponse retrieveContexts(LocationName parent, RagQuery query) {
+  public final RetrieveContextsResponse retrieveContexts(
+      @Nullable LocationName parent, RagQuery query) {
     RetrieveContextsRequest request =
         RetrieveContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -505,7 +507,9 @@ public class VertexRagServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AugmentPromptResponse augmentPrompt(
-      LocationName parent, AugmentPromptRequest.Model model, VertexRagStore vertexRagStore) {
+      @Nullable LocationName parent,
+      AugmentPromptRequest.Model model,
+      VertexRagStore vertexRagStore) {
     AugmentPromptRequest request =
         AugmentPromptRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -648,7 +652,7 @@ public class VertexRagServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CorroborateContentResponse corroborateContent(
-      LocationName parent, Content content, List<Fact> facts) {
+      @Nullable LocationName parent, Content content, List<Fact> facts) {
     CorroborateContentRequest request =
         CorroborateContentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -789,7 +793,7 @@ public class VertexRagServiceClient implements BackgroundResource {
    * @param query Required. Single RAG retrieve query.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AskContextsResponse askContexts(LocationName parent, RagQuery query) {
+  public final AskContextsResponse askContexts(@Nullable LocationName parent, RagQuery query) {
     AskContextsRequest request =
         AskContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -917,7 +921,7 @@ public class VertexRagServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           AsyncRetrieveContextsResponse, AsyncRetrieveContextsOperationMetadata>
-      asyncRetrieveContextsAsync(LocationName parent, RagQuery query) {
+      asyncRetrieveContextsAsync(@Nullable LocationName parent, RagQuery query) {
     AsyncRetrieveContextsRequest request =
         AsyncRetrieveContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1483,8 +1487,8 @@ public class VertexRagServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1494,14 +1498,14 @@ public class VertexRagServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1515,7 +1519,8 @@ public class VertexRagServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1525,7 +1530,7 @@ public class VertexRagServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
