@@ -875,6 +875,7 @@ public class InstancesClientTest {
             .setLastStartTimestamp("lastStartTimestamp1011643146")
             .setLastStopTimestamp("lastStopTimestamp-251714498")
             .setLastSuspendedTimestamp("lastSuspendedTimestamp1116944049")
+            .setLocalSsdEncryptionMode("localSsdEncryptionMode-1139426625")
             .setMachineType("machineType-218117087")
             .setMetadata(Metadata.newBuilder().build())
             .setMinCpuPlatform("minCpuPlatform1549557897")

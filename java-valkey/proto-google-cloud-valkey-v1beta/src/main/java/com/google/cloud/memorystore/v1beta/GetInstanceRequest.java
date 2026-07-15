@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1beta;
  *
  *
  * <pre>
- * Request message for [GetInstance][].
+ * Request message for `GetInstance`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1beta.GetInstanceRequest}
@@ -294,7 +294,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [GetInstance][].
+   * Request message for `GetInstance`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1beta.GetInstanceRequest}

@@ -747,6 +747,34 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
+   * The number of NAT IP addresses to be allocated per connected endpoint.
+   * If not specified, the default value is 1.
+   * </pre>
+   *
+   * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+   *
+   * @return Whether the natIpsPerEndpoint field is set.
+   */
+  boolean hasNatIpsPerEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of NAT IP addresses to be allocated per connected endpoint.
+   * If not specified, the default value is 1.
+   * </pre>
+   *
+   * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+   *
+   * @return The natIpsPerEndpoint.
+   */
+  int getNatIpsPerEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
    * An array of URLs where each entry is the URL of a subnet provided
    * by the service producer to use for NAT in this service attachment.
    * </pre>

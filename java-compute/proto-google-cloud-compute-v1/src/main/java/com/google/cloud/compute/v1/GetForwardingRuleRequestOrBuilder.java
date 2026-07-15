@@ -103,4 +103,46 @@ public interface GetForwardingRuleRequestOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return Whether the view field is set.
+   */
+  boolean hasView();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The view.
+   */
+  java.lang.String getView();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The bytes for view.
+   */
+  com.google.protobuf.ByteString getViewBytes();
 }
