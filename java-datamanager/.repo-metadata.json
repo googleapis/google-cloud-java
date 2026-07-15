@@ -9,7 +9,7 @@
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-datamanager",
-  "distribution_name": "com.google.api-ads:data-manager",
+  "distribution_name": "com.google.api-ad:data-manager",
   "api_id": "datamanager.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,

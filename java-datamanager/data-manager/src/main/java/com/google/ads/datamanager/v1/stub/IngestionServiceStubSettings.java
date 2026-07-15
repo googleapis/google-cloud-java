@@ -273,7 +273,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   @Override
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
-        .setArtifactName("com.google.api-ads:data-manager")
+        .setArtifactName("com.google.api-ad:data-manager")
         .setRepository("googleapis/google-cloud-java")
         .setVersion(Version.VERSION)
         .build();

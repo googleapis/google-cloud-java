@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Storage",
   "product_documentation": "https://cloud.google.com/storage",
   "api_description": "is a durable and highly available object storage service. Google Cloud Storage is almost infinitely scalable and guarantees consistency: when a write succeeds, the latest copy of the object will be returned to any GET, globally.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/overview",
   "release_level": "stable",
   "transport": "rest",
   "language": "java",
