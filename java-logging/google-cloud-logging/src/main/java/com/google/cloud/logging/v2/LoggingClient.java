@@ -54,6 +54,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -232,7 +233,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LoggingClient implements BackgroundResource {
-  private final LoggingSettings settings;
+  private final @Nullable LoggingSettings settings;
   private final LoggingServiceV2Stub stub;
 
   /** Constructs an instance of LoggingClient with default settings. */
@@ -270,7 +271,7 @@ public class LoggingClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LoggingSettings getSettings() {
+  public final @Nullable LoggingSettings getSettings() {
     return settings;
   }
 
@@ -311,7 +312,7 @@ public class LoggingClient implements BackgroundResource {
    *     <p>For more information about log names, see [LogEntry][google.logging.v2.LogEntry].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLog(LogName logName) {
+  public final void deleteLog(@Nullable LogName logName) {
     DeleteLogRequest request =
         DeleteLogRequest.newBuilder()
             .setLogName(logName == null ? null : logName.toString())
@@ -488,7 +489,7 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
-      LogName logName,
+      @Nullable LogName logName,
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
@@ -975,7 +976,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(BillingAccountName parent) {
+  public final ListLogsPagedResponse listLogs(@Nullable BillingAccountName parent) {
     ListLogsRequest request =
         ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
@@ -1012,7 +1013,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(FolderName parent) {
+  public final ListLogsPagedResponse listLogs(@Nullable FolderName parent) {
     ListLogsRequest request =
         ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
@@ -1049,7 +1050,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(OrganizationName parent) {
+  public final ListLogsPagedResponse listLogs(@Nullable OrganizationName parent) {
     ListLogsRequest request =
         ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
@@ -1086,7 +1087,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(ProjectName parent) {
+  public final ListLogsPagedResponse listLogs(@Nullable ProjectName parent) {
     ListLogsRequest request =
         ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
@@ -1328,8 +1329,8 @@ public class LoggingClient implements BackgroundResource {
           ListLogEntriesRequest, ListLogEntriesResponse, LogEntry, ListLogEntriesPage> {
 
     private ListLogEntriesPage(
-        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
-        ListLogEntriesResponse response) {
+        @Nullable PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        @Nullable ListLogEntriesResponse response) {
       super(context, response);
     }
 
@@ -1339,14 +1340,14 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListLogEntriesPage createPage(
-        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
-        ListLogEntriesResponse response) {
+        @Nullable PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        @Nullable ListLogEntriesResponse response) {
       return new ListLogEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLogEntriesPage> createPageAsync(
-        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        @Nullable PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
         ApiFuture<ListLogEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1360,7 +1361,8 @@ public class LoggingClient implements BackgroundResource {
           ListLogEntriesPage,
           ListLogEntriesFixedSizeCollection> {
 
-    private ListLogEntriesFixedSizeCollection(List<ListLogEntriesPage> pages, int collectionSize) {
+    private ListLogEntriesFixedSizeCollection(
+        @Nullable List<ListLogEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1370,7 +1372,7 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListLogEntriesFixedSizeCollection createCollection(
-        List<ListLogEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListLogEntriesPage> pages, int collectionSize) {
       return new ListLogEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1413,12 +1415,13 @@ public class LoggingClient implements BackgroundResource {
           ListMonitoredResourceDescriptorsPage> {
 
     private ListMonitoredResourceDescriptorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
             context,
-        ListMonitoredResourceDescriptorsResponse response) {
+        @Nullable ListMonitoredResourceDescriptorsResponse response) {
       super(context, response);
     }
 
@@ -1428,18 +1431,20 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListMonitoredResourceDescriptorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
             context,
-        ListMonitoredResourceDescriptorsResponse response) {
+        @Nullable ListMonitoredResourceDescriptorsResponse response) {
       return new ListMonitoredResourceDescriptorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
@@ -1458,7 +1463,7 @@ public class LoggingClient implements BackgroundResource {
           ListMonitoredResourceDescriptorsFixedSizeCollection> {
 
     private ListMonitoredResourceDescriptorsFixedSizeCollection(
-        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1468,7 +1473,7 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListMonitoredResourceDescriptorsFixedSizeCollection createCollection(
-        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
       return new ListMonitoredResourceDescriptorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1495,7 +1500,8 @@ public class LoggingClient implements BackgroundResource {
       extends AbstractPage<ListLogsRequest, ListLogsResponse, String, ListLogsPage> {
 
     private ListLogsPage(
-        PageContext<ListLogsRequest, ListLogsResponse, String> context, ListLogsResponse response) {
+        @Nullable PageContext<ListLogsRequest, ListLogsResponse, String> context,
+        @Nullable ListLogsResponse response) {
       super(context, response);
     }
 
@@ -1505,13 +1511,14 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListLogsPage createPage(
-        PageContext<ListLogsRequest, ListLogsResponse, String> context, ListLogsResponse response) {
+        @Nullable PageContext<ListLogsRequest, ListLogsResponse, String> context,
+        @Nullable ListLogsResponse response) {
       return new ListLogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLogsPage> createPageAsync(
-        PageContext<ListLogsRequest, ListLogsResponse, String> context,
+        @Nullable PageContext<ListLogsRequest, ListLogsResponse, String> context,
         ApiFuture<ListLogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1521,7 +1528,7 @@ public class LoggingClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListLogsRequest, ListLogsResponse, String, ListLogsPage, ListLogsFixedSizeCollection> {
 
-    private ListLogsFixedSizeCollection(List<ListLogsPage> pages, int collectionSize) {
+    private ListLogsFixedSizeCollection(@Nullable List<ListLogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1531,7 +1538,7 @@ public class LoggingClient implements BackgroundResource {
 
     @Override
     protected ListLogsFixedSizeCollection createCollection(
-        List<ListLogsPage> pages, int collectionSize) {
+        @Nullable List<ListLogsPage> pages, int collectionSize) {
       return new ListLogsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -315,7 +316,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversationProfilesClient implements BackgroundResource {
-  private final ConversationProfilesSettings settings;
+  private final @Nullable ConversationProfilesSettings settings;
   private final ConversationProfilesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -363,7 +364,7 @@ public class ConversationProfilesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConversationProfilesSettings getSettings() {
+  public final @Nullable ConversationProfilesSettings getSettings() {
     return settings;
   }
 
@@ -414,7 +415,8 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationProfilesPagedResponse listConversationProfiles(LocationName parent) {
+  public final ListConversationProfilesPagedResponse listConversationProfiles(
+      @Nullable LocationName parent) {
     ListConversationProfilesRequest request =
         ListConversationProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -448,7 +450,8 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationProfilesPagedResponse listConversationProfiles(ProjectName parent) {
+  public final ListConversationProfilesPagedResponse listConversationProfiles(
+      @Nullable ProjectName parent) {
     ListConversationProfilesRequest request =
         ListConversationProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -624,7 +627,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConversationProfile getConversationProfile(ConversationProfileName name) {
+  public final ConversationProfile getConversationProfile(@Nullable ConversationProfileName name) {
     GetConversationProfileRequest request =
         GetConversationProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -762,7 +765,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConversationProfile createConversationProfile(
-      LocationName parent, ConversationProfile conversationProfile) {
+      @Nullable LocationName parent, ConversationProfile conversationProfile) {
     CreateConversationProfileRequest request =
         CreateConversationProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -803,7 +806,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConversationProfile createConversationProfile(
-      ProjectName parent, ConversationProfile conversationProfile) {
+      @Nullable ProjectName parent, ConversationProfile conversationProfile) {
     CreateConversationProfileRequest request =
         CreateConversationProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1063,7 +1066,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversationProfile(ConversationProfileName name) {
+  public final void deleteConversationProfile(@Nullable ConversationProfileName name) {
     DeleteConversationProfileRequest request =
         DeleteConversationProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1909,12 +1912,13 @@ public class ConversationProfilesClient implements BackgroundResource {
           ListConversationProfilesPage> {
 
     private ListConversationProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationProfilesRequest,
                 ListConversationProfilesResponse,
                 ConversationProfile>
             context,
-        ListConversationProfilesResponse response) {
+        @Nullable ListConversationProfilesResponse response) {
       super(context, response);
     }
 
@@ -1924,18 +1928,20 @@ public class ConversationProfilesClient implements BackgroundResource {
 
     @Override
     protected ListConversationProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationProfilesRequest,
                 ListConversationProfilesResponse,
                 ConversationProfile>
             context,
-        ListConversationProfilesResponse response) {
+        @Nullable ListConversationProfilesResponse response) {
       return new ListConversationProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationProfilesRequest,
                 ListConversationProfilesResponse,
                 ConversationProfile>
@@ -1954,7 +1960,7 @@ public class ConversationProfilesClient implements BackgroundResource {
           ListConversationProfilesFixedSizeCollection> {
 
     private ListConversationProfilesFixedSizeCollection(
-        List<ListConversationProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConversationProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1964,7 +1970,7 @@ public class ConversationProfilesClient implements BackgroundResource {
 
     @Override
     protected ListConversationProfilesFixedSizeCollection createCollection(
-        List<ListConversationProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConversationProfilesPage> pages, int collectionSize) {
       return new ListConversationProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1998,8 +2004,8 @@ public class ConversationProfilesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2009,14 +2015,14 @@ public class ConversationProfilesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2030,7 +2036,8 @@ public class ConversationProfilesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2040,7 +2047,7 @@ public class ConversationProfilesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

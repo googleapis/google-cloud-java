@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -118,7 +119,7 @@ public class FeatureMonitorJobName implements ResourceName {
         .toString();
   }
 
-  public static FeatureMonitorJobName parse(String formattedString) {
+  public static @Nullable FeatureMonitorJobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -141,7 +142,7 @@ public class FeatureMonitorJobName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FeatureMonitorJobName> values) {
+  public static List<String> toStringList(List<@Nullable FeatureMonitorJobName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FeatureMonitorJobName value : values) {
       if (value == null) {
@@ -206,7 +207,7 @@ public class FeatureMonitorJobName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

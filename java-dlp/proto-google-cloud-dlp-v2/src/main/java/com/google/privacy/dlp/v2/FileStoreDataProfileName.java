@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -159,7 +160,7 @@ public class FileStoreDataProfileName implements ResourceName {
         .toString();
   }
 
-  public static FileStoreDataProfileName parse(String formattedString) {
+  public static @Nullable FileStoreDataProfileName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -190,7 +191,7 @@ public class FileStoreDataProfileName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FileStoreDataProfileName> values) {
+  public static List<String> toStringList(List<@Nullable FileStoreDataProfileName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FileStoreDataProfileName value : values) {
       if (value == null) {
@@ -242,7 +243,7 @@ public class FileStoreDataProfileName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

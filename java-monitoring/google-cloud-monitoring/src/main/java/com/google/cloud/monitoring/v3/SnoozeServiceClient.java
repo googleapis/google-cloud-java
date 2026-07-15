@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -194,7 +195,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SnoozeServiceClient implements BackgroundResource {
-  private final SnoozeServiceSettings settings;
+  private final @Nullable SnoozeServiceSettings settings;
   private final SnoozeServiceStub stub;
 
   /** Constructs an instance of SnoozeServiceClient with default settings. */
@@ -234,7 +235,7 @@ public class SnoozeServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SnoozeServiceSettings getSettings() {
+  public final @Nullable SnoozeServiceSettings getSettings() {
     return settings;
   }
 
@@ -269,7 +270,7 @@ public class SnoozeServiceClient implements BackgroundResource {
    *     by the API.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snooze createSnooze(ProjectName parent, Snooze snooze) {
+  public final Snooze createSnooze(@Nullable ProjectName parent, Snooze snooze) {
     CreateSnoozeRequest request =
         CreateSnoozeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -396,7 +397,7 @@ public class SnoozeServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSnoozesPagedResponse listSnoozes(ProjectName parent) {
+  public final ListSnoozesPagedResponse listSnoozes(@Nullable ProjectName parent) {
     ListSnoozesRequest request =
         ListSnoozesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -565,7 +566,7 @@ public class SnoozeServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snooze getSnooze(SnoozeName name) {
+  public final Snooze getSnooze(@Nullable SnoozeName name) {
     GetSnoozeRequest request =
         GetSnoozeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnooze(request);
@@ -806,8 +807,8 @@ public class SnoozeServiceClient implements BackgroundResource {
       extends AbstractPage<ListSnoozesRequest, ListSnoozesResponse, Snooze, ListSnoozesPage> {
 
     private ListSnoozesPage(
-        PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
-        ListSnoozesResponse response) {
+        @Nullable PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
+        @Nullable ListSnoozesResponse response) {
       super(context, response);
     }
 
@@ -817,14 +818,14 @@ public class SnoozeServiceClient implements BackgroundResource {
 
     @Override
     protected ListSnoozesPage createPage(
-        PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
-        ListSnoozesResponse response) {
+        @Nullable PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
+        @Nullable ListSnoozesResponse response) {
       return new ListSnoozesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSnoozesPage> createPageAsync(
-        PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
+        @Nullable PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> context,
         ApiFuture<ListSnoozesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -838,7 +839,8 @@ public class SnoozeServiceClient implements BackgroundResource {
           ListSnoozesPage,
           ListSnoozesFixedSizeCollection> {
 
-    private ListSnoozesFixedSizeCollection(List<ListSnoozesPage> pages, int collectionSize) {
+    private ListSnoozesFixedSizeCollection(
+        @Nullable List<ListSnoozesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -848,7 +850,7 @@ public class SnoozeServiceClient implements BackgroundResource {
 
     @Override
     protected ListSnoozesFixedSizeCollection createCollection(
-        List<ListSnoozesPage> pages, int collectionSize) {
+        @Nullable List<ListSnoozesPage> pages, int collectionSize) {
       return new ListSnoozesFixedSizeCollection(pages, collectionSize);
     }
   }

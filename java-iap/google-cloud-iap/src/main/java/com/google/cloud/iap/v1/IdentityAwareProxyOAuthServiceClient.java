@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -241,7 +242,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource {
-  private final IdentityAwareProxyOAuthServiceSettings settings;
+  private final @Nullable IdentityAwareProxyOAuthServiceSettings settings;
   private final IdentityAwareProxyOAuthServiceStub stub;
 
   /** Constructs an instance of IdentityAwareProxyOAuthServiceClient with default settings. */
@@ -286,7 +287,7 @@ public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource 
     this.stub = stub;
   }
 
-  public final IdentityAwareProxyOAuthServiceSettings getSettings() {
+  public final @Nullable IdentityAwareProxyOAuthServiceSettings getSettings() {
     return settings;
   }
 
@@ -903,12 +904,13 @@ public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource 
           ListIdentityAwareProxyClientsPage> {
 
     private ListIdentityAwareProxyClientsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityAwareProxyClientsRequest,
                 ListIdentityAwareProxyClientsResponse,
                 IdentityAwareProxyClient>
             context,
-        ListIdentityAwareProxyClientsResponse response) {
+        @Nullable ListIdentityAwareProxyClientsResponse response) {
       super(context, response);
     }
 
@@ -918,18 +920,20 @@ public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource 
 
     @Override
     protected ListIdentityAwareProxyClientsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityAwareProxyClientsRequest,
                 ListIdentityAwareProxyClientsResponse,
                 IdentityAwareProxyClient>
             context,
-        ListIdentityAwareProxyClientsResponse response) {
+        @Nullable ListIdentityAwareProxyClientsResponse response) {
       return new ListIdentityAwareProxyClientsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIdentityAwareProxyClientsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityAwareProxyClientsRequest,
                 ListIdentityAwareProxyClientsResponse,
                 IdentityAwareProxyClient>
@@ -948,7 +952,7 @@ public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource 
           ListIdentityAwareProxyClientsFixedSizeCollection> {
 
     private ListIdentityAwareProxyClientsFixedSizeCollection(
-        List<ListIdentityAwareProxyClientsPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityAwareProxyClientsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -958,7 +962,7 @@ public class IdentityAwareProxyOAuthServiceClient implements BackgroundResource 
 
     @Override
     protected ListIdentityAwareProxyClientsFixedSizeCollection createCollection(
-        List<ListIdentityAwareProxyClientsPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityAwareProxyClientsPage> pages, int collectionSize) {
       return new ListIdentityAwareProxyClientsFixedSizeCollection(pages, collectionSize);
     }
   }

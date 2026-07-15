@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -434,7 +435,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PipelineServiceClient implements BackgroundResource {
-  private final PipelineServiceSettings settings;
+  private final @Nullable PipelineServiceSettings settings;
   private final PipelineServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -477,7 +478,7 @@ public class PipelineServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final PipelineServiceSettings getSettings() {
+  public final @Nullable PipelineServiceSettings getSettings() {
     return settings;
   }
 
@@ -519,7 +520,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline createTrainingPipeline(
-      LocationName parent, TrainingPipeline trainingPipeline) {
+      @Nullable LocationName parent, TrainingPipeline trainingPipeline) {
     CreateTrainingPipelineRequest request =
         CreateTrainingPipelineRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -645,7 +646,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TrainingPipeline getTrainingPipeline(TrainingPipelineName name) {
+  public final TrainingPipeline getTrainingPipeline(@Nullable TrainingPipelineName name) {
     GetTrainingPipelineRequest request =
         GetTrainingPipelineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -768,7 +769,8 @@ public class PipelineServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTrainingPipelinesPagedResponse listTrainingPipelines(LocationName parent) {
+  public final ListTrainingPipelinesPagedResponse listTrainingPipelines(
+      @Nullable LocationName parent) {
     ListTrainingPipelinesRequest request =
         ListTrainingPipelinesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -944,7 +946,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
-      TrainingPipelineName name) {
+      @Nullable TrainingPipelineName name) {
     DeleteTrainingPipelineRequest request =
         DeleteTrainingPipelineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1108,7 +1110,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelTrainingPipeline(TrainingPipelineName name) {
+  public final void cancelTrainingPipeline(@Nullable TrainingPipelineName name) {
     CancelTrainingPipelineRequest request =
         CancelTrainingPipelineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1266,7 +1268,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PipelineJob createPipelineJob(
-      LocationName parent, PipelineJob pipelineJob, String pipelineJobId) {
+      @Nullable LocationName parent, PipelineJob pipelineJob, String pipelineJobId) {
     CreatePipelineJobRequest request =
         CreatePipelineJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1398,7 +1400,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PipelineJob getPipelineJob(PipelineJobName name) {
+  public final PipelineJob getPipelineJob(@Nullable PipelineJobName name) {
     GetPipelineJobRequest request =
         GetPipelineJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPipelineJob(request);
@@ -1511,7 +1513,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPipelineJobsPagedResponse listPipelineJobs(LocationName parent) {
+  public final ListPipelineJobsPagedResponse listPipelineJobs(@Nullable LocationName parent) {
     ListPipelineJobsRequest request =
         ListPipelineJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1686,7 +1688,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deletePipelineJobAsync(
-      PipelineJobName name) {
+      @Nullable PipelineJobName name) {
     DeletePipelineJobRequest request =
         DeletePipelineJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1836,7 +1838,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
-      batchDeletePipelineJobsAsync(LocationName parent, List<String> names) {
+      batchDeletePipelineJobsAsync(@Nullable LocationName parent, List<String> names) {
     BatchDeletePipelineJobsRequest request =
         BatchDeletePipelineJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2005,7 +2007,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelPipelineJob(PipelineJobName name) {
+  public final void cancelPipelineJob(@Nullable PipelineJobName name) {
     CancelPipelineJobRequest request =
         CancelPipelineJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2152,7 +2154,7 @@ public class PipelineServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           BatchCancelPipelineJobsResponse, BatchCancelPipelineJobsOperationMetadata>
-      batchCancelPipelineJobsAsync(LocationName parent, List<String> names) {
+      batchCancelPipelineJobsAsync(@Nullable LocationName parent, List<String> names) {
     BatchCancelPipelineJobsRequest request =
         BatchCancelPipelineJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2732,9 +2734,11 @@ public class PipelineServiceClient implements BackgroundResource {
           ListTrainingPipelinesPage> {
 
     private ListTrainingPipelinesPage(
-        PageContext<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
+        @Nullable
+            PageContext<
+                ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
             context,
-        ListTrainingPipelinesResponse response) {
+        @Nullable ListTrainingPipelinesResponse response) {
       super(context, response);
     }
 
@@ -2744,15 +2748,19 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListTrainingPipelinesPage createPage(
-        PageContext<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
+        @Nullable
+            PageContext<
+                ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
             context,
-        ListTrainingPipelinesResponse response) {
+        @Nullable ListTrainingPipelinesResponse response) {
       return new ListTrainingPipelinesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTrainingPipelinesPage> createPageAsync(
-        PageContext<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
+        @Nullable
+            PageContext<
+                ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
             context,
         ApiFuture<ListTrainingPipelinesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2768,7 +2776,7 @@ public class PipelineServiceClient implements BackgroundResource {
           ListTrainingPipelinesFixedSizeCollection> {
 
     private ListTrainingPipelinesFixedSizeCollection(
-        List<ListTrainingPipelinesPage> pages, int collectionSize) {
+        @Nullable List<ListTrainingPipelinesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2778,7 +2786,7 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListTrainingPipelinesFixedSizeCollection createCollection(
-        List<ListTrainingPipelinesPage> pages, int collectionSize) {
+        @Nullable List<ListTrainingPipelinesPage> pages, int collectionSize) {
       return new ListTrainingPipelinesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2812,8 +2820,9 @@ public class PipelineServiceClient implements BackgroundResource {
           ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob, ListPipelineJobsPage> {
 
     private ListPipelineJobsPage(
-        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
-        ListPipelineJobsResponse response) {
+        @Nullable PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>
+            context,
+        @Nullable ListPipelineJobsResponse response) {
       super(context, response);
     }
 
@@ -2823,14 +2832,16 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListPipelineJobsPage createPage(
-        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
-        ListPipelineJobsResponse response) {
+        @Nullable PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>
+            context,
+        @Nullable ListPipelineJobsResponse response) {
       return new ListPipelineJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPipelineJobsPage> createPageAsync(
-        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
+        @Nullable PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>
+            context,
         ApiFuture<ListPipelineJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2845,7 +2856,7 @@ public class PipelineServiceClient implements BackgroundResource {
           ListPipelineJobsFixedSizeCollection> {
 
     private ListPipelineJobsFixedSizeCollection(
-        List<ListPipelineJobsPage> pages, int collectionSize) {
+        @Nullable List<ListPipelineJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2855,7 +2866,7 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListPipelineJobsFixedSizeCollection createCollection(
-        List<ListPipelineJobsPage> pages, int collectionSize) {
+        @Nullable List<ListPipelineJobsPage> pages, int collectionSize) {
       return new ListPipelineJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2889,8 +2900,8 @@ public class PipelineServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2900,14 +2911,14 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2921,7 +2932,8 @@ public class PipelineServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2931,7 +2943,7 @@ public class PipelineServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

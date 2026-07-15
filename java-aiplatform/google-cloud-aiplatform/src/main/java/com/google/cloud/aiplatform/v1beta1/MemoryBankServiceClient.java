@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -336,7 +337,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MemoryBankServiceClient implements BackgroundResource {
-  private final MemoryBankServiceSettings settings;
+  private final @Nullable MemoryBankServiceSettings settings;
   private final MemoryBankServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -379,7 +380,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final MemoryBankServiceSettings getSettings() {
+  public final @Nullable MemoryBankServiceSettings getSettings() {
     return settings;
   }
 
@@ -427,7 +428,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Memory, CreateMemoryOperationMetadata> createMemoryAsync(
-      ReasoningEngineName parent, Memory memory, String memoryId) {
+      @Nullable ReasoningEngineName parent, Memory memory, String memoryId) {
     CreateMemoryRequest request =
         CreateMemoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -599,7 +600,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Memory getMemory(MemoryName name) {
+  public final Memory getMemory(@Nullable MemoryName name) {
     GetMemoryRequest request =
         GetMemoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMemory(request);
@@ -837,7 +838,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMemoriesPagedResponse listMemories(ReasoningEngineName parent) {
+  public final ListMemoriesPagedResponse listMemories(@Nullable ReasoningEngineName parent) {
     ListMemoriesRequest request =
         ListMemoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1011,7 +1012,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteMemoryOperationMetadata> deleteMemoryAsync(
-      MemoryName name) {
+      @Nullable MemoryName name) {
     DeleteMemoryRequest request =
         DeleteMemoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMemoryAsync(request);
@@ -1163,7 +1164,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GenerateMemoriesResponse, GenerateMemoriesOperationMetadata>
-      generateMemoriesAsync(ReasoningEngineName parent) {
+      generateMemoriesAsync(@Nullable ReasoningEngineName parent) {
     GenerateMemoriesRequest request =
         GenerateMemoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1325,7 +1326,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RetrieveMemoriesResponse retrieveMemories(ReasoningEngineName parent) {
+  public final RetrieveMemoriesResponse retrieveMemories(@Nullable ReasoningEngineName parent) {
     RetrieveMemoriesRequest request =
         RetrieveMemoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1849,8 +1850,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
       extends AbstractPage<ListMemoriesRequest, ListMemoriesResponse, Memory, ListMemoriesPage> {
 
     private ListMemoriesPage(
-        PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
-        ListMemoriesResponse response) {
+        @Nullable PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
+        @Nullable ListMemoriesResponse response) {
       super(context, response);
     }
 
@@ -1860,14 +1861,14 @@ public class MemoryBankServiceClient implements BackgroundResource {
 
     @Override
     protected ListMemoriesPage createPage(
-        PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
-        ListMemoriesResponse response) {
+        @Nullable PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
+        @Nullable ListMemoriesResponse response) {
       return new ListMemoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMemoriesPage> createPageAsync(
-        PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
+        @Nullable PageContext<ListMemoriesRequest, ListMemoriesResponse, Memory> context,
         ApiFuture<ListMemoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1881,7 +1882,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
           ListMemoriesPage,
           ListMemoriesFixedSizeCollection> {
 
-    private ListMemoriesFixedSizeCollection(List<ListMemoriesPage> pages, int collectionSize) {
+    private ListMemoriesFixedSizeCollection(
+        @Nullable List<ListMemoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1891,7 +1893,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
 
     @Override
     protected ListMemoriesFixedSizeCollection createCollection(
-        List<ListMemoriesPage> pages, int collectionSize) {
+        @Nullable List<ListMemoriesPage> pages, int collectionSize) {
       return new ListMemoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1925,8 +1927,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1936,14 +1938,14 @@ public class MemoryBankServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1957,7 +1959,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1967,7 +1970,7 @@ public class MemoryBankServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -457,7 +458,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataTransferServiceClient implements BackgroundResource {
-  private final DataTransferServiceSettings settings;
+  private final @Nullable DataTransferServiceSettings settings;
   private final DataTransferServiceStub stub;
 
   /** Constructs an instance of DataTransferServiceClient with default settings. */
@@ -497,7 +498,7 @@ public class DataTransferServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataTransferServiceSettings getSettings() {
+  public final @Nullable DataTransferServiceSettings getSettings() {
     return settings;
   }
 
@@ -530,7 +531,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSource getDataSource(DataSourceName name) {
+  public final DataSource getDataSource(@Nullable DataSourceName name) {
     GetDataSourceRequest request =
         GetDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataSource(request);
@@ -650,7 +651,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourcesPagedResponse listDataSources(LocationName parent) {
+  public final ListDataSourcesPagedResponse listDataSources(@Nullable LocationName parent) {
     ListDataSourcesRequest request =
         ListDataSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -682,7 +683,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourcesPagedResponse listDataSources(ProjectName parent) {
+  public final ListDataSourcesPagedResponse listDataSources(@Nullable ProjectName parent) {
     ListDataSourcesRequest request =
         ListDataSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -852,7 +853,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
-      LocationName parent, TransferConfig transferConfig) {
+      @Nullable LocationName parent, TransferConfig transferConfig) {
     CreateTransferConfigRequest request =
         CreateTransferConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -889,7 +890,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
-      ProjectName parent, TransferConfig transferConfig) {
+      @Nullable ProjectName parent, TransferConfig transferConfig) {
     CreateTransferConfigRequest request =
         CreateTransferConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1123,7 +1124,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTransferConfig(TransferConfigName name) {
+  public final void deleteTransferConfig(@Nullable TransferConfigName name) {
     DeleteTransferConfigRequest request =
         DeleteTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1249,7 +1250,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TransferConfig getTransferConfig(TransferConfigName name) {
+  public final TransferConfig getTransferConfig(@Nullable TransferConfigName name) {
     GetTransferConfigRequest request =
         GetTransferConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1374,7 +1375,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransferConfigsPagedResponse listTransferConfigs(LocationName parent) {
+  public final ListTransferConfigsPagedResponse listTransferConfigs(@Nullable LocationName parent) {
     ListTransferConfigsRequest request =
         ListTransferConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1407,7 +1408,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransferConfigsPagedResponse listTransferConfigs(ProjectName parent) {
+  public final ListTransferConfigsPagedResponse listTransferConfigs(@Nullable ProjectName parent) {
     ListTransferConfigsRequest request =
         ListTransferConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1594,7 +1595,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
-      TransferConfigName parent, Timestamp startTime, Timestamp endTime) {
+      @Nullable TransferConfigName parent, Timestamp startTime, Timestamp endTime) {
     ScheduleTransferRunsRequest request =
         ScheduleTransferRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1826,7 +1827,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TransferRun getTransferRun(RunName name) {
+  public final TransferRun getTransferRun(@Nullable RunName name) {
     GetTransferRunRequest request =
         GetTransferRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTransferRun(request);
@@ -1949,7 +1950,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTransferRun(RunName name) {
+  public final void deleteTransferRun(@Nullable RunName name) {
     DeleteTransferRunRequest request =
         DeleteTransferRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2077,7 +2078,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransferRunsPagedResponse listTransferRuns(TransferConfigName parent) {
+  public final ListTransferRunsPagedResponse listTransferRuns(@Nullable TransferConfigName parent) {
     ListTransferRunsRequest request =
         ListTransferRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2264,7 +2265,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransferLogsPagedResponse listTransferLogs(RunName parent) {
+  public final ListTransferLogsPagedResponse listTransferLogs(@Nullable RunName parent) {
     ListTransferLogsRequest request =
         ListTransferLogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2449,7 +2450,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CheckValidCredsResponse checkValidCreds(DataSourceName name) {
+  public final CheckValidCredsResponse checkValidCreds(@Nullable DataSourceName name) {
     CheckValidCredsRequest request =
         CheckValidCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return checkValidCreds(request);
@@ -2892,8 +2893,8 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListDataSourcesRequest, ListDataSourcesResponse, DataSource, ListDataSourcesPage> {
 
     private ListDataSourcesPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       super(context, response);
     }
 
@@ -2903,14 +2904,14 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesPage createPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       return new ListDataSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataSourcesPage> createPageAsync(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
         ApiFuture<ListDataSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2925,7 +2926,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListDataSourcesFixedSizeCollection> {
 
     private ListDataSourcesFixedSizeCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2935,7 +2936,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesFixedSizeCollection createCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       return new ListDataSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2973,9 +2974,10 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferConfigsPage> {
 
     private ListTransferConfigsPage(
-        PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
+        @Nullable
+            PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
             context,
-        ListTransferConfigsResponse response) {
+        @Nullable ListTransferConfigsResponse response) {
       super(context, response);
     }
 
@@ -2985,15 +2987,17 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferConfigsPage createPage(
-        PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
+        @Nullable
+            PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
             context,
-        ListTransferConfigsResponse response) {
+        @Nullable ListTransferConfigsResponse response) {
       return new ListTransferConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferConfigsPage> createPageAsync(
-        PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
+        @Nullable
+            PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
             context,
         ApiFuture<ListTransferConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3009,7 +3013,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferConfigsFixedSizeCollection> {
 
     private ListTransferConfigsFixedSizeCollection(
-        List<ListTransferConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3019,7 +3023,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferConfigsFixedSizeCollection createCollection(
-        List<ListTransferConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferConfigsPage> pages, int collectionSize) {
       return new ListTransferConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3053,8 +3057,9 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferRunsRequest, ListTransferRunsResponse, TransferRun, ListTransferRunsPage> {
 
     private ListTransferRunsPage(
-        PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun> context,
-        ListTransferRunsResponse response) {
+        @Nullable PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
+            context,
+        @Nullable ListTransferRunsResponse response) {
       super(context, response);
     }
 
@@ -3064,14 +3069,16 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferRunsPage createPage(
-        PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun> context,
-        ListTransferRunsResponse response) {
+        @Nullable PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
+            context,
+        @Nullable ListTransferRunsResponse response) {
       return new ListTransferRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferRunsPage> createPageAsync(
-        PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun> context,
+        @Nullable PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
+            context,
         ApiFuture<ListTransferRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3086,7 +3093,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferRunsFixedSizeCollection> {
 
     private ListTransferRunsFixedSizeCollection(
-        List<ListTransferRunsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3096,7 +3103,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferRunsFixedSizeCollection createCollection(
-        List<ListTransferRunsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferRunsPage> pages, int collectionSize) {
       return new ListTransferRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3133,8 +3140,9 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferLogsPage> {
 
     private ListTransferLogsPage(
-        PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage> context,
-        ListTransferLogsResponse response) {
+        @Nullable PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
+            context,
+        @Nullable ListTransferLogsResponse response) {
       super(context, response);
     }
 
@@ -3144,14 +3152,16 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferLogsPage createPage(
-        PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage> context,
-        ListTransferLogsResponse response) {
+        @Nullable PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
+            context,
+        @Nullable ListTransferLogsResponse response) {
       return new ListTransferLogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferLogsPage> createPageAsync(
-        PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage> context,
+        @Nullable PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
+            context,
         ApiFuture<ListTransferLogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3166,7 +3176,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferLogsFixedSizeCollection> {
 
     private ListTransferLogsFixedSizeCollection(
-        List<ListTransferLogsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferLogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3176,7 +3186,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferLogsFixedSizeCollection createCollection(
-        List<ListTransferLogsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferLogsPage> pages, int collectionSize) {
       return new ListTransferLogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3210,8 +3220,8 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3221,14 +3231,14 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3242,7 +3252,8 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3252,7 +3263,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

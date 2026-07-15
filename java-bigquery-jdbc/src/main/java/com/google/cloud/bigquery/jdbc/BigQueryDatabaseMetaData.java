@@ -4954,12 +4954,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       FieldList resultSchemaFields) {
     LOG.info("Populating queue with %d results...", collectedResults.size());
     try {
+      boolean[] isComplexColumn =
+          BigQueryFieldValueListWrapper.createComplexColumnFlags(resultSchemaFields);
       for (FieldValueList sortedRow : collectedResults) {
         if (Thread.currentThread().isInterrupted()) {
           LOG.warning("Interrupted during queue population.");
           break;
         }
-        queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, sortedRow));
+        queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, sortedRow, isComplexColumn));
       }
       LOG.info("Finished populating queue.");
     } catch (InterruptedException e) {
@@ -4998,7 +5000,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       LOG.info("Adding end signal to queue.");
       BigQueryFieldValueListWrapper element =
-          BigQueryFieldValueListWrapper.of(resultSchemaFields, null, true);
+          BigQueryFieldValueListWrapper.ofEndOfStream(resultSchemaFields);
       if (!queue.offer(element)) {
         boolean wasInterrupted = Thread.interrupted();
         try {

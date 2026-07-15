@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -151,7 +152,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CustomTargetingValueServiceClient implements BackgroundResource {
-  private final CustomTargetingValueServiceSettings settings;
+  private final @Nullable CustomTargetingValueServiceSettings settings;
   private final CustomTargetingValueServiceStub stub;
 
   /** Constructs an instance of CustomTargetingValueServiceClient with default settings. */
@@ -194,7 +195,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CustomTargetingValueServiceSettings getSettings() {
+  public final @Nullable CustomTargetingValueServiceSettings getSettings() {
     return settings;
   }
 
@@ -227,7 +228,8 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *     `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomTargetingValue getCustomTargetingValue(CustomTargetingValueName name) {
+  public final CustomTargetingValue getCustomTargetingValue(
+      @Nullable CustomTargetingValueName name) {
     GetCustomTargetingValueRequest request =
         GetCustomTargetingValueRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -358,7 +360,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomTargetingValuesPagedResponse listCustomTargetingValues(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListCustomTargetingValuesRequest request =
         ListCustomTargetingValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -586,12 +588,13 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
           ListCustomTargetingValuesPage> {
 
     private ListCustomTargetingValuesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
             context,
-        ListCustomTargetingValuesResponse response) {
+        @Nullable ListCustomTargetingValuesResponse response) {
       super(context, response);
     }
 
@@ -601,18 +604,20 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingValuesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
             context,
-        ListCustomTargetingValuesResponse response) {
+        @Nullable ListCustomTargetingValuesResponse response) {
       return new ListCustomTargetingValuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomTargetingValuesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
@@ -631,7 +636,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
           ListCustomTargetingValuesFixedSizeCollection> {
 
     private ListCustomTargetingValuesFixedSizeCollection(
-        List<ListCustomTargetingValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingValuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -641,7 +646,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingValuesFixedSizeCollection createCollection(
-        List<ListCustomTargetingValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingValuesPage> pages, int collectionSize) {
       return new ListCustomTargetingValuesFixedSizeCollection(pages, collectionSize);
     }
   }

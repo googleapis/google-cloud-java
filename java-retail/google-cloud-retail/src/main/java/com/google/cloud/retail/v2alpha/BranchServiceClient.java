@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,7 +158,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BranchServiceClient implements BackgroundResource {
-  private final BranchServiceSettings settings;
+  private final @Nullable BranchServiceSettings settings;
   private final BranchServiceStub stub;
 
   /** Constructs an instance of BranchServiceClient with default settings. */
@@ -197,7 +198,7 @@ public class BranchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BranchServiceSettings getSettings() {
+  public final @Nullable BranchServiceSettings getSettings() {
     return settings;
   }
 
@@ -227,7 +228,7 @@ public class BranchServiceClient implements BackgroundResource {
    * @param parent Required. The parent catalog resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBranchesResponse listBranches(CatalogName parent) {
+  public final ListBranchesResponse listBranches(@Nullable CatalogName parent) {
     ListBranchesRequest request =
         ListBranchesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -346,7 +347,7 @@ public class BranchServiceClient implements BackgroundResource {
    *     has been set for the catalog.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Branch getBranch(BranchName name) {
+  public final Branch getBranch(@Nullable BranchName name) {
     GetBranchRequest request =
         GetBranchRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBranch(request);

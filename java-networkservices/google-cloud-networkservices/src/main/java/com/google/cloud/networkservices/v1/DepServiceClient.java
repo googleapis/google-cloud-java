@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -601,7 +602,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DepServiceClient implements BackgroundResource {
-  private final DepServiceSettings settings;
+  private final @Nullable DepServiceSettings settings;
   private final DepServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -647,7 +648,7 @@ public class DepServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DepServiceSettings getSettings() {
+  public final @Nullable DepServiceSettings getSettings() {
     return settings;
   }
 
@@ -698,7 +699,8 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLbTrafficExtensionsPagedResponse listLbTrafficExtensions(LocationName parent) {
+  public final ListLbTrafficExtensionsPagedResponse listLbTrafficExtensions(
+      @Nullable LocationName parent) {
     ListLbTrafficExtensionsRequest request =
         ListLbTrafficExtensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -874,7 +876,7 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/lbTrafficExtensions/{lb_traffic_extension}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LbTrafficExtension getLbTrafficExtension(LbTrafficExtensionName name) {
+  public final LbTrafficExtension getLbTrafficExtension(@Nullable LbTrafficExtensionName name) {
     GetLbTrafficExtensionRequest request =
         GetLbTrafficExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1003,7 +1005,9 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LbTrafficExtension, OperationMetadata> createLbTrafficExtensionAsync(
-      LocationName parent, LbTrafficExtension lbTrafficExtension, String lbTrafficExtensionId) {
+      @Nullable LocationName parent,
+      LbTrafficExtension lbTrafficExtension,
+      String lbTrafficExtensionId) {
     CreateLbTrafficExtensionRequest request =
         CreateLbTrafficExtensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1307,7 +1311,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLbTrafficExtensionAsync(
-      LbTrafficExtensionName name) {
+      @Nullable LbTrafficExtensionName name) {
     DeleteLbTrafficExtensionRequest request =
         DeleteLbTrafficExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1467,7 +1471,8 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLbRouteExtensionsPagedResponse listLbRouteExtensions(LocationName parent) {
+  public final ListLbRouteExtensionsPagedResponse listLbRouteExtensions(
+      @Nullable LocationName parent) {
     ListLbRouteExtensionsRequest request =
         ListLbRouteExtensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1642,7 +1647,7 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/lbRouteExtensions/{lb_route_extension}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LbRouteExtension getLbRouteExtension(LbRouteExtensionName name) {
+  public final LbRouteExtension getLbRouteExtension(@Nullable LbRouteExtensionName name) {
     GetLbRouteExtensionRequest request =
         GetLbRouteExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1771,7 +1776,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LbRouteExtension, OperationMetadata> createLbRouteExtensionAsync(
-      LocationName parent, LbRouteExtension lbRouteExtension, String lbRouteExtensionId) {
+      @Nullable LocationName parent, LbRouteExtension lbRouteExtension, String lbRouteExtensionId) {
     CreateLbRouteExtensionRequest request =
         CreateLbRouteExtensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2072,7 +2077,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLbRouteExtensionAsync(
-      LbRouteExtensionName name) {
+      @Nullable LbRouteExtensionName name) {
     DeleteLbRouteExtensionRequest request =
         DeleteLbRouteExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2230,7 +2235,8 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLbEdgeExtensionsPagedResponse listLbEdgeExtensions(LocationName parent) {
+  public final ListLbEdgeExtensionsPagedResponse listLbEdgeExtensions(
+      @Nullable LocationName parent) {
     ListLbEdgeExtensionsRequest request =
         ListLbEdgeExtensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2404,7 +2410,7 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LbEdgeExtension getLbEdgeExtension(LbEdgeExtensionName name) {
+  public final LbEdgeExtension getLbEdgeExtension(@Nullable LbEdgeExtensionName name) {
     GetLbEdgeExtensionRequest request =
         GetLbEdgeExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2533,7 +2539,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LbEdgeExtension, OperationMetadata> createLbEdgeExtensionAsync(
-      LocationName parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId) {
+      @Nullable LocationName parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId) {
     CreateLbEdgeExtensionRequest request =
         CreateLbEdgeExtensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2834,7 +2840,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLbEdgeExtensionAsync(
-      LbEdgeExtensionName name) {
+      @Nullable LbEdgeExtensionName name) {
     DeleteLbEdgeExtensionRequest request =
         DeleteLbEdgeExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2992,7 +2998,7 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAuthzExtensionsPagedResponse listAuthzExtensions(LocationName parent) {
+  public final ListAuthzExtensionsPagedResponse listAuthzExtensions(@Nullable LocationName parent) {
     ListAuthzExtensionsRequest request =
         ListAuthzExtensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3166,7 +3172,7 @@ public class DepServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/authzExtensions/{authz_extension}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AuthzExtension getAuthzExtension(AuthzExtensionName name) {
+  public final AuthzExtension getAuthzExtension(@Nullable AuthzExtensionName name) {
     GetAuthzExtensionRequest request =
         GetAuthzExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3291,7 +3297,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AuthzExtension, OperationMetadata> createAuthzExtensionAsync(
-      LocationName parent, AuthzExtension authzExtension, String authzExtensionId) {
+      @Nullable LocationName parent, AuthzExtension authzExtension, String authzExtensionId) {
     CreateAuthzExtensionRequest request =
         CreateAuthzExtensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3592,7 +3598,7 @@ public class DepServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAuthzExtensionAsync(
-      AuthzExtensionName name) {
+      @Nullable AuthzExtensionName name) {
     DeleteAuthzExtensionRequest request =
         DeleteAuthzExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4138,10 +4144,11 @@ public class DepServiceClient implements BackgroundResource {
           ListLbTrafficExtensionsPage> {
 
     private ListLbTrafficExtensionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListLbTrafficExtensionsRequest, ListLbTrafficExtensionsResponse, LbTrafficExtension>
             context,
-        ListLbTrafficExtensionsResponse response) {
+        @Nullable ListLbTrafficExtensionsResponse response) {
       super(context, response);
     }
 
@@ -4151,16 +4158,18 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbTrafficExtensionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListLbTrafficExtensionsRequest, ListLbTrafficExtensionsResponse, LbTrafficExtension>
             context,
-        ListLbTrafficExtensionsResponse response) {
+        @Nullable ListLbTrafficExtensionsResponse response) {
       return new ListLbTrafficExtensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLbTrafficExtensionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListLbTrafficExtensionsRequest, ListLbTrafficExtensionsResponse, LbTrafficExtension>
             context,
         ApiFuture<ListLbTrafficExtensionsResponse> futureResponse) {
@@ -4177,7 +4186,7 @@ public class DepServiceClient implements BackgroundResource {
           ListLbTrafficExtensionsFixedSizeCollection> {
 
     private ListLbTrafficExtensionsFixedSizeCollection(
-        List<ListLbTrafficExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbTrafficExtensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4187,7 +4196,7 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbTrafficExtensionsFixedSizeCollection createCollection(
-        List<ListLbTrafficExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbTrafficExtensionsPage> pages, int collectionSize) {
       return new ListLbTrafficExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4225,9 +4234,11 @@ public class DepServiceClient implements BackgroundResource {
           ListLbRouteExtensionsPage> {
 
     private ListLbRouteExtensionsPage(
-        PageContext<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
+        @Nullable
+            PageContext<
+                ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
             context,
-        ListLbRouteExtensionsResponse response) {
+        @Nullable ListLbRouteExtensionsResponse response) {
       super(context, response);
     }
 
@@ -4237,15 +4248,19 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbRouteExtensionsPage createPage(
-        PageContext<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
+        @Nullable
+            PageContext<
+                ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
             context,
-        ListLbRouteExtensionsResponse response) {
+        @Nullable ListLbRouteExtensionsResponse response) {
       return new ListLbRouteExtensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLbRouteExtensionsPage> createPageAsync(
-        PageContext<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
+        @Nullable
+            PageContext<
+                ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse, LbRouteExtension>
             context,
         ApiFuture<ListLbRouteExtensionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4261,7 +4276,7 @@ public class DepServiceClient implements BackgroundResource {
           ListLbRouteExtensionsFixedSizeCollection> {
 
     private ListLbRouteExtensionsFixedSizeCollection(
-        List<ListLbRouteExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbRouteExtensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4271,7 +4286,7 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbRouteExtensionsFixedSizeCollection createCollection(
-        List<ListLbRouteExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbRouteExtensionsPage> pages, int collectionSize) {
       return new ListLbRouteExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4309,9 +4324,10 @@ public class DepServiceClient implements BackgroundResource {
           ListLbEdgeExtensionsPage> {
 
     private ListLbEdgeExtensionsPage(
-        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+        @Nullable
+            PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
             context,
-        ListLbEdgeExtensionsResponse response) {
+        @Nullable ListLbEdgeExtensionsResponse response) {
       super(context, response);
     }
 
@@ -4321,15 +4337,17 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbEdgeExtensionsPage createPage(
-        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+        @Nullable
+            PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
             context,
-        ListLbEdgeExtensionsResponse response) {
+        @Nullable ListLbEdgeExtensionsResponse response) {
       return new ListLbEdgeExtensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLbEdgeExtensionsPage> createPageAsync(
-        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+        @Nullable
+            PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
             context,
         ApiFuture<ListLbEdgeExtensionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4345,7 +4363,7 @@ public class DepServiceClient implements BackgroundResource {
           ListLbEdgeExtensionsFixedSizeCollection> {
 
     private ListLbEdgeExtensionsFixedSizeCollection(
-        List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4355,7 +4373,7 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLbEdgeExtensionsFixedSizeCollection createCollection(
-        List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
       return new ListLbEdgeExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4393,9 +4411,10 @@ public class DepServiceClient implements BackgroundResource {
           ListAuthzExtensionsPage> {
 
     private ListAuthzExtensionsPage(
-        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+        @Nullable
+            PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
             context,
-        ListAuthzExtensionsResponse response) {
+        @Nullable ListAuthzExtensionsResponse response) {
       super(context, response);
     }
 
@@ -4405,15 +4424,17 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListAuthzExtensionsPage createPage(
-        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+        @Nullable
+            PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
             context,
-        ListAuthzExtensionsResponse response) {
+        @Nullable ListAuthzExtensionsResponse response) {
       return new ListAuthzExtensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAuthzExtensionsPage> createPageAsync(
-        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+        @Nullable
+            PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
             context,
         ApiFuture<ListAuthzExtensionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4429,7 +4450,7 @@ public class DepServiceClient implements BackgroundResource {
           ListAuthzExtensionsFixedSizeCollection> {
 
     private ListAuthzExtensionsFixedSizeCollection(
-        List<ListAuthzExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListAuthzExtensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4439,7 +4460,7 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListAuthzExtensionsFixedSizeCollection createCollection(
-        List<ListAuthzExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListAuthzExtensionsPage> pages, int collectionSize) {
       return new ListAuthzExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4473,8 +4494,8 @@ public class DepServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4484,14 +4505,14 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4505,7 +4526,8 @@ public class DepServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4515,7 +4537,7 @@ public class DepServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

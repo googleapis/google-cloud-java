@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -238,7 +239,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DirectAccessServiceClient implements BackgroundResource {
-  private final DirectAccessServiceSettings settings;
+  private final @Nullable DirectAccessServiceSettings settings;
   private final DirectAccessServiceStub stub;
 
   /** Constructs an instance of DirectAccessServiceClient with default settings. */
@@ -278,7 +279,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DirectAccessServiceSettings getSettings() {
+  public final @Nullable DirectAccessServiceSettings getSettings() {
     return settings;
   }
 
@@ -316,7 +317,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceSession createDeviceSession(
-      ProjectName parent, DeviceSession deviceSession, String deviceSessionId) {
+      @Nullable ProjectName parent, DeviceSession deviceSession, String deviceSessionId) {
     CreateDeviceSessionRequest request =
         CreateDeviceSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -451,7 +452,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
    * @param parent Required. The name of the parent to request, e.g. "projects/{project_id}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceSessionsPagedResponse listDeviceSessions(ProjectName parent) {
+  public final ListDeviceSessionsPagedResponse listDeviceSessions(@Nullable ProjectName parent) {
     ListDeviceSessionsRequest request =
         ListDeviceSessionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -622,7 +623,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
    *     "projects/{project_id}/deviceSessions/{session_id}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceSession getDeviceSession(DeviceSessionName name) {
+  public final DeviceSession getDeviceSession(@Nullable DeviceSessionName name) {
     GetDeviceSessionRequest request =
         GetDeviceSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeviceSession(request);
@@ -959,8 +960,9 @@ public class DirectAccessServiceClient implements BackgroundResource {
           ListDeviceSessionsPage> {
 
     private ListDeviceSessionsPage(
-        PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession> context,
-        ListDeviceSessionsResponse response) {
+        @Nullable PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession>
+            context,
+        @Nullable ListDeviceSessionsResponse response) {
       super(context, response);
     }
 
@@ -970,14 +972,16 @@ public class DirectAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceSessionsPage createPage(
-        PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession> context,
-        ListDeviceSessionsResponse response) {
+        @Nullable PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession>
+            context,
+        @Nullable ListDeviceSessionsResponse response) {
       return new ListDeviceSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeviceSessionsPage> createPageAsync(
-        PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession> context,
+        @Nullable PageContext<ListDeviceSessionsRequest, ListDeviceSessionsResponse, DeviceSession>
+            context,
         ApiFuture<ListDeviceSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -992,7 +996,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
           ListDeviceSessionsFixedSizeCollection> {
 
     private ListDeviceSessionsFixedSizeCollection(
-        List<ListDeviceSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1002,7 +1006,7 @@ public class DirectAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceSessionsFixedSizeCollection createCollection(
-        List<ListDeviceSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceSessionsPage> pages, int collectionSize) {
       return new ListDeviceSessionsFixedSizeCollection(pages, collectionSize);
     }
   }

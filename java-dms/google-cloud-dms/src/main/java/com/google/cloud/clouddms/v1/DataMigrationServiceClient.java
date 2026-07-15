@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -839,7 +840,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataMigrationServiceClient implements BackgroundResource {
-  private final DataMigrationServiceSettings settings;
+  private final @Nullable DataMigrationServiceSettings settings;
   private final DataMigrationServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -882,7 +883,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final DataMigrationServiceSettings getSettings() {
+  public final @Nullable DataMigrationServiceSettings getSettings() {
     return settings;
   }
 
@@ -923,7 +924,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param parent Required. The parent which owns this collection of migrationJobs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMigrationJobsPagedResponse listMigrationJobs(LocationName parent) {
+  public final ListMigrationJobsPagedResponse listMigrationJobs(@Nullable LocationName parent) {
     ListMigrationJobsRequest request =
         ListMigrationJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1099,7 +1100,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param name Required. Name of the migration job resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MigrationJob getMigrationJob(MigrationJobName name) {
+  public final MigrationJob getMigrationJob(@Nullable MigrationJobName name) {
     GetMigrationJobRequest request =
         GetMigrationJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMigrationJob(request);
@@ -1222,7 +1223,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MigrationJob, OperationMetadata> createMigrationJobAsync(
-      LocationName parent, MigrationJob migrationJob, String migrationJobId) {
+      @Nullable LocationName parent, MigrationJob migrationJob, String migrationJobId) {
     CreateMigrationJobRequest request =
         CreateMigrationJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1526,7 +1527,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMigrationJobAsync(
-      MigrationJobName name) {
+      @Nullable MigrationJobName name) {
     DeleteMigrationJobRequest request =
         DeleteMigrationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2373,7 +2374,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param parent Required. The parent which owns this collection of connection profiles.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionProfilesPagedResponse listConnectionProfiles(LocationName parent) {
+  public final ListConnectionProfilesPagedResponse listConnectionProfiles(
+      @Nullable LocationName parent) {
     ListConnectionProfilesRequest request =
         ListConnectionProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2551,7 +2553,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param name Required. Name of the connection profile resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectionProfile getConnectionProfile(ConnectionProfileName name) {
+  public final ConnectionProfile getConnectionProfile(@Nullable ConnectionProfileName name) {
     GetConnectionProfileRequest request =
         GetConnectionProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2682,7 +2684,9 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ConnectionProfile, OperationMetadata> createConnectionProfileAsync(
-      LocationName parent, ConnectionProfile connectionProfile, String connectionProfileId) {
+      @Nullable LocationName parent,
+      ConnectionProfile connectionProfile,
+      String connectionProfileId) {
     CreateConnectionProfileRequest request =
         CreateConnectionProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3007,7 +3011,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConnectionProfileAsync(
-      ConnectionProfileName name) {
+      @Nullable ConnectionProfileName name) {
     DeleteConnectionProfileRequest request =
         DeleteConnectionProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3180,7 +3184,9 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
-      LocationName parent, PrivateConnection privateConnection, String privateConnectionId) {
+      @Nullable LocationName parent,
+      PrivateConnection privateConnection,
+      String privateConnectionId) {
     CreatePrivateConnectionRequest request =
         CreatePrivateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3357,7 +3363,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param name Required. The name of the private connection to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateConnection getPrivateConnection(PrivateConnectionName name) {
+  public final PrivateConnection getPrivateConnection(@Nullable PrivateConnectionName name) {
     GetPrivateConnectionRequest request =
         GetPrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3482,7 +3488,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param parent Required. The parent that owns the collection of private connections.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateConnectionsPagedResponse listPrivateConnections(LocationName parent) {
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(
+      @Nullable LocationName parent) {
     ListPrivateConnectionsRequest request =
         ListPrivateConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3661,7 +3668,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(
-      PrivateConnectionName name) {
+      @Nullable PrivateConnectionName name) {
     DeletePrivateConnectionRequest request =
         DeletePrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3820,7 +3827,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param name Required. Name of the conversion workspace resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConversionWorkspace getConversionWorkspace(ConversionWorkspaceName name) {
+  public final ConversionWorkspace getConversionWorkspace(@Nullable ConversionWorkspaceName name) {
     GetConversionWorkspaceRequest request =
         GetConversionWorkspaceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3946,7 +3953,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param parent Required. The parent which owns this collection of conversion workspaces.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversionWorkspacesPagedResponse listConversionWorkspaces(LocationName parent) {
+  public final ListConversionWorkspacesPagedResponse listConversionWorkspaces(
+      @Nullable LocationName parent) {
     ListConversionWorkspacesRequest request =
         ListConversionWorkspacesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4129,7 +4137,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ConversionWorkspace, OperationMetadata>
       createConversionWorkspaceAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ConversionWorkspace conversionWorkspace,
           String conversionWorkspaceId) {
     CreateConversionWorkspaceRequest request =
@@ -4448,7 +4456,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConversionWorkspaceAsync(
-      ConversionWorkspaceName name) {
+      @Nullable ConversionWorkspaceName name) {
     DeleteConversionWorkspaceRequest request =
         DeleteConversionWorkspaceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4622,7 +4630,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MappingRule createMappingRule(
-      ConversionWorkspaceName parent, MappingRule mappingRule, String mappingRuleId) {
+      @Nullable ConversionWorkspaceName parent, MappingRule mappingRule, String mappingRuleId) {
     CreateMappingRuleRequest request =
         CreateMappingRuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4765,7 +4773,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * @param name Required. Name of the mapping rule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMappingRule(ConversionWorkspaceName name) {
+  public final void deleteMappingRule(@Nullable ConversionWorkspaceName name) {
     DeleteMappingRuleRequest request =
         DeleteMappingRuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4893,7 +4901,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/conversionWorkspaces/{conversion_workspace}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMappingRulesPagedResponse listMappingRules(ConversionWorkspaceName parent) {
+  public final ListMappingRulesPagedResponse listMappingRules(
+      @Nullable ConversionWorkspaceName parent) {
     ListMappingRulesRequest request =
         ListMappingRulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5077,7 +5086,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     conversionWorkspace/123/mappingRules/rule123{@literal @}c7cfa2a8c7cfa2a8c7cfa2a8c7cfa2a8
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MappingRule getMappingRule(MappingRuleName name) {
+  public final MappingRule getMappingRule(@Nullable MappingRuleName name) {
     GetMappingRuleRequest request =
         GetMappingRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMappingRule(request);
@@ -6128,7 +6137,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     returned. Must be in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchStaticIpsPagedResponse fetchStaticIps(LocationName name) {
+  public final FetchStaticIpsPagedResponse fetchStaticIps(@Nullable LocationName name) {
     FetchStaticIpsRequest request =
         FetchStaticIpsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return fetchStaticIps(request);
@@ -6338,8 +6347,9 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListMigrationJobsPage> {
 
     private ListMigrationJobsPage(
-        PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob> context,
-        ListMigrationJobsResponse response) {
+        @Nullable PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob>
+            context,
+        @Nullable ListMigrationJobsResponse response) {
       super(context, response);
     }
 
@@ -6349,14 +6359,16 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationJobsPage createPage(
-        PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob> context,
-        ListMigrationJobsResponse response) {
+        @Nullable PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob>
+            context,
+        @Nullable ListMigrationJobsResponse response) {
       return new ListMigrationJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMigrationJobsPage> createPageAsync(
-        PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob> context,
+        @Nullable PageContext<ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob>
+            context,
         ApiFuture<ListMigrationJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6371,7 +6383,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListMigrationJobsFixedSizeCollection> {
 
     private ListMigrationJobsFixedSizeCollection(
-        List<ListMigrationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6381,7 +6393,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationJobsFixedSizeCollection createCollection(
-        List<ListMigrationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationJobsPage> pages, int collectionSize) {
       return new ListMigrationJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6420,10 +6432,11 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListConnectionProfilesPage> {
 
     private ListConnectionProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
-        ListConnectionProfilesResponse response) {
+        @Nullable ListConnectionProfilesResponse response) {
       super(context, response);
     }
 
@@ -6433,16 +6446,18 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
-        ListConnectionProfilesResponse response) {
+        @Nullable ListConnectionProfilesResponse response) {
       return new ListConnectionProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
         ApiFuture<ListConnectionProfilesResponse> futureResponse) {
@@ -6459,7 +6474,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListConnectionProfilesFixedSizeCollection> {
 
     private ListConnectionProfilesFixedSizeCollection(
-        List<ListConnectionProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6469,7 +6484,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionProfilesFixedSizeCollection createCollection(
-        List<ListConnectionProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionProfilesPage> pages, int collectionSize) {
       return new ListConnectionProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6508,10 +6523,11 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListPrivateConnectionsPage> {
 
     private ListPrivateConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       super(context, response);
     }
 
@@ -6521,16 +6537,18 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       return new ListPrivateConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
         ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
@@ -6547,7 +6565,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListPrivateConnectionsFixedSizeCollection> {
 
     private ListPrivateConnectionsFixedSizeCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6557,7 +6575,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsFixedSizeCollection createCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       return new ListPrivateConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6598,12 +6616,13 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListConversionWorkspacesPage> {
 
     private ListConversionWorkspacesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversionWorkspacesRequest,
                 ListConversionWorkspacesResponse,
                 ConversionWorkspace>
             context,
-        ListConversionWorkspacesResponse response) {
+        @Nullable ListConversionWorkspacesResponse response) {
       super(context, response);
     }
 
@@ -6613,18 +6632,20 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionWorkspacesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversionWorkspacesRequest,
                 ListConversionWorkspacesResponse,
                 ConversionWorkspace>
             context,
-        ListConversionWorkspacesResponse response) {
+        @Nullable ListConversionWorkspacesResponse response) {
       return new ListConversionWorkspacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversionWorkspacesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversionWorkspacesRequest,
                 ListConversionWorkspacesResponse,
                 ConversionWorkspace>
@@ -6643,7 +6664,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListConversionWorkspacesFixedSizeCollection> {
 
     private ListConversionWorkspacesFixedSizeCollection(
-        List<ListConversionWorkspacesPage> pages, int collectionSize) {
+        @Nullable List<ListConversionWorkspacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6653,7 +6674,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionWorkspacesFixedSizeCollection createCollection(
-        List<ListConversionWorkspacesPage> pages, int collectionSize) {
+        @Nullable List<ListConversionWorkspacesPage> pages, int collectionSize) {
       return new ListConversionWorkspacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6687,8 +6708,9 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListMappingRulesRequest, ListMappingRulesResponse, MappingRule, ListMappingRulesPage> {
 
     private ListMappingRulesPage(
-        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
-        ListMappingRulesResponse response) {
+        @Nullable PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+            context,
+        @Nullable ListMappingRulesResponse response) {
       super(context, response);
     }
 
@@ -6698,14 +6720,16 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMappingRulesPage createPage(
-        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
-        ListMappingRulesResponse response) {
+        @Nullable PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+            context,
+        @Nullable ListMappingRulesResponse response) {
       return new ListMappingRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMappingRulesPage> createPageAsync(
-        PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule> context,
+        @Nullable PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+            context,
         ApiFuture<ListMappingRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6720,7 +6744,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           ListMappingRulesFixedSizeCollection> {
 
     private ListMappingRulesFixedSizeCollection(
-        List<ListMappingRulesPage> pages, int collectionSize) {
+        @Nullable List<ListMappingRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6730,7 +6754,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMappingRulesFixedSizeCollection createCollection(
-        List<ListMappingRulesPage> pages, int collectionSize) {
+        @Nullable List<ListMappingRulesPage> pages, int collectionSize) {
       return new ListMappingRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6769,10 +6793,11 @@ public class DataMigrationServiceClient implements BackgroundResource {
           DescribeDatabaseEntitiesPage> {
 
     private DescribeDatabaseEntitiesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>
             context,
-        DescribeDatabaseEntitiesResponse response) {
+        @Nullable DescribeDatabaseEntitiesResponse response) {
       super(context, response);
     }
 
@@ -6782,16 +6807,18 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected DescribeDatabaseEntitiesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>
             context,
-        DescribeDatabaseEntitiesResponse response) {
+        @Nullable DescribeDatabaseEntitiesResponse response) {
       return new DescribeDatabaseEntitiesPage(context, response);
     }
 
     @Override
     public ApiFuture<DescribeDatabaseEntitiesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>
             context,
         ApiFuture<DescribeDatabaseEntitiesResponse> futureResponse) {
@@ -6808,7 +6835,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
           DescribeDatabaseEntitiesFixedSizeCollection> {
 
     private DescribeDatabaseEntitiesFixedSizeCollection(
-        List<DescribeDatabaseEntitiesPage> pages, int collectionSize) {
+        @Nullable List<DescribeDatabaseEntitiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6818,7 +6845,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected DescribeDatabaseEntitiesFixedSizeCollection createCollection(
-        List<DescribeDatabaseEntitiesPage> pages, int collectionSize) {
+        @Nullable List<DescribeDatabaseEntitiesPage> pages, int collectionSize) {
       return new DescribeDatabaseEntitiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6852,8 +6879,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
           FetchStaticIpsRequest, FetchStaticIpsResponse, String, FetchStaticIpsPage> {
 
     private FetchStaticIpsPage(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
-        FetchStaticIpsResponse response) {
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable FetchStaticIpsResponse response) {
       super(context, response);
     }
 
@@ -6863,14 +6890,14 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected FetchStaticIpsPage createPage(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
-        FetchStaticIpsResponse response) {
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable FetchStaticIpsResponse response) {
       return new FetchStaticIpsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchStaticIpsPage> createPageAsync(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
         ApiFuture<FetchStaticIpsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6884,7 +6911,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
           FetchStaticIpsPage,
           FetchStaticIpsFixedSizeCollection> {
 
-    private FetchStaticIpsFixedSizeCollection(List<FetchStaticIpsPage> pages, int collectionSize) {
+    private FetchStaticIpsFixedSizeCollection(
+        @Nullable List<FetchStaticIpsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6894,7 +6922,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
 
     @Override
     protected FetchStaticIpsFixedSizeCollection createCollection(
-        List<FetchStaticIpsPage> pages, int collectionSize) {
+        @Nullable List<FetchStaticIpsPage> pages, int collectionSize) {
       return new FetchStaticIpsFixedSizeCollection(pages, collectionSize);
     }
   }

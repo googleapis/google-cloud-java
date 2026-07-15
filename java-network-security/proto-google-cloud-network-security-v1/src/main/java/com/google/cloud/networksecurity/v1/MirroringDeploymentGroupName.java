@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -90,7 +91,7 @@ public class MirroringDeploymentGroupName implements ResourceName {
         .toString();
   }
 
-  public static MirroringDeploymentGroupName parse(String formattedString) {
+  public static @Nullable MirroringDeploymentGroupName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -112,7 +113,7 @@ public class MirroringDeploymentGroupName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<MirroringDeploymentGroupName> values) {
+  public static List<String> toStringList(List<@Nullable MirroringDeploymentGroupName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (MirroringDeploymentGroupName value : values) {
       if (value == null) {
@@ -166,7 +167,7 @@ public class MirroringDeploymentGroupName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }
