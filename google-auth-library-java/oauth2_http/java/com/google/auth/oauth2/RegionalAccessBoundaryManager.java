@@ -198,6 +198,11 @@ final class RegionalAccessBoundaryManager {
     // this thread "won the race" and is responsible for starting the background task.
     // All other concurrent threads will return false and exit immediately.
     if (isRefreshing.compareAndSet(false, true)) {
+      currentRab = cachedRAB.get();
+      if (currentRab != null && !currentRab.shouldRefresh()) {
+        isRefreshing.set(false);
+        return;
+      }
       Runnable refreshTask =
           () -> {
             try {
