@@ -368,6 +368,834 @@ public final class MemorystoreGrpc {
     return getGetSharedRegionalCertificateAuthorityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleMaintenance",
+      requestType = com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleMaintenanceMethod;
+    if ((getRescheduleMaintenanceMethod = MemorystoreGrpc.getRescheduleMaintenanceMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getRescheduleMaintenanceMethod = MemorystoreGrpc.getRescheduleMaintenanceMethod)
+            == null) {
+          MemorystoreGrpc.getRescheduleMaintenanceMethod =
+              getRescheduleMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("RescheduleMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleMaintenanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest,
+          com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+      getListBackupCollectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupCollections",
+      requestType = com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest,
+          com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+      getListBackupCollectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest,
+            com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+        getListBackupCollectionsMethod;
+    if ((getListBackupCollectionsMethod = MemorystoreGrpc.getListBackupCollectionsMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListBackupCollectionsMethod = MemorystoreGrpc.getListBackupCollectionsMethod)
+            == null) {
+          MemorystoreGrpc.getListBackupCollectionsMethod =
+              getListBackupCollectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest,
+                          com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBackupCollections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListBackupCollections"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupCollectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest,
+          com.google.cloud.memorystore.v1beta.BackupCollection>
+      getGetBackupCollectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupCollection",
+      requestType = com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.BackupCollection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest,
+          com.google.cloud.memorystore.v1beta.BackupCollection>
+      getGetBackupCollectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest,
+            com.google.cloud.memorystore.v1beta.BackupCollection>
+        getGetBackupCollectionMethod;
+    if ((getGetBackupCollectionMethod = MemorystoreGrpc.getGetBackupCollectionMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetBackupCollectionMethod = MemorystoreGrpc.getGetBackupCollectionMethod) == null) {
+          MemorystoreGrpc.getGetBackupCollectionMethod =
+              getGetBackupCollectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest,
+                          com.google.cloud.memorystore.v1beta.BackupCollection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupCollection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.BackupCollection
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("GetBackupCollection"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupCollectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListBackupsRequest,
+          com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+      getListBackupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackups",
+      requestType = com.google.cloud.memorystore.v1beta.ListBackupsRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.ListBackupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListBackupsRequest,
+          com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+      getListBackupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.ListBackupsRequest,
+            com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+        getListBackupsMethod;
+    if ((getListBackupsMethod = MemorystoreGrpc.getListBackupsMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListBackupsMethod = MemorystoreGrpc.getListBackupsMethod) == null) {
+          MemorystoreGrpc.getListBackupsMethod =
+              getListBackupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.ListBackupsRequest,
+                          com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListBackupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListBackupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("ListBackups"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetBackupRequest,
+          com.google.cloud.memorystore.v1beta.Backup>
+      getGetBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackup",
+      requestType = com.google.cloud.memorystore.v1beta.GetBackupRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.Backup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetBackupRequest,
+          com.google.cloud.memorystore.v1beta.Backup>
+      getGetBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.GetBackupRequest,
+            com.google.cloud.memorystore.v1beta.Backup>
+        getGetBackupMethod;
+    if ((getGetBackupMethod = MemorystoreGrpc.getGetBackupMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetBackupMethod = MemorystoreGrpc.getGetBackupMethod) == null) {
+          MemorystoreGrpc.getGetBackupMethod =
+              getGetBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.GetBackupRequest,
+                          com.google.cloud.memorystore.v1beta.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.GetBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("GetBackup"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteBackupRequest, com.google.longrunning.Operation>
+      getDeleteBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackup",
+      requestType = com.google.cloud.memorystore.v1beta.DeleteBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteBackupRequest, com.google.longrunning.Operation>
+      getDeleteBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.DeleteBackupRequest,
+            com.google.longrunning.Operation>
+        getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = MemorystoreGrpc.getDeleteBackupMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteBackupMethod = MemorystoreGrpc.getDeleteBackupMethod) == null) {
+          MemorystoreGrpc.getDeleteBackupMethod =
+              getDeleteBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.DeleteBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.DeleteBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("DeleteBackup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ExportBackupRequest, com.google.longrunning.Operation>
+      getExportBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportBackup",
+      requestType = com.google.cloud.memorystore.v1beta.ExportBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ExportBackupRequest, com.google.longrunning.Operation>
+      getExportBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.ExportBackupRequest,
+            com.google.longrunning.Operation>
+        getExportBackupMethod;
+    if ((getExportBackupMethod = MemorystoreGrpc.getExportBackupMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getExportBackupMethod = MemorystoreGrpc.getExportBackupMethod) == null) {
+          MemorystoreGrpc.getExportBackupMethod =
+              getExportBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.ExportBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ExportBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("ExportBackup"))
+                      .build();
+        }
+      }
+    }
+    return getExportBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.BackupInstanceRequest,
+          com.google.longrunning.Operation>
+      getBackupInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BackupInstance",
+      requestType = com.google.cloud.memorystore.v1beta.BackupInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.BackupInstanceRequest,
+          com.google.longrunning.Operation>
+      getBackupInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.BackupInstanceRequest,
+            com.google.longrunning.Operation>
+        getBackupInstanceMethod;
+    if ((getBackupInstanceMethod = MemorystoreGrpc.getBackupInstanceMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getBackupInstanceMethod = MemorystoreGrpc.getBackupInstanceMethod) == null) {
+          MemorystoreGrpc.getBackupInstanceMethod =
+              getBackupInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.BackupInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BackupInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.BackupInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("BackupInstance"))
+                      .build();
+        }
+      }
+    }
+    return getBackupInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.StartMigrationRequest,
+          com.google.longrunning.Operation>
+      getStartMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartMigration",
+      requestType = com.google.cloud.memorystore.v1beta.StartMigrationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.StartMigrationRequest,
+          com.google.longrunning.Operation>
+      getStartMigrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.StartMigrationRequest,
+            com.google.longrunning.Operation>
+        getStartMigrationMethod;
+    if ((getStartMigrationMethod = MemorystoreGrpc.getStartMigrationMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getStartMigrationMethod = MemorystoreGrpc.getStartMigrationMethod) == null) {
+          MemorystoreGrpc.getStartMigrationMethod =
+              getStartMigrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.StartMigrationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartMigration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.StartMigrationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("StartMigration"))
+                      .build();
+        }
+      }
+    }
+    return getStartMigrationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.FinishMigrationRequest,
+          com.google.longrunning.Operation>
+      getFinishMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FinishMigration",
+      requestType = com.google.cloud.memorystore.v1beta.FinishMigrationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.FinishMigrationRequest,
+          com.google.longrunning.Operation>
+      getFinishMigrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.FinishMigrationRequest,
+            com.google.longrunning.Operation>
+        getFinishMigrationMethod;
+    if ((getFinishMigrationMethod = MemorystoreGrpc.getFinishMigrationMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getFinishMigrationMethod = MemorystoreGrpc.getFinishMigrationMethod) == null) {
+          MemorystoreGrpc.getFinishMigrationMethod =
+              getFinishMigrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.FinishMigrationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FinishMigration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.FinishMigrationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("FinishMigration"))
+                      .build();
+        }
+      }
+    }
+    return getFinishMigrationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest,
+          com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTokenAuthUsers",
+      requestType = com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest,
+          com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest,
+            com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+        getListTokenAuthUsersMethod;
+    if ((getListTokenAuthUsersMethod = MemorystoreGrpc.getListTokenAuthUsersMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListTokenAuthUsersMethod = MemorystoreGrpc.getListTokenAuthUsersMethod) == null) {
+          MemorystoreGrpc.getListTokenAuthUsersMethod =
+              getListTokenAuthUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest,
+                          com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTokenAuthUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListTokenAuthUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListTokenAuthUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest,
+          com.google.cloud.memorystore.v1beta.TokenAuthUser>
+      getGetTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.TokenAuthUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest,
+          com.google.cloud.memorystore.v1beta.TokenAuthUser>
+      getGetTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest,
+            com.google.cloud.memorystore.v1beta.TokenAuthUser>
+        getGetTokenAuthUserMethod;
+    if ((getGetTokenAuthUserMethod = MemorystoreGrpc.getGetTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetTokenAuthUserMethod = MemorystoreGrpc.getGetTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getGetTokenAuthUserMethod =
+              getGetTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest,
+                          com.google.cloud.memorystore.v1beta.TokenAuthUser>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.TokenAuthUser
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("GetTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getGetTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListAuthTokensRequest,
+          com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+      getListAuthTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthTokens",
+      requestType = com.google.cloud.memorystore.v1beta.ListAuthTokensRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.ListAuthTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.ListAuthTokensRequest,
+          com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+      getListAuthTokensMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.ListAuthTokensRequest,
+            com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+        getListAuthTokensMethod;
+    if ((getListAuthTokensMethod = MemorystoreGrpc.getListAuthTokensMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListAuthTokensMethod = MemorystoreGrpc.getListAuthTokensMethod) == null) {
+          MemorystoreGrpc.getListAuthTokensMethod =
+              getListAuthTokensMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.ListAuthTokensRequest,
+                          com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthTokens"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListAuthTokensRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.ListAuthTokensResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListAuthTokens"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetAuthTokenRequest,
+          com.google.cloud.memorystore.v1beta.AuthToken>
+      getGetAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthToken",
+      requestType = com.google.cloud.memorystore.v1beta.GetAuthTokenRequest.class,
+      responseType = com.google.cloud.memorystore.v1beta.AuthToken.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.GetAuthTokenRequest,
+          com.google.cloud.memorystore.v1beta.AuthToken>
+      getGetAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.GetAuthTokenRequest,
+            com.google.cloud.memorystore.v1beta.AuthToken>
+        getGetAuthTokenMethod;
+    if ((getGetAuthTokenMethod = MemorystoreGrpc.getGetAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetAuthTokenMethod = MemorystoreGrpc.getGetAuthTokenMethod) == null) {
+          MemorystoreGrpc.getGetAuthTokenMethod =
+              getGetAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.GetAuthTokenRequest,
+                          com.google.cloud.memorystore.v1beta.AuthToken>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.GetAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.AuthToken.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("GetAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getAddTokenAuthUserMethod;
+    if ((getAddTokenAuthUserMethod = MemorystoreGrpc.getAddTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getAddTokenAuthUserMethod = MemorystoreGrpc.getAddTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getAddTokenAuthUserMethod =
+              getAddTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("AddTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getAddTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getDeleteTokenAuthUserMethod;
+    if ((getDeleteTokenAuthUserMethod = MemorystoreGrpc.getDeleteTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteTokenAuthUserMethod = MemorystoreGrpc.getDeleteTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getDeleteTokenAuthUserMethod =
+              getDeleteTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("DeleteTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddAuthToken",
+      requestType = com.google.cloud.memorystore.v1beta.AddAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.AddAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getAddAuthTokenMethod;
+    if ((getAddAuthTokenMethod = MemorystoreGrpc.getAddAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getAddAuthTokenMethod = MemorystoreGrpc.getAddAuthTokenMethod) == null) {
+          MemorystoreGrpc.getAddAuthTokenMethod =
+              getAddAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.AddAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.AddAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("AddAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getAddAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthToken",
+      requestType = com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getDeleteAuthTokenMethod;
+    if ((getDeleteAuthTokenMethod = MemorystoreGrpc.getDeleteAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteAuthTokenMethod = MemorystoreGrpc.getDeleteAuthTokenMethod) == null) {
+          MemorystoreGrpc.getDeleteAuthTokenMethod =
+              getDeleteAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("DeleteAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static MemorystoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MemorystoreStub> factory =
@@ -533,6 +1361,289 @@ public final class MemorystoreGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetSharedRegionalCertificateAuthorityMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    default void rescheduleMaintenance(
+        com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleMaintenanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    default void listBackupCollections(
+        com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupCollectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    default void getBackupCollection(
+        com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.BackupCollection>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupCollectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    default void listBackups(
+        com.google.cloud.memorystore.v1beta.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    default void getBackup(
+        com.google.cloud.memorystore.v1beta.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.Backup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    default void deleteBackup(
+        com.google.cloud.memorystore.v1beta.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    default void exportBackup(
+        com.google.cloud.memorystore.v1beta.ExportBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Instance.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the instance's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    default void backupInstance(
+        com.google.cloud.memorystore.v1beta.BackupInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBackupInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    default void startMigration(
+        com.google.cloud.memorystore.v1beta.StartMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartMigrationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    default void finishMigration(
+        com.google.cloud.memorystore.v1beta.FinishMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFinishMigrationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    default void listTokenAuthUsers(
+        com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTokenAuthUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void getTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    default void listAuthTokens(
+        com.google.cloud.memorystore.v1beta.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    default void getAuthToken(
+        com.google.cloud.memorystore.v1beta.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.AuthToken>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void addTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void addAuthToken(
+        com.google.cloud.memorystore.v1beta.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteAuthToken(
+        com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthTokenMethod(), responseObserver);
+    }
   }
 
   /**
@@ -686,6 +1797,324 @@ public final class MemorystoreGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public void listBackupCollections(
+        com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupCollectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public void getBackupCollection(
+        com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.BackupCollection>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupCollectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public void listBackups(
+        com.google.cloud.memorystore.v1beta.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public void getBackup(
+        com.google.cloud.memorystore.v1beta.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.Backup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public void deleteBackup(
+        com.google.cloud.memorystore.v1beta.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public void exportBackup(
+        com.google.cloud.memorystore.v1beta.ExportBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Instance.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the instance's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public void backupInstance(
+        com.google.cloud.memorystore.v1beta.BackupInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBackupInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public void startMigration(
+        com.google.cloud.memorystore.v1beta.StartMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartMigrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public void finishMigration(
+        com.google.cloud.memorystore.v1beta.FinishMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFinishMigrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public void listTokenAuthUsers(
+        com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void getTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public void listAuthTokens(
+        com.google.cloud.memorystore.v1beta.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public void getAuthToken(
+        com.google.cloud.memorystore.v1beta.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.AuthToken>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void addTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void addAuthToken(
+        com.google.cloud.memorystore.v1beta.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteAuthToken(
+        com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -810,6 +2239,282 @@ public final class MemorystoreGrpc {
           getCallOptions(),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse listBackupCollections(
+        com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.BackupCollection getBackupCollection(
+        com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListBackupsResponse listBackups(
+        com.google.cloud.memorystore.v1beta.ListBackupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.Backup getBackup(
+        com.google.cloud.memorystore.v1beta.GetBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.memorystore.v1beta.DeleteBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportBackup(
+        com.google.cloud.memorystore.v1beta.ExportBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Instance.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the instance's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation backupInstance(
+        com.google.cloud.memorystore.v1beta.BackupInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBackupInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startMigration(
+        com.google.cloud.memorystore.v1beta.StartMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation finishMigration(
+        com.google.cloud.memorystore.v1beta.FinishMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.memorystore.v1beta.ListAuthTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.AuthToken getAuthToken(
+        com.google.cloud.memorystore.v1beta.GetAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.memorystore.v1beta.AddAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -926,6 +2631,264 @@ public final class MemorystoreGrpc {
           getGetSharedRegionalCertificateAuthorityMethod(),
           getCallOptions(),
           request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse listBackupCollections(
+        com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.BackupCollection getBackupCollection(
+        com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListBackupsResponse listBackups(
+        com.google.cloud.memorystore.v1beta.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.Backup getBackup(
+        com.google.cloud.memorystore.v1beta.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.memorystore.v1beta.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportBackup(
+        com.google.cloud.memorystore.v1beta.ExportBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Instance.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the instance's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation backupInstance(
+        com.google.cloud.memorystore.v1beta.BackupInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBackupInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startMigration(
+        com.google.cloud.memorystore.v1beta.StartMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation finishMigration(
+        com.google.cloud.memorystore.v1beta.FinishMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.memorystore.v1beta.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1beta.AuthToken getAuthToken(
+        com.google.cloud.memorystore.v1beta.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.memorystore.v1beta.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -1047,6 +3010,276 @@ public final class MemorystoreGrpc {
           getChannel().newCall(getGetSharedRegionalCertificateAuthorityMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleMaintenance(
+            com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>
+        listBackupCollections(
+            com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupCollectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.BackupCollection>
+        getBackupCollection(
+            com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupCollectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.ListBackupsResponse>
+        listBackups(com.google.cloud.memorystore.v1beta.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.Backup>
+        getBackup(com.google.cloud.memorystore.v1beta.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackup(com.google.cloud.memorystore.v1beta.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportBackup(com.google.cloud.memorystore.v1beta.ExportBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Instance.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the instance's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        backupInstance(com.google.cloud.memorystore.v1beta.BackupInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBackupInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startMigration(com.google.cloud.memorystore.v1beta.StartMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartMigrationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        finishMigration(com.google.cloud.memorystore.v1beta.FinishMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFinishMigrationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>
+        listTokenAuthUsers(com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.TokenAuthUser>
+        getTokenAuthUser(com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>
+        listAuthTokens(com.google.cloud.memorystore.v1beta.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1beta.AuthToken>
+        getAuthToken(com.google.cloud.memorystore.v1beta.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addTokenAuthUser(com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTokenAuthUser(
+            com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addAuthToken(com.google.cloud.memorystore.v1beta.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAuthToken(com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -1056,6 +3289,24 @@ public final class MemorystoreGrpc {
   private static final int METHODID_DELETE_INSTANCE = 4;
   private static final int METHODID_GET_CERTIFICATE_AUTHORITY = 5;
   private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 6;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 7;
+  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 8;
+  private static final int METHODID_GET_BACKUP_COLLECTION = 9;
+  private static final int METHODID_LIST_BACKUPS = 10;
+  private static final int METHODID_GET_BACKUP = 11;
+  private static final int METHODID_DELETE_BACKUP = 12;
+  private static final int METHODID_EXPORT_BACKUP = 13;
+  private static final int METHODID_BACKUP_INSTANCE = 14;
+  private static final int METHODID_START_MIGRATION = 15;
+  private static final int METHODID_FINISH_MIGRATION = 16;
+  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 17;
+  private static final int METHODID_GET_TOKEN_AUTH_USER = 18;
+  private static final int METHODID_LIST_AUTH_TOKENS = 19;
+  private static final int METHODID_GET_AUTH_TOKEN = 20;
+  private static final int METHODID_ADD_TOKEN_AUTH_USER = 21;
+  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 22;
+  private static final int METHODID_ADD_AUTH_TOKEN = 23;
+  private static final int METHODID_DELETE_AUTH_TOKEN = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1116,6 +3367,107 @@ public final class MemorystoreGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority>)
                   responseObserver);
+          break;
+        case METHODID_RESCHEDULE_MAINTENANCE:
+          serviceImpl.rescheduleMaintenance(
+              (com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_COLLECTIONS:
+          serviceImpl.listBackupCollections(
+              (com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_COLLECTION:
+          serviceImpl.getBackupCollection(
+              (com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.BackupCollection>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups(
+              (com.google.cloud.memorystore.v1beta.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.ListBackupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup(
+              (com.google.cloud.memorystore.v1beta.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.Backup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup(
+              (com.google.cloud.memorystore.v1beta.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_BACKUP:
+          serviceImpl.exportBackup(
+              (com.google.cloud.memorystore.v1beta.ExportBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BACKUP_INSTANCE:
+          serviceImpl.backupInstance(
+              (com.google.cloud.memorystore.v1beta.BackupInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_MIGRATION:
+          serviceImpl.startMigration(
+              (com.google.cloud.memorystore.v1beta.StartMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FINISH_MIGRATION:
+          serviceImpl.finishMigration(
+              (com.google.cloud.memorystore.v1beta.FinishMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_TOKEN_AUTH_USERS:
+          serviceImpl.listTokenAuthUsers(
+              (com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TOKEN_AUTH_USER:
+          serviceImpl.getTokenAuthUser(
+              (com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.TokenAuthUser>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTH_TOKENS:
+          serviceImpl.listAuthTokens(
+              (com.google.cloud.memorystore.v1beta.ListAuthTokensRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTH_TOKEN:
+          serviceImpl.getAuthToken(
+              (com.google.cloud.memorystore.v1beta.GetAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1beta.AuthToken>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_TOKEN_AUTH_USER:
+          serviceImpl.addTokenAuthUser(
+              (com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKEN_AUTH_USER:
+          serviceImpl.deleteTokenAuthUser(
+              (com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ADD_AUTH_TOKEN:
+          serviceImpl.addAuthToken(
+              (com.google.cloud.memorystore.v1beta.AddAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTH_TOKEN:
+          serviceImpl.deleteAuthToken(
+              (com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1181,6 +3533,121 @@ public final class MemorystoreGrpc {
                         .GetSharedRegionalCertificateAuthorityRequest,
                     com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority>(
                     service, METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY)))
+        .addMethod(
+            getRescheduleMaintenanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESCHEDULE_MAINTENANCE)))
+        .addMethod(
+            getListBackupCollectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest,
+                    com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse>(
+                    service, METHODID_LIST_BACKUP_COLLECTIONS)))
+        .addMethod(
+            getGetBackupCollectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest,
+                    com.google.cloud.memorystore.v1beta.BackupCollection>(
+                    service, METHODID_GET_BACKUP_COLLECTION)))
+        .addMethod(
+            getListBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.ListBackupsRequest,
+                    com.google.cloud.memorystore.v1beta.ListBackupsResponse>(
+                    service, METHODID_LIST_BACKUPS)))
+        .addMethod(
+            getGetBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.GetBackupRequest,
+                    com.google.cloud.memorystore.v1beta.Backup>(service, METHODID_GET_BACKUP)))
+        .addMethod(
+            getDeleteBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.DeleteBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getExportBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.ExportBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_BACKUP)))
+        .addMethod(
+            getBackupInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.BackupInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BACKUP_INSTANCE)))
+        .addMethod(
+            getStartMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.StartMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_MIGRATION)))
+        .addMethod(
+            getFinishMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.FinishMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_FINISH_MIGRATION)))
+        .addMethod(
+            getListTokenAuthUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest,
+                    com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse>(
+                    service, METHODID_LIST_TOKEN_AUTH_USERS)))
+        .addMethod(
+            getGetTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest,
+                    com.google.cloud.memorystore.v1beta.TokenAuthUser>(
+                    service, METHODID_GET_TOKEN_AUTH_USER)))
+        .addMethod(
+            getListAuthTokensMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.ListAuthTokensRequest,
+                    com.google.cloud.memorystore.v1beta.ListAuthTokensResponse>(
+                    service, METHODID_LIST_AUTH_TOKENS)))
+        .addMethod(
+            getGetAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.GetAuthTokenRequest,
+                    com.google.cloud.memorystore.v1beta.AuthToken>(
+                    service, METHODID_GET_AUTH_TOKEN)))
+        .addMethod(
+            getAddTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_TOKEN_AUTH_USER)))
+        .addMethod(
+            getDeleteTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TOKEN_AUTH_USER)))
+        .addMethod(
+            getAddAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.AddAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_AUTH_TOKEN)))
+        .addMethod(
+            getDeleteAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTH_TOKEN)))
         .build();
   }
 
@@ -1239,6 +3706,24 @@ public final class MemorystoreGrpc {
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getGetCertificateAuthorityMethod())
                       .addMethod(getGetSharedRegionalCertificateAuthorityMethod())
+                      .addMethod(getRescheduleMaintenanceMethod())
+                      .addMethod(getListBackupCollectionsMethod())
+                      .addMethod(getGetBackupCollectionMethod())
+                      .addMethod(getListBackupsMethod())
+                      .addMethod(getGetBackupMethod())
+                      .addMethod(getDeleteBackupMethod())
+                      .addMethod(getExportBackupMethod())
+                      .addMethod(getBackupInstanceMethod())
+                      .addMethod(getStartMigrationMethod())
+                      .addMethod(getFinishMigrationMethod())
+                      .addMethod(getListTokenAuthUsersMethod())
+                      .addMethod(getGetTokenAuthUserMethod())
+                      .addMethod(getListAuthTokensMethod())
+                      .addMethod(getGetAuthTokenMethod())
+                      .addMethod(getAddTokenAuthUserMethod())
+                      .addMethod(getDeleteTokenAuthUserMethod())
+                      .addMethod(getAddAuthTokenMethod())
+                      .addMethod(getDeleteAuthTokenMethod())
                       .build();
         }
       }

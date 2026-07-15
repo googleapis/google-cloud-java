@@ -41,6 +41,7 @@ public class SyncStopInstances {
               .setInstanceGroupManager("instanceGroupManager-388242077")
               .setInstanceGroupManagersStopInstancesRequestResource(
                   InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+              .setNoGracefulShutdown(true)
               .setProject("project-309310695")
               .setRequestId("requestId693933066")
               .setZone("zone3744684")

@@ -432,6 +432,51 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
+   * Output only. URL of the InterconnectLocation object that represents where
+   * this connection is to be provisioned. By default it will be the same as the
+   * location field.
+   * </pre>
+   *
+   * <code>optional string effective_location = 302355277;</code>
+   *
+   * @return Whether the effectiveLocation field is set.
+   */
+  boolean hasEffectiveLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URL of the InterconnectLocation object that represents where
+   * this connection is to be provisioned. By default it will be the same as the
+   * location field.
+   * </pre>
+   *
+   * <code>optional string effective_location = 302355277;</code>
+   *
+   * @return The effectiveLocation.
+   */
+  java.lang.String getEffectiveLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URL of the InterconnectLocation object that represents where
+   * this connection is to be provisioned. By default it will be the same as the
+   * location field.
+   * </pre>
+   *
+   * <code>optional string effective_location = 302355277;</code>
+   *
+   * @return The bytes for effectiveLocation.
+   */
+  com.google.protobuf.ByteString getEffectiveLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
