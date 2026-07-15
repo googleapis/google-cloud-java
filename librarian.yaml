@@ -1828,7 +1828,7 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.89.0-SNAPSHOT
+    version: 1.88.1
     skip_generate: true
   - name: google-cloud-pom-parent
     version: 1.89.0-SNAPSHOT

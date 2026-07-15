@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.88.0:1.89.0-SNAPSHOT
+google-cloud-java:1.88.0:1.88.1
 google-cloud-pom-parent:1.88.0:1.89.0-SNAPSHOT
 google-cloud-accessapproval:2.95.0:2.96.0-SNAPSHOT
 grpc-google-cloud-accessapproval-v1:2.95.0:2.96.0-SNAPSHOT
