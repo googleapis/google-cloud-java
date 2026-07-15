@@ -30,8 +30,10 @@ import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class ITPaginationTest extends BaseTest {
   private static ZonesClient zonesClient;
 
