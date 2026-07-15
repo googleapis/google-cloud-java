@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,7 +166,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ProductsServiceClient implements BackgroundResource {
-  private final ProductsServiceSettings settings;
+  private final @Nullable ProductsServiceSettings settings;
   private final ProductsServiceStub stub;
 
   /** Constructs an instance of ProductsServiceClient with default settings. */
@@ -205,7 +206,7 @@ public class ProductsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProductsServiceSettings getSettings() {
+  public final @Nullable ProductsServiceSettings getSettings() {
     return settings;
   }
 
@@ -262,7 +263,7 @@ public class ProductsServiceClient implements BackgroundResource {
    *     `accounts/123/products/online~en~US~sku123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product getProduct(ProductName name) {
+  public final Product getProduct(@Nullable ProductName name) {
     GetProductRequest request =
         GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
@@ -412,7 +413,7 @@ public class ProductsServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductsPagedResponse listProducts(AccountName parent) {
+  public final ListProductsPagedResponse listProducts(@Nullable AccountName parent) {
     ListProductsRequest request =
         ListProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -630,8 +631,8 @@ public class ProductsServiceClient implements BackgroundResource {
       extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
 
     private ListProductsPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       super(context, response);
     }
 
@@ -641,14 +642,14 @@ public class ProductsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsPage createPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       return new ListProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsPage> createPageAsync(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
         ApiFuture<ListProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -662,7 +663,8 @@ public class ProductsServiceClient implements BackgroundResource {
           ListProductsPage,
           ListProductsFixedSizeCollection> {
 
-    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+    private ListProductsFixedSizeCollection(
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -672,7 +674,7 @@ public class ProductsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsFixedSizeCollection createCollection(
-        List<ListProductsPage> pages, int collectionSize) {
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       return new ListProductsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -204,7 +205,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class WireGroupsClient implements BackgroundResource {
-  private final WireGroupsSettings settings;
+  private final @Nullable WireGroupsSettings settings;
   private final WireGroupsStub stub;
 
   /** Constructs an instance of WireGroupsClient with default settings. */
@@ -242,7 +243,7 @@ public class WireGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WireGroupsSettings getSettings() {
+  public final @Nullable WireGroupsSettings getSettings() {
     return settings;
   }
 
@@ -957,8 +958,8 @@ public class WireGroupsClient implements BackgroundResource {
       extends AbstractPage<ListWireGroupsRequest, WireGroupList, WireGroup, ListPage> {
 
     private ListPage(
-        PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
-        WireGroupList response) {
+        @Nullable PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
+        @Nullable WireGroupList response) {
       super(context, response);
     }
 
@@ -968,14 +969,14 @@ public class WireGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
-        WireGroupList response) {
+        @Nullable PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
+        @Nullable WireGroupList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
+        @Nullable PageContext<ListWireGroupsRequest, WireGroupList, WireGroup> context,
         ApiFuture<WireGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -985,7 +986,7 @@ public class WireGroupsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListWireGroupsRequest, WireGroupList, WireGroup, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -994,7 +995,8 @@ public class WireGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -130,7 +131,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IamCheckerClient implements BackgroundResource {
-  private final IamCheckerSettings settings;
+  private final @Nullable IamCheckerSettings settings;
   private final IamCheckerStub stub;
 
   /** Constructs an instance of IamCheckerClient with default settings. */
@@ -168,7 +169,7 @@ public class IamCheckerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IamCheckerSettings getSettings() {
+  public final @Nullable IamCheckerSettings getSettings() {
     return settings;
   }
 

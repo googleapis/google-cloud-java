@@ -46,6 +46,8 @@ public interface Reference extends AstNode {
 
   Reference copyAndSetGenerics(List<Reference> generics);
 
+  Reference copyAndSetNullable(boolean isNullable);
+
   // Valid only for nested classes.
   boolean isStaticImport();
 
@@ -59,4 +61,6 @@ public interface Reference extends AstNode {
   boolean isAssignableFrom(Reference other);
 
   boolean isWildcard();
+
+  boolean isNullable();
 }

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,7 +66,7 @@ public class PropertyQuotasSnapshotName implements ResourceName {
     return newBuilder().setProperty(property).build().toString();
   }
 
-  public static PropertyQuotasSnapshotName parse(String formattedString) {
+  public static @Nullable PropertyQuotasSnapshotName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -84,7 +85,7 @@ public class PropertyQuotasSnapshotName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<PropertyQuotasSnapshotName> values) {
+  public static List<String> toStringList(List<@Nullable PropertyQuotasSnapshotName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (PropertyQuotasSnapshotName value : values) {
       if (value == null) {
@@ -126,7 +127,7 @@ public class PropertyQuotasSnapshotName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

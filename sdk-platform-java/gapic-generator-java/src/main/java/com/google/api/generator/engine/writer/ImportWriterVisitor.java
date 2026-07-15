@@ -479,6 +479,9 @@ public class ImportWriterVisitor implements AstNodeVisitor {
   }
 
   private void handleReference(Reference reference) {
+    if (reference.isNullable()) {
+      addImport("org.jspecify.annotations.Nullable");
+    }
     // Don't need to import this.
     if (reference.useFullName()) {
       return;

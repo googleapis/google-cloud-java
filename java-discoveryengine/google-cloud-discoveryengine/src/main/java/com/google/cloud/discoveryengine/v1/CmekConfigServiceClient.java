@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,7 +200,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CmekConfigServiceClient implements BackgroundResource {
-  private final CmekConfigServiceSettings settings;
+  private final @Nullable CmekConfigServiceSettings settings;
   private final CmekConfigServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -247,7 +248,7 @@ public class CmekConfigServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CmekConfigServiceSettings getSettings() {
+  public final @Nullable CmekConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -424,7 +425,7 @@ public class CmekConfigServiceClient implements BackgroundResource {
    *     exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CmekConfig getCmekConfig(CmekConfigName name) {
+  public final CmekConfig getCmekConfig(@Nullable CmekConfigName name) {
     GetCmekConfigRequest request =
         GetCmekConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCmekConfig(request);
@@ -543,7 +544,7 @@ public class CmekConfigServiceClient implements BackgroundResource {
    *     of whether or not a CmekConfig exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCmekConfigsResponse listCmekConfigs(LocationName parent) {
+  public final ListCmekConfigsResponse listCmekConfigs(@Nullable LocationName parent) {
     ListCmekConfigsRequest request =
         ListCmekConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -664,7 +665,7 @@ public class CmekConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteCmekConfigMetadata> deleteCmekConfigAsync(
-      CmekConfigName name) {
+      @Nullable CmekConfigName name) {
     DeleteCmekConfigRequest request =
         DeleteCmekConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCmekConfigAsync(request);

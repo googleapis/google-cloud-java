@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -144,7 +145,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VideoIntelligenceServiceClient implements BackgroundResource {
-  private final VideoIntelligenceServiceSettings settings;
+  private final @Nullable VideoIntelligenceServiceSettings settings;
   private final VideoIntelligenceServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -194,7 +195,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VideoIntelligenceServiceSettings getSettings() {
+  public final @Nullable VideoIntelligenceServiceSettings getSettings() {
     return settings;
   }
 

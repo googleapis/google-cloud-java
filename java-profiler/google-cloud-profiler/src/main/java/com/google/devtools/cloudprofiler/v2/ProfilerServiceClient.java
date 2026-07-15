@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -181,7 +182,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ProfilerServiceClient implements BackgroundResource {
-  private final ProfilerServiceSettings settings;
+  private final @Nullable ProfilerServiceSettings settings;
   private final ProfilerServiceStub stub;
 
   /** Constructs an instance of ProfilerServiceClient with default settings. */
@@ -221,7 +222,7 @@ public class ProfilerServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProfilerServiceSettings getSettings() {
+  public final @Nullable ProfilerServiceSettings getSettings() {
     return settings;
   }
 
@@ -342,7 +343,7 @@ public class ProfilerServiceClient implements BackgroundResource {
    * @param profile Contents of the profile to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Profile createOfflineProfile(ProjectName parent, Profile profile) {
+  public final Profile createOfflineProfile(@Nullable ProjectName parent, Profile profile) {
     CreateOfflineProfileRequest request =
         CreateOfflineProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

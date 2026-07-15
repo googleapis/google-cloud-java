@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -373,7 +374,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerClient implements BackgroundResource {
-  private final PolicyTagManagerSettings settings;
+  private final @Nullable PolicyTagManagerSettings settings;
   private final PolicyTagManagerStub stub;
 
   /** Constructs an instance of PolicyTagManagerClient with default settings. */
@@ -413,7 +414,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PolicyTagManagerSettings getSettings() {
+  public final @Nullable PolicyTagManagerSettings getSettings() {
     return settings;
   }
 
@@ -446,7 +447,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param taxonomy The taxonomy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Taxonomy createTaxonomy(LocationName parent, Taxonomy taxonomy) {
+  public final Taxonomy createTaxonomy(@Nullable LocationName parent, Taxonomy taxonomy) {
     CreateTaxonomyRequest request =
         CreateTaxonomyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -571,7 +572,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *     <p>Note: All policy tags in this taxonomy are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTaxonomy(TaxonomyName name) {
+  public final void deleteTaxonomy(@Nullable TaxonomyName name) {
     DeleteTaxonomyRequest request =
         DeleteTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTaxonomy(request);
@@ -771,7 +772,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param parent Required. Resource name of the project to list the taxonomies of.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTaxonomiesPagedResponse listTaxonomies(LocationName parent) {
+  public final ListTaxonomiesPagedResponse listTaxonomies(@Nullable LocationName parent) {
     ListTaxonomiesRequest request =
         ListTaxonomiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -936,7 +937,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param name Required. Resource name of the taxonomy to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Taxonomy getTaxonomy(TaxonomyName name) {
+  public final Taxonomy getTaxonomy(@Nullable TaxonomyName name) {
     GetTaxonomyRequest request =
         GetTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTaxonomy(request);
@@ -1046,7 +1047,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param policyTag The policy tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PolicyTag createPolicyTag(TaxonomyName parent, PolicyTag policyTag) {
+  public final PolicyTag createPolicyTag(@Nullable TaxonomyName parent, PolicyTag policyTag) {
     CreatePolicyTagRequest request =
         CreatePolicyTagRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1171,7 +1172,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *     <p>Note: All of its descendant policy tags are also deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePolicyTag(PolicyTagName name) {
+  public final void deletePolicyTag(@Nullable PolicyTagName name) {
     DeletePolicyTagRequest request =
         DeletePolicyTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePolicyTag(request);
@@ -1392,7 +1393,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param parent Required. Resource name of the taxonomy to list the policy tags of.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyTagsPagedResponse listPolicyTags(TaxonomyName parent) {
+  public final ListPolicyTagsPagedResponse listPolicyTags(@Nullable TaxonomyName parent) {
     ListPolicyTagsRequest request =
         ListPolicyTagsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1555,7 +1556,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * @param name Required. Resource name of the policy tag.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PolicyTag getPolicyTag(PolicyTagName name) {
+  public final PolicyTag getPolicyTag(@Nullable PolicyTagName name) {
     GetPolicyTagRequest request =
         GetPolicyTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPolicyTag(request);
@@ -1894,8 +1895,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy, ListTaxonomiesPage> {
 
     private ListTaxonomiesPage(
-        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
-        ListTaxonomiesResponse response) {
+        @Nullable PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        @Nullable ListTaxonomiesResponse response) {
       super(context, response);
     }
 
@@ -1905,14 +1906,14 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
     @Override
     protected ListTaxonomiesPage createPage(
-        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
-        ListTaxonomiesResponse response) {
+        @Nullable PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        @Nullable ListTaxonomiesResponse response) {
       return new ListTaxonomiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTaxonomiesPage> createPageAsync(
-        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        @Nullable PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
         ApiFuture<ListTaxonomiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1926,7 +1927,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListTaxonomiesPage,
           ListTaxonomiesFixedSizeCollection> {
 
-    private ListTaxonomiesFixedSizeCollection(List<ListTaxonomiesPage> pages, int collectionSize) {
+    private ListTaxonomiesFixedSizeCollection(
+        @Nullable List<ListTaxonomiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1936,7 +1938,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
     @Override
     protected ListTaxonomiesFixedSizeCollection createCollection(
-        List<ListTaxonomiesPage> pages, int collectionSize) {
+        @Nullable List<ListTaxonomiesPage> pages, int collectionSize) {
       return new ListTaxonomiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1970,8 +1972,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag, ListPolicyTagsPage> {
 
     private ListPolicyTagsPage(
-        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
-        ListPolicyTagsResponse response) {
+        @Nullable PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        @Nullable ListPolicyTagsResponse response) {
       super(context, response);
     }
 
@@ -1981,14 +1983,14 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
     @Override
     protected ListPolicyTagsPage createPage(
-        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
-        ListPolicyTagsResponse response) {
+        @Nullable PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        @Nullable ListPolicyTagsResponse response) {
       return new ListPolicyTagsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPolicyTagsPage> createPageAsync(
-        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        @Nullable PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
         ApiFuture<ListPolicyTagsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2002,7 +2004,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
           ListPolicyTagsPage,
           ListPolicyTagsFixedSizeCollection> {
 
-    private ListPolicyTagsFixedSizeCollection(List<ListPolicyTagsPage> pages, int collectionSize) {
+    private ListPolicyTagsFixedSizeCollection(
+        @Nullable List<ListPolicyTagsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2012,7 +2015,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
     @Override
     protected ListPolicyTagsFixedSizeCollection createCollection(
-        List<ListPolicyTagsPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyTagsPage> pages, int collectionSize) {
       return new ListPolicyTagsFixedSizeCollection(pages, collectionSize);
     }
   }

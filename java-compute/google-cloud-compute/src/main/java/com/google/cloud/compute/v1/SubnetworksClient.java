@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -336,7 +337,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SubnetworksClient implements BackgroundResource {
-  private final SubnetworksSettings settings;
+  private final @Nullable SubnetworksSettings settings;
   private final SubnetworksStub stub;
 
   /** Constructs an instance of SubnetworksClient with default settings. */
@@ -375,7 +376,7 @@ public class SubnetworksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SubnetworksSettings getSettings() {
+  public final @Nullable SubnetworksSettings getSettings() {
     return settings;
   }
 
@@ -2029,12 +2030,13 @@ public class SubnetworksClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
                 Map.Entry<String, SubnetworksScopedList>>
             context,
-        SubnetworkAggregatedList response) {
+        @Nullable SubnetworkAggregatedList response) {
       super(context, response);
     }
 
@@ -2044,18 +2046,20 @@ public class SubnetworksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
                 Map.Entry<String, SubnetworksScopedList>>
             context,
-        SubnetworkAggregatedList response) {
+        @Nullable SubnetworkAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSubnetworksRequest,
                 SubnetworkAggregatedList,
                 Map.Entry<String, SubnetworksScopedList>>
@@ -2073,7 +2077,8 @@ public class SubnetworksClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2083,7 +2088,7 @@ public class SubnetworksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2110,8 +2115,8 @@ public class SubnetworksClient implements BackgroundResource {
       extends AbstractPage<ListSubnetworksRequest, SubnetworkList, Subnetwork, ListPage> {
 
     private ListPage(
-        PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
-        SubnetworkList response) {
+        @Nullable PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
+        @Nullable SubnetworkList response) {
       super(context, response);
     }
 
@@ -2121,14 +2126,14 @@ public class SubnetworksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
-        SubnetworkList response) {
+        @Nullable PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
+        @Nullable SubnetworkList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
+        @Nullable PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> context,
         ApiFuture<SubnetworkList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2138,7 +2143,7 @@ public class SubnetworksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSubnetworksRequest, SubnetworkList, Subnetwork, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2147,7 +2152,8 @@ public class SubnetworksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2183,9 +2189,11 @@ public class SubnetworksClient implements BackgroundResource {
           ListUsablePage> {
 
     private ListUsablePage(
-        PageContext<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
             context,
-        UsableSubnetworksAggregatedList response) {
+        @Nullable UsableSubnetworksAggregatedList response) {
       super(context, response);
     }
 
@@ -2195,15 +2203,19 @@ public class SubnetworksClient implements BackgroundResource {
 
     @Override
     protected ListUsablePage createPage(
-        PageContext<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
             context,
-        UsableSubnetworksAggregatedList response) {
+        @Nullable UsableSubnetworksAggregatedList response) {
       return new ListUsablePage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsablePage> createPageAsync(
-        PageContext<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
             context,
         ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2218,7 +2230,8 @@ public class SubnetworksClient implements BackgroundResource {
           ListUsablePage,
           ListUsableFixedSizeCollection> {
 
-    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+    private ListUsableFixedSizeCollection(
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2228,7 +2241,7 @@ public class SubnetworksClient implements BackgroundResource {
 
     @Override
     protected ListUsableFixedSizeCollection createCollection(
-        List<ListUsablePage> pages, int collectionSize) {
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }

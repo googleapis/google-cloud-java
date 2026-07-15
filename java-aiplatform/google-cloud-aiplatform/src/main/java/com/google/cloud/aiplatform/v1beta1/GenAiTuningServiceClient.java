@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -296,7 +297,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GenAiTuningServiceClient implements BackgroundResource {
-  private final GenAiTuningServiceSettings settings;
+  private final @Nullable GenAiTuningServiceSettings settings;
   private final GenAiTuningServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -339,7 +340,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final GenAiTuningServiceSettings getSettings() {
+  public final @Nullable GenAiTuningServiceSettings getSettings() {
     return settings;
   }
 
@@ -379,7 +380,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    * @param tuningJob Required. The TuningJob to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TuningJob createTuningJob(LocationName parent, TuningJob tuningJob) {
+  public final TuningJob createTuningJob(@Nullable LocationName parent, TuningJob tuningJob) {
     CreateTuningJobRequest request =
         CreateTuningJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -498,7 +499,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TuningJob getTuningJob(TuningJobName name) {
+  public final TuningJob getTuningJob(@Nullable TuningJobName name) {
     GetTuningJobRequest request =
         GetTuningJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTuningJob(request);
@@ -611,7 +612,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTuningJobsPagedResponse listTuningJobs(LocationName parent) {
+  public final ListTuningJobsPagedResponse listTuningJobs(@Nullable LocationName parent) {
     ListTuningJobsRequest request =
         ListTuningJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -786,7 +787,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelTuningJob(TuningJobName name) {
+  public final void cancelTuningJob(@Nullable TuningJobName name) {
     CancelTuningJobRequest request =
         CancelTuningJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     cancelTuningJob(request);
@@ -926,7 +927,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TuningJob, RebaseTunedModelOperationMetadata> rebaseTunedModelAsync(
-      LocationName parent, TunedModelRef tunedModelRef) {
+      @Nullable LocationName parent, TunedModelRef tunedModelRef) {
     RebaseTunedModelRequest request =
         RebaseTunedModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1500,8 +1501,8 @@ public class GenAiTuningServiceClient implements BackgroundResource {
           ListTuningJobsRequest, ListTuningJobsResponse, TuningJob, ListTuningJobsPage> {
 
     private ListTuningJobsPage(
-        PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
-        ListTuningJobsResponse response) {
+        @Nullable PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
+        @Nullable ListTuningJobsResponse response) {
       super(context, response);
     }
 
@@ -1511,14 +1512,14 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
     @Override
     protected ListTuningJobsPage createPage(
-        PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
-        ListTuningJobsResponse response) {
+        @Nullable PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
+        @Nullable ListTuningJobsResponse response) {
       return new ListTuningJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTuningJobsPage> createPageAsync(
-        PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
+        @Nullable PageContext<ListTuningJobsRequest, ListTuningJobsResponse, TuningJob> context,
         ApiFuture<ListTuningJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1532,7 +1533,8 @@ public class GenAiTuningServiceClient implements BackgroundResource {
           ListTuningJobsPage,
           ListTuningJobsFixedSizeCollection> {
 
-    private ListTuningJobsFixedSizeCollection(List<ListTuningJobsPage> pages, int collectionSize) {
+    private ListTuningJobsFixedSizeCollection(
+        @Nullable List<ListTuningJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1542,7 +1544,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
     @Override
     protected ListTuningJobsFixedSizeCollection createCollection(
-        List<ListTuningJobsPage> pages, int collectionSize) {
+        @Nullable List<ListTuningJobsPage> pages, int collectionSize) {
       return new ListTuningJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1576,8 +1578,8 @@ public class GenAiTuningServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1587,14 +1589,14 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1608,7 +1610,8 @@ public class GenAiTuningServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1618,7 +1621,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

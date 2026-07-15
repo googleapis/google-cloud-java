@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -182,7 +183,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CommentServiceClient implements BackgroundResource {
-  private final CommentServiceSettings settings;
+  private final @Nullable CommentServiceSettings settings;
   private final CommentServiceStub stub;
 
   /** Constructs an instance of CommentServiceClient with default settings. */
@@ -222,7 +223,7 @@ public class CommentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CommentServiceSettings getSettings() {
+  public final @Nullable CommentServiceSettings getSettings() {
     return settings;
   }
 
@@ -253,7 +254,7 @@ public class CommentServiceClient implements BackgroundResource {
    * @param parent Required. The name of the case for which to list comments.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCommentsPagedResponse listComments(CaseName parent) {
+  public final ListCommentsPagedResponse listComments(@Nullable CaseName parent) {
     ListCommentsRequest request =
         ListCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -417,7 +418,7 @@ public class CommentServiceClient implements BackgroundResource {
    * @param comment Required. The comment to be added.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Comment createComment(CaseName parent, Comment comment) {
+  public final Comment createComment(@Nullable CaseName parent, Comment comment) {
     CreateCommentRequest request =
         CreateCommentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -540,7 +541,7 @@ public class CommentServiceClient implements BackgroundResource {
    * @param name Required. The name of the comment to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Comment getComment(CommentName name) {
+  public final Comment getComment(@Nullable CommentName name) {
     GetCommentRequest request =
         GetCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getComment(request);
@@ -691,8 +692,8 @@ public class CommentServiceClient implements BackgroundResource {
       extends AbstractPage<ListCommentsRequest, ListCommentsResponse, Comment, ListCommentsPage> {
 
     private ListCommentsPage(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
-        ListCommentsResponse response) {
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable ListCommentsResponse response) {
       super(context, response);
     }
 
@@ -702,14 +703,14 @@ public class CommentServiceClient implements BackgroundResource {
 
     @Override
     protected ListCommentsPage createPage(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
-        ListCommentsResponse response) {
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable ListCommentsResponse response) {
       return new ListCommentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCommentsPage> createPageAsync(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
         ApiFuture<ListCommentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -723,7 +724,8 @@ public class CommentServiceClient implements BackgroundResource {
           ListCommentsPage,
           ListCommentsFixedSizeCollection> {
 
-    private ListCommentsFixedSizeCollection(List<ListCommentsPage> pages, int collectionSize) {
+    private ListCommentsFixedSizeCollection(
+        @Nullable List<ListCommentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -733,7 +735,7 @@ public class CommentServiceClient implements BackgroundResource {
 
     @Override
     protected ListCommentsFixedSizeCollection createCollection(
-        List<ListCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListCommentsPage> pages, int collectionSize) {
       return new ListCommentsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -185,7 +186,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PromotionsServiceClient implements BackgroundResource {
-  private final PromotionsServiceSettings settings;
+  private final @Nullable PromotionsServiceSettings settings;
   private final PromotionsServiceStub stub;
 
   /** Constructs an instance of PromotionsServiceClient with default settings. */
@@ -225,7 +226,7 @@ public class PromotionsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PromotionsServiceSettings getSettings() {
+  public final @Nullable PromotionsServiceSettings getSettings() {
     return settings;
   }
 
@@ -320,7 +321,7 @@ public class PromotionsServiceClient implements BackgroundResource {
    *     `accounts/{account}/promotions/{promotions}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Promotion getPromotion(PromotionName name) {
+  public final Promotion getPromotion(@Nullable PromotionName name) {
     GetPromotionRequest request =
         GetPromotionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPromotion(request);
@@ -631,8 +632,8 @@ public class PromotionsServiceClient implements BackgroundResource {
           ListPromotionsRequest, ListPromotionsResponse, Promotion, ListPromotionsPage> {
 
     private ListPromotionsPage(
-        PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
-        ListPromotionsResponse response) {
+        @Nullable PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
+        @Nullable ListPromotionsResponse response) {
       super(context, response);
     }
 
@@ -642,14 +643,14 @@ public class PromotionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListPromotionsPage createPage(
-        PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
-        ListPromotionsResponse response) {
+        @Nullable PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
+        @Nullable ListPromotionsResponse response) {
       return new ListPromotionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPromotionsPage> createPageAsync(
-        PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
+        @Nullable PageContext<ListPromotionsRequest, ListPromotionsResponse, Promotion> context,
         ApiFuture<ListPromotionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -663,7 +664,8 @@ public class PromotionsServiceClient implements BackgroundResource {
           ListPromotionsPage,
           ListPromotionsFixedSizeCollection> {
 
-    private ListPromotionsFixedSizeCollection(List<ListPromotionsPage> pages, int collectionSize) {
+    private ListPromotionsFixedSizeCollection(
+        @Nullable List<ListPromotionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -673,7 +675,7 @@ public class PromotionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListPromotionsFixedSizeCollection createCollection(
-        List<ListPromotionsPage> pages, int collectionSize) {
+        @Nullable List<ListPromotionsPage> pages, int collectionSize) {
       return new ListPromotionsFixedSizeCollection(pages, collectionSize);
     }
   }

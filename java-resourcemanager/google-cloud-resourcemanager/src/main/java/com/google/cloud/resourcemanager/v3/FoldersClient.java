@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -354,7 +355,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FoldersClient implements BackgroundResource {
-  private final FoldersSettings settings;
+  private final @Nullable FoldersSettings settings;
   private final FoldersStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -400,7 +401,7 @@ public class FoldersClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final FoldersSettings getSettings() {
+  public final @Nullable FoldersSettings getSettings() {
     return settings;
   }
 
@@ -449,7 +450,7 @@ public class FoldersClient implements BackgroundResource {
    *     `folders/{folder_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder getFolder(FolderName name) {
+  public final Folder getFolder(@Nullable FolderName name) {
     GetFolderRequest request =
         GetFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFolder(request);
@@ -570,7 +571,7 @@ public class FoldersClient implements BackgroundResource {
    *     permission on the `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFoldersPagedResponse listFolders(ResourceName parent) {
+  public final ListFoldersPagedResponse listFolders(@Nullable ResourceName parent) {
     ListFoldersRequest request =
         ListFoldersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1280,7 +1281,7 @@ public class FoldersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, MoveFolderMetadata> moveFolderAsync(
-      FolderName name, ResourceName destinationParent) {
+      @Nullable FolderName name, @Nullable ResourceName destinationParent) {
     MoveFolderRequest request =
         MoveFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1327,7 +1328,7 @@ public class FoldersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, MoveFolderMetadata> moveFolderAsync(
-      FolderName name, String destinationParent) {
+      @Nullable FolderName name, String destinationParent) {
     MoveFolderRequest request =
         MoveFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1374,7 +1375,7 @@ public class FoldersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, MoveFolderMetadata> moveFolderAsync(
-      String name, ResourceName destinationParent) {
+      String name, @Nullable ResourceName destinationParent) {
     MoveFolderRequest request =
         MoveFolderRequest.newBuilder()
             .setName(name)
@@ -1580,7 +1581,8 @@ public class FoldersClient implements BackgroundResource {
    *     `folders/{folder_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Folder, DeleteFolderMetadata> deleteFolderAsync(FolderName name) {
+  public final OperationFuture<Folder, DeleteFolderMetadata> deleteFolderAsync(
+      @Nullable FolderName name) {
     DeleteFolderRequest request =
         DeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFolderAsync(request);
@@ -1750,7 +1752,7 @@ public class FoldersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, UndeleteFolderMetadata> undeleteFolderAsync(
-      FolderName name) {
+      @Nullable FolderName name) {
     UndeleteFolderRequest request =
         UndeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return undeleteFolderAsync(request);
@@ -1915,7 +1917,7 @@ public class FoldersClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2044,7 +2046,7 @@ public class FoldersClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2180,7 +2182,7 @@ public class FoldersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2349,8 +2351,8 @@ public class FoldersClient implements BackgroundResource {
       extends AbstractPage<ListFoldersRequest, ListFoldersResponse, Folder, ListFoldersPage> {
 
     private ListFoldersPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       super(context, response);
     }
 
@@ -2360,14 +2362,14 @@ public class FoldersClient implements BackgroundResource {
 
     @Override
     protected ListFoldersPage createPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       return new ListFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFoldersPage> createPageAsync(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
         ApiFuture<ListFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2381,7 +2383,8 @@ public class FoldersClient implements BackgroundResource {
           ListFoldersPage,
           ListFoldersFixedSizeCollection> {
 
-    private ListFoldersFixedSizeCollection(List<ListFoldersPage> pages, int collectionSize) {
+    private ListFoldersFixedSizeCollection(
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2391,7 +2394,7 @@ public class FoldersClient implements BackgroundResource {
 
     @Override
     protected ListFoldersFixedSizeCollection createCollection(
-        List<ListFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       return new ListFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2424,8 +2427,8 @@ public class FoldersClient implements BackgroundResource {
       extends AbstractPage<SearchFoldersRequest, SearchFoldersResponse, Folder, SearchFoldersPage> {
 
     private SearchFoldersPage(
-        PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
-        SearchFoldersResponse response) {
+        @Nullable PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
+        @Nullable SearchFoldersResponse response) {
       super(context, response);
     }
 
@@ -2435,14 +2438,14 @@ public class FoldersClient implements BackgroundResource {
 
     @Override
     protected SearchFoldersPage createPage(
-        PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
-        SearchFoldersResponse response) {
+        @Nullable PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
+        @Nullable SearchFoldersResponse response) {
       return new SearchFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchFoldersPage> createPageAsync(
-        PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
+        @Nullable PageContext<SearchFoldersRequest, SearchFoldersResponse, Folder> context,
         ApiFuture<SearchFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2456,7 +2459,8 @@ public class FoldersClient implements BackgroundResource {
           SearchFoldersPage,
           SearchFoldersFixedSizeCollection> {
 
-    private SearchFoldersFixedSizeCollection(List<SearchFoldersPage> pages, int collectionSize) {
+    private SearchFoldersFixedSizeCollection(
+        @Nullable List<SearchFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2466,7 +2470,7 @@ public class FoldersClient implements BackgroundResource {
 
     @Override
     protected SearchFoldersFixedSizeCollection createCollection(
-        List<SearchFoldersPage> pages, int collectionSize) {
+        @Nullable List<SearchFoldersPage> pages, int collectionSize) {
       return new SearchFoldersFixedSizeCollection(pages, collectionSize);
     }
   }

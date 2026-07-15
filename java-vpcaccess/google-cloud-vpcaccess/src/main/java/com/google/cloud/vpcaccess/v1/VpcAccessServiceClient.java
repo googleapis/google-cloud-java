@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,7 +230,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VpcAccessServiceClient implements BackgroundResource {
-  private final VpcAccessServiceSettings settings;
+  private final @Nullable VpcAccessServiceSettings settings;
   private final VpcAccessServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -277,7 +278,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VpcAccessServiceSettings getSettings() {
+  public final @Nullable VpcAccessServiceSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +331,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Connector, OperationMetadata> createConnectorAsync(
-      LocationName parent, String connectorId, Connector connector) {
+      @Nullable LocationName parent, String connectorId, Connector connector) {
     CreateConnectorRequest request =
         CreateConnectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -491,7 +492,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * @param name Required. Name of a Serverless VPC Access connector to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connector getConnector(ConnectorName name) {
+  public final Connector getConnector(@Nullable ConnectorName name) {
     GetConnectorRequest request =
         GetConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConnector(request);
@@ -602,7 +603,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * @param parent Required. The project and location from which the routes should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectorsPagedResponse listConnectors(LocationName parent) {
+  public final ListConnectorsPagedResponse listConnectors(@Nullable LocationName parent) {
     ListConnectorsRequest request =
         ListConnectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -764,7 +765,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * @param name Required. Name of a Serverless VPC Access connector to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteConnectorAsync(ConnectorName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteConnectorAsync(
+      @Nullable ConnectorName name) {
     DeleteConnectorRequest request =
         DeleteConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteConnectorAsync(request);
@@ -1048,8 +1050,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
           ListConnectorsRequest, ListConnectorsResponse, Connector, ListConnectorsPage> {
 
     private ListConnectorsPage(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
-        ListConnectorsResponse response) {
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable ListConnectorsResponse response) {
       super(context, response);
     }
 
@@ -1059,14 +1061,14 @@ public class VpcAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectorsPage createPage(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
-        ListConnectorsResponse response) {
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable ListConnectorsResponse response) {
       return new ListConnectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectorsPage> createPageAsync(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
         ApiFuture<ListConnectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1080,7 +1082,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
           ListConnectorsPage,
           ListConnectorsFixedSizeCollection> {
 
-    private ListConnectorsFixedSizeCollection(List<ListConnectorsPage> pages, int collectionSize) {
+    private ListConnectorsFixedSizeCollection(
+        @Nullable List<ListConnectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1090,7 +1093,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectorsFixedSizeCollection createCollection(
-        List<ListConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectorsPage> pages, int collectionSize) {
       return new ListConnectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1124,8 +1127,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1135,14 +1138,14 @@ public class VpcAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1156,7 +1159,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1166,7 +1170,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
