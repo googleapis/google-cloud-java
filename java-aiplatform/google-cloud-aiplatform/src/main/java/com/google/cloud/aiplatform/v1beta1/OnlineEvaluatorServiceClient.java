@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -334,10 +336,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class OnlineEvaluatorServiceClient implements BackgroundResource {
-  private final OnlineEvaluatorServiceSettings settings;
+  private final @Nullable OnlineEvaluatorServiceSettings settings;
   private final OnlineEvaluatorServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -381,7 +384,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final OnlineEvaluatorServiceSettings getSettings() {
+  public final @Nullable OnlineEvaluatorServiceSettings getSettings() {
     return settings;
   }
 
@@ -424,7 +427,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<OnlineEvaluator, CreateOnlineEvaluatorOperationMetadata>
-      createOnlineEvaluatorAsync(LocationName parent, OnlineEvaluator onlineEvaluator) {
+      createOnlineEvaluatorAsync(@Nullable LocationName parent, OnlineEvaluator onlineEvaluator) {
     CreateOnlineEvaluatorRequest request =
         CreateOnlineEvaluatorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -588,7 +591,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/onlineEvaluators/{id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OnlineEvaluator getOnlineEvaluator(OnlineEvaluatorName name) {
+  public final OnlineEvaluator getOnlineEvaluator(@Nullable OnlineEvaluatorName name) {
     GetOnlineEvaluatorRequest request =
         GetOnlineEvaluatorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -848,7 +851,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOnlineEvaluatorOperationMetadata>
-      deleteOnlineEvaluatorAsync(OnlineEvaluatorName name) {
+      deleteOnlineEvaluatorAsync(@Nullable OnlineEvaluatorName name) {
     DeleteOnlineEvaluatorRequest request =
         DeleteOnlineEvaluatorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1010,7 +1013,8 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOnlineEvaluatorsPagedResponse listOnlineEvaluators(LocationName parent) {
+  public final ListOnlineEvaluatorsPagedResponse listOnlineEvaluators(
+      @Nullable LocationName parent) {
     ListOnlineEvaluatorsRequest request =
         ListOnlineEvaluatorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1192,7 +1196,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<OnlineEvaluator, ActivateOnlineEvaluatorOperationMetadata>
-      activateOnlineEvaluatorAsync(OnlineEvaluatorName name) {
+      activateOnlineEvaluatorAsync(@Nullable OnlineEvaluatorName name) {
     ActivateOnlineEvaluatorRequest request =
         ActivateOnlineEvaluatorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1359,7 +1363,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<OnlineEvaluator, SuspendOnlineEvaluatorOperationMetadata>
-      suspendOnlineEvaluatorAsync(OnlineEvaluatorName name) {
+      suspendOnlineEvaluatorAsync(@Nullable OnlineEvaluatorName name) {
     SuspendOnlineEvaluatorRequest request =
         SuspendOnlineEvaluatorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1946,9 +1950,10 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
           ListOnlineEvaluatorsPage> {
 
     private ListOnlineEvaluatorsPage(
-        PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
+        @Nullable
+            PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
             context,
-        ListOnlineEvaluatorsResponse response) {
+        @Nullable ListOnlineEvaluatorsResponse response) {
       super(context, response);
     }
 
@@ -1958,15 +1963,17 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
 
     @Override
     protected ListOnlineEvaluatorsPage createPage(
-        PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
+        @Nullable
+            PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
             context,
-        ListOnlineEvaluatorsResponse response) {
+        @Nullable ListOnlineEvaluatorsResponse response) {
       return new ListOnlineEvaluatorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOnlineEvaluatorsPage> createPageAsync(
-        PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
+        @Nullable
+            PageContext<ListOnlineEvaluatorsRequest, ListOnlineEvaluatorsResponse, OnlineEvaluator>
             context,
         ApiFuture<ListOnlineEvaluatorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1982,7 +1989,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
           ListOnlineEvaluatorsFixedSizeCollection> {
 
     private ListOnlineEvaluatorsFixedSizeCollection(
-        List<ListOnlineEvaluatorsPage> pages, int collectionSize) {
+        @Nullable List<ListOnlineEvaluatorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1992,7 +1999,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
 
     @Override
     protected ListOnlineEvaluatorsFixedSizeCollection createCollection(
-        List<ListOnlineEvaluatorsPage> pages, int collectionSize) {
+        @Nullable List<ListOnlineEvaluatorsPage> pages, int collectionSize) {
       return new ListOnlineEvaluatorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2026,8 +2033,8 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2037,14 +2044,14 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2058,7 +2065,8 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2068,7 +2076,7 @@ public class OnlineEvaluatorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

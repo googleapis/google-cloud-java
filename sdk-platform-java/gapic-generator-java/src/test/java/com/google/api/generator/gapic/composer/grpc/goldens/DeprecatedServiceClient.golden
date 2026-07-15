@@ -8,6 +8,8 @@ import com.google.testdata.v1.stub.DeprecatedServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -110,10 +112,11 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public class DeprecatedServiceClient implements BackgroundResource {
-  private final DeprecatedServiceSettings settings;
+  private final @Nullable DeprecatedServiceSettings settings;
   private final DeprecatedServiceStub stub;
 
   /** Constructs an instance of DeprecatedServiceClient with default settings. */
@@ -153,7 +156,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeprecatedServiceSettings getSettings() {
+  public final @Nullable DeprecatedServiceSettings getSettings() {
     return settings;
   }
 

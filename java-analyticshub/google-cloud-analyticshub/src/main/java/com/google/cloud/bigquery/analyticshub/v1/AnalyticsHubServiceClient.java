@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -679,9 +681,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AnalyticsHubServiceClient implements BackgroundResource {
-  private final AnalyticsHubServiceSettings settings;
+  private final @Nullable AnalyticsHubServiceSettings settings;
   private final AnalyticsHubServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -729,7 +732,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AnalyticsHubServiceSettings getSettings() {
+  public final @Nullable AnalyticsHubServiceSettings getSettings() {
     return settings;
   }
 
@@ -779,7 +782,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataExchangesPagedResponse listDataExchanges(LocationName parent) {
+  public final ListDataExchangesPagedResponse listDataExchanges(@Nullable LocationName parent) {
     ListDataExchangesRequest request =
         ListDataExchangesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1084,7 +1087,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataExchange getDataExchange(DataExchangeName name) {
+  public final DataExchange getDataExchange(@Nullable DataExchangeName name) {
     GetDataExchangeRequest request =
         GetDataExchangeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataExchange(request);
@@ -1197,7 +1200,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @param dataExchange Required. The data exchange to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataExchange createDataExchange(LocationName parent, DataExchange dataExchange) {
+  public final DataExchange createDataExchange(
+      @Nullable LocationName parent, DataExchange dataExchange) {
     CreateDataExchangeRequest request =
         CreateDataExchangeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1414,7 +1418,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     example, `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataExchange(DataExchangeName name) {
+  public final void deleteDataExchange(@Nullable DataExchangeName name) {
     DeleteDataExchangeRequest request =
         DeleteDataExchangeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1530,7 +1534,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListListingsPagedResponse listListings(DataExchangeName parent) {
+  public final ListListingsPagedResponse listListings(@Nullable DataExchangeName parent) {
     ListListingsRequest request =
         ListListingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1696,7 +1700,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Listing getListing(ListingName name) {
+  public final Listing getListing(@Nullable ListingName name) {
     GetListingRequest request =
         GetListingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getListing(request);
@@ -1814,7 +1818,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @param listing Required. The listing to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Listing createListing(DataExchangeName parent, Listing listing) {
+  public final Listing createListing(@Nullable DataExchangeName parent, Listing listing) {
     CreateListingRequest request =
         CreateListingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2026,7 +2030,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteListing(ListingName name) {
+  public final void deleteListing(@Nullable ListingName name) {
     DeleteListingRequest request =
         DeleteListingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteListing(request);
@@ -2148,7 +2152,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SubscribeListingResponse subscribeListing(ListingName name) {
+  public final SubscribeListingResponse subscribeListing(@Nullable ListingName name) {
     SubscribeListingRequest request =
         SubscribeListingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return subscribeListing(request);
@@ -2281,7 +2285,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
-      subscribeDataExchangeAsync(DataExchangeName name) {
+      subscribeDataExchangeAsync(@Nullable DataExchangeName name) {
     SubscribeDataExchangeRequest request =
         SubscribeDataExchangeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2453,7 +2457,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
-      refreshSubscriptionAsync(SubscriptionName name) {
+      refreshSubscriptionAsync(@Nullable SubscriptionName name) {
     RefreshSubscriptionRequest request =
         RefreshSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2605,7 +2609,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Subscription getSubscription(SubscriptionName name) {
+  public final Subscription getSubscription(@Nullable SubscriptionName name) {
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSubscription(request);
@@ -2719,7 +2723,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     projects/myproject/locations/us
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubscriptionsPagedResponse listSubscriptions(LocationName parent) {
+  public final ListSubscriptionsPagedResponse listSubscriptions(@Nullable LocationName parent) {
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2894,7 +2898,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
-      ResourceName resource) {
+      @Nullable ResourceName resource) {
     ListSharedResourceSubscriptionsRequest request =
         ListSharedResourceSubscriptionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3075,7 +3079,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RevokeSubscriptionResponse revokeSubscription(SubscriptionName name) {
+  public final RevokeSubscriptionResponse revokeSubscription(@Nullable SubscriptionName name) {
     RevokeSubscriptionRequest request =
         RevokeSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3193,7 +3197,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(
-      SubscriptionName name) {
+      @Nullable SubscriptionName name) {
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3527,7 +3531,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QueryTemplate createQueryTemplate(
-      DataExchangeName parent, QueryTemplate queryTemplate, String queryTemplateId) {
+      @Nullable DataExchangeName parent, QueryTemplate queryTemplate, String queryTemplateId) {
     CreateQueryTemplateRequest request =
         CreateQueryTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3662,7 +3666,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryTemplate getQueryTemplate(QueryTemplateName name) {
+  public final QueryTemplate getQueryTemplate(@Nullable QueryTemplateName name) {
     GetQueryTemplateRequest request =
         GetQueryTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQueryTemplate(request);
@@ -3784,7 +3788,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQueryTemplatesPagedResponse listQueryTemplates(DataExchangeName parent) {
+  public final ListQueryTemplatesPagedResponse listQueryTemplates(
+      @Nullable DataExchangeName parent) {
     ListQueryTemplatesRequest request =
         ListQueryTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4051,7 +4056,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQueryTemplate(QueryTemplateName name) {
+  public final void deleteQueryTemplate(@Nullable QueryTemplateName name) {
     DeleteQueryTemplateRequest request =
         DeleteQueryTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4174,7 +4179,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryTemplate submitQueryTemplate(QueryTemplateName name) {
+  public final QueryTemplate submitQueryTemplate(@Nullable QueryTemplateName name) {
     SubmitQueryTemplateRequest request =
         SubmitQueryTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4298,7 +4303,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryTemplate approveQueryTemplate(QueryTemplateName name) {
+  public final QueryTemplate approveQueryTemplate(@Nullable QueryTemplateName name) {
     ApproveQueryTemplateRequest request =
         ApproveQueryTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4461,8 +4466,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListDataExchangesPage> {
 
     private ListDataExchangesPage(
-        PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange> context,
-        ListDataExchangesResponse response) {
+        @Nullable PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange>
+            context,
+        @Nullable ListDataExchangesResponse response) {
       super(context, response);
     }
 
@@ -4472,14 +4478,16 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataExchangesPage createPage(
-        PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange> context,
-        ListDataExchangesResponse response) {
+        @Nullable PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange>
+            context,
+        @Nullable ListDataExchangesResponse response) {
       return new ListDataExchangesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataExchangesPage> createPageAsync(
-        PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange> context,
+        @Nullable PageContext<ListDataExchangesRequest, ListDataExchangesResponse, DataExchange>
+            context,
         ApiFuture<ListDataExchangesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4494,7 +4502,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListDataExchangesFixedSizeCollection> {
 
     private ListDataExchangesFixedSizeCollection(
-        List<ListDataExchangesPage> pages, int collectionSize) {
+        @Nullable List<ListDataExchangesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4504,7 +4512,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataExchangesFixedSizeCollection createCollection(
-        List<ListDataExchangesPage> pages, int collectionSize) {
+        @Nullable List<ListDataExchangesPage> pages, int collectionSize) {
       return new ListDataExchangesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4542,9 +4550,10 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListOrgDataExchangesPage> {
 
     private ListOrgDataExchangesPage(
-        PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
+        @Nullable
+            PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
             context,
-        ListOrgDataExchangesResponse response) {
+        @Nullable ListOrgDataExchangesResponse response) {
       super(context, response);
     }
 
@@ -4554,15 +4563,17 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrgDataExchangesPage createPage(
-        PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
+        @Nullable
+            PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
             context,
-        ListOrgDataExchangesResponse response) {
+        @Nullable ListOrgDataExchangesResponse response) {
       return new ListOrgDataExchangesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrgDataExchangesPage> createPageAsync(
-        PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
+        @Nullable
+            PageContext<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse, DataExchange>
             context,
         ApiFuture<ListOrgDataExchangesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4578,7 +4589,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListOrgDataExchangesFixedSizeCollection> {
 
     private ListOrgDataExchangesFixedSizeCollection(
-        List<ListOrgDataExchangesPage> pages, int collectionSize) {
+        @Nullable List<ListOrgDataExchangesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4588,7 +4599,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrgDataExchangesFixedSizeCollection createCollection(
-        List<ListOrgDataExchangesPage> pages, int collectionSize) {
+        @Nullable List<ListOrgDataExchangesPage> pages, int collectionSize) {
       return new ListOrgDataExchangesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4621,8 +4632,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
       extends AbstractPage<ListListingsRequest, ListListingsResponse, Listing, ListListingsPage> {
 
     private ListListingsPage(
-        PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
-        ListListingsResponse response) {
+        @Nullable PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
+        @Nullable ListListingsResponse response) {
       super(context, response);
     }
 
@@ -4632,14 +4643,14 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListListingsPage createPage(
-        PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
-        ListListingsResponse response) {
+        @Nullable PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
+        @Nullable ListListingsResponse response) {
       return new ListListingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListListingsPage> createPageAsync(
-        PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
+        @Nullable PageContext<ListListingsRequest, ListListingsResponse, Listing> context,
         ApiFuture<ListListingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4653,7 +4664,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListListingsPage,
           ListListingsFixedSizeCollection> {
 
-    private ListListingsFixedSizeCollection(List<ListListingsPage> pages, int collectionSize) {
+    private ListListingsFixedSizeCollection(
+        @Nullable List<ListListingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4663,7 +4675,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListListingsFixedSizeCollection createCollection(
-        List<ListListingsPage> pages, int collectionSize) {
+        @Nullable List<ListListingsPage> pages, int collectionSize) {
       return new ListListingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4700,8 +4712,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListSubscriptionsPage> {
 
     private ListSubscriptionsPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
+        @Nullable ListSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -4711,14 +4724,16 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsPage createPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
+        @Nullable ListSubscriptionsResponse response) {
       return new ListSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscriptionsPage> createPageAsync(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
         ApiFuture<ListSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4733,7 +4748,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListSubscriptionsFixedSizeCollection> {
 
     private ListSubscriptionsFixedSizeCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4743,7 +4758,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsFixedSizeCollection createCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4785,12 +4800,13 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListSharedResourceSubscriptionsPage> {
 
     private ListSharedResourceSubscriptionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSharedResourceSubscriptionsRequest,
                 ListSharedResourceSubscriptionsResponse,
                 Subscription>
             context,
-        ListSharedResourceSubscriptionsResponse response) {
+        @Nullable ListSharedResourceSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -4800,18 +4816,20 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSharedResourceSubscriptionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSharedResourceSubscriptionsRequest,
                 ListSharedResourceSubscriptionsResponse,
                 Subscription>
             context,
-        ListSharedResourceSubscriptionsResponse response) {
+        @Nullable ListSharedResourceSubscriptionsResponse response) {
       return new ListSharedResourceSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSharedResourceSubscriptionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSharedResourceSubscriptionsRequest,
                 ListSharedResourceSubscriptionsResponse,
                 Subscription>
@@ -4830,7 +4848,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListSharedResourceSubscriptionsFixedSizeCollection> {
 
     private ListSharedResourceSubscriptionsFixedSizeCollection(
-        List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4840,7 +4858,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSharedResourceSubscriptionsFixedSizeCollection createCollection(
-        List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
       return new ListSharedResourceSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4877,8 +4895,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListQueryTemplatesPage> {
 
     private ListQueryTemplatesPage(
-        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
-        ListQueryTemplatesResponse response) {
+        @Nullable PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>
+            context,
+        @Nullable ListQueryTemplatesResponse response) {
       super(context, response);
     }
 
@@ -4888,14 +4907,16 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListQueryTemplatesPage createPage(
-        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
-        ListQueryTemplatesResponse response) {
+        @Nullable PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>
+            context,
+        @Nullable ListQueryTemplatesResponse response) {
       return new ListQueryTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQueryTemplatesPage> createPageAsync(
-        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
+        @Nullable PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate>
+            context,
         ApiFuture<ListQueryTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4910,7 +4931,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
           ListQueryTemplatesFixedSizeCollection> {
 
     private ListQueryTemplatesFixedSizeCollection(
-        List<ListQueryTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListQueryTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4920,7 +4941,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
     @Override
     protected ListQueryTemplatesFixedSizeCollection createCollection(
-        List<ListQueryTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListQueryTemplatesPage> pages, int collectionSize) {
       return new ListQueryTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }

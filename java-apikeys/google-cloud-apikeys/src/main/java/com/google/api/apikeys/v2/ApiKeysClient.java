@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -274,9 +276,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ApiKeysClient implements BackgroundResource {
-  private final ApiKeysSettings settings;
+  private final @Nullable ApiKeysSettings settings;
   private final ApiKeysStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -322,7 +325,7 @@ public class ApiKeysClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ApiKeysSettings getSettings() {
+  public final @Nullable ApiKeysSettings getSettings() {
     return settings;
   }
 
@@ -381,7 +384,7 @@ public class ApiKeysClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Key, Empty> createKeyAsync(
-      LocationName parent, Key key, String keyId) {
+      @Nullable LocationName parent, Key key, String keyId) {
     CreateKeyRequest request =
         CreateKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -551,7 +554,7 @@ public class ApiKeysClient implements BackgroundResource {
    * @param parent Required. Lists all API keys associated with this project.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeysPagedResponse listKeys(LocationName parent) {
+  public final ListKeysPagedResponse listKeys(@Nullable LocationName parent) {
     ListKeysRequest request =
         ListKeysRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listKeys(request);
@@ -724,7 +727,7 @@ public class ApiKeysClient implements BackgroundResource {
    * @param name Required. The resource name of the API key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Key getKey(KeyName name) {
+  public final Key getKey(@Nullable KeyName name) {
     GetKeyRequest request =
         GetKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKey(request);
@@ -840,7 +843,7 @@ public class ApiKeysClient implements BackgroundResource {
    * @param name Required. The resource name of the API key to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetKeyStringResponse getKeyString(KeyName name) {
+  public final GetKeyStringResponse getKeyString(@Nullable KeyName name) {
     GetKeyStringRequest request =
         GetKeyStringRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKeyString(request);
@@ -1090,7 +1093,7 @@ public class ApiKeysClient implements BackgroundResource {
    * @param name Required. The resource name of the API key to be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Key, Empty> deleteKeyAsync(KeyName name) {
+  public final OperationFuture<Key, Empty> deleteKeyAsync(@Nullable KeyName name) {
     DeleteKeyRequest request =
         DeleteKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteKeyAsync(request);
@@ -1416,7 +1419,8 @@ public class ApiKeysClient implements BackgroundResource {
       extends AbstractPage<ListKeysRequest, ListKeysResponse, Key, ListKeysPage> {
 
     private ListKeysPage(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context, ListKeysResponse response) {
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable ListKeysResponse response) {
       super(context, response);
     }
 
@@ -1426,13 +1430,14 @@ public class ApiKeysClient implements BackgroundResource {
 
     @Override
     protected ListKeysPage createPage(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context, ListKeysResponse response) {
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable ListKeysResponse response) {
       return new ListKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKeysPage> createPageAsync(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
         ApiFuture<ListKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1442,7 +1447,7 @@ public class ApiKeysClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListKeysRequest, ListKeysResponse, Key, ListKeysPage, ListKeysFixedSizeCollection> {
 
-    private ListKeysFixedSizeCollection(List<ListKeysPage> pages, int collectionSize) {
+    private ListKeysFixedSizeCollection(@Nullable List<ListKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1452,7 +1457,7 @@ public class ApiKeysClient implements BackgroundResource {
 
     @Override
     protected ListKeysFixedSizeCollection createCollection(
-        List<ListKeysPage> pages, int collectionSize) {
+        @Nullable List<ListKeysPage> pages, int collectionSize) {
       return new ListKeysFixedSizeCollection(pages, collectionSize);
     }
   }

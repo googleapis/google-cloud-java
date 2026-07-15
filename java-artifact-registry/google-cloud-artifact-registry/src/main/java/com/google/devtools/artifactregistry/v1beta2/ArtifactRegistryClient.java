@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -624,10 +626,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ArtifactRegistryClient implements BackgroundResource {
-  private final ArtifactRegistrySettings settings;
+  private final @Nullable ArtifactRegistrySettings settings;
   private final ArtifactRegistryStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -675,7 +678,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ArtifactRegistrySettings getSettings() {
+  public final @Nullable ArtifactRegistrySettings getSettings() {
     return settings;
   }
 
@@ -899,7 +902,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @param parent Required. The name of the parent resource whose repositories will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRepositoriesPagedResponse listRepositories(LocationName parent) {
+  public final ListRepositoriesPagedResponse listRepositories(@Nullable LocationName parent) {
     ListRepositoriesRequest request =
         ListRepositoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1062,7 +1065,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @param name Required. The name of the repository to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Repository getRepository(RepositoryName name) {
+  public final Repository getRepository(@Nullable RepositoryName name) {
     GetRepositoryRequest request =
         GetRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRepository(request);
@@ -1178,7 +1181,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
-      LocationName parent, Repository repository, String repositoryId) {
+      @Nullable LocationName parent, Repository repository, String repositoryId) {
     CreateRepositoryRequest request =
         CreateRepositoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1436,7 +1439,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRepositoryAsync(
-      RepositoryName name) {
+      @Nullable RepositoryName name) {
     DeleteRepositoryRequest request =
         DeleteRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRepositoryAsync(request);
@@ -3071,7 +3074,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * @param name Required. The name of the projectSettings resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProjectSettings getProjectSettings(ProjectSettingsName name) {
+  public final ProjectSettings getProjectSettings(@Nullable ProjectSettingsName name) {
     GetProjectSettingsRequest request =
         GetProjectSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3471,8 +3474,9 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListRepositoriesRequest, ListRepositoriesResponse, Repository, ListRepositoriesPage> {
 
     private ListRepositoriesPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -3482,14 +3486,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesPage createPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       return new ListRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRepositoriesPage> createPageAsync(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
         ApiFuture<ListRepositoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3504,7 +3510,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListRepositoriesFixedSizeCollection> {
 
     private ListRepositoriesFixedSizeCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3514,7 +3520,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesFixedSizeCollection createCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       return new ListRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3547,8 +3553,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractPage<ListPackagesRequest, ListPackagesResponse, Package, ListPackagesPage> {
 
     private ListPackagesPage(
-        PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
-        ListPackagesResponse response) {
+        @Nullable PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
+        @Nullable ListPackagesResponse response) {
       super(context, response);
     }
 
@@ -3558,14 +3564,14 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListPackagesPage createPage(
-        PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
-        ListPackagesResponse response) {
+        @Nullable PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
+        @Nullable ListPackagesResponse response) {
       return new ListPackagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPackagesPage> createPageAsync(
-        PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
+        @Nullable PageContext<ListPackagesRequest, ListPackagesResponse, Package> context,
         ApiFuture<ListPackagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3579,7 +3585,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListPackagesPage,
           ListPackagesFixedSizeCollection> {
 
-    private ListPackagesFixedSizeCollection(List<ListPackagesPage> pages, int collectionSize) {
+    private ListPackagesFixedSizeCollection(
+        @Nullable List<ListPackagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3589,7 +3596,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListPackagesFixedSizeCollection createCollection(
-        List<ListPackagesPage> pages, int collectionSize) {
+        @Nullable List<ListPackagesPage> pages, int collectionSize) {
       return new ListPackagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3622,8 +3629,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractPage<ListVersionsRequest, ListVersionsResponse, Version, ListVersionsPage> {
 
     private ListVersionsPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       super(context, response);
     }
 
@@ -3633,14 +3640,14 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListVersionsPage createPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       return new ListVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVersionsPage> createPageAsync(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
         ApiFuture<ListVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3654,7 +3661,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListVersionsPage,
           ListVersionsFixedSizeCollection> {
 
-    private ListVersionsFixedSizeCollection(List<ListVersionsPage> pages, int collectionSize) {
+    private ListVersionsFixedSizeCollection(
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3664,7 +3672,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListVersionsFixedSizeCollection createCollection(
-        List<ListVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       return new ListVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3691,8 +3699,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractPage<ListFilesRequest, ListFilesResponse, File, ListFilesPage> {
 
     private ListFilesPage(
-        PageContext<ListFilesRequest, ListFilesResponse, File> context,
-        ListFilesResponse response) {
+        @Nullable PageContext<ListFilesRequest, ListFilesResponse, File> context,
+        @Nullable ListFilesResponse response) {
       super(context, response);
     }
 
@@ -3702,14 +3710,14 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListFilesPage createPage(
-        PageContext<ListFilesRequest, ListFilesResponse, File> context,
-        ListFilesResponse response) {
+        @Nullable PageContext<ListFilesRequest, ListFilesResponse, File> context,
+        @Nullable ListFilesResponse response) {
       return new ListFilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFilesPage> createPageAsync(
-        PageContext<ListFilesRequest, ListFilesResponse, File> context,
+        @Nullable PageContext<ListFilesRequest, ListFilesResponse, File> context,
         ApiFuture<ListFilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3719,7 +3727,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListFilesRequest, ListFilesResponse, File, ListFilesPage, ListFilesFixedSizeCollection> {
 
-    private ListFilesFixedSizeCollection(List<ListFilesPage> pages, int collectionSize) {
+    private ListFilesFixedSizeCollection(@Nullable List<ListFilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3729,7 +3737,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListFilesFixedSizeCollection createCollection(
-        List<ListFilesPage> pages, int collectionSize) {
+        @Nullable List<ListFilesPage> pages, int collectionSize) {
       return new ListFilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3756,7 +3764,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractPage<ListTagsRequest, ListTagsResponse, Tag, ListTagsPage> {
 
     private ListTagsPage(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context, ListTagsResponse response) {
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable ListTagsResponse response) {
       super(context, response);
     }
 
@@ -3766,13 +3775,14 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListTagsPage createPage(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context, ListTagsResponse response) {
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable ListTagsResponse response) {
       return new ListTagsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTagsPage> createPageAsync(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
         ApiFuture<ListTagsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3782,7 +3792,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTagsRequest, ListTagsResponse, Tag, ListTagsPage, ListTagsFixedSizeCollection> {
 
-    private ListTagsFixedSizeCollection(List<ListTagsPage> pages, int collectionSize) {
+    private ListTagsFixedSizeCollection(@Nullable List<ListTagsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3792,7 +3802,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListTagsFixedSizeCollection createCollection(
-        List<ListTagsPage> pages, int collectionSize) {
+        @Nullable List<ListTagsPage> pages, int collectionSize) {
       return new ListTagsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3826,8 +3836,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3837,14 +3847,14 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3858,7 +3868,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3868,7 +3879,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

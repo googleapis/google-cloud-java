@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -250,10 +252,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PolicyBindingsClient implements BackgroundResource {
-  private final PolicyBindingsSettings settings;
+  private final @Nullable PolicyBindingsSettings settings;
   private final PolicyBindingsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -301,7 +304,7 @@ public class PolicyBindingsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PolicyBindingsSettings getSettings() {
+  public final @Nullable PolicyBindingsSettings getSettings() {
     return settings;
   }
 
@@ -370,7 +373,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      FolderLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable FolderLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -424,7 +427,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      LocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable LocationName parent, PolicyBinding policyBinding, String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -478,7 +481,9 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      OrganizationLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable OrganizationLocationName parent,
+      PolicyBinding policyBinding,
+      String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -674,7 +679,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PolicyBinding getPolicyBinding(PolicyBindingName name) {
+  public final PolicyBinding getPolicyBinding(@Nullable PolicyBindingName name) {
     GetPolicyBindingRequest request =
         GetPolicyBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPolicyBinding(request);
@@ -948,7 +953,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBindingAsync(
-      PolicyBindingName name) {
+      @Nullable PolicyBindingName name) {
     DeletePolicyBindingRequest request =
         DeletePolicyBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1134,7 +1139,8 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(FolderLocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(
+      @Nullable FolderLocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1173,7 +1179,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(LocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(@Nullable LocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1212,7 +1218,8 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(OrganizationLocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(
+      @Nullable OrganizationLocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1412,7 +1419,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      FolderLocationName parent, String target) {
+      @Nullable FolderLocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1467,7 +1474,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      LocationName parent, String target) {
+      @Nullable LocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1522,7 +1529,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      OrganizationLocationName parent, String target) {
+      @Nullable OrganizationLocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1759,8 +1766,9 @@ public class PolicyBindingsClient implements BackgroundResource {
           ListPolicyBindingsPage> {
 
     private ListPolicyBindingsPage(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
-        ListPolicyBindingsResponse response) {
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
+        @Nullable ListPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1770,14 +1778,16 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBindingsPage createPage(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
-        ListPolicyBindingsResponse response) {
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
+        @Nullable ListPolicyBindingsResponse response) {
       return new ListPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPolicyBindingsPage> createPageAsync(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
         ApiFuture<ListPolicyBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1792,7 +1802,7 @@ public class PolicyBindingsClient implements BackgroundResource {
           ListPolicyBindingsFixedSizeCollection> {
 
     private ListPolicyBindingsFixedSizeCollection(
-        List<ListPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1802,7 +1812,7 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBindingsFixedSizeCollection createCollection(
-        List<ListPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBindingsPage> pages, int collectionSize) {
       return new ListPolicyBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1843,12 +1853,13 @@ public class PolicyBindingsClient implements BackgroundResource {
           SearchTargetPolicyBindingsPage> {
 
     private SearchTargetPolicyBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchTargetPolicyBindingsResponse response) {
+        @Nullable SearchTargetPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1858,18 +1869,20 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected SearchTargetPolicyBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchTargetPolicyBindingsResponse response) {
+        @Nullable SearchTargetPolicyBindingsResponse response) {
       return new SearchTargetPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchTargetPolicyBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
@@ -1888,7 +1901,7 @@ public class PolicyBindingsClient implements BackgroundResource {
           SearchTargetPolicyBindingsFixedSizeCollection> {
 
     private SearchTargetPolicyBindingsFixedSizeCollection(
-        List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1898,7 +1911,7 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected SearchTargetPolicyBindingsFixedSizeCollection createCollection(
-        List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
       return new SearchTargetPolicyBindingsFixedSizeCollection(pages, collectionSize);
     }
   }

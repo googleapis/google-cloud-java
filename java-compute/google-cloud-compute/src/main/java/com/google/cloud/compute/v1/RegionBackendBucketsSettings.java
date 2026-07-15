@@ -34,6 +34,8 @@ import com.google.cloud.compute.v1.stub.RegionBackendBucketsStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -112,6 +114,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionBackendBucketsSettings extends ClientSettings<RegionBackendBucketsSettings> {
 
@@ -227,7 +230,7 @@ public class RegionBackendBucketsSettings extends ClientSettings<RegionBackendBu
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -248,7 +251,7 @@ public class RegionBackendBucketsSettings extends ClientSettings<RegionBackendBu
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RegionBackendBucketsStubSettings.newBuilder(clientContext));
     }
 

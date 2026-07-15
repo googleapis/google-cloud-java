@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,10 +223,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataObjectSearchServiceClient implements BackgroundResource {
-  private final DataObjectSearchServiceSettings settings;
+  private final @Nullable DataObjectSearchServiceSettings settings;
   private final DataObjectSearchServiceStub stub;
 
   /** Constructs an instance of DataObjectSearchServiceClient with default settings. */
@@ -265,7 +268,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataObjectSearchServiceSettings getSettings() {
+  public final @Nullable DataObjectSearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -887,8 +890,9 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           SearchDataObjectsPage> {
 
     private SearchDataObjectsPage(
-        PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult> context,
-        SearchDataObjectsResponse response) {
+        @Nullable PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult>
+            context,
+        @Nullable SearchDataObjectsResponse response) {
       super(context, response);
     }
 
@@ -898,14 +902,16 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDataObjectsPage createPage(
-        PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult> context,
-        SearchDataObjectsResponse response) {
+        @Nullable PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult>
+            context,
+        @Nullable SearchDataObjectsResponse response) {
       return new SearchDataObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDataObjectsPage> createPageAsync(
-        PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult> context,
+        @Nullable PageContext<SearchDataObjectsRequest, SearchDataObjectsResponse, SearchResult>
+            context,
         ApiFuture<SearchDataObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -920,7 +926,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           SearchDataObjectsFixedSizeCollection> {
 
     private SearchDataObjectsFixedSizeCollection(
-        List<SearchDataObjectsPage> pages, int collectionSize) {
+        @Nullable List<SearchDataObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -930,7 +936,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDataObjectsFixedSizeCollection createCollection(
-        List<SearchDataObjectsPage> pages, int collectionSize) {
+        @Nullable List<SearchDataObjectsPage> pages, int collectionSize) {
       return new SearchDataObjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -964,8 +970,9 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject, QueryDataObjectsPage> {
 
     private QueryDataObjectsPage(
-        PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject> context,
-        QueryDataObjectsResponse response) {
+        @Nullable PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject>
+            context,
+        @Nullable QueryDataObjectsResponse response) {
       super(context, response);
     }
 
@@ -975,14 +982,16 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected QueryDataObjectsPage createPage(
-        PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject> context,
-        QueryDataObjectsResponse response) {
+        @Nullable PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject>
+            context,
+        @Nullable QueryDataObjectsResponse response) {
       return new QueryDataObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryDataObjectsPage> createPageAsync(
-        PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject> context,
+        @Nullable PageContext<QueryDataObjectsRequest, QueryDataObjectsResponse, DataObject>
+            context,
         ApiFuture<QueryDataObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -997,7 +1006,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           QueryDataObjectsFixedSizeCollection> {
 
     private QueryDataObjectsFixedSizeCollection(
-        List<QueryDataObjectsPage> pages, int collectionSize) {
+        @Nullable List<QueryDataObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1007,7 +1016,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected QueryDataObjectsFixedSizeCollection createCollection(
-        List<QueryDataObjectsPage> pages, int collectionSize) {
+        @Nullable List<QueryDataObjectsPage> pages, int collectionSize) {
       return new QueryDataObjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1041,8 +1050,8 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1052,14 +1061,14 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1073,7 +1082,8 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1083,7 +1093,7 @@ public class DataObjectSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

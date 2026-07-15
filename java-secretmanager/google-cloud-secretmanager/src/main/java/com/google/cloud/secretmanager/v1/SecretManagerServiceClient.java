@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -418,9 +420,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SecretManagerServiceClient implements BackgroundResource {
-  private final SecretManagerServiceSettings settings;
+  private final @Nullable SecretManagerServiceSettings settings;
   private final SecretManagerServiceStub stub;
 
   /** Constructs an instance of SecretManagerServiceClient with default settings. */
@@ -460,7 +463,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SecretManagerServiceSettings getSettings() {
+  public final @Nullable SecretManagerServiceSettings getSettings() {
     return settings;
   }
 
@@ -494,7 +497,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSecretsPagedResponse listSecrets(LocationName parent) {
+  public final ListSecretsPagedResponse listSecrets(@Nullable LocationName parent) {
     ListSecretsRequest request =
         ListSecretsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -528,7 +531,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSecretsPagedResponse listSecrets(ProjectName parent) {
+  public final ListSecretsPagedResponse listSecrets(@Nullable ProjectName parent) {
     ListSecretsRequest request =
         ListSecretsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -710,7 +713,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Secret createSecret(LocationName parent, String secretId, Secret secret) {
+  public final Secret createSecret(@Nullable LocationName parent, String secretId, Secret secret) {
     CreateSecretRequest request =
         CreateSecretRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -753,7 +756,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Secret createSecret(ProjectName parent, String secretId, Secret secret) {
+  public final Secret createSecret(@Nullable ProjectName parent, String secretId, Secret secret) {
     CreateSecretRequest request =
         CreateSecretRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -898,7 +901,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecretVersion addSecretVersion(SecretName parent, SecretPayload payload) {
+  public final SecretVersion addSecretVersion(@Nullable SecretName parent, SecretPayload payload) {
     AddSecretVersionRequest request =
         AddSecretVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1027,7 +1030,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/secrets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Secret getSecret(SecretName name) {
+  public final Secret getSecret(@Nullable SecretName name) {
     GetSecretRequest request =
         GetSecretRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSecret(request);
@@ -1233,7 +1236,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     to delete in the format `projects/&#42;/secrets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSecret(SecretName name) {
+  public final void deleteSecret(@Nullable SecretName name) {
     DeleteSecretRequest request =
         DeleteSecretRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSecret(request);
@@ -1356,7 +1359,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/secrets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSecretVersionsPagedResponse listSecretVersions(SecretName parent) {
+  public final ListSecretVersionsPagedResponse listSecretVersions(@Nullable SecretName parent) {
     ListSecretVersionsRequest request =
         ListSecretVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1548,7 +1551,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     recently created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecretVersion getSecretVersion(SecretVersionName name) {
+  public final SecretVersion getSecretVersion(@Nullable SecretVersionName name) {
     GetSecretVersionRequest request =
         GetSecretVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSecretVersion(request);
@@ -1697,7 +1700,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     recently created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccessSecretVersionResponse accessSecretVersion(SecretVersionName name) {
+  public final AccessSecretVersionResponse accessSecretVersion(@Nullable SecretVersionName name) {
     AccessSecretVersionRequest request =
         AccessSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1851,7 +1854,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/secrets/&#42;/versions/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecretVersion disableSecretVersion(SecretVersionName name) {
+  public final SecretVersion disableSecretVersion(@Nullable SecretVersionName name) {
     DisableSecretVersionRequest request =
         DisableSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2003,7 +2006,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/secrets/&#42;/versions/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecretVersion enableSecretVersion(SecretVersionName name) {
+  public final SecretVersion enableSecretVersion(@Nullable SecretVersionName name) {
     EnableSecretVersionRequest request =
         EnableSecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2156,7 +2159,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/secrets/&#42;/versions/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecretVersion destroySecretVersion(SecretVersionName name) {
+  public final SecretVersion destroySecretVersion(@Nullable SecretVersionName name) {
     DestroySecretVersionRequest request =
         DestroySecretVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2537,8 +2540,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
       extends AbstractPage<ListSecretsRequest, ListSecretsResponse, Secret, ListSecretsPage> {
 
     private ListSecretsPage(
-        PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
-        ListSecretsResponse response) {
+        @Nullable PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
+        @Nullable ListSecretsResponse response) {
       super(context, response);
     }
 
@@ -2548,14 +2551,14 @@ public class SecretManagerServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecretsPage createPage(
-        PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
-        ListSecretsResponse response) {
+        @Nullable PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
+        @Nullable ListSecretsResponse response) {
       return new ListSecretsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecretsPage> createPageAsync(
-        PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
+        @Nullable PageContext<ListSecretsRequest, ListSecretsResponse, Secret> context,
         ApiFuture<ListSecretsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2569,7 +2572,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
           ListSecretsPage,
           ListSecretsFixedSizeCollection> {
 
-    private ListSecretsFixedSizeCollection(List<ListSecretsPage> pages, int collectionSize) {
+    private ListSecretsFixedSizeCollection(
+        @Nullable List<ListSecretsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2579,7 +2583,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecretsFixedSizeCollection createCollection(
-        List<ListSecretsPage> pages, int collectionSize) {
+        @Nullable List<ListSecretsPage> pages, int collectionSize) {
       return new ListSecretsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2616,8 +2620,9 @@ public class SecretManagerServiceClient implements BackgroundResource {
           ListSecretVersionsPage> {
 
     private ListSecretVersionsPage(
-        PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion> context,
-        ListSecretVersionsResponse response) {
+        @Nullable PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
+            context,
+        @Nullable ListSecretVersionsResponse response) {
       super(context, response);
     }
 
@@ -2627,14 +2632,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecretVersionsPage createPage(
-        PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion> context,
-        ListSecretVersionsResponse response) {
+        @Nullable PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
+            context,
+        @Nullable ListSecretVersionsResponse response) {
       return new ListSecretVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecretVersionsPage> createPageAsync(
-        PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion> context,
+        @Nullable PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
+            context,
         ApiFuture<ListSecretVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2649,7 +2656,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
           ListSecretVersionsFixedSizeCollection> {
 
     private ListSecretVersionsFixedSizeCollection(
-        List<ListSecretVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListSecretVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2659,7 +2666,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecretVersionsFixedSizeCollection createCollection(
-        List<ListSecretVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListSecretVersionsPage> pages, int collectionSize) {
       return new ListSecretVersionsFixedSizeCollection(pages, collectionSize);
     }
   }

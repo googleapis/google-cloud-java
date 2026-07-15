@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -219,9 +221,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ApiHubDiscoveryClient implements BackgroundResource {
-  private final ApiHubDiscoverySettings settings;
+  private final @Nullable ApiHubDiscoverySettings settings;
   private final ApiHubDiscoveryStub stub;
 
   /** Constructs an instance of ApiHubDiscoveryClient with default settings. */
@@ -261,7 +264,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ApiHubDiscoverySettings getSettings() {
+  public final @Nullable ApiHubDiscoverySettings getSettings() {
     return settings;
   }
 
@@ -295,7 +298,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredApiObservationsPagedResponse listDiscoveredApiObservations(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListDiscoveredApiObservationsRequest request =
         ListDiscoveredApiObservationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -469,7 +472,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveredApiObservation getDiscoveredApiObservation(
-      DiscoveredApiObservationName name) {
+      @Nullable DiscoveredApiObservationName name) {
     GetDiscoveredApiObservationRequest request =
         GetDiscoveredApiObservationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -601,7 +604,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredApiOperationsPagedResponse listDiscoveredApiOperations(
-      DiscoveredApiObservationName parent) {
+      @Nullable DiscoveredApiObservationName parent) {
     ListDiscoveredApiOperationsRequest request =
         ListDiscoveredApiOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -788,7 +791,8 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/discoveredApiObservations/{discovered_api_observation}/discoveredApiOperations/{discovered_api_operation}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscoveredApiOperation getDiscoveredApiOperation(DiscoveredApiOperationName name) {
+  public final DiscoveredApiOperation getDiscoveredApiOperation(
+      @Nullable DiscoveredApiOperationName name) {
     GetDiscoveredApiOperationRequest request =
         GetDiscoveredApiOperationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1123,12 +1127,13 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListDiscoveredApiObservationsPage> {
 
     private ListDiscoveredApiObservationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiObservationsRequest,
                 ListDiscoveredApiObservationsResponse,
                 DiscoveredApiObservation>
             context,
-        ListDiscoveredApiObservationsResponse response) {
+        @Nullable ListDiscoveredApiObservationsResponse response) {
       super(context, response);
     }
 
@@ -1138,18 +1143,20 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredApiObservationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiObservationsRequest,
                 ListDiscoveredApiObservationsResponse,
                 DiscoveredApiObservation>
             context,
-        ListDiscoveredApiObservationsResponse response) {
+        @Nullable ListDiscoveredApiObservationsResponse response) {
       return new ListDiscoveredApiObservationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiscoveredApiObservationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiObservationsRequest,
                 ListDiscoveredApiObservationsResponse,
                 DiscoveredApiObservation>
@@ -1168,7 +1175,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListDiscoveredApiObservationsFixedSizeCollection> {
 
     private ListDiscoveredApiObservationsFixedSizeCollection(
-        List<ListDiscoveredApiObservationsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredApiObservationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1178,7 +1185,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredApiObservationsFixedSizeCollection createCollection(
-        List<ListDiscoveredApiObservationsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredApiObservationsPage> pages, int collectionSize) {
       return new ListDiscoveredApiObservationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1220,12 +1227,13 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListDiscoveredApiOperationsPage> {
 
     private ListDiscoveredApiOperationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiOperationsRequest,
                 ListDiscoveredApiOperationsResponse,
                 DiscoveredApiOperation>
             context,
-        ListDiscoveredApiOperationsResponse response) {
+        @Nullable ListDiscoveredApiOperationsResponse response) {
       super(context, response);
     }
 
@@ -1235,18 +1243,20 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredApiOperationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiOperationsRequest,
                 ListDiscoveredApiOperationsResponse,
                 DiscoveredApiOperation>
             context,
-        ListDiscoveredApiOperationsResponse response) {
+        @Nullable ListDiscoveredApiOperationsResponse response) {
       return new ListDiscoveredApiOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiscoveredApiOperationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredApiOperationsRequest,
                 ListDiscoveredApiOperationsResponse,
                 DiscoveredApiOperation>
@@ -1265,7 +1275,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListDiscoveredApiOperationsFixedSizeCollection> {
 
     private ListDiscoveredApiOperationsFixedSizeCollection(
-        List<ListDiscoveredApiOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredApiOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1275,7 +1285,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredApiOperationsFixedSizeCollection createCollection(
-        List<ListDiscoveredApiOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredApiOperationsPage> pages, int collectionSize) {
       return new ListDiscoveredApiOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1309,8 +1319,8 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1320,14 +1330,14 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1341,7 +1351,8 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1351,7 +1362,7 @@ public class ApiHubDiscoveryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

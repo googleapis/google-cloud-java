@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DatasetVersionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATASET_DATASET_VERSION =
@@ -98,7 +101,7 @@ public class DatasetVersionName implements ResourceName {
         .toString();
   }
 
-  public static DatasetVersionName parse(String formattedString) {
+  public static @Nullable DatasetVersionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class DatasetVersionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DatasetVersionName> values) {
+  public static List<String> toStringList(List<@Nullable DatasetVersionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DatasetVersionName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class DatasetVersionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkehub</artifactId>
-  <version>1.93.0</version>
+  <version>1.94.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-gkehub:1.93.0'
+implementation 'com.google.cloud:google-cloud-gkehub:1.94.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gkehub" % "1.93.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-gkehub" % "1.94.0"
 ```
 
 ## Authentication
@@ -147,8 +147,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -175,7 +173,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-gkehub/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gkehub.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gkehub/1.93.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gkehub/1.94.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

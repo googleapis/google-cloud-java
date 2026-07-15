@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -376,9 +378,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OrgPolicyClient implements BackgroundResource {
-  private final OrgPolicySettings settings;
+  private final @Nullable OrgPolicySettings settings;
   private final OrgPolicyStub stub;
 
   /** Constructs an instance of OrgPolicyClient with default settings. */
@@ -416,7 +419,7 @@ public class OrgPolicyClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OrgPolicySettings getSettings() {
+  public final @Nullable OrgPolicySettings getSettings() {
     return settings;
   }
 
@@ -455,7 +458,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConstraintsPagedResponse listConstraints(FolderName parent) {
+  public final ListConstraintsPagedResponse listConstraints(@Nullable FolderName parent) {
     ListConstraintsRequest request =
         ListConstraintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -494,7 +497,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConstraintsPagedResponse listConstraints(OrganizationName parent) {
+  public final ListConstraintsPagedResponse listConstraints(@Nullable OrganizationName parent) {
     ListConstraintsRequest request =
         ListConstraintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -533,7 +536,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConstraintsPagedResponse listConstraints(ProjectName parent) {
+  public final ListConstraintsPagedResponse listConstraints(@Nullable ProjectName parent) {
     ListConstraintsRequest request =
         ListConstraintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -712,7 +715,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPoliciesPagedResponse listPolicies(FolderName parent) {
+  public final ListPoliciesPagedResponse listPolicies(@Nullable FolderName parent) {
     ListPoliciesRequest request =
         ListPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -751,7 +754,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPoliciesPagedResponse listPolicies(OrganizationName parent) {
+  public final ListPoliciesPagedResponse listPolicies(@Nullable OrganizationName parent) {
     ListPoliciesRequest request =
         ListPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -790,7 +793,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPoliciesPagedResponse listPolicies(ProjectName parent) {
+  public final ListPoliciesPagedResponse listPolicies(@Nullable ProjectName parent) {
     ListPoliciesRequest request =
         ListPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -961,7 +964,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getPolicy(PolicyName name) {
+  public final Policy getPolicy(@Nullable PolicyName name) {
     GetPolicyRequest request =
         GetPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPolicy(request);
@@ -1083,7 +1086,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getEffectivePolicy(PolicyName name) {
+  public final Policy getEffectivePolicy(@Nullable PolicyName name) {
     GetEffectivePolicyRequest request =
         GetEffectivePolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1218,7 +1221,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy createPolicy(FolderName parent, Policy policy) {
+  public final Policy createPolicy(@Nullable FolderName parent, Policy policy) {
     CreatePolicyRequest request =
         CreatePolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1262,7 +1265,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy createPolicy(OrganizationName parent, Policy policy) {
+  public final Policy createPolicy(@Nullable OrganizationName parent, Policy policy) {
     CreatePolicyRequest request =
         CreatePolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1306,7 +1309,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy createPolicy(ProjectName parent, Policy policy) {
+  public final Policy createPolicy(@Nullable ProjectName parent, Policy policy) {
     CreatePolicyRequest request =
         CreatePolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1546,7 +1549,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param name Required. Name of the policy to delete. See the policy entry for naming rules.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePolicy(PolicyName name) {
+  public final void deletePolicy(@Nullable PolicyName name) {
     DeletePolicyRequest request =
         DeletePolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePolicy(request);
@@ -1676,7 +1679,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomConstraint createCustomConstraint(
-      OrganizationName parent, CustomConstraint customConstraint) {
+      @Nullable OrganizationName parent, CustomConstraint customConstraint) {
     CreateCustomConstraintRequest request =
         CreateCustomConstraintRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1917,7 +1920,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *     constraint entry for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomConstraint getCustomConstraint(CustomConstraintName name) {
+  public final CustomConstraint getCustomConstraint(@Nullable CustomConstraintName name) {
     GetCustomConstraintRequest request =
         GetCustomConstraintRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2047,7 +2050,8 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomConstraintsPagedResponse listCustomConstraints(OrganizationName parent) {
+  public final ListCustomConstraintsPagedResponse listCustomConstraints(
+      @Nullable OrganizationName parent) {
     ListCustomConstraintsRequest request =
         ListCustomConstraintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2220,7 +2224,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *     for naming rules.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomConstraint(CustomConstraintName name) {
+  public final void deleteCustomConstraint(@Nullable CustomConstraintName name) {
     DeleteCustomConstraintRequest request =
         DeleteCustomConstraintRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2381,8 +2385,8 @@ public class OrgPolicyClient implements BackgroundResource {
           ListConstraintsRequest, ListConstraintsResponse, Constraint, ListConstraintsPage> {
 
     private ListConstraintsPage(
-        PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
-        ListConstraintsResponse response) {
+        @Nullable PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
+        @Nullable ListConstraintsResponse response) {
       super(context, response);
     }
 
@@ -2392,14 +2396,14 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListConstraintsPage createPage(
-        PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
-        ListConstraintsResponse response) {
+        @Nullable PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
+        @Nullable ListConstraintsResponse response) {
       return new ListConstraintsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConstraintsPage> createPageAsync(
-        PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
+        @Nullable PageContext<ListConstraintsRequest, ListConstraintsResponse, Constraint> context,
         ApiFuture<ListConstraintsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2414,7 +2418,7 @@ public class OrgPolicyClient implements BackgroundResource {
           ListConstraintsFixedSizeCollection> {
 
     private ListConstraintsFixedSizeCollection(
-        List<ListConstraintsPage> pages, int collectionSize) {
+        @Nullable List<ListConstraintsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2424,7 +2428,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListConstraintsFixedSizeCollection createCollection(
-        List<ListConstraintsPage> pages, int collectionSize) {
+        @Nullable List<ListConstraintsPage> pages, int collectionSize) {
       return new ListConstraintsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2457,8 +2461,8 @@ public class OrgPolicyClient implements BackgroundResource {
       extends AbstractPage<ListPoliciesRequest, ListPoliciesResponse, Policy, ListPoliciesPage> {
 
     private ListPoliciesPage(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
-        ListPoliciesResponse response) {
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable ListPoliciesResponse response) {
       super(context, response);
     }
 
@@ -2468,14 +2472,14 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListPoliciesPage createPage(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
-        ListPoliciesResponse response) {
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable ListPoliciesResponse response) {
       return new ListPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPoliciesPage> createPageAsync(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
         ApiFuture<ListPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2489,7 +2493,8 @@ public class OrgPolicyClient implements BackgroundResource {
           ListPoliciesPage,
           ListPoliciesFixedSizeCollection> {
 
-    private ListPoliciesFixedSizeCollection(List<ListPoliciesPage> pages, int collectionSize) {
+    private ListPoliciesFixedSizeCollection(
+        @Nullable List<ListPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2499,7 +2504,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListPoliciesFixedSizeCollection createCollection(
-        List<ListPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListPoliciesPage> pages, int collectionSize) {
       return new ListPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2537,9 +2542,11 @@ public class OrgPolicyClient implements BackgroundResource {
           ListCustomConstraintsPage> {
 
     private ListCustomConstraintsPage(
-        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+        @Nullable
+            PageContext<
+                ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
             context,
-        ListCustomConstraintsResponse response) {
+        @Nullable ListCustomConstraintsResponse response) {
       super(context, response);
     }
 
@@ -2549,15 +2556,19 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListCustomConstraintsPage createPage(
-        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+        @Nullable
+            PageContext<
+                ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
             context,
-        ListCustomConstraintsResponse response) {
+        @Nullable ListCustomConstraintsResponse response) {
       return new ListCustomConstraintsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomConstraintsPage> createPageAsync(
-        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+        @Nullable
+            PageContext<
+                ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
             context,
         ApiFuture<ListCustomConstraintsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2573,7 +2584,7 @@ public class OrgPolicyClient implements BackgroundResource {
           ListCustomConstraintsFixedSizeCollection> {
 
     private ListCustomConstraintsFixedSizeCollection(
-        List<ListCustomConstraintsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomConstraintsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2583,7 +2594,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
     @Override
     protected ListCustomConstraintsFixedSizeCollection createCollection(
-        List<ListCustomConstraintsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomConstraintsPage> pages, int collectionSize) {
       return new ListCustomConstraintsFixedSizeCollection(pages, collectionSize);
     }
   }

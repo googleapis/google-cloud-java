@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AutonomousDatabaseCharacterSetName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AUTONOMOUS_DATABASE_CHARACTER_SET =
@@ -90,7 +93,7 @@ public class AutonomousDatabaseCharacterSetName implements ResourceName {
         .toString();
   }
 
-  public static AutonomousDatabaseCharacterSetName parse(String formattedString) {
+  public static @Nullable AutonomousDatabaseCharacterSetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -112,7 +115,8 @@ public class AutonomousDatabaseCharacterSetName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AutonomousDatabaseCharacterSetName> values) {
+  public static List<String> toStringList(
+      List<@Nullable AutonomousDatabaseCharacterSetName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AutonomousDatabaseCharacterSetName value : values) {
       if (value == null) {
@@ -167,7 +171,7 @@ public class AutonomousDatabaseCharacterSetName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -375,9 +377,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MetadataServiceClient implements BackgroundResource {
-  private final MetadataServiceSettings settings;
+  private final @Nullable MetadataServiceSettings settings;
   private final MetadataServiceStub stub;
 
   /** Constructs an instance of MetadataServiceClient with default settings. */
@@ -417,7 +420,7 @@ public class MetadataServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetadataServiceSettings getSettings() {
+  public final @Nullable MetadataServiceSettings getSettings() {
     return settings;
   }
 
@@ -449,7 +452,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @param entity Required. Entity resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entity createEntity(ZoneName parent, Entity entity) {
+  public final Entity createEntity(@Nullable ZoneName parent, Entity entity) {
     CreateEntityRequest request =
         CreateEntityRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -626,7 +629,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEntity(EntityName name) {
+  public final void deleteEntity(@Nullable EntityName name) {
     DeleteEntityRequest request =
         DeleteEntityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntity(request);
@@ -743,7 +746,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}.`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entity getEntity(EntityName name) {
+  public final Entity getEntity(@Nullable EntityName name) {
     GetEntityRequest request =
         GetEntityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntity(request);
@@ -860,7 +863,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitiesPagedResponse listEntities(ZoneName parent) {
+  public final ListEntitiesPagedResponse listEntities(@Nullable ZoneName parent) {
     ListEntitiesRequest request =
         ListEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1027,7 +1030,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @param partition Required. Partition resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Partition createPartition(EntityName parent, Partition partition) {
+  public final Partition createPartition(@Nullable EntityName parent, Partition partition) {
     CreatePartitionRequest request =
         CreatePartitionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1157,7 +1160,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     separated by "/". All values must be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePartition(PartitionName name) {
+  public final void deletePartition(@Nullable PartitionName name) {
     DeletePartitionRequest request =
         DeletePartitionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePartition(request);
@@ -1283,7 +1286,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     separated by "/". All values must be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Partition getPartition(PartitionName name) {
+  public final Partition getPartition(@Nullable PartitionName name) {
     GetPartitionRequest request =
         GetPartitionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPartition(request);
@@ -1406,7 +1409,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPartitionsPagedResponse listPartitions(EntityName parent) {
+  public final ListPartitionsPagedResponse listPartitions(@Nullable EntityName parent) {
     ListPartitionsRequest request =
         ListPartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1999,8 +2002,8 @@ public class MetadataServiceClient implements BackgroundResource {
       extends AbstractPage<ListEntitiesRequest, ListEntitiesResponse, Entity, ListEntitiesPage> {
 
     private ListEntitiesPage(
-        PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
-        ListEntitiesResponse response) {
+        @Nullable PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
+        @Nullable ListEntitiesResponse response) {
       super(context, response);
     }
 
@@ -2010,14 +2013,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitiesPage createPage(
-        PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
-        ListEntitiesResponse response) {
+        @Nullable PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
+        @Nullable ListEntitiesResponse response) {
       return new ListEntitiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitiesPage> createPageAsync(
-        PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
+        @Nullable PageContext<ListEntitiesRequest, ListEntitiesResponse, Entity> context,
         ApiFuture<ListEntitiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2031,7 +2034,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListEntitiesPage,
           ListEntitiesFixedSizeCollection> {
 
-    private ListEntitiesFixedSizeCollection(List<ListEntitiesPage> pages, int collectionSize) {
+    private ListEntitiesFixedSizeCollection(
+        @Nullable List<ListEntitiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2041,7 +2045,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitiesFixedSizeCollection createCollection(
-        List<ListEntitiesPage> pages, int collectionSize) {
+        @Nullable List<ListEntitiesPage> pages, int collectionSize) {
       return new ListEntitiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2075,8 +2079,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListPartitionsRequest, ListPartitionsResponse, Partition, ListPartitionsPage> {
 
     private ListPartitionsPage(
-        PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
-        ListPartitionsResponse response) {
+        @Nullable PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
+        @Nullable ListPartitionsResponse response) {
       super(context, response);
     }
 
@@ -2086,14 +2090,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListPartitionsPage createPage(
-        PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
-        ListPartitionsResponse response) {
+        @Nullable PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
+        @Nullable ListPartitionsResponse response) {
       return new ListPartitionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPartitionsPage> createPageAsync(
-        PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
+        @Nullable PageContext<ListPartitionsRequest, ListPartitionsResponse, Partition> context,
         ApiFuture<ListPartitionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2107,7 +2111,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListPartitionsPage,
           ListPartitionsFixedSizeCollection> {
 
-    private ListPartitionsFixedSizeCollection(List<ListPartitionsPage> pages, int collectionSize) {
+    private ListPartitionsFixedSizeCollection(
+        @Nullable List<ListPartitionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2117,7 +2122,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListPartitionsFixedSizeCollection createCollection(
-        List<ListPartitionsPage> pages, int collectionSize) {
+        @Nullable List<ListPartitionsPage> pages, int collectionSize) {
       return new ListPartitionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2151,8 +2156,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2162,14 +2167,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2183,7 +2188,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2193,7 +2199,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

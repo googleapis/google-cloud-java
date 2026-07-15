@@ -9700,6 +9700,38 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return The bytes for evaluationRun.
      */
     com.google.protobuf.ByteString getEvaluationRunBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The loss attribution algorithm to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for algorithm.
+     */
+    int getAlgorithmValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The loss attribution algorithm to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The algorithm.
+     */
+    com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+            .LossAttributionAlgorithm
+        getAlgorithm();
   }
 
   /**
@@ -9736,6 +9768,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
 
     private QualityReportGenerationConfig() {
       evaluationRun_ = "";
+      algorithm_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9753,6 +9786,182 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                   .class,
               com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
                   .Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The algorithm to use for loss attribution.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm}
+     */
+    public enum LossAttributionAlgorithm implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED = 0;</code>
+       */
+      LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * App-centric loss attribution. Treats the app as a single unit.
+       * </pre>
+       *
+       * <code>APP_CENTRIC = 1;</code>
+       */
+      APP_CENTRIC(1),
+      /**
+       *
+       *
+       * <pre>
+       * Agent-centric loss attribution. Attributes loss to individual agents.
+       * </pre>
+       *
+       * <code>AGENT_CENTRIC = 2;</code>
+       */
+      AGENT_CENTRIC(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "LossAttributionAlgorithm");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED = 0;</code>
+       */
+      public static final int LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * App-centric loss attribution. Treats the app as a single unit.
+       * </pre>
+       *
+       * <code>APP_CENTRIC = 1;</code>
+       */
+      public static final int APP_CENTRIC_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Agent-centric loss attribution. Attributes loss to individual agents.
+       * </pre>
+       *
+       * <code>AGENT_CENTRIC = 2;</code>
+       */
+      public static final int AGENT_CENTRIC_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LossAttributionAlgorithm valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static LossAttributionAlgorithm forNumber(int value) {
+        switch (value) {
+          case 0:
+            return LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED;
+          case 1:
+            return APP_CENTRIC;
+          case 2:
+            return AGENT_CENTRIC;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LossAttributionAlgorithm>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<LossAttributionAlgorithm>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<LossAttributionAlgorithm>() {
+                public LossAttributionAlgorithm findValueByNumber(int number) {
+                  return LossAttributionAlgorithm.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final LossAttributionAlgorithm[] VALUES = values();
+
+      public static LossAttributionAlgorithm valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private LossAttributionAlgorithm(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm)
     }
 
     public static final int EVALUATION_RUN_FIELD_NUMBER = 1;
@@ -9812,6 +10021,55 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       }
     }
 
+    public static final int ALGORITHM_FIELD_NUMBER = 2;
+    private int algorithm_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The loss attribution algorithm to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for algorithm.
+     */
+    @java.lang.Override
+    public int getAlgorithmValue() {
+      return algorithm_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The loss attribution algorithm to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The algorithm.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+            .LossAttributionAlgorithm
+        getAlgorithm() {
+      com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+              .LossAttributionAlgorithm
+          result =
+              com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+                  .LossAttributionAlgorithm.forNumber(algorithm_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+              .LossAttributionAlgorithm.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9829,6 +10087,12 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(evaluationRun_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, evaluationRun_);
       }
+      if (algorithm_
+          != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+              .LossAttributionAlgorithm.LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, algorithm_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9840,6 +10104,12 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(evaluationRun_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, evaluationRun_);
+      }
+      if (algorithm_
+          != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+              .LossAttributionAlgorithm.LOSS_ATTRIBUTION_ALGORITHM_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, algorithm_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -9861,6 +10131,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
               obj;
 
       if (!getEvaluationRun().equals(other.getEvaluationRun())) return false;
+      if (algorithm_ != other.algorithm_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9874,6 +10145,8 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EVALUATION_RUN_FIELD_NUMBER;
       hash = (53 * hash) + getEvaluationRun().hashCode();
+      hash = (37 * hash) + ALGORITHM_FIELD_NUMBER;
+      hash = (53 * hash) + algorithm_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10040,6 +10313,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         super.clear();
         bitField0_ = 0;
         evaluationRun_ = "";
+        algorithm_ = 0;
         return this;
       }
 
@@ -10088,6 +10362,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.evaluationRun_ = evaluationRun_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.algorithm_ = algorithm_;
+        }
       }
 
       @java.lang.Override
@@ -10114,6 +10391,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
           evaluationRun_ = other.evaluationRun_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (other.algorithm_ != 0) {
+          setAlgorithmValue(other.getAlgorithmValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -10147,6 +10427,12 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  algorithm_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10283,6 +10569,122 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         checkByteStringIsUtf8(value);
         evaluationRun_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int algorithm_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The loss attribution algorithm to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for algorithm.
+       */
+      @java.lang.Override
+      public int getAlgorithmValue() {
+        return algorithm_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The loss attribution algorithm to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for algorithm to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlgorithmValue(int value) {
+        algorithm_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The loss attribution algorithm to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The algorithm.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+              .LossAttributionAlgorithm
+          getAlgorithm() {
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+                .LossAttributionAlgorithm
+            result =
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+                    .LossAttributionAlgorithm.forNumber(algorithm_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+                .LossAttributionAlgorithm.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The loss attribution algorithm to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The algorithm to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlgorithm(
+          com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
+                  .LossAttributionAlgorithm
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        algorithm_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The loss attribution algorithm to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig.LossAttributionAlgorithm algorithm = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAlgorithm() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        algorithm_ = 0;
         onChanged();
         return this;
       }

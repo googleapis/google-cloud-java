@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -208,10 +210,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AnswerRecordsClient implements BackgroundResource {
-  private final AnswerRecordsSettings settings;
+  private final @Nullable AnswerRecordsSettings settings;
   private final AnswerRecordsStub stub;
 
   /** Constructs an instance of AnswerRecordsClient with default settings. */
@@ -251,7 +254,7 @@ public class AnswerRecordsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AnswerRecordsSettings getSettings() {
+  public final @Nullable AnswerRecordsSettings getSettings() {
     return settings;
   }
 
@@ -340,7 +343,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    *     order. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnswerRecordsPagedResponse listAnswerRecords(LocationName parent) {
+  public final ListAnswerRecordsPagedResponse listAnswerRecords(@Nullable LocationName parent) {
     ListAnswerRecordsRequest request =
         ListAnswerRecordsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -372,7 +375,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    *     order. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnswerRecordsPagedResponse listAnswerRecords(ProjectName parent) {
+  public final ListAnswerRecordsPagedResponse listAnswerRecords(@Nullable ProjectName parent) {
     ListAnswerRecordsRequest request =
         ListAnswerRecordsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -861,8 +864,9 @@ public class AnswerRecordsClient implements BackgroundResource {
           ListAnswerRecordsPage> {
 
     private ListAnswerRecordsPage(
-        PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord> context,
-        ListAnswerRecordsResponse response) {
+        @Nullable PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord>
+            context,
+        @Nullable ListAnswerRecordsResponse response) {
       super(context, response);
     }
 
@@ -872,14 +876,16 @@ public class AnswerRecordsClient implements BackgroundResource {
 
     @Override
     protected ListAnswerRecordsPage createPage(
-        PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord> context,
-        ListAnswerRecordsResponse response) {
+        @Nullable PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord>
+            context,
+        @Nullable ListAnswerRecordsResponse response) {
       return new ListAnswerRecordsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnswerRecordsPage> createPageAsync(
-        PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord> context,
+        @Nullable PageContext<ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord>
+            context,
         ApiFuture<ListAnswerRecordsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -894,7 +900,7 @@ public class AnswerRecordsClient implements BackgroundResource {
           ListAnswerRecordsFixedSizeCollection> {
 
     private ListAnswerRecordsFixedSizeCollection(
-        List<ListAnswerRecordsPage> pages, int collectionSize) {
+        @Nullable List<ListAnswerRecordsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -904,7 +910,7 @@ public class AnswerRecordsClient implements BackgroundResource {
 
     @Override
     protected ListAnswerRecordsFixedSizeCollection createCollection(
-        List<ListAnswerRecordsPage> pages, int collectionSize) {
+        @Nullable List<ListAnswerRecordsPage> pages, int collectionSize) {
       return new ListAnswerRecordsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -938,8 +944,8 @@ public class AnswerRecordsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -949,14 +955,14 @@ public class AnswerRecordsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -970,7 +976,8 @@ public class AnswerRecordsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -980,7 +987,7 @@ public class AnswerRecordsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

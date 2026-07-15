@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WorkflowTemplateName implements ResourceName {
   private static final PathTemplate PROJECT_REGION_WORKFLOW_TEMPLATE =
@@ -155,7 +158,7 @@ public class WorkflowTemplateName implements ResourceName {
         .toString();
   }
 
-  public static WorkflowTemplateName parse(String formattedString) {
+  public static @Nullable WorkflowTemplateName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -180,7 +183,7 @@ public class WorkflowTemplateName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<WorkflowTemplateName> values) {
+  public static List<String> toStringList(List<@Nullable WorkflowTemplateName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (WorkflowTemplateName value : values) {
       if (value == null) {
@@ -232,7 +235,7 @@ public class WorkflowTemplateName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

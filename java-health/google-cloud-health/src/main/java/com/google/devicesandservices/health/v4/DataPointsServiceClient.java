@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -286,9 +288,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataPointsServiceClient implements BackgroundResource {
-  private final DataPointsServiceSettings settings;
+  private final @Nullable DataPointsServiceSettings settings;
   private final DataPointsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -336,7 +339,7 @@ public class DataPointsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataPointsServiceSettings getSettings() {
+  public final @Nullable DataPointsServiceSettings getSettings() {
     return settings;
   }
 
@@ -385,7 +388,7 @@ public class DataPointsServiceClient implements BackgroundResource {
    *     and possible values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataPoint getDataPoint(DataPointName name) {
+  public final DataPoint getDataPoint(@Nullable DataPointName name) {
     GetDataPointRequest request =
         GetDataPointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataPoint(request);
@@ -503,7 +506,7 @@ public class DataPointsServiceClient implements BackgroundResource {
    *     data][google.devicesandservices.health.v4.DataPoint] union field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataPointsPagedResponse listDataPoints(DataTypeName parent) {
+  public final ListDataPointsPagedResponse listDataPoints(@Nullable DataTypeName parent) {
     ListDataPointsRequest request =
         ListDataPointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -676,7 +679,7 @@ public class DataPointsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataPoint, CreateDataPointOperationMetadata> createDataPointAsync(
-      DataTypeName parent, DataPoint dataPoint) {
+      @Nullable DataTypeName parent, DataPoint dataPoint) {
     CreateDataPointRequest request =
         CreateDataPointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1353,7 +1356,7 @@ public class DataPointsServiceClient implements BackgroundResource {
    *     `{data_point}` ID maps to the exercise ID, which is a long integer.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExportExerciseTcxResponse exportExerciseTcx(DataPointName name) {
+  public final ExportExerciseTcxResponse exportExerciseTcx(@Nullable DataPointName name) {
     ExportExerciseTcxRequest request =
         ExportExerciseTcxRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1551,8 +1554,8 @@ public class DataPointsServiceClient implements BackgroundResource {
           ListDataPointsRequest, ListDataPointsResponse, DataPoint, ListDataPointsPage> {
 
     private ListDataPointsPage(
-        PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
-        ListDataPointsResponse response) {
+        @Nullable PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
+        @Nullable ListDataPointsResponse response) {
       super(context, response);
     }
 
@@ -1562,14 +1565,14 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataPointsPage createPage(
-        PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
-        ListDataPointsResponse response) {
+        @Nullable PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
+        @Nullable ListDataPointsResponse response) {
       return new ListDataPointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataPointsPage> createPageAsync(
-        PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
+        @Nullable PageContext<ListDataPointsRequest, ListDataPointsResponse, DataPoint> context,
         ApiFuture<ListDataPointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1583,7 +1586,8 @@ public class DataPointsServiceClient implements BackgroundResource {
           ListDataPointsPage,
           ListDataPointsFixedSizeCollection> {
 
-    private ListDataPointsFixedSizeCollection(List<ListDataPointsPage> pages, int collectionSize) {
+    private ListDataPointsFixedSizeCollection(
+        @Nullable List<ListDataPointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1593,7 +1597,7 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataPointsFixedSizeCollection createCollection(
-        List<ListDataPointsPage> pages, int collectionSize) {
+        @Nullable List<ListDataPointsPage> pages, int collectionSize) {
       return new ListDataPointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1631,9 +1635,11 @@ public class DataPointsServiceClient implements BackgroundResource {
           ReconcileDataPointsPage> {
 
     private ReconcileDataPointsPage(
-        PageContext<ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
+        @Nullable
+            PageContext<
+                ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
             context,
-        ReconcileDataPointsResponse response) {
+        @Nullable ReconcileDataPointsResponse response) {
       super(context, response);
     }
 
@@ -1643,15 +1649,19 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected ReconcileDataPointsPage createPage(
-        PageContext<ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
+        @Nullable
+            PageContext<
+                ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
             context,
-        ReconcileDataPointsResponse response) {
+        @Nullable ReconcileDataPointsResponse response) {
       return new ReconcileDataPointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ReconcileDataPointsPage> createPageAsync(
-        PageContext<ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
+        @Nullable
+            PageContext<
+                ReconcileDataPointsRequest, ReconcileDataPointsResponse, ReconciledDataPoint>
             context,
         ApiFuture<ReconcileDataPointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1667,7 +1677,7 @@ public class DataPointsServiceClient implements BackgroundResource {
           ReconcileDataPointsFixedSizeCollection> {
 
     private ReconcileDataPointsFixedSizeCollection(
-        List<ReconcileDataPointsPage> pages, int collectionSize) {
+        @Nullable List<ReconcileDataPointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1677,7 +1687,7 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected ReconcileDataPointsFixedSizeCollection createCollection(
-        List<ReconcileDataPointsPage> pages, int collectionSize) {
+        @Nullable List<ReconcileDataPointsPage> pages, int collectionSize) {
       return new ReconcileDataPointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1714,8 +1724,9 @@ public class DataPointsServiceClient implements BackgroundResource {
           RollUpDataPointsPage> {
 
     private RollUpDataPointsPage(
-        PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint> context,
-        RollUpDataPointsResponse response) {
+        @Nullable PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint>
+            context,
+        @Nullable RollUpDataPointsResponse response) {
       super(context, response);
     }
 
@@ -1725,14 +1736,16 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected RollUpDataPointsPage createPage(
-        PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint> context,
-        RollUpDataPointsResponse response) {
+        @Nullable PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint>
+            context,
+        @Nullable RollUpDataPointsResponse response) {
       return new RollUpDataPointsPage(context, response);
     }
 
     @Override
     public ApiFuture<RollUpDataPointsPage> createPageAsync(
-        PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint> context,
+        @Nullable PageContext<RollUpDataPointsRequest, RollUpDataPointsResponse, RollupDataPoint>
+            context,
         ApiFuture<RollUpDataPointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1747,7 +1760,7 @@ public class DataPointsServiceClient implements BackgroundResource {
           RollUpDataPointsFixedSizeCollection> {
 
     private RollUpDataPointsFixedSizeCollection(
-        List<RollUpDataPointsPage> pages, int collectionSize) {
+        @Nullable List<RollUpDataPointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1757,7 +1770,7 @@ public class DataPointsServiceClient implements BackgroundResource {
 
     @Override
     protected RollUpDataPointsFixedSizeCollection createCollection(
-        List<RollUpDataPointsPage> pages, int collectionSize) {
+        @Nullable List<RollUpDataPointsPage> pages, int collectionSize) {
       return new RollUpDataPointsFixedSizeCollection(pages, collectionSize);
     }
   }

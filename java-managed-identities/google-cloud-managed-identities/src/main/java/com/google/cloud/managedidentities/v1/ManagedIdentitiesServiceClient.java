@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -337,9 +339,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ManagedIdentitiesServiceClient implements BackgroundResource {
-  private final ManagedIdentitiesServiceSettings settings;
+  private final @Nullable ManagedIdentitiesServiceSettings settings;
   private final ManagedIdentitiesServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -384,7 +387,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ManagedIdentitiesServiceSettings getSettings() {
+  public final @Nullable ManagedIdentitiesServiceSettings getSettings() {
     return settings;
   }
 
@@ -437,7 +440,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Domain, OpMetadata> createMicrosoftAdDomainAsync(
-      LocationName parent, String domainName, Domain domain) {
+      @Nullable LocationName parent, String domainName, Domain domain) {
     CreateMicrosoftAdDomainRequest request =
         CreateMicrosoftAdDomainRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -615,7 +618,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResetAdminPasswordResponse resetAdminPassword(DomainName name) {
+  public final ResetAdminPasswordResponse resetAdminPassword(@Nullable DomainName name) {
     ResetAdminPasswordRequest request =
         ResetAdminPasswordRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -737,7 +740,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDomainsPagedResponse listDomains(LocationName parent) {
+  public final ListDomainsPagedResponse listDomains(@Nullable LocationName parent) {
     ListDomainsRequest request =
         ListDomainsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -911,7 +914,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Domain getDomain(DomainName name) {
+  public final Domain getDomain(@Nullable DomainName name) {
     GetDomainRequest request =
         GetDomainRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDomain(request);
@@ -1152,7 +1155,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OpMetadata> deleteDomainAsync(DomainName name) {
+  public final OperationFuture<Empty, OpMetadata> deleteDomainAsync(@Nullable DomainName name) {
     DeleteDomainRequest request =
         DeleteDomainRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDomainAsync(request);
@@ -1299,7 +1302,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * @param trust Required. The domain trust resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Domain, OpMetadata> attachTrustAsync(DomainName name, Trust trust) {
+  public final OperationFuture<Domain, OpMetadata> attachTrustAsync(
+      @Nullable DomainName name, Trust trust) {
     AttachTrustRequest request =
         AttachTrustRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1463,7 +1467,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Domain, OpMetadata> reconfigureTrustAsync(
-      DomainName name, String targetDomainName, List<String> targetDnsIpAddresses) {
+      @Nullable DomainName name, String targetDomainName, List<String> targetDnsIpAddresses) {
     ReconfigureTrustRequest request =
         ReconfigureTrustRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1636,7 +1640,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * @param trust Required. The domain trust resource to removed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Domain, OpMetadata> detachTrustAsync(DomainName name, Trust trust) {
+  public final OperationFuture<Domain, OpMetadata> detachTrustAsync(
+      @Nullable DomainName name, Trust trust) {
     DetachTrustRequest request =
         DetachTrustRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1794,7 +1799,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Domain, OpMetadata> validateTrustAsync(
-      DomainName name, Trust trust) {
+      @Nullable DomainName name, Trust trust) {
     ValidateTrustRequest request =
         ValidateTrustRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1986,8 +1991,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
       extends AbstractPage<ListDomainsRequest, ListDomainsResponse, Domain, ListDomainsPage> {
 
     private ListDomainsPage(
-        PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
-        ListDomainsResponse response) {
+        @Nullable PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
+        @Nullable ListDomainsResponse response) {
       super(context, response);
     }
 
@@ -1997,14 +2002,14 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
 
     @Override
     protected ListDomainsPage createPage(
-        PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
-        ListDomainsResponse response) {
+        @Nullable PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
+        @Nullable ListDomainsResponse response) {
       return new ListDomainsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDomainsPage> createPageAsync(
-        PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
+        @Nullable PageContext<ListDomainsRequest, ListDomainsResponse, Domain> context,
         ApiFuture<ListDomainsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2018,7 +2023,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
           ListDomainsPage,
           ListDomainsFixedSizeCollection> {
 
-    private ListDomainsFixedSizeCollection(List<ListDomainsPage> pages, int collectionSize) {
+    private ListDomainsFixedSizeCollection(
+        @Nullable List<ListDomainsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2028,7 +2034,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
 
     @Override
     protected ListDomainsFixedSizeCollection createCollection(
-        List<ListDomainsPage> pages, int collectionSize) {
+        @Nullable List<ListDomainsPage> pages, int collectionSize) {
       return new ListDomainsFixedSizeCollection(pages, collectionSize);
     }
   }

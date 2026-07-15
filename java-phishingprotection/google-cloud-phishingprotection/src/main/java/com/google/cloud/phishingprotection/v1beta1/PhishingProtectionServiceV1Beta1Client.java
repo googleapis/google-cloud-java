@@ -27,6 +27,8 @@ import com.google.phishingprotection.v1beta1.ReportPhishingResponse;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,10 +140,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PhishingProtectionServiceV1Beta1Client implements BackgroundResource {
-  private final PhishingProtectionServiceV1Beta1Settings settings;
+  private final @Nullable PhishingProtectionServiceV1Beta1Settings settings;
   private final PhishingProtectionServiceV1Beta1Stub stub;
 
   /** Constructs an instance of PhishingProtectionServiceV1Beta1Client with default settings. */
@@ -186,7 +189,7 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
     this.stub = stub;
   }
 
-  public final PhishingProtectionServiceV1Beta1Settings getSettings() {
+  public final @Nullable PhishingProtectionServiceV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -225,7 +228,7 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * @param uri Required. The URI that is being reported for phishing content to be analyzed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportPhishingResponse reportPhishing(ProjectName parent, String uri) {
+  public final ReportPhishingResponse reportPhishing(@Nullable ProjectName parent, String uri) {
     ReportPhishingRequest request =
         ReportPhishingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

@@ -26,6 +26,7 @@ import com.google.dataflow.v1beta3.Job;
 import com.google.dataflow.v1beta3.LaunchTemplateRequest;
 import com.google.dataflow.v1beta3.LaunchTemplateResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class TemplatesServiceStub implements BackgroundResource {

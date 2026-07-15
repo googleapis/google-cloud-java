@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -917,9 +919,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SecurityCenterClient implements BackgroundResource {
-  private final SecurityCenterSettings settings;
+  private final @Nullable SecurityCenterSettings settings;
   private final SecurityCenterStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -967,7 +970,7 @@ public class SecurityCenterClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SecurityCenterSettings getSettings() {
+  public final @Nullable SecurityCenterSettings getSettings() {
     return settings;
   }
 
@@ -1019,7 +1022,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateResourceValueConfigsResponse batchCreateResourceValueConfigs(
-      OrganizationLocationName parent, List<CreateResourceValueConfigRequest> requests) {
+      @Nullable OrganizationLocationName parent, List<CreateResourceValueConfigRequest> requests) {
     BatchCreateResourceValueConfigsRequest request =
         BatchCreateResourceValueConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1055,7 +1058,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateResourceValueConfigsResponse batchCreateResourceValueConfigs(
-      OrganizationName parent, List<CreateResourceValueConfigRequest> requests) {
+      @Nullable OrganizationName parent, List<CreateResourceValueConfigRequest> requests) {
     BatchCreateResourceValueConfigsRequest request =
         BatchCreateResourceValueConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1193,7 +1196,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkMuteFindingsResponse, Empty> bulkMuteFindingsAsync(
-      ResourceName parent) {
+      @Nullable ResourceName parent) {
     BulkMuteFindingsRequest request =
         BulkMuteFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1363,7 +1366,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
-      FolderLocationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+      @Nullable FolderLocationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
     CreateBigQueryExportRequest request =
         CreateBigQueryExportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1405,7 +1408,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
-      LocationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+      @Nullable LocationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
     CreateBigQueryExportRequest request =
         CreateBigQueryExportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1447,7 +1450,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
-      OrganizationLocationName parent, BigQueryExport bigQueryExport, String bigQueryExportId) {
+      @Nullable OrganizationLocationName parent,
+      BigQueryExport bigQueryExport,
+      String bigQueryExportId) {
     CreateBigQueryExportRequest request =
         CreateBigQueryExportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1591,7 +1596,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     in length.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding createFinding(SourceName parent, Finding finding, String findingId) {
+  public final Finding createFinding(
+      @Nullable SourceName parent, Finding finding, String findingId) {
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1736,7 +1742,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      FolderLocationName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable FolderLocationName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1777,7 +1783,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      FolderName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable FolderName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1818,7 +1824,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      LocationName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable LocationName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1859,7 +1865,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      OrganizationLocationName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable OrganizationLocationName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1900,7 +1906,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      OrganizationName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable OrganizationName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1941,7 +1947,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
-      ProjectName parent, MuteConfig muteConfig, String muteConfigId) {
+      @Nullable ProjectName parent, MuteConfig muteConfig, String muteConfigId) {
     CreateMuteConfigRequest request =
         CreateMuteConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2085,7 +2091,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig createNotificationConfig(
-      FolderLocationName parent, NotificationConfig notificationConfig, String configId) {
+      @Nullable FolderLocationName parent, NotificationConfig notificationConfig, String configId) {
     CreateNotificationConfigRequest request =
         CreateNotificationConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2128,7 +2134,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig createNotificationConfig(
-      LocationName parent, NotificationConfig notificationConfig, String configId) {
+      @Nullable LocationName parent, NotificationConfig notificationConfig, String configId) {
     CreateNotificationConfigRequest request =
         CreateNotificationConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2171,7 +2177,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig createNotificationConfig(
-      OrganizationLocationName parent, NotificationConfig notificationConfig, String configId) {
+      @Nullable OrganizationLocationName parent,
+      NotificationConfig notificationConfig,
+      String configId) {
     CreateNotificationConfigRequest request =
         CreateNotificationConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2311,7 +2319,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source createSource(OrganizationName parent, Source source) {
+  public final Source createSource(@Nullable OrganizationName parent, Source source) {
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2435,7 +2443,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/bigQueryExports/{export_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBigQueryExport(BigQueryExportName name) {
+  public final void deleteBigQueryExport(@Nullable BigQueryExportName name) {
     DeleteBigQueryExportRequest request =
         DeleteBigQueryExportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2568,7 +2576,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/muteConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMuteConfig(MuteConfigName name) {
+  public final void deleteMuteConfig(@Nullable MuteConfigName name) {
     DeleteMuteConfigRequest request =
         DeleteMuteConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteMuteConfig(request);
@@ -2695,7 +2703,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]notificationConfigs/[config_id]`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNotificationConfig(NotificationConfigName name) {
+  public final void deleteNotificationConfig(@Nullable NotificationConfigName name) {
     DeleteNotificationConfigRequest request =
         DeleteNotificationConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2824,7 +2832,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param name Required. Name of the ResourceValueConfig to delete
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteResourceValueConfig(ResourceValueConfigName name) {
+  public final void deleteResourceValueConfig(@Nullable ResourceValueConfigName name) {
     DeleteResourceValueConfigRequest request =
         DeleteResourceValueConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2952,7 +2960,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/{project}locations/{location}//bigQueryExports/{export_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BigQueryExport getBigQueryExport(BigQueryExportName name) {
+  public final BigQueryExport getBigQueryExport(@Nullable BigQueryExportName name) {
     GetBigQueryExportRequest request =
         GetBigQueryExportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3079,7 +3087,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/{organization}/simulations/{simulation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Simulation getSimulation(SimulationName name) {
+  public final Simulation getSimulation(@Nullable SimulationName name) {
     GetSimulationRequest request =
         GetSimulationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSimulation(request);
@@ -3199,7 +3207,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ValuedResource getValuedResource(ValuedResourceName name) {
+  public final ValuedResource getValuedResource(@Nullable ValuedResourceName name) {
     GetValuedResourceRequest request =
         GetValuedResourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3322,7 +3330,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3445,7 +3453,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/muteConfigs/{config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MuteConfig getMuteConfig(MuteConfigName name) {
+  public final MuteConfig getMuteConfig(@Nullable MuteConfigName name) {
     GetMuteConfigRequest request =
         GetMuteConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMuteConfig(request);
@@ -3573,7 +3581,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]/notificationConfigs/[config_id]`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NotificationConfig getNotificationConfig(NotificationConfigName name) {
+  public final NotificationConfig getNotificationConfig(@Nullable NotificationConfigName name) {
     GetNotificationConfigRequest request =
         GetNotificationConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3703,7 +3711,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     organizations/{organization}/resourceValueConfigs/{config_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceValueConfig getResourceValueConfig(ResourceValueConfigName name) {
+  public final ResourceValueConfig getResourceValueConfig(@Nullable ResourceValueConfigName name) {
     GetResourceValueConfigRequest request =
         GetResourceValueConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3827,7 +3835,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/[organization_id]/source/[source_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source getSource(SourceName name) {
+  public final Source getSource(@Nullable SourceName name) {
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -3967,7 +3975,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "parent,resource_name".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
+  public final GroupFindingsPagedResponse groupFindings(
+      @Nullable SourceName parent, String groupBy) {
     GroupFindingsRequest request =
         GroupFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4208,7 +4217,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttackPathsPagedResponse listAttackPaths(OrganizationValuedResourceName parent) {
+  public final ListAttackPathsPagedResponse listAttackPaths(
+      @Nullable OrganizationValuedResourceName parent) {
     ListAttackPathsRequest request =
         ListAttackPathsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4245,7 +4255,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttackPathsPagedResponse listAttackPaths(ValuedResourceName parent) {
+  public final ListAttackPathsPagedResponse listAttackPaths(@Nullable ValuedResourceName parent) {
     ListAttackPathsRequest request =
         ListAttackPathsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4434,7 +4444,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBigQueryExportsPagedResponse listBigQueryExports(FolderLocationName parent) {
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(
+      @Nullable FolderLocationName parent) {
     ListBigQueryExportsRequest request =
         ListBigQueryExportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4471,7 +4482,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBigQueryExportsPagedResponse listBigQueryExports(LocationName parent) {
+  public final ListBigQueryExportsPagedResponse listBigQueryExports(@Nullable LocationName parent) {
     ListBigQueryExportsRequest request =
         ListBigQueryExportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4509,7 +4520,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBigQueryExportsPagedResponse listBigQueryExports(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListBigQueryExportsRequest request =
         ListBigQueryExportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4713,7 +4724,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/{projects_id}/sources/-/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingsPagedResponse listFindings(SourceName parent) {
+  public final ListFindingsPagedResponse listFindings(@Nullable SourceName parent) {
     ListFindingsRequest request =
         ListFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4936,7 +4947,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(FolderLocationName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(@Nullable FolderLocationName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4971,7 +4982,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(FolderName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(@Nullable FolderName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5006,7 +5017,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(LocationName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(@Nullable LocationName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5041,7 +5052,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(OrganizationLocationName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(
+      @Nullable OrganizationLocationName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5076,7 +5088,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(OrganizationName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(@Nullable OrganizationName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5111,7 +5123,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `projects/[project_id]/locations/[location_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMuteConfigsPagedResponse listMuteConfigs(ProjectName parent) {
+  public final ListMuteConfigsPagedResponse listMuteConfigs(@Nullable ProjectName parent) {
     ListMuteConfigsRequest request =
         ListMuteConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5284,7 +5296,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(
-      FolderLocationName parent) {
+      @Nullable FolderLocationName parent) {
     ListNotificationConfigsRequest request =
         ListNotificationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5319,7 +5331,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "projects/[project_id]/locations/[location_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationConfigsPagedResponse listNotificationConfigs(LocationName parent) {
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(
+      @Nullable LocationName parent) {
     ListNotificationConfigsRequest request =
         ListNotificationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5355,7 +5368,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListNotificationConfigsRequest request =
         ListNotificationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5529,7 +5542,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceValueConfigsPagedResponse listResourceValueConfigs(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListResourceValueConfigsRequest request =
         ListResourceValueConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5563,7 +5576,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceValueConfigsPagedResponse listResourceValueConfigs(
-      OrganizationName parent) {
+      @Nullable OrganizationName parent) {
     ListResourceValueConfigsRequest request =
         ListResourceValueConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5733,7 +5746,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(FolderName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable FolderName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5765,7 +5778,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(OrganizationName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable OrganizationName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5797,7 +5810,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(ProjectName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable ProjectName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5964,7 +5977,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListValuedResourcesPagedResponse listValuedResources(SimulationName parent) {
+  public final ListValuedResourcesPagedResponse listValuedResources(
+      @Nullable SimulationName parent) {
     ListValuedResourcesRequest request =
         ListValuedResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6157,7 +6171,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param state Required. The desired State of the finding.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding setFindingState(FindingName name, Finding.State state) {
+  public final Finding setFindingState(@Nullable FindingName name, Finding.State state) {
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6294,7 +6308,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -6430,7 +6444,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param mute Required. The desired state of the Mute.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding setMute(FindingName name, Finding.Mute mute) {
+  public final Finding setMute(@Nullable FindingName name, Finding.Mute mute) {
     SetMuteRequest request =
         SetMuteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6570,7 +6584,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -7493,8 +7507,8 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage> {
 
     private GroupFindingsPage(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
-        GroupFindingsResponse response) {
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable GroupFindingsResponse response) {
       super(context, response);
     }
 
@@ -7504,14 +7518,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupFindingsPage createPage(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
-        GroupFindingsResponse response) {
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable GroupFindingsResponse response) {
       return new GroupFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<GroupFindingsPage> createPageAsync(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
         ApiFuture<GroupFindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7525,7 +7539,8 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
-    private GroupFindingsFixedSizeCollection(List<GroupFindingsPage> pages, int collectionSize) {
+    private GroupFindingsFixedSizeCollection(
+        @Nullable List<GroupFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7535,7 +7550,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupFindingsFixedSizeCollection createCollection(
-        List<GroupFindingsPage> pages, int collectionSize) {
+        @Nullable List<GroupFindingsPage> pages, int collectionSize) {
       return new GroupFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7569,8 +7584,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListAttackPathsRequest, ListAttackPathsResponse, AttackPath, ListAttackPathsPage> {
 
     private ListAttackPathsPage(
-        PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
-        ListAttackPathsResponse response) {
+        @Nullable PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
+        @Nullable ListAttackPathsResponse response) {
       super(context, response);
     }
 
@@ -7580,14 +7595,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListAttackPathsPage createPage(
-        PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
-        ListAttackPathsResponse response) {
+        @Nullable PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
+        @Nullable ListAttackPathsResponse response) {
       return new ListAttackPathsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttackPathsPage> createPageAsync(
-        PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
+        @Nullable PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> context,
         ApiFuture<ListAttackPathsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7602,7 +7617,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListAttackPathsFixedSizeCollection> {
 
     private ListAttackPathsFixedSizeCollection(
-        List<ListAttackPathsPage> pages, int collectionSize) {
+        @Nullable List<ListAttackPathsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7612,7 +7627,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListAttackPathsFixedSizeCollection createCollection(
-        List<ListAttackPathsPage> pages, int collectionSize) {
+        @Nullable List<ListAttackPathsPage> pages, int collectionSize) {
       return new ListAttackPathsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7650,9 +7665,10 @@ public class SecurityCenterClient implements BackgroundResource {
           ListBigQueryExportsPage> {
 
     private ListBigQueryExportsPage(
-        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+        @Nullable
+            PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
             context,
-        ListBigQueryExportsResponse response) {
+        @Nullable ListBigQueryExportsResponse response) {
       super(context, response);
     }
 
@@ -7662,15 +7678,17 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListBigQueryExportsPage createPage(
-        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+        @Nullable
+            PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
             context,
-        ListBigQueryExportsResponse response) {
+        @Nullable ListBigQueryExportsResponse response) {
       return new ListBigQueryExportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBigQueryExportsPage> createPageAsync(
-        PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
+        @Nullable
+            PageContext<ListBigQueryExportsRequest, ListBigQueryExportsResponse, BigQueryExport>
             context,
         ApiFuture<ListBigQueryExportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7686,7 +7704,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListBigQueryExportsFixedSizeCollection> {
 
     private ListBigQueryExportsFixedSizeCollection(
-        List<ListBigQueryExportsPage> pages, int collectionSize) {
+        @Nullable List<ListBigQueryExportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7696,7 +7714,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListBigQueryExportsFixedSizeCollection createCollection(
-        List<ListBigQueryExportsPage> pages, int collectionSize) {
+        @Nullable List<ListBigQueryExportsPage> pages, int collectionSize) {
       return new ListBigQueryExportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7735,10 +7753,11 @@ public class SecurityCenterClient implements BackgroundResource {
           ListFindingsPage> {
 
     private ListFindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult>
             context,
-        ListFindingsResponse response) {
+        @Nullable ListFindingsResponse response) {
       super(context, response);
     }
 
@@ -7748,16 +7767,18 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListFindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult>
             context,
-        ListFindingsResponse response) {
+        @Nullable ListFindingsResponse response) {
       return new ListFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult>
             context,
         ApiFuture<ListFindingsResponse> futureResponse) {
@@ -7773,7 +7794,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
-    private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
+    private ListFindingsFixedSizeCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7783,7 +7805,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListFindingsFixedSizeCollection createCollection(
-        List<ListFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7817,8 +7839,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig, ListMuteConfigsPage> {
 
     private ListMuteConfigsPage(
-        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
-        ListMuteConfigsResponse response) {
+        @Nullable PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        @Nullable ListMuteConfigsResponse response) {
       super(context, response);
     }
 
@@ -7828,14 +7850,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListMuteConfigsPage createPage(
-        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
-        ListMuteConfigsResponse response) {
+        @Nullable PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        @Nullable ListMuteConfigsResponse response) {
       return new ListMuteConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMuteConfigsPage> createPageAsync(
-        PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
+        @Nullable PageContext<ListMuteConfigsRequest, ListMuteConfigsResponse, MuteConfig> context,
         ApiFuture<ListMuteConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7850,7 +7872,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListMuteConfigsFixedSizeCollection> {
 
     private ListMuteConfigsFixedSizeCollection(
-        List<ListMuteConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMuteConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7860,7 +7882,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListMuteConfigsFixedSizeCollection createCollection(
-        List<ListMuteConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListMuteConfigsPage> pages, int collectionSize) {
       return new ListMuteConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7899,10 +7921,11 @@ public class SecurityCenterClient implements BackgroundResource {
           ListNotificationConfigsPage> {
 
     private ListNotificationConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
             context,
-        ListNotificationConfigsResponse response) {
+        @Nullable ListNotificationConfigsResponse response) {
       super(context, response);
     }
 
@@ -7912,16 +7935,18 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListNotificationConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
             context,
-        ListNotificationConfigsResponse response) {
+        @Nullable ListNotificationConfigsResponse response) {
       return new ListNotificationConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
             context,
         ApiFuture<ListNotificationConfigsResponse> futureResponse) {
@@ -7938,7 +7963,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListNotificationConfigsFixedSizeCollection> {
 
     private ListNotificationConfigsFixedSizeCollection(
-        List<ListNotificationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7948,7 +7973,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListNotificationConfigsFixedSizeCollection createCollection(
-        List<ListNotificationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationConfigsPage> pages, int collectionSize) {
       return new ListNotificationConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7989,12 +8014,13 @@ public class SecurityCenterClient implements BackgroundResource {
           ListResourceValueConfigsPage> {
 
     private ListResourceValueConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceValueConfigsRequest,
                 ListResourceValueConfigsResponse,
                 ResourceValueConfig>
             context,
-        ListResourceValueConfigsResponse response) {
+        @Nullable ListResourceValueConfigsResponse response) {
       super(context, response);
     }
 
@@ -8004,18 +8030,20 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListResourceValueConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceValueConfigsRequest,
                 ListResourceValueConfigsResponse,
                 ResourceValueConfig>
             context,
-        ListResourceValueConfigsResponse response) {
+        @Nullable ListResourceValueConfigsResponse response) {
       return new ListResourceValueConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceValueConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceValueConfigsRequest,
                 ListResourceValueConfigsResponse,
                 ResourceValueConfig>
@@ -8034,7 +8062,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListResourceValueConfigsFixedSizeCollection> {
 
     private ListResourceValueConfigsFixedSizeCollection(
-        List<ListResourceValueConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceValueConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8044,7 +8072,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListResourceValueConfigsFixedSizeCollection createCollection(
-        List<ListResourceValueConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceValueConfigsPage> pages, int collectionSize) {
       return new ListResourceValueConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8075,8 +8103,8 @@ public class SecurityCenterClient implements BackgroundResource {
       extends AbstractPage<ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage> {
 
     private ListSourcesPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       super(context, response);
     }
 
@@ -8086,14 +8114,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesPage createPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       return new ListSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSourcesPage> createPageAsync(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
         ApiFuture<ListSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8107,7 +8135,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
-    private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {
+    private ListSourcesFixedSizeCollection(
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8117,7 +8146,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesFixedSizeCollection createCollection(
-        List<ListSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8155,9 +8184,10 @@ public class SecurityCenterClient implements BackgroundResource {
           ListValuedResourcesPage> {
 
     private ListValuedResourcesPage(
-        PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
+        @Nullable
+            PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
             context,
-        ListValuedResourcesResponse response) {
+        @Nullable ListValuedResourcesResponse response) {
       super(context, response);
     }
 
@@ -8167,15 +8197,17 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListValuedResourcesPage createPage(
-        PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
+        @Nullable
+            PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
             context,
-        ListValuedResourcesResponse response) {
+        @Nullable ListValuedResourcesResponse response) {
       return new ListValuedResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListValuedResourcesPage> createPageAsync(
-        PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
+        @Nullable
+            PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
             context,
         ApiFuture<ListValuedResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -8191,7 +8223,7 @@ public class SecurityCenterClient implements BackgroundResource {
           ListValuedResourcesFixedSizeCollection> {
 
     private ListValuedResourcesFixedSizeCollection(
-        List<ListValuedResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListValuedResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8201,7 +8233,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListValuedResourcesFixedSizeCollection createCollection(
-        List<ListValuedResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListValuedResourcesPage> pages, int collectionSize) {
       return new ListValuedResourcesFixedSizeCollection(pages, collectionSize);
     }
   }

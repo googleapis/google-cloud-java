@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -548,9 +550,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EdgeContainerClient implements BackgroundResource {
-  private final EdgeContainerSettings settings;
+  private final @Nullable EdgeContainerSettings settings;
   private final EdgeContainerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -598,7 +601,7 @@ public class EdgeContainerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EdgeContainerSettings getSettings() {
+  public final @Nullable EdgeContainerSettings getSettings() {
     return settings;
   }
 
@@ -646,7 +649,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param parent Required. The parent location, which owns this collection of clusters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(LocationName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable LocationName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -812,7 +815,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -925,7 +928,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1216,7 +1219,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> upgradeClusterAsync(
-      ClusterName name, String targetVersion, UpgradeClusterRequest.Schedule schedule) {
+      @Nullable ClusterName name, String targetVersion, UpgradeClusterRequest.Schedule schedule) {
     UpgradeClusterRequest request =
         UpgradeClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1376,7 +1379,8 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(
+      @Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -1517,7 +1521,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param cluster Required. The resource name of the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GenerateAccessTokenResponse generateAccessToken(ClusterName cluster) {
+  public final GenerateAccessTokenResponse generateAccessToken(@Nullable ClusterName cluster) {
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setCluster(cluster == null ? null : cluster.toString())
@@ -1631,7 +1635,8 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param cluster Required. The resource name of the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GenerateOfflineCredentialResponse generateOfflineCredential(ClusterName cluster) {
+  public final GenerateOfflineCredentialResponse generateOfflineCredential(
+      @Nullable ClusterName cluster) {
     GenerateOfflineCredentialRequest request =
         GenerateOfflineCredentialRequest.newBuilder()
             .setCluster(cluster == null ? null : cluster.toString())
@@ -1749,7 +1754,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param parent Required. The parent cluster, which owns this collection of node pools.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNodePoolsPagedResponse listNodePools(ClusterName parent) {
+  public final ListNodePoolsPagedResponse listNodePools(@Nullable ClusterName parent) {
     ListNodePoolsRequest request =
         ListNodePoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1915,7 +1920,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the node pool.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NodePool getNodePool(NodePoolName name) {
+  public final NodePool getNodePool(@Nullable NodePoolName name) {
     GetNodePoolRequest request =
         GetNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNodePool(request);
@@ -2032,7 +2037,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NodePool, OperationMetadata> createNodePoolAsync(
-      ClusterName parent, NodePool nodePool, String nodePoolId) {
+      @Nullable ClusterName parent, NodePool nodePool, String nodePoolId) {
     CreateNodePoolRequest request =
         CreateNodePoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2320,7 +2325,8 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the node pool.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteNodePoolAsync(NodePoolName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteNodePoolAsync(
+      @Nullable NodePoolName name) {
     DeleteNodePoolRequest request =
         DeleteNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteNodePoolAsync(request);
@@ -2468,7 +2474,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param parent Required. The parent site, which owns this collection of machines.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMachinesPagedResponse listMachines(LocationName parent) {
+  public final ListMachinesPagedResponse listMachines(@Nullable LocationName parent) {
     ListMachinesRequest request =
         ListMachinesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2634,7 +2640,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the machine.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Machine getMachine(MachineName name) {
+  public final Machine getMachine(@Nullable MachineName name) {
     GetMachineRequest request =
         GetMachineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMachine(request);
@@ -2744,7 +2750,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param parent Required. The parent location, which owns this collection of VPN connections.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVpnConnectionsPagedResponse listVpnConnections(LocationName parent) {
+  public final ListVpnConnectionsPagedResponse listVpnConnections(@Nullable LocationName parent) {
     ListVpnConnectionsRequest request =
         ListVpnConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2914,7 +2920,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @param name Required. The resource name of the vpn connection.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VpnConnection getVpnConnection(VpnConnectionName name) {
+  public final VpnConnection getVpnConnection(@Nullable VpnConnectionName name) {
     GetVpnConnectionRequest request =
         GetVpnConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVpnConnection(request);
@@ -3033,7 +3039,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpnConnection, OperationMetadata> createVpnConnectionAsync(
-      LocationName parent, VpnConnection vpnConnection, String vpnConnectionId) {
+      @Nullable LocationName parent, VpnConnection vpnConnection, String vpnConnectionId) {
     CreateVpnConnectionRequest request =
         CreateVpnConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3199,7 +3205,7 @@ public class EdgeContainerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteVpnConnectionAsync(
-      VpnConnectionName name) {
+      @Nullable VpnConnectionName name) {
     DeleteVpnConnectionRequest request =
         DeleteVpnConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3348,7 +3354,7 @@ public class EdgeContainerClient implements BackgroundResource {
    *     the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServerConfig getServerConfig(LocationName name) {
+  public final ServerConfig getServerConfig(@Nullable LocationName name) {
     GetServerConfigRequest request =
         GetServerConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getServerConfig(request);
@@ -3650,8 +3656,8 @@ public class EdgeContainerClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -3661,14 +3667,14 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3682,7 +3688,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3692,7 +3699,7 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3726,8 +3733,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListNodePoolsRequest, ListNodePoolsResponse, NodePool, ListNodePoolsPage> {
 
     private ListNodePoolsPage(
-        PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
-        ListNodePoolsResponse response) {
+        @Nullable PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
+        @Nullable ListNodePoolsResponse response) {
       super(context, response);
     }
 
@@ -3737,14 +3744,14 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListNodePoolsPage createPage(
-        PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
-        ListNodePoolsResponse response) {
+        @Nullable PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
+        @Nullable ListNodePoolsResponse response) {
       return new ListNodePoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNodePoolsPage> createPageAsync(
-        PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
+        @Nullable PageContext<ListNodePoolsRequest, ListNodePoolsResponse, NodePool> context,
         ApiFuture<ListNodePoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3758,7 +3765,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListNodePoolsPage,
           ListNodePoolsFixedSizeCollection> {
 
-    private ListNodePoolsFixedSizeCollection(List<ListNodePoolsPage> pages, int collectionSize) {
+    private ListNodePoolsFixedSizeCollection(
+        @Nullable List<ListNodePoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3768,7 +3776,7 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListNodePoolsFixedSizeCollection createCollection(
-        List<ListNodePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListNodePoolsPage> pages, int collectionSize) {
       return new ListNodePoolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3801,8 +3809,8 @@ public class EdgeContainerClient implements BackgroundResource {
       extends AbstractPage<ListMachinesRequest, ListMachinesResponse, Machine, ListMachinesPage> {
 
     private ListMachinesPage(
-        PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
-        ListMachinesResponse response) {
+        @Nullable PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
+        @Nullable ListMachinesResponse response) {
       super(context, response);
     }
 
@@ -3812,14 +3820,14 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListMachinesPage createPage(
-        PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
-        ListMachinesResponse response) {
+        @Nullable PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
+        @Nullable ListMachinesResponse response) {
       return new ListMachinesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMachinesPage> createPageAsync(
-        PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
+        @Nullable PageContext<ListMachinesRequest, ListMachinesResponse, Machine> context,
         ApiFuture<ListMachinesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3833,7 +3841,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListMachinesPage,
           ListMachinesFixedSizeCollection> {
 
-    private ListMachinesFixedSizeCollection(List<ListMachinesPage> pages, int collectionSize) {
+    private ListMachinesFixedSizeCollection(
+        @Nullable List<ListMachinesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3843,7 +3852,7 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListMachinesFixedSizeCollection createCollection(
-        List<ListMachinesPage> pages, int collectionSize) {
+        @Nullable List<ListMachinesPage> pages, int collectionSize) {
       return new ListMachinesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3880,8 +3889,9 @@ public class EdgeContainerClient implements BackgroundResource {
           ListVpnConnectionsPage> {
 
     private ListVpnConnectionsPage(
-        PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection> context,
-        ListVpnConnectionsResponse response) {
+        @Nullable PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection>
+            context,
+        @Nullable ListVpnConnectionsResponse response) {
       super(context, response);
     }
 
@@ -3891,14 +3901,16 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListVpnConnectionsPage createPage(
-        PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection> context,
-        ListVpnConnectionsResponse response) {
+        @Nullable PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection>
+            context,
+        @Nullable ListVpnConnectionsResponse response) {
       return new ListVpnConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVpnConnectionsPage> createPageAsync(
-        PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection> context,
+        @Nullable PageContext<ListVpnConnectionsRequest, ListVpnConnectionsResponse, VpnConnection>
+            context,
         ApiFuture<ListVpnConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3913,7 +3925,7 @@ public class EdgeContainerClient implements BackgroundResource {
           ListVpnConnectionsFixedSizeCollection> {
 
     private ListVpnConnectionsFixedSizeCollection(
-        List<ListVpnConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListVpnConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3923,7 +3935,7 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListVpnConnectionsFixedSizeCollection createCollection(
-        List<ListVpnConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListVpnConnectionsPage> pages, int collectionSize) {
       return new ListVpnConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3957,8 +3969,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3968,14 +3980,14 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3989,7 +4001,8 @@ public class EdgeContainerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3999,7 +4012,7 @@ public class EdgeContainerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

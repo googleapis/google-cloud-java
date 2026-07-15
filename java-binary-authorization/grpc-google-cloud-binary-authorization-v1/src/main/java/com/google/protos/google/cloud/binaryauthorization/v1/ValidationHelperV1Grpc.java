@@ -165,8 +165,8 @@ public final class ValidationHelperV1Grpc {
      *
      *
      * <pre>
-     * Returns whether the given Attestation for the given image URI
-     * was signed by the given Attestor
+     * Returns whether the given `Attestation` for the given image URI
+     * was signed by the given `Attestor`
      * </pre>
      */
     default void validateAttestationOccurrence(
@@ -221,8 +221,8 @@ public final class ValidationHelperV1Grpc {
      *
      *
      * <pre>
-     * Returns whether the given Attestation for the given image URI
-     * was signed by the given Attestor
+     * Returns whether the given `Attestation` for the given image URI
+     * was signed by the given `Attestor`
      * </pre>
      */
     public void validateAttestationOccurrence(
@@ -264,8 +264,8 @@ public final class ValidationHelperV1Grpc {
      *
      *
      * <pre>
-     * Returns whether the given Attestation for the given image URI
-     * was signed by the given Attestor
+     * Returns whether the given `Attestation` for the given image URI
+     * was signed by the given `Attestor`
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Service
@@ -304,8 +304,8 @@ public final class ValidationHelperV1Grpc {
      *
      *
      * <pre>
-     * Returns whether the given Attestation for the given image URI
-     * was signed by the given Attestor
+     * Returns whether the given `Attestation` for the given image URI
+     * was signed by the given `Attestor`
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Service
@@ -342,8 +342,8 @@ public final class ValidationHelperV1Grpc {
      *
      *
      * <pre>
-     * Returns whether the given Attestation for the given image URI
-     * was signed by the given Attestor
+     * Returns whether the given `Attestation` for the given image URI
+     * was signed by the given `Attestor`
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

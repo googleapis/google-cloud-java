@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -333,9 +335,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionBackendServicesClient implements BackgroundResource {
-  private final RegionBackendServicesSettings settings;
+  private final @Nullable RegionBackendServicesSettings settings;
   private final RegionBackendServicesStub stub;
 
   /** Constructs an instance of RegionBackendServicesClient with default settings. */
@@ -375,7 +378,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionBackendServicesSettings getSettings() {
+  public final @Nullable RegionBackendServicesSettings getSettings() {
     return settings;
   }
 
@@ -2018,8 +2021,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListRegionBackendServicesRequest, BackendServiceList, BackendService, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
-        BackendServiceList response) {
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
+        @Nullable BackendServiceList response) {
       super(context, response);
     }
 
@@ -2029,14 +2033,16 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
-        BackendServiceList response) {
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
+        @Nullable BackendServiceList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
         ApiFuture<BackendServiceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2050,7 +2056,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2059,7 +2065,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2096,10 +2103,11 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListUsablePage> {
 
     private ListUsablePage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
-        BackendServiceListUsable response) {
+        @Nullable BackendServiceListUsable response) {
       super(context, response);
     }
 
@@ -2109,16 +2117,18 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListUsablePage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
-        BackendServiceListUsable response) {
+        @Nullable BackendServiceListUsable response) {
       return new ListUsablePage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsablePage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
         ApiFuture<BackendServiceListUsable> futureResponse) {
@@ -2134,7 +2144,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListUsablePage,
           ListUsableFixedSizeCollection> {
 
-    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+    private ListUsableFixedSizeCollection(
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2144,7 +2155,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListUsableFixedSizeCollection createCollection(
-        List<ListUsablePage> pages, int collectionSize) {
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -189,9 +191,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SimulatorClient implements BackgroundResource {
-  private final SimulatorSettings settings;
+  private final @Nullable SimulatorSettings settings;
   private final SimulatorStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -237,7 +240,7 @@ public class SimulatorClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SimulatorSettings getSettings() {
+  public final @Nullable SimulatorSettings getSettings() {
     return settings;
   }
 
@@ -291,7 +294,7 @@ public class SimulatorClient implements BackgroundResource {
    *     `projects/my-example-project/locations/global/replays/506a5f7f-38ce-4d7d-8e03-479ce1833c36`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Replay getReplay(ReplayName name) {
+  public final Replay getReplay(@Nullable ReplayName name) {
     GetReplayRequest request =
         GetReplayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReplay(request);
@@ -546,7 +549,7 @@ public class SimulatorClient implements BackgroundResource {
    *     `projects/my-project/locations/global/replays/506a5f7f-38ce-4d7d-8e03-479ce1833c36`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReplayResultsPagedResponse listReplayResults(ReplayName parent) {
+  public final ListReplayResultsPagedResponse listReplayResults(@Nullable ReplayName parent) {
     ListReplayResultsRequest request =
         ListReplayResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -761,8 +764,9 @@ public class SimulatorClient implements BackgroundResource {
           ListReplayResultsPage> {
 
     private ListReplayResultsPage(
-        PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult> context,
-        ListReplayResultsResponse response) {
+        @Nullable PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult>
+            context,
+        @Nullable ListReplayResultsResponse response) {
       super(context, response);
     }
 
@@ -772,14 +776,16 @@ public class SimulatorClient implements BackgroundResource {
 
     @Override
     protected ListReplayResultsPage createPage(
-        PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult> context,
-        ListReplayResultsResponse response) {
+        @Nullable PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult>
+            context,
+        @Nullable ListReplayResultsResponse response) {
       return new ListReplayResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReplayResultsPage> createPageAsync(
-        PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult> context,
+        @Nullable PageContext<ListReplayResultsRequest, ListReplayResultsResponse, ReplayResult>
+            context,
         ApiFuture<ListReplayResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -794,7 +800,7 @@ public class SimulatorClient implements BackgroundResource {
           ListReplayResultsFixedSizeCollection> {
 
     private ListReplayResultsFixedSizeCollection(
-        List<ListReplayResultsPage> pages, int collectionSize) {
+        @Nullable List<ListReplayResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -804,7 +810,7 @@ public class SimulatorClient implements BackgroundResource {
 
     @Override
     protected ListReplayResultsFixedSizeCollection createCollection(
-        List<ListReplayResultsPage> pages, int collectionSize) {
+        @Nullable List<ListReplayResultsPage> pages, int collectionSize) {
       return new ListReplayResultsFixedSizeCollection(pages, collectionSize);
     }
   }

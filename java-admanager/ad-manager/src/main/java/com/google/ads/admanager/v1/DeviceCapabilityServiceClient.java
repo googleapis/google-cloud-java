@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DeviceCapabilityServiceClient implements BackgroundResource {
-  private final DeviceCapabilityServiceSettings settings;
+  private final @Nullable DeviceCapabilityServiceSettings settings;
   private final DeviceCapabilityServiceStub stub;
 
   /** Constructs an instance of DeviceCapabilityServiceClient with default settings. */
@@ -188,7 +191,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeviceCapabilityServiceSettings getSettings() {
+  public final @Nullable DeviceCapabilityServiceSettings getSettings() {
     return settings;
   }
 
@@ -219,7 +222,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
    *     `networks/{network_code}/deviceCapabilities/{device_capability_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceCapability getDeviceCapability(DeviceCapabilityName name) {
+  public final DeviceCapability getDeviceCapability(@Nullable DeviceCapabilityName name) {
     GetDeviceCapabilityRequest request =
         GetDeviceCapabilityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -341,7 +344,8 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceCapabilitiesPagedResponse listDeviceCapabilities(NetworkName parent) {
+  public final ListDeviceCapabilitiesPagedResponse listDeviceCapabilities(
+      @Nullable NetworkName parent) {
     ListDeviceCapabilitiesRequest request =
         ListDeviceCapabilitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -563,9 +567,11 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
           ListDeviceCapabilitiesPage> {
 
     private ListDeviceCapabilitiesPage(
-        PageContext<ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
+        @Nullable
+            PageContext<
+                ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
             context,
-        ListDeviceCapabilitiesResponse response) {
+        @Nullable ListDeviceCapabilitiesResponse response) {
       super(context, response);
     }
 
@@ -575,15 +581,19 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceCapabilitiesPage createPage(
-        PageContext<ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
+        @Nullable
+            PageContext<
+                ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
             context,
-        ListDeviceCapabilitiesResponse response) {
+        @Nullable ListDeviceCapabilitiesResponse response) {
       return new ListDeviceCapabilitiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeviceCapabilitiesPage> createPageAsync(
-        PageContext<ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
+        @Nullable
+            PageContext<
+                ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse, DeviceCapability>
             context,
         ApiFuture<ListDeviceCapabilitiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -599,7 +609,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
           ListDeviceCapabilitiesFixedSizeCollection> {
 
     private ListDeviceCapabilitiesFixedSizeCollection(
-        List<ListDeviceCapabilitiesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceCapabilitiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -609,7 +619,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceCapabilitiesFixedSizeCollection createCollection(
-        List<ListDeviceCapabilitiesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceCapabilitiesPage> pages, int collectionSize) {
       return new ListDeviceCapabilitiesFixedSizeCollection(pages, collectionSize);
     }
   }

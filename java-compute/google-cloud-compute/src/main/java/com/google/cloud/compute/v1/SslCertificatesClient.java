@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -204,9 +206,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SslCertificatesClient implements BackgroundResource {
-  private final SslCertificatesSettings settings;
+  private final @Nullable SslCertificatesSettings settings;
   private final SslCertificatesStub stub;
 
   /** Constructs an instance of SslCertificatesClient with default settings. */
@@ -246,7 +249,7 @@ public class SslCertificatesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SslCertificatesSettings getSettings() {
+  public final @Nullable SslCertificatesSettings getSettings() {
     return settings;
   }
 
@@ -969,12 +972,13 @@ public class SslCertificatesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslCertificatesRequest,
                 SslCertificateAggregatedList,
                 Map.Entry<String, SslCertificatesScopedList>>
             context,
-        SslCertificateAggregatedList response) {
+        @Nullable SslCertificateAggregatedList response) {
       super(context, response);
     }
 
@@ -984,18 +988,20 @@ public class SslCertificatesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslCertificatesRequest,
                 SslCertificateAggregatedList,
                 Map.Entry<String, SslCertificatesScopedList>>
             context,
-        SslCertificateAggregatedList response) {
+        @Nullable SslCertificateAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslCertificatesRequest,
                 SslCertificateAggregatedList,
                 Map.Entry<String, SslCertificatesScopedList>>
@@ -1013,7 +1019,8 @@ public class SslCertificatesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1023,7 +1030,7 @@ public class SslCertificatesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1055,8 +1062,9 @@ public class SslCertificatesClient implements BackgroundResource {
           ListSslCertificatesRequest, SslCertificateList, SslCertificate, ListPage> {
 
     private ListPage(
-        PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate> context,
-        SslCertificateList response) {
+        @Nullable PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate>
+            context,
+        @Nullable SslCertificateList response) {
       super(context, response);
     }
 
@@ -1066,14 +1074,16 @@ public class SslCertificatesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate> context,
-        SslCertificateList response) {
+        @Nullable PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate>
+            context,
+        @Nullable SslCertificateList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate> context,
+        @Nullable PageContext<ListSslCertificatesRequest, SslCertificateList, SslCertificate>
+            context,
         ApiFuture<SslCertificateList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1087,7 +1097,7 @@ public class SslCertificatesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1096,7 +1106,8 @@ public class SslCertificatesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

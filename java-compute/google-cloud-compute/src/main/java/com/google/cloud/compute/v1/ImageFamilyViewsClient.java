@@ -23,6 +23,8 @@ import com.google.cloud.compute.v1.stub.ImageFamilyViewsStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -117,9 +119,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ImageFamilyViewsClient implements BackgroundResource {
-  private final ImageFamilyViewsSettings settings;
+  private final @Nullable ImageFamilyViewsSettings settings;
   private final ImageFamilyViewsStub stub;
 
   /** Constructs an instance of ImageFamilyViewsClient with default settings. */
@@ -159,7 +162,7 @@ public class ImageFamilyViewsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ImageFamilyViewsSettings getSettings() {
+  public final @Nullable ImageFamilyViewsSettings getSettings() {
     return settings;
   }
 

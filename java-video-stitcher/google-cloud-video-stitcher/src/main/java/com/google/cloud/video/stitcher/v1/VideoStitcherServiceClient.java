@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -700,9 +702,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class VideoStitcherServiceClient implements BackgroundResource {
-  private final VideoStitcherServiceSettings settings;
+  private final @Nullable VideoStitcherServiceSettings settings;
   private final VideoStitcherServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -745,7 +748,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final VideoStitcherServiceSettings getSettings() {
+  public final @Nullable VideoStitcherServiceSettings getSettings() {
     return settings;
   }
 
@@ -794,7 +797,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CdnKey, OperationMetadata> createCdnKeyAsync(
-      LocationName parent, CdnKey cdnKey, String cdnKeyId) {
+      @Nullable LocationName parent, CdnKey cdnKey, String cdnKeyId) {
     CreateCdnKeyRequest request =
         CreateCdnKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -967,7 +970,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCdnKeysPagedResponse listCdnKeys(LocationName parent) {
+  public final ListCdnKeysPagedResponse listCdnKeys(@Nullable LocationName parent) {
     ListCdnKeysRequest request =
         ListCdnKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1141,7 +1144,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/cdnKeys/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CdnKey getCdnKey(CdnKeyName name) {
+  public final CdnKey getCdnKey(@Nullable CdnKeyName name) {
     GetCdnKeyRequest request =
         GetCdnKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCdnKey(request);
@@ -1255,7 +1258,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/cdnKeys/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteCdnKeyAsync(CdnKeyName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteCdnKeyAsync(
+      @Nullable CdnKeyName name) {
     DeleteCdnKeyRequest request =
         DeleteCdnKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCdnKeyAsync(request);
@@ -1529,7 +1533,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @param vodSession Required. Parameters for creating a session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VodSession createVodSession(LocationName parent, VodSession vodSession) {
+  public final VodSession createVodSession(@Nullable LocationName parent, VodSession vodSession) {
     CreateVodSessionRequest request =
         CreateVodSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1656,7 +1660,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/vodSessions/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VodSession getVodSession(VodSessionName name) {
+  public final VodSession getVodSession(@Nullable VodSessionName name) {
     GetVodSessionRequest request =
         GetVodSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVodSession(request);
@@ -1777,7 +1781,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/vodSessions/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVodStitchDetailsPagedResponse listVodStitchDetails(VodSessionName parent) {
+  public final ListVodStitchDetailsPagedResponse listVodStitchDetails(
+      @Nullable VodSessionName parent) {
     ListVodStitchDetailsRequest request =
         ListVodStitchDetailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1952,7 +1957,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VodStitchDetail getVodStitchDetail(VodStitchDetailName name) {
+  public final VodStitchDetail getVodStitchDetail(@Nullable VodStitchDetailName name) {
     GetVodStitchDetailRequest request =
         GetVodStitchDetailRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2083,7 +2088,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/vodSessions/{vod_session_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVodAdTagDetailsPagedResponse listVodAdTagDetails(VodSessionName parent) {
+  public final ListVodAdTagDetailsPagedResponse listVodAdTagDetails(
+      @Nullable VodSessionName parent) {
     ListVodAdTagDetailsRequest request =
         ListVodAdTagDetailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2258,7 +2264,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VodAdTagDetail getVodAdTagDetail(VodAdTagDetailName name) {
+  public final VodAdTagDetail getVodAdTagDetail(@Nullable VodAdTagDetailName name) {
     GetVodAdTagDetailRequest request =
         GetVodAdTagDetailRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2387,7 +2393,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/liveSessions/{live_session}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLiveAdTagDetailsPagedResponse listLiveAdTagDetails(LiveSessionName parent) {
+  public final ListLiveAdTagDetailsPagedResponse listLiveAdTagDetails(
+      @Nullable LiveSessionName parent) {
     ListLiveAdTagDetailsRequest request =
         ListLiveAdTagDetailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2562,7 +2569,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/liveSessions/{live_session}/liveAdTagDetails/{live_ad_tag_detail}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LiveAdTagDetail getLiveAdTagDetail(LiveAdTagDetailName name) {
+  public final LiveAdTagDetail getLiveAdTagDetail(@Nullable LiveAdTagDetailName name) {
     GetLiveAdTagDetailRequest request =
         GetLiveAdTagDetailRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2697,7 +2704,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Slate, OperationMetadata> createSlateAsync(
-      LocationName parent, Slate slate, String slateId) {
+      @Nullable LocationName parent, Slate slate, String slateId) {
     CreateSlateRequest request =
         CreateSlateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2870,7 +2877,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSlatesPagedResponse listSlates(LocationName parent) {
+  public final ListSlatesPagedResponse listSlates(@Nullable LocationName parent) {
     ListSlatesRequest request =
         ListSlatesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSlates(request);
@@ -3040,7 +3047,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/slates/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Slate getSlate(SlateName name) {
+  public final Slate getSlate(@Nullable SlateName name) {
     GetSlateRequest request =
         GetSlateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSlate(request);
@@ -3277,7 +3284,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/slates/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSlateAsync(SlateName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSlateAsync(
+      @Nullable SlateName name) {
     DeleteSlateRequest request =
         DeleteSlateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSlateAsync(request);
@@ -3425,7 +3433,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @param liveSession Required. Parameters for creating a live session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LiveSession createLiveSession(LocationName parent, LiveSession liveSession) {
+  public final LiveSession createLiveSession(
+      @Nullable LocationName parent, LiveSession liveSession) {
     CreateLiveSessionRequest request =
         CreateLiveSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3548,7 +3557,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/liveSessions/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LiveSession getLiveSession(LiveSessionName name) {
+  public final LiveSession getLiveSession(@Nullable LiveSessionName name) {
     GetLiveSessionRequest request =
         GetLiveSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLiveSession(request);
@@ -3669,7 +3678,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LiveConfig, OperationMetadata> createLiveConfigAsync(
-      LocationName parent, LiveConfig liveConfig, String liveConfigId) {
+      @Nullable LocationName parent, LiveConfig liveConfig, String liveConfigId) {
     CreateLiveConfigRequest request =
         CreateLiveConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3842,7 +3851,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLiveConfigsPagedResponse listLiveConfigs(LocationName parent) {
+  public final ListLiveConfigsPagedResponse listLiveConfigs(@Nullable LocationName parent) {
     ListLiveConfigsRequest request =
         ListLiveConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4021,7 +4030,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/liveConfigs/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LiveConfig getLiveConfig(LiveConfigName name) {
+  public final LiveConfig getLiveConfig(@Nullable LiveConfigName name) {
     GetLiveConfigRequest request =
         GetLiveConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLiveConfig(request);
@@ -4137,7 +4146,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLiveConfigAsync(
-      LiveConfigName name) {
+      @Nullable LiveConfigName name) {
     DeleteLiveConfigRequest request =
         DeleteLiveConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteLiveConfigAsync(request);
@@ -4418,7 +4427,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VodConfig, OperationMetadata> createVodConfigAsync(
-      LocationName parent, VodConfig vodConfig, String vodConfigId) {
+      @Nullable LocationName parent, VodConfig vodConfig, String vodConfigId) {
     CreateVodConfigRequest request =
         CreateVodConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4591,7 +4600,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVodConfigsPagedResponse listVodConfigs(LocationName parent) {
+  public final ListVodConfigsPagedResponse listVodConfigs(@Nullable LocationName parent) {
     ListVodConfigsRequest request =
         ListVodConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4770,7 +4779,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VodConfig getVodConfig(VodConfigName name) {
+  public final VodConfig getVodConfig(@Nullable VodConfigName name) {
     GetVodConfigRequest request =
         GetVodConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVodConfig(request);
@@ -4885,7 +4894,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteVodConfigAsync(VodConfigName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteVodConfigAsync(
+      @Nullable VodConfigName name) {
     DeleteVodConfigRequest request =
         DeleteVodConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteVodConfigAsync(request);
@@ -5193,8 +5203,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
       extends AbstractPage<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey, ListCdnKeysPage> {
 
     private ListCdnKeysPage(
-        PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
-        ListCdnKeysResponse response) {
+        @Nullable PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
+        @Nullable ListCdnKeysResponse response) {
       super(context, response);
     }
 
@@ -5204,14 +5214,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListCdnKeysPage createPage(
-        PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
-        ListCdnKeysResponse response) {
+        @Nullable PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
+        @Nullable ListCdnKeysResponse response) {
       return new ListCdnKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCdnKeysPage> createPageAsync(
-        PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
+        @Nullable PageContext<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey> context,
         ApiFuture<ListCdnKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5225,7 +5235,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListCdnKeysPage,
           ListCdnKeysFixedSizeCollection> {
 
-    private ListCdnKeysFixedSizeCollection(List<ListCdnKeysPage> pages, int collectionSize) {
+    private ListCdnKeysFixedSizeCollection(
+        @Nullable List<ListCdnKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5235,7 +5246,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListCdnKeysFixedSizeCollection createCollection(
-        List<ListCdnKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCdnKeysPage> pages, int collectionSize) {
       return new ListCdnKeysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5273,9 +5284,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodStitchDetailsPage> {
 
     private ListVodStitchDetailsPage(
-        PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
+        @Nullable
+            PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
             context,
-        ListVodStitchDetailsResponse response) {
+        @Nullable ListVodStitchDetailsResponse response) {
       super(context, response);
     }
 
@@ -5285,15 +5297,17 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodStitchDetailsPage createPage(
-        PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
+        @Nullable
+            PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
             context,
-        ListVodStitchDetailsResponse response) {
+        @Nullable ListVodStitchDetailsResponse response) {
       return new ListVodStitchDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVodStitchDetailsPage> createPageAsync(
-        PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
+        @Nullable
+            PageContext<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse, VodStitchDetail>
             context,
         ApiFuture<ListVodStitchDetailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5309,7 +5323,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodStitchDetailsFixedSizeCollection> {
 
     private ListVodStitchDetailsFixedSizeCollection(
-        List<ListVodStitchDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListVodStitchDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5319,7 +5333,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodStitchDetailsFixedSizeCollection createCollection(
-        List<ListVodStitchDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListVodStitchDetailsPage> pages, int collectionSize) {
       return new ListVodStitchDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5357,9 +5371,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodAdTagDetailsPage> {
 
     private ListVodAdTagDetailsPage(
-        PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
+        @Nullable
+            PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
             context,
-        ListVodAdTagDetailsResponse response) {
+        @Nullable ListVodAdTagDetailsResponse response) {
       super(context, response);
     }
 
@@ -5369,15 +5384,17 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodAdTagDetailsPage createPage(
-        PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
+        @Nullable
+            PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
             context,
-        ListVodAdTagDetailsResponse response) {
+        @Nullable ListVodAdTagDetailsResponse response) {
       return new ListVodAdTagDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVodAdTagDetailsPage> createPageAsync(
-        PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
+        @Nullable
+            PageContext<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse, VodAdTagDetail>
             context,
         ApiFuture<ListVodAdTagDetailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5393,7 +5410,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodAdTagDetailsFixedSizeCollection> {
 
     private ListVodAdTagDetailsFixedSizeCollection(
-        List<ListVodAdTagDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListVodAdTagDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5403,7 +5420,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodAdTagDetailsFixedSizeCollection createCollection(
-        List<ListVodAdTagDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListVodAdTagDetailsPage> pages, int collectionSize) {
       return new ListVodAdTagDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5441,9 +5458,10 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListLiveAdTagDetailsPage> {
 
     private ListLiveAdTagDetailsPage(
-        PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
+        @Nullable
+            PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
             context,
-        ListLiveAdTagDetailsResponse response) {
+        @Nullable ListLiveAdTagDetailsResponse response) {
       super(context, response);
     }
 
@@ -5453,15 +5471,17 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListLiveAdTagDetailsPage createPage(
-        PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
+        @Nullable
+            PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
             context,
-        ListLiveAdTagDetailsResponse response) {
+        @Nullable ListLiveAdTagDetailsResponse response) {
       return new ListLiveAdTagDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLiveAdTagDetailsPage> createPageAsync(
-        PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
+        @Nullable
+            PageContext<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse, LiveAdTagDetail>
             context,
         ApiFuture<ListLiveAdTagDetailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5477,7 +5497,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListLiveAdTagDetailsFixedSizeCollection> {
 
     private ListLiveAdTagDetailsFixedSizeCollection(
-        List<ListLiveAdTagDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListLiveAdTagDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5487,7 +5507,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListLiveAdTagDetailsFixedSizeCollection createCollection(
-        List<ListLiveAdTagDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListLiveAdTagDetailsPage> pages, int collectionSize) {
       return new ListLiveAdTagDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5518,8 +5538,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
       extends AbstractPage<ListSlatesRequest, ListSlatesResponse, Slate, ListSlatesPage> {
 
     private ListSlatesPage(
-        PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
-        ListSlatesResponse response) {
+        @Nullable PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
+        @Nullable ListSlatesResponse response) {
       super(context, response);
     }
 
@@ -5529,14 +5549,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListSlatesPage createPage(
-        PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
-        ListSlatesResponse response) {
+        @Nullable PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
+        @Nullable ListSlatesResponse response) {
       return new ListSlatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSlatesPage> createPageAsync(
-        PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
+        @Nullable PageContext<ListSlatesRequest, ListSlatesResponse, Slate> context,
         ApiFuture<ListSlatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5550,7 +5570,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListSlatesPage,
           ListSlatesFixedSizeCollection> {
 
-    private ListSlatesFixedSizeCollection(List<ListSlatesPage> pages, int collectionSize) {
+    private ListSlatesFixedSizeCollection(
+        @Nullable List<ListSlatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5560,7 +5581,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListSlatesFixedSizeCollection createCollection(
-        List<ListSlatesPage> pages, int collectionSize) {
+        @Nullable List<ListSlatesPage> pages, int collectionSize) {
       return new ListSlatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5594,8 +5615,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig, ListLiveConfigsPage> {
 
     private ListLiveConfigsPage(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ListLiveConfigsResponse response) {
+        @Nullable PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
+        @Nullable ListLiveConfigsResponse response) {
       super(context, response);
     }
 
@@ -5605,14 +5626,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListLiveConfigsPage createPage(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
-        ListLiveConfigsResponse response) {
+        @Nullable PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
+        @Nullable ListLiveConfigsResponse response) {
       return new ListLiveConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLiveConfigsPage> createPageAsync(
-        PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
+        @Nullable PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> context,
         ApiFuture<ListLiveConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5627,7 +5648,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListLiveConfigsFixedSizeCollection> {
 
     private ListLiveConfigsFixedSizeCollection(
-        List<ListLiveConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListLiveConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5637,7 +5658,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListLiveConfigsFixedSizeCollection createCollection(
-        List<ListLiveConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListLiveConfigsPage> pages, int collectionSize) {
       return new ListLiveConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5671,8 +5692,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodConfigsRequest, ListVodConfigsResponse, VodConfig, ListVodConfigsPage> {
 
     private ListVodConfigsPage(
-        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
-        ListVodConfigsResponse response) {
+        @Nullable PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        @Nullable ListVodConfigsResponse response) {
       super(context, response);
     }
 
@@ -5682,14 +5703,14 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodConfigsPage createPage(
-        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
-        ListVodConfigsResponse response) {
+        @Nullable PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        @Nullable ListVodConfigsResponse response) {
       return new ListVodConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVodConfigsPage> createPageAsync(
-        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        @Nullable PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
         ApiFuture<ListVodConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5703,7 +5724,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
           ListVodConfigsPage,
           ListVodConfigsFixedSizeCollection> {
 
-    private ListVodConfigsFixedSizeCollection(List<ListVodConfigsPage> pages, int collectionSize) {
+    private ListVodConfigsFixedSizeCollection(
+        @Nullable List<ListVodConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5713,7 +5735,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
 
     @Override
     protected ListVodConfigsFixedSizeCollection createCollection(
-        List<ListVodConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListVodConfigsPage> pages, int collectionSize) {
       return new ListVodConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

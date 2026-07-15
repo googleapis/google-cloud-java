@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -256,9 +258,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NodeTemplatesClient implements BackgroundResource {
-  private final NodeTemplatesSettings settings;
+  private final @Nullable NodeTemplatesSettings settings;
   private final NodeTemplatesStub stub;
 
   /** Constructs an instance of NodeTemplatesClient with default settings. */
@@ -298,7 +301,7 @@ public class NodeTemplatesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NodeTemplatesSettings getSettings() {
+  public final @Nullable NodeTemplatesSettings getSettings() {
     return settings;
   }
 
@@ -1353,12 +1356,13 @@ public class NodeTemplatesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
                 Map.Entry<String, NodeTemplatesScopedList>>
             context,
-        NodeTemplateAggregatedList response) {
+        @Nullable NodeTemplateAggregatedList response) {
       super(context, response);
     }
 
@@ -1368,18 +1372,20 @@ public class NodeTemplatesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
                 Map.Entry<String, NodeTemplatesScopedList>>
             context,
-        NodeTemplateAggregatedList response) {
+        @Nullable NodeTemplateAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeTemplatesRequest,
                 NodeTemplateAggregatedList,
                 Map.Entry<String, NodeTemplatesScopedList>>
@@ -1397,7 +1403,8 @@ public class NodeTemplatesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1407,7 +1414,7 @@ public class NodeTemplatesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1438,8 +1445,8 @@ public class NodeTemplatesClient implements BackgroundResource {
       extends AbstractPage<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate, ListPage> {
 
     private ListPage(
-        PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
-        NodeTemplateList response) {
+        @Nullable PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
+        @Nullable NodeTemplateList response) {
       super(context, response);
     }
 
@@ -1449,14 +1456,14 @@ public class NodeTemplatesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
-        NodeTemplateList response) {
+        @Nullable PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
+        @Nullable NodeTemplateList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
+        @Nullable PageContext<ListNodeTemplatesRequest, NodeTemplateList, NodeTemplate> context,
         ApiFuture<NodeTemplateList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1470,7 +1477,7 @@ public class NodeTemplatesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1479,7 +1486,8 @@ public class NodeTemplatesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

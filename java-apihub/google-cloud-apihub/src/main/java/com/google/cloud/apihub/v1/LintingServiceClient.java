@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -207,9 +209,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LintingServiceClient implements BackgroundResource {
-  private final LintingServiceSettings settings;
+  private final @Nullable LintingServiceSettings settings;
   private final LintingServiceStub stub;
 
   /** Constructs an instance of LintingServiceClient with default settings. */
@@ -249,7 +252,7 @@ public class LintingServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LintingServiceSettings getSettings() {
+  public final @Nullable LintingServiceSettings getSettings() {
     return settings;
   }
 
@@ -279,7 +282,7 @@ public class LintingServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}/styleGuide`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StyleGuide getStyleGuide(StyleGuideName name) {
+  public final StyleGuide getStyleGuide(@Nullable StyleGuideName name) {
     GetStyleGuideRequest request =
         GetStyleGuideRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStyleGuide(request);
@@ -481,7 +484,7 @@ public class LintingServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}/styleGuide`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StyleGuideContents getStyleGuideContents(StyleGuideName name) {
+  public final StyleGuideContents getStyleGuideContents(@Nullable StyleGuideName name) {
     GetStyleGuideContentsRequest request =
         GetStyleGuideContentsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -848,8 +851,8 @@ public class LintingServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -859,14 +862,14 @@ public class LintingServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -880,7 +883,8 @@ public class LintingServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -890,7 +894,7 @@ public class LintingServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

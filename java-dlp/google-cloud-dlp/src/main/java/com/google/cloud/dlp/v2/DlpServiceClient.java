@@ -135,6 +135,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1288,9 +1290,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DlpServiceClient implements BackgroundResource {
-  private final DlpServiceSettings settings;
+  private final @Nullable DlpServiceSettings settings;
   private final DlpServiceStub stub;
 
   /** Constructs an instance of DlpServiceClient with default settings. */
@@ -1328,7 +1331,7 @@ public class DlpServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DlpServiceSettings getSettings() {
+  public final @Nullable DlpServiceSettings getSettings() {
     return settings;
   }
 
@@ -1794,7 +1797,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectTemplate createInspectTemplate(
-      LocationName parent, InspectTemplate inspectTemplate) {
+      @Nullable LocationName parent, InspectTemplate inspectTemplate) {
     CreateInspectTemplateRequest request =
         CreateInspectTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1839,7 +1842,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectTemplate createInspectTemplate(
-      OrganizationLocationName parent, InspectTemplate inspectTemplate) {
+      @Nullable OrganizationLocationName parent, InspectTemplate inspectTemplate) {
     CreateInspectTemplateRequest request =
         CreateInspectTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1884,7 +1887,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectTemplate createInspectTemplate(
-      OrganizationName parent, InspectTemplate inspectTemplate) {
+      @Nullable OrganizationName parent, InspectTemplate inspectTemplate) {
     CreateInspectTemplateRequest request =
         CreateInspectTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1929,7 +1932,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectTemplate createInspectTemplate(
-      ProjectName parent, InspectTemplate inspectTemplate) {
+      @Nullable ProjectName parent, InspectTemplate inspectTemplate) {
     CreateInspectTemplateRequest request =
         CreateInspectTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2082,7 +2085,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InspectTemplate updateInspectTemplate(
-      InspectTemplateName name, InspectTemplate inspectTemplate, FieldMask updateMask) {
+      @Nullable InspectTemplateName name, InspectTemplate inspectTemplate, FieldMask updateMask) {
     UpdateInspectTemplateRequest request =
         UpdateInspectTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2230,7 +2233,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/inspectTemplates/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InspectTemplate getInspectTemplate(InspectTemplateName name) {
+  public final InspectTemplate getInspectTemplate(@Nullable InspectTemplateName name) {
     GetInspectTemplateRequest request =
         GetInspectTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2370,7 +2373,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInspectTemplatesPagedResponse listInspectTemplates(LocationName parent) {
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(
+      @Nullable LocationName parent) {
     ListInspectTemplatesRequest request =
         ListInspectTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2413,7 +2417,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListInspectTemplatesRequest request =
         ListInspectTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2455,7 +2459,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInspectTemplatesPagedResponse listInspectTemplates(OrganizationName parent) {
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(
+      @Nullable OrganizationName parent) {
     ListInspectTemplatesRequest request =
         ListInspectTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2497,7 +2502,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInspectTemplatesPagedResponse listInspectTemplates(ProjectName parent) {
+  public final ListInspectTemplatesPagedResponse listInspectTemplates(
+      @Nullable ProjectName parent) {
     ListInspectTemplatesRequest request =
         ListInspectTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2686,7 +2692,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/inspectTemplates/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInspectTemplate(InspectTemplateName name) {
+  public final void deleteInspectTemplate(@Nullable InspectTemplateName name) {
     DeleteInspectTemplateRequest request =
         DeleteInspectTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2828,7 +2834,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeidentifyTemplate createDeidentifyTemplate(
-      LocationName parent, DeidentifyTemplate deidentifyTemplate) {
+      @Nullable LocationName parent, DeidentifyTemplate deidentifyTemplate) {
     CreateDeidentifyTemplateRequest request =
         CreateDeidentifyTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2874,7 +2880,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeidentifyTemplate createDeidentifyTemplate(
-      OrganizationLocationName parent, DeidentifyTemplate deidentifyTemplate) {
+      @Nullable OrganizationLocationName parent, DeidentifyTemplate deidentifyTemplate) {
     CreateDeidentifyTemplateRequest request =
         CreateDeidentifyTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2920,7 +2926,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeidentifyTemplate createDeidentifyTemplate(
-      OrganizationName parent, DeidentifyTemplate deidentifyTemplate) {
+      @Nullable OrganizationName parent, DeidentifyTemplate deidentifyTemplate) {
     CreateDeidentifyTemplateRequest request =
         CreateDeidentifyTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2966,7 +2972,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeidentifyTemplate createDeidentifyTemplate(
-      ProjectName parent, DeidentifyTemplate deidentifyTemplate) {
+      @Nullable ProjectName parent, DeidentifyTemplate deidentifyTemplate) {
     CreateDeidentifyTemplateRequest request =
         CreateDeidentifyTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3121,7 +3127,9 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeidentifyTemplate updateDeidentifyTemplate(
-      DeidentifyTemplateName name, DeidentifyTemplate deidentifyTemplate, FieldMask updateMask) {
+      @Nullable DeidentifyTemplateName name,
+      DeidentifyTemplate deidentifyTemplate,
+      FieldMask updateMask) {
     UpdateDeidentifyTemplateRequest request =
         UpdateDeidentifyTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3270,7 +3278,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/deidentifyTemplates/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeidentifyTemplate getDeidentifyTemplate(DeidentifyTemplateName name) {
+  public final DeidentifyTemplate getDeidentifyTemplate(@Nullable DeidentifyTemplateName name) {
     GetDeidentifyTemplateRequest request =
         GetDeidentifyTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3411,7 +3419,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(LocationName parent) {
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
+      @Nullable LocationName parent) {
     ListDeidentifyTemplatesRequest request =
         ListDeidentifyTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3455,7 +3464,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListDeidentifyTemplatesRequest request =
         ListDeidentifyTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3499,7 +3508,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
-      OrganizationName parent) {
+      @Nullable OrganizationName parent) {
     ListDeidentifyTemplatesRequest request =
         ListDeidentifyTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3542,7 +3551,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(ProjectName parent) {
+  public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
+      @Nullable ProjectName parent) {
     ListDeidentifyTemplatesRequest request =
         ListDeidentifyTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3733,7 +3743,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/deidentifyTemplates/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeidentifyTemplate(DeidentifyTemplateName name) {
+  public final void deleteDeidentifyTemplate(@Nullable DeidentifyTemplateName name) {
     DeleteDeidentifyTemplateRequest request =
         DeleteDeidentifyTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3871,7 +3881,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final JobTrigger createJobTrigger(LocationName parent, JobTrigger jobTrigger) {
+  public final JobTrigger createJobTrigger(@Nullable LocationName parent, JobTrigger jobTrigger) {
     CreateJobTriggerRequest request =
         CreateJobTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3912,7 +3922,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final JobTrigger createJobTrigger(ProjectName parent, JobTrigger jobTrigger) {
+  public final JobTrigger createJobTrigger(@Nullable ProjectName parent, JobTrigger jobTrigger) {
     CreateJobTriggerRequest request =
         CreateJobTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4053,7 +4063,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JobTrigger updateJobTrigger(
-      JobTriggerName name, JobTrigger jobTrigger, FieldMask updateMask) {
+      @Nullable JobTriggerName name, JobTrigger jobTrigger, FieldMask updateMask) {
     UpdateJobTriggerRequest request =
         UpdateJobTriggerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4190,7 +4200,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/jobTriggers/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HybridInspectResponse hybridInspectJobTrigger(JobTriggerName name) {
+  public final HybridInspectResponse hybridInspectJobTrigger(@Nullable JobTriggerName name) {
     HybridInspectJobTriggerRequest request =
         HybridInspectJobTriggerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4318,7 +4328,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/jobTriggers/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final JobTrigger getJobTrigger(JobTriggerName name) {
+  public final JobTrigger getJobTrigger(@Nullable JobTriggerName name) {
     GetJobTriggerRequest request =
         GetJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJobTrigger(request);
@@ -4442,7 +4452,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobTriggersPagedResponse listJobTriggers(LocationName parent) {
+  public final ListJobTriggersPagedResponse listJobTriggers(@Nullable LocationName parent) {
     ListJobTriggersRequest request =
         ListJobTriggersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4481,7 +4491,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
+  public final ListJobTriggersPagedResponse listJobTriggers(@Nullable ProjectName parent) {
     ListJobTriggersRequest request =
         ListJobTriggersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4667,7 +4677,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/jobTriggers/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJobTrigger(JobTriggerName name) {
+  public final void deleteJobTrigger(@Nullable JobTriggerName name) {
     DeleteJobTriggerRequest request =
         DeleteJobTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJobTrigger(request);
@@ -4850,7 +4860,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveryConfig createDiscoveryConfig(
-      LocationName parent, DiscoveryConfig discoveryConfig) {
+      @Nullable LocationName parent, DiscoveryConfig discoveryConfig) {
     CreateDiscoveryConfigRequest request =
         CreateDiscoveryConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4989,7 +4999,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveryConfig updateDiscoveryConfig(
-      DiscoveryConfigName name, DiscoveryConfig discoveryConfig, FieldMask updateMask) {
+      @Nullable DiscoveryConfigName name, DiscoveryConfig discoveryConfig, FieldMask updateMask) {
     UpdateDiscoveryConfigRequest request =
         UpdateDiscoveryConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5126,7 +5136,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/discoveryConfigs/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscoveryConfig getDiscoveryConfig(DiscoveryConfigName name) {
+  public final DiscoveryConfig getDiscoveryConfig(@Nullable DiscoveryConfigName name) {
     GetDiscoveryConfigRequest request =
         GetDiscoveryConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5251,7 +5261,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDiscoveryConfigsPagedResponse listDiscoveryConfigs(LocationName parent) {
+  public final ListDiscoveryConfigsPagedResponse listDiscoveryConfigs(
+      @Nullable LocationName parent) {
     ListDiscoveryConfigsRequest request =
         ListDiscoveryConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5424,7 +5435,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/discoveryConfigs/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDiscoveryConfig(DiscoveryConfigName name) {
+  public final void deleteDiscoveryConfig(@Nullable DiscoveryConfigName name) {
     DeleteDiscoveryConfigRequest request =
         DeleteDiscoveryConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5557,7 +5568,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param inspectJob An inspection job scans a storage repository for InfoTypes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DlpJob createDlpJob(LocationName parent, InspectJobConfig inspectJob) {
+  public final DlpJob createDlpJob(@Nullable LocationName parent, InspectJobConfig inspectJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5603,7 +5614,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DlpJob createDlpJob(LocationName parent, RiskAnalysisJobConfig riskJob) {
+  public final DlpJob createDlpJob(@Nullable LocationName parent, RiskAnalysisJobConfig riskJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5648,7 +5659,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param inspectJob An inspection job scans a storage repository for InfoTypes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DlpJob createDlpJob(ProjectName parent, InspectJobConfig inspectJob) {
+  public final DlpJob createDlpJob(@Nullable ProjectName parent, InspectJobConfig inspectJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5694,7 +5705,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     table.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DlpJob createDlpJob(ProjectName parent, RiskAnalysisJobConfig riskJob) {
+  public final DlpJob createDlpJob(@Nullable ProjectName parent, RiskAnalysisJobConfig riskJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5891,7 +5902,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDlpJobsPagedResponse listDlpJobs(LocationName parent) {
+  public final ListDlpJobsPagedResponse listDlpJobs(@Nullable LocationName parent) {
     ListDlpJobsRequest request =
         ListDlpJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5931,7 +5942,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDlpJobsPagedResponse listDlpJobs(ProjectName parent) {
+  public final ListDlpJobsPagedResponse listDlpJobs(@Nullable ProjectName parent) {
     ListDlpJobsRequest request =
         ListDlpJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6119,7 +6130,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param name Required. The name of the DlpJob resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DlpJob getDlpJob(DlpJobName name) {
+  public final DlpJob getDlpJob(@Nullable DlpJobName name) {
     GetDlpJobRequest request =
         GetDlpJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDlpJob(request);
@@ -6236,7 +6247,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param name Required. The name of the DlpJob resource to be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDlpJob(DlpJobName name) {
+  public final void deleteDlpJob(@Nullable DlpJobName name) {
     DeleteDlpJobRequest request =
         DeleteDlpJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDlpJob(request);
@@ -6429,7 +6440,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StoredInfoType createStoredInfoType(
-      LocationName parent, StoredInfoTypeConfig config) {
+      @Nullable LocationName parent, StoredInfoTypeConfig config) {
     CreateStoredInfoTypeRequest request =
         CreateStoredInfoTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6474,7 +6485,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StoredInfoType createStoredInfoType(
-      OrganizationLocationName parent, StoredInfoTypeConfig config) {
+      @Nullable OrganizationLocationName parent, StoredInfoTypeConfig config) {
     CreateStoredInfoTypeRequest request =
         CreateStoredInfoTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6519,7 +6530,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StoredInfoType createStoredInfoType(
-      OrganizationName parent, StoredInfoTypeConfig config) {
+      @Nullable OrganizationName parent, StoredInfoTypeConfig config) {
     CreateStoredInfoTypeRequest request =
         CreateStoredInfoTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6564,7 +6575,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StoredInfoType createStoredInfoType(
-      ProjectName parent, StoredInfoTypeConfig config) {
+      @Nullable ProjectName parent, StoredInfoTypeConfig config) {
     CreateStoredInfoTypeRequest request =
         CreateStoredInfoTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6715,7 +6726,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StoredInfoType updateStoredInfoType(
-      StoredInfoTypeName name, StoredInfoTypeConfig config, FieldMask updateMask) {
+      @Nullable StoredInfoTypeName name, StoredInfoTypeConfig config, FieldMask updateMask) {
     UpdateStoredInfoTypeRequest request =
         UpdateStoredInfoTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6870,7 +6881,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/storedInfoTypes/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StoredInfoType getStoredInfoType(StoredInfoTypeName name) {
+  public final StoredInfoType getStoredInfoType(@Nullable StoredInfoTypeName name) {
     GetStoredInfoTypeRequest request =
         GetStoredInfoTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7010,7 +7021,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(LocationName parent) {
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(@Nullable LocationName parent) {
     ListStoredInfoTypesRequest request =
         ListStoredInfoTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7052,7 +7063,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListStoredInfoTypesRequest request =
         ListStoredInfoTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7093,7 +7104,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(OrganizationName parent) {
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
+      @Nullable OrganizationName parent) {
     ListStoredInfoTypesRequest request =
         ListStoredInfoTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7134,7 +7146,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(ProjectName parent) {
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(@Nullable ProjectName parent) {
     ListStoredInfoTypesRequest request =
         ListStoredInfoTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7326,7 +7338,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     projects/project-id/storedInfoTypes/432452342.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteStoredInfoType(StoredInfoTypeName name) {
+  public final void deleteStoredInfoType(@Nullable StoredInfoTypeName name) {
     DeleteStoredInfoTypeRequest request =
         DeleteStoredInfoTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7457,7 +7469,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. organizations/{org_id}/locations/{loc_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(LocationName parent) {
+  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(
+      @Nullable LocationName parent) {
     ListProjectDataProfilesRequest request =
         ListProjectDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7490,7 +7503,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListProjectDataProfilesRequest request =
         ListProjectDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7665,7 +7678,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTableDataProfilesPagedResponse listTableDataProfiles(LocationName parent) {
+  public final ListTableDataProfilesPagedResponse listTableDataProfiles(
+      @Nullable LocationName parent) {
     ListTableDataProfilesRequest request =
         ListTableDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7698,7 +7712,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTableDataProfilesPagedResponse listTableDataProfiles(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListTableDataProfilesRequest request =
         ListTableDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7874,7 +7888,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(LocationName parent) {
+  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(
+      @Nullable LocationName parent) {
     ListColumnDataProfilesRequest request =
         ListColumnDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7908,7 +7923,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListColumnDataProfilesRequest request =
         ListColumnDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8084,7 +8099,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/12345/locations/us/projectDataProfiles/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProjectDataProfile getProjectDataProfile(ProjectDataProfileName name) {
+  public final ProjectDataProfile getProjectDataProfile(@Nullable ProjectDataProfileName name) {
     GetProjectDataProfileRequest request =
         GetProjectDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8212,7 +8227,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListFileStoreDataProfilesRequest request =
         ListFileStoreDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8246,7 +8261,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFileStoreDataProfilesPagedResponse listFileStoreDataProfiles(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListFileStoreDataProfilesRequest request =
         ListFileStoreDataProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8423,7 +8438,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/12345/locations/us/fileStoreDataProfiles/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FileStoreDataProfile getFileStoreDataProfile(ProjectDataProfileName name) {
+  public final FileStoreDataProfile getFileStoreDataProfile(@Nullable ProjectDataProfileName name) {
     GetFileStoreDataProfileRequest request =
         GetFileStoreDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8550,7 +8565,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the file store data profile.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFileStoreDataProfile(FileStoreDataProfileName name) {
+  public final void deleteFileStoreDataProfile(@Nullable FileStoreDataProfileName name) {
     DeleteFileStoreDataProfileRequest request =
         DeleteFileStoreDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8678,7 +8693,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/12345/locations/us/tableDataProfiles/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TableDataProfile getTableDataProfile(TableDataProfileName name) {
+  public final TableDataProfile getTableDataProfile(@Nullable TableDataProfileName name) {
     GetTableDataProfileRequest request =
         GetTableDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8804,7 +8819,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/12345/locations/us/columnDataProfiles/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ColumnDataProfile getColumnDataProfile(ColumnDataProfileName name) {
+  public final ColumnDataProfile getColumnDataProfile(@Nullable ColumnDataProfileName name) {
     GetColumnDataProfileRequest request =
         GetColumnDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8930,7 +8945,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the table data profile.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTableDataProfile(TableDataProfileName name) {
+  public final void deleteTableDataProfile(@Nullable TableDataProfileName name) {
     DeleteTableDataProfileRequest request =
         DeleteTableDataProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9058,7 +9073,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/dlp-test-project/dlpJob/53234423`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HybridInspectResponse hybridInspectDlpJob(DlpJobName name) {
+  public final HybridInspectResponse hybridInspectDlpJob(@Nullable DlpJobName name) {
     HybridInspectDlpJobRequest request =
         HybridInspectDlpJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9248,7 +9263,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param connection Required. The connection resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection createConnection(LocationName parent, Connection connection) {
+  public final Connection createConnection(@Nullable LocationName parent, Connection connection) {
     CreateConnectionRequest request =
         CreateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9284,7 +9299,8 @@ public class DlpServiceClient implements BackgroundResource {
    * @param connection Required. The connection resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection createConnection(OrganizationLocationName parent, Connection connection) {
+  public final Connection createConnection(
+      @Nullable OrganizationLocationName parent, Connection connection) {
     CreateConnectionRequest request =
         CreateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9407,7 +9423,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/connections/{connection}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection getConnection(ConnectionName name) {
+  public final Connection getConnection(@Nullable ConnectionName name) {
     GetConnectionRequest request =
         GetConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConnection(request);
@@ -9528,7 +9544,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(LocationName parent) {
+  public final ListConnectionsPagedResponse listConnections(@Nullable LocationName parent) {
     ListConnectionsRequest request =
         ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9561,7 +9577,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(OrganizationLocationName parent) {
+  public final ListConnectionsPagedResponse listConnections(
+      @Nullable OrganizationLocationName parent) {
     ListConnectionsRequest request =
         ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9733,7 +9750,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchConnectionsPagedResponse searchConnections(LocationName parent) {
+  public final SearchConnectionsPagedResponse searchConnections(@Nullable LocationName parent) {
     SearchConnectionsRequest request =
         SearchConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9765,7 +9782,8 @@ public class DlpServiceClient implements BackgroundResource {
    *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchConnectionsPagedResponse searchConnections(OrganizationLocationName parent) {
+  public final SearchConnectionsPagedResponse searchConnections(
+      @Nullable OrganizationLocationName parent) {
     SearchConnectionsRequest request =
         SearchConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9934,7 +9952,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/connections/{connection}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConnection(ConnectionName name) {
+  public final void deleteConnection(@Nullable ConnectionName name) {
     DeleteConnectionRequest request =
         DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteConnection(request);
@@ -10053,7 +10071,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/connections/{connection}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection updateConnection(ConnectionName name) {
+  public final Connection updateConnection(@Nullable ConnectionName name) {
     UpdateConnectionRequest request =
         UpdateConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return updateConnection(request);
@@ -10217,9 +10235,10 @@ public class DlpServiceClient implements BackgroundResource {
           ListInspectTemplatesPage> {
 
     private ListInspectTemplatesPage(
-        PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
+        @Nullable
+            PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
             context,
-        ListInspectTemplatesResponse response) {
+        @Nullable ListInspectTemplatesResponse response) {
       super(context, response);
     }
 
@@ -10229,15 +10248,17 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListInspectTemplatesPage createPage(
-        PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
+        @Nullable
+            PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
             context,
-        ListInspectTemplatesResponse response) {
+        @Nullable ListInspectTemplatesResponse response) {
       return new ListInspectTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInspectTemplatesPage> createPageAsync(
-        PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
+        @Nullable
+            PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
             context,
         ApiFuture<ListInspectTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10253,7 +10274,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListInspectTemplatesFixedSizeCollection> {
 
     private ListInspectTemplatesFixedSizeCollection(
-        List<ListInspectTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListInspectTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10263,7 +10284,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListInspectTemplatesFixedSizeCollection createCollection(
-        List<ListInspectTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListInspectTemplatesPage> pages, int collectionSize) {
       return new ListInspectTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10302,10 +10323,11 @@ public class DlpServiceClient implements BackgroundResource {
           ListDeidentifyTemplatesPage> {
 
     private ListDeidentifyTemplatesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate>
             context,
-        ListDeidentifyTemplatesResponse response) {
+        @Nullable ListDeidentifyTemplatesResponse response) {
       super(context, response);
     }
 
@@ -10315,16 +10337,18 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeidentifyTemplatesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate>
             context,
-        ListDeidentifyTemplatesResponse response) {
+        @Nullable ListDeidentifyTemplatesResponse response) {
       return new ListDeidentifyTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeidentifyTemplatesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate>
             context,
         ApiFuture<ListDeidentifyTemplatesResponse> futureResponse) {
@@ -10341,7 +10365,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListDeidentifyTemplatesFixedSizeCollection> {
 
     private ListDeidentifyTemplatesFixedSizeCollection(
-        List<ListDeidentifyTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListDeidentifyTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10351,7 +10375,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeidentifyTemplatesFixedSizeCollection createCollection(
-        List<ListDeidentifyTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListDeidentifyTemplatesPage> pages, int collectionSize) {
       return new ListDeidentifyTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10385,8 +10409,8 @@ public class DlpServiceClient implements BackgroundResource {
           ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger, ListJobTriggersPage> {
 
     private ListJobTriggersPage(
-        PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
-        ListJobTriggersResponse response) {
+        @Nullable PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
+        @Nullable ListJobTriggersResponse response) {
       super(context, response);
     }
 
@@ -10396,14 +10420,14 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobTriggersPage createPage(
-        PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
-        ListJobTriggersResponse response) {
+        @Nullable PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
+        @Nullable ListJobTriggersResponse response) {
       return new ListJobTriggersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobTriggersPage> createPageAsync(
-        PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
+        @Nullable PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> context,
         ApiFuture<ListJobTriggersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10418,7 +10442,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListJobTriggersFixedSizeCollection> {
 
     private ListJobTriggersFixedSizeCollection(
-        List<ListJobTriggersPage> pages, int collectionSize) {
+        @Nullable List<ListJobTriggersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10428,7 +10452,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobTriggersFixedSizeCollection createCollection(
-        List<ListJobTriggersPage> pages, int collectionSize) {
+        @Nullable List<ListJobTriggersPage> pages, int collectionSize) {
       return new ListJobTriggersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10466,9 +10490,10 @@ public class DlpServiceClient implements BackgroundResource {
           ListDiscoveryConfigsPage> {
 
     private ListDiscoveryConfigsPage(
-        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+        @Nullable
+            PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
             context,
-        ListDiscoveryConfigsResponse response) {
+        @Nullable ListDiscoveryConfigsResponse response) {
       super(context, response);
     }
 
@@ -10478,15 +10503,17 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveryConfigsPage createPage(
-        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+        @Nullable
+            PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
             context,
-        ListDiscoveryConfigsResponse response) {
+        @Nullable ListDiscoveryConfigsResponse response) {
       return new ListDiscoveryConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiscoveryConfigsPage> createPageAsync(
-        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+        @Nullable
+            PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
             context,
         ApiFuture<ListDiscoveryConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10502,7 +10529,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListDiscoveryConfigsFixedSizeCollection> {
 
     private ListDiscoveryConfigsFixedSizeCollection(
-        List<ListDiscoveryConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveryConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10512,7 +10539,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveryConfigsFixedSizeCollection createCollection(
-        List<ListDiscoveryConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveryConfigsPage> pages, int collectionSize) {
       return new ListDiscoveryConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10543,8 +10570,8 @@ public class DlpServiceClient implements BackgroundResource {
       extends AbstractPage<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage> {
 
     private ListDlpJobsPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
+        @Nullable PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        @Nullable ListDlpJobsResponse response) {
       super(context, response);
     }
 
@@ -10554,14 +10581,14 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDlpJobsPage createPage(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
-        ListDlpJobsResponse response) {
+        @Nullable PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        @Nullable ListDlpJobsResponse response) {
       return new ListDlpJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDlpJobsPage> createPageAsync(
-        PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
+        @Nullable PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> context,
         ApiFuture<ListDlpJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10575,7 +10602,8 @@ public class DlpServiceClient implements BackgroundResource {
           ListDlpJobsPage,
           ListDlpJobsFixedSizeCollection> {
 
-    private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
+    private ListDlpJobsFixedSizeCollection(
+        @Nullable List<ListDlpJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10585,7 +10613,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListDlpJobsFixedSizeCollection createCollection(
-        List<ListDlpJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDlpJobsPage> pages, int collectionSize) {
       return new ListDlpJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10623,9 +10651,10 @@ public class DlpServiceClient implements BackgroundResource {
           ListStoredInfoTypesPage> {
 
     private ListStoredInfoTypesPage(
-        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+        @Nullable
+            PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
             context,
-        ListStoredInfoTypesResponse response) {
+        @Nullable ListStoredInfoTypesResponse response) {
       super(context, response);
     }
 
@@ -10635,15 +10664,17 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListStoredInfoTypesPage createPage(
-        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+        @Nullable
+            PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
             context,
-        ListStoredInfoTypesResponse response) {
+        @Nullable ListStoredInfoTypesResponse response) {
       return new ListStoredInfoTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStoredInfoTypesPage> createPageAsync(
-        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+        @Nullable
+            PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
             context,
         ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10659,7 +10690,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListStoredInfoTypesFixedSizeCollection> {
 
     private ListStoredInfoTypesFixedSizeCollection(
-        List<ListStoredInfoTypesPage> pages, int collectionSize) {
+        @Nullable List<ListStoredInfoTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10669,7 +10700,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListStoredInfoTypesFixedSizeCollection createCollection(
-        List<ListStoredInfoTypesPage> pages, int collectionSize) {
+        @Nullable List<ListStoredInfoTypesPage> pages, int collectionSize) {
       return new ListStoredInfoTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10708,10 +10739,11 @@ public class DlpServiceClient implements BackgroundResource {
           ListProjectDataProfilesPage> {
 
     private ListProjectDataProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
             context,
-        ListProjectDataProfilesResponse response) {
+        @Nullable ListProjectDataProfilesResponse response) {
       super(context, response);
     }
 
@@ -10721,16 +10753,18 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListProjectDataProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
             context,
-        ListProjectDataProfilesResponse response) {
+        @Nullable ListProjectDataProfilesResponse response) {
       return new ListProjectDataProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProjectDataProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
             context,
         ApiFuture<ListProjectDataProfilesResponse> futureResponse) {
@@ -10747,7 +10781,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListProjectDataProfilesFixedSizeCollection> {
 
     private ListProjectDataProfilesFixedSizeCollection(
-        List<ListProjectDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListProjectDataProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10757,7 +10791,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListProjectDataProfilesFixedSizeCollection createCollection(
-        List<ListProjectDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListProjectDataProfilesPage> pages, int collectionSize) {
       return new ListProjectDataProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10795,9 +10829,11 @@ public class DlpServiceClient implements BackgroundResource {
           ListTableDataProfilesPage> {
 
     private ListTableDataProfilesPage(
-        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+        @Nullable
+            PageContext<
+                ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
             context,
-        ListTableDataProfilesResponse response) {
+        @Nullable ListTableDataProfilesResponse response) {
       super(context, response);
     }
 
@@ -10807,15 +10843,19 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListTableDataProfilesPage createPage(
-        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+        @Nullable
+            PageContext<
+                ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
             context,
-        ListTableDataProfilesResponse response) {
+        @Nullable ListTableDataProfilesResponse response) {
       return new ListTableDataProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTableDataProfilesPage> createPageAsync(
-        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+        @Nullable
+            PageContext<
+                ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
             context,
         ApiFuture<ListTableDataProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10831,7 +10871,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListTableDataProfilesFixedSizeCollection> {
 
     private ListTableDataProfilesFixedSizeCollection(
-        List<ListTableDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListTableDataProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10841,7 +10881,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListTableDataProfilesFixedSizeCollection createCollection(
-        List<ListTableDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListTableDataProfilesPage> pages, int collectionSize) {
       return new ListTableDataProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10880,10 +10920,11 @@ public class DlpServiceClient implements BackgroundResource {
           ListColumnDataProfilesPage> {
 
     private ListColumnDataProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
             context,
-        ListColumnDataProfilesResponse response) {
+        @Nullable ListColumnDataProfilesResponse response) {
       super(context, response);
     }
 
@@ -10893,16 +10934,18 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListColumnDataProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
             context,
-        ListColumnDataProfilesResponse response) {
+        @Nullable ListColumnDataProfilesResponse response) {
       return new ListColumnDataProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListColumnDataProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
             context,
         ApiFuture<ListColumnDataProfilesResponse> futureResponse) {
@@ -10919,7 +10962,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListColumnDataProfilesFixedSizeCollection> {
 
     private ListColumnDataProfilesFixedSizeCollection(
-        List<ListColumnDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListColumnDataProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10929,7 +10972,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListColumnDataProfilesFixedSizeCollection createCollection(
-        List<ListColumnDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListColumnDataProfilesPage> pages, int collectionSize) {
       return new ListColumnDataProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10970,12 +11013,13 @@ public class DlpServiceClient implements BackgroundResource {
           ListFileStoreDataProfilesPage> {
 
     private ListFileStoreDataProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFileStoreDataProfilesRequest,
                 ListFileStoreDataProfilesResponse,
                 FileStoreDataProfile>
             context,
-        ListFileStoreDataProfilesResponse response) {
+        @Nullable ListFileStoreDataProfilesResponse response) {
       super(context, response);
     }
 
@@ -10985,18 +11029,20 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListFileStoreDataProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFileStoreDataProfilesRequest,
                 ListFileStoreDataProfilesResponse,
                 FileStoreDataProfile>
             context,
-        ListFileStoreDataProfilesResponse response) {
+        @Nullable ListFileStoreDataProfilesResponse response) {
       return new ListFileStoreDataProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFileStoreDataProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFileStoreDataProfilesRequest,
                 ListFileStoreDataProfilesResponse,
                 FileStoreDataProfile>
@@ -11015,7 +11061,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListFileStoreDataProfilesFixedSizeCollection> {
 
     private ListFileStoreDataProfilesFixedSizeCollection(
-        List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11025,7 +11071,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListFileStoreDataProfilesFixedSizeCollection createCollection(
-        List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListFileStoreDataProfilesPage> pages, int collectionSize) {
       return new ListFileStoreDataProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11059,8 +11105,8 @@ public class DlpServiceClient implements BackgroundResource {
           ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
 
     private ListConnectionsPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       super(context, response);
     }
 
@@ -11070,14 +11116,14 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsPage createPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       return new ListConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionsPage> createPageAsync(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
         ApiFuture<ListConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11092,7 +11138,7 @@ public class DlpServiceClient implements BackgroundResource {
           ListConnectionsFixedSizeCollection> {
 
     private ListConnectionsFixedSizeCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11102,7 +11148,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsFixedSizeCollection createCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       return new ListConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11136,8 +11182,9 @@ public class DlpServiceClient implements BackgroundResource {
           SearchConnectionsRequest, SearchConnectionsResponse, Connection, SearchConnectionsPage> {
 
     private SearchConnectionsPage(
-        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
-        SearchConnectionsResponse response) {
+        @Nullable PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+            context,
+        @Nullable SearchConnectionsResponse response) {
       super(context, response);
     }
 
@@ -11147,14 +11194,16 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected SearchConnectionsPage createPage(
-        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
-        SearchConnectionsResponse response) {
+        @Nullable PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+            context,
+        @Nullable SearchConnectionsResponse response) {
       return new SearchConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchConnectionsPage> createPageAsync(
-        PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection> context,
+        @Nullable PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+            context,
         ApiFuture<SearchConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11169,7 +11218,7 @@ public class DlpServiceClient implements BackgroundResource {
           SearchConnectionsFixedSizeCollection> {
 
     private SearchConnectionsFixedSizeCollection(
-        List<SearchConnectionsPage> pages, int collectionSize) {
+        @Nullable List<SearchConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11179,7 +11228,7 @@ public class DlpServiceClient implements BackgroundResource {
 
     @Override
     protected SearchConnectionsFixedSizeCollection createCollection(
-        List<SearchConnectionsPage> pages, int collectionSize) {
+        @Nullable List<SearchConnectionsPage> pages, int collectionSize) {
       return new SearchConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }

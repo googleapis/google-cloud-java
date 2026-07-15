@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,9 +201,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AdvisoryNotificationsServiceClient implements BackgroundResource {
-  private final AdvisoryNotificationsServiceSettings settings;
+  private final @Nullable AdvisoryNotificationsServiceSettings settings;
   private final AdvisoryNotificationsServiceStub stub;
 
   /** Constructs an instance of AdvisoryNotificationsServiceClient with default settings. */
@@ -245,7 +248,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdvisoryNotificationsServiceSettings getSettings() {
+  public final @Nullable AdvisoryNotificationsServiceSettings getSettings() {
     return settings;
   }
 
@@ -280,7 +283,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     "projects/{project}/locations/{location}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationsPagedResponse listNotifications(LocationName parent) {
+  public final ListNotificationsPagedResponse listNotifications(@Nullable LocationName parent) {
     ListNotificationsRequest request =
         ListNotificationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -469,7 +472,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     projects/{projects}/locations/{location}/notifications/{notification}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Notification getNotification(NotificationName name) {
+  public final Notification getNotification(@Nullable NotificationName name) {
     GetNotificationRequest request =
         GetNotificationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNotification(request);
@@ -597,7 +600,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     projects/{projects}/locations/{location}/settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
+  public final Settings getSettings(@Nullable SettingsName name) {
     GetSettingsRequest request =
         GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
@@ -839,8 +842,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
           ListNotificationsPage> {
 
     private ListNotificationsPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification>
+            context,
+        @Nullable ListNotificationsResponse response) {
       super(context, response);
     }
 
@@ -850,14 +854,16 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsPage createPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification>
+            context,
+        @Nullable ListNotificationsResponse response) {
       return new ListNotificationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationsPage> createPageAsync(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification>
+            context,
         ApiFuture<ListNotificationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -872,7 +878,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
           ListNotificationsFixedSizeCollection> {
 
     private ListNotificationsFixedSizeCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -882,7 +888,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsFixedSizeCollection createCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       return new ListNotificationsFixedSizeCollection(pages, collectionSize);
     }
   }

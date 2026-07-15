@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -505,10 +507,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class NetworkSecurityClient implements BackgroundResource {
-  private final NetworkSecuritySettings settings;
+  private final @Nullable NetworkSecuritySettings settings;
   private final NetworkSecurityStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -556,7 +559,7 @@ public class NetworkSecurityClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final NetworkSecuritySettings getSettings() {
+  public final @Nullable NetworkSecuritySettings getSettings() {
     return settings;
   }
 
@@ -607,7 +610,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAuthorizationPoliciesPagedResponse listAuthorizationPolicies(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListAuthorizationPoliciesRequest request =
         ListAuthorizationPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -777,7 +780,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AuthorizationPolicy getAuthorizationPolicy(AuthorizationPolicyName name) {
+  public final AuthorizationPolicy getAuthorizationPolicy(@Nullable AuthorizationPolicyName name) {
     GetAuthorizationPolicyRequest request =
         GetAuthorizationPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -909,7 +912,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    */
   public final OperationFuture<AuthorizationPolicy, OperationMetadata>
       createAuthorizationPolicyAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           AuthorizationPolicy authorizationPolicy,
           String authorizationPolicyId) {
     CreateAuthorizationPolicyRequest request =
@@ -1215,7 +1218,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAuthorizationPolicyAsync(
-      AuthorizationPolicyName name) {
+      @Nullable AuthorizationPolicyName name) {
     DeleteAuthorizationPolicyRequest request =
         DeleteAuthorizationPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1372,7 +1375,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *     listed, specified in the format `projects/&#42;/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServerTlsPoliciesPagedResponse listServerTlsPolicies(LocationName parent) {
+  public final ListServerTlsPoliciesPagedResponse listServerTlsPolicies(
+      @Nullable LocationName parent) {
     ListServerTlsPoliciesRequest request =
         ListServerTlsPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1541,7 +1545,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *     `projects/&#42;/locations/{location}/serverTlsPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServerTlsPolicy getServerTlsPolicy(ServerTlsPolicyName name) {
+  public final ServerTlsPolicy getServerTlsPolicy(@Nullable ServerTlsPolicyName name) {
     GetServerTlsPolicyRequest request =
         GetServerTlsPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1671,7 +1675,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServerTlsPolicy, OperationMetadata> createServerTlsPolicyAsync(
-      LocationName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId) {
+      @Nullable LocationName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId) {
     CreateServerTlsPolicyRequest request =
         CreateServerTlsPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1967,7 +1971,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServerTlsPolicyAsync(
-      ServerTlsPolicyName name) {
+      @Nullable ServerTlsPolicyName name) {
     DeleteServerTlsPolicyRequest request =
         DeleteServerTlsPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2122,7 +2126,8 @@ public class NetworkSecurityClient implements BackgroundResource {
    *     listed, specified in the format `projects/&#42;/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClientTlsPoliciesPagedResponse listClientTlsPolicies(LocationName parent) {
+  public final ListClientTlsPoliciesPagedResponse listClientTlsPolicies(
+      @Nullable LocationName parent) {
     ListClientTlsPoliciesRequest request =
         ListClientTlsPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2291,7 +2296,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *     `projects/&#42;/locations/{location}/clientTlsPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ClientTlsPolicy getClientTlsPolicy(ClientTlsPolicyName name) {
+  public final ClientTlsPolicy getClientTlsPolicy(@Nullable ClientTlsPolicyName name) {
     GetClientTlsPolicyRequest request =
         GetClientTlsPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2421,7 +2426,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ClientTlsPolicy, OperationMetadata> createClientTlsPolicyAsync(
-      LocationName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId) {
+      @Nullable LocationName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId) {
     CreateClientTlsPolicyRequest request =
         CreateClientTlsPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2717,7 +2722,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteClientTlsPolicyAsync(
-      ClientTlsPolicyName name) {
+      @Nullable ClientTlsPolicyName name) {
     DeleteClientTlsPolicyRequest request =
         DeleteClientTlsPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3272,12 +3277,13 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListAuthorizationPoliciesPage> {
 
     private ListAuthorizationPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizationPoliciesRequest,
                 ListAuthorizationPoliciesResponse,
                 AuthorizationPolicy>
             context,
-        ListAuthorizationPoliciesResponse response) {
+        @Nullable ListAuthorizationPoliciesResponse response) {
       super(context, response);
     }
 
@@ -3287,18 +3293,20 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizationPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizationPoliciesRequest,
                 ListAuthorizationPoliciesResponse,
                 AuthorizationPolicy>
             context,
-        ListAuthorizationPoliciesResponse response) {
+        @Nullable ListAuthorizationPoliciesResponse response) {
       return new ListAuthorizationPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAuthorizationPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizationPoliciesRequest,
                 ListAuthorizationPoliciesResponse,
                 AuthorizationPolicy>
@@ -3317,7 +3325,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListAuthorizationPoliciesFixedSizeCollection> {
 
     private ListAuthorizationPoliciesFixedSizeCollection(
-        List<ListAuthorizationPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizationPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3327,7 +3335,7 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizationPoliciesFixedSizeCollection createCollection(
-        List<ListAuthorizationPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizationPoliciesPage> pages, int collectionSize) {
       return new ListAuthorizationPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3365,9 +3373,11 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListServerTlsPoliciesPage> {
 
     private ListServerTlsPoliciesPage(
-        PageContext<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
+        @Nullable
+            PageContext<
+                ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
             context,
-        ListServerTlsPoliciesResponse response) {
+        @Nullable ListServerTlsPoliciesResponse response) {
       super(context, response);
     }
 
@@ -3377,15 +3387,19 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListServerTlsPoliciesPage createPage(
-        PageContext<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
+        @Nullable
+            PageContext<
+                ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
             context,
-        ListServerTlsPoliciesResponse response) {
+        @Nullable ListServerTlsPoliciesResponse response) {
       return new ListServerTlsPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServerTlsPoliciesPage> createPageAsync(
-        PageContext<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
+        @Nullable
+            PageContext<
+                ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse, ServerTlsPolicy>
             context,
         ApiFuture<ListServerTlsPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3401,7 +3415,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListServerTlsPoliciesFixedSizeCollection> {
 
     private ListServerTlsPoliciesFixedSizeCollection(
-        List<ListServerTlsPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServerTlsPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3411,7 +3425,7 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListServerTlsPoliciesFixedSizeCollection createCollection(
-        List<ListServerTlsPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServerTlsPoliciesPage> pages, int collectionSize) {
       return new ListServerTlsPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3449,9 +3463,11 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListClientTlsPoliciesPage> {
 
     private ListClientTlsPoliciesPage(
-        PageContext<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
+        @Nullable
+            PageContext<
+                ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
             context,
-        ListClientTlsPoliciesResponse response) {
+        @Nullable ListClientTlsPoliciesResponse response) {
       super(context, response);
     }
 
@@ -3461,15 +3477,19 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListClientTlsPoliciesPage createPage(
-        PageContext<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
+        @Nullable
+            PageContext<
+                ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
             context,
-        ListClientTlsPoliciesResponse response) {
+        @Nullable ListClientTlsPoliciesResponse response) {
       return new ListClientTlsPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClientTlsPoliciesPage> createPageAsync(
-        PageContext<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
+        @Nullable
+            PageContext<
+                ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse, ClientTlsPolicy>
             context,
         ApiFuture<ListClientTlsPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3485,7 +3505,7 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListClientTlsPoliciesFixedSizeCollection> {
 
     private ListClientTlsPoliciesFixedSizeCollection(
-        List<ListClientTlsPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListClientTlsPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3495,7 +3515,7 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListClientTlsPoliciesFixedSizeCollection createCollection(
-        List<ListClientTlsPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListClientTlsPoliciesPage> pages, int collectionSize) {
       return new ListClientTlsPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3529,8 +3549,8 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3540,14 +3560,14 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3561,7 +3581,8 @@ public class NetworkSecurityClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3571,7 +3592,7 @@ public class NetworkSecurityClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

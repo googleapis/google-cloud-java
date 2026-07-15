@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -179,9 +181,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RevisionsClient implements BackgroundResource {
-  private final RevisionsSettings settings;
+  private final @Nullable RevisionsSettings settings;
   private final RevisionsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -227,7 +230,7 @@ public class RevisionsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final RevisionsSettings getSettings() {
+  public final @Nullable RevisionsSettings getSettings() {
     return settings;
   }
 
@@ -274,7 +277,7 @@ public class RevisionsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/services/{service}/revisions/{revision}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Revision getRevision(RevisionName name) {
+  public final Revision getRevision(@Nullable RevisionName name) {
     GetRevisionRequest request =
         GetRevisionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRevision(request);
@@ -391,7 +394,7 @@ public class RevisionsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/services/{service}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRevisionsPagedResponse listRevisions(ServiceName parent) {
+  public final ListRevisionsPagedResponse listRevisions(@Nullable ServiceName parent) {
     ListRevisionsRequest request =
         ListRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -560,7 +563,8 @@ public class RevisionsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/services/{service}/revisions/{revision}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Revision, Revision> deleteRevisionAsync(RevisionName name) {
+  public final OperationFuture<Revision, Revision> deleteRevisionAsync(
+      @Nullable RevisionName name) {
     DeleteRevisionRequest request =
         DeleteRevisionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRevisionAsync(request);
@@ -747,8 +751,8 @@ public class RevisionsClient implements BackgroundResource {
           ListRevisionsRequest, ListRevisionsResponse, Revision, ListRevisionsPage> {
 
     private ListRevisionsPage(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
-        ListRevisionsResponse response) {
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable ListRevisionsResponse response) {
       super(context, response);
     }
 
@@ -758,14 +762,14 @@ public class RevisionsClient implements BackgroundResource {
 
     @Override
     protected ListRevisionsPage createPage(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
-        ListRevisionsResponse response) {
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable ListRevisionsResponse response) {
       return new ListRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRevisionsPage> createPageAsync(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
         ApiFuture<ListRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -779,7 +783,8 @@ public class RevisionsClient implements BackgroundResource {
           ListRevisionsPage,
           ListRevisionsFixedSizeCollection> {
 
-    private ListRevisionsFixedSizeCollection(List<ListRevisionsPage> pages, int collectionSize) {
+    private ListRevisionsFixedSizeCollection(
+        @Nullable List<ListRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -789,7 +794,7 @@ public class RevisionsClient implements BackgroundResource {
 
     @Override
     protected ListRevisionsFixedSizeCollection createCollection(
-        List<ListRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListRevisionsPage> pages, int collectionSize) {
       return new ListRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }

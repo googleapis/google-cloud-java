@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -626,10 +628,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FeaturestoreServiceClient implements BackgroundResource {
-  private final FeaturestoreServiceSettings settings;
+  private final @Nullable FeaturestoreServiceSettings settings;
   private final FeaturestoreServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -672,7 +675,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final FeaturestoreServiceSettings getSettings() {
+  public final @Nullable FeaturestoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -714,7 +717,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata>
-      createFeaturestoreAsync(LocationName parent, Featurestore featurestore) {
+      createFeaturestoreAsync(@Nullable LocationName parent, Featurestore featurestore) {
     CreateFeaturestoreRequest request =
         CreateFeaturestoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -793,7 +796,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    */
   public final OperationFuture<Featurestore, CreateFeaturestoreOperationMetadata>
       createFeaturestoreAsync(
-          LocationName parent, Featurestore featurestore, String featurestoreId) {
+          @Nullable LocationName parent, Featurestore featurestore, String featurestoreId) {
     CreateFeaturestoreRequest request =
         CreateFeaturestoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -961,7 +964,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @param name Required. The name of the Featurestore resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Featurestore getFeaturestore(FeaturestoreName name) {
+  public final Featurestore getFeaturestore(@Nullable FeaturestoreName name) {
     GetFeaturestoreRequest request =
         GetFeaturestoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeaturestore(request);
@@ -1074,7 +1077,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturestoresPagedResponse listFeaturestores(LocationName parent) {
+  public final ListFeaturestoresPagedResponse listFeaturestores(@Nullable LocationName parent) {
     ListFeaturestoresRequest request =
         ListFeaturestoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1385,7 +1388,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeaturestoreAsync(
-      FeaturestoreName name) {
+      @Nullable FeaturestoreName name) {
     DeleteFeaturestoreRequest request =
         DeleteFeaturestoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1450,7 +1453,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeaturestoreAsync(
-      FeaturestoreName name, boolean force) {
+      @Nullable FeaturestoreName name, boolean force) {
     DeleteFeaturestoreRequest request =
         DeleteFeaturestoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1610,7 +1613,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EntityType, CreateEntityTypeOperationMetadata> createEntityTypeAsync(
-      FeaturestoreName parent, EntityType entityType) {
+      @Nullable FeaturestoreName parent, EntityType entityType) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1683,7 +1686,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EntityType, CreateEntityTypeOperationMetadata> createEntityTypeAsync(
-      FeaturestoreName parent, EntityType entityType, String entityTypeId) {
+      @Nullable FeaturestoreName parent, EntityType entityType, String entityTypeId) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1854,7 +1857,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType getEntityType(EntityTypeName name) {
+  public final EntityType getEntityType(@Nullable EntityTypeName name) {
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
@@ -1973,7 +1976,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntityTypesPagedResponse listEntityTypes(FeaturestoreName parent) {
+  public final ListEntityTypesPagedResponse listEntityTypes(@Nullable FeaturestoreName parent) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2256,7 +2259,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEntityTypeAsync(
-      EntityTypeName name) {
+      @Nullable EntityTypeName name) {
     DeleteEntityTypeRequest request =
         DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEntityTypeAsync(request);
@@ -2320,7 +2323,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEntityTypeAsync(
-      EntityTypeName name, boolean force) {
+      @Nullable EntityTypeName name, boolean force) {
     DeleteEntityTypeRequest request =
         DeleteEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2491,7 +2494,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      EntityTypeName parent, Feature feature) {
+      @Nullable EntityTypeName parent, Feature feature) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2528,7 +2531,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      FeatureGroupName parent, Feature feature) {
+      @Nullable FeatureGroupName parent, Feature feature) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2609,7 +2612,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      EntityTypeName parent, Feature feature, String featureId) {
+      @Nullable EntityTypeName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2654,7 +2657,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      FeatureGroupName parent, Feature feature, String featureId) {
+      @Nullable FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2841,7 +2844,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
-      batchCreateFeaturesAsync(EntityTypeName parent, List<CreateFeatureRequest> requests) {
+      batchCreateFeaturesAsync(
+          @Nullable EntityTypeName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2881,7 +2885,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
-      batchCreateFeaturesAsync(FeatureGroupName parent, List<CreateFeatureRequest> requests) {
+      batchCreateFeaturesAsync(
+          @Nullable FeatureGroupName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3054,7 +3059,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Feature getFeature(FeatureName name) {
+  public final Feature getFeature(@Nullable FeatureName name) {
     GetFeatureRequest request =
         GetFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeature(request);
@@ -3184,7 +3189,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturesPagedResponse listFeatures(EntityTypeName parent) {
+  public final ListFeaturesPagedResponse listFeatures(@Nullable EntityTypeName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3219,7 +3224,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturesPagedResponse listFeatures(FeatureGroupName parent) {
+  public final ListFeaturesPagedResponse listFeatures(@Nullable FeatureGroupName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3507,7 +3512,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(
-      FeatureName name) {
+      @Nullable FeatureName name) {
     DeleteFeatureRequest request =
         DeleteFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFeatureAsync(request);
@@ -3681,7 +3686,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportFeatureValuesResponse, ImportFeatureValuesOperationMetadata>
-      importFeatureValuesAsync(EntityTypeName entityType) {
+      importFeatureValuesAsync(@Nullable EntityTypeName entityType) {
     ImportFeatureValuesRequest request =
         ImportFeatureValuesRequest.newBuilder()
             .setEntityType(entityType == null ? null : entityType.toString())
@@ -3927,7 +3932,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata>
-      batchReadFeatureValuesAsync(FeaturestoreName featurestore) {
+      batchReadFeatureValuesAsync(@Nullable FeaturestoreName featurestore) {
     BatchReadFeatureValuesRequest request =
         BatchReadFeatureValuesRequest.newBuilder()
             .setFeaturestore(featurestore == null ? null : featurestore.toString())
@@ -4122,7 +4127,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportFeatureValuesResponse, ExportFeatureValuesOperationMetadata>
-      exportFeatureValuesAsync(EntityTypeName entityType) {
+      exportFeatureValuesAsync(@Nullable EntityTypeName entityType) {
     ExportFeatureValuesRequest request =
         ExportFeatureValuesRequest.newBuilder()
             .setEntityType(entityType == null ? null : entityType.toString())
@@ -4302,7 +4307,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeleteFeatureValuesResponse, DeleteFeatureValuesOperationMetadata>
-      deleteFeatureValuesAsync(EntityTypeName entityType) {
+      deleteFeatureValuesAsync(@Nullable EntityTypeName entityType) {
     DeleteFeatureValuesRequest request =
         DeleteFeatureValuesRequest.newBuilder()
             .setEntityType(entityType == null ? null : entityType.toString())
@@ -4495,7 +4500,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchFeaturesPagedResponse searchFeatures(LocationName location) {
+  public final SearchFeaturesPagedResponse searchFeatures(@Nullable LocationName location) {
     SearchFeaturesRequest request =
         SearchFeaturesRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -4610,7 +4615,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchFeaturesPagedResponse searchFeatures(LocationName location, String query) {
+  public final SearchFeaturesPagedResponse searchFeatures(
+      @Nullable LocationName location, String query) {
     SearchFeaturesRequest request =
         SearchFeaturesRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -5240,8 +5246,9 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListFeaturestoresPage> {
 
     private ListFeaturestoresPage(
-        PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore> context,
-        ListFeaturestoresResponse response) {
+        @Nullable PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore>
+            context,
+        @Nullable ListFeaturestoresResponse response) {
       super(context, response);
     }
 
@@ -5251,14 +5258,16 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturestoresPage createPage(
-        PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore> context,
-        ListFeaturestoresResponse response) {
+        @Nullable PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore>
+            context,
+        @Nullable ListFeaturestoresResponse response) {
       return new ListFeaturestoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturestoresPage> createPageAsync(
-        PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore> context,
+        @Nullable PageContext<ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore>
+            context,
         ApiFuture<ListFeaturestoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5273,7 +5282,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListFeaturestoresFixedSizeCollection> {
 
     private ListFeaturestoresFixedSizeCollection(
-        List<ListFeaturestoresPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturestoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5283,7 +5292,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturestoresFixedSizeCollection createCollection(
-        List<ListFeaturestoresPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturestoresPage> pages, int collectionSize) {
       return new ListFeaturestoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5317,8 +5326,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage> {
 
     private ListEntityTypesPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       super(context, response);
     }
 
@@ -5328,14 +5337,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesPage createPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       return new ListEntityTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntityTypesPage> createPageAsync(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
         ApiFuture<ListEntityTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5350,7 +5359,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListEntityTypesFixedSizeCollection> {
 
     private ListEntityTypesFixedSizeCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5360,7 +5369,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesFixedSizeCollection createCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       return new ListEntityTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5393,8 +5402,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
       extends AbstractPage<ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage> {
 
     private ListFeaturesPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       super(context, response);
     }
 
@@ -5404,14 +5413,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesPage createPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       return new ListFeaturesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturesPage> createPageAsync(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
         ApiFuture<ListFeaturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5425,7 +5434,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
-    private ListFeaturesFixedSizeCollection(List<ListFeaturesPage> pages, int collectionSize) {
+    private ListFeaturesFixedSizeCollection(
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5435,7 +5445,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesFixedSizeCollection createCollection(
-        List<ListFeaturesPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       return new ListFeaturesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5469,8 +5479,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           SearchFeaturesRequest, SearchFeaturesResponse, Feature, SearchFeaturesPage> {
 
     private SearchFeaturesPage(
-        PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
-        SearchFeaturesResponse response) {
+        @Nullable PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
+        @Nullable SearchFeaturesResponse response) {
       super(context, response);
     }
 
@@ -5480,14 +5490,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFeaturesPage createPage(
-        PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
-        SearchFeaturesResponse response) {
+        @Nullable PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
+        @Nullable SearchFeaturesResponse response) {
       return new SearchFeaturesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchFeaturesPage> createPageAsync(
-        PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
+        @Nullable PageContext<SearchFeaturesRequest, SearchFeaturesResponse, Feature> context,
         ApiFuture<SearchFeaturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5501,7 +5511,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           SearchFeaturesPage,
           SearchFeaturesFixedSizeCollection> {
 
-    private SearchFeaturesFixedSizeCollection(List<SearchFeaturesPage> pages, int collectionSize) {
+    private SearchFeaturesFixedSizeCollection(
+        @Nullable List<SearchFeaturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5511,7 +5522,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFeaturesFixedSizeCollection createCollection(
-        List<SearchFeaturesPage> pages, int collectionSize) {
+        @Nullable List<SearchFeaturesPage> pages, int collectionSize) {
       return new SearchFeaturesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5545,8 +5556,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5556,14 +5567,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5577,7 +5588,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5587,7 +5599,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

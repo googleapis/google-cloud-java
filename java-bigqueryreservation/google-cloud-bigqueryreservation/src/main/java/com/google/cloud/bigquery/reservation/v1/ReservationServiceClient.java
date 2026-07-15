@@ -39,6 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -744,9 +746,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReservationServiceClient implements BackgroundResource {
-  private final ReservationServiceSettings settings;
+  private final @Nullable ReservationServiceSettings settings;
   private final ReservationServiceStub stub;
 
   /** Constructs an instance of ReservationServiceClient with default settings. */
@@ -786,7 +789,7 @@ public class ReservationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReservationServiceSettings getSettings() {
+  public final @Nullable ReservationServiceSettings getSettings() {
     return settings;
   }
 
@@ -823,7 +826,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Reservation createReservation(
-      LocationName parent, Reservation reservation, String reservationId) {
+      @Nullable LocationName parent, Reservation reservation, String reservationId) {
     CreateReservationRequest request =
         CreateReservationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -956,7 +959,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReservationsPagedResponse listReservations(LocationName parent) {
+  public final ListReservationsPagedResponse listReservations(@Nullable LocationName parent) {
     ListReservationsRequest request =
         ListReservationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1121,7 +1124,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/reservations/team1-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Reservation getReservation(ReservationName name) {
+  public final Reservation getReservation(@Nullable ReservationName name) {
     GetReservationRequest request =
         GetReservationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReservation(request);
@@ -1233,7 +1236,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/reservations/team1-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReservation(ReservationName name) {
+  public final void deleteReservation(@Nullable ReservationName name) {
     DeleteReservationRequest request =
         DeleteReservationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1508,7 +1511,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment createCapacityCommitment(
-      LocationName parent, CapacityCommitment capacityCommitment) {
+      @Nullable LocationName parent, CapacityCommitment capacityCommitment) {
     CreateCapacityCommitmentRequest request =
         CreateCapacityCommitmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1641,7 +1644,8 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCapacityCommitmentsPagedResponse listCapacityCommitments(LocationName parent) {
+  public final ListCapacityCommitmentsPagedResponse listCapacityCommitments(
+      @Nullable LocationName parent) {
     ListCapacityCommitmentsRequest request =
         ListCapacityCommitmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1810,7 +1814,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CapacityCommitment getCapacityCommitment(CapacityCommitmentName name) {
+  public final CapacityCommitment getCapacityCommitment(@Nullable CapacityCommitmentName name) {
     GetCapacityCommitmentRequest request =
         GetCapacityCommitmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1932,7 +1936,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCapacityCommitment(CapacityCommitmentName name) {
+  public final void deleteCapacityCommitment(@Nullable CapacityCommitmentName name) {
     DeleteCapacityCommitmentRequest request =
         DeleteCapacityCommitmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2180,7 +2184,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitCapacityCommitmentResponse splitCapacityCommitment(
-      CapacityCommitmentName name, long slotCount) {
+      @Nullable CapacityCommitmentName name, long slotCount) {
     SplitCapacityCommitmentRequest request =
         SplitCapacityCommitmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2340,7 +2344,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment mergeCapacityCommitments(
-      LocationName parent, List<String> capacityCommitmentIds) {
+      @Nullable LocationName parent, List<String> capacityCommitmentIds) {
     MergeCapacityCommitmentsRequest request =
         MergeCapacityCommitmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2521,7 +2525,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * @param assignment Assignment resource to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assignment createAssignment(ReservationName parent, Assignment assignment) {
+  public final Assignment createAssignment(
+      @Nullable ReservationName parent, Assignment assignment) {
     CreateAssignmentRequest request =
         CreateAssignmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2755,7 +2760,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     <p>`projects/myproject/locations/US/reservations/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssignmentsPagedResponse listAssignments(ReservationName parent) {
+  public final ListAssignmentsPagedResponse listAssignments(@Nullable ReservationName parent) {
     ListAssignmentsRequest request =
         ListAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3011,7 +3016,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAssignment(AssignmentName name) {
+  public final void deleteAssignment(@Nullable AssignmentName name) {
     DeleteAssignmentRequest request =
         DeleteAssignmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAssignment(request);
@@ -3199,7 +3204,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final SearchAssignmentsPagedResponse searchAssignments(LocationName parent, String query) {
+  public final SearchAssignmentsPagedResponse searchAssignments(
+      @Nullable LocationName parent, String query) {
     SearchAssignmentsRequest request =
         SearchAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3494,7 +3500,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAllAssignmentsPagedResponse searchAllAssignments(
-      LocationName parent, String query) {
+      @Nullable LocationName parent, String query) {
     SearchAllAssignmentsRequest request =
         SearchAllAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3751,7 +3757,8 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assignment moveAssignment(AssignmentName name, ReservationName destinationId) {
+  public final Assignment moveAssignment(
+      @Nullable AssignmentName name, @Nullable ReservationName destinationId) {
     MoveAssignmentRequest request =
         MoveAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3790,7 +3797,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assignment moveAssignment(AssignmentName name, String destinationId) {
+  public final Assignment moveAssignment(@Nullable AssignmentName name, String destinationId) {
     MoveAssignmentRequest request =
         MoveAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3829,7 +3836,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assignment moveAssignment(String name, ReservationName destinationId) {
+  public final Assignment moveAssignment(String name, @Nullable ReservationName destinationId) {
     MoveAssignmentRequest request =
         MoveAssignmentRequest.newBuilder()
             .setName(name)
@@ -4064,7 +4071,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/biReservation`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BiReservation getBiReservation(BiReservationName name) {
+  public final BiReservation getBiReservation(@Nullable BiReservationName name) {
     GetBiReservationRequest request =
         GetBiReservationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBiReservation(request);
@@ -4299,7 +4306,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4466,7 +4473,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4747,7 +4754,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/reservationGroups/team1-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReservationGroup getReservationGroup(ReservationGroupName name) {
+  public final ReservationGroup getReservationGroup(@Nullable ReservationGroupName name) {
     GetReservationGroupRequest request =
         GetReservationGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4869,7 +4876,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US/reservationGroups/team1-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReservationGroup(ReservationGroupName name) {
+  public final void deleteReservationGroup(@Nullable ReservationGroupName name) {
     DeleteReservationGroupRequest request =
         DeleteReservationGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4995,7 +5002,8 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReservationGroupsPagedResponse listReservationGroups(LocationName parent) {
+  public final ListReservationGroupsPagedResponse listReservationGroups(
+      @Nullable LocationName parent) {
     ListReservationGroupsRequest request =
         ListReservationGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5200,8 +5208,9 @@ public class ReservationServiceClient implements BackgroundResource {
           ListReservationsRequest, ListReservationsResponse, Reservation, ListReservationsPage> {
 
     private ListReservationsPage(
-        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
-        ListReservationsResponse response) {
+        @Nullable PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
+            context,
+        @Nullable ListReservationsResponse response) {
       super(context, response);
     }
 
@@ -5211,14 +5220,16 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListReservationsPage createPage(
-        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
-        ListReservationsResponse response) {
+        @Nullable PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
+            context,
+        @Nullable ListReservationsResponse response) {
       return new ListReservationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReservationsPage> createPageAsync(
-        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        @Nullable PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
+            context,
         ApiFuture<ListReservationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5233,7 +5244,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListReservationsFixedSizeCollection> {
 
     private ListReservationsFixedSizeCollection(
-        List<ListReservationsPage> pages, int collectionSize) {
+        @Nullable List<ListReservationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5243,7 +5254,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListReservationsFixedSizeCollection createCollection(
-        List<ListReservationsPage> pages, int collectionSize) {
+        @Nullable List<ListReservationsPage> pages, int collectionSize) {
       return new ListReservationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5282,10 +5293,11 @@ public class ReservationServiceClient implements BackgroundResource {
           ListCapacityCommitmentsPage> {
 
     private ListCapacityCommitmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
             context,
-        ListCapacityCommitmentsResponse response) {
+        @Nullable ListCapacityCommitmentsResponse response) {
       super(context, response);
     }
 
@@ -5295,16 +5307,18 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListCapacityCommitmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
             context,
-        ListCapacityCommitmentsResponse response) {
+        @Nullable ListCapacityCommitmentsResponse response) {
       return new ListCapacityCommitmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCapacityCommitmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
             context,
         ApiFuture<ListCapacityCommitmentsResponse> futureResponse) {
@@ -5321,7 +5335,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListCapacityCommitmentsFixedSizeCollection> {
 
     private ListCapacityCommitmentsFixedSizeCollection(
-        List<ListCapacityCommitmentsPage> pages, int collectionSize) {
+        @Nullable List<ListCapacityCommitmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5331,7 +5345,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListCapacityCommitmentsFixedSizeCollection createCollection(
-        List<ListCapacityCommitmentsPage> pages, int collectionSize) {
+        @Nullable List<ListCapacityCommitmentsPage> pages, int collectionSize) {
       return new ListCapacityCommitmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5365,8 +5379,8 @@ public class ReservationServiceClient implements BackgroundResource {
           ListAssignmentsRequest, ListAssignmentsResponse, Assignment, ListAssignmentsPage> {
 
     private ListAssignmentsPage(
-        PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
-        ListAssignmentsResponse response) {
+        @Nullable PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
+        @Nullable ListAssignmentsResponse response) {
       super(context, response);
     }
 
@@ -5376,14 +5390,14 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssignmentsPage createPage(
-        PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
-        ListAssignmentsResponse response) {
+        @Nullable PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
+        @Nullable ListAssignmentsResponse response) {
       return new ListAssignmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssignmentsPage> createPageAsync(
-        PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
+        @Nullable PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> context,
         ApiFuture<ListAssignmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5398,7 +5412,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListAssignmentsFixedSizeCollection> {
 
     private ListAssignmentsFixedSizeCollection(
-        List<ListAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAssignmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5408,7 +5422,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssignmentsFixedSizeCollection createCollection(
-        List<ListAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAssignmentsPage> pages, int collectionSize) {
       return new ListAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5442,8 +5456,9 @@ public class ReservationServiceClient implements BackgroundResource {
           SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment, SearchAssignmentsPage> {
 
     private SearchAssignmentsPage(
-        PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment> context,
-        SearchAssignmentsResponse response) {
+        @Nullable PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
+            context,
+        @Nullable SearchAssignmentsResponse response) {
       super(context, response);
     }
 
@@ -5453,14 +5468,16 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAssignmentsPage createPage(
-        PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment> context,
-        SearchAssignmentsResponse response) {
+        @Nullable PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
+            context,
+        @Nullable SearchAssignmentsResponse response) {
       return new SearchAssignmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAssignmentsPage> createPageAsync(
-        PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment> context,
+        @Nullable PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
+            context,
         ApiFuture<SearchAssignmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5475,7 +5492,7 @@ public class ReservationServiceClient implements BackgroundResource {
           SearchAssignmentsFixedSizeCollection> {
 
     private SearchAssignmentsFixedSizeCollection(
-        List<SearchAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<SearchAssignmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5485,7 +5502,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAssignmentsFixedSizeCollection createCollection(
-        List<SearchAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<SearchAssignmentsPage> pages, int collectionSize) {
       return new SearchAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5522,8 +5539,9 @@ public class ReservationServiceClient implements BackgroundResource {
           SearchAllAssignmentsPage> {
 
     private SearchAllAssignmentsPage(
-        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
-        SearchAllAssignmentsResponse response) {
+        @Nullable PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>
+            context,
+        @Nullable SearchAllAssignmentsResponse response) {
       super(context, response);
     }
 
@@ -5533,14 +5551,16 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllAssignmentsPage createPage(
-        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
-        SearchAllAssignmentsResponse response) {
+        @Nullable PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>
+            context,
+        @Nullable SearchAllAssignmentsResponse response) {
       return new SearchAllAssignmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAllAssignmentsPage> createPageAsync(
-        PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment> context,
+        @Nullable PageContext<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse, Assignment>
+            context,
         ApiFuture<SearchAllAssignmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5555,7 +5575,7 @@ public class ReservationServiceClient implements BackgroundResource {
           SearchAllAssignmentsFixedSizeCollection> {
 
     private SearchAllAssignmentsFixedSizeCollection(
-        List<SearchAllAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<SearchAllAssignmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5565,7 +5585,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllAssignmentsFixedSizeCollection createCollection(
-        List<SearchAllAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<SearchAllAssignmentsPage> pages, int collectionSize) {
       return new SearchAllAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5603,9 +5623,11 @@ public class ReservationServiceClient implements BackgroundResource {
           ListReservationGroupsPage> {
 
     private ListReservationGroupsPage(
-        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+        @Nullable
+            PageContext<
+                ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
             context,
-        ListReservationGroupsResponse response) {
+        @Nullable ListReservationGroupsResponse response) {
       super(context, response);
     }
 
@@ -5615,15 +5637,19 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListReservationGroupsPage createPage(
-        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+        @Nullable
+            PageContext<
+                ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
             context,
-        ListReservationGroupsResponse response) {
+        @Nullable ListReservationGroupsResponse response) {
       return new ListReservationGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReservationGroupsPage> createPageAsync(
-        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+        @Nullable
+            PageContext<
+                ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
             context,
         ApiFuture<ListReservationGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5639,7 +5665,7 @@ public class ReservationServiceClient implements BackgroundResource {
           ListReservationGroupsFixedSizeCollection> {
 
     private ListReservationGroupsFixedSizeCollection(
-        List<ListReservationGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListReservationGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5649,7 +5675,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
     @Override
     protected ListReservationGroupsFixedSizeCollection createCollection(
-        List<ListReservationGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListReservationGroupsPage> pages, int collectionSize) {
       return new ListReservationGroupsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -225,9 +227,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ModelGardenServiceClient implements BackgroundResource {
-  private final ModelGardenServiceSettings settings;
+  private final @Nullable ModelGardenServiceSettings settings;
   private final ModelGardenServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -270,7 +273,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ModelGardenServiceSettings getSettings() {
+  public final @Nullable ModelGardenServiceSettings getSettings() {
     return settings;
   }
 
@@ -308,7 +311,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *     `publishers/{publisher}/models/{publisher_model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublisherModel getPublisherModel(PublisherModelName name) {
+  public final PublisherModel getPublisherModel(@Nullable PublisherModelName name) {
     GetPublisherModelRequest request =
         GetPublisherModelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -928,8 +931,8 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -939,14 +942,14 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -960,7 +963,8 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -970,7 +974,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

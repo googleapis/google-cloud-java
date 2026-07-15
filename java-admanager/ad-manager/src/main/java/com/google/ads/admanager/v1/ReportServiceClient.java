@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -222,9 +224,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReportServiceClient implements BackgroundResource {
-  private final ReportServiceSettings settings;
+  private final @Nullable ReportServiceSettings settings;
   private final ReportServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
 
@@ -267,7 +270,7 @@ public class ReportServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ReportServiceSettings getSettings() {
+  public final @Nullable ReportServiceSettings getSettings() {
     return settings;
   }
 
@@ -305,7 +308,7 @@ public class ReportServiceClient implements BackgroundResource {
    *     `networks/{network_code}/reports/{report_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Report getReport(ReportName name) {
+  public final Report getReport(@Nullable ReportName name) {
     GetReportRequest request =
         GetReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReport(request);
@@ -417,7 +420,7 @@ public class ReportServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportsPagedResponse listReports(NetworkName parent) {
+  public final ListReportsPagedResponse listReports(@Nullable NetworkName parent) {
     ListReportsRequest request =
         ListReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -589,7 +592,7 @@ public class ReportServiceClient implements BackgroundResource {
    * @param report Required. The `Report` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Report createReport(NetworkName parent, Report report) {
+  public final Report createReport(@Nullable NetworkName parent, Report report) {
     CreateReportRequest request =
         CreateReportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -797,7 +800,7 @@ public class ReportServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RunReportResponse, RunReportMetadata> runReportAsync(
-      ReportName name) {
+      @Nullable ReportName name) {
     RunReportRequest request =
         RunReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runReportAsync(request);
@@ -1132,8 +1135,8 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractPage<ListReportsRequest, ListReportsResponse, Report, ListReportsPage> {
 
     private ListReportsPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       super(context, response);
     }
 
@@ -1143,14 +1146,14 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected ListReportsPage createPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       return new ListReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportsPage> createPageAsync(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
         ApiFuture<ListReportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1164,7 +1167,8 @@ public class ReportServiceClient implements BackgroundResource {
           ListReportsPage,
           ListReportsFixedSizeCollection> {
 
-    private ListReportsFixedSizeCollection(List<ListReportsPage> pages, int collectionSize) {
+    private ListReportsFixedSizeCollection(
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1174,7 +1178,7 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected ListReportsFixedSizeCollection createCollection(
-        List<ListReportsPage> pages, int collectionSize) {
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       return new ListReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1213,10 +1217,11 @@ public class ReportServiceClient implements BackgroundResource {
           FetchReportResultRowsPage> {
 
     private FetchReportResultRowsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
-        FetchReportResultRowsResponse response) {
+        @Nullable FetchReportResultRowsResponse response) {
       super(context, response);
     }
 
@@ -1226,16 +1231,18 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected FetchReportResultRowsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
-        FetchReportResultRowsResponse response) {
+        @Nullable FetchReportResultRowsResponse response) {
       return new FetchReportResultRowsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchReportResultRowsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
         ApiFuture<FetchReportResultRowsResponse> futureResponse) {
@@ -1252,7 +1259,7 @@ public class ReportServiceClient implements BackgroundResource {
           FetchReportResultRowsFixedSizeCollection> {
 
     private FetchReportResultRowsFixedSizeCollection(
-        List<FetchReportResultRowsPage> pages, int collectionSize) {
+        @Nullable List<FetchReportResultRowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1262,7 +1269,7 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected FetchReportResultRowsFixedSizeCollection createCollection(
-        List<FetchReportResultRowsPage> pages, int collectionSize) {
+        @Nullable List<FetchReportResultRowsPage> pages, int collectionSize) {
       return new FetchReportResultRowsFixedSizeCollection(pages, collectionSize);
     }
   }

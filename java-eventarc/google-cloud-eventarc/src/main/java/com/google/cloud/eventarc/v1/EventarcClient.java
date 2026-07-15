@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -967,9 +969,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EventarcClient implements BackgroundResource {
-  private final EventarcSettings settings;
+  private final @Nullable EventarcSettings settings;
   private final EventarcStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1015,7 +1018,7 @@ public class EventarcClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EventarcSettings getSettings() {
+  public final @Nullable EventarcSettings getSettings() {
     return settings;
   }
 
@@ -1061,7 +1064,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the trigger to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Trigger getTrigger(TriggerName name) {
+  public final Trigger getTrigger(@Nullable TriggerName name) {
     GetTriggerRequest request =
         GetTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTrigger(request);
@@ -1171,7 +1174,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list triggers on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTriggersPagedResponse listTriggers(LocationName parent) {
+  public final ListTriggersPagedResponse listTriggers(@Nullable LocationName parent) {
     ListTriggersRequest request =
         ListTriggersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1341,7 +1344,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Trigger, OperationMetadata> createTriggerAsync(
-      LocationName parent, Trigger trigger, String triggerId) {
+      @Nullable LocationName parent, Trigger trigger, String triggerId) {
     CreateTriggerRequest request =
         CreateTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1639,7 +1642,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Trigger, OperationMetadata> deleteTriggerAsync(
-      TriggerName name, boolean allowMissing) {
+      @Nullable TriggerName name, boolean allowMissing) {
     DeleteTriggerRequest request =
         DeleteTriggerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1794,7 +1797,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the channel to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Channel getChannel(ChannelName name) {
+  public final Channel getChannel(@Nullable ChannelName name) {
     GetChannelRequest request =
         GetChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getChannel(request);
@@ -1904,7 +1907,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list channels on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChannelsPagedResponse listChannels(LocationName parent) {
+  public final ListChannelsPagedResponse listChannels(@Nullable LocationName parent) {
     ListChannelsRequest request =
         ListChannelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2071,7 +2074,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Channel, OperationMetadata> createChannelAsync(
-      LocationName parent, Channel channel, String channelId) {
+      @Nullable LocationName parent, Channel channel, String channelId) {
     CreateChannelRequest request =
         CreateChannelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2355,7 +2358,8 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the channel to be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Channel, OperationMetadata> deleteChannelAsync(ChannelName name) {
+  public final OperationFuture<Channel, OperationMetadata> deleteChannelAsync(
+      @Nullable ChannelName name) {
     DeleteChannelRequest request =
         DeleteChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteChannelAsync(request);
@@ -2496,7 +2500,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the provider to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Provider getProvider(ProviderName name) {
+  public final Provider getProvider(@Nullable ProviderName name) {
     GetProviderRequest request =
         GetProviderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProvider(request);
@@ -2606,7 +2610,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent of the provider to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProvidersPagedResponse listProviders(LocationName parent) {
+  public final ListProvidersPagedResponse listProviders(@Nullable LocationName parent) {
     ListProvidersRequest request =
         ListProvidersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2772,7 +2776,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the channel connection to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ChannelConnection getChannelConnection(ChannelConnectionName name) {
+  public final ChannelConnection getChannelConnection(@Nullable ChannelConnectionName name) {
     GetChannelConnectionRequest request =
         GetChannelConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2892,7 +2896,8 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection from which to list channel connections.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChannelConnectionsPagedResponse listChannelConnections(LocationName parent) {
+  public final ListChannelConnectionsPagedResponse listChannelConnections(
+      @Nullable LocationName parent) {
     ListChannelConnectionsRequest request =
         ListChannelConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3066,7 +3071,9 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelConnection, OperationMetadata> createChannelConnectionAsync(
-      LocationName parent, ChannelConnection channelConnection, String channelConnectionId) {
+      @Nullable LocationName parent,
+      ChannelConnection channelConnection,
+      String channelConnectionId) {
     CreateChannelConnectionRequest request =
         CreateChannelConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3233,7 +3240,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ChannelConnection, OperationMetadata> deleteChannelConnectionAsync(
-      ChannelConnectionName name) {
+      @Nullable ChannelConnectionName name) {
     DeleteChannelConnectionRequest request =
         DeleteChannelConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3386,7 +3393,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the config to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GoogleChannelConfig getGoogleChannelConfig(GoogleChannelConfigName name) {
+  public final GoogleChannelConfig getGoogleChannelConfig(@Nullable GoogleChannelConfigName name) {
     GetGoogleChannelConfigRequest request =
         GetGoogleChannelConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3598,7 +3605,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the message bus to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MessageBus getMessageBus(MessageBusName name) {
+  public final MessageBus getMessageBus(@Nullable MessageBusName name) {
     GetMessageBusRequest request =
         GetMessageBusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMessageBus(request);
@@ -3708,7 +3715,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list message buses on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMessageBusesPagedResponse listMessageBuses(LocationName parent) {
+  public final ListMessageBusesPagedResponse listMessageBuses(@Nullable LocationName parent) {
     ListMessageBusesRequest request =
         ListMessageBusesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3879,7 +3886,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMessageBusEnrollmentsPagedResponse listMessageBusEnrollments(
-      MessageBusName parent) {
+      @Nullable MessageBusName parent) {
     ListMessageBusEnrollmentsRequest request =
         ListMessageBusEnrollmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4051,7 +4058,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MessageBus, OperationMetadata> createMessageBusAsync(
-      LocationName parent, MessageBus messageBus, String messageBusId) {
+      @Nullable LocationName parent, MessageBus messageBus, String messageBusId) {
     CreateMessageBusRequest request =
         CreateMessageBusRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4347,7 +4354,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MessageBus, OperationMetadata> deleteMessageBusAsync(
-      MessageBusName name, String etag) {
+      @Nullable MessageBusName name, String etag) {
     DeleteMessageBusRequest request =
         DeleteMessageBusRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4502,7 +4509,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the Enrollment to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Enrollment getEnrollment(EnrollmentName name) {
+  public final Enrollment getEnrollment(@Nullable EnrollmentName name) {
     GetEnrollmentRequest request =
         GetEnrollmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEnrollment(request);
@@ -4612,7 +4619,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list triggers on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnrollmentsPagedResponse listEnrollments(LocationName parent) {
+  public final ListEnrollmentsPagedResponse listEnrollments(@Nullable LocationName parent) {
     ListEnrollmentsRequest request =
         ListEnrollmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4786,7 +4793,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Enrollment, OperationMetadata> createEnrollmentAsync(
-      LocationName parent, Enrollment enrollment, String enrollmentId) {
+      @Nullable LocationName parent, Enrollment enrollment, String enrollmentId) {
     CreateEnrollmentRequest request =
         CreateEnrollmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5082,7 +5089,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Enrollment, OperationMetadata> deleteEnrollmentAsync(
-      EnrollmentName name, String etag) {
+      @Nullable EnrollmentName name, String etag) {
     DeleteEnrollmentRequest request =
         DeleteEnrollmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5237,7 +5244,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the pipeline to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Pipeline getPipeline(PipelineName name) {
+  public final Pipeline getPipeline(@Nullable PipelineName name) {
     GetPipelineRequest request =
         GetPipelineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPipeline(request);
@@ -5347,7 +5354,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list pipelines on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPipelinesPagedResponse listPipelines(LocationName parent) {
+  public final ListPipelinesPagedResponse listPipelines(@Nullable LocationName parent) {
     ListPipelinesRequest request =
         ListPipelinesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5518,7 +5525,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Pipeline, OperationMetadata> createPipelineAsync(
-      LocationName parent, Pipeline pipeline, String pipelineId) {
+      @Nullable LocationName parent, Pipeline pipeline, String pipelineId) {
     CreatePipelineRequest request =
         CreatePipelineRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5810,7 +5817,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Pipeline, OperationMetadata> deletePipelineAsync(
-      PipelineName name, String etag) {
+      @Nullable PipelineName name, String etag) {
     DeletePipelineRequest request =
         DeletePipelineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5966,7 +5973,7 @@ public class EventarcClient implements BackgroundResource {
    * @param name Required. The name of the google api source to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GoogleApiSource getGoogleApiSource(GoogleApiSourceName name) {
+  public final GoogleApiSource getGoogleApiSource(@Nullable GoogleApiSourceName name) {
     GetGoogleApiSourceRequest request =
         GetGoogleApiSourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6086,7 +6093,8 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection to list GoogleApiSources on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGoogleApiSourcesPagedResponse listGoogleApiSources(LocationName parent) {
+  public final ListGoogleApiSourcesPagedResponse listGoogleApiSources(
+      @Nullable LocationName parent) {
     ListGoogleApiSourcesRequest request =
         ListGoogleApiSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6265,7 +6273,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoogleApiSource, OperationMetadata> createGoogleApiSourceAsync(
-      LocationName parent, GoogleApiSource googleApiSource, String googleApiSourceId) {
+      @Nullable LocationName parent, GoogleApiSource googleApiSource, String googleApiSourceId) {
     CreateGoogleApiSourceRequest request =
         CreateGoogleApiSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6569,7 +6577,7 @@ public class EventarcClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoogleApiSource, OperationMetadata> deleteGoogleApiSourceAsync(
-      GoogleApiSourceName name, String etag) {
+      @Nullable GoogleApiSourceName name, String etag) {
     DeleteGoogleApiSourceRequest request =
         DeleteGoogleApiSourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7115,8 +7123,8 @@ public class EventarcClient implements BackgroundResource {
       extends AbstractPage<ListTriggersRequest, ListTriggersResponse, Trigger, ListTriggersPage> {
 
     private ListTriggersPage(
-        PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
-        ListTriggersResponse response) {
+        @Nullable PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
+        @Nullable ListTriggersResponse response) {
       super(context, response);
     }
 
@@ -7126,14 +7134,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListTriggersPage createPage(
-        PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
-        ListTriggersResponse response) {
+        @Nullable PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
+        @Nullable ListTriggersResponse response) {
       return new ListTriggersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTriggersPage> createPageAsync(
-        PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
+        @Nullable PageContext<ListTriggersRequest, ListTriggersResponse, Trigger> context,
         ApiFuture<ListTriggersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7147,7 +7155,8 @@ public class EventarcClient implements BackgroundResource {
           ListTriggersPage,
           ListTriggersFixedSizeCollection> {
 
-    private ListTriggersFixedSizeCollection(List<ListTriggersPage> pages, int collectionSize) {
+    private ListTriggersFixedSizeCollection(
+        @Nullable List<ListTriggersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7157,7 +7166,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListTriggersFixedSizeCollection createCollection(
-        List<ListTriggersPage> pages, int collectionSize) {
+        @Nullable List<ListTriggersPage> pages, int collectionSize) {
       return new ListTriggersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7190,8 +7199,8 @@ public class EventarcClient implements BackgroundResource {
       extends AbstractPage<ListChannelsRequest, ListChannelsResponse, Channel, ListChannelsPage> {
 
     private ListChannelsPage(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
-        ListChannelsResponse response) {
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable ListChannelsResponse response) {
       super(context, response);
     }
 
@@ -7201,14 +7210,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListChannelsPage createPage(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
-        ListChannelsResponse response) {
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable ListChannelsResponse response) {
       return new ListChannelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChannelsPage> createPageAsync(
-        PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
+        @Nullable PageContext<ListChannelsRequest, ListChannelsResponse, Channel> context,
         ApiFuture<ListChannelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7222,7 +7231,8 @@ public class EventarcClient implements BackgroundResource {
           ListChannelsPage,
           ListChannelsFixedSizeCollection> {
 
-    private ListChannelsFixedSizeCollection(List<ListChannelsPage> pages, int collectionSize) {
+    private ListChannelsFixedSizeCollection(
+        @Nullable List<ListChannelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7232,7 +7242,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListChannelsFixedSizeCollection createCollection(
-        List<ListChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelsPage> pages, int collectionSize) {
       return new ListChannelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7266,8 +7276,8 @@ public class EventarcClient implements BackgroundResource {
           ListProvidersRequest, ListProvidersResponse, Provider, ListProvidersPage> {
 
     private ListProvidersPage(
-        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
-        ListProvidersResponse response) {
+        @Nullable PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        @Nullable ListProvidersResponse response) {
       super(context, response);
     }
 
@@ -7277,14 +7287,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListProvidersPage createPage(
-        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
-        ListProvidersResponse response) {
+        @Nullable PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        @Nullable ListProvidersResponse response) {
       return new ListProvidersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProvidersPage> createPageAsync(
-        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        @Nullable PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
         ApiFuture<ListProvidersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7298,7 +7308,8 @@ public class EventarcClient implements BackgroundResource {
           ListProvidersPage,
           ListProvidersFixedSizeCollection> {
 
-    private ListProvidersFixedSizeCollection(List<ListProvidersPage> pages, int collectionSize) {
+    private ListProvidersFixedSizeCollection(
+        @Nullable List<ListProvidersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7308,7 +7319,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListProvidersFixedSizeCollection createCollection(
-        List<ListProvidersPage> pages, int collectionSize) {
+        @Nullable List<ListProvidersPage> pages, int collectionSize) {
       return new ListProvidersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7347,10 +7358,11 @@ public class EventarcClient implements BackgroundResource {
           ListChannelConnectionsPage> {
 
     private ListChannelConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
             context,
-        ListChannelConnectionsResponse response) {
+        @Nullable ListChannelConnectionsResponse response) {
       super(context, response);
     }
 
@@ -7360,16 +7372,18 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListChannelConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
             context,
-        ListChannelConnectionsResponse response) {
+        @Nullable ListChannelConnectionsResponse response) {
       return new ListChannelConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChannelConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
             context,
         ApiFuture<ListChannelConnectionsResponse> futureResponse) {
@@ -7386,7 +7400,7 @@ public class EventarcClient implements BackgroundResource {
           ListChannelConnectionsFixedSizeCollection> {
 
     private ListChannelConnectionsFixedSizeCollection(
-        List<ListChannelConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7396,7 +7410,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListChannelConnectionsFixedSizeCollection createCollection(
-        List<ListChannelConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListChannelConnectionsPage> pages, int collectionSize) {
       return new ListChannelConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7430,8 +7444,9 @@ public class EventarcClient implements BackgroundResource {
           ListMessageBusesRequest, ListMessageBusesResponse, MessageBus, ListMessageBusesPage> {
 
     private ListMessageBusesPage(
-        PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus> context,
-        ListMessageBusesResponse response) {
+        @Nullable PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>
+            context,
+        @Nullable ListMessageBusesResponse response) {
       super(context, response);
     }
 
@@ -7441,14 +7456,16 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListMessageBusesPage createPage(
-        PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus> context,
-        ListMessageBusesResponse response) {
+        @Nullable PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>
+            context,
+        @Nullable ListMessageBusesResponse response) {
       return new ListMessageBusesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessageBusesPage> createPageAsync(
-        PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus> context,
+        @Nullable PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>
+            context,
         ApiFuture<ListMessageBusesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7463,7 +7480,7 @@ public class EventarcClient implements BackgroundResource {
           ListMessageBusesFixedSizeCollection> {
 
     private ListMessageBusesFixedSizeCollection(
-        List<ListMessageBusesPage> pages, int collectionSize) {
+        @Nullable List<ListMessageBusesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7473,7 +7490,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListMessageBusesFixedSizeCollection createCollection(
-        List<ListMessageBusesPage> pages, int collectionSize) {
+        @Nullable List<ListMessageBusesPage> pages, int collectionSize) {
       return new ListMessageBusesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7511,9 +7528,10 @@ public class EventarcClient implements BackgroundResource {
           ListMessageBusEnrollmentsPage> {
 
     private ListMessageBusEnrollmentsPage(
-        PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
+        @Nullable
+            PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
             context,
-        ListMessageBusEnrollmentsResponse response) {
+        @Nullable ListMessageBusEnrollmentsResponse response) {
       super(context, response);
     }
 
@@ -7523,15 +7541,17 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListMessageBusEnrollmentsPage createPage(
-        PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
+        @Nullable
+            PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
             context,
-        ListMessageBusEnrollmentsResponse response) {
+        @Nullable ListMessageBusEnrollmentsResponse response) {
       return new ListMessageBusEnrollmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessageBusEnrollmentsPage> createPageAsync(
-        PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
+        @Nullable
+            PageContext<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
             context,
         ApiFuture<ListMessageBusEnrollmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7547,7 +7567,7 @@ public class EventarcClient implements BackgroundResource {
           ListMessageBusEnrollmentsFixedSizeCollection> {
 
     private ListMessageBusEnrollmentsFixedSizeCollection(
-        List<ListMessageBusEnrollmentsPage> pages, int collectionSize) {
+        @Nullable List<ListMessageBusEnrollmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7557,7 +7577,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListMessageBusEnrollmentsFixedSizeCollection createCollection(
-        List<ListMessageBusEnrollmentsPage> pages, int collectionSize) {
+        @Nullable List<ListMessageBusEnrollmentsPage> pages, int collectionSize) {
       return new ListMessageBusEnrollmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7591,8 +7611,8 @@ public class EventarcClient implements BackgroundResource {
           ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment, ListEnrollmentsPage> {
 
     private ListEnrollmentsPage(
-        PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
-        ListEnrollmentsResponse response) {
+        @Nullable PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
+        @Nullable ListEnrollmentsResponse response) {
       super(context, response);
     }
 
@@ -7602,14 +7622,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListEnrollmentsPage createPage(
-        PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
-        ListEnrollmentsResponse response) {
+        @Nullable PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
+        @Nullable ListEnrollmentsResponse response) {
       return new ListEnrollmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnrollmentsPage> createPageAsync(
-        PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
+        @Nullable PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> context,
         ApiFuture<ListEnrollmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7624,7 +7644,7 @@ public class EventarcClient implements BackgroundResource {
           ListEnrollmentsFixedSizeCollection> {
 
     private ListEnrollmentsFixedSizeCollection(
-        List<ListEnrollmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnrollmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7634,7 +7654,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListEnrollmentsFixedSizeCollection createCollection(
-        List<ListEnrollmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnrollmentsPage> pages, int collectionSize) {
       return new ListEnrollmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7668,8 +7688,8 @@ public class EventarcClient implements BackgroundResource {
           ListPipelinesRequest, ListPipelinesResponse, Pipeline, ListPipelinesPage> {
 
     private ListPipelinesPage(
-        PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
-        ListPipelinesResponse response) {
+        @Nullable PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
+        @Nullable ListPipelinesResponse response) {
       super(context, response);
     }
 
@@ -7679,14 +7699,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListPipelinesPage createPage(
-        PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
-        ListPipelinesResponse response) {
+        @Nullable PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
+        @Nullable ListPipelinesResponse response) {
       return new ListPipelinesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPipelinesPage> createPageAsync(
-        PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
+        @Nullable PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> context,
         ApiFuture<ListPipelinesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7700,7 +7720,8 @@ public class EventarcClient implements BackgroundResource {
           ListPipelinesPage,
           ListPipelinesFixedSizeCollection> {
 
-    private ListPipelinesFixedSizeCollection(List<ListPipelinesPage> pages, int collectionSize) {
+    private ListPipelinesFixedSizeCollection(
+        @Nullable List<ListPipelinesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7710,7 +7731,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListPipelinesFixedSizeCollection createCollection(
-        List<ListPipelinesPage> pages, int collectionSize) {
+        @Nullable List<ListPipelinesPage> pages, int collectionSize) {
       return new ListPipelinesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7748,9 +7769,10 @@ public class EventarcClient implements BackgroundResource {
           ListGoogleApiSourcesPage> {
 
     private ListGoogleApiSourcesPage(
-        PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
+        @Nullable
+            PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
             context,
-        ListGoogleApiSourcesResponse response) {
+        @Nullable ListGoogleApiSourcesResponse response) {
       super(context, response);
     }
 
@@ -7760,15 +7782,17 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListGoogleApiSourcesPage createPage(
-        PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
+        @Nullable
+            PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
             context,
-        ListGoogleApiSourcesResponse response) {
+        @Nullable ListGoogleApiSourcesResponse response) {
       return new ListGoogleApiSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoogleApiSourcesPage> createPageAsync(
-        PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
+        @Nullable
+            PageContext<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
             context,
         ApiFuture<ListGoogleApiSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7784,7 +7808,7 @@ public class EventarcClient implements BackgroundResource {
           ListGoogleApiSourcesFixedSizeCollection> {
 
     private ListGoogleApiSourcesFixedSizeCollection(
-        List<ListGoogleApiSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListGoogleApiSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7794,7 +7818,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListGoogleApiSourcesFixedSizeCollection createCollection(
-        List<ListGoogleApiSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListGoogleApiSourcesPage> pages, int collectionSize) {
       return new ListGoogleApiSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7828,8 +7852,8 @@ public class EventarcClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7839,14 +7863,14 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7860,7 +7884,8 @@ public class EventarcClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7870,7 +7895,7 @@ public class EventarcClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

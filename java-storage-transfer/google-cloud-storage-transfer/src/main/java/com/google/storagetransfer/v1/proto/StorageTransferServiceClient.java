@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -353,9 +355,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class StorageTransferServiceClient implements BackgroundResource {
-  private final StorageTransferServiceSettings settings;
+  private final @Nullable StorageTransferServiceSettings settings;
   private final StorageTransferServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -404,7 +407,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StorageTransferServiceSettings getSettings() {
+  public final @Nullable StorageTransferServiceSettings getSettings() {
     return settings;
   }
 
@@ -1693,12 +1696,13 @@ public class StorageTransferServiceClient implements BackgroundResource {
           ListTransferJobsPage> {
 
     private ListTransferJobsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListTransferJobsRequest,
                 TransferProto.ListTransferJobsResponse,
                 TransferTypes.TransferJob>
             context,
-        TransferProto.ListTransferJobsResponse response) {
+        TransferProto.@Nullable ListTransferJobsResponse response) {
       super(context, response);
     }
 
@@ -1708,18 +1712,20 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferJobsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListTransferJobsRequest,
                 TransferProto.ListTransferJobsResponse,
                 TransferTypes.TransferJob>
             context,
-        TransferProto.ListTransferJobsResponse response) {
+        TransferProto.@Nullable ListTransferJobsResponse response) {
       return new ListTransferJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransferJobsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListTransferJobsRequest,
                 TransferProto.ListTransferJobsResponse,
                 TransferTypes.TransferJob>
@@ -1738,7 +1744,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
           ListTransferJobsFixedSizeCollection> {
 
     private ListTransferJobsFixedSizeCollection(
-        List<ListTransferJobsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1748,7 +1754,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListTransferJobsFixedSizeCollection createCollection(
-        List<ListTransferJobsPage> pages, int collectionSize) {
+        @Nullable List<ListTransferJobsPage> pages, int collectionSize) {
       return new ListTransferJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1789,12 +1795,13 @@ public class StorageTransferServiceClient implements BackgroundResource {
           ListAgentPoolsPage> {
 
     private ListAgentPoolsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListAgentPoolsRequest,
                 TransferProto.ListAgentPoolsResponse,
                 TransferTypes.AgentPool>
             context,
-        TransferProto.ListAgentPoolsResponse response) {
+        TransferProto.@Nullable ListAgentPoolsResponse response) {
       super(context, response);
     }
 
@@ -1804,18 +1811,20 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListAgentPoolsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListAgentPoolsRequest,
                 TransferProto.ListAgentPoolsResponse,
                 TransferTypes.AgentPool>
             context,
-        TransferProto.ListAgentPoolsResponse response) {
+        TransferProto.@Nullable ListAgentPoolsResponse response) {
       return new ListAgentPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAgentPoolsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 TransferProto.ListAgentPoolsRequest,
                 TransferProto.ListAgentPoolsResponse,
                 TransferTypes.AgentPool>
@@ -1833,7 +1842,8 @@ public class StorageTransferServiceClient implements BackgroundResource {
           ListAgentPoolsPage,
           ListAgentPoolsFixedSizeCollection> {
 
-    private ListAgentPoolsFixedSizeCollection(List<ListAgentPoolsPage> pages, int collectionSize) {
+    private ListAgentPoolsFixedSizeCollection(
+        @Nullable List<ListAgentPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1843,7 +1853,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
     @Override
     protected ListAgentPoolsFixedSizeCollection createCollection(
-        List<ListAgentPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListAgentPoolsPage> pages, int collectionSize) {
       return new ListAgentPoolsFixedSizeCollection(pages, collectionSize);
     }
   }

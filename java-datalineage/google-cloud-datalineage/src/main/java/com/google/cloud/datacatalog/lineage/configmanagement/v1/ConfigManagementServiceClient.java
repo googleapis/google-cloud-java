@@ -23,6 +23,8 @@ import com.google.cloud.datacatalog.lineage.configmanagement.v1.stub.ConfigManag
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,9 +154,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigManagementServiceClient implements BackgroundResource {
-  private final ConfigManagementServiceSettings settings;
+  private final @Nullable ConfigManagementServiceSettings settings;
   private final ConfigManagementServiceStub stub;
 
   /** Constructs an instance of ConfigManagementServiceClient with default settings. */
@@ -195,7 +198,7 @@ public class ConfigManagementServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConfigManagementServiceSettings getSettings() {
+  public final @Nullable ConfigManagementServiceSettings getSettings() {
     return settings;
   }
 
@@ -229,7 +232,7 @@ public class ConfigManagementServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/global/config`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Config getConfig(ConfigName name) {
+  public final Config getConfig(@Nullable ConfigName name) {
     GetConfigRequest request =
         GetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConfig(request);

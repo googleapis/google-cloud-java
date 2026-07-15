@@ -25,6 +25,8 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -158,10 +160,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
-  private final QuotaAdjusterSettingsManagerSettings settings;
+  private final @Nullable QuotaAdjusterSettingsManagerSettings settings;
   private final QuotaAdjusterSettingsManagerStub stub;
 
   /** Constructs an instance of QuotaAdjusterSettingsManagerClient with default settings. */
@@ -205,7 +208,7 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final QuotaAdjusterSettingsManagerSettings getSettings() {
+  public final @Nullable QuotaAdjusterSettingsManagerSettings getSettings() {
     return settings;
   }
 
@@ -341,7 +344,8 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    *     per project is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QuotaAdjusterSettings getQuotaAdjusterSettings(QuotaAdjusterSettingsName name) {
+  public final QuotaAdjusterSettings getQuotaAdjusterSettings(
+      @Nullable QuotaAdjusterSettingsName name) {
     GetQuotaAdjusterSettingsRequest request =
         GetQuotaAdjusterSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())

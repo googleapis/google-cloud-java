@@ -577,21 +577,22 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132#.google.cloud.aiplatform.v1.SegmentH\000\210\001\001\022\037\n"
           + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n"
           + "\021confidence_scores\030\003 \003(\002B\n\n"
-          + "\010_segment\"\240\005\n"
+          + "\010_segment\"\300\005\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022R\n"
           + "\022search_entry_point\030\004 \001(\0132,.google.clou"
-          + "d.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
+          + "d.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n"
+          + "\021retrieval_queries\030\003 \003(\tB\003\340A\001\022D\n"
           + "\020grounding_chunks\030\005"
           + " \003(\0132*.google.cloud.aiplatform.v1.GroundingChunk\022M\n"
           + "\022grounding_supports\030\006"
           + " \003(\0132,.google.cloud.aiplatform.v1.GroundingSupportB\003\340A\001\022V\n"
-          + "\022retrieval_metadata\030\007 \001(\0132-.google.cloud.aipla"
-          + "tform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
+          + "\022retrieval_metadata\030\007"
+          + " \001(\0132-.google.cloud.aiplatform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
           + " google_maps_widget_context_token\030\010 \001("
           + "\tB\006\340A\001\340A\003H\002\210\001\001\022]\n"
-          + "\024source_flagging_uris\030\t"
-          + " \003(\0132?.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri\032@\n"
+          + "\024source_flagging_uris\030\t \003(\0132?.g"
+          + "oogle.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri\032@\n"
           + "\021SourceFlaggingUri\022\021\n"
           + "\tsource_id\030\001 \001(\t\022\030\n"
           + "\020flag_content_uri\030\002 \001(\tB\025\n"
@@ -626,12 +627,12 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\257\002\n"
-          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>cloud."
-          + "google.com/go/aiplatform/apiv1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
-          + "\"modelarmor.googleapis.com/Template\022<projects/{pro"
-          + "ject}/locations/{location}/templates/{template}b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>cloud.google.c"
+          + "om/go/aiplatform/apiv1/aiplatformpb;aipl"
+          + "atformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032"
+          + "Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
+          + "\"modelarmor.googleapis.com/Template\022<projects/{project}/lo"
+          + "cations/{location}/templates/{template}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -993,6 +994,7 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "WebSearchQueries",
               "SearchEntryPoint",
+              "RetrievalQueries",
               "GroundingChunks",
               "GroundingSupports",
               "RetrievalMetadata",

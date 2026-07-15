@@ -49,6 +49,7 @@ import com.google.cloud.memorystore.v1.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.FinishMigrationRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
@@ -64,6 +65,7 @@ import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -76,6 +78,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +86,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private static final TypeRegistry typeRegistry =
@@ -660,6 +664,86 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<StartMigrationRequest, Operation>
+      startMigrationMethodDescriptor =
+          ApiMethodDescriptor.<StartMigrationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/StartMigration")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartMigrationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*}:startMigration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartMigrationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<FinishMigrationRequest, Operation>
+      finishMigrationMethodDescriptor =
+          ApiMethodDescriptor.<FinishMigrationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/FinishMigration")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FinishMigrationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*}:finishMigration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (FinishMigrationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -769,6 +853,12 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private final UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable;
   private final OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationCallable;
+  private final UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable;
+  private final OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable;
+  private final UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable;
+  private final OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1033,6 +1123,30 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
+        HttpJsonCallSettings.<StartMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(startMigrationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<FinishMigrationRequest, Operation> finishMigrationTransportSettings =
+        HttpJsonCallSettings.<FinishMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(finishMigrationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1165,6 +1279,24 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
             settings.backupInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.startMigrationCallable =
+        callableFactory.createUnaryCallable(
+            startMigrationTransportSettings, settings.startMigrationSettings(), clientContext);
+    this.startMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            startMigrationTransportSettings,
+            settings.startMigrationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.finishMigrationCallable =
+        callableFactory.createUnaryCallable(
+            finishMigrationTransportSettings, settings.finishMigrationSettings(), clientContext);
+    this.finishMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            finishMigrationTransportSettings,
+            settings.finishMigrationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1197,6 +1329,8 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
     methodDescriptors.add(deleteBackupMethodDescriptor);
     methodDescriptors.add(exportBackupMethodDescriptor);
     methodDescriptors.add(backupInstanceMethodDescriptor);
+    methodDescriptors.add(startMigrationMethodDescriptor);
+    methodDescriptors.add(finishMigrationMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1342,6 +1476,28 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   public OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationCallable() {
     return backupInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable() {
+    return startMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable() {
+    return startMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
+    return finishMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable() {
+    return finishMigrationOperationCallable;
   }
 
   @Override

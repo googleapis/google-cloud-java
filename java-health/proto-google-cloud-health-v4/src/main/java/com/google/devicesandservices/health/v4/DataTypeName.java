@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataTypeName implements ResourceName {
   private static final PathTemplate USER_DATA_TYPE =
@@ -70,7 +73,7 @@ public class DataTypeName implements ResourceName {
     return newBuilder().setUser(user).setDataType(dataType).build().toString();
   }
 
-  public static DataTypeName parse(String formattedString) {
+  public static @Nullable DataTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class DataTypeName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DataTypeName> values) {
+  public static List<String> toStringList(List<@Nullable DataTypeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DataTypeName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class DataTypeName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

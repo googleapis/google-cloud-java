@@ -845,7 +845,7 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + "\032METRIC_CALCULATION_FAILURE\020\003\022\035\n"
           + "\031EVALUATION_UPDATE_FAILURE\020\004\022\023\n"
           + "\017QUOTA_EXHAUSTED\020\005\022\033\n"
-          + "\027USER_SIMULATION_FAILURE\020\006\"\354\005\n"
+          + "\027USER_SIMULATION_FAILURE\020\006\"\321\006\n"
           + "\024RunEvaluationRequest\022+\n"
           + "\003app\030\001 \001(\tB\036\340A\002\372A\030\n"
           + "\026ces.googleapis.com/App\022:\n"
@@ -867,7 +867,9 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + ")ces.googleapis.com/ScheduledEvaluationRun\022H\n"
           + "\021golden_run_method\030\r"
           + " \001(\0162(.google.cloud.ces.v1beta.GoldenRunMethodB\003\340A\001\022$\n"
-          + "\027generate_latency_report\030\016 \001(\010B\003\340A\001B\014\n\n"
+          + "\027generate_latency_report\030\016 \001(\010B\003\340A\001\022c\n"
+          + "\037evaluation_run_caching_settings\030\017 \001(\01325.google.cloud.ces"
+          + ".v1beta.EvaluationRunCachingSettingsB\003\340A\001B\014\n\n"
           + "_run_count\"\351\010\n"
           + "\026ScheduledEvaluationRun\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
@@ -875,8 +877,8 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + "\007request\030\003"
           + " \001(\0132-.google.cloud.ces.v1beta.RunEvaluationRequestB\003\340A\002\022\030\n"
           + "\013description\030\004 \001(\tB\003\340A\001\022`\n"
-          + "\021scheduling_config\030\005 \001(\0132@.google.c"
-          + "loud.ces.v1beta.ScheduledEvaluationRun.SchedulingConfigB\003\340A\002\022\023\n"
+          + "\021scheduling_config\030\005 \001(\0132@.google.cloud.ces.v1beta.Sch"
+          + "eduledEvaluationRun.SchedulingConfigB\003\340A\002\022\023\n"
           + "\006active\030\006 \001(\010B\003\340A\001\022D\n"
           + "\022last_completed_run\030\007 \001(\tB(\340A\003\372A\"\n"
           + " ces.googleapis.com/EvaluationRun\022\035\n"
@@ -892,9 +894,8 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + " \001(\tB\003\340A\003\022\021\n"
           + "\004etag\030\016 \001(\tB\003\340A\003\032\235\002\n"
           + "\020SchedulingConfig\022b\n"
-          + "\tfrequency\030\001 \001(\0162J.g"
-          + "oogle.cloud.ces.v1beta.ScheduledEvaluationRun.SchedulingConfig.FrequencyB\003\340A\002\0223\n"
-          + "\n"
+          + "\tfrequency\030\001 \001(\0162J.google.cloud.ces.v1b"
+          + "eta.ScheduledEvaluationRun.SchedulingConfig.FrequencyB\003\340A\002\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022\031\n"
           + "\014days_of_week\030\003 \003(\005B\003\340A\001\"U\n"
           + "\tFrequency\022\031\n"
@@ -903,9 +904,9 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + "\005DAILY\020\002\022\n\n"
           + "\006WEEKLY\020\003\022\014\n"
           + "\010BIWEEKLY\020\004:\307\001\352A\303\001\n"
-          + ")ces.googleapis.com/ScheduledEvaluationRun\022eprojects/{project}/locat"
-          + "ions/{location}/apps/{app}/scheduledEvaluationRuns/{scheduled_evaluation_run}*\027s"
-          + "cheduledEvaluationRuns2\026scheduledEvaluationRun\"A\n"
+          + ")ces.googleapis.com/ScheduledEvaluationRun\022epro"
+          + "jects/{project}/locations/{location}/apps/{app}/scheduledEvaluationRuns/{schedul"
+          + "ed_evaluation_run}*\027scheduledEvaluationRuns2\026scheduledEvaluationRun\"A\n"
           + "\020PersonaRunConfig\022\024\n"
           + "\007persona\030\001 \001(\tB\003\340A\001\022\027\n\n"
           + "task_count\030\002 \001(\005B\003\340A\001\"\233\003\n"
@@ -914,8 +915,8 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + "\021assistant_session\030\002 \001(\tB\003\340A\003\022\033\n"
           + "\016report_summary\030\003 \001(\tB\003\340A\003\022\037\n"
           + "\022should_suggest_fix\030\005 \001(\010B\003\340A\003\022S\n"
-          + "\006status\030\004 \001("
-          + "\0162>.google.cloud.ces.v1beta.OptimizationConfig.OptimizationStatusB\003\340A\003\022\032\n\r"
+          + "\006status\030\004 \001(\0162>.google.cloud.ce"
+          + "s.v1beta.OptimizationConfig.OptimizationStatusB\003\340A\003\022\032\n\r"
           + "error_message\030\006 \001(\tB\003\340A\003\0221\n"
           + "\013loss_report\030\007 \001(\0132\027.google.protobuf.StructB\003\340A\003\"`\n"
           + "\022OptimizationStatus\022#\n"
@@ -923,8 +924,8 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
           + "\007RUNNING\020\001\022\r\n"
           + "\tCOMPLETED\020\002\022\t\n"
           + "\005ERROR\020\003B_\n"
-          + "\033com.google.cloud.ces.v1betaB\017EvaluationProtoP\001Z-cloud.google.com/go/c"
-          + "es/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\017EvaluationProtoP\001Z-"
+          + "cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1523,6 +1524,7 @@ public final class EvaluationProto extends com.google.protobuf.GeneratedFile {
               "ScheduledEvaluationRun",
               "GoldenRunMethod",
               "GenerateLatencyReport",
+              "EvaluationRunCachingSettings",
             });
     internal_static_google_cloud_ces_v1beta_ScheduledEvaluationRun_descriptor =
         getDescriptor().getMessageType(10);

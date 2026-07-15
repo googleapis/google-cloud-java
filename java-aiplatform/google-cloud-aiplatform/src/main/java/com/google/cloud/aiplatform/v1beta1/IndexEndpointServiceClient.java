@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -352,10 +354,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class IndexEndpointServiceClient implements BackgroundResource {
-  private final IndexEndpointServiceSettings settings;
+  private final @Nullable IndexEndpointServiceSettings settings;
   private final IndexEndpointServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -398,7 +401,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final IndexEndpointServiceSettings getSettings() {
+  public final @Nullable IndexEndpointServiceSettings getSettings() {
     return settings;
   }
 
@@ -441,7 +444,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<IndexEndpoint, CreateIndexEndpointOperationMetadata>
-      createIndexEndpointAsync(LocationName parent, IndexEndpoint indexEndpoint) {
+      createIndexEndpointAsync(@Nullable LocationName parent, IndexEndpoint indexEndpoint) {
     CreateIndexEndpointRequest request =
         CreateIndexEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -602,7 +605,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IndexEndpoint getIndexEndpoint(IndexEndpointName name) {
+  public final IndexEndpoint getIndexEndpoint(@Nullable IndexEndpointName name) {
     GetIndexEndpointRequest request =
         GetIndexEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndexEndpoint(request);
@@ -722,7 +725,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    *     IndexEndpoints. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexEndpointsPagedResponse listIndexEndpoints(LocationName parent) {
+  public final ListIndexEndpointsPagedResponse listIndexEndpoints(@Nullable LocationName parent) {
     ListIndexEndpointsRequest request =
         ListIndexEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -999,7 +1002,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteIndexEndpointAsync(
-      IndexEndpointName name) {
+      @Nullable IndexEndpointName name) {
     DeleteIndexEndpointRequest request =
         DeleteIndexEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1158,7 +1161,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployIndexResponse, DeployIndexOperationMetadata> deployIndexAsync(
-      IndexEndpointName indexEndpoint, DeployedIndex deployedIndex) {
+      @Nullable IndexEndpointName indexEndpoint, DeployedIndex deployedIndex) {
     DeployIndexRequest request =
         DeployIndexRequest.newBuilder()
             .setIndexEndpoint(indexEndpoint == null ? null : indexEndpoint.toString())
@@ -1334,7 +1337,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeployIndexResponse, UndeployIndexOperationMetadata>
-      undeployIndexAsync(IndexEndpointName indexEndpoint, String deployedIndexId) {
+      undeployIndexAsync(@Nullable IndexEndpointName indexEndpoint, String deployedIndexId) {
     UndeployIndexRequest request =
         UndeployIndexRequest.newBuilder()
             .setIndexEndpoint(indexEndpoint == null ? null : indexEndpoint.toString())
@@ -1511,7 +1514,8 @@ public class IndexEndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MutateDeployedIndexResponse, MutateDeployedIndexOperationMetadata>
-      mutateDeployedIndexAsync(IndexEndpointName indexEndpoint, DeployedIndex deployedIndex) {
+      mutateDeployedIndexAsync(
+          @Nullable IndexEndpointName indexEndpoint, DeployedIndex deployedIndex) {
     MutateDeployedIndexRequest request =
         MutateDeployedIndexRequest.newBuilder()
             .setIndexEndpoint(indexEndpoint == null ? null : indexEndpoint.toString())
@@ -2099,8 +2103,9 @@ public class IndexEndpointServiceClient implements BackgroundResource {
           ListIndexEndpointsPage> {
 
     private ListIndexEndpointsPage(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
-        ListIndexEndpointsResponse response) {
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
+        @Nullable ListIndexEndpointsResponse response) {
       super(context, response);
     }
 
@@ -2110,14 +2115,16 @@ public class IndexEndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexEndpointsPage createPage(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
-        ListIndexEndpointsResponse response) {
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
+        @Nullable ListIndexEndpointsResponse response) {
       return new ListIndexEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexEndpointsPage> createPageAsync(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
         ApiFuture<ListIndexEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2132,7 +2139,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
           ListIndexEndpointsFixedSizeCollection> {
 
     private ListIndexEndpointsFixedSizeCollection(
-        List<ListIndexEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListIndexEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2142,7 +2149,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexEndpointsFixedSizeCollection createCollection(
-        List<ListIndexEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListIndexEndpointsPage> pages, int collectionSize) {
       return new ListIndexEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2176,8 +2183,8 @@ public class IndexEndpointServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2187,14 +2194,14 @@ public class IndexEndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2208,7 +2215,8 @@ public class IndexEndpointServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2218,7 +2226,7 @@ public class IndexEndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

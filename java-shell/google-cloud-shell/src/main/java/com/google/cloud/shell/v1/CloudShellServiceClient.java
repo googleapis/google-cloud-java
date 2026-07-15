@@ -28,6 +28,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,9 +202,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CloudShellServiceClient implements BackgroundResource {
-  private final CloudShellServiceSettings settings;
+  private final @Nullable CloudShellServiceSettings settings;
   private final CloudShellServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -250,7 +253,7 @@ public class CloudShellServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudShellServiceSettings getSettings() {
+  public final @Nullable CloudShellServiceSettings getSettings() {
     return settings;
   }
 
@@ -298,7 +301,7 @@ public class CloudShellServiceClient implements BackgroundResource {
    *     `users/someone{@literal @}example.com/environments/default`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Environment getEnvironment(EnvironmentName name) {
+  public final Environment getEnvironment(@Nullable EnvironmentName name) {
     GetEnvironmentRequest request =
         GetEnvironmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEnvironment(request);

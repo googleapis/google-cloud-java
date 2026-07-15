@@ -24,6 +24,8 @@ import com.google.shopping.merchant.datasources.v1beta.stub.FileUploadsServiceSt
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -132,10 +134,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FileUploadsServiceClient implements BackgroundResource {
-  private final FileUploadsServiceSettings settings;
+  private final @Nullable FileUploadsServiceSettings settings;
   private final FileUploadsServiceStub stub;
 
   /** Constructs an instance of FileUploadsServiceClient with default settings. */
@@ -175,7 +178,7 @@ public class FileUploadsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FileUploadsServiceSettings getSettings() {
+  public final @Nullable FileUploadsServiceSettings getSettings() {
     return settings;
   }
 
@@ -205,7 +208,7 @@ public class FileUploadsServiceClient implements BackgroundResource {
    *     `accounts/{account}/dataSources/{datasource}/fileUploads/latest`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FileUpload getFileUpload(FileUploadName name) {
+  public final FileUpload getFileUpload(@Nullable FileUploadName name) {
     GetFileUploadRequest request =
         GetFileUploadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFileUpload(request);

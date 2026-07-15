@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WorkloadName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_APPLICATION_WORKLOAD =
@@ -98,7 +101,7 @@ public class WorkloadName implements ResourceName {
         .toString();
   }
 
-  public static WorkloadName parse(String formattedString) {
+  public static @Nullable WorkloadName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class WorkloadName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<WorkloadName> values) {
+  public static List<String> toStringList(List<@Nullable WorkloadName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (WorkloadName value : values) {
       if (value == null) {
@@ -172,7 +175,7 @@ public class WorkloadName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

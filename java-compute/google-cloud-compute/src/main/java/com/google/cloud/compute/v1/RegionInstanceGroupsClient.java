@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -203,9 +205,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionInstanceGroupsClient implements BackgroundResource {
-  private final RegionInstanceGroupsSettings settings;
+  private final @Nullable RegionInstanceGroupsSettings settings;
   private final RegionInstanceGroupsStub stub;
 
   /** Constructs an instance of RegionInstanceGroupsClient with default settings. */
@@ -245,7 +248,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionInstanceGroupsSettings getSettings() {
+  public final @Nullable RegionInstanceGroupsSettings getSettings() {
     return settings;
   }
 
@@ -1018,9 +1021,10 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
           ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
+        @Nullable
+            PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
             context,
-        RegionInstanceGroupList response) {
+        @Nullable RegionInstanceGroupList response) {
       super(context, response);
     }
 
@@ -1030,15 +1034,17 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
+        @Nullable
+            PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
             context,
-        RegionInstanceGroupList response) {
+        @Nullable RegionInstanceGroupList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
+        @Nullable
+            PageContext<ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
             context,
         ApiFuture<RegionInstanceGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1053,7 +1059,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1062,7 +1068,8 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1103,12 +1110,13 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
           ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesRegionInstanceGroupsRequest,
                 RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
-        RegionInstanceGroupsListInstances response) {
+        @Nullable RegionInstanceGroupsListInstances response) {
       super(context, response);
     }
 
@@ -1118,18 +1126,20 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesRegionInstanceGroupsRequest,
                 RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
-        RegionInstanceGroupsListInstances response) {
+        @Nullable RegionInstanceGroupsListInstances response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesRegionInstanceGroupsRequest,
                 RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
@@ -1147,7 +1157,8 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1157,7 +1168,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }

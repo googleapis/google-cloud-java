@@ -25,6 +25,8 @@ import com.google.cloud.compute.v1.stub.RegionSnapshotSettingsStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,9 +140,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionSnapshotSettingsClient implements BackgroundResource {
-  private final RegionSnapshotSettingsSettings settings;
+  private final @Nullable RegionSnapshotSettingsSettings settings;
   private final RegionSnapshotSettingsStub stub;
 
   /** Constructs an instance of RegionSnapshotSettingsClient with default settings. */
@@ -181,7 +184,7 @@ public class RegionSnapshotSettingsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionSnapshotSettingsSettings getSettings() {
+  public final @Nullable RegionSnapshotSettingsSettings getSettings() {
     return settings;
   }
 

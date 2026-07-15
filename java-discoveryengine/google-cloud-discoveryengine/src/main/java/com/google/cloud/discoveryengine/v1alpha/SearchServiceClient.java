@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -176,10 +178,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SearchServiceClient implements BackgroundResource {
-  private final SearchServiceSettings settings;
+  private final @Nullable SearchServiceSettings settings;
   private final SearchServiceStub stub;
 
   /** Constructs an instance of SearchServiceClient with default settings. */
@@ -219,7 +222,7 @@ public class SearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SearchServiceSettings getSettings() {
+  public final @Nullable SearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -496,8 +499,8 @@ public class SearchServiceClient implements BackgroundResource {
       extends AbstractPage<SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchPage> {
 
     private SearchPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -507,14 +510,14 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPage createPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       return new SearchPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -528,7 +531,7 @@ public class SearchServiceClient implements BackgroundResource {
           SearchPage,
           SearchFixedSizeCollection> {
 
-    private SearchFixedSizeCollection(List<SearchPage> pages, int collectionSize) {
+    private SearchFixedSizeCollection(@Nullable List<SearchPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -538,7 +541,7 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFixedSizeCollection createCollection(
-        List<SearchPage> pages, int collectionSize) {
+        @Nullable List<SearchPage> pages, int collectionSize) {
       return new SearchFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -23,6 +23,8 @@ import com.google.cloud.talent.v4.stub.EventServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -127,9 +129,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EventServiceClient implements BackgroundResource {
-  private final EventServiceSettings settings;
+  private final @Nullable EventServiceSettings settings;
   private final EventServiceStub stub;
 
   /** Constructs an instance of EventServiceClient with default settings. */
@@ -168,7 +171,7 @@ public class EventServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EventServiceSettings getSettings() {
+  public final @Nullable EventServiceSettings getSettings() {
     return settings;
   }
 
@@ -205,7 +208,7 @@ public class EventServiceClient implements BackgroundResource {
    *     that uses Cloud Talent Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ClientEvent createClientEvent(TenantName parent, ClientEvent clientEvent) {
+  public final ClientEvent createClientEvent(@Nullable TenantName parent, ClientEvent clientEvent) {
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

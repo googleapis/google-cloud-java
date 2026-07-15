@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,9 +143,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ContentServiceClient implements BackgroundResource {
-  private final ContentServiceSettings settings;
+  private final @Nullable ContentServiceSettings settings;
   private final ContentServiceStub stub;
 
   /** Constructs an instance of ContentServiceClient with default settings. */
@@ -183,7 +186,7 @@ public class ContentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContentServiceSettings getSettings() {
+  public final @Nullable ContentServiceSettings getSettings() {
     return settings;
   }
 
@@ -213,7 +216,7 @@ public class ContentServiceClient implements BackgroundResource {
    *     `networks/{network_code}/content/{content_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Content getContent(ContentName name) {
+  public final Content getContent(@Nullable ContentName name) {
     GetContentRequest request =
         GetContentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContent(request);
@@ -325,7 +328,7 @@ public class ContentServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContentPagedResponse listContent(NetworkName parent) {
+  public final ListContentPagedResponse listContent(@Nullable NetworkName parent) {
     ListContentRequest request =
         ListContentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -530,8 +533,8 @@ public class ContentServiceClient implements BackgroundResource {
       extends AbstractPage<ListContentRequest, ListContentResponse, Content, ListContentPage> {
 
     private ListContentPage(
-        PageContext<ListContentRequest, ListContentResponse, Content> context,
-        ListContentResponse response) {
+        @Nullable PageContext<ListContentRequest, ListContentResponse, Content> context,
+        @Nullable ListContentResponse response) {
       super(context, response);
     }
 
@@ -541,14 +544,14 @@ public class ContentServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentPage createPage(
-        PageContext<ListContentRequest, ListContentResponse, Content> context,
-        ListContentResponse response) {
+        @Nullable PageContext<ListContentRequest, ListContentResponse, Content> context,
+        @Nullable ListContentResponse response) {
       return new ListContentPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContentPage> createPageAsync(
-        PageContext<ListContentRequest, ListContentResponse, Content> context,
+        @Nullable PageContext<ListContentRequest, ListContentResponse, Content> context,
         ApiFuture<ListContentResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -562,7 +565,8 @@ public class ContentServiceClient implements BackgroundResource {
           ListContentPage,
           ListContentFixedSizeCollection> {
 
-    private ListContentFixedSizeCollection(List<ListContentPage> pages, int collectionSize) {
+    private ListContentFixedSizeCollection(
+        @Nullable List<ListContentPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -572,7 +576,7 @@ public class ContentServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentFixedSizeCollection createCollection(
-        List<ListContentPage> pages, int collectionSize) {
+        @Nullable List<ListContentPage> pages, int collectionSize) {
       return new ListContentFixedSizeCollection(pages, collectionSize);
     }
   }

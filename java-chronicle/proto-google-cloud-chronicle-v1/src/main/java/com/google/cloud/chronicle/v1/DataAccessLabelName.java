@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataAccessLabelName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_INSTANCE_DATA_ACCESS_LABEL =
@@ -98,7 +101,7 @@ public class DataAccessLabelName implements ResourceName {
         .toString();
   }
 
-  public static DataAccessLabelName parse(String formattedString) {
+  public static @Nullable DataAccessLabelName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class DataAccessLabelName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DataAccessLabelName> values) {
+  public static List<String> toStringList(List<@Nullable DataAccessLabelName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DataAccessLabelName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class DataAccessLabelName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

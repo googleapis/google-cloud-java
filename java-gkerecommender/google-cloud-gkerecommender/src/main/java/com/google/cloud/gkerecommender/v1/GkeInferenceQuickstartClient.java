@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,9 +223,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GkeInferenceQuickstartClient implements BackgroundResource {
-  private final GkeInferenceQuickstartSettings settings;
+  private final @Nullable GkeInferenceQuickstartSettings settings;
   private final GkeInferenceQuickstartStub stub;
 
   /** Constructs an instance of GkeInferenceQuickstartClient with default settings. */
@@ -264,7 +267,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GkeInferenceQuickstartSettings getSettings() {
+  public final @Nullable GkeInferenceQuickstartSettings getSettings() {
     return settings;
   }
 
@@ -958,8 +961,8 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
       extends AbstractPage<FetchModelsRequest, FetchModelsResponse, String, FetchModelsPage> {
 
     private FetchModelsPage(
-        PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
-        FetchModelsResponse response) {
+        @Nullable PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
+        @Nullable FetchModelsResponse response) {
       super(context, response);
     }
 
@@ -969,14 +972,14 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelsPage createPage(
-        PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
-        FetchModelsResponse response) {
+        @Nullable PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
+        @Nullable FetchModelsResponse response) {
       return new FetchModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchModelsPage> createPageAsync(
-        PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
+        @Nullable PageContext<FetchModelsRequest, FetchModelsResponse, String> context,
         ApiFuture<FetchModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -990,7 +993,8 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchModelsPage,
           FetchModelsFixedSizeCollection> {
 
-    private FetchModelsFixedSizeCollection(List<FetchModelsPage> pages, int collectionSize) {
+    private FetchModelsFixedSizeCollection(
+        @Nullable List<FetchModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1000,7 +1004,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelsFixedSizeCollection createCollection(
-        List<FetchModelsPage> pages, int collectionSize) {
+        @Nullable List<FetchModelsPage> pages, int collectionSize) {
       return new FetchModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1034,8 +1038,8 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchModelServersRequest, FetchModelServersResponse, String, FetchModelServersPage> {
 
     private FetchModelServersPage(
-        PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
-        FetchModelServersResponse response) {
+        @Nullable PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
+        @Nullable FetchModelServersResponse response) {
       super(context, response);
     }
 
@@ -1045,14 +1049,14 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelServersPage createPage(
-        PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
-        FetchModelServersResponse response) {
+        @Nullable PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
+        @Nullable FetchModelServersResponse response) {
       return new FetchModelServersPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchModelServersPage> createPageAsync(
-        PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
+        @Nullable PageContext<FetchModelServersRequest, FetchModelServersResponse, String> context,
         ApiFuture<FetchModelServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1067,7 +1071,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchModelServersFixedSizeCollection> {
 
     private FetchModelServersFixedSizeCollection(
-        List<FetchModelServersPage> pages, int collectionSize) {
+        @Nullable List<FetchModelServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1077,7 +1081,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelServersFixedSizeCollection createCollection(
-        List<FetchModelServersPage> pages, int collectionSize) {
+        @Nullable List<FetchModelServersPage> pages, int collectionSize) {
       return new FetchModelServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1115,9 +1119,10 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchModelServerVersionsPage> {
 
     private FetchModelServerVersionsPage(
-        PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
+        @Nullable
+            PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
             context,
-        FetchModelServerVersionsResponse response) {
+        @Nullable FetchModelServerVersionsResponse response) {
       super(context, response);
     }
 
@@ -1127,15 +1132,17 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelServerVersionsPage createPage(
-        PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
+        @Nullable
+            PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
             context,
-        FetchModelServerVersionsResponse response) {
+        @Nullable FetchModelServerVersionsResponse response) {
       return new FetchModelServerVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchModelServerVersionsPage> createPageAsync(
-        PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
+        @Nullable
+            PageContext<FetchModelServerVersionsRequest, FetchModelServerVersionsResponse, String>
             context,
         ApiFuture<FetchModelServerVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1151,7 +1158,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchModelServerVersionsFixedSizeCollection> {
 
     private FetchModelServerVersionsFixedSizeCollection(
-        List<FetchModelServerVersionsPage> pages, int collectionSize) {
+        @Nullable List<FetchModelServerVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1161,7 +1168,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchModelServerVersionsFixedSizeCollection createCollection(
-        List<FetchModelServerVersionsPage> pages, int collectionSize) {
+        @Nullable List<FetchModelServerVersionsPage> pages, int collectionSize) {
       return new FetchModelServerVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1195,8 +1202,8 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchProfilesRequest, FetchProfilesResponse, Profile, FetchProfilesPage> {
 
     private FetchProfilesPage(
-        PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
-        FetchProfilesResponse response) {
+        @Nullable PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
+        @Nullable FetchProfilesResponse response) {
       super(context, response);
     }
 
@@ -1206,14 +1213,14 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchProfilesPage createPage(
-        PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
-        FetchProfilesResponse response) {
+        @Nullable PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
+        @Nullable FetchProfilesResponse response) {
       return new FetchProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchProfilesPage> createPageAsync(
-        PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
+        @Nullable PageContext<FetchProfilesRequest, FetchProfilesResponse, Profile> context,
         ApiFuture<FetchProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1227,7 +1234,8 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
           FetchProfilesPage,
           FetchProfilesFixedSizeCollection> {
 
-    private FetchProfilesFixedSizeCollection(List<FetchProfilesPage> pages, int collectionSize) {
+    private FetchProfilesFixedSizeCollection(
+        @Nullable List<FetchProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1237,7 +1245,7 @@ public class GkeInferenceQuickstartClient implements BackgroundResource {
 
     @Override
     protected FetchProfilesFixedSizeCollection createCollection(
-        List<FetchProfilesPage> pages, int collectionSize) {
+        @Nullable List<FetchProfilesPage> pages, int collectionSize) {
       return new FetchProfilesFixedSizeCollection(pages, collectionSize);
     }
   }

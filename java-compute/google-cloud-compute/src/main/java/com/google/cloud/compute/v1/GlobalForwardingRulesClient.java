@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -241,9 +243,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GlobalForwardingRulesClient implements BackgroundResource {
-  private final GlobalForwardingRulesSettings settings;
+  private final @Nullable GlobalForwardingRulesSettings settings;
   private final GlobalForwardingRulesStub stub;
 
   /** Constructs an instance of GlobalForwardingRulesClient with default settings. */
@@ -283,7 +286,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GlobalForwardingRulesSettings getSettings() {
+  public final @Nullable GlobalForwardingRulesSettings getSettings() {
     return settings;
   }
 
@@ -1279,8 +1282,9 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
           ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule, ListPage> {
 
     private ListPage(
-        PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
-        ForwardingRuleList response) {
+        @Nullable PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
+        @Nullable ForwardingRuleList response) {
       super(context, response);
     }
 
@@ -1290,14 +1294,16 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
-        ForwardingRuleList response) {
+        @Nullable PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
+        @Nullable ForwardingRuleList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
+        @Nullable PageContext<ListGlobalForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
         ApiFuture<ForwardingRuleList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1311,7 +1317,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1320,7 +1326,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

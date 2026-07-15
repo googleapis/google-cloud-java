@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -586,9 +588,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InterceptClient implements BackgroundResource {
-  private final InterceptSettings settings;
+  private final @Nullable InterceptSettings settings;
   private final InterceptStub stub;
   private final OperationsClient operationsClient;
 
@@ -629,7 +632,7 @@ public class InterceptClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final InterceptSettings getSettings() {
+  public final @Nullable InterceptSettings getSettings() {
     return settings;
   }
 
@@ -671,7 +674,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInterceptEndpointGroupsPagedResponse listInterceptEndpointGroups(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListInterceptEndpointGroupsRequest request =
         ListInterceptEndpointGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -848,7 +851,8 @@ public class InterceptClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/interceptEndpointGroups/{intercept_endpoint_group}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InterceptEndpointGroup getInterceptEndpointGroup(InterceptEndpointGroupName name) {
+  public final InterceptEndpointGroup getInterceptEndpointGroup(
+      @Nullable InterceptEndpointGroupName name) {
     GetInterceptEndpointGroupRequest request =
         GetInterceptEndpointGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -983,7 +987,7 @@ public class InterceptClient implements BackgroundResource {
    */
   public final OperationFuture<InterceptEndpointGroup, OperationMetadata>
       createInterceptEndpointGroupAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           InterceptEndpointGroup interceptEndpointGroup,
           String interceptEndpointGroupId) {
     CreateInterceptEndpointGroupRequest request =
@@ -1295,7 +1299,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInterceptEndpointGroupAsync(
-      InterceptEndpointGroupName name) {
+      @Nullable InterceptEndpointGroupName name) {
     DeleteInterceptEndpointGroupRequest request =
         DeleteInterceptEndpointGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1458,7 +1462,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInterceptEndpointGroupAssociationsPagedResponse
-      listInterceptEndpointGroupAssociations(LocationName parent) {
+      listInterceptEndpointGroupAssociations(@Nullable LocationName parent) {
     ListInterceptEndpointGroupAssociationsRequest request =
         ListInterceptEndpointGroupAssociationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1643,7 +1647,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InterceptEndpointGroupAssociation getInterceptEndpointGroupAssociation(
-      InterceptEndpointGroupAssociationName name) {
+      @Nullable InterceptEndpointGroupAssociationName name) {
     GetInterceptEndpointGroupAssociationRequest request =
         GetInterceptEndpointGroupAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1784,7 +1788,7 @@ public class InterceptClient implements BackgroundResource {
    */
   public final OperationFuture<InterceptEndpointGroupAssociation, OperationMetadata>
       createInterceptEndpointGroupAssociationAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           InterceptEndpointGroupAssociation interceptEndpointGroupAssociation,
           String interceptEndpointGroupAssociationId) {
     CreateInterceptEndpointGroupAssociationRequest request =
@@ -2122,7 +2126,8 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata>
-      deleteInterceptEndpointGroupAssociationAsync(InterceptEndpointGroupAssociationName name) {
+      deleteInterceptEndpointGroupAssociationAsync(
+          @Nullable InterceptEndpointGroupAssociationName name) {
     DeleteInterceptEndpointGroupAssociationRequest request =
         DeleteInterceptEndpointGroupAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2290,7 +2295,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInterceptDeploymentGroupsPagedResponse listInterceptDeploymentGroups(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListInterceptDeploymentGroupsRequest request =
         ListInterceptDeploymentGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2470,7 +2475,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InterceptDeploymentGroup getInterceptDeploymentGroup(
-      InterceptDeploymentGroupName name) {
+      @Nullable InterceptDeploymentGroupName name) {
     GetInterceptDeploymentGroupRequest request =
         GetInterceptDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2606,7 +2611,7 @@ public class InterceptClient implements BackgroundResource {
    */
   public final OperationFuture<InterceptDeploymentGroup, OperationMetadata>
       createInterceptDeploymentGroupAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           InterceptDeploymentGroup interceptDeploymentGroup,
           String interceptDeploymentGroupId) {
     CreateInterceptDeploymentGroupRequest request =
@@ -2921,7 +2926,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInterceptDeploymentGroupAsync(
-      InterceptDeploymentGroupName name) {
+      @Nullable InterceptDeploymentGroupName name) {
     DeleteInterceptDeploymentGroupRequest request =
         DeleteInterceptDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3084,7 +3089,8 @@ public class InterceptClient implements BackgroundResource {
    *     details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInterceptDeploymentsPagedResponse listInterceptDeployments(LocationName parent) {
+  public final ListInterceptDeploymentsPagedResponse listInterceptDeployments(
+      @Nullable LocationName parent) {
     ListInterceptDeploymentsRequest request =
         ListInterceptDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3260,7 +3266,7 @@ public class InterceptClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/interceptDeployments/{intercept_deployment}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InterceptDeployment getInterceptDeployment(InterceptDeploymentName name) {
+  public final InterceptDeployment getInterceptDeployment(@Nullable InterceptDeploymentName name) {
     GetInterceptDeploymentRequest request =
         GetInterceptDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3391,7 +3397,7 @@ public class InterceptClient implements BackgroundResource {
    */
   public final OperationFuture<InterceptDeployment, OperationMetadata>
       createInterceptDeploymentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           InterceptDeployment interceptDeployment,
           String interceptDeploymentId) {
     CreateInterceptDeploymentRequest request =
@@ -3696,7 +3702,7 @@ public class InterceptClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInterceptDeploymentAsync(
-      InterceptDeploymentName name) {
+      @Nullable InterceptDeploymentName name) {
     DeleteInterceptDeploymentRequest request =
         DeleteInterceptDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4296,12 +4302,13 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptEndpointGroupsPage> {
 
     private ListInterceptEndpointGroupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupsRequest,
                 ListInterceptEndpointGroupsResponse,
                 InterceptEndpointGroup>
             context,
-        ListInterceptEndpointGroupsResponse response) {
+        @Nullable ListInterceptEndpointGroupsResponse response) {
       super(context, response);
     }
 
@@ -4311,18 +4318,20 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptEndpointGroupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupsRequest,
                 ListInterceptEndpointGroupsResponse,
                 InterceptEndpointGroup>
             context,
-        ListInterceptEndpointGroupsResponse response) {
+        @Nullable ListInterceptEndpointGroupsResponse response) {
       return new ListInterceptEndpointGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterceptEndpointGroupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupsRequest,
                 ListInterceptEndpointGroupsResponse,
                 InterceptEndpointGroup>
@@ -4341,7 +4350,7 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptEndpointGroupsFixedSizeCollection> {
 
     private ListInterceptEndpointGroupsFixedSizeCollection(
-        List<ListInterceptEndpointGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptEndpointGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4351,7 +4360,7 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptEndpointGroupsFixedSizeCollection createCollection(
-        List<ListInterceptEndpointGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptEndpointGroupsPage> pages, int collectionSize) {
       return new ListInterceptEndpointGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4395,12 +4404,13 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptEndpointGroupAssociationsPage> {
 
     private ListInterceptEndpointGroupAssociationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupAssociationsRequest,
                 ListInterceptEndpointGroupAssociationsResponse,
                 InterceptEndpointGroupAssociation>
             context,
-        ListInterceptEndpointGroupAssociationsResponse response) {
+        @Nullable ListInterceptEndpointGroupAssociationsResponse response) {
       super(context, response);
     }
 
@@ -4410,18 +4420,20 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptEndpointGroupAssociationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupAssociationsRequest,
                 ListInterceptEndpointGroupAssociationsResponse,
                 InterceptEndpointGroupAssociation>
             context,
-        ListInterceptEndpointGroupAssociationsResponse response) {
+        @Nullable ListInterceptEndpointGroupAssociationsResponse response) {
       return new ListInterceptEndpointGroupAssociationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterceptEndpointGroupAssociationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptEndpointGroupAssociationsRequest,
                 ListInterceptEndpointGroupAssociationsResponse,
                 InterceptEndpointGroupAssociation>
@@ -4440,7 +4452,7 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptEndpointGroupAssociationsFixedSizeCollection> {
 
     private ListInterceptEndpointGroupAssociationsFixedSizeCollection(
-        List<ListInterceptEndpointGroupAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptEndpointGroupAssociationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4451,7 +4463,7 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptEndpointGroupAssociationsFixedSizeCollection createCollection(
-        List<ListInterceptEndpointGroupAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptEndpointGroupAssociationsPage> pages, int collectionSize) {
       return new ListInterceptEndpointGroupAssociationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4493,12 +4505,13 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptDeploymentGroupsPage> {
 
     private ListInterceptDeploymentGroupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentGroupsRequest,
                 ListInterceptDeploymentGroupsResponse,
                 InterceptDeploymentGroup>
             context,
-        ListInterceptDeploymentGroupsResponse response) {
+        @Nullable ListInterceptDeploymentGroupsResponse response) {
       super(context, response);
     }
 
@@ -4508,18 +4521,20 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptDeploymentGroupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentGroupsRequest,
                 ListInterceptDeploymentGroupsResponse,
                 InterceptDeploymentGroup>
             context,
-        ListInterceptDeploymentGroupsResponse response) {
+        @Nullable ListInterceptDeploymentGroupsResponse response) {
       return new ListInterceptDeploymentGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterceptDeploymentGroupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentGroupsRequest,
                 ListInterceptDeploymentGroupsResponse,
                 InterceptDeploymentGroup>
@@ -4538,7 +4553,7 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptDeploymentGroupsFixedSizeCollection> {
 
     private ListInterceptDeploymentGroupsFixedSizeCollection(
-        List<ListInterceptDeploymentGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptDeploymentGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4548,7 +4563,7 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptDeploymentGroupsFixedSizeCollection createCollection(
-        List<ListInterceptDeploymentGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptDeploymentGroupsPage> pages, int collectionSize) {
       return new ListInterceptDeploymentGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4589,12 +4604,13 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptDeploymentsPage> {
 
     private ListInterceptDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentsRequest,
                 ListInterceptDeploymentsResponse,
                 InterceptDeployment>
             context,
-        ListInterceptDeploymentsResponse response) {
+        @Nullable ListInterceptDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -4604,18 +4620,20 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentsRequest,
                 ListInterceptDeploymentsResponse,
                 InterceptDeployment>
             context,
-        ListInterceptDeploymentsResponse response) {
+        @Nullable ListInterceptDeploymentsResponse response) {
       return new ListInterceptDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterceptDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterceptDeploymentsRequest,
                 ListInterceptDeploymentsResponse,
                 InterceptDeployment>
@@ -4634,7 +4652,7 @@ public class InterceptClient implements BackgroundResource {
           ListInterceptDeploymentsFixedSizeCollection> {
 
     private ListInterceptDeploymentsFixedSizeCollection(
-        List<ListInterceptDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4644,7 +4662,7 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListInterceptDeploymentsFixedSizeCollection createCollection(
-        List<ListInterceptDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListInterceptDeploymentsPage> pages, int collectionSize) {
       return new ListInterceptDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4678,8 +4696,8 @@ public class InterceptClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4689,14 +4707,14 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4710,7 +4728,8 @@ public class InterceptClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4720,7 +4739,7 @@ public class InterceptClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AccessApprovalSettingsName implements ResourceName {
   private static final PathTemplate PROJECT =
@@ -135,7 +138,7 @@ public class AccessApprovalSettingsName implements ResourceName {
     return newOrganizationBuilder().setOrganization(organization).build().toString();
   }
 
-  public static AccessApprovalSettingsName parse(String formattedString) {
+  public static @Nullable AccessApprovalSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -161,7 +164,7 @@ public class AccessApprovalSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AccessApprovalSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable AccessApprovalSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AccessApprovalSettingsName value : values) {
       if (value == null) {
@@ -211,7 +214,7 @@ public class AccessApprovalSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

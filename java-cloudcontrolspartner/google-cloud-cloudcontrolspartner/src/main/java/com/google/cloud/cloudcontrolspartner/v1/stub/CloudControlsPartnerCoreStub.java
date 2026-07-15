@@ -43,6 +43,7 @@ import com.google.cloud.cloudcontrolspartner.v1.UpdateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Workload;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -50,6 +51,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CloudControlsPartnerCoreStub implements BackgroundResource {
 

@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,9 +201,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IDSClient implements BackgroundResource {
-  private final IDSSettings settings;
+  private final @Nullable IDSSettings settings;
   private final IDSStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -247,7 +250,7 @@ public class IDSClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final IDSSettings getSettings() {
+  public final @Nullable IDSSettings getSettings() {
     return settings;
   }
 
@@ -295,7 +298,7 @@ public class IDSClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of endpoints.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointsPagedResponse listEndpoints(LocationName parent) {
+  public final ListEndpointsPagedResponse listEndpoints(@Nullable LocationName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -461,7 +464,7 @@ public class IDSClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Endpoint getEndpoint(EndpointName name) {
+  public final Endpoint getEndpoint(@Nullable EndpointName name) {
     GetEndpointRequest request =
         GetEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEndpoint(request);
@@ -578,7 +581,7 @@ public class IDSClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Endpoint, OperationMetadata> createEndpointAsync(
-      LocationName parent, Endpoint endpoint, String endpointId) {
+      @Nullable LocationName parent, Endpoint endpoint, String endpointId) {
     CreateEndpointRequest request =
         CreateEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -742,7 +745,8 @@ public class IDSClient implements BackgroundResource {
    * @param name Required. The name of the endpoint to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteEndpointAsync(EndpointName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteEndpointAsync(
+      @Nullable EndpointName name) {
     DeleteEndpointRequest request =
         DeleteEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEndpointAsync(request);
@@ -921,8 +925,8 @@ public class IDSClient implements BackgroundResource {
           ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage> {
 
     private ListEndpointsPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       super(context, response);
     }
 
@@ -932,14 +936,14 @@ public class IDSClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsPage createPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       return new ListEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEndpointsPage> createPageAsync(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
         ApiFuture<ListEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -953,7 +957,8 @@ public class IDSClient implements BackgroundResource {
           ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
-    private ListEndpointsFixedSizeCollection(List<ListEndpointsPage> pages, int collectionSize) {
+    private ListEndpointsFixedSizeCollection(
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -963,7 +968,7 @@ public class IDSClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsFixedSizeCollection createCollection(
-        List<ListEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       return new ListEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }

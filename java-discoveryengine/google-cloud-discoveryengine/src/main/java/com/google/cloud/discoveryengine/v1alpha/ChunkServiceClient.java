@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -159,10 +161,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ChunkServiceClient implements BackgroundResource {
-  private final ChunkServiceSettings settings;
+  private final @Nullable ChunkServiceSettings settings;
   private final ChunkServiceStub stub;
 
   /** Constructs an instance of ChunkServiceClient with default settings. */
@@ -201,7 +204,7 @@ public class ChunkServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ChunkServiceSettings getSettings() {
+  public final @Nullable ChunkServiceSettings getSettings() {
     return settings;
   }
 
@@ -239,7 +242,7 @@ public class ChunkServiceClient implements BackgroundResource {
    *     `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Chunk getChunk(ChunkName name) {
+  public final Chunk getChunk(@Nullable ChunkName name) {
     GetChunkRequest request =
         GetChunkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getChunk(request);
@@ -381,7 +384,7 @@ public class ChunkServiceClient implements BackgroundResource {
    *     whether or not this document exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChunksPagedResponse listChunks(DocumentName parent) {
+  public final ListChunksPagedResponse listChunks(@Nullable DocumentName parent) {
     ListChunksRequest request =
         ListChunksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listChunks(request);
@@ -588,8 +591,8 @@ public class ChunkServiceClient implements BackgroundResource {
       extends AbstractPage<ListChunksRequest, ListChunksResponse, Chunk, ListChunksPage> {
 
     private ListChunksPage(
-        PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
-        ListChunksResponse response) {
+        @Nullable PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
+        @Nullable ListChunksResponse response) {
       super(context, response);
     }
 
@@ -599,14 +602,14 @@ public class ChunkServiceClient implements BackgroundResource {
 
     @Override
     protected ListChunksPage createPage(
-        PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
-        ListChunksResponse response) {
+        @Nullable PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
+        @Nullable ListChunksResponse response) {
       return new ListChunksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChunksPage> createPageAsync(
-        PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
+        @Nullable PageContext<ListChunksRequest, ListChunksResponse, Chunk> context,
         ApiFuture<ListChunksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -620,7 +623,8 @@ public class ChunkServiceClient implements BackgroundResource {
           ListChunksPage,
           ListChunksFixedSizeCollection> {
 
-    private ListChunksFixedSizeCollection(List<ListChunksPage> pages, int collectionSize) {
+    private ListChunksFixedSizeCollection(
+        @Nullable List<ListChunksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -630,7 +634,7 @@ public class ChunkServiceClient implements BackgroundResource {
 
     @Override
     protected ListChunksFixedSizeCollection createCollection(
-        List<ListChunksPage> pages, int collectionSize) {
+        @Nullable List<ListChunksPage> pages, int collectionSize) {
       return new ListChunksFixedSizeCollection(pages, collectionSize);
     }
   }

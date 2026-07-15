@@ -25,6 +25,8 @@ import com.google.spanner.executor.v1.SpannerAsyncActionResponse;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -121,9 +123,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SpannerExecutorProxyClient implements BackgroundResource {
-  private final SpannerExecutorProxySettings settings;
+  private final @Nullable SpannerExecutorProxySettings settings;
   private final SpannerExecutorProxyStub stub;
 
   /** Constructs an instance of SpannerExecutorProxyClient with default settings. */
@@ -163,7 +166,7 @@ public class SpannerExecutorProxyClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SpannerExecutorProxySettings getSettings() {
+  public final @Nullable SpannerExecutorProxySettings getSettings() {
     return settings;
   }
 

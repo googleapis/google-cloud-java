@@ -70,6 +70,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -469,9 +471,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RepositoryManagerClient implements BackgroundResource {
-  private final RepositoryManagerSettings settings;
+  private final @Nullable RepositoryManagerSettings settings;
   private final RepositoryManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -519,7 +522,7 @@ public class RepositoryManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final RepositoryManagerSettings getSettings() {
+  public final @Nullable RepositoryManagerSettings getSettings() {
     return settings;
   }
 
@@ -574,7 +577,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Connection, OperationMetadata> createConnectionAsync(
-      LocationName parent, Connection connection, String connectionId) {
+      @Nullable LocationName parent, Connection connection, String connectionId) {
     CreateConnectionRequest request =
         CreateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -738,7 +741,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection getConnection(ConnectionName name) {
+  public final Connection getConnection(@Nullable ConnectionName name) {
     GetConnectionRequest request =
         GetConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConnection(request);
@@ -851,7 +854,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(LocationName parent) {
+  public final ListConnectionsPagedResponse listConnections(@Nullable LocationName parent) {
     ListConnectionsRequest request =
         ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1145,7 +1148,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConnectionAsync(
-      ConnectionName name) {
+      @Nullable ConnectionName name) {
     DeleteConnectionRequest request =
         DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteConnectionAsync(request);
@@ -1301,7 +1304,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
-      ConnectionName parent, Repository repository, String repositoryId) {
+      @Nullable ConnectionName parent, Repository repository, String repositoryId) {
     CreateRepositoryRequest request =
         CreateRepositoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1471,7 +1474,8 @@ public class RepositoryManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateRepositoriesResponse, OperationMetadata>
-      batchCreateRepositoriesAsync(ConnectionName parent, List<CreateRepositoryRequest> requests) {
+      batchCreateRepositoriesAsync(
+          @Nullable ConnectionName parent, List<CreateRepositoryRequest> requests) {
     BatchCreateRepositoriesRequest request =
         BatchCreateRepositoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1631,7 +1635,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Repository getRepository(RepositoryName name) {
+  public final Repository getRepository(@Nullable RepositoryName name) {
     GetRepositoryRequest request =
         GetRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRepository(request);
@@ -1749,7 +1753,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRepositoriesPagedResponse listRepositories(ConnectionName parent) {
+  public final ListRepositoriesPagedResponse listRepositories(@Nullable ConnectionName parent) {
     ListRepositoriesRequest request =
         ListRepositoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1919,7 +1923,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRepositoryAsync(
-      RepositoryName name) {
+      @Nullable RepositoryName name) {
     DeleteRepositoryRequest request =
         DeleteRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRepositoryAsync(request);
@@ -2075,7 +2079,8 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchReadWriteTokenResponse fetchReadWriteToken(RepositoryName repository) {
+  public final FetchReadWriteTokenResponse fetchReadWriteToken(
+      @Nullable RepositoryName repository) {
     FetchReadWriteTokenRequest request =
         FetchReadWriteTokenRequest.newBuilder()
             .setRepository(repository == null ? null : repository.toString())
@@ -2197,7 +2202,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchReadTokenResponse fetchReadToken(RepositoryName repository) {
+  public final FetchReadTokenResponse fetchReadToken(@Nullable RepositoryName repository) {
     FetchReadTokenRequest request =
         FetchReadTokenRequest.newBuilder()
             .setRepository(repository == null ? null : repository.toString())
@@ -2432,7 +2437,7 @@ public class RepositoryManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchGitRefsResponse fetchGitRefs(RepositoryName repository) {
+  public final FetchGitRefsResponse fetchGitRefs(@Nullable RepositoryName repository) {
     FetchGitRefsRequest request =
         FetchGitRefsRequest.newBuilder()
             .setRepository(repository == null ? null : repository.toString())
@@ -2779,8 +2784,8 @@ public class RepositoryManagerClient implements BackgroundResource {
           ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
 
     private ListConnectionsPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       super(context, response);
     }
 
@@ -2790,14 +2795,14 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsPage createPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       return new ListConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionsPage> createPageAsync(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
         ApiFuture<ListConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2812,7 +2817,7 @@ public class RepositoryManagerClient implements BackgroundResource {
           ListConnectionsFixedSizeCollection> {
 
     private ListConnectionsFixedSizeCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2822,7 +2827,7 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsFixedSizeCollection createCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       return new ListConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2856,8 +2861,9 @@ public class RepositoryManagerClient implements BackgroundResource {
           ListRepositoriesRequest, ListRepositoriesResponse, Repository, ListRepositoriesPage> {
 
     private ListRepositoriesPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -2867,14 +2873,16 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesPage createPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       return new ListRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRepositoriesPage> createPageAsync(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
         ApiFuture<ListRepositoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2889,7 +2897,7 @@ public class RepositoryManagerClient implements BackgroundResource {
           ListRepositoriesFixedSizeCollection> {
 
     private ListRepositoriesFixedSizeCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2899,7 +2907,7 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesFixedSizeCollection createCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       return new ListRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2937,9 +2945,11 @@ public class RepositoryManagerClient implements BackgroundResource {
           FetchLinkableRepositoriesPage> {
 
     private FetchLinkableRepositoriesPage(
-        PageContext<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
+        @Nullable
+            PageContext<
+                FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
             context,
-        FetchLinkableRepositoriesResponse response) {
+        @Nullable FetchLinkableRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -2949,15 +2959,19 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected FetchLinkableRepositoriesPage createPage(
-        PageContext<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
+        @Nullable
+            PageContext<
+                FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
             context,
-        FetchLinkableRepositoriesResponse response) {
+        @Nullable FetchLinkableRepositoriesResponse response) {
       return new FetchLinkableRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchLinkableRepositoriesPage> createPageAsync(
-        PageContext<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
+        @Nullable
+            PageContext<
+                FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse, Repository>
             context,
         ApiFuture<FetchLinkableRepositoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2973,7 +2987,7 @@ public class RepositoryManagerClient implements BackgroundResource {
           FetchLinkableRepositoriesFixedSizeCollection> {
 
     private FetchLinkableRepositoriesFixedSizeCollection(
-        List<FetchLinkableRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<FetchLinkableRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2983,7 +2997,7 @@ public class RepositoryManagerClient implements BackgroundResource {
 
     @Override
     protected FetchLinkableRepositoriesFixedSizeCollection createCollection(
-        List<FetchLinkableRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<FetchLinkableRepositoriesPage> pages, int collectionSize) {
       return new FetchLinkableRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }

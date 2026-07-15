@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -728,10 +730,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SaasDeploymentsClient implements BackgroundResource {
-  private final SaasDeploymentsSettings settings;
+  private final @Nullable SaasDeploymentsSettings settings;
   private final SaasDeploymentsStub stub;
 
   /** Constructs an instance of SaasDeploymentsClient with default settings. */
@@ -771,7 +774,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SaasDeploymentsSettings getSettings() {
+  public final @Nullable SaasDeploymentsSettings getSettings() {
     return settings;
   }
 
@@ -802,7 +805,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the saas.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSaasPagedResponse listSaas(LocationName parent) {
+  public final ListSaasPagedResponse listSaas(@Nullable LocationName parent) {
     ListSaasRequest request =
         ListSaasRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSaas(request);
@@ -964,7 +967,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Saas getSaas(SaasName name) {
+  public final Saas getSaas(@Nullable SaasName name) {
     GetSaasRequest request =
         GetSaasRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSaas(request);
@@ -1076,7 +1079,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param saasId Required. The ID value for the new saas.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Saas createSaas(LocationName parent, Saas saas, String saasId) {
+  public final Saas createSaas(@Nullable LocationName parent, Saas saas, String saasId) {
     CreateSaasRequest request =
         CreateSaasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1295,7 +1298,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSaas(SaasName name) {
+  public final void deleteSaas(@Nullable SaasName name) {
     DeleteSaasRequest request =
         DeleteSaasRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSaas(request);
@@ -1411,7 +1414,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the tenant.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTenantsPagedResponse listTenants(LocationName parent) {
+  public final ListTenantsPagedResponse listTenants(@Nullable LocationName parent) {
     ListTenantsRequest request =
         ListTenantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1577,7 +1580,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tenant getTenant(TenantName name) {
+  public final Tenant getTenant(@Nullable TenantName name) {
     GetTenantRequest request =
         GetTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTenant(request);
@@ -1689,7 +1692,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param tenantId Required. The ID value for the new tenant.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tenant createTenant(LocationName parent, Tenant tenant, String tenantId) {
+  public final Tenant createTenant(@Nullable LocationName parent, Tenant tenant, String tenantId) {
     CreateTenantRequest request =
         CreateTenantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1912,7 +1915,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTenant(TenantName name) {
+  public final void deleteTenant(@Nullable TenantName name) {
     DeleteTenantRequest request =
         DeleteTenantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTenant(request);
@@ -2028,7 +2031,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the unit kind.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUnitKindsPagedResponse listUnitKinds(LocationName parent) {
+  public final ListUnitKindsPagedResponse listUnitKinds(@Nullable LocationName parent) {
     ListUnitKindsRequest request =
         ListUnitKindsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2195,7 +2198,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UnitKind getUnitKind(UnitKindName name) {
+  public final UnitKind getUnitKind(@Nullable UnitKindName name) {
     GetUnitKindRequest request =
         GetUnitKindRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUnitKind(request);
@@ -2307,7 +2310,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param unitKindId Required. The ID value for the new unit kind.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UnitKind createUnitKind(LocationName parent, UnitKind unitKind, String unitKindId) {
+  public final UnitKind createUnitKind(
+      @Nullable LocationName parent, UnitKind unitKind, String unitKindId) {
     CreateUnitKindRequest request =
         CreateUnitKindRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2532,7 +2536,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUnitKind(UnitKindName name) {
+  public final void deleteUnitKind(@Nullable UnitKindName name) {
     DeleteUnitKindRequest request =
         DeleteUnitKindRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUnitKind(request);
@@ -2648,7 +2652,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the unit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUnitsPagedResponse listUnits(LocationName parent) {
+  public final ListUnitsPagedResponse listUnits(@Nullable LocationName parent) {
     ListUnitsRequest request =
         ListUnitsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listUnits(request);
@@ -2810,7 +2814,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Unit getUnit(UnitName name) {
+  public final Unit getUnit(@Nullable UnitName name) {
     GetUnitRequest request =
         GetUnitRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUnit(request);
@@ -2922,7 +2926,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param unitId Required. The ID value for the new unit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Unit createUnit(LocationName parent, Unit unit, String unitId) {
+  public final Unit createUnit(@Nullable LocationName parent, Unit unit, String unitId) {
     CreateUnitRequest request =
         CreateUnitRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3141,7 +3145,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUnit(UnitName name) {
+  public final void deleteUnit(@Nullable UnitName name) {
     DeleteUnitRequest request =
         DeleteUnitRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUnit(request);
@@ -3257,7 +3261,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the unit operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUnitOperationsPagedResponse listUnitOperations(LocationName parent) {
+  public final ListUnitOperationsPagedResponse listUnitOperations(@Nullable LocationName parent) {
     ListUnitOperationsRequest request =
         ListUnitOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3427,7 +3431,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UnitOperation getUnitOperation(UnitOperationName name) {
+  public final UnitOperation getUnitOperation(@Nullable UnitOperationName name) {
     GetUnitOperationRequest request =
         GetUnitOperationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUnitOperation(request);
@@ -3544,7 +3548,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnitOperation createUnitOperation(
-      LocationName parent, UnitOperation unitOperation, String unitOperationId) {
+      @Nullable LocationName parent, UnitOperation unitOperation, String unitOperationId) {
     CreateUnitOperationRequest request =
         CreateUnitOperationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3778,7 +3782,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUnitOperation(UnitOperationName name) {
+  public final void deleteUnitOperation(@Nullable UnitOperationName name) {
     DeleteUnitOperationRequest request =
         DeleteUnitOperationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3900,7 +3904,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param parent Required. The parent of the release.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReleasesPagedResponse listReleases(LocationName parent) {
+  public final ListReleasesPagedResponse listReleases(@Nullable LocationName parent) {
     ListReleasesRequest request =
         ListReleasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4066,7 +4070,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Release getRelease(ReleaseName name) {
+  public final Release getRelease(@Nullable ReleaseName name) {
     GetReleaseRequest request =
         GetReleaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRelease(request);
@@ -4178,7 +4182,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param releaseId Required. The ID value for the new release.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Release createRelease(LocationName parent, Release release, String releaseId) {
+  public final Release createRelease(
+      @Nullable LocationName parent, Release release, String releaseId) {
     CreateReleaseRequest request =
         CreateReleaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4401,7 +4406,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRelease(ReleaseName name) {
+  public final void deleteRelease(@Nullable ReleaseName name) {
     DeleteReleaseRequest request =
         DeleteReleaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRelease(request);
@@ -4738,7 +4743,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractPage<ListSaasRequest, ListSaasResponse, Saas, ListSaasPage> {
 
     private ListSaasPage(
-        PageContext<ListSaasRequest, ListSaasResponse, Saas> context, ListSaasResponse response) {
+        @Nullable PageContext<ListSaasRequest, ListSaasResponse, Saas> context,
+        @Nullable ListSaasResponse response) {
       super(context, response);
     }
 
@@ -4748,13 +4754,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListSaasPage createPage(
-        PageContext<ListSaasRequest, ListSaasResponse, Saas> context, ListSaasResponse response) {
+        @Nullable PageContext<ListSaasRequest, ListSaasResponse, Saas> context,
+        @Nullable ListSaasResponse response) {
       return new ListSaasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSaasPage> createPageAsync(
-        PageContext<ListSaasRequest, ListSaasResponse, Saas> context,
+        @Nullable PageContext<ListSaasRequest, ListSaasResponse, Saas> context,
         ApiFuture<ListSaasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4764,7 +4771,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSaasRequest, ListSaasResponse, Saas, ListSaasPage, ListSaasFixedSizeCollection> {
 
-    private ListSaasFixedSizeCollection(List<ListSaasPage> pages, int collectionSize) {
+    private ListSaasFixedSizeCollection(@Nullable List<ListSaasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4774,7 +4781,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListSaasFixedSizeCollection createCollection(
-        List<ListSaasPage> pages, int collectionSize) {
+        @Nullable List<ListSaasPage> pages, int collectionSize) {
       return new ListSaasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4805,8 +4812,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractPage<ListTenantsRequest, ListTenantsResponse, Tenant, ListTenantsPage> {
 
     private ListTenantsPage(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
-        ListTenantsResponse response) {
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable ListTenantsResponse response) {
       super(context, response);
     }
 
@@ -4816,14 +4823,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListTenantsPage createPage(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
-        ListTenantsResponse response) {
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable ListTenantsResponse response) {
       return new ListTenantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTenantsPage> createPageAsync(
-        PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
+        @Nullable PageContext<ListTenantsRequest, ListTenantsResponse, Tenant> context,
         ApiFuture<ListTenantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4837,7 +4844,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListTenantsPage,
           ListTenantsFixedSizeCollection> {
 
-    private ListTenantsFixedSizeCollection(List<ListTenantsPage> pages, int collectionSize) {
+    private ListTenantsFixedSizeCollection(
+        @Nullable List<ListTenantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4847,7 +4855,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListTenantsFixedSizeCollection createCollection(
-        List<ListTenantsPage> pages, int collectionSize) {
+        @Nullable List<ListTenantsPage> pages, int collectionSize) {
       return new ListTenantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4881,8 +4889,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListUnitKindsRequest, ListUnitKindsResponse, UnitKind, ListUnitKindsPage> {
 
     private ListUnitKindsPage(
-        PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
-        ListUnitKindsResponse response) {
+        @Nullable PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
+        @Nullable ListUnitKindsResponse response) {
       super(context, response);
     }
 
@@ -4892,14 +4900,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitKindsPage createPage(
-        PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
-        ListUnitKindsResponse response) {
+        @Nullable PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
+        @Nullable ListUnitKindsResponse response) {
       return new ListUnitKindsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUnitKindsPage> createPageAsync(
-        PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
+        @Nullable PageContext<ListUnitKindsRequest, ListUnitKindsResponse, UnitKind> context,
         ApiFuture<ListUnitKindsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4913,7 +4921,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListUnitKindsPage,
           ListUnitKindsFixedSizeCollection> {
 
-    private ListUnitKindsFixedSizeCollection(List<ListUnitKindsPage> pages, int collectionSize) {
+    private ListUnitKindsFixedSizeCollection(
+        @Nullable List<ListUnitKindsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4923,7 +4932,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitKindsFixedSizeCollection createCollection(
-        List<ListUnitKindsPage> pages, int collectionSize) {
+        @Nullable List<ListUnitKindsPage> pages, int collectionSize) {
       return new ListUnitKindsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4950,8 +4959,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractPage<ListUnitsRequest, ListUnitsResponse, Unit, ListUnitsPage> {
 
     private ListUnitsPage(
-        PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
-        ListUnitsResponse response) {
+        @Nullable PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
+        @Nullable ListUnitsResponse response) {
       super(context, response);
     }
 
@@ -4961,14 +4970,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitsPage createPage(
-        PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
-        ListUnitsResponse response) {
+        @Nullable PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
+        @Nullable ListUnitsResponse response) {
       return new ListUnitsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUnitsPage> createPageAsync(
-        PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
+        @Nullable PageContext<ListUnitsRequest, ListUnitsResponse, Unit> context,
         ApiFuture<ListUnitsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4978,7 +4987,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUnitsRequest, ListUnitsResponse, Unit, ListUnitsPage, ListUnitsFixedSizeCollection> {
 
-    private ListUnitsFixedSizeCollection(List<ListUnitsPage> pages, int collectionSize) {
+    private ListUnitsFixedSizeCollection(@Nullable List<ListUnitsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4988,7 +4997,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitsFixedSizeCollection createCollection(
-        List<ListUnitsPage> pages, int collectionSize) {
+        @Nullable List<ListUnitsPage> pages, int collectionSize) {
       return new ListUnitsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5025,8 +5034,9 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListUnitOperationsPage> {
 
     private ListUnitOperationsPage(
-        PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation> context,
-        ListUnitOperationsResponse response) {
+        @Nullable PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation>
+            context,
+        @Nullable ListUnitOperationsResponse response) {
       super(context, response);
     }
 
@@ -5036,14 +5046,16 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitOperationsPage createPage(
-        PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation> context,
-        ListUnitOperationsResponse response) {
+        @Nullable PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation>
+            context,
+        @Nullable ListUnitOperationsResponse response) {
       return new ListUnitOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUnitOperationsPage> createPageAsync(
-        PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation> context,
+        @Nullable PageContext<ListUnitOperationsRequest, ListUnitOperationsResponse, UnitOperation>
+            context,
         ApiFuture<ListUnitOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5058,7 +5070,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListUnitOperationsFixedSizeCollection> {
 
     private ListUnitOperationsFixedSizeCollection(
-        List<ListUnitOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListUnitOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5068,7 +5080,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListUnitOperationsFixedSizeCollection createCollection(
-        List<ListUnitOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListUnitOperationsPage> pages, int collectionSize) {
       return new ListUnitOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5101,8 +5113,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
       extends AbstractPage<ListReleasesRequest, ListReleasesResponse, Release, ListReleasesPage> {
 
     private ListReleasesPage(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
-        ListReleasesResponse response) {
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable ListReleasesResponse response) {
       super(context, response);
     }
 
@@ -5112,14 +5124,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListReleasesPage createPage(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
-        ListReleasesResponse response) {
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable ListReleasesResponse response) {
       return new ListReleasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReleasesPage> createPageAsync(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
         ApiFuture<ListReleasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5133,7 +5145,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListReleasesPage,
           ListReleasesFixedSizeCollection> {
 
-    private ListReleasesFixedSizeCollection(List<ListReleasesPage> pages, int collectionSize) {
+    private ListReleasesFixedSizeCollection(
+        @Nullable List<ListReleasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5143,7 +5156,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListReleasesFixedSizeCollection createCollection(
-        List<ListReleasesPage> pages, int collectionSize) {
+        @Nullable List<ListReleasesPage> pages, int collectionSize) {
       return new ListReleasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5177,8 +5190,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5188,14 +5201,14 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5209,7 +5222,8 @@ public class SaasDeploymentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5219,7 +5233,7 @@ public class SaasDeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

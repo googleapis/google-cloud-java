@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CssProductName implements ResourceName {
   private static final PathTemplate ACCOUNT_CSS_PRODUCT =
@@ -70,7 +73,7 @@ public class CssProductName implements ResourceName {
     return newBuilder().setAccount(account).setCssProduct(cssProduct).build().toString();
   }
 
-  public static CssProductName parse(String formattedString) {
+  public static @Nullable CssProductName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class CssProductName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CssProductName> values) {
+  public static List<String> toStringList(List<@Nullable CssProductName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CssProductName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class CssProductName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

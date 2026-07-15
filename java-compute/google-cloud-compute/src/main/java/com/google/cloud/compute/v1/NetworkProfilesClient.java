@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -143,9 +145,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkProfilesClient implements BackgroundResource {
-  private final NetworkProfilesSettings settings;
+  private final @Nullable NetworkProfilesSettings settings;
   private final NetworkProfilesStub stub;
 
   /** Constructs an instance of NetworkProfilesClient with default settings. */
@@ -185,7 +188,7 @@ public class NetworkProfilesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworkProfilesSettings getSettings() {
+  public final @Nullable NetworkProfilesSettings getSettings() {
     return settings;
   }
 
@@ -481,9 +484,10 @@ public class NetworkProfilesClient implements BackgroundResource {
           ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile, ListPage> {
 
     private ListPage(
-        PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
+        @Nullable
+            PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
             context,
-        NetworkProfilesListResponse response) {
+        @Nullable NetworkProfilesListResponse response) {
       super(context, response);
     }
 
@@ -493,15 +497,17 @@ public class NetworkProfilesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
+        @Nullable
+            PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
             context,
-        NetworkProfilesListResponse response) {
+        @Nullable NetworkProfilesListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
+        @Nullable
+            PageContext<ListNetworkProfilesRequest, NetworkProfilesListResponse, NetworkProfile>
             context,
         ApiFuture<NetworkProfilesListResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -516,7 +522,7 @@ public class NetworkProfilesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -525,7 +531,8 @@ public class NetworkProfilesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

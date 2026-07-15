@@ -23,6 +23,8 @@ import com.google.cloud.chronicle.v1.stub.DashboardQueryServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,9 +154,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DashboardQueryServiceClient implements BackgroundResource {
-  private final DashboardQueryServiceSettings settings;
+  private final @Nullable DashboardQueryServiceSettings settings;
   private final DashboardQueryServiceStub stub;
 
   /** Constructs an instance of DashboardQueryServiceClient with default settings. */
@@ -194,7 +197,7 @@ public class DashboardQueryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DashboardQueryServiceSettings getSettings() {
+  public final @Nullable DashboardQueryServiceSettings getSettings() {
     return settings;
   }
 
@@ -226,7 +229,7 @@ public class DashboardQueryServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/dashboardQueries/{query}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DashboardQuery getDashboardQuery(DashboardQueryName name) {
+  public final DashboardQuery getDashboardQuery(@Nullable DashboardQueryName name) {
     GetDashboardQueryRequest request =
         GetDashboardQueryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -354,7 +357,7 @@ public class DashboardQueryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExecuteDashboardQueryResponse executeDashboardQuery(
-      InstanceName parent, DashboardQuery query) {
+      @Nullable InstanceName parent, DashboardQuery query) {
     ExecuteDashboardQueryRequest request =
         ExecuteDashboardQueryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

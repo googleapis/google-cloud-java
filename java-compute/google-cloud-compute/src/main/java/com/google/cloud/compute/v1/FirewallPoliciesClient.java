@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -442,9 +444,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FirewallPoliciesClient implements BackgroundResource {
-  private final FirewallPoliciesSettings settings;
+  private final @Nullable FirewallPoliciesSettings settings;
   private final FirewallPoliciesStub stub;
 
   /** Constructs an instance of FirewallPoliciesClient with default settings. */
@@ -484,7 +487,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FirewallPoliciesSettings getSettings() {
+  public final @Nullable FirewallPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -2543,8 +2546,9 @@ public class FirewallPoliciesClient implements BackgroundResource {
           ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
-        FirewallPolicyList response) {
+        @Nullable PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
+        @Nullable FirewallPolicyList response) {
       super(context, response);
     }
 
@@ -2554,14 +2558,16 @@ public class FirewallPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
-        FirewallPolicyList response) {
+        @Nullable PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
+        @Nullable FirewallPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
+        @Nullable PageContext<ListFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
         ApiFuture<FirewallPolicyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2575,7 +2581,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2584,7 +2590,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -564,9 +566,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WorkstationsClient implements BackgroundResource {
-  private final WorkstationsSettings settings;
+  private final @Nullable WorkstationsSettings settings;
   private final WorkstationsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -613,7 +616,7 @@ public class WorkstationsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WorkstationsSettings getSettings() {
+  public final @Nullable WorkstationsSettings getSettings() {
     return settings;
   }
 
@@ -660,7 +663,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @param name Required. Name of the requested resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkstationCluster getWorkstationCluster(WorkstationClusterName name) {
+  public final WorkstationCluster getWorkstationCluster(@Nullable WorkstationClusterName name) {
     GetWorkstationClusterRequest request =
         GetWorkstationClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -781,7 +784,8 @@ public class WorkstationsClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkstationClustersPagedResponse listWorkstationClusters(LocationName parent) {
+  public final ListWorkstationClustersPagedResponse listWorkstationClusters(
+      @Nullable LocationName parent) {
     ListWorkstationClustersRequest request =
         ListWorkstationClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -958,7 +962,9 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationCluster, OperationMetadata> createWorkstationClusterAsync(
-      LocationName parent, WorkstationCluster workstationCluster, String workstationClusterId) {
+      @Nullable LocationName parent,
+      WorkstationCluster workstationCluster,
+      String workstationClusterId) {
     CreateWorkstationClusterRequest request =
         CreateWorkstationClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1259,7 +1265,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationCluster, OperationMetadata> deleteWorkstationClusterAsync(
-      WorkstationClusterName name) {
+      @Nullable WorkstationClusterName name) {
     DeleteWorkstationClusterRequest request =
         DeleteWorkstationClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1422,7 +1428,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @param name Required. Name of the requested resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkstationConfig getWorkstationConfig(WorkstationConfigName name) {
+  public final WorkstationConfig getWorkstationConfig(@Nullable WorkstationConfigName name) {
     GetWorkstationConfigRequest request =
         GetWorkstationConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1555,7 +1561,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkstationConfigsPagedResponse listWorkstationConfigs(
-      WorkstationClusterName parent) {
+      @Nullable WorkstationClusterName parent) {
     ListWorkstationConfigsRequest request =
         ListWorkstationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1737,7 +1743,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUsableWorkstationConfigsPagedResponse listUsableWorkstationConfigs(
-      WorkstationClusterName parent) {
+      @Nullable WorkstationClusterName parent) {
     ListUsableWorkstationConfigsRequest request =
         ListUsableWorkstationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1926,7 +1932,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> createWorkstationConfigAsync(
-      WorkstationClusterName parent,
+      @Nullable WorkstationClusterName parent,
       WorkstationConfig workstationConfig,
       String workstationConfigId) {
     CreateWorkstationConfigRequest request =
@@ -2237,7 +2243,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> deleteWorkstationConfigAsync(
-      WorkstationConfigName name) {
+      @Nullable WorkstationConfigName name) {
     DeleteWorkstationConfigRequest request =
         DeleteWorkstationConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2418,7 +2424,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @param name Required. Name of the requested resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workstation getWorkstation(WorkstationName name) {
+  public final Workstation getWorkstation(@Nullable WorkstationName name) {
     GetWorkstationRequest request =
         GetWorkstationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkstation(request);
@@ -2552,7 +2558,8 @@ public class WorkstationsClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkstationsPagedResponse listWorkstations(WorkstationConfigName parent) {
+  public final ListWorkstationsPagedResponse listWorkstations(
+      @Nullable WorkstationConfigName parent) {
     ListWorkstationsRequest request =
         ListWorkstationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2745,7 +2752,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUsableWorkstationsPagedResponse listUsableWorkstations(
-      WorkstationConfigName parent) {
+      @Nullable WorkstationConfigName parent) {
     ListUsableWorkstationsRequest request =
         ListUsableWorkstationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2946,7 +2953,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> createWorkstationAsync(
-      WorkstationConfigName parent, Workstation workstation, String workstationId) {
+      @Nullable WorkstationConfigName parent, Workstation workstation, String workstationId) {
     CreateWorkstationRequest request =
         CreateWorkstationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3270,7 +3277,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> deleteWorkstationAsync(
-      WorkstationName name) {
+      @Nullable WorkstationName name) {
     DeleteWorkstationRequest request =
         DeleteWorkstationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3452,7 +3459,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> startWorkstationAsync(
-      WorkstationName name) {
+      @Nullable WorkstationName name) {
     StartWorkstationRequest request =
         StartWorkstationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startWorkstationAsync(request);
@@ -3635,7 +3642,7 @@ public class WorkstationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> stopWorkstationAsync(
-      WorkstationName name) {
+      @Nullable WorkstationName name) {
     StopWorkstationRequest request =
         StopWorkstationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopWorkstationAsync(request);
@@ -3817,7 +3824,8 @@ public class WorkstationsClient implements BackgroundResource {
    *     generated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GenerateAccessTokenResponse generateAccessToken(WorkstationName workstation) {
+  public final GenerateAccessTokenResponse generateAccessToken(
+      @Nullable WorkstationName workstation) {
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setWorkstation(workstation == null ? null : workstation.toString())
@@ -4236,10 +4244,11 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationClustersPage> {
 
     private ListWorkstationClustersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationClustersRequest, ListWorkstationClustersResponse, WorkstationCluster>
             context,
-        ListWorkstationClustersResponse response) {
+        @Nullable ListWorkstationClustersResponse response) {
       super(context, response);
     }
 
@@ -4249,16 +4258,18 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationClustersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationClustersRequest, ListWorkstationClustersResponse, WorkstationCluster>
             context,
-        ListWorkstationClustersResponse response) {
+        @Nullable ListWorkstationClustersResponse response) {
       return new ListWorkstationClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkstationClustersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationClustersRequest, ListWorkstationClustersResponse, WorkstationCluster>
             context,
         ApiFuture<ListWorkstationClustersResponse> futureResponse) {
@@ -4275,7 +4286,7 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationClustersFixedSizeCollection> {
 
     private ListWorkstationClustersFixedSizeCollection(
-        List<ListWorkstationClustersPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4285,7 +4296,7 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationClustersFixedSizeCollection createCollection(
-        List<ListWorkstationClustersPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationClustersPage> pages, int collectionSize) {
       return new ListWorkstationClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4324,10 +4335,11 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationConfigsPage> {
 
     private ListWorkstationConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationConfigsRequest, ListWorkstationConfigsResponse, WorkstationConfig>
             context,
-        ListWorkstationConfigsResponse response) {
+        @Nullable ListWorkstationConfigsResponse response) {
       super(context, response);
     }
 
@@ -4337,16 +4349,18 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationConfigsRequest, ListWorkstationConfigsResponse, WorkstationConfig>
             context,
-        ListWorkstationConfigsResponse response) {
+        @Nullable ListWorkstationConfigsResponse response) {
       return new ListWorkstationConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkstationConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkstationConfigsRequest, ListWorkstationConfigsResponse, WorkstationConfig>
             context,
         ApiFuture<ListWorkstationConfigsResponse> futureResponse) {
@@ -4363,7 +4377,7 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationConfigsFixedSizeCollection> {
 
     private ListWorkstationConfigsFixedSizeCollection(
-        List<ListWorkstationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4373,7 +4387,7 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationConfigsFixedSizeCollection createCollection(
-        List<ListWorkstationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationConfigsPage> pages, int collectionSize) {
       return new ListWorkstationConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4415,12 +4429,13 @@ public class WorkstationsClient implements BackgroundResource {
           ListUsableWorkstationConfigsPage> {
 
     private ListUsableWorkstationConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableWorkstationConfigsRequest,
                 ListUsableWorkstationConfigsResponse,
                 WorkstationConfig>
             context,
-        ListUsableWorkstationConfigsResponse response) {
+        @Nullable ListUsableWorkstationConfigsResponse response) {
       super(context, response);
     }
 
@@ -4430,18 +4445,20 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListUsableWorkstationConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableWorkstationConfigsRequest,
                 ListUsableWorkstationConfigsResponse,
                 WorkstationConfig>
             context,
-        ListUsableWorkstationConfigsResponse response) {
+        @Nullable ListUsableWorkstationConfigsResponse response) {
       return new ListUsableWorkstationConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsableWorkstationConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableWorkstationConfigsRequest,
                 ListUsableWorkstationConfigsResponse,
                 WorkstationConfig>
@@ -4460,7 +4477,7 @@ public class WorkstationsClient implements BackgroundResource {
           ListUsableWorkstationConfigsFixedSizeCollection> {
 
     private ListUsableWorkstationConfigsFixedSizeCollection(
-        List<ListUsableWorkstationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListUsableWorkstationConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4470,7 +4487,7 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListUsableWorkstationConfigsFixedSizeCollection createCollection(
-        List<ListUsableWorkstationConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListUsableWorkstationConfigsPage> pages, int collectionSize) {
       return new ListUsableWorkstationConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4504,8 +4521,9 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationsRequest, ListWorkstationsResponse, Workstation, ListWorkstationsPage> {
 
     private ListWorkstationsPage(
-        PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation> context,
-        ListWorkstationsResponse response) {
+        @Nullable PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation>
+            context,
+        @Nullable ListWorkstationsResponse response) {
       super(context, response);
     }
 
@@ -4515,14 +4533,16 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationsPage createPage(
-        PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation> context,
-        ListWorkstationsResponse response) {
+        @Nullable PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation>
+            context,
+        @Nullable ListWorkstationsResponse response) {
       return new ListWorkstationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkstationsPage> createPageAsync(
-        PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation> context,
+        @Nullable PageContext<ListWorkstationsRequest, ListWorkstationsResponse, Workstation>
+            context,
         ApiFuture<ListWorkstationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4537,7 +4557,7 @@ public class WorkstationsClient implements BackgroundResource {
           ListWorkstationsFixedSizeCollection> {
 
     private ListWorkstationsFixedSizeCollection(
-        List<ListWorkstationsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4547,7 +4567,7 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListWorkstationsFixedSizeCollection createCollection(
-        List<ListWorkstationsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkstationsPage> pages, int collectionSize) {
       return new ListWorkstationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4585,9 +4605,10 @@ public class WorkstationsClient implements BackgroundResource {
           ListUsableWorkstationsPage> {
 
     private ListUsableWorkstationsPage(
-        PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
+        @Nullable
+            PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
             context,
-        ListUsableWorkstationsResponse response) {
+        @Nullable ListUsableWorkstationsResponse response) {
       super(context, response);
     }
 
@@ -4597,15 +4618,17 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListUsableWorkstationsPage createPage(
-        PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
+        @Nullable
+            PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
             context,
-        ListUsableWorkstationsResponse response) {
+        @Nullable ListUsableWorkstationsResponse response) {
       return new ListUsableWorkstationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsableWorkstationsPage> createPageAsync(
-        PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
+        @Nullable
+            PageContext<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse, Workstation>
             context,
         ApiFuture<ListUsableWorkstationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4621,7 +4644,7 @@ public class WorkstationsClient implements BackgroundResource {
           ListUsableWorkstationsFixedSizeCollection> {
 
     private ListUsableWorkstationsFixedSizeCollection(
-        List<ListUsableWorkstationsPage> pages, int collectionSize) {
+        @Nullable List<ListUsableWorkstationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4631,7 +4654,7 @@ public class WorkstationsClient implements BackgroundResource {
 
     @Override
     protected ListUsableWorkstationsFixedSizeCollection createCollection(
-        List<ListUsableWorkstationsPage> pages, int collectionSize) {
+        @Nullable List<ListUsableWorkstationsPage> pages, int collectionSize) {
       return new ListUsableWorkstationsFixedSizeCollection(pages, collectionSize);
     }
   }

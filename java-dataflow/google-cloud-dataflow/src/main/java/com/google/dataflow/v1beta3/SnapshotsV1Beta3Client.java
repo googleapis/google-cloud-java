@@ -24,6 +24,8 @@ import com.google.dataflow.v1beta3.stub.SnapshotsV1Beta3StubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -160,10 +162,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SnapshotsV1Beta3Client implements BackgroundResource {
-  private final SnapshotsV1Beta3Settings settings;
+  private final @Nullable SnapshotsV1Beta3Settings settings;
   private final SnapshotsV1Beta3Stub stub;
 
   /** Constructs an instance of SnapshotsV1Beta3Client with default settings. */
@@ -203,7 +206,7 @@ public class SnapshotsV1Beta3Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SnapshotsV1Beta3Settings getSettings() {
+  public final @Nullable SnapshotsV1Beta3Settings getSettings() {
     return settings;
   }
 

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DiscoveredApiOperationName implements ResourceName {
   private static final PathTemplate
@@ -105,7 +108,7 @@ public class DiscoveredApiOperationName implements ResourceName {
         .toString();
   }
 
-  public static DiscoveredApiOperationName parse(String formattedString) {
+  public static @Nullable DiscoveredApiOperationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -128,7 +131,7 @@ public class DiscoveredApiOperationName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DiscoveredApiOperationName> values) {
+  public static List<String> toStringList(List<@Nullable DiscoveredApiOperationName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DiscoveredApiOperationName value : values) {
       if (value == null) {
@@ -188,7 +191,7 @@ public class DiscoveredApiOperationName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

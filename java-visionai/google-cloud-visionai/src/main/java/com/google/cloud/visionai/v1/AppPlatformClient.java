@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -667,9 +669,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AppPlatformClient implements BackgroundResource {
-  private final AppPlatformSettings settings;
+  private final @Nullable AppPlatformSettings settings;
   private final AppPlatformStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -716,7 +719,7 @@ public class AppPlatformClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AppPlatformSettings getSettings() {
+  public final @Nullable AppPlatformSettings getSettings() {
     return settings;
   }
 
@@ -764,7 +767,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param parent Required. Parent value for ListApplicationsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApplicationsPagedResponse listApplications(LocationName parent) {
+  public final ListApplicationsPagedResponse listApplications(@Nullable LocationName parent) {
     ListApplicationsRequest request =
         ListApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -933,7 +936,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Application getApplication(ApplicationName name) {
+  public final Application getApplication(@Nullable ApplicationName name) {
     GetApplicationRequest request =
         GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApplication(request);
@@ -1045,7 +1048,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Application, OperationMetadata> createApplicationAsync(
-      LocationName parent, Application application) {
+      @Nullable LocationName parent, Application application) {
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1330,7 +1333,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteApplicationAsync(
-      ApplicationName name) {
+      @Nullable ApplicationName name) {
     DeleteApplicationRequest request =
         DeleteApplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1479,7 +1482,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployApplicationResponse, OperationMetadata> deployApplicationAsync(
-      ApplicationName name) {
+      @Nullable ApplicationName name) {
     DeployApplicationRequest request =
         DeployApplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1634,7 +1637,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeployApplicationResponse, OperationMetadata>
-      undeployApplicationAsync(ApplicationName name) {
+      undeployApplicationAsync(@Nullable ApplicationName name) {
     UndeployApplicationRequest request =
         UndeployApplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1788,7 +1791,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddApplicationStreamInputResponse, OperationMetadata>
-      addApplicationStreamInputAsync(ApplicationName name) {
+      addApplicationStreamInputAsync(@Nullable ApplicationName name) {
     AddApplicationStreamInputRequest request =
         AddApplicationStreamInputRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1955,7 +1958,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RemoveApplicationStreamInputResponse, OperationMetadata>
-      removeApplicationStreamInputAsync(ApplicationName name) {
+      removeApplicationStreamInputAsync(@Nullable ApplicationName name) {
     RemoveApplicationStreamInputRequest request =
         RemoveApplicationStreamInputRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2127,7 +2130,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UpdateApplicationStreamInputResponse, OperationMetadata>
-      updateApplicationStreamInputAsync(ApplicationName name) {
+      updateApplicationStreamInputAsync(@Nullable ApplicationName name) {
     UpdateApplicationStreamInputRequest request =
         UpdateApplicationStreamInputRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2296,7 +2299,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInstancesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(ApplicationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable ApplicationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2462,7 +2465,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -2580,7 +2583,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CreateApplicationInstancesResponse, OperationMetadata>
-      createApplicationInstancesAsync(ApplicationName name) {
+      createApplicationInstancesAsync(@Nullable ApplicationName name) {
     CreateApplicationInstancesRequest request =
         CreateApplicationInstancesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2746,7 +2749,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> deleteApplicationInstancesAsync(
-      ApplicationName name) {
+      @Nullable ApplicationName name) {
     DeleteApplicationInstancesRequest request =
         DeleteApplicationInstancesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2914,7 +2917,7 @@ public class AppPlatformClient implements BackgroundResource {
    */
   public final OperationFuture<UpdateApplicationInstancesResponse, OperationMetadata>
       updateApplicationInstancesAsync(
-          ApplicationName name,
+          @Nullable ApplicationName name,
           List<UpdateApplicationInstancesRequest.UpdateApplicationInstance> applicationInstances) {
     UpdateApplicationInstancesRequest request =
         UpdateApplicationInstancesRequest.newBuilder()
@@ -3094,7 +3097,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param parent Required. Parent value for ListDraftsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDraftsPagedResponse listDrafts(ApplicationName parent) {
+  public final ListDraftsPagedResponse listDrafts(@Nullable ApplicationName parent) {
     ListDraftsRequest request =
         ListDraftsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listDrafts(request);
@@ -3256,7 +3259,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Draft getDraft(DraftName name) {
+  public final Draft getDraft(@Nullable DraftName name) {
     GetDraftRequest request =
         GetDraftRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDraft(request);
@@ -3371,7 +3374,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Draft, OperationMetadata> createDraftAsync(
-      ApplicationName parent, Draft draft, String draftId) {
+      @Nullable ApplicationName parent, Draft draft, String draftId) {
     CreateDraftRequest request =
         CreateDraftRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3659,7 +3662,8 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDraftAsync(DraftName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDraftAsync(
+      @Nullable DraftName name) {
     DeleteDraftRequest request =
         DeleteDraftRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDraftAsync(request);
@@ -3805,7 +3809,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param parent Required. Parent value for ListProcessorsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessorsPagedResponse listProcessors(LocationName parent) {
+  public final ListProcessorsPagedResponse listProcessors(@Nullable LocationName parent) {
     ListProcessorsRequest request =
         ListProcessorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3972,7 +3976,8 @@ public class AppPlatformClient implements BackgroundResource {
    * @param parent Required. Parent path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrebuiltProcessorsResponse listPrebuiltProcessors(LocationName parent) {
+  public final ListPrebuiltProcessorsResponse listPrebuiltProcessors(
+      @Nullable LocationName parent) {
     ListPrebuiltProcessorsRequest request =
         ListPrebuiltProcessorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4086,7 +4091,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Processor getProcessor(ProcessorName name) {
+  public final Processor getProcessor(@Nullable ProcessorName name) {
     GetProcessorRequest request =
         GetProcessorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcessor(request);
@@ -4200,7 +4205,7 @@ public class AppPlatformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Processor, OperationMetadata> createProcessorAsync(
-      LocationName parent, Processor processor, String processorId) {
+      @Nullable LocationName parent, Processor processor, String processorId) {
     CreateProcessorRequest request =
         CreateProcessorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4489,7 +4494,8 @@ public class AppPlatformClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteProcessorAsync(ProcessorName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteProcessorAsync(
+      @Nullable ProcessorName name) {
     DeleteProcessorRequest request =
         DeleteProcessorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProcessorAsync(request);
@@ -4823,8 +4829,9 @@ public class AppPlatformClient implements BackgroundResource {
           ListApplicationsRequest, ListApplicationsResponse, Application, ListApplicationsPage> {
 
     private ListApplicationsPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       super(context, response);
     }
 
@@ -4834,14 +4841,16 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsPage createPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       return new ListApplicationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApplicationsPage> createPageAsync(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
         ApiFuture<ListApplicationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4856,7 +4865,7 @@ public class AppPlatformClient implements BackgroundResource {
           ListApplicationsFixedSizeCollection> {
 
     private ListApplicationsFixedSizeCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4866,7 +4875,7 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsFixedSizeCollection createCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       return new ListApplicationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4900,8 +4909,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -4911,14 +4920,14 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4932,7 +4941,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4942,7 +4952,7 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4973,8 +4983,8 @@ public class AppPlatformClient implements BackgroundResource {
       extends AbstractPage<ListDraftsRequest, ListDraftsResponse, Draft, ListDraftsPage> {
 
     private ListDraftsPage(
-        PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
-        ListDraftsResponse response) {
+        @Nullable PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
+        @Nullable ListDraftsResponse response) {
       super(context, response);
     }
 
@@ -4984,14 +4994,14 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListDraftsPage createPage(
-        PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
-        ListDraftsResponse response) {
+        @Nullable PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
+        @Nullable ListDraftsResponse response) {
       return new ListDraftsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDraftsPage> createPageAsync(
-        PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
+        @Nullable PageContext<ListDraftsRequest, ListDraftsResponse, Draft> context,
         ApiFuture<ListDraftsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5005,7 +5015,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListDraftsPage,
           ListDraftsFixedSizeCollection> {
 
-    private ListDraftsFixedSizeCollection(List<ListDraftsPage> pages, int collectionSize) {
+    private ListDraftsFixedSizeCollection(
+        @Nullable List<ListDraftsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5015,7 +5026,7 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListDraftsFixedSizeCollection createCollection(
-        List<ListDraftsPage> pages, int collectionSize) {
+        @Nullable List<ListDraftsPage> pages, int collectionSize) {
       return new ListDraftsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5049,8 +5060,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListProcessorsRequest, ListProcessorsResponse, Processor, ListProcessorsPage> {
 
     private ListProcessorsPage(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
-        ListProcessorsResponse response) {
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable ListProcessorsResponse response) {
       super(context, response);
     }
 
@@ -5060,14 +5071,14 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListProcessorsPage createPage(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
-        ListProcessorsResponse response) {
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable ListProcessorsResponse response) {
       return new ListProcessorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessorsPage> createPageAsync(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
         ApiFuture<ListProcessorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5081,7 +5092,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListProcessorsPage,
           ListProcessorsFixedSizeCollection> {
 
-    private ListProcessorsFixedSizeCollection(List<ListProcessorsPage> pages, int collectionSize) {
+    private ListProcessorsFixedSizeCollection(
+        @Nullable List<ListProcessorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5091,7 +5103,7 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListProcessorsFixedSizeCollection createCollection(
-        List<ListProcessorsPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorsPage> pages, int collectionSize) {
       return new ListProcessorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5125,8 +5137,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5136,14 +5148,14 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5157,7 +5169,8 @@ public class AppPlatformClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5167,7 +5180,7 @@ public class AppPlatformClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -58,8 +58,13 @@ import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
@@ -1175,6 +1180,60 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     assertEquals("explicit.project_id", credentials.getProjectId());
     assertEquals(0, transportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void isOnGce_clientError_doesNotRetry_returnsFalseOnUnknownOs() {
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
+    DefaultCredentialsProvider provider =
+        new DefaultCredentialsProvider() {
+          @Override
+          String getEnv(String name) {
+            if (DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR.equals(name)) {
+              return "false";
+            }
+            return super.getEnv(name);
+          }
+
+          @Override
+          String getOsName() {
+            return "Unknown";
+          }
+        };
+    boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
+    assertFalse(isOnGce);
+    assertEquals(1, transportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void isOnGce_clientError_doesNotRetry_returnsTrueOnLinuxGce() {
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN);
+    DefaultCredentialsProvider provider =
+        new DefaultCredentialsProvider() {
+          @Override
+          String getEnv(String name) {
+            if (DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR.equals(name)) {
+              return "false";
+            }
+            return super.getEnv(name);
+          }
+
+          @Override
+          String getOsName() {
+            return "linux";
+          }
+
+          @Override
+          InputStream readStream(File file) throws FileNotFoundException {
+            return new ByteArrayInputStream(
+                "Google Compute Engine".getBytes(StandardCharsets.UTF_8));
+          }
+        };
+    boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
+    assertTrue(isOnGce);
+    assertEquals(1, transportFactory.transport.getRequestCount());
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {

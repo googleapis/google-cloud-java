@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -170,10 +172,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MetricsV1Beta3Client implements BackgroundResource {
-  private final MetricsV1Beta3Settings settings;
+  private final @Nullable MetricsV1Beta3Settings settings;
   private final MetricsV1Beta3Stub stub;
 
   /** Constructs an instance of MetricsV1Beta3Client with default settings. */
@@ -213,7 +216,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetricsV1Beta3Settings getSettings() {
+  public final @Nullable MetricsV1Beta3Settings getSettings() {
     return settings;
   }
 
@@ -602,8 +605,9 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetJobExecutionDetailsPage> {
 
     private GetJobExecutionDetailsPage(
-        PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary> context,
-        JobExecutionDetails response) {
+        @Nullable PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary>
+            context,
+        @Nullable JobExecutionDetails response) {
       super(context, response);
     }
 
@@ -613,14 +617,16 @@ public class MetricsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected GetJobExecutionDetailsPage createPage(
-        PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary> context,
-        JobExecutionDetails response) {
+        @Nullable PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary>
+            context,
+        @Nullable JobExecutionDetails response) {
       return new GetJobExecutionDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<GetJobExecutionDetailsPage> createPageAsync(
-        PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary> context,
+        @Nullable PageContext<GetJobExecutionDetailsRequest, JobExecutionDetails, StageSummary>
+            context,
         ApiFuture<JobExecutionDetails> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -635,7 +641,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetJobExecutionDetailsFixedSizeCollection> {
 
     private GetJobExecutionDetailsFixedSizeCollection(
-        List<GetJobExecutionDetailsPage> pages, int collectionSize) {
+        @Nullable List<GetJobExecutionDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -645,7 +651,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected GetJobExecutionDetailsFixedSizeCollection createCollection(
-        List<GetJobExecutionDetailsPage> pages, int collectionSize) {
+        @Nullable List<GetJobExecutionDetailsPage> pages, int collectionSize) {
       return new GetJobExecutionDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -682,8 +688,9 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetStageExecutionDetailsPage> {
 
     private GetStageExecutionDetailsPage(
-        PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails> context,
-        StageExecutionDetails response) {
+        @Nullable PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails>
+            context,
+        @Nullable StageExecutionDetails response) {
       super(context, response);
     }
 
@@ -693,14 +700,16 @@ public class MetricsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected GetStageExecutionDetailsPage createPage(
-        PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails> context,
-        StageExecutionDetails response) {
+        @Nullable PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails>
+            context,
+        @Nullable StageExecutionDetails response) {
       return new GetStageExecutionDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<GetStageExecutionDetailsPage> createPageAsync(
-        PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails> context,
+        @Nullable PageContext<GetStageExecutionDetailsRequest, StageExecutionDetails, WorkerDetails>
+            context,
         ApiFuture<StageExecutionDetails> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -715,7 +724,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
           GetStageExecutionDetailsFixedSizeCollection> {
 
     private GetStageExecutionDetailsFixedSizeCollection(
-        List<GetStageExecutionDetailsPage> pages, int collectionSize) {
+        @Nullable List<GetStageExecutionDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -725,7 +734,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected GetStageExecutionDetailsFixedSizeCollection createCollection(
-        List<GetStageExecutionDetailsPage> pages, int collectionSize) {
+        @Nullable List<GetStageExecutionDetailsPage> pages, int collectionSize) {
       return new GetStageExecutionDetailsFixedSizeCollection(pages, collectionSize);
     }
   }

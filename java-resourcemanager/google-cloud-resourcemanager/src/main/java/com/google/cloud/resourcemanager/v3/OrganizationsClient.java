@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,9 +223,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OrganizationsClient implements BackgroundResource {
-  private final OrganizationsSettings settings;
+  private final @Nullable OrganizationsSettings settings;
   private final OrganizationsStub stub;
 
   /** Constructs an instance of OrganizationsClient with default settings. */
@@ -263,7 +266,7 @@ public class OrganizationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OrganizationsSettings getSettings() {
+  public final @Nullable OrganizationsSettings getSettings() {
     return settings;
   }
 
@@ -294,7 +297,7 @@ public class OrganizationsClient implements BackgroundResource {
    *     example, "organizations/1234".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Organization getOrganization(OrganizationName name) {
+  public final Organization getOrganization(@Nullable OrganizationName name) {
     GetOrganizationRequest request =
         GetOrganizationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOrganization(request);
@@ -580,7 +583,7 @@ public class OrganizationsClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -713,7 +716,7 @@ public class OrganizationsClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -850,7 +853,7 @@ public class OrganizationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1026,8 +1029,9 @@ public class OrganizationsClient implements BackgroundResource {
           SearchOrganizationsPage> {
 
     private SearchOrganizationsPage(
-        PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization> context,
-        SearchOrganizationsResponse response) {
+        @Nullable PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization>
+            context,
+        @Nullable SearchOrganizationsResponse response) {
       super(context, response);
     }
 
@@ -1037,14 +1041,16 @@ public class OrganizationsClient implements BackgroundResource {
 
     @Override
     protected SearchOrganizationsPage createPage(
-        PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization> context,
-        SearchOrganizationsResponse response) {
+        @Nullable PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization>
+            context,
+        @Nullable SearchOrganizationsResponse response) {
       return new SearchOrganizationsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchOrganizationsPage> createPageAsync(
-        PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization> context,
+        @Nullable PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization>
+            context,
         ApiFuture<SearchOrganizationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1059,7 +1065,7 @@ public class OrganizationsClient implements BackgroundResource {
           SearchOrganizationsFixedSizeCollection> {
 
     private SearchOrganizationsFixedSizeCollection(
-        List<SearchOrganizationsPage> pages, int collectionSize) {
+        @Nullable List<SearchOrganizationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1069,7 +1075,7 @@ public class OrganizationsClient implements BackgroundResource {
 
     @Override
     protected SearchOrganizationsFixedSizeCollection createCollection(
-        List<SearchOrganizationsPage> pages, int collectionSize) {
+        @Nullable List<SearchOrganizationsPage> pages, int collectionSize) {
       return new SearchOrganizationsFixedSizeCollection(pages, collectionSize);
     }
   }

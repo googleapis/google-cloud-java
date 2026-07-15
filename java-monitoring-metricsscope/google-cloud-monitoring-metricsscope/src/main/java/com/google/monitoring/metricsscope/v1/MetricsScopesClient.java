@@ -28,6 +28,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -173,9 +175,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MetricsScopesClient implements BackgroundResource {
-  private final MetricsScopesSettings settings;
+  private final @Nullable MetricsScopesSettings settings;
   private final MetricsScopesStub stub;
   private final OperationsClient operationsClient;
 
@@ -218,7 +221,7 @@ public class MetricsScopesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final MetricsScopesSettings getSettings() {
+  public final @Nullable MetricsScopesSettings getSettings() {
     return settings;
   }
 
@@ -256,7 +259,7 @@ public class MetricsScopesClient implements BackgroundResource {
    *     `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetricsScope getMetricsScope(MetricsScopeName name) {
+  public final MetricsScope getMetricsScope(@Nullable MetricsScopeName name) {
     GetMetricsScopeRequest request =
         GetMetricsScopeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetricsScope(request);
@@ -438,7 +441,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MonitoredProject, OperationMetadata> createMonitoredProjectAsync(
-      MetricsScopeName parent, MonitoredProject monitoredProject) {
+      @Nullable MetricsScopeName parent, MonitoredProject monitoredProject) {
     CreateMonitoredProjectRequest request =
         CreateMonitoredProjectRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -601,7 +604,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMonitoredProjectAsync(
-      MonitoredProjectName name) {
+      @Nullable MonitoredProjectName name) {
     DeleteMonitoredProjectRequest request =
         DeleteMonitoredProjectRequest.newBuilder()
             .setName(name == null ? null : name.toString())

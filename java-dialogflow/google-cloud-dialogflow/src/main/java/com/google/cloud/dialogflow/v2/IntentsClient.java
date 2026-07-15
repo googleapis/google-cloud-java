@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -310,9 +312,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IntentsClient implements BackgroundResource {
-  private final IntentsSettings settings;
+  private final @Nullable IntentsSettings settings;
   private final IntentsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -358,7 +361,7 @@ public class IntentsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final IntentsSettings getSettings() {
+  public final @Nullable IntentsSettings getSettings() {
     return settings;
   }
 
@@ -412,7 +415,7 @@ public class IntentsClient implements BackgroundResource {
    *     will not be returned for non-draft environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntentsPagedResponse listIntents(AgentName parent) {
+  public final ListIntentsPagedResponse listIntents(@Nullable AgentName parent) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -488,7 +491,8 @@ public class IntentsClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntentsPagedResponse listIntents(AgentName parent, String languageCode) {
+  public final ListIntentsPagedResponse listIntents(
+      @Nullable AgentName parent, String languageCode) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -667,7 +671,7 @@ public class IntentsClient implements BackgroundResource {
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent getIntent(IntentName name) {
+  public final Intent getIntent(@Nullable IntentName name) {
     GetIntentRequest request =
         GetIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIntent(request);
@@ -727,7 +731,7 @@ public class IntentsClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent getIntent(IntentName name, String languageCode) {
+  public final Intent getIntent(@Nullable IntentName name, String languageCode) {
     GetIntentRequest request =
         GetIntentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -855,7 +859,7 @@ public class IntentsClient implements BackgroundResource {
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent createIntent(AgentName parent, Intent intent) {
+  public final Intent createIntent(@Nullable AgentName parent, Intent intent) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -929,7 +933,7 @@ public class IntentsClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent createIntent(AgentName parent, Intent intent, String languageCode) {
+  public final Intent createIntent(@Nullable AgentName parent, Intent intent, String languageCode) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1217,7 +1221,7 @@ public class IntentsClient implements BackgroundResource {
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteIntent(IntentName name) {
+  public final void deleteIntent(@Nullable IntentName name) {
     DeleteIntentRequest request =
         DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIntent(request);
@@ -1353,7 +1357,7 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
-      AgentName parent, IntentBatch intentBatchInline) {
+      @Nullable AgentName parent, IntentBatch intentBatchInline) {
     BatchUpdateIntentsRequest request =
         BatchUpdateIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1402,7 +1406,7 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
-      AgentName parent, String intentBatchUri) {
+      @Nullable AgentName parent, String intentBatchUri) {
     BatchUpdateIntentsRequest request =
         BatchUpdateIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1675,7 +1679,7 @@ public class IntentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
-      AgentName parent, List<Intent> intents) {
+      @Nullable AgentName parent, List<Intent> intents) {
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2098,8 +2102,8 @@ public class IntentsClient implements BackgroundResource {
       extends AbstractPage<ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage> {
 
     private ListIntentsPage(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
-        ListIntentsResponse response) {
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable ListIntentsResponse response) {
       super(context, response);
     }
 
@@ -2109,14 +2113,14 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListIntentsPage createPage(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
-        ListIntentsResponse response) {
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable ListIntentsResponse response) {
       return new ListIntentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntentsPage> createPageAsync(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
         ApiFuture<ListIntentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2130,7 +2134,8 @@ public class IntentsClient implements BackgroundResource {
           ListIntentsPage,
           ListIntentsFixedSizeCollection> {
 
-    private ListIntentsFixedSizeCollection(List<ListIntentsPage> pages, int collectionSize) {
+    private ListIntentsFixedSizeCollection(
+        @Nullable List<ListIntentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2140,7 +2145,7 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListIntentsFixedSizeCollection createCollection(
-        List<ListIntentsPage> pages, int collectionSize) {
+        @Nullable List<ListIntentsPage> pages, int collectionSize) {
       return new ListIntentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2174,8 +2179,8 @@ public class IntentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2185,14 +2190,14 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2206,7 +2211,8 @@ public class IntentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2216,7 +2222,7 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

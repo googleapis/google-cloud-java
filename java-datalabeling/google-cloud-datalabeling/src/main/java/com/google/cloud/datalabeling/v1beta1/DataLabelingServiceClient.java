@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -771,10 +773,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataLabelingServiceClient implements BackgroundResource {
-  private final DataLabelingServiceSettings settings;
+  private final @Nullable DataLabelingServiceSettings settings;
   private final DataLabelingServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -817,7 +820,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final DataLabelingServiceSettings getSettings() {
+  public final @Nullable DataLabelingServiceSettings getSettings() {
     return settings;
   }
 
@@ -856,7 +859,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param dataset Required. The dataset to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset createDataset(ProjectName parent, Dataset dataset) {
+  public final Dataset createDataset(@Nullable ProjectName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -974,7 +977,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -1088,7 +1091,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param filter Optional. Filter on dataset is not supported at this moment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(ProjectName parent, String filter) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable ProjectName parent, String filter) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1257,7 +1260,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataset(DatasetName name) {
+  public final void deleteDataset(@Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataset(request);
@@ -1375,7 +1378,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataOperationResponse, ImportDataOperationMetadata>
-      importDataAsync(DatasetName name, InputConfig inputConfig) {
+      importDataAsync(@Nullable DatasetName name, InputConfig inputConfig) {
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1558,8 +1561,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataAsync(
-          DatasetName name,
-          AnnotatedDatasetName annotatedDataset,
+          @Nullable DatasetName name,
+          @Nullable AnnotatedDatasetName annotatedDataset,
           String filter,
           OutputConfig outputConfig) {
     ExportDataRequest request =
@@ -1608,7 +1611,10 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataAsync(
-          DatasetName name, String annotatedDataset, String filter, OutputConfig outputConfig) {
+          @Nullable DatasetName name,
+          String annotatedDataset,
+          String filter,
+          OutputConfig outputConfig) {
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1656,7 +1662,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
   public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataAsync(
           String name,
-          AnnotatedDatasetName annotatedDataset,
+          @Nullable AnnotatedDatasetName annotatedDataset,
           String filter,
           OutputConfig outputConfig) {
     ExportDataRequest request =
@@ -1845,7 +1851,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataItem getDataItem(DataItemName name) {
+  public final DataItem getDataItem(@Nullable DataItemName name) {
     GetDataItemRequest request =
         GetDataItemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataItem(request);
@@ -1965,7 +1971,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param filter Optional. Filter is not supported at this moment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataItemsPagedResponse listDataItems(DatasetName parent, String filter) {
+  public final ListDataItemsPagedResponse listDataItems(
+      @Nullable DatasetName parent, String filter) {
     ListDataItemsRequest request =
         ListDataItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2141,7 +2148,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnnotatedDataset getAnnotatedDataset(AnnotatedDatasetName name) {
+  public final AnnotatedDataset getAnnotatedDataset(@Nullable AnnotatedDatasetName name) {
     GetAnnotatedDatasetRequest request =
         GetAnnotatedDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2267,7 +2274,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotatedDatasetsPagedResponse listAnnotatedDatasets(
-      DatasetName parent, String filter) {
+      @Nullable DatasetName parent, String filter) {
     ListAnnotatedDatasetsRequest request =
         ListAnnotatedDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2510,7 +2517,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelImageAsync(
-      DatasetName parent, HumanAnnotationConfig basicConfig, LabelImageRequest.Feature feature) {
+      @Nullable DatasetName parent,
+      HumanAnnotationConfig basicConfig,
+      LabelImageRequest.Feature feature) {
     LabelImageRequest request =
         LabelImageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2680,7 +2689,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelVideoAsync(
-      DatasetName parent, HumanAnnotationConfig basicConfig, LabelVideoRequest.Feature feature) {
+      @Nullable DatasetName parent,
+      HumanAnnotationConfig basicConfig,
+      LabelVideoRequest.Feature feature) {
     LabelVideoRequest request =
         LabelVideoRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2850,7 +2861,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnnotatedDataset, LabelOperationMetadata> labelTextAsync(
-      DatasetName parent, HumanAnnotationConfig basicConfig, LabelTextRequest.Feature feature) {
+      @Nullable DatasetName parent,
+      HumanAnnotationConfig basicConfig,
+      LabelTextRequest.Feature feature) {
     LabelTextRequest request =
         LabelTextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3019,7 +3032,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     {display_name}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example getExample(ExampleName name, String filter) {
+  public final Example getExample(@Nullable ExampleName name, String filter) {
     GetExampleRequest request =
         GetExampleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3152,7 +3165,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     "annotation_spec.display_name = {display_name}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExamplesPagedResponse listExamples(AnnotatedDatasetName parent, String filter) {
+  public final ListExamplesPagedResponse listExamples(
+      @Nullable AnnotatedDatasetName parent, String filter) {
     ListExamplesRequest request =
         ListExamplesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3335,7 +3349,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpecSet createAnnotationSpecSet(
-      ProjectName parent, AnnotationSpecSet annotationSpecSet) {
+      @Nullable ProjectName parent, AnnotationSpecSet annotationSpecSet) {
     CreateAnnotationSpecSetRequest request =
         CreateAnnotationSpecSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3461,7 +3475,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnnotationSpecSet getAnnotationSpecSet(AnnotationSpecSetName name) {
+  public final AnnotationSpecSet getAnnotationSpecSet(@Nullable AnnotationSpecSetName name) {
     GetAnnotationSpecSetRequest request =
         GetAnnotationSpecSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3581,7 +3595,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationSpecSetsPagedResponse listAnnotationSpecSets(
-      ProjectName parent, String filter) {
+      @Nullable ProjectName parent, String filter) {
     ListAnnotationSpecSetsRequest request =
         ListAnnotationSpecSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3755,7 +3769,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAnnotationSpecSet(AnnotationSpecSetName name) {
+  public final void deleteAnnotationSpecSet(@Nullable AnnotationSpecSetName name) {
     DeleteAnnotationSpecSetRequest request =
         DeleteAnnotationSpecSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3873,7 +3887,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instruction, CreateInstructionMetadata> createInstructionAsync(
-      ProjectName parent, Instruction instruction) {
+      @Nullable ProjectName parent, Instruction instruction) {
     CreateInstructionRequest request =
         CreateInstructionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4024,7 +4038,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/instructions/{instruction_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instruction getInstruction(InstructionName name) {
+  public final Instruction getInstruction(@Nullable InstructionName name) {
     GetInstructionRequest request =
         GetInstructionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstruction(request);
@@ -4139,7 +4153,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param filter Optional. Filter is not supported at this moment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstructionsPagedResponse listInstructions(ProjectName parent, String filter) {
+  public final ListInstructionsPagedResponse listInstructions(
+      @Nullable ProjectName parent, String filter) {
     ListInstructionsRequest request =
         ListInstructionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4310,7 +4325,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     projects/{project_id}/instructions/{instruction_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInstruction(InstructionName name) {
+  public final void deleteInstruction(@Nullable InstructionName name) {
     DeleteInstructionRequest request =
         DeleteInstructionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4424,7 +4439,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -4575,7 +4590,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchEvaluationsPagedResponse searchEvaluations(
-      EvaluationName parent, String filter) {
+      @Nullable EvaluationName parent, String filter) {
     SearchEvaluationsRequest request =
         SearchEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4785,7 +4800,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchExampleComparisonsPagedResponse searchExampleComparisons(
-      EvaluationName parent) {
+      @Nullable EvaluationName parent) {
     SearchExampleComparisonsRequest request =
         SearchExampleComparisonsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4965,7 +4980,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param job Required. The evaluation job to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationJob createEvaluationJob(ProjectName parent, EvaluationJob job) {
+  public final EvaluationJob createEvaluationJob(@Nullable ProjectName parent, EvaluationJob job) {
     CreateEvaluationJobRequest request =
         CreateEvaluationJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5200,7 +5215,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationJob getEvaluationJob(EvaluationJobName name) {
+  public final EvaluationJob getEvaluationJob(@Nullable EvaluationJobName name) {
     GetEvaluationJobRequest request =
         GetEvaluationJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluationJob(request);
@@ -5312,7 +5327,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void pauseEvaluationJob(EvaluationJobName name) {
+  public final void pauseEvaluationJob(@Nullable EvaluationJobName name) {
     PauseEvaluationJobRequest request =
         PauseEvaluationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5430,7 +5445,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void resumeEvaluationJob(EvaluationJobName name) {
+  public final void resumeEvaluationJob(@Nullable EvaluationJobName name) {
     ResumeEvaluationJobRequest request =
         ResumeEvaluationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5547,7 +5562,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationJob(EvaluationJobName name) {
+  public final void deleteEvaluationJob(@Nullable EvaluationJobName name) {
     DeleteEvaluationJobRequest request =
         DeleteEvaluationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5675,7 +5690,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEvaluationJobsPagedResponse listEvaluationJobs(
-      ProjectName parent, String filter) {
+      @Nullable ProjectName parent, String filter) {
     ListEvaluationJobsRequest request =
         ListEvaluationJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5893,8 +5908,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -5904,14 +5919,14 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5925,7 +5940,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5935,7 +5951,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5969,8 +5985,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListDataItemsRequest, ListDataItemsResponse, DataItem, ListDataItemsPage> {
 
     private ListDataItemsPage(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
-        ListDataItemsResponse response) {
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable ListDataItemsResponse response) {
       super(context, response);
     }
 
@@ -5980,14 +5996,14 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataItemsPage createPage(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
-        ListDataItemsResponse response) {
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable ListDataItemsResponse response) {
       return new ListDataItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataItemsPage> createPageAsync(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
         ApiFuture<ListDataItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6001,7 +6017,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListDataItemsPage,
           ListDataItemsFixedSizeCollection> {
 
-    private ListDataItemsFixedSizeCollection(List<ListDataItemsPage> pages, int collectionSize) {
+    private ListDataItemsFixedSizeCollection(
+        @Nullable List<ListDataItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6011,7 +6028,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataItemsFixedSizeCollection createCollection(
-        List<ListDataItemsPage> pages, int collectionSize) {
+        @Nullable List<ListDataItemsPage> pages, int collectionSize) {
       return new ListDataItemsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6049,9 +6066,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotatedDatasetsPage> {
 
     private ListAnnotatedDatasetsPage(
-        PageContext<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
+        @Nullable
+            PageContext<
+                ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
             context,
-        ListAnnotatedDatasetsResponse response) {
+        @Nullable ListAnnotatedDatasetsResponse response) {
       super(context, response);
     }
 
@@ -6061,15 +6080,19 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotatedDatasetsPage createPage(
-        PageContext<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
+        @Nullable
+            PageContext<
+                ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
             context,
-        ListAnnotatedDatasetsResponse response) {
+        @Nullable ListAnnotatedDatasetsResponse response) {
       return new ListAnnotatedDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnnotatedDatasetsPage> createPageAsync(
-        PageContext<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
+        @Nullable
+            PageContext<
+                ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
             context,
         ApiFuture<ListAnnotatedDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6085,7 +6108,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotatedDatasetsFixedSizeCollection> {
 
     private ListAnnotatedDatasetsFixedSizeCollection(
-        List<ListAnnotatedDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotatedDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6095,7 +6118,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotatedDatasetsFixedSizeCollection createCollection(
-        List<ListAnnotatedDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotatedDatasetsPage> pages, int collectionSize) {
       return new ListAnnotatedDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6128,8 +6151,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
       extends AbstractPage<ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage> {
 
     private ListExamplesPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       super(context, response);
     }
 
@@ -6139,14 +6162,14 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesPage createPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       return new ListExamplesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExamplesPage> createPageAsync(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
         ApiFuture<ListExamplesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6160,7 +6183,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
-    private ListExamplesFixedSizeCollection(List<ListExamplesPage> pages, int collectionSize) {
+    private ListExamplesFixedSizeCollection(
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6170,7 +6194,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesFixedSizeCollection createCollection(
-        List<ListExamplesPage> pages, int collectionSize) {
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       return new ListExamplesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6209,10 +6233,11 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotationSpecSetsPage> {
 
     private ListAnnotationSpecSetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet>
             context,
-        ListAnnotationSpecSetsResponse response) {
+        @Nullable ListAnnotationSpecSetsResponse response) {
       super(context, response);
     }
 
@@ -6222,16 +6247,18 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationSpecSetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet>
             context,
-        ListAnnotationSpecSetsResponse response) {
+        @Nullable ListAnnotationSpecSetsResponse response) {
       return new ListAnnotationSpecSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnnotationSpecSetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet>
             context,
         ApiFuture<ListAnnotationSpecSetsResponse> futureResponse) {
@@ -6248,7 +6275,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListAnnotationSpecSetsFixedSizeCollection> {
 
     private ListAnnotationSpecSetsFixedSizeCollection(
-        List<ListAnnotationSpecSetsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationSpecSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6258,7 +6285,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationSpecSetsFixedSizeCollection createCollection(
-        List<ListAnnotationSpecSetsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationSpecSetsPage> pages, int collectionSize) {
       return new ListAnnotationSpecSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6292,8 +6319,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListInstructionsRequest, ListInstructionsResponse, Instruction, ListInstructionsPage> {
 
     private ListInstructionsPage(
-        PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction> context,
-        ListInstructionsResponse response) {
+        @Nullable PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction>
+            context,
+        @Nullable ListInstructionsResponse response) {
       super(context, response);
     }
 
@@ -6303,14 +6331,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListInstructionsPage createPage(
-        PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction> context,
-        ListInstructionsResponse response) {
+        @Nullable PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction>
+            context,
+        @Nullable ListInstructionsResponse response) {
       return new ListInstructionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstructionsPage> createPageAsync(
-        PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction> context,
+        @Nullable PageContext<ListInstructionsRequest, ListInstructionsResponse, Instruction>
+            context,
         ApiFuture<ListInstructionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6325,7 +6355,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListInstructionsFixedSizeCollection> {
 
     private ListInstructionsFixedSizeCollection(
-        List<ListInstructionsPage> pages, int collectionSize) {
+        @Nullable List<ListInstructionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6335,7 +6365,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListInstructionsFixedSizeCollection createCollection(
-        List<ListInstructionsPage> pages, int collectionSize) {
+        @Nullable List<ListInstructionsPage> pages, int collectionSize) {
       return new ListInstructionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6369,8 +6399,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation, SearchEvaluationsPage> {
 
     private SearchEvaluationsPage(
-        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
-        SearchEvaluationsResponse response) {
+        @Nullable PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>
+            context,
+        @Nullable SearchEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -6380,14 +6411,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchEvaluationsPage createPage(
-        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
-        SearchEvaluationsResponse response) {
+        @Nullable PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>
+            context,
+        @Nullable SearchEvaluationsResponse response) {
       return new SearchEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchEvaluationsPage> createPageAsync(
-        PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation>
+            context,
         ApiFuture<SearchEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6402,7 +6435,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchEvaluationsFixedSizeCollection> {
 
     private SearchEvaluationsFixedSizeCollection(
-        List<SearchEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<SearchEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6412,7 +6445,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchEvaluationsFixedSizeCollection createCollection(
-        List<SearchEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<SearchEvaluationsPage> pages, int collectionSize) {
       return new SearchEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6453,12 +6486,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchExampleComparisonsPage> {
 
     private SearchExampleComparisonsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchExampleComparisonsRequest,
                 SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
-        SearchExampleComparisonsResponse response) {
+        @Nullable SearchExampleComparisonsResponse response) {
       super(context, response);
     }
 
@@ -6468,18 +6502,20 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchExampleComparisonsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchExampleComparisonsRequest,
                 SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
-        SearchExampleComparisonsResponse response) {
+        @Nullable SearchExampleComparisonsResponse response) {
       return new SearchExampleComparisonsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchExampleComparisonsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchExampleComparisonsRequest,
                 SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
@@ -6498,7 +6534,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           SearchExampleComparisonsFixedSizeCollection> {
 
     private SearchExampleComparisonsFixedSizeCollection(
-        List<SearchExampleComparisonsPage> pages, int collectionSize) {
+        @Nullable List<SearchExampleComparisonsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6508,7 +6544,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchExampleComparisonsFixedSizeCollection createCollection(
-        List<SearchExampleComparisonsPage> pages, int collectionSize) {
+        @Nullable List<SearchExampleComparisonsPage> pages, int collectionSize) {
       return new SearchExampleComparisonsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6545,8 +6581,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListEvaluationJobsPage> {
 
     private ListEvaluationJobsPage(
-        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
-        ListEvaluationJobsResponse response) {
+        @Nullable PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>
+            context,
+        @Nullable ListEvaluationJobsResponse response) {
       super(context, response);
     }
 
@@ -6556,14 +6593,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationJobsPage createPage(
-        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
-        ListEvaluationJobsResponse response) {
+        @Nullable PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>
+            context,
+        @Nullable ListEvaluationJobsResponse response) {
       return new ListEvaluationJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationJobsPage> createPageAsync(
-        PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
+        @Nullable PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob>
+            context,
         ApiFuture<ListEvaluationJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6578,7 +6617,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
           ListEvaluationJobsFixedSizeCollection> {
 
     private ListEvaluationJobsFixedSizeCollection(
-        List<ListEvaluationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6588,7 +6627,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationJobsFixedSizeCollection createCollection(
-        List<ListEvaluationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationJobsPage> pages, int collectionSize) {
       return new ListEvaluationJobsFixedSizeCollection(pages, collectionSize);
     }
   }

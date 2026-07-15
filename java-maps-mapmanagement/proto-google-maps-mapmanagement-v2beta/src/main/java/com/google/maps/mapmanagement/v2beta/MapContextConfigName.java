@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MapContextConfigName implements ResourceName {
   private static final PathTemplate PROJECT_MAP_CONFIG_MAP_CONTEXT_CONFIG =
@@ -87,7 +90,7 @@ public class MapContextConfigName implements ResourceName {
         .toString();
   }
 
-  public static MapContextConfigName parse(String formattedString) {
+  public static @Nullable MapContextConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -106,7 +109,7 @@ public class MapContextConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<MapContextConfigName> values) {
+  public static List<String> toStringList(List<@Nullable MapContextConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (MapContextConfigName value : values) {
       if (value == null) {
@@ -155,7 +158,7 @@ public class MapContextConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

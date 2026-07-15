@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -144,9 +146,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AggregateProductStatusesServiceClient implements BackgroundResource {
-  private final AggregateProductStatusesServiceSettings settings;
+  private final @Nullable AggregateProductStatusesServiceSettings settings;
   private final AggregateProductStatusesServiceStub stub;
 
   /** Constructs an instance of AggregateProductStatusesServiceClient with default settings. */
@@ -191,7 +194,7 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
     this.stub = stub;
   }
 
-  public final AggregateProductStatusesServiceSettings getSettings() {
+  public final @Nullable AggregateProductStatusesServiceSettings getSettings() {
     return settings;
   }
 
@@ -228,7 +231,7 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAggregateProductStatusesPagedResponse listAggregateProductStatuses(
-      AccountName parent) {
+      @Nullable AccountName parent) {
     ListAggregateProductStatusesRequest request =
         ListAggregateProductStatusesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -465,12 +468,13 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
           ListAggregateProductStatusesPage> {
 
     private ListAggregateProductStatusesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAggregateProductStatusesRequest,
                 ListAggregateProductStatusesResponse,
                 AggregateProductStatus>
             context,
-        ListAggregateProductStatusesResponse response) {
+        @Nullable ListAggregateProductStatusesResponse response) {
       super(context, response);
     }
 
@@ -480,18 +484,20 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
 
     @Override
     protected ListAggregateProductStatusesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAggregateProductStatusesRequest,
                 ListAggregateProductStatusesResponse,
                 AggregateProductStatus>
             context,
-        ListAggregateProductStatusesResponse response) {
+        @Nullable ListAggregateProductStatusesResponse response) {
       return new ListAggregateProductStatusesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAggregateProductStatusesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAggregateProductStatusesRequest,
                 ListAggregateProductStatusesResponse,
                 AggregateProductStatus>
@@ -510,7 +516,7 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
           ListAggregateProductStatusesFixedSizeCollection> {
 
     private ListAggregateProductStatusesFixedSizeCollection(
-        List<ListAggregateProductStatusesPage> pages, int collectionSize) {
+        @Nullable List<ListAggregateProductStatusesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -520,7 +526,7 @@ public class AggregateProductStatusesServiceClient implements BackgroundResource
 
     @Override
     protected ListAggregateProductStatusesFixedSizeCollection createCollection(
-        List<ListAggregateProductStatusesPage> pages, int collectionSize) {
+        @Nullable List<ListAggregateProductStatusesPage> pages, int collectionSize) {
       return new ListAggregateProductStatusesFixedSizeCollection(pages, collectionSize);
     }
   }

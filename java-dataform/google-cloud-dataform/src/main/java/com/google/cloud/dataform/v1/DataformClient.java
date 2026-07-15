@@ -48,6 +48,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1427,9 +1429,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataformClient implements BackgroundResource {
-  private final DataformSettings settings;
+  private final @Nullable DataformSettings settings;
   private final DataformStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1475,7 +1478,7 @@ public class DataformClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataformSettings getSettings() {
+  public final @Nullable DataformSettings getSettings() {
     return settings;
   }
 
@@ -1521,7 +1524,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The TeamFolder's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TeamFolder getTeamFolder(TeamFolderName name) {
+  public final TeamFolder getTeamFolder(@Nullable TeamFolderName name) {
     GetTeamFolderRequest request =
         GetTeamFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTeamFolder(request);
@@ -1632,7 +1635,7 @@ public class DataformClient implements BackgroundResource {
    * @param teamFolder Required. The TeamFolder to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TeamFolder createTeamFolder(LocationName parent, TeamFolder teamFolder) {
+  public final TeamFolder createTeamFolder(@Nullable LocationName parent, TeamFolder teamFolder) {
     CreateTeamFolderRequest request =
         CreateTeamFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1839,7 +1842,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The TeamFolder's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTeamFolder(TeamFolderName name) {
+  public final void deleteTeamFolder(@Nullable TeamFolderName name) {
     DeleteTeamFolderRequest request =
         DeleteTeamFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTeamFolder(request);
@@ -1956,7 +1959,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteTeamFolderTreeAsync(
-      TeamFolderName name, boolean force) {
+      @Nullable TeamFolderName name, boolean force) {
     DeleteTeamFolderTreeRequest request =
         DeleteTeamFolderTreeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2120,7 +2123,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QueryTeamFolderContentsPagedResponse queryTeamFolderContents(
-      TeamFolderName teamFolder) {
+      @Nullable TeamFolderName teamFolder) {
     QueryTeamFolderContentsRequest request =
         QueryTeamFolderContentsRequest.newBuilder()
             .setTeamFolder(teamFolder == null ? null : teamFolder.toString())
@@ -2413,7 +2416,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The Folder's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder getFolder(FolderName name) {
+  public final Folder getFolder(@Nullable FolderName name) {
     GetFolderRequest request =
         GetFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFolder(request);
@@ -2524,7 +2527,7 @@ public class DataformClient implements BackgroundResource {
    * @param folder Required. The Folder to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder createFolder(LocationName parent, Folder folder) {
+  public final Folder createFolder(@Nullable LocationName parent, Folder folder) {
     CreateFolderRequest request =
         CreateFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2729,7 +2732,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The Folder's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFolder(FolderName name) {
+  public final void deleteFolder(@Nullable FolderName name) {
     DeleteFolderRequest request =
         DeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFolder(request);
@@ -2846,7 +2849,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteFolderTreeAsync(
-      FolderName name, boolean force) {
+      @Nullable FolderName name, boolean force) {
     DeleteFolderTreeRequest request =
         DeleteFolderTreeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3007,7 +3010,7 @@ public class DataformClient implements BackgroundResource {
    *     projects/&#42;/locations/&#42;/folders/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryFolderContentsPagedResponse queryFolderContents(FolderName folder) {
+  public final QueryFolderContentsPagedResponse queryFolderContents(@Nullable FolderName folder) {
     QueryFolderContentsRequest request =
         QueryFolderContentsRequest.newBuilder()
             .setFolder(folder == null ? null : folder.toString())
@@ -3185,7 +3188,8 @@ public class DataformClient implements BackgroundResource {
    *     projects/&#42;/locations/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryUserRootContentsPagedResponse queryUserRootContents(LocationName location) {
+  public final QueryUserRootContentsPagedResponse queryUserRootContents(
+      @Nullable LocationName location) {
     QueryUserRootContentsRequest request =
         QueryUserRootContentsRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -3368,7 +3372,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, MoveFolderMetadata> moveFolderAsync(
-      FolderName name, String destinationContainingFolder) {
+      @Nullable FolderName name, String destinationContainingFolder) {
     MoveFolderRequest request =
         MoveFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3528,7 +3532,7 @@ public class DataformClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRepositoriesPagedResponse listRepositories(LocationName parent) {
+  public final ListRepositoriesPagedResponse listRepositories(@Nullable LocationName parent) {
     ListRepositoriesRequest request =
         ListRepositoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3709,7 +3713,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The repository's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Repository getRepository(RepositoryName name) {
+  public final Repository getRepository(@Nullable RepositoryName name) {
     GetRepositoryRequest request =
         GetRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRepository(request);
@@ -3824,7 +3828,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Repository createRepository(
-      LocationName parent, Repository repository, String repositoryId) {
+      @Nullable LocationName parent, Repository repository, String repositoryId) {
     CreateRepositoryRequest request =
         CreateRepositoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4057,7 +4061,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The repository's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRepository(RepositoryName name) {
+  public final void deleteRepository(@Nullable RepositoryName name) {
     DeleteRepositoryRequest request =
         DeleteRepositoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRepository(request);
@@ -4173,7 +4177,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, MoveRepositoryMetadata> moveRepositoryAsync(
-      RepositoryName name, String destinationContainingFolder) {
+      @Nullable RepositoryName name, String destinationContainingFolder) {
     MoveRepositoryRequest request =
         MoveRepositoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4805,7 +4809,7 @@ public class DataformClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkspacesPagedResponse listWorkspaces(RepositoryName parent) {
+  public final ListWorkspacesPagedResponse listWorkspaces(@Nullable RepositoryName parent) {
     ListWorkspacesRequest request =
         ListWorkspacesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4974,7 +4978,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workspace's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workspace getWorkspace(WorkspaceName name) {
+  public final Workspace getWorkspace(@Nullable WorkspaceName name) {
     GetWorkspaceRequest request =
         GetWorkspaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkspace(request);
@@ -5094,7 +5098,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Workspace createWorkspace(
-      RepositoryName parent, Workspace workspace, String workspaceId) {
+      @Nullable RepositoryName parent, Workspace workspace, String workspaceId) {
     CreateWorkspaceRequest request =
         CreateWorkspaceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5222,7 +5226,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workspace resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWorkspace(WorkspaceName name) {
+  public final void deleteWorkspace(@Nullable WorkspaceName name) {
     DeleteWorkspaceRequest request =
         DeleteWorkspaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteWorkspace(request);
@@ -6518,7 +6522,7 @@ public class DataformClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReleaseConfigsPagedResponse listReleaseConfigs(RepositoryName parent) {
+  public final ListReleaseConfigsPagedResponse listReleaseConfigs(@Nullable RepositoryName parent) {
     ListReleaseConfigsRequest request =
         ListReleaseConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6684,7 +6688,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The release config's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReleaseConfig getReleaseConfig(ReleaseConfigName name) {
+  public final ReleaseConfig getReleaseConfig(@Nullable ReleaseConfigName name) {
     GetReleaseConfigRequest request =
         GetReleaseConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReleaseConfig(request);
@@ -6809,7 +6813,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReleaseConfig createReleaseConfig(
-      RepositoryName parent, ReleaseConfig releaseConfig, String releaseConfigId) {
+      @Nullable RepositoryName parent, ReleaseConfig releaseConfig, String releaseConfigId) {
     CreateReleaseConfigRequest request =
         CreateReleaseConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7049,7 +7053,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The release config's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReleaseConfig(ReleaseConfigName name) {
+  public final void deleteReleaseConfig(@Nullable ReleaseConfigName name) {
     DeleteReleaseConfigRequest request =
         DeleteReleaseConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7171,7 +7175,8 @@ public class DataformClient implements BackgroundResource {
    *     format `projects/&#42;/locations/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCompilationResultsPagedResponse listCompilationResults(RepositoryName parent) {
+  public final ListCompilationResultsPagedResponse listCompilationResults(
+      @Nullable RepositoryName parent) {
     ListCompilationResultsRequest request =
         ListCompilationResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7345,7 +7350,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The compilation result's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CompilationResult getCompilationResult(CompilationResultName name) {
+  public final CompilationResult getCompilationResult(@Nullable CompilationResultName name) {
     GetCompilationResultRequest request =
         GetCompilationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7472,7 +7477,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompilationResult createCompilationResult(
-      RepositoryName parent, CompilationResult compilationResult) {
+      @Nullable RepositoryName parent, CompilationResult compilationResult) {
     CreateCompilationResultRequest request =
         CreateCompilationResultRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7720,7 +7725,8 @@ public class DataformClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkflowConfigsPagedResponse listWorkflowConfigs(RepositoryName parent) {
+  public final ListWorkflowConfigsPagedResponse listWorkflowConfigs(
+      @Nullable RepositoryName parent) {
     ListWorkflowConfigsRequest request =
         ListWorkflowConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7886,7 +7892,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workflow config's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkflowConfig getWorkflowConfig(WorkflowConfigName name) {
+  public final WorkflowConfig getWorkflowConfig(@Nullable WorkflowConfigName name) {
     GetWorkflowConfigRequest request =
         GetWorkflowConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8013,7 +8019,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowConfig createWorkflowConfig(
-      RepositoryName parent, WorkflowConfig workflowConfig, String workflowConfigId) {
+      @Nullable RepositoryName parent, WorkflowConfig workflowConfig, String workflowConfigId) {
     CreateWorkflowConfigRequest request =
         CreateWorkflowConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8253,7 +8259,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workflow config's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWorkflowConfig(WorkflowConfigName name) {
+  public final void deleteWorkflowConfig(@Nullable WorkflowConfigName name) {
     DeleteWorkflowConfigRequest request =
         DeleteWorkflowConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8376,7 +8382,8 @@ public class DataformClient implements BackgroundResource {
    *     format `projects/&#42;/locations/&#42;/repositories/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkflowInvocationsPagedResponse listWorkflowInvocations(RepositoryName parent) {
+  public final ListWorkflowInvocationsPagedResponse listWorkflowInvocations(
+      @Nullable RepositoryName parent) {
     ListWorkflowInvocationsRequest request =
         ListWorkflowInvocationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8551,7 +8558,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workflow invocation resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkflowInvocation getWorkflowInvocation(WorkflowInvocationName name) {
+  public final WorkflowInvocation getWorkflowInvocation(@Nullable WorkflowInvocationName name) {
     GetWorkflowInvocationRequest request =
         GetWorkflowInvocationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8678,7 +8685,7 @@ public class DataformClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowInvocation createWorkflowInvocation(
-      RepositoryName parent, WorkflowInvocation workflowInvocation) {
+      @Nullable RepositoryName parent, WorkflowInvocation workflowInvocation) {
     CreateWorkflowInvocationRequest request =
         CreateWorkflowInvocationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8805,7 +8812,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The workflow invocation resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWorkflowInvocation(WorkflowInvocationName name) {
+  public final void deleteWorkflowInvocation(@Nullable WorkflowInvocationName name) {
     DeleteWorkflowInvocationRequest request =
         DeleteWorkflowInvocationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9109,7 +9116,7 @@ public class DataformClient implements BackgroundResource {
    * @param name Required. The config name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Config getConfig(ConfigName name) {
+  public final Config getConfig(@Nullable ConfigName name) {
     GetConfigRequest request =
         GetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConfig(request);
@@ -9320,7 +9327,7 @@ public class DataformClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -9806,12 +9813,13 @@ public class DataformClient implements BackgroundResource {
           QueryTeamFolderContentsPage> {
 
     private QueryTeamFolderContentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryTeamFolderContentsRequest,
                 QueryTeamFolderContentsResponse,
                 QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
             context,
-        QueryTeamFolderContentsResponse response) {
+        @Nullable QueryTeamFolderContentsResponse response) {
       super(context, response);
     }
 
@@ -9821,18 +9829,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryTeamFolderContentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryTeamFolderContentsRequest,
                 QueryTeamFolderContentsResponse,
                 QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
             context,
-        QueryTeamFolderContentsResponse response) {
+        @Nullable QueryTeamFolderContentsResponse response) {
       return new QueryTeamFolderContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryTeamFolderContentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryTeamFolderContentsRequest,
                 QueryTeamFolderContentsResponse,
                 QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
@@ -9851,7 +9861,7 @@ public class DataformClient implements BackgroundResource {
           QueryTeamFolderContentsFixedSizeCollection> {
 
     private QueryTeamFolderContentsFixedSizeCollection(
-        List<QueryTeamFolderContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryTeamFolderContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9861,7 +9871,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryTeamFolderContentsFixedSizeCollection createCollection(
-        List<QueryTeamFolderContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryTeamFolderContentsPage> pages, int collectionSize) {
       return new QueryTeamFolderContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9902,12 +9912,13 @@ public class DataformClient implements BackgroundResource {
           SearchTeamFoldersPage> {
 
     private SearchTeamFoldersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTeamFoldersRequest,
                 SearchTeamFoldersResponse,
                 SearchTeamFoldersResponse.TeamFolderSearchResult>
             context,
-        SearchTeamFoldersResponse response) {
+        @Nullable SearchTeamFoldersResponse response) {
       super(context, response);
     }
 
@@ -9917,18 +9928,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected SearchTeamFoldersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTeamFoldersRequest,
                 SearchTeamFoldersResponse,
                 SearchTeamFoldersResponse.TeamFolderSearchResult>
             context,
-        SearchTeamFoldersResponse response) {
+        @Nullable SearchTeamFoldersResponse response) {
       return new SearchTeamFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchTeamFoldersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTeamFoldersRequest,
                 SearchTeamFoldersResponse,
                 SearchTeamFoldersResponse.TeamFolderSearchResult>
@@ -9947,7 +9960,7 @@ public class DataformClient implements BackgroundResource {
           SearchTeamFoldersFixedSizeCollection> {
 
     private SearchTeamFoldersFixedSizeCollection(
-        List<SearchTeamFoldersPage> pages, int collectionSize) {
+        @Nullable List<SearchTeamFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9957,7 +9970,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected SearchTeamFoldersFixedSizeCollection createCollection(
-        List<SearchTeamFoldersPage> pages, int collectionSize) {
+        @Nullable List<SearchTeamFoldersPage> pages, int collectionSize) {
       return new SearchTeamFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9998,12 +10011,13 @@ public class DataformClient implements BackgroundResource {
           QueryFolderContentsPage> {
 
     private QueryFolderContentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryFolderContentsRequest,
                 QueryFolderContentsResponse,
                 QueryFolderContentsResponse.FolderContentsEntry>
             context,
-        QueryFolderContentsResponse response) {
+        @Nullable QueryFolderContentsResponse response) {
       super(context, response);
     }
 
@@ -10013,18 +10027,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryFolderContentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryFolderContentsRequest,
                 QueryFolderContentsResponse,
                 QueryFolderContentsResponse.FolderContentsEntry>
             context,
-        QueryFolderContentsResponse response) {
+        @Nullable QueryFolderContentsResponse response) {
       return new QueryFolderContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryFolderContentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryFolderContentsRequest,
                 QueryFolderContentsResponse,
                 QueryFolderContentsResponse.FolderContentsEntry>
@@ -10043,7 +10059,7 @@ public class DataformClient implements BackgroundResource {
           QueryFolderContentsFixedSizeCollection> {
 
     private QueryFolderContentsFixedSizeCollection(
-        List<QueryFolderContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryFolderContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10053,7 +10069,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryFolderContentsFixedSizeCollection createCollection(
-        List<QueryFolderContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryFolderContentsPage> pages, int collectionSize) {
       return new QueryFolderContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10094,12 +10110,13 @@ public class DataformClient implements BackgroundResource {
           QueryUserRootContentsPage> {
 
     private QueryUserRootContentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryUserRootContentsRequest,
                 QueryUserRootContentsResponse,
                 QueryUserRootContentsResponse.RootContentsEntry>
             context,
-        QueryUserRootContentsResponse response) {
+        @Nullable QueryUserRootContentsResponse response) {
       super(context, response);
     }
 
@@ -10109,18 +10126,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryUserRootContentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryUserRootContentsRequest,
                 QueryUserRootContentsResponse,
                 QueryUserRootContentsResponse.RootContentsEntry>
             context,
-        QueryUserRootContentsResponse response) {
+        @Nullable QueryUserRootContentsResponse response) {
       return new QueryUserRootContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryUserRootContentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryUserRootContentsRequest,
                 QueryUserRootContentsResponse,
                 QueryUserRootContentsResponse.RootContentsEntry>
@@ -10139,7 +10158,7 @@ public class DataformClient implements BackgroundResource {
           QueryUserRootContentsFixedSizeCollection> {
 
     private QueryUserRootContentsFixedSizeCollection(
-        List<QueryUserRootContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryUserRootContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10149,7 +10168,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryUserRootContentsFixedSizeCollection createCollection(
-        List<QueryUserRootContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryUserRootContentsPage> pages, int collectionSize) {
       return new QueryUserRootContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10183,8 +10202,9 @@ public class DataformClient implements BackgroundResource {
           ListRepositoriesRequest, ListRepositoriesResponse, Repository, ListRepositoriesPage> {
 
     private ListRepositoriesPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -10194,14 +10214,16 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesPage createPage(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
-        ListRepositoriesResponse response) {
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
+        @Nullable ListRepositoriesResponse response) {
       return new ListRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRepositoriesPage> createPageAsync(
-        PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository> context,
+        @Nullable PageContext<ListRepositoriesRequest, ListRepositoriesResponse, Repository>
+            context,
         ApiFuture<ListRepositoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10216,7 +10238,7 @@ public class DataformClient implements BackgroundResource {
           ListRepositoriesFixedSizeCollection> {
 
     private ListRepositoriesFixedSizeCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10226,7 +10248,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListRepositoriesFixedSizeCollection createCollection(
-        List<ListRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRepositoriesPage> pages, int collectionSize) {
       return new ListRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10269,12 +10291,13 @@ public class DataformClient implements BackgroundResource {
           QueryRepositoryDirectoryContentsPage> {
 
     private QueryRepositoryDirectoryContentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryRepositoryDirectoryContentsRequest,
                 QueryRepositoryDirectoryContentsResponse,
                 DirectoryEntry>
             context,
-        QueryRepositoryDirectoryContentsResponse response) {
+        @Nullable QueryRepositoryDirectoryContentsResponse response) {
       super(context, response);
     }
 
@@ -10284,18 +10307,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryRepositoryDirectoryContentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryRepositoryDirectoryContentsRequest,
                 QueryRepositoryDirectoryContentsResponse,
                 DirectoryEntry>
             context,
-        QueryRepositoryDirectoryContentsResponse response) {
+        @Nullable QueryRepositoryDirectoryContentsResponse response) {
       return new QueryRepositoryDirectoryContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryRepositoryDirectoryContentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryRepositoryDirectoryContentsRequest,
                 QueryRepositoryDirectoryContentsResponse,
                 DirectoryEntry>
@@ -10314,7 +10339,7 @@ public class DataformClient implements BackgroundResource {
           QueryRepositoryDirectoryContentsFixedSizeCollection> {
 
     private QueryRepositoryDirectoryContentsFixedSizeCollection(
-        List<QueryRepositoryDirectoryContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryRepositoryDirectoryContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10324,7 +10349,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryRepositoryDirectoryContentsFixedSizeCollection createCollection(
-        List<QueryRepositoryDirectoryContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryRepositoryDirectoryContentsPage> pages, int collectionSize) {
       return new QueryRepositoryDirectoryContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10362,9 +10387,11 @@ public class DataformClient implements BackgroundResource {
           FetchRepositoryHistoryPage> {
 
     private FetchRepositoryHistoryPage(
-        PageContext<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
+        @Nullable
+            PageContext<
+                FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
             context,
-        FetchRepositoryHistoryResponse response) {
+        @Nullable FetchRepositoryHistoryResponse response) {
       super(context, response);
     }
 
@@ -10374,15 +10401,19 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected FetchRepositoryHistoryPage createPage(
-        PageContext<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
+        @Nullable
+            PageContext<
+                FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
             context,
-        FetchRepositoryHistoryResponse response) {
+        @Nullable FetchRepositoryHistoryResponse response) {
       return new FetchRepositoryHistoryPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchRepositoryHistoryPage> createPageAsync(
-        PageContext<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
+        @Nullable
+            PageContext<
+                FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
             context,
         ApiFuture<FetchRepositoryHistoryResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10398,7 +10429,7 @@ public class DataformClient implements BackgroundResource {
           FetchRepositoryHistoryFixedSizeCollection> {
 
     private FetchRepositoryHistoryFixedSizeCollection(
-        List<FetchRepositoryHistoryPage> pages, int collectionSize) {
+        @Nullable List<FetchRepositoryHistoryPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10408,7 +10439,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected FetchRepositoryHistoryFixedSizeCollection createCollection(
-        List<FetchRepositoryHistoryPage> pages, int collectionSize) {
+        @Nullable List<FetchRepositoryHistoryPage> pages, int collectionSize) {
       return new FetchRepositoryHistoryFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10442,8 +10473,8 @@ public class DataformClient implements BackgroundResource {
           ListWorkspacesRequest, ListWorkspacesResponse, Workspace, ListWorkspacesPage> {
 
     private ListWorkspacesPage(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
-        ListWorkspacesResponse response) {
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable ListWorkspacesResponse response) {
       super(context, response);
     }
 
@@ -10453,14 +10484,14 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkspacesPage createPage(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
-        ListWorkspacesResponse response) {
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable ListWorkspacesResponse response) {
       return new ListWorkspacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkspacesPage> createPageAsync(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
         ApiFuture<ListWorkspacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10474,7 +10505,8 @@ public class DataformClient implements BackgroundResource {
           ListWorkspacesPage,
           ListWorkspacesFixedSizeCollection> {
 
-    private ListWorkspacesFixedSizeCollection(List<ListWorkspacesPage> pages, int collectionSize) {
+    private ListWorkspacesFixedSizeCollection(
+        @Nullable List<ListWorkspacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10484,7 +10516,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkspacesFixedSizeCollection createCollection(
-        List<ListWorkspacesPage> pages, int collectionSize) {
+        @Nullable List<ListWorkspacesPage> pages, int collectionSize) {
       return new ListWorkspacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10522,9 +10554,11 @@ public class DataformClient implements BackgroundResource {
           QueryDirectoryContentsPage> {
 
     private QueryDirectoryContentsPage(
-        PageContext<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
+        @Nullable
+            PageContext<
+                QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
             context,
-        QueryDirectoryContentsResponse response) {
+        @Nullable QueryDirectoryContentsResponse response) {
       super(context, response);
     }
 
@@ -10534,15 +10568,19 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryDirectoryContentsPage createPage(
-        PageContext<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
+        @Nullable
+            PageContext<
+                QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
             context,
-        QueryDirectoryContentsResponse response) {
+        @Nullable QueryDirectoryContentsResponse response) {
       return new QueryDirectoryContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryDirectoryContentsPage> createPageAsync(
-        PageContext<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
+        @Nullable
+            PageContext<
+                QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
             context,
         ApiFuture<QueryDirectoryContentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10558,7 +10596,7 @@ public class DataformClient implements BackgroundResource {
           QueryDirectoryContentsFixedSizeCollection> {
 
     private QueryDirectoryContentsFixedSizeCollection(
-        List<QueryDirectoryContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryDirectoryContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10568,7 +10606,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryDirectoryContentsFixedSizeCollection createCollection(
-        List<QueryDirectoryContentsPage> pages, int collectionSize) {
+        @Nullable List<QueryDirectoryContentsPage> pages, int collectionSize) {
       return new QueryDirectoryContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10599,8 +10637,8 @@ public class DataformClient implements BackgroundResource {
       extends AbstractPage<SearchFilesRequest, SearchFilesResponse, SearchResult, SearchFilesPage> {
 
     private SearchFilesPage(
-        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
-        SearchFilesResponse response) {
+        @Nullable PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        @Nullable SearchFilesResponse response) {
       super(context, response);
     }
 
@@ -10610,14 +10648,14 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected SearchFilesPage createPage(
-        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
-        SearchFilesResponse response) {
+        @Nullable PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        @Nullable SearchFilesResponse response) {
       return new SearchFilesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchFilesPage> createPageAsync(
-        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        @Nullable PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
         ApiFuture<SearchFilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10631,7 +10669,8 @@ public class DataformClient implements BackgroundResource {
           SearchFilesPage,
           SearchFilesFixedSizeCollection> {
 
-    private SearchFilesFixedSizeCollection(List<SearchFilesPage> pages, int collectionSize) {
+    private SearchFilesFixedSizeCollection(
+        @Nullable List<SearchFilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10641,7 +10680,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected SearchFilesFixedSizeCollection createCollection(
-        List<SearchFilesPage> pages, int collectionSize) {
+        @Nullable List<SearchFilesPage> pages, int collectionSize) {
       return new SearchFilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10678,8 +10717,9 @@ public class DataformClient implements BackgroundResource {
           ListReleaseConfigsPage> {
 
     private ListReleaseConfigsPage(
-        PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig> context,
-        ListReleaseConfigsResponse response) {
+        @Nullable PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>
+            context,
+        @Nullable ListReleaseConfigsResponse response) {
       super(context, response);
     }
 
@@ -10689,14 +10729,16 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListReleaseConfigsPage createPage(
-        PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig> context,
-        ListReleaseConfigsResponse response) {
+        @Nullable PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>
+            context,
+        @Nullable ListReleaseConfigsResponse response) {
       return new ListReleaseConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReleaseConfigsPage> createPageAsync(
-        PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig> context,
+        @Nullable PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>
+            context,
         ApiFuture<ListReleaseConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10711,7 +10753,7 @@ public class DataformClient implements BackgroundResource {
           ListReleaseConfigsFixedSizeCollection> {
 
     private ListReleaseConfigsFixedSizeCollection(
-        List<ListReleaseConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReleaseConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10721,7 +10763,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListReleaseConfigsFixedSizeCollection createCollection(
-        List<ListReleaseConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReleaseConfigsPage> pages, int collectionSize) {
       return new ListReleaseConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10760,10 +10802,11 @@ public class DataformClient implements BackgroundResource {
           ListCompilationResultsPage> {
 
     private ListCompilationResultsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCompilationResultsRequest, ListCompilationResultsResponse, CompilationResult>
             context,
-        ListCompilationResultsResponse response) {
+        @Nullable ListCompilationResultsResponse response) {
       super(context, response);
     }
 
@@ -10773,16 +10816,18 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListCompilationResultsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCompilationResultsRequest, ListCompilationResultsResponse, CompilationResult>
             context,
-        ListCompilationResultsResponse response) {
+        @Nullable ListCompilationResultsResponse response) {
       return new ListCompilationResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCompilationResultsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCompilationResultsRequest, ListCompilationResultsResponse, CompilationResult>
             context,
         ApiFuture<ListCompilationResultsResponse> futureResponse) {
@@ -10799,7 +10844,7 @@ public class DataformClient implements BackgroundResource {
           ListCompilationResultsFixedSizeCollection> {
 
     private ListCompilationResultsFixedSizeCollection(
-        List<ListCompilationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListCompilationResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10809,7 +10854,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListCompilationResultsFixedSizeCollection createCollection(
-        List<ListCompilationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListCompilationResultsPage> pages, int collectionSize) {
       return new ListCompilationResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10851,12 +10896,13 @@ public class DataformClient implements BackgroundResource {
           QueryCompilationResultActionsPage> {
 
     private QueryCompilationResultActionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryCompilationResultActionsRequest,
                 QueryCompilationResultActionsResponse,
                 CompilationResultAction>
             context,
-        QueryCompilationResultActionsResponse response) {
+        @Nullable QueryCompilationResultActionsResponse response) {
       super(context, response);
     }
 
@@ -10866,18 +10912,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryCompilationResultActionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryCompilationResultActionsRequest,
                 QueryCompilationResultActionsResponse,
                 CompilationResultAction>
             context,
-        QueryCompilationResultActionsResponse response) {
+        @Nullable QueryCompilationResultActionsResponse response) {
       return new QueryCompilationResultActionsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryCompilationResultActionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryCompilationResultActionsRequest,
                 QueryCompilationResultActionsResponse,
                 CompilationResultAction>
@@ -10896,7 +10944,7 @@ public class DataformClient implements BackgroundResource {
           QueryCompilationResultActionsFixedSizeCollection> {
 
     private QueryCompilationResultActionsFixedSizeCollection(
-        List<QueryCompilationResultActionsPage> pages, int collectionSize) {
+        @Nullable List<QueryCompilationResultActionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10906,7 +10954,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryCompilationResultActionsFixedSizeCollection createCollection(
-        List<QueryCompilationResultActionsPage> pages, int collectionSize) {
+        @Nullable List<QueryCompilationResultActionsPage> pages, int collectionSize) {
       return new QueryCompilationResultActionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10944,9 +10992,10 @@ public class DataformClient implements BackgroundResource {
           ListWorkflowConfigsPage> {
 
     private ListWorkflowConfigsPage(
-        PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
+        @Nullable
+            PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
             context,
-        ListWorkflowConfigsResponse response) {
+        @Nullable ListWorkflowConfigsResponse response) {
       super(context, response);
     }
 
@@ -10956,15 +11005,17 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowConfigsPage createPage(
-        PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
+        @Nullable
+            PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
             context,
-        ListWorkflowConfigsResponse response) {
+        @Nullable ListWorkflowConfigsResponse response) {
       return new ListWorkflowConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkflowConfigsPage> createPageAsync(
-        PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
+        @Nullable
+            PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
             context,
         ApiFuture<ListWorkflowConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10980,7 +11031,7 @@ public class DataformClient implements BackgroundResource {
           ListWorkflowConfigsFixedSizeCollection> {
 
     private ListWorkflowConfigsFixedSizeCollection(
-        List<ListWorkflowConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10990,7 +11041,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowConfigsFixedSizeCollection createCollection(
-        List<ListWorkflowConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowConfigsPage> pages, int collectionSize) {
       return new ListWorkflowConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11029,10 +11080,11 @@ public class DataformClient implements BackgroundResource {
           ListWorkflowInvocationsPage> {
 
     private ListWorkflowInvocationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse, WorkflowInvocation>
             context,
-        ListWorkflowInvocationsResponse response) {
+        @Nullable ListWorkflowInvocationsResponse response) {
       super(context, response);
     }
 
@@ -11042,16 +11094,18 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowInvocationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse, WorkflowInvocation>
             context,
-        ListWorkflowInvocationsResponse response) {
+        @Nullable ListWorkflowInvocationsResponse response) {
       return new ListWorkflowInvocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkflowInvocationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse, WorkflowInvocation>
             context,
         ApiFuture<ListWorkflowInvocationsResponse> futureResponse) {
@@ -11068,7 +11122,7 @@ public class DataformClient implements BackgroundResource {
           ListWorkflowInvocationsFixedSizeCollection> {
 
     private ListWorkflowInvocationsFixedSizeCollection(
-        List<ListWorkflowInvocationsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowInvocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11078,7 +11132,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowInvocationsFixedSizeCollection createCollection(
-        List<ListWorkflowInvocationsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowInvocationsPage> pages, int collectionSize) {
       return new ListWorkflowInvocationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11120,12 +11174,13 @@ public class DataformClient implements BackgroundResource {
           QueryWorkflowInvocationActionsPage> {
 
     private QueryWorkflowInvocationActionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryWorkflowInvocationActionsRequest,
                 QueryWorkflowInvocationActionsResponse,
                 WorkflowInvocationAction>
             context,
-        QueryWorkflowInvocationActionsResponse response) {
+        @Nullable QueryWorkflowInvocationActionsResponse response) {
       super(context, response);
     }
 
@@ -11135,18 +11190,20 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryWorkflowInvocationActionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryWorkflowInvocationActionsRequest,
                 QueryWorkflowInvocationActionsResponse,
                 WorkflowInvocationAction>
             context,
-        QueryWorkflowInvocationActionsResponse response) {
+        @Nullable QueryWorkflowInvocationActionsResponse response) {
       return new QueryWorkflowInvocationActionsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryWorkflowInvocationActionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryWorkflowInvocationActionsRequest,
                 QueryWorkflowInvocationActionsResponse,
                 WorkflowInvocationAction>
@@ -11165,7 +11222,7 @@ public class DataformClient implements BackgroundResource {
           QueryWorkflowInvocationActionsFixedSizeCollection> {
 
     private QueryWorkflowInvocationActionsFixedSizeCollection(
-        List<QueryWorkflowInvocationActionsPage> pages, int collectionSize) {
+        @Nullable List<QueryWorkflowInvocationActionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11175,7 +11232,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected QueryWorkflowInvocationActionsFixedSizeCollection createCollection(
-        List<QueryWorkflowInvocationActionsPage> pages, int collectionSize) {
+        @Nullable List<QueryWorkflowInvocationActionsPage> pages, int collectionSize) {
       return new QueryWorkflowInvocationActionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11209,8 +11266,8 @@ public class DataformClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -11220,14 +11277,14 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11241,7 +11298,8 @@ public class DataformClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11251,7 +11309,7 @@ public class DataformClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

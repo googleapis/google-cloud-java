@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -310,10 +312,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AdaptationClient implements BackgroundResource {
-  private final AdaptationSettings settings;
+  private final @Nullable AdaptationSettings settings;
   private final AdaptationStub stub;
 
   /** Constructs an instance of AdaptationClient with default settings. */
@@ -351,7 +354,7 @@ public class AdaptationClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdaptationSettings getSettings() {
+  public final @Nullable AdaptationSettings getSettings() {
     return settings;
   }
 
@@ -396,7 +399,7 @@ public class AdaptationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhraseSet createPhraseSet(
-      LocationName parent, PhraseSet phraseSet, String phraseSetId) {
+      @Nullable LocationName parent, PhraseSet phraseSet, String phraseSetId) {
     CreatePhraseSetRequest request =
         CreatePhraseSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -542,7 +545,7 @@ public class AdaptationClient implements BackgroundResource {
    *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PhraseSet getPhraseSet(PhraseSetName name) {
+  public final PhraseSet getPhraseSet(@Nullable PhraseSetName name) {
     GetPhraseSetRequest request =
         GetPhraseSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPhraseSet(request);
@@ -664,7 +667,7 @@ public class AdaptationClient implements BackgroundResource {
    *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPhraseSetPagedResponse listPhraseSet(LocationName parent) {
+  public final ListPhraseSetPagedResponse listPhraseSet(@Nullable LocationName parent) {
     ListPhraseSetRequest request =
         ListPhraseSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -927,7 +930,7 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePhraseSet(PhraseSetName name) {
+  public final void deletePhraseSet(@Nullable PhraseSetName name) {
     DeletePhraseSetRequest request =
         DeletePhraseSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePhraseSet(request);
@@ -1050,7 +1053,7 @@ public class AdaptationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomClass createCustomClass(
-      LocationName parent, CustomClass customClass, String customClassId) {
+      @Nullable LocationName parent, CustomClass customClass, String customClassId) {
     CreateCustomClassRequest request =
         CreateCustomClassRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1187,7 +1190,7 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses/{custom_class}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomClass getCustomClass(CustomClassName name) {
+  public final CustomClass getCustomClass(@Nullable CustomClassName name) {
     GetCustomClassRequest request =
         GetCustomClassRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomClass(request);
@@ -1304,7 +1307,7 @@ public class AdaptationClient implements BackgroundResource {
    *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomClassesPagedResponse listCustomClasses(LocationName parent) {
+  public final ListCustomClassesPagedResponse listCustomClasses(@Nullable LocationName parent) {
     ListCustomClassesRequest request =
         ListCustomClassesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1577,7 +1580,7 @@ public class AdaptationClient implements BackgroundResource {
    *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomClass(CustomClassName name) {
+  public final void deleteCustomClass(@Nullable CustomClassName name) {
     DeleteCustomClassRequest request =
         DeleteCustomClassRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1731,8 +1734,8 @@ public class AdaptationClient implements BackgroundResource {
           ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet, ListPhraseSetPage> {
 
     private ListPhraseSetPage(
-        PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
-        ListPhraseSetResponse response) {
+        @Nullable PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
+        @Nullable ListPhraseSetResponse response) {
       super(context, response);
     }
 
@@ -1742,14 +1745,14 @@ public class AdaptationClient implements BackgroundResource {
 
     @Override
     protected ListPhraseSetPage createPage(
-        PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
-        ListPhraseSetResponse response) {
+        @Nullable PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
+        @Nullable ListPhraseSetResponse response) {
       return new ListPhraseSetPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPhraseSetPage> createPageAsync(
-        PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
+        @Nullable PageContext<ListPhraseSetRequest, ListPhraseSetResponse, PhraseSet> context,
         ApiFuture<ListPhraseSetResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1763,7 +1766,8 @@ public class AdaptationClient implements BackgroundResource {
           ListPhraseSetPage,
           ListPhraseSetFixedSizeCollection> {
 
-    private ListPhraseSetFixedSizeCollection(List<ListPhraseSetPage> pages, int collectionSize) {
+    private ListPhraseSetFixedSizeCollection(
+        @Nullable List<ListPhraseSetPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1773,7 +1777,7 @@ public class AdaptationClient implements BackgroundResource {
 
     @Override
     protected ListPhraseSetFixedSizeCollection createCollection(
-        List<ListPhraseSetPage> pages, int collectionSize) {
+        @Nullable List<ListPhraseSetPage> pages, int collectionSize) {
       return new ListPhraseSetFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1807,8 +1811,9 @@ public class AdaptationClient implements BackgroundResource {
           ListCustomClassesRequest, ListCustomClassesResponse, CustomClass, ListCustomClassesPage> {
 
     private ListCustomClassesPage(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
-        ListCustomClassesResponse response) {
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
+        @Nullable ListCustomClassesResponse response) {
       super(context, response);
     }
 
@@ -1818,14 +1823,16 @@ public class AdaptationClient implements BackgroundResource {
 
     @Override
     protected ListCustomClassesPage createPage(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
-        ListCustomClassesResponse response) {
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
+        @Nullable ListCustomClassesResponse response) {
       return new ListCustomClassesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomClassesPage> createPageAsync(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
         ApiFuture<ListCustomClassesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1840,7 +1847,7 @@ public class AdaptationClient implements BackgroundResource {
           ListCustomClassesFixedSizeCollection> {
 
     private ListCustomClassesFixedSizeCollection(
-        List<ListCustomClassesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomClassesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1850,7 +1857,7 @@ public class AdaptationClient implements BackgroundResource {
 
     @Override
     protected ListCustomClassesFixedSizeCollection createCollection(
-        List<ListCustomClassesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomClassesPage> pages, int collectionSize) {
       return new ListCustomClassesFixedSizeCollection(pages, collectionSize);
     }
   }

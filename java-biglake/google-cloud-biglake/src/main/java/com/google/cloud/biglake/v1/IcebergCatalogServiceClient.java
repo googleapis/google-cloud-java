@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,9 +223,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IcebergCatalogServiceClient implements BackgroundResource {
-  private final IcebergCatalogServiceSettings settings;
+  private final @Nullable IcebergCatalogServiceSettings settings;
   private final IcebergCatalogServiceStub stub;
 
   /** Constructs an instance of IcebergCatalogServiceClient with default settings. */
@@ -263,7 +266,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IcebergCatalogServiceSettings getSettings() {
+  public final @Nullable IcebergCatalogServiceSettings getSettings() {
     return settings;
   }
 
@@ -293,7 +296,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    * @param name Required. The catalog to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IcebergCatalog getIcebergCatalog(CatalogName name) {
+  public final IcebergCatalog getIcebergCatalog(@Nullable CatalogName name) {
     GetIcebergCatalogRequest request =
         GetIcebergCatalogRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -412,7 +415,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *     projects/{project_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIcebergCatalogsPagedResponse listIcebergCatalogs(ProjectName parent) {
+  public final ListIcebergCatalogsPagedResponse listIcebergCatalogs(@Nullable ProjectName parent) {
     ListIcebergCatalogsRequest request =
         ListIcebergCatalogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -694,7 +697,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IcebergCatalog createIcebergCatalog(
-      ProjectName parent, IcebergCatalog icebergCatalog, String icebergCatalogId) {
+      @Nullable ProjectName parent, IcebergCatalog icebergCatalog, String icebergCatalogId) {
     CreateIcebergCatalogRequest request =
         CreateIcebergCatalogRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -796,7 +799,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IcebergCatalog createIcebergCatalog(
-      ProjectName parent,
+      @Nullable ProjectName parent,
       IcebergCatalog icebergCatalog,
       String icebergCatalogId,
       String primaryLocation) {
@@ -1111,9 +1114,10 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
           ListIcebergCatalogsPage> {
 
     private ListIcebergCatalogsPage(
-        PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
+        @Nullable
+            PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
             context,
-        ListIcebergCatalogsResponse response) {
+        @Nullable ListIcebergCatalogsResponse response) {
       super(context, response);
     }
 
@@ -1123,15 +1127,17 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListIcebergCatalogsPage createPage(
-        PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
+        @Nullable
+            PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
             context,
-        ListIcebergCatalogsResponse response) {
+        @Nullable ListIcebergCatalogsResponse response) {
       return new ListIcebergCatalogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIcebergCatalogsPage> createPageAsync(
-        PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
+        @Nullable
+            PageContext<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse, IcebergCatalog>
             context,
         ApiFuture<ListIcebergCatalogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1147,7 +1153,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
           ListIcebergCatalogsFixedSizeCollection> {
 
     private ListIcebergCatalogsFixedSizeCollection(
-        List<ListIcebergCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListIcebergCatalogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1157,7 +1163,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListIcebergCatalogsFixedSizeCollection createCollection(
-        List<ListIcebergCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListIcebergCatalogsPage> pages, int collectionSize) {
       return new ListIcebergCatalogsFixedSizeCollection(pages, collectionSize);
     }
   }

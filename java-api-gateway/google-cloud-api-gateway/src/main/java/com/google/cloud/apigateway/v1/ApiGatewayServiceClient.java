@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -421,9 +423,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ApiGatewayServiceClient implements BackgroundResource {
-  private final ApiGatewayServiceSettings settings;
+  private final @Nullable ApiGatewayServiceSettings settings;
   private final ApiGatewayServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -471,7 +474,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ApiGatewayServiceSettings getSettings() {
+  public final @Nullable ApiGatewayServiceSettings getSettings() {
     return settings;
   }
 
@@ -520,7 +523,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGatewaysPagedResponse listGateways(LocationName parent) {
+  public final ListGatewaysPagedResponse listGateways(@Nullable LocationName parent) {
     ListGatewaysRequest request =
         ListGatewaysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -689,7 +692,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/gateways/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Gateway getGateway(GatewayName name) {
+  public final Gateway getGateway(@Nullable GatewayName name) {
     GetGatewayRequest request =
         GetGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGateway(request);
@@ -806,7 +809,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Gateway, OperationMetadata> createGatewayAsync(
-      LocationName parent, Gateway gateway, String gatewayId) {
+      @Nullable LocationName parent, Gateway gateway, String gatewayId) {
     CreateGatewayRequest request =
         CreateGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1091,7 +1094,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/gateways/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAsync(GatewayName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAsync(
+      @Nullable GatewayName name) {
     DeleteGatewayRequest request =
         DeleteGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGatewayAsync(request);
@@ -1234,7 +1238,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApisPagedResponse listApis(LocationName parent) {
+  public final ListApisPagedResponse listApis(@Nullable LocationName parent) {
     ListApisRequest request =
         ListApisRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listApis(request);
@@ -1397,7 +1401,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the form: `projects/&#42;/locations/global/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Api getApi(ApiName name) {
+  public final Api getApi(@Nullable ApiName name) {
     GetApiRequest request =
         GetApiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApi(request);
@@ -1508,7 +1512,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Api, OperationMetadata> createApiAsync(
-      LocationName parent, Api api, String apiId) {
+      @Nullable LocationName parent, Api api, String apiId) {
     CreateApiRequest request =
         CreateApiRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1783,7 +1787,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the form: `projects/&#42;/locations/global/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteApiAsync(ApiName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteApiAsync(@Nullable ApiName name) {
     DeleteApiRequest request =
         DeleteApiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteApiAsync(request);
@@ -1923,7 +1927,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApiConfigsPagedResponse listApiConfigs(ApiName parent) {
+  public final ListApiConfigsPagedResponse listApiConfigs(@Nullable ApiName parent) {
     ListApiConfigsRequest request =
         ListApiConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2093,7 +2097,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/apis/&#42;/configs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ApiConfig getApiConfig(ApiConfigName name) {
+  public final ApiConfig getApiConfig(@Nullable ApiConfigName name) {
     GetApiConfigRequest request =
         GetApiConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApiConfig(request);
@@ -2211,7 +2215,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ApiConfig, OperationMetadata> createApiConfigAsync(
-      ApiName parent, ApiConfig apiConfig, String apiConfigId) {
+      @Nullable ApiName parent, ApiConfig apiConfig, String apiConfigId) {
     CreateApiConfigRequest request =
         CreateApiConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2500,7 +2504,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/apis/&#42;/configs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteApiConfigAsync(ApiConfigName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteApiConfigAsync(
+      @Nullable ApiConfigName name) {
     DeleteApiConfigRequest request =
         DeleteApiConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteApiConfigAsync(request);
@@ -2677,8 +2682,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
       extends AbstractPage<ListGatewaysRequest, ListGatewaysResponse, Gateway, ListGatewaysPage> {
 
     private ListGatewaysPage(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
-        ListGatewaysResponse response) {
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable ListGatewaysResponse response) {
       super(context, response);
     }
 
@@ -2688,14 +2693,14 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListGatewaysPage createPage(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
-        ListGatewaysResponse response) {
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable ListGatewaysResponse response) {
       return new ListGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGatewaysPage> createPageAsync(
-        PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
+        @Nullable PageContext<ListGatewaysRequest, ListGatewaysResponse, Gateway> context,
         ApiFuture<ListGatewaysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2709,7 +2714,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
           ListGatewaysPage,
           ListGatewaysFixedSizeCollection> {
 
-    private ListGatewaysFixedSizeCollection(List<ListGatewaysPage> pages, int collectionSize) {
+    private ListGatewaysFixedSizeCollection(
+        @Nullable List<ListGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2719,7 +2725,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListGatewaysFixedSizeCollection createCollection(
-        List<ListGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListGatewaysPage> pages, int collectionSize) {
       return new ListGatewaysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2746,7 +2752,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
       extends AbstractPage<ListApisRequest, ListApisResponse, Api, ListApisPage> {
 
     private ListApisPage(
-        PageContext<ListApisRequest, ListApisResponse, Api> context, ListApisResponse response) {
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable ListApisResponse response) {
       super(context, response);
     }
 
@@ -2756,13 +2763,14 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListApisPage createPage(
-        PageContext<ListApisRequest, ListApisResponse, Api> context, ListApisResponse response) {
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable ListApisResponse response) {
       return new ListApisPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApisPage> createPageAsync(
-        PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
         ApiFuture<ListApisResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2772,7 +2780,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListApisRequest, ListApisResponse, Api, ListApisPage, ListApisFixedSizeCollection> {
 
-    private ListApisFixedSizeCollection(List<ListApisPage> pages, int collectionSize) {
+    private ListApisFixedSizeCollection(@Nullable List<ListApisPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2782,7 +2790,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListApisFixedSizeCollection createCollection(
-        List<ListApisPage> pages, int collectionSize) {
+        @Nullable List<ListApisPage> pages, int collectionSize) {
       return new ListApisFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2816,8 +2824,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
           ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig, ListApiConfigsPage> {
 
     private ListApiConfigsPage(
-        PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
-        ListApiConfigsResponse response) {
+        @Nullable PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
+        @Nullable ListApiConfigsResponse response) {
       super(context, response);
     }
 
@@ -2827,14 +2835,14 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListApiConfigsPage createPage(
-        PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
-        ListApiConfigsResponse response) {
+        @Nullable PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
+        @Nullable ListApiConfigsResponse response) {
       return new ListApiConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApiConfigsPage> createPageAsync(
-        PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
+        @Nullable PageContext<ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig> context,
         ApiFuture<ListApiConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2848,7 +2856,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
           ListApiConfigsPage,
           ListApiConfigsFixedSizeCollection> {
 
-    private ListApiConfigsFixedSizeCollection(List<ListApiConfigsPage> pages, int collectionSize) {
+    private ListApiConfigsFixedSizeCollection(
+        @Nullable List<ListApiConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2858,7 +2867,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
     @Override
     protected ListApiConfigsFixedSizeCollection createCollection(
-        List<ListApiConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListApiConfigsPage> pages, int collectionSize) {
       return new ListApiConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

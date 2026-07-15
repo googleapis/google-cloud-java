@@ -25,6 +25,8 @@ import com.google.cloud.bigquery.storage.v1beta2.stub.BigQueryReadStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,10 +157,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BaseBigQueryReadClient implements BackgroundResource {
-  private final BaseBigQueryReadSettings settings;
+  private final @Nullable BaseBigQueryReadSettings settings;
   private final BigQueryReadStub stub;
 
   /** Constructs an instance of BaseBigQueryReadClient with default settings. */
@@ -198,7 +201,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BaseBigQueryReadSettings getSettings() {
+  public final @Nullable BaseBigQueryReadSettings getSettings() {
     return settings;
   }
 
@@ -254,7 +257,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadSession createReadSession(
-      ProjectName parent, ReadSession readSession, int maxStreamCount) {
+      @Nullable ProjectName parent, ReadSession readSession, int maxStreamCount) {
     CreateReadSessionRequest request =
         CreateReadSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
