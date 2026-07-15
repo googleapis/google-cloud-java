@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -361,7 +362,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RapidMigrationAssessmentClient implements BackgroundResource {
-  private final RapidMigrationAssessmentSettings settings;
+  private final @Nullable RapidMigrationAssessmentSettings settings;
   private final RapidMigrationAssessmentStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -411,7 +412,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final RapidMigrationAssessmentSettings getSettings() {
+  public final @Nullable RapidMigrationAssessmentSettings getSettings() {
     return settings;
   }
 
@@ -465,7 +466,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collector, OperationMetadata> createCollectorAsync(
-      LocationName parent, Collector collector, String collectorId) {
+      @Nullable LocationName parent, Collector collector, String collectorId) {
     CreateCollectorRequest request =
         CreateCollectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -641,7 +642,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Annotation, OperationMetadata> createAnnotationAsync(
-      LocationName parent, Annotation annotation) {
+      @Nullable LocationName parent, Annotation annotation) {
     CreateAnnotationRequest request =
         CreateAnnotationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -799,7 +800,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Annotation getAnnotation(AnnotationName name) {
+  public final Annotation getAnnotation(@Nullable AnnotationName name) {
     GetAnnotationRequest request =
         GetAnnotationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnnotation(request);
@@ -914,7 +915,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @param parent Required. Parent value for ListCollectorsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCollectorsPagedResponse listCollectors(LocationName parent) {
+  public final ListCollectorsPagedResponse listCollectors(@Nullable LocationName parent) {
     ListCollectorsRequest request =
         ListCollectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1088,7 +1089,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Collector getCollector(CollectorName name) {
+  public final Collector getCollector(@Nullable CollectorName name) {
     GetCollectorRequest request =
         GetCollectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCollector(request);
@@ -1336,7 +1337,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collector, OperationMetadata> deleteCollectorAsync(
-      CollectorName name) {
+      @Nullable CollectorName name) {
     DeleteCollectorRequest request =
         DeleteCollectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCollectorAsync(request);
@@ -1488,7 +1489,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collector, OperationMetadata> resumeCollectorAsync(
-      CollectorName name) {
+      @Nullable CollectorName name) {
     ResumeCollectorRequest request =
         ResumeCollectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeCollectorAsync(request);
@@ -1636,7 +1637,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collector, OperationMetadata> registerCollectorAsync(
-      CollectorName name) {
+      @Nullable CollectorName name) {
     RegisterCollectorRequest request =
         RegisterCollectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1786,7 +1787,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collector, OperationMetadata> pauseCollectorAsync(
-      CollectorName name) {
+      @Nullable CollectorName name) {
     PauseCollectorRequest request =
         PauseCollectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseCollectorAsync(request);
@@ -2132,8 +2133,8 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
           ListCollectorsRequest, ListCollectorsResponse, Collector, ListCollectorsPage> {
 
     private ListCollectorsPage(
-        PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
-        ListCollectorsResponse response) {
+        @Nullable PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
+        @Nullable ListCollectorsResponse response) {
       super(context, response);
     }
 
@@ -2143,14 +2144,14 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
 
     @Override
     protected ListCollectorsPage createPage(
-        PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
-        ListCollectorsResponse response) {
+        @Nullable PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
+        @Nullable ListCollectorsResponse response) {
       return new ListCollectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCollectorsPage> createPageAsync(
-        PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
+        @Nullable PageContext<ListCollectorsRequest, ListCollectorsResponse, Collector> context,
         ApiFuture<ListCollectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2164,7 +2165,8 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
           ListCollectorsPage,
           ListCollectorsFixedSizeCollection> {
 
-    private ListCollectorsFixedSizeCollection(List<ListCollectorsPage> pages, int collectionSize) {
+    private ListCollectorsFixedSizeCollection(
+        @Nullable List<ListCollectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2174,7 +2176,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
 
     @Override
     protected ListCollectorsFixedSizeCollection createCollection(
-        List<ListCollectorsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectorsPage> pages, int collectionSize) {
       return new ListCollectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2208,8 +2210,8 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2219,14 +2221,14 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2240,7 +2242,8 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2250,7 +2253,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

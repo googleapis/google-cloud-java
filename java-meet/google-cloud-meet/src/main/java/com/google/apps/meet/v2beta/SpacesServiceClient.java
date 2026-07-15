@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -302,7 +303,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SpacesServiceClient implements BackgroundResource {
-  private final SpacesServiceSettings settings;
+  private final @Nullable SpacesServiceSettings settings;
   private final SpacesServiceStub stub;
 
   /** Constructs an instance of SpacesServiceClient with default settings. */
@@ -342,7 +343,7 @@ public class SpacesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SpacesServiceSettings getSettings() {
+  public final @Nullable SpacesServiceSettings getSettings() {
     return settings;
   }
 
@@ -463,7 +464,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Space getSpace(SpaceName name) {
+  public final Space getSpace(@Nullable SpaceName name) {
     GetSpaceRequest request =
         GetSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpace(request);
@@ -693,7 +694,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * @param name Required. Resource name of the space. Format: spaces/{spaceId}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectActiveConferenceResponse connectActiveConference(SpaceName name) {
+  public final ConnectActiveConferenceResponse connectActiveConference(@Nullable SpaceName name) {
     ConnectActiveConferenceRequest request =
         ConnectActiveConferenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -842,7 +843,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void endActiveConference(SpaceName name) {
+  public final void endActiveConference(@Nullable SpaceName name) {
     EndActiveConferenceRequest request =
         EndActiveConferenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -974,7 +975,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * @param member Required. The member to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Member createMember(SpaceName parent, Member member) {
+  public final Member createMember(@Nullable SpaceName parent, Member member) {
     CreateMemberRequest request =
         CreateMemberRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1106,7 +1107,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * @param name Required. Format: “spaces/{space}/members/{member}”
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Member getMember(MemberName name) {
+  public final Member getMember(@Nullable MemberName name) {
     GetMemberRequest request =
         GetMemberRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMember(request);
@@ -1232,7 +1233,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * @param parent Required. Format: spaces/{space}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembersPagedResponse listMembers(SpaceName parent) {
+  public final ListMembersPagedResponse listMembers(@Nullable SpaceName parent) {
     ListMembersRequest request =
         ListMembersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1408,7 +1409,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * @param name Required. Format: “spaces/{space}/members/{member}”
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMember(MemberName name) {
+  public final void deleteMember(@Nullable MemberName name) {
     DeleteMemberRequest request =
         DeleteMemberRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteMember(request);
@@ -1554,8 +1555,8 @@ public class SpacesServiceClient implements BackgroundResource {
       extends AbstractPage<ListMembersRequest, ListMembersResponse, Member, ListMembersPage> {
 
     private ListMembersPage(
-        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
-        ListMembersResponse response) {
+        @Nullable PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        @Nullable ListMembersResponse response) {
       super(context, response);
     }
 
@@ -1565,14 +1566,14 @@ public class SpacesServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembersPage createPage(
-        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
-        ListMembersResponse response) {
+        @Nullable PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        @Nullable ListMembersResponse response) {
       return new ListMembersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembersPage> createPageAsync(
-        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        @Nullable PageContext<ListMembersRequest, ListMembersResponse, Member> context,
         ApiFuture<ListMembersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1586,7 +1587,8 @@ public class SpacesServiceClient implements BackgroundResource {
           ListMembersPage,
           ListMembersFixedSizeCollection> {
 
-    private ListMembersFixedSizeCollection(List<ListMembersPage> pages, int collectionSize) {
+    private ListMembersFixedSizeCollection(
+        @Nullable List<ListMembersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1596,7 +1598,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembersFixedSizeCollection createCollection(
-        List<ListMembersPage> pages, int collectionSize) {
+        @Nullable List<ListMembersPage> pages, int collectionSize) {
       return new ListMembersFixedSizeCollection(pages, collectionSize);
     }
   }

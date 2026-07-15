@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -586,7 +587,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DocumentProcessorServiceClient implements BackgroundResource {
-  private final DocumentProcessorServiceSettings settings;
+  private final @Nullable DocumentProcessorServiceSettings settings;
   private final DocumentProcessorServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -636,7 +637,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DocumentProcessorServiceSettings getSettings() {
+  public final @Nullable DocumentProcessorServiceSettings getSettings() {
     return settings;
   }
 
@@ -689,7 +690,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProcessResponse processDocument(ResourceName name) {
+  public final ProcessResponse processDocument(@Nullable ResourceName name) {
     ProcessRequest request =
         ProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return processDocument(request);
@@ -827,7 +828,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
-      batchProcessDocumentsAsync(ResourceName name) {
+      batchProcessDocumentsAsync(@Nullable ResourceName name) {
     BatchProcessRequest request =
         BatchProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return batchProcessDocumentsAsync(request);
@@ -1005,7 +1006,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchProcessorTypesResponse fetchProcessorTypes(LocationName parent) {
+  public final FetchProcessorTypesResponse fetchProcessorTypes(@Nullable LocationName parent) {
     FetchProcessorTypesRequest request =
         FetchProcessorTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1135,7 +1136,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessorTypesPagedResponse listProcessorTypes(LocationName parent) {
+  public final ListProcessorTypesPagedResponse listProcessorTypes(@Nullable LocationName parent) {
     ListProcessorTypesRequest request =
         ListProcessorTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1307,7 +1308,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @param name Required. The processor type resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProcessorType getProcessorType(ProcessorTypeName name) {
+  public final ProcessorType getProcessorType(@Nullable ProcessorTypeName name) {
     GetProcessorTypeRequest request =
         GetProcessorTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcessorType(request);
@@ -1425,7 +1426,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Processors. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessorsPagedResponse listProcessors(LocationName parent) {
+  public final ListProcessorsPagedResponse listProcessors(@Nullable LocationName parent) {
     ListProcessorsRequest request =
         ListProcessorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1594,7 +1595,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Processor getProcessor(ProcessorName name) {
+  public final Processor getProcessor(@Nullable ProcessorName name) {
     GetProcessorRequest request =
         GetProcessorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcessor(request);
@@ -1713,7 +1714,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata>
-      trainProcessorVersionAsync(ProcessorName parent, ProcessorVersion processorVersion) {
+      trainProcessorVersionAsync(
+          @Nullable ProcessorName parent, ProcessorVersion processorVersion) {
     TrainProcessorVersionRequest request =
         TrainProcessorVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1893,7 +1895,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProcessorVersion getProcessorVersion(ProcessorVersionName name) {
+  public final ProcessorVersion getProcessorVersion(@Nullable ProcessorVersionName name) {
     GetProcessorVersionRequest request =
         GetProcessorVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2022,7 +2024,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/processors/{processor}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessorVersionsPagedResponse listProcessorVersions(ProcessorName parent) {
+  public final ListProcessorVersionsPagedResponse listProcessorVersions(
+      @Nullable ProcessorName parent) {
     ListProcessorVersionsRequest request =
         ListProcessorVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2196,7 +2199,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteProcessorVersionMetadata> deleteProcessorVersionAsync(
-      ProcessorVersionName name) {
+      @Nullable ProcessorVersionName name) {
     DeleteProcessorVersionRequest request =
         DeleteProcessorVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2362,7 +2365,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployProcessorVersionResponse, DeployProcessorVersionMetadata>
-      deployProcessorVersionAsync(ProcessorVersionName name) {
+      deployProcessorVersionAsync(@Nullable ProcessorVersionName name) {
     DeployProcessorVersionRequest request =
         DeployProcessorVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2532,7 +2535,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeployProcessorVersionResponse, UndeployProcessorVersionMetadata>
-      undeployProcessorVersionAsync(ProcessorVersionName name) {
+      undeployProcessorVersionAsync(@Nullable ProcessorVersionName name) {
     UndeployProcessorVersionRequest request =
         UndeployProcessorVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2710,7 +2713,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     must be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Processor createProcessor(LocationName parent, Processor processor) {
+  public final Processor createProcessor(@Nullable LocationName parent, Processor processor) {
     CreateProcessorRequest request =
         CreateProcessorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2850,7 +2853,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteProcessorMetadata> deleteProcessorAsync(
-      ProcessorName name) {
+      @Nullable ProcessorName name) {
     DeleteProcessorRequest request =
         DeleteProcessorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProcessorAsync(request);
@@ -3305,7 +3308,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
-      reviewDocumentAsync(HumanReviewConfigName humanReviewConfig) {
+      reviewDocumentAsync(@Nullable HumanReviewConfigName humanReviewConfig) {
     ReviewDocumentRequest request =
         ReviewDocumentRequest.newBuilder()
             .setHumanReviewConfig(humanReviewConfig == null ? null : humanReviewConfig.toString())
@@ -3477,7 +3480,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EvaluateProcessorVersionResponse, EvaluateProcessorVersionMetadata>
-      evaluateProcessorVersionAsync(ProcessorVersionName processorVersion) {
+      evaluateProcessorVersionAsync(@Nullable ProcessorVersionName processorVersion) {
     EvaluateProcessorVersionRequest request =
         EvaluateProcessorVersionRequest.newBuilder()
             .setProcessorVersion(processorVersion == null ? null : processorVersion.toString())
@@ -3653,7 +3656,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -3791,7 +3794,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationsPagedResponse listEvaluations(ProcessorVersionName parent) {
+  public final ListEvaluationsPagedResponse listEvaluations(@Nullable ProcessorVersionName parent) {
     ListEvaluationsRequest request =
         ListEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4175,8 +4178,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorTypesPage> {
 
     private ListProcessorTypesPage(
-        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
-        ListProcessorTypesResponse response) {
+        @Nullable PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>
+            context,
+        @Nullable ListProcessorTypesResponse response) {
       super(context, response);
     }
 
@@ -4186,14 +4190,16 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorTypesPage createPage(
-        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
-        ListProcessorTypesResponse response) {
+        @Nullable PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>
+            context,
+        @Nullable ListProcessorTypesResponse response) {
       return new ListProcessorTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessorTypesPage> createPageAsync(
-        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
+        @Nullable PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>
+            context,
         ApiFuture<ListProcessorTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4208,7 +4214,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorTypesFixedSizeCollection> {
 
     private ListProcessorTypesFixedSizeCollection(
-        List<ListProcessorTypesPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4218,7 +4224,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorTypesFixedSizeCollection createCollection(
-        List<ListProcessorTypesPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorTypesPage> pages, int collectionSize) {
       return new ListProcessorTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4252,8 +4258,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorsRequest, ListProcessorsResponse, Processor, ListProcessorsPage> {
 
     private ListProcessorsPage(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
-        ListProcessorsResponse response) {
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable ListProcessorsResponse response) {
       super(context, response);
     }
 
@@ -4263,14 +4269,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorsPage createPage(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
-        ListProcessorsResponse response) {
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable ListProcessorsResponse response) {
       return new ListProcessorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessorsPage> createPageAsync(
-        PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
+        @Nullable PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> context,
         ApiFuture<ListProcessorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4284,7 +4290,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorsPage,
           ListProcessorsFixedSizeCollection> {
 
-    private ListProcessorsFixedSizeCollection(List<ListProcessorsPage> pages, int collectionSize) {
+    private ListProcessorsFixedSizeCollection(
+        @Nullable List<ListProcessorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4294,7 +4301,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorsFixedSizeCollection createCollection(
-        List<ListProcessorsPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorsPage> pages, int collectionSize) {
       return new ListProcessorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4332,9 +4339,11 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorVersionsPage> {
 
     private ListProcessorVersionsPage(
-        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+        @Nullable
+            PageContext<
+                ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
             context,
-        ListProcessorVersionsResponse response) {
+        @Nullable ListProcessorVersionsResponse response) {
       super(context, response);
     }
 
@@ -4344,15 +4353,19 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorVersionsPage createPage(
-        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+        @Nullable
+            PageContext<
+                ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
             context,
-        ListProcessorVersionsResponse response) {
+        @Nullable ListProcessorVersionsResponse response) {
       return new ListProcessorVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessorVersionsPage> createPageAsync(
-        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+        @Nullable
+            PageContext<
+                ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
             context,
         ApiFuture<ListProcessorVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4368,7 +4381,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListProcessorVersionsFixedSizeCollection> {
 
     private ListProcessorVersionsFixedSizeCollection(
-        List<ListProcessorVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4378,7 +4391,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListProcessorVersionsFixedSizeCollection createCollection(
-        List<ListProcessorVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListProcessorVersionsPage> pages, int collectionSize) {
       return new ListProcessorVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4412,8 +4425,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
 
     private ListEvaluationsPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -4423,14 +4436,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsPage createPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       return new ListEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationsPage> createPageAsync(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
         ApiFuture<ListEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4445,7 +4458,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListEvaluationsFixedSizeCollection> {
 
     private ListEvaluationsFixedSizeCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4455,7 +4468,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsFixedSizeCollection createCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4489,8 +4502,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4500,14 +4513,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4521,7 +4534,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4531,7 +4545,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -429,7 +430,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RoutersClient implements BackgroundResource {
-  private final RoutersSettings settings;
+  private final @Nullable RoutersSettings settings;
   private final RoutersStub stub;
 
   /** Constructs an instance of RoutersClient with default settings. */
@@ -467,7 +468,7 @@ public class RoutersClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RoutersSettings getSettings() {
+  public final @Nullable RoutersSettings getSettings() {
     return settings;
   }
 
@@ -2787,12 +2788,13 @@ public class RoutersClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
                 Map.Entry<String, RoutersScopedList>>
             context,
-        RouterAggregatedList response) {
+        @Nullable RouterAggregatedList response) {
       super(context, response);
     }
 
@@ -2802,18 +2804,20 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
                 Map.Entry<String, RoutersScopedList>>
             context,
-        RouterAggregatedList response) {
+        @Nullable RouterAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRoutersRequest,
                 RouterAggregatedList,
                 Map.Entry<String, RoutersScopedList>>
@@ -2831,7 +2835,8 @@ public class RoutersClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2841,7 +2846,7 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2880,10 +2885,11 @@ public class RoutersClient implements BackgroundResource {
           GetNatMappingInfoPage> {
 
     private GetNatMappingInfoPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList, VmEndpointNatMappings>
             context,
-        VmEndpointNatMappingsList response) {
+        @Nullable VmEndpointNatMappingsList response) {
       super(context, response);
     }
 
@@ -2893,16 +2899,18 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected GetNatMappingInfoPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList, VmEndpointNatMappings>
             context,
-        VmEndpointNatMappingsList response) {
+        @Nullable VmEndpointNatMappingsList response) {
       return new GetNatMappingInfoPage(context, response);
     }
 
     @Override
     public ApiFuture<GetNatMappingInfoPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList, VmEndpointNatMappings>
             context,
         ApiFuture<VmEndpointNatMappingsList> futureResponse) {
@@ -2919,7 +2927,7 @@ public class RoutersClient implements BackgroundResource {
           GetNatMappingInfoFixedSizeCollection> {
 
     private GetNatMappingInfoFixedSizeCollection(
-        List<GetNatMappingInfoPage> pages, int collectionSize) {
+        @Nullable List<GetNatMappingInfoPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2929,7 +2937,7 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected GetNatMappingInfoFixedSizeCollection createCollection(
-        List<GetNatMappingInfoPage> pages, int collectionSize) {
+        @Nullable List<GetNatMappingInfoPage> pages, int collectionSize) {
       return new GetNatMappingInfoFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2956,7 +2964,8 @@ public class RoutersClient implements BackgroundResource {
       extends AbstractPage<ListRoutersRequest, RouterList, Router, ListPage> {
 
     private ListPage(
-        PageContext<ListRoutersRequest, RouterList, Router> context, RouterList response) {
+        @Nullable PageContext<ListRoutersRequest, RouterList, Router> context,
+        @Nullable RouterList response) {
       super(context, response);
     }
 
@@ -2966,13 +2975,14 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRoutersRequest, RouterList, Router> context, RouterList response) {
+        @Nullable PageContext<ListRoutersRequest, RouterList, Router> context,
+        @Nullable RouterList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRoutersRequest, RouterList, Router> context,
+        @Nullable PageContext<ListRoutersRequest, RouterList, Router> context,
         ApiFuture<RouterList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2982,7 +2992,7 @@ public class RoutersClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRoutersRequest, RouterList, Router, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2991,7 +3001,8 @@ public class RoutersClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3025,8 +3036,8 @@ public class RoutersClient implements BackgroundResource {
           ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute, ListBgpRoutesPage> {
 
     private ListBgpRoutesPage(
-        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
-        RoutersListBgpRoutes response) {
+        @Nullable PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        @Nullable RoutersListBgpRoutes response) {
       super(context, response);
     }
 
@@ -3036,14 +3047,14 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected ListBgpRoutesPage createPage(
-        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
-        RoutersListBgpRoutes response) {
+        @Nullable PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        @Nullable RoutersListBgpRoutes response) {
       return new ListBgpRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBgpRoutesPage> createPageAsync(
-        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        @Nullable PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
         ApiFuture<RoutersListBgpRoutes> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3057,7 +3068,8 @@ public class RoutersClient implements BackgroundResource {
           ListBgpRoutesPage,
           ListBgpRoutesFixedSizeCollection> {
 
-    private ListBgpRoutesFixedSizeCollection(List<ListBgpRoutesPage> pages, int collectionSize) {
+    private ListBgpRoutesFixedSizeCollection(
+        @Nullable List<ListBgpRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3067,7 +3079,7 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected ListBgpRoutesFixedSizeCollection createCollection(
-        List<ListBgpRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListBgpRoutesPage> pages, int collectionSize) {
       return new ListBgpRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3104,8 +3116,10 @@ public class RoutersClient implements BackgroundResource {
           ListRoutePoliciesPage> {
 
     private ListRoutePoliciesPage(
-        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
-        RoutersListRoutePolicies response) {
+        @Nullable
+            PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
+            context,
+        @Nullable RoutersListRoutePolicies response) {
       super(context, response);
     }
 
@@ -3115,14 +3129,18 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected ListRoutePoliciesPage createPage(
-        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
-        RoutersListRoutePolicies response) {
+        @Nullable
+            PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
+            context,
+        @Nullable RoutersListRoutePolicies response) {
       return new ListRoutePoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRoutePoliciesPage> createPageAsync(
-        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
+        @Nullable
+            PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
+            context,
         ApiFuture<RoutersListRoutePolicies> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3137,7 +3155,7 @@ public class RoutersClient implements BackgroundResource {
           ListRoutePoliciesFixedSizeCollection> {
 
     private ListRoutePoliciesFixedSizeCollection(
-        List<ListRoutePoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListRoutePoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3147,7 +3165,7 @@ public class RoutersClient implements BackgroundResource {
 
     @Override
     protected ListRoutePoliciesFixedSizeCollection createCollection(
-        List<ListRoutePoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListRoutePoliciesPage> pages, int collectionSize) {
       return new ListRoutePoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

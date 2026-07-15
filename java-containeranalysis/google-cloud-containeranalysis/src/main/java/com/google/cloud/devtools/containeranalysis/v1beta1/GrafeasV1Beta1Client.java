@@ -57,6 +57,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -371,7 +372,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrafeasV1Beta1Client implements BackgroundResource {
-  private final GrafeasV1Beta1Settings settings;
+  private final @Nullable GrafeasV1Beta1Settings settings;
   private final GrafeasV1Beta1Stub stub;
 
   /** Constructs an instance of GrafeasV1Beta1Client with default settings. */
@@ -411,7 +412,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GrafeasV1Beta1Settings getSettings() {
+  public final @Nullable GrafeasV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -1476,8 +1477,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListOccurrencesRequest, ListOccurrencesResponse, Occurrence, ListOccurrencesPage> {
 
     private ListOccurrencesPage(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
-        ListOccurrencesResponse response) {
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable ListOccurrencesResponse response) {
       super(context, response);
     }
 
@@ -1487,14 +1488,14 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListOccurrencesPage createPage(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
-        ListOccurrencesResponse response) {
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable ListOccurrencesResponse response) {
       return new ListOccurrencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOccurrencesPage> createPageAsync(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
         ApiFuture<ListOccurrencesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1509,7 +1510,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListOccurrencesFixedSizeCollection> {
 
     private ListOccurrencesFixedSizeCollection(
-        List<ListOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListOccurrencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1519,7 +1520,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListOccurrencesFixedSizeCollection createCollection(
-        List<ListOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListOccurrencesPage> pages, int collectionSize) {
       return new ListOccurrencesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1546,8 +1547,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
       extends AbstractPage<ListNotesRequest, ListNotesResponse, Note, ListNotesPage> {
 
     private ListNotesPage(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
-        ListNotesResponse response) {
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable ListNotesResponse response) {
       super(context, response);
     }
 
@@ -1557,14 +1558,14 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListNotesPage createPage(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
-        ListNotesResponse response) {
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable ListNotesResponse response) {
       return new ListNotesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotesPage> createPageAsync(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
         ApiFuture<ListNotesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1574,7 +1575,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNotesRequest, ListNotesResponse, Note, ListNotesPage, ListNotesFixedSizeCollection> {
 
-    private ListNotesFixedSizeCollection(List<ListNotesPage> pages, int collectionSize) {
+    private ListNotesFixedSizeCollection(@Nullable List<ListNotesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1584,7 +1585,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListNotesFixedSizeCollection createCollection(
-        List<ListNotesPage> pages, int collectionSize) {
+        @Nullable List<ListNotesPage> pages, int collectionSize) {
       return new ListNotesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1621,8 +1622,9 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListNoteOccurrencesPage> {
 
     private ListNoteOccurrencesPage(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
-        ListNoteOccurrencesResponse response) {
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
+        @Nullable ListNoteOccurrencesResponse response) {
       super(context, response);
     }
 
@@ -1632,14 +1634,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListNoteOccurrencesPage createPage(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
-        ListNoteOccurrencesResponse response) {
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
+        @Nullable ListNoteOccurrencesResponse response) {
       return new ListNoteOccurrencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNoteOccurrencesPage> createPageAsync(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
         ApiFuture<ListNoteOccurrencesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1654,7 +1658,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListNoteOccurrencesFixedSizeCollection> {
 
     private ListNoteOccurrencesFixedSizeCollection(
-        List<ListNoteOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListNoteOccurrencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1664,7 +1668,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
     @Override
     protected ListNoteOccurrencesFixedSizeCollection createCollection(
-        List<ListNoteOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListNoteOccurrencesPage> pages, int collectionSize) {
       return new ListNoteOccurrencesFixedSizeCollection(pages, collectionSize);
     }
   }

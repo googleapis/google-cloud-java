@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -203,7 +204,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PredictionServiceClient implements BackgroundResource {
-  private final PredictionServiceSettings settings;
+  private final @Nullable PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -251,7 +252,7 @@ public class PredictionServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PredictionServiceSettings getSettings() {
+  public final @Nullable PredictionServiceSettings getSettings() {
     return settings;
   }
 
@@ -366,7 +367,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
-      ModelName name, ExamplePayload payload, Map<String, String> params) {
+      @Nullable ModelName name, ExamplePayload payload, Map<String, String> params) {
     PredictRequest request =
         PredictRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -718,7 +719,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
-      ModelName name,
+      @Nullable ModelName name,
       BatchPredictInputConfig inputConfig,
       BatchPredictOutputConfig outputConfig,
       Map<String, String> params) {

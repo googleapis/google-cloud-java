@@ -45,6 +45,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -870,7 +871,7 @@ import org.jspecify.annotations.NullMarked;
 @Deprecated
 @Generated("by gapic-generator-java")
 public class DataCatalogClient implements BackgroundResource {
-  private final DataCatalogSettings settings;
+  private final @Nullable DataCatalogSettings settings;
   private final DataCatalogStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -917,7 +918,7 @@ public class DataCatalogClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataCatalogSettings getSettings() {
+  public final @Nullable DataCatalogSettings getSettings() {
     return settings;
   }
 
@@ -1213,7 +1214,7 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final EntryGroup createEntryGroup(
-      LocationName parent, String entryGroupId, EntryGroup entryGroup) {
+      @Nullable LocationName parent, String entryGroupId, EntryGroup entryGroup) {
     CreateEntryGroupRequest request =
         CreateEntryGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1429,7 +1430,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final EntryGroup getEntryGroup(EntryGroupName name) {
+  public final EntryGroup getEntryGroup(@Nullable EntryGroupName name) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntryGroup(request);
@@ -1488,7 +1489,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final EntryGroup getEntryGroup(EntryGroupName name, FieldMask readMask) {
+  public final EntryGroup getEntryGroup(@Nullable EntryGroupName name, FieldMask readMask) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1761,7 +1762,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteEntryGroup(EntryGroupName name) {
+  public final void deleteEntryGroup(@Nullable EntryGroupName name) {
     DeleteEntryGroupRequest request =
         DeleteEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntryGroup(request);
@@ -1895,7 +1896,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListEntryGroupsPagedResponse listEntryGroups(LocationName parent) {
+  public final ListEntryGroupsPagedResponse listEntryGroups(@Nullable LocationName parent) {
     ListEntryGroupsRequest request =
         ListEntryGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2088,7 +2089,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Entry createEntry(EntryGroupName parent, String entryId, Entry entry) {
+  public final Entry createEntry(@Nullable EntryGroupName parent, String entryId, Entry entry) {
     CreateEntryRequest request =
         CreateEntryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2426,7 +2427,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteEntry(EntryName name) {
+  public final void deleteEntry(@Nullable EntryName name) {
     DeleteEntryRequest request =
         DeleteEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntry(request);
@@ -2566,7 +2567,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Entry getEntry(EntryName name) {
+  public final Entry getEntry(@Nullable EntryName name) {
     GetEntryRequest request =
         GetEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntry(request);
@@ -2758,7 +2759,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListEntriesPagedResponse listEntries(EntryGroupName parent) {
+  public final ListEntriesPagedResponse listEntries(@Nullable EntryGroupName parent) {
     ListEntriesRequest request =
         ListEntriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3109,7 +3110,7 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplate createTagTemplate(
-      LocationName parent, String tagTemplateId, TagTemplate tagTemplate) {
+      @Nullable LocationName parent, String tagTemplateId, TagTemplate tagTemplate) {
     CreateTagTemplateRequest request =
         CreateTagTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3261,7 +3262,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final TagTemplate getTagTemplate(TagTemplateName name) {
+  public final TagTemplate getTagTemplate(@Nullable TagTemplateName name) {
     GetTagTemplateRequest request =
         GetTagTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTagTemplate(request);
@@ -3545,7 +3546,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteTagTemplate(TagTemplateName name, boolean force) {
+  public final void deleteTagTemplate(@Nullable TagTemplateName name, boolean force) {
     DeleteTagTemplateRequest request =
         DeleteTagTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3698,7 +3699,9 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplateField createTagTemplateField(
-      TagTemplateName parent, String tagTemplateFieldId, TagTemplateField tagTemplateField) {
+      @Nullable TagTemplateName parent,
+      String tagTemplateFieldId,
+      TagTemplateField tagTemplateField) {
     CreateTagTemplateFieldRequest request =
         CreateTagTemplateFieldRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3863,7 +3866,7 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplateField updateTagTemplateField(
-      TagTemplateFieldName name, TagTemplateField tagTemplateField) {
+      @Nullable TagTemplateFieldName name, TagTemplateField tagTemplateField) {
     UpdateTagTemplateFieldRequest request =
         UpdateTagTemplateFieldRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3967,7 +3970,9 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplateField updateTagTemplateField(
-      TagTemplateFieldName name, TagTemplateField tagTemplateField, FieldMask updateMask) {
+      @Nullable TagTemplateFieldName name,
+      TagTemplateField tagTemplateField,
+      FieldMask updateMask) {
     UpdateTagTemplateFieldRequest request =
         UpdateTagTemplateFieldRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4155,7 +4160,7 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplateField renameTagTemplateField(
-      TagTemplateFieldName name, String newTagTemplateFieldId) {
+      @Nullable TagTemplateFieldName name, String newTagTemplateFieldId) {
     RenameTagTemplateFieldRequest request =
         RenameTagTemplateFieldRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4318,7 +4323,7 @@ public class DataCatalogClient implements BackgroundResource {
    */
   @Deprecated
   public final TagTemplateField renameTagTemplateFieldEnumValue(
-      TagTemplateFieldEnumValueName name, String newEnumValueDisplayName) {
+      @Nullable TagTemplateFieldEnumValueName name, String newEnumValueDisplayName) {
     RenameTagTemplateFieldEnumValueRequest request =
         RenameTagTemplateFieldEnumValueRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4488,7 +4493,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteTagTemplateField(TagTemplateFieldName name, boolean force) {
+  public final void deleteTagTemplateField(@Nullable TagTemplateFieldName name, boolean force) {
     DeleteTagTemplateFieldRequest request =
         DeleteTagTemplateFieldRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4656,7 +4661,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Tag createTag(EntryName parent, Tag tag) {
+  public final Tag createTag(@Nullable EntryName parent, Tag tag) {
     CreateTagRequest request =
         CreateTagRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4950,7 +4955,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteTag(EntryName name) {
+  public final void deleteTag(@Nullable EntryName name) {
     DeleteTagRequest request =
         DeleteTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTag(request);
@@ -5075,7 +5080,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListTagsPagedResponse listTags(EntryName parent) {
+  public final ListTagsPagedResponse listTags(@Nullable EntryName parent) {
     ListTagsRequest request =
         ListTagsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTags(request);
@@ -5384,7 +5389,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final StarEntryResponse starEntry(EntryName name) {
+  public final StarEntryResponse starEntry(@Nullable EntryName name) {
     StarEntryRequest request =
         StarEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return starEntry(request);
@@ -5508,7 +5513,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final UnstarEntryResponse unstarEntry(EntryName name) {
+  public final UnstarEntryResponse unstarEntry(@Nullable EntryName name) {
     UnstarEntryRequest request =
         UnstarEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return unstarEntry(request);
@@ -5649,7 +5654,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -5840,7 +5845,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -6459,8 +6464,9 @@ public class DataCatalogClient implements BackgroundResource {
           SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult, SearchCatalogPage> {
 
     private SearchCatalogPage(
-        PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult> context,
-        SearchCatalogResponse response) {
+        @Nullable PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
+            context,
+        @Nullable SearchCatalogResponse response) {
       super(context, response);
     }
 
@@ -6470,14 +6476,16 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchCatalogPage createPage(
-        PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult> context,
-        SearchCatalogResponse response) {
+        @Nullable PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
+            context,
+        @Nullable SearchCatalogResponse response) {
       return new SearchCatalogPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchCatalogPage> createPageAsync(
-        PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult> context,
+        @Nullable PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
+            context,
         ApiFuture<SearchCatalogResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6491,7 +6499,8 @@ public class DataCatalogClient implements BackgroundResource {
           SearchCatalogPage,
           SearchCatalogFixedSizeCollection> {
 
-    private SearchCatalogFixedSizeCollection(List<SearchCatalogPage> pages, int collectionSize) {
+    private SearchCatalogFixedSizeCollection(
+        @Nullable List<SearchCatalogPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6501,7 +6510,7 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected SearchCatalogFixedSizeCollection createCollection(
-        List<SearchCatalogPage> pages, int collectionSize) {
+        @Nullable List<SearchCatalogPage> pages, int collectionSize) {
       return new SearchCatalogFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6535,8 +6544,8 @@ public class DataCatalogClient implements BackgroundResource {
           ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup, ListEntryGroupsPage> {
 
     private ListEntryGroupsPage(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
-        ListEntryGroupsResponse response) {
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable ListEntryGroupsResponse response) {
       super(context, response);
     }
 
@@ -6546,14 +6555,14 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListEntryGroupsPage createPage(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
-        ListEntryGroupsResponse response) {
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable ListEntryGroupsResponse response) {
       return new ListEntryGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntryGroupsPage> createPageAsync(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
         ApiFuture<ListEntryGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6568,7 +6577,7 @@ public class DataCatalogClient implements BackgroundResource {
           ListEntryGroupsFixedSizeCollection> {
 
     private ListEntryGroupsFixedSizeCollection(
-        List<ListEntryGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListEntryGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6578,7 +6587,7 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListEntryGroupsFixedSizeCollection createCollection(
-        List<ListEntryGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListEntryGroupsPage> pages, int collectionSize) {
       return new ListEntryGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6609,8 +6618,8 @@ public class DataCatalogClient implements BackgroundResource {
       extends AbstractPage<ListEntriesRequest, ListEntriesResponse, Entry, ListEntriesPage> {
 
     private ListEntriesPage(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
-        ListEntriesResponse response) {
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable ListEntriesResponse response) {
       super(context, response);
     }
 
@@ -6620,14 +6629,14 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListEntriesPage createPage(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
-        ListEntriesResponse response) {
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable ListEntriesResponse response) {
       return new ListEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntriesPage> createPageAsync(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
         ApiFuture<ListEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6641,7 +6650,8 @@ public class DataCatalogClient implements BackgroundResource {
           ListEntriesPage,
           ListEntriesFixedSizeCollection> {
 
-    private ListEntriesFixedSizeCollection(List<ListEntriesPage> pages, int collectionSize) {
+    private ListEntriesFixedSizeCollection(
+        @Nullable List<ListEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6651,7 +6661,7 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListEntriesFixedSizeCollection createCollection(
-        List<ListEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListEntriesPage> pages, int collectionSize) {
       return new ListEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6678,7 +6688,8 @@ public class DataCatalogClient implements BackgroundResource {
       extends AbstractPage<ListTagsRequest, ListTagsResponse, Tag, ListTagsPage> {
 
     private ListTagsPage(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context, ListTagsResponse response) {
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable ListTagsResponse response) {
       super(context, response);
     }
 
@@ -6688,13 +6699,14 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListTagsPage createPage(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context, ListTagsResponse response) {
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable ListTagsResponse response) {
       return new ListTagsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTagsPage> createPageAsync(
-        PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
+        @Nullable PageContext<ListTagsRequest, ListTagsResponse, Tag> context,
         ApiFuture<ListTagsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6704,7 +6716,7 @@ public class DataCatalogClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTagsRequest, ListTagsResponse, Tag, ListTagsPage, ListTagsFixedSizeCollection> {
 
-    private ListTagsFixedSizeCollection(List<ListTagsPage> pages, int collectionSize) {
+    private ListTagsFixedSizeCollection(@Nullable List<ListTagsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6714,7 +6726,7 @@ public class DataCatalogClient implements BackgroundResource {
 
     @Override
     protected ListTagsFixedSizeCollection createCollection(
-        List<ListTagsPage> pages, int collectionSize) {
+        @Nullable List<ListTagsPage> pages, int collectionSize) {
       return new ListTagsFixedSizeCollection(pages, collectionSize);
     }
   }

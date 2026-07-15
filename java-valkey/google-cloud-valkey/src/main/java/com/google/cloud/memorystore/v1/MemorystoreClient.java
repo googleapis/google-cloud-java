@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -489,7 +490,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MemorystoreClient implements BackgroundResource {
-  private final MemorystoreSettings settings;
+  private final @Nullable MemorystoreSettings settings;
   private final MemorystoreStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -536,7 +537,7 @@ public class MemorystoreClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final MemorystoreSettings getSettings() {
+  public final @Nullable MemorystoreSettings getSettings() {
     return settings;
   }
 
@@ -585,7 +586,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -753,7 +754,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -878,7 +879,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1173,7 +1174,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1316,7 +1318,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/certificateAuthority
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CertificateAuthority getCertificateAuthority(InstanceName name) {
+  public final CertificateAuthority getCertificateAuthority(@Nullable InstanceName name) {
     GetCertificateAuthorityRequest request =
         GetCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1436,7 +1438,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SharedRegionalCertificateAuthority getSharedRegionalCertificateAuthority(
-      SharedRegionalCertificateAuthorityName name) {
+      @Nullable SharedRegionalCertificateAuthorityName name) {
     GetSharedRegionalCertificateAuthorityRequest request =
         GetSharedRegionalCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1567,7 +1569,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
-      InstanceName name,
+      @Nullable InstanceName name,
       RescheduleMaintenanceRequest.RescheduleType rescheduleType,
       Timestamp scheduleTime) {
     RescheduleMaintenanceRequest request =
@@ -1741,7 +1743,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupCollectionsPagedResponse listBackupCollections(LocationName parent) {
+  public final ListBackupCollectionsPagedResponse listBackupCollections(
+      @Nullable LocationName parent) {
     ListBackupCollectionsRequest request =
         ListBackupCollectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1928,7 +1931,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     where `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupCollection getBackupCollection(BackupCollectionName name) {
+  public final BackupCollection getBackupCollection(@Nullable BackupCollectionName name) {
     GetBackupCollectionRequest request =
         GetBackupCollectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2052,7 +2055,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(BackupCollectionName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable BackupCollectionName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2220,7 +2223,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -2335,7 +2338,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -2585,7 +2589,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Instance, OperationMetadata> backupInstanceAsync(InstanceName name) {
+  public final OperationFuture<Instance, OperationMetadata> backupInstanceAsync(
+      @Nullable InstanceName name) {
     BackupInstanceRequest request =
         BackupInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return backupInstanceAsync(request);
@@ -2869,7 +2874,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> finishMigrationAsync(
-      InstanceName name, boolean force) {
+      @Nullable InstanceName name, boolean force) {
     FinishMigrationRequest request =
         FinishMigrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3261,8 +3266,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -3272,14 +3277,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3293,7 +3298,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3303,7 +3309,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3341,9 +3347,11 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupCollectionsPage> {
 
     private ListBackupCollectionsPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       super(context, response);
     }
 
@@ -3353,15 +3361,19 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsPage createPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       return new ListBackupCollectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupCollectionsPage> createPageAsync(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
         ApiFuture<ListBackupCollectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3377,7 +3389,7 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupCollectionsFixedSizeCollection> {
 
     private ListBackupCollectionsFixedSizeCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3387,7 +3399,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsFixedSizeCollection createCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       return new ListBackupCollectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3418,8 +3430,8 @@ public class MemorystoreClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -3429,14 +3441,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3450,7 +3462,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3460,7 +3473,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3494,8 +3507,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3505,14 +3518,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3526,7 +3539,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3536,7 +3550,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
