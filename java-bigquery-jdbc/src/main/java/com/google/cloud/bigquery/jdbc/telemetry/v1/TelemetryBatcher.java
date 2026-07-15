@@ -51,12 +51,14 @@ final class TelemetryBatcher implements AutoCloseable {
   private final boolean ownsExecutor;
   private final ReentrantLock flushLock = new ReentrantLock();
 
-  private final Queue<ConnectionAttempt> connectionAttemptQueue =
+  private final LinkedBlockingQueue<ConnectionAttempt> connectionAttemptQueue =
       new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final Queue<StatementExecution> statementExecutionQueue =
+  private final LinkedBlockingQueue<StatementExecution> statementExecutionQueue =
       new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final Queue<ErrorMetric> errorMetricQueue = new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final Queue<FeatureUsage> featureUsageQueue = new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final LinkedBlockingQueue<ErrorMetric> errorMetricQueue =
+      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final LinkedBlockingQueue<FeatureUsage> featureUsageQueue =
+      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
 
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
@@ -66,13 +68,17 @@ final class TelemetryBatcher implements AutoCloseable {
     this(
         config,
         transport,
-        Executors.newSingleThreadScheduledExecutor(
-            r -> {
-              Thread t = new Thread(r, "jdbc-telemetry-batcher");
-              t.setDaemon(true);
-              return t;
-            }),
-        true);
+        (config != null && config.isEnabled()) ? createDefaultExecutor() : null,
+        config != null && config.isEnabled());
+  }
+
+  private static ScheduledExecutorService createDefaultExecutor() {
+    return Executors.newSingleThreadScheduledExecutor(
+        r -> {
+          Thread t = new Thread(r, "jdbc-telemetry-batcher");
+          t.setDaemon(true);
+          return t;
+        });
   }
 
   // Package-private constructor for testing overrides
@@ -316,39 +322,36 @@ final class TelemetryBatcher implements AutoCloseable {
       List<StatementExecution> statementExecutions,
       List<ErrorMetric> errorMetrics,
       List<FeatureUsage> featureUsages) {
-    int remainingToTrim = itemsToTrim;
-
-    while (remainingToTrim > 0 && !featureUsages.isEmpty()) {
-      featureUsageQueue.offer(featureUsages.remove(featureUsages.size() - 1));
-      remainingToTrim--;
-    }
-    while (remainingToTrim > 0 && !errorMetrics.isEmpty()) {
-      errorMetricQueue.offer(errorMetrics.remove(errorMetrics.size() - 1));
-      remainingToTrim--;
-    }
-    while (remainingToTrim > 0 && !statementExecutions.isEmpty()) {
-      statementExecutionQueue.offer(statementExecutions.remove(statementExecutions.size() - 1));
-      remainingToTrim--;
-    }
-    while (remainingToTrim > 0 && !connectionAttempts.isEmpty()) {
-      connectionAttemptQueue.offer(connectionAttempts.remove(connectionAttempts.size() - 1));
-      remainingToTrim--;
-    }
+    int remaining = itemsToTrim;
+    remaining -= trimListToQueue(featureUsages, featureUsageQueue, remaining);
+    remaining -= trimListToQueue(errorMetrics, errorMetricQueue, remaining);
+    remaining -= trimListToQueue(statementExecutions, statementExecutionQueue, remaining);
+    trimListToQueue(connectionAttempts, connectionAttemptQueue, remaining);
   }
 
-  private <T> int drainQueue(Queue<T> queue, List<T> targetList, int maxItems) {
-    int count = 0;
-    T item;
-    while (count < maxItems && (item = queue.poll()) != null) {
-      targetList.add(item);
-      count++;
+  private <T> int trimListToQueue(List<T> list, Queue<T> queue, int maxToTrim) {
+    int trimmed = 0;
+    while (trimmed < maxToTrim && !list.isEmpty()) {
+      queue.offer(list.remove(list.size() - 1));
+      trimmed++;
     }
-    return count;
+    return trimmed;
+  }
+
+  private <T> int drainQueue(LinkedBlockingQueue<T> queue, List<T> targetList, int maxItems) {
+    if (maxItems <= 0) {
+      return 0;
+    }
+    return queue.drainTo(targetList, maxItems);
   }
 
   private <T> void requeueItems(Queue<T> queue, List<T> items) {
     if (items != null && !items.isEmpty()) {
-      queue.addAll(items);
+      for (T item : items) {
+        if (!queue.offer(item)) {
+          break; // Queue is full; stop requeueing to avoid dropping metrics or throwing exception
+        }
+      }
     }
   }
 }
