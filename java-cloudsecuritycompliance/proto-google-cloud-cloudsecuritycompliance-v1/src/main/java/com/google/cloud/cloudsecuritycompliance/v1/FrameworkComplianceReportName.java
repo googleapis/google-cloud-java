@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -205,7 +204,7 @@ public class FrameworkComplianceReportName implements ResourceName {
         .toString();
   }
 
-  public static @Nullable FrameworkComplianceReportName parse(String formattedString) {
+  public static FrameworkComplianceReportName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -243,7 +242,7 @@ public class FrameworkComplianceReportName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<@Nullable FrameworkComplianceReportName> values) {
+  public static List<String> toStringList(List<FrameworkComplianceReportName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FrameworkComplianceReportName value : values) {
       if (value == null) {
@@ -299,7 +298,7 @@ public class FrameworkComplianceReportName implements ResourceName {
   }
 
   @Override
-  public boolean equals(@Nullable Object o) {
+  public boolean equals(Object o) {
     if (o == this) {
       return true;
     }

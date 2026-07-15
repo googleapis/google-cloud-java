@@ -36,7 +36,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -259,7 +258,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MonitoringClient implements BackgroundResource {
-  private final @Nullable MonitoringSettings settings;
+  private final MonitoringSettings settings;
   private final MonitoringStub stub;
 
   /** Constructs an instance of MonitoringClient with default settings. */
@@ -297,7 +296,7 @@ public class MonitoringClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final @Nullable MonitoringSettings getSettings() {
+  public final MonitoringSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +329,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkComplianceSummariesPagedResponse listFrameworkComplianceSummaries(
-      @Nullable FolderLocationName parent) {
+      FolderLocationName parent) {
     ListFrameworkComplianceSummariesRequest request =
         ListFrameworkComplianceSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -363,7 +362,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkComplianceSummariesPagedResponse listFrameworkComplianceSummaries(
-      @Nullable LocationName parent) {
+      LocationName parent) {
     ListFrameworkComplianceSummariesRequest request =
         ListFrameworkComplianceSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -396,7 +395,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkComplianceSummariesPagedResponse listFrameworkComplianceSummaries(
-      @Nullable OrganizationLocationName parent) {
+      OrganizationLocationName parent) {
     ListFrameworkComplianceSummariesRequest request =
         ListFrameworkComplianceSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -573,8 +572,7 @@ public class MonitoringClient implements BackgroundResource {
    * @param parent Required. The parent scope for the framework overview page.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingSummariesPagedResponse listFindingSummaries(
-      @Nullable FolderLocationName parent) {
+  public final ListFindingSummariesPagedResponse listFindingSummaries(FolderLocationName parent) {
     ListFindingSummariesRequest request =
         ListFindingSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -605,8 +603,7 @@ public class MonitoringClient implements BackgroundResource {
    * @param parent Required. The parent scope for the framework overview page.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingSummariesPagedResponse listFindingSummaries(
-      @Nullable LocationName parent) {
+  public final ListFindingSummariesPagedResponse listFindingSummaries(LocationName parent) {
     ListFindingSummariesRequest request =
         ListFindingSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -638,7 +635,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingSummariesPagedResponse listFindingSummaries(
-      @Nullable OrganizationLocationName parent) {
+      OrganizationLocationName parent) {
     ListFindingSummariesRequest request =
         ListFindingSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -811,7 +808,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FrameworkComplianceReport fetchFrameworkComplianceReport(
-      @Nullable FrameworkComplianceReportName name) {
+      FrameworkComplianceReportName name) {
     FetchFrameworkComplianceReportRequest request =
         FetchFrameworkComplianceReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -944,7 +941,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListControlComplianceSummariesPagedResponse listControlComplianceSummaries(
-      @Nullable FrameworkComplianceReportName parent) {
+      FrameworkComplianceReportName parent) {
     ListControlComplianceSummariesRequest request =
         ListControlComplianceSummariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1137,7 +1134,7 @@ public class MonitoringClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AggregateFrameworkComplianceReportResponse aggregateFrameworkComplianceReport(
-      @Nullable FrameworkComplianceReportName name) {
+      FrameworkComplianceReportName name) {
     AggregateFrameworkComplianceReportRequest request =
         AggregateFrameworkComplianceReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1508,13 +1505,12 @@ public class MonitoringClient implements BackgroundResource {
           ListFrameworkComplianceSummariesPage> {
 
     private ListFrameworkComplianceSummariesPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkComplianceSummariesRequest,
                 ListFrameworkComplianceSummariesResponse,
                 FrameworkComplianceSummary>
             context,
-        @Nullable ListFrameworkComplianceSummariesResponse response) {
+        ListFrameworkComplianceSummariesResponse response) {
       super(context, response);
     }
 
@@ -1524,20 +1520,18 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkComplianceSummariesPage createPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkComplianceSummariesRequest,
                 ListFrameworkComplianceSummariesResponse,
                 FrameworkComplianceSummary>
             context,
-        @Nullable ListFrameworkComplianceSummariesResponse response) {
+        ListFrameworkComplianceSummariesResponse response) {
       return new ListFrameworkComplianceSummariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFrameworkComplianceSummariesPage> createPageAsync(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListFrameworkComplianceSummariesRequest,
                 ListFrameworkComplianceSummariesResponse,
                 FrameworkComplianceSummary>
@@ -1556,7 +1550,7 @@ public class MonitoringClient implements BackgroundResource {
           ListFrameworkComplianceSummariesFixedSizeCollection> {
 
     private ListFrameworkComplianceSummariesFixedSizeCollection(
-        @Nullable List<ListFrameworkComplianceSummariesPage> pages, int collectionSize) {
+        List<ListFrameworkComplianceSummariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1566,7 +1560,7 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkComplianceSummariesFixedSizeCollection createCollection(
-        @Nullable List<ListFrameworkComplianceSummariesPage> pages, int collectionSize) {
+        List<ListFrameworkComplianceSummariesPage> pages, int collectionSize) {
       return new ListFrameworkComplianceSummariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1604,10 +1598,9 @@ public class MonitoringClient implements BackgroundResource {
           ListFindingSummariesPage> {
 
     private ListFindingSummariesPage(
-        @Nullable
-            PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
+        PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
             context,
-        @Nullable ListFindingSummariesResponse response) {
+        ListFindingSummariesResponse response) {
       super(context, response);
     }
 
@@ -1617,17 +1610,15 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListFindingSummariesPage createPage(
-        @Nullable
-            PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
+        PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
             context,
-        @Nullable ListFindingSummariesResponse response) {
+        ListFindingSummariesResponse response) {
       return new ListFindingSummariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingSummariesPage> createPageAsync(
-        @Nullable
-            PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
+        PageContext<ListFindingSummariesRequest, ListFindingSummariesResponse, FindingSummary>
             context,
         ApiFuture<ListFindingSummariesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1643,7 +1634,7 @@ public class MonitoringClient implements BackgroundResource {
           ListFindingSummariesFixedSizeCollection> {
 
     private ListFindingSummariesFixedSizeCollection(
-        @Nullable List<ListFindingSummariesPage> pages, int collectionSize) {
+        List<ListFindingSummariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1653,7 +1644,7 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListFindingSummariesFixedSizeCollection createCollection(
-        @Nullable List<ListFindingSummariesPage> pages, int collectionSize) {
+        List<ListFindingSummariesPage> pages, int collectionSize) {
       return new ListFindingSummariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1695,13 +1686,12 @@ public class MonitoringClient implements BackgroundResource {
           ListControlComplianceSummariesPage> {
 
     private ListControlComplianceSummariesPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListControlComplianceSummariesRequest,
                 ListControlComplianceSummariesResponse,
                 ControlComplianceSummary>
             context,
-        @Nullable ListControlComplianceSummariesResponse response) {
+        ListControlComplianceSummariesResponse response) {
       super(context, response);
     }
 
@@ -1711,20 +1701,18 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListControlComplianceSummariesPage createPage(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListControlComplianceSummariesRequest,
                 ListControlComplianceSummariesResponse,
                 ControlComplianceSummary>
             context,
-        @Nullable ListControlComplianceSummariesResponse response) {
+        ListControlComplianceSummariesResponse response) {
       return new ListControlComplianceSummariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListControlComplianceSummariesPage> createPageAsync(
-        @Nullable
-            PageContext<
+        PageContext<
                 ListControlComplianceSummariesRequest,
                 ListControlComplianceSummariesResponse,
                 ControlComplianceSummary>
@@ -1743,7 +1731,7 @@ public class MonitoringClient implements BackgroundResource {
           ListControlComplianceSummariesFixedSizeCollection> {
 
     private ListControlComplianceSummariesFixedSizeCollection(
-        @Nullable List<ListControlComplianceSummariesPage> pages, int collectionSize) {
+        List<ListControlComplianceSummariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1753,7 +1741,7 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListControlComplianceSummariesFixedSizeCollection createCollection(
-        @Nullable List<ListControlComplianceSummariesPage> pages, int collectionSize) {
+        List<ListControlComplianceSummariesPage> pages, int collectionSize) {
       return new ListControlComplianceSummariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1787,8 +1775,8 @@ public class MonitoringClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1798,14 +1786,14 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1819,8 +1807,7 @@ public class MonitoringClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1830,7 +1817,7 @@ public class MonitoringClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+        List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

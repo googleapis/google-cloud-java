@@ -59,13 +59,13 @@ public final class WindowsEventLog extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_WindowsEventLog_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_WindowsEventLog_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_WindowsEventLog_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.WindowsEventLog.class,
@@ -669,13 +669,13 @@ public final class WindowsEventLog extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.WindowsEventLog)
       com.google.backstory.WindowsEventLogOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_WindowsEventLog_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_WindowsEventLog_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsEventLog_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.WindowsEventLog.class,
@@ -701,7 +701,7 @@ public final class WindowsEventLog extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_WindowsEventLog_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_WindowsEventLog_descriptor;
     }
 
     @java.lang.Override

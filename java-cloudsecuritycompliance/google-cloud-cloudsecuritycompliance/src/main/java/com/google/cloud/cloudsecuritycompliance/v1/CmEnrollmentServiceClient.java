@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,7 +199,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CmEnrollmentServiceClient implements BackgroundResource {
-  private final @Nullable CmEnrollmentServiceSettings settings;
+  private final CmEnrollmentServiceSettings settings;
   private final CmEnrollmentServiceStub stub;
 
   /** Constructs an instance of CmEnrollmentServiceClient with default settings. */
@@ -240,7 +239,7 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final @Nullable CmEnrollmentServiceSettings getSettings() {
+  public final CmEnrollmentServiceSettings getSettings() {
     return settings;
   }
 
@@ -379,7 +378,7 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CalculateEffectiveCmEnrollmentResponse calculateEffectiveCmEnrollment(
-      @Nullable CmEnrollmentName name) {
+      CmEnrollmentName name) {
     CalculateEffectiveCmEnrollmentRequest request =
         CalculateEffectiveCmEnrollmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -745,8 +744,8 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -756,14 +755,14 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        @Nullable ListLocationsResponse response) {
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -777,8 +776,7 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -788,7 +786,7 @@ public class CmEnrollmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        @Nullable List<ListLocationsPage> pages, int collectionSize) {
+        List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
