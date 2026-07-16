@@ -828,7 +828,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           (rt) -> rt.getRoutineId().getRoutine(),
                           procedureNamePattern,
                           procedureNameRegex,
-                          LOG);
+                          LOG,
+                          false);
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
             }
@@ -1130,7 +1131,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   procedureNamePattern,
                   procedureNameRegex,
-                  logger);
+                  logger,
+                  false);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
     logger.fine(
@@ -1629,7 +1631,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           (tbl) -> tbl.getTableId().getTable(),
                           tableNamePattern,
                           tableNameRegex,
-                          LOG);
+                          LOG,
+                          false);
               Future<List<Table>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
             }
@@ -1943,7 +1946,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       (tbl) -> tbl.getTableId().getTable(),
                       tableNamePattern,
                       tableNameRegex,
-                      LOG);
+                      LOG,
+                      false);
 
               for (Table table : tablesToScan) {
                 if (Thread.currentThread().isInterrupted()) {
@@ -3828,7 +3832,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         (rt) -> rt.getRoutineId().getRoutine(),
                         functionNamePattern,
                         functionNameRegex,
-                        LOG);
+                        LOG,
+                        false);
                   };
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
@@ -4179,7 +4184,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   functionNamePattern,
                   functionNameRegex,
-                  logger);
+                  logger,
+                  false);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
     logger.fine(
@@ -4615,7 +4621,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<T, String> nameExtractor,
       String pattern,
       Pattern regex,
-      BigQueryJdbcCustomLogger logger)
+      BigQueryJdbcCustomLogger logger,
+      boolean throwOn404)
       throws InterruptedException {
 
     boolean needsList = needsListing(pattern);
@@ -4664,9 +4671,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
     } catch (BigQueryException e) {
-      boolean isBroadDatasetScan = needsList && "Dataset".equals(objectTypeName);
-      if (e.getCode() == 404 && !isBroadDatasetScan) {
+      if (e.getCode() == 404 && !throwOn404) {
         logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+        return Collections.emptyList();
       } else {
         logger.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
@@ -4982,7 +4989,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private List<Dataset> fetchDatasetsForProject(
-      String project, String schemaPattern, Pattern schemaRegex) throws SQLException {
+      String project, String schemaPattern, Pattern schemaRegex, boolean throwOn404)
+      throws SQLException {
     try {
       List<Dataset> datasets =
           findMatchingBigQueryObjects(
@@ -4992,7 +5000,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               (ds) -> ds.getDatasetId().getDataset(),
               schemaPattern,
               schemaRegex,
-              LOG);
+              LOG,
+              throwOn404);
       return datasets != null ? datasets : Collections.emptyList();
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
@@ -5012,9 +5021,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return Collections.emptyList();
     }
 
+    boolean isBroadScan = (catalog == null);
+
     // Single project path
     if (projects.size() == 1) {
-      return fetchDatasetsForProject(projects.get(0), schemaPattern, schemaRegex);
+      return fetchDatasetsForProject(projects.get(0), schemaPattern, schemaRegex, isBroadScan);
     }
 
     // Multi-project path
@@ -5026,7 +5037,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       for (String project : projects) {
         Callable<Void> task =
             () -> {
-              List<Dataset> datasets = fetchDatasetsForProject(project, schemaPattern, schemaRegex);
+              List<Dataset> datasets =
+                  fetchDatasetsForProject(project, schemaPattern, schemaRegex, isBroadScan);
               allDatasets.addAll(datasets);
               return null;
             };
