@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.88.0:1.89.0-SNAPSHOT
+google-cloud-java:1.88.1:1.89.0-SNAPSHOT
 google-cloud-pom-parent:1.88.0:1.89.0-SNAPSHOT
 google-cloud-accessapproval:2.95.0:2.96.0-SNAPSHOT
 grpc-google-cloud-accessapproval-v1:2.95.0:2.96.0-SNAPSHOT
@@ -1060,8 +1060,8 @@ google-cloud-developer-knowledge:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-developer-knowledge-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-developer-knowledge-v1:0.2.0:0.3.0-SNAPSHOT
 google-cloud-backstory:0.2.0:0.3.0-SNAPSHOT
-google-cloud-bom:0.266.0:0.267.0-SNAPSHOT
-libraries-bom:26.85.0:26.86.0-SNAPSHOT
+google-cloud-bom:0.266.1:0.266.1
+libraries-bom:26.85.1:26.85.1
 java-cloud-bom-tests:0.81.0:0.82.0-SNAPSHOT
 full-convergence-check:0.84.0:0.85.0-SNAPSHOT
 google-cloud-shared-config:1.18.0:1.19.0-SNAPSHOT
