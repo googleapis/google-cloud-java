@@ -1027,7 +1027,8 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            dbMetadata.LOG,
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1069,7 +1070,8 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            dbMetadata.LOG,
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1104,7 +1106,8 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
             regex,
-            dbMetadata.LOG);
+            dbMetadata.LOG,
+            false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
