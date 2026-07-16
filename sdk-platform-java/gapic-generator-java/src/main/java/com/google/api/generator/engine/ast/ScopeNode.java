@@ -14,8 +14,10 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ScopeNode implements AstNode {
   private enum ScopeKind {
     LOCAL, // Placeholder for local scopes.

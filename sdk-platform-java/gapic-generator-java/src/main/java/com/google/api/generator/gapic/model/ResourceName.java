@@ -59,8 +59,7 @@ public abstract class ResourceName {
 
   public abstract boolean isOnlyWildcard();
 
-  @Nullable
-  public String getMatchingPattern(HttpBindings bindings) {
+  public @Nullable String getMatchingPattern(HttpBindings bindings) {
     List<String> bindingPatterns =
         ImmutableList.<String>builder()
             .add(bindings.pattern())
@@ -93,11 +92,9 @@ public abstract class ResourceName {
 
   // The message in which this resource was defined. Optional.
   // This is expected to be empty for file-level definitions.
-  @Nullable
-  public abstract String parentMessageName();
+  public abstract @Nullable String parentMessageName();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   public boolean hasParentMessageName() {
     return parentMessageName() != null;

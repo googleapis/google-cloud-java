@@ -25,7 +25,9 @@ import com.google.api.generator.gapic.utils.JavaStyle;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class SampleComposerUtil {
   // Assign client variable expr with create client.
   // e.g EchoClient echoClient = EchoClient.create()

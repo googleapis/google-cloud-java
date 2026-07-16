@@ -15,6 +15,7 @@
 package com.google.api.generator.gapic.model;
 
 import com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location;
+import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -23,13 +24,13 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 public class SourceCodeInfoLocation {
-  private final Location location;
+  @Nonnull private final Location location;
 
   private SourceCodeInfoLocation(Location location) {
     this.location = location;
   }
 
-  public static SourceCodeInfoLocation create(Location location) {
+  public static SourceCodeInfoLocation create(@Nonnull Location location) {
     return new SourceCodeInfoLocation(location);
   }
 

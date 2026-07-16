@@ -30,11 +30,9 @@ import org.jspecify.annotations.Nullable;
 public abstract class VariableExpr implements Expr {
   public abstract Variable variable();
 
-  @Nullable
-  public abstract Expr exprReferenceExpr();
+  public abstract @Nullable Expr exprReferenceExpr();
 
-  @Nullable
-  public abstract TypeNode staticReferenceType();
+  public abstract @Nullable TypeNode staticReferenceType();
 
   /** Variable declaration fields. */
   public abstract boolean isDecl();

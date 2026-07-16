@@ -134,7 +134,7 @@ public class HttpRuleParser {
 
   private static Set<HttpBinding> validateAndConstructHttpBindings(
       Set<String> paramNames,
-      @Nullable Message inputMessage,
+      Message inputMessage,
       Map<String, Message> messageTypes,
       @Nullable Map<String, String> patternSampleValues) {
     ImmutableSortedSet.Builder<HttpBinding> httpBindings = ImmutableSortedSet.naturalOrder();
@@ -235,7 +235,7 @@ public class HttpRuleParser {
         String.format(messageFormat, field.name(), inputMessage.name(), field.type()));
   }
 
-  private static Map<String, String> constructPathValuePatterns(@Nullable String pattern) {
+  private static Map<String, String> constructPathValuePatterns(String pattern) {
     Map<String, String> varPattern = new HashMap<>();
     if (pattern == null || pattern.isEmpty()) {
       return varPattern;

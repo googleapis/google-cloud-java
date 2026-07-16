@@ -24,17 +24,14 @@ import org.jspecify.annotations.Nullable;
 public abstract class ThrowExpr implements Expr {
   // TODO(miraleung): Refactor with StringObjectValue and possibly with NewObjectExpr.
 
-  @Nullable
-  public abstract Expr throwExpr();
+  public abstract @Nullable Expr throwExpr();
 
   @Override
   public abstract TypeNode type();
 
-  @Nullable
-  public abstract Expr messageExpr();
+  public abstract @Nullable Expr messageExpr();
 
-  @Nullable
-  public abstract Expr causeExpr();
+  public abstract @Nullable Expr causeExpr();
 
   @Override
   public void accept(AstNodeVisitor visitor) {

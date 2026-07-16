@@ -31,8 +31,7 @@ public abstract class ClassDefinition implements AstNode {
   public abstract ImmutableList<CommentStatement> fileHeader();
 
   // Required for samples classes.
-  @Nullable
-  public abstract RegionTag regionTag();
+  public abstract @Nullable RegionTag regionTag();
 
   // Required.
   public abstract ScopeNode scope();
@@ -41,8 +40,7 @@ public abstract class ClassDefinition implements AstNode {
   public abstract IdentifierNode classIdentifier();
 
   // Required for outer classes.
-  @Nullable
-  public abstract String packageString();
+  public abstract @Nullable String packageString();
 
   public abstract boolean isNested();
 
@@ -54,8 +52,7 @@ public abstract class ClassDefinition implements AstNode {
   // Using a list helps with determinism in unit tests.
   public abstract ImmutableList<TypeNode> implementsTypes();
 
-  @Nullable
-  public abstract TypeNode extendsType();
+  public abstract @Nullable TypeNode extendsType();
 
   public abstract boolean isStatic();
 

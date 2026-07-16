@@ -29,11 +29,9 @@ public abstract class MethodInvocationExpr implements Expr {
 
   public abstract TypeNode returnType();
 
-  @Nullable
-  public abstract Expr exprReferenceExpr();
+  public abstract @Nullable Expr exprReferenceExpr();
 
-  @Nullable
-  public abstract TypeNode staticReferenceType();
+  public abstract @Nullable TypeNode staticReferenceType();
 
   public abstract List<Expr> arguments();
 

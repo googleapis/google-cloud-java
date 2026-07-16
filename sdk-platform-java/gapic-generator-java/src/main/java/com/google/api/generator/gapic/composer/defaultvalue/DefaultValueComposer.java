@@ -266,7 +266,7 @@ public class DefaultValueComposer {
       List<ResourceName> resnames,
       String fieldOrMessageName,
       boolean allowAnonResourceNameClass,
-      @Nullable HttpBindings bindings) {
+      HttpBindings bindings) {
 
     if (isChildType) {
       resourceName = findParentResource(resourceName, resnames).orElse(resourceName);
@@ -550,7 +550,7 @@ public class DefaultValueComposer {
 
   @VisibleForTesting
   static AnonymousClassExpr createAnonymousResourceNameClassValue(
-      String fieldOrMessageName, @Nullable HttpBindings matchedBindings) {
+      String fieldOrMessageName, HttpBindings matchedBindings) {
     TypeNode stringMapType =
         TypeNode.withReference(
             ConcreteReference.builder()
@@ -652,7 +652,7 @@ public class DefaultValueComposer {
         .build();
   }
 
-  public static String constructValueMatchingPattern(String fieldName, @Nullable String pattern) {
+  public static String constructValueMatchingPattern(String fieldName, String pattern) {
     if (pattern == null || pattern.isEmpty()) {
       return fieldName + fieldName.hashCode();
     }

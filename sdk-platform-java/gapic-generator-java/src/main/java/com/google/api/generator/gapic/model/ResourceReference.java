@@ -16,8 +16,10 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.gapic.utils.ResourceNameConstants;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class ResourceReference {
 

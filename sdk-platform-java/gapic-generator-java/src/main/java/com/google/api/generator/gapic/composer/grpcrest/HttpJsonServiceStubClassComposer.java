@@ -18,7 +18,9 @@ import com.google.api.generator.engine.ast.MethodDefinition;
 import com.google.api.generator.gapic.composer.store.TypeStore;
 import com.google.api.generator.gapic.model.Service;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HttpJsonServiceStubClassComposer
     extends com.google.api.generator.gapic.composer.rest.HttpJsonServiceStubClassComposer {
   private static final HttpJsonServiceStubClassComposer INSTANCE =

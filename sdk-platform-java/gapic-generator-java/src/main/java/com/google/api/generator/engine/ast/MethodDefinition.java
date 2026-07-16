@@ -70,8 +70,7 @@ public abstract class MethodDefinition implements AstNode {
 
   abstract ImmutableList<String> returnTemplateNames();
 
-  @Nullable
-  public abstract ReturnExpr returnExpr();
+  public abstract @Nullable ReturnExpr returnExpr();
 
   abstract boolean isOverride();
 

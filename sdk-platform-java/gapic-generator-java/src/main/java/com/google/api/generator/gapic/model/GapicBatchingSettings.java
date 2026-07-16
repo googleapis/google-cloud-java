@@ -42,11 +42,9 @@ public abstract class GapicBatchingSettings {
 
   public abstract long delayThresholdMillis();
 
-  @Nullable
-  public abstract Integer flowControlElementLimit();
+  public abstract @Nullable Integer flowControlElementLimit();
 
-  @Nullable
-  public abstract Integer flowControlByteLimit();
+  public abstract @Nullable Integer flowControlByteLimit();
 
   public abstract FlowControlLimitExceededBehavior flowControlLimitExceededBehavior();
 
@@ -55,8 +53,7 @@ public abstract class GapicBatchingSettings {
 
   public abstract ImmutableList<String> discriminatorFieldNames();
 
-  @Nullable
-  public abstract String subresponseFieldName();
+  public abstract @Nullable String subresponseFieldName();
 
   public boolean matches(Service service, Method method) {
     return protoPakkage().equals(service.protoPakkage())

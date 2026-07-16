@@ -27,7 +27,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.longrunning.OperationsClient;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.longrunning.stub.OperationsStub;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public abstract class GrpcRestContext extends TransportContext {
   private static final TransportContext INSTANCE =
       GrpcRestContext.builder()

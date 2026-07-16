@@ -33,8 +33,7 @@ public abstract class Field {
   // resolution behavior. For more context, please see the invocation site of the setter method.
   public abstract String originalName();
 
-  @Nullable
-  public abstract String jsonName();
+  public abstract @Nullable String jsonName();
 
   public abstract TypeNode type();
 
@@ -44,8 +43,7 @@ public abstract class Field {
   // *not* be autopopulated.
   public abstract boolean isRequired();
 
-  @Nullable
-  public abstract Format fieldInfoFormat();
+  public abstract @Nullable Format fieldInfoFormat();
 
   public abstract boolean isMessage();
 
@@ -59,11 +57,9 @@ public abstract class Field {
 
   public abstract boolean isProto3Optional();
 
-  @Nullable
-  public abstract ResourceReference resourceReference();
+  public abstract @Nullable ResourceReference resourceReference();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   public boolean hasFieldNameConflict() {
     return !name().equals(originalName());

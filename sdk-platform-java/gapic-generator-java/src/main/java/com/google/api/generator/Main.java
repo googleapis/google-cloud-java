@@ -21,7 +21,9 @@ import com.google.protobuf.ExtensionRegistry;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class Main {
   public static void main(String[] args) throws IOException {
     ExtensionRegistry registry = ExtensionRegistry.newInstance();

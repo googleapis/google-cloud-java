@@ -26,8 +26,7 @@ public abstract class LongrunningOperation {
 
   public abstract TypeNode metadataType();
 
-  @Nullable
-  public abstract TypeNode operationServiceStubType();
+  public abstract @Nullable TypeNode operationServiceStubType();
 
   public static Builder builder() {
     return new AutoValue_LongrunningOperation.Builder();

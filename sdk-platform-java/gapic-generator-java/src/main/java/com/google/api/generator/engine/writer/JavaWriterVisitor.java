@@ -71,7 +71,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class JavaWriterVisitor implements AstNodeVisitor {
   private static final String SPACE = " ";
   private static final String NEWLINE = "\n";
@@ -94,6 +96,7 @@ public class JavaWriterVisitor implements AstNodeVisitor {
   private static final String RIGHT_PAREN = ")";
   private static final String SEMICOLON = ";";
   private static final String ASTERISK = "*";
+  private static final String NULLABLE = "@Nullable ";
 
   private static final String ABSTRACT = "abstract";
   private static final String CATCH = "catch";
@@ -222,6 +225,10 @@ public class JavaWriterVisitor implements AstNodeVisitor {
       buffer.append(DOT);
     }
 
+    if (reference.isNullable()) {
+      buffer.append(NULLABLE);
+    }
+
     buffer.append(reference.simpleName());
 
     if (!reference.generics().isEmpty()) {
@@ -249,14 +256,31 @@ public class JavaWriterVisitor implements AstNodeVisitor {
     if (reference.useFullName() || importWriterVisitor.collidesWithImport(pakkage, shortName)) {
       buffer.append(pakkage);
       buffer.append(DOT);
-      if (reference.hasEnclosingClass()) {
-        buffer.append(String.join(DOT, reference.enclosingClassNames()));
-        buffer.append(DOT);
-      }
     }
 
-    // A null pointer exception will be thrown if reference is null, which is WAI.
-    buffer.append(shortName);
+    if (reference.hasEnclosingClass() && !reference.isStaticImport()) {
+      buffer.append(String.join(DOT, reference.enclosingClassNames()));
+      buffer.append(DOT);
+    }
+
+    if (reference.isNullable()) {
+      buffer.append(NULLABLE);
+    }
+
+    buffer.append(reference.simpleName());
+
+    if (!reference.generics().isEmpty()) {
+      buffer.append(LEFT_ANGLE);
+      for (int i = 0; i < reference.generics().size(); i++) {
+        Reference r = reference.generics().get(i);
+        r.accept(this);
+        if (i < reference.generics().size() - 1) {
+          buffer.append(COMMA);
+          buffer.append(SPACE);
+        }
+      }
+      buffer.append(RIGHT_ANGLE);
+    }
   }
 
   /** =============================== EXPRESSIONS =============================== */

@@ -24,7 +24,9 @@ import com.google.api.generator.gapic.protowriter.Writer;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class Generator {
   public static CodeGeneratorResponse generateGapic(CodeGeneratorRequest request) {
     GapicContext context = Parser.parse(request);

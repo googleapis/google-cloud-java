@@ -20,6 +20,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -37,8 +38,7 @@ public abstract class TryCatchStatement implements Statement {
   public abstract List<List<Statement>> catchBlocks();
 
   // Optional.
-  @Nullable
-  public abstract AssignmentExpr tryResourceExpr();
+  public abstract @Nullable AssignmentExpr tryResourceExpr();
 
   public abstract boolean isSampleCode();
 
@@ -62,7 +62,7 @@ public abstract class TryCatchStatement implements Statement {
 
     public abstract Builder setIsSampleCode(boolean isSampleCode);
 
-    public Builder addCatch(VariableExpr variableExpr, List<Statement> body) {
+    public Builder addCatch(@Nonnull VariableExpr variableExpr, List<Statement> body) {
       List<VariableExpr> catchVarExprs = new ArrayList<>(catchVariableExprs());
       catchVarExprs.add(variableExpr);
       setCatchVariableExprs(catchVarExprs);

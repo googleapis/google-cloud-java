@@ -36,8 +36,7 @@ public abstract class AnnotationNode implements AstNode {
 
   public abstract TypeNode type();
 
-  @Nullable
-  public abstract List<Expr> descriptionExprs();
+  public abstract @Nullable List<Expr> descriptionExprs();
 
   @Override
   public void accept(AstNodeVisitor visitor) {

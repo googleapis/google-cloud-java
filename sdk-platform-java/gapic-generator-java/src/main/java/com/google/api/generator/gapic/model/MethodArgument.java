@@ -18,8 +18,10 @@ import com.google.api.generator.engine.ast.TypeNode;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class MethodArgument implements Comparable<MethodArgument> {
   // The method argument name.

@@ -69,6 +69,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -84,7 +85,7 @@ public class ImportWriterVisitor implements AstNodeVisitor {
   private final Set<String> importShortNames = new TreeSet<>();
 
   private String currentPackage;
-  @Nullable private String currentClassName;
+  private @Nullable String currentClassName;
 
   public void clear() {
     staticImports.clear();
@@ -92,12 +93,12 @@ public class ImportWriterVisitor implements AstNodeVisitor {
     importShortNames.clear();
   }
 
-  public void initialize(String currentPackage) {
+  public void initialize(@Nonnull String currentPackage) {
     this.currentPackage = currentPackage;
     currentClassName = null;
   }
 
-  public void initialize(String currentPackage, String currentClassName) {
+  public void initialize(@Nonnull String currentPackage, @Nonnull String currentClassName) {
     this.currentPackage = currentPackage;
     this.currentClassName = currentClassName;
   }
@@ -480,6 +481,9 @@ public class ImportWriterVisitor implements AstNodeVisitor {
   }
 
   private void handleReference(Reference reference) {
+    if (reference.isNullable()) {
+      addImport("org.jspecify.annotations.Nullable");
+    }
     // Don't need to import this.
     if (reference.useFullName()) {
       return;

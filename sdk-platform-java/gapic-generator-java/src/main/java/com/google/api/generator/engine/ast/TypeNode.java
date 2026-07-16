@@ -131,8 +131,7 @@ public abstract class TypeNode implements AstNode, Comparable<TypeNode> {
         .build();
   }
 
-  @Nullable
-  public abstract Reference reference();
+  public abstract @Nullable Reference reference();
 
   @Override
   public int compareTo(TypeNode other) {

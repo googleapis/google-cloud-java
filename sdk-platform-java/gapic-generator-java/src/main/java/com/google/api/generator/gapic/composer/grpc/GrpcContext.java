@@ -28,7 +28,9 @@ import com.google.longrunning.OperationsClient;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.longrunning.stub.OperationsStub;
 import io.grpc.MethodDescriptor;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public abstract class GrpcContext extends TransportContext {
   private static final TransportContext INSTANCE =
       GrpcContext.builder()

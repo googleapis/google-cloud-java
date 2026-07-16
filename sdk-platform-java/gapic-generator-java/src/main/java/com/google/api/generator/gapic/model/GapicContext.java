@@ -68,16 +68,13 @@ public abstract class GapicContext {
     return gapicMetadata;
   }
 
-  @Nullable
-  public abstract GapicServiceConfig serviceConfig();
+  public abstract @Nullable GapicServiceConfig serviceConfig();
 
   public abstract com.google.api.@Nullable Service serviceYamlProto();
 
-  @Nullable
-  public abstract String repo();
+  public abstract @Nullable String repo();
 
-  @Nullable
-  public abstract String artifact();
+  public abstract @Nullable String artifact();
 
   public boolean containsServices() {
     return !services().isEmpty();

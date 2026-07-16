@@ -14,6 +14,9 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public class TypeMismatchException extends RuntimeException {
   public TypeMismatchException(String errorMessage) {
     super(errorMessage);

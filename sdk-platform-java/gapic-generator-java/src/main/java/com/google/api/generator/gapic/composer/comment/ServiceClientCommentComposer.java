@@ -32,8 +32,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import org.jspecify.annotations.Nullable;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientCommentComposer {
   // Tokens.
   private static final String EMPTY_STRING = "";
@@ -104,7 +105,7 @@ public class ServiceClientCommentComposer {
       String classMethodSampleCode,
       String credentialsSampleCode,
       String endpointSampleCode,
-      @Nullable String transportSampleCode,
+      String transportSampleCode,
       String primaryTransport,
       String secondaryTransport) {
     JavaDocComment.Builder classHeaderJavadocBuilder = JavaDocComment.builder();

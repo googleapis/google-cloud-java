@@ -58,7 +58,9 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientTestClassComposer extends AbstractServiceClientTestClassComposer {
 
   private static final String MOCK_SERVICE_VAR_NAME = "mockService";
