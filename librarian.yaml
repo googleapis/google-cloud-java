@@ -105,6 +105,19 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentidentity
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentidentity/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/agentidentity/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: agentregistry
     version: 0.2.0-SNAPSHOT
     apis:
