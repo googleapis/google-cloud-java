@@ -214,6 +214,7 @@ public class TargetTcpProxiesClientTest {
             .setDescription("description-1724546052")
             .setId(3355)
             .setKind("kind3292052")
+            .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .setName("name3373707")
             .setProxyBind(true)
             .setProxyHeader("proxyHeader1768394395")

@@ -192,9 +192,9 @@ grpc-google-cloud-dataproc-metastore-v1:2.95.0:2.96.0-SNAPSHOT
 proto-google-cloud-dataproc-metastore-v1beta:2.95.0:2.96.0-SNAPSHOT
 proto-google-cloud-dataproc-metastore-v1alpha:2.95.0:2.96.0-SNAPSHOT
 proto-google-cloud-dataproc-metastore-v1:2.95.0:2.96.0-SNAPSHOT
-google-cloud-dataproc:4.91.0:4.92.0-SNAPSHOT
-grpc-google-cloud-dataproc-v1:4.91.0:4.92.0-SNAPSHOT
-proto-google-cloud-dataproc-v1:4.91.0:4.92.0-SNAPSHOT
+google-cloud-dataproc:4.91.1:4.92.0-SNAPSHOT
+grpc-google-cloud-dataproc-v1:4.91.1:4.92.0-SNAPSHOT
+proto-google-cloud-dataproc-v1:4.91.1:4.92.0-SNAPSHOT
 google-cloud-datastream:1.93.0:1.94.0-SNAPSHOT
 grpc-google-cloud-datastream-v1alpha1:1.93.0:1.94.0-SNAPSHOT
 proto-google-cloud-datastream-v1alpha1:1.93.0:1.94.0-SNAPSHOT

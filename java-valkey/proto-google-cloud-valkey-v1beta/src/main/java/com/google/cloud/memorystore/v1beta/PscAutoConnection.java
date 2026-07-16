@@ -130,13 +130,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the port field is set.
    */
@@ -149,13 +146,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */
@@ -407,7 +401,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The network where the PSC endpoints are created, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -434,7 +428,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The network where the PSC endpoints are created, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -1159,13 +1153,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Output only. port will only be set for Primary/Reader or
-     * Discovery endpoint.
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
      * </pre>
      *
-     * <code>
-     * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the port field is set.
      */
@@ -1177,13 +1168,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Output only. port will only be set for Primary/Reader or
-     * Discovery endpoint.
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
      * </pre>
      *
-     * <code>
-     * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The port.
      */
@@ -1198,13 +1186,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Output only. port will only be set for Primary/Reader or
-     * Discovery endpoint.
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
      * </pre>
      *
-     * <code>
-     * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -1221,13 +1206,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Output only. port will only be set for Primary/Reader or
-     * Discovery endpoint.
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
      * </pre>
      *
-     * <code>
-     * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1736,7 +1718,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1762,7 +1744,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1788,7 +1770,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1813,7 +1795,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1834,7 +1816,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>

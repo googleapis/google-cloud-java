@@ -212,7 +212,7 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.backstory.UdmProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.backstory.Udm.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final Status[] VALUES = values();

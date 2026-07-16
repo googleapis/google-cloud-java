@@ -53,6 +53,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   }
 
   private BackendServiceLogConfig() {
+    loggingHttpRequestHeaders_ = java.util.Collections.emptyList();
+    loggingHttpResponseHeaders_ = java.util.Collections.emptyList();
     optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     optionalMode_ = "";
   }
@@ -307,6 +309,188 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     return enable_;
   }
 
+  public static final int LOGGING_HTTP_REQUEST_HEADERS_FIELD_NUMBER = 430426367;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      loggingHttpRequestHeaders_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      getLoggingHttpRequestHeadersList() {
+    return loggingHttpRequestHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+      getLoggingHttpRequestHeadersOrBuilderList() {
+    return loggingHttpRequestHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  @java.lang.Override
+  public int getLoggingHttpRequestHeadersCount() {
+    return loggingHttpRequestHeaders_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+      getLoggingHttpRequestHeaders(int index) {
+    return loggingHttpRequestHeaders_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+      getLoggingHttpRequestHeadersOrBuilder(int index) {
+    return loggingHttpRequestHeaders_.get(index);
+  }
+
+  public static final int LOGGING_HTTP_RESPONSE_HEADERS_FIELD_NUMBER = 515407743;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      loggingHttpResponseHeaders_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      getLoggingHttpResponseHeadersList() {
+    return loggingHttpResponseHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+      getLoggingHttpResponseHeadersOrBuilderList() {
+    return loggingHttpResponseHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  @java.lang.Override
+  public int getLoggingHttpResponseHeadersCount() {
+    return loggingHttpResponseHeaders_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+      getLoggingHttpResponseHeaders(int index) {
+    return loggingHttpResponseHeaders_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+      getLoggingHttpResponseHeadersOrBuilder(int index) {
+    return loggingHttpResponseHeaders_.get(index);
+  }
+
   public static final int OPTIONAL_FIELDS_FIELD_NUMBER = 528589944;
 
   @SuppressWarnings("serial")
@@ -538,6 +722,12 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(311764355, enable_);
     }
+    for (int i = 0; i < loggingHttpRequestHeaders_.size(); i++) {
+      output.writeMessage(430426367, loggingHttpRequestHeaders_.get(i));
+    }
+    for (int i = 0; i < loggingHttpResponseHeaders_.size(); i++) {
+      output.writeMessage(515407743, loggingHttpResponseHeaders_.get(i));
+    }
     for (int i = 0; i < optionalFields_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 528589944, optionalFields_.getRaw(i));
@@ -559,6 +749,16 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
+    }
+    for (int i = 0; i < loggingHttpRequestHeaders_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              430426367, loggingHttpRequestHeaders_.get(i));
+    }
+    for (int i = 0; i < loggingHttpResponseHeaders_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              515407743, loggingHttpResponseHeaders_.get(i));
     }
     {
       int dataSize = 0;
@@ -588,6 +788,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (hasEnable()) {
       if (getEnable() != other.getEnable()) return false;
     }
+    if (!getLoggingHttpRequestHeadersList().equals(other.getLoggingHttpRequestHeadersList()))
+      return false;
+    if (!getLoggingHttpResponseHeadersList().equals(other.getLoggingHttpResponseHeadersList()))
+      return false;
     if (!getOptionalFieldsList().equals(other.getOptionalFieldsList())) return false;
     if (hasOptionalMode() != other.hasOptionalMode()) return false;
     if (hasOptionalMode()) {
@@ -612,6 +816,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
+    if (getLoggingHttpRequestHeadersCount() > 0) {
+      hash = (37 * hash) + LOGGING_HTTP_REQUEST_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingHttpRequestHeadersList().hashCode();
+    }
+    if (getLoggingHttpResponseHeadersCount() > 0) {
+      hash = (37 * hash) + LOGGING_HTTP_RESPONSE_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingHttpResponseHeadersList().hashCode();
     }
     if (getOptionalFieldsCount() > 0) {
       hash = (37 * hash) + OPTIONAL_FIELDS_FIELD_NUMBER;
@@ -767,6 +979,20 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       enable_ = false;
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        loggingHttpRequestHeaders_ = java.util.Collections.emptyList();
+      } else {
+        loggingHttpRequestHeaders_ = null;
+        loggingHttpRequestHeadersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        loggingHttpResponseHeaders_ = java.util.Collections.emptyList();
+      } else {
+        loggingHttpResponseHeaders_ = null;
+        loggingHttpResponseHeadersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       optionalMode_ = "";
       sampleRate_ = 0F;
@@ -797,11 +1023,36 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceLogConfig buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLogConfig result =
           new com.google.cloud.compute.v1.BackendServiceLogConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.BackendServiceLogConfig result) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          loggingHttpRequestHeaders_ =
+              java.util.Collections.unmodifiableList(loggingHttpRequestHeaders_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.loggingHttpRequestHeaders_ = loggingHttpRequestHeaders_;
+      } else {
+        result.loggingHttpRequestHeaders_ = loggingHttpRequestHeadersBuilder_.build();
+      }
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          loggingHttpResponseHeaders_ =
+              java.util.Collections.unmodifiableList(loggingHttpResponseHeaders_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.loggingHttpResponseHeaders_ = loggingHttpResponseHeaders_;
+      } else {
+        result.loggingHttpResponseHeaders_ = loggingHttpResponseHeadersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendServiceLogConfig result) {
@@ -811,15 +1062,15 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         result.enable_ = enable_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         optionalFields_.makeImmutable();
         result.optionalFields_ = optionalFields_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.optionalMode_ = optionalMode_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.sampleRate_ = sampleRate_;
         to_bitField0_ |= 0x00000004;
       }
@@ -842,10 +1093,64 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        if (!other.loggingHttpRequestHeaders_.isEmpty()) {
+          if (loggingHttpRequestHeaders_.isEmpty()) {
+            loggingHttpRequestHeaders_ = other.loggingHttpRequestHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureLoggingHttpRequestHeadersIsMutable();
+            loggingHttpRequestHeaders_.addAll(other.loggingHttpRequestHeaders_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.loggingHttpRequestHeaders_.isEmpty()) {
+          if (loggingHttpRequestHeadersBuilder_.isEmpty()) {
+            loggingHttpRequestHeadersBuilder_.dispose();
+            loggingHttpRequestHeadersBuilder_ = null;
+            loggingHttpRequestHeaders_ = other.loggingHttpRequestHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            loggingHttpRequestHeadersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetLoggingHttpRequestHeadersFieldBuilder()
+                    : null;
+          } else {
+            loggingHttpRequestHeadersBuilder_.addAllMessages(other.loggingHttpRequestHeaders_);
+          }
+        }
+      }
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        if (!other.loggingHttpResponseHeaders_.isEmpty()) {
+          if (loggingHttpResponseHeaders_.isEmpty()) {
+            loggingHttpResponseHeaders_ = other.loggingHttpResponseHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureLoggingHttpResponseHeadersIsMutable();
+            loggingHttpResponseHeaders_.addAll(other.loggingHttpResponseHeaders_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.loggingHttpResponseHeaders_.isEmpty()) {
+          if (loggingHttpResponseHeadersBuilder_.isEmpty()) {
+            loggingHttpResponseHeadersBuilder_.dispose();
+            loggingHttpResponseHeadersBuilder_ = null;
+            loggingHttpResponseHeaders_ = other.loggingHttpResponseHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            loggingHttpResponseHeadersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetLoggingHttpResponseHeadersFieldBuilder()
+                    : null;
+          } else {
+            loggingHttpResponseHeadersBuilder_.addAllMessages(other.loggingHttpResponseHeaders_);
+          }
+        }
+      }
       if (!other.optionalFields_.isEmpty()) {
         if (optionalFields_.isEmpty()) {
           optionalFields_ = other.optionalFields_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         } else {
           ensureOptionalFieldsIsMutable();
           optionalFields_.addAll(other.optionalFields_);
@@ -854,7 +1159,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       if (other.hasOptionalMode()) {
         optionalMode_ = other.optionalMode_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSampleRate()) {
@@ -889,13 +1194,13 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
             case 1029576978:
               {
                 optionalMode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1029576978
             case 1225544365:
               {
                 sampleRate_ = input.readFloat();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1225544365
             case -1800852456:
@@ -904,6 +1209,36 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1800852456
+            case -851556358:
+              {
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                            .parser(),
+                        extensionRegistry);
+                if (loggingHttpRequestHeadersBuilder_ == null) {
+                  ensureLoggingHttpRequestHeadersIsMutable();
+                  loggingHttpRequestHeaders_.add(m);
+                } else {
+                  loggingHttpRequestHeadersBuilder_.addMessage(m);
+                }
+                break;
+              } // case -851556358
+            case -171705350:
+              {
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                            .parser(),
+                        extensionRegistry);
+                if (loggingHttpResponseHeadersBuilder_ == null) {
+                  ensureLoggingHttpResponseHeadersIsMutable();
+                  loggingHttpResponseHeaders_.add(m);
+                } else {
+                  loggingHttpResponseHeadersBuilder_.addMessage(m);
+                }
+                break;
+              } // case -171705350
             case -66247742:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1006,6 +1341,870 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+        loggingHttpRequestHeaders_ = java.util.Collections.emptyList();
+
+    private void ensureLoggingHttpRequestHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        loggingHttpRequestHeaders_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>(
+                loggingHttpRequestHeaders_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        loggingHttpRequestHeadersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+        getLoggingHttpRequestHeadersList() {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(loggingHttpRequestHeaders_);
+      } else {
+        return loggingHttpRequestHeadersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public int getLoggingHttpRequestHeadersCount() {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        return loggingHttpRequestHeaders_.size();
+      } else {
+        return loggingHttpRequestHeadersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+        getLoggingHttpRequestHeaders(int index) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        return loggingHttpRequestHeaders_.get(index);
+      } else {
+        return loggingHttpRequestHeadersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder setLoggingHttpRequestHeaders(
+        int index, com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.set(index, value);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder setLoggingHttpRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder addLoggingHttpRequestHeaders(
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.add(value);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder addLoggingHttpRequestHeaders(
+        int index, com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.add(index, value);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder addLoggingHttpRequestHeaders(
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.add(builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder addLoggingHttpRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder addAllLoggingHttpRequestHeaders(
+        java.lang.Iterable<
+                ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+            values) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        ensureLoggingHttpRequestHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loggingHttpRequestHeaders_);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder clearLoggingHttpRequestHeaders() {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        loggingHttpRequestHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public Builder removeLoggingHttpRequestHeaders(int index) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        ensureLoggingHttpRequestHeadersIsMutable();
+        loggingHttpRequestHeaders_.remove(index);
+        onChanged();
+      } else {
+        loggingHttpRequestHeadersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        getLoggingHttpRequestHeadersBuilder(int index) {
+      return internalGetLoggingHttpRequestHeadersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+        getLoggingHttpRequestHeadersOrBuilder(int index) {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        return loggingHttpRequestHeaders_.get(index);
+      } else {
+        return loggingHttpRequestHeadersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        getLoggingHttpRequestHeadersOrBuilderList() {
+      if (loggingHttpRequestHeadersBuilder_ != null) {
+        return loggingHttpRequestHeadersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(loggingHttpRequestHeaders_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        addLoggingHttpRequestHeadersBuilder() {
+      return internalGetLoggingHttpRequestHeadersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        addLoggingHttpRequestHeadersBuilder(int index) {
+      return internalGetLoggingHttpRequestHeadersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of request headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder>
+        getLoggingHttpRequestHeadersBuilderList() {
+      return internalGetLoggingHttpRequestHeadersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        internalGetLoggingHttpRequestHeadersFieldBuilder() {
+      if (loggingHttpRequestHeadersBuilder_ == null) {
+        loggingHttpRequestHeadersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>(
+                loggingHttpRequestHeaders_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        loggingHttpRequestHeaders_ = null;
+      }
+      return loggingHttpRequestHeadersBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+        loggingHttpResponseHeaders_ = java.util.Collections.emptyList();
+
+    private void ensureLoggingHttpResponseHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        loggingHttpResponseHeaders_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>(
+                loggingHttpResponseHeaders_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        loggingHttpResponseHeadersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+        getLoggingHttpResponseHeadersList() {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(loggingHttpResponseHeaders_);
+      } else {
+        return loggingHttpResponseHeadersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public int getLoggingHttpResponseHeadersCount() {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        return loggingHttpResponseHeaders_.size();
+      } else {
+        return loggingHttpResponseHeadersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+        getLoggingHttpResponseHeaders(int index) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        return loggingHttpResponseHeaders_.get(index);
+      } else {
+        return loggingHttpResponseHeadersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder setLoggingHttpResponseHeaders(
+        int index, com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.set(index, value);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder setLoggingHttpResponseHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder addLoggingHttpResponseHeaders(
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.add(value);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder addLoggingHttpResponseHeaders(
+        int index, com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader value) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.add(index, value);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder addLoggingHttpResponseHeaders(
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.add(builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder addLoggingHttpResponseHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+            builderForValue) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder addAllLoggingHttpResponseHeaders(
+        java.lang.Iterable<
+                ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+            values) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        ensureLoggingHttpResponseHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loggingHttpResponseHeaders_);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder clearLoggingHttpResponseHeaders() {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        loggingHttpResponseHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public Builder removeLoggingHttpResponseHeaders(int index) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        ensureLoggingHttpResponseHeadersIsMutable();
+        loggingHttpResponseHeaders_.remove(index);
+        onChanged();
+      } else {
+        loggingHttpResponseHeadersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        getLoggingHttpResponseHeadersBuilder(int index) {
+      return internalGetLoggingHttpResponseHeadersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+        getLoggingHttpResponseHeadersOrBuilder(int index) {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        return loggingHttpResponseHeaders_.get(index);
+      } else {
+        return loggingHttpResponseHeadersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        getLoggingHttpResponseHeadersOrBuilderList() {
+      if (loggingHttpResponseHeadersBuilder_ != null) {
+        return loggingHttpResponseHeadersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(loggingHttpResponseHeaders_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        addLoggingHttpResponseHeadersBuilder() {
+      return internalGetLoggingHttpResponseHeadersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder
+        addLoggingHttpResponseHeadersBuilder(int index) {
+      return internalGetLoggingHttpResponseHeadersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of response headers that will be logged to Stackdriver.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder>
+        getLoggingHttpResponseHeadersBuilderList() {
+      return internalGetLoggingHttpResponseHeadersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+        internalGetLoggingHttpResponseHeadersFieldBuilder() {
+      if (loggingHttpResponseHeadersBuilder_ == null) {
+        loggingHttpResponseHeadersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader,
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader.Builder,
+                com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>(
+                loggingHttpResponseHeaders_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        loggingHttpResponseHeaders_ = null;
+      }
+      return loggingHttpResponseHeadersBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList optionalFields_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1013,7 +2212,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       if (!optionalFields_.isModifiable()) {
         optionalFields_ = new com.google.protobuf.LazyStringArrayList(optionalFields_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
     }
 
     /**
@@ -1118,7 +2317,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       ensureOptionalFieldsIsMutable();
       optionalFields_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1145,7 +2344,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       ensureOptionalFieldsIsMutable();
       optionalFields_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1169,7 +2368,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder addAllOptionalFields(java.lang.Iterable<java.lang.String> values) {
       ensureOptionalFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, optionalFields_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1191,7 +2390,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      */
     public Builder clearOptionalFields() {
       optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1220,7 +2419,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureOptionalFieldsIsMutable();
       optionalFields_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1243,7 +2442,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return Whether the optionalMode field is set.
      */
     public boolean hasOptionalMode() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1321,7 +2520,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       optionalMode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1343,7 +2542,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      */
     public Builder clearOptionalMode() {
       optionalMode_ = getDefaultInstance().getOptionalMode();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1370,7 +2569,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       optionalMode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1394,7 +2593,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasSampleRate() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1436,7 +2635,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder setSampleRate(float value) {
 
       sampleRate_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1457,7 +2656,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSampleRate() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       sampleRate_ = 0F;
       onChanged();
       return this;

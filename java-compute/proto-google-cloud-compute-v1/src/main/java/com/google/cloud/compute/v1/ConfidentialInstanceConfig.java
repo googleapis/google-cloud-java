@@ -95,6 +95,16 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
+     * Arm Confidential Compute Architecture.
+     * </pre>
+     *
+     * <code>CCA = 66529;</code>
+     */
+    CCA(66529),
+    /**
+     *
+     *
+     * <pre>
      * No type specified. Do not use this value.
      * </pre>
      *
@@ -154,6 +164,17 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * <code>UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Arm Confidential Compute Architecture.
+     * </pre>
+     *
+     * <code>CCA = 66529;</code>
+     */
+    public static final int CCA_VALUE = 66529;
 
     /**
      *
@@ -225,6 +246,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE;
+        case 66529:
+          return CCA;
         case 115021829:
           return CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED;
         case 81988:

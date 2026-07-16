@@ -99,6 +99,7 @@ public class SipTrunksClientTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockSipTrunks.addResponse(expectedResponse);
 
@@ -143,6 +144,7 @@ public class SipTrunksClientTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockSipTrunks.addResponse(expectedResponse);
 
@@ -343,6 +345,7 @@ public class SipTrunksClientTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockSipTrunks.addResponse(expectedResponse);
 
@@ -384,6 +387,7 @@ public class SipTrunksClientTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockSipTrunks.addResponse(expectedResponse);
 
@@ -425,6 +429,7 @@ public class SipTrunksClientTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockSipTrunks.addResponse(expectedResponse);
 

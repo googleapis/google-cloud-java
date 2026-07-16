@@ -476,6 +476,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *       GetGlobalForwardingRuleRequest.newBuilder()
    *           .setForwardingRule("forwardingRule-1429104743")
    *           .setProject("project-309310695")
+   *           .setView("view3619493")
    *           .build();
    *   ForwardingRule response = globalForwardingRulesClient.get(request);
    * }
@@ -507,6 +508,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *       GetGlobalForwardingRuleRequest.newBuilder()
    *           .setForwardingRule("forwardingRule-1429104743")
    *           .setProject("project-309310695")
+   *           .setView("view3619493")
    *           .build();
    *   ApiFuture<ForwardingRule> future =
    *       globalForwardingRulesClient.getCallable().futureCall(request);

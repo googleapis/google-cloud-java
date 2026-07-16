@@ -393,10 +393,6 @@
       <groupId>com.google.cloud</groupId>
     </dependency>
     <dependency>
-      <artifactId>google-cloud-spanner-jdbc</artifactId>
-      <groupId>com.google.cloud</groupId>
-    </dependency>
-    <dependency>
       <artifactId>google-cloud-speech</artifactId>
       <groupId>com.google.cloud</groupId>
     </dependency>

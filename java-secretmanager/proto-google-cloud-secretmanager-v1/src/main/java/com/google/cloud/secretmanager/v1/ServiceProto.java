@@ -57,6 +57,18 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_secretmanager_v1_AddSecretVersionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_secretmanager_v1_RotateSecretRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_secretmanager_v1_RotateSecretRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_secretmanager_v1_GetSecretRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_secretmanager_v1_GetSecretRequest_fieldAccessorTable;
@@ -139,7 +151,20 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
           + "#secretmanager.googleapis.com/Secret\022B\n"
           + "\007payload\030\002 \001(\0132,.goo"
-          + "gle.cloud.secretmanager.v1.SecretPayloadB\003\340A\002\"M\n"
+          + "gle.cloud.secretmanager.v1.SecretPayloadB\003\340A\002\"\334\002\n"
+          + "\034EnableManagedRotationRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#secretmanager.googleapis.com/Secret\022\206\001\n"
+          + "!cloud_sql_single_user_credentials\030\002 \001(\0132Y.google.cloud.s"
+          + "ecretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentialsH\000\032g\n"
+          + "\035CloudSQLSingleUserCredentials\022\030\n"
+          + "\013instance_id\030\001 \001(\tB\003\340A\002\022\025\n"
+          + "\010username\030\002 \001(\tB\003\340A\002\022\025\n"
+          + "\010password\030\003 \001(\tB\003\340A\001B\r\n"
+          + "\013credentials\"R\n"
+          + "\023RotateSecretRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#secretmanager.googleapis.com/Secret\"M\n"
           + "\020GetSecretRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#secretmanager.googleapis.com/Secret\"\236\001\n"
@@ -157,8 +182,8 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*secretmanager.googleapis.com/SecretVersion\"\207\001\n"
           + "\023UpdateSecretRequest\022:\n"
-          + "\006secret\030\001 \001(\0132%"
-          + ".google.cloud.secretmanager.v1.SecretB\003\340A\002\0224\n"
+          + "\006secret\030\001"
+          + " \001(\0132%.google.cloud.secretmanager.v1.SecretB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"^\n"
           + "\032AccessSecretVersionRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
@@ -182,88 +207,96 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\033DestroySecretVersionRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*secretmanager.googleapis.com/SecretVersion\022\021\n"
-          + "\004etag\030\002 \001(\tB\003\340A\0012\350\034\n"
+          + "\004etag\030\002 \001(\tB\003\340A\0012\241!\n"
           + "\024SecretManagerService\022\325\001\n"
-          + "\013ListSecrets\0221.google.cloud.secretmanager.v1.ListSecr"
-          + "etsRequest\0322.google.cloud.secretmanager."
-          + "v1.ListSecretsResponse\"_\332A\006parent\202\323\344\223\002P\022"
-          + "\037/v1/{parent=projects/*}/secretsZ-\022+/v1/"
-          + "{parent=projects/*/locations/*}/secrets\022\354\001\n"
-          + "\014CreateSecret\0222.google.cloud.secretmanager.v1.CreateSecretRequest\032%.google.cl"
-          + "oud.secretmanager.v1.Secret\"\200\001\332A\027parent,"
-          + "secret_id,secret\202\323\344\223\002`\"\037/v1/{parent=proj"
-          + "ects/*}/secrets:\006secretZ5\"+/v1/{parent=p"
-          + "rojects/*/locations/*}/secrets:\006secret\022\202\002\n"
-          + "\020AddSecretVersion\0226.google.cloud.secre"
-          + "tmanager.v1.AddSecretVersionRequest\032,.google.cloud.secretmanager.v1.SecretVersio"
-          + "n\"\207\001\332A\016parent,payload\202\323\344\223\002p\",/v1/{parent"
-          + "=projects/*/secrets/*}:addVersion:\001*Z=\"8"
-          + "/v1/{parent=projects/*/locations/*/secrets/*}:addVersion:\001*\022\302\001\n"
-          + "\tGetSecret\022/.google.cloud.secretmanager.v1.GetSecretReque"
-          + "st\032%.google.cloud.secretmanager.v1.Secre"
-          + "t\"]\332A\004name\202\323\344\223\002P\022\037/v1/{name=projects/*/s"
-          + "ecrets/*}Z-\022+/v1/{name=projects/*/locations/*/secrets/*}\022\365\001\n"
-          + "\014UpdateSecret\0222.google.cloud.secretmanager.v1.UpdateSecretRe"
-          + "quest\032%.google.cloud.secretmanager.v1.Se"
-          + "cret\"\211\001\332A\022secret,update_mask\202\323\344\223\002n2&/v1/"
-          + "{secret.name=projects/*/secrets/*}:\006secr"
-          + "etZ<22/v1/{secret.name=projects/*/locations/*/secrets/*}:\006secret\022\271\001\n"
-          + "\014DeleteSecret\0222.google.cloud.secretmanager.v1.Delete"
-          + "SecretRequest\032\026.google.protobuf.Empty\"]\332"
-          + "A\004name\202\323\344\223\002P*\037/v1/{name=projects/*/secre"
-          + "ts/*}Z-*+/v1/{name=projects/*/locations/*/secrets/*}\022\200\002\n"
-          + "\022ListSecretVersions\0228.google.cloud.secretmanager.v1.ListSecretVe"
-          + "rsionsRequest\0329.google.cloud.secretmanag"
-          + "er.v1.ListSecretVersionsResponse\"u\332A\006par"
-          + "ent\202\323\344\223\002f\022*/v1/{parent=projects/*/secret"
-          + "s/*}/versionsZ8\0226/v1/{parent=projects/*/locations/*/secrets/*}/versions\022\355\001\n"
-          + "\020GetSecretVersion\0226.google.cloud.secretmanage"
-          + "r.v1.GetSecretVersionRequest\032,.google.cl"
-          + "oud.secretmanager.v1.SecretVersion\"s\332A\004n"
-          + "ame\202\323\344\223\002f\022*/v1/{name=projects/*/secrets/"
-          + "*/versions/*}Z8\0226/v1/{name=projects/*/locations/*/secrets/*/versions/*}\022\220\002\n"
-          + "\023AccessSecretVersion\0229.google.cloud.secretman"
-          + "ager.v1.AccessSecretVersionRequest\032:.google.cloud.secretmanager.v1.AccessSecretV"
-          + "ersionResponse\"\201\001\332A\004name\202\323\344\223\002t\0221/v1/{nam"
-          + "e=projects/*/secrets/*/versions/*}:acces"
-          + "sZ?\022=/v1/{name=projects/*/locations/*/secrets/*/versions/*}:access\022\214\002\n"
-          + "\024DisableSecretVersion\022:.google.cloud.secretmanager"
-          + ".v1.DisableSecretVersionRequest\032,.google"
-          + ".cloud.secretmanager.v1.SecretVersion\"\211\001"
-          + "\332A\004name\202\323\344\223\002|\"2/v1/{name=projects/*/secr"
-          + "ets/*/versions/*}:disable:\001*ZC\">/v1/{nam"
-          + "e=projects/*/locations/*/secrets/*/versions/*}:disable:\001*\022\210\002\n"
-          + "\023EnableSecretVersion\0229.google.cloud.secretmanager.v1.Enable"
-          + "SecretVersionRequest\032,.google.cloud.secr"
-          + "etmanager.v1.SecretVersion\"\207\001\332A\004name\202\323\344\223"
-          + "\002z\"1/v1/{name=projects/*/secrets/*/versi"
-          + "ons/*}:enable:\001*ZB\"=/v1/{name=projects/*"
-          + "/locations/*/secrets/*/versions/*}:enable:\001*\022\214\002\n"
-          + "\024DestroySecretVersion\022:.google.cloud.secretmanager.v1.DestroySecretVersi"
+          + "\013ListSecrets\0221.google.cloud.secretmanager.v1.ListSecretsRe"
+          + "quest\0322.google.cloud.secretmanager.v1.Li"
+          + "stSecretsResponse\"_\332A\006parent\202\323\344\223\002P\022\037/v1/"
+          + "{parent=projects/*}/secretsZ-\022+/v1/{parent=projects/*/locations/*}/secrets\022\354\001\n"
+          + "\014CreateSecret\0222.google.cloud.secretmanager"
+          + ".v1.CreateSecretRequest\032%.google.cloud.s"
+          + "ecretmanager.v1.Secret\"\200\001\332A\027parent,secre"
+          + "t_id,secret\202\323\344\223\002`\"\037/v1/{parent=projects/"
+          + "*}/secrets:\006secretZ5\"+/v1/{parent=projects/*/locations/*}/secrets:\006secret\022\202\002\n"
+          + "\020AddSecretVersion\0226.google.cloud.secretmana"
+          + "ger.v1.AddSecretVersionRequest\032,.google."
+          + "cloud.secretmanager.v1.SecretVersion\"\207\001\332"
+          + "A\016parent,payload\202\323\344\223\002p\",/v1/{parent=proj"
+          + "ects/*/secrets/*}:addVersion:\001*Z=\"8/v1/{"
+          + "parent=projects/*/locations/*/secrets/*}:addVersion:\001*\022\302\001\n"
+          + "\tGetSecret\022/.google.cloud.secretmanager.v1.GetSecretRequest\032%."
+          + "google.cloud.secretmanager.v1.Secret\"]\332A"
+          + "\004name\202\323\344\223\002P\022\037/v1/{name=projects/*/secret"
+          + "s/*}Z-\022+/v1/{name=projects/*/locations/*/secrets/*}\022\365\001\n"
+          + "\014UpdateSecret\0222.google.cloud.secretmanager.v1.UpdateSecretRequest"
+          + "\032%.google.cloud.secretmanager.v1.Secret\""
+          + "\211\001\332A\022secret,update_mask\202\323\344\223\002n2&/v1/{secr"
+          + "et.name=projects/*/secrets/*}:\006secretZ<2"
+          + "2/v1/{secret.name=projects/*/locations/*/secrets/*}:\006secret\022\271\001\n"
+          + "\014DeleteSecret\0222.google.cloud.secretmanager.v1.DeleteSecre"
+          + "tRequest\032\026.google.protobuf.Empty\"]\332A\004nam"
+          + "e\202\323\344\223\002P*\037/v1/{name=projects/*/secrets/*}"
+          + "Z-*+/v1/{name=projects/*/locations/*/secrets/*}\022\200\002\n"
+          + "\022ListSecretVersions\0228.google.cloud.secretmanager.v1.ListSecretVersion"
+          + "sRequest\0329.google.cloud.secretmanager.v1"
+          + ".ListSecretVersionsResponse\"u\332A\006parent\202\323"
+          + "\344\223\002f\022*/v1/{parent=projects/*/secrets/*}/"
+          + "versionsZ8\0226/v1/{parent=projects/*/locations/*/secrets/*}/versions\022\355\001\n"
+          + "\020GetSecretVersion\0226.google.cloud.secretmanager.v1."
+          + "GetSecretVersionRequest\032,.google.cloud.s"
+          + "ecretmanager.v1.SecretVersion\"s\332A\004name\202\323"
+          + "\344\223\002f\022*/v1/{name=projects/*/secrets/*/ver"
+          + "sions/*}Z8\0226/v1/{name=projects/*/locations/*/secrets/*/versions/*}\022\220\002\n"
+          + "\023AccessSecretVersion\0229.google.cloud.secretmanager."
+          + "v1.AccessSecretVersionRequest\032:.google.cloud.secretmanager.v1.AccessSecretVersio"
+          + "nResponse\"\201\001\332A\004name\202\323\344\223\002t\0221/v1/{name=pro"
+          + "jects/*/secrets/*/versions/*}:accessZ?\022="
+          + "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:access\022\214\002\n"
+          + "\024DisableSecretVersion\022:.google.cloud.secretmanager.v1.D"
+          + "isableSecretVersionRequest\032,.google.clou"
+          + "d.secretmanager.v1.SecretVersion\"\211\001\332A\004na"
+          + "me\202\323\344\223\002|\"2/v1/{name=projects/*/secrets/*"
+          + "/versions/*}:disable:\001*ZC\">/v1/{name=pro"
+          + "jects/*/locations/*/secrets/*/versions/*}:disable:\001*\022\210\002\n"
+          + "\023EnableSecretVersion\0229.google.cloud.secretmanager.v1.EnableSecre"
+          + "tVersionRequest\032,.google.cloud.secretman"
+          + "ager.v1.SecretVersion\"\207\001\332A\004name\202\323\344\223\002z\"1/"
+          + "v1/{name=projects/*/secrets/*/versions/*}:enable:\001*ZB\"=/v1/{name=projects/*/loca"
+          + "tions/*/secrets/*/versions/*}:enable:\001*\022\214\002\n"
+          + "\024DestroySecretVersion\022:.google.cloud.secretmanager.v1.DestroySecretVersionReq"
+          + "uest\032,.google.cloud.secretmanager.v1.Sec"
+          + "retVersion\"\211\001\332A\004name\202\323\344\223\002|\"2/v1/{name=pr"
+          + "ojects/*/secrets/*/versions/*}:destroy:\001"
+          + "*ZC\">/v1/{name=projects/*/locations/*/secrets/*/versions/*}:destroy:\001*\022\311\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolicyRequ"
+          + "est\032\025.google.iam.v1.Policy\"~\202\323\344\223\002x\"0/v1/"
+          + "{resource=projects/*/secrets/*}:setIamPo"
+          + "licy:\001*ZA\"</v1/{resource=projects/*/locations/*/secrets/*}:setIamPolicy:\001*\022\303\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicy"
+          + "Request\032\025.google.iam.v1.Policy\"x\202\323\344\223\002r\0220"
+          + "/v1/{resource=projects/*/secrets/*}:getI"
+          + "amPolicyZ>\022</v1/{resource=projects/*/locations/*/secrets/*}:getIamPolicy\022\367\001\n"
+          + "\022TestIamPermissions\022(.google.iam.v1.TestIamP"
+          + "ermissionsRequest\032).google.iam.v1.TestIa"
+          + "mPermissionsResponse\"\213\001\202\323\344\223\002\204\001\"6/v1/{res"
+          + "ource=projects/*/secrets/*}:testIamPermissions:\001*ZG\"B/v1/{resource=projects/*/lo"
+          + "cations/*/secrets/*}:testIamPermissions:\001*\022\275\002\n"
+          + "\025EnableManagedRotation\022;.google.cloud.secretmanager.v1.EnableManagedRotati"
           + "onRequest\032,.google.cloud.secretmanager.v"
-          + "1.SecretVersion\"\211\001\332A\004name\202\323\344\223\002|\"2/v1/{na"
-          + "me=projects/*/secrets/*/versions/*}:dest"
-          + "roy:\001*ZC\">/v1/{name=projects/*/locations/*/secrets/*/versions/*}:destroy:\001*\022\311\001\n"
-          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolic"
-          + "yRequest\032\025.google.iam.v1.Policy\"~\202\323\344\223\002x\""
-          + "0/v1/{resource=projects/*/secrets/*}:setIamPolicy:\001*ZA\"</v1/{resource=projects/*"
-          + "/locations/*/secrets/*}:setIamPolicy:\001*\022\303\001\n"
-          + "\014GetIamPolicy\022\".google.iam.v1.GetIamP"
-          + "olicyRequest\032\025.google.iam.v1.Policy\"x\202\323\344"
-          + "\223\002r\0220/v1/{resource=projects/*/secrets/*}"
-          + ":getIamPolicyZ>\022</v1/{resource=projects/"
-          + "*/locations/*/secrets/*}:getIamPolicy\022\367\001\n"
-          + "\022TestIamPermissions\022(.google.iam.v1.Tes"
-          + "tIamPermissionsRequest\032).google.iam.v1.T"
-          + "estIamPermissionsResponse\"\213\001\202\323\344\223\002\204\001\"6/v1"
-          + "/{resource=projects/*/secrets/*}:testIamPermissions:\001*ZG\"B/v1/{resource=projects"
-          + "/*/locations/*/secrets/*}:testIamPermiss"
-          + "ions:\001*\032P\312A\034secretmanager.googleapis.com"
-          + "\322A.https://www.googleapis.com/auth/cloud-platformB\345\001\n"
-          + "!com.google.cloud.secretmanager.v1B\014ServiceProtoP\001ZGcloud.google.co"
-          + "m/go/secretmanager/apiv1/secretmanagerpb"
-          + ";secretmanagerpb\242\002\003GSM\252\002\035Google.Cloud.Se"
-          + "cretManager.V1\312\002\035Google\\Cloud\\SecretManager\\V1\352\002"
+          + "1.SecretVersion\"\270\001\332A(parent,cloud_sql_si"
+          + "ngle_user_credentials\202\323\344\223\002\206\001\"7/v1/{paren"
+          + "t=projects/*/secrets/*}:enableManagedRotation:\001*ZH\"C/v1/{parent=projects/*/locat"
+          + "ions/*/secrets/*}:enableManagedRotation:\001*\022\366\001\n"
+          + "\014RotateSecret\0222.google.cloud.secretmanager.v1.RotateSecretRequest\032,.google"
+          + ".cloud.secretmanager.v1.SecretVersion\"\203\001"
+          + "\332A\006parent\202\323\344\223\002t\"./v1/{parent=projects/*/"
+          + "secrets/*}:rotateSecret:\001*Z?\":/v1/{parent=projects/*/locations/*/secrets/*}:rota"
+          + "teSecret:\001*\032P\312A\034secretmanager.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/cloud-platformB\345\001\n"
+          + "!com.google.cloud.secretmanager.v1B\014ServiceProtoP\001ZGcloud.googl"
+          + "e.com/go/secretmanager/apiv1/secretmanag"
+          + "erpb;secretmanagerpb\242\002\003GSM\252\002\035Google.Clou"
+          + "d.SecretManager.V1\312\002\035Google\\Cloud\\SecretManager\\V1\352\002"
           + " Google::Cloud::SecretManager::V1b\006proto3"
     };
     descriptor =
@@ -312,8 +345,33 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Parent", "Payload",
             });
-    internal_static_google_cloud_secretmanager_v1_GetSecretRequest_descriptor =
+    internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "CloudSqlSingleUserCredentials", "Credentials",
+            });
+    internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor =
+        internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor,
+            new java.lang.String[] {
+              "InstanceId", "Username", "Password",
+            });
+    internal_static_google_cloud_secretmanager_v1_RotateSecretRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_secretmanager_v1_RotateSecretRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_secretmanager_v1_RotateSecretRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_cloud_secretmanager_v1_GetSecretRequest_descriptor =
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_secretmanager_v1_GetSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_GetSecretRequest_descriptor,
@@ -321,7 +379,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_secretmanager_v1_ListSecretVersionsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_secretmanager_v1_ListSecretVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_ListSecretVersionsRequest_descriptor,
@@ -329,7 +387,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_secretmanager_v1_ListSecretVersionsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_secretmanager_v1_ListSecretVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_ListSecretVersionsResponse_descriptor,
@@ -337,7 +395,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Versions", "NextPageToken", "TotalSize",
             });
     internal_static_google_cloud_secretmanager_v1_GetSecretVersionRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_secretmanager_v1_GetSecretVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_GetSecretVersionRequest_descriptor,
@@ -345,7 +403,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_secretmanager_v1_UpdateSecretRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_secretmanager_v1_UpdateSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_UpdateSecretRequest_descriptor,
@@ -353,7 +411,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Secret", "UpdateMask",
             });
     internal_static_google_cloud_secretmanager_v1_AccessSecretVersionRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_secretmanager_v1_AccessSecretVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_AccessSecretVersionRequest_descriptor,
@@ -361,7 +419,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_secretmanager_v1_AccessSecretVersionResponse_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_secretmanager_v1_AccessSecretVersionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_AccessSecretVersionResponse_descriptor,
@@ -369,7 +427,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Payload",
             });
     internal_static_google_cloud_secretmanager_v1_DeleteSecretRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_secretmanager_v1_DeleteSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_DeleteSecretRequest_descriptor,
@@ -377,7 +435,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Etag",
             });
     internal_static_google_cloud_secretmanager_v1_DisableSecretVersionRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_secretmanager_v1_DisableSecretVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_DisableSecretVersionRequest_descriptor,
@@ -385,7 +443,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Etag",
             });
     internal_static_google_cloud_secretmanager_v1_EnableSecretVersionRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_secretmanager_v1_EnableSecretVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_EnableSecretVersionRequest_descriptor,
@@ -393,7 +451,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Etag",
             });
     internal_static_google_cloud_secretmanager_v1_DestroySecretVersionRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_secretmanager_v1_DestroySecretVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_DestroySecretVersionRequest_descriptor,

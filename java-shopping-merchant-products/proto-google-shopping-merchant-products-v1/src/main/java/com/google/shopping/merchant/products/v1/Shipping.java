@@ -59,6 +59,8 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
     postalCode_ = "";
     handlingCutoffTime_ = "";
     handlingCutoffTimezone_ = "";
+    loyaltyProgramLabel_ = "";
+    loyaltyTierLabel_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -800,6 +802,140 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int LOYALTY_PROGRAM_LABEL_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loyaltyProgramLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * program](https://support.google.com/merchants/answer/6324484).
+   * Must match one of the program labels set in
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The loyaltyProgramLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getLoyaltyProgramLabel() {
+    java.lang.Object ref = loyaltyProgramLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loyaltyProgramLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * program](https://support.google.com/merchants/answer/6324484).
+   * Must match one of the program labels set in
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for loyaltyProgramLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoyaltyProgramLabelBytes() {
+    java.lang.Object ref = loyaltyProgramLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loyaltyProgramLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOYALTY_TIER_LABEL_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loyaltyTierLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * tier](https://support.google.com/merchants/answer/6324484) within the
+   * loyalty program. Must match one of the tiers set in the
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The loyaltyTierLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getLoyaltyTierLabel() {
+    java.lang.Object ref = loyaltyTierLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loyaltyTierLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * tier](https://support.google.com/merchants/answer/6324484) within the
+   * loyalty program. Must match one of the tiers set in the
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for loyaltyTierLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoyaltyTierLabelBytes() {
+    java.lang.Object ref = loyaltyTierLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loyaltyTierLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -853,6 +989,12 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 13, handlingCutoffTimezone_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loyaltyProgramLabel_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, loyaltyProgramLabel_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loyaltyTierLabel_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, loyaltyTierLabel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -900,6 +1042,12 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(13, handlingCutoffTimezone_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loyaltyProgramLabel_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, loyaltyProgramLabel_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loyaltyTierLabel_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, loyaltyTierLabel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -951,6 +1099,8 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
     if (hasHandlingCutoffTimezone()) {
       if (!getHandlingCutoffTimezone().equals(other.getHandlingCutoffTimezone())) return false;
     }
+    if (!getLoyaltyProgramLabel().equals(other.getLoyaltyProgramLabel())) return false;
+    if (!getLoyaltyTierLabel().equals(other.getLoyaltyTierLabel())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1002,6 +1152,10 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + HANDLING_CUTOFF_TIMEZONE_FIELD_NUMBER;
       hash = (53 * hash) + getHandlingCutoffTimezone().hashCode();
     }
+    hash = (37 * hash) + LOYALTY_PROGRAM_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLoyaltyProgramLabel().hashCode();
+    hash = (37 * hash) + LOYALTY_TIER_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLoyaltyTierLabel().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1168,6 +1322,8 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
       maxTransitTime_ = 0L;
       handlingCutoffTime_ = "";
       handlingCutoffTimezone_ = "";
+      loyaltyProgramLabel_ = "";
+      loyaltyTierLabel_ = "";
       return this;
     }
 
@@ -1251,6 +1407,12 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
         result.handlingCutoffTimezone_ = handlingCutoffTimezone_;
         to_bitField0_ |= 0x00000040;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.loyaltyProgramLabel_ = loyaltyProgramLabel_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.loyaltyTierLabel_ = loyaltyTierLabel_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1318,6 +1480,16 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
       if (other.hasHandlingCutoffTimezone()) {
         handlingCutoffTimezone_ = other.handlingCutoffTimezone_;
         bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getLoyaltyProgramLabel().isEmpty()) {
+        loyaltyProgramLabel_ = other.loyaltyProgramLabel_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (!other.getLoyaltyTierLabel().isEmpty()) {
+        loyaltyTierLabel_ = other.loyaltyTierLabel_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1424,6 +1596,18 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 114:
+              {
+                loyaltyProgramLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+            case 122:
+              {
+                loyaltyTierLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3013,6 +3197,298 @@ public final class Shipping extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       handlingCutoffTimezone_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object loyaltyProgramLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * program](https://support.google.com/merchants/answer/6324484).
+     * Must match one of the program labels set in
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The loyaltyProgramLabel.
+     */
+    public java.lang.String getLoyaltyProgramLabel() {
+      java.lang.Object ref = loyaltyProgramLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loyaltyProgramLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * program](https://support.google.com/merchants/answer/6324484).
+     * Must match one of the program labels set in
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for loyaltyProgramLabel.
+     */
+    public com.google.protobuf.ByteString getLoyaltyProgramLabelBytes() {
+      java.lang.Object ref = loyaltyProgramLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loyaltyProgramLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * program](https://support.google.com/merchants/answer/6324484).
+     * Must match one of the program labels set in
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The loyaltyProgramLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoyaltyProgramLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loyaltyProgramLabel_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * program](https://support.google.com/merchants/answer/6324484).
+     * Must match one of the program labels set in
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoyaltyProgramLabel() {
+      loyaltyProgramLabel_ = getDefaultInstance().getLoyaltyProgramLabel();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * program](https://support.google.com/merchants/answer/6324484).
+     * Must match one of the program labels set in
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for loyaltyProgramLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoyaltyProgramLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loyaltyProgramLabel_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object loyaltyTierLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * tier](https://support.google.com/merchants/answer/6324484) within the
+     * loyalty program. Must match one of the tiers set in the
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The loyaltyTierLabel.
+     */
+    public java.lang.String getLoyaltyTierLabel() {
+      java.lang.Object ref = loyaltyTierLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loyaltyTierLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * tier](https://support.google.com/merchants/answer/6324484) within the
+     * loyalty program. Must match one of the tiers set in the
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for loyaltyTierLabel.
+     */
+    public com.google.protobuf.ByteString getLoyaltyTierLabelBytes() {
+      java.lang.Object ref = loyaltyTierLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loyaltyTierLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * tier](https://support.google.com/merchants/answer/6324484) within the
+     * loyalty program. Must match one of the tiers set in the
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The loyaltyTierLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoyaltyTierLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loyaltyTierLabel_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * tier](https://support.google.com/merchants/answer/6324484) within the
+     * loyalty program. Must match one of the tiers set in the
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoyaltyTierLabel() {
+      loyaltyTierLabel_ = getDefaultInstance().getLoyaltyTierLabel();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label of the [loyalty
+     * tier](https://support.google.com/merchants/answer/6324484) within the
+     * loyalty program. Must match one of the tiers set in the
+     * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+     * When set (in combination with
+     * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+     * this shipping option is only applicable to loyalty program members of the
+     * specified tier.
+     * </pre>
+     *
+     * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for loyaltyTierLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoyaltyTierLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loyaltyTierLabel_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
