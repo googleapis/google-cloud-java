@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 
 /**
@@ -38,6 +40,7 @@ import com.google.api.core.InternalApi;
  *
  * <p>For internal use only - public for technical reasons.
  */
+@NullMarked
 @InternalApi
 public class ServerStreamingAttemptException extends RuntimeException {
   private final boolean canResume;

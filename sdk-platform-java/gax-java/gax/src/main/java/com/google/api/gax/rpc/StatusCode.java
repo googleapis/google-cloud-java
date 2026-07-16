@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalExtensionOnly;
 
 /**
@@ -38,6 +40,7 @@ import com.google.api.core.InternalExtensionOnly;
  * status codes, see
  * https://github.com/grpc/grpc-java/blob/master/core/src/main/java/io/grpc/Status.java
  */
+@NullMarked
 @InternalExtensionOnly
 public interface StatusCode {
 

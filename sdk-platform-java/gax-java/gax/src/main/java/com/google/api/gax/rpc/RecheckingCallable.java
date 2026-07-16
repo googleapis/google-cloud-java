@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
@@ -41,6 +43,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class RecheckingCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> callable;
   private final RetryingExecutorWithContext<ResponseT> executor;

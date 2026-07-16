@@ -30,6 +30,8 @@
 
 package com.google.api.gax.logging;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.common.base.Strings;
 import com.google.gson.Gson;
@@ -43,6 +45,7 @@ import org.slf4j.Logger;
 import org.slf4j.event.Level;
 
 /** Contains helper methods to log requests and responses */
+@NullMarked
 @InternalApi
 class Slf4jLoggingHelpers {
 

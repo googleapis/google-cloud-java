@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import java.util.concurrent.Callable;
 
@@ -45,6 +47,7 @@ import java.util.concurrent.Callable;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public interface RetryingExecutor<ResponseT> {
   /**
    * Creates the {@link RetryingFuture}, which is a facade, returned to the client code to wait for

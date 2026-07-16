@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.Credentials;
 import com.google.common.base.Preconditions;
@@ -38,6 +40,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 
 /** An instance of TransportChannelProvider that always provides the same TransportChannel. */
+@NullMarked
 @InternalExtensionOnly
 public class FixedTransportChannelProvider implements TransportChannelProvider {
 

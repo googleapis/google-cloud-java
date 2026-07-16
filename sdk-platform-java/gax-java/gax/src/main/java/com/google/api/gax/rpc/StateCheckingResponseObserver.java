@@ -29,9 +29,12 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.Preconditions;
 
 /** Base implementation of {@link ResponseObserver} that performs state sanity checks. */
+@NullMarked
 public abstract class StateCheckingResponseObserver<V> implements ResponseObserver<V> {
   private boolean isStarted;
   private boolean isClosed;

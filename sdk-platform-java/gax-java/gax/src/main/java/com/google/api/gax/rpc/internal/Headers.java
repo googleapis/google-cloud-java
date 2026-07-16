@@ -30,12 +30,15 @@
 
 package com.google.api.gax.rpc.internal;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import java.util.Map;
 
+@NullMarked
 @InternalApi
 public class Headers {
   public static final String DYNAMIC_ROUTING_HEADER_KEY = "x-goog-request-params";

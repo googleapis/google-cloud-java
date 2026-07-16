@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 
 /**
@@ -40,6 +42,7 @@ import com.google.api.core.InternalApi;
  * @param <ElementT> The type of each individual element to be batched.
  * @param <RequestT> The type of the request that will contain the accumulated elements.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only.")
 public interface BatchingRequestBuilder<ElementT, RequestT> {
 

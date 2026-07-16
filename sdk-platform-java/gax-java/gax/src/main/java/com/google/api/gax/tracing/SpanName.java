@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
@@ -37,6 +39,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /** A value class to represent the name of the operation in an {@link ApiTracer}. */
+@NullMarked
 @BetaApi("Surface for tracing is not yet stable")
 @InternalApi("For google-cloud-java client use only")
 @AutoValue

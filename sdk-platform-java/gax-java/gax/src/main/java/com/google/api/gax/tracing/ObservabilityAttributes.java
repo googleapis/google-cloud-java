@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 
@@ -38,6 +40,7 @@ import com.google.api.core.InternalApi;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 @BetaApi
 public class ObservabilityAttributes {

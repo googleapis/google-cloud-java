@@ -30,6 +30,8 @@
 
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
@@ -40,6 +42,7 @@ import javax.annotation.Nullable;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 @BetaApi
 @AutoValue

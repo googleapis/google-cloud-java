@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 
 /**
@@ -38,6 +40,7 @@ import com.google.api.core.InternalApi;
  *
  * @param <RequestT> request message type
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public interface RequestParamsEncoder<RequestT> {
 

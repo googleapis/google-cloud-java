@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.Credentials;
@@ -58,6 +60,7 @@ import javax.annotation.Nullable;
  * TransportChannel transportChannel = transportChannelProvider.getTransportChannel();
  * </code></pre>
  */
+@NullMarked
 @InternalExtensionOnly
 public interface TransportChannelProvider {
   /** Indicates whether the TransportChannel should be closed by the containing client class. */

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracer;
@@ -41,6 +43,7 @@ import javax.annotation.Nullable;
  *
  * <p>It provides state to individual {@link RetryingFuture}s via the {@link RetryingExecutor}.
  */
+@NullMarked
 @BetaApi("The surface for passing per operation state is not yet stable")
 public interface RetryingContext {
   /** Returns the {@link ApiTracer} associated with the current operation. */

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -92,6 +94,7 @@ import javax.annotation.Nullable;
  * can occur if messages are created and added to batching faster than they can be processed. The
  * flow control behavior is controlled using FlowControlSettings.
  */
+@NullMarked
 @AutoValue
 public abstract class BatchingSettings {
   /** Get the element count threshold to use for batching. */

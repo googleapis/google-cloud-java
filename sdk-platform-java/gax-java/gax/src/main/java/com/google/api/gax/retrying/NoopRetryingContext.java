@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 // TODO(igorbernstein2): Remove this class once RetryingExecutor#createFuture(Callable) is
 // deprecated and removed.
 
@@ -42,6 +44,7 @@ import javax.annotation.Nonnull;
  * Backwards compatibility class to aid in transition to adding operation state to {@link
  * RetryingFuture} implementations.
  */
+@NullMarked
 class NoopRetryingContext implements RetryingContext {
   public static RetryingContext create() {
     return new NoopRetryingContext();

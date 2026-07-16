@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc.internal;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.client.util.Beta;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableMap;
@@ -43,6 +45,7 @@ import java.util.Map;
  *
  * <p>Ensure that a custom set quota project id takes priority over one detected by credentials.
  */
+@NullMarked
 @Beta
 public class QuotaProjectIdHidingCredentials extends Credentials {
   private static final String QUOTA_PROJECT_ID_HEADER_KEY = "x-goog-user-project";

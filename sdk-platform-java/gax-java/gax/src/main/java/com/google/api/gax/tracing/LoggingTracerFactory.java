@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
@@ -40,6 +42,7 @@ import com.google.common.annotations.VisibleForTesting;
  * managed automatically by the system, when {@link LoggingUtils#isLoggingEnabled()} returning
  * {@code true}.
  */
+@NullMarked
 @InternalApi
 public class LoggingTracerFactory implements ApiTracerFactory {
   private final ApiTracerContext apiTracerContext;

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.auto.value.AutoValue;
@@ -36,6 +38,7 @@ import com.google.common.base.Preconditions;
 import javax.annotation.Nullable;
 
 /** Settings for {@link FlowController}. */
+@NullMarked
 @AutoValue
 public abstract class FlowControlSettings {
   public static FlowControlSettings getDefaultInstance() {

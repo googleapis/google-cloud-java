@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.NonCancellableFuture;
@@ -45,6 +47,7 @@ import java.util.concurrent.Callable;
  * @param <RequestT> request type
  * @param <ResponseT> response type
  */
+@NullMarked
 class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> callable;
   private final RequestT request;

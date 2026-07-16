@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.Preconditions;
 
 /**
@@ -37,6 +39,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>This class is designed to be used by generated code.
  */
+@NullMarked
 public final class BatchedRequestIssuer<ResponseT> {
   private final BatchedFuture<ResponseT> batchedFuture;
   private final long messageCount;

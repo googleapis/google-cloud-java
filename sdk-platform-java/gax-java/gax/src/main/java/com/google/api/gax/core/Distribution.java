@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -40,6 +42,7 @@ import java.util.concurrent.atomic.AtomicLongArray;
  *
  * <p>Methods may be called concurrently.
  */
+@NullMarked
 public class Distribution {
 
   private final AtomicLongArray buckets;

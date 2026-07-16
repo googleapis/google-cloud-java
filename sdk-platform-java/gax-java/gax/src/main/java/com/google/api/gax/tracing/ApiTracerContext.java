@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
@@ -46,6 +48,7 @@ import javax.annotation.Nullable;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 @AutoValue
 public abstract class ApiTracerContext {

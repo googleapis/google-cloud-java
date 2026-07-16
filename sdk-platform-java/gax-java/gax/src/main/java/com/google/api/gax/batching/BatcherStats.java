@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.common.base.Joiner;
@@ -45,6 +47,7 @@ import javax.annotation.Nullable;
  * provides the count of individual exception failure and count of each failed {@link Code} occurred
  * in the batching process.
  */
+@NullMarked
 class BatcherStats {
 
   private final Map<Class, Integer> requestExceptionCounts = new HashMap<>();

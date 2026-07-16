@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.BetaApi;
@@ -50,6 +52,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * class should not have any knowledge about the observability framework used for metrics recording.
  * method_name and language will be autopopulated attributes. Default value of language is 'Java'.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class MetricsTracer implements ApiTracer {

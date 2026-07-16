@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.InternalExtensionOnly;
@@ -55,6 +57,7 @@ import java.util.Set;
  * builder class cannot be used to create an instance of UnaryCallSettings, because
  * UnaryCallSettings is an abstract class.
  */
+@NullMarked
 @InternalExtensionOnly
 public class UnaryCallSettings<RequestT, ResponseT> {
 

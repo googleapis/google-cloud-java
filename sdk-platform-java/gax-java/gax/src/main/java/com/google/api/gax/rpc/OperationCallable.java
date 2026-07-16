@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.longrunning.OperationFuture;
 
@@ -41,6 +43,7 @@ import com.google.api.gax.longrunning.OperationFuture;
  * class is intended to be created by a generated client class, and configured by instances of
  * OperationCallSettings.Builder which are exposed through the client settings class.
  */
+@NullMarked
 public abstract class OperationCallable<RequestT, ResponseT, MetadataT> {
 
   protected OperationCallable() {}

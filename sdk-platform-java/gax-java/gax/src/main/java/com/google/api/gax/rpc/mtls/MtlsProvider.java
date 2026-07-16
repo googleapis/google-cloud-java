@@ -30,6 +30,8 @@
 
 package com.google.api.gax.rpc.mtls;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.SecurityUtils;
@@ -54,6 +56,7 @@ import java.util.List;
  *
  * <p>Note: This class is for Google cloud internal use only.
  */
+@NullMarked
 @BetaApi
 @Deprecated
 public class MtlsProvider {

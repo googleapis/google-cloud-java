@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.longrunning;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
@@ -50,6 +52,7 @@ import java.util.concurrent.TimeoutException;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public final class OperationFutureImpl<ResponseT, MetadataT>
     implements OperationFuture<ResponseT, MetadataT> {

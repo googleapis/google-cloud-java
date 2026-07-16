@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -76,6 +78,7 @@ import java.io.Serializable;
  * configuration are the default values for the RetrySettings class if there are no RPC specific
  * configurations from the Service Team.
  */
+@NullMarked
 @AutoValue
 public abstract class RetrySettings implements Serializable {
 

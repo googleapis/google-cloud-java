@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.paging;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -39,6 +41,7 @@ import java.util.stream.StreamSupport;
  * object also provides methods to retrieve additional pages using the page token, and to get the
  * API request and response objects.
  */
+@NullMarked
 public interface Page<ResourceT> {
   /** Returns true if there are more pages that can be retrieved from the API. */
   boolean hasNextPage();

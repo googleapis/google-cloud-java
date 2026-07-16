@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import java.util.concurrent.Callable;
 
@@ -40,6 +42,7 @@ import java.util.concurrent.Callable;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public interface RetryingFuture<ResponseT> extends ApiFuture<ResponseT> {
   /**
    * Sets the attempt in a form of a future. This future represents a concrete retry attempt,

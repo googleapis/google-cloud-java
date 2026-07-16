@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
@@ -93,6 +95,7 @@ import java.util.concurrent.CancellationException;
  * @param <RequestT> request type
  * @param <ResponseT> response type
  */
+@NullMarked
 final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Callable<Void> {
   private final Object lock = new Object();
 

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiClock;
@@ -41,6 +43,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * <p>This class is thread-safe.
  */
+@NullMarked
 public class ExponentialRetryAlgorithm implements TimedRetryAlgorithmWithContext {
 
   private final RetrySettings globalSettings;

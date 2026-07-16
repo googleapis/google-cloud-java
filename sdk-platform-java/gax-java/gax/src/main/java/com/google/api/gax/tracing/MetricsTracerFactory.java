@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
@@ -43,6 +45,7 @@ import java.util.Map;
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class MetricsTracerFactory implements ApiTracerFactory {

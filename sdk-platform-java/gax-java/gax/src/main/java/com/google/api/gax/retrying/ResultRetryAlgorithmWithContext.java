@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.concurrent.CancellationException;
 
 /**
@@ -49,6 +51,7 @@ import java.util.concurrent.CancellationException;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public interface ResultRetryAlgorithmWithContext<ResponseT>
     extends ResultRetryAlgorithm<ResponseT> {
 

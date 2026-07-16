@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
@@ -52,6 +54,7 @@ import javax.annotation.Nullable;
  *
  * <p>Contains the fields required to resolve the endpoint and Universe Domain
  */
+@NullMarked
 @InternalApi
 @AutoValue
 public abstract class EndpointContext {

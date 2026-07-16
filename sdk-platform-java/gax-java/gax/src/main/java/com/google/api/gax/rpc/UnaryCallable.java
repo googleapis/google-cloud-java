@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 
 /**
@@ -65,6 +67,7 @@ import com.google.api.core.ApiFuture;
  * intended to be created by a generated client class, and configured by instances of
  * UnaryCallSettings.Builder which are exposed through the client settings class.
  */
+@NullMarked
 public abstract class UnaryCallable<RequestT, ResponseT> {
 
   protected UnaryCallable() {}

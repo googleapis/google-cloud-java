@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import java.util.Map;
@@ -40,6 +42,7 @@ import java.util.Map;
  * all the methods in this class are expected to be called from multiple threads, hence the
  * implementation must be thread safe.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public interface MetricsRecorder {

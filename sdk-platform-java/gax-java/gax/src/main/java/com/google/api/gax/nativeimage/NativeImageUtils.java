@@ -30,6 +30,8 @@
 
 package com.google.api.gax.nativeimage;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -39,6 +41,7 @@ import org.graalvm.nativeimage.hosted.Feature.FeatureAccess;
 import org.graalvm.nativeimage.hosted.RuntimeReflection;
 
 /** Internal class offering helper methods for registering methods/classes for reflection. */
+@NullMarked
 @InternalApi
 public class NativeImageUtils {
 

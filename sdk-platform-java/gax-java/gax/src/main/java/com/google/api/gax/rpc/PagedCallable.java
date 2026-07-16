@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
@@ -38,6 +40,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>Public for technical reasons - for advanced usage.
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public class PagedCallable<RequestT, ResponseT, PagedListResponseT>
     extends UnaryCallable<RequestT, PagedListResponseT> {

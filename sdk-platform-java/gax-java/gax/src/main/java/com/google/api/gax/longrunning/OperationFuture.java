@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.longrunning;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import java.util.concurrent.ExecutionException;
@@ -39,6 +41,7 @@ import java.util.concurrent.ExecutionException;
  *
  * <p>Implementations are expected to be thread-safe.
  */
+@NullMarked
 public interface OperationFuture<ResponseT, MetadataT> extends ApiFuture<ResponseT> {
   /**
    * Returns the value of the name of the operation from the initial operation object returned from

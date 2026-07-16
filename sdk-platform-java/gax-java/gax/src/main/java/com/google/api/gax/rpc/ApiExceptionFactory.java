@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A factory class that returns the corresponding type of exception class from the given status
  * code.
  */
+@NullMarked
 public class ApiExceptionFactory {
   private ApiExceptionFactory() {}
 

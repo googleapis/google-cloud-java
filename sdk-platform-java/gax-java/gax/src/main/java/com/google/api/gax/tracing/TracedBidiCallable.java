@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -48,6 +50,7 @@ import javax.annotation.Nullable;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @BetaApi("The surface for tracing is not stable and might change in the future")
 @InternalApi("For internal use by google-cloud-java clients only")
 public class TracedBidiCallable<RequestT, ResponseT>

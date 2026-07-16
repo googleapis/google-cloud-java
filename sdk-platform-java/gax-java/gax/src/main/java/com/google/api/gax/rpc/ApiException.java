@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.Preconditions;
 import java.util.Map;
 
 /** Represents an exception thrown during an RPC call. */
+@NullMarked
 public class ApiException extends RuntimeException {
 
   private static final long serialVersionUID = -4375114339928877996L;

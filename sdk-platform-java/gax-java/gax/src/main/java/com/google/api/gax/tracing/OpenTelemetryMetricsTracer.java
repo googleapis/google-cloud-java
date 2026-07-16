@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
@@ -43,6 +45,7 @@ import java.util.concurrent.TimeUnit;
  * GoldenSignalsMetricsRecorder}, hence this class should not have any knowledge about the
  * observability framework (e.g. OpenTelemetry).
  */
+@NullMarked
 class OpenTelemetryMetricsTracer implements ApiTracer {
   private final Stopwatch clientRequestTimer;
   private final GoldenSignalsMetricsRecorder metricsRecorder;

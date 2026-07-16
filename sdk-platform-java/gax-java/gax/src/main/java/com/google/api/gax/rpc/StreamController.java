@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.concurrent.CancellationException;
 
 /**
@@ -39,6 +41,7 @@ import java.util.concurrent.CancellationException;
  * flow control. The receiver can also save a reference to the instance and terminate the stream
  * early using {@code cancel()}.
  */
+@NullMarked
 public interface StreamController {
   /**
    * Cancel the stream early.

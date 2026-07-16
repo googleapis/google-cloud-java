@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.ApiClock;
@@ -52,6 +54,7 @@ import javax.annotation.Nullable;
  * <p>If no ExecutorProvider is set, then InstantiatingExecutorProvider will be used, which creates
  * a default executor.
  */
+@NullMarked
 public abstract class ClientSettings<SettingsT extends ClientSettings<SettingsT>> {
 
   private final StubSettings stubSettings;

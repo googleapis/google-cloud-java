@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalExtensionOnly;
 
 /**
  * A settings class to configure a streaming callable object for calls to a streaming API method.
  */
+@NullMarked
 @InternalExtensionOnly
 public class StreamingCallSettings<RequestT, ResponseT> {
 

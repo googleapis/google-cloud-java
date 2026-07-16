@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFuture;
@@ -50,6 +52,7 @@ import java.util.List;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class BatchExecutor<RequestT, ResponseT>
     implements ThresholdBatchReceiver<Batch<RequestT, ResponseT>> {
 

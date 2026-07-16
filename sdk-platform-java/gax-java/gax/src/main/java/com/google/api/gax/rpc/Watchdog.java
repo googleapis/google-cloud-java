@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -66,6 +68,7 @@ import javax.annotation.Nonnull;
  *       had no outstanding demand. Duration.ZERO disables the timeout.
  * </ul>
  */
+@NullMarked
 public final class Watchdog implements Runnable, BackgroundResource {
 
   private static final Logger LOG = Logger.getLogger(Watchdog.class.getName());

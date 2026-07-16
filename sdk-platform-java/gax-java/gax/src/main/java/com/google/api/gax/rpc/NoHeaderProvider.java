@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Map;
 
 /** Implementation of HeaderProvider that provides empty headers. */
+@NullMarked
 public class NoHeaderProvider implements HeaderProvider, Serializable {
   private static final long serialVersionUID = 7323717933589691233L;
 

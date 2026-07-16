@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -51,6 +53,7 @@ import java.util.concurrent.Future;
  *
  * <p>This class is thread-safe.
  */
+@NullMarked
 class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<ResponseT> {
   private final ScheduledRetryingExecutor<ResponseT> retryingExecutor;
   private volatile AttemptCompletionListener attemptFutureCompletionListener;

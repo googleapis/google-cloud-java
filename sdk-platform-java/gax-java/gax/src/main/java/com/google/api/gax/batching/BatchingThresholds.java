@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 
 /** Factory methods for general-purpose batching thresholds. */
+@NullMarked
 public final class BatchingThresholds {
 
   /**

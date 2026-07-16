@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiClock;
 
 /**
@@ -38,6 +40,7 @@ import com.google.api.core.ApiClock;
  *
  * <p>This class is thread-safe.
  */
+@NullMarked
 public class ExponentialPollAlgorithm extends ExponentialRetryAlgorithm {
   /**
    * Creates a new exponential poll algorithm instance.

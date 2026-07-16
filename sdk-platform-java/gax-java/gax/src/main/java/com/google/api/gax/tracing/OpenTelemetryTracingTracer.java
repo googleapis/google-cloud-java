@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.client.util.Strings;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
@@ -41,6 +43,7 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
+@NullMarked
 class OpenTelemetryTracingTracer implements ApiTracer {
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";

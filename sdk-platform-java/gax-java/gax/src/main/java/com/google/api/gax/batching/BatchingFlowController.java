@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 
 /** Wraps a {@link FlowController} for use by batching. */
+@NullMarked
 public class BatchingFlowController<T> {
 
   private final FlowController flowController;
