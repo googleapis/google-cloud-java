@@ -1277,7 +1277,7 @@ libraries:
       rest_documentation: https://cloud.google.com/dataplex/docs/reference/rest
       rpc_documentation: https://cloud.google.com/dataplex/docs/reference/rpc
   - name: dataproc
-    version: 4.91.1
+    version: 4.92.0-SNAPSHOT
     apis:
       - path: google/cloud/dataproc/v1
         java:
@@ -1828,7 +1828,7 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.88.1
+    version: 1.89.0-SNAPSHOT
     skip_generate: true
   - name: google-cloud-pom-parent
     version: 1.89.0-SNAPSHOT
