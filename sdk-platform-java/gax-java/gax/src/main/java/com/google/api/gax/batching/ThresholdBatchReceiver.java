@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 
 /**
  * Interface representing an object that receives batches from a ThresholdBatcher and takes action
  * on them. Implementations of ThresholdBatchReceiver should be thread-safe.
  */
+@NullMarked
 public interface ThresholdBatchReceiver<BatchT> {
 
   /**

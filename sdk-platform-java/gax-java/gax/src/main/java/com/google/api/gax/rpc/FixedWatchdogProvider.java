@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
@@ -44,6 +46,7 @@ import javax.annotation.Nullable;
  * <p>This is the internal class and is public only for technical reasons. It may change any time
  * without notice, please do not depend on it explicitly.
  */
+@NullMarked
 @InternalApi
 public final class FixedWatchdogProvider implements WatchdogProvider {
   @Nullable private final Watchdog watchdog;

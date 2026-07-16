@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -46,6 +48,7 @@ import java.util.concurrent.ExecutionException;
  *
  * @param <RequestT> type of the request
  */
+@NullMarked
 class OperationCheckingCallable<RequestT> extends UnaryCallable<RequestT, OperationSnapshot> {
   private final LongRunningClient longRunningClient;
   private final ApiFuture<OperationSnapshot> initialFuture;

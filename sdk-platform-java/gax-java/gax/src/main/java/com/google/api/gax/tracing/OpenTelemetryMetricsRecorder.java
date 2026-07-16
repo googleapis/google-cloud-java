@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
@@ -51,6 +53,7 @@ import java.util.Map;
  * error). A single call (i.e. `EchoClient.echo()`) should have an operation_count of 1 and may have
  * an attempt_count of 1+ (depending on the retry configurations).
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class OpenTelemetryMetricsRecorder implements MetricsRecorder {

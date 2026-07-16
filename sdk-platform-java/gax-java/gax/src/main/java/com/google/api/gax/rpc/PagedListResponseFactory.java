@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 
 /**
@@ -36,6 +38,7 @@ import com.google.api.core.ApiFuture;
  *
  * <p>This class is designed to be used by generated code.
  */
+@NullMarked
 public interface PagedListResponseFactory<RequestT, ResponseT, PagedListResponseT> {
 
   ApiFuture<PagedListResponseT> getFuturePagedResponse(

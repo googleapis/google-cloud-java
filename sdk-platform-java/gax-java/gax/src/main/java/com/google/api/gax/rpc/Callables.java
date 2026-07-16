@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.longrunning.OperationResponsePollAlgorithm;
@@ -46,6 +48,7 @@ import java.util.Collection;
  * <p>The callable objects wrap a given direct callable with features like retry and exception
  * translation.
  */
+@NullMarked
 @BetaApi
 public class Callables {
 

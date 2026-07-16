@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 
 /**
@@ -36,6 +38,7 @@ import com.google.api.core.InternalApi;
  * other things to determine if adding a new element needs to be flow controlled or if the current
  * batch needs to be flushed.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only.")
 public interface BatchResource {
 

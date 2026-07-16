@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.paging;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFunction;
@@ -43,6 +45,7 @@ import com.google.common.collect.Iterables;
 import java.util.Iterator;
 
 /** Partial implementation of {@link AsyncPage}. */
+@NullMarked
 public abstract class AbstractPage<
         RequestT,
         ResponseT,

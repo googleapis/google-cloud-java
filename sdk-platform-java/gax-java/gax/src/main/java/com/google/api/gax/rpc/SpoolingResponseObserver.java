@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.common.collect.Lists;
@@ -42,6 +44,7 @@ import java.util.List;
  *
  * @param <ResponseT> The type of the element in the stream.
  */
+@NullMarked
 class SpoolingResponseObserver<ResponseT> extends StateCheckingResponseObserver<ResponseT> {
   private final MyFuture future = new MyFuture();
   private StreamController controller;

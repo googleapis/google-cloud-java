@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -48,6 +50,7 @@ import javax.annotation.Nonnull;
  *
  * <p>This class is thread safe.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only")
 public final class OpencensusTracerFactory extends BaseApiTracerFactory {
   @Nonnull private final Tracer internalTracer;

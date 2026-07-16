@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Provides an interface to either build a ScheduledExecutorService or provide a fixed
  * ScheduledExecutorService that will be used to make calls to a service.
  */
+@NullMarked
 public interface ExecutorProvider {
   /** Indicates whether the executor should be closed by the containing client class. */
   boolean shouldAutoClose();

@@ -30,6 +30,9 @@
 
 package com.google.api.gax.util;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public class TimeConversionUtils {
   public static java.time.Duration toJavaTimeDuration(org.threeten.bp.Duration source) {
     if (source == null) {

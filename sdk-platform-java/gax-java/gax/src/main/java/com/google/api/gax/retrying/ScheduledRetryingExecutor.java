@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -54,6 +56,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public class ScheduledRetryingExecutor<ResponseT>
     implements RetryingExecutorWithContext<ResponseT> {
 

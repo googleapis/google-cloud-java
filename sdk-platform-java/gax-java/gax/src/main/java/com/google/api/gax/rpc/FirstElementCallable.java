@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 
 /**
@@ -40,6 +42,7 @@ import com.google.api.core.ApiFuture;
  * @param <RequestT> The type of the request.
  * @param <ResponseT> The type of the item in the stream.
  */
+@NullMarked
 final class FirstElementCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> streamingCallable;
 

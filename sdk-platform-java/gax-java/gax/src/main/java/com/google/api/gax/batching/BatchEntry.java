@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.auto.value.AutoValue;
@@ -42,6 +44,7 @@ import javax.annotation.Nullable;
  * @param <ElementT> The type of each individual element to be batched.
  * @param <ElementResultT> The type of the result for each individual element.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only.")
 @AutoValue
 public abstract class BatchEntry<ElementT, ElementResultT> {

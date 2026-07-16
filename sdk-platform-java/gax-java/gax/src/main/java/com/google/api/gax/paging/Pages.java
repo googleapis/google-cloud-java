@@ -29,9 +29,12 @@
  */
 package com.google.api.gax.paging;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.Collections;
 
 /** Utility class for {@link Page}s. */
+@NullMarked
 public class Pages {
   private Pages() {}
 

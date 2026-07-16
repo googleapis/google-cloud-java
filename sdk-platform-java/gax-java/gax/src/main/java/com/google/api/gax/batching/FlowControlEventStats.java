@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 
 import com.google.api.core.InternalApi;
@@ -59,6 +61,7 @@ import javax.annotation.Nullable;
  * }
  * }</pre>
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only")
 public class FlowControlEventStats {
 

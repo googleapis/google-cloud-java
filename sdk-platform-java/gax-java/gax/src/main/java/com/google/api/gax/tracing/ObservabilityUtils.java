@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.base.Joiner;
@@ -42,6 +44,7 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
+@NullMarked
 final class ObservabilityUtils {
 
   /** Function to extract the status of the error as a canonical code. */

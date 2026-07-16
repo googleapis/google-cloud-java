@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryingContext;
 
 /* Package-private for internal use. */
+@NullMarked
 class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
   /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */

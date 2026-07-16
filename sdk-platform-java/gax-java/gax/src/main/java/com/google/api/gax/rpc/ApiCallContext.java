@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.ObsoleteApi;
@@ -54,6 +56,7 @@ import javax.annotation.Nullable;
  *
  * <p>This is transport specific and each transport has an implementation with its own options.
  */
+@NullMarked
 @InternalExtensionOnly
 public interface ApiCallContext extends RetryingContext {
 

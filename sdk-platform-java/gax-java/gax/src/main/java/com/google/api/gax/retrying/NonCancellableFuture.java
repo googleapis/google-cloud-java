@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.InternalApi;
 
@@ -39,6 +41,7 @@ import com.google.api.core.InternalApi;
  *
  * @param <ResponseT> future response type
  */
+@NullMarked
 @InternalApi
 public final class NonCancellableFuture<ResponseT> extends AbstractApiFuture<ResponseT> {
   @Override

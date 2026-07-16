@@ -30,6 +30,8 @@
 
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.client.util.Strings;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.annotations.VisibleForTesting;
@@ -44,6 +46,7 @@ import io.opentelemetry.api.trace.Tracer;
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
+@NullMarked
 public class OpenTelemetryTracingFactory implements ApiTracerFactory {
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;

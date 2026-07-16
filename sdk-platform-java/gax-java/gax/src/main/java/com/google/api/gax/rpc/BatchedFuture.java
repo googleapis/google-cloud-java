@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.InternalApi;
 
@@ -37,6 +39,7 @@ import com.google.api.core.InternalApi;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public class BatchedFuture<ResponseT> extends AbstractApiFuture<ResponseT> {
 

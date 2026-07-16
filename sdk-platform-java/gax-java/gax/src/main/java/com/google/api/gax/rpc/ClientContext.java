@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -73,6 +75,7 @@ import javax.annotation.Nullable;
  * <p>Unlike {@link ClientSettings} which allows users to configure the client, {@code
  * ClientContext} is intended to be used in generated code. Most users will not need to use it.
  */
+@NullMarked
 @AutoValue
 public abstract class ClientContext {
   private static final String QUOTA_PROJECT_ID_HEADER_KEY = "x-goog-user-project";

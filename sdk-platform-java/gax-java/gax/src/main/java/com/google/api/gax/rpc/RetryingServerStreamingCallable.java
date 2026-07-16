@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFutureCallback;
@@ -52,6 +54,7 @@ import com.google.api.gax.retrying.StreamResumptionStrategy;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 final class RetryingServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -64,6 +66,7 @@ import javax.annotation.Nullable;
  * <p>If no ExecutorProvider is set, then InstantiatingExecutorProvider will be used, which creates
  * a default executor.
  */
+@NullMarked
 public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
 
   static final String QUOTA_PROJECT_ID_HEADER_KEY = "x-goog-user-project";

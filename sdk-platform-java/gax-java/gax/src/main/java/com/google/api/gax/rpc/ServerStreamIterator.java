@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.util.concurrent.UncheckedExecutionException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -43,6 +45,7 @@ import java.util.NoSuchElementException;
  *
  * @param <V> The type of items to be Iterated over.
  */
+@NullMarked
 final class ServerStreamIterator<V> implements Iterator<V> {
   private final QueuingResponseObserver<V> observer;
   private Object last;

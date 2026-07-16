@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.auto.value.AutoValue;
@@ -36,6 +38,7 @@ import com.google.common.base.Preconditions;
 import javax.annotation.Nullable;
 
 /** Settings for dynamic flow control */
+@NullMarked
 @AutoValue
 @InternalApi("For google-cloud-java client use only")
 public abstract class DynamicFlowControlSettings {

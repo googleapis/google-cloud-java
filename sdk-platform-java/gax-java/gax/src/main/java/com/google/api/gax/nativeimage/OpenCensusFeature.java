@@ -30,11 +30,14 @@
 
 package com.google.api.gax.nativeimage;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerForReflectiveInstantiation;
 
 import org.graalvm.nativeimage.hosted.Feature;
 
 /** Registers reflection usage in OpenCensus libraries. */
+@NullMarked
 final class OpenCensusFeature implements Feature {
 
   private static final String TAGS_COMPONENT_CLASS = "io.opencensus.impl.tags.TagsComponentImpl";

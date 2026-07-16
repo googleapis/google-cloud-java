@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 
 /** A utility class for working with {@link ApiException}. */
+@NullMarked
 public class ApiExceptions {
   private ApiExceptions() {}
 

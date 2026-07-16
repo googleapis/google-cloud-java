@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingFlowController;
 import com.google.api.gax.batching.BatchingSettings;
@@ -53,6 +55,7 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public final class BatcherFactory<RequestT, ResponseT> {
   private final Map<PartitionKey, ThresholdBatcher<Batch<RequestT, ResponseT>>> batchers =

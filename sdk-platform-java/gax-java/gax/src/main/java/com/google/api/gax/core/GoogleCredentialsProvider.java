@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.BetaApi;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -48,6 +50,7 @@ import javax.annotation.Nullable;
  * href="https://developers.google.com/identity/protocols/application-default-credentials">
  * https://developers.google.com/identity/protocols/application-default-credentials</a>.
  */
+@NullMarked
 @AutoValue
 public abstract class GoogleCredentialsProvider implements CredentialsProvider {
 

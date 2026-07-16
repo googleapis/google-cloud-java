@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 import java.util.concurrent.TimeUnit;
 
 /**
  * Represents a resource running in the background that needs to be shut down for resources to be
  * released.
  */
+@NullMarked
 public interface BackgroundResource extends AutoCloseable {
 
   /**

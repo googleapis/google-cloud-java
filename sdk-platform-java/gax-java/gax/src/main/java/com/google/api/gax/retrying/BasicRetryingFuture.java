@@ -30,6 +30,8 @@
 
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -53,6 +55,7 @@ import java.util.logging.Logger;
  *
  * <p>This class is thread-safe.
  */
+@NullMarked
 class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
     implements RetryingFuture<ResponseT> {
 

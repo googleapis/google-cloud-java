@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.escape.PercentEscaper;
@@ -41,6 +43,7 @@ import java.util.Map;
  *
  * @param <RequestT> request message type
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public class RequestUrlParamsEncoder<RequestT> implements RequestParamsEncoder<RequestT> {
   // Per RFC 3986 Section 2.3, these are the four unreserved characters that don't need to be

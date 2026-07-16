@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 
@@ -42,6 +44,7 @@ import com.google.common.base.Preconditions;
  *
  * @see Watchdog for more details
  */
+@NullMarked
 class WatchdogServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> inner;

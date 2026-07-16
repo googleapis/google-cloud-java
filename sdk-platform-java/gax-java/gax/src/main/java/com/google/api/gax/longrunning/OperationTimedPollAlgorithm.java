@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.longrunning;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import com.google.api.core.NanoClock;
@@ -45,6 +47,7 @@ import java.util.logging.Logger;
  * next polling operation should be executed. If the polling exceeds the total timeout this
  * algorithm cancels polling.
  */
+@NullMarked
 public class OperationTimedPollAlgorithm extends ExponentialRetryAlgorithm {
 
   @VisibleForTesting

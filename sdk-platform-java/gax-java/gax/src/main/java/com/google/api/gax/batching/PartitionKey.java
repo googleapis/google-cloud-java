@@ -30,8 +30,11 @@
 
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.collect.ImmutableList;
 
+@NullMarked
 public final class PartitionKey {
   private final ImmutableList<Object> keys;
   private final int hash;

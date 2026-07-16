@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -38,6 +40,7 @@ import javax.annotation.Nullable;
  *
  * <p>Implementations don't have to be threadsafe because all of the calls will be serialized.
  */
+@NullMarked
 public interface StreamResumptionStrategy<RequestT, ResponseT> {
 
   /** Creates a new instance of this StreamResumptionStrategy without accumulated state */

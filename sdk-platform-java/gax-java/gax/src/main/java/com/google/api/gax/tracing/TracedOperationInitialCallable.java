@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -43,6 +45,7 @@ import com.google.common.util.concurrent.MoreExecutors;
  * <p>It will trace it like a child unary RPC and will also contribute to the parent tracer (created
  * by {@link TracedOperationCallable}) the result of the call.
  */
+@NullMarked
 public class TracedOperationInitialCallable<RequestT>
     extends TracedUnaryCallable<RequestT, OperationSnapshot> {
 

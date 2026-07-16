@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.Preconditions;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -37,6 +39,7 @@ import java.util.concurrent.TimeUnit;
  * ExecutorAsBackgroundResource wraps an {@link ExecutorService} so that it can be used as a {@link
  * BackgroundResource}.
  */
+@NullMarked
 public class ExecutorAsBackgroundResource implements BackgroundResource {
 
   private final ExecutorService executor;

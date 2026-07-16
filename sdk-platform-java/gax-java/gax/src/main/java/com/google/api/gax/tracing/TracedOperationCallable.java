@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
@@ -44,6 +46,7 @@ import javax.annotation.Nonnull;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public class TracedOperationCallable<RequestT, ResponseT, MetadataT>
     extends OperationCallable<RequestT, ResponseT, MetadataT> {

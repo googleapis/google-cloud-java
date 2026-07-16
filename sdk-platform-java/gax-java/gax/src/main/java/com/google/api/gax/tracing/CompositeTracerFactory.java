@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,7 @@ import java.util.List;
  * A composite implementation of {@link ApiTracerFactory} that bundles multiple tracing factories
  * and produces a {@link CompositeTracer} out of them.
  */
+@NullMarked
 public class CompositeTracerFactory extends BaseApiTracerFactory {
   private final List<ApiTracerFactory> apiTracerFactories;
 

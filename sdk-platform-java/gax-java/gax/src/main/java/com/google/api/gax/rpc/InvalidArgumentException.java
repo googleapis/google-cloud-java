@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when client specified an invalid argument. Note that this differs from {@link
  * FailedPreconditionException}. This exception indicates arguments that are problematic regardless
  * of the state of the system (e.g., a malformed file name).
  */
+@NullMarked
 public class InvalidArgumentException extends ApiException {
   public InvalidArgumentException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

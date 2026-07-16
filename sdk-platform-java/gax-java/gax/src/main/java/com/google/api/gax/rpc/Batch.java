@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchMerger;
 import com.google.api.gax.batching.ElementCounter;
@@ -48,6 +50,7 @@ import java.util.List;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public class Batch<RequestT, ResponseT> {
   private final List<BatchedRequestIssuer<ResponseT>> requestIssuerList;

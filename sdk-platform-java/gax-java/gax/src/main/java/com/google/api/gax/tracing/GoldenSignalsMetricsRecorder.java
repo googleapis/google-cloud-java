@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.base.Strings;
 import io.opentelemetry.api.OpenTelemetry;
@@ -46,6 +48,7 @@ import javax.annotation.Nullable;
  * GoldenSignalsMetricsRecorder per client, all the methods in this class are expected to be called
  * from multiple threads, hence they need to be thread safe.
  */
+@NullMarked
 class GoldenSignalsMetricsRecorder {
   static final String CLIENT_REQUEST_DURATION_METRIC_NAME = "gcp.client.request.duration";
   static final String CLIENT_REQUEST_DURATION_METRIC_DESCRIPTION =

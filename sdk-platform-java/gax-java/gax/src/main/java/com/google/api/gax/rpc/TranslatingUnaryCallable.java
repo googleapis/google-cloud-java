@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFunction;
@@ -38,6 +40,7 @@ import com.google.api.core.ApiFutures;
 /**
  * A UnaryCallable that translates request types and response types using the given transformers.
  */
+@NullMarked
 public class TranslatingUnaryCallable<InnerRequestT, InnerResponseT, OuterRequestT, OuterResponseT>
     extends UnaryCallable<OuterRequestT, OuterResponseT> {
   private final UnaryCallable<InnerRequestT, InnerResponseT> innerUnaryCallable;

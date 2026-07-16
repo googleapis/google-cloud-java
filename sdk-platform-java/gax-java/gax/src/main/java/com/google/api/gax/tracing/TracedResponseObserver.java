@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
@@ -43,6 +45,7 @@ import javax.annotation.Nonnull;
  * that the span of the instrumentation will not include processing of the innerObserver's
  * onComplete.
  */
+@NullMarked
 @InternalApi
 class TracedResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
   private final ApiTracer tracer;

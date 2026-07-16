@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import java.util.concurrent.CancellationException;
 
@@ -41,6 +43,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Internal use only - public for technical reasons.
  */
+@NullMarked
 @InternalApi("For internal use only")
 public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
 

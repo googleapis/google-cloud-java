@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
@@ -39,6 +41,7 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 /** An instance of HeaderProvider that always provides the same headers. */
+@NullMarked
 @AutoValue
 public abstract class FixedHeaderProvider implements HeaderProvider, Serializable {
 

@@ -30,6 +30,8 @@
 
 package com.google.api.gax.rpc.mtls;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import com.google.common.collect.ImmutableList;
@@ -43,6 +45,7 @@ import java.util.List;
  *
  * <p>Note: This class is for Google cloud internal use only.
  */
+@NullMarked
 @Deprecated
 public class ContextAwareMetadataJson extends GenericJson {
   /** Cert provider command */

@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.common.base.Preconditions;
 
 /**
  * Simplest implementation of a {@link StreamResumptionStrategy} which returns the initial request
  * for unstarted streams.
  */
+@NullMarked
 public final class SimpleStreamResumptionStrategy<RequestT, ResponseT>
     implements StreamResumptionStrategy<RequestT, ResponseT> {
   private boolean seenFirstResponse;

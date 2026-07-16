@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.BetaApi;
@@ -208,6 +210,7 @@ import javax.annotation.Nonnull;
  * only one thread that invokes the operation* and attempt* methods. Please see {@link
  * com.google.api.gax.rpc.ApiStreamObserver} for more information.
  */
+@NullMarked
 @BetaApi("Surface for tracing is not yet stable")
 public class OpencensusTracer extends BaseApiTracer {
   private final Tracer tracer;

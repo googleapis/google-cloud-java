@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Receives notifications from an observable stream of messages.
  *
@@ -50,6 +52,7 @@ package com.google.api.gax.rpc;
  * <p>This interface is a fork of io.grpc.stub.StreamObserver to enable shadowing of Guava, and also
  * to allow for a transport-agnostic interface that doesn't depend on gRPC.
  */
+@NullMarked
 public interface ApiStreamObserver<V> {
   /**
    * Receives a value from the stream.

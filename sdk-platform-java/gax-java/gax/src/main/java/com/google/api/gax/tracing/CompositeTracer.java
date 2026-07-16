@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
@@ -41,6 +43,7 @@ import java.util.Map;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
   private final List<ApiTracer> children;

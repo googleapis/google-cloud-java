@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -48,6 +50,7 @@ import javax.annotation.Nullable;
  * @param <ElementT> The type of each individual element to be batched.
  * @param <ElementResultT> The type of the result for each individual element.
  */
+@NullMarked
 @InternalExtensionOnly
 public interface Batcher<ElementT, ElementResultT> extends AutoCloseable {
 

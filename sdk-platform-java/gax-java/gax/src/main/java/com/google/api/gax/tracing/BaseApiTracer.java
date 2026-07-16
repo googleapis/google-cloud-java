@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
+import org.jspecify.annotations.NullMarked;
+
 import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 
@@ -40,6 +42,7 @@ import com.google.api.core.ObsoleteApi;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public class BaseApiTracer implements ApiTracer {
   private static final ApiTracer INSTANCE = new BaseApiTracer();
