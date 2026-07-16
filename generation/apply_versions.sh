@@ -38,7 +38,7 @@ trap 'rm -f "$SED_SCRIPT_FILE"' EXIT
 for KV in $(cut -f1,"${column_index}" -d: $versions_file |grep -v "#"); do
   K=${KV%:*}; V=${KV#*:}
   echo Key:$K, Value:$V;
-  echo "/x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}" >> "$SED_SCRIPT_FILE"
+  echo '/x-version-update:'"$K"':current/{s|<\([^>]*\)>[^<]*</\1>|<\1>'"$V"'</\1>|;}' >> "$SED_SCRIPT_FILE"
 done
 
 echo "Running sed command. It may take few minutes."
