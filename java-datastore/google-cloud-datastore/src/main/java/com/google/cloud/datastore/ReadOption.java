@@ -180,71 +180,21 @@ public abstract class ReadOption implements Serializable {
       return requestOptions;
     }
 
-    public static <Q extends Query<?>> QueryConfig<Q> create(
-        Q query, ExplainOptions explainOptions) {
-      return QueryConfig.<Q>newBuilder().setQuery(query).setExplainOptions(explainOptions).build();
-    }
-
-    public static <Q extends Query<?>> QueryConfig<Q> create(
-        Q query, ExplainOptions explainOptions, List<ReadOption> readOptions) {
-      return QueryConfig.<Q>newBuilder()
-          .setQuery(query)
-          .setExplainOptions(explainOptions)
-          .setReadOptions(readOptions)
-          .build();
-    }
-
-    public static <Q extends Query<?>> QueryConfig<Q> create(
-        Q query,
-        ExplainOptions explainOptions,
-        List<ReadOption> readOptions,
-        RequestOptions requestOptions) {
-      return QueryConfig.<Q>newBuilder()
-          .setQuery(query)
-          .setExplainOptions(explainOptions)
-          .setReadOptions(readOptions)
-          .setRequestOptions(requestOptions)
-          .build();
-    }
-
-    /** Creates a new builder for {@link QueryConfig}. */
-    public static <Q extends Query<?>> Builder<Q> newBuilder() {
-      return new Builder<>();
-    }
-
-    /** Builder for {@link QueryConfig}. */
-    public static class Builder<Q extends Query<?>> {
-      private Q query;
-      private List<ReadOption> readOptions = Collections.emptyList();
-      private ExplainOptions explainOptions;
-      private RequestOptions requestOptions;
-
-      private Builder() {}
-
-      public Builder<Q> setQuery(Q query) {
-        this.query = query;
-        return this;
+    public static <Q extends Query<?>> QueryConfig<Q> createWithDatastoreExecutionOptions(
+        Q query, DatastoreExecutionOptions executionOptions) {
+      Preconditions.checkNotNull(query, "query cannot be null");
+      if (executionOptions != null) {
+        ExplainOptions explainOptions =
+            executionOptions.getExplainOptions() != null
+                ? executionOptions.getExplainOptions().toPb()
+                : null;
+        return new QueryConfig<>(
+            query,
+            explainOptions,
+            executionOptions.getReadOptions(),
+            executionOptions.getRequestOptions());
       }
-
-      public Builder<Q> setReadOptions(List<ReadOption> readOptions) {
-        this.readOptions = readOptions;
-        return this;
-      }
-
-      public Builder<Q> setExplainOptions(ExplainOptions explainOptions) {
-        this.explainOptions = explainOptions;
-        return this;
-      }
-
-      public Builder<Q> setRequestOptions(RequestOptions requestOptions) {
-        this.requestOptions = requestOptions;
-        return this;
-      }
-
-      public QueryConfig<Q> build() {
-        Preconditions.checkNotNull(query, "query cannot be null");
-        return new QueryConfig<>(query, explainOptions, readOptions, requestOptions);
-      }
+      return new QueryConfig<>(query, null, Collections.emptyList(), null);
     }
   }
 }

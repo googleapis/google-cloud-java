@@ -27,6 +27,21 @@ public final class RequestOptionsHelper {
 
   /**
    * Creates a merged {@link RequestOptions} instance containing both the instance-level tags and
+   * the request-level options from {@link DatastoreExecutionOptions}.
+   *
+   * @param datastoreOptions the global Datastore options containing instance-level tags
+   * @param executionOptions the execution options containing request-level options, or {@code null}
+   * @return the merged RequestOptions proto message
+   */
+  public static RequestOptions createRequestOptions(
+      DatastoreOptions datastoreOptions, DatastoreExecutionOptions executionOptions) {
+    RequestOptions requestOptions =
+        executionOptions != null ? executionOptions.getRequestOptions() : null;
+    return createRequestOptions(datastoreOptions, requestOptions);
+  }
+
+  /**
+   * Creates a merged {@link RequestOptions} instance containing both the instance-level tags and
    * the request-level options.
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags

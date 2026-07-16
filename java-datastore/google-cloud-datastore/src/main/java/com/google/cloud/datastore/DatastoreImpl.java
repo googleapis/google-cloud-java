@@ -155,6 +155,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return new TransactionImpl(this);
   }
 
+  @Override
+  @BetaApi
+  public Transaction newTransaction(DatastoreExecutionOptions executionOptions) {
+    return new TransactionImpl(this, null, executionOptions);
+  }
+
+  @Override
+  @BetaApi
+  public Transaction newTransaction(
+      TransactionOptions transactionOptions, DatastoreExecutionOptions executionOptions) {
+    return new TransactionImpl(this, transactionOptions, executionOptions);
+  }
+
   /**
    * A Tracing callable that adds OpenTelemetry tracing context. Intended to be used for
    * transactions and wraps {@link ReadWriteTransactionCallable} as the delegate. All transaction
@@ -345,28 +358,17 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return run(toReadOptionsPb(options), query, explainOptions.toPb());
   }
 
-  /** Implements run query with request options. */
-  @Override
-  public <T> QueryResults<T> run(Query<T> query, RequestOptions requestOptions) {
-    return run(Optional.empty(), query, null, requestOptions);
-  }
-
-  /** Implements run query with request options and read options. */
-  @Override
-  public <T> QueryResults<T> run(
-      Query<T> query, RequestOptions requestOptions, ReadOption... options) {
-    return run(toReadOptionsPb(options), query, null, requestOptions);
-  }
-
-  /** Implements run query with explain options, request options and read options. */
+  /** Implements run query with execution options. */
   @Override
   @BetaApi
-  public <T> QueryResults<T> run(
-      Query<T> query,
-      com.google.cloud.datastore.models.ExplainOptions explainOptions,
-      RequestOptions requestOptions,
-      ReadOption... options) {
-    return run(toReadOptionsPb(options), query, explainOptions.toPb(), requestOptions);
+  public <T> QueryResults<T> run(Query<T> query, DatastoreExecutionOptions executionOptions) {
+    com.google.cloud.datastore.models.ExplainOptions explainOptions =
+        executionOptions.getExplainOptions();
+    return run(
+        toReadOptionsPb(executionOptions.getReadOptions().toArray(new ReadOption[0])),
+        query,
+        explainOptions != null ? explainOptions.toPb() : null,
+        executionOptions.getRequestOptions());
   }
 
   @SuppressWarnings("unchecked")
@@ -396,22 +398,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return aggregationQueryExecutor.execute(query, null);
   }
 
-  /** Implements run aggregation query with request options. */
-  @Override
-  public AggregationResults runAggregation(AggregationQuery query, RequestOptions requestOptions) {
-    return aggregationQueryExecutor.execute(query, null, requestOptions);
-  }
-
   @Override
   public AggregationResults runAggregation(AggregationQuery query, ReadOption... options) {
     return aggregationQueryExecutor.execute(query, null, options);
-  }
-
-  /** Implements run aggregation query with request options and read options. */
-  @Override
-  public AggregationResults runAggregation(
-      AggregationQuery query, RequestOptions requestOptions, ReadOption... options) {
-    return aggregationQueryExecutor.execute(query, null, requestOptions, options);
   }
 
   @Override
@@ -419,16 +408,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   public AggregationResults runAggregation(
       AggregationQuery query, com.google.cloud.datastore.models.ExplainOptions explainOptions) {
     return aggregationQueryExecutor.execute(query, explainOptions);
-  }
-
-  /** Implements run aggregation query with explain options and request options. */
-  @Override
-  @BetaApi
-  public AggregationResults runAggregation(
-      AggregationQuery query,
-      com.google.cloud.datastore.models.ExplainOptions explainOptions,
-      RequestOptions requestOptions) {
-    return aggregationQueryExecutor.execute(query, explainOptions, requestOptions);
   }
 
   @Override
@@ -440,15 +419,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return aggregationQueryExecutor.execute(query, explainOptions, options);
   }
 
-  /** Implements run aggregation query with explain options, request options and read options. */
+  /** Implements run aggregation query with execution options. */
   @Override
   @BetaApi
   public AggregationResults runAggregation(
-      AggregationQuery query,
-      com.google.cloud.datastore.models.ExplainOptions explainOptions,
-      RequestOptions requestOptions,
-      ReadOption... options) {
-    return aggregationQueryExecutor.execute(query, explainOptions, requestOptions, options);
+      AggregationQuery query, DatastoreExecutionOptions executionOptions) {
+    return aggregationQueryExecutor.execute(query, executionOptions);
   }
 
   RunQueryResponse runQuery(final RunQueryRequest requestPb) {
@@ -493,6 +469,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.allocateId(this, key);
   }
 
+
+
   private boolean verifyIncompleteKeyType(IncompleteKey... keys) {
     for (IncompleteKey key : keys) {
       if (key instanceof Key) {
@@ -504,6 +482,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> allocateId(IncompleteKey... keys) {
+    return allocateId(null, keys);
+  }
+
+  @Override
+  @BetaApi
+  public List<Key> allocateId(DatastoreExecutionOptions executionOptions, IncompleteKey... keys) {
     Preconditions.checkArgument(
         verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
     if (keys.length == 0) {
@@ -515,6 +499,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
     AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (com.google.datastore.v1.Key keyPb : responsePb.getKeysList()) {
@@ -543,9 +529,22 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.add(this, entity);
   }
 
+  @Override
+  @BetaApi
+  public Entity add(FullEntity<?> entity, DatastoreExecutionOptions executionOptions) {
+    return add(executionOptions, entity).get(0);
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   public List<Entity> add(FullEntity<?>... entities) {
+    return add(null, entities);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  @BetaApi
+  public List<Entity> add(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities) {
     if (entities.length == 0) {
       return Collections.emptyList();
     }
@@ -566,7 +565,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       }
       mutationsPb.add(Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
-    CommitResponse commitResponse = commitMutation(mutationsPb.build());
+    CommitResponse commitResponse = commitMutation(mutationsPb.build(), executionOptions);
     Iterator<MutationResult> mutationResults = commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
@@ -593,6 +592,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
+  @BetaApi
+  public Entity get(Key key, DatastoreExecutionOptions executionOptions) {
+    Iterator<Entity> results = get(Collections.singletonList(key), executionOptions);
+    return results.hasNext() ? results.next() : null;
+  }
+
+  @Override
   public Iterator<Entity> get(Key... keys) {
     return get(Optional.empty(), keys);
   }
@@ -600,6 +606,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   public Iterator<Entity> get(Iterable<Key> keys, ReadOption... options) {
     return get(toReadOptionsPb(options), Iterables.toArray(keys, Key.class));
+  }
+
+  @Override
+  @BetaApi
+  public Iterator<Entity> get(Iterable<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Optional<ReadOptions> readOptionsPb =
+        executionOptions != null
+            ? toReadOptionsPb(executionOptions.getReadOptions().toArray(new ReadOption[0]))
+            : Optional.empty();
+    return get(readOptionsPb, executionOptions, Iterables.toArray(keys, Key.class));
   }
 
   private Optional<ReadOptions> toReadOptionsPb(ReadOption... options) {
@@ -619,7 +635,21 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.fetch(this, Iterables.toArray(keys, Key.class), options);
   }
 
+  @Override
+  @BetaApi
+  public List<Entity> fetch(Iterable<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Iterator<Entity> results = get(keys, executionOptions);
+    return DatastoreHelper.compileEntities(Iterables.toArray(keys, Key.class), results);
+  }
+
   Iterator<Entity> get(Optional<ReadOptions> readOptionsPb, final Key... keys) {
+    return get(readOptionsPb, null, keys);
+  }
+
+  Iterator<Entity> get(
+      Optional<ReadOptions> readOptionsPb,
+      DatastoreExecutionOptions executionOptions,
+      final Key... keys) {
     if (keys.length == 0) {
       return Collections.emptyIterator();
     }
@@ -630,6 +660,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
     return new ResultsIterator(requestPb);
   }
 
@@ -698,12 +730,20 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> reserveIds(Key... keys) {
+    return reserveIds((DatastoreExecutionOptions) null, keys);
+  }
+
+  @Override
+  @BetaApi
+  public List<Key> reserveIds(DatastoreExecutionOptions executionOptions, Key... keys) {
     ReserveIdsRequest.Builder requestPb = ReserveIdsRequest.newBuilder();
     for (Key key : keys) {
       requestPb.addKeys(key.toPb());
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
     ReserveIdsResponse responsePb = reserveIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     if (responsePb.isInitialized()) {
@@ -724,6 +764,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void update(Entity... entities) {
+    update(null, entities);
+  }
+
+  @Override
+  @BetaApi
+  public void update(DatastoreExecutionOptions executionOptions, Entity... entities) {
     if (entities.length > 0) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
@@ -733,7 +779,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       for (Entity entity : dedupEntities.values()) {
         mutationsPb.add(Mutation.newBuilder().setUpdate(entity.toPb()).build());
       }
-      commitMutation(mutationsPb.build());
+      commitMutation(mutationsPb.build(), executionOptions);
     }
   }
 
@@ -742,9 +788,15 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.put(this, entity);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   public List<Entity> put(FullEntity<?>... entities) {
+    return put((DatastoreExecutionOptions) null, entities);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  @BetaApi
+  public List<Entity> put(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities) {
     if (entities.length == 0) {
       return Collections.emptyList();
     }
@@ -762,7 +814,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     for (Entity entity : dedupEntities.values()) {
       mutationsPb.add(Mutation.newBuilder().setUpsert(entity.toPb()).build());
     }
-    CommitResponse commitResponse = commitMutation(mutationsPb.build());
+    CommitResponse commitResponse = commitMutation(mutationsPb.build(), executionOptions);
     Iterator<MutationResult> mutationResults = commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
@@ -779,13 +831,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void delete(Key... keys) {
+    delete((DatastoreExecutionOptions) null, keys);
+  }
+
+  @Override
+  @BetaApi
+  public void delete(DatastoreExecutionOptions executionOptions, Key... keys) {
     if (keys.length > 0) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Set<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
       for (Key key : dedupKeys) {
         mutationsPb.add(Mutation.newBuilder().setDelete(key.toPb()).build());
       }
-      commitMutation(mutationsPb.build());
+      commitMutation(mutationsPb.build(), executionOptions);
     }
   }
 
@@ -795,12 +853,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   private CommitResponse commitMutation(ImmutableList<Mutation> mutationsPb) {
+    return commitMutation(mutationsPb, null);
+  }
+
+  private CommitResponse commitMutation(
+      ImmutableList<Mutation> mutationsPb, DatastoreExecutionOptions executionOptions) {
     CommitRequest.Builder requestPb =
         CommitRequest.newBuilder()
             .setMode(CommitRequest.Mode.NON_TRANSACTIONAL)
             .setProjectId(getOptions().getProjectId())
             .setDatabaseId(getOptions().getDatabaseId())
             .addAllMutations(mutationsPb);
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
     return commit(requestPb.build());
   }
 
@@ -846,10 +911,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   void rollbackTransaction(ByteString transaction) {
+    rollbackTransaction(transaction, null);
+  }
+
+  void rollbackTransaction(ByteString transaction, DatastoreExecutionOptions executionOptions) {
     RollbackRequest.Builder requestPb = RollbackRequest.newBuilder();
     requestPb.setTransaction(transaction);
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
     rollback(requestPb.build());
   }
 

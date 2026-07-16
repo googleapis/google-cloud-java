@@ -64,10 +64,17 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   TransactionImpl(DatastoreImpl datastore) {
-    this(datastore, null);
+    this(datastore, null, null);
   }
 
   TransactionImpl(DatastoreImpl datastore, TransactionOptions options) {
+    this(datastore, options, null);
+  }
+
+  TransactionImpl(
+      DatastoreImpl datastore,
+      TransactionOptions options,
+      DatastoreExecutionOptions executionOptions) {
     super("transaction");
     this.datastore = datastore;
     com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
@@ -79,6 +86,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     if (options != null) {
       requestPb.setTransactionOptions(options);
     }
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(datastore.getOptions(), executionOptions));
 
     transactionId = datastore.requestTransactionId(requestPb);
     this.readOptionProtoPreparer = new ReadOptionProtoPreparer();
@@ -133,7 +142,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public Transaction.Response commit() {
+  @BetaApi
+  public Transaction.Response commit(DatastoreExecutionOptions executionOptions) {
     validateActive();
     List<com.google.datastore.v1.Mutation> mutationsPb = toMutationPbList();
     com.google.datastore.v1.CommitRequest.Builder requestPb =
@@ -143,20 +153,33 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     requestPb.addAllMutations(mutationsPb);
     requestPb.setProjectId(datastore.getOptions().getProjectId());
     requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        RequestOptionsHelper.createRequestOptions(datastore.getOptions(), executionOptions));
     com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
   @Override
-  public void rollback() {
+  public Transaction.Response commit() {
+    return commit(null);
+  }
+
+  @Override
+  @BetaApi
+  public void rollback(DatastoreExecutionOptions executionOptions) {
     if (rolledback) {
       return;
     }
     validateActive();
-    datastore.rollbackTransaction(transactionId);
+    datastore.rollbackTransaction(transactionId, executionOptions);
     deactivate();
     rolledback = true;
+  }
+
+  @Override
+  public void rollback() {
+    rollback(null);
   }
 
   @Override

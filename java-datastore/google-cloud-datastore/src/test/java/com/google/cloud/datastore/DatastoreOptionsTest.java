@@ -36,6 +36,8 @@ import com.google.datastore.v1.client.DatastoreFactory;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Arrays;
+import java.util.List;
 
 public class DatastoreOptionsTest {
 
@@ -216,6 +218,8 @@ public class DatastoreOptionsTest {
                 .build()
                 .getRequestTags())
         .containsExactly("tag3");
+    assertThat(options.setRequestTags(Arrays.asList("tag4")).build().getRequestTags())
+        .containsExactly("tag4");
   }
 
   @Test

@@ -40,6 +40,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -262,9 +263,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
      * @param requestTags the list of request tags to set
      * @return the builder object
      */
-    public Builder setRequestTags(ImmutableList<String> requestTags) {
+    public Builder setRequestTags(List<String> requestTags) {
       Preconditions.checkNotNull(requestTags, "Request tags cannot be null");
-      this.requestTags = requestTags;
+      this.requestTags = ImmutableList.copyOf(requestTags);
       return this;
     }
 

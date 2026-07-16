@@ -47,6 +47,24 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   Transaction newTransaction();
 
   /**
+   * Returns a new Datastore transaction with specified {@link DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  Transaction newTransaction(DatastoreExecutionOptions executionOptions);
+
+  /**
+   * Returns a new Datastore transaction with specified {@link TransactionOptions} and {@link
+   * DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  Transaction newTransaction(
+      TransactionOptions options, DatastoreExecutionOptions executionOptions);
+
+  /**
    * A callback for running with a transactional {@link
    * com.google.cloud.datastore.DatastoreReaderWriter}. The associated transaction will be committed
    * after a successful return from the {@code run} method. Any propagated exception will cause the
@@ -181,6 +199,17 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    */
   List<Key> allocateId(IncompleteKey... keys);
 
+
+
+  /**
+   * Returns a list of keys using the allocated ids with specified {@link
+   * DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  List<Key> allocateId(DatastoreExecutionOptions executionOptions, IncompleteKey... keys);
+
   /**
    * Reserve one or more keys, preventing them from being automatically allocated by Datastore.
    *
@@ -197,6 +226,14 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   List<Key> reserveIds(Key... keys);
+
+  /**
+   * Reserve one or more keys with specified {@link DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  List<Key> reserveIds(DatastoreExecutionOptions executionOptions, Key... keys);
 
   /**
    * {@inheritDoc}
@@ -227,6 +264,16 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    */
   @Override
   Entity add(FullEntity<?> entity);
+
+  /**
+   * Datastore add operation: inserts the provided entity with specified {@link
+   * DatastoreExecutionOptions}. This method will automatically allocate an id if necessary.
+   *
+   * @throws DatastoreException upon failure
+   * @throws IllegalArgumentException if the given entity is missing a key
+   */
+  @BetaApi
+  Entity add(FullEntity<?> entity, DatastoreExecutionOptions executionOptions);
 
   /**
    * {@inheritDoc}
@@ -267,6 +314,17 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   List<Entity> add(FullEntity<?>... entities);
 
   /**
+   * Datastore add operation: inserts the provided entities with specified {@link
+   * DatastoreExecutionOptions}. This method will automatically allocate id for any entity with an
+   * incomplete key.
+   *
+   * @throws DatastoreException upon failure
+   * @throws IllegalArgumentException if any of the given entities is missing a key
+   */
+  @BetaApi
+  List<Entity> add(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities);
+
+  /**
    * {@inheritDoc}
    *
    * <p>Example of updating multiple entities.
@@ -293,6 +351,15 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   void update(Entity... entities);
 
   /**
+   * A Datastore update operation with specified {@link DatastoreExecutionOptions}. The operation
+   * will fail if an entity with the same key does not already exist.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  void update(DatastoreExecutionOptions executionOptions, Entity... entities);
+
+  /**
    * {@inheritDoc}
    *
    * <p>Example of putting a single entity.
@@ -311,31 +378,18 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   @Override
   Entity put(FullEntity<?> entity);
 
+  @Override
+  List<Entity> put(FullEntity<?>... entities);
+
+
+
   /**
-   * {@inheritDoc}
-   *
-   * <p>Example of putting multiple entities.
-   *
-   * <pre>{@code
-   * String keyName1 = "my_key_name1";
-   * String keyName2 = "my_key_name2";
-   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
-   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
-   * entityBuilder1.set("propertyName", "value1");
-   * Entity entity1 = entityBuilder1.build();
-   *
-   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
-   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
-   * entityBuilder2.set("propertyName", "value2");
-   * Entity entity2 = entityBuilder2.build();
-   *
-   * datastore.put(entity1, entity2);
-   * }</pre>
+   * {@inheritDoc} with specified {@link DatastoreExecutionOptions}.
    *
    * @throws DatastoreException upon failure
    */
-  @Override
-  List<Entity> put(FullEntity<?>... entities);
+  @BetaApi
+  List<Entity> put(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities);
 
   /**
    * {@inheritDoc}
@@ -354,6 +408,14 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    */
   @Override
   void delete(Key... keys);
+
+  /**
+   * A datastore delete operation with specified {@link DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  void delete(DatastoreExecutionOptions executionOptions, Key... keys);
 
   /**
    * Returns a new KeyFactory for this service
@@ -384,6 +446,15 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   Entity get(Key key, ReadOption... options);
 
   /**
+   * Returns an {@link Entity} for the given {@link Key} with specified {@link
+   * DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  Entity get(Key key, DatastoreExecutionOptions executionOptions);
+
+  /**
    * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore. The order of
    * the result is unspecified. Results are loaded lazily, so it is possible to get a {@code
    * DatastoreException} from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
@@ -412,6 +483,15 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   Iterator<Entity> get(Iterable<Key> keys, ReadOption... options);
 
   /**
+   * Returns an {@link Entity} for each given {@link Key} with specified {@link
+   * DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException upon failure
+   */
+  @BetaApi
+  Iterator<Entity> get(Iterable<Key> keys, DatastoreExecutionOptions executionOptions);
+
+  /**
    * Returns a list with a value for each given key (ordered by input). {@code null} values are
    * returned for nonexistent keys. When possible prefer using {@link #get(Key...)} to avoid eagerly
    * loading the results. {@link ReadOption}s can be specified if desired.
@@ -431,6 +511,13 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * }</pre>
    */
   List<Entity> fetch(Iterable<Key> keys, ReadOption... options);
+
+  /**
+   * Returns a list with a value for each given key with specified {@link
+   * DatastoreExecutionOptions}.
+   */
+  @BetaApi
+  List<Entity> fetch(Iterable<Key> keys, DatastoreExecutionOptions executionOptions);
 
   /**
    * Submits a {@link Query} and returns its result. {@link ReadOption}s can be specified if
@@ -495,28 +582,10 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
-   * Submits a {@link Query} with specified {@link com.google.datastore.v1.RequestOptions} and
-   * returns its result.
-   */
-  <T> QueryResults<T> run(Query<T> query, RequestOptions requestOptions);
-
-  /**
-   * Submits a {@link Query} with specified {@link com.google.datastore.v1.RequestOptions} and
-   * returns its result. {@link ReadOption}s can be specified if desired.
-   */
-  <T> QueryResults<T> run(Query<T> query, RequestOptions requestOptions, ReadOption... options);
-
-  /**
-   * Submits a {@link Query} with specified {@link com.google.cloud.datastore.models.ExplainOptions}
-   * and {@link com.google.datastore.v1.RequestOptions} and returns its result. {@link ReadOption}s
-   * can be specified if desired.
+   * Submits a {@link Query} with specified {@link DatastoreExecutionOptions} and returns its result.
    */
   @BetaApi
-  <T> QueryResults<T> run(
-      Query<T> query,
-      ExplainOptions explainOptions,
-      RequestOptions requestOptions,
-      ReadOption... options);
+  <T> QueryResults<T> run(Query<T> query, DatastoreExecutionOptions executionOptions);
 
   /**
    * Submits a {@link AggregationQuery} and returns {@link AggregationResults}. {@link ReadOption}s
@@ -564,20 +633,6 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   AggregationResults runAggregation(AggregationQuery query, ReadOption... options);
 
   /**
-   * Submits an {@link AggregationQuery} with specified {@link
-   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}.
-   */
-  AggregationResults runAggregation(AggregationQuery query, RequestOptions requestOptions);
-
-  /**
-   * Submits an {@link AggregationQuery} with specified {@link
-   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}. {@link
-   * ReadOption}s can be specified if desired.
-   */
-  AggregationResults runAggregation(
-      AggregationQuery query, RequestOptions requestOptions, ReadOption... options);
-
-  /**
    * Submits a {@link AggregationQuery} with specified {@link
    * com.google.cloud.datastore.models.ExplainOptions} and returns {@link AggregationResults}.
    * {@link ReadOption}s can be specified if desired.
@@ -605,26 +660,12 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
       AggregationQuery query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
-   * Submits an {@link AggregationQuery} with specified {@link
-   * com.google.cloud.datastore.models.ExplainOptions} and {@link
-   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}.
+   * Submits an {@link AggregationQuery} with specified {@link DatastoreExecutionOptions} and returns
+   * {@link AggregationResults}.
    */
   @BetaApi
   AggregationResults runAggregation(
-      AggregationQuery query, ExplainOptions explainOptions, RequestOptions requestOptions);
-
-  /**
-   * Submits an {@link AggregationQuery} with specified {@link
-   * com.google.cloud.datastore.models.ExplainOptions} and {@link
-   * com.google.datastore.v1.RequestOptions} and returns {@link AggregationResults}. {@link
-   * ReadOption}s can be specified if desired.
-   */
-  @BetaApi
-  AggregationResults runAggregation(
-      AggregationQuery query,
-      ExplainOptions explainOptions,
-      RequestOptions requestOptions,
-      ReadOption... options);
+      AggregationQuery query, DatastoreExecutionOptions executionOptions);
 
   /**
    * Closes the gRPC channels associated with this instance and frees up their resources. This
@@ -636,16 +677,4 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
 
   /** Returns true if this background resource has been shut down. */
   boolean isClosed();
-
-  /**
-   * Returns a new Datastore client with the specified request tags added.
-   *
-   * @param requestTags the request tags to append to existing ones
-   */
-  default Datastore withRequestTags(List<String> requestTags) {
-    ImmutableList.Builder<String> builder = ImmutableList.builder();
-    builder.addAll(getOptions().getRequestTags());
-    builder.addAll(requestTags);
-    return getOptions().toBuilder().setRequestTags(builder.build()).build().getService();
-  }
 }

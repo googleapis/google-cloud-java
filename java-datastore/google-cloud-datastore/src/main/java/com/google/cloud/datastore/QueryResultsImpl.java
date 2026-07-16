@@ -130,7 +130,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     if (explainOptions != null) {
       requestPb.setExplainOptions(explainOptions);
     }
-    if (requestOptions != null || !datastore.getOptions().getRequestTags().isEmpty()) {
+    if (requestOptions != null) {
       requestPb.setRequestOptions(
           RequestOptionsHelper.createRequestOptions(datastore.getOptions(), requestOptions));
     }
