@@ -27,8 +27,19 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.sql.Array;
+import java.sql.Date;
+import java.sql.ParameterMetaData;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -148,7 +159,7 @@ public class BigQueryPreparedStatementSettersTest {
     preparedStatement.setString(1, "test");
     preparedStatement.setInt(2, 42);
 
-    java.sql.ParameterMetaData metaData = preparedStatement.getParameterMetaData();
+    ParameterMetaData metaData = preparedStatement.getParameterMetaData();
     assertEquals(5, metaData.getParameterCount());
     assertEquals(Types.NVARCHAR, metaData.getParameterType(1));
     assertEquals("STRING", metaData.getParameterTypeName(1));
@@ -158,17 +169,17 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals("INT64", metaData.getParameterTypeName(2));
     assertEquals(Long.class.getName(), metaData.getParameterClassName(2));
 
-    assertEquals(java.sql.ParameterMetaData.parameterNullable, metaData.isNullable(1));
-    assertEquals(java.sql.ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
+    assertEquals(ParameterMetaData.parameterNullable, metaData.isNullable(1));
+    assertEquals(ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
 
-    assertThrows(java.sql.SQLException.class, () -> metaData.getParameterType(0));
-    assertThrows(java.sql.SQLException.class, () -> metaData.getParameterType(6));
+    assertThrows(SQLException.class, () -> metaData.getParameterType(0));
+    assertThrows(SQLException.class, () -> metaData.getParameterType(6));
   }
 
   @Test
   public void testSetDateWithCalendar() throws Exception {
-    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
-    java.sql.Date date = new java.sql.Date(1700000000000L); // 2023-11-14
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    Date date = new Date(1700000000000L); // 2023-11-14
 
     preparedStatement.setDate(1, date, cal);
     assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
@@ -176,8 +187,8 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetTimeWithCalendar() throws Exception {
-    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
-    java.sql.Time time = new java.sql.Time(43200000L); // 12:00:00
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    Time time = new Time(43200000L); // 12:00:00
 
     preparedStatement.setTime(1, time, cal);
     assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
@@ -185,8 +196,8 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetTimestampWithCalendar() throws Exception {
-    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
-    java.sql.Timestamp ts = new java.sql.Timestamp(1700000000000L);
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    Timestamp ts = new Timestamp(1700000000000L);
 
     preparedStatement.setTimestamp(1, ts, cal);
     assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
@@ -210,5 +221,24 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
     assertEquals("col2", metaData.getColumnName(2));
     assertEquals(Types.BIGINT, metaData.getColumnType(2));
+  }
+
+  @Test
+  public void testSetObjectWithJavaTime() throws Exception {
+    LocalDate localDate = LocalDate.of(2025, 12, 3);
+    preparedStatement.setObject(1, localDate);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+
+    LocalTime localTime = LocalTime.of(12, 30, 0);
+    preparedStatement.setObject(2, localTime);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(2));
+
+    LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
+    preparedStatement.setObject(3, localDateTime);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+
+    Instant instant = Instant.now();
+    preparedStatement.setObject(4, instant);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(4));
   }
 }

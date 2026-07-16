@@ -57,6 +57,12 @@ import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -230,6 +236,30 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, targetSqlType);
       return;
     }
+    if (x instanceof LocalDate) {
+      setDate(parameterIndex, Date.valueOf((LocalDate) x));
+      return;
+    }
+    if (x instanceof LocalTime) {
+      setTime(parameterIndex, Time.valueOf((LocalTime) x));
+      return;
+    }
+    if (x instanceof LocalDateTime) {
+      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
+      return;
+    }
+    if (x instanceof OffsetDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
+      return;
+    }
+    if (x instanceof Instant) {
+      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
+      return;
+    }
+    if (x instanceof ZonedDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
+      return;
+    }
     Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
     this.parameterHandler.setParameter(parameterIndex, x, javaType);
   }
@@ -239,6 +269,30 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     checkClosed();
     if (x == null) {
       setNull(parameterIndex, Types.NULL);
+      return;
+    }
+    if (x instanceof LocalDate) {
+      setDate(parameterIndex, Date.valueOf((LocalDate) x));
+      return;
+    }
+    if (x instanceof LocalTime) {
+      setTime(parameterIndex, Time.valueOf((LocalTime) x));
+      return;
+    }
+    if (x instanceof LocalDateTime) {
+      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
+      return;
+    }
+    if (x instanceof OffsetDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
+      return;
+    }
+    if (x instanceof Instant) {
+      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
+      return;
+    }
+    if (x instanceof ZonedDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
       return;
     }
     this.parameterHandler.setParameter(parameterIndex, x, x.getClass());
