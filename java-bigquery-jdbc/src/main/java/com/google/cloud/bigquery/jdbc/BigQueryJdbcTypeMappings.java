@@ -80,8 +80,8 @@ class BigQueryJdbcTypeMappings {
       ImmutableMap.ofEntries(
           entry(Types.BIGINT, Long.class),
           entry(Types.INTEGER, Integer.class),
-          entry(Types.SMALLINT, Long.class),
-          entry(Types.TINYINT, Long.class),
+          entry(Types.SMALLINT, Short.class),
+          entry(Types.TINYINT, Byte.class),
           entry(Types.BOOLEAN, Boolean.class),
           entry(Types.DOUBLE, Double.class),
           entry(Types.FLOAT, Float.class),
@@ -126,7 +126,7 @@ class BigQueryJdbcTypeMappings {
     } else if (JsonObject.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.JSON;
     } else if (Byte.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.BYTES;
+      return StandardSQLTypeName.INT64;
     } else if (Array.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.ARRAY;
     } else if (Struct.class.isAssignableFrom(type)) {

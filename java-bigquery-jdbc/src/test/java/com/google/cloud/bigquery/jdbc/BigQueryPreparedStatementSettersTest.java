@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
@@ -50,10 +51,20 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(Integer.class, preparedStatement.parameterHandler.getType(2));
     assertEquals(StandardSQLTypeName.INT64, preparedStatement.parameterHandler.getSqlType(2));
 
-    preparedStatement.setNull(3, Types.NULL);
+    preparedStatement.setNull(3, Types.SMALLINT);
     assertNull(preparedStatement.parameterHandler.getParameter(3));
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
-    assertEquals(StandardSQLTypeName.STRING, preparedStatement.parameterHandler.getSqlType(3));
+    assertEquals(Short.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(StandardSQLTypeName.INT64, preparedStatement.parameterHandler.getSqlType(3));
+
+    preparedStatement.setNull(4, Types.TINYINT);
+    assertNull(preparedStatement.parameterHandler.getParameter(4));
+    assertEquals(Byte.class, preparedStatement.parameterHandler.getType(4));
+    assertEquals(StandardSQLTypeName.INT64, preparedStatement.parameterHandler.getSqlType(4));
+
+    preparedStatement.setNull(5, Types.NULL);
+    assertNull(preparedStatement.parameterHandler.getParameter(5));
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(5));
+    assertEquals(StandardSQLTypeName.STRING, preparedStatement.parameterHandler.getSqlType(5));
   }
 
   @Test
@@ -65,10 +76,15 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
+  public void testSetNullWithUnsupportedSqlTypeThrowsException() {
+    assertThrows(java.sql.SQLException.class, () -> preparedStatement.setNull(1, 99999));
+  }
+
+  @Test
   public void testSetShort() throws Exception {
     preparedStatement.setShort(1, (short) 42);
-    assertEquals(42L, preparedStatement.parameterHandler.getParameter(1));
-    assertEquals(Long.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals((short) 42, preparedStatement.parameterHandler.getParameter(1));
+    assertEquals(Short.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(StandardSQLTypeName.INT64, preparedStatement.parameterHandler.getSqlType(1));
   }
 
