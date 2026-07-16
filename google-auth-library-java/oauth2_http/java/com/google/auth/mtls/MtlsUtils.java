@@ -173,26 +173,45 @@ public class MtlsUtils {
 
     // Check if client certificate usage is allowed
     String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    MtlsEndpointUsagePolicy policy = getMtlsEndpointUsagePolicy(envProvider);
     if ("false".equalsIgnoreCase(useClientCertificate)) {
-      if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
-        throw new CertificateSourceUnavailableException(
-            "mTLS is configured to ALWAYS, but client certificate usage was explicitly disabled via GOOGLE_API_USE_CLIENT_CERTIFICATE=false.");
-      }
       return false;
     }
 
+    MtlsEndpointUsagePolicy policy = getMtlsEndpointUsagePolicy(envProvider);
     if (policy == MtlsEndpointUsagePolicy.NEVER) {
       return false;
-    }
-
-    if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
-      return true;
     }
 
     File certConfigFile =
         resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
     return certConfigFile != null;
+  }
+
+  /**
+   * Returns whether the mutual TLS (mTLS) endpoint should be used.
+   *
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @param propProvider the property provider to use for resolving system properties
+   * @param certConfigPathOverride optional override path for the configuration file
+   * @return true if the mTLS endpoint should be used, false otherwise
+   */
+  public static boolean shouldMtlsEndpointBeUsed(
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      String certConfigPathOverride) {
+    MtlsEndpointUsagePolicy policy = getMtlsEndpointUsagePolicy(envProvider);
+    if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
+      return true;
+    }
+    if (policy == MtlsEndpointUsagePolicy.NEVER) {
+      return false;
+    }
+    // policy is AUTO: use mTLS endpoint if client certificate can be enabled
+    try {
+      return canBeEnabled(envProvider, propProvider, certConfigPathOverride);
+    } catch (IOException e) {
+      return false;
+    }
   }
 
   /**
@@ -313,7 +332,6 @@ public class MtlsUtils {
       return baseTransportFactory;
     }
 
-    MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
     try {
       // This is the default HttpTransportFactory assigned by credentials.
       // Automatically discover and load client certificates to construct an mTLS factory.
@@ -322,11 +340,10 @@ public class MtlsUtils {
       KeyStore mtlsKeyStore = x509Provider.getKeyStore();
       return new MtlsHttpTransportFactory(mtlsKeyStore);
     } catch (Exception e) {
-      if (mtlsPolicy == MtlsEndpointUsagePolicy.ALWAYS) {
-        throw new IOException(
-            "mTLS is configured to ALWAYS, but initialization failed: " + e.getMessage(), e);
-      }
-      // Graceful fallback to standard transport if mTLS initialization fails under AUTO policy
+      LOGGER.warning(
+          "mTLS transport factory initialization failed, falling back to non-mTLS transport: "
+              + e.getMessage());
+      // Graceful fallback to standard transport if mTLS initialization fails
       return baseTransportFactory;
     }
   }

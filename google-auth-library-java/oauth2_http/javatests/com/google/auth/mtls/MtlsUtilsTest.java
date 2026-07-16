@@ -353,7 +353,7 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void canBeEnabled_alwaysPolicy_clientCertDisabled_throwsException() {
+  void canBeEnabled_alwaysPolicy_clientCertDisabled_returnsFalse() throws IOException {
     EnvironmentProvider envProvider =
         name -> {
           if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
@@ -366,9 +366,8 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertThrows(
-        CertificateSourceUnavailableException.class,
-        () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
   }
 
   @Test
@@ -431,12 +430,13 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void canBeEnabled_alwaysPolicy_returnsTrue() throws IOException {
+  void canBeEnabled_alwaysPolicy_returnsFalse() throws IOException {
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
   }
 
   @Test
@@ -535,6 +535,43 @@ class MtlsUtilsTest {
             OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
 
     assertTrue(result instanceof MtlsHttpTransportFactory);
+  }
+
+  @Test
+  void
+      prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAlways_clientCertDisabled_returnsAsIs()
+          throws IOException {
+    EnvironmentProvider envProvider =
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+            return "false";
+          }
+          if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+            return "always";
+          }
+          return null;
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAlways_missingConfig_returnsAsIs()
+      throws IOException {
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, result);
   }
 
   @Test

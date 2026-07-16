@@ -214,8 +214,7 @@ final class RegionalAccessBoundaryManager {
               HttpTransportFactory upgradedTransportFactory =
                   MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
                       transportFactory, envProvider, propProvider, null);
-              if (MtlsUtils.canBeEnabled(envProvider, propProvider, null)
-                  && upgradedTransportFactory != OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
+              if (MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null)) {
                 url = url.replace(IAM_ENDPOINT, MTLS_IAM_ENDPOINT);
               }
               RegionalAccessBoundary newRAB =
