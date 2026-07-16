@@ -44,4 +44,7 @@
  * service that returns long-running operations should implement the `Operations` interface so
  * developers can have a consistent client experience.
  */
+@NullMarked
 package com.google.longrunning;
+
+import org.jspecify.annotations.NullMarked;

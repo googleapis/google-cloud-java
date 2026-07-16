@@ -30,11 +30,10 @@
 
 package com.google.api.gax.nativeimage;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForReflection;
 
 import org.graalvm.nativeimage.hosted.Feature;
+import org.jspecify.annotations.NullMarked;
 
 /** Configures Native Image settings for the Google JSON Client. */
 @NullMarked

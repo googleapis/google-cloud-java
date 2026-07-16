@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ResponseObserver} that wraps a future. The future will resolved upon receiving the first

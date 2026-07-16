@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -41,6 +39,8 @@ import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.Map;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link OpencensusTracer}.
@@ -120,7 +120,7 @@ public final class OpencensusTracerFactory extends BaseApiTracerFactory {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (this == o) {
       return true;
     }

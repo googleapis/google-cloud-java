@@ -29,12 +29,11 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import java.util.concurrent.Callable;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link RetryingExecutor} that accepts a per-operation context.

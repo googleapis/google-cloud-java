@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchMerger;
 import com.google.api.gax.batching.ElementCounter;
 import com.google.api.gax.batching.RequestBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A Batch contains a collection of requests that are to be batched into a single API call.

@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Wraps a {@link ServerStreamingCallable} in a {@link UnaryCallable} that returns the first

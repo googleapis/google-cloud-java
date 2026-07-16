@@ -32,8 +32,10 @@ package com.google.api.gax.httpjson;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.StatusCode;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
 
 /** A failure code specific to an HTTP call. */
+@NullMarked
 @InternalExtensionOnly
 public class HttpJsonStatusCode implements StatusCode {
   private final int httpStatus;

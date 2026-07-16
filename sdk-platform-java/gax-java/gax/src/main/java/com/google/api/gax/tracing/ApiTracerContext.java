@@ -30,8 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
@@ -41,6 +39,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A context object that contains information used to infer attributes that are common for all

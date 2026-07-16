@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFuture;
@@ -68,6 +66,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Queues up the elements until {@link #flush()} is called; once batching is over, returned future

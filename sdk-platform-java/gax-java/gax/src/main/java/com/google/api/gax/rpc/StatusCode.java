@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalExtensionOnly;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Transport-specific status code.

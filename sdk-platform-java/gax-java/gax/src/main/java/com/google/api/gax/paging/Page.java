@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.paging;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A Page object wraps an API list method response.

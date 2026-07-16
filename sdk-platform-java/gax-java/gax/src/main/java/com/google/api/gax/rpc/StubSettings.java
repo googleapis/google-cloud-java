@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -55,6 +53,7 @@ import java.io.IOException;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A base settings class to configure a client stub class.
@@ -138,6 +137,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   /**
    * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
    */
+  @Nullable
   @Deprecated
   public final ExecutorProvider getExecutorProvider() {
     return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
@@ -293,20 +293,20 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     private CredentialsProvider credentialsProvider;
     private HeaderProvider headerProvider;
     private HeaderProvider internalHeaderProvider;
-    private TransportChannelProvider transportChannelProvider;
+    @Nullable private TransportChannelProvider transportChannelProvider;
     private ApiClock clock;
-    private String clientSettingsEndpoint;
-    private String transportChannelProviderEndpoint;
-    private String mtlsEndpoint;
-    private String quotaProjectId;
+    @Nullable private String clientSettingsEndpoint;
+    @Nullable private String transportChannelProviderEndpoint;
+    @Nullable private String mtlsEndpoint;
+    @Nullable private String quotaProjectId;
     @Nullable private String gdchApiAudience;
     @Nullable private WatchdogProvider streamWatchdogProvider;
     @Nonnull private java.time.Duration streamWatchdogCheckInterval;
     @Nonnull private ApiTracerFactory tracerFactory;
     private boolean deprecatedExecutorProviderSet;
-    private String universeDomain;
+    @Nullable private String universeDomain;
     private final EndpointContext endpointContext;
-    private String apiKey;
+    @Nullable private String apiKey;
 
     /**
      * Indicate when creating transport whether it is allowed to use mTLS endpoint instead of the
@@ -348,6 +348,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     }
 
     /** Get Quota Project ID from Client Context * */
+    @Nullable
     private static String getQuotaProjectIdFromClientContext(ClientContext clientContext) {
       if (clientContext.getQuotaProjectId() != null) {
         return clientContext.getQuotaProjectId();
@@ -364,7 +365,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
       return null;
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       if (clientContext == null) {
         this.backgroundExecutorProvider = InstantiatingExecutorProvider.newBuilder().build();
         this.transportChannelProvider = null;
@@ -624,6 +625,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     /**
      * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
      */
+    @Nullable
     @Deprecated
     public ExecutorProvider getExecutorProvider() {
       return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;

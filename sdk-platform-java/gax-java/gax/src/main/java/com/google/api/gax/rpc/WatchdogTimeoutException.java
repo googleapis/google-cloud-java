@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The marker exception thrown when a timeout is exceeded.
@@ -56,7 +57,7 @@ public class WatchdogTimeoutException extends ApiException {
         }
 
         @Override
-        public Object getTransportCode() {
+        public @Nullable Object getTransportCode() {
           return null;
         }
       };

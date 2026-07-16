@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A ClientStreamingCallable is an immutable object which is capable of making RPC calls to client
@@ -52,7 +53,7 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
    * @return {@link ApiStreamObserver} which is used for making streaming requests.
    */
   public abstract ApiStreamObserver<RequestT> clientStreamingCall(
-      ApiStreamObserver<ResponseT> responseObserver, ApiCallContext context);
+      ApiStreamObserver<ResponseT> responseObserver, @Nullable ApiCallContext context);
 
   /**
    * Conduct a client streaming call

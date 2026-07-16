@@ -30,12 +30,11 @@
 
 package com.google.api.gax.rpc.mtls;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Data class representing context_aware_metadata.json file.

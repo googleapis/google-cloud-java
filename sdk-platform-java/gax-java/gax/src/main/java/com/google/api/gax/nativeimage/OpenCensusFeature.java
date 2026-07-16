@@ -30,11 +30,10 @@
 
 package com.google.api.gax.nativeimage;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerForReflectiveInstantiation;
 
 import org.graalvm.nativeimage.hosted.Feature;
+import org.jspecify.annotations.NullMarked;
 
 /** Registers reflection usage in OpenCensus libraries. */
 @NullMarked

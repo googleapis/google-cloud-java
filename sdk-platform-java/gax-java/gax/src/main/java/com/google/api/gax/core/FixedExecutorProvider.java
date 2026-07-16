@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.concurrent.ScheduledExecutorService;
+import org.jspecify.annotations.NullMarked;
 
 /** FixedExecutorProvider is an ExecutorProvider which always returns the same executor. */
 @NullMarked

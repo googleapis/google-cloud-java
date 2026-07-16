@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.collect.Queues;
 import java.util.concurrent.BlockingQueue;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A back pressure aware bridge from a {@link ResponseObserver} to a {@link BlockingQueue}. The

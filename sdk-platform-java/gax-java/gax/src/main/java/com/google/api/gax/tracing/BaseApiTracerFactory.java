@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Base factory that will build {@link ApiTracer}s that do nothing.

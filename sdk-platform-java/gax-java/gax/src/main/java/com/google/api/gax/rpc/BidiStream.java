@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A wrapper around a bidirectional stream.

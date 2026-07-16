@@ -41,8 +41,10 @@ import com.google.longrunning.OperationsClient.ListOperationsPagedResponse;
 import com.google.longrunning.stub.OperationsStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /** Settings class to configure an instance of {@link OperationsClient}. */
+@NullMarked
 public class OperationsSettings extends ClientSettings<OperationsSettings> {
   /** Returns the object with the settings used for calls to getOperation. */
   public UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings() {

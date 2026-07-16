@@ -29,11 +29,11 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A UnaryCallable that will keep issuing calls to an inner callable until it succeeds or times out.
@@ -59,7 +59,7 @@ class RetryingCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, Resp
       ApiCallContext callContextPrototype,
       UnaryCallable<RequestT, ResponseT> callable,
       RetryingExecutorWithContext<ResponseT> executor,
-      RequestMutator<RequestT> requestMutator) {
+      @Nullable RequestMutator<RequestT> requestMutator) {
     this.callContextPrototype = Preconditions.checkNotNull(callContextPrototype);
     this.callable = Preconditions.checkNotNull(callable);
     this.executor = Preconditions.checkNotNull(executor);

@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A future which cannot be cancelled from the external package.

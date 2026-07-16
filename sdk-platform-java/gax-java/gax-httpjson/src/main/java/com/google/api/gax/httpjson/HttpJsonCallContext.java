@@ -57,6 +57,7 @@ import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * HttpJsonCallContext encapsulates context data used to make an http-json call.
@@ -66,6 +67,7 @@ import javax.annotation.Nullable;
  * copies of the object, but with one field changed. The immutability and thread safety of the
  * arguments solely depends on the arguments themselves.
  */
+@NullMarked
 public final class HttpJsonCallContext implements ApiCallContext {
   private static final HttpJsonStatusCode UNAUTHENTICATED_STATUS_CODE =
       HttpJsonStatusCode.of(StatusCode.Code.UNAUTHENTICATED);

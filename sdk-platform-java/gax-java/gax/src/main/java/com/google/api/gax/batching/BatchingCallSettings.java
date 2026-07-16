@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
@@ -39,6 +37,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This is an extension of {@link UnaryCallSettings} class to configure a {@link UnaryCallable} for

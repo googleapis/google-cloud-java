@@ -29,13 +29,12 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link MetricsTracer}.

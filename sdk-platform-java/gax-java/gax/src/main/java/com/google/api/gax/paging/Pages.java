@@ -29,9 +29,9 @@
  */
 package com.google.api.gax.paging;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.Collections;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Utility class for {@link Page}s. */
 @NullMarked
@@ -52,7 +52,7 @@ public class Pages {
       }
 
       @Override
-      public Page<ResourceT> getNextPage() {
+      public @Nullable Page<ResourceT> getNextPage() {
         return null;
       }
 

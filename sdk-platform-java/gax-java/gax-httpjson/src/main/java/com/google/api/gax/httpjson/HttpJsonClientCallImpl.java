@@ -48,6 +48,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class serves as main implementation of {@link HttpJsonClientCall} for REST transport and is
@@ -60,6 +61,7 @@ import javax.annotation.Nullable;
  * @param <RequestT> call request type
  * @param <ResponseT> call response type
  */
+@NullMarked
 final class HttpJsonClientCallImpl<RequestT, ResponseT>
     extends HttpJsonClientCall<RequestT, ResponseT> implements ResultListener {
   //

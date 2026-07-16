@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -46,6 +44,7 @@ import com.google.common.collect.Sets;
 import java.time.Duration;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure a {@link ServerStreamingCallable}.

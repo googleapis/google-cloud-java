@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.longrunning;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Operation polling algorithm, which keeps retrying until {@link OperationSnapshot#isDone()} is

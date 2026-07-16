@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalExtensionOnly;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure a streaming callable object for calls to a streaming API method.

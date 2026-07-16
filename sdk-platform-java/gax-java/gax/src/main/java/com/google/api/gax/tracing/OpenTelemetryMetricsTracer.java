@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
@@ -38,6 +36,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class computes golden signal metrics that can be observed in the lifecycle of an RPC
@@ -91,7 +91,7 @@ class OpenTelemetryMetricsTracer implements ApiTracer {
     recordMetric(error);
   }
 
-  private void recordMetric(Throwable error) {
+  private void recordMetric(@Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, transport);
     attributes.putAll(responseAttributes);

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
@@ -50,6 +48,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Queues up elements until either a duration of time has passed or any threshold in a given set of
@@ -91,8 +91,8 @@ public final class ThresholdBatcher<E> {
   // - lock gates all accesses to members below
   // - currentOpenBatch and currentAlarmFuture are either both null or both non-null
   private final ReentrantLock lock = new ReentrantLock();
-  private E currentOpenBatch;
-  private Future<?> currentAlarmFuture;
+  private @Nullable E currentOpenBatch;
+  private @Nullable Future<?> currentAlarmFuture;
 
   private ThresholdBatcher(Builder<E> builder) {
     this.thresholds = new ArrayList<>(builder.thresholds);

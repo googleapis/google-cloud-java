@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.escape.PercentEscaper;
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The request params encoder, which encodes URL-encoded parameters in one URL parameters string.

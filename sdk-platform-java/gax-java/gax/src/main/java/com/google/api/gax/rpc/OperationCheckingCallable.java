@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import java.util.concurrent.ExecutionException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A future callable which relies on callback chaining to execute server polling (asking for a

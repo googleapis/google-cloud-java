@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.paging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /** An AsyncPage extends a {@link Page} object with a getNextPageAsync method. */
 @NullMarked

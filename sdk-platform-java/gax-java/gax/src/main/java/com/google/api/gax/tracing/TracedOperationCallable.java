@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
@@ -40,6 +38,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This callable wraps a {@link OperationCallable} in a {@link ApiTracer}.

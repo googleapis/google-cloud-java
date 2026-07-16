@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
@@ -38,6 +36,7 @@ import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A watchdog provider which always returns the same watchdog instance provided to the provider

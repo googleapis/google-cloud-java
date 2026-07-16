@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.common.base.Joiner;
@@ -41,6 +39,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Keeps the statistics about failed operations(both at RPC and ElementT) in {@link Batcher}. This

@@ -29,11 +29,11 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.util.concurrent.UncheckedExecutionException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal implementation of a blocking Iterator, which will coordinate with the
@@ -48,7 +48,7 @@ import java.util.NoSuchElementException;
 @NullMarked
 final class ServerStreamIterator<V> implements Iterator<V> {
   private final QueuingResponseObserver<V> observer;
-  private Object last;
+  private @Nullable Object last;
 
   ServerStreamIterator(QueuingResponseObserver<V> observer) {
     this.observer = observer;

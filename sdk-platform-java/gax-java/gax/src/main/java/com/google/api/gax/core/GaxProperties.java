@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
@@ -42,6 +40,7 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides properties of the GAX library. */
 @NullMarked

@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowControlEventStats.FlowControlEvent;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides flow control capability. */
 @NullMarked

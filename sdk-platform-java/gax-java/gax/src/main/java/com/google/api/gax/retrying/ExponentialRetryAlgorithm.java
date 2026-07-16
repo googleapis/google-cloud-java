@@ -29,13 +29,12 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import java.util.concurrent.ThreadLocalRandom;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The timed retry algorithm which uses jittered exponential backoff factor for calculating the next

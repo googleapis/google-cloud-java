@@ -29,13 +29,12 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A UnaryCallable that translates request types and response types using the given transformers.

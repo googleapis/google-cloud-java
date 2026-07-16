@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -42,6 +40,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * GoogleCredentialsProvider acquires credentials using Application Default Credentials.

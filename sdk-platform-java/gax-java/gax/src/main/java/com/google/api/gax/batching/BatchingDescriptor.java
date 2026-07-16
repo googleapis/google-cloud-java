@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An adapter that packs and unpacks the elements in and out of batch requests and responses.

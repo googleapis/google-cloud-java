@@ -30,12 +30,11 @@
 
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A context object that contains information about the GAPIC library.

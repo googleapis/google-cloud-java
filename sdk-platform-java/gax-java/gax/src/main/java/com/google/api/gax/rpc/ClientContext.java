@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
@@ -68,6 +66,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Encapsulates client state, including executor, credentials, and transport channel.
@@ -438,9 +437,9 @@ public abstract class ClientContext {
 
     public abstract Builder setEndpoint(String endpoint);
 
-    public abstract Builder setQuotaProjectId(String QuotaProjectId);
+    public abstract Builder setQuotaProjectId(@Nullable String QuotaProjectId);
 
-    public abstract Builder setStreamWatchdog(Watchdog watchdog);
+    public abstract Builder setStreamWatchdog(@Nullable Watchdog watchdog);
 
     /**
      * This method is obsolete. Use {@link
@@ -470,7 +469,7 @@ public abstract class ClientContext {
      *
      * @param gdchApiAudience the audience to be used - must be a valid URI string
      */
-    public abstract Builder setGdchApiAudience(String gdchApiAudience);
+    public abstract Builder setGdchApiAudience(@Nullable String gdchApiAudience);
 
     /** Package-Private as this is to be shared to StubSettings */
     abstract Builder setEndpointContext(EndpointContext endpointContext);

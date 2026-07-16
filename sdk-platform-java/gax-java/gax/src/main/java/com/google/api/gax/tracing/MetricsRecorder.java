@@ -30,11 +30,10 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provides an interface for metrics recording. The implementer is expected to use an observability

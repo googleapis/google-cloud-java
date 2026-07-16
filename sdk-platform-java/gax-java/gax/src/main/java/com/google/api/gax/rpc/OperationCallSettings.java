@@ -29,13 +29,12 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure an {@link OperationCallable} for calls to initiate, resume, and

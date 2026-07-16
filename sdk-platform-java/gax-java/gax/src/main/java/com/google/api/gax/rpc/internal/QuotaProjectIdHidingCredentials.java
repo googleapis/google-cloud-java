@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc.internal;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.client.util.Beta;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableMap;
@@ -38,6 +36,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * {@code QuotaProjectIdHidingCredentials} is intended to be used to wrap a {@link Credentials} to
@@ -61,7 +61,7 @@ public class QuotaProjectIdHidingCredentials extends Credentials {
   }
 
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     ImmutableMap.Builder<String, List<String>> metaBuilder = ImmutableMap.builder();
     for (Map.Entry<String, List<String>> entry :
         this.wrappedCredentials.getRequestMetadata(uri).entrySet()) {

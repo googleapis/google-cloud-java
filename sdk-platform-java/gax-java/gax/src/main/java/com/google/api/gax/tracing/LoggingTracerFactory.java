@@ -30,11 +30,10 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. This class is

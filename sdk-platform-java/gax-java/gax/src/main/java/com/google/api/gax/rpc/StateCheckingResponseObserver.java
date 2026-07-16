@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /** Base implementation of {@link ResponseObserver} that performs state sanity checks. */
 @NullMarked

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
@@ -40,6 +38,7 @@ import com.google.api.gax.longrunning.OperationFutureImpl;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.RetryingFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An OperationCallableImpl is an immutable object which is capable of initiating RPC calls to

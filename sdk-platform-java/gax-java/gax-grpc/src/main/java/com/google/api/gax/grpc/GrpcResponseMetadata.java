@@ -32,6 +32,7 @@ package com.google.api.gax.grpc;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.common.base.Preconditions;
 import io.grpc.Metadata;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * GrpcResponseMetadata provides a mechanism to access the headers and trailers returned by a gRPC
@@ -52,6 +53,7 @@ import io.grpc.Metadata;
  * </code>
  * </pre>
  */
+@NullMarked
 public class GrpcResponseMetadata implements ResponseMetadataHandler {
 
   private volatile Metadata responseMetadata;

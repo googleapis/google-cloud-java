@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -38,6 +36,7 @@ import com.google.api.core.ApiFutures;
 import java.io.InterruptedIOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The retry executor which executes attempts in the current thread, potentially causing the current

@@ -51,6 +51,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +84,7 @@ import java.util.List;
  * OperationsSettings operationsSettings = operationsSettingsBuilder.build();
  * }</pre>
  */
+@NullMarked
 public class OperationsSettings extends ClientSettings<OperationsSettings> {
 
   /** Returns the object with the settings used for calls to listOperations. */

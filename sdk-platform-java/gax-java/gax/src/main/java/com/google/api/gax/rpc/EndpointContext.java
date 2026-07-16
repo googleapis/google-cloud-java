@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
@@ -47,6 +45,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * EndpointContext is an internal class used by the client library to resolve the endpoint. It is
@@ -406,6 +405,7 @@ public abstract class EndpointContext {
       return mtlsEndpoint().contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     }
 
+    @Nullable
     private String parseServerAddress(String endpoint) {
       if (endpoint.isEmpty()) {
         return endpoint;
@@ -417,6 +417,7 @@ public abstract class EndpointContext {
       return hostAndPort.getHost();
     }
 
+    @Nullable
     private Integer parseServerPort(String endpoint) {
       if (endpoint.isEmpty()) {
         return null;
@@ -428,6 +429,7 @@ public abstract class EndpointContext {
       return hostAndPort.getPort();
     }
 
+    @Nullable
     private HostAndPort parseServerHostAndPort(String endpoint) {
       String hostPort = endpoint;
       if (hostPort.contains("://")) {

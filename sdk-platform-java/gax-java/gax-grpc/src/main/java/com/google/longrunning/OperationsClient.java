@@ -46,6 +46,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Service Description: Manages long-running operations with an API service.
@@ -108,6 +109,7 @@ import java.util.concurrent.TimeUnit;
  * </code>
  * </pre>
  */
+@NullMarked
 public class OperationsClient implements BackgroundResource {
   private final OperationsSettings settings;
   private final OperationsStub stub;

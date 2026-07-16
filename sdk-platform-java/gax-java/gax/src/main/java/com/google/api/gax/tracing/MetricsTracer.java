@@ -30,8 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.BetaApi;
@@ -45,6 +43,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class computes generic metrics that can be observed in the lifecycle of an RPC operation.

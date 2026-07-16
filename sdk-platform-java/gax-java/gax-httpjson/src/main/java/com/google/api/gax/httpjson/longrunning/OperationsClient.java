@@ -51,6 +51,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -119,6 +120,7 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 public class OperationsClient implements BackgroundResource {
   private final OperationsSettings settings;
   private final OperationsStub stub;

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFuture;
@@ -40,6 +38,7 @@ import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.ThresholdBatchReceiver;
 import com.google.common.base.Preconditions;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A ThresholdBatchReceiver which uses a provided {@link BatchingDescriptor} to merge the items from

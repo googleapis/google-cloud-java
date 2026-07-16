@@ -29,9 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A UnaryCallable is an immutable object which is capable of making RPC calls to non-streaming API
@@ -78,7 +78,8 @@ public abstract class UnaryCallable<RequestT, ResponseT> {
    * @param context {@link ApiCallContext} to make the call with
    * @return {@link ApiFuture} for the call result
    */
-  public abstract ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext context);
+  public abstract ApiFuture<ResponseT> futureCall(
+      RequestT request, @Nullable ApiCallContext context);
 
   /**
    * Same as {@link #futureCall(Object, ApiCallContext)}, with a null context.

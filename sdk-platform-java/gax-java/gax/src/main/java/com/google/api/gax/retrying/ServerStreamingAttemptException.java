@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A wrapper exception thrown by {@code ServerStreamingAttemptCallable} to communicate additional

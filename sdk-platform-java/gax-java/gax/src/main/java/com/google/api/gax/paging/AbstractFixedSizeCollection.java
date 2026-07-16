@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.paging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.client.util.Lists;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import java.util.Iterator;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /** Partial implementation of {@link FixedSizeCollection}. */
 @NullMarked

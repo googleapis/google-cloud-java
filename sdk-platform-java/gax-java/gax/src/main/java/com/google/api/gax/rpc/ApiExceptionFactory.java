@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A factory class that returns the corresponding type of exception class from the given status
@@ -85,13 +86,16 @@ public class ApiExceptionFactory {
   }
 
   public static ApiException createException(
-      Throwable cause, StatusCode statusCode, boolean retryable, ErrorDetails errorDetails) {
+      Throwable cause,
+      StatusCode statusCode,
+      boolean retryable,
+      @Nullable ErrorDetails errorDetails) {
     return createException(
         cause == null ? null : cause.toString(), cause, statusCode, retryable, errorDetails);
   }
 
   public static ApiException createException(
-      String message,
+      @Nullable String message,
       Throwable cause,
       StatusCode statusCode,
       boolean retryable,
