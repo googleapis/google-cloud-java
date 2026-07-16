@@ -543,16 +543,17 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setDate(parameterIndex, x);
       return;
     }
+    Calendar targetCal = (Calendar) cal.clone();
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
-    cal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
-    cal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
-    cal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
-    cal.set(Calendar.HOUR_OF_DAY, 0);
-    cal.set(Calendar.MINUTE, 0);
-    cal.set(Calendar.SECOND, 0);
-    cal.set(Calendar.MILLISECOND, 0);
-    setDate(parameterIndex, new Date(cal.getTimeInMillis()));
+    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    targetCal.set(Calendar.HOUR_OF_DAY, 0);
+    targetCal.set(Calendar.MINUTE, 0);
+    targetCal.set(Calendar.SECOND, 0);
+    targetCal.set(Calendar.MILLISECOND, 0);
+    setDate(parameterIndex, new Date(targetCal.getTimeInMillis()));
   }
 
   @Override
@@ -566,13 +567,14 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setTime(parameterIndex, x);
       return;
     }
+    Calendar targetCal = (Calendar) cal.clone();
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
-    cal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    cal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    cal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    cal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-    setTime(parameterIndex, new Time(cal.getTimeInMillis()));
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    setTime(parameterIndex, new Time(targetCal.getTimeInMillis()));
   }
 
   @Override
@@ -586,16 +588,17 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setTimestamp(parameterIndex, x);
       return;
     }
+    Calendar targetCal = (Calendar) cal.clone();
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
-    cal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
-    cal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
-    cal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
-    cal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    cal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    cal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    cal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-    Timestamp adjustedTimestamp = new Timestamp(cal.getTimeInMillis());
+    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    Timestamp adjustedTimestamp = new Timestamp(targetCal.getTimeInMillis());
     adjustedTimestamp.setNanos(x.getNanos());
     setTimestamp(parameterIndex, adjustedTimestamp);
   }
