@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A callable that uses a {@link Watchdog} to monitor streams.

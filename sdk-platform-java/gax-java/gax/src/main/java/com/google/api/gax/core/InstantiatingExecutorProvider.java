@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.auto.value.AutoValue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -38,6 +36,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * InstantiatingChannelProvider is an ExecutorProvider which constructs a new

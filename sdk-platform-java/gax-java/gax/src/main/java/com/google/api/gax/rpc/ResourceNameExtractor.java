@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ObservabilityAttributes;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A resource name extractor takes a request message and extracts the resource name from it. This

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.longrunning;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import com.google.api.core.NanoClock;
@@ -41,6 +39,7 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.CancellationException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Operation timed polling algorithm, which uses exponential backoff factor for determining when the

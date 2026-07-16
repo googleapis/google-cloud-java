@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Allows the implementer of {@link ResponseObserver} to control the flow of responses.

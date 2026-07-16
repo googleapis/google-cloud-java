@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /** A threshold which accumulates a count based on the provided ElementCounter. */
 @NullMarked

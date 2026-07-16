@@ -29,11 +29,10 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * ExecutorAsBackgroundResource wraps an {@link ExecutorService} so that it can be used as a {@link

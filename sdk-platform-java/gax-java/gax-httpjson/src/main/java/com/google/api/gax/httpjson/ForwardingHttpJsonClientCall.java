@@ -30,11 +30,13 @@
 package com.google.api.gax.httpjson;
 
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link HttpJsonClientCall} which forwards all of its methods to another {@link
  * HttpJsonClientCall}.
  */
+@NullMarked
 public abstract class ForwardingHttpJsonClientCall<RequestT, ResponseT>
     extends HttpJsonClientCall<RequestT, ResponseT> {
 

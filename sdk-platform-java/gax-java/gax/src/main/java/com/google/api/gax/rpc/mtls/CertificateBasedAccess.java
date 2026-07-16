@@ -30,10 +30,9 @@
 
 package com.google.api.gax.rpc.mtls;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for handling certificate-based access configurations.

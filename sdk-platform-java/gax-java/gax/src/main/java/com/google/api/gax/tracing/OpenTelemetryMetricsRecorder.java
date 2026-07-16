@@ -30,8 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
@@ -43,6 +41,7 @@ import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * OpenTelemetry implementation of recording metrics. This implementation collections the

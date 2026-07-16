@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 
 import com.google.api.core.InternalApi;
@@ -39,6 +37,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Record the statistics of flow control events.

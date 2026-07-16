@@ -36,8 +36,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
 /** Creates parts of a HTTP request from a protobuf message. */
+@NullMarked
 public class ProtoMessageRequestFormatter<RequestT extends Message>
     implements HttpRequestFormatter<RequestT> {
 

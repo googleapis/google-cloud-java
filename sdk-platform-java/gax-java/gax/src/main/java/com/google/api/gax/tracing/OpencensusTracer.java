@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.BetaApi;
@@ -52,6 +50,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of {@link ApiTracer} that uses OpenCensus.
@@ -217,7 +217,7 @@ public class OpencensusTracer extends BaseApiTracer {
   private final Span span;
   private final OperationType operationType;
 
-  private volatile String lastConnectionId;
+  private volatile @Nullable String lastConnectionId;
   private volatile long currentAttemptId;
   private AtomicLong attemptSentMessages = new AtomicLong(0);
   private long attemptReceivedMessages = 0;

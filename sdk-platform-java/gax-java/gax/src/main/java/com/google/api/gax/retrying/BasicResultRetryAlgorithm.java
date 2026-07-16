@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A basic implementation of {@link ResultRetryAlgorithm}. Using this implementation would mean that

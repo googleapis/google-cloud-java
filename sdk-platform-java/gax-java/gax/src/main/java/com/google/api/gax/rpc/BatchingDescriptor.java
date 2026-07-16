@@ -29,11 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import java.util.Collection;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Interface which represents an object that transforms request/response data for the purposes of

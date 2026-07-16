@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** Treats a collection of background resources as a single background resource. */
 @NullMarked

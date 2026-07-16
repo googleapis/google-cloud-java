@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiClock;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The timed poll algorithm which uses jittered exponential backoff factor for calculating the next

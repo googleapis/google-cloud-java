@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Simplest implementation of a {@link StreamResumptionStrategy} which returns the initial request

@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** A Background resource that does nothing. */
 @NullMarked

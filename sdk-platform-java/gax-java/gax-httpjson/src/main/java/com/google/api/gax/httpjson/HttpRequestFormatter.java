@@ -33,8 +33,10 @@ import com.google.api.pathtemplate.PathTemplate;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** Interface for classes that create parts of HTTP requests from a parameterized message. */
+@NullMarked
 public interface HttpRequestFormatter<MessageFormatT> {
   /**
    * Return a map where each entry is the name of a query param mapped to the values of the param.

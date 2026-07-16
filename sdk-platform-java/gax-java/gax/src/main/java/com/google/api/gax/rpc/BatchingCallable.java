@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController.FlowControlException;
@@ -38,6 +36,7 @@ import com.google.api.gax.batching.FlowController.FlowControlRuntimeException;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.ThresholdBatcher;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link UnaryCallable} which will batch requests based on the given BatchingDescriptor and

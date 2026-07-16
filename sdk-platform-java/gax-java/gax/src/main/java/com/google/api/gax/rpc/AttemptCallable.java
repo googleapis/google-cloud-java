@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.NonCancellableFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Callable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A callable representing an attempt to make an RPC call. This class is used from {@link

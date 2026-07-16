@@ -29,12 +29,11 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
 import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implementations of this class trace the logical flow of a google cloud client.

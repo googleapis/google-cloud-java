@@ -36,8 +36,10 @@ import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** This class is for internal use only and is public for technical reasons. */
+@NullMarked
 @InternalApi
 public class HttpHeadersUtils {
   public static String getUserAgentValue(Map<String, String> headersMap) {

@@ -66,6 +66,7 @@ import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * GrpcCallContext encapsulates context data used to make a grpc call.
@@ -75,6 +76,7 @@ import javax.annotation.Nullable;
  * #withTransportChannel}, return copies of the object, but with one field changed. The immutability
  * and thread safety of the arguments solely depends on the arguments themselves.
  */
+@NullMarked
 @BetaApi("Reference ApiCallContext instead - this class is likely to experience breaking changes")
 public final class GrpcCallContext implements ApiCallContext {
   private static final GrpcStatusCode UNAUTHENTICATED_STATUS_CODE =

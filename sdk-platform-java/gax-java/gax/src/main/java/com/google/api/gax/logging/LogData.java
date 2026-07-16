@@ -30,14 +30,13 @@
 
 package com.google.api.gax.logging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 @InternalApi

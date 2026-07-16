@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.longrunning;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
@@ -43,6 +41,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An ApiFuture which tracks polling of a service. The polling is done periodically, based on the

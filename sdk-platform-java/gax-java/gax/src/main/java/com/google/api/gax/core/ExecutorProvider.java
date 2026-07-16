@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.util.concurrent.ScheduledExecutorService;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provides an interface to either build a ScheduledExecutorService or provide a fixed

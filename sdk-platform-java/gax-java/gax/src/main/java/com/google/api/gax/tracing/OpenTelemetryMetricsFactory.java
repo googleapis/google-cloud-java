@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import io.opentelemetry.api.OpenTelemetry;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryMetricsTracer}.

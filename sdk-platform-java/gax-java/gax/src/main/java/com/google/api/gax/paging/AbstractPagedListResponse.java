@@ -29,12 +29,11 @@
  */
 package com.google.api.gax.paging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import java.util.Iterator;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /** Partial implementation of {@link com.google.api.gax.paging.PagedListResponse}. */
 @NullMarked

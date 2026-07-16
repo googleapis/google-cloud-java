@@ -29,12 +29,11 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.common.collect.Lists;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ResponseObserver} that buffers the results from a {@link ServerStreamingCallable} in an

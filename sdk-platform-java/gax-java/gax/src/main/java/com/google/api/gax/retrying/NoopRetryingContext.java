@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 // TODO(igorbernstein2): Remove this class once RetryingExecutor#createFuture(Callable) is
 // deprecated and removed.
 
@@ -39,6 +37,7 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Backwards compatibility class to aid in transition to adding operation state to {@link

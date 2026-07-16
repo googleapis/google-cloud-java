@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Interface representing an object that receives batches from a ThresholdBatcher and takes action

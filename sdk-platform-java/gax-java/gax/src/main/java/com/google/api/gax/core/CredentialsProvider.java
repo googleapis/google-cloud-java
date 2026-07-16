@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.auth.Credentials;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provides an interface to hold and acquire the credentials that will be used to call the service.

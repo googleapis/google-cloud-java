@@ -57,8 +57,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /** A runnable object that creates and executes an HTTP request. */
+@NullMarked
 class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
   private final RequestT request;
   private final ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor;

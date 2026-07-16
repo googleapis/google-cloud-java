@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.longrunning.OperationSnapshot;
+import org.jspecify.annotations.NullMarked;
 
 /** Implementation-agnostic interface for managing long-running operations. */
 @NullMarked

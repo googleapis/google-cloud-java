@@ -29,10 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.common.base.Preconditions;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents an exception thrown during an RPC call. */
 @NullMarked
@@ -40,7 +40,7 @@ public class ApiException extends RuntimeException {
 
   private static final long serialVersionUID = -4375114339928877996L;
 
-  private final ErrorDetails errorDetails;
+  private final @Nullable ErrorDetails errorDetails;
   private final StatusCode statusCode;
   private final boolean retryable;
 
@@ -56,7 +56,10 @@ public class ApiException extends RuntimeException {
   }
 
   public ApiException(
-      Throwable cause, StatusCode statusCode, boolean retryable, ErrorDetails errorDetails) {
+      Throwable cause,
+      StatusCode statusCode,
+      boolean retryable,
+      @Nullable ErrorDetails errorDetails) {
     super(cause);
     this.statusCode = Preconditions.checkNotNull(statusCode);
     this.retryable = retryable;
@@ -89,7 +92,7 @@ public class ApiException extends RuntimeException {
    * Returns the reason of the exception. This is a constant value that identifies the proximate
    * cause of the error. e.g. SERVICE_DISABLED
    */
-  public String getReason() {
+  public @Nullable String getReason() {
     if (isErrorInfoEmpty()) {
       return null;
     }
@@ -100,7 +103,7 @@ public class ApiException extends RuntimeException {
    * Returns the logical grouping to which the "reason" belongs. The error domain is typically the
    * registered service name of the tool or product that generates the error. e.g. googleapis.com
    */
-  public String getDomain() {
+  public @Nullable String getDomain() {
     if (isErrorInfoEmpty()) {
       return null;
     }
@@ -108,7 +111,7 @@ public class ApiException extends RuntimeException {
   }
 
   /** Returns additional structured details about this exception. */
-  public Map<String, String> getMetadata() {
+  public @Nullable Map<String, String> getMetadata() {
     if (isErrorInfoEmpty()) {
       return null;
     }

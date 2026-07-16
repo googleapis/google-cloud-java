@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
@@ -39,6 +37,7 @@ import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A callable that generates Server Streaming attempts. At any one time, it is responsible for at

@@ -31,9 +31,11 @@ package com.google.api.gax.httpjson;
 
 import com.google.auto.value.AutoValue;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 @AutoValue
 /* Method descriptor for messages to be transmitted over HTTP. */
+@NullMarked
 public abstract class ApiMethodDescriptor<RequestT, ResponseT> {
   public enum MethodType {
     UNARY,

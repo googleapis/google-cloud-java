@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 
 import com.google.api.core.ApiClock;
@@ -43,6 +41,7 @@ import java.io.IOException;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A base settings class to configure a client class.
@@ -171,7 +170,7 @@ public abstract class ClientSettings<SettingsT extends ClientSettings<SettingsT>
     }
 
     /** Create a builder from a StubSettings object. */
-    protected Builder(StubSettings.Builder stubSettings) {
+    protected Builder(@Nullable StubSettings.Builder stubSettings) {
       this.stubSettings = stubSettings;
     }
 

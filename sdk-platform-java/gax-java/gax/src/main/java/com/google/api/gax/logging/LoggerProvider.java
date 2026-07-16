@@ -30,9 +30,8 @@
 
 package com.google.api.gax.logging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.Logger;
 
 @NullMarked

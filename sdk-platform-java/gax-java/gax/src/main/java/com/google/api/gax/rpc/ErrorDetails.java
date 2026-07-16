@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.auto.value.AutoValue;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.Any;
@@ -48,6 +46,7 @@ import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /** This class contains a list of standard error messages that returns from server. */
 @NullMarked

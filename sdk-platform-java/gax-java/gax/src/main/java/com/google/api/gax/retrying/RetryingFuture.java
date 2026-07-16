@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import java.util.concurrent.Callable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a retrying future. This is a facade hiding all the complications of an

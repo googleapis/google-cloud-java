@@ -29,14 +29,13 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.ObsoleteApi;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
 /** Timed attempt execution settings. Defines time-specific properties of a retry attempt. */
 @NullMarked

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.base.Joiner;
@@ -43,6 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 final class ObservabilityUtils {

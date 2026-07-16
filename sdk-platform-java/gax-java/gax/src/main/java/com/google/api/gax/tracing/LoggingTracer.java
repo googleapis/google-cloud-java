@@ -30,8 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
@@ -39,6 +37,7 @@ import com.google.common.base.Strings;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An {@link ApiTracer} that logs actionable errors using {@link LoggingUtils} when an RPC attempt

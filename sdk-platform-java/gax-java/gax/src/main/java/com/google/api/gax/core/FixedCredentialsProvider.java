@@ -29,11 +29,10 @@
  */
 package com.google.api.gax.core;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.auth.Credentials;
 import com.google.auto.value.AutoValue;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /** FixedCredentialsProvider is a CredentialsProvider which always provides the same credentials. */
 @NullMarked

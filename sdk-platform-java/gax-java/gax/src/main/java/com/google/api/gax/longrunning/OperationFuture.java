@@ -29,11 +29,10 @@
  */
 package com.google.api.gax.longrunning;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import java.util.concurrent.ExecutionException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An ApiFuture which tracks polling of a service. The polling is done periodically, based on the

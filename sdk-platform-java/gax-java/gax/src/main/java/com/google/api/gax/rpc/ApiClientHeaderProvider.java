@@ -29,14 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.core.GaxProperties;
 import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of HeaderProvider that provides headers describing the API client library making
@@ -131,17 +131,17 @@ public class ApiClientHeaderProvider implements HeaderProvider, Serializable {
   public static class Builder {
     private String apiClientHeaderKey;
     private String jvmToken;
-    private String clientLibToken;
-    private String generatedLibToken;
+    private @Nullable String clientLibToken;
+    private @Nullable String generatedLibToken;
     private String generatedRuntimeToken;
-    private String transportToken;
-    private String quotaProjectIdToken;
+    private @Nullable String transportToken;
+    private @Nullable String quotaProjectIdToken;
     private final String protobufRuntimeToken;
 
     private String resourceHeaderKey;
-    private String resourceToken;
+    private @Nullable String resourceToken;
 
-    private String apiVersionToken;
+    private @Nullable String apiVersionToken;
 
     protected Builder() {
       // Initialize with default values
@@ -253,7 +253,7 @@ public class ApiClientHeaderProvider implements HeaderProvider, Serializable {
       return this;
     }
 
-    private String constructToken(String name, String version) {
+    private @Nullable String constructToken(String name, String version) {
       if (version == null) {
         return null;
       }

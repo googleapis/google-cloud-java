@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.rpc.internal;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalExtensionOnly;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides an interface to provide the environment variable values. */
 @NullMarked

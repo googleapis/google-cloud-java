@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
@@ -48,6 +46,7 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLHandshakeException;
+import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class ErrorTypeUtil {

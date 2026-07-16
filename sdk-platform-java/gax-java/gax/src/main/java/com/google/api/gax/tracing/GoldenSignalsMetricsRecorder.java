@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.base.Strings;
 import io.opentelemetry.api.OpenTelemetry;
@@ -41,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class takes an OpenTelemetry object, and creates instruments (meters, histograms etc.) from

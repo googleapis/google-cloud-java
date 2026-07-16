@@ -29,9 +29,8 @@
  */
 package com.google.api.gax.longrunning;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.gax.rpc.StatusCode;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A snapshot of a long-running operation.

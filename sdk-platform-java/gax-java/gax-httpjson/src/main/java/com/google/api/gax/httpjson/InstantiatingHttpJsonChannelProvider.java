@@ -51,6 +51,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * InstantiatingHttpJsonChannelProvider is a TransportChannelProvider which constructs a {@link
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  * <p>The client lib header and generator header values are used to form a value that goes into the
  * http header of requests to the service.
  */
+@NullMarked
 @InternalExtensionOnly
 public final class InstantiatingHttpJsonChannelProvider implements TransportChannelProvider {
 

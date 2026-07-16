@@ -29,12 +29,11 @@
  */
 package com.google.api.gax.batching;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.ApiFuture;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.jspecify.annotations.NullMarked;
 
 /** A simple ThresholdBatchReceiver that just accumulates batches. */
 @NullMarked

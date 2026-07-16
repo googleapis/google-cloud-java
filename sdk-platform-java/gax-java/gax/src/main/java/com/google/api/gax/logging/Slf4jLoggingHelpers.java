@@ -30,8 +30,6 @@
 
 package com.google.api.gax.logging;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import com.google.common.base.Strings;
 import com.google.gson.Gson;
@@ -41,6 +39,7 @@ import com.google.protobuf.Message;
 import com.google.protobuf.util.JsonFormat;
 import java.util.Map;
 import java.util.function.Consumer;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.Logger;
 import org.slf4j.event.Level;
 

@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -38,6 +36,8 @@ import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * For internal use only.
@@ -56,7 +56,7 @@ import java.util.concurrent.Future;
 @NullMarked
 class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<ResponseT> {
   private final ScheduledRetryingExecutor<ResponseT> retryingExecutor;
-  private volatile AttemptCompletionListener attemptFutureCompletionListener;
+  private volatile @Nullable AttemptCompletionListener attemptFutureCompletionListener;
 
   CallbackChainRetryingFuture(
       Callable<ResponseT> callable,
@@ -123,7 +123,7 @@ class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<Respons
       }
     }
 
-    private void handle(Throwable t, ResponseT response) {
+    private void handle(@Nullable Throwable t, ResponseT response) {
       // Essential check, to ensure that we do not execute callback of an abandoned attempt.
       // First before the lock, to increase performance and reduce chance of deadlocking
       // (should never happen, but being extra cautious is appropriate here).

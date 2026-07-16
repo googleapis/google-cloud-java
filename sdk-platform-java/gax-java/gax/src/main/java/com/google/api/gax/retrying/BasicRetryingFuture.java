@@ -30,8 +30,6 @@
 
 package com.google.api.gax.retrying;
 
-import org.jspecify.annotations.NullMarked;
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -46,6 +44,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * For internal use only.
@@ -69,7 +69,7 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   private volatile TimedAttemptSettings attemptSettings;
 
   private volatile ApiFuture<ResponseT> latestCompletedAttemptResult;
-  private volatile ApiFuture<ResponseT> attemptResult;
+  private volatile @Nullable ApiFuture<ResponseT> attemptResult;
 
   private static final Logger LOG = Logger.getLogger(BasicRetryingFuture.class.getName());
 
@@ -147,7 +147,7 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   }
 
   // "super." is used here to avoid infinite loops of callback chains
-  void handleAttempt(Throwable throwable, ResponseT response) {
+  void handleAttempt(@Nullable Throwable throwable, ResponseT response) {
     ApiTracer tracer = retryingContext.getTracer();
 
     synchronized (lock) {
@@ -232,7 +232,8 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   // getAttemptResult() call will return a new future, tracking the new attempt. Otherwise
   // attemptResult is set to the same result as the one returned by peekAttemptResult(), indicating
   // that the ultimate unmodifiable result of the whole future was reached.
-  private void setAttemptResult(Throwable throwable, ResponseT response, boolean shouldRetry) {
+  private void setAttemptResult(
+      @Nullable Throwable throwable, ResponseT response, boolean shouldRetry) {
     ApiFuture<ResponseT> prevAttemptResult = attemptResult;
     try {
       if (throwable instanceof CancellationException) {

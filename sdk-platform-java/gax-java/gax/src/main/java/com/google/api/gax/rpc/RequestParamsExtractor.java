@@ -29,10 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import com.google.api.core.InternalApi;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A request params extractor takes a {@code request} message, extracts specific field values from

@@ -29,11 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
-import org.jspecify.annotations.NullMarked;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** Implementation of HeaderProvider that provides empty headers. */
 @NullMarked
