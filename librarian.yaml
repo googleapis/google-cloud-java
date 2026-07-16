@@ -1035,6 +1035,14 @@ libraries:
           generate_gapic: false
           generate_resource_names: false
           samples: false
+    keep:
+      - README.md
+    postprocess:
+      remove_file:
+        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
     java:
       api_description_override: Protobuf classes for Google's common protos.
       api_shortname_override: common-protos
@@ -1050,14 +1058,6 @@ libraries:
       transport_override: grpc
       skip_pom_updates: true
       skip_api_id: true
-    keep:
-      - README.md
-    postprocess:
-      remove_file:
-        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
   - name: compute
     version: 1.105.0-SNAPSHOT
     apis:
@@ -3387,9 +3387,9 @@ libraries:
           grpc_artifact_id_override: grpc-gapic-showcase-v1beta1
           proto_artifact_id_override: proto-gapic-showcase-v1beta1
     keep:
+      - README.md
       - gapic-showcase/src/main/java/com/google/showcase/v1beta1/Version.java
       - gapic-showcase/src/test
-      - README.md
     roots:
       - showcase
       - googleapis
