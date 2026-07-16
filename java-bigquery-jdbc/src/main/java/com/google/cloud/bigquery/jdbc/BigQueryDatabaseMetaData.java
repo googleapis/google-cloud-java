@@ -2420,13 +2420,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
 
-    boolean ignoreAccessErrors = (catalog == null);
     processTargetTablesConcurrently(
         targetDatasets,
         table,
         collectedResults,
         resultSchemaFields,
-        ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
           processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
@@ -2517,13 +2515,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
 
-    boolean ignoreAccessErrors = (catalog == null);
     processTargetTablesConcurrently(
         targetDatasets,
         table,
         collectedResults,
         resultSchemaFields,
-        ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
           if (constraints == null || constraints.getForeignKeys() == null) {
@@ -2562,13 +2558,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
 
-    boolean ignoreAccessErrors = (catalog == null);
     processTargetTablesConcurrently(
         targetDatasets,
         null,
         collectedResults,
         resultSchemaFields,
-        ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
           if (constraints == null || constraints.getForeignKeys() == null) {
@@ -2623,13 +2617,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema);
 
-    boolean ignoreAccessErrors = (foreignCatalog == null);
     processTargetTablesConcurrently(
         targetDatasets,
         foreignTable,
         collectedResults,
         resultSchemaFields,
-        ignoreAccessErrors,
         (bqTable, results, fields) -> {
           TableConstraints constraints = bqTable.getTableConstraints();
           if (constraints == null || constraints.getForeignKeys() == null) {
@@ -4672,7 +4664,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
     } catch (BigQueryException e) {
-      if (!needsList && e.getCode() == 404) {
+      boolean isBroadDatasetScan = needsList && "Dataset".equals(objectTypeName);
+      if (e.getCode() == 404 && !isBroadDatasetScan) {
         logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
       } else {
         logger.warning(
@@ -5146,7 +5139,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String tableName,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
     Table bqTable;
@@ -5154,10 +5146,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       bqTable =
           bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
     } catch (BigQueryException e) {
-      if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+      if (e.getCode() == 404) {
         LOG.info(
-            "Table '%s' or dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
-            tableName, datasetId.getDataset(), datasetId.getProject(), e.getCode());
+            "Table '%s' or dataset '%s' not found in project '%s' (API error 404). Skipping.",
+            tableName, datasetId.getDataset(), datasetId.getProject());
         bqTable = null;
       } else {
         throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
@@ -5175,17 +5167,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String tableName,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      boolean ignoreAccessErrors,
       TableProcessor processor)
       throws SQLException {
     if (targetDatasets.size() == 1 && tableName != null) {
       processSingleTable(
-          targetDatasets.get(0),
-          tableName,
-          collectedResults,
-          resultSchemaFields,
-          ignoreAccessErrors,
-          processor);
+          targetDatasets.get(0), tableName, collectedResults, resultSchemaFields, processor);
       return;
     }
 
@@ -5199,12 +5185,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           tasks.add(
               () -> {
                 processSingleTable(
-                    datasetId,
-                    tableName,
-                    collectedResults,
-                    resultSchemaFields,
-                    ignoreAccessErrors,
-                    processor);
+                    datasetId, tableName, collectedResults, resultSchemaFields, processor);
                 return null;
               });
           continue;
@@ -5228,16 +5209,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       table.getTableId().getTable(),
                       collectedResults,
                       resultSchemaFields,
-                      ignoreAccessErrors,
                       processor);
                   return null;
                 });
           }
         } catch (BigQueryException e) {
-          if (ignoreAccessErrors && (e.getCode() == 404 || e.getCode() == 403)) {
+          if (e.getCode() == 404) {
             LOG.info(
-                "Dataset '%s' not found/accessible in project '%s' (API error %d). Skipping.",
-                datasetId.getDataset(), datasetId.getProject(), e.getCode());
+                "Dataset '%s' not found in project '%s' (API error 404). Skipping.",
+                datasetId.getDataset(), datasetId.getProject());
             continue;
           }
           throw new SQLException("Error while listing tables: " + e.getMessage(), e);
