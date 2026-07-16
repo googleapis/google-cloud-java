@@ -18,12 +18,16 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.sql.Array;
+import java.sql.ResultSetMetaData;
 import java.sql.Types;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -137,5 +141,74 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(mockArray, preparedStatement.parameterHandler.getParameter(1));
     assertEquals(Array.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(StandardSQLTypeName.ARRAY, preparedStatement.parameterHandler.getSqlType(1));
+  }
+
+  @Test
+  public void testGetParameterMetaData() throws Exception {
+    preparedStatement.setString(1, "test");
+    preparedStatement.setInt(2, 42);
+
+    java.sql.ParameterMetaData metaData = preparedStatement.getParameterMetaData();
+    assertEquals(5, metaData.getParameterCount());
+    assertEquals(Types.NVARCHAR, metaData.getParameterType(1));
+    assertEquals("STRING", metaData.getParameterTypeName(1));
+    assertEquals(String.class.getName(), metaData.getParameterClassName(1));
+
+    assertEquals(Types.BIGINT, metaData.getParameterType(2));
+    assertEquals("INT64", metaData.getParameterTypeName(2));
+    assertEquals(Long.class.getName(), metaData.getParameterClassName(2));
+
+    assertEquals(java.sql.ParameterMetaData.parameterNullable, metaData.isNullable(1));
+    assertEquals(java.sql.ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
+
+    assertThrows(java.sql.SQLException.class, () -> metaData.getParameterType(0));
+    assertThrows(java.sql.SQLException.class, () -> metaData.getParameterType(6));
+  }
+
+  @Test
+  public void testSetDateWithCalendar() throws Exception {
+    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+    java.sql.Date date = new java.sql.Date(1700000000000L); // 2023-11-14
+
+    preparedStatement.setDate(1, date, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+  }
+
+  @Test
+  public void testSetTimeWithCalendar() throws Exception {
+    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+    java.sql.Time time = new java.sql.Time(43200000L); // 12:00:00
+
+    preparedStatement.setTime(1, time, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+  }
+
+  @Test
+  public void testSetTimestampWithCalendar() throws Exception {
+    java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+    java.sql.Timestamp ts = new java.sql.Timestamp(1700000000000L);
+
+    preparedStatement.setTimestamp(1, ts, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+  }
+
+  @Test
+  public void testGetMetaData() throws Exception {
+    // Before execution/insertSchema initialization, getMetaData() returns null
+    assertNull(preparedStatement.getMetaData());
+
+    // When insertSchema is present, getMetaData() returns ResultSetMetaData
+    preparedStatement.insertSchema =
+        Schema.of(
+            Field.of("col1", StandardSQLTypeName.STRING),
+            Field.of("col2", StandardSQLTypeName.INT64));
+
+    ResultSetMetaData metaData = preparedStatement.getMetaData();
+    assertNotNull(metaData);
+    assertEquals(2, metaData.getColumnCount());
+    assertEquals("col1", metaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
+    assertEquals("col2", metaData.getColumnName(2));
+    assertEquals(Types.BIGINT, metaData.getColumnType(2));
   }
 }

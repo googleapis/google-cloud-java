@@ -70,7 +70,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   protected int parameterCount = 0;
   protected String currentQuery;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
-  private Schema insertSchema = null;
+  Schema insertSchema = null;
   private TableName insertTableName = null;
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) {
@@ -470,24 +470,80 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public ResultSetMetaData getMetaData() {
-    // TODO(neenu) :IMPLEMENT metadata
+  public ResultSetMetaData getMetaData() throws SQLException {
+    checkClosed();
+    if (this.insertSchema != null) {
+      return BigQueryResultSetMetadata.of(this.insertSchema.getFields(), this);
+    }
     return null;
   }
 
   @Override
-  public void setDate(int parameterIndex, Date x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setDate(int parameterIndex, Date x, Calendar cal) throws SQLException {
+    checkClosed();
+    if (x == null) {
+      setNull(parameterIndex, Types.DATE);
+      return;
+    }
+    if (cal == null) {
+      setDate(parameterIndex, x);
+      return;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(x);
+    cal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    cal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    cal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    cal.set(Calendar.HOUR_OF_DAY, 0);
+    cal.set(Calendar.MINUTE, 0);
+    cal.set(Calendar.SECOND, 0);
+    cal.set(Calendar.MILLISECOND, 0);
+    setDate(parameterIndex, new Date(cal.getTimeInMillis()));
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setTime(int parameterIndex, Time x, Calendar cal) throws SQLException {
+    checkClosed();
+    if (x == null) {
+      setNull(parameterIndex, Types.TIME);
+      return;
+    }
+    if (cal == null) {
+      setTime(parameterIndex, x);
+      return;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(x);
+    cal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    cal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    cal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    cal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    setTime(parameterIndex, new Time(cal.getTimeInMillis()));
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setTimestamp(int parameterIndex, Timestamp x, Calendar cal) throws SQLException {
+    checkClosed();
+    if (x == null) {
+      setNull(parameterIndex, Types.TIMESTAMP);
+      return;
+    }
+    if (cal == null) {
+      setTimestamp(parameterIndex, x);
+      return;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(x);
+    cal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    cal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    cal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    cal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    cal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    cal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    cal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    Timestamp adjustedTimestamp = new Timestamp(cal.getTimeInMillis());
+    adjustedTimestamp.setNanos(x.getNanos());
+    setTimestamp(parameterIndex, adjustedTimestamp);
   }
 
   @Override
@@ -501,9 +557,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public ParameterMetaData getParameterMetaData() {
-    // TODO(neenu) :IMPLEMENT
-    return null;
+  public ParameterMetaData getParameterMetaData() throws SQLException {
+    checkClosed();
+    return new BigQueryParameterMetaData(this.parameterCount, this.parameterHandler);
   }
 
   @Override
