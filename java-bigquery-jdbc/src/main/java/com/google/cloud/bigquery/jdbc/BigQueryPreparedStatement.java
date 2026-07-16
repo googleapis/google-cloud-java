@@ -55,6 +55,7 @@ import java.sql.SQLException;
 import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -114,8 +115,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setNull(int parameterIndex, int sqlType) {
-    // TODO(neenu): implement null case
+  public void setNull(int parameterIndex, int sqlType) throws SQLException {
+    checkClosed();
+    Class<?> javaType;
+    try {
+      javaType = BigQueryJdbcTypeMappings.getJavaType(sqlType);
+    } catch (SQLException e) {
+      javaType = String.class;
+    }
+    this.parameterHandler.setParameter(parameterIndex, null, javaType);
   }
 
   @Override
@@ -131,8 +139,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setShort(int parameterIndex, short x) {
-    // TODO(neenu): implement Bytes conversion.
+  public void setShort(int parameterIndex, short x) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, (long) x, Long.class);
   }
 
   @Override
@@ -172,8 +181,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setBytes(int parameterIndex, byte[] x) {
-    // TODO(neenu): implement Bytes conversion.
+  public void setBytes(int parameterIndex, byte[] x) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, x, byte[].class);
   }
 
   @Override
@@ -218,11 +228,24 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType) {}
+  public void setObject(int parameterIndex, Object x, int targetSqlType) throws SQLException {
+    checkClosed();
+    if (x == null) {
+      setNull(parameterIndex, targetSqlType);
+      return;
+    }
+    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
+    this.parameterHandler.setParameter(parameterIndex, x, javaType);
+  }
 
   @Override
-  public void setObject(int parameterIndex, Object x) {
-    // TODO :NOT IMPLEMENTED
+  public void setObject(int parameterIndex, Object x) throws SQLException {
+    checkClosed();
+    if (x == null) {
+      setNull(parameterIndex, Types.NULL);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, x, x.getClass());
   }
 
   @Override
@@ -444,8 +467,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setArray(int parameterIndex, Array x) {
-    // TODO(neenu) :IMPLEMENT ARRAY
+  public void setArray(int parameterIndex, Array x) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, x, Array.class);
   }
 
   @Override
@@ -470,8 +494,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setNull(int parameterIndex, int sqlType, String typeName) {
-    // TODO :NOT IMPLEMENTED
+  public void setNull(int parameterIndex, int sqlType, String typeName) throws SQLException {
+    setNull(parameterIndex, sqlType);
   }
 
   @Override
@@ -526,8 +550,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType, int scaleOrLength) {
-    // TODO(neenu) : IMPLEMENT?
+  public void setObject(int parameterIndex, Object x, int targetSqlType, int scaleOrLength)
+      throws SQLException {
+    checkClosed();
+    setObject(parameterIndex, x, targetSqlType);
   }
 
   @Override
