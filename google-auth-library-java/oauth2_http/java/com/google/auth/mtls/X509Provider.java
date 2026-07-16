@@ -134,6 +134,11 @@ public class X509Provider implements MtlsProvider {
 
   @Override
   public boolean isAvailable() throws IOException {
-    return MtlsUtils.canBeEnabled(envProvider, propProvider, certConfigPathOverride);
+    try {
+      this.getKeyStore();
+    } catch (CertificateSourceUnavailableException e) {
+      return false;
+    }
+    return true;
   }
 }

@@ -32,6 +32,7 @@
 package com.google.auth.mtls;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -249,5 +250,35 @@ class X509ProviderTest {
             (name, def) -> def,
             null);
     assertThrows(CertificateSourceUnavailableException.class, provider::getKeyStore);
+  }
+
+  @Test
+  void x509Provider_isAvailable_succeeds() throws IOException {
+    X509Provider testProvider = new X509Provider(TEST_CONFIG_PATH);
+    assertTrue(testProvider.isAvailable());
+  }
+
+  @Test
+  void x509Provider_isAvailable_missingConfig_returnsFalse() throws IOException {
+    X509Provider testProvider = new X509Provider("badfile.json");
+    assertFalse(testProvider.isAvailable());
+  }
+
+  @Test
+  void x509Provider_isAvailable_unaffectedByMtlsFlags() throws IOException {
+    X509Provider provider =
+        new X509Provider(
+            name -> {
+              if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+                return "false";
+              }
+              if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+                return "never";
+              }
+              return null;
+            },
+            (name, def) -> def,
+            TEST_CONFIG_PATH);
+    assertTrue(provider.isAvailable());
   }
 }
