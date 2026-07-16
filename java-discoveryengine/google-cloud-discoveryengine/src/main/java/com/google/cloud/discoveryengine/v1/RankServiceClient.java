@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -135,7 +136,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RankServiceClient implements BackgroundResource {
-  private final RankServiceSettings settings;
+  private final @Nullable RankServiceSettings settings;
   private final RankServiceStub stub;
 
   /** Constructs an instance of RankServiceClient with default settings. */
@@ -174,7 +175,7 @@ public class RankServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RankServiceSettings getSettings() {
+  public final @Nullable RankServiceSettings getSettings() {
     return settings;
   }
 

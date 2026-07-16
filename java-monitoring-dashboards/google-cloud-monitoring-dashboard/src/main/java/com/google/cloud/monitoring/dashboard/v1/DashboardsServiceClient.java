@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -231,7 +232,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DashboardsServiceClient implements BackgroundResource {
-  private final DashboardsServiceSettings settings;
+  private final @Nullable DashboardsServiceSettings settings;
   private final DashboardsServiceStub stub;
 
   /** Constructs an instance of DashboardsServiceClient with default settings. */
@@ -271,7 +272,7 @@ public class DashboardsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DashboardsServiceSettings getSettings() {
+  public final @Nullable DashboardsServiceSettings getSettings() {
     return settings;
   }
 
@@ -308,7 +309,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    * @param dashboard Required. The initial dashboard specification.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dashboard createDashboard(ProjectName parent, Dashboard dashboard) {
+  public final Dashboard createDashboard(@Nullable ProjectName parent, Dashboard dashboard) {
     CreateDashboardRequest request =
         CreateDashboardRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -447,7 +448,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDashboardsPagedResponse listDashboards(ProjectName parent) {
+  public final ListDashboardsPagedResponse listDashboards(@Nullable ProjectName parent) {
     ListDashboardsRequest request =
         ListDashboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -627,7 +628,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *     `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]` (for custom dashboards).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dashboard getDashboard(DashboardName name) {
+  public final Dashboard getDashboard(@Nullable DashboardName name) {
     GetDashboardRequest request =
         GetDashboardRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDashboard(request);
@@ -752,7 +753,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDashboard(DashboardName name) {
+  public final void deleteDashboard(@Nullable DashboardName name) {
     DeleteDashboardRequest request =
         DeleteDashboardRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDashboard(request);
@@ -978,8 +979,8 @@ public class DashboardsServiceClient implements BackgroundResource {
           ListDashboardsRequest, ListDashboardsResponse, Dashboard, ListDashboardsPage> {
 
     private ListDashboardsPage(
-        PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
-        ListDashboardsResponse response) {
+        @Nullable PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
+        @Nullable ListDashboardsResponse response) {
       super(context, response);
     }
 
@@ -989,14 +990,14 @@ public class DashboardsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDashboardsPage createPage(
-        PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
-        ListDashboardsResponse response) {
+        @Nullable PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
+        @Nullable ListDashboardsResponse response) {
       return new ListDashboardsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDashboardsPage> createPageAsync(
-        PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
+        @Nullable PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> context,
         ApiFuture<ListDashboardsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1010,7 +1011,8 @@ public class DashboardsServiceClient implements BackgroundResource {
           ListDashboardsPage,
           ListDashboardsFixedSizeCollection> {
 
-    private ListDashboardsFixedSizeCollection(List<ListDashboardsPage> pages, int collectionSize) {
+    private ListDashboardsFixedSizeCollection(
+        @Nullable List<ListDashboardsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1020,7 +1022,7 @@ public class DashboardsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDashboardsFixedSizeCollection createCollection(
-        List<ListDashboardsPage> pages, int collectionSize) {
+        @Nullable List<ListDashboardsPage> pages, int collectionSize) {
       return new ListDashboardsFixedSizeCollection(pages, collectionSize);
     }
   }

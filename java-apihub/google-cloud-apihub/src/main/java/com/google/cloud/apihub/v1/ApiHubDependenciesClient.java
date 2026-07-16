@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -247,7 +248,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ApiHubDependenciesClient implements BackgroundResource {
-  private final ApiHubDependenciesSettings settings;
+  private final @Nullable ApiHubDependenciesSettings settings;
   private final ApiHubDependenciesStub stub;
 
   /** Constructs an instance of ApiHubDependenciesClient with default settings. */
@@ -287,7 +288,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ApiHubDependenciesSettings getSettings() {
+  public final @Nullable ApiHubDependenciesSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +331,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dependency createDependency(
-      LocationName parent, Dependency dependency, String dependencyId) {
+      @Nullable LocationName parent, Dependency dependency, String dependencyId) {
     CreateDependencyRequest request =
         CreateDependencyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -467,7 +468,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/dependencies/{dependency}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dependency getDependency(DependencyName name) {
+  public final Dependency getDependency(@Nullable DependencyName name) {
     GetDependencyRequest request =
         GetDependencyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDependency(request);
@@ -694,7 +695,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/dependencies/{dependency}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDependency(DependencyName name) {
+  public final void deleteDependency(@Nullable DependencyName name) {
     DeleteDependencyRequest request =
         DeleteDependencyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDependency(request);
@@ -807,7 +808,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDependenciesPagedResponse listDependencies(LocationName parent) {
+  public final ListDependenciesPagedResponse listDependencies(@Nullable LocationName parent) {
     ListDependenciesRequest request =
         ListDependenciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1169,8 +1170,9 @@ public class ApiHubDependenciesClient implements BackgroundResource {
           ListDependenciesRequest, ListDependenciesResponse, Dependency, ListDependenciesPage> {
 
     private ListDependenciesPage(
-        PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency> context,
-        ListDependenciesResponse response) {
+        @Nullable PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency>
+            context,
+        @Nullable ListDependenciesResponse response) {
       super(context, response);
     }
 
@@ -1180,14 +1182,16 @@ public class ApiHubDependenciesClient implements BackgroundResource {
 
     @Override
     protected ListDependenciesPage createPage(
-        PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency> context,
-        ListDependenciesResponse response) {
+        @Nullable PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency>
+            context,
+        @Nullable ListDependenciesResponse response) {
       return new ListDependenciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDependenciesPage> createPageAsync(
-        PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency> context,
+        @Nullable PageContext<ListDependenciesRequest, ListDependenciesResponse, Dependency>
+            context,
         ApiFuture<ListDependenciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1202,7 +1206,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
           ListDependenciesFixedSizeCollection> {
 
     private ListDependenciesFixedSizeCollection(
-        List<ListDependenciesPage> pages, int collectionSize) {
+        @Nullable List<ListDependenciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1212,7 +1216,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
 
     @Override
     protected ListDependenciesFixedSizeCollection createCollection(
-        List<ListDependenciesPage> pages, int collectionSize) {
+        @Nullable List<ListDependenciesPage> pages, int collectionSize) {
       return new ListDependenciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1246,8 +1250,8 @@ public class ApiHubDependenciesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1257,14 +1261,14 @@ public class ApiHubDependenciesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1278,7 +1282,8 @@ public class ApiHubDependenciesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1288,7 +1293,7 @@ public class ApiHubDependenciesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

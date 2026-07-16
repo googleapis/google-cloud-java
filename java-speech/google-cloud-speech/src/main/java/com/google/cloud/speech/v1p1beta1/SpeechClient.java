@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,7 +166,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SpeechClient implements BackgroundResource {
-  private final SpeechSettings settings;
+  private final @Nullable SpeechSettings settings;
   private final SpeechStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -211,7 +212,7 @@ public class SpeechClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SpeechSettings getSettings() {
+  public final @Nullable SpeechSettings getSettings() {
     return settings;
   }
 

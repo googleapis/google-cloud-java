@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -875,7 +876,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AlloyDBAdminClient implements BackgroundResource {
-  private final AlloyDBAdminSettings settings;
+  private final @Nullable AlloyDBAdminSettings settings;
   private final AlloyDBAdminStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -922,7 +923,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AlloyDBAdminSettings getSettings() {
+  public final @Nullable AlloyDBAdminSettings getSettings() {
     return settings;
   }
 
@@ -973,7 +974,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     projects/{project}/locations/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(LocationName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable LocationName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1143,7 +1144,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Cluster.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -1260,7 +1261,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1574,7 +1575,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
-      ClusterName name,
+      @Nullable ClusterName name,
       GcsDestination gcsDestination,
       String database,
       ExportClusterRequest.CsvExportOptions csvExportOptions,
@@ -1768,7 +1769,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportClusterResponse, OperationMetadata> importClusterAsync(
-      ClusterName name, String gcsUri, String database, String user) {
+      @Nullable ClusterName name, String gcsUri, String database, String user) {
     ImportClusterRequest request =
         ImportClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1942,7 +1943,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
-      ClusterName name, DatabaseVersion version) {
+      @Nullable ClusterName name, DatabaseVersion version) {
     UpgradeClusterRequest request =
         UpgradeClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2100,7 +2101,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Cluster.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(
+      @Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -2253,7 +2255,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Cluster.name field
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, OperationMetadata> promoteClusterAsync(ClusterName name) {
+  public final OperationFuture<Cluster, OperationMetadata> promoteClusterAsync(
+      @Nullable ClusterName name) {
     PromoteClusterRequest request =
         PromoteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return promoteClusterAsync(request);
@@ -2409,7 +2412,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(
-      ClusterName name) {
+      @Nullable ClusterName name) {
     SwitchoverClusterRequest request =
         SwitchoverClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2673,7 +2676,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createSecondaryClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateSecondaryClusterRequest request =
         CreateSecondaryClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2851,7 +2854,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     projects/{project}/locations/{region}/clusters/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(ClusterName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable ClusterName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3022,7 +3025,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Instance.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -3143,7 +3146,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      ClusterName parent, Instance instance, String instanceId) {
+      @Nullable ClusterName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3316,7 +3319,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createSecondaryInstanceAsync(
-      ClusterName parent, Instance instance, String instanceId) {
+      @Nullable ClusterName parent, Instance instance, String instanceId) {
     CreateSecondaryInstanceRequest request =
         CreateSecondaryInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3728,7 +3731,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Instance.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -3883,7 +3887,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
-      InstanceName name) {
+      @Nullable InstanceName name) {
     FailoverInstanceRequest request =
         FailoverInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return failoverInstanceAsync(request);
@@ -4041,7 +4045,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> injectFaultAsync(
-      InjectFaultRequest.FaultType faultType, InstanceName name) {
+      InjectFaultRequest.FaultType faultType, @Nullable InstanceName name) {
     InjectFaultRequest request =
         InjectFaultRequest.newBuilder()
             .setFaultType(faultType)
@@ -4199,7 +4203,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> restartInstanceAsync(
-      InstanceName name) {
+      @Nullable InstanceName name) {
     RestartInstanceRequest request =
         RestartInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return restartInstanceAsync(request);
@@ -4367,7 +4371,11 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExecuteSqlResponse executeSql(
-      InstanceName instance, String database, String user, String sqlStatement, String password) {
+      @Nullable InstanceName instance,
+      String database,
+      String user,
+      String sqlStatement,
+      String password) {
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -4517,7 +4525,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @param parent Required. Parent value for ListBackupsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(LocationName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable LocationName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4682,7 +4690,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -4795,7 +4803,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
-      LocationName parent, Backup backup, String backupId) {
+      @Nullable LocationName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5090,7 +5098,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     Backup.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -5246,7 +5255,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSupportedDatabaseFlagsPagedResponse listSupportedDatabaseFlags(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListSupportedDatabaseFlagsRequest request =
         ListSupportedDatabaseFlagsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5422,7 +5431,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/clusters/{cluster}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GenerateClientCertificateResponse generateClientCertificate(ClusterName parent) {
+  public final GenerateClientCertificateResponse generateClientCertificate(
+      @Nullable ClusterName parent) {
     GenerateClientCertificateRequest request =
         GenerateClientCertificateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5557,7 +5567,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/clusters/{cluster}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectionInfo getConnectionInfo(InstanceName parent) {
+  public final ConnectionInfo getConnectionInfo(@Nullable InstanceName parent) {
     GetConnectionInfoRequest request =
         GetConnectionInfoRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5677,7 +5687,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @param parent Required. Parent value for ListUsersRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUsersPagedResponse listUsers(ClusterName parent) {
+  public final ListUsersPagedResponse listUsers(@Nullable ClusterName parent) {
     ListUsersRequest request =
         ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listUsers(request);
@@ -5840,7 +5850,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     User.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User getUser(UserName name) {
+  public final User getUser(@Nullable UserName name) {
     GetUserRequest request =
         GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUser(request);
@@ -5953,7 +5963,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @param userId Required. ID of the requesting object.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User createUser(ClusterName parent, User user, String userId) {
+  public final User createUser(@Nullable ClusterName parent, User user, String userId) {
     CreateUserRequest request =
         CreateUserRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6174,7 +6184,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *     User.name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUser(UserName name) {
+  public final void deleteUser(@Nullable UserName name) {
     DeleteUserRequest request =
         DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUser(request);
@@ -6289,7 +6299,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * @param parent Required. Parent value for ListDatabasesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabasesPagedResponse listDatabases(ClusterName parent) {
+  public final ListDatabasesPagedResponse listDatabases(@Nullable ClusterName parent) {
     ListDatabasesRequest request =
         ListDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6644,8 +6654,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -6655,14 +6665,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6676,7 +6686,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6686,7 +6697,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6720,8 +6731,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -6731,14 +6742,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6752,7 +6763,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6762,7 +6774,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6793,8 +6805,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -6804,14 +6816,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6825,7 +6837,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6835,7 +6848,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6876,12 +6889,13 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListSupportedDatabaseFlagsPage> {
 
     private ListSupportedDatabaseFlagsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportedDatabaseFlagsRequest,
                 ListSupportedDatabaseFlagsResponse,
                 SupportedDatabaseFlag>
             context,
-        ListSupportedDatabaseFlagsResponse response) {
+        @Nullable ListSupportedDatabaseFlagsResponse response) {
       super(context, response);
     }
 
@@ -6891,18 +6905,20 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListSupportedDatabaseFlagsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportedDatabaseFlagsRequest,
                 ListSupportedDatabaseFlagsResponse,
                 SupportedDatabaseFlag>
             context,
-        ListSupportedDatabaseFlagsResponse response) {
+        @Nullable ListSupportedDatabaseFlagsResponse response) {
       return new ListSupportedDatabaseFlagsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSupportedDatabaseFlagsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportedDatabaseFlagsRequest,
                 ListSupportedDatabaseFlagsResponse,
                 SupportedDatabaseFlag>
@@ -6921,7 +6937,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListSupportedDatabaseFlagsFixedSizeCollection> {
 
     private ListSupportedDatabaseFlagsFixedSizeCollection(
-        List<ListSupportedDatabaseFlagsPage> pages, int collectionSize) {
+        @Nullable List<ListSupportedDatabaseFlagsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6931,7 +6947,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListSupportedDatabaseFlagsFixedSizeCollection createCollection(
-        List<ListSupportedDatabaseFlagsPage> pages, int collectionSize) {
+        @Nullable List<ListSupportedDatabaseFlagsPage> pages, int collectionSize) {
       return new ListSupportedDatabaseFlagsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6958,8 +6974,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
       extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
 
     private ListUsersPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       super(context, response);
     }
 
@@ -6969,14 +6985,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListUsersPage createPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       return new ListUsersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsersPage> createPageAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
         ApiFuture<ListUsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6986,7 +7002,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
 
-    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+    private ListUsersFixedSizeCollection(@Nullable List<ListUsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6996,7 +7012,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListUsersFixedSizeCollection createCollection(
-        List<ListUsersPage> pages, int collectionSize) {
+        @Nullable List<ListUsersPage> pages, int collectionSize) {
       return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7030,8 +7046,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage> {
 
     private ListDatabasesPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       super(context, response);
     }
 
@@ -7041,14 +7057,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesPage createPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       return new ListDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabasesPage> createPageAsync(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
         ApiFuture<ListDatabasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7062,7 +7078,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
-    private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
+    private ListDatabasesFixedSizeCollection(
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7072,7 +7089,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesFixedSizeCollection createCollection(
-        List<ListDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       return new ListDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7106,8 +7123,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7117,14 +7134,14 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7138,7 +7155,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7148,7 +7166,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

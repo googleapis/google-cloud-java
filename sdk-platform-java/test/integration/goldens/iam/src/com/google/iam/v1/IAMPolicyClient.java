@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -168,7 +169,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IAMPolicyClient implements BackgroundResource {
-  private final IAMPolicySettings settings;
+  private final @Nullable IAMPolicySettings settings;
   private final IAMPolicyStub stub;
 
   /** Constructs an instance of IAMPolicyClient with default settings. */
@@ -206,7 +207,7 @@ public class IAMPolicyClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IAMPolicySettings getSettings() {
+  public final @Nullable IAMPolicySettings getSettings() {
     return settings;
   }
 

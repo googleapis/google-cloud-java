@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1361,7 +1362,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VmMigrationClient implements BackgroundResource {
-  private final VmMigrationSettings settings;
+  private final @Nullable VmMigrationSettings settings;
   private final VmMigrationStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1408,7 +1409,7 @@ public class VmMigrationClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VmMigrationSettings getSettings() {
+  public final @Nullable VmMigrationSettings getSettings() {
     return settings;
   }
 
@@ -1456,7 +1457,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of sources.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(LocationName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable LocationName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1621,7 +1622,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The Source name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source getSource(SourceName name) {
+  public final Source getSource(@Nullable SourceName name) {
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -1734,7 +1735,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Source, OperationMetadata> createSourceAsync(
-      LocationName parent, Source source, String sourceId) {
+      @Nullable LocationName parent, Source source, String sourceId) {
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2019,7 +2020,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The Source name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSourceAsync(SourceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSourceAsync(
+      @Nullable SourceName name) {
     DeleteSourceRequest request =
         DeleteSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSourceAsync(request);
@@ -2163,7 +2165,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param source Required. The name of the Source.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchInventoryResponse fetchInventory(SourceName source) {
+  public final FetchInventoryResponse fetchInventory(@Nullable SourceName source) {
     FetchInventoryRequest request =
         FetchInventoryRequest.newBuilder()
             .setSource(source == null ? null : source.toString())
@@ -2296,7 +2298,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchStorageInventoryPagedResponse fetchStorageInventory(
-      SourceName source, FetchStorageInventoryRequest.StorageType type) {
+      @Nullable SourceName source, FetchStorageInventoryRequest.StorageType type) {
     FetchStorageInventoryRequest request =
         FetchStorageInventoryRequest.newBuilder()
             .setSource(source == null ? null : source.toString())
@@ -2485,7 +2487,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The Utilization Reports parent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUtilizationReportsPagedResponse listUtilizationReports(SourceName parent) {
+  public final ListUtilizationReportsPagedResponse listUtilizationReports(
+      @Nullable SourceName parent) {
     ListUtilizationReportsRequest request =
         ListUtilizationReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2661,7 +2664,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The Utilization Report name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UtilizationReport getUtilizationReport(UtilizationReportName name) {
+  public final UtilizationReport getUtilizationReport(@Nullable UtilizationReportName name) {
     GetUtilizationReportRequest request =
         GetUtilizationReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2795,7 +2798,9 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UtilizationReport, OperationMetadata> createUtilizationReportAsync(
-      SourceName parent, UtilizationReport utilizationReport, String utilizationReportId) {
+      @Nullable SourceName parent,
+      UtilizationReport utilizationReport,
+      String utilizationReportId) {
     CreateUtilizationReportRequest request =
         CreateUtilizationReportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2967,7 +2972,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteUtilizationReportAsync(
-      UtilizationReportName name) {
+      @Nullable UtilizationReportName name) {
     DeleteUtilizationReportRequest request =
         DeleteUtilizationReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3127,7 +3132,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of connectors.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatacenterConnectorsPagedResponse listDatacenterConnectors(SourceName parent) {
+  public final ListDatacenterConnectorsPagedResponse listDatacenterConnectors(
+      @Nullable SourceName parent) {
     ListDatacenterConnectorsRequest request =
         ListDatacenterConnectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3301,7 +3307,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the DatacenterConnector.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DatacenterConnector getDatacenterConnector(DatacenterConnectorName name) {
+  public final DatacenterConnector getDatacenterConnector(@Nullable DatacenterConnectorName name) {
     GetDatacenterConnectorRequest request =
         GetDatacenterConnectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3434,7 +3440,7 @@ public class VmMigrationClient implements BackgroundResource {
    */
   public final OperationFuture<DatacenterConnector, OperationMetadata>
       createDatacenterConnectorAsync(
-          SourceName parent,
+          @Nullable SourceName parent,
           DatacenterConnector datacenterConnector,
           String datacenterConnectorId) {
     CreateDatacenterConnectorRequest request =
@@ -3610,7 +3616,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDatacenterConnectorAsync(
-      DatacenterConnectorName name) {
+      @Nullable DatacenterConnectorName name) {
     DeleteDatacenterConnectorRequest request =
         DeleteDatacenterConnectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3874,7 +3880,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MigratingVm, OperationMetadata> createMigratingVmAsync(
-      SourceName parent, MigratingVm migratingVm, String migratingVmId) {
+      @Nullable SourceName parent, MigratingVm migratingVm, String migratingVmId) {
     CreateMigratingVmRequest request =
         CreateMigratingVmRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4039,7 +4045,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of MigratingVms.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMigratingVmsPagedResponse listMigratingVms(SourceName parent) {
+  public final ListMigratingVmsPagedResponse listMigratingVms(@Nullable SourceName parent) {
     ListMigratingVmsRequest request =
         ListMigratingVmsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4212,7 +4218,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the MigratingVm.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MigratingVm getMigratingVm(MigratingVmName name) {
+  public final MigratingVm getMigratingVm(@Nullable MigratingVmName name) {
     GetMigratingVmRequest request =
         GetMigratingVmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMigratingVm(request);
@@ -4459,7 +4465,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMigratingVmAsync(
-      MigratingVmName name) {
+      @Nullable MigratingVmName name) {
     DeleteMigratingVmRequest request =
         DeleteMigratingVmRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4610,7 +4616,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StartMigrationResponse, OperationMetadata> startMigrationAsync(
-      MigratingVmName migratingVm) {
+      @Nullable MigratingVmName migratingVm) {
     StartMigrationRequest request =
         StartMigrationRequest.newBuilder()
             .setMigratingVm(migratingVm == null ? null : migratingVm.toString())
@@ -4961,7 +4967,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FinalizeMigrationResponse, OperationMetadata> finalizeMigrationAsync(
-      MigratingVmName migratingVm) {
+      @Nullable MigratingVmName migratingVm) {
     FinalizeMigrationRequest request =
         FinalizeMigrationRequest.newBuilder()
             .setMigratingVm(migratingVm == null ? null : migratingVm.toString())
@@ -5214,7 +5220,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CloneJob, OperationMetadata> createCloneJobAsync(
-      MigratingVmName parent, CloneJob cloneJob, String cloneJobId) {
+      @Nullable MigratingVmName parent, CloneJob cloneJob, String cloneJobId) {
     CreateCloneJobRequest request =
         CreateCloneJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5384,7 +5390,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CancelCloneJobResponse, OperationMetadata> cancelCloneJobAsync(
-      CloneJobName name) {
+      @Nullable CloneJobName name) {
     CancelCloneJobRequest request =
         CancelCloneJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelCloneJobAsync(request);
@@ -5537,7 +5543,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of source VMs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCloneJobsPagedResponse listCloneJobs(MigratingVmName parent) {
+  public final ListCloneJobsPagedResponse listCloneJobs(@Nullable MigratingVmName parent) {
     ListCloneJobsRequest request =
         ListCloneJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5711,7 +5717,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the CloneJob.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloneJob getCloneJob(CloneJobName name) {
+  public final CloneJob getCloneJob(@Nullable CloneJobName name) {
     GetCloneJobRequest request =
         GetCloneJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCloneJob(request);
@@ -5835,7 +5841,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CutoverJob, OperationMetadata> createCutoverJobAsync(
-      MigratingVmName parent, CutoverJob cutoverJob, String cutoverJobId) {
+      @Nullable MigratingVmName parent, CutoverJob cutoverJob, String cutoverJobId) {
     CreateCutoverJobRequest request =
         CreateCutoverJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6012,7 +6018,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CancelCutoverJobResponse, OperationMetadata> cancelCutoverJobAsync(
-      CutoverJobName name) {
+      @Nullable CutoverJobName name) {
     CancelCutoverJobRequest request =
         CancelCutoverJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelCutoverJobAsync(request);
@@ -6168,7 +6174,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of migrating VMs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCutoverJobsPagedResponse listCutoverJobs(MigratingVmName parent) {
+  public final ListCutoverJobsPagedResponse listCutoverJobs(@Nullable MigratingVmName parent) {
     ListCutoverJobsRequest request =
         ListCutoverJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6345,7 +6351,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the CutoverJob.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CutoverJob getCutoverJob(CutoverJobName name) {
+  public final CutoverJob getCutoverJob(@Nullable CutoverJobName name) {
     GetCutoverJobRequest request =
         GetCutoverJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCutoverJob(request);
@@ -6464,7 +6470,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of groups.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(LocationName parent) {
+  public final ListGroupsPagedResponse listGroups(@Nullable LocationName parent) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listGroups(request);
@@ -6626,7 +6632,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The group name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group getGroup(GroupName name) {
+  public final Group getGroup(@Nullable GroupName name) {
     GetGroupRequest request =
         GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGroup(request);
@@ -6739,7 +6745,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Group, OperationMetadata> createGroupAsync(
-      LocationName parent, Group group, String groupId) {
+      @Nullable LocationName parent, Group group, String groupId) {
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7024,7 +7030,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The Group name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGroupAsync(GroupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGroupAsync(
+      @Nullable GroupName name) {
     DeleteGroupRequest request =
         DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGroupAsync(request);
@@ -7166,7 +7173,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddGroupMigrationResponse, OperationMetadata> addGroupMigrationAsync(
-      GroupName group) {
+      @Nullable GroupName group) {
     AddGroupMigrationRequest request =
         AddGroupMigrationRequest.newBuilder()
             .setGroup(group == null ? null : group.toString())
@@ -7321,7 +7328,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RemoveGroupMigrationResponse, OperationMetadata>
-      removeGroupMigrationAsync(GroupName group) {
+      removeGroupMigrationAsync(@Nullable GroupName group) {
     RemoveGroupMigrationRequest request =
         RemoveGroupMigrationRequest.newBuilder()
             .setGroup(group == null ? null : group.toString())
@@ -7482,7 +7489,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of targets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTargetProjectsPagedResponse listTargetProjects(LocationName parent) {
+  public final ListTargetProjectsPagedResponse listTargetProjects(@Nullable LocationName parent) {
     ListTargetProjectsRequest request =
         ListTargetProjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7667,7 +7674,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The TargetProject name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TargetProject getTargetProject(TargetProjectName name) {
+  public final TargetProject getTargetProject(@Nullable TargetProjectName name) {
     GetTargetProjectRequest request =
         GetTargetProjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTargetProject(request);
@@ -7796,7 +7803,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TargetProject, OperationMetadata> createTargetProjectAsync(
-      LocationName parent, TargetProject targetProject, String targetProjectId) {
+      @Nullable LocationName parent, TargetProject targetProject, String targetProjectId) {
     CreateTargetProjectRequest request =
         CreateTargetProjectRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8116,7 +8123,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTargetProjectAsync(
-      TargetProjectName name) {
+      @Nullable TargetProjectName name) {
     DeleteTargetProjectRequest request =
         DeleteTargetProjectRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8280,7 +8287,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of ReplicationCycles.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReplicationCyclesPagedResponse listReplicationCycles(MigratingVmName parent) {
+  public final ListReplicationCyclesPagedResponse listReplicationCycles(
+      @Nullable MigratingVmName parent) {
     ListReplicationCyclesRequest request =
         ListReplicationCyclesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8461,7 +8469,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the ReplicationCycle.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReplicationCycle getReplicationCycle(ReplicationCycleName name) {
+  public final ReplicationCycle getReplicationCycle(@Nullable ReplicationCycleName name) {
     GetReplicationCycleRequest request =
         GetReplicationCycleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8593,7 +8601,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of targets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListImageImportsPagedResponse listImageImports(LocationName parent) {
+  public final ListImageImportsPagedResponse listImageImports(@Nullable LocationName parent) {
     ListImageImportsRequest request =
         ListImageImportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8762,7 +8770,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The ImageImport name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImageImport getImageImport(ImageImportName name) {
+  public final ImageImport getImageImport(@Nullable ImageImportName name) {
     GetImageImportRequest request =
         GetImageImportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getImageImport(request);
@@ -8879,7 +8887,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImageImport, OperationMetadata> createImageImportAsync(
-      LocationName parent, ImageImport imageImport, String imageImportId) {
+      @Nullable LocationName parent, ImageImport imageImport, String imageImportId) {
     CreateImageImportRequest request =
         CreateImageImportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9045,7 +9053,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteImageImportAsync(
-      ImageImportName name) {
+      @Nullable ImageImportName name) {
     DeleteImageImportRequest request =
         DeleteImageImportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9191,7 +9199,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of targets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListImageImportJobsPagedResponse listImageImportJobs(ImageImportName parent) {
+  public final ListImageImportJobsPagedResponse listImageImportJobs(
+      @Nullable ImageImportName parent) {
     ListImageImportJobsRequest request =
         ListImageImportJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9362,7 +9371,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The ImageImportJob name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImageImportJob getImageImportJob(ImageImportJobName name) {
+  public final ImageImportJob getImageImportJob(@Nullable ImageImportJobName name) {
     GetImageImportJobRequest request =
         GetImageImportJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9479,7 +9488,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CancelImageImportJobResponse, OperationMetadata>
-      cancelImageImportJobAsync(ImageImportJobName name) {
+      cancelImageImportJobAsync(@Nullable ImageImportJobName name) {
     CancelImageImportJobRequest request =
         CancelImageImportJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9640,7 +9649,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DiskMigrationJob, OperationMetadata> createDiskMigrationJobAsync(
-      SourceName parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId) {
+      @Nullable SourceName parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId) {
     CreateDiskMigrationJobRequest request =
         CreateDiskMigrationJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9811,7 +9820,8 @@ public class VmMigrationClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of DiskMigrationJobs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDiskMigrationJobsPagedResponse listDiskMigrationJobs(SourceName parent) {
+  public final ListDiskMigrationJobsPagedResponse listDiskMigrationJobs(
+      @Nullable SourceName parent) {
     ListDiskMigrationJobsRequest request =
         ListDiskMigrationJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9984,7 +9994,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @param name Required. The name of the DiskMigrationJob.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiskMigrationJob getDiskMigrationJob(DiskMigrationJobName name) {
+  public final DiskMigrationJob getDiskMigrationJob(@Nullable DiskMigrationJobName name) {
     GetDiskMigrationJobRequest request =
         GetDiskMigrationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10238,7 +10248,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDiskMigrationJobAsync(
-      DiskMigrationJobName name) {
+      @Nullable DiskMigrationJobName name) {
     DeleteDiskMigrationJobRequest request =
         DeleteDiskMigrationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10394,7 +10404,7 @@ public class VmMigrationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RunDiskMigrationJobResponse, OperationMetadata>
-      runDiskMigrationJobAsync(DiskMigrationJobName name) {
+      runDiskMigrationJobAsync(@Nullable DiskMigrationJobName name) {
     RunDiskMigrationJobRequest request =
         RunDiskMigrationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10838,8 +10848,8 @@ public class VmMigrationClient implements BackgroundResource {
       extends AbstractPage<ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage> {
 
     private ListSourcesPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       super(context, response);
     }
 
@@ -10849,14 +10859,14 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListSourcesPage createPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       return new ListSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSourcesPage> createPageAsync(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
         ApiFuture<ListSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10870,7 +10880,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
-    private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {
+    private ListSourcesFixedSizeCollection(
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10880,7 +10891,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListSourcesFixedSizeCollection createCollection(
-        List<ListSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10919,10 +10930,11 @@ public class VmMigrationClient implements BackgroundResource {
           FetchStorageInventoryPage> {
 
     private FetchStorageInventoryPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
             context,
-        FetchStorageInventoryResponse response) {
+        @Nullable FetchStorageInventoryResponse response) {
       super(context, response);
     }
 
@@ -10932,16 +10944,18 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected FetchStorageInventoryPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
             context,
-        FetchStorageInventoryResponse response) {
+        @Nullable FetchStorageInventoryResponse response) {
       return new FetchStorageInventoryPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchStorageInventoryPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
             context,
         ApiFuture<FetchStorageInventoryResponse> futureResponse) {
@@ -10958,7 +10972,7 @@ public class VmMigrationClient implements BackgroundResource {
           FetchStorageInventoryFixedSizeCollection> {
 
     private FetchStorageInventoryFixedSizeCollection(
-        List<FetchStorageInventoryPage> pages, int collectionSize) {
+        @Nullable List<FetchStorageInventoryPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10968,7 +10982,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected FetchStorageInventoryFixedSizeCollection createCollection(
-        List<FetchStorageInventoryPage> pages, int collectionSize) {
+        @Nullable List<FetchStorageInventoryPage> pages, int collectionSize) {
       return new FetchStorageInventoryFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11007,10 +11021,11 @@ public class VmMigrationClient implements BackgroundResource {
           ListUtilizationReportsPage> {
 
     private ListUtilizationReportsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUtilizationReportsRequest, ListUtilizationReportsResponse, UtilizationReport>
             context,
-        ListUtilizationReportsResponse response) {
+        @Nullable ListUtilizationReportsResponse response) {
       super(context, response);
     }
 
@@ -11020,16 +11035,18 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListUtilizationReportsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUtilizationReportsRequest, ListUtilizationReportsResponse, UtilizationReport>
             context,
-        ListUtilizationReportsResponse response) {
+        @Nullable ListUtilizationReportsResponse response) {
       return new ListUtilizationReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUtilizationReportsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUtilizationReportsRequest, ListUtilizationReportsResponse, UtilizationReport>
             context,
         ApiFuture<ListUtilizationReportsResponse> futureResponse) {
@@ -11046,7 +11063,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListUtilizationReportsFixedSizeCollection> {
 
     private ListUtilizationReportsFixedSizeCollection(
-        List<ListUtilizationReportsPage> pages, int collectionSize) {
+        @Nullable List<ListUtilizationReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11056,7 +11073,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListUtilizationReportsFixedSizeCollection createCollection(
-        List<ListUtilizationReportsPage> pages, int collectionSize) {
+        @Nullable List<ListUtilizationReportsPage> pages, int collectionSize) {
       return new ListUtilizationReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11097,12 +11114,13 @@ public class VmMigrationClient implements BackgroundResource {
           ListDatacenterConnectorsPage> {
 
     private ListDatacenterConnectorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatacenterConnectorsRequest,
                 ListDatacenterConnectorsResponse,
                 DatacenterConnector>
             context,
-        ListDatacenterConnectorsResponse response) {
+        @Nullable ListDatacenterConnectorsResponse response) {
       super(context, response);
     }
 
@@ -11112,18 +11130,20 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListDatacenterConnectorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatacenterConnectorsRequest,
                 ListDatacenterConnectorsResponse,
                 DatacenterConnector>
             context,
-        ListDatacenterConnectorsResponse response) {
+        @Nullable ListDatacenterConnectorsResponse response) {
       return new ListDatacenterConnectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatacenterConnectorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatacenterConnectorsRequest,
                 ListDatacenterConnectorsResponse,
                 DatacenterConnector>
@@ -11142,7 +11162,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListDatacenterConnectorsFixedSizeCollection> {
 
     private ListDatacenterConnectorsFixedSizeCollection(
-        List<ListDatacenterConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListDatacenterConnectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11152,7 +11172,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListDatacenterConnectorsFixedSizeCollection createCollection(
-        List<ListDatacenterConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListDatacenterConnectorsPage> pages, int collectionSize) {
       return new ListDatacenterConnectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11186,8 +11206,9 @@ public class VmMigrationClient implements BackgroundResource {
           ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm, ListMigratingVmsPage> {
 
     private ListMigratingVmsPage(
-        PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm> context,
-        ListMigratingVmsResponse response) {
+        @Nullable PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm>
+            context,
+        @Nullable ListMigratingVmsResponse response) {
       super(context, response);
     }
 
@@ -11197,14 +11218,16 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListMigratingVmsPage createPage(
-        PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm> context,
-        ListMigratingVmsResponse response) {
+        @Nullable PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm>
+            context,
+        @Nullable ListMigratingVmsResponse response) {
       return new ListMigratingVmsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMigratingVmsPage> createPageAsync(
-        PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm> context,
+        @Nullable PageContext<ListMigratingVmsRequest, ListMigratingVmsResponse, MigratingVm>
+            context,
         ApiFuture<ListMigratingVmsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11219,7 +11242,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListMigratingVmsFixedSizeCollection> {
 
     private ListMigratingVmsFixedSizeCollection(
-        List<ListMigratingVmsPage> pages, int collectionSize) {
+        @Nullable List<ListMigratingVmsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11229,7 +11252,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListMigratingVmsFixedSizeCollection createCollection(
-        List<ListMigratingVmsPage> pages, int collectionSize) {
+        @Nullable List<ListMigratingVmsPage> pages, int collectionSize) {
       return new ListMigratingVmsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11263,8 +11286,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListCloneJobsRequest, ListCloneJobsResponse, CloneJob, ListCloneJobsPage> {
 
     private ListCloneJobsPage(
-        PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
-        ListCloneJobsResponse response) {
+        @Nullable PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
+        @Nullable ListCloneJobsResponse response) {
       super(context, response);
     }
 
@@ -11274,14 +11297,14 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListCloneJobsPage createPage(
-        PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
-        ListCloneJobsResponse response) {
+        @Nullable PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
+        @Nullable ListCloneJobsResponse response) {
       return new ListCloneJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloneJobsPage> createPageAsync(
-        PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
+        @Nullable PageContext<ListCloneJobsRequest, ListCloneJobsResponse, CloneJob> context,
         ApiFuture<ListCloneJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11295,7 +11318,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListCloneJobsPage,
           ListCloneJobsFixedSizeCollection> {
 
-    private ListCloneJobsFixedSizeCollection(List<ListCloneJobsPage> pages, int collectionSize) {
+    private ListCloneJobsFixedSizeCollection(
+        @Nullable List<ListCloneJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11305,7 +11329,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListCloneJobsFixedSizeCollection createCollection(
-        List<ListCloneJobsPage> pages, int collectionSize) {
+        @Nullable List<ListCloneJobsPage> pages, int collectionSize) {
       return new ListCloneJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11339,8 +11363,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob, ListCutoverJobsPage> {
 
     private ListCutoverJobsPage(
-        PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
-        ListCutoverJobsResponse response) {
+        @Nullable PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
+        @Nullable ListCutoverJobsResponse response) {
       super(context, response);
     }
 
@@ -11350,14 +11374,14 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListCutoverJobsPage createPage(
-        PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
-        ListCutoverJobsResponse response) {
+        @Nullable PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
+        @Nullable ListCutoverJobsResponse response) {
       return new ListCutoverJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCutoverJobsPage> createPageAsync(
-        PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
+        @Nullable PageContext<ListCutoverJobsRequest, ListCutoverJobsResponse, CutoverJob> context,
         ApiFuture<ListCutoverJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11372,7 +11396,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListCutoverJobsFixedSizeCollection> {
 
     private ListCutoverJobsFixedSizeCollection(
-        List<ListCutoverJobsPage> pages, int collectionSize) {
+        @Nullable List<ListCutoverJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11382,7 +11406,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListCutoverJobsFixedSizeCollection createCollection(
-        List<ListCutoverJobsPage> pages, int collectionSize) {
+        @Nullable List<ListCutoverJobsPage> pages, int collectionSize) {
       return new ListCutoverJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11413,8 +11437,8 @@ public class VmMigrationClient implements BackgroundResource {
       extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
 
     private ListGroupsPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       super(context, response);
     }
 
@@ -11424,14 +11448,14 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListGroupsPage createPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       return new ListGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupsPage> createPageAsync(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
         ApiFuture<ListGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11445,7 +11469,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
-    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+    private ListGroupsFixedSizeCollection(
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11455,7 +11480,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListGroupsFixedSizeCollection createCollection(
-        List<ListGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       return new ListGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11492,8 +11517,9 @@ public class VmMigrationClient implements BackgroundResource {
           ListTargetProjectsPage> {
 
     private ListTargetProjectsPage(
-        PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject> context,
-        ListTargetProjectsResponse response) {
+        @Nullable PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject>
+            context,
+        @Nullable ListTargetProjectsResponse response) {
       super(context, response);
     }
 
@@ -11503,14 +11529,16 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListTargetProjectsPage createPage(
-        PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject> context,
-        ListTargetProjectsResponse response) {
+        @Nullable PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject>
+            context,
+        @Nullable ListTargetProjectsResponse response) {
       return new ListTargetProjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTargetProjectsPage> createPageAsync(
-        PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject> context,
+        @Nullable PageContext<ListTargetProjectsRequest, ListTargetProjectsResponse, TargetProject>
+            context,
         ApiFuture<ListTargetProjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11525,7 +11553,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListTargetProjectsFixedSizeCollection> {
 
     private ListTargetProjectsFixedSizeCollection(
-        List<ListTargetProjectsPage> pages, int collectionSize) {
+        @Nullable List<ListTargetProjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11535,7 +11563,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListTargetProjectsFixedSizeCollection createCollection(
-        List<ListTargetProjectsPage> pages, int collectionSize) {
+        @Nullable List<ListTargetProjectsPage> pages, int collectionSize) {
       return new ListTargetProjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11573,9 +11601,11 @@ public class VmMigrationClient implements BackgroundResource {
           ListReplicationCyclesPage> {
 
     private ListReplicationCyclesPage(
-        PageContext<ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
+        @Nullable
+            PageContext<
+                ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
             context,
-        ListReplicationCyclesResponse response) {
+        @Nullable ListReplicationCyclesResponse response) {
       super(context, response);
     }
 
@@ -11585,15 +11615,19 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListReplicationCyclesPage createPage(
-        PageContext<ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
+        @Nullable
+            PageContext<
+                ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
             context,
-        ListReplicationCyclesResponse response) {
+        @Nullable ListReplicationCyclesResponse response) {
       return new ListReplicationCyclesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReplicationCyclesPage> createPageAsync(
-        PageContext<ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
+        @Nullable
+            PageContext<
+                ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
             context,
         ApiFuture<ListReplicationCyclesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11609,7 +11643,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListReplicationCyclesFixedSizeCollection> {
 
     private ListReplicationCyclesFixedSizeCollection(
-        List<ListReplicationCyclesPage> pages, int collectionSize) {
+        @Nullable List<ListReplicationCyclesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11619,7 +11653,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListReplicationCyclesFixedSizeCollection createCollection(
-        List<ListReplicationCyclesPage> pages, int collectionSize) {
+        @Nullable List<ListReplicationCyclesPage> pages, int collectionSize) {
       return new ListReplicationCyclesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11653,8 +11687,9 @@ public class VmMigrationClient implements BackgroundResource {
           ListImageImportsRequest, ListImageImportsResponse, ImageImport, ListImageImportsPage> {
 
     private ListImageImportsPage(
-        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
-        ListImageImportsResponse response) {
+        @Nullable PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport>
+            context,
+        @Nullable ListImageImportsResponse response) {
       super(context, response);
     }
 
@@ -11664,14 +11699,16 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListImageImportsPage createPage(
-        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
-        ListImageImportsResponse response) {
+        @Nullable PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport>
+            context,
+        @Nullable ListImageImportsResponse response) {
       return new ListImageImportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImageImportsPage> createPageAsync(
-        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
+        @Nullable PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport>
+            context,
         ApiFuture<ListImageImportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11686,7 +11723,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListImageImportsFixedSizeCollection> {
 
     private ListImageImportsFixedSizeCollection(
-        List<ListImageImportsPage> pages, int collectionSize) {
+        @Nullable List<ListImageImportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11696,7 +11733,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListImageImportsFixedSizeCollection createCollection(
-        List<ListImageImportsPage> pages, int collectionSize) {
+        @Nullable List<ListImageImportsPage> pages, int collectionSize) {
       return new ListImageImportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11734,9 +11771,10 @@ public class VmMigrationClient implements BackgroundResource {
           ListImageImportJobsPage> {
 
     private ListImageImportJobsPage(
-        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+        @Nullable
+            PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
             context,
-        ListImageImportJobsResponse response) {
+        @Nullable ListImageImportJobsResponse response) {
       super(context, response);
     }
 
@@ -11746,15 +11784,17 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListImageImportJobsPage createPage(
-        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+        @Nullable
+            PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
             context,
-        ListImageImportJobsResponse response) {
+        @Nullable ListImageImportJobsResponse response) {
       return new ListImageImportJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImageImportJobsPage> createPageAsync(
-        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+        @Nullable
+            PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
             context,
         ApiFuture<ListImageImportJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11770,7 +11810,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListImageImportJobsFixedSizeCollection> {
 
     private ListImageImportJobsFixedSizeCollection(
-        List<ListImageImportJobsPage> pages, int collectionSize) {
+        @Nullable List<ListImageImportJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11780,7 +11820,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListImageImportJobsFixedSizeCollection createCollection(
-        List<ListImageImportJobsPage> pages, int collectionSize) {
+        @Nullable List<ListImageImportJobsPage> pages, int collectionSize) {
       return new ListImageImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11818,9 +11858,11 @@ public class VmMigrationClient implements BackgroundResource {
           ListDiskMigrationJobsPage> {
 
     private ListDiskMigrationJobsPage(
-        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+        @Nullable
+            PageContext<
+                ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
             context,
-        ListDiskMigrationJobsResponse response) {
+        @Nullable ListDiskMigrationJobsResponse response) {
       super(context, response);
     }
 
@@ -11830,15 +11872,19 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListDiskMigrationJobsPage createPage(
-        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+        @Nullable
+            PageContext<
+                ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
             context,
-        ListDiskMigrationJobsResponse response) {
+        @Nullable ListDiskMigrationJobsResponse response) {
       return new ListDiskMigrationJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiskMigrationJobsPage> createPageAsync(
-        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+        @Nullable
+            PageContext<
+                ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
             context,
         ApiFuture<ListDiskMigrationJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11854,7 +11900,7 @@ public class VmMigrationClient implements BackgroundResource {
           ListDiskMigrationJobsFixedSizeCollection> {
 
     private ListDiskMigrationJobsFixedSizeCollection(
-        List<ListDiskMigrationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDiskMigrationJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11864,7 +11910,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListDiskMigrationJobsFixedSizeCollection createCollection(
-        List<ListDiskMigrationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDiskMigrationJobsPage> pages, int collectionSize) {
       return new ListDiskMigrationJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11898,8 +11944,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -11909,14 +11955,14 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11930,7 +11976,8 @@ public class VmMigrationClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11940,7 +11987,7 @@ public class VmMigrationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
