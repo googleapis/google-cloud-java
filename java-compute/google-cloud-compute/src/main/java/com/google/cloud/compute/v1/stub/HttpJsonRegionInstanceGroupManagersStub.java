@@ -304,6 +304,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -360,6 +364,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -955,6 +963,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RecreateInstancesRegionInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -1328,6 +1340,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopInstancesRegionInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }

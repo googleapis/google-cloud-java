@@ -14441,6 +14441,2170 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface InstanceFlexibilityPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getInstanceSelectionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    boolean containsInstanceSelections(java.lang.String key);
+
+    /** Use {@link #getInstanceSelectionsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        getInstanceSelections();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.Map<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        getInstanceSelectionsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    /* nullable */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        getInstanceSelectionsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection getInstanceSelectionsOrThrow(
+        java.lang.String key);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Allows creating VMs from multiple types of machines. Instance flexibility
+   * configuration overrides instances configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy}
+   */
+  public static final class InstanceFlexibilityPolicy extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)
+      InstanceFlexibilityPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "InstanceFlexibilityPolicy");
+    }
+
+    // Use InstanceFlexibilityPolicy.newBuilder() to construct.
+    private InstanceFlexibilityPolicy(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InstanceFlexibilityPolicy() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.batch.v1alpha.JobProto
+          .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetInstanceSelections();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.batch.v1alpha.JobProto
+          .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.class,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder
+                  .class);
+    }
+
+    public static final int INSTANCE_SELECTIONS_FIELD_NUMBER = 1;
+
+    private static final class InstanceSelectionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String,
+                      com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+                      newDefaultInstance(
+                          com.google.cloud.batch.v1alpha.JobProto
+                              .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+                              .getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        instanceSelections_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        internalGetInstanceSelections() {
+      if (instanceSelections_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InstanceSelectionsDefaultEntryHolder.defaultEntry);
+      }
+      return instanceSelections_;
+    }
+
+    public int getInstanceSelectionsCount() {
+      return internalGetInstanceSelections().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsInstanceSelections(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInstanceSelections().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getInstanceSelectionsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        getInstanceSelections() {
+      return getInstanceSelectionsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+        getInstanceSelectionsMap() {
+      return internalGetInstanceSelections().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        getInstanceSelectionsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          map = internalGetInstanceSelections().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Named instance selections configuring properties that the group
+     * will use when creating new VMs. The map key is a user-specified name for
+     * the instance selection. The key must be 1-63 characters long, and comply
+     * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+     * key must consist of lowercase letters, numbers, and hyphens. The first
+     * character must be a lowercase letter, and the last character must be a
+     * lowercase letter or number.
+     * The maximum number of instance selections is 50. Exceeding this limit
+     * results in a validation error with code `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        getInstanceSelectionsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          map = internalGetInstanceSelections().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+          output,
+          internalGetInstanceSelections(),
+          InstanceSelectionsDefaultEntryHolder.defaultEntry,
+          1);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          entry : internalGetInstanceSelections().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+            instanceSelections__ =
+                InstanceSelectionsDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, instanceSelections__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy other =
+          (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy) obj;
+
+      if (!internalGetInstanceSelections().equals(other.internalGetInstanceSelections()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetInstanceSelections().getMap().isEmpty()) {
+        hash = (37 * hash) + INSTANCE_SELECTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetInstanceSelections().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows creating VMs from multiple types of machines. Instance flexibility
+     * configuration overrides instances configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetInstanceSelections();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableInstanceSelections();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.class,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableInstanceSelections().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceFlexibilityPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+          getDefaultInstanceForType() {
+        return com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy build() {
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+          buildPartial() {
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy result =
+            new com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.instanceSelections_ =
+              internalGetInstanceSelections()
+                  .build(InstanceSelectionsDefaultEntryHolder.defaultEntry);
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy) {
+          return mergeFrom(
+              (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy other) {
+        if (other
+            == com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+                .getDefaultInstance()) return this;
+        internalGetMutableInstanceSelections().mergeFrom(other.internalGetInstanceSelections());
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String,
+                          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+                      instanceSelections__ =
+                          input.readMessage(
+                              InstanceSelectionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableInstanceSelections()
+                      .ensureBuilderMap()
+                      .put(instanceSelections__.getKey(), instanceSelections__.getValue());
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private static final class InstanceSelectionsConverter
+          implements com.google.protobuf.MapFieldBuilder.Converter<
+              java.lang.String,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection> {
+        @java.lang.Override
+        public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection build(
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder val) {
+          if (val instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) {
+            return (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) val;
+          }
+          return ((com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder) val)
+              .build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<
+                java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+            defaultEntry() {
+          return InstanceSelectionsDefaultEntryHolder.defaultEntry;
+        }
+      }
+      ;
+
+      private static final InstanceSelectionsConverter instanceSelectionsConverter =
+          new InstanceSelectionsConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder>
+          instanceSelections_;
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder>
+          internalGetInstanceSelections() {
+        if (instanceSelections_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(instanceSelectionsConverter);
+        }
+        return instanceSelections_;
+      }
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder>
+          internalGetMutableInstanceSelections() {
+        if (instanceSelections_ == null) {
+          instanceSelections_ =
+              new com.google.protobuf.MapFieldBuilder<>(instanceSelectionsConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return instanceSelections_;
+      }
+
+      public int getInstanceSelectionsCount() {
+        return internalGetInstanceSelections().ensureBuilderMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsInstanceSelections(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetInstanceSelections().ensureBuilderMap().containsKey(key);
+      }
+
+      /** Use {@link #getInstanceSelectionsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          getInstanceSelections() {
+        return getInstanceSelectionsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          getInstanceSelectionsMap() {
+        return internalGetInstanceSelections().getImmutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+          getInstanceSelectionsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder>
+            map = internalGetMutableInstanceSelections().ensureBuilderMap();
+        return map.containsKey(key)
+            ? instanceSelectionsConverter.build(map.get(key))
+            : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+          getInstanceSelectionsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder>
+            map = internalGetMutableInstanceSelections().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return instanceSelectionsConverter.build(map.get(key));
+      }
+
+      public Builder clearInstanceSelections() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableInstanceSelections().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeInstanceSelections(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableInstanceSelections().ensureBuilderMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+          getMutableInstanceSelections() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableInstanceSelections().ensureMessageMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder putInstanceSelections(
+          java.lang.String key,
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableInstanceSelections().ensureBuilderMap().put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder putAllInstanceSelections(
+          java.util.Map<
+                  java.lang.String,
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+              values) {
+        for (java.util.Map.Entry<
+                java.lang.String, com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection>
+            e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableInstanceSelections().ensureBuilderMap().putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Named instance selections configuring properties that the group
+       * will use when creating new VMs. The map key is a user-specified name for
+       * the instance selection. The key must be 1-63 characters long, and comply
+       * with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Specifically, the
+       * key must consist of lowercase letters, numbers, and hyphens. The first
+       * character must be a lowercase letter, and the last character must be a
+       * lowercase letter or number.
+       * The maximum number of instance selections is 50. Exceeding this limit
+       * results in a validation error with code `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection&gt; instance_selections = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder
+          putInstanceSelectionsBuilderIfAbsent(java.lang.String key) {
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder>
+            builderMap = internalGetMutableInstanceSelections().ensureBuilderMap();
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder entry =
+            builderMap.get(key);
+        if (entry == null) {
+          entry = com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) {
+          entry =
+              ((com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) entry)
+                  .toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder) entry;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy)
+    private static final com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy();
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InstanceFlexibilityPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<InstanceFlexibilityPolicy>() {
+          @java.lang.Override
+          public InstanceFlexibilityPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InstanceFlexibilityPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InstanceFlexibilityPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface InstanceSelectionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the machineTypes.
+     */
+    java.util.List<java.lang.String> getMachineTypesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of machineTypes.
+     */
+    int getMachineTypesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The machineTypes at the given index.
+     */
+    java.lang.String getMachineTypes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the machineTypes at the given index.
+     */
+    com.google.protobuf.ByteString getMachineTypesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the preference of this instance selection. Lower
+     * number means higher preference. First try is to create a VM based on the
+     * machine-type with lowest rank and fallback to next rank based on
+     * availability. Machine types and instance selections with the same rank
+     * have the same preference.
+     * </pre>
+     *
+     * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the rank field is set.
+     */
+    boolean hasRank();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the preference of this instance selection. Lower
+     * number means higher preference. First try is to create a VM based on the
+     * machine-type with lowest rank and fallback to next rank based on
+     * availability. Machine types and instance selections with the same rank
+     * have the same preference.
+     * </pre>
+     *
+     * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The rank.
+     */
+    int getRank();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines an instance selection for a given instance flexibility policy.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection}
+   */
+  public static final class InstanceSelection extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
+      InstanceSelectionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "InstanceSelection");
+    }
+
+    // Use InstanceSelection.newBuilder() to construct.
+    private InstanceSelection(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InstanceSelection() {
+      machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.batch.v1alpha.JobProto
+          .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.batch.v1alpha.JobProto
+          .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.class,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MACHINE_TYPES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList machineTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the machineTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getMachineTypesList() {
+      return machineTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of machineTypes.
+     */
+    public int getMachineTypesCount() {
+      return machineTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The machineTypes at the given index.
+     */
+    public java.lang.String getMachineTypes(int index) {
+      return machineTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Compute Engine machine type IDs.
+     * Only the machine type ID is supported, such as `n1-standard-16`.
+     * Full or partial URLs are not accepted.
+     * The total maximum number of machine types across all instance selections
+     * is 200. Exceeding this limit results in a validation error with code
+     * `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the machineTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getMachineTypesBytes(int index) {
+      return machineTypes_.getByteString(index);
+    }
+
+    public static final int RANK_FIELD_NUMBER = 2;
+    private int rank_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the preference of this instance selection. Lower
+     * number means higher preference. First try is to create a VM based on the
+     * machine-type with lowest rank and fallback to next rank based on
+     * availability. Machine types and instance selections with the same rank
+     * have the same preference.
+     * </pre>
+     *
+     * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the rank field is set.
+     */
+    @java.lang.Override
+    public boolean hasRank() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the preference of this instance selection. Lower
+     * number means higher preference. First try is to create a VM based on the
+     * machine-type with lowest rank and fallback to next rank based on
+     * availability. Machine types and instance selections with the same rank
+     * have the same preference.
+     * </pre>
+     *
+     * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The rank.
+     */
+    @java.lang.Override
+    public int getRank() {
+      return rank_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < machineTypes_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, machineTypes_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(2, rank_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < machineTypes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(machineTypes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getMachineTypesList().size();
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rank_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection other =
+          (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) obj;
+
+      if (!getMachineTypesList().equals(other.getMachineTypesList())) return false;
+      if (hasRank() != other.hasRank()) return false;
+      if (hasRank()) {
+        if (getRank() != other.getRank()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMachineTypesCount() > 0) {
+        hash = (37 * hash) + MACHINE_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getMachineTypesList().hashCode();
+      }
+      if (hasRank()) {
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines an instance selection for a given instance flexibility policy.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelectionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.class,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        rank_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.batch.v1alpha.JobProto
+            .internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+          getDefaultInstanceForType() {
+        return com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection build() {
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection buildPartial() {
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection result =
+            new com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          machineTypes_.makeImmutable();
+          result.machineTypes_ = machineTypes_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rank_ = rank_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) {
+          return mergeFrom(
+              (com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection other) {
+        if (other
+            == com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+                .getDefaultInstance()) return this;
+        if (!other.machineTypes_.isEmpty()) {
+          if (machineTypes_.isEmpty()) {
+            machineTypes_ = other.machineTypes_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureMachineTypesIsMutable();
+            machineTypes_.addAll(other.machineTypes_);
+          }
+          onChanged();
+        }
+        if (other.hasRank()) {
+          setRank(other.getRank());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureMachineTypesIsMutable();
+                  machineTypes_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  rank_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList machineTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureMachineTypesIsMutable() {
+        if (!machineTypes_.isModifiable()) {
+          machineTypes_ = new com.google.protobuf.LazyStringArrayList(machineTypes_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the machineTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getMachineTypesList() {
+        machineTypes_.makeImmutable();
+        return machineTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of machineTypes.
+       */
+      public int getMachineTypesCount() {
+        return machineTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The machineTypes at the given index.
+       */
+      public java.lang.String getMachineTypes(int index) {
+        return machineTypes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the machineTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getMachineTypesBytes(int index) {
+        return machineTypes_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The machineTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMachineTypes(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMachineTypesIsMutable();
+        machineTypes_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The machineTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMachineTypes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMachineTypesIsMutable();
+        machineTypes_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The machineTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMachineTypes(java.lang.Iterable<java.lang.String> values) {
+        ensureMachineTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, machineTypes_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMachineTypes() {
+        machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Compute Engine machine type IDs.
+       * Only the machine type ID is supported, such as `n1-standard-16`.
+       * Full or partial URLs are not accepted.
+       * The total maximum number of machine types across all instance selections
+       * is 200. Exceeding this limit results in a validation error with code
+       * `INVALID_ARGUMENT`.
+       * </pre>
+       *
+       * <code>repeated string machine_types = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes of the machineTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMachineTypesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureMachineTypesIsMutable();
+        machineTypes_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int rank_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the preference of this instance selection. Lower
+       * number means higher preference. First try is to create a VM based on the
+       * machine-type with lowest rank and fallback to next rank based on
+       * availability. Machine types and instance selections with the same rank
+       * have the same preference.
+       * </pre>
+       *
+       * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the rank field is set.
+       */
+      @java.lang.Override
+      public boolean hasRank() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the preference of this instance selection. Lower
+       * number means higher preference. First try is to create a VM based on the
+       * machine-type with lowest rank and fallback to next rank based on
+       * availability. Machine types and instance selections with the same rank
+       * have the same preference.
+       * </pre>
+       *
+       * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the preference of this instance selection. Lower
+       * number means higher preference. First try is to create a VM based on the
+       * machine-type with lowest rank and fallback to next rank based on
+       * availability. Machine types and instance selections with the same rank
+       * have the same preference.
+       * </pre>
+       *
+       * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The rank to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRank(int value) {
+
+        rank_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the preference of this instance selection. Lower
+       * number means higher preference. First try is to create a VM based on the
+       * machine-type with lowest rank and fallback to next rank based on
+       * availability. Machine types and instance selections with the same rank
+       * have the same preference.
+       * </pre>
+       *
+       * <code>optional int32 rank = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRank() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rank_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
+    private static final com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection();
+    }
+
+    public static com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InstanceSelection> PARSER =
+        new com.google.protobuf.AbstractParser<InstanceSelection>() {
+          @java.lang.Override
+          public InstanceSelection parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InstanceSelection> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InstanceSelection> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.cloud.batch.v1alpha.AllocationPolicy.LocationPolicy location_;
@@ -14511,7 +16675,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=660
+   *     google/cloud/batch/v1alpha/job.proto;l=694
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -14532,7 +16696,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=660
+   *     google/cloud/batch/v1alpha/job.proto;l=694
    * @return The instance.
    */
   @java.lang.Override
@@ -14676,7 +16840,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=667
+   *     google/cloud/batch/v1alpha/job.proto;l=701
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -14694,7 +16858,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=667
+   *     google/cloud/batch/v1alpha/job.proto;l=701
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -14712,7 +16876,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=667
+   *     google/cloud/batch/v1alpha/job.proto;l=701
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -14731,7 +16895,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=667
+   *     google/cloud/batch/v1alpha/job.proto;l=701
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -14772,7 +16936,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=670
+   *     google/cloud/batch/v1alpha/job.proto;l=704
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -14796,7 +16960,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=670
+   *     google/cloud/batch/v1alpha/job.proto;l=704
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -14817,7 +16981,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=670
+   *     google/cloud/batch/v1alpha/job.proto;l=704
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -14840,7 +17004,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=670
+   *     google/cloud/batch/v1alpha/job.proto;l=704
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -14861,7 +17025,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=670
+   *     google/cloud/batch/v1alpha/job.proto;l=704
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -14888,7 +17052,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=673
+   *     See google/cloud/batch/v1alpha/job.proto;l=707
    * @return The serviceAccountEmail.
    */
   @java.lang.Override
@@ -14915,7 +17079,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=673
+   *     See google/cloud/batch/v1alpha/job.proto;l=707
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Override
@@ -15366,6 +17530,76 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     return tags_.getByteString(index);
   }
 
+  public static final int INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER = 12;
+  private com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+      instanceFlexibilityPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceFlexibilityPolicy() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+      getInstanceFlexibilityPolicy() {
+    return instanceFlexibilityPolicy_ == null
+        ? com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+            .getDefaultInstance()
+        : instanceFlexibilityPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder() {
+    return instanceFlexibilityPolicy_ == null
+        ? com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+            .getDefaultInstance()
+        : instanceFlexibilityPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -15416,6 +17650,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, tags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(12, getInstanceFlexibilityPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -15487,6 +17724,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getTagsList().size();
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, getInstanceFlexibilityPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -15529,6 +17771,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getPlacement().equals(other.getPlacement())) return false;
     }
     if (!getTagsList().equals(other.getTagsList())) return false;
+    if (hasInstanceFlexibilityPolicy() != other.hasInstanceFlexibilityPolicy()) return false;
+    if (hasInstanceFlexibilityPolicy()) {
+      if (!getInstanceFlexibilityPolicy().equals(other.getInstanceFlexibilityPolicy()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -15581,6 +17828,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (getTagsCount() > 0) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getTagsList().hashCode();
+    }
+    if (hasInstanceFlexibilityPolicy()) {
+      hash = (37 * hash) + INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceFlexibilityPolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -15752,6 +18003,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         internalGetServiceAccountFieldBuilder();
         internalGetNetworkFieldBuilder();
         internalGetPlacementFieldBuilder();
+        internalGetInstanceFlexibilityPolicyFieldBuilder();
       }
     }
 
@@ -15796,6 +18048,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         placementBuilder_ = null;
       }
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      instanceFlexibilityPolicy_ = null;
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        instanceFlexibilityPolicyBuilder_.dispose();
+        instanceFlexibilityPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -15886,6 +18143,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.instanceFlexibilityPolicy_ =
+            instanceFlexibilityPolicyBuilder_ == null
+                ? instanceFlexibilityPolicy_
+                : instanceFlexibilityPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -15982,6 +18246,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           tags_.addAll(other.tags_);
         }
         onChanged();
+      }
+      if (other.hasInstanceFlexibilityPolicy()) {
+        mergeInstanceFlexibilityPolicy(other.getInstanceFlexibilityPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -16108,6 +18375,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 tags_.add(s);
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetInstanceFlexibilityPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16347,7 +18622,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=660
+     *     google/cloud/batch/v1alpha/job.proto;l=694
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -16367,7 +18642,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=660
+     *     google/cloud/batch/v1alpha/job.proto;l=694
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -17027,7 +19302,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -17046,7 +19321,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -17064,7 +19339,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -17083,7 +19358,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -17102,7 +19377,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -17129,7 +19404,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -17155,7 +19430,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -17178,7 +19453,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17200,7 +19475,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=667
+     *     google/cloud/batch/v1alpha/job.proto;l=701
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -17238,7 +19513,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -17261,7 +19536,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -17281,7 +19556,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -17303,7 +19578,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -17332,7 +19607,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -17360,7 +19635,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -17389,7 +19664,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17412,7 +19687,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -17433,7 +19708,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -17454,7 +19729,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -17479,7 +19754,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -17503,7 +19778,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=670
+     *     See google/cloud/batch/v1alpha/job.proto;l=704
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -17529,7 +19804,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=673
+     *     See google/cloud/batch/v1alpha/job.proto;l=707
      * @return The serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -17555,7 +19830,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=673
+     *     See google/cloud/batch/v1alpha/job.proto;l=707
      * @return The bytes for serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -17581,7 +19856,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=673
+     *     See google/cloud/batch/v1alpha/job.proto;l=707
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -17606,7 +19881,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=673
+     *     See google/cloud/batch/v1alpha/job.proto;l=707
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17627,7 +19902,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=673
+     *     See google/cloud/batch/v1alpha/job.proto;l=707
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -18825,6 +21100,248 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        instanceFlexibilityPolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy,
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder,
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder>
+        instanceFlexibilityPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the instanceFlexibilityPolicy field is set.
+     */
+    public boolean hasInstanceFlexibilityPolicy() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The instanceFlexibilityPolicy.
+     */
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+        getInstanceFlexibilityPolicy() {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        return instanceFlexibilityPolicy_ == null
+            ? com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+                .getDefaultInstance()
+            : instanceFlexibilityPolicy_;
+      } else {
+        return instanceFlexibilityPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstanceFlexibilityPolicy(
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy value) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceFlexibilityPolicy_ = value;
+      } else {
+        instanceFlexibilityPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstanceFlexibilityPolicy(
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder
+            builderForValue) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        instanceFlexibilityPolicy_ = builderForValue.build();
+      } else {
+        instanceFlexibilityPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInstanceFlexibilityPolicy(
+        com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy value) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && instanceFlexibilityPolicy_ != null
+            && instanceFlexibilityPolicy_
+                != com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+                    .getDefaultInstance()) {
+          getInstanceFlexibilityPolicyBuilder().mergeFrom(value);
+        } else {
+          instanceFlexibilityPolicy_ = value;
+        }
+      } else {
+        instanceFlexibilityPolicyBuilder_.mergeFrom(value);
+      }
+      if (instanceFlexibilityPolicy_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInstanceFlexibilityPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      instanceFlexibilityPolicy_ = null;
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        instanceFlexibilityPolicyBuilder_.dispose();
+        instanceFlexibilityPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder
+        getInstanceFlexibilityPolicyBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetInstanceFlexibilityPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder
+        getInstanceFlexibilityPolicyOrBuilder() {
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        return instanceFlexibilityPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return instanceFlexibilityPolicy_ == null
+            ? com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy
+                .getDefaultInstance()
+            : instanceFlexibilityPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instance flexibility policy for the job. This configuration
+     * overrides the `instances` configuration. Only allowed in job level. Not
+     * allowed in task group level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy,
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder,
+            com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder>
+        internalGetInstanceFlexibilityPolicyFieldBuilder() {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        instanceFlexibilityPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicy.Builder,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder>(
+                getInstanceFlexibilityPolicy(), getParentForChildren(), isClean());
+        instanceFlexibilityPolicy_ = null;
+      }
+      return instanceFlexibilityPolicyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.batch.v1alpha.AllocationPolicy)

@@ -123,6 +123,105 @@ public interface SubnetworkSecondaryRangeOrBuilder
    *
    *
    * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  boolean hasIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  java.lang.String getIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  com.google.protobuf.ByteString getIpCollectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  boolean hasIpVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The ipVersion.
+   */
+  java.lang.String getIpVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The bytes for ipVersion.
+   */
+  com.google.protobuf.ByteString getIpVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name associated with this subnetwork secondary range, used when adding
    * an alias IP/IPv6 range to a VM instance.
    * The name must be 1-63 characters long, and comply withRFC1035.
