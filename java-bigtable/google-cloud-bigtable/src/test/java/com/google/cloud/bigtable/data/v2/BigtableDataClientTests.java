@@ -59,7 +59,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -76,36 +75,68 @@ public class BigtableDataClientTests {
 
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
-  @Mock private EnhancedBigtableStub mockStub;
+  private EnhancedBigtableStub mockStub;
 
-  @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
+  private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
 
-  @Mock private UnaryCallable<Query, Row> mockReadRowCallable;
-  @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
+  private UnaryCallable<Query, Row> mockReadRowCallable;
+  private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
 
-  @Mock
   private UnaryCallable<SampleRowKeysRequest, List<KeyOffset>> mockSampleRowKeysCallableWithRequest;
 
-  @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
-  @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
-  @Mock private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
-  @Mock private UnaryCallable<BulkMutation, Void> mockBulkMutateRowsCallable;
-  @Mock private Batcher<RowMutationEntry, Void> mockBulkMutationBatcher;
-  @Mock private Batcher<ByteString, Row> mockBulkReadRowsBatcher;
-  @Mock private UnaryCallable<PrepareQueryRequest, PrepareResponse> mockPrepareQueryCallable;
+  private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
+  private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
+  private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
+  private UnaryCallable<BulkMutation, Void> mockBulkMutateRowsCallable;
+  private Batcher<RowMutationEntry, Void> mockBulkMutationBatcher;
+  private Batcher<ByteString, Row> mockBulkReadRowsBatcher;
+  private UnaryCallable<PrepareQueryRequest, PrepareResponse> mockPrepareQueryCallable;
 
-  @Mock
   private ServerStreamingCallable<String, ByteStringRange>
       mockGenerateInitialChangeStreamPartitionsCallable;
-
-  @Mock
   private ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
       mockReadChangeStreamCallable;
 
   private BigtableDataClient bigtableDataClient;
 
   @Before
+  @SuppressWarnings("unchecked")
   public void setUp() {
+    mockStub =
+        Mockito.mock(EnhancedBigtableStub.class, Mockito.withSettings().withoutAnnotations());
+    mockReadRowsCallable =
+        Mockito.mock(
+            ServerStreamingCallable.class,
+            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+    mockReadRowCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockSampleRowKeysCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockSampleRowKeysCallableWithRequest =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockMutateRowCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCheckAndMutateRowCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockReadModifyWriteRowCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockBulkMutateRowsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockBulkMutationBatcher =
+        Mockito.mock(Batcher.class, Mockito.withSettings().withoutAnnotations());
+    mockBulkReadRowsBatcher =
+        Mockito.mock(Batcher.class, Mockito.withSettings().withoutAnnotations());
+    mockPrepareQueryCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGenerateInitialChangeStreamPartitionsCallable =
+        Mockito.mock(
+            ServerStreamingCallable.class,
+            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+    mockReadChangeStreamCallable =
+        Mockito.mock(
+            ServerStreamingCallable.class,
+            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+
     bigtableDataClient = new BigtableDataClient(mockStub);
   }
 
@@ -597,7 +628,8 @@ public class BigtableDataClientTests {
 
     Query query = Query.create(TableId.of("fake-table"));
     @SuppressWarnings("unchecked")
-    ResponseObserver<Row> mockObserver = Mockito.mock(ResponseObserver.class);
+    ResponseObserver<Row> mockObserver =
+        Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     bigtableDataClient.readRowsAsync(query, mockObserver);
 
     Mockito.verify(mockReadRowsCallable).call(query, mockObserver);
@@ -609,7 +641,8 @@ public class BigtableDataClientTests {
 
     Query query = Query.create(AuthorizedViewId.of("fake-table", "fake-authorized-view"));
     @SuppressWarnings("unchecked")
-    ResponseObserver<Row> mockObserver = Mockito.mock(ResponseObserver.class);
+    ResponseObserver<Row> mockObserver =
+        Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     bigtableDataClient.readRowsAsync(query, mockObserver);
 
     Mockito.verify(mockReadRowsCallable).call(query, mockObserver);
@@ -631,7 +664,8 @@ public class BigtableDataClientTests {
         .thenReturn(mockGenerateInitialChangeStreamPartitionsCallable);
 
     @SuppressWarnings("unchecked")
-    ResponseObserver<ByteStringRange> mockObserver = Mockito.mock(ResponseObserver.class);
+    ResponseObserver<ByteStringRange> mockObserver =
+        Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     bigtableDataClient.generateInitialChangeStreamPartitionsAsync("fake-table", mockObserver);
 
     Mockito.verify(mockGenerateInitialChangeStreamPartitionsCallable)
@@ -653,7 +687,8 @@ public class BigtableDataClientTests {
     Mockito.when(mockStub.readChangeStreamCallable()).thenReturn(mockReadChangeStreamCallable);
 
     @SuppressWarnings("unchecked")
-    ResponseObserver<ChangeStreamRecord> mockObserver = Mockito.mock(ResponseObserver.class);
+    ResponseObserver<ChangeStreamRecord> mockObserver =
+        Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     ReadChangeStreamQuery query = ReadChangeStreamQuery.create("fake-table");
     bigtableDataClient.readChangeStreamAsync(query, mockObserver);
 
