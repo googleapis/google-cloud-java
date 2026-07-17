@@ -110,7 +110,8 @@ class RetryAlgorithmTest {
 
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
 
     algorithm.createNextAttempt(previousThrowable, previousResult, previousSettings);
     verify(resultAlgorithm).shouldRetry(previousThrowable, previousResult);
@@ -128,7 +129,8 @@ class RetryAlgorithmTest {
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
 
     algorithm.createNextAttempt(context, previousThrowable, previousResult, previousSettings);
     verify(resultAlgorithm).shouldRetry(context, previousThrowable, previousResult);
@@ -144,7 +146,8 @@ class RetryAlgorithmTest {
 
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
 
     algorithm.shouldRetry(previousThrowable, previousResult, previousSettings);
     verify(resultAlgorithm).shouldRetry(previousThrowable, previousResult);
@@ -160,7 +163,8 @@ class RetryAlgorithmTest {
 
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
     when(resultAlgorithm.shouldRetry(previousThrowable, previousResult)).thenReturn(true);
 
     algorithm.shouldRetry(previousThrowable, previousResult, previousSettings);
@@ -179,7 +183,8 @@ class RetryAlgorithmTest {
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
 
     algorithm.shouldRetry(context, previousThrowable, previousResult, previousSettings);
     verify(resultAlgorithm).shouldRetry(context, previousThrowable, previousResult);
@@ -197,7 +202,8 @@ class RetryAlgorithmTest {
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
-    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings previousSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
     when(resultAlgorithm.shouldRetry(context, previousThrowable, previousResult)).thenReturn(true);
 
     algorithm.shouldRetry(context, previousThrowable, previousResult, previousSettings);

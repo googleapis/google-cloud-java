@@ -33,6 +33,7 @@ package com.google.api.gax.httpjson;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.httpjson.ApiMethodDescriptor.MethodType;
+import org.mockito.Mockito;
 
 class HttpJsonLoggingInterceptorTest {
 
@@ -40,9 +41,12 @@ class HttpJsonLoggingInterceptorTest {
   private static final ApiMethodDescriptor<String, Integer> method =
       ApiMethodDescriptor.newBuilder()
           .setType(MethodType.UNARY)
-          .setRequestFormatter(mock(HttpRequestFormatter.class))
-          .setRequestFormatter(mock(HttpRequestFormatter.class))
+          .setRequestFormatter(
+              mock(HttpRequestFormatter.class, Mockito.withSettings().withoutAnnotations()))
+          .setRequestFormatter(
+              mock(HttpRequestFormatter.class, Mockito.withSettings().withoutAnnotations()))
           .setFullMethodName("FakeClient/fake-method")
-          .setResponseParser(mock(HttpResponseParser.class))
+          .setResponseParser(
+              mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
           .build();
 }

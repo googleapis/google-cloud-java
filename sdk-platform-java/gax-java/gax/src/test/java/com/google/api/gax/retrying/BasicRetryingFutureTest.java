@@ -61,10 +61,13 @@ class BasicRetryingFutureTest {
     @SuppressWarnings("unchecked")
     Callable<Integer> callable = mock(Callable.class);
     @SuppressWarnings("unchecked")
-    RetryAlgorithm<Integer> retryAlgorithm = mock(RetryAlgorithm.class);
-    RetryingContext retryingContext = mock(RetryingContext.class);
+    RetryAlgorithm<Integer> retryAlgorithm =
+        mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+    RetryingContext retryingContext =
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    TimedAttemptSettings timedAttemptSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings timedAttemptSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
     java.time.Duration testDuration = java.time.Duration.ofMillis(123);
     Mockito.when(timedAttemptSettings.getRandomizedRetryDelayDuration()).thenReturn(testDuration);
     Mockito.when(timedAttemptSettings.getRetryDelayDuration()).thenReturn(testDuration);
@@ -110,10 +113,13 @@ class BasicRetryingFutureTest {
     @SuppressWarnings("unchecked")
     Callable<Integer> callable = mock(Callable.class);
     @SuppressWarnings("unchecked")
-    RetryAlgorithm<Integer> retryAlgorithm = mock(RetryAlgorithm.class);
-    RetryingContext retryingContext = mock(RetryingContext.class);
+    RetryAlgorithm<Integer> retryAlgorithm =
+        mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+    RetryingContext retryingContext =
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    TimedAttemptSettings timedAttemptSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings timedAttemptSettings =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(retryingContext.getTracer()).thenReturn(tracer);
 
     Mockito.when(retryAlgorithm.createFirstAttempt(retryingContext))

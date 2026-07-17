@@ -97,7 +97,7 @@ class ServerStreamingCallableTest {
   @Test
   void testServerStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -146,7 +146,7 @@ class ServerStreamingCallableTest {
   @Test
   void testIteratedServerStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -202,7 +202,7 @@ class ServerStreamingCallableTest {
   @Test
   void testFirstElementCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -251,7 +251,7 @@ class ServerStreamingCallableTest {
   @Test
   void testAllElementCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =

@@ -58,7 +58,8 @@ class QuotaProjectIdHidingCredentialsTest {
             Collections.singletonList("v1"),
             QUOTA_PROJECT_ID_KEY,
             Collections.singletonList(QUOTA_PROJECT_ID_FROM_CREDENTIALS_VALUE));
-    Credentials credentialsWithQuotaProjectId = mock(GoogleCredentials.class);
+    Credentials credentialsWithQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithQuota);
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentials =
@@ -73,7 +74,8 @@ class QuotaProjectIdHidingCredentialsTest {
     // Credentials without quota project id
     Map<String, List<String>> metaDataWithoutQuota =
         ImmutableMap.of("k1", Collections.singletonList("v1"));
-    Credentials credentialsWithoutQuotaProjectId = mock(GoogleCredentials.class);
+    Credentials credentialsWithoutQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithoutQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithoutQuota);
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentialsWithout =
@@ -87,7 +89,8 @@ class QuotaProjectIdHidingCredentialsTest {
   @Test
   void quotaProjectIdHidingCredentials_getAuthenticationType() throws IOException {
     final String mockType = "mock_type";
-    Credentials credentials = mock(GoogleCredentials.class);
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getAuthenticationType()).thenReturn(mockType);
     Mockito.when(credentials.hasRequestMetadata()).thenReturn(true);
     Mockito.when(credentials.hasRequestMetadataOnly()).thenReturn(false);
@@ -105,7 +108,8 @@ class QuotaProjectIdHidingCredentialsTest {
 
   @Test
   void quotaProjectIdHidingCredentials_getUniverseDomain() throws IOException {
-    Credentials credentials = mock(GoogleCredentials.class);
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getUniverseDomain()).thenReturn("example.com");
 
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentials =

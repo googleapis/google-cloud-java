@@ -48,8 +48,11 @@ class RetryingCallableTest {
     FakeCallContext fakeCallContext = FakeCallContext.createDefault();
     UnaryCallable innerCallable =
         Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
-    RetryingExecutorWithContext executor = Mockito.mock(RetryingExecutorWithContext.class);
-    RetryingFuture retryingFuture = Mockito.mock(RetryingFuture.class);
+    RetryingExecutorWithContext executor =
+        Mockito.mock(
+            RetryingExecutorWithContext.class, Mockito.withSettings().withoutAnnotations());
+    RetryingFuture retryingFuture =
+        Mockito.mock(RetryingFuture.class, Mockito.withSettings().withoutAnnotations());
     TimedAttemptSettings fakeAttemptSettings =
         TimedAttemptSettings.newBuilder()
             .setRpcTimeout(Duration.of(1, ChronoUnit.SECONDS))

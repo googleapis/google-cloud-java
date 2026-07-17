@@ -97,7 +97,8 @@ class GrpcLongRunningTest {
   @BeforeEach
   void setUp() throws IOException {
     channel = mock(ManagedChannel.class);
-    TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
+    TransportChannelProvider operationsChannelProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     TransportChannel transportChannel =
         GrpcTransportChannel.newBuilder().setManagedChannel(channel).build();
     when(operationsChannelProvider.getTransportChannel()).thenReturn(transportChannel);

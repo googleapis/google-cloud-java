@@ -69,7 +69,7 @@ class HttpJsonCallContextTest {
 
   @Test
   void testWithCredentials() {
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();
     assertNull(emptyContext.getCredentials());
     HttpJsonCallContext context = emptyContext.withCredentials(credentials);
@@ -78,7 +78,8 @@ class HttpJsonCallContextTest {
 
   @Test
   void testWithTransportChannel() {
-    ManagedHttpJsonChannel channel = mock(ManagedHttpJsonChannel.class);
+    ManagedHttpJsonChannel channel =
+        mock(ManagedHttpJsonChannel.class, Mockito.withSettings().withoutAnnotations());
 
     HttpJsonCallContext context =
         HttpJsonCallContext.createDefault()

@@ -68,7 +68,7 @@ class ServerStreamingAttemptCallableTest {
     innerCallable = new MockServerStreamingCallable<>();
     observer = new AccumulatingObserver(true);
     resumptionStrategy = new MyStreamResumptionStrategy();
-    mockedCallContext = mock(FakeCallContext.class);
+    mockedCallContext = mock(FakeCallContext.class, Mockito.withSettings().withoutAnnotations());
   }
 
   private ServerStreamingAttemptCallable<String, String> createCallable() {

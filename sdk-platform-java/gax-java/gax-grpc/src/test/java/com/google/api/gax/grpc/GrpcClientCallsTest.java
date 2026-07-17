@@ -93,7 +93,7 @@ class GrpcClientCallsTest {
 
   @BeforeEach
   void setUp() throws IOException {
-    credentials = Mockito.mock(Credentials.class);
+    credentials = Mockito.mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     endpointContext =
         Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     mockChannel = Mockito.mock(Channel.class);

@@ -186,7 +186,7 @@ class CallableTest {
     doReturn(callContext).when(callContext).withStreamIdleTimeoutDuration(eq(timeout));
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
             Mockito.mock(
                 ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));

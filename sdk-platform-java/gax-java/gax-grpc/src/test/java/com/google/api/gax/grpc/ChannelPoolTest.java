@@ -222,7 +222,8 @@ class ChannelPoolTest {
   // Test channelPrimer is called same number of times as poolSize if executorService is set to null
   @Test
   void channelPrimerShouldCallPoolConstruction() throws IOException {
-    ChannelPrimer mockChannelPrimer = mock(ChannelPrimer.class);
+    ChannelPrimer mockChannelPrimer =
+        mock(ChannelPrimer.class, Mockito.withSettings().withoutAnnotations());
     ManagedChannel channel1 = mock(ManagedChannel.class);
     ManagedChannel channel2 = mock(ManagedChannel.class);
 
@@ -240,7 +241,8 @@ class ChannelPoolTest {
   // Test channelPrimer is called periodically, if there's an executorService
   @Test
   void channelPrimerIsCalledPeriodically() throws IOException {
-    ChannelPrimer mockChannelPrimer = mock(ChannelPrimer.class);
+    ChannelPrimer mockChannelPrimer =
+        mock(ChannelPrimer.class, Mockito.withSettings().withoutAnnotations());
     ManagedChannel channel1 = mock(ManagedChannel.class);
     ManagedChannel channel2 = mock(ManagedChannel.class);
     ManagedChannel channel3 = mock(ManagedChannel.class);

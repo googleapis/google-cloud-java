@@ -40,6 +40,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -48,7 +49,8 @@ public abstract class LatchCountDownScheduler implements ScheduledExecutorServic
       final CountDownLatch latch,
       final long delayBeforeCountDown,
       final long extraDelayAfterCountDown) {
-    LatchCountDownScheduler mock = mock(LatchCountDownScheduler.class);
+    LatchCountDownScheduler mock =
+        mock(LatchCountDownScheduler.class, Mockito.withSettings().withoutAnnotations());
 
     // mock class fields:
     final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);

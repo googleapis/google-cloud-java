@@ -76,7 +76,9 @@ class StreamingRetryAlgorithmTest {
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
 
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
@@ -94,7 +96,9 @@ class StreamingRetryAlgorithmTest {
     when(context.getRetrySettings()).thenReturn(CONTEXT_RETRY_SETTINGS);
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
 
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
@@ -110,21 +114,32 @@ class StreamingRetryAlgorithmTest {
     RetryingContext context =
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
-    BasicResultRetryAlgorithm<String> resultAlgorithm = mock(BasicResultRetryAlgorithm.class);
-    UnavailableException exception = mock(UnavailableException.class);
+    BasicResultRetryAlgorithm<String> resultAlgorithm =
+        mock(BasicResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+    UnavailableException exception =
+        mock(UnavailableException.class, Mockito.withSettings().withoutAnnotations());
     when(resultAlgorithm.shouldRetry(context, exception, null)).thenReturn(false);
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
 
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings attempt =
-        algorithm.createNextAttempt(context, exception, null, mock(TimedAttemptSettings.class));
+        algorithm.createNextAttempt(
+            context,
+            exception,
+            null,
+            mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(attempt).isNull();
 
     TimedAttemptSettings attemptWithoutContext =
-        algorithm.createNextAttempt(exception, null, mock(TimedAttemptSettings.class));
+        algorithm.createNextAttempt(
+            exception,
+            null,
+            mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(attemptWithoutContext).isNull();
   }
 
@@ -133,10 +148,13 @@ class StreamingRetryAlgorithmTest {
     RetryingContext context =
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
-    BasicResultRetryAlgorithm<String> resultAlgorithm = mock(BasicResultRetryAlgorithm.class);
-    UnavailableException exception = mock(UnavailableException.class);
+    BasicResultRetryAlgorithm<String> resultAlgorithm =
+        mock(BasicResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+    UnavailableException exception =
+        mock(UnavailableException.class, Mockito.withSettings().withoutAnnotations());
     when(resultAlgorithm.shouldRetry(context, exception, null)).thenReturn(true);
-    TimedAttemptSettings next = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings next =
+        mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations());
     when(resultAlgorithm.createNextAttempt(
             Mockito.eq(context),
             Mockito.eq(exception),
@@ -144,7 +162,9 @@ class StreamingRetryAlgorithmTest {
             any(TimedAttemptSettings.class)))
         .thenReturn(next);
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
 
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
@@ -160,20 +180,28 @@ class StreamingRetryAlgorithmTest {
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
 
-    ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
+    ServerStreamingAttemptException exception =
+        mock(ServerStreamingAttemptException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.canResume()).thenReturn(true);
     when(exception.hasSeenResponses()).thenReturn(true);
-    UnavailableException cause = mock(UnavailableException.class);
+    UnavailableException cause =
+        mock(UnavailableException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.getCause()).thenReturn(cause);
 
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings first = algorithm.createFirstAttempt(context);
     TimedAttemptSettings second =
-        algorithm.createNextAttempt(context, mock(Exception.class), null, first);
+        algorithm.createNextAttempt(
+            context,
+            mock(Exception.class, Mockito.withSettings().withoutAnnotations()),
+            null,
+            first);
     TimedAttemptSettings third = algorithm.createNextAttempt(context, exception, null, second);
     assertThat(third.getFirstAttemptStartTimeNanos())
         .isEqualTo(first.getFirstAttemptStartTimeNanos());
@@ -186,25 +214,36 @@ class StreamingRetryAlgorithmTest {
     RetryingContext context =
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
 
-    ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
+    ServerStreamingAttemptException exception =
+        mock(ServerStreamingAttemptException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.canResume()).thenReturn(false);
-    UnavailableException cause = mock(UnavailableException.class);
+    UnavailableException cause =
+        mock(UnavailableException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.getCause()).thenReturn(cause);
 
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
 
     ExponentialRetryAlgorithm timedAlgorithm =
-        new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
+        new ExponentialRetryAlgorithm(
+            DEFAULT_RETRY_SETTINGS,
+            mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     // This should return false because the attempt exception indicates that it is non-resumable.
     boolean shouldRetry =
-        algorithm.shouldRetry(context, exception, null, mock(TimedAttemptSettings.class));
+        algorithm.shouldRetry(
+            context,
+            exception,
+            null,
+            mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(shouldRetry).isFalse();
 
     boolean shouldRetryWithoutContext =
-        algorithm.shouldRetry(exception, null, mock(TimedAttemptSettings.class));
+        algorithm.shouldRetry(
+            exception,
+            null,
+            mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(shouldRetryWithoutContext).isFalse();
   }
 
@@ -213,21 +252,28 @@ class StreamingRetryAlgorithmTest {
     RetryingContext context =
         mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
 
-    ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
+    ServerStreamingAttemptException exception =
+        mock(ServerStreamingAttemptException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.canResume()).thenReturn(true);
-    UnavailableException cause = mock(UnavailableException.class);
+    UnavailableException cause =
+        mock(UnavailableException.class, Mockito.withSettings().withoutAnnotations());
     when(exception.getCause()).thenReturn(cause);
 
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
 
-    ExponentialRetryAlgorithm timedAlgorithm = mock(ExponentialRetryAlgorithm.class);
+    ExponentialRetryAlgorithm timedAlgorithm =
+        mock(ExponentialRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     when(timedAlgorithm.shouldRetry(Mockito.eq(context), any(TimedAttemptSettings.class)))
         .thenReturn(true);
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     boolean shouldRetry =
-        algorithm.shouldRetry(context, exception, null, mock(TimedAttemptSettings.class));
+        algorithm.shouldRetry(
+            context,
+            exception,
+            null,
+            mock(TimedAttemptSettings.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(shouldRetry).isTrue();
   }
 }

@@ -66,13 +66,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class HttpJsonClientCallImplTest {
-  @Mock private ApiMethodDescriptor apiMethodDescriptor;
-  @Mock private HttpResponseParser httpResponseParser;
-  @Mock private HttpJsonCallOptions httpJsonCallOptions;
-  @Mock private TypeRegistry typeRegistry;
-  @Mock private HttpTransport httpTransport;
+  private ApiMethodDescriptor apiMethodDescriptor;
+  private HttpResponseParser httpResponseParser;
+  private HttpJsonCallOptions httpJsonCallOptions;
+  private TypeRegistry typeRegistry;
+  private HttpTransport httpTransport;
   @Mock private Executor executor;
-  @Mock private HttpJsonClientCall.Listener listener;
+  private HttpJsonClientCall.Listener listener;
 
   @Test
   void responseReceived_noCancellationTask() {
@@ -201,6 +201,17 @@ class HttpJsonClientCallImplTest {
 
   @BeforeEach
   void setUp() {
+    apiMethodDescriptor =
+        Mockito.mock(ApiMethodDescriptor.class, Mockito.withSettings().withoutAnnotations());
+    httpResponseParser =
+        Mockito.mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations());
+    httpJsonCallOptions =
+        Mockito.mock(HttpJsonCallOptions.class, Mockito.withSettings().withoutAnnotations());
+    typeRegistry = Mockito.mock(TypeRegistry.class, Mockito.withSettings().withoutAnnotations());
+    httpTransport = Mockito.mock(HttpTransport.class, Mockito.withSettings().withoutAnnotations());
+    listener =
+        Mockito.mock(
+            HttpJsonClientCall.Listener.class, Mockito.withSettings().withoutAnnotations());
     channel =
         ManagedHttpJsonChannel.newBuilder()
             .setEndpoint("google.com:443")

@@ -41,6 +41,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -51,7 +52,8 @@ public abstract class RecordingScheduler implements ScheduledExecutorService {
   public abstract int getIterationsCount();
 
   public static RecordingScheduler create(final FakeApiClock clock) {
-    RecordingScheduler mock = mock(RecordingScheduler.class);
+    RecordingScheduler mock =
+        mock(RecordingScheduler.class, Mockito.withSettings().withoutAnnotations());
 
     // mock class fields:
     final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);

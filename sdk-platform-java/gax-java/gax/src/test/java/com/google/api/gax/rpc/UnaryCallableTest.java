@@ -76,7 +76,7 @@ class UnaryCallableTest {
   @Test
   void callWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     RetrySettings retrySettings =
         mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryableCodes =

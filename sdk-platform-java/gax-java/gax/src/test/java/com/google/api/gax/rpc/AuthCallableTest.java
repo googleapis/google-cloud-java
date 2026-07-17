@@ -42,6 +42,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class AuthCallableTest {
   private ClientContext clientContext;
@@ -66,7 +67,10 @@ class AuthCallableTest {
         FakeCallableFactory.createUnaryCallable(
             stash,
             callSettings,
-            clientContext.toBuilder().setCredentials(mock(Credentials.class)).build());
+            clientContext.toBuilder()
+                .setCredentials(
+                    mock(Credentials.class, Mockito.withSettings().withoutAnnotations()))
+                .build());
     Truth.assertThat(callable.futureCall(0).get()).isEqualTo(42);
     Truth.assertThat(stash.getContext()).isNotNull();
     FakeCallContext callContext = (FakeCallContext) stash.getContext();

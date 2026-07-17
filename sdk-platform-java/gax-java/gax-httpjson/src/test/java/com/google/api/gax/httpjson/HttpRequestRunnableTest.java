@@ -97,7 +97,7 @@ class HttpRequestRunnableTest {
             .setRequestBodyExtractor(request -> null)
             .build();
 
-    responseParser = mock(HttpResponseParser.class);
+    responseParser = mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations());
   }
 
   @Test

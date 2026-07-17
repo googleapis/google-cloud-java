@@ -49,7 +49,7 @@ class FixedWatchdogProviderTest {
   void testSameInstance() {
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
             Mockito.mock(
                 ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
@@ -62,7 +62,7 @@ class FixedWatchdogProviderTest {
   void testNoModifications() {
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
             Mockito.mock(
                 ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
@@ -83,7 +83,7 @@ class FixedWatchdogProviderTest {
 
     actualError = null;
     try {
-      provider.withClock(mock(ApiClock.class));
+      provider.withClock(mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
     } catch (Throwable t) {
       actualError = t;
     }

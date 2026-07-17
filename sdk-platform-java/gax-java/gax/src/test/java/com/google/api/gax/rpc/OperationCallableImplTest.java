@@ -114,10 +114,11 @@ class OperationCallableImplTest {
 
   @BeforeEach
   void setUp() throws IOException {
-    initialChannel = mock(FakeChannel.class);
+    initialChannel = mock(FakeChannel.class, Mockito.withSettings().withoutAnnotations());
     pollTransportChannel =
         mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations());
-    TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
+    TransportChannelProvider operationsChannelProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     when(operationsChannelProvider.getTransportChannel()).thenReturn(pollTransportChannel);
 
     clock = new FakeApiClock(0L);
@@ -501,7 +502,8 @@ class OperationCallableImplTest {
     UnaryCallable<Integer, OperationSnapshot> initialCallable =
         mockGetOpSnapshotCallable(StatusCode.Code.OK, initialOperation);
 
-    LongRunningClient longRunningClient = mock(LongRunningClient.class);
+    LongRunningClient longRunningClient =
+        mock(LongRunningClient.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
     UnaryCallable<String, OperationSnapshot> getOpCallable =
         Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
@@ -546,7 +548,8 @@ class OperationCallableImplTest {
     UnaryCallable<Integer, OperationSnapshot> initialCallable =
         mockGetOpSnapshotCallable(StatusCode.Code.OK, initialOperation);
 
-    LongRunningClient longRunningClient = mock(LongRunningClient.class);
+    LongRunningClient longRunningClient =
+        mock(LongRunningClient.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
     UnaryCallable<String, OperationSnapshot> getOpCallable =
         Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
@@ -860,7 +863,7 @@ class OperationCallableImplTest {
   @Test
   void callWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();
@@ -891,7 +894,7 @@ class OperationCallableImplTest {
   @Test
   void callResumeWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();
@@ -924,7 +927,7 @@ class OperationCallableImplTest {
   @Test
   void callCancelWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();

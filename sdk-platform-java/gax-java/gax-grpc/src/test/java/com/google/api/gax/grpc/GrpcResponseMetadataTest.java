@@ -76,7 +76,8 @@ class GrpcResponseMetadataTest {
   @BeforeEach
   void setUp() throws Exception {
     String serverName = "fakeservice";
-    FakeServiceImplBase serviceImpl = mock(FakeServiceImplBase.class);
+    FakeServiceImplBase serviceImpl =
+        mock(FakeServiceImplBase.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doAnswer(
             (Answer<Void>)
                 invocation -> {

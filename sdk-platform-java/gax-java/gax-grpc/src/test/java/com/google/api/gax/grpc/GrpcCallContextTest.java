@@ -78,7 +78,7 @@ class GrpcCallContextTest {
 
   @Test
   void testWithCredentials() {
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext emptyContext = GrpcCallContext.createDefault();
     assertNull(emptyContext.getCallOptions().getCredentials());
     GrpcCallContext context = emptyContext.withCredentials(credentials);
@@ -107,7 +107,8 @@ class GrpcCallContextTest {
   @Test
   void testWithTransportChannelIsDirectPath() {
     ManagedChannel channel = mock(ManagedChannel.class);
-    Credentials credentials = mock(GoogleCredentials.class);
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext context = GrpcCallContext.createDefault().withCredentials(credentials);
     assertNotNull(context.getCallOptions().getCredentials());
     context =
@@ -347,7 +348,8 @@ class GrpcCallContextTest {
   @Test
   void testMergeWithIsDirectPath() {
     ManagedChannel channel = mock(ManagedChannel.class);
-    CallCredentials callCredentials = mock(CallCredentials.class);
+    CallCredentials callCredentials =
+        mock(CallCredentials.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext ctx1 =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCallCredentials(callCredentials));

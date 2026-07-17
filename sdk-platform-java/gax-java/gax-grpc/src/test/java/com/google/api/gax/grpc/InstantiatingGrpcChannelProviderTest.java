@@ -104,7 +104,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @BeforeEach
   public void setup() throws IOException {
-    computeEngineCredentials = mock(ComputeEngineCredentials.class);
+    computeEngineCredentials =
+        mock(ComputeEngineCredentials.class, Mockito.withSettings().withoutAnnotations());
     certificateBasedAccess =
         new CertificateBasedAccess(
             name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "never" : "false");
@@ -281,7 +282,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   private void testWithInterceptors(int numChannels) throws Exception {
-    final GrpcInterceptorProvider interceptorProvider = mock(GrpcInterceptorProvider.class);
+    final GrpcInterceptorProvider interceptorProvider =
+        mock(GrpcInterceptorProvider.class, Mockito.withSettings().withoutAnnotations());
 
     InstantiatingGrpcChannelProvider channelProvider =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -306,12 +308,13 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     // Create a mock configurator that will insert mock channels
     @SuppressWarnings("unchecked")
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        mock(ApiFunction.class);
+        mock(ApiFunction.class, Mockito.withSettings().withoutAnnotations());
 
     ArgumentCaptor<ManagedChannelBuilder<?>> channelBuilderCaptor =
         ArgumentCaptor.forClass(ManagedChannelBuilder.class);
 
-    ManagedChannelBuilder<?> swappedBuilder = mock(ManagedChannelBuilder.class);
+    ManagedChannelBuilder<?> swappedBuilder =
+        mock(ManagedChannelBuilder.class, Mockito.withSettings().withoutAnnotations());
     ManagedChannel fakeChannel = mock(ManagedChannel.class);
     Mockito.when(swappedBuilder.build()).thenReturn(fakeChannel);
 
@@ -520,7 +523,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     // create channelProvider with different pool sizes to verify ChannelPrimer is called the
     // correct number of times
     for (int poolSize = 1; poolSize < 5; poolSize++) {
-      final ChannelPrimer mockChannelPrimer = mock(ChannelPrimer.class);
+      final ChannelPrimer mockChannelPrimer =
+          mock(ChannelPrimer.class, Mockito.withSettings().withoutAnnotations());
 
       InstantiatingGrpcChannelProvider provider =
           InstantiatingGrpcChannelProvider.newBuilder()
@@ -759,7 +763,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_happyPath() throws IOException {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -787,8 +792,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_boundTokenNotEnabledWithNonComputeCredentials() {
     System.setProperty("os.name", "Linux");
-    Credentials credentials = mock(Credentials.class);
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -810,7 +816,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_happyPathWithBoundToken() throws IOException {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -842,7 +849,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_directPathEnvVarDisabled() throws IOException {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -897,8 +905,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_nonComputeCredentials() {
     System.setProperty("os.name", "Linux");
-    Credentials credentials = mock(Credentials.class);
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -918,7 +927,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_isNotOnComputeEngine_invalidOsNameSystemProperty() {
     System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -938,7 +948,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_isNotOnComputeEngine_invalidSystemProductName() {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -958,7 +969,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_isNotOnComputeEngine_unableToGetSystemProductName() {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -977,7 +989,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_nonGDUUniverseDomain() {
     System.setProperty("os.name", "Linux");
-    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(
             envProvider.getenv(
                 InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -1058,7 +1071,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void buildProvider_handlesNullCredentialsMetadataRequest() throws IOException {
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getRequestMetadata()).thenReturn(null);
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -1075,7 +1088,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void buildProvider_handlesErrorRetrievingCredentialsMetadataRequest() throws IOException {
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getRequestMetadata())
         .thenThrow(new IOException("Error getting request metadata"));
     InstantiatingGrpcChannelProvider.Builder builder =
@@ -1159,7 +1172,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   void createS2ASecuredChannelCredentials_bothS2AAddressesNull_returnsNull() {
     InstantiatingGrpcChannelProvider.resetS2AChannelCredentials();
-    SecureSessionAgent s2aConfigProvider = mock(SecureSessionAgent.class);
+    SecureSessionAgent s2aConfigProvider =
+        mock(SecureSessionAgent.class, Mockito.withSettings().withoutAnnotations());
     SecureSessionAgentConfig config = SecureSessionAgentConfig.createBuilder().build();
     Mockito.when(s2aConfigProvider.getConfig()).thenReturn(config);
     InstantiatingGrpcChannelProvider provider =
@@ -1173,7 +1187,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   void
       createS2ASecuredChannelCredentials_mtlsS2AAddressNull_returnsPlaintextToS2AS2AChannelCredentials() {
     InstantiatingGrpcChannelProvider.resetS2AChannelCredentials();
-    SecureSessionAgent s2aConfigProvider = mock(SecureSessionAgent.class);
+    SecureSessionAgent s2aConfigProvider =
+        mock(SecureSessionAgent.class, Mockito.withSettings().withoutAnnotations());
     SecureSessionAgentConfig config =
         SecureSessionAgentConfig.createBuilder().setPlaintextAddress("localhost:8080").build();
     Mockito.when(s2aConfigProvider.getConfig()).thenReturn(config);
@@ -1194,7 +1209,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   void
       createTwoS2ASecuredChannelCredentials_mtlsS2AAddressNull_returnsSamePlaintextToS2AS2AChannelCredentials() {
     InstantiatingGrpcChannelProvider.resetS2AChannelCredentials();
-    SecureSessionAgent s2aConfigProvider = mock(SecureSessionAgent.class);
+    SecureSessionAgent s2aConfigProvider =
+        mock(SecureSessionAgent.class, Mockito.withSettings().withoutAnnotations());
     SecureSessionAgentConfig config =
         SecureSessionAgentConfig.createBuilder().setPlaintextAddress("localhost:8080").build();
     Mockito.when(s2aConfigProvider.getConfig()).thenReturn(config);
@@ -1214,7 +1230,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   void createS2ASecuredChannelCredentials_returnsPlaintextToS2AS2AChannelCredentials() {
     InstantiatingGrpcChannelProvider.resetS2AChannelCredentials();
-    SecureSessionAgent s2aConfigProvider = mock(SecureSessionAgent.class);
+    SecureSessionAgent s2aConfigProvider =
+        mock(SecureSessionAgent.class, Mockito.withSettings().withoutAnnotations());
     SecureSessionAgentConfig config =
         SecureSessionAgentConfig.createBuilder()
             .setMtlsAddress("localhost:8080")

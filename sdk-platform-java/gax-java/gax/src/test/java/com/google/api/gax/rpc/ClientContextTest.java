@@ -312,11 +312,11 @@ class ClientContextTest {
             null,
             DEFAULT_ENDPOINT,
             DEFAULT_MTLS_ENDPOINT);
-    Credentials credentials = mock(Credentials.class);
-    ApiClock clock = mock(ApiClock.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
+    ApiClock clock = mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
             Mockito.mock(
                 ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
@@ -390,10 +390,12 @@ class ClientContextTest {
     FakeTransportProvider transportProvider =
         new FakeTransportProvider(
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
-    ApiClock clock = mock(ApiClock.class);
+    ApiClock clock = mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
 
     builder.setClock(clock);
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(mock(Credentials.class)));
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     builder.setExecutorProvider(new FakeExecutorProvider(executor, true));
     builder.setTransportChannelProvider(transportProvider);
 
@@ -441,7 +443,9 @@ class ClientContextTest {
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
     builder.setTransportChannelProvider(transportProvider);
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(mock(Credentials.class)));
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     builder.setHeaderProvider(headerProvider);
     builder.setInternalHeaderProvider(internalHeaderProvider);
     builder.setQuotaProjectId(QUOTA_PROJECT_ID_FROM_SETTINGS);
@@ -490,7 +494,9 @@ class ClientContextTest {
         };
 
     builder.setTransportChannelProvider(transportProvider);
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(mock(Credentials.class)));
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     builder.setHeaderProvider(headerProvider);
     builder.setInternalHeaderProvider(internalHeaderProvider);
     builder.setQuotaProjectId(QUOTA_PROJECT_ID_FROM_SETTINGS);
@@ -525,7 +531,9 @@ class ClientContextTest {
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
     builder.setTransportChannelProvider(transportProvider);
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(mock(Credentials.class)));
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     builder.setHeaderProvider(headerProvider);
     builder.setInternalHeaderProvider(internalHeaderProvider);
 
@@ -554,7 +562,8 @@ class ClientContextTest {
             Collections.singletonList("v1"),
             QUOTA_PROJECT_ID_KEY,
             Collections.singletonList(QUOTA_PROJECT_ID_FROM_CREDENTIALS_VALUE));
-    final Credentials credentialsWithQuotaProjectId = mock(GoogleCredentials.class);
+    final Credentials credentialsWithQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithQuota);
     HeaderProvider headerProviderWithQuota =
@@ -593,7 +602,8 @@ class ClientContextTest {
         new FakeTransportProvider(
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
     Map<String, List<String>> metaData = ImmutableMap.of("k1", Collections.singletonList("v1"));
-    final Credentials credentialsWithoutQuotaProjectId = mock(GoogleCredentials.class);
+    final Credentials credentialsWithoutQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithoutQuotaProjectId.getRequestMetadata(null)).thenReturn(metaData);
     HeaderProvider headerProviderWithQuota =
         mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
@@ -628,7 +638,7 @@ class ClientContextTest {
             executor,
             true,
             null,
-            mock(Credentials.class),
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations()),
             DEFAULT_ENDPOINT,
             DEFAULT_MTLS_ENDPOINT);
 
@@ -662,7 +672,9 @@ class ClientContextTest {
                         ScheduledExecutorService.class,
                         Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
-            .setCredentialsProvider(FixedCredentialsProvider.create(mock(GoogleCredentials.class)));
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(
+                    mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations())));
 
     builder.setInternalHeaderProvider(FixedHeaderProvider.create("user-agent", "internal-agent"));
 
@@ -693,7 +705,9 @@ class ClientContextTest {
                         ScheduledExecutorService.class,
                         Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
-            .setCredentialsProvider(FixedCredentialsProvider.create(mock(GoogleCredentials.class)));
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(
+                    mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations())));
 
     builder.setHeaderProvider(FixedHeaderProvider.create("user-agent", "user-supplied-agent"));
 
@@ -724,7 +738,9 @@ class ClientContextTest {
                         ScheduledExecutorService.class,
                         Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
-            .setCredentialsProvider(FixedCredentialsProvider.create(mock(GoogleCredentials.class)));
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(
+                    mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations())));
 
     builder.setHeaderProvider(FixedHeaderProvider.create("user-agent", "user-supplied-agent"));
     builder.setInternalHeaderProvider(FixedHeaderProvider.create("user-agent", "internal-agent"));
@@ -739,7 +755,8 @@ class ClientContextTest {
 
   @Test
   void testApiClientHeaderAppendsCredType() throws Exception {
-    GoogleCredentials googleCredentials = mock(GoogleCredentials.class);
+    GoogleCredentials googleCredentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     when(googleCredentials.getMetricsCredentialType())
         .thenReturn(CredentialTypeForMetrics.USER_CREDENTIALS);
 
@@ -753,7 +770,8 @@ class ClientContextTest {
 
   @Test
   void testApiClientHeaderDoNotAppendsCredType_whenNoApiClientHeader() throws Exception {
-    GoogleCredentials googleCredentials = mock(GoogleCredentials.class);
+    GoogleCredentials googleCredentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     when(googleCredentials.getMetricsCredentialType())
         .thenReturn(CredentialTypeForMetrics.USER_CREDENTIALS);
 
@@ -779,7 +797,8 @@ class ClientContextTest {
 
   @Test
   void testApiClientHeaderDoNotAppendsCredType_whenCredTypeDoNotSend() throws Exception {
-    GoogleCredentials googleCredentials = mock(GoogleCredentials.class);
+    GoogleCredentials googleCredentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     when(googleCredentials.getMetricsCredentialType())
         .thenReturn(CredentialTypeForMetrics.DO_NOT_SEND);
 
@@ -860,7 +879,9 @@ class ClientContextTest {
     ClientSettings.Builder builder =
         new FakeClientSettings.Builder()
             .setTransportChannelProvider(transportChannelProvider)
-            .setCredentialsProvider(FixedCredentialsProvider.create(mock(GoogleCredentials.class)));
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(
+                    mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations())));
 
     // By default, if executor is not set, channel provider should not have an executor set
     ClientContext context = ClientContext.create(builder.build());
@@ -913,7 +934,8 @@ class ClientContextTest {
   }
 
   private GdchCredentials getMockGdchCredentials() {
-    GdchCredentials creds = mock(GdchCredentials.class);
+    GdchCredentials creds =
+        mock(GdchCredentials.class, Mockito.withSettings().withoutAnnotations());
 
     // GdchCredentials builder is mocked to accept a well-formed uri
     GdchCredentials.Builder gdchCredsBuilder = mock(GdchCredentials.Builder.class);
@@ -1081,7 +1103,8 @@ class ClientContextTest {
     // it should throw if apiAudience is set but not using GDC-H creds
     StubSettings settings =
         new FakeStubSettings.Builder().setGdchApiAudience("audience:test").build();
-    Credentials creds = mock(ComputeEngineCredentials.class);
+    Credentials creds =
+        mock(ComputeEngineCredentials.class, Mockito.withSettings().withoutAnnotations());
     CredentialsProvider provider = FixedCredentialsProvider.create(creds);
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setCredentialsProvider(provider);
@@ -1108,7 +1131,8 @@ class ClientContextTest {
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     clientSettingsBuilder.setCredentialsProvider(
-        FixedCredentialsProvider.create(mock(Credentials.class)));
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     ClientSettings clientSettings = clientSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(clientSettings);
     assertThat(clientContext.getEndpoint()).isEqualTo(DEFAULT_ENDPOINT);
@@ -1135,7 +1159,8 @@ class ClientContextTest {
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     clientSettingsBuilder.setCredentialsProvider(
-        FixedCredentialsProvider.create(mock(Credentials.class)));
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     ClientSettings clientSettings = clientSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(clientSettings);
     assertThat(clientContext.getEndpoint()).isEqualTo(transportChannelProviderEndpoint);
@@ -1164,7 +1189,8 @@ class ClientContextTest {
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     clientSettingsBuilder.setCredentialsProvider(
-        FixedCredentialsProvider.create(mock(Credentials.class)));
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     ClientSettings clientSettings = clientSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(clientSettings);
     // ClientContext.getEndpoint() is the resolved endpoint. If both the client settings
@@ -1187,7 +1213,8 @@ class ClientContextTest {
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     clientSettingsBuilder.setCredentialsProvider(
-        FixedCredentialsProvider.create(mock(Credentials.class)));
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     ClientSettings clientSettings = clientSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(clientSettings);
     assertThat(clientContext.getUniverseDomain()).isEqualTo(DEFAULT_UNIVERSE_DOMAIN);
@@ -1204,7 +1231,8 @@ class ClientContextTest {
     ClientSettings.Builder clientSettingsBuilder = new FakeClientSettings.Builder(settings);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     clientSettingsBuilder.setCredentialsProvider(
-        FixedCredentialsProvider.create(mock(Credentials.class)));
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
     ClientSettings clientSettings = clientSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(clientSettings);
     assertThat(clientContext.getUniverseDomain()).isEqualTo(universeDomain);
@@ -1312,7 +1340,9 @@ class ClientContextTest {
   void testCreate_withTracerFactoryReturningNullWithContext() throws IOException {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTransportChannelProvider(getFakeTransportChannelProvider());
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(mock(Credentials.class)));
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(
+            mock(Credentials.class, Mockito.withSettings().withoutAnnotations())));
 
     ApiTracerFactory apiTracerFactory =
         Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());

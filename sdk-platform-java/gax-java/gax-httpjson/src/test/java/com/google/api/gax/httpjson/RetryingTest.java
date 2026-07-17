@@ -79,7 +79,8 @@ class RetryingTest {
           .setFullMethodName("google.cloud.v1.Fake/FakeMethodForRequestMutator")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(createMockRequestFormatter())
-          .setResponseParser(mock(HttpResponseParser.class))
+          .setResponseParser(
+              mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
           .build();
 
   private final Integer initialRequest = 1;
@@ -117,7 +118,8 @@ class RetryingTest {
           .build();
 
   private HttpRequestFormatter createMockRequestFormatter() {
-    HttpRequestFormatter formatter = mock(HttpRequestFormatter.class);
+    HttpRequestFormatter formatter =
+        mock(HttpRequestFormatter.class, Mockito.withSettings().withoutAnnotations());
     PathTemplate template = PathTemplate.create("/test/path/template");
     Mockito.when(formatter.getPathTemplate()).thenReturn(template);
     return formatter;

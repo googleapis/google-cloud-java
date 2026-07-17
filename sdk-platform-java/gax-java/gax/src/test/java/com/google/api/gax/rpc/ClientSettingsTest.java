@@ -162,15 +162,17 @@ class ClientSettingsTest {
 
     ExecutorProvider executorProvider =
         mock(ExecutorProvider.class, Mockito.withSettings().withoutAnnotations());
-    TransportChannelProvider transportProvider = mock(TransportChannelProvider.class);
+    TransportChannelProvider transportProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     CredentialsProvider credentialsProvider =
         mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
-    ApiClock clock = mock(ApiClock.class);
+    ApiClock clock = mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider headerProvider =
         mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
         mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
-    WatchdogProvider watchdogProvider = mock(WatchdogProvider.class);
+    WatchdogProvider watchdogProvider =
+        mock(WatchdogProvider.class, Mockito.withSettings().withoutAnnotations());
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(13);
     String quotaProjectId = "test_quota_project_id";
     String apiKey = "api_key";
@@ -217,7 +219,7 @@ class ClientSettingsTest {
   @Test
   void testBuilderFromClientContext() throws Exception {
     final String QUOTA_PROJECT_ID_FROM_CONTEXT = "some_quota_project_id_from_context";
-    ApiClock clock = Mockito.mock(ApiClock.class);
+    ApiClock clock = Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
     EndpointContext endpointContext =
         Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext callContext =
@@ -225,7 +227,7 @@ class ClientSettingsTest {
     Map<String, String> headers = Collections.singletonMap("spiffykey", "spiffyvalue");
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
             Mockito.mock(
                 ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
@@ -236,8 +238,10 @@ class ClientSettingsTest {
             .setExecutor(
                 Mockito.mock(
                     ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()))
-            .setTransportChannel(Mockito.mock(TransportChannel.class))
-            .setCredentials(Mockito.mock(Credentials.class))
+            .setTransportChannel(
+                Mockito.mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
+            .setCredentials(
+                Mockito.mock(Credentials.class, Mockito.withSettings().withoutAnnotations()))
             .setClock(clock)
             .setDefaultCallContext(callContext)
             .setHeaders(headers)
@@ -271,15 +275,17 @@ class ClientSettingsTest {
 
     ExecutorProvider executorProvider =
         mock(ExecutorProvider.class, Mockito.withSettings().withoutAnnotations());
-    TransportChannelProvider transportProvider = mock(TransportChannelProvider.class);
+    TransportChannelProvider transportProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     CredentialsProvider credentialsProvider =
         mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
-    ApiClock clock = mock(ApiClock.class);
+    ApiClock clock = mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider headerProvider =
         mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
         mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
-    WatchdogProvider watchdogProvider = mock(WatchdogProvider.class);
+    WatchdogProvider watchdogProvider =
+        mock(WatchdogProvider.class, Mockito.withSettings().withoutAnnotations());
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(14);
     String quotaProjectId = "test_builder_from_settings_quotaProjectId";
 

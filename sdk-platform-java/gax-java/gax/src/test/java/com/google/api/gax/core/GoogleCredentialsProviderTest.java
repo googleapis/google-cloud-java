@@ -39,6 +39,7 @@ import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.common.collect.ImmutableList;
 import java.security.PrivateKey;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class GoogleCredentialsProviderTest {
   ServiceAccountCredentials CreateServiceAccountCredentials() {
@@ -46,7 +47,7 @@ class GoogleCredentialsProviderTest {
         .setClientId("fake-client-id")
         .setClientEmail("fake@example.com")
         .setPrivateKeyId("fake-private-key")
-        .setPrivateKey(mock(PrivateKey.class))
+        .setPrivateKey(mock(PrivateKey.class, Mockito.withSettings().withoutAnnotations()))
         .build();
   }
 

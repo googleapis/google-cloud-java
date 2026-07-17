@@ -268,7 +268,7 @@ class SettingsTest {
 
   @Test
   void customCredentials() throws IOException {
-    Credentials credentials = mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
 
     FakeStubSettings settings =
         FakeStubSettings.newBuilder()
