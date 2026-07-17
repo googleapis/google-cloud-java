@@ -22,7 +22,10 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 class BigQueryParameterHandler {
@@ -298,5 +301,25 @@ class BigQueryParameterHandler {
 
   int getParametersArraySize() {
     return this.parametersArraySize;
+  }
+
+  /**
+   * Returns a safe, cloned copy of the provided Calendar to prevent mutating the caller's state
+   * during timezone conversions. If cal is null, returns a default Calendar instance.
+   */
+  static Calendar getSafeCalendar(Calendar cal) {
+    return BigQueryTypeCoercionUtility.getSafeCalendar(cal);
+  }
+
+  static Date convertDateWithCalendar(Date date, Calendar cal) {
+    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
+  }
+
+  static Time convertTimeWithCalendar(Time time, Calendar cal) {
+    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
+  }
+
+  static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
+    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(timestamp, cal);
   }
 }

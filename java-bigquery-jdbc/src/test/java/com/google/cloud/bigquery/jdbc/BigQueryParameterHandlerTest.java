@@ -18,10 +18,16 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryParameterHandlerTest {
@@ -155,5 +161,35 @@ public class BigQueryParameterHandlerTest {
     assertEquals(3, config.getPositionalParameters().size());
     assertEquals("5", config.getPositionalParameters().get(0).getValue());
     assertEquals("10", config.getPositionalParameters().get(1).getValue());
+  }
+
+  @Test
+  public void testCalendarConversions() {
+    assertNull(BigQueryParameterHandler.convertDateWithCalendar(null, null));
+    assertNull(BigQueryParameterHandler.convertTimeWithCalendar(null, null));
+    assertNull(BigQueryParameterHandler.convertTimestampWithCalendar(null, null));
+
+    Date rawDate = Date.valueOf("2026-07-17");
+    Time rawTime = Time.valueOf("14:30:00");
+    Timestamp rawTimestamp = Timestamp.valueOf("2026-07-17 14:30:00.123456789");
+
+    // Null calendar returns input unchanged
+    assertEquals(rawDate, BigQueryParameterHandler.convertDateWithCalendar(rawDate, null));
+    assertEquals(rawTime, BigQueryParameterHandler.convertTimeWithCalendar(rawTime, null));
+    assertEquals(
+        rawTimestamp, BigQueryParameterHandler.convertTimestampWithCalendar(rawTimestamp, null));
+
+    // UTC Calendar shifts wall-clock components into target timezone
+    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    Date utcConvertedDate = BigQueryParameterHandler.convertDateWithCalendar(rawDate, utcCal);
+    assertNotNull(utcConvertedDate);
+
+    Time utcConvertedTime = BigQueryParameterHandler.convertTimeWithCalendar(rawTime, utcCal);
+    assertNotNull(utcConvertedTime);
+
+    Timestamp utcConvertedTimestamp =
+        BigQueryParameterHandler.convertTimestampWithCalendar(rawTimestamp, utcCal);
+    assertNotNull(utcConvertedTimestamp);
+    assertEquals(123456789, utcConvertedTimestamp.getNanos());
   }
 }

@@ -31,9 +31,11 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.Period;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.Text;
@@ -42,6 +44,91 @@ import org.apache.arrow.vector.util.Text;
 class BigQueryTypeCoercionUtility {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryTypeCoercionUtility.class.getName());
+
+  /**
+   * Returns a defensively cloned Calendar instance or a new default Calendar if input is null.
+   */
+  static Calendar getSafeCalendar(Calendar cal) {
+    if (cal == null) {
+      return Calendar.getInstance();
+    }
+    return (Calendar) cal.clone();
+  }
+
+  /**
+   * Converts a java.sql.Date by shifting its wall-clock year, month, and day fields into the target
+   * Calendar's timezone per JDBC specification.
+   */
+  static Date convertDateWithCalendar(Date date, Calendar cal) {
+    if (date == null) {
+      return null;
+    }
+    if (cal == null) {
+      return date;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(date);
+
+    Calendar targetCal = (Calendar) cal.clone();
+    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    targetCal.set(Calendar.HOUR_OF_DAY, 0);
+    targetCal.set(Calendar.MINUTE, 0);
+    targetCal.set(Calendar.SECOND, 0);
+    targetCal.set(Calendar.MILLISECOND, 0);
+    return new Date(targetCal.getTimeInMillis());
+  }
+
+  /**
+   * Converts a java.sql.Time by shifting its wall-clock hour, minute, second, and millisecond fields
+   * into the target Calendar's timezone per JDBC specification.
+   */
+  static Time convertTimeWithCalendar(Time time, Calendar cal) {
+    if (time == null) {
+      return null;
+    }
+    if (cal == null) {
+      return time;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(time);
+
+    Calendar targetCal = (Calendar) cal.clone();
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    return new Time(targetCal.getTimeInMillis());
+  }
+
+  /**
+   * Converts a java.sql.Timestamp by shifting its wall-clock fields into the target Calendar's
+   * timezone per JDBC specification while preserving nanosecond precision.
+   */
+  static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
+    if (timestamp == null) {
+      return null;
+    }
+    if (cal == null) {
+      return timestamp;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(timestamp);
+
+    Calendar targetCal = (Calendar) cal.clone();
+    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
+    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
+    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+
+    Timestamp adjustedTimestamp = new Timestamp(targetCal.getTimeInMillis());
+    adjustedTimestamp.setNanos(timestamp.getNanos());
+    return adjustedTimestamp;
+  }
 
   static BigQueryTypeCoercer INSTANCE;
 
