@@ -35,6 +35,7 @@ import static com.google.auth.oauth2.ComputeEngineCredentials.METADATA_RESPONSE_
 import static com.google.auth.oauth2.ImpersonatedCredentialsTest.SA_CLIENT_EMAIL;
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
 import static com.google.auth.oauth2.TestUtils.createDummyRab;
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -45,7 +46,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
@@ -1310,18 +1310,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
 
     assertNull(credentials.getRegionalAccessBoundaryUrl());
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {

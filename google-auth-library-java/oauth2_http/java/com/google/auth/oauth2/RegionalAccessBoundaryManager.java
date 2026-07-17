@@ -36,7 +36,9 @@ import static com.google.auth.oauth2.LoggingUtils.log;
 import com.google.api.client.util.Clock;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsUtils;
 import com.google.common.annotations.VisibleForTesting;
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -67,6 +69,9 @@ final class RegionalAccessBoundaryManager {
    * requests.
    */
   static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
+
+  static final String IAM_ENDPOINT = "iamcredentials.googleapis.com";
+  static final String MTLS_IAM_ENDPOINT = "iamcredentials.mtls.googleapis.com";
 
   /**
    * cachedRAB uses AtomicReference to provide thread-safe, lock-free access to the cached data for
@@ -177,7 +182,9 @@ final class RegionalAccessBoundaryManager {
   void triggerAsyncRefresh(
       final HttpTransportFactory transportFactory,
       final RegionalAccessBoundaryProvider provider,
-      final AccessToken accessToken) {
+      final AccessToken accessToken,
+      final EnvironmentProvider envProvider,
+      final PropertyProvider propProvider) {
     if (skipRAB.get() || isCooldownActive()) {
       return;
     }
@@ -191,6 +198,11 @@ final class RegionalAccessBoundaryManager {
     // this thread "won the race" and is responsible for starting the background task.
     // All other concurrent threads will return false and exit immediately.
     if (isRefreshing.compareAndSet(false, true)) {
+      currentRab = cachedRAB.get();
+      if (currentRab != null && !currentRab.shouldRefresh()) {
+        isRefreshing.set(false);
+        return;
+      }
       Runnable refreshTask =
           () -> {
             try {
@@ -199,9 +211,15 @@ final class RegionalAccessBoundaryManager {
                 skipRAB.set(true);
                 return;
               }
+              HttpTransportFactory upgradedTransportFactory =
+                  MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+                      transportFactory, envProvider, propProvider, null);
+              if (MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null)) {
+                url = url.replace(IAM_ENDPOINT, MTLS_IAM_ENDPOINT);
+              }
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
-                      transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
+                      upgradedTransportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
               cachedRAB.set(newRAB);
               resetCooldown();
             } catch (Throwable e) {
@@ -217,6 +235,8 @@ final class RegionalAccessBoundaryManager {
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.
+        handleRefreshFailure(
+            new IOException("Failed to submit background refresh task: " + e.getMessage(), e));
         log(
             LOGGER_PROVIDER,
             Level.FINE,

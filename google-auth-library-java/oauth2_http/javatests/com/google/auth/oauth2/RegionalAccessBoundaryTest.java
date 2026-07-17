@@ -31,25 +31,35 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
+import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public class RegionalAccessBoundaryTest {
 
@@ -148,6 +158,25 @@ public class RegionalAccessBoundaryTest {
   }
 
   @Test
+  public void testRefreshThrowsIOExceptionOnExpiringToken() {
+    final String url = "https://example.com/rab";
+    final AccessToken token =
+        new AccessToken(
+            "token",
+            new java.util.Date(
+                testClock.currentTimeMillis() + 120_000L)); // 2 minutes, within 3 min skew
+
+    MockHttpTransport transport = new MockHttpTransport.Builder().build();
+    HttpTransportFactory transportFactory = () -> transport;
+
+    assertThrows(
+        IOException.class,
+        () -> {
+          RegionalAccessBoundary.refresh(transportFactory, url, token, testClock, 1000);
+        });
+  }
+
+  @Test
   public void testManagerTriggersRefreshInGracePeriod() throws InterruptedException {
     final String url =
         "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/default:allowedLocations";
@@ -173,7 +202,12 @@ public class RegionalAccessBoundaryTest {
     RegionalAccessBoundaryManager manager = new RegionalAccessBoundaryManager(testClock);
 
     // 1. Let's first get a RAB into the cache
-    manager.triggerAsyncRefresh(transportFactory, provider, token);
+    manager.triggerAsyncRefresh(
+        transportFactory,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     // Wait for it to be cached
     int retries = 0;
@@ -204,7 +238,12 @@ public class RegionalAccessBoundaryTest {
     HttpTransportFactory transportFactory2 = () -> transport2;
 
     // 4. Trigger refresh - should start because we are in grace period
-    manager.triggerAsyncRefresh(transportFactory2, provider, token);
+    manager.triggerAsyncRefresh(
+        transportFactory2,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     // 5. Wait for background refresh to complete
     // We expect the cached RAB to eventually change to newerEncoded
@@ -288,7 +327,12 @@ public class RegionalAccessBoundaryTest {
               testClock,
               RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
               testExecutor);
-      managers[i].triggerAsyncRefresh(transportFactory, provider, token);
+      managers[i].triggerAsyncRefresh(
+          transportFactory,
+          provider,
+          token,
+          SystemEnvironmentProvider.getInstance(),
+          SystemPropertyProvider.getInstance());
     }
 
     RegionalAccessBoundaryManager extraManager =
@@ -298,7 +342,12 @@ public class RegionalAccessBoundaryTest {
             testExecutor);
     assertFalse(extraManager.isCooldownActive());
 
-    extraManager.triggerAsyncRefresh(transportFactory, provider, token);
+    extraManager.triggerAsyncRefresh(
+        transportFactory,
+        provider,
+        token,
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance());
 
     assertTrue(
         extraManager.isCooldownActive(),
@@ -333,5 +382,52 @@ public class RegionalAccessBoundaryTest {
     public boolean isDisconnected() {
       return disconnected;
     }
+  }
+
+  @Test
+  public void
+      regionalAccessBoundary_withMtlsEnabled_shouldCallAllowedLocationsUsingMtlsTransportFactory()
+          throws IOException, InterruptedException {
+
+    MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+
+    // Configure the environment provider to enable mTLS.
+    // X509Provider will use certificate_config.json to load keys.
+    TestEnvironmentProvider testEnvProvider = new TestEnvironmentProvider();
+    testEnvProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    testEnvProvider.setEnv(
+        "GOOGLE_API_CERTIFICATE_CONFIG",
+        new File("testresources/mtls/certificate_config.json").getAbsolutePath());
+
+    // Mock MtlsHttpTransportFactory to return our mock transport
+    MtlsHttpTransportFactory mockMtlsFactory = Mockito.mock(MtlsHttpTransportFactory.class);
+    Mockito.doReturn(transport).when(mockMtlsFactory).create();
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mockMtlsFactory)
+            .setEnvironmentProvider(testEnvProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+
+    // Verify that MtlsHttpTransportFactory.create() was called to retrieve the mTLS transport
+    Mockito.verify(mockMtlsFactory, Mockito.times(2)).create();
   }
 }

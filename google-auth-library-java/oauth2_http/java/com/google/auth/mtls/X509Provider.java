@@ -100,7 +100,7 @@ public class X509Provider implements MtlsProvider {
    *
    * <ul>
    *   <li>The certificate config override path, if set.
-   *   <li>The path pointed to by the "GOOGLE_API_CERTIFICATE_CONFIG" environment variable
+   *   <li>The path pointed to by the "GOOGLE_API_CERTIFICATE_CONFIG" environment variable.
    *   <li>The well known gcloud location for the certificate configuration file.
    * </ul>
    *
@@ -111,33 +111,27 @@ public class X509Provider implements MtlsProvider {
    */
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    WorkloadCertificateConfiguration workloadCertConfig =
-        MtlsUtils.getWorkloadCertificateConfiguration(
-            envProvider, propProvider, certConfigPathOverride);
+    try {
+      // Attempt to load from resolved Config File
+      WorkloadCertificateConfiguration workloadCertConfig =
+          MtlsUtils.getWorkloadCertificateConfiguration(
+              envProvider, propProvider, certConfigPathOverride);
 
-    // Read the certificate and private key file paths into streams.
-    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
-        InputStream privateKeyStream =
-            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
-        SequenceInputStream certAndPrivateKeyStream =
-            new SequenceInputStream(certStream, privateKeyStream)) {
-
-      // Build a key store using the combined stream.
-      return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      try (InputStream certStream =
+              new FileInputStream(new File(workloadCertConfig.getCertPath()));
+          InputStream privateKeyStream =
+              new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+          SequenceInputStream certAndPrivateKeyStream =
+              new SequenceInputStream(certStream, privateKeyStream)) {
+        return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      }
     } catch (CertificateSourceUnavailableException e) {
-      // Throw the CertificateSourceUnavailableException without wrapping.
       throw e;
     } catch (Exception e) {
-      // Wrap all other exception types to an IOException.
-      throw new IOException("X509Provider: Unexpected IOException:", e);
+      throw new IOException("X509Provider: Unexpected error loading from config file:", e);
     }
   }
 
-  /**
-   * Returns true if the X509 mTLS provider is available.
-   *
-   * @throws IOException if a general I/O error occurs while determining availability.
-   */
   @Override
   public boolean isAvailable() throws IOException {
     try {

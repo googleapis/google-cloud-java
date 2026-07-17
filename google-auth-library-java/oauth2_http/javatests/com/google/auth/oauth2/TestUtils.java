@@ -74,4 +74,17 @@ class TestUtils {
     return new RegionalAccessBoundary(
         "dummy-locations", java.util.Arrays.asList("dummy-loc"), clock);
   }
+
+  static void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      org.junit.jupiter.api.Assertions.fail(
+          "Timed out waiting for regional access boundary refresh");
+    }
+  }
 }

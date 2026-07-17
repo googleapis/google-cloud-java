@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -1358,18 +1359,6 @@ class GoogleCredentialsTest extends BaseSerializationTest {
         .build();
   }
 
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      Assertions.fail("Timed out waiting for regional access boundary refresh");
-    }
-  }
-
   private void waitForCooldownActive(GoogleCredentials credentials) throws InterruptedException {
     long deadline = System.currentTimeMillis() + 5000;
     while (!credentials.regionalAccessBoundaryManager.isCooldownActive()
@@ -1379,6 +1368,65 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     if (!credentials.regionalAccessBoundaryManager.isCooldownActive()) {
       Assertions.fail("Timed out waiting for cooldown to become active");
     }
+  }
+
+  @Test
+  public void regionalAccessBoundary_refreshUsesMtlsEndpointWhenConfigured()
+      throws IOException, InterruptedException {
+    MockTokenServerTransport transport = new MockTokenServerTransport();
+    transport.setRegionalAccessBoundary(
+        new RegionalAccessBoundary("valid", Collections.singletonList("us-central1"), null));
+
+    // Configure the environment provider to enable mTLS with ALWAYS policy
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "true";
+            }
+            if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+              return "always";
+            }
+            return null;
+          }
+        };
+
+    AccessToken token =
+        new AccessToken("test-token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+
+    com.google.auth.mtls.MtlsHttpTransportFactory mockMtlsFactory;
+    try {
+      java.security.KeyStore dummyKeyStore =
+          java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+      dummyKeyStore.load(null, null);
+      mockMtlsFactory =
+          new com.google.auth.mtls.MtlsHttpTransportFactory(dummyKeyStore) {
+            @Override
+            public com.google.api.client.http.HttpTransport create() {
+              return transport;
+            }
+          };
+    } catch (java.security.GeneralSecurityException e) {
+      throw new RuntimeException(e);
+    }
+
+    TestRegionalCredentials credentials =
+        new TestRegionalCredentials(token, envProvider, mockMtlsFactory);
+
+    credentials.getRequestMetadata(URI.create("https://foo.com"));
+
+    // Wait for the async refresh to complete
+    waitForRegionalAccessBoundary(credentials);
+
+    // Verify a request was made
+    assertEquals(1, transport.getRegionalAccessBoundaryRequestCount());
+    // Verify the request URL used the mTLS subdomain: "iamcredentials.mtls.googleapis.com"
+    String requestedUrl = transport.getRequest().getUrl();
+    assertNotNull(requestedUrl);
+    assertTrue(
+        requestedUrl.contains("iamcredentials.mtls.googleapis.com"),
+        "Expected mTLS URL, but got: " + requestedUrl);
   }
 
   private static class TestClock implements Clock {
@@ -1391,6 +1439,38 @@ class GoogleCredentialsTest extends BaseSerializationTest {
 
     public void advanceTime(long millis) {
       currentTime.addAndGet(millis);
+    }
+  }
+
+  private static class TestRegionalCredentials extends GoogleCredentials
+      implements RegionalAccessBoundaryProvider {
+    private final EnvironmentProvider envProvider;
+    private final HttpTransportFactory transportFactory;
+
+    TestRegionalCredentials(AccessToken token, EnvironmentProvider envProvider) {
+      this(token, envProvider, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+    }
+
+    TestRegionalCredentials(
+        AccessToken token, EnvironmentProvider envProvider, HttpTransportFactory transportFactory) {
+      super(GoogleCredentials.newBuilder().setAccessToken(token));
+      this.envProvider = envProvider;
+      this.transportFactory = transportFactory;
+    }
+
+    @Override
+    EnvironmentProvider getEnvironmentProvider() {
+      return envProvider;
+    }
+
+    @Override
+    HttpTransportFactory getTransportFactory() {
+      return transportFactory;
+    }
+
+    @Override
+    public String getRegionalAccessBoundaryUrl() {
+      return "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/foo/allowedLocations";
     }
   }
 }

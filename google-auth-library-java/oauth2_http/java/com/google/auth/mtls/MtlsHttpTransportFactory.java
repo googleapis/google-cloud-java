@@ -31,6 +31,7 @@
 
 package com.google.auth.mtls;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
@@ -62,7 +63,7 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   }
 
   @Override
-  public NetHttpTransport create() {
+  public HttpTransport create() {
     try {
       // Build the mTLS transport using the provided KeyStore.
       return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
