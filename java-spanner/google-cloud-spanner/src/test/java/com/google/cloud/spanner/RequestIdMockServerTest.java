@@ -116,17 +116,39 @@ public class RequestIdMockServerTest {
                       ServerCall<ReqT, RespT> call,
                       Metadata headers,
                       ServerCallHandler<ReqT, RespT> next) {
+                    XGoogSpannerRequestId tmpId = null;
                     try {
                       String requestId = headers.get(XGoogSpannerRequestId.REQUEST_ID_HEADER_KEY);
                       if (requestId != null) {
-                        requestIds.add(XGoogSpannerRequestId.of(requestId));
+                        tmpId = XGoogSpannerRequestId.of(requestId);
                       } else {
-                        requestIds.add(XGoogSpannerRequestId.of(0, 0, 0, 0));
+                        tmpId = XGoogSpannerRequestId.of(0, 0, 0, 0);
                       }
                     } catch (Throwable t) {
-                      // Ignore and continue
+                      tmpId = null;
                     }
-                    return Contexts.interceptCall(Context.current(), call, headers, next);
+                    final XGoogSpannerRequestId id = tmpId;
+                    ServerCall.Listener<ReqT> listener =
+                        Contexts.interceptCall(Context.current(), call, headers, next);
+                    return new io.grpc.ForwardingServerCallListener
+                            .SimpleForwardingServerCallListener<
+                        ReqT>(listener) {
+                      @Override
+                      public void onMessage(ReqT message) {
+                        boolean isDetermineMetadata =
+                            message instanceof ExecuteSqlRequest
+                                && ((ExecuteSqlRequest) message)
+                                    .getSql()
+                                    .equals(
+                                        MultiplexedSessionDatabaseClient
+                                            .DETERMINE_METADATA_STATEMENT
+                                            .getSql());
+                        if (!isDetermineMetadata && id != null) {
+                          requestIds.add(id);
+                        }
+                        super.onMessage(message);
+                      }
+                    };
                   }
                 })
             .build()
@@ -184,10 +206,10 @@ public class RequestIdMockServerTest {
 
   @Before
   public void prepareTest() {
-    // Call getClient() to make sure the multiplexed session has been created.
-    // Then clear all requests that were received as part of that so we don't need to include
-    // that in the test verifications.
-    getClient();
+    // Call getClient().getDialect() to make sure the multiplexed session and metadata have been
+    // initialized. Then clear all requests that were received as part of that so we don't need to
+    // include that in the test verifications.
+    getClient().getDialect();
     mockSpanner.reset();
     requestIds.clear();
     ((SpannerImpl) spanner).resetRequestIdCounters();
@@ -660,6 +682,7 @@ public class RequestIdMockServerTest {
     try (Spanner spanner = createSpanner()) {
       otherClientId = ((SpannerImpl) spanner).getRequestIdClientId();
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      client.getDialect();
       try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
         while (resultSet.next()) {}
       }
@@ -683,7 +706,7 @@ public class RequestIdMockServerTest {
             // the requests that we see. This request does not include a channel hint, hence the
             // zero value for the channel number in the request ID.
             XGoogSpannerRequestId.of(otherClientId, 0, 1, 1),
-            XGoogSpannerRequestId.of(otherClientId, -1, 2, 1),
+            XGoogSpannerRequestId.of(otherClientId, -1, 3, 1),
             XGoogSpannerRequestId.of(getClientId(), -1, 2, 1)),
         actual);
   }
