@@ -69,7 +69,7 @@ class BigQueryTypeCoercionUtility {
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(date);
 
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = getSafeCalendar(cal);
     targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
     targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
     targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
@@ -94,7 +94,7 @@ class BigQueryTypeCoercionUtility {
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(time);
 
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = getSafeCalendar(cal);
     targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
     targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
     targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
@@ -116,7 +116,7 @@ class BigQueryTypeCoercionUtility {
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(timestamp);
 
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = getSafeCalendar(cal);
     targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
     targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
     targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
