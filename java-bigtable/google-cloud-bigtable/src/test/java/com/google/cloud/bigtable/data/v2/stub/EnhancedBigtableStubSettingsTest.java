@@ -78,8 +78,10 @@ public class EnhancedBigtableStubSettingsTest {
     String appProfileId = "my-app-profile-id";
     boolean isRefreshingChannel = false;
     String endpoint = "some.other.host:123";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
-    WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
+    CredentialsProvider credentialsProvider =
+        Mockito.mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
+    WatchdogProvider watchdogProvider =
+        Mockito.mock(WatchdogProvider.class, Mockito.withSettings().withoutAnnotations());
     Duration watchdogInterval = Duration.ofSeconds(12);
     String metricsEndpoint = "test-endpoint:443";
 
@@ -963,7 +965,8 @@ public class EnhancedBigtableStubSettingsTest {
   public void refreshingChannelSetFixedCredentialProvider() throws Exception {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    CredentialsProvider credentialsProvider =
+        Mockito.mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
     FakeCredentials expectedCredentials = new FakeCredentials();
     Mockito.when(credentialsProvider.getCredentials())
         .thenReturn(expectedCredentials, new FakeCredentials(), new FakeCredentials());
