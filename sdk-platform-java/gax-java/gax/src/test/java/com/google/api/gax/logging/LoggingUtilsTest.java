@@ -95,7 +95,8 @@ class LoggingUtilsTest {
   @Test
   void testLogActionableError_loggingDisabled() {
     LoggingUtils.setLoggingEnabled(false);
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider =
+        mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
 
     LoggingUtils.logActionableError(
         Collections.<String, Object>emptyMap(), loggerProvider, "message");
@@ -106,7 +107,8 @@ class LoggingUtilsTest {
   @Test
   void testLogActionableError_success() {
     LoggingUtils.setLoggingEnabled(true);
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider =
+        mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
     Logger logger = mock(Logger.class);
     when(loggerProvider.getLogger()).thenReturn(logger);
 

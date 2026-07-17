@@ -63,7 +63,7 @@ class EndpointContextTest {
             .setClientSettingsEndpoint(DEFAULT_ENDPOINT)
             .setMtlsEndpoint(DEFAULT_MTLS_ENDPOINT)
             .setMtlsProvider(mtlsProvider);
-    statusCode = Mockito.mock(StatusCode.class);
+    statusCode = Mockito.mock(StatusCode.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(statusCode.getCode()).thenReturn(StatusCode.Code.UNAUTHENTICATED);
     Mockito.when(statusCode.getTransportCode()).thenReturn(Status.Code.UNAUTHENTICATED);
   }

@@ -82,12 +82,19 @@ class TimeoutTest {
   private static GrpcCallContext defaultCallContext;
 
   @Mock private Marshaller<String> stringMarshaller;
-  @Mock private RequestParamsExtractor<String> paramsExtractor;
+  private RequestParamsExtractor<String> paramsExtractor;
   @Mock private ManagedChannel managedChannel;
+
+  @org.junit.jupiter.api.BeforeEach
+  void initParamsExtractor() {
+    paramsExtractor =
+        Mockito.mock(RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
+  }
 
   @BeforeAll
   public static void setUp() throws IOException {
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

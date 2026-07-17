@@ -220,7 +220,8 @@ class HttpJsonClientCallImplTest {
     HttpJsonDirectCallable<Field, Field> callable =
         new HttpJsonDirectCallable<>(FAKE_METHOD_DESCRIPTOR);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.lenient()
         .doNothing()
         .when(endpointContext)
@@ -266,7 +267,8 @@ class HttpJsonClientCallImplTest {
     HttpJsonDirectServerStreamingCallable<Field, Field> callable =
         new HttpJsonDirectServerStreamingCallable<>(methodServerStreaming);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.lenient()
         .doNothing()
         .when(endpointContext)

@@ -39,6 +39,7 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 
 class MetricsTracerFactoryTest {
   private static final int DEFAULT_ATTRIBUTES_COUNT = 2;
@@ -53,7 +54,7 @@ class MetricsTracerFactoryTest {
     // Create an instance of MetricsTracerFactory with the mocked MetricsRecorder
     metricsTracerFactory = new MetricsTracerFactory(metricsRecorder);
 
-    spanName = mock(SpanName.class);
+    spanName = mock(SpanName.class, Mockito.withSettings().withoutAnnotations());
     when(spanName.getClientName()).thenReturn("testService");
     when(spanName.getMethodName()).thenReturn("testMethod");
   }

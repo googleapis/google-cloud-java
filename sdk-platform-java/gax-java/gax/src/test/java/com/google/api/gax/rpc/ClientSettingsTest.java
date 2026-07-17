@@ -213,7 +213,8 @@ class ClientSettingsTest {
   void testBuilderFromClientContext() throws Exception {
     final String QUOTA_PROJECT_ID_FROM_CONTEXT = "some_quota_project_id_from_context";
     ApiClock clock = Mockito.mock(ApiClock.class);
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext callContext =
         FakeCallContext.createDefault().withEndpointContext(endpointContext);
     Map<String, String> headers = Collections.singletonMap("spiffykey", "spiffyvalue");
@@ -221,12 +222,15 @@ class ClientSettingsTest {
         Watchdog.createDuration(
             Mockito.mock(ApiClock.class),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(12);
 
     ClientContext clientContext =
         ClientContext.newBuilder()
-            .setExecutor(Mockito.mock(ScheduledExecutorService.class))
+            .setExecutor(
+                Mockito.mock(
+                    ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()))
             .setTransportChannel(Mockito.mock(TransportChannel.class))
             .setCredentials(Mockito.mock(Credentials.class))
             .setClock(clock)
@@ -450,7 +454,8 @@ class ClientSettingsTest {
 
   @Test
   void testBuilderFromClientContext_QuotaProjectId() {
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext callContext =
         FakeCallContext.createDefault().withEndpointContext(endpointContext);
 

@@ -1308,7 +1308,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void testSettingBackgroundExecutor() {
-    ScheduledExecutorService mockExecutor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExecutor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder().setBackgroundExecutor(mockExecutor).build();
 

@@ -110,7 +110,9 @@ class CheckingAttemptCallableTest {
     FakeCallContext callContext = Mockito.spy(FakeCallContext.createDefault());
     Mockito.doReturn(callContext).when(callContext).withTimeoutDuration(ArgumentMatchers.any());
     CheckingAttemptCallable<String, String> callable =
-        new CheckingAttemptCallable<>(Mockito.mock(UnaryCallable.class), callContext);
+        new CheckingAttemptCallable<>(
+            Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()),
+            callContext);
     callable.setExternalFuture(mockExternalFuture);
 
     // Make sure that the rpc timeout is set

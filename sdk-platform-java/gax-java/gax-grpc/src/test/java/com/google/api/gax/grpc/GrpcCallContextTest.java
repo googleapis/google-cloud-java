@@ -397,7 +397,8 @@ class GrpcCallContextTest {
 
   @Test
   void testMergeWithTracer() {
-    ApiTracer explicitTracer = Mockito.mock(ApiTracer.class);
+    ApiTracer explicitTracer =
+        Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext ctxWithExplicitTracer =
         GrpcCallContext.createDefault().withTracer(explicitTracer);
 

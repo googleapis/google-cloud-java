@@ -502,7 +502,8 @@ class OperationCallableImplTest {
 
     LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);
@@ -546,7 +547,8 @@ class OperationCallableImplTest {
 
     LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);

@@ -182,7 +182,8 @@ class CallableTest {
         Watchdog.createDuration(
             Mockito.mock(ApiClock.class),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     ClientContext clientContext =
         ClientContext.newBuilder()
             .setStreamWatchdog(watchdog)

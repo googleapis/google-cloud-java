@@ -30,6 +30,7 @@
 
 package com.google.api.gax.httpjson;
 
+
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.httpjson.ApiMethodDescriptor.MethodType;

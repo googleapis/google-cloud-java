@@ -247,13 +247,13 @@ class ChannelPoolTest {
     List<Runnable> channelRefreshers = new ArrayList<>();
 
     ScheduledExecutorService scheduledExecutorService =
-        Mockito.mock(ScheduledExecutorService.class);
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(scheduledExecutorService);
 
     Answer<?> extractChannelRefresher =
         invocation -> {
           channelRefreshers.add(invocation.getArgument(0));
-          return Mockito.mock(ScheduledFuture.class);
+          return Mockito.mock(ScheduledFuture.class, Mockito.withSettings().withoutAnnotations());
         };
 
     Mockito.doAnswer(extractChannelRefresher)
@@ -431,7 +431,7 @@ class ChannelPoolTest {
 
     // mock executor service to capture the runnable scheduled, so we can invoke it when we want to
     ScheduledExecutorService scheduledExecutorService =
-        Mockito.mock(ScheduledExecutorService.class);
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(scheduledExecutorService);
 
     Mockito.doReturn(null)
@@ -466,7 +466,8 @@ class ChannelPoolTest {
 
   @Test
   void channelCountShouldNotChangeWhenOutstandingRpcsAreWithinLimits() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
@@ -532,7 +533,8 @@ class ChannelPoolTest {
 
   @Test
   void customResizeDeltaIsRespected() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
@@ -564,7 +566,8 @@ class ChannelPoolTest {
 
   @Test
   void removedIdleChannelsAreShutdown() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
@@ -591,7 +594,8 @@ class ChannelPoolTest {
 
   @Test
   void removedActiveChannelsAreShutdown() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
@@ -647,7 +651,8 @@ class ChannelPoolTest {
     ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));
     pool = ChannelPool.create(channelPoolSettings, factory, null);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -692,7 +697,8 @@ class ChannelPoolTest {
 
   @Test
   void repeatedResizingLogsWarningOnExpand() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     ChannelFactory channelFactory = createMockChannelFactory(new ArrayList<>(), null);
@@ -743,7 +749,8 @@ class ChannelPoolTest {
 
   @Test
   void repeatedResizingLogsWarningOnShrink() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     ChannelFactory channelFactory = () -> Mockito.mock(ManagedChannel.class);
@@ -797,7 +804,8 @@ class ChannelPoolTest {
 
       pool = ChannelPool.create(channelPoolSettings, factory, null);
 
-      EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+      EndpointContext endpointContext =
+          Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
       Mockito.doNothing()
           .when(endpointContext)
           .validateUniverseDomain(
@@ -850,7 +858,8 @@ class ChannelPoolTest {
 
   @Test
   void minChannelsClampedToMaxChannelCountUnderHighLoad() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
@@ -885,7 +894,8 @@ class ChannelPoolTest {
 
   @Test
   void maxChannelsClampedToMinChannelCountUnderLowLoad() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService executor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();

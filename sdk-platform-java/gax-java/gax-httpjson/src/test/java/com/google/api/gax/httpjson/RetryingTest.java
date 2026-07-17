@@ -70,7 +70,8 @@ import org.mockito.Mockito;
 class RetryingTest {
 
   @SuppressWarnings("unchecked")
-  private final UnaryCallable<Integer, Integer> callInt = Mockito.mock(UnaryCallable.class);
+  private final UnaryCallable<Integer, Integer> callInt =
+      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
 
   private final ApiMethodDescriptor<Integer, Integer> FAKE_METHOD_DESCRIPTOR_FOR_REQUEST_MUTATOR =
       ApiMethodDescriptor.newBuilder()

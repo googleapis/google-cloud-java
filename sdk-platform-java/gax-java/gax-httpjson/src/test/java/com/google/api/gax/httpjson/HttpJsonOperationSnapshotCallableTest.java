@@ -44,6 +44,7 @@ import java.util.concurrent.ExecutionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class HttpJsonOperationSnapshotCallableTest {
 
@@ -54,9 +55,12 @@ class HttpJsonOperationSnapshotCallableTest {
   @BeforeEach
   @SuppressWarnings("unchecked")
   void init() {
-    innerCallable = (UnaryCallable<Option, Field>) mock(UnaryCallable.class);
+    innerCallable =
+        (UnaryCallable<Option, Field>)
+            mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     operationSnapshotFactory =
-        (OperationSnapshotFactory<Option, Field>) mock(OperationSnapshotFactory.class);
+        (OperationSnapshotFactory<Option, Field>)
+            mock(OperationSnapshotFactory.class, Mockito.withSettings().withoutAnnotations());
 
     operationSnapCallable =
         new HttpJsonOperationSnapshotCallable<Option, Field>(

@@ -54,6 +54,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -184,7 +185,8 @@ class TracedServerStreamingCallableTest {
     RuntimeException expectedError = new RuntimeException("expected error");
 
     // Create a broken inner callable
-    ServerStreamingCallable<String, String> innerCallable = mock(ServerStreamingCallable.class);
+    ServerStreamingCallable<String, String> innerCallable =
+        mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
     doThrow(expectedError)
         .when(innerCallable)
         .call(

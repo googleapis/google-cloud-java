@@ -89,7 +89,8 @@ class AttemptCallableTest {
     FakeCallContext callContext = mock(FakeCallContext.class);
     when(callContext.getTimeoutDuration()).thenReturn(null);
     when(callContext.withTimeoutDuration(any(java.time.Duration.class))).thenReturn(callContext);
-    when(callContext.getTracer()).thenReturn(mock(ApiTracer.class));
+    when(callContext.getTracer())
+        .thenReturn(mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()));
     AttemptCallable<String, String> callable =
         new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
     callable.setExternalFuture(mockExternalFuture);

@@ -126,7 +126,7 @@ class HttpRequestRunnableTest {
 
   @Test
   void testApiTracerRequestUrlResolved() throws IOException {
-    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    ApiTracer tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiMethodDescriptor<Field, Empty> methodDescriptor =
         ApiMethodDescriptor.<Field, Empty>newBuilder()
             .setFullMethodName("house.cat.get")

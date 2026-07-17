@@ -317,7 +317,8 @@ class ClientContextTest {
         Watchdog.createDuration(
             Mockito.mock(ApiClock.class),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(11);
 
     builder.setExecutorProvider(executorProvider);
@@ -647,7 +648,10 @@ class ClientContextTest {
     ClientSettings.Builder builder =
         new FakeClientSettings.Builder()
             .setExecutorProvider(
-                FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class)))
+                FixedExecutorProvider.create(
+                    Mockito.mock(
+                        ScheduledExecutorService.class,
+                        Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
             .setCredentialsProvider(
                 FixedCredentialsProvider.create(Mockito.mock(GoogleCredentials.class)));
@@ -676,7 +680,10 @@ class ClientContextTest {
     ClientSettings.Builder builder =
         new FakeClientSettings.Builder()
             .setExecutorProvider(
-                FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class)))
+                FixedExecutorProvider.create(
+                    Mockito.mock(
+                        ScheduledExecutorService.class,
+                        Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
             .setCredentialsProvider(
                 FixedCredentialsProvider.create(Mockito.mock(GoogleCredentials.class)));
@@ -705,7 +712,10 @@ class ClientContextTest {
     ClientSettings.Builder builder =
         new FakeClientSettings.Builder()
             .setExecutorProvider(
-                FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class)))
+                FixedExecutorProvider.create(
+                    Mockito.mock(
+                        ScheduledExecutorService.class,
+                        Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
             .setCredentialsProvider(
                 FixedCredentialsProvider.create(Mockito.mock(GoogleCredentials.class)));
@@ -791,7 +801,10 @@ class ClientContextTest {
     ClientSettings.Builder builder =
         new FakeClientSettings.Builder()
             .setExecutorProvider(
-                FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class)))
+                FixedExecutorProvider.create(
+                    Mockito.mock(
+                        ScheduledExecutorService.class,
+                        Mockito.withSettings().withoutAnnotations())))
             .setTransportChannelProvider(transportChannelProvider)
             .setCredentialsProvider(credentialsProvider)
             .setInternalHeaderProvider(headerProvider);
@@ -850,7 +863,9 @@ class ClientContextTest {
     assertThat(transportChannel.getExecutor()).isNull();
 
     ExecutorProvider channelExecutorProvider =
-        FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class));
+        FixedExecutorProvider.create(
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     builder.setTransportChannelProvider(
         transportChannelProvider.withExecutor((Executor) channelExecutorProvider.getExecutor()));
     context = ClientContext.create(builder.build());
@@ -859,7 +874,9 @@ class ClientContextTest {
         .isSameInstanceAs(channelExecutorProvider.getExecutor());
 
     ExecutorProvider executorProvider =
-        FixedExecutorProvider.create(Mockito.mock(ScheduledExecutorService.class));
+        FixedExecutorProvider.create(
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     assertThat(channelExecutorProvider.getExecutor())
         .isNotSameInstanceAs(executorProvider.getExecutor());
 
@@ -1291,7 +1308,8 @@ class ClientContextTest {
     builder.setCredentialsProvider(
         FixedCredentialsProvider.create(Mockito.mock(Credentials.class)));
 
-    ApiTracerFactory apiTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory apiTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doReturn(true).when(apiTracerFactory).needsContext();
     Mockito.doReturn(apiTracerFactory).when(apiTracerFactory).withContext(Mockito.any());
 
@@ -1305,7 +1323,8 @@ class ClientContextTest {
 
   @Test
   void testGetApiTracerFactory_noContextNeeded() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(false);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1314,7 +1333,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
 
     ApiTracerFactory apiTracerFactory =
         ClientContext.getApiTracerFactory(builder.build(), endpointContext);
@@ -1324,8 +1344,10 @@ class ClientContextTest {
 
   @Test
   void testGetApiTracerFactory_contextNeeded() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
-    ApiTracerFactory withContextTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracerFactory withContextTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(true);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1334,7 +1356,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     when(endpointContext.resolvedServerAddress()).thenReturn("test-address");
     when(endpointContext.resolvedServerPort()).thenReturn(443);
 
@@ -1349,7 +1372,8 @@ class ClientContextTest {
   // This test should only run when the maven profile `EnvVarTest` is enabled.
   @Test
   void testGetApiTracerFactory_loggingEnabled() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(false);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1358,7 +1382,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
 
     ApiTracerFactory apiTracerFactory =
         ClientContext.getApiTracerFactory(builder.build(), endpointContext);

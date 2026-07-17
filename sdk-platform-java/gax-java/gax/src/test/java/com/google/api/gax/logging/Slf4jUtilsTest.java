@@ -35,7 +35,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyMap;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -180,7 +179,8 @@ class Slf4jUtilsTest {
   }
 
   LoggerProvider setUpLoggerProviderMock(TestLogger testLogger) {
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider =
+        Mockito.mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(testLogger);
     return loggerProvider;
   }
