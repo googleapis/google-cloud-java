@@ -1115,4 +1115,61 @@ public class BigQueryCallableStatementTest {
     assertEquals(javaType, paramHandler.getType(paramName));
     assertEquals(sqlType, paramHandler.getSqlType(paramName));
   }
+
+  @Test
+  public void testWasNullTracking() throws SQLException {
+    BigQueryCallableStatement statement =
+        new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
+
+    statement.setNull("nullParam", Types.INTEGER);
+    Object val = statement.getObject("nullParam");
+    assertNull(val);
+    assertTrue(statement.wasNull());
+
+    statement.setString("nonNullParam", "hello");
+    Object nonNullVal = statement.getObject("nonNullParam");
+    assertNotNull(nonNullVal);
+    org.junit.jupiter.api.Assertions.assertFalse(statement.wasNull());
+  }
+
+  @Test
+  public void testSetNullByName() throws SQLException {
+    BigQueryCallableStatement statement =
+        new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
+
+    statement.setNull(PARAM_KEY, Types.VARCHAR);
+    assertNull(statement.getObject(PARAM_KEY));
+    assertEquals(String.class, statement.getParameterHandler().getType(PARAM_KEY));
+  }
+
+  @Test
+  public void testSetDateCalDoesNotMutateCallerCalendar() throws SQLException {
+    BigQueryCallableStatement statement =
+        new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
+    Calendar callerCal = Calendar.getInstance();
+    callerCal.setTimeInMillis(1000000L);
+    long originalMillis = callerCal.getTimeInMillis();
+
+    Date testDate = new Date(5000000L);
+    statement.setDate(PARAM_KEY, testDate, callerCal);
+
+    assertEquals(originalMillis, callerCal.getTimeInMillis());
+  }
+
+  @Test
+  public void testSetNullGuardingForBigDecimalBytesAndObjectByName() throws SQLException {
+    BigQueryCallableStatement statement =
+        new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
+
+    statement.setBigDecimal(PARAM_KEY, null);
+    assertNull(statement.getObject(PARAM_KEY));
+    assertEquals(BigDecimal.class, statement.getParameterHandler().getType(PARAM_KEY));
+
+    statement.setBytes(PARAM_KEY, null);
+    assertNull(statement.getObject(PARAM_KEY));
+
+    statement.setObject(PARAM_KEY, null, Types.BIGINT);
+    assertNull(statement.getObject(PARAM_KEY));
+    assertEquals(Long.class, statement.getParameterHandler().getType(PARAM_KEY));
+  }
 }
