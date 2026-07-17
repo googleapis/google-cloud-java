@@ -34,8 +34,8 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.ApiCallContext;
 import java.time.Duration;
 import java.util.concurrent.TimeoutException;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a batching context where individual elements will be accumulated and flushed in a

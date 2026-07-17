@@ -37,8 +37,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A wrapper callable that will wrap a callable chain in a trace.
@@ -53,7 +53,7 @@ public final class TracedServerStreamingCallable<RequestT, ResponseT>
 
   @Nonnull private final ApiTracerFactory tracerFactory;
   @Nonnull private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
+  private final @Nullable ApiTracerContext apiTracerContext;
   @Nonnull private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
 
   public TracedServerStreamingCallable(

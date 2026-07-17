@@ -32,8 +32,8 @@ package com.google.api.gax.batching;
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class contains the element and its corresponding unresolved future, which would be resolved
@@ -54,8 +54,7 @@ public abstract class BatchEntry<ElementT, ElementResultT> {
     return new AutoValue_BatchEntry<>(element, resultFuture);
   }
 
-  @Nullable
-  public abstract ElementT getElement();
+  public abstract @Nullable ElementT getElement();
 
   public abstract SettableApiFuture<ElementResultT> getResultFuture();
 }

@@ -44,8 +44,8 @@ import com.google.common.net.HostAndPort;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * EndpointContext is an internal class used by the client library to resolve the endpoint. It is
@@ -89,8 +89,7 @@ public abstract class EndpointContext {
    * `{ServiceName}.googleapis.com`. For example, speech.googleapis.com would have a ServiceName of
    * speech and cloudasset.googleapis.com would have a ServiceName of cloudasset.
    */
-  @Nullable
-  public abstract String serviceName();
+  public abstract @Nullable String serviceName();
 
   /**
    * Universe Domain is the domain for Google Cloud Services. It follows the format of
@@ -98,34 +97,29 @@ public abstract class EndpointContext {
    * Domain value of `googleapis.com` and cloudasset.test.com would have a Universe Domain of
    * `test.com`. If this value is not set, this will default to `googleapis.com`.
    */
-  @Nullable
-  public abstract String universeDomain();
+  public abstract @Nullable String universeDomain();
 
   /**
    * ClientSettingsEndpoint is the endpoint value set via the ClientSettings/StubSettings classes.
    */
-  @Nullable
-  public abstract String clientSettingsEndpoint();
+  public abstract @Nullable String clientSettingsEndpoint();
 
   /**
    * TransportChannelProviderEndpoint is the endpoint value set via the TransportChannelProvider
    * class.
    */
-  @Nullable
-  public abstract String transportChannelProviderEndpoint();
+  public abstract @Nullable String transportChannelProviderEndpoint();
 
   abstract boolean useS2A();
 
   @Nullable
   abstract EnvironmentProvider envProvider();
 
-  @Nullable
-  public abstract String mtlsEndpoint();
+  public abstract @Nullable String mtlsEndpoint();
 
   public abstract boolean switchToMtlsEndpointAllowed();
 
-  @Nullable
-  public abstract MtlsProvider mtlsProvider();
+  public abstract @Nullable MtlsProvider mtlsProvider();
 
   @Nullable
   abstract CertificateBasedAccess certificateBasedAccess();
@@ -136,14 +130,11 @@ public abstract class EndpointContext {
 
   public abstract String resolvedEndpoint();
 
-  @Nullable
-  public abstract String resolvedServerAddress();
+  public abstract @Nullable String resolvedServerAddress();
 
-  @Nullable
-  public abstract Integer resolvedServerPort();
+  public abstract @Nullable Integer resolvedServerPort();
 
-  @Nullable
-  String getUrlDomain() {
+  @Nullable String getUrlDomain() {
     if (!Strings.isNullOrEmpty(serviceName()) && !Strings.isNullOrEmpty(resolvedUniverseDomain())) {
       return serviceName() + "." + resolvedUniverseDomain();
     }
@@ -405,8 +396,7 @@ public abstract class EndpointContext {
       return mtlsEndpoint().contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     }
 
-    @Nullable
-    private String parseServerAddress(String endpoint) {
+    private @Nullable String parseServerAddress(String endpoint) {
       if (endpoint.isEmpty()) {
         return endpoint;
       }
@@ -417,8 +407,7 @@ public abstract class EndpointContext {
       return hostAndPort.getHost();
     }
 
-    @Nullable
-    private Integer parseServerPort(String endpoint) {
+    private @Nullable Integer parseServerPort(String endpoint) {
       if (endpoint.isEmpty()) {
         return null;
       }
@@ -429,8 +418,7 @@ public abstract class EndpointContext {
       return hostAndPort.getPort();
     }
 
-    @Nullable
-    private HostAndPort parseServerHostAndPort(String endpoint) {
+    private @Nullable HostAndPort parseServerHostAndPort(String endpoint) {
       String hostPort = endpoint;
       if (hostPort.contains("://")) {
         // Strip the scheme if present. HostAndPort doesn't support schemes.

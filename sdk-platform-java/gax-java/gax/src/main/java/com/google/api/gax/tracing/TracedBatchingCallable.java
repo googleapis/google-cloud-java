@@ -38,8 +38,8 @@ import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This callable wraps a batching callable chain in a {@link ApiTracer}.
@@ -53,7 +53,7 @@ public class TracedBatchingCallable<RequestT, ResponseT>
     extends UnaryCallable<RequestT, ResponseT> {
   private final ApiTracerFactory tracerFactory;
   private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
+  private final @Nullable ApiTracerContext apiTracerContext;
   private final BatchingDescriptor<RequestT, ResponseT> batchingDescriptor;
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
 
