@@ -27,6 +27,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.paging.Page;
@@ -535,7 +536,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       BigQuery mockBigQuery = mock(BigQuery.class);
       connection.bigQuery = mockBigQuery;
 
-      Page<Project> mockPage = mock(Page.class);
+      Page<Project> mockPage = mock(Page.class, withSettings().withoutAnnotations());
       Project project1 = mock(Project.class);
       when(project1.getProjectId()).thenReturn("discovered-p1");
       Project project2 = mock(Project.class);
