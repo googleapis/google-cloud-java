@@ -27,6 +27,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -596,8 +597,8 @@ public class BigQueryStatementTest {
   }
 
   private ApiException mockApiException(StatusCode.Code code) {
-    ApiException apiExceptionMock = mock(ApiException.class);
-    StatusCode statusCodeMock = mock(StatusCode.class);
+    ApiException apiExceptionMock = mock(ApiException.class, withSettings().withoutAnnotations());
+    StatusCode statusCodeMock = mock(StatusCode.class, withSettings().withoutAnnotations());
     doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
     doReturn(code).when(statusCodeMock).getCode();
     return apiExceptionMock;
