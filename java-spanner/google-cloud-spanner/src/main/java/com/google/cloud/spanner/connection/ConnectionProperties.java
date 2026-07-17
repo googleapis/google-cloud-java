@@ -98,6 +98,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENCODED_CREDENTIALS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENDPOINT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.COMMIT_RPC_TIMEOUT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIME_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.IS_EXPERIMENTAL_HOST_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.KEEP_TRANSACTION_ALIVE_PROPERTY_NAME;
@@ -254,6 +255,13 @@ public class ConnectionProperties {
           DEFAULT_USE_PLAIN_TEXT,
           BOOLEANS,
           BooleanConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Duration> COMMIT_RPC_TIMEOUT =
+      create(
+          COMMIT_RPC_TIMEOUT_PROPERTY_NAME,
+          "The default RPC timeout applied strictly to commit operations (e.g. '30s', '10000ms').",
+          null,
+          DurationConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIME =
       create(

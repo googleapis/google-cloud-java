@@ -43,6 +43,7 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ENCODED_C
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIME;
+import static com.google.cloud.spanner.connection.ConnectionProperties.COMMIT_RPC_TIMEOUT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIMEOUT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionProperties.LENIENT;
@@ -283,6 +284,9 @@ public class ConnectionOptions {
 
   /** Name of the 'grpcKeepAliveTime' connection property. */
   public static final String GRPC_KEEPALIVE_TIME_PROPERTY_NAME = "grpcKeepAliveTime";
+
+  /** Name of the 'commitRpcTimeout' connection property. */
+  public static final String COMMIT_RPC_TIMEOUT_PROPERTY_NAME = "commitRpcTimeout";
 
   /** Name of the 'grpcKeepAliveTimeout' connection property. */
   public static final String GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME = "grpcKeepAliveTimeout";
@@ -1092,6 +1096,11 @@ public class ConnectionOptions {
   }
 
   /** The gRPC keepalive time for this connection. */
+  /** The commit RPC timeout for this connection. */
+  public Duration getCommitRpcTimeout() {
+    return getInitialConnectionPropertyValue(COMMIT_RPC_TIMEOUT);
+  }
+
   public Duration getGrpcKeepAliveTime() {
     return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIME);
   }

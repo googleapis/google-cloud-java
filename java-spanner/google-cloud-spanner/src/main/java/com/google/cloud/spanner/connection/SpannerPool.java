@@ -153,6 +153,7 @@ public class SpannerPool {
     private final String host;
     private final String projectId;
     private final Duration grpcKeepAliveTime;
+    final Duration commitRpcTimeout;
     private final Duration grpcKeepAliveTimeout;
     private final CredentialsKey credentialsKey;
     private final SessionPoolOptions sessionPoolOptions;
@@ -226,6 +227,7 @@ public class SpannerPool {
       this.universeDomain = options.getUniverseDomain();
       this.grpcInterceptorProvider = options.getGrpcInterceptorProviderName();
       this.grpcKeepAliveTime = options.getGrpcKeepAliveTime();
+      this.commitRpcTimeout = options.getCommitRpcTimeout();
       this.grpcKeepAliveTimeout = options.getGrpcKeepAliveTimeout();
     }
 
@@ -266,6 +268,7 @@ public class SpannerPool {
           && Objects.equals(this.universeDomain, other.universeDomain)
           && Objects.equals(this.grpcInterceptorProvider, other.grpcInterceptorProvider)
           && Objects.equals(this.grpcKeepAliveTime, other.grpcKeepAliveTime)
+          && Objects.equals(this.commitRpcTimeout, other.commitRpcTimeout)
           && Objects.equals(this.grpcKeepAliveTimeout, other.grpcKeepAliveTimeout);
     }
 
@@ -301,6 +304,7 @@ public class SpannerPool {
           this.universeDomain,
           this.grpcInterceptorProvider,
           this.grpcKeepAliveTime,
+          commitRpcTimeout,
           this.grpcKeepAliveTimeout);
     }
   }
@@ -521,6 +525,9 @@ public class SpannerPool {
     }
     if (key.grpcKeepAliveTime != null) {
       builder.setGrpcKeepAliveTime(key.grpcKeepAliveTime);
+    }
+    if (key.commitRpcTimeout != null) {
+      builder.setCommitRpcTimeout(key.commitRpcTimeout);
     }
     if (key.grpcKeepAliveTimeout != null) {
       builder.setGrpcKeepAliveTimeout(key.grpcKeepAliveTimeout);

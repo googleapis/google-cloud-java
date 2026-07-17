@@ -269,6 +269,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
   private final Duration partitionedDmlTimeout;
   private final Duration grpcKeepAliveTime;
+  private final Duration commitRpcTimeout;
   private final Duration grpcKeepAliveTimeout;
   private final boolean grpcGcpExtensionEnabled;
   private final GcpManagedChannelOptions grpcGcpOptions;
@@ -925,6 +926,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     sessionLabels = builder.sessionLabels;
     try {
       String resolvedUniversalDomain = getResolvedUniverseDomain();
+      if (builder.commitRpcTimeout != null) {
+        com.google.api.gax.retrying.RetrySettings currentCommitRetrySettings = builder.spannerStubSettingsBuilder.commitSettings().getRetrySettings();
+        builder.spannerStubSettingsBuilder.commitSettings().setRetrySettings(
+            currentCommitRetrySettings.toBuilder()
+                .setInitialRpcTimeoutDuration(builder.commitRpcTimeout)
+                .setMaxRpcTimeoutDuration(builder.commitRpcTimeout)
+                .setTotalTimeoutDuration(builder.commitRpcTimeout)
+                .build());
+      }
       spannerStubSettings =
           builder.spannerStubSettingsBuilder.setUniverseDomain(resolvedUniversalDomain).build();
       instanceAdminStubSettings =
@@ -942,6 +952,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     partitionedDmlTimeout = builder.partitionedDmlTimeout;
     grpcKeepAliveTime = builder.grpcKeepAliveTime;
+    commitRpcTimeout = builder.commitRpcTimeout;
     grpcKeepAliveTimeout = builder.grpcKeepAliveTimeout;
     grpcGcpExtensionEnabled = builder.grpcGcpExtensionEnabled;
     grpcGcpOptions = builder.grpcGcpOptions;
@@ -1322,6 +1333,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean enableGrpcGcpOtelMetrics =
         SpannerOptions.environment.isEnableGrpcGcpOtelMetrics();
     private Duration grpcKeepAliveTime = Duration.ofSeconds(120);
+    private Duration commitRpcTimeout = Duration.ofMinutes(60);
     private Duration grpcKeepAliveTimeout = Duration.ofSeconds(20);
     private CallCredentialsProvider callCredentialsProvider;
     private CloseableExecutorProvider asyncExecutorProvider;
@@ -1437,6 +1449,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.defaultQueryOptions = options.defaultQueryOptions;
       this.callCredentialsProvider = options.callCredentialsProvider;
       this.grpcKeepAliveTime = options.grpcKeepAliveTime;
+      this.commitRpcTimeout = options.commitRpcTimeout;
       this.grpcKeepAliveTimeout = options.grpcKeepAliveTimeout;
       this.asyncExecutorProvider = options.asyncExecutorProvider;
       this.compressorName = options.compressorName;
@@ -1704,6 +1717,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Sets the keep-alive time for gRPC connections. The default is 120 seconds. Note that the
      * client-side keepalive time is clamped to a minimum of 10 seconds by gRPC.
      */
+    public Builder setCommitRpcTimeout(Duration commitRpcTimeout) {
+      this.commitRpcTimeout = commitRpcTimeout;
+      return this;
+    }
+
     public Builder setGrpcKeepAliveTime(Duration grpcKeepAliveTime) {
       Preconditions.checkNotNull(grpcKeepAliveTime, "grpcKeepAliveTime cannot be null");
       Preconditions.checkArgument(
@@ -2525,6 +2543,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Duration getPartitionedDmlTimeoutDuration() {
     return partitionedDmlTimeout;
+  }
+
+  public Duration getCommitRpcTimeout() {
+    return commitRpcTimeout;
   }
 
   public Duration getGrpcKeepAliveTime() {
