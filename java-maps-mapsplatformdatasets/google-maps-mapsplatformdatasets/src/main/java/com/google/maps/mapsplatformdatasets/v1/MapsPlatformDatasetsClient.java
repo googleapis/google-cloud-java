@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,7 +245,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MapsPlatformDatasetsClient implements BackgroundResource {
-  private final MapsPlatformDatasetsSettings settings;
+  private final @Nullable MapsPlatformDatasetsSettings settings;
   private final MapsPlatformDatasetsStub stub;
 
   /** Constructs an instance of MapsPlatformDatasetsClient with default settings. */
@@ -284,7 +285,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MapsPlatformDatasetsSettings getSettings() {
+  public final @Nullable MapsPlatformDatasetsSettings getSettings() {
     return settings;
   }
 
@@ -316,7 +317,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * @param dataset Required. The dataset version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset createDataset(ProjectName parent, Dataset dataset) {
+  public final Dataset createDataset(@Nullable ProjectName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -537,7 +538,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *     if the dataset does not have one.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -657,7 +658,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(DatasetName dataset) {
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(@Nullable DatasetName dataset) {
     FetchDatasetErrorsRequest request =
         FetchDatasetErrorsRequest.newBuilder()
             .setDataset(dataset == null ? null : dataset.toString())
@@ -830,7 +831,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(ProjectName parent) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable ProjectName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1001,7 +1002,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataset(DatasetName name) {
+  public final void deleteDataset(@Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataset(request);
@@ -1152,8 +1153,9 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
           FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status, FetchDatasetErrorsPage> {
 
     private FetchDatasetErrorsPage(
-        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
-        FetchDatasetErrorsResponse response) {
+        @Nullable PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>
+            context,
+        @Nullable FetchDatasetErrorsResponse response) {
       super(context, response);
     }
 
@@ -1163,14 +1165,16 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
     @Override
     protected FetchDatasetErrorsPage createPage(
-        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
-        FetchDatasetErrorsResponse response) {
+        @Nullable PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>
+            context,
+        @Nullable FetchDatasetErrorsResponse response) {
       return new FetchDatasetErrorsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchDatasetErrorsPage> createPageAsync(
-        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        @Nullable PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>
+            context,
         ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1185,7 +1189,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
           FetchDatasetErrorsFixedSizeCollection> {
 
     private FetchDatasetErrorsFixedSizeCollection(
-        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+        @Nullable List<FetchDatasetErrorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1195,7 +1199,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
     @Override
     protected FetchDatasetErrorsFixedSizeCollection createCollection(
-        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+        @Nullable List<FetchDatasetErrorsPage> pages, int collectionSize) {
       return new FetchDatasetErrorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1228,8 +1232,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -1239,14 +1243,14 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1260,7 +1264,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1270,7 +1275,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }

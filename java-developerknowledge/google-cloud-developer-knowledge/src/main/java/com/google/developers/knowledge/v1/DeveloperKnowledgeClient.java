@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeveloperKnowledgeClient implements BackgroundResource {
-  private final DeveloperKnowledgeSettings settings;
+  private final @Nullable DeveloperKnowledgeSettings settings;
   private final DeveloperKnowledgeStub stub;
 
   /** Constructs an instance of DeveloperKnowledgeClient with default settings. */
@@ -227,7 +228,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeveloperKnowledgeSettings getSettings() {
+  public final @Nullable DeveloperKnowledgeSettings getSettings() {
     return settings;
   }
 
@@ -395,7 +396,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document getDocument(DocumentName name) {
+  public final Document getDocument(@Nullable DocumentName name) {
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
@@ -609,9 +610,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
           SearchDocumentChunksPage> {
 
     private SearchDocumentChunksPage(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
-        SearchDocumentChunksResponse response) {
+        @Nullable SearchDocumentChunksResponse response) {
       super(context, response);
     }
 
@@ -621,15 +623,17 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentChunksPage createPage(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
-        SearchDocumentChunksResponse response) {
+        @Nullable SearchDocumentChunksResponse response) {
       return new SearchDocumentChunksPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDocumentChunksPage> createPageAsync(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
         ApiFuture<SearchDocumentChunksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -645,7 +649,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
           SearchDocumentChunksFixedSizeCollection> {
 
     private SearchDocumentChunksFixedSizeCollection(
-        List<SearchDocumentChunksPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentChunksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -655,7 +659,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentChunksFixedSizeCollection createCollection(
-        List<SearchDocumentChunksPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentChunksPage> pages, int collectionSize) {
       return new SearchDocumentChunksFixedSizeCollection(pages, collectionSize);
     }
   }

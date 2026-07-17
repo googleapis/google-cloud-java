@@ -45,11 +45,14 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AdvanceRolloutRequest;
 import com.google.cloud.compute.v1.CancelRolloutRequest;
 import com.google.cloud.compute.v1.DeleteRolloutRequest;
 import com.google.cloud.compute.v1.GetRolloutRequest;
 import com.google.cloud.compute.v1.ListRolloutsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PauseRolloutRequest;
+import com.google.cloud.compute.v1.ResumeRolloutRequest;
 import com.google.cloud.compute.v1.Rollout;
 import com.google.cloud.compute.v1.RolloutsListResponse;
 import com.google.common.collect.ImmutableList;
@@ -61,6 +64,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -113,7 +117,7 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for cancel:
+ * configure the RetrySettings for advance:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -147,6 +151,9 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<AdvanceRolloutRequest, Operation> advanceSettings;
+  private final OperationCallSettings<AdvanceRolloutRequest, Operation, Operation>
+      advanceOperationSettings;
   private final UnaryCallSettings<CancelRolloutRequest, Operation> cancelSettings;
   private final OperationCallSettings<CancelRolloutRequest, Operation, Operation>
       cancelOperationSettings;
@@ -156,6 +163,12 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
   private final UnaryCallSettings<GetRolloutRequest, Rollout> getSettings;
   private final PagedCallSettings<ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<PauseRolloutRequest, Operation> pauseSettings;
+  private final OperationCallSettings<PauseRolloutRequest, Operation, Operation>
+      pauseOperationSettings;
+  private final UnaryCallSettings<ResumeRolloutRequest, Operation> resumeSettings;
+  private final OperationCallSettings<ResumeRolloutRequest, Operation, Operation>
+      resumeOperationSettings;
 
   private static final PagedListDescriptor<ListRolloutsRequest, RolloutsListResponse, Rollout>
       LIST_PAGE_STR_DESC =
@@ -208,6 +221,17 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
             }
           };
 
+  /** Returns the object with the settings used for calls to advance. */
+  public UnaryCallSettings<AdvanceRolloutRequest, Operation> advanceSettings() {
+    return advanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to advance. */
+  public OperationCallSettings<AdvanceRolloutRequest, Operation, Operation>
+      advanceOperationSettings() {
+    return advanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to cancel. */
   public UnaryCallSettings<CancelRolloutRequest, Operation> cancelSettings() {
     return cancelSettings;
@@ -239,6 +263,27 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
   public PagedCallSettings<ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pause. */
+  public UnaryCallSettings<PauseRolloutRequest, Operation> pauseSettings() {
+    return pauseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pause. */
+  public OperationCallSettings<PauseRolloutRequest, Operation, Operation> pauseOperationSettings() {
+    return pauseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public UnaryCallSettings<ResumeRolloutRequest, Operation> resumeSettings() {
+    return resumeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public OperationCallSettings<ResumeRolloutRequest, Operation, Operation>
+      resumeOperationSettings() {
+    return resumeOperationSettings;
   }
 
   public RolloutsStub createStub() throws IOException {
@@ -310,7 +355,7 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -322,12 +367,18 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
   protected RolloutsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    advanceSettings = settingsBuilder.advanceSettings().build();
+    advanceOperationSettings = settingsBuilder.advanceOperationSettings().build();
     cancelSettings = settingsBuilder.cancelSettings().build();
     cancelOperationSettings = settingsBuilder.cancelOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    pauseSettings = settingsBuilder.pauseSettings().build();
+    pauseOperationSettings = settingsBuilder.pauseOperationSettings().build();
+    resumeSettings = settingsBuilder.resumeSettings().build();
+    resumeOperationSettings = settingsBuilder.resumeOperationSettings().build();
   }
 
   @Override
@@ -342,6 +393,9 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
   /** Builder for RolloutsStubSettings. */
   public static class Builder extends StubSettings.Builder<RolloutsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<AdvanceRolloutRequest, Operation> advanceSettings;
+    private final OperationCallSettings.Builder<AdvanceRolloutRequest, Operation, Operation>
+        advanceOperationSettings;
     private final UnaryCallSettings.Builder<CancelRolloutRequest, Operation> cancelSettings;
     private final OperationCallSettings.Builder<CancelRolloutRequest, Operation, Operation>
         cancelOperationSettings;
@@ -352,6 +406,12 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
     private final PagedCallSettings.Builder<
             ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<PauseRolloutRequest, Operation> pauseSettings;
+    private final OperationCallSettings.Builder<PauseRolloutRequest, Operation, Operation>
+        pauseOperationSettings;
+    private final UnaryCallSettings.Builder<ResumeRolloutRequest, Operation> resumeSettings;
+    private final OperationCallSettings.Builder<ResumeRolloutRequest, Operation, Operation>
+        resumeOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -399,35 +459,59 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
+      advanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      advanceOperationSettings = OperationCallSettings.newBuilder();
       cancelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      pauseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pauseOperationSettings = OperationCallSettings.newBuilder();
+      resumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumeOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              cancelSettings, deleteSettings, getSettings, listSettings);
+              advanceSettings,
+              cancelSettings,
+              deleteSettings,
+              getSettings,
+              listSettings,
+              pauseSettings,
+              resumeSettings);
       initDefaults(this);
     }
 
     protected Builder(RolloutsStubSettings settings) {
       super(settings);
 
+      advanceSettings = settings.advanceSettings.toBuilder();
+      advanceOperationSettings = settings.advanceOperationSettings.toBuilder();
       cancelSettings = settings.cancelSettings.toBuilder();
       cancelOperationSettings = settings.cancelOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      pauseSettings = settings.pauseSettings.toBuilder();
+      pauseOperationSettings = settings.pauseOperationSettings.toBuilder();
+      resumeSettings = settings.resumeSettings.toBuilder();
+      resumeOperationSettings = settings.resumeOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              cancelSettings, deleteSettings, getSettings, listSettings);
+              advanceSettings,
+              cancelSettings,
+              deleteSettings,
+              getSettings,
+              listSettings,
+              pauseSettings,
+              resumeSettings);
     }
 
     private static Builder createDefault() {
@@ -443,6 +527,11 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .advanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
       builder
           .cancelSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -462,6 +551,40 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .pauseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .resumeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .advanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AdvanceRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
 
       builder
           .cancelOperationSettings()
@@ -511,6 +634,54 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .pauseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PauseRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resumeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ResumeRolloutRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -527,6 +698,17 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to advance. */
+    public UnaryCallSettings.Builder<AdvanceRolloutRequest, Operation> advanceSettings() {
+      return advanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to advance. */
+    public OperationCallSettings.Builder<AdvanceRolloutRequest, Operation, Operation>
+        advanceOperationSettings() {
+      return advanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to cancel. */
@@ -560,6 +742,28 @@ public class RolloutsStubSettings extends StubSettings<RolloutsStubSettings> {
     public PagedCallSettings.Builder<ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pause. */
+    public UnaryCallSettings.Builder<PauseRolloutRequest, Operation> pauseSettings() {
+      return pauseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pause. */
+    public OperationCallSettings.Builder<PauseRolloutRequest, Operation, Operation>
+        pauseOperationSettings() {
+      return pauseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    public UnaryCallSettings.Builder<ResumeRolloutRequest, Operation> resumeSettings() {
+      return resumeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    public OperationCallSettings.Builder<ResumeRolloutRequest, Operation, Operation>
+        resumeOperationSettings() {
+      return resumeOperationSettings;
     }
 
     @Override

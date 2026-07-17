@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -241,7 +242,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SupportEventSubscriptionServiceClient implements BackgroundResource {
-  private final SupportEventSubscriptionServiceSettings settings;
+  private final @Nullable SupportEventSubscriptionServiceSettings settings;
   private final SupportEventSubscriptionServiceStub stub;
 
   /** Constructs an instance of SupportEventSubscriptionServiceClient with default settings. */
@@ -286,7 +287,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
     this.stub = stub;
   }
 
-  public final SupportEventSubscriptionServiceSettings getSettings() {
+  public final @Nullable SupportEventSubscriptionServiceSettings getSettings() {
     return settings;
   }
 
@@ -323,7 +324,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportEventSubscription createSupportEventSubscription(
-      OrganizationName parent, SupportEventSubscription supportEventSubscription) {
+      @Nullable OrganizationName parent, SupportEventSubscription supportEventSubscription) {
     CreateSupportEventSubscriptionRequest request =
         CreateSupportEventSubscriptionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -461,7 +462,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportEventSubscription getSupportEventSubscription(
-      SupportEventSubscriptionName name) {
+      @Nullable SupportEventSubscriptionName name) {
     GetSupportEventSubscriptionRequest request =
         GetSupportEventSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -597,7 +598,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSupportEventSubscriptionsPagedResponse listSupportEventSubscriptions(
-      OrganizationName parent) {
+      @Nullable OrganizationName parent) {
     ListSupportEventSubscriptionsRequest request =
         ListSupportEventSubscriptionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -894,7 +895,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportEventSubscription deleteSupportEventSubscription(
-      SupportEventSubscriptionName name) {
+      @Nullable SupportEventSubscriptionName name) {
     DeleteSupportEventSubscriptionRequest request =
         DeleteSupportEventSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1135,12 +1136,13 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
           ListSupportEventSubscriptionsPage> {
 
     private ListSupportEventSubscriptionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportEventSubscriptionsRequest,
                 ListSupportEventSubscriptionsResponse,
                 SupportEventSubscription>
             context,
-        ListSupportEventSubscriptionsResponse response) {
+        @Nullable ListSupportEventSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -1150,18 +1152,20 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
     @Override
     protected ListSupportEventSubscriptionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportEventSubscriptionsRequest,
                 ListSupportEventSubscriptionsResponse,
                 SupportEventSubscription>
             context,
-        ListSupportEventSubscriptionsResponse response) {
+        @Nullable ListSupportEventSubscriptionsResponse response) {
       return new ListSupportEventSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSupportEventSubscriptionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSupportEventSubscriptionsRequest,
                 ListSupportEventSubscriptionsResponse,
                 SupportEventSubscription>
@@ -1180,7 +1184,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
           ListSupportEventSubscriptionsFixedSizeCollection> {
 
     private ListSupportEventSubscriptionsFixedSizeCollection(
-        List<ListSupportEventSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSupportEventSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1190,7 +1194,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
     @Override
     protected ListSupportEventSubscriptionsFixedSizeCollection createCollection(
-        List<ListSupportEventSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSupportEventSubscriptionsPage> pages, int collectionSize) {
       return new ListSupportEventSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -144,7 +145,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ReportServiceClient implements BackgroundResource {
-  private final ReportServiceSettings settings;
+  private final @Nullable ReportServiceSettings settings;
   private final ReportServiceStub stub;
 
   /** Constructs an instance of ReportServiceClient with default settings. */
@@ -184,7 +185,7 @@ public class ReportServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReportServiceSettings getSettings() {
+  public final @Nullable ReportServiceSettings getSettings() {
     return settings;
   }
 
@@ -385,7 +386,8 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractPage<SearchRequest, SearchResponse, ReportRow, SearchPage> {
 
     private SearchPage(
-        PageContext<SearchRequest, SearchResponse, ReportRow> context, SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, ReportRow> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -395,13 +397,14 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPage createPage(
-        PageContext<SearchRequest, SearchResponse, ReportRow> context, SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, ReportRow> context,
+        @Nullable SearchResponse response) {
       return new SearchPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, ReportRow> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, ReportRow> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -411,7 +414,7 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           SearchRequest, SearchResponse, ReportRow, SearchPage, SearchFixedSizeCollection> {
 
-    private SearchFixedSizeCollection(List<SearchPage> pages, int collectionSize) {
+    private SearchFixedSizeCollection(@Nullable List<SearchPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -421,7 +424,7 @@ public class ReportServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFixedSizeCollection createCollection(
-        List<SearchPage> pages, int collectionSize) {
+        @Nullable List<SearchPage> pages, int collectionSize) {
       return new SearchFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,7 +149,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ContentLabelServiceClient implements BackgroundResource {
-  private final ContentLabelServiceSettings settings;
+  private final @Nullable ContentLabelServiceSettings settings;
   private final ContentLabelServiceStub stub;
 
   /** Constructs an instance of ContentLabelServiceClient with default settings. */
@@ -188,7 +189,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContentLabelServiceSettings getSettings() {
+  public final @Nullable ContentLabelServiceSettings getSettings() {
     return settings;
   }
 
@@ -218,7 +219,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
    *     `networks/{network_code}/contentLabels/{content_label_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ContentLabel getContentLabel(ContentLabelName name) {
+  public final ContentLabel getContentLabel(@Nullable ContentLabelName name) {
     GetContentLabelRequest request =
         GetContentLabelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContentLabel(request);
@@ -332,7 +333,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContentLabelsPagedResponse listContentLabels(NetworkName parent) {
+  public final ListContentLabelsPagedResponse listContentLabels(@Nullable NetworkName parent) {
     ListContentLabelsRequest request =
         ListContentLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -548,8 +549,9 @@ public class ContentLabelServiceClient implements BackgroundResource {
           ListContentLabelsPage> {
 
     private ListContentLabelsPage(
-        PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel> context,
-        ListContentLabelsResponse response) {
+        @Nullable PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel>
+            context,
+        @Nullable ListContentLabelsResponse response) {
       super(context, response);
     }
 
@@ -559,14 +561,16 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentLabelsPage createPage(
-        PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel> context,
-        ListContentLabelsResponse response) {
+        @Nullable PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel>
+            context,
+        @Nullable ListContentLabelsResponse response) {
       return new ListContentLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContentLabelsPage> createPageAsync(
-        PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel> context,
+        @Nullable PageContext<ListContentLabelsRequest, ListContentLabelsResponse, ContentLabel>
+            context,
         ApiFuture<ListContentLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -581,7 +585,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
           ListContentLabelsFixedSizeCollection> {
 
     private ListContentLabelsFixedSizeCollection(
-        List<ListContentLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListContentLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -591,7 +595,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
     @Override
     protected ListContentLabelsFixedSizeCollection createCollection(
-        List<ListContentLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListContentLabelsPage> pages, int collectionSize) {
       return new ListContentLabelsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -37,6 +37,7 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -1009,9 +1010,9 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
     Routine otherProc = mockBigQueryRoutine(catalog, schema, "another_proc", "PROCEDURE", "p3");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1, proc2, otherProc));
-    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class)))
+    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
     Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
@@ -1030,7 +1031,7 @@ public class BigQueryDatabaseMetaDataTest {
             dbMetadata.LOG);
 
     verify(bigqueryClient, times(1))
-        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
+        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
     verify(bigqueryClient, never()).getRoutine(any(RoutineId.class));
 
     assertNotNull(results);
@@ -1053,9 +1054,9 @@ public class BigQueryDatabaseMetaDataTest {
     Routine proc1 = mockBigQueryRoutine(catalog, schema, "proc_abc", "PROCEDURE", "p1");
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1));
-    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class)))
+    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
     Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
@@ -1072,7 +1073,7 @@ public class BigQueryDatabaseMetaDataTest {
             dbMetadata.LOG);
 
     verify(bigqueryClient, times(1))
-        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
+        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
 
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
@@ -1108,7 +1109,7 @@ public class BigQueryDatabaseMetaDataTest {
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
-        .listRoutines(any(DatasetId.class), any(BigQuery.RoutineListOption.class));
+        .listRoutines(any(DatasetId.class), any(BigQuery.RoutineListOption[].class));
 
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
@@ -1545,12 +1546,12 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "func_b", "FUNCTION", "desc b");
     Routine proc2_ds2 = mockBigQueryRoutine(catalog, schema2Name, "proc_c", "PROCEDURE", "desc c");
 
-    Page<Routine> page1 = mock(Page.class);
+    Page<Routine> page1 = mock(Page.class, withSettings().withoutAnnotations());
     when(page1.iterateAll()).thenReturn(Arrays.asList(proc1_ds1, func1_ds1));
     when(bigqueryClient.listRoutines(eq(dataset1.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page1);
 
-    Page<Routine> page2 = mock(Page.class);
+    Page<Routine> page2 = mock(Page.class, withSettings().withoutAnnotations());
     when(page2.iterateAll()).thenReturn(Collections.singletonList(proc2_ds2));
     when(bigqueryClient.listRoutines(eq(dataset2.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page2);
@@ -2931,11 +2932,14 @@ public class BigQueryDatabaseMetaDataTest {
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
 
-    ResultSet rs = spiedDbMetadata.getSchemas();
+    try (ResultSet rs = spiedDbMetadata.getSchemas()) {
 
-    assertSame(
-        mockResultSet, rs, "The returned ResultSet should be the one from the two-argument method");
-    verify(spiedDbMetadata, times(1)).getSchemas(null, null);
+      assertSame(
+          mockResultSet,
+          rs,
+          "The returned ResultSet should be the one from the two-argument method");
+      verify(spiedDbMetadata, times(1)).getSchemas(null, null);
+    }
   }
 
   // Non-Resultset DatabaseMetadata tests
@@ -3262,18 +3266,19 @@ public class BigQueryDatabaseMetaDataTest {
         .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
 
-    ResultSet rs = dbMetadata.getCatalogs();
-    assertNotNull(rs);
+    try (ResultSet rs = dbMetadata.getCatalogs()) {
+      assertNotNull(rs);
 
-    List<String> catalogs = new ArrayList<>();
-    while (rs.next()) {
-      catalogs.add(rs.getString("TABLE_CAT"));
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        catalogs.add(rs.getString("TABLE_CAT"));
+      }
+
+      assertThat(catalogs)
+          .containsExactly(
+              "additional-1", "additional-2", "discovered-1", "discovered-2", "primary-project")
+          .inOrder();
     }
-
-    assertThat(catalogs)
-        .containsExactly(
-            "additional-1", "additional-2", "discovered-1", "discovered-2", "primary-project")
-        .inOrder();
   }
 
   @Test
@@ -3284,17 +3289,18 @@ public class BigQueryDatabaseMetaDataTest {
         .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
 
-    ResultSet rs = dbMetadata.getCatalogs();
-    assertNotNull(rs);
+    try (ResultSet rs = dbMetadata.getCatalogs()) {
+      assertNotNull(rs);
 
-    List<String> catalogs = new ArrayList<>();
-    while (rs.next()) {
-      catalogs.add(rs.getString("TABLE_CAT"));
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        catalogs.add(rs.getString("TABLE_CAT"));
+      }
+
+      assertThat(catalogs)
+          .containsExactly("additional-1", "additional-2", "primary-project")
+          .inOrder();
     }
-
-    assertThat(catalogs)
-        .containsExactly("additional-1", "additional-2", "primary-project")
-        .inOrder();
   }
 
   @Test
@@ -3304,40 +3310,42 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
-    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+    when(bigqueryClient.listDatasets(
+            eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
-    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pageAdditional);
 
-    Page<Dataset> pageDiscovered = mock(Page.class);
+    Page<Dataset> pageDiscovered = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
     when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
-    when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class)))
+    when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pageDiscovered);
 
-    ResultSet rs = dbMetadata.getSchemas(null, null);
-    assertNotNull(rs);
+    try (ResultSet rs = dbMetadata.getSchemas(null, null)) {
+      assertNotNull(rs);
 
-    List<String> schemas = new ArrayList<>();
-    List<String> catalogs = new ArrayList<>();
-    while (rs.next()) {
-      schemas.add(rs.getString("TABLE_SCHEM"));
-      catalogs.add(rs.getString("TABLE_CATALOG"));
+      List<String> schemas = new ArrayList<>();
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        schemas.add(rs.getString("TABLE_SCHEM"));
+        catalogs.add(rs.getString("TABLE_CATALOG"));
+      }
+
+      // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+      // alphabetical catalog: "additional-1", "discovered-1", "primary-project"
+      assertThat(catalogs)
+          .containsExactly("additional-1", "discovered-1", "primary-project")
+          .inOrder();
+      assertThat(schemas).containsExactly("dataset_a", "dataset_d", "dataset_p").inOrder();
     }
-
-    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
-    // alphabetical catalog: "additional-1", "discovered-1", "primary-project"
-    assertThat(catalogs)
-        .containsExactly("additional-1", "discovered-1", "primary-project")
-        .inOrder();
-    assertThat(schemas).containsExactly("dataset_a", "dataset_d", "dataset_p").inOrder();
   }
 
   @Test
@@ -3347,34 +3355,317 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
-    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+    when(bigqueryClient.listDatasets(
+            eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
-    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pageAdditional);
 
-    ResultSet rs = dbMetadata.getSchemas(null, null);
-    assertNotNull(rs);
+    try (ResultSet rs = dbMetadata.getSchemas(null, null)) {
+      assertNotNull(rs);
 
-    List<String> schemas = new ArrayList<>();
-    List<String> catalogs = new ArrayList<>();
-    while (rs.next()) {
-      schemas.add(rs.getString("TABLE_SCHEM"));
-      catalogs.add(rs.getString("TABLE_CATALOG"));
+      List<String> schemas = new ArrayList<>();
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        schemas.add(rs.getString("TABLE_SCHEM"));
+        catalogs.add(rs.getString("TABLE_CATALOG"));
+      }
+
+      // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+      // alphabetical catalog: "additional-1", "primary-project" (discovered-1 is ignored)
+      assertThat(catalogs).containsExactly("additional-1", "primary-project").inOrder();
+      assertThat(schemas).containsExactly("dataset_a", "dataset_p").inOrder();
+
+      verify(bigqueryClient, never())
+          .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class));
     }
+  }
 
-    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
-    // alphabetical catalog: "additional-1", "primary-project" (discovered-1 is ignored)
-    assertThat(catalogs).containsExactly("additional-1", "primary-project").inOrder();
-    assertThat(schemas).containsExactly("dataset_a", "dataset_p").inOrder();
+  private void mockDatasetIteration(DatasetId datasetId) {
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsPrimary = mock(Dataset.class);
+    when(dsPrimary.getDatasetId()).thenReturn(datasetId);
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(
+            eq(datasetId.getProject()), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pagePrimary);
+  }
 
-    verify(bigqueryClient, never())
-        .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class));
+  private Table mockTableWithConstraints(TableId tableId, TableConstraints constraints) {
+    Table mockTable = mock(Table.class);
+    when(mockTable.getTableId()).thenReturn(tableId);
+    TableDefinition mockDef = mock(TableDefinition.class);
+    when(mockDef.getType()).thenReturn(TableDefinition.Type.TABLE);
+    when(mockTable.getDefinition()).thenReturn(mockDef);
+    if (constraints != null) {
+      when(mockTable.getTableConstraints()).thenReturn(constraints);
+    }
+    when(bigqueryClient.getTable(eq(tableId))).thenReturn(mockTable);
+    return mockTable;
+  }
+
+  private void mockTableIteration(DatasetId datasetId, Table... tables) {
+    Page<Table> pageTables = mock(Page.class, withSettings().withoutAnnotations());
+    when(pageTables.iterateAll()).thenReturn(Arrays.asList(tables));
+    when(bigqueryClient.listTables(eq(datasetId), any(BigQuery.TableListOption[].class)))
+        .thenReturn(pageTables);
+  }
+
+  @Test
+  public void testGetPrimaryKeys_hasKey() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    PrimaryKey mockPk = mock(PrimaryKey.class);
+    when(mockPk.getColumns()).thenReturn(Arrays.asList("id_col1", "id_col2"));
+    when(mockConstraints.getPrimaryKey()).thenReturn(mockPk);
+
+    mockTableWithConstraints(tableId, mockConstraints);
+
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("TABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("TABLE_NAME"));
+      assertEquals("id_col1", rs.getString("COLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertNull(rs.getString("PK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("TABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("TABLE_NAME"));
+      assertEquals("id_col2", rs.getString("COLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertNull(rs.getString("PK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetPrimaryKeys_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    mockTableWithConstraints(tableId, null);
+
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetImportedKeys_hasKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable())
+        .thenReturn(TableId.of("test-project", "dataset_p", "ref_table"));
+
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+    mockTableWithConstraints(tableId, mockConstraints);
+
+    try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetImportedKeys_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    mockTableWithConstraints(tableId, null);
+
+    try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+
+    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
+    assertEquals(mockRs, rs);
+    verify(mockStmt).closeOnCompletion();
+    verify(mockStmt).executeQuery();
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntSchema() throws SQLException {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset.p", "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_hasKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+    TableId refTableId = TableId.of("test-project", "dataset_p", "ref_table");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable()).thenReturn(refTableId);
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+
+    Table mockTableP = mockTableWithConstraints(tableId, mockConstraints);
+    mockDatasetIteration(datasetId);
+    mockTableIteration(datasetId, mockTableP);
+
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    Table mockTableP = mockTableWithConstraints(tableId, null);
+    mockDatasetIteration(datasetId);
+    mockTableIteration(datasetId, mockTableP);
+
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetCrossReference_hasKeys() throws SQLException {
+    TableId fkTableId = TableId.of("test-project", "dataset_p", "fk_table");
+    TableId pkTableId = TableId.of("test-project", "dataset_p", "pk_table");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable()).thenReturn(pkTableId);
+
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+
+    mockTableWithConstraints(fkTableId, mockConstraints);
+
+    try (ResultSet rs =
+        dbMetadata.getCrossReference(
+            "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetCrossReference_noKeys() throws SQLException {
+    TableId fkTableId = TableId.of("test-project", "dataset_p", "fk_table");
+
+    mockTableWithConstraints(fkTableId, null);
+
+    try (ResultSet rs =
+        dbMetadata.getCrossReference(
+            "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
+      assertFalse(rs.next());
+    }
   }
 }

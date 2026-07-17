@@ -11,6 +11,5 @@
   "repo_short": "java-memcache",
   "distribution_name": "com.google.cloud:google-cloud-memcache",
   "api_id": "memcache.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": false
+  "library_type": "GAPIC_AUTO"
 }

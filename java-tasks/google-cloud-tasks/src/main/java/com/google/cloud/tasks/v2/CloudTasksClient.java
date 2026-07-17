@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -502,7 +503,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudTasksClient implements BackgroundResource {
-  private final CloudTasksSettings settings;
+  private final @Nullable CloudTasksSettings settings;
   private final CloudTasksStub stub;
 
   /** Constructs an instance of CloudTasksClient with default settings. */
@@ -540,7 +541,7 @@ public class CloudTasksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudTasksSettings getSettings() {
+  public final @Nullable CloudTasksSettings getSettings() {
     return settings;
   }
 
@@ -574,7 +575,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQueuesPagedResponse listQueues(LocationName parent) {
+  public final ListQueuesPagedResponse listQueues(@Nullable LocationName parent) {
     ListQueuesRequest request =
         ListQueuesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listQueues(request);
@@ -743,7 +744,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue getQueue(QueueName name) {
+  public final Queue getQueue(@Nullable QueueName name) {
     GetQueueRequest request =
         GetQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQueue(request);
@@ -866,7 +867,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     queue.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue createQueue(LocationName parent, Queue queue) {
+  public final Queue createQueue(@Nullable LocationName parent, Queue queue) {
     CreateQueueRequest request =
         CreateQueueRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1135,7 +1136,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQueue(QueueName name) {
+  public final void deleteQueue(@Nullable QueueName name) {
     DeleteQueueRequest request =
         DeleteQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteQueue(request);
@@ -1274,7 +1275,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue purgeQueue(QueueName name) {
+  public final Queue purgeQueue(@Nullable QueueName name) {
     PurgeQueueRequest request =
         PurgeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return purgeQueue(request);
@@ -1404,7 +1405,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue pauseQueue(QueueName name) {
+  public final Queue pauseQueue(@Nullable QueueName name) {
     PauseQueueRequest request =
         PauseQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseQueue(request);
@@ -1539,7 +1540,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue resumeQueue(QueueName name) {
+  public final Queue resumeQueue(@Nullable QueueName name) {
     ResumeQueueRequest request =
         ResumeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeQueue(request);
@@ -1687,7 +1688,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1844,7 +1845,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2015,7 +2016,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2174,7 +2175,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(QueueName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable QueueName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -2360,7 +2361,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -2501,7 +2502,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     serve tasks efficiently.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task createTask(QueueName parent, Task task) {
+  public final Task createTask(@Nullable QueueName parent, Task task) {
     CreateTaskRequest request =
         CreateTaskRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2663,7 +2664,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTask(TaskName name) {
+  public final void deleteTask(@Nullable TaskName name) {
     DeleteTaskRequest request =
         DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTask(request);
@@ -2803,7 +2804,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task runTask(TaskName name) {
+  public final Task runTask(@Nullable TaskName name) {
     RunTaskRequest request =
         RunTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runTask(request);
@@ -3165,8 +3166,8 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractPage<ListQueuesRequest, ListQueuesResponse, Queue, ListQueuesPage> {
 
     private ListQueuesPage(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
-        ListQueuesResponse response) {
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable ListQueuesResponse response) {
       super(context, response);
     }
 
@@ -3176,14 +3177,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListQueuesPage createPage(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
-        ListQueuesResponse response) {
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable ListQueuesResponse response) {
       return new ListQueuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQueuesPage> createPageAsync(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
         ApiFuture<ListQueuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3197,7 +3198,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListQueuesPage,
           ListQueuesFixedSizeCollection> {
 
-    private ListQueuesFixedSizeCollection(List<ListQueuesPage> pages, int collectionSize) {
+    private ListQueuesFixedSizeCollection(
+        @Nullable List<ListQueuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3207,7 +3209,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListQueuesFixedSizeCollection createCollection(
-        List<ListQueuesPage> pages, int collectionSize) {
+        @Nullable List<ListQueuesPage> pages, int collectionSize) {
       return new ListQueuesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3234,8 +3236,8 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -3245,14 +3247,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3262,7 +3264,7 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3272,7 +3274,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3306,8 +3308,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3317,14 +3319,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3338,7 +3340,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3348,7 +3351,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

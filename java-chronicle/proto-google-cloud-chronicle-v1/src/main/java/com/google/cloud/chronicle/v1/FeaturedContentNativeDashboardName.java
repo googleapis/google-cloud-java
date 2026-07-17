@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -101,7 +102,7 @@ public class FeaturedContentNativeDashboardName implements ResourceName {
         .toString();
   }
 
-  public static FeaturedContentNativeDashboardName parse(String formattedString) {
+  public static @Nullable FeaturedContentNativeDashboardName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -124,7 +125,8 @@ public class FeaturedContentNativeDashboardName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FeaturedContentNativeDashboardName> values) {
+  public static List<String> toStringList(
+      List<@Nullable FeaturedContentNativeDashboardName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FeaturedContentNativeDashboardName value : values) {
       if (value == null) {
@@ -184,7 +186,7 @@ public class FeaturedContentNativeDashboardName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

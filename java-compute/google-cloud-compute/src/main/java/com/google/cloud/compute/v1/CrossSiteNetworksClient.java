@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -206,7 +207,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CrossSiteNetworksClient implements BackgroundResource {
-  private final CrossSiteNetworksSettings settings;
+  private final @Nullable CrossSiteNetworksSettings settings;
   private final CrossSiteNetworksStub stub;
 
   /** Constructs an instance of CrossSiteNetworksClient with default settings. */
@@ -246,7 +247,7 @@ public class CrossSiteNetworksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CrossSiteNetworksSettings getSettings() {
+  public final @Nullable CrossSiteNetworksSettings getSettings() {
     return settings;
   }
 
@@ -940,8 +941,9 @@ public class CrossSiteNetworksClient implements BackgroundResource {
           ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork, ListPage> {
 
     private ListPage(
-        PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork> context,
-        CrossSiteNetworkList response) {
+        @Nullable PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork>
+            context,
+        @Nullable CrossSiteNetworkList response) {
       super(context, response);
     }
 
@@ -951,14 +953,16 @@ public class CrossSiteNetworksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork> context,
-        CrossSiteNetworkList response) {
+        @Nullable PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork>
+            context,
+        @Nullable CrossSiteNetworkList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork> context,
+        @Nullable PageContext<ListCrossSiteNetworksRequest, CrossSiteNetworkList, CrossSiteNetwork>
+            context,
         ApiFuture<CrossSiteNetworkList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -972,7 +976,7 @@ public class CrossSiteNetworksClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -981,7 +985,8 @@ public class CrossSiteNetworksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -89,7 +90,7 @@ public class StoragePoolName implements ResourceName {
         .toString();
   }
 
-  public static StoragePoolName parse(String formattedString) {
+  public static @Nullable StoragePoolName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -107,7 +108,7 @@ public class StoragePoolName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<StoragePoolName> values) {
+  public static List<String> toStringList(List<@Nullable StoragePoolName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (StoragePoolName value : values) {
       if (value == null) {
@@ -156,7 +157,7 @@ public class StoragePoolName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

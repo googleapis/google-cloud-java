@@ -32,7 +32,9 @@ public interface FirewallPolicyRuleOrBuilder
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -49,7 +51,9 @@ public interface FirewallPolicyRuleOrBuilder
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -66,7 +70,9 @@ public interface FirewallPolicyRuleOrBuilder
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -407,11 +413,12 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -424,11 +431,12 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -441,11 +449,12 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -453,6 +462,100 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The bytes for securityProfileGroup.
    */
   com.google.protobuf.ByteString getSecurityProfileGroupBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @return A list containing the targetForwardingRules.
+   */
+  java.util.List<java.lang.String> getTargetForwardingRulesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @return The count of targetForwardingRules.
+   */
+  int getTargetForwardingRulesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetForwardingRules at the given index.
+   */
+  java.lang.String getTargetForwardingRules(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetForwardingRules at the given index.
+   */
+  com.google.protobuf.ByteString getTargetForwardingRulesBytes(int index);
 
   /**
    *
@@ -675,6 +778,51 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The bytes of the targetServiceAccounts at the given index.
    */
   com.google.protobuf.ByteString getTargetServiceAccountsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return Whether the targetType field is set.
+   */
+  boolean hasTargetType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return The targetType.
+   */
+  java.lang.String getTargetType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return The bytes for targetType.
+   */
+  com.google.protobuf.ByteString getTargetTypeBytes();
 
   /**
    *

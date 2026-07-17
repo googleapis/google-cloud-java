@@ -116,7 +116,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -151,140 +150,117 @@ public class BigtableTableAdminClientTests {
   private BigtableTableAdminClient adminClient;
   private EnhancedBigtableTableAdminStub mockStub;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.CreateTableRequest, com.google.bigtable.admin.v2.Table>
       mockCreateTableCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateTableRequest,
           com.google.bigtable.admin.v2.Table,
           UpdateTableMetadata>
       mockUpdateTableOperationCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest,
           com.google.bigtable.admin.v2.Table>
       mockModifyTableCallable;
 
-  @Mock private UnaryCallable<DeleteTableRequest, Empty> mockDeleteTableCallable;
+  private UnaryCallable<DeleteTableRequest, Empty> mockDeleteTableCallable;
 
-  @Mock
   private UnaryCallable<GetTableRequest, com.google.bigtable.admin.v2.Table> mockGetTableCallable;
 
-  @Mock private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
-  @Mock private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
-  @Mock private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
+  private UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockListTableCallable;
+  private UnaryCallable<DropRowRangeRequest, Empty> mockDropRowRangeCallable;
+  private UnaryCallable<TableName, Void> mockAwaitReplicationCallable;
 
-  @Mock private UnaryCallable<ConsistencyRequest, Void> mockAwaitConsistencyCallable;
+  private UnaryCallable<ConsistencyRequest, Void> mockAwaitConsistencyCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateBackupRequest,
           com.google.bigtable.admin.v2.Backup,
           CreateBackupMetadata>
       mockCreateBackupOperationCallable;
 
-  @Mock
   private UnaryCallable<GetBackupRequest, com.google.bigtable.admin.v2.Backup>
       mockGetBackupCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.UpdateBackupRequest, com.google.bigtable.admin.v2.Backup>
       mockUpdateBackupCallable;
 
-  @Mock private UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> mockListBackupCallable;
-  @Mock private UnaryCallable<DeleteBackupRequest, Empty> mockDeleteBackupCallable;
+  private UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> mockListBackupCallable;
+  private UnaryCallable<DeleteBackupRequest, Empty> mockDeleteBackupCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.RestoreTableRequest,
           com.google.bigtable.admin.v2.Table,
           RestoreTableMetadata>
       mockRestoreTableOperationCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CopyBackupRequest,
           com.google.bigtable.admin.v2.Backup,
           CopyBackupMetadata>
       mockCopyBackupOperationCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
           com.google.bigtable.admin.v2.AuthorizedView,
           CreateAuthorizedViewMetadata>
       mockCreateAuthorizedViewOperationCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
           com.google.bigtable.admin.v2.AuthorizedView,
           UpdateAuthorizedViewMetadata>
       mockUpdateAuthorizedViewOperationCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
           com.google.bigtable.admin.v2.AuthorizedView>
       mockGetAuthorizedViewCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
       mockListAuthorizedViewsCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, Empty>
       mockDeleteAuthorizedViewCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateSchemaBundleRequest,
           com.google.bigtable.admin.v2.SchemaBundle,
           CreateSchemaBundleMetadata>
       mockCreateSchemaBundleOperationCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateSchemaBundleRequest,
           com.google.bigtable.admin.v2.SchemaBundle,
           UpdateSchemaBundleMetadata>
       mockUpdateSchemaBundleOperationCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetSchemaBundleRequest,
           com.google.bigtable.admin.v2.SchemaBundle>
       mockGetSchemaBundleCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListSchemaBundlesRequest, ListSchemaBundlesPagedResponse>
       mockListSchemaBundlesCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteSchemaBundleRequest, Empty>
       mockDeleteSchemaBundleCallable;
 
-  @Mock
   private UnaryCallable<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       mockGetIamPolicyCallable;
 
-  @Mock
   private UnaryCallable<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       mockSetIamPolicyCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       mockTestIamPermissionsCallable;
 
-  @Mock
   private OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       mockOptimizeRestoredTableCallable;
 
@@ -294,6 +270,67 @@ public class BigtableTableAdminClientTests {
         Mockito.mock(
             EnhancedBigtableTableAdminStub.class, Mockito.withSettings().withoutAnnotations());
     adminClient = BigtableTableAdminClient.create(PROJECT_ID, INSTANCE_ID, mockStub);
+
+    mockCreateTableCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateTableOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockModifyTableCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteTableCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetTableCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListTableCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDropRowRangeCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockAwaitReplicationCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockAwaitConsistencyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateBackupOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetBackupCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateBackupCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListBackupCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteBackupCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockRestoreTableOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCopyBackupOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateAuthorizedViewOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateAuthorizedViewOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetAuthorizedViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListAuthorizedViewsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteAuthorizedViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateSchemaBundleOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateSchemaBundleOperationCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetSchemaBundleCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListSchemaBundlesCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteSchemaBundleCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetIamPolicyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockSetIamPolicyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockTestIamPermissionsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockOptimizeRestoredTableCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
   }
 
   @Test
