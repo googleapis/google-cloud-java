@@ -128,7 +128,17 @@ public class BoundStatementDeserializer {
           throw new IllegalArgumentException("Unexpected query param type in param: " + value);
       }
     }
-    boundStatementBuilder.setViewParameters(request.getRequest().getViewParametersMap());
+    for (Map.Entry<String, Value> entry : request.getRequest().getViewParametersMap().entrySet()) {
+      String name = entry.getKey();
+      Value value = entry.getValue();
+      if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
+        boundStatementBuilder.setStringViewParameter(name, null);
+      } else if (value.getKindCase().equals(KindCase.STRING_VALUE)) {
+        boundStatementBuilder.setStringViewParameter(name, value.getStringValue());
+      } else {
+        throw new IllegalArgumentException("Unexpected view parameter type in param: " + value);
+      }
+    }
     return boundStatementBuilder.build();
   }
 

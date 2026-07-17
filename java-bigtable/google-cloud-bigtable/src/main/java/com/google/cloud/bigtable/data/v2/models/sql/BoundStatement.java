@@ -48,11 +48,14 @@ import javax.annotation.Nullable;
  * paramName, Type value) for the appropriate type. For example:
  *
  * <pre>{@code
- * BoundStatementt boundStatement = preparedStatement.bind()
+ * BoundStatement boundStatement = preparedStatement.bind()
  *     .setBytesParam("qualifier", ByteString.copyFromUtf8("test"))
  *     .setBytesParam("key", ByteString.copyFromUtf8("testKey"))
  *     .build();
  * }</pre>
+ *
+ * <p>View parameters can also be specified on the statement using {@link
+ * Builder#setStringViewParameter(String, String)} or {@link Builder#setStringViewParameters(Map)}.
  */
 public class BoundStatement {
 
@@ -118,7 +121,6 @@ public class BoundStatement {
      */
     public Builder setStringViewParameter(String paramName, @Nullable String value) {
       Preconditions.checkNotNull(paramName, "paramName cannot be null");
-      Preconditions.checkNotNull(value, "value cannot be null");
       viewParameters.put(paramName, stringParamOf(value));
       return this;
     }
@@ -128,38 +130,6 @@ public class BoundStatement {
       Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
       for (Map.Entry<String, String> entry : viewParameters.entrySet()) {
         setStringViewParameter(entry.getKey(), entry.getValue());
-      }
-      return this;
-    }
-
-    /**
-     * Sets a view parameter with the name {@code name} and the Value {@code value}.
-     *
-     * <p>This is considered an internal implementation detail and should not be used by
-     * applications.
-     */
-    @InternalApi("For internal use only")
-    public Builder setViewParameter(String name, Value value) {
-      Preconditions.checkNotNull(name, "name cannot be null");
-      Preconditions.checkNotNull(value, "value cannot be null");
-      Preconditions.checkArgument(
-          value.getKindCase() == Value.KindCase.STRING_VALUE,
-          "Currently only String typed view parameters are supported");
-      viewParameters.put(name, value);
-      return this;
-    }
-
-    /**
-     * Sets view parameters from a map.
-     *
-     * <p>This is considered an internal implementation detail and should not be used by
-     * applications.
-     */
-    @InternalApi("For internal use only")
-    public Builder setViewParameters(Map<String, Value> viewParameters) {
-      Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
-      for (Map.Entry<String, Value> entry : viewParameters.entrySet()) {
-        setViewParameter(entry.getKey(), entry.getValue());
       }
       return this;
     }
