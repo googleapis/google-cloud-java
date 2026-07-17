@@ -1042,11 +1042,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, Types.DATE);
       return;
     }
-    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-    safeCal.setTimeInMillis(x.getTime());
     this.parameterHandler.setParameter(
         parameterName,
-        new Date(safeCal.getTimeInMillis()),
+        BigQueryTypeCoercionUtility.convertDateWithCalendar(x, cal),
         Date.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -1224,11 +1222,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, Types.TIME);
       return;
     }
-    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-    safeCal.setTimeInMillis(x.getTime());
     this.parameterHandler.setParameter(
         parameterName,
-        new Time(safeCal.getTimeInMillis()),
+        BigQueryTypeCoercionUtility.convertTimeWithCalendar(x, cal),
         Time.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -1251,11 +1247,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, Types.TIMESTAMP);
       return;
     }
-    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-    safeCal.setTimeInMillis(x.getTime());
     this.parameterHandler.setParameter(
         parameterName,
-        new Timestamp(safeCal.getTimeInMillis()),
+        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(x, cal),
         Timestamp.class,
         BigQueryStatementParameterType.IN,
         0);
