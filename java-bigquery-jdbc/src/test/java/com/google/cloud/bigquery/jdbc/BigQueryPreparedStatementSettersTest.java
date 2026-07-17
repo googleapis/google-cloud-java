@@ -177,6 +177,21 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
+  public void testGetParameterModeWithInOutParameters() throws Exception {
+    preparedStatement.parameterHandler.setParameter(
+        1, "inParam", String.class, BigQueryParameterHandler.BigQueryStatementParameterType.IN, 0);
+    preparedStatement.parameterHandler.setParameter(
+        2, null, Integer.class, BigQueryParameterHandler.BigQueryStatementParameterType.OUT, 0);
+    preparedStatement.parameterHandler.setParameter(
+        3, "inoutParam", String.class, BigQueryParameterHandler.BigQueryStatementParameterType.INOUT, 0);
+
+    ParameterMetaData metaData = preparedStatement.getParameterMetaData();
+    assertEquals(ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
+    assertEquals(ParameterMetaData.parameterModeOut, metaData.getParameterMode(2));
+    assertEquals(ParameterMetaData.parameterModeInOut, metaData.getParameterMode(3));
+  }
+
+  @Test
   public void testSetDateWithCalendar() throws Exception {
     Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     cal.setTimeInMillis(1000000L);

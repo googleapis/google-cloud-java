@@ -130,6 +130,15 @@ class BigQueryParameterMetaData implements ParameterMetaData {
   @Override
   public int getParameterMode(int param) throws SQLException {
     checkValidIndex(param);
+    if (this.parameterHandler != null) {
+      BigQueryParameterHandler.BigQueryStatementParameterType paramType =
+          this.parameterHandler.getParameterType(param);
+      if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.OUT) {
+        return parameterModeOut;
+      } else if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.INOUT) {
+        return parameterModeInOut;
+      }
+    }
     return parameterModeIn;
   }
 
