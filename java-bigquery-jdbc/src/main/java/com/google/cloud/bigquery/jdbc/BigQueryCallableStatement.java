@@ -368,20 +368,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   private Calendar getSafeCalendar(Calendar cal) {
-    Calendar safeCal = null;
-    if (cal != null) {
-      Object cloned = cal.clone();
-      if (cloned instanceof Calendar) {
-        safeCal = (Calendar) cloned;
-      }
-    }
-    if (safeCal == null) {
-      safeCal = Calendar.getInstance();
-      if (cal != null && cal.getTimeZone() != null) {
-        safeCal.setTimeZone(cal.getTimeZone());
-      }
-    }
-    return safeCal;
+    return BigQueryParameterHandler.getSafeCalendar(cal);
   }
 
   @Override

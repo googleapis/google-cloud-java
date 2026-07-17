@@ -543,7 +543,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setDate(parameterIndex, x);
       return;
     }
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = BigQueryParameterHandler.getSafeCalendar(cal);
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
     targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
@@ -567,7 +567,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setTime(parameterIndex, x);
       return;
     }
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = BigQueryParameterHandler.getSafeCalendar(cal);
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
     targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
@@ -588,7 +588,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setTimestamp(parameterIndex, x);
       return;
     }
-    Calendar targetCal = (Calendar) cal.clone();
+    Calendar targetCal = BigQueryParameterHandler.getSafeCalendar(cal);
     Calendar defaultCal = Calendar.getInstance();
     defaultCal.setTime(x);
     targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));

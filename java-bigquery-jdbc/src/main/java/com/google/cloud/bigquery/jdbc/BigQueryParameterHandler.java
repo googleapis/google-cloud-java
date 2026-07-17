@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 class BigQueryParameterHandler {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
@@ -298,5 +299,26 @@ class BigQueryParameterHandler {
 
   int getParametersArraySize() {
     return this.parametersArraySize;
+  }
+
+  /**
+   * Returns a safe, cloned copy of the provided Calendar to prevent mutating the caller's state during
+   * timezone conversions. If cal is null, returns a default Calendar instance.
+   */
+  static Calendar getSafeCalendar(Calendar cal) {
+    Calendar safeCal = null;
+    if (cal != null) {
+      Object cloned = cal.clone();
+      if (cloned instanceof Calendar) {
+        safeCal = (Calendar) cloned;
+      }
+    }
+    if (safeCal == null) {
+      safeCal = Calendar.getInstance();
+      if (cal != null && cal.getTimeZone() != null) {
+        safeCal.setTimeZone(cal.getTimeZone());
+      }
+    }
+    return safeCal;
   }
 }
