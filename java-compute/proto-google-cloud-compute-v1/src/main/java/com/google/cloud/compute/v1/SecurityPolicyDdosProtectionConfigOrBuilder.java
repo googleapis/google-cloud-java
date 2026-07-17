@@ -31,6 +31,102 @@ public interface SecurityPolicyDdosProtectionConfigOrBuilder
    *
    * <pre>
    *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return Whether the ddosAdaptiveProtection field is set.
+   */
+  boolean hasDdosAdaptiveProtection();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return The ddosAdaptiveProtection.
+   */
+  java.lang.String getDdosAdaptiveProtection();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return The bytes for ddosAdaptiveProtection.
+   */
+  com.google.protobuf.ByteString getDdosAdaptiveProtectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+   * builds DDoS mitigations that minimize collateral damage. It quantifies
+   * this as the fraction of a non-abuse baseline that's inadvertently
+   * blocked.
+   *
+   * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+   * not be deployed. Using a lower value will prioritize keeping collateral
+   * damage low, possibly at the cost of its effectiveness in rate limiting
+   * some or all of the attack. It should typically be unset, so Advanced DDoS
+   * (and Adaptive Protection) uses the best mitigation it can find. Setting
+   * the threshold is advised if there are logs for false positive detections
+   * with high collateral damage, and will cause Advanced DDoS to attempt to
+   * find a less aggressive rule that satisfies the constraint. If a suitable
+   * rule cannot be found, the system falls back to either no mitigation for
+   * smaller attacks or broader network throttles for larger ones.
+   * </pre>
+   *
+   * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+   *
+   * @return Whether the ddosImpactedBaselineThreshold field is set.
+   */
+  boolean hasDdosImpactedBaselineThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+   * builds DDoS mitigations that minimize collateral damage. It quantifies
+   * this as the fraction of a non-abuse baseline that's inadvertently
+   * blocked.
+   *
+   * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+   * not be deployed. Using a lower value will prioritize keeping collateral
+   * damage low, possibly at the cost of its effectiveness in rate limiting
+   * some or all of the attack. It should typically be unset, so Advanced DDoS
+   * (and Adaptive Protection) uses the best mitigation it can find. Setting
+   * the threshold is advised if there are logs for false positive detections
+   * with high collateral damage, and will cause Advanced DDoS to attempt to
+   * find a less aggressive rule that satisfies the constraint. If a suitable
+   * rule cannot be found, the system falls back to either no mitigation for
+   * smaller attacks or broader network throttles for larger ones.
+   * </pre>
+   *
+   * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+   *
+   * @return The ddosImpactedBaselineThreshold.
+   */
+  float getDdosImpactedBaselineThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   *
    * Check the DdosProtection enum for the list of possible values.
    * </pre>
    *

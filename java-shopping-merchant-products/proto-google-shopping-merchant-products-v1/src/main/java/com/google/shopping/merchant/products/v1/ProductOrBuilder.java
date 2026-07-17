@@ -530,4 +530,22 @@ public interface ProductOrBuilder
    */
   com.google.shopping.merchant.products.v1.AutomatedDiscountsOrBuilder
       getAutomatedDiscountsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Determines whether the product is
+   * [archived](https://support.google.com/merchants/answer/11909930).
+   *
+   * To archive or restore your product, visit Merchant Center products page.
+   * Learn also more about [offer
+   * visibility](https://support.google.com/merchants/answer/12488713).
+   * </pre>
+   *
+   * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  boolean getArchived();
 }
