@@ -37,6 +37,7 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -3522,7 +3523,27 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_hasKeys() throws SQLException {
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+
+    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
+    assertEquals(mockRs, rs);
+    verify(mockStmt).closeOnCompletion();
+    verify(mockStmt).executeQuery();
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntSchema() throws SQLException {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset.p", "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_hasKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
     TableId refTableId = TableId.of("test-project", "dataset_p", "ref_table");
@@ -3544,7 +3565,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertTrue(rs.next());
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
@@ -3572,7 +3593,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_noKeys() throws SQLException {
+  public void testGetExportedKeys_fallback_noKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
 
@@ -3580,7 +3601,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertFalse(rs.next());
     }
   }
