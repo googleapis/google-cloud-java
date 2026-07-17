@@ -31,7 +31,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.Period;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -46,9 +45,7 @@ class BigQueryTypeCoercionUtility {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryTypeCoercionUtility.class.getName());
 
-  /**
-   * Returns a defensively cloned Calendar instance or a new default Calendar if input is null.
-   */
+  /** Returns a defensively cloned Calendar instance or a new default Calendar if input is null. */
   static Calendar getSafeCalendar(Calendar cal) {
     if (cal == null) {
       return Calendar.getInstance();
@@ -81,8 +78,8 @@ class BigQueryTypeCoercionUtility {
   }
 
   /**
-   * Converts a java.sql.Time by shifting its wall-clock hour, minute, second, and millisecond fields
-   * into the target Calendar's timezone per JDBC specification.
+   * Converts a java.sql.Time by shifting its wall-clock hour, minute, second, and millisecond
+   * fields into the target Calendar's timezone per JDBC specification.
    */
   static Time convertTimeWithCalendar(Time time, Calendar cal) {
     if (time == null) {
