@@ -213,20 +213,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setAsciiStream(int parameterIndex, InputStream x, int length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
   @Deprecated
   @SuppressWarnings("deprecation")
-  public void setUnicodeStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setUnicodeStream(int parameterIndex, InputStream x, int length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setUnicodeStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setBinaryStream(int parameterIndex, InputStream x, int length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
   @Override
