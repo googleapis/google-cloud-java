@@ -1077,3 +1077,8 @@ grpc-google-cloud-agentidentity-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-agentidentity:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-agentidentity-v1beta:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-agentidentity-v1beta:0.0.0:0.1.0-SNAPSHOT
+google-cloud-commerceproducer-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-commerceproducer-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-commerceproducer-v1beta:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-commerceproducer-v1beta:0.0.0:0.1.0-SNAPSHOT
+google-cloud-commerceproducer:0.0.0:0.1.0-SNAPSHOT
