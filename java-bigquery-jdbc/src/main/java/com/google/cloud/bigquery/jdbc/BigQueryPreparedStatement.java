@@ -236,28 +236,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, targetSqlType);
       return;
     }
-    if (x instanceof LocalDate) {
-      setDate(parameterIndex, Date.valueOf((LocalDate) x));
-      return;
-    }
-    if (x instanceof LocalTime) {
-      setTime(parameterIndex, Time.valueOf((LocalTime) x));
-      return;
-    }
-    if (x instanceof LocalDateTime) {
-      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
-      return;
-    }
-    if (x instanceof OffsetDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
-      return;
-    }
-    if (x instanceof Instant) {
-      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
-      return;
-    }
-    if (x instanceof ZonedDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
+    if (setTemporalObject(parameterIndex, x)) {
       return;
     }
     Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
@@ -271,31 +250,38 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, Types.NULL);
       return;
     }
-    if (x instanceof LocalDate) {
-      setDate(parameterIndex, Date.valueOf((LocalDate) x));
-      return;
-    }
-    if (x instanceof LocalTime) {
-      setTime(parameterIndex, Time.valueOf((LocalTime) x));
-      return;
-    }
-    if (x instanceof LocalDateTime) {
-      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
-      return;
-    }
-    if (x instanceof OffsetDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
-      return;
-    }
-    if (x instanceof Instant) {
-      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
-      return;
-    }
-    if (x instanceof ZonedDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
+    if (setTemporalObject(parameterIndex, x)) {
       return;
     }
     this.parameterHandler.setParameter(parameterIndex, x, x.getClass());
+  }
+
+  private boolean setTemporalObject(int parameterIndex, Object x) throws SQLException {
+    if (x instanceof LocalDate) {
+      setDate(parameterIndex, Date.valueOf((LocalDate) x));
+      return true;
+    }
+    if (x instanceof LocalTime) {
+      setTime(parameterIndex, Time.valueOf((LocalTime) x));
+      return true;
+    }
+    if (x instanceof LocalDateTime) {
+      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
+      return true;
+    }
+    if (x instanceof OffsetDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
+      return true;
+    }
+    if (x instanceof Instant) {
+      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
+      return true;
+    }
+    if (x instanceof ZonedDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
+      return true;
+    }
+    return false;
   }
 
   @Override
