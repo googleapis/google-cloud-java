@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
 import com.google.common.annotations.VisibleForTesting;
@@ -564,45 +565,85 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public Object getObject(int arg0, Map<String, Class<?>> arg1) throws SQLException {
-    String paramKey = this.parameterHandler.getSqlType(arg0).name();
-    if (arg1.containsKey(paramKey)) {
-      Class<?> argJavaType = arg1.get(paramKey);
-      Class<?> paramJavaType = this.parameterHandler.getType(arg0);
-      if (paramJavaType.isAssignableFrom(argJavaType)) {
-        return this.parameterHandler.getParameter(arg0);
+  public Object getObject(int parameterIndex, Map<String, Class<?>> map) throws SQLException {
+    checkClosed();
+    if (map != null && !map.isEmpty()) {
+      StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterIndex);
+      if (sqlType != null && map.containsKey(sqlType.name())) {
+        Class<?> targetClass = map.get(sqlType.name());
+        Object value = getObject(parameterIndex);
+        if (value != null && targetClass != null && !targetClass.isInstance(value)) {
+          throw new BigQueryJdbcException(
+              String.format(
+                  "Cannot map parameter %d of type %s to requested class %s in type map",
+                  parameterIndex, value.getClass().getName(), targetClass.getName()));
+        }
+        return value;
       }
     }
-    return null;
+    return getObject(parameterIndex);
   }
 
   @Override
-  public Object getObject(String arg0, Map<String, Class<?>> arg1) throws SQLException {
-    String paramKey = this.parameterHandler.getSqlType(arg0).name();
-    if (arg1.containsKey(paramKey)) {
-      Class<?> argJavaType = arg1.get(paramKey);
-      Class<?> paramJavaType = this.parameterHandler.getType(arg0);
-      if (paramJavaType.isAssignableFrom(argJavaType)) {
-        return this.parameterHandler.getParameter(arg0);
+  public Object getObject(String parameterName, Map<String, Class<?>> map) throws SQLException {
+    checkClosed();
+    if (map != null && !map.isEmpty()) {
+      StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
+      if (sqlType != null && map.containsKey(sqlType.name())) {
+        Class<?> targetClass = map.get(sqlType.name());
+        Object value = getObject(parameterName);
+        if (value != null && targetClass != null && !targetClass.isInstance(value)) {
+          throw new BigQueryJdbcException(
+              String.format(
+                  "Cannot map parameter '%s' of type %s to requested class %s in type map",
+                  parameterName, value.getClass().getName(), targetClass.getName()));
+        }
+        return value;
       }
     }
-    return null;
+    return getObject(parameterName);
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public <T> T getObject(int parameterIndex, Class<T> type) throws SQLException {
+    checkClosed();
+    if (type == null) {
+      throw new BigQueryJdbcException("Type cannot be null.");
+    }
+    Object value = this.parameterHandler.getParameter(parameterIndex);
+    this.lastReadWasNull = (value == null);
+    if (value == null) {
+      return null;
+    }
+    if (type.isInstance(value)) {
+      return (T) value;
+    }
     Class<?> javaType = this.parameterHandler.getType(parameterIndex);
-    if (javaType.isAssignableFrom(type)) {
-      return (T) this.parameterHandler.getParameter(parameterIndex);
+    if (javaType != null && type.isAssignableFrom(javaType)) {
+      return (T) value;
     }
     return null;
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public <T> T getObject(String parameterName, Class<T> type) throws SQLException {
+    checkClosed();
+    if (type == null) {
+      throw new BigQueryJdbcException("Type cannot be null.");
+    }
+    Object value = this.parameterHandler.getParameter(parameterName);
+    this.lastReadWasNull = (value == null);
+    if (value == null) {
+      return null;
+    }
+    if (type.isInstance(value)) {
+      return (T) value;
+    }
     Class<?> javaType = this.parameterHandler.getType(parameterName);
-    if (javaType.isAssignableFrom(type)) {
-      return (T) this.parameterHandler.getParameter(parameterName);
+    if (javaType != null && type.isAssignableFrom(javaType)) {
+      return (T) value;
     }
     return null;
   }
@@ -1044,7 +1085,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     }
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertDateWithCalendar(x, cal),
+        BigQueryTypeCoercionUtility.convertDateToCalendar(x, cal),
         Date.class,
         BigQueryStatementParameterType.IN,
         0);

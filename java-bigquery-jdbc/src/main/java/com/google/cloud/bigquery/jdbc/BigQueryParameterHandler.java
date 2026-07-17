@@ -24,7 +24,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 class BigQueryParameterHandler {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
