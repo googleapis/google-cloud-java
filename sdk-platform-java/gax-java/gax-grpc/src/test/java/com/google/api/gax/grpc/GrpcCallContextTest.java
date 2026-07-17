@@ -397,7 +397,8 @@ class GrpcCallContextTest {
 
   @Test
   void testMergeWithTracer() {
-    ApiTracer explicitTracer = Mockito.mock(ApiTracer.class);
+    ApiTracer explicitTracer =
+        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext ctxWithExplicitTracer =
         GrpcCallContext.createDefault().withTracer(explicitTracer);
 
@@ -419,7 +420,8 @@ class GrpcCallContextTest {
 
   @Test
   void testWithRetrySettings() {
-    RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
+    RetrySettings retrySettings =
+        Mockito.Mockito.mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext emptyContext = GrpcCallContext.createDefault();
     assertNull(emptyContext.getRetrySettings());
     GrpcCallContext context = emptyContext.withRetrySettings(retrySettings);

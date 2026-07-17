@@ -647,7 +647,8 @@ class ChannelPoolTest {
     ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));
     pool = ChannelPool.create(channelPoolSettings, factory, null);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -797,7 +798,8 @@ class ChannelPoolTest {
 
       pool = ChannelPool.create(channelPoolSettings, factory, null);
 
-      EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+      EndpointContext endpointContext =
+          Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
       Mockito.doNothing()
           .when(endpointContext)
           .validateUniverseDomain(

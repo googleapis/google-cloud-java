@@ -50,13 +50,15 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class CheckingAttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
   @Mock RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockInnerCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
 
     currentAttemptSettings =
@@ -110,7 +112,9 @@ class CheckingAttemptCallableTest {
     FakeCallContext callContext = Mockito.spy(FakeCallContext.createDefault());
     Mockito.doReturn(callContext).when(callContext).withTimeoutDuration(ArgumentMatchers.any());
     CheckingAttemptCallable<String, String> callable =
-        new CheckingAttemptCallable<>(Mockito.mock(UnaryCallable.class), callContext);
+        new CheckingAttemptCallable<>(
+            Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()),
+            callContext);
     callable.setExternalFuture(mockExternalFuture);
 
     // Make sure that the rpc timeout is set

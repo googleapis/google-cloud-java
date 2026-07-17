@@ -115,7 +115,8 @@ class OperationCallableImplTest {
   @BeforeEach
   void setUp() throws IOException {
     initialChannel = mock(FakeChannel.class);
-    pollTransportChannel = mock(TransportChannel.class);
+    pollTransportChannel =
+        Mockito.mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations());
     TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
     when(operationsChannelProvider.getTransportChannel()).thenReturn(pollTransportChannel);
 
@@ -502,7 +503,8 @@ class OperationCallableImplTest {
 
     LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);
@@ -546,7 +548,8 @@ class OperationCallableImplTest {
 
     LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);

@@ -52,11 +52,21 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedBatchingCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    batchingDescriptor =
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
@@ -66,10 +76,10 @@ class TracedBatchingCallableTest {
           .setOperationType(OperationType.Batching)
           .build();
 
-  @Mock private ApiTracerFactory tracerFactory;
-  @Mock private ApiTracer tracer;
-  @Mock private BatchingDescriptor<String, String> batchingDescriptor;
-  @Mock private UnaryCallable<String, String> innerCallable;
+  private ApiTracerFactory tracerFactory;
+  private ApiTracer tracer;
+  private BatchingDescriptor<String, String> batchingDescriptor;
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   private TracedBatchingCallable<String, String> tracedBatchingCallable;

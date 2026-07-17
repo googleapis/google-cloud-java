@@ -134,7 +134,8 @@ class GrpcLongRunningTest {
             .setPollingAlgorithm(pollingAlgorithm)
             .build();
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -162,7 +163,8 @@ class GrpcLongRunningTest {
         GrpcCallableFactory.createOperationCallable(
             createGrpcSettings(), callSettings, initialContext, operationsStub);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

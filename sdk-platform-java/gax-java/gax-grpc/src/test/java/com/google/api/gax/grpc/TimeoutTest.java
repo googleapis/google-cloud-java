@@ -66,6 +66,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TimeoutTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    paramsExtractor =
+        Mockito.mock(RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final String CALL_OPTIONS_AUTHORITY = "RETRYING_TEST";
   private static final int DEADLINE_IN_DAYS = 7;
   private static final int DEADLINE_IN_MINUTES = 10;
@@ -82,12 +89,13 @@ class TimeoutTest {
   private static GrpcCallContext defaultCallContext;
 
   @Mock private Marshaller<String> stringMarshaller;
-  @Mock private RequestParamsExtractor<String> paramsExtractor;
+  private RequestParamsExtractor<String> paramsExtractor;
   @Mock private ManagedChannel managedChannel;
 
   @BeforeAll
   public static void setUp() throws IOException {
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

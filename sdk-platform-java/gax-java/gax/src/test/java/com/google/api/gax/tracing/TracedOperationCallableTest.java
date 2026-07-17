@@ -58,9 +58,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class TracedOperationCallableTest {
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeOperation");
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
-  @Mock private ApiTracer tracer;
+  private ApiTracer tracer;
   @Mock private OperationCallable<String, String, Long> innerCallable;
   private FakeOperationFuture innerResult;
 
@@ -69,6 +69,9 @@ class TracedOperationCallableTest {
 
   @BeforeEach
   void setUp() {
+    tracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory

@@ -73,7 +73,8 @@ class GrpcDirectStreamingCallableTest {
     inprocessServer = new InProcessServer<>(serviceImpl, serverName);
     inprocessServer.start();
     channel = InProcessChannelBuilder.forName(serverName).directExecutor().usePlaintext().build();
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

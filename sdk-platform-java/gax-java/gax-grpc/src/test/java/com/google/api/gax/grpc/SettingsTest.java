@@ -72,11 +72,13 @@ class SettingsTest {
 
     @SuppressWarnings("unchecked")
     private static final PagedListResponseFactory<Integer, Integer, FakePagedListResponse>
-        fakePagedListResponseFactory = Mockito.mock(PagedListResponseFactory.class);
+        fakePagedListResponseFactory =
+            Mockito.Mockito.mock(
+                PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
 
     @SuppressWarnings("unchecked")
     private static final BatchingDescriptor<Integer, Integer> FAKE_BATCHING_DESCRIPTOR =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
 
     private static final String DEFAULT_GAPIC_NAME = "gapic";
     public static final String DEFAULT_SERVICE_ADDRESS = "pubsub-experimental.googleapis.com";

@@ -189,7 +189,9 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .setEndpoint("localhost:8080")
             .setMtlsProvider(provider)
             .setCertificateBasedAccess(certificateBasedAccess)
-            .setHeaderProvider(Mockito.mock(HeaderProvider.class))
+            .setHeaderProvider(
+                Mockito.Mockito.mock(
+                    HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
             .setExecutor(Mockito.mock(Executor.class))
             .build();
     return channelProvider.createHttpTransport();

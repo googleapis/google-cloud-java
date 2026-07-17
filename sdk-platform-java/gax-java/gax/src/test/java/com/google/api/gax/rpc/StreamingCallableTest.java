@@ -123,7 +123,8 @@ class StreamingCallableTest {
     ApiCallContext defaultCallContext = FakeCallContext.createDefault();
     ClientStreamingStashCallable<Integer, Integer> stashCallable =
         new ClientStreamingStashCallable<>();
-    ApiStreamObserver<Integer> observer = Mockito.mock(ApiStreamObserver.class);
+    ApiStreamObserver<Integer> observer =
+        Mockito.Mockito.mock(ApiStreamObserver.class, Mockito.withSettings().withoutAnnotations());
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(defaultCallContext);
     callable.clientStreamingCall(observer);
@@ -136,7 +137,8 @@ class StreamingCallableTest {
   void testClientStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
     Credentials credentials = Mockito.mock(Credentials.class);
-    RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
+    RetrySettings retrySettings =
+        Mockito.Mockito.mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryableCodes =
         ImmutableSet.of(
             StatusCode.Code.INTERNAL,
@@ -150,7 +152,8 @@ class StreamingCallableTest {
             .withRetryableCodes(retryableCodes);
     ClientStreamingStashCallable<Integer, Integer> stashCallable =
         new ClientStreamingStashCallable<>();
-    ApiStreamObserver<Integer> observer = Mockito.mock(ApiStreamObserver.class);
+    ApiStreamObserver<Integer> observer =
+        Mockito.Mockito.mock(ApiStreamObserver.class, Mockito.withSettings().withoutAnnotations());
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     callable.clientStreamingCall(observer, context);

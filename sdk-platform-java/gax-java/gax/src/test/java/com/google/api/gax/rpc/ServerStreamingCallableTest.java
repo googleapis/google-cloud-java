@@ -84,7 +84,8 @@ class ServerStreamingCallableTest {
         stashCallable.withDefaultCallContext(defaultCallContext);
     @SuppressWarnings("unchecked")
     StateCheckingResponseObserver<Integer> observer =
-        Mockito.mock(StateCheckingResponseObserver.class);
+        Mockito.Mockito.mock(
+            StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);
@@ -103,7 +104,9 @@ class ServerStreamingCallableTest {
     ServerStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     @SuppressWarnings("unchecked")
-    ResponseObserver<Integer> observer = Mockito.mock(StateCheckingResponseObserver.class);
+    ResponseObserver<Integer> observer =
+        Mockito.Mockito.mock(
+            StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer, context);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);

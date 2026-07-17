@@ -121,7 +121,7 @@ class BatchTest {
   private Batch<LabeledIntList, List<Integer>> createBatch(LabeledIntList request) {
     @SuppressWarnings("unchecked")
     UnaryCallable<FakeBatchableApi.LabeledIntList, List<Integer>> callable =
-        Mockito.mock(UnaryCallable.class);
+        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     return createBatch(request, callable);
   }
 

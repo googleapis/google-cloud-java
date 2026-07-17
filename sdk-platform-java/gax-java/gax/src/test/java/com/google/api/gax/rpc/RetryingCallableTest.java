@@ -46,7 +46,8 @@ class RetryingCallableTest {
   @Test
   void futureCall() {
     FakeCallContext fakeCallContext = FakeCallContext.createDefault();
-    UnaryCallable innerCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable innerCallable =
+        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     RetryingExecutorWithContext executor = Mockito.mock(RetryingExecutorWithContext.class);
     RetryingFuture retryingFuture = Mockito.mock(RetryingFuture.class);
     TimedAttemptSettings fakeAttemptSettings =

@@ -43,7 +43,8 @@ class PagedCallSettingsTest {
   void testEmptyBuilder() {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.mock(PagedListResponseFactory.class);
+        Mockito.Mockito.mock(
+            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 
@@ -64,7 +65,8 @@ class PagedCallSettingsTest {
   void testBuilder() {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.mock(PagedListResponseFactory.class);
+        Mockito.Mockito.mock(
+            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 
@@ -97,7 +99,8 @@ class PagedCallSettingsTest {
   void testBuilderFromSettings() throws Exception {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.mock(PagedListResponseFactory.class);
+        Mockito.Mockito.mock(
+            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 

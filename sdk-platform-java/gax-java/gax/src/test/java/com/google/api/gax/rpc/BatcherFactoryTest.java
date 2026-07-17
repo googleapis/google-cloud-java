@@ -63,7 +63,8 @@ class BatcherFactoryTest {
   @Test
   void testGetPushingBatcher() {
     final java.time.Duration delayThreshold = java.time.Duration.ofSeconds(1);
-    BatchingSettings batchingSettings = Mockito.mock(BatchingSettings.class);
+    BatchingSettings batchingSettings =
+        Mockito.Mockito.mock(BatchingSettings.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(batchingSettings.getDelayThresholdDuration()).thenReturn(delayThreshold);
     Mockito.when(batchingSettings.getElementCountThreshold()).thenReturn(2L);
     Mockito.when(batchingSettings.getRequestByteThreshold()).thenReturn(1000L);

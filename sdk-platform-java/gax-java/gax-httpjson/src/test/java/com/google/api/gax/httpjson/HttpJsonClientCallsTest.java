@@ -74,7 +74,8 @@ class HttpJsonClientCallsTest {
   @BeforeEach
   void setUp() throws IOException {
     credentials = Mockito.mock(Credentials.class);
-    endpointContext = Mockito.mock(EndpointContext.class);
+    endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     mockChannel = Mockito.mock(HttpJsonChannel.class);
     descriptor = Mockito.mock(ApiMethodDescriptor.class);
     callOptions = Mockito.mock(HttpJsonCallOptions.class);

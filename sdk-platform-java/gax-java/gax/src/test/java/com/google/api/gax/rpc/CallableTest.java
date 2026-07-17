@@ -55,7 +55,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class CallableTest {
 
-  @Mock private UnaryCallable<String, String> innerCallable;
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+  }
+
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   @Mock private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;

@@ -52,13 +52,15 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class AttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
   @Mock RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockInnerCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
     when(mockInnerCallable.futureCall(Mockito.anyString(), capturedCallContext.capture()))
         .thenReturn(SettableApiFuture.<String>create());
@@ -89,7 +91,8 @@ class AttemptCallableTest {
     FakeCallContext callContext = mock(FakeCallContext.class);
     when(callContext.getTimeoutDuration()).thenReturn(null);
     when(callContext.withTimeoutDuration(any(java.time.Duration.class))).thenReturn(callContext);
-    when(callContext.getTracer()).thenReturn(mock(ApiTracer.class));
+    when(callContext.getTracer())
+        .thenReturn(Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()));
     AttemptCallable<String, String> callable =
         new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
     callable.setExternalFuture(mockExternalFuture);

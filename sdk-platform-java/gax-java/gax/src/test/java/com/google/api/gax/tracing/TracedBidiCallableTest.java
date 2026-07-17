@@ -55,11 +55,18 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedBidiCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final SpanName SPAN_NAME = SpanName.of("fake-client", "fake-method");
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
@@ -72,9 +79,9 @@ class TracedBidiCallableTest {
   private FakeBidiObserver outerObserver;
   private FakeCallContext outerCallContext;
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer = BaseApiTracer.getInstance();
-  @Mock private ApiTracer tracer;
+  private ApiTracer tracer;
 
   private TracedBidiCallable<String, String> tracedCallable;
 

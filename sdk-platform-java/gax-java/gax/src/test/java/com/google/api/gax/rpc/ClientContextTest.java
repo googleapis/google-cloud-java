@@ -327,9 +327,11 @@ class ClientContextTest {
     builder.setWatchdogCheckIntervalDuration(watchdogCheckInterval);
     builder.setClock(clock);
 
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     if (headersCollision) {
       Mockito.when(internalHeaderProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
     } else {
@@ -402,9 +404,11 @@ class ClientContextTest {
             .withExecutor(executor));
     builder.setWatchdogCheckIntervalDuration(watchdogCheckInterval);
 
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     Mockito.when(internalHeaderProvider.getHeaders()).thenReturn(ImmutableMap.of("k2", "v2"));
     builder.setHeaderProvider(headerProvider);
@@ -427,9 +431,11 @@ class ClientContextTest {
         new FakeTransportProvider(
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
 
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("header_k1", "v1"));
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(internalHeaderProvider.getHeaders())
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
@@ -511,9 +517,11 @@ class ClientContextTest {
         new FakeTransportProvider(
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
 
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("header_k1", "v1"));
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(internalHeaderProvider.getHeaders())
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
@@ -551,8 +559,10 @@ class ClientContextTest {
     final Credentials credentialsWithQuotaProjectId = Mockito.mock(GoogleCredentials.class);
     Mockito.when(credentialsWithQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithQuota);
-    HeaderProvider headerProviderWithQuota = Mockito.mock(HeaderProvider.class);
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProviderWithQuota =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     builder.setExecutorProvider(new FakeExecutorProvider(executor, true));
     builder.setTransportChannelProvider(transportProvider);
@@ -587,8 +597,10 @@ class ClientContextTest {
     Map<String, List<String>> metaData = ImmutableMap.of("k1", Collections.singletonList("v1"));
     final Credentials credentialsWithoutQuotaProjectId = Mockito.mock(GoogleCredentials.class);
     Mockito.when(credentialsWithoutQuotaProjectId.getRequestMetadata(null)).thenReturn(metaData);
-    HeaderProvider headerProviderWithQuota = Mockito.mock(HeaderProvider.class);
-    HeaderProvider internalHeaderProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProviderWithQuota =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
+    HeaderProvider internalHeaderProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     builder.setExecutorProvider(new FakeExecutorProvider(executor, true));
     builder.setTransportChannelProvider(transportProvider);
@@ -1216,7 +1228,8 @@ class ClientContextTest {
             DEFAULT_ENDPOINT,
             DEFAULT_MTLS_ENDPOINT);
     builder.setTransportChannelProvider(transportProvider);
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
     builder.setHeaderProvider(headerProvider);
     builder.setApiKey(apiKey);
@@ -1243,7 +1256,8 @@ class ClientContextTest {
             DEFAULT_ENDPOINT,
             DEFAULT_MTLS_ENDPOINT);
     builder.setTransportChannelProvider(transportProvider);
-    HeaderProvider headerProvider = Mockito.mock(HeaderProvider.class);
+    HeaderProvider headerProvider =
+        Mockito.Mockito.mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
     builder.setHeaderProvider(headerProvider);
     builder.setApiKey(apiKey);
@@ -1291,7 +1305,8 @@ class ClientContextTest {
     builder.setCredentialsProvider(
         FixedCredentialsProvider.create(Mockito.mock(Credentials.class)));
 
-    ApiTracerFactory apiTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory apiTracerFactory =
+        Mockito.Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doReturn(true).when(apiTracerFactory).needsContext();
     Mockito.doReturn(apiTracerFactory).when(apiTracerFactory).withContext(Mockito.any());
 
@@ -1305,7 +1320,8 @@ class ClientContextTest {
 
   @Test
   void testGetApiTracerFactory_noContextNeeded() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(false);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1314,7 +1330,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
 
     ApiTracerFactory apiTracerFactory =
         ClientContext.getApiTracerFactory(builder.build(), endpointContext);
@@ -1324,8 +1341,10 @@ class ClientContextTest {
 
   @Test
   void testGetApiTracerFactory_contextNeeded() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
-    ApiTracerFactory withContextTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracerFactory withContextTracerFactory =
+        Mockito.Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(true);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1334,7 +1353,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     when(endpointContext.resolvedServerAddress()).thenReturn("test-address");
     when(endpointContext.resolvedServerPort()).thenReturn(443);
 
@@ -1349,7 +1369,8 @@ class ClientContextTest {
   // This test should only run when the maven profile `EnvVarTest` is enabled.
   @Test
   void testGetApiTracerFactory_loggingEnabled() throws java.io.IOException {
-    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory mockTracerFactory =
+        Mockito.Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     when(mockTracerFactory.needsContext()).thenReturn(false);
     when(mockTracerFactory.withContext(
             Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
@@ -1358,7 +1379,8 @@ class ClientContextTest {
     FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
     builder.setTracerFactory(mockTracerFactory);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
 
     ApiTracerFactory apiTracerFactory =
         ClientContext.getApiTracerFactory(builder.build(), endpointContext);

@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -45,19 +44,21 @@ class CompositeTracerFactoryTest {
 
   @BeforeEach
   void setUp() {
-    childFactory1 = mock(ApiTracerFactory.class);
-    childFactory2 = mock(ApiTracerFactory.class);
+    childFactory1 =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    childFactory2 =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     compositeFactory = new CompositeTracerFactory(Arrays.asList(childFactory1, childFactory2));
   }
 
   @Test
   void testNewTracerWithParentAndSpanName() {
-    ApiTracer parent = mock(ApiTracer.class);
+    ApiTracer parent = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     SpanName spanName = SpanName.of("TestClient", "TestMethod");
     ApiTracerFactory.OperationType operationType = ApiTracerFactory.OperationType.Unary;
 
-    ApiTracer tracer1 = mock(ApiTracer.class);
-    ApiTracer tracer2 = mock(ApiTracer.class);
+    ApiTracer tracer1 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer tracer2 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
 
     when(childFactory1.newTracer(parent, spanName, operationType)).thenReturn(tracer1);
     when(childFactory2.newTracer(parent, spanName, operationType)).thenReturn(tracer2);
@@ -75,11 +76,11 @@ class CompositeTracerFactoryTest {
 
   @Test
   void testNewTracerWithApiTracerContext() {
-    ApiTracer parent = mock(ApiTracer.class);
+    ApiTracer parent = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracerContext context = ApiTracerContext.empty();
 
-    ApiTracer tracer1 = mock(ApiTracer.class);
-    ApiTracer tracer2 = mock(ApiTracer.class);
+    ApiTracer tracer1 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer tracer2 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
 
     when(childFactory1.newTracer(parent, context)).thenReturn(tracer1);
     when(childFactory2.newTracer(parent, context)).thenReturn(tracer2);
@@ -99,8 +100,10 @@ class CompositeTracerFactoryTest {
   void testWithContext() {
     ApiTracerContext context = ApiTracerContext.empty();
 
-    ApiTracerFactory contextualizedFactory1 = mock(ApiTracerFactory.class);
-    ApiTracerFactory contextualizedFactory2 = mock(ApiTracerFactory.class);
+    ApiTracerFactory contextualizedFactory1 =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracerFactory contextualizedFactory2 =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
 
     when(childFactory1.withContext(context)).thenReturn(contextualizedFactory1);
     when(childFactory2.withContext(context)).thenReturn(contextualizedFactory2);
@@ -109,11 +112,11 @@ class CompositeTracerFactoryTest {
 
     // Create tracer from the new compositeFactory and verify it delegates to the contextualized
     // children
-    ApiTracer parent = mock(ApiTracer.class);
+    ApiTracer parent = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracerContext tracerContext = ApiTracerContext.empty();
 
-    ApiTracer tracer1 = mock(ApiTracer.class);
-    ApiTracer tracer2 = mock(ApiTracer.class);
+    ApiTracer tracer1 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer tracer2 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
 
     when(contextualizedFactory1.newTracer(parent, tracerContext)).thenReturn(tracer1);
     when(contextualizedFactory2.newTracer(parent, tracerContext)).thenReturn(tracer2);

@@ -72,7 +72,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testFirstAttemptUsesDefaultSettings() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
     ExponentialRetryAlgorithm timedAlgorithm =
         new ExponentialRetryAlgorithm(DEFAULT_RETRY_SETTINGS, mock(ApiClock.class));
@@ -88,7 +89,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testFirstAttemptUsesContextSettings() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     when(context.getRetrySettings()).thenReturn(CONTEXT_RETRY_SETTINGS);
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
     ExponentialRetryAlgorithm timedAlgorithm =
@@ -105,7 +107,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testNextAttemptReturnsNullWhenShouldNotRetry() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
     BasicResultRetryAlgorithm<String> resultAlgorithm = mock(BasicResultRetryAlgorithm.class);
     UnavailableException exception = mock(UnavailableException.class);
@@ -127,7 +130,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testNextAttemptReturnsResultAlgorithmSettingsWhenShouldRetry() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
     BasicResultRetryAlgorithm<String> resultAlgorithm = mock(BasicResultRetryAlgorithm.class);
     UnavailableException exception = mock(UnavailableException.class);
@@ -152,7 +156,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testNextAttemptResetsTimedSettings() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     BasicResultRetryAlgorithm<String> resultAlgorithm = new BasicResultRetryAlgorithm<>();
 
     ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
@@ -178,7 +183,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testShouldNotRetryIfAttemptIsNonResumable() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
 
     ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
     when(exception.canResume()).thenReturn(false);
@@ -204,7 +210,8 @@ class StreamingRetryAlgorithmTest {
 
   @Test
   void testShouldRetryIfAllSayYes() {
-    RetryingContext context = mock(RetryingContext.class);
+    RetryingContext context =
+        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
 
     ServerStreamingAttemptException exception = mock(ServerStreamingAttemptException.class);
     when(exception.canResume()).thenReturn(true);

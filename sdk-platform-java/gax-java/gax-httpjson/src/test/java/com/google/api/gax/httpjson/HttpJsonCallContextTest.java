@@ -232,7 +232,8 @@ class HttpJsonCallContextTest {
 
   @Test
   void testMergeWithTracer() {
-    ApiTracer explicitTracer = Mockito.mock(ApiTracer.class);
+    ApiTracer explicitTracer =
+        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallContext ctxWithExplicitTracer =
         HttpJsonCallContext.createDefault().withTracer(explicitTracer);
 
@@ -254,7 +255,8 @@ class HttpJsonCallContextTest {
 
   @Test
   void testWithTracer() {
-    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    ApiTracer tracer =
+        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();
     // Default context has a default tracer.
     assertNotNull(emptyContext.getTracer());
@@ -264,7 +266,8 @@ class HttpJsonCallContextTest {
 
   @Test
   void testWithRetrySettings() {
-    RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
+    RetrySettings retrySettings =
+        Mockito.Mockito.mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();
     assertNull(emptyContext.getRetrySettings());
     HttpJsonCallContext context = emptyContext.withRetrySettings(retrySettings);

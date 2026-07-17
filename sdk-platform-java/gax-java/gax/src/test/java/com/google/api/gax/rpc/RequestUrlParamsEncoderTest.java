@@ -83,7 +83,9 @@ class RequestUrlParamsEncoderTest {
   private RequestParamsExtractor<String> getMockExtractor(Map<String, String> output) {
     @SuppressWarnings("unchecked")
     RequestParamsExtractor<String> extractor =
-        (RequestParamsExtractor<String>) Mockito.mock(RequestParamsExtractor.class);
+        (RequestParamsExtractor<String>)
+            Mockito.Mockito.mock(
+                RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
     when(extractor.extract(key)).thenReturn(output);
     return extractor;
   }

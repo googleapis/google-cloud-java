@@ -58,7 +58,9 @@ class OperationCallSettingsTest {
         UnaryCallSettings.<Integer, OperationSnapshot>newUnaryCallSettingsBuilder()
             .setRetryableCodes(Code.UNAVAILABLE)
             .build();
-    TimedRetryAlgorithm pollingAlgorithm = Mockito.mock(TimedRetryAlgorithm.class);
+    TimedRetryAlgorithm pollingAlgorithm =
+        Mockito.Mockito.mock(
+            TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     ResponseTransformer responseTransformer = new ResponseTransformer();
     MetadataTransformer metadataTransformer = new MetadataTransformer();
 
@@ -87,7 +89,9 @@ class OperationCallSettingsTest {
         UnaryCallSettings.<Integer, OperationSnapshot>newUnaryCallSettingsBuilder()
             .setRetryableCodes(Code.UNAVAILABLE)
             .build();
-    TimedRetryAlgorithm pollingAlgorithm = Mockito.mock(TimedRetryAlgorithm.class);
+    TimedRetryAlgorithm pollingAlgorithm =
+        Mockito.Mockito.mock(
+            TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     ResponseTransformer responseTransformer = new ResponseTransformer();
     MetadataTransformer metadataTransformer = new MetadataTransformer();
 
