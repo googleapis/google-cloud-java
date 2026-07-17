@@ -109,14 +109,10 @@ public class BoundStatement {
         }
       }
       return new BoundStatement(
-          preparedStatement,
-          ImmutableMap.copyOf(params),
-          ImmutableMap.copyOf(viewParameters));
+          preparedStatement, ImmutableMap.copyOf(params), ImmutableMap.copyOf(viewParameters));
     }
 
-    /**
-     * Sets a view parameter with the name {@code name} and the Value {@code value}.
-     */
+    /** Sets a view parameter with the name {@code name} and the Value {@code value}. */
     public Builder setViewParameter(String name, Value value) {
       Preconditions.checkNotNull(name, "name cannot be null");
       Preconditions.checkNotNull(value, "value cannot be null");
@@ -127,9 +123,7 @@ public class BoundStatement {
       return this;
     }
 
-    /**
-     * Sets view parameters from a map.
-     */
+    /** Sets view parameters from a map. */
     public Builder setViewParameters(Map<String, Value> viewParameters) {
       Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
       for (Map.Entry<String, Value> entry : viewParameters.entrySet()) {
