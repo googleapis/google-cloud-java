@@ -1070,3 +1070,10 @@ grpc-google-cloud-agentregistry-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-agentregistry:0.1.0:0.2.0-SNAPSHOT
 google-cloud-agentregistry-bom:0.1.0:0.2.0-SNAPSHOT
 google-cloud-agentregistry-parent:0.1.0:0.2.0-SNAPSHOT
+google-cloud-agentidentity-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-agentidentity-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-agentidentity-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-agentidentity-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-agentidentity:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-agentidentity-v1beta:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-agentidentity-v1beta:0.0.0:0.1.0-SNAPSHOT
