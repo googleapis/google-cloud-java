@@ -162,6 +162,4 @@ public class BigQueryParameterHandlerTest {
     assertEquals("5", config.getPositionalParameters().get(0).getValue());
     assertEquals("10", config.getPositionalParameters().get(1).getValue());
   }
-
-  }
 }
