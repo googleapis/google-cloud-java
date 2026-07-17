@@ -28,6 +28,12 @@ import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
 
@@ -80,6 +86,8 @@ class BigQueryJdbcTypeMappings {
       ImmutableMap.ofEntries(
           entry(Types.BIGINT, Long.class),
           entry(Types.INTEGER, Integer.class),
+          entry(Types.SMALLINT, Short.class),
+          entry(Types.TINYINT, Byte.class),
           entry(Types.BOOLEAN, Boolean.class),
           entry(Types.DOUBLE, Double.class),
           entry(Types.FLOAT, Float.class),
@@ -94,7 +102,8 @@ class BigQueryJdbcTypeMappings {
           entry(Types.VARBINARY, byte[].class),
           entry(Types.STRUCT, Struct.class),
           entry(Types.BIT, Boolean.class),
-          entry(Types.ARRAY, Array.class));
+          entry(Types.ARRAY, Array.class),
+          entry(Types.NULL, String.class));
 
   static StandardSQLTypeName classToType(Class type)
       throws BigQueryJdbcSqlFeatureNotSupportedException {
@@ -102,13 +111,11 @@ class BigQueryJdbcTypeMappings {
       return StandardSQLTypeName.BOOL;
     } else if (String.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.STRING;
-    } else if (String.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.GEOGRAPHY;
-    } else if (String.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.DATETIME;
     } else if (Integer.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
     } else if (Long.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.INT64;
+    } else if (Short.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
     } else if (Double.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.FLOAT64;
@@ -116,20 +123,20 @@ class BigQueryJdbcTypeMappings {
       return StandardSQLTypeName.FLOAT64;
     } else if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
-    } else if (BigDecimal.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.BIGNUMERIC;
-    } else if (Date.class.isAssignableFrom(type)) {
+    } else if (Date.class.isAssignableFrom(type) || LocalDate.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.DATE;
-    } else if (Timestamp.class.isAssignableFrom(type)) {
+    } else if (Timestamp.class.isAssignableFrom(type)
+        || LocalDateTime.class.isAssignableFrom(type)
+        || OffsetDateTime.class.isAssignableFrom(type)
+        || Instant.class.isAssignableFrom(type)
+        || ZonedDateTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIMESTAMP;
-    } else if (Time.class.isAssignableFrom(type)) {
+    } else if (Time.class.isAssignableFrom(type) || LocalTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIME;
-    } else if (String.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.JSON;
     } else if (JsonObject.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.JSON;
     } else if (Byte.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.BYTES;
+      return StandardSQLTypeName.INT64;
     } else if (Array.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.ARRAY;
     } else if (Struct.class.isAssignableFrom(type)) {
