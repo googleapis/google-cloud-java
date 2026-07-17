@@ -112,7 +112,33 @@ public class BoundStatement {
           preparedStatement, ImmutableMap.copyOf(params), ImmutableMap.copyOf(viewParameters));
     }
 
-    /** Sets a view parameter with the name {@code name} and the Value {@code value}. */
+    /**
+     * Sets a view parameter with the name {@code paramName} and the String typed value {@code
+     * value}.
+     */
+    public Builder setStringViewParameter(String paramName, @Nullable String value) {
+      Preconditions.checkNotNull(paramName, "paramName cannot be null");
+      Preconditions.checkNotNull(value, "value cannot be null");
+      viewParameters.put(paramName, stringParamOf(value));
+      return this;
+    }
+
+    /** Sets String typed view parameters from a map. */
+    public Builder setStringViewParameters(Map<String, String> viewParameters) {
+      Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
+      for (Map.Entry<String, String> entry : viewParameters.entrySet()) {
+        setStringViewParameter(entry.getKey(), entry.getValue());
+      }
+      return this;
+    }
+
+    /**
+     * Sets a view parameter with the name {@code name} and the Value {@code value}.
+     *
+     * <p>This is considered an internal implementation detail and should not be used by
+     * applications.
+     */
+    @InternalApi("For internal use only")
     public Builder setViewParameter(String name, Value value) {
       Preconditions.checkNotNull(name, "name cannot be null");
       Preconditions.checkNotNull(value, "value cannot be null");
@@ -123,7 +149,13 @@ public class BoundStatement {
       return this;
     }
 
-    /** Sets view parameters from a map. */
+    /**
+     * Sets view parameters from a map.
+     *
+     * <p>This is considered an internal implementation detail and should not be used by
+     * applications.
+     */
+    @InternalApi("For internal use only")
     public Builder setViewParameters(Map<String, Value> viewParameters) {
       Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
       for (Map.Entry<String, Value> entry : viewParameters.entrySet()) {
