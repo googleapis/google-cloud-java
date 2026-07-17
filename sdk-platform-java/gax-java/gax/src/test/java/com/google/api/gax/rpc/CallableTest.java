@@ -48,7 +48,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -59,12 +58,14 @@ class CallableTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
     innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    innerServerStreamingCallable =
+        mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
   }
 
   private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
-  @Mock private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;
+  private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;
 
   private RetrySettings retrySettings =
       RetrySettings.newBuilder()

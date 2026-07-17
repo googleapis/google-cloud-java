@@ -51,7 +51,6 @@ import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -62,7 +61,7 @@ class TracedOperationCallableTest {
   private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
   private ApiTracer tracer;
-  @Mock private OperationCallable<String, String, Long> innerCallable;
+  private OperationCallable<String, String, Long> innerCallable;
   private FakeOperationFuture innerResult;
 
   private TracedOperationCallable<String, String, Long> tracedOperationCallable;
@@ -70,6 +69,7 @@ class TracedOperationCallableTest {
 
   @BeforeEach
   void setUp() {
+    innerCallable = mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
     tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     parentTracer = BaseApiTracer.getInstance();
