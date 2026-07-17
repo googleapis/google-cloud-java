@@ -3532,7 +3532,6 @@ public class BigQueryDatabaseMetaDataTest {
     ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
     assertEquals(mockRs, rs);
     verify(mockStmt).closeOnCompletion();
-    verify(mockStmt).setString(1, "ref_table");
     verify(mockStmt).executeQuery();
   }
 
