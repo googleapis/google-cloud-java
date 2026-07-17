@@ -2367,6 +2367,13 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
+  - name: maps-isochrones
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/maps/isochrones/v1
+    java:
+      artifact_id: google-maps-isochrones
+      group_id: com.google.maps
   - name: maps-mapmanagement
     version: 0.4.0-SNAPSHOT
     apis:
