@@ -125,8 +125,9 @@ class BigQueryJdbcTypeMappings {
       return StandardSQLTypeName.NUMERIC;
     } else if (Date.class.isAssignableFrom(type) || LocalDate.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.DATE;
+    } else if (LocalDateTime.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATETIME;
     } else if (Timestamp.class.isAssignableFrom(type)
-        || LocalDateTime.class.isAssignableFrom(type)
         || OffsetDateTime.class.isAssignableFrom(type)
         || Instant.class.isAssignableFrom(type)
         || ZonedDateTime.class.isAssignableFrom(type)) {
