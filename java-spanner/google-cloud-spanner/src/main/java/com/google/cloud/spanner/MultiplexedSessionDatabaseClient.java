@@ -31,6 +31,8 @@ import com.google.cloud.spanner.SpannerException.ResourceNotFoundException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.spanner.v1.BatchWriteResponse;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
@@ -63,13 +65,29 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
    */
   private static final int MAX_INITIAL_CREATE_SESSION_ATTEMPTS = 10;
 
+  /**
+   * Statement used to query database-level default options from
+   * INFORMATION_SCHEMA.DATABASE_OPTIONS. This retrieves 'default_transaction_isolation',
+   * 'default_read_lock_mode', and 'database_dialect' so that the client can correctly configure
+   * transaction routing (e.g. Leader-Aware Routing) and isolation level behaviors without relying
+   * solely on client-side hardcoded defaults.
+   */
   @VisibleForTesting
-  static final Statement DETERMINE_DIALECT_STATEMENT =
+  static final Statement DETERMINE_METADATA_STATEMENT =
       Statement.newBuilder(
-              "select option_value "
-                  + "from information_schema.database_options "
-                  + "where option_name='database_dialect'")
+              "SELECT OPTION_NAME, OPTION_VALUE "
+                  + "FROM INFORMATION_SCHEMA.DATABASE_OPTIONS "
+                  + "WHERE OPTION_NAME IN ('default_transaction_isolation', "
+                  + "'default_read_lock_mode', 'database_dialect')")
           .build();
+
+  static final String OPTION_DATABASE_DIALECT = "database_dialect";
+  static final String OPTION_DEFAULT_TRANSACTION_ISOLATION = "default_transaction_isolation";
+  static final String OPTION_DEFAULT_READ_LOCK_MODE = "default_read_lock_mode";
+
+  static final String ISOLATION_LEVEL_REPEATABLE_READ = "repeatable read";
+  static final String READ_LOCK_MODE_OPTIMISTIC = "optimistic";
+  static final String READ_LOCK_MODE_PESSIMISTIC = "pessimistic";
 
   /**
    * Represents a single transaction on a multiplexed session. This can be both a single-use or
@@ -274,13 +292,8 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             // only start the maintainer if we actually managed to create a session in the first
             // place.
             maintainer.start();
-            if (sessionClient
-                .getSpanner()
-                .getOptions()
-                .getSessionPoolOptions()
-                .isAutoDetectDialect()) {
-              MAINTAINER_SERVICE.submit(() -> getDialect());
-            }
+            MAINTAINER_SERVICE.submit(
+                () -> session.getSessionReference().setDatabaseMetadata(getDatabaseMetadata()));
           }
 
           @Override
@@ -369,6 +382,12 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   AtomicLong getNumSessionsReleased() {
     return this.numSessionsReleased;
+  }
+
+  @VisibleForTesting
+  void resetAcquiredAndReleasedCounts() {
+    this.numSessionsAcquired.set(0L);
+    this.numSessionsReleased.set(0L);
   }
 
   void close() {
@@ -473,32 +492,71 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     }
   }
 
-  private final AbstractLazyInitializer<Dialect> dialectSupplier =
-      new AbstractLazyInitializer<Dialect>() {
+  private static IsolationLevel parseIsolationLevel(String value) {
+    return ISOLATION_LEVEL_REPEATABLE_READ.equalsIgnoreCase(value)
+        ? IsolationLevel.REPEATABLE_READ
+        : IsolationLevel.SERIALIZABLE;
+  }
+
+  private static ReadLockMode parseReadLockMode(String value) {
+    if (READ_LOCK_MODE_OPTIMISTIC.equalsIgnoreCase(value)) {
+      return ReadLockMode.OPTIMISTIC;
+    } else if (READ_LOCK_MODE_PESSIMISTIC.equalsIgnoreCase(value)) {
+      return ReadLockMode.PESSIMISTIC;
+    }
+    return ReadLockMode.READ_LOCK_MODE_UNSPECIFIED;
+  }
+
+  /**
+   * Lazily initializes and caches {@link DatabaseMetadata} (dialect, default isolation level, and
+   * read lock mode). Introspects the database options once and attaches the resolved metadata to
+   * the current multiplexed {@link SessionReference} so subsequent transactions can resolve their
+   * effective modes.
+   */
+  private final AbstractLazyInitializer<DatabaseMetadata> metadataSupplier =
+      new AbstractLazyInitializer<DatabaseMetadata>() {
         @Override
-        protected Dialect initialize() {
-          try (ResultSet dialectResultSet = singleUse().executeQuery(DETERMINE_DIALECT_STATEMENT)) {
-            if (dialectResultSet.next()) {
-              return Dialect.fromName(dialectResultSet.getString(0));
+        protected DatabaseMetadata initialize() {
+          Dialect dialect = Dialect.GOOGLE_STANDARD_SQL;
+          IsolationLevel isolationLevel = IsolationLevel.SERIALIZABLE;
+          ReadLockMode readLockMode = ReadLockMode.READ_LOCK_MODE_UNSPECIFIED;
+
+          numSessionsAcquired.decrementAndGet();
+          try (ResultSet resultSet = singleUse().executeQuery(DETERMINE_METADATA_STATEMENT)) {
+            while (resultSet.next()) {
+              String name = resultSet.getString(0);
+              String value = resultSet.getString(1);
+              if (OPTION_DATABASE_DIALECT.equalsIgnoreCase(name)) {
+                dialect = Dialect.fromName(value);
+              } else if (OPTION_DEFAULT_TRANSACTION_ISOLATION.equalsIgnoreCase(name)) {
+                isolationLevel = parseIsolationLevel(value);
+              } else if (OPTION_DEFAULT_READ_LOCK_MODE.equalsIgnoreCase(name)) {
+                readLockMode = parseReadLockMode(value);
+              }
             }
+          } finally {
+            numSessionsReleased.decrementAndGet();
           }
-          // This should not really happen, but it is the safest fallback value.
-          return Dialect.GOOGLE_STANDARD_SQL;
+          return new DatabaseMetadata(dialect, isolationLevel, readLockMode);
         }
       };
 
-  @Override
-  public Dialect getDialect() {
+  DatabaseMetadata getDatabaseMetadata() {
     try {
-      return dialectSupplier.get();
+      return metadataSupplier.get();
     } catch (Exception exception) {
       throw SpannerExceptionFactory.asSpannerException(exception);
     }
   }
 
+  @Override
+  public Dialect getDialect() {
+    return getDatabaseMetadata().getDialect();
+  }
+
   Future<Dialect> getDialectAsync() {
     try {
-      return MAINTAINER_SERVICE.submit(dialectSupplier::get);
+      return MAINTAINER_SERVICE.submit(() -> getDialect());
     } catch (Exception exception) {
       throw SpannerExceptionFactory.asSpannerException(exception);
     }
@@ -659,8 +717,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             new SessionConsumer() {
               @Override
               public void onSessionReady(SessionImpl session) {
-                multiplexedSessionReference.set(
-                    ApiFutures.immediateFuture(session.getSessionReference()));
+                SessionReference sessionRef = session.getSessionReference();
+                multiplexedSessionReference.set(ApiFutures.immediateFuture(sessionRef));
+                MAINTAINER_SERVICE.submit(
+                    () -> sessionRef.setDatabaseMetadata(getDatabaseMetadata()));
                 expirationDate.set(
                     clock
                         .instant()
