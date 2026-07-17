@@ -33,6 +33,7 @@ import java.time.OffsetDateTime;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -74,18 +75,9 @@ class BigQueryTypeCoercionUtility {
     if (cal == null) {
       return date;
     }
-    Calendar defaultCal = Calendar.getInstance();
-    defaultCal.setTime(date);
-
-    Calendar targetCal = getSafeCalendar(cal);
-    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
-    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
-    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
-    targetCal.set(Calendar.HOUR_OF_DAY, 0);
-    targetCal.set(Calendar.MINUTE, 0);
-    targetCal.set(Calendar.SECOND, 0);
-    targetCal.set(Calendar.MILLISECOND, 0);
-    return new Date(targetCal.getTimeInMillis());
+    LocalDate localDate = date.toLocalDate();
+    ZonedDateTime zdt = localDate.atStartOfDay(cal.getTimeZone().toZoneId());
+    return new Date(zdt.toInstant().toEpochMilli());
   }
 
   /**
@@ -99,15 +91,10 @@ class BigQueryTypeCoercionUtility {
     if (cal == null) {
       return time;
     }
-    Calendar defaultCal = Calendar.getInstance();
-    defaultCal.setTime(time);
-
-    Calendar targetCal = getSafeCalendar(cal);
-    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-    return new Time(targetCal.getTimeInMillis());
+    LocalTime localTime = time.toLocalTime();
+    ZonedDateTime zdt =
+        localTime.atDate(LocalDate.of(1970, 1, 1)).atZone(cal.getTimeZone().toZoneId());
+    return new Time(zdt.toInstant().toEpochMilli());
   }
 
   /**
@@ -121,19 +108,9 @@ class BigQueryTypeCoercionUtility {
     if (cal == null) {
       return timestamp;
     }
-    Calendar defaultCal = Calendar.getInstance();
-    defaultCal.setTime(timestamp);
-
-    Calendar targetCal = getSafeCalendar(cal);
-    targetCal.set(Calendar.YEAR, defaultCal.get(Calendar.YEAR));
-    targetCal.set(Calendar.MONTH, defaultCal.get(Calendar.MONTH));
-    targetCal.set(Calendar.DAY_OF_MONTH, defaultCal.get(Calendar.DAY_OF_MONTH));
-    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-
-    Timestamp adjustedTimestamp = new Timestamp(targetCal.getTimeInMillis());
+    LocalDateTime ldt = timestamp.toLocalDateTime();
+    ZonedDateTime zdt = ldt.atZone(cal.getTimeZone().toZoneId());
+    Timestamp adjustedTimestamp = Timestamp.from(zdt.toInstant());
     adjustedTimestamp.setNanos(timestamp.getNanos());
     return adjustedTimestamp;
   }
