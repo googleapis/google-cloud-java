@@ -370,53 +370,17 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Date getDate(int parameterIndex, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterIndex);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Date) {
-      Date dateParam = (Date) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTime(dateParam);
-        return new Date(safeCal.getTimeInMillis());
-      }
-      return dateParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Date.class)) {
-      Date dateObj = getObject(parameterIndex, Date.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTime(dateObj);
-        return new Date(safeCal.getTimeInMillis());
-      }
-      return dateObj;
-    }
-    return null;
+    Date date = getDate(parameterIndex);
+    this.lastReadWasNull = (date == null);
+    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
   }
 
   @Override
   public Date getDate(String parameterName, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterName);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Date) {
-      Date dateParam = (Date) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTime(dateParam);
-        return new Date(safeCal.getTimeInMillis());
-      }
-      return dateParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Date.class)) {
-      Date dateObj = getObject(parameterName, Date.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTime(dateObj);
-        return new Date(safeCal.getTimeInMillis());
-      }
-      return dateObj;
-    }
-    return null;
+    Date date = getDate(parameterName);
+    this.lastReadWasNull = (date == null);
+    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
   }
 
   @Override
@@ -766,53 +730,17 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Time getTime(int parameterIndex, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterIndex);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Time) {
-      Time timeParam = (Time) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timeParam.getTime());
-        return new Time(safeCal.getTimeInMillis());
-      }
-      return timeParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Time.class)) {
-      Time timeObj = getObject(parameterIndex, Time.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timeObj.getTime());
-        return new Time(safeCal.getTimeInMillis());
-      }
-      return timeObj;
-    }
-    return null;
+    Time time = getTime(parameterIndex);
+    this.lastReadWasNull = (time == null);
+    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
   }
 
   @Override
   public Time getTime(String parameterName, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterName);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Time) {
-      Time timeParam = (Time) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timeParam.getTime());
-        return new Time(safeCal.getTimeInMillis());
-      }
-      return timeParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Time.class)) {
-      Time timeObj = getObject(parameterName, Time.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timeObj.getTime());
-        return new Time(safeCal.getTimeInMillis());
-      }
-      return timeObj;
-    }
-    return null;
+    Time time = getTime(parameterName);
+    this.lastReadWasNull = (time == null);
+    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
   }
 
   @Override
@@ -842,53 +770,17 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Timestamp getTimestamp(int parameterIndex, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterIndex);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Timestamp) {
-      Timestamp timestampParam = (Timestamp) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timestampParam.getTime());
-        return new Timestamp(safeCal.getTimeInMillis());
-      }
-      return timestampParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Timestamp.class)) {
-      Timestamp timestampObj = getObject(parameterIndex, Timestamp.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timestampObj.getTime());
-        return new Timestamp(safeCal.getTimeInMillis());
-      }
-      return timestampObj;
-    }
-    return null;
+    Timestamp ts = getTimestamp(parameterIndex);
+    this.lastReadWasNull = (ts == null);
+    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, cal);
   }
 
   @Override
   public Timestamp getTimestamp(String parameterName, Calendar cal) throws SQLException {
     checkClosed();
-    Object param = this.parameterHandler.getParameter(parameterName);
-    this.lastReadWasNull = (param == null);
-    if (param instanceof Timestamp) {
-      Timestamp timestampParam = (Timestamp) param;
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timestampParam.getTime());
-        return new Timestamp(safeCal.getTimeInMillis());
-      }
-      return timestampParam;
-    }
-    if (param != null && param.getClass().isAssignableFrom(Timestamp.class)) {
-      Timestamp timestampObj = getObject(parameterName, Timestamp.class);
-      if (cal != null) {
-        Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
-        safeCal.setTimeInMillis(timestampObj.getTime());
-        return new Timestamp(safeCal.getTimeInMillis());
-      }
-      return timestampObj;
-    }
-    return null;
+    Timestamp ts = getTimestamp(parameterName);
+    this.lastReadWasNull = (ts == null);
+    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, cal);
   }
 
   @Override
