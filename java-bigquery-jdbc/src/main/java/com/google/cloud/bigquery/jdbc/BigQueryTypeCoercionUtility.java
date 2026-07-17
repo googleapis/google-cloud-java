@@ -88,10 +88,15 @@ class BigQueryTypeCoercionUtility {
     if (cal == null) {
       return time;
     }
-    LocalTime localTime = time.toLocalTime();
-    ZonedDateTime zdt =
-        localTime.atDate(LocalDate.of(1970, 1, 1)).atZone(cal.getTimeZone().toZoneId());
-    return new Time(zdt.toInstant().toEpochMilli());
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(time);
+
+    Calendar targetCal = getSafeCalendar(cal);
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    return new Time(targetCal.getTimeInMillis());
   }
 
   /**
