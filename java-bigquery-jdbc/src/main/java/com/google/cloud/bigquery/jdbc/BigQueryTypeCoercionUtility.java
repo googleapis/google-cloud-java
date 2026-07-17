@@ -31,6 +31,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.Period;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -58,14 +59,30 @@ class BigQueryTypeCoercionUtility {
    * Calendar's timezone per JDBC specification.
    */
   static Date convertDateWithCalendar(Date date, Calendar cal) {
-    if (date == null) {
-      return null;
+    if (date == null || cal == null) {
+      return date;
     }
-    if (cal == null) {
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
       return date;
     }
     LocalDate localDate = date.toLocalDate();
-    ZonedDateTime zdt = localDate.atStartOfDay(cal.getTimeZone().toZoneId());
+    ZonedDateTime zdt = localDate.atStartOfDay(targetZone);
+    return new Date(zdt.toInstant().toEpochMilli());
+  }
+
+  static Date convertDateToCalendar(Date date, Calendar cal) {
+    if (date == null || cal == null) {
+      return date;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return date;
+    }
+    LocalDate localDate = Instant.ofEpochMilli(date.getTime()).atZone(targetZone).toLocalDate();
+    ZonedDateTime zdt = localDate.atStartOfDay(systemZone);
     return new Date(zdt.toInstant().toEpochMilli());
   }
 
@@ -74,10 +91,12 @@ class BigQueryTypeCoercionUtility {
    * fields into the target Calendar's timezone per JDBC specification.
    */
   static Time convertTimeWithCalendar(Time time, Calendar cal) {
-    if (time == null) {
-      return null;
+    if (time == null || cal == null) {
+      return time;
     }
-    if (cal == null) {
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
       return time;
     }
     Calendar defaultCal = Calendar.getInstance();
@@ -96,14 +115,16 @@ class BigQueryTypeCoercionUtility {
    * timezone per JDBC specification while preserving nanosecond precision.
    */
   static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
-    if (timestamp == null) {
-      return null;
+    if (timestamp == null || cal == null) {
+      return timestamp;
     }
-    if (cal == null) {
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
       return timestamp;
     }
     LocalDateTime ldt = timestamp.toLocalDateTime();
-    ZonedDateTime zdt = ldt.atZone(cal.getTimeZone().toZoneId());
+    ZonedDateTime zdt = ldt.atZone(targetZone);
     Timestamp adjustedTimestamp = Timestamp.from(zdt.toInstant());
     adjustedTimestamp.setNanos(timestamp.getNanos());
     return adjustedTimestamp;
