@@ -2816,6 +2816,10 @@ libraries:
       name_pretty_override: Privileged Access Manager API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
       rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
+  - name: productregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/productregistry/v1
   - name: profiler
     version: 2.95.0-SNAPSHOT
     apis:
