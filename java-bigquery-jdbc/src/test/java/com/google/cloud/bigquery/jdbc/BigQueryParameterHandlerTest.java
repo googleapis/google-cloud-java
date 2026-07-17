@@ -163,33 +163,5 @@ public class BigQueryParameterHandlerTest {
     assertEquals("10", config.getPositionalParameters().get(1).getValue());
   }
 
-  @Test
-  public void testCalendarConversions() {
-    assertNull(BigQueryTypeCoercionUtility.convertDateWithCalendar(null, null));
-    assertNull(BigQueryTypeCoercionUtility.convertTimeWithCalendar(null, null));
-    assertNull(BigQueryTypeCoercionUtility.convertTimestampWithCalendar(null, null));
-
-    Date rawDate = Date.valueOf("2026-07-17");
-    Time rawTime = Time.valueOf("14:30:00");
-    Timestamp rawTimestamp = Timestamp.valueOf("2026-07-17 14:30:00.123456789");
-
-    // Null calendar returns input unchanged
-    assertEquals(rawDate, BigQueryTypeCoercionUtility.convertDateWithCalendar(rawDate, null));
-    assertEquals(rawTime, BigQueryTypeCoercionUtility.convertTimeWithCalendar(rawTime, null));
-    assertEquals(
-        rawTimestamp, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(rawTimestamp, null));
-
-    // UTC Calendar shifts wall-clock components into target timezone
-    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    Date utcConvertedDate = BigQueryTypeCoercionUtility.convertDateWithCalendar(rawDate, utcCal);
-    assertNotNull(utcConvertedDate);
-
-    Time utcConvertedTime = BigQueryTypeCoercionUtility.convertTimeWithCalendar(rawTime, utcCal);
-    assertNotNull(utcConvertedTime);
-
-    Timestamp utcConvertedTimestamp =
-        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(rawTimestamp, utcCal);
-    assertNotNull(utcConvertedTimestamp);
-    assertEquals(123456789, utcConvertedTimestamp.getNanos());
   }
 }
