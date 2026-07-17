@@ -31,6 +31,7 @@ package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -63,8 +64,8 @@ class TracedClientStreamingCallableTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
     tracerFactory =
-        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
-    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private static final SpanName SPAN_NAME = SpanName.of("fake-client", "fake-method");

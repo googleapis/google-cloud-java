@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
@@ -63,8 +64,7 @@ class EndpointContextTest {
             .setClientSettingsEndpoint(DEFAULT_ENDPOINT)
             .setMtlsEndpoint(DEFAULT_MTLS_ENDPOINT)
             .setMtlsProvider(mtlsProvider);
-    statusCode =
-        Mockito.Mockito.mock(StatusCode.class, Mockito.withSettings().withoutAnnotations());
+    statusCode = mock(StatusCode.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.when(statusCode.getCode()).thenReturn(StatusCode.Code.UNAUTHENTICATED);
     Mockito.when(statusCode.getTransportCode()).thenReturn(Status.Code.UNAUTHENTICATED);
   }
@@ -383,7 +383,7 @@ class EndpointContextTest {
 
   @Test
   void endpointContextBuild_shouldUseS2A_tlsEndpoint() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -400,7 +400,7 @@ class EndpointContextTest {
   @Test
   void hasValidUniverseDomain_gdchFlow_anyCredentials() throws IOException {
     Credentials noCredentials = NoCredentialsProvider.create().getCredentials();
-    Credentials validCredentials = Mockito.mock(Credentials.class);
+    Credentials validCredentials = mock(Credentials.class);
     EndpointContext endpointContext =
         defaultEndpointContextBuilder.setUniverseDomain(null).setUsingGDCH(true).build();
     endpointContext.validateUniverseDomain(noCredentials, statusCode);
@@ -426,7 +426,7 @@ class EndpointContextTest {
 
   @Test
   void hasValidUniverseDomain_credentialsInGDU_configInGDU() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     Mockito.when(credentials.getUniverseDomain()).thenReturn(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     EndpointContext endpointContext = defaultEndpointContextBuilder.build();
     endpointContext.validateUniverseDomain(credentials, statusCode);
@@ -435,7 +435,7 @@ class EndpointContextTest {
   // Non-GDU Universe Domain could be any domain, but this test refers uses `test.com`
   @Test
   void hasValidUniverseDomain_credentialsNonGDU_configInGDU() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     Mockito.when(credentials.getUniverseDomain()).thenReturn("test.com");
     EndpointContext endpointContext = defaultEndpointContextBuilder.build();
     assertThrows(
@@ -446,7 +446,7 @@ class EndpointContextTest {
   // Non-GDU Universe Domain could be any domain, but this test refers uses `test.com`
   @Test
   void hasValidUniverseDomain_credentialsNonGDU_configNonGDU() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     Mockito.when(credentials.getUniverseDomain()).thenReturn("test.com");
     EndpointContext endpointContext =
         defaultEndpointContextBuilder.setUniverseDomain("test.com").build();
@@ -456,7 +456,7 @@ class EndpointContextTest {
   // Non-GDU Universe Domain could be any domain, but this test refers uses `test.com`
   @Test
   void hasValidUniverseDomain_credentialsInGDU_configNonGDU() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     Mockito.when(credentials.getUniverseDomain()).thenReturn(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     EndpointContext endpointContext =
         defaultEndpointContextBuilder.setUniverseDomain("test.com").build();
@@ -470,7 +470,7 @@ class EndpointContextTest {
   @Test
   void hasValidUniverseDomain_computeEngineCredentials_noValidationOnUniverseDomain()
       throws IOException {
-    Credentials credentials = Mockito.mock(ComputeEngineCredentials.class);
+    Credentials credentials = mock(ComputeEngineCredentials.class);
     Mockito.when(credentials.getUniverseDomain()).thenReturn(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     EndpointContext endpointContext =
         defaultEndpointContextBuilder
@@ -482,7 +482,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_envVarNotSet_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("false");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -496,7 +496,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_UsingGDCH_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -510,7 +510,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_customEndpointSetViaClientSettings_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -524,7 +524,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_customEndpointSetViaTransportChannelProvider_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -538,7 +538,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_mtlsEndpointNull_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -553,7 +553,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_mtlsEndpointEmpty_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -568,7 +568,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_mtlsEndpointNotGoogleDefaultUniverse_returnsFalse() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder
@@ -583,7 +583,7 @@ class EndpointContextTest {
 
   @Test
   void shouldUseS2A_success() throws IOException {
-    EnvironmentProvider envProvider = Mockito.mock(EnvironmentProvider.class);
+    EnvironmentProvider envProvider = mock(EnvironmentProvider.class);
     Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
     defaultEndpointContextBuilder =
         defaultEndpointContextBuilder

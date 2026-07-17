@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.grpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.grpc.testing.FakeServiceGrpc;
 import com.google.api.gax.grpc.testing.FakeServiceGrpc.FakeServiceImplBase;
 import com.google.api.gax.grpc.testing.InProcessServer;
@@ -74,7 +76,7 @@ class GrpcResponseMetadataTest {
   @BeforeEach
   void setUp() throws Exception {
     String serverName = "fakeservice";
-    FakeServiceImplBase serviceImpl = Mockito.mock(FakeServiceImplBase.class);
+    FakeServiceImplBase serviceImpl = mock(FakeServiceImplBase.class);
     Mockito.doAnswer(
             (Answer<Void>)
                 invocation -> {
@@ -131,7 +133,7 @@ class GrpcResponseMetadataTest {
             .build();
 
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.api.gax.rpc.testing.FakeCallableFactory;
 import com.google.api.gax.rpc.testing.FakeChannel;
@@ -42,7 +44,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class ServerStreamingCallableTest {
   private ClientContext clientContext;
@@ -84,8 +85,9 @@ class ServerStreamingCallableTest {
         stashCallable.withDefaultCallContext(defaultCallContext);
     @SuppressWarnings("unchecked")
     StateCheckingResponseObserver<Integer> observer =
-        Mockito.Mockito.mock(
-            StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
+        mock(
+            StateCheckingResponseObserver.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);
@@ -96,7 +98,7 @@ class ServerStreamingCallableTest {
   @Test
   void testServerStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -105,8 +107,9 @@ class ServerStreamingCallableTest {
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     @SuppressWarnings("unchecked")
     ResponseObserver<Integer> observer =
-        Mockito.Mockito.mock(
-            StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
+        mock(
+            StateCheckingResponseObserver.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer, context);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);
@@ -146,7 +149,7 @@ class ServerStreamingCallableTest {
   @Test
   void testIteratedServerStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -202,7 +205,7 @@ class ServerStreamingCallableTest {
   @Test
   void testFirstElementCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =
@@ -251,7 +254,7 @@ class ServerStreamingCallableTest {
   @Test
   void testAllElementCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     ServerStreamingStashCallable<Integer, Integer> stashCallable =

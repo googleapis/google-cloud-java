@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.gax.retrying.RetrySettings;
@@ -47,9 +48,9 @@ class RetryingCallableTest {
   void futureCall() {
     FakeCallContext fakeCallContext = FakeCallContext.createDefault();
     UnaryCallable innerCallable =
-        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
-    RetryingExecutorWithContext executor = Mockito.mock(RetryingExecutorWithContext.class);
-    RetryingFuture retryingFuture = Mockito.mock(RetryingFuture.class);
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    RetryingExecutorWithContext executor = mock(RetryingExecutorWithContext.class);
+    RetryingFuture retryingFuture = mock(RetryingFuture.class);
     TimedAttemptSettings fakeAttemptSettings =
         TimedAttemptSettings.newBuilder()
             .setRpcTimeout(Duration.of(1, ChronoUnit.SECONDS))

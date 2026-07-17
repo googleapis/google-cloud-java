@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.api.gax.rpc.testing.FakeBatchableApi.SquarerBatchingDescriptor;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -64,7 +65,7 @@ class BatcherFactoryTest {
   void testGetPushingBatcher() {
     final java.time.Duration delayThreshold = java.time.Duration.ofSeconds(1);
     BatchingSettings batchingSettings =
-        Mockito.Mockito.mock(BatchingSettings.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingSettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.when(batchingSettings.getDelayThresholdDuration()).thenReturn(delayThreshold);
     Mockito.when(batchingSettings.getElementCountThreshold()).thenReturn(2L);
     Mockito.when(batchingSettings.getRequestByteThreshold()).thenReturn(1000L);

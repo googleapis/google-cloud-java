@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.retrying.RetrySettings;
@@ -37,7 +39,6 @@ import com.google.common.collect.Sets;
 import com.google.common.truth.Truth;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class BatchingCallSettingsTest {
 
@@ -45,7 +46,7 @@ class BatchingCallSettingsTest {
   void testEmptyBuilder() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
@@ -71,13 +72,13 @@ class BatchingCallSettingsTest {
   void testBuilder() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController = mock(FlowController.class);
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -115,13 +116,13 @@ class BatchingCallSettingsTest {
   void testBuilderFromSettings() throws Exception {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController = mock(FlowController.class);
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -154,7 +155,7 @@ class BatchingCallSettingsTest {
   void testNoFlowControlSettings() throws Exception {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
@@ -172,13 +173,13 @@ class BatchingCallSettingsTest {
   void testToString() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController = mock(FlowController.class);
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
 

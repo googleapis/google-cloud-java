@@ -30,6 +30,7 @@
 package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -118,7 +119,7 @@ class HttpJsonDirectCallableTest {
               return t;
             });
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(

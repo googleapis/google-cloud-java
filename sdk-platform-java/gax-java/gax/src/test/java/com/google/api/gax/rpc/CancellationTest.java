@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
@@ -56,7 +58,7 @@ class CancellationTest {
 
   @SuppressWarnings("unchecked")
   private UnaryCallable<Integer, Integer> callInt =
-      Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+      mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
 
   private static final RetrySettings FAST_RETRY_SETTINGS =
       RetrySettings.newBuilder()

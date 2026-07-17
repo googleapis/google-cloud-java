@@ -34,6 +34,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -60,11 +61,12 @@ class TracedBatchingCallableTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
     tracerFactory =
-        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
-    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
-    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");

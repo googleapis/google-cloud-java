@@ -35,6 +35,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -48,7 +49,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -57,7 +57,8 @@ class CallableTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
-    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private UnaryCallable<String, String> innerCallable;
@@ -185,9 +186,7 @@ class CallableTest {
     doReturn(callContext).when(callContext).withStreamIdleTimeoutDuration(eq(timeout));
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
-            java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            mock(ApiClock.class), java.time.Duration.ZERO, mock(ScheduledExecutorService.class));
     ClientContext clientContext =
         ClientContext.newBuilder()
             .setStreamWatchdog(watchdog)

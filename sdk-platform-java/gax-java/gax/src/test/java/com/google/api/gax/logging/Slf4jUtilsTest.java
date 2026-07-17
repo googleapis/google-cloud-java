@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -47,7 +48,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.slf4j.Logger;
 import org.slf4j.event.Level;
 import org.slf4j.helpers.NOPLogger;
@@ -180,7 +180,7 @@ class Slf4jUtilsTest {
 
   LoggerProvider setUpLoggerProviderMock(TestLogger testLogger) {
     LoggerProvider loggerProvider =
-        Mockito.mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
+        mock(LoggerProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(testLogger);
     return loggerProvider;
   }
@@ -268,7 +268,7 @@ class Slf4jUtilsTest {
   @Test
   void testLogRequest_infoEnabled_debugDisabled() {
     Object message = new Object(); // not used in info path
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder = mock(LogData.Builder.class);
 
     LogData.Builder testLogDataBuilder =
         LogData.builder().serviceName("service-name").rpcName("rpc-name");
@@ -293,7 +293,7 @@ class Slf4jUtilsTest {
             .addOptions(Option.newBuilder().setName("opt_name2").build())
             .build();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder = mock(LogData.Builder.class);
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")
@@ -319,7 +319,7 @@ class Slf4jUtilsTest {
     String status = "OK";
     Map<String, Object> responseData = new HashMap<>();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder = mock(LogData.Builder.class);
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")
@@ -342,7 +342,7 @@ class Slf4jUtilsTest {
     String status = "OK";
     Map<String, Object> responseData = new HashMap<>();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder = mock(LogData.Builder.class);
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")

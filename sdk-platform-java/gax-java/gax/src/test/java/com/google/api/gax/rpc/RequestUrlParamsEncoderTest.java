@@ -31,13 +31,13 @@
 package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class RequestUrlParamsEncoderTest {
 
@@ -84,8 +84,9 @@ class RequestUrlParamsEncoderTest {
     @SuppressWarnings("unchecked")
     RequestParamsExtractor<String> extractor =
         (RequestParamsExtractor<String>)
-            Mockito.Mockito.mock(
-                RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
+            mock(
+                RequestParamsExtractor.class,
+                org.mockito.Mockito.withSettings().withoutAnnotations());
     when(extractor.extract(key)).thenReturn(output);
     return extractor;
   }

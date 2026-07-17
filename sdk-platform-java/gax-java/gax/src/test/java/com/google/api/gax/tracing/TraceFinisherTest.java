@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.tracing;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -44,7 +45,7 @@ class TraceFinisherTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
-    mockTracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    mockTracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private ApiTracer mockTracer;

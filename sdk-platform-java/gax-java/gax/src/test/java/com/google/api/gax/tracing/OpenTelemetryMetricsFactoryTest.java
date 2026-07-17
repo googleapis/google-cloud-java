@@ -31,6 +31,7 @@ package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;
@@ -54,8 +55,8 @@ class OpenTelemetryMetricsFactoryTest {
     ApiTracerFactory factoryWithContext = tracerFactory.withContext(context);
     ApiTracer actual =
         factoryWithContext.newTracer(
-            Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()),
-            Mockito.mock(SpanName.class, Mockito.withSettings().withoutAnnotations()),
+            mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
+            mock(SpanName.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
             ApiTracerFactory.OperationType.Unary);
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
     assertThat(factoryWithContext).isNotEqualTo(tracerFactory);
@@ -65,8 +66,8 @@ class OpenTelemetryMetricsFactoryTest {
   void newTracerWithSpanName_shouldCreateBaseTracer_ifMetricsRecorderIsNull() {
     ApiTracer actual =
         tracerFactory.newTracer(
-            Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()),
-            Mockito.mock(SpanName.class, Mockito.withSettings().withoutAnnotations()),
+            mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
+            mock(SpanName.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
             ApiTracerFactory.OperationType.Unary);
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
   }
@@ -83,7 +84,7 @@ class OpenTelemetryMetricsFactoryTest {
     ApiTracerFactory factoryWithContext = tracerFactory.withContext(clientLevelTracerContext);
     ApiTracer actual =
         factoryWithContext.newTracer(
-            Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()),
+            mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
             methodLevelTracerContext);
 
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
@@ -129,7 +130,7 @@ class OpenTelemetryMetricsFactoryTest {
     OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracer actual =
         factory.newTracer(
-            Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()),
+            mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations()),
             mock(ApiTracerContext.class));
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);

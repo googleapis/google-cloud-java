@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -56,10 +57,11 @@ class TracedUnaryCallableTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
     tracerFactory =
-        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
-    parentTracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    parentTracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private static final ApiTracerContext TRACER_CONTEXT =

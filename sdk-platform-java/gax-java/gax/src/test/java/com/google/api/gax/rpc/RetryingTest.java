@@ -32,6 +32,7 @@ package com.google.api.gax.rpc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -58,7 +59,7 @@ class RetryingTest {
 
   @SuppressWarnings("unchecked")
   private UnaryCallable<Integer, Integer> callInt =
-      Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+      mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
 
   private RecordingScheduler executor;
   private FakeApiClock fakeClock;

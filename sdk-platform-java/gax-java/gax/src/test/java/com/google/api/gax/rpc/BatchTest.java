@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.api.gax.rpc.testing.FakeBatchableApi.SQUARER_BATCHING_DESC;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.batching.ElementCounter;
 import com.google.api.gax.rpc.Batch.BatchByteCounter;
@@ -41,7 +42,6 @@ import com.google.common.truth.Truth;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class BatchTest {
 
@@ -121,7 +121,7 @@ class BatchTest {
   private Batch<LabeledIntList, List<Integer>> createBatch(LabeledIntList request) {
     @SuppressWarnings("unchecked")
     UnaryCallable<FakeBatchableApi.LabeledIntList, List<Integer>> callable =
-        Mockito.Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     return createBatch(request, callable);
   }
 

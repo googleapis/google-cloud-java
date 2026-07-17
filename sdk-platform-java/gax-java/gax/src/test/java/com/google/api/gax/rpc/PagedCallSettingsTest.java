@@ -29,13 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.common.collect.Sets;
 import com.google.common.truth.Truth;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class PagedCallSettingsTest {
 
@@ -43,8 +44,9 @@ class PagedCallSettingsTest {
   void testEmptyBuilder() {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.Mockito.mock(
-            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
+        mock(
+            PagedListResponseFactory.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 
@@ -65,8 +67,9 @@ class PagedCallSettingsTest {
   void testBuilder() {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.Mockito.mock(
-            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
+        mock(
+            PagedListResponseFactory.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 
@@ -99,8 +102,9 @@ class PagedCallSettingsTest {
   void testBuilderFromSettings() throws Exception {
     @SuppressWarnings("unchecked")
     PagedListResponseFactory<Integer, String, Long> pagedListResponseFactory =
-        Mockito.Mockito.mock(
-            PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
+        mock(
+            PagedListResponseFactory.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     PagedCallSettings.Builder<Integer, String, Long> builder =
         PagedCallSettings.newBuilder(pagedListResponseFactory);
 

@@ -78,7 +78,7 @@ class OpenTelemetryTracingFactoryTest {
     when(spanBuilder.startSpan()).thenReturn(span);
 
     validMetadata =
-        Mockito.mock(LibraryMetadata.class, Mockito.withSettings().withoutAnnotations());
+        mock(LibraryMetadata.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(validMetadata.artifactName()).thenReturn("gax-java");
     when(validMetadata.version()).thenReturn("2.1.0");
   }
@@ -411,7 +411,7 @@ class OpenTelemetryTracingFactoryTest {
   @Test
   void testWithContext_nullVersion_createsFactorySuccessfully() {
     LibraryMetadata metadata =
-        Mockito.mock(LibraryMetadata.class, Mockito.withSettings().withoutAnnotations());
+        mock(LibraryMetadata.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(metadata.artifactName()).thenReturn("gax-java");
     when(metadata.version()).thenReturn(null);
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();

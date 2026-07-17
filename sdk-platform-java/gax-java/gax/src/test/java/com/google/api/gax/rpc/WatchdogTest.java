@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.BackgroundResource;
@@ -217,7 +218,7 @@ class WatchdogTest {
   @Test
   @SuppressWarnings("unchecked")
   void testWatchdogBeingClosed() {
-    ScheduledFuture future = Mockito.mock(ScheduledFuture.class);
+    ScheduledFuture future = mock(ScheduledFuture.class);
     ScheduledExecutorService mockExecutor = getMockExecutorService(future);
     Watchdog underTest = Watchdog.createDuration(clock, checkInterval, mockExecutor);
     assertThat(underTest).isInstanceOf(BackgroundResource.class);
@@ -239,7 +240,7 @@ class WatchdogTest {
   void awaitTermination_shouldReturnTrueIfFutureIsDone() throws Exception {
     int duration = 1000;
     TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-    ScheduledFuture future = Mockito.mock(ScheduledFuture.class);
+    ScheduledFuture future = mock(ScheduledFuture.class);
     ScheduledExecutorService mockExecutor = getMockExecutorService(future);
     Watchdog watchdog = Watchdog.createDuration(clock, checkInterval, mockExecutor);
     watchdog.shutdown();
@@ -253,7 +254,7 @@ class WatchdogTest {
   void awaitTermination_shouldReturnFalseIfGettingFutureTimedOut() throws Exception {
     int duration = 1000;
     TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-    ScheduledFuture future = Mockito.mock(ScheduledFuture.class);
+    ScheduledFuture future = mock(ScheduledFuture.class);
     Mockito.doThrow(new TimeoutException()).when(future).get(duration, timeUnit);
     ScheduledExecutorService mockExecutor = getMockExecutorService(future);
     Watchdog watchdog = Watchdog.createDuration(clock, checkInterval, mockExecutor);
@@ -267,7 +268,7 @@ class WatchdogTest {
   void awaitTermination_shouldReturnTrueIfFutureIsAlreadyCancelled() throws Exception {
     int duration = 1000;
     TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-    ScheduledFuture future = Mockito.mock(ScheduledFuture.class);
+    ScheduledFuture future = mock(ScheduledFuture.class);
     Mockito.doThrow(new CancellationException()).when(future).get(duration, timeUnit);
     ScheduledExecutorService mockExecutor = getMockExecutorService(future);
     Watchdog watchdog = Watchdog.createDuration(clock, checkInterval, mockExecutor);
@@ -282,7 +283,7 @@ class WatchdogTest {
       throws Exception {
     int duration = 1000;
     TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-    ScheduledFuture future = Mockito.mock(ScheduledFuture.class);
+    ScheduledFuture future = mock(ScheduledFuture.class);
     Mockito.doThrow(new ExecutionException(new RuntimeException()))
         .when(future)
         .get(duration, timeUnit);
@@ -295,7 +296,7 @@ class WatchdogTest {
   }
 
   private ScheduledExecutorService getMockExecutorService(ScheduledFuture future) {
-    ScheduledExecutorService mockExecutor = Mockito.mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
     Mockito.when(
             mockExecutor.scheduleAtFixedRate(
                 Mockito.any(Watchdog.class),

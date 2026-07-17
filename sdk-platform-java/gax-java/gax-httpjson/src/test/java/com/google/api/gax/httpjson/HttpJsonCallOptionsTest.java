@@ -32,10 +32,10 @@ package com.google.api.gax.httpjson;
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static com.google.api.gax.util.TimeConversionTestUtils.testInstantMethod;
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.tracing.ApiTracer;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 public class HttpJsonCallOptionsTest {
   private final HttpJsonCallOptions.Builder OPTIONS_BUILDER = HttpJsonCallOptions.newBuilder();
@@ -43,7 +43,7 @@ public class HttpJsonCallOptionsTest {
   @Test
   void testTracer() {
     ApiTracer tracer =
-        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     HttpJsonCallOptions options = OPTIONS_BUILDER.setTracer(tracer).build();
     assertThat(options.getTracer()).isSameInstanceAs(tracer);
   }

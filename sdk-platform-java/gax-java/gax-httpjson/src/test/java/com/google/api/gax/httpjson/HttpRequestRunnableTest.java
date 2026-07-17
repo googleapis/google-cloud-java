@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.httpjson;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.testing.http.MockHttpTransport;
@@ -95,7 +97,7 @@ class HttpRequestRunnableTest {
             .setRequestBodyExtractor(request -> null)
             .build();
 
-    responseParser = Mockito.mock(HttpResponseParser.class);
+    responseParser = mock(HttpResponseParser.class);
   }
 
   @Test
@@ -127,7 +129,7 @@ class HttpRequestRunnableTest {
   @Test
   void testApiTracerRequestUrlResolved() throws IOException {
     ApiTracer tracer =
-        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ApiMethodDescriptor<Field, Empty> methodDescriptor =
         ApiMethodDescriptor.<Field, Empty>newBuilder()
             .setFullMethodName("house.cat.get")

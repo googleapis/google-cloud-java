@@ -33,6 +33,7 @@ import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -59,7 +60,6 @@ import java.util.Map;
 import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class GrpcCallContextTest {
 
@@ -77,7 +77,7 @@ class GrpcCallContextTest {
 
   @Test
   void testWithCredentials() {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
     GrpcCallContext emptyContext = GrpcCallContext.createDefault();
     assertNull(emptyContext.getCallOptions().getCredentials());
     GrpcCallContext context = emptyContext.withCredentials(credentials);
@@ -86,7 +86,7 @@ class GrpcCallContextTest {
 
   @Test
   void testWithTransportChannel() {
-    ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel channel = mock(ManagedChannel.class);
     GrpcCallContext context =
         GrpcCallContext.createDefault().withTransportChannel(GrpcTransportChannel.create(channel));
     Truth.assertThat(context.getChannel()).isSameInstanceAs(channel);
@@ -105,8 +105,8 @@ class GrpcCallContextTest {
 
   @Test
   void testWithTransportChannelIsDirectPath() {
-    ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-    Credentials credentials = Mockito.mock(GoogleCredentials.class);
+    ManagedChannel channel = mock(ManagedChannel.class);
+    Credentials credentials = mock(GoogleCredentials.class);
     GrpcCallContext context = GrpcCallContext.createDefault().withCredentials(credentials);
     assertNotNull(context.getCallOptions().getCredentials());
     context =
@@ -345,8 +345,8 @@ class GrpcCallContextTest {
 
   @Test
   void testMergeWithIsDirectPath() {
-    ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-    CallCredentials callCredentials = Mockito.mock(CallCredentials.class);
+    ManagedChannel channel = mock(ManagedChannel.class);
+    CallCredentials callCredentials = mock(CallCredentials.class);
     GrpcCallContext ctx1 =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCallCredentials(callCredentials));
@@ -398,7 +398,7 @@ class GrpcCallContextTest {
   @Test
   void testMergeWithTracer() {
     ApiTracer explicitTracer =
-        Mockito.Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     GrpcCallContext ctxWithExplicitTracer =
         GrpcCallContext.createDefault().withTracer(explicitTracer);
 
@@ -421,7 +421,7 @@ class GrpcCallContextTest {
   @Test
   void testWithRetrySettings() {
     RetrySettings retrySettings =
-        Mockito.Mockito.mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
+        mock(RetrySettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     GrpcCallContext emptyContext = GrpcCallContext.createDefault();
     assertNull(emptyContext.getRetrySettings());
     GrpcCallContext context = emptyContext.withRetrySettings(retrySettings);

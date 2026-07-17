@@ -32,6 +32,7 @@ package com.google.api.gax.tracing;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -76,9 +77,10 @@ class TracedCallableTest {
   @BeforeEach
   void setUp() {
     tracerFactory =
-        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
-    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory

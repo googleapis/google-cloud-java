@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.httpjson;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.httpjson.ApiMethodDescriptor.MethodType;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -137,7 +139,7 @@ class HttpJsonDirectServerStreamingCallableTest {
                 .build(),
             new HttpJsonHeaderInterceptor(Collections.singletonMap("header-key", "headerValue")));
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(

@@ -34,6 +34,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
@@ -62,7 +63,7 @@ class MetricsTracerTest {
   @BeforeEach
   void setUp() {
     metricsRecorder =
-        Mockito.mock(MetricsRecorder.class, Mockito.withSettings().withoutAnnotations());
+        mock(MetricsRecorder.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     metricsTracer =
         new MetricsTracer(MethodName.of("fake_service", "fake_method"), metricsRecorder);
   }

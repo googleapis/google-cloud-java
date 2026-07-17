@@ -62,10 +62,11 @@ class BasicRetryingFutureTest {
     Callable<Integer> callable = mock(Callable.class);
     @SuppressWarnings("unchecked")
     RetryAlgorithm<Integer> retryAlgorithm =
-        Mockito.mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+        mock(RetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     RetryingContext retryingContext =
-        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
-    ApiTracer tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    ApiTracer tracer =
+        mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     TimedAttemptSettings timedAttemptSettings = mock(TimedAttemptSettings.class);
     java.time.Duration testDuration = java.time.Duration.ofMillis(123);
     Mockito.when(timedAttemptSettings.getRandomizedRetryDelayDuration()).thenReturn(testDuration);
@@ -113,10 +114,11 @@ class BasicRetryingFutureTest {
     Callable<Integer> callable = mock(Callable.class);
     @SuppressWarnings("unchecked")
     RetryAlgorithm<Integer> retryAlgorithm =
-        Mockito.mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+        mock(RetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     RetryingContext retryingContext =
-        Mockito.mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
-    ApiTracer tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    ApiTracer tracer =
+        mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     TimedAttemptSettings timedAttemptSettings = mock(TimedAttemptSettings.class);
     Mockito.when(retryingContext.getTracer()).thenReturn(tracer);
 

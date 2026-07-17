@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.paging.FixedSizeCollection;
@@ -65,7 +66,7 @@ class PagingTest {
 
   @SuppressWarnings("unchecked")
   UnaryCallable<Integer, List<Integer>> callIntList =
-      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+      mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
 
   @Test
   void nonPaged() {

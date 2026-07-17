@@ -40,6 +40,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -77,7 +78,7 @@ public abstract class AbstractRetryingExecutorTest {
 
   @BeforeEach
   void setup() {
-    tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 

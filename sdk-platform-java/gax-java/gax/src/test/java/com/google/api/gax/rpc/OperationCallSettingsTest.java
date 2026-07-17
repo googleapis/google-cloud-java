@@ -29,13 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.common.truth.Truth;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class OperationCallSettingsTest {
 
@@ -59,8 +60,7 @@ class OperationCallSettingsTest {
             .setRetryableCodes(Code.UNAVAILABLE)
             .build();
     TimedRetryAlgorithm pollingAlgorithm =
-        Mockito.Mockito.mock(
-            TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ResponseTransformer responseTransformer = new ResponseTransformer();
     MetadataTransformer metadataTransformer = new MetadataTransformer();
 
@@ -90,8 +90,7 @@ class OperationCallSettingsTest {
             .setRetryableCodes(Code.UNAVAILABLE)
             .build();
     TimedRetryAlgorithm pollingAlgorithm =
-        Mockito.Mockito.mock(
-            TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ResponseTransformer responseTransformer = new ResponseTransformer();
     MetadataTransformer metadataTransformer = new MetadataTransformer();
 

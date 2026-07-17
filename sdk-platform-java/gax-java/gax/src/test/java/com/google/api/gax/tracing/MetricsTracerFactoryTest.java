@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.tracing;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
@@ -49,12 +50,12 @@ class MetricsTracerFactoryTest {
   @BeforeEach
   void setUp() {
     metricsRecorder =
-        Mockito.mock(MetricsRecorder.class, Mockito.withSettings().withoutAnnotations());
-    parent = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+        mock(MetricsRecorder.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    parent = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     // Create an instance of MetricsTracerFactory with the mocked MetricsRecorder
     metricsTracerFactory = new MetricsTracerFactory(metricsRecorder);
 
-    spanName = Mockito.mock(SpanName.class, Mockito.withSettings().withoutAnnotations());
+    spanName = mock(SpanName.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(spanName.getClientName()).thenReturn("testService");
     when(spanName.getMethodName()).thenReturn("testMethod");
   }

@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.StatusCode;
@@ -73,12 +74,12 @@ class HttpJsonClientCallsTest {
 
   @BeforeEach
   void setUp() throws IOException {
-    credentials = Mockito.mock(Credentials.class);
+    credentials = mock(Credentials.class);
     endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
-    mockChannel = Mockito.mock(HttpJsonChannel.class);
-    descriptor = Mockito.mock(ApiMethodDescriptor.class);
-    callOptions = Mockito.mock(HttpJsonCallOptions.class);
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    mockChannel = mock(HttpJsonChannel.class);
+    descriptor = mock(ApiMethodDescriptor.class);
+    callOptions = mock(HttpJsonCallOptions.class);
 
     callContext =
         HttpJsonCallContext.of(mockChannel, callOptions)
@@ -144,7 +145,7 @@ class HttpJsonClientCallsTest {
   @Test
   void testGetMetadataWithTraceContext() {
     com.google.api.gax.tracing.ApiTracer mockTracer =
-        Mockito.mock(com.google.api.gax.tracing.ApiTracer.class);
+        mock(com.google.api.gax.tracing.ApiTracer.class);
     Mockito.doAnswer(
             invocation -> {
               java.util.Map<String, String> carrier = invocation.getArgument(0);

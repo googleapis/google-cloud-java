@@ -53,8 +53,8 @@ class CompositeTracerTest {
 
   @BeforeEach
   void setUp() {
-    child1 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
-    child2 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    child1 = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    child2 = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     compositeTracer = new CompositeTracer(Arrays.asList(child1, child2));
   }
 

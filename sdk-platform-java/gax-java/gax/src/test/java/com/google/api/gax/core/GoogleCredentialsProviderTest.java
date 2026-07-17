@@ -31,6 +31,7 @@ package com.google.api.gax.core;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -38,7 +39,6 @@ import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.common.collect.ImmutableList;
 import java.security.PrivateKey;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class GoogleCredentialsProviderTest {
   ServiceAccountCredentials CreateServiceAccountCredentials() {
@@ -46,7 +46,7 @@ class GoogleCredentialsProviderTest {
         .setClientId("fake-client-id")
         .setClientEmail("fake@example.com")
         .setPrivateKeyId("fake-private-key")
-        .setPrivateKey(Mockito.mock(PrivateKey.class))
+        .setPrivateKey(mock(PrivateKey.class))
         .build();
   }
 

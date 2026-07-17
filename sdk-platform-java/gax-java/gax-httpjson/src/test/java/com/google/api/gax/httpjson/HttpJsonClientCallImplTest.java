@@ -30,6 +30,7 @@
 package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -221,7 +222,7 @@ class HttpJsonClientCallImplTest {
         new HttpJsonDirectCallable<>(FAKE_METHOD_DESCRIPTOR);
 
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.lenient()
         .doNothing()
         .when(endpointContext)
@@ -268,7 +269,7 @@ class HttpJsonClientCallImplTest {
         new HttpJsonDirectServerStreamingCallable<>(methodServerStreaming);
 
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.lenient()
         .doNothing()
         .when(endpointContext)

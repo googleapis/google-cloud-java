@@ -30,6 +30,7 @@
 package com.google.api.gax.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 
 import com.google.api.gax.retrying.RetrySettings;
@@ -68,9 +69,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class TimeoutTest {
 
   @org.junit.jupiter.api.BeforeEach
-  void setUp() {
+  void initParamsExtractor() {
     paramsExtractor =
-        Mockito.mock(RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
+        mock(RequestParamsExtractor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
   }
 
   private static final String CALL_OPTIONS_AUTHORITY = "RETRYING_TEST";
@@ -95,7 +96,7 @@ class TimeoutTest {
   @BeforeAll
   public static void setUp() throws IOException {
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -344,7 +345,7 @@ class TimeoutTest {
             .build();
 
     @SuppressWarnings("unchecked")
-    ClientCall<String, String> clientCall = Mockito.mock(ClientCall.class);
+    ClientCall<String, String> clientCall = mock(ClientCall.class);
     Mockito.doReturn(clientCall)
         .when(managedChannel)
         .newCall(ArgumentMatchers.eq(methodDescriptor), ArgumentMatchers.any(CallOptions.class));
@@ -405,7 +406,7 @@ class TimeoutTest {
             .build();
 
     @SuppressWarnings("unchecked")
-    ClientCall<String, String> clientCall = Mockito.mock(ClientCall.class);
+    ClientCall<String, String> clientCall = mock(ClientCall.class);
     Mockito.doReturn(clientCall)
         .when(managedChannel)
         .newCall(ArgumentMatchers.eq(methodDescriptor), ArgumentMatchers.any(CallOptions.class));

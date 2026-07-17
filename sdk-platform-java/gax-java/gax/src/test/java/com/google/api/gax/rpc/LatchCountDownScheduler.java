@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -39,7 +40,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -48,7 +48,7 @@ public abstract class LatchCountDownScheduler implements ScheduledExecutorServic
       final CountDownLatch latch,
       final long delayBeforeCountDown,
       final long extraDelayAfterCountDown) {
-    LatchCountDownScheduler mock = Mockito.mock(LatchCountDownScheduler.class);
+    LatchCountDownScheduler mock = mock(LatchCountDownScheduler.class);
 
     // mock class fields:
     final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);

@@ -30,6 +30,7 @@
 package com.google.api.gax.grpc;
 
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_SERVER_STREAMING_RECOGNIZE;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.testing.FakeServiceImpl;
@@ -86,7 +87,7 @@ class GrpcDirectServerStreamingCallableTest {
     inprocessServer.start();
 
     EndpointContext endpointContext =
-        Mockito.Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+        mock(EndpointContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
