@@ -2616,6 +2616,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String sql = getExportedKeysSqlContent();
     String formattedSql = replaceSqlParameters(sql, catalog, schema);
     PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
+    if (stmt == null) {
+      throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
+    }
     try {
       stmt.closeOnCompletion();
       stmt.setString(1, table);
