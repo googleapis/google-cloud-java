@@ -33,9 +33,11 @@ import com.google.api.gax.rpc.ClientStream;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
@@ -66,6 +68,9 @@ public class StreamingSubscriberConnectionTest {
   private FakeScheduledExecutorService executor;
   private FakeClock clock;
   private SubscriberStub mockSubscriberStub;
+  private BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable;
+  private UnaryCallable<AcknowledgeRequest, Empty> mockAcknowledgeCallable;
+  private UnaryCallable<ModifyAckDeadlineRequest, Empty> mockModifyAckDeadlineCallable;
 
   private static final String MOCK_SUBSCRIPTION_NAME =
       "projects/MOCK-PROJECT/subscriptions/MOCK-SUBSCRIPTION";
@@ -103,10 +108,15 @@ public class StreamingSubscriberConnectionTest {
     systemExecutor = new FakeScheduledExecutorService();
     executor = new FakeScheduledExecutorService();
     clock = systemExecutor.getClock();
-    mockSubscriberStub =
-        mock(
-            SubscriberStub.class,
-            withSettings().withoutAnnotations().defaultAnswer(RETURNS_DEEP_STUBS));
+
+    mockStreamingCallable = mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
+    mockAcknowledgeCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    mockModifyAckDeadlineCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
+
+    mockSubscriberStub = mock(SubscriberStub.class, withSettings().withoutAnnotations());
+    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
+    when(mockSubscriberStub.acknowledgeCallable()).thenReturn(mockAcknowledgeCallable);
+    when(mockSubscriberStub.modifyAckDeadlineCallable()).thenReturn(mockModifyAckDeadlineCallable);
   }
 
   @After
@@ -391,12 +401,9 @@ public class StreamingSubscriberConnectionTest {
     systemExecutor.advanceTime(Duration.ofSeconds(200));
 
     // Assert expected behavior
-    verify(mockSubscriberStub.modifyAckDeadlineCallable(), times(1))
-        .futureCall(modifyAckDeadlineRequestNack);
-    verify(mockSubscriberStub.modifyAckDeadlineCallable(), times(1))
-        .futureCall(modifyAckDeadlineRequestInitial);
-    verify(mockSubscriberStub.modifyAckDeadlineCallable(), times(1))
-        .futureCall(modifyAckDeadlineRequestRetry);
+    verify(mockModifyAckDeadlineCallable, times(1)).futureCall(modifyAckDeadlineRequestNack);
+    verify(mockModifyAckDeadlineCallable, times(1)).futureCall(modifyAckDeadlineRequestInitial);
+    verify(mockModifyAckDeadlineCallable, times(1)).futureCall(modifyAckDeadlineRequestRetry);
     verify(mockSubscriberStub, never()).acknowledgeCallable();
 
     try {
@@ -511,9 +518,8 @@ public class StreamingSubscriberConnectionTest {
     systemExecutor.advanceTime(Duration.ofMillis(200));
 
     // Assert expected behavior;
-    verify(mockSubscriberStub.acknowledgeCallable(), times(1))
-        .futureCall(acknowledgeRequestInitial);
-    verify(mockSubscriberStub.acknowledgeCallable(), times(1))
+    verify(mockAcknowledgeCallable, times(1)).futureCall(acknowledgeRequestInitial);
+    verify(mockAcknowledgeCallable, times(1))
         .futureCall(
             argThat(new CustomArgumentMatchers.AcknowledgeRequestMatcher(acknowledgeRequestRetry)));
     verify(mockSubscriberStub, never()).modifyAckDeadlineCallable();
@@ -577,7 +583,7 @@ public class StreamingSubscriberConnectionTest {
     systemExecutor.advanceTime(Duration.ofMillis(200));
 
     // Assert expected behavior;
-    verify(mockSubscriberStub.acknowledgeCallable(), times(2)).futureCall(acknowledgeRequest);
+    verify(mockAcknowledgeCallable, times(2)).futureCall(acknowledgeRequest);
     verify(mockSubscriberStub, never()).modifyAckDeadlineCallable();
 
     try {
@@ -677,8 +683,7 @@ public class StreamingSubscriberConnectionTest {
               .setSubscription(MOCK_SUBSCRIPTION_NAME)
               .addAllAckIds(mockAckIdsInRequest)
               .build();
-      verify(mockSubscriberStub.acknowledgeCallable(), times(1))
-          .futureCall(expectedAcknowledgeRequest);
+      verify(mockAcknowledgeCallable, times(1)).futureCall(expectedAcknowledgeRequest);
 
       ModifyAckDeadlineRequest expectedModifyAckDeadlineRequest =
           ModifyAckDeadlineRequest.newBuilder()
@@ -686,18 +691,14 @@ public class StreamingSubscriberConnectionTest {
               .addAllAckIds(mockAckIdsInRequest)
               .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT_SECONDS)
               .build();
-      verify(mockSubscriberStub.modifyAckDeadlineCallable(), times(1))
-          .futureCall(expectedModifyAckDeadlineRequest);
+      verify(mockModifyAckDeadlineCallable, times(1)).futureCall(expectedModifyAckDeadlineRequest);
     }
   }
 
   @Test
   public void testClientPinger_pingSent() {
-    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
-    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
         .thenReturn(mockClientStream);
 
@@ -737,11 +738,8 @@ public class StreamingSubscriberConnectionTest {
 
   @Test
   public void testClientPinger_pingsNotSentWhenDisabled() {
-    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
-    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
         .thenReturn(mockClientStream);
 
@@ -763,13 +761,10 @@ public class StreamingSubscriberConnectionTest {
 
   @Test
   public void testServerMonitor_timesOut() {
-    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
         ArgumentCaptor.forClass(ResponseObserver.class);
-    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(observerCaptor.capture(), any()))
         .thenReturn(mockClientStream);
 
@@ -813,13 +808,10 @@ public class StreamingSubscriberConnectionTest {
 
   @Test
   public void testServerMonitor_doesNotTimeOutIfResponseReceived() {
-    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
-        mock(BidiStreamingCallable.class, withSettings().withoutAnnotations());
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
         ArgumentCaptor.forClass(ResponseObserver.class);
-    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockStreamingCallable.splitCall(observerCaptor.capture(), any()))
         .thenReturn(mockClientStream);
 
