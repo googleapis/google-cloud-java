@@ -79,7 +79,7 @@ run-it-standalone:
 # Commands for dockerized environments
 .docker-run: | 
 	docker run \
-		$(interactive) \
+		$(DOCKER_INTERACTIVE_OPTS) \
 		--cap-add=NET_ADMIN \
 		-v $(GOOGLE_APPLICATION_CREDENTIALS):/auth/application_creds.json \
 		-v "$(GOOGLE_APPLICATION_CREDENTIALS).p12":/auth/application_creds.p12 \
@@ -99,10 +99,10 @@ docker-proxy-build:
 	docker build --target proxy -t $(PROXY_CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
 
 docker-session:
-	$(MAKE) .docker-run args="bash" interactive="-it"
+	$(MAKE) .docker-run args="bash" DOCKER_INTERACTIVE_OPTS="-it"
 
 docker-proxy-session:
-	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash" interactive="-it"
+	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash" DOCKER_INTERACTIVE_OPTS="-it"
 
 docker-package-all-dependencies: docker-build
 	mkdir -p $(PACKAGE_DESTINATION)
