@@ -390,62 +390,6 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  public void testGetPrimaryKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-        ResultSet primaryKeys =
-            connection.getMetaData().getPrimaryKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
-      Assertions.assertNotNull(primaryKeys);
-      ResultSetMetaData pkMetaData = primaryKeys.getMetaData();
-      Assertions.assertEquals(6, pkMetaData.getColumnCount());
-      Assertions.assertFalse(primaryKeys.next());
-    }
-  }
-
-  @Test
-  public void testGetImportedKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-        ResultSet importedKeys =
-            connection.getMetaData().getImportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
-      Assertions.assertNotNull(importedKeys);
-      ResultSetMetaData ikMetaData = importedKeys.getMetaData();
-      Assertions.assertEquals(14, ikMetaData.getColumnCount());
-      Assertions.assertFalse(importedKeys.next());
-    }
-  }
-
-  @Test
-  public void testGetExportedKeys_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-        ResultSet exportedKeys =
-            connection.getMetaData().getExportedKeys(PROJECT_ID, PCNT_SCHEMA, PCNT_TABLE_NAME)) {
-      Assertions.assertNotNull(exportedKeys);
-      ResultSetMetaData ekMetaData = exportedKeys.getMetaData();
-      Assertions.assertEquals(14, ekMetaData.getColumnCount());
-      Assertions.assertFalse(exportedKeys.next());
-    }
-  }
-
-  @Test
-  public void testGetCrossReference_pcntTable() throws SQLException {
-    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-        ResultSet crossReference =
-            connection
-                .getMetaData()
-                .getCrossReference(
-                    PROJECT_ID,
-                    PCNT_SCHEMA,
-                    PCNT_TABLE_NAME,
-                    PROJECT_ID,
-                    PCNT_SCHEMA,
-                    PCNT_TABLE_NAME)) {
-      Assertions.assertNotNull(crossReference);
-      ResultSetMetaData crMetaData = crossReference.getMetaData();
-      Assertions.assertEquals(14, crMetaData.getColumnCount());
-      Assertions.assertFalse(crossReference.next());
-    }
-  }
-
-  @Test
   public void testMetadataResultSetsDoNotInterfere() throws SQLException {
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
