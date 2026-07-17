@@ -51,7 +51,15 @@ class BigQueryTypeCoercionUtility {
     if (cal == null) {
       return Calendar.getInstance();
     }
-    return (Calendar) cal.clone();
+    Object cloned = cal.clone();
+    if (cloned instanceof Calendar) {
+      return (Calendar) cloned;
+    }
+    Calendar safeCal = Calendar.getInstance();
+    if (cal.getTimeZone() != null) {
+      safeCal.setTimeZone(cal.getTimeZone());
+    }
+    return safeCal;
   }
 
   /**
