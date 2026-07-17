@@ -11,6 +11,5 @@
   "repo_short": "java-bigqueryconnection",
   "distribution_name": "com.google.cloud:google-cloud-bigqueryconnection",
   "api_id": "bigqueryconnection.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }
