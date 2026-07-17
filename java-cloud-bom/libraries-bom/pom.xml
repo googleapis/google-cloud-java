@@ -44,7 +44,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <first-party-dependencies.version>3.65.0-SNAPSHOT</first-party-dependencies.version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <first-party-dependencies.version>3.64.0</first-party-dependencies.version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
     <enforcer.skip>true</enforcer.skip>
   </properties>
 
