@@ -30,7 +30,6 @@
 
 package com.google.api.gax.grpc;
 
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 

@@ -330,10 +330,10 @@ class ClientContextTest {
     builder.setClock(clock);
 
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     if (headersCollision) {
       Mockito.when(internalHeaderProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
     } else {
@@ -406,10 +406,10 @@ class ClientContextTest {
     builder.setWatchdogCheckIntervalDuration(watchdogCheckInterval);
 
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("k1", "v1"));
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     Mockito.when(internalHeaderProvider.getHeaders()).thenReturn(ImmutableMap.of("k2", "v2"));
     builder.setHeaderProvider(headerProvider);
@@ -433,10 +433,10 @@ class ClientContextTest {
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
 
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("header_k1", "v1"));
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(internalHeaderProvider.getHeaders())
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
@@ -517,10 +517,10 @@ class ClientContextTest {
             transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
 
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of("header_k1", "v1"));
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(internalHeaderProvider.getHeaders())
         .thenReturn(ImmutableMap.of("internal_header_k1", "v1"));
 
@@ -558,9 +558,9 @@ class ClientContextTest {
     Mockito.when(credentialsWithQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithQuota);
     HeaderProvider headerProviderWithQuota =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     builder.setExecutorProvider(new FakeExecutorProvider(executor, true));
     builder.setTransportChannelProvider(transportProvider);
@@ -596,9 +596,9 @@ class ClientContextTest {
     final Credentials credentialsWithoutQuotaProjectId = mock(GoogleCredentials.class);
     Mockito.when(credentialsWithoutQuotaProjectId.getRequestMetadata(null)).thenReturn(metaData);
     HeaderProvider headerProviderWithQuota =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
 
     builder.setExecutorProvider(new FakeExecutorProvider(executor, true));
     builder.setTransportChannelProvider(transportProvider);
@@ -1239,7 +1239,7 @@ class ClientContextTest {
             DEFAULT_MTLS_ENDPOINT);
     builder.setTransportChannelProvider(transportProvider);
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
     builder.setHeaderProvider(headerProvider);
     builder.setApiKey(apiKey);
@@ -1267,7 +1267,7 @@ class ClientContextTest {
             DEFAULT_MTLS_ENDPOINT);
     builder.setTransportChannelProvider(transportProvider);
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
     builder.setHeaderProvider(headerProvider);
     builder.setApiKey(apiKey);

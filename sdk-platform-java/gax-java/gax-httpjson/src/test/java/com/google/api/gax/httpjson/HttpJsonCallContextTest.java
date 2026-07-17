@@ -267,7 +267,7 @@ class HttpJsonCallContextTest {
   @Test
   void testWithRetrySettings() {
     RetrySettings retrySettings =
-        mock(RetrySettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();
     assertNull(emptyContext.getRetrySettings());
     HttpJsonCallContext context = emptyContext.withRetrySettings(retrySettings);

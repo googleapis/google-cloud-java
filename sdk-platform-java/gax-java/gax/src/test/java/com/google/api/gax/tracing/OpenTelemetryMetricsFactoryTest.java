@@ -132,7 +132,7 @@ class OpenTelemetryMetricsFactoryTest {
     ApiTracer actual =
         factory.newTracer(
             mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()),
-            mock(ApiTracerContext.class));
+            mock(ApiTracerContext.class, Mockito.withSettings().withoutAnnotations()));
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
   }

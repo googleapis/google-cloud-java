@@ -422,7 +422,7 @@ class GrpcCallContextTest {
   @Test
   void testWithRetrySettings() {
     RetrySettings retrySettings =
-        mock(RetrySettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetrySettings.class, Mockito.withSettings().withoutAnnotations());
     GrpcCallContext emptyContext = GrpcCallContext.createDefault();
     assertNull(emptyContext.getRetrySettings());
     GrpcCallContext context = emptyContext.withRetrySettings(retrySettings);

@@ -58,8 +58,7 @@ class CheckingAttemptCallableTest {
 
   @BeforeEach
   void setUp() {
-    mockInnerCallable =
-        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    mockInnerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
 
     currentAttemptSettings =

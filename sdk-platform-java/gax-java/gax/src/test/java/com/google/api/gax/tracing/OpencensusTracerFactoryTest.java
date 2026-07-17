@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.nullable;

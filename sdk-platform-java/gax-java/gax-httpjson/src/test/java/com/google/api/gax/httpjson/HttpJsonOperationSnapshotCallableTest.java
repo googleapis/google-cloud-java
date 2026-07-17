@@ -72,7 +72,7 @@ class HttpJsonOperationSnapshotCallableTest {
     Option request = Option.newBuilder().setName("Arizona").build();
     Field field = Field.newBuilder().setName("Georgia").build();
     ApiCallContext context =
-        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()
             .setName("California")
@@ -98,7 +98,7 @@ class HttpJsonOperationSnapshotCallableTest {
     Option request = Option.newBuilder().setName("Arizona").build();
     Field field = Field.newBuilder().setName("Georgia").build();
     ApiCallContext context =
-        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()
             .setName("California")

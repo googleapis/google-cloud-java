@@ -30,7 +30,6 @@
 
 package com.google.api.gax.logging;
 
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

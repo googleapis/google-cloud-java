@@ -30,7 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -54,6 +53,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -61,13 +61,11 @@ class TracedBatchingCallableTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
-    tracerFactory =
-        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
-    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     batchingDescriptor =
-        mock(BatchingDescriptor.class, org.mockito.Mockito.withSettings().withoutAnnotations());
-    innerCallable =
-        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+    innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
   }
 
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");

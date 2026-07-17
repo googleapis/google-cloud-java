@@ -59,8 +59,7 @@ class AttemptCallableTest {
 
   @BeforeEach
   void setUp() {
-    mockInnerCallable =
-        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    mockInnerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
     when(mockInnerCallable.futureCall(Mockito.anyString(), capturedCallContext.capture()))
         .thenReturn(SettableApiFuture.<String>create());

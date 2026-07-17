@@ -116,7 +116,7 @@ class OperationCallableImplTest {
   void setUp() throws IOException {
     initialChannel = mock(FakeChannel.class);
     pollTransportChannel =
-        mock(TransportChannel.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations());
     TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
     when(operationsChannelProvider.getTransportChannel()).thenReturn(pollTransportChannel);
 

@@ -58,8 +58,7 @@ class CallableTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
-    innerCallable =
-        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
   }
 
   private UnaryCallable<String, String> innerCallable;

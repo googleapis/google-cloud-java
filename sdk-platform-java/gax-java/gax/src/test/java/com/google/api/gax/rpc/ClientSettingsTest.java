@@ -161,15 +161,15 @@ class ClientSettingsTest {
     FakeClientSettings.Builder builder = new FakeClientSettings.Builder();
 
     ExecutorProvider executorProvider =
-        mock(ExecutorProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ExecutorProvider.class, Mockito.withSettings().withoutAnnotations());
     TransportChannelProvider transportProvider = mock(TransportChannelProvider.class);
     CredentialsProvider credentialsProvider =
-        mock(CredentialsProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
     ApiClock clock = mock(ApiClock.class);
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     WatchdogProvider watchdogProvider = mock(WatchdogProvider.class);
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(13);
     String quotaProjectId = "test_quota_project_id";
@@ -270,15 +270,15 @@ class ClientSettingsTest {
     FakeClientSettings.Builder builder = new FakeClientSettings.Builder();
 
     ExecutorProvider executorProvider =
-        mock(ExecutorProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ExecutorProvider.class, Mockito.withSettings().withoutAnnotations());
     TransportChannelProvider transportProvider = mock(TransportChannelProvider.class);
     CredentialsProvider credentialsProvider =
-        mock(CredentialsProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
     ApiClock clock = mock(ApiClock.class);
     HeaderProvider headerProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     WatchdogProvider watchdogProvider = mock(WatchdogProvider.class);
     java.time.Duration watchdogCheckInterval = java.time.Duration.ofSeconds(14);
     String quotaProjectId = "test_builder_from_settings_quotaProjectId";
@@ -349,11 +349,11 @@ class ClientSettingsTest {
   void testBuilderFromSettings_QuotaProjectId() {
 
     CredentialsProvider credentialsProvider_no_quota =
-        mock(CredentialsProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider headerProvider_no_quota =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider internalHeaderProvider_no_quota =
-        mock(HeaderProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
     HeaderProvider headerProvider_with_quota =
         new HeaderProvider() {
           @Override
@@ -474,9 +474,7 @@ class ClientSettingsTest {
     ClientContext clientContextQuotaOnly =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setQuotaProjectId(QUOTA_PROJECT_ID_FROM_CONTEXT)
             .build();
@@ -486,9 +484,7 @@ class ClientSettingsTest {
     ClientContext clientContextCredentialOnly =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setCredentials(credentialsWithQuotaProject)
             .build();
@@ -498,9 +494,7 @@ class ClientSettingsTest {
     ClientContext clientContextCredentialAndQuota =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setCredentials(credentialsWithQuotaProject)
             .setQuotaProjectId(QUOTA_PROJECT_ID_FROM_CONTEXT)
@@ -511,9 +505,7 @@ class ClientSettingsTest {
     ClientContext clientContextHeadersOnly =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setHeaders(ImmutableMap.of(QUOTA_PROJECT_ID_KEY, QUOTA_PROJECT_ID_FROM_HEADER_VALUE))
             .build();
@@ -523,9 +515,7 @@ class ClientSettingsTest {
     ClientContext clientContextHeadersAndQuota =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setQuotaProjectId(QUOTA_PROJECT_ID_FROM_CONTEXT)
             .setHeaders(ImmutableMap.of(QUOTA_PROJECT_ID_KEY, QUOTA_PROJECT_ID_FROM_HEADER_VALUE))
@@ -536,9 +526,7 @@ class ClientSettingsTest {
     ClientContext clientContextInternalHeadersOnly =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setInternalHeaders(
                 ImmutableMap.of(QUOTA_PROJECT_ID_KEY, QUOTA_PROJECT_ID_FROM_INTERNAL_HEADER_VALUE))
@@ -549,9 +537,7 @@ class ClientSettingsTest {
     ClientContext clientContextInternalHeadersAndQuota =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setInternalHeaders(
                 ImmutableMap.of(QUOTA_PROJECT_ID_KEY, QUOTA_PROJECT_ID_FROM_INTERNAL_HEADER_VALUE))
@@ -563,9 +549,7 @@ class ClientSettingsTest {
     ClientContext clientContextQuotaFromAllSources =
         ClientContext.newBuilder()
             .setTransportChannel(
-                mock(
-                    TransportChannel.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()))
+                mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations()))
             .setDefaultCallContext(callContext)
             .setHeaders(
                 ImmutableMap.of(QUOTA_PROJECT_ID_KEY, QUOTA_PROJECT_ID_FROM_INTERNAL_HEADER_VALUE))

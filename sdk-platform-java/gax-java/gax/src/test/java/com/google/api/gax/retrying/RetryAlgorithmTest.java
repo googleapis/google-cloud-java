@@ -29,13 +29,13 @@
  */
 package com.google.api.gax.retrying;
 
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 class RetryAlgorithmTest {
@@ -43,12 +43,10 @@ class RetryAlgorithmTest {
   @Test
   void testCreateFirstAttempt() {
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Void> algorithm =
         new RetryAlgorithm<>(
-            mock(
-                ResultRetryAlgorithm.class,
-                org.mockito.Mockito.withSettings().withoutAnnotations()),
+            mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations()),
             timedAlgorithm);
 
     algorithm.createFirstAttempt();
@@ -58,16 +56,14 @@ class RetryAlgorithmTest {
   @Test
   void testCreateFirstAttemptWithUnusedContext() {
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Void> algorithm =
         new RetryAlgorithm<>(
-            mock(
-                ResultRetryAlgorithm.class,
-                org.mockito.Mockito.withSettings().withoutAnnotations()),
+            mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations()),
             timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     algorithm.createFirstAttempt(context);
     verify(timedAlgorithm).createFirstAttempt();
   }
@@ -75,19 +71,17 @@ class RetryAlgorithmTest {
   @Test
   void testCreateFirstAttemptWithContext() {
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Void> algorithm =
         new RetryAlgorithm<>(
             (ResultRetryAlgorithmWithContext<Void>)
                 mock(
                     ResultRetryAlgorithmWithContext.class,
-                    org.mockito.Mockito.withSettings().withoutAnnotations()),
+                    Mockito.withSettings().withoutAnnotations()),
             (TimedRetryAlgorithmWithContext) timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     algorithm.createFirstAttempt(context);
     verify(timedAlgorithm).createFirstAttempt(context);
   }
@@ -95,14 +89,11 @@ class RetryAlgorithmTest {
   @Test
   void testCreateFirstAttemptWithNullContext() {
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Void> algorithm =
         new RetryAlgorithm<>(
             mock(
-                ResultRetryAlgorithmWithContext.class,
-                org.mockito.Mockito.withSettings().withoutAnnotations()),
+                ResultRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations()),
             timedAlgorithm);
 
     algorithm.createFirstAttempt(null);
@@ -112,9 +103,9 @@ class RetryAlgorithmTest {
   @Test
   void testNextAttempt() {
     ResultRetryAlgorithm<Object> resultAlgorithm =
-        mock(ResultRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     Throwable previousThrowable = new Throwable();
@@ -128,17 +119,13 @@ class RetryAlgorithmTest {
   @Test
   void testNextAttemptWithContext() {
     ResultRetryAlgorithmWithContext<Object> resultAlgorithm =
-        mock(
-            ResultRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
     TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
@@ -150,9 +137,9 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetry() {
     ResultRetryAlgorithm<Object> resultAlgorithm =
-        mock(ResultRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     Throwable previousThrowable = new Throwable();
@@ -166,9 +153,9 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetry_usesTimedAlgorithm() {
     ResultRetryAlgorithm<Object> resultAlgorithm =
-        mock(ResultRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     Throwable previousThrowable = new Throwable();
@@ -183,17 +170,13 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetryWithContext() {
     ResultRetryAlgorithmWithContext<Object> resultAlgorithm =
-        mock(
-            ResultRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
     TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
@@ -205,17 +188,13 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetryWithContext_usesTimedAlgorithm() {
     ResultRetryAlgorithmWithContext<Object> resultAlgorithm =
-        mock(
-            ResultRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
     TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
@@ -228,9 +207,9 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetry_noPreviousSettings() {
     ResultRetryAlgorithm<Object> resultAlgorithm =
-        mock(ResultRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithm timedAlgorithm =
-        mock(TimedRetryAlgorithm.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     Throwable previousThrowable = new Throwable();
@@ -243,17 +222,13 @@ class RetryAlgorithmTest {
   @Test
   void testShouldRetryWithContext_noPreviousSettings() {
     ResultRetryAlgorithmWithContext<Object> resultAlgorithm =
-        mock(
-            ResultRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ResultRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     TimedRetryAlgorithmWithContext timedAlgorithm =
-        mock(
-            TimedRetryAlgorithmWithContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(TimedRetryAlgorithmWithContext.class, Mockito.withSettings().withoutAnnotations());
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     RetryingContext context =
-        mock(RetryingContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(RetryingContext.class, Mockito.withSettings().withoutAnnotations());
     Throwable previousThrowable = new Throwable();
     Object previousResult = new Object();
 

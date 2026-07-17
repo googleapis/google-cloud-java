@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.retrying;
 
-
 import static com.google.api.gax.retrying.FailingCallable.FAILING_RETRY_SETTINGS;
 import static com.google.api.gax.retrying.FailingCallable.FAST_RETRY_SETTINGS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -66,6 +65,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -79,7 +79,7 @@ public abstract class AbstractRetryingExecutorTest {
 
   @BeforeEach
   void setup() {
-    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 

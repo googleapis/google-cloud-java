@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.testing.FakeCallContext;
@@ -45,6 +44,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class ServerStreamingCallableTest {
   private ClientContext clientContext;
@@ -86,9 +86,7 @@ class ServerStreamingCallableTest {
         stashCallable.withDefaultCallContext(defaultCallContext);
     @SuppressWarnings("unchecked")
     StateCheckingResponseObserver<Integer> observer =
-        mock(
-            StateCheckingResponseObserver.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);
@@ -108,9 +106,7 @@ class ServerStreamingCallableTest {
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     @SuppressWarnings("unchecked")
     ResponseObserver<Integer> observer =
-        mock(
-            StateCheckingResponseObserver.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(StateCheckingResponseObserver.class, Mockito.withSettings().withoutAnnotations());
     Integer request = 1;
     callable.call(request, observer, context);
     Truth.assertThat(stashCallable.getActualObserver()).isSameInstanceAs(observer);

@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.tracing;
 
-
 import static com.google.api.gax.tracing.MetricsTestUtils.reportFailedAttempt;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -52,6 +51,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -63,8 +63,7 @@ class MetricsTracerTest {
 
   @BeforeEach
   void setUp() {
-    metricsRecorder =
-        mock(MetricsRecorder.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    metricsRecorder = mock(MetricsRecorder.class, Mockito.withSettings().withoutAnnotations());
     metricsTracer =
         new MetricsTracer(MethodName.of("fake_service", "fake_method"), metricsRecorder);
   }

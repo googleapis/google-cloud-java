@@ -53,7 +53,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -62,18 +61,20 @@ class TracedServerStreamingCallableTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {
-    tracerFactory =
-        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
-    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
-    parentTracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    parentTracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    tracerContext = mock(ApiTracerContext.class, Mockito.withSettings().withoutAnnotations());
+    tracerContextBuilder =
+        mock(ApiTracerContext.Builder.class, Mockito.withSettings().withoutAnnotations());
   }
 
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
 
   private ApiTracerFactory tracerFactory;
   private ApiTracer tracer;
-  @Mock private ApiTracerContext tracerContext;
-  @Mock private ApiTracerContext.Builder tracerContextBuilder;
+  private ApiTracerContext tracerContext;
+  private ApiTracerContext.Builder tracerContextBuilder;
 
   private MockServerStreamingCallable<String, String> innerCallable;
   private TracedServerStreamingCallable<String, String> tracedCallable;

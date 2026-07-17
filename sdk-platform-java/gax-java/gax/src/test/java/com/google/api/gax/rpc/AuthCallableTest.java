@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.testing.FakeCallContext;
