@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-locationfinder",
   "api_id": "locationfinder.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://cloud.google.com/locationfinder/docs/reference/rest"
 }

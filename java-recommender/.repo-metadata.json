@@ -11,6 +11,5 @@
   "repo_short": "java-recommender",
   "distribution_name": "com.google.cloud:google-cloud-recommender",
   "api_id": "recommender.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }
