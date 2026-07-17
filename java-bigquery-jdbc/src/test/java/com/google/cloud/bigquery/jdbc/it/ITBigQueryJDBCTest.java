@@ -51,6 +51,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
@@ -984,11 +985,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_PREPARED_EXECUTE_TABLE_" + randomNumber;
     String createQuery =
         String.format(
-            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER);",
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
             DATASET, TABLE_NAME);
     String insertQuery =
         String.format(
-            "INSERT INTO %s.%s (StringField, IntegerField) VALUES (?,?), (?,?), (?,?), (?,?);",
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
             DATASET, TABLE_NAME);
     String updateQuery =
         String.format("UPDATE %s.%s SET StringField=? WHERE IntegerField=?", DATASET, TABLE_NAME);
@@ -999,14 +1000,23 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertFalse(createStatus);
 
     PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    // Row 1: Testing setString, setInt, setShort, setBytes, setObject, setNull
     insertStmt.setString(1, "String1");
     insertStmt.setInt(2, 111);
-    insertStmt.setString(3, "String2");
-    insertStmt.setInt(4, 222);
-    insertStmt.setString(5, "String3");
-    insertStmt.setInt(6, 333);
-    insertStmt.setString(7, "String4");
-    insertStmt.setInt(8, 444);
+    insertStmt.setShort(3, (short) 12);
+    insertStmt.setBytes(4, new byte[] {0x1, 0x2});
+    insertStmt.setObject(5, 3.14d);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    // Row 2: Testing setString, setInt, setShort, setBytes, setObject, setNull with typeName
+    insertStmt.setString(8, "String2");
+    insertStmt.setInt(9, 222);
+    insertStmt.setShort(10, (short) 34);
+    insertStmt.setBytes(11, new byte[] {0x3, 0x4});
+    insertStmt.setObject(12, 6.28d);
+    insertStmt.setObject(13, false);
+    insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
     assertFalse(insertStatus);

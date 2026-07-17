@@ -1607,6 +1607,125 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         : propertiesFromFlexibilityPolicy_;
   }
 
+  public static final int SCHEDULING_FIELD_NUMBER = 386688404;
+  private com.google.cloud.compute.v1.ManagedInstanceScheduling scheduling_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   *
+   * @return Whether the scheduling field is set.
+   */
+  @java.lang.Override
+  public boolean hasScheduling() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   *
+   * @return The scheduling.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstanceScheduling getScheduling() {
+    return scheduling_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceScheduling.getDefaultInstance()
+        : scheduling_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder getSchedulingOrBuilder() {
+    return scheduling_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceScheduling.getDefaultInstance()
+        : scheduling_;
+  }
+
+  public static final int SHUTDOWN_DETAILS_FIELD_NUMBER = 15198553;
+  private com.google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdownDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return Whether the shutdownDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasShutdownDetails() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return The shutdownDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstanceShutdownDetails getShutdownDetails() {
+    return shutdownDetails_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.getDefaultInstance()
+        : shutdownDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder
+      getShutdownDetailsOrBuilder() {
+    return shutdownDetails_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.getDefaultInstance()
+        : shutdownDetails_;
+  }
+
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
 
@@ -1623,7 +1742,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1680,6 +1799,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(15198553, getShutdownDetails());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18257045, instance_);
     }
@@ -1695,11 +1817,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
       output.writeMessage(382667078, instanceHealth_.get(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(434771492, getLastAttempt());
@@ -1722,6 +1847,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(15198553, getShutdownDetails());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18257045, instance_);
     }
@@ -1741,13 +1870,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               382667078, instanceHealth_.get(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(434771492, getLastAttempt());
@@ -1812,6 +1944,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       if (!getPropertiesFromFlexibilityPolicy().equals(other.getPropertiesFromFlexibilityPolicy()))
         return false;
     }
+    if (hasScheduling() != other.hasScheduling()) return false;
+    if (hasScheduling()) {
+      if (!getScheduling().equals(other.getScheduling())) return false;
+    }
+    if (hasShutdownDetails() != other.hasShutdownDetails()) return false;
+    if (hasShutdownDetails()) {
+      if (!getShutdownDetails().equals(other.getShutdownDetails())) return false;
+    }
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
       if (!getVersion().equals(other.getVersion())) return false;
@@ -1866,6 +2006,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (hasPropertiesFromFlexibilityPolicy()) {
       hash = (37 * hash) + PROPERTIES_FROM_FLEXIBILITY_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPropertiesFromFlexibilityPolicy().hashCode();
+    }
+    if (hasScheduling()) {
+      hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduling().hashCode();
+    }
+    if (hasShutdownDetails()) {
+      hash = (37 * hash) + SHUTDOWN_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getShutdownDetails().hashCode();
     }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -2017,6 +2165,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         internalGetPreservedStateFromConfigFieldBuilder();
         internalGetPreservedStateFromPolicyFieldBuilder();
         internalGetPropertiesFromFlexibilityPolicyFieldBuilder();
+        internalGetSchedulingFieldBuilder();
+        internalGetShutdownDetailsFieldBuilder();
         internalGetVersionFieldBuilder();
       }
     }
@@ -2056,6 +2206,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       if (propertiesFromFlexibilityPolicyBuilder_ != null) {
         propertiesFromFlexibilityPolicyBuilder_.dispose();
         propertiesFromFlexibilityPolicyBuilder_ = null;
+      }
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
+        schedulingBuilder_ = null;
+      }
+      shutdownDetails_ = null;
+      if (shutdownDetailsBuilder_ != null) {
+        shutdownDetailsBuilder_.dispose();
+        shutdownDetailsBuilder_ = null;
       }
       version_ = null;
       if (versionBuilder_ != null) {
@@ -2159,8 +2319,17 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.shutdownDetails_ =
+            shutdownDetailsBuilder_ == null ? shutdownDetails_ : shutdownDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2239,6 +2408,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       if (other.hasPropertiesFromFlexibilityPolicy()) {
         mergePropertiesFromFlexibilityPolicy(other.getPropertiesFromFlexibilityPolicy());
       }
+      if (other.hasScheduling()) {
+        mergeScheduling(other.getScheduling());
+      }
+      if (other.hasShutdownDetails()) {
+        mergeShutdownDetails(other.getShutdownDetails());
+      }
       if (other.hasVersion()) {
         mergeVersion(other.getVersion());
       }
@@ -2280,6 +2455,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 26989658
+            case 121588426:
+              {
+                input.readMessage(
+                    internalGetShutdownDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 121588426
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
@@ -2317,7 +2499,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
             case -1482103102:
               {
                 input.readMessage(internalGetVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1482103102
             case -1233630670:
@@ -2334,6 +2516,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case -1233630670
+            case -1201460062:
+              {
+                input.readMessage(
+                    internalGetSchedulingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -1201460062
             case -816795358:
               {
                 input.readMessage(
@@ -4448,6 +4637,439 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       return propertiesFromFlexibilityPolicyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.ManagedInstanceScheduling scheduling_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ManagedInstanceScheduling,
+            com.google.cloud.compute.v1.ManagedInstanceScheduling.Builder,
+            com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder>
+        schedulingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     *
+     * @return Whether the scheduling field is set.
+     */
+    public boolean hasScheduling() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     *
+     * @return The scheduling.
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceScheduling getScheduling() {
+      if (schedulingBuilder_ == null) {
+        return scheduling_ == null
+            ? com.google.cloud.compute.v1.ManagedInstanceScheduling.getDefaultInstance()
+            : scheduling_;
+      } else {
+        return schedulingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder setScheduling(com.google.cloud.compute.v1.ManagedInstanceScheduling value) {
+      if (schedulingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scheduling_ = value;
+      } else {
+        schedulingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder setScheduling(
+        com.google.cloud.compute.v1.ManagedInstanceScheduling.Builder builderForValue) {
+      if (schedulingBuilder_ == null) {
+        scheduling_ = builderForValue.build();
+      } else {
+        schedulingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder mergeScheduling(com.google.cloud.compute.v1.ManagedInstanceScheduling value) {
+      if (schedulingBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && scheduling_ != null
+            && scheduling_
+                != com.google.cloud.compute.v1.ManagedInstanceScheduling.getDefaultInstance()) {
+          getSchedulingBuilder().mergeFrom(value);
+        } else {
+          scheduling_ = value;
+        }
+      } else {
+        schedulingBuilder_.mergeFrom(value);
+      }
+      if (scheduling_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder clearScheduling() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
+        schedulingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceScheduling.Builder getSchedulingBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetSchedulingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder getSchedulingOrBuilder() {
+      if (schedulingBuilder_ != null) {
+        return schedulingBuilder_.getMessageOrBuilder();
+      } else {
+        return scheduling_ == null
+            ? com.google.cloud.compute.v1.ManagedInstanceScheduling.getDefaultInstance()
+            : scheduling_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the termination timestamp of the instance, if applicable.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ManagedInstanceScheduling,
+            com.google.cloud.compute.v1.ManagedInstanceScheduling.Builder,
+            com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder>
+        internalGetSchedulingFieldBuilder() {
+      if (schedulingBuilder_ == null) {
+        schedulingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ManagedInstanceScheduling,
+                com.google.cloud.compute.v1.ManagedInstanceScheduling.Builder,
+                com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder>(
+                getScheduling(), getParentForChildren(), isClean());
+        scheduling_ = null;
+      }
+      return schedulingBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdownDetails_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetails,
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.Builder,
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder>
+        shutdownDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     *
+     * @return Whether the shutdownDetails field is set.
+     */
+    public boolean hasShutdownDetails() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     *
+     * @return The shutdownDetails.
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceShutdownDetails getShutdownDetails() {
+      if (shutdownDetailsBuilder_ == null) {
+        return shutdownDetails_ == null
+            ? com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.getDefaultInstance()
+            : shutdownDetails_;
+      } else {
+        return shutdownDetailsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public Builder setShutdownDetails(
+        com.google.cloud.compute.v1.ManagedInstanceShutdownDetails value) {
+      if (shutdownDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shutdownDetails_ = value;
+      } else {
+        shutdownDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public Builder setShutdownDetails(
+        com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.Builder builderForValue) {
+      if (shutdownDetailsBuilder_ == null) {
+        shutdownDetails_ = builderForValue.build();
+      } else {
+        shutdownDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public Builder mergeShutdownDetails(
+        com.google.cloud.compute.v1.ManagedInstanceShutdownDetails value) {
+      if (shutdownDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && shutdownDetails_ != null
+            && shutdownDetails_
+                != com.google.cloud.compute.v1.ManagedInstanceShutdownDetails
+                    .getDefaultInstance()) {
+          getShutdownDetailsBuilder().mergeFrom(value);
+        } else {
+          shutdownDetails_ = value;
+        }
+      } else {
+        shutdownDetailsBuilder_.mergeFrom(value);
+      }
+      if (shutdownDetails_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public Builder clearShutdownDetails() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      shutdownDetails_ = null;
+      if (shutdownDetailsBuilder_ != null) {
+        shutdownDetailsBuilder_.dispose();
+        shutdownDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.Builder
+        getShutdownDetailsBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetShutdownDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder
+        getShutdownDetailsOrBuilder() {
+      if (shutdownDetailsBuilder_ != null) {
+        return shutdownDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return shutdownDetails_ == null
+            ? com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.getDefaultInstance()
+            : shutdownDetails_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the graceful shutdown details if the instance is in
+     * `PENDING_STOP` state or there is a programmed stop scheduled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetails,
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.Builder,
+            com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder>
+        internalGetShutdownDetailsFieldBuilder() {
+      if (shutdownDetailsBuilder_ == null) {
+        shutdownDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ManagedInstanceShutdownDetails,
+                com.google.cloud.compute.v1.ManagedInstanceShutdownDetails.Builder,
+                com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder>(
+                getShutdownDetails(), getParentForChildren(), isClean());
+        shutdownDetails_ = null;
+      }
+      return shutdownDetailsBuilder_;
+    }
+
     private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.ManagedInstanceVersion,
@@ -4467,7 +5089,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4509,7 +5131,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       } else {
         versionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4530,7 +5152,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4546,7 +5168,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
@@ -4558,7 +5180,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         versionBuilder_.mergeFrom(value);
       }
       if (version_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4574,7 +5196,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       version_ = null;
       if (versionBuilder_ != null) {
         versionBuilder_.dispose();
@@ -4594,7 +5216,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetVersionFieldBuilder().getBuilder();
     }

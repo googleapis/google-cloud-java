@@ -259,7 +259,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListUsable</td>
- *      <td><p> Retrieves a list of all usable backend services in the specified project.</td>
+ *      <td><p> Retrieves a list of all usable backend services for Application Load Balancers and Proxy Network Load Balancers in the specified project. Backend services for external and internal passthrough Network Load Balancers are not included in the response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1708,7 +1708,9 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project. Backend services for external and internal
+   * passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1737,7 +1739,9 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project. Backend services for external and internal
+   * passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1772,7 +1776,9 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project. Backend services for external and internal
+   * passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1808,7 +1814,9 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project. Backend services for external and internal
+   * passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *

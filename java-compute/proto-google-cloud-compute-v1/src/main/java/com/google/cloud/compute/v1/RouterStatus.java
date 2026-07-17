@@ -55,6 +55,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
     bestRoutesForRouter_ = java.util.Collections.emptyList();
     bgpPeerStatus_ = java.util.Collections.emptyList();
     natStatus_ = java.util.Collections.emptyList();
+    nccGateway_ = "";
     network_ = "";
   }
 
@@ -376,6 +377,75 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
     return natStatus_.get(index);
   }
 
+  public static final int NCC_GATEWAY_FIELD_NUMBER = 174876755;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nccGateway_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return Whether the nccGateway field is set.
+   */
+  @java.lang.Override
+  public boolean hasNccGateway() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return The nccGateway.
+   */
+  @java.lang.Override
+  public java.lang.String getNccGateway() {
+    java.lang.Object ref = nccGateway_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nccGateway_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return The bytes for nccGateway.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNccGatewayBytes() {
+    java.lang.Object ref = nccGateway_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nccGateway_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NETWORK_FIELD_NUMBER = 232872494;
 
   @SuppressWarnings("serial")
@@ -394,7 +464,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -465,10 +535,13 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < bestRoutesForRouter_.size(); i++) {
       output.writeMessage(119389689, bestRoutesForRouter_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 174876755, nccGateway_);
+    }
     for (int i = 0; i < bgpPeerStatus_.size(); i++) {
       output.writeMessage(218459131, bgpPeerStatus_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 232872494, network_);
     }
     for (int i = 0; i < bestRoutes_.size(); i++) {
@@ -491,12 +564,15 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               119389689, bestRoutesForRouter_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(174876755, nccGateway_);
+    }
     for (int i = 0; i < bgpPeerStatus_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               218459131, bgpPeerStatus_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(232872494, network_);
     }
     for (int i = 0; i < bestRoutes_.size(); i++) {
@@ -522,6 +598,10 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
     if (!getBestRoutesForRouterList().equals(other.getBestRoutesForRouterList())) return false;
     if (!getBgpPeerStatusList().equals(other.getBgpPeerStatusList())) return false;
     if (!getNatStatusList().equals(other.getNatStatusList())) return false;
+    if (hasNccGateway() != other.hasNccGateway()) return false;
+    if (hasNccGateway()) {
+      if (!getNccGateway().equals(other.getNccGateway())) return false;
+    }
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
@@ -552,6 +632,10 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
     if (getNatStatusCount() > 0) {
       hash = (37 * hash) + NAT_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getNatStatusList().hashCode();
+    }
+    if (hasNccGateway()) {
+      hash = (37 * hash) + NCC_GATEWAY_FIELD_NUMBER;
+      hash = (53 * hash) + getNccGateway().hashCode();
     }
     if (hasNetwork()) {
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
@@ -724,6 +808,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
         natStatusBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      nccGateway_ = "";
       network_ = "";
       return this;
     }
@@ -803,8 +888,12 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.network_ = network_;
+        result.nccGateway_ = nccGateway_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.network_ = network_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -929,9 +1018,14 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasNccGateway()) {
+        nccGateway_ = other.nccGateway_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -987,6 +1081,12 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 955117514
+            case 1399014042:
+              {
+                nccGateway_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1399014042
             case 1747673050:
               {
                 com.google.cloud.compute.v1.RouterStatusBgpPeerStatus m =
@@ -1004,7 +1104,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1862979954
             case -1128353750:
@@ -2565,6 +2665,132 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
       return natStatusBuilder_;
     }
 
+    private java.lang.Object nccGateway_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @return Whether the nccGateway field is set.
+     */
+    public boolean hasNccGateway() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @return The nccGateway.
+     */
+    public java.lang.String getNccGateway() {
+      java.lang.Object ref = nccGateway_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nccGateway_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @return The bytes for nccGateway.
+     */
+    public com.google.protobuf.ByteString getNccGatewayBytes() {
+      java.lang.Object ref = nccGateway_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nccGateway_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @param value The nccGateway to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccGateway(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nccGateway_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNccGateway() {
+      nccGateway_ = getDefaultInstance().getNccGateway();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * URI of the ncc_gateway to which this router associated.
+     * </pre>
+     *
+     * <code>optional string ncc_gateway = 174876755;</code>
+     *
+     * @param value The bytes for nccGateway to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccGatewayBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nccGateway_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object network_ = "";
 
     /**
@@ -2579,7 +2805,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2645,7 +2871,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2663,7 +2889,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2686,7 +2912,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
