@@ -26,6 +26,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
@@ -64,7 +65,7 @@ public class AsyncResultSetImplTest {
 
   @Before
   public void setup() {
-    mockedProvider = mock(ExecutorProvider.class);
+    mockedProvider = mock(ExecutorProvider.class, withSettings().withoutAnnotations());
     when(mockedProvider.getExecutor()).thenReturn(mock(ScheduledExecutorService.class));
     simpleProvider = SpannerOptions.createAsyncExecutorProvider(1, 1L, TimeUnit.SECONDS);
   }
