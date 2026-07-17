@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -29,7 +30,9 @@ import java.time.ZoneId;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.LockSupport;
 import java.util.function.BooleanSupplier;
@@ -419,6 +422,80 @@ public class EndpointLifecycleManagerTest {
   }
 
   @Test
+  public void requestEndpointRecreationSkippedWhenAddressNotActive() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    manager =
+        new EndpointLifecycleManager(
+            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+
+    String finder1 = registerAddresses(manager, "server1", "server2");
+    awaitCondition(
+        "endpoints should be created",
+        () -> cache.getIfPresent("server1") != null && cache.getIfPresent("server2") != null);
+
+    // Remove server1 from the active set (stale-evict).
+    manager.updateActiveAddresses(finder1, Collections.singleton("server2"));
+    assertFalse(manager.isManaged("server1"));
+    assertNull(cache.getIfPresent("server1"));
+
+    // Route-lookup recreation must not revive a non-active address.
+    manager.requestEndpointRecreation("server1");
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () -> !manager.isManaged("server1") && cache.getIfPresent("server1") == null);
+  }
+
+  @Test
+  public void requestEndpointRecreationDoesNotRaceActiveAddressRemoval() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    BlockingClock clock = new BlockingClock(Instant.now());
+    manager =
+        new EndpointLifecycleManager(cache, /* probeIntervalSeconds= */ 60, Duration.ZERO, clock);
+
+    String finder = registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
+    clock.advance(Duration.ofSeconds(1));
+    manager.checkIdleEviction();
+    assertFalse(manager.isManaged("server1"));
+
+    clock.blockThread("endpoint-recreation");
+    Thread recreation =
+        new Thread(() -> manager.requestEndpointRecreation("server1"), "endpoint-recreation");
+    recreation.start();
+    assertTrue("recreation should reach endpoint insertion", clock.awaitBlocked());
+
+    AtomicBoolean removalDone = new AtomicBoolean();
+    Thread removal =
+        new Thread(
+            () -> {
+              manager.updateActiveAddresses(finder, Collections.emptySet());
+              removalDone.set(true);
+            },
+            "active-address-removal");
+    removal.start();
+
+    long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+    while (!removalDone.get()
+        && removal.getState() != Thread.State.BLOCKED
+        && System.nanoTime() < deadlineNanos) {
+      LockSupport.parkNanos(TimeUnit.MILLISECONDS.toNanos(10));
+    }
+    assertTrue(
+        "removal should either finish or block on the active-address lock",
+        removalDone.get() || removal.getState() == Thread.State.BLOCKED);
+
+    clock.releaseBlockedThread();
+    recreation.join(TimeUnit.SECONDS.toMillis(5));
+    removal.join(TimeUnit.SECONDS.toMillis(5));
+
+    assertFalse("recreation thread should finish", recreation.isAlive());
+    assertFalse("removal thread should finish", removal.isAlive());
+    assertFalse("inactive address must not be resurrected", manager.isManaged("server1"));
+  }
+
+  @Test
   public void endpointKeptIfReferencedByAnotherFinder() throws Exception {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
@@ -472,6 +549,60 @@ public class EndpointLifecycleManagerTest {
 
     @Override
     public Instant instant() {
+      return now;
+    }
+
+    @Override
+    public ZoneId getZone() {
+      return ZoneId.of("UTC");
+    }
+
+    @Override
+    public Clock withZone(ZoneId zone) {
+      return this;
+    }
+  }
+
+  /** Clock that can pause one named thread inside endpoint-state construction. */
+  private static final class BlockingClock extends Clock {
+    private Instant now;
+    private final CountDownLatch blocked = new CountDownLatch(1);
+    private final CountDownLatch release = new CountDownLatch(1);
+    private volatile String blockedThreadName;
+
+    BlockingClock(Instant now) {
+      this.now = now;
+    }
+
+    void blockThread(String threadName) {
+      this.blockedThreadName = threadName;
+    }
+
+    void advance(Duration duration) {
+      now = now.plus(duration);
+    }
+
+    boolean awaitBlocked() throws InterruptedException {
+      return blocked.await(5, TimeUnit.SECONDS);
+    }
+
+    void releaseBlockedThread() {
+      release.countDown();
+    }
+
+    @Override
+    public Instant instant() {
+      if (Thread.currentThread().getName().equals(blockedThreadName)) {
+        blocked.countDown();
+        try {
+          if (!release.await(5, TimeUnit.SECONDS)) {
+            throw new AssertionError("timed out waiting to release blocked clock");
+          }
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw new AssertionError(e);
+        }
+      }
       return now;
     }
 
