@@ -36,8 +36,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** An instance of HeaderProvider that always provides the same headers. */
 @NullMarked
@@ -47,8 +47,7 @@ public abstract class FixedHeaderProvider implements HeaderProvider, Serializabl
   private static final long serialVersionUID = -4881534091594970538L;
 
   @Override
-  @Nullable
-  public abstract Map<String, String> getHeaders();
+  public abstract @Nullable Map<String, String> getHeaders();
 
   /** Creates a FixedHeaderProvider. */
   public static FixedHeaderProvider create(Map<String, String> headers) {

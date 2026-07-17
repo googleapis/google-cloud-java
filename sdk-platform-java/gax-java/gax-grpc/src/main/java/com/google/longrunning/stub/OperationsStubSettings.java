@@ -64,6 +64,7 @@ import com.google.longrunning.WaitOperationRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Settings class to configure an instance of {@link OperationsStub}. */
 @NullMarked
@@ -260,7 +261,7 @@ public class OperationsStubSettings extends StubSettings<OperationsStubSettings>
       this((ClientContext) null);
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();

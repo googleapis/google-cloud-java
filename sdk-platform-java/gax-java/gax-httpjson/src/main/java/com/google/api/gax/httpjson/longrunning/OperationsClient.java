@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -122,7 +123,7 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 public class OperationsClient implements BackgroundResource {
-  private final OperationsSettings settings;
+  private final @Nullable OperationsSettings settings;
   private final OperationsStub stub;
 
   /** Constructs an instance of OperationsClient with default settings. */
@@ -604,8 +605,8 @@ public class OperationsClient implements BackgroundResource {
           ListOperationsRequest, ListOperationsResponse, Operation, ListOperationsPage> {
 
     private ListOperationsPage(
-        PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
-        ListOperationsResponse response) {
+        @Nullable PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
+        @Nullable ListOperationsResponse response) {
       super(context, response);
     }
 
@@ -636,7 +637,8 @@ public class OperationsClient implements BackgroundResource {
           ListOperationsPage,
           ListOperationsFixedSizeCollection> {
 
-    private ListOperationsFixedSizeCollection(List<ListOperationsPage> pages, int collectionSize) {
+    private ListOperationsFixedSizeCollection(
+        @Nullable List<ListOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 

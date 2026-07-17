@@ -31,8 +31,8 @@ package com.google.api.gax.core;
 
 import com.google.auth.Credentials;
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** FixedCredentialsProvider is a CredentialsProvider which always provides the same credentials. */
 @NullMarked
@@ -40,8 +40,7 @@ import org.jspecify.annotations.NullMarked;
 public abstract class FixedCredentialsProvider implements CredentialsProvider {
 
   @Override
-  @Nullable
-  public abstract Credentials getCredentials();
+  public abstract @Nullable Credentials getCredentials();
 
   /** Creates a FixedCredentialsProvider. */
   public static FixedCredentialsProvider create(Credentials credentials) {

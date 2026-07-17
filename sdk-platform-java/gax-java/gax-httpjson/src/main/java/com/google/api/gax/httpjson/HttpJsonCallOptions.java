@@ -39,8 +39,8 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.auth.Credentials;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.TypeRegistry;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Options for an http-json call, including deadline and credentials. */
 @NullMarked
@@ -49,33 +49,26 @@ public abstract class HttpJsonCallOptions {
   public static final HttpJsonCallOptions DEFAULT = newBuilder().build();
 
   /** This method is obsolete. Use {@link #getTimeoutDuration()} instead. */
-  @Nullable
   @ObsoleteApi("Use getTimeoutDuration() instead")
-  public final org.threeten.bp.Duration getTimeout() {
+  public final org.threeten.bp.@Nullable Duration getTimeout() {
     return toThreetenDuration(getTimeoutDuration());
   }
 
-  @Nullable
-  public abstract java.time.Duration getTimeoutDuration();
+  public abstract java.time.@Nullable Duration getTimeoutDuration();
 
   /** This method is obsolete. Use {@link #getDeadlineInstant()} instead. */
-  @Nullable
   @ObsoleteApi("Use getDeadlineInstant() instead")
-  public final org.threeten.bp.Instant getDeadline() {
+  public final org.threeten.bp.@Nullable Instant getDeadline() {
     return toThreetenInstant(getDeadlineInstant());
   }
 
-  @Nullable
-  public abstract java.time.Instant getDeadlineInstant();
+  public abstract java.time.@Nullable Instant getDeadlineInstant();
 
-  @Nullable
-  public abstract Credentials getCredentials();
+  public abstract @Nullable Credentials getCredentials();
 
-  @Nullable
-  public abstract TypeRegistry getTypeRegistry();
+  public abstract @Nullable TypeRegistry getTypeRegistry();
 
-  @Nullable
-  public abstract ApiTracer getTracer();
+  public abstract @Nullable ApiTracer getTracer();
 
   public abstract Builder toBuilder();
 

@@ -39,8 +39,8 @@ import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This callable wraps a callable chain in a {@link ApiTracer}.
@@ -54,8 +54,8 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
   private final ApiTracerFactory tracerFactory;
   private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
-  @Nullable private final ResourceNameExtractor<RequestT> resourceNameExtractor;
+  private final @Nullable ApiTracerContext apiTracerContext;
+  private final @Nullable ResourceNameExtractor<RequestT> resourceNameExtractor;
 
   @ObsoleteApi("Use constructor with ApiTracerContext instead")
   public TracedUnaryCallable(

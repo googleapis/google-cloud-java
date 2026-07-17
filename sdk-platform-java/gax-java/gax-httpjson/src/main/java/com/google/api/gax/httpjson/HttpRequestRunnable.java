@@ -56,8 +56,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** A runnable object that creates and executes an HTTP request. */
 @NullMarked
@@ -312,7 +312,7 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
 
       public abstract Builder setStatusCode(int newStatusCode);
 
-      public abstract Builder setResponseContent(InputStream newResponseContent);
+      public abstract Builder setResponseContent(@Nullable InputStream newResponseContent);
 
       public abstract Builder setTrailers(HttpJsonMetadata newTrailers);
 

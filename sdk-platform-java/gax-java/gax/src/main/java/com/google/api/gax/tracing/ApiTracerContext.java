@@ -32,14 +32,15 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A context object that contains information used to infer attributes that are common for all
@@ -99,8 +100,7 @@ public abstract class ApiTracerContext {
    *
    * @return the RPC system name, or {@code null} if the transport is not set
    */
-  @Nullable
-  String rpcSystemName() {
+  @Nullable String rpcSystemName() {
     if (transport() == null) {
       return null;
     }
@@ -167,15 +167,13 @@ public abstract class ApiTracerContext {
   @Nullable
   abstract String urlDomain();
 
-  @Nullable
-  protected abstract Supplier<String> destinationResourceIdSupplier();
+  protected abstract @Nullable Supplier<String> destinationResourceIdSupplier();
 
   /**
    * The destination resource id of the request (e.g.
    * //pubsub.googleapis.com/projects/p/locations/l/topics/t).
    */
-  @Nullable
-  String destinationResourceId() {
+  @Nullable String destinationResourceId() {
     Supplier<String> supplier = destinationResourceIdSupplier();
     if (supplier == null) {
       return null;
@@ -191,8 +189,7 @@ public abstract class ApiTracerContext {
   }
 
   <RequestT> ApiTracerContext withResourceNameExtractor(
-      @Nullable RequestT request,
-      @Nullable com.google.api.gax.rpc.ResourceNameExtractor<RequestT> extractor) {
+      @Nullable RequestT request, @Nullable ResourceNameExtractor<RequestT> extractor) {
     if (extractor == null || request == null) {
       return this;
     }

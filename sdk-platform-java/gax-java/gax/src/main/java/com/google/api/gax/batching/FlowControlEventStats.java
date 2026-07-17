@@ -36,8 +36,8 @@ import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Record the statistics of flow control events.
@@ -126,13 +126,11 @@ public class FlowControlEventStats {
       return timestampMs;
     }
 
-    @Nullable
-    public FlowControlException getException() {
+    public @Nullable FlowControlException getException() {
       return exception;
     }
 
-    @Nullable
-    public Long getThrottledTime(TimeUnit timeUnit) {
+    public @Nullable Long getThrottledTime(TimeUnit timeUnit) {
       return throttledTimeMs == null
           ? null
           : timeUnit.convert(throttledTimeMs, TimeUnit.MILLISECONDS);

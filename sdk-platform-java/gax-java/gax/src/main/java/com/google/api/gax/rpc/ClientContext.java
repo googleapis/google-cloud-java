@@ -65,8 +65,8 @@ import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Encapsulates client state, including executor, credentials, and transport channel.
@@ -91,11 +91,9 @@ public abstract class ClientContext {
    */
   public abstract ScheduledExecutorService getExecutor();
 
-  @Nullable
-  public abstract Credentials getCredentials();
+  public abstract @Nullable Credentials getCredentials();
 
-  @Nullable
-  public abstract TransportChannel getTransportChannel();
+  public abstract @Nullable TransportChannel getTransportChannel();
 
   public abstract Map<String, String> getHeaders();
 
@@ -105,8 +103,7 @@ public abstract class ClientContext {
 
   public abstract ApiCallContext getDefaultCallContext();
 
-  @Nullable
-  public abstract Watchdog getStreamWatchdog();
+  public abstract @Nullable Watchdog getStreamWatchdog();
 
   /** This method is obsolete. Use {@link #getStreamWatchdogCheckIntervalDuration()} instead. */
   @Nonnull
@@ -118,14 +115,11 @@ public abstract class ClientContext {
   @Nonnull
   public abstract java.time.Duration getStreamWatchdogCheckIntervalDuration();
 
-  @Nullable
-  public abstract String getUniverseDomain();
+  public abstract @Nullable String getUniverseDomain();
 
-  @Nullable
-  public abstract String getEndpoint();
+  public abstract @Nullable String getEndpoint();
 
-  @Nullable
-  public abstract String getQuotaProjectId();
+  public abstract @Nullable String getQuotaProjectId();
 
   /** Package-Private as this is to be shared to StubSettings */
   abstract EndpointContext getEndpointContext();
@@ -139,8 +133,7 @@ public abstract class ClientContext {
    * Gets the API audience used when creating a Client that uses {@link
    * com.google.auth.oauth2.GdchCredentials}
    */
-  @Nullable
-  public abstract String getGdchApiAudience();
+  public abstract @Nullable String getGdchApiAudience();
 
   /** Create a new ClientContext with default values */
   public static Builder newBuilder() {

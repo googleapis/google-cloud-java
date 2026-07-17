@@ -33,8 +33,8 @@ import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Settings for {@link FlowController}. */
 @NullMarked
@@ -45,12 +45,10 @@ public abstract class FlowControlSettings {
   }
 
   /** Maximum number of outstanding elements to keep in memory before enforcing flow control. */
-  @Nullable
-  public abstract Long getMaxOutstandingElementCount();
+  public abstract @Nullable Long getMaxOutstandingElementCount();
 
   /** Maximum number of outstanding bytes to keep in memory before enforcing flow control. */
-  @Nullable
-  public abstract Long getMaxOutstandingRequestBytes();
+  public abstract @Nullable Long getMaxOutstandingRequestBytes();
 
   /**
    * The behavior of {@link FlowController} when the specified limits are exceeded. Defaults to

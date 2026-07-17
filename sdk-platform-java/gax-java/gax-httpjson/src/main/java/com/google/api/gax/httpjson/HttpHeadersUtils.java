@@ -37,12 +37,13 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** This class is for internal use only and is public for technical reasons. */
 @NullMarked
 @InternalApi
 public class HttpHeadersUtils {
-  public static String getUserAgentValue(Map<String, String> headersMap) {
+  public static @Nullable String getUserAgentValue(Map<String, String> headersMap) {
     for (Map.Entry<String, String> entry : headersMap.entrySet()) {
       if ("user-agent".equalsIgnoreCase(entry.getKey())) {
         return entry.getValue();

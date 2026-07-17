@@ -37,8 +37,8 @@ import com.google.api.core.ObsoleteApi;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A watchdog provider which instantiates a new provider on every request.
@@ -49,9 +49,9 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 public final class InstantiatingWatchdogProvider implements WatchdogProvider {
-  @Nullable private final ApiClock clock;
-  @Nullable private final ScheduledExecutorService executor;
-  @Nullable private final java.time.Duration checkInterval;
+  private final @Nullable ApiClock clock;
+  private final @Nullable ScheduledExecutorService executor;
+  private final java.time.@Nullable Duration checkInterval;
 
   public static WatchdogProvider create() {
     return new InstantiatingWatchdogProvider(null, null, null);
@@ -60,7 +60,7 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   private InstantiatingWatchdogProvider(
       @Nullable ApiClock clock,
       @Nullable ScheduledExecutorService executor,
-      @Nullable java.time.Duration checkInterval) {
+      java.time.@Nullable Duration checkInterval) {
     this.clock = clock;
     this.executor = executor;
     this.checkInterval = checkInterval;
