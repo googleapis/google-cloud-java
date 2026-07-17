@@ -104,7 +104,7 @@ public class StreamingSubscriberConnectionTest {
   private static final Duration MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
   @Before
-  public void setUp() {
+  public void setUp() throws Exception {
     systemExecutor = new FakeScheduledExecutorService();
     executor = new FakeScheduledExecutorService();
     clock = systemExecutor.getClock();
@@ -117,6 +117,15 @@ public class StreamingSubscriberConnectionTest {
     when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
     when(mockSubscriberStub.acknowledgeCallable()).thenReturn(mockAcknowledgeCallable);
     when(mockSubscriberStub.modifyAckDeadlineCallable()).thenReturn(mockModifyAckDeadlineCallable);
+
+    ClientStream<StreamingPullRequest> defaultMockClientStream =
+        mock(ClientStream.class, withSettings().withoutAnnotations());
+    when(mockStreamingCallable.splitCall(any(), any())).thenReturn(defaultMockClientStream);
+
+    when(mockAcknowledgeCallable.futureCall(any()))
+        .thenAnswer(invocation -> SettableApiFuture.create());
+    when(mockModifyAckDeadlineCallable.futureCall(any()))
+        .thenAnswer(invocation -> SettableApiFuture.create());
   }
 
   @After
