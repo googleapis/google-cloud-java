@@ -73,7 +73,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Answers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -104,7 +103,6 @@ public class MetricsTracerTest {
 
   private Server server;
 
-  @Mock(answer = Answers.CALLS_REAL_METHODS)
   private BigtableGrpc.BigtableImplBase mockService;
 
   private final StatsComponent localStats = new SimpleStatsComponent();
@@ -113,6 +111,10 @@ public class MetricsTracerTest {
 
   @Before
   public void setUp() throws Exception {
+    mockService =
+        Mockito.mock(
+            BigtableGrpc.BigtableImplBase.class,
+            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.CALLS_REAL_METHODS));
     server = FakeServiceBuilder.create(mockService).start();
 
     com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientViews(
@@ -414,7 +416,8 @@ public class MetricsTracerTest {
 
   @Test
   public void testBatchMutateRowsThrottledTime() throws Exception {
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController =
+        Mockito.mock(FlowController.class, Mockito.withSettings().withoutAnnotations());
     MutateRowsBatchingDescriptor batchingDescriptor = new MutateRowsBatchingDescriptor();
 
     // Mock throttling

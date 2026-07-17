@@ -14,7 +14,6 @@ Java idiomatic client for [Config Delivery API][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -47,6 +46,14 @@ If you are using Maven without the BOM, add this to your dependencies:
   <artifactId>google-cloud-configdelivery</artifactId>
   <version>0.28.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-configdelivery'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

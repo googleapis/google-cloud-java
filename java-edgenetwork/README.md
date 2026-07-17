@@ -11,7 +11,6 @@ Java idiomatic client for [Distributed Cloud Edge Network API][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -44,6 +43,14 @@ If you are using Maven without the BOM, add this to your dependencies:
   <artifactId>google-cloud-edgenetwork</artifactId>
   <version>0.62.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-edgenetwork'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
