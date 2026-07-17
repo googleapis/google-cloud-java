@@ -267,6 +267,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   /** The result of a statement that is executed on a {@link MockSpannerServiceImpl}. */
   public static class StatementResult {
+
     private enum StatementResultType {
       RESULT_SET,
       UPDATE_COUNT,
@@ -317,10 +318,27 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       return new StatementResult(statement, exception);
     }
 
-    /** Creates a result for the query that detects the dialect that is used for the database. */
+    /**
+     * Creates a result for the query that detects the dialect that is used for the database.
+     * Delegates to {@link #detectMetadataResult(Dialect)} as dialect detection uses database
+     * metadata.
+     */
     public static StatementResult detectDialectResult(Dialect resultDialect) {
-      return StatementResult.query(
-          MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+      return detectMetadataResult(resultDialect);
+    }
+
+    /** Creates a result for the query that detects the database metadata. */
+    public static StatementResult detectMetadataResult(Dialect resultDialect) {
+      return detectMetadataResult(resultDialect, "serializable", "pessimistic");
+    }
+
+    /**
+     * Creates a result for the query that detects the database metadata with custom isolation and
+     * lock mode.
+     */
+    public static StatementResult detectMetadataResult(
+        Dialect resultDialect, String defaultTxnIsolation, String defaultReadLockMode) {
+      ResultSet.Builder builder =
           ResultSet.newBuilder()
               .setMetadata(
                   ResultSetMetadata.newBuilder()
@@ -328,19 +346,57 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                           StructType.newBuilder()
                               .addFields(
                                   Field.newBuilder()
-                                      .setName("DIALECT")
+                                      .setName("option_name")
+                                      .setType(Type.newBuilder().setCode(TypeCode.STRING).build())
+                                      .build())
+                              .addFields(
+                                  Field.newBuilder()
+                                      .setName("option_value")
                                       .setType(Type.newBuilder().setCode(TypeCode.STRING).build())
                                       .build())
                               .build())
-                      .build())
-              .addRows(
-                  ListValue.newBuilder()
-                      .addValues(
-                          com.google.protobuf.Value.newBuilder()
-                              .setStringValue(resultDialect.toString())
-                              .build())
-                      .build())
-              .build());
+                      .build());
+      if (resultDialect != null) {
+        builder.addRows(
+            ListValue.newBuilder()
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue("database_dialect")
+                        .build())
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue(resultDialect.toString())
+                        .build())
+                .build());
+      }
+      if (defaultTxnIsolation != null) {
+        builder.addRows(
+            ListValue.newBuilder()
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue("default_transaction_isolation")
+                        .build())
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue(defaultTxnIsolation)
+                        .build())
+                .build());
+      }
+      if (defaultReadLockMode != null) {
+        builder.addRows(
+            ListValue.newBuilder()
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue("default_read_lock_mode")
+                        .build())
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue(defaultReadLockMode)
+                        .build())
+                .build());
+      }
+      return StatementResult.query(
+          MultiplexedSessionDatabaseClient.DETERMINE_METADATA_STATEMENT, builder.build());
     }
 
     private static class KeepLastElementDeque<E> extends LinkedList<E> {
@@ -598,7 +654,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   /**
    * Flip this switch to true if you want the {@link
-   * MultiplexedSessionDatabaseClient#DETERMINE_DIALECT_STATEMENT} statement to be included in the
+   * MultiplexedSessionDatabaseClient#DETERMINE_METADATA_STATEMENT} statement to be included in the
    * recorded requests on the mock server. It is ignored by default to prevent tests that do not
    * expect this request to suddenly start failing.
    */
@@ -658,7 +714,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private SimulatedExecutionTime streamingReadExecutionTime = NO_EXECUTION_TIME;
 
   public MockSpannerServiceImpl() {
-    putStatementResult(StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    putStatementResult(StatementResult.detectMetadataResult(Dialect.GOOGLE_STANDARD_SQL));
   }
 
   private String generateSessionName(String database) {
@@ -765,7 +821,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   /**
    * Set this to true if you want the {@link
-   * MultiplexedSessionDatabaseClient#DETERMINE_DIALECT_STATEMENT} statement to be included in the
+   * MultiplexedSessionDatabaseClient#DETERMINE_METADATA_STATEMENT} statement to be included in the
    * recorded requests on the mock server. It is ignored by default to prevent tests that do not
    * expect this request to suddenly start failing.
    */
@@ -1060,7 +1116,14 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void executeSql(ExecuteSqlRequest request, StreamObserver<ResultSet> responseObserver) {
-    maybeFreezeAndRecordRequest(request);
+    boolean isDetermineMetadata =
+        !includeDetermineDialectStatementInRequests
+            && request
+                .getSql()
+                .equals(MultiplexedSessionDatabaseClient.DETERMINE_METADATA_STATEMENT.getSql());
+    if (!isDetermineMetadata) {
+      maybeFreezeAndRecordRequest(request);
+    }
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -1069,7 +1132,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
     sessionLastUsed.put(session.getName(), Instant.now());
     try {
-      executeSqlExecutionTime.simulateExecutionTime(exceptions, stickyGlobalExceptions, freezeLock);
+      if (!isDetermineMetadata) {
+        executeSqlExecutionTime.simulateExecutionTime(
+            exceptions, stickyGlobalExceptions, freezeLock);
+      }
       ByteString transactionId = getTransactionId(session, request.getTransaction());
       simulateAbort(session, transactionId);
       Statement statement =
@@ -1260,10 +1326,12 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void executeStreamingSql(
       ExecuteSqlRequest request, StreamObserver<PartialResultSet> responseObserver) {
-    if (includeDetermineDialectStatementInRequests
-        || !request
-            .getSql()
-            .equals(MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT.getSql())) {
+    boolean isDetermineMetadata =
+        !includeDetermineDialectStatementInRequests
+            && request
+                .getSql()
+                .equals(MultiplexedSessionDatabaseClient.DETERMINE_METADATA_STATEMENT.getSql());
+    if (!isDetermineMetadata) {
       maybeFreezeAndRecordRequest(request);
     }
     Preconditions.checkNotNull(request.getSession());
@@ -1298,8 +1366,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
             break;
         }
       }
-      executeStreamingSqlExecutionTime.simulateExecutionTime(
-          exceptions, stickyGlobalExceptions, freezeLock);
+      if (!isDetermineMetadata) {
+        executeStreamingSqlExecutionTime.simulateExecutionTime(
+            exceptions, stickyGlobalExceptions, freezeLock);
+      }
       // Get or start transaction
       if (!request.getPartitionToken().isEmpty()) {
         List<ByteString> tokens =
@@ -1325,7 +1395,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
               request.getTransaction(),
               request.getResumeToken(),
               responseObserver,
-              getExecuteStreamingSqlExecutionTime(),
+              isDetermineMetadata ? NO_EXECUTION_TIME : getExecuteStreamingSqlExecutionTime(),
               session.getMultiplexed());
           break;
         case UPDATE_COUNT:

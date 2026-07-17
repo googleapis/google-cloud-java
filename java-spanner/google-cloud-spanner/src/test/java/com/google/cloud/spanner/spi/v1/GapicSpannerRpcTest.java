@@ -829,6 +829,7 @@ public class GapicSpannerRpcTest {
     try (Spanner spanner = options.getService()) {
       final DatabaseClient databaseClient =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      databaseClient.getDialect();
       TransactionRunner runner = databaseClient.readWriteTransaction();
       runner.run(
           transaction -> {
