@@ -547,8 +547,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     if (date == null || cal == null) {
       return null;
     }
-    cal.setTimeInMillis(date.getTime());
-    return new java.sql.Date(cal.getTimeInMillis());
+    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
+    safeCal.setTimeInMillis(date.getTime());
+    return new java.sql.Date(safeCal.getTimeInMillis());
   }
 
   @Override
@@ -558,8 +559,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     if (time == null || cal == null) {
       return null;
     }
-    cal.setTimeInMillis(time.getTime());
-    return new java.sql.Time(cal.getTimeInMillis());
+    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
+    safeCal.setTimeInMillis(time.getTime());
+    return new java.sql.Time(safeCal.getTimeInMillis());
   }
 
   @Override
@@ -569,8 +571,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     if (timeStamp == null || cal == null) {
       return null;
     }
-    cal.setTimeInMillis(timeStamp.getTime());
-    return new java.sql.Timestamp(cal.getTimeInMillis());
+    Calendar safeCal = BigQueryParameterHandler.getSafeCalendar(cal);
+    safeCal.setTimeInMillis(timeStamp.getTime());
+    return new java.sql.Timestamp(safeCal.getTimeInMillis());
   }
 
   @Override

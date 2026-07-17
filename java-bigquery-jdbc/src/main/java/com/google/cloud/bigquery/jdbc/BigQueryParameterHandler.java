@@ -302,8 +302,8 @@ class BigQueryParameterHandler {
   }
 
   /**
-   * Returns a safe, cloned copy of the provided Calendar to prevent mutating the caller's state during
-   * timezone conversions. If cal is null, returns a default Calendar instance.
+   * Returns a safe, cloned copy of the provided Calendar to prevent mutating the caller's state
+   * during timezone conversions. If cal is null, returns a default Calendar instance.
    */
   static Calendar getSafeCalendar(Calendar cal) {
     Calendar safeCal = null;

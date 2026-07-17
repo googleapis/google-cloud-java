@@ -183,7 +183,11 @@ public class BigQueryPreparedStatementSettersTest {
     preparedStatement.parameterHandler.setParameter(
         2, null, Integer.class, BigQueryParameterHandler.BigQueryStatementParameterType.OUT, 0);
     preparedStatement.parameterHandler.setParameter(
-        3, "inoutParam", String.class, BigQueryParameterHandler.BigQueryStatementParameterType.INOUT, 0);
+        3,
+        "inoutParam",
+        String.class,
+        BigQueryParameterHandler.BigQueryStatementParameterType.INOUT,
+        0);
 
     ParameterMetaData metaData = preparedStatement.getParameterMetaData();
     assertEquals(ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
