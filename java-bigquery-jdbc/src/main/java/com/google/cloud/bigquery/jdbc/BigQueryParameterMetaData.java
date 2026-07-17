@@ -120,9 +120,11 @@ class BigQueryParameterMetaData implements ParameterMetaData {
         return clazz.getName();
       }
     }
-    Class<?> boundType = this.parameterHandler.getType(param);
-    if (boundType != null) {
-      return boundType.getName();
+    if (this.parameterHandler != null) {
+      Class<?> boundType = this.parameterHandler.getType(param);
+      if (boundType != null) {
+        return boundType.getName();
+      }
     }
     return Object.class.getName();
   }
