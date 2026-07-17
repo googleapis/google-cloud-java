@@ -357,7 +357,9 @@ class GrpcClientCallsTest {
 
     Channel mockChannel = mock(ManagedChannel.class);
     com.google.api.gax.tracing.ApiTracer mockTracer =
-        mock(com.google.api.gax.tracing.ApiTracer.class);
+        mock(
+            com.google.api.gax.tracing.ApiTracer.class,
+            Mockito.withSettings().withoutAnnotations());
 
     Mockito.doAnswer(
             invocation -> {

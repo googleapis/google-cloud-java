@@ -147,7 +147,9 @@ class HttpJsonClientCallsTest {
   @Test
   void testGetMetadataWithTraceContext() {
     com.google.api.gax.tracing.ApiTracer mockTracer =
-        mock(com.google.api.gax.tracing.ApiTracer.class);
+        mock(
+            com.google.api.gax.tracing.ApiTracer.class,
+            Mockito.withSettings().withoutAnnotations());
     Mockito.doAnswer(
             invocation -> {
               java.util.Map<String, String> carrier = invocation.getArgument(0);
