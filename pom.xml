@@ -80,6 +80,7 @@
     <module>java-cloudquotas</module>
     <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
+    <module>java-commerceproducer</module>
     <module>java-common-protos</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
