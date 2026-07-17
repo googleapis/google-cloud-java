@@ -184,7 +184,19 @@ public class MtlsUtils {
 
     File certConfigFile =
         resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
-    return certConfigFile != null;
+    if (certConfigFile == null) {
+      return false;
+    }
+
+    try {
+      WorkloadCertificateConfiguration config =
+          getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
+      File certFile = new File(config.getCertPath());
+      File keyFile = new File(config.getPrivateKeyPath());
+      return certFile.isFile() && keyFile.isFile();
+    } catch (IOException e) {
+      return false;
+    }
   }
 
   /**

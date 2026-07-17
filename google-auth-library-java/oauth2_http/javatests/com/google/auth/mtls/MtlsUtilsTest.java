@@ -440,6 +440,25 @@ class MtlsUtilsTest {
   }
 
   @Test
+  void shouldMtlsEndpointBeUsed_autoPolicy_withMissingCertFiles_returnsFalse() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path nonExistentCert = tempDir.resolve("non_existent_cert.pem");
+    Files.write(
+        configFile,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + nonExistentCert.toString().replace("\\", "\\\\")
+                + "\",\"key_path\":\"key.pem\"}}}")
+            .getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
+  }
+
+  @Test
   void getWorkloadCertificateConfiguration_malformedJson_throwsException() throws IOException {
     Path configFile = tempDir.resolve("malformed.json");
     Files.write(configFile, "{invalid-json}".getBytes());
