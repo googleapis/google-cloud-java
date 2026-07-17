@@ -28,6 +28,12 @@ import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
 
@@ -117,11 +123,15 @@ class BigQueryJdbcTypeMappings {
       return StandardSQLTypeName.FLOAT64;
     } else if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
-    } else if (Date.class.isAssignableFrom(type)) {
+    } else if (Date.class.isAssignableFrom(type) || LocalDate.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.DATE;
-    } else if (Timestamp.class.isAssignableFrom(type)) {
+    } else if (Timestamp.class.isAssignableFrom(type)
+        || LocalDateTime.class.isAssignableFrom(type)
+        || OffsetDateTime.class.isAssignableFrom(type)
+        || Instant.class.isAssignableFrom(type)
+        || ZonedDateTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIMESTAMP;
-    } else if (Time.class.isAssignableFrom(type)) {
+    } else if (Time.class.isAssignableFrom(type) || LocalTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIME;
     } else if (JsonObject.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.JSON;
