@@ -12,6 +12,5 @@
   "distribution_name": "com.google.api-ads:data-manager",
   "api_id": "datamanager.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://developers.google.com/data-manager/api/reference/rpc"
 }

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.26.0
+version: v0.27.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -105,6 +105,19 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentidentity
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentidentity/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/agentidentity/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: agentregistry
     version: 0.2.0-SNAPSHOT
     apis:
@@ -945,6 +958,13 @@ libraries:
       api_description_override: Manages Google Cloud technical support cases for Customer Care support offerings.
       name_pretty_override: Google Cloud Support API
       product_documentation_override: https://cloud.google.com/support/docs/reference/support-api/
+  - name: commerceproducer
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/commerceproducer/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: common-protos
     version: 2.74.0-SNAPSHOT
     apis:

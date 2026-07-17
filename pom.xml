@@ -21,6 +21,7 @@
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
     <module>java-advisorynotifications</module>
+    <module>java-agentidentity</module>
     <module>java-agentregistry</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
@@ -79,6 +80,7 @@
     <module>java-cloudquotas</module>
     <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
+    <module>java-commerceproducer</module>
     <module>java-common-protos</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
