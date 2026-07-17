@@ -29,11 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
@@ -43,7 +45,6 @@ import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 /** Tests for {@link UnaryCallable}. */
 class UnaryCallableTest {
@@ -75,8 +76,9 @@ class UnaryCallableTest {
   @Test
   void callWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
-    RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
+    Credentials credentials = mock(Credentials.class);
+    RetrySettings retrySettings =
+        mock(RetrySettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryableCodes =
         ImmutableSet.of(
             StatusCode.Code.INTERNAL,

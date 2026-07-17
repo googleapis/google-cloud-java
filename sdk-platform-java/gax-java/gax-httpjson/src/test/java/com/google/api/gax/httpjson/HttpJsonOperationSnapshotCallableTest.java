@@ -71,7 +71,8 @@ class HttpJsonOperationSnapshotCallableTest {
   void futureCallTest() throws ExecutionException, InterruptedException {
     Option request = Option.newBuilder().setName("Arizona").build();
     Field field = Field.newBuilder().setName("Georgia").build();
-    ApiCallContext context = mock(ApiCallContext.class);
+    ApiCallContext context =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()
             .setName("California")
@@ -96,7 +97,8 @@ class HttpJsonOperationSnapshotCallableTest {
   void futureCallTestException() throws InterruptedException {
     Option request = Option.newBuilder().setName("Arizona").build();
     Field field = Field.newBuilder().setName("Georgia").build();
-    ApiCallContext context = mock(ApiCallContext.class);
+    ApiCallContext context =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()
             .setName("California")

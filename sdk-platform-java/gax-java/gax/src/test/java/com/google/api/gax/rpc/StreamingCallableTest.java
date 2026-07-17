@@ -29,7 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
+
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
@@ -48,7 +50,6 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class StreamingCallableTest {
   private ClientContext clientContext;
@@ -123,7 +124,8 @@ class StreamingCallableTest {
     ApiCallContext defaultCallContext = FakeCallContext.createDefault();
     ClientStreamingStashCallable<Integer, Integer> stashCallable =
         new ClientStreamingStashCallable<>();
-    ApiStreamObserver<Integer> observer = Mockito.mock(ApiStreamObserver.class);
+    ApiStreamObserver<Integer> observer =
+        mock(ApiStreamObserver.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(defaultCallContext);
     callable.clientStreamingCall(observer);
@@ -135,8 +137,9 @@ class StreamingCallableTest {
   @SuppressWarnings("unchecked")
   void testClientStreamingCallWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
-    RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
+    Credentials credentials = mock(Credentials.class);
+    RetrySettings retrySettings =
+        mock(RetrySettings.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryableCodes =
         ImmutableSet.of(
             StatusCode.Code.INTERNAL,
@@ -150,7 +153,8 @@ class StreamingCallableTest {
             .withRetryableCodes(retryableCodes);
     ClientStreamingStashCallable<Integer, Integer> stashCallable =
         new ClientStreamingStashCallable<>();
-    ApiStreamObserver<Integer> observer = Mockito.mock(ApiStreamObserver.class);
+    ApiStreamObserver<Integer> observer =
+        mock(ApiStreamObserver.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     callable.clientStreamingCall(observer, context);

@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.StatusCode;
@@ -144,7 +145,7 @@ class HttpJsonClientCallsTest {
   @Test
   void testGetMetadataWithTraceContext() {
     com.google.api.gax.tracing.ApiTracer mockTracer =
-        Mockito.mock(com.google.api.gax.tracing.ApiTracer.class);
+        mock(com.google.api.gax.tracing.ApiTracer.class);
     Mockito.doAnswer(
             invocation -> {
               java.util.Map<String, String> carrier = invocation.getArgument(0);

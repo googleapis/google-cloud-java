@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.retrying.RetrySettings;
@@ -66,7 +68,7 @@ class ServerStreamingAttemptCallableTest {
     innerCallable = new MockServerStreamingCallable<>();
     observer = new AccumulatingObserver(true);
     resumptionStrategy = new MyStreamResumptionStrategy();
-    mockedCallContext = Mockito.mock(FakeCallContext.class);
+    mockedCallContext = mock(FakeCallContext.class);
   }
 
   private ServerStreamingAttemptCallable<String, String> createCallable() {

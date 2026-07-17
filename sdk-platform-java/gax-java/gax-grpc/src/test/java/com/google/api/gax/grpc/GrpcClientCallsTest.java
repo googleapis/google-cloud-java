@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.api.gax.grpc.testing.FakeChannelFactory;
@@ -108,13 +109,13 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> clientCall0 = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> clientCall0 = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> clientCall1 = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> clientCall1 = mock(ClientCall.class);
 
-    ManagedChannel channel0 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel channel1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel channel0 = mock(ManagedChannel.class);
+    ManagedChannel channel1 = mock(ManagedChannel.class);
 
     Mockito.when(channel0.newCall(Mockito.eq(descriptor), Mockito.<CallOptions>any()))
         .thenReturn(clientCall0);
@@ -149,12 +150,12 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> mockClientCall = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Money> mockListener = mock(ClientCall.Listener.class);
 
-    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    Channel mockChannel = mock(ManagedChannel.class);
 
     Mockito.doAnswer(
             invocation -> {
@@ -184,12 +185,12 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> mockClientCall = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Money> mockListener = mock(ClientCall.Listener.class);
 
-    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    Channel mockChannel = mock(ManagedChannel.class);
 
     ArgumentCaptor<CallOptions> capturedCallOptions = ArgumentCaptor.forClass(CallOptions.class);
 
@@ -215,12 +216,12 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> mockClientCall = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Money> mockListener = mock(ClientCall.Listener.class);
 
-    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    Channel mockChannel = mock(ManagedChannel.class);
 
     ArgumentCaptor<CallOptions> capturedCallOptions = ArgumentCaptor.forClass(CallOptions.class);
 
@@ -248,12 +249,12 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> mockClientCall = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Money> mockListener = mock(ClientCall.Listener.class);
 
-    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    Channel mockChannel = mock(ManagedChannel.class);
 
     ArgumentCaptor<CallOptions> capturedCallOptions = ArgumentCaptor.forClass(CallOptions.class);
 
@@ -349,14 +350,14 @@ class GrpcClientCallsTest {
     MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
 
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> mockClientCall = mock(ClientCall.class);
 
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Money> mockListener = mock(ClientCall.Listener.class);
 
-    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    Channel mockChannel = mock(ManagedChannel.class);
     com.google.api.gax.tracing.ApiTracer mockTracer =
-        Mockito.mock(com.google.api.gax.tracing.ApiTracer.class);
+        mock(com.google.api.gax.tracing.ApiTracer.class);
 
     Mockito.doAnswer(
             invocation -> {

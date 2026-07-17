@@ -30,17 +30,18 @@
 
 package com.google.api.gax.grpc;
 
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.mockito.Mockito.mock;
 
 import io.grpc.ManagedChannel;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class GrpcTransportChannelTest {
 
   @Test
   void testBuilderDefaults() {
-    ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel channel = mock(ManagedChannel.class);
     GrpcTransportChannel grpcTransportChannel =
         GrpcTransportChannel.newBuilder().setManagedChannel(channel).build();
     assertFalse(grpcTransportChannel.isDirectPath());

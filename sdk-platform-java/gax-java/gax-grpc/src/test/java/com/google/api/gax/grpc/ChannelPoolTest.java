@@ -33,6 +33,7 @@ import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_RECOGNIZE;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_SERVER_STREAMING_RECOGNIZE;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedExecutorProvider;
@@ -91,8 +92,8 @@ class ChannelPoolTest {
 
   @Test
   void testAuthority() throws IOException {
-    ManagedChannel sub1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel sub2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel sub1 = mock(ManagedChannel.class);
+    ManagedChannel sub2 = mock(ManagedChannel.class);
 
     Mockito.when(sub1.authority()).thenReturn("myAuth");
 
@@ -106,8 +107,8 @@ class ChannelPoolTest {
 
   @Test
   void testRoundRobin() throws IOException {
-    ManagedChannel sub1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel sub2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel sub1 = mock(ManagedChannel.class);
+    ManagedChannel sub2 = mock(ManagedChannel.class);
 
     Mockito.when(sub1.authority()).thenReturn("myAuth");
 
@@ -128,7 +129,7 @@ class ChannelPoolTest {
     MethodDescriptor<Color, Money> methodDescriptor = METHOD_RECOGNIZE;
     CallOptions callOptions = CallOptions.DEFAULT;
     @SuppressWarnings("unchecked")
-    ClientCall<Color, Money> expectedClientCall = Mockito.mock(ClientCall.class);
+    ClientCall<Color, Money> expectedClientCall = mock(ClientCall.class);
 
     channels.forEach(Mockito::reset);
     Mockito.doReturn(expectedClientCall).when(targetChannel).newCall(methodDescriptor, callOptions);
@@ -148,12 +149,12 @@ class ChannelPoolTest {
   private static ChannelFactory createMockChannelFactory(
       List<ManagedChannel> channels, List<ClientCall<Object, Object>> startedCalls) {
     return () -> {
-      ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+      ManagedChannel channel = mock(ManagedChannel.class);
       Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
           .thenAnswer(
               invocation -> {
                 @SuppressWarnings("unchecked")
-                ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
+                ClientCall<Object, Object> clientCall = mock(ClientCall.class);
                 if (startedCalls != null) {
                   startedCalls.add(clientCall);
                 }
@@ -174,14 +175,14 @@ class ChannelPoolTest {
     final MethodDescriptor<Color, Money> methodDescriptor = METHOD_RECOGNIZE;
     final CallOptions callOptions = CallOptions.DEFAULT;
     @SuppressWarnings("unchecked")
-    final ClientCall<Color, Money> clientCall = Mockito.mock(ClientCall.class);
+    final ClientCall<Color, Money> clientCall = mock(ClientCall.class);
 
     for (int i = 0; i < numChannels; i++) {
       final int index = i;
 
       counts[i] = new AtomicInteger();
 
-      channels[i] = Mockito.mock(ManagedChannel.class);
+      channels[i] = mock(ManagedChannel.class);
       Mockito.when(channels[i].newCall(methodDescriptor, callOptions))
           .thenAnswer(
               (ignored) -> {
@@ -221,9 +222,9 @@ class ChannelPoolTest {
   // Test channelPrimer is called same number of times as poolSize if executorService is set to null
   @Test
   void channelPrimerShouldCallPoolConstruction() throws IOException {
-    ChannelPrimer mockChannelPrimer = Mockito.mock(ChannelPrimer.class);
-    ManagedChannel channel1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel channel2 = Mockito.mock(ManagedChannel.class);
+    ChannelPrimer mockChannelPrimer = mock(ChannelPrimer.class);
+    ManagedChannel channel1 = mock(ManagedChannel.class);
+    ManagedChannel channel2 = mock(ManagedChannel.class);
 
     pool =
         ChannelPool.create(
@@ -239,10 +240,10 @@ class ChannelPoolTest {
   // Test channelPrimer is called periodically, if there's an executorService
   @Test
   void channelPrimerIsCalledPeriodically() throws IOException {
-    ChannelPrimer mockChannelPrimer = Mockito.mock(ChannelPrimer.class);
-    ManagedChannel channel1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel channel2 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel channel3 = Mockito.mock(ManagedChannel.class);
+    ChannelPrimer mockChannelPrimer = mock(ChannelPrimer.class);
+    ManagedChannel channel1 = mock(ManagedChannel.class);
+    ManagedChannel channel2 = mock(ManagedChannel.class);
+    ManagedChannel channel3 = mock(ManagedChannel.class);
 
     List<Runnable> channelRefreshers = new ArrayList<>();
 
@@ -290,8 +291,8 @@ class ChannelPoolTest {
   // call should be allowed to complete and the channel should not be shutdown
   @Test
   void callShouldCompleteAfterCreation() throws IOException {
-    ManagedChannel underlyingChannel = Mockito.mock(ManagedChannel.class);
-    ManagedChannel replacementChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel underlyingChannel = mock(ManagedChannel.class);
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
     pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null);
@@ -315,7 +316,7 @@ class ChannelPoolTest {
 
     // create a new call on entry
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Integer> listener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Integer> listener = mock(ClientCall.Listener.class);
     ClientCall<String, Integer> call =
         pool.newCall(FakeMethodDescriptor.create(), CallOptions.DEFAULT);
 
@@ -338,8 +339,8 @@ class ChannelPoolTest {
   // call should be allowed to complete and the channel should not be shutdown
   @Test
   void callShouldCompleteAfterStarted() throws IOException {
-    final ManagedChannel underlyingChannel = Mockito.mock(ManagedChannel.class);
-    ManagedChannel replacementChannel = Mockito.mock(ManagedChannel.class);
+    final ManagedChannel underlyingChannel = mock(ManagedChannel.class);
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
 
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
@@ -364,7 +365,7 @@ class ChannelPoolTest {
 
     // create a new call on safeShutdownManagedChannel
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Integer> listener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Integer> listener = mock(ClientCall.Listener.class);
     ClientCall<String, Integer> call =
         pool.newCall(FakeMethodDescriptor.create(), CallOptions.DEFAULT);
 
@@ -383,8 +384,8 @@ class ChannelPoolTest {
   // Channel should be shutdown after a refresh all the calls have completed
   @Test
   void channelShouldShutdown() throws IOException {
-    ManagedChannel underlyingChannel = Mockito.mock(ManagedChannel.class);
-    ManagedChannel replacementChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel underlyingChannel = mock(ManagedChannel.class);
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
 
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
@@ -409,7 +410,7 @@ class ChannelPoolTest {
 
     // create a new call on safeShutdownManagedChannel
     @SuppressWarnings("unchecked")
-    ClientCall.Listener<Integer> listener = Mockito.mock(ClientCall.Listener.class);
+    ClientCall.Listener<Integer> listener = mock(ClientCall.Listener.class);
     ClientCall<String, Integer> call =
         pool.newCall(FakeMethodDescriptor.create(), CallOptions.DEFAULT);
 
@@ -426,8 +427,8 @@ class ChannelPoolTest {
 
   @Test
   void channelRefreshShouldSwapChannels() throws IOException {
-    ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel underlyingChannel2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel underlyingChannel1 = mock(ManagedChannel.class);
+    ManagedChannel underlyingChannel2 = mock(ManagedChannel.class);
 
     // mock executor service to capture the runnable scheduled, so we can invoke it when we want to
     ScheduledExecutorService scheduledExecutorService =
@@ -643,9 +644,9 @@ class ChannelPoolTest {
 
   @Test
   void testReleasingClientCallCancelEarly() throws IOException {
-    ClientCall mockClientCall = Mockito.mock(ClientCall.class);
+    ClientCall mockClientCall = mock(ClientCall.class);
     Mockito.doAnswer(invocation -> null).when(mockClientCall).cancel(Mockito.any(), Mockito.any());
-    ManagedChannel fakeChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel fakeChannel = mock(ManagedChannel.class);
     Mockito.when(fakeChannel.newCall(Mockito.any(), Mockito.any())).thenReturn(mockClientCall);
     ChannelPoolSettings channelPoolSettings = ChannelPoolSettings.staticallySized(1);
     ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));
@@ -753,7 +754,7 @@ class ChannelPoolTest {
         Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
-    ChannelFactory channelFactory = () -> Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = () -> mock(ManagedChannel.class);
 
     pool =
         new ChannelPool(
@@ -796,8 +797,8 @@ class ChannelPoolTest {
 
     try {
       // Create a fake channel pool thats backed by mock channels that simply record invocations
-      ClientCall mockClientCall = Mockito.mock(ClientCall.class);
-      ManagedChannel fakeChannel = Mockito.mock(ManagedChannel.class);
+      ClientCall mockClientCall = mock(ClientCall.class);
+      ManagedChannel fakeChannel = mock(ManagedChannel.class);
       Mockito.when(fakeChannel.newCall(Mockito.any(), Mockito.any())).thenReturn(mockClientCall);
       ChannelPoolSettings channelPoolSettings = ChannelPoolSettings.staticallySized(1);
       ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));

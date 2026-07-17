@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.httpjson;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.testing.http.MockHttpTransport;
@@ -95,7 +97,7 @@ class HttpRequestRunnableTest {
             .setRequestBodyExtractor(request -> null)
             .build();
 
-    responseParser = Mockito.mock(HttpResponseParser.class);
+    responseParser = mock(HttpResponseParser.class);
   }
 
   @Test

@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
@@ -267,7 +268,7 @@ class SettingsTest {
 
   @Test
   void customCredentials() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class);
 
     FakeStubSettings settings =
         FakeStubSettings.newBuilder()

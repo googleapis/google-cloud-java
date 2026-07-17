@@ -57,7 +57,8 @@ class ApiResultRetryAlgorithmTest {
 
   @Test
   void testShouldRetryWithContextWithoutRetryableCodes() {
-    ApiCallContext context = mock(ApiCallContext.class);
+    ApiCallContext context =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     // No retryable codes in the call context, means that the retry algorithm should fall back to
     // its default implementation.
     when(context.getRetryableCodes()).thenReturn(null);
@@ -74,14 +75,17 @@ class ApiResultRetryAlgorithmTest {
 
   @Test
   void testShouldRetryWithContextWithRetryableCodes() {
-    ApiCallContext context = mock(ApiCallContext.class);
+    ApiCallContext context =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(context.getRetryableCodes())
         .thenReturn(
             Sets.newHashSet(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE));
 
-    StatusCode unavailable = mock(StatusCode.class);
+    StatusCode unavailable =
+        mock(StatusCode.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(unavailable.getCode()).thenReturn(Code.UNAVAILABLE);
-    StatusCode dataLoss = mock(StatusCode.class);
+    StatusCode dataLoss =
+        mock(StatusCode.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(dataLoss.getCode()).thenReturn(Code.DATA_LOSS);
 
     // The return value of isRetryable() will be ignored, as UNAVAILABLE has been added as a
@@ -98,7 +102,8 @@ class ApiResultRetryAlgorithmTest {
 
   @Test
   void testShouldRetryWithContextWithEmptyRetryableCodes() {
-    ApiCallContext context = mock(ApiCallContext.class);
+    ApiCallContext context =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     // This will effectively make the RPC non-retryable.
     when(context.getRetryableCodes()).thenReturn(Collections.<Code>emptySet());
 

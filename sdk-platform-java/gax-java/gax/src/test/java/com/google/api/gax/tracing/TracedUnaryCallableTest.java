@@ -34,6 +34,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -49,11 +50,20 @@ import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedUnaryCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory =
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    parentTracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+  }
 
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
@@ -63,10 +73,10 @@ class TracedUnaryCallableTest {
           .setOperationType(OperationType.Unary)
           .build();
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
-  @Mock private ApiTracer tracer;
-  @Mock private UnaryCallable<String, String> innerCallable;
+  private ApiTracer tracer;
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   private TracedUnaryCallable<String, String> tracedUnaryCallable;

@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.api.core.SettableApiFuture;
@@ -50,13 +51,15 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class CheckingAttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
   @Mock RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockInnerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
 
     currentAttemptSettings =

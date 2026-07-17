@@ -35,6 +35,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -55,7 +56,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class CallableTest {
 
-  @Mock private UnaryCallable<String, String> innerCallable;
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    innerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+  }
+
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   @Mock private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;

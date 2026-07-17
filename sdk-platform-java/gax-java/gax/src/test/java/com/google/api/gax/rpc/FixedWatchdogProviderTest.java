@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiClock;
 import java.util.concurrent.ScheduledExecutorService;
@@ -82,7 +83,7 @@ class FixedWatchdogProviderTest {
 
     actualError = null;
     try {
-      provider.withClock(Mockito.mock(ApiClock.class));
+      provider.withClock(mock(ApiClock.class));
     } catch (Throwable t) {
       actualError = t;
     }

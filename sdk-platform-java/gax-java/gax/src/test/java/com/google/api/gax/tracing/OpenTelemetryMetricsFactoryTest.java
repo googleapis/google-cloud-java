@@ -31,6 +31,7 @@ package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;

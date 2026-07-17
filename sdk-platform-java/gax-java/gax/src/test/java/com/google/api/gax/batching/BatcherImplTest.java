@@ -951,7 +951,8 @@ class BatcherImplTest {
                 .build());
     ExecutorService executor = Executors.newFixedThreadPool(2);
 
-    ApiCallContext callContext = mock(ApiCallContext.class);
+    ApiCallContext callContext =
+        mock(ApiCallContext.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext.Key<Long>> key =
         ArgumentCaptor.forClass(ApiCallContext.Key.class);
     ArgumentCaptor<Long> value = ArgumentCaptor.forClass(Long.class);

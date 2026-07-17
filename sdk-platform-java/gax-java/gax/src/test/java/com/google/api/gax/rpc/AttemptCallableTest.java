@@ -52,13 +52,15 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class AttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
   @Mock RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockInnerCallable =
+        mock(UnaryCallable.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
     when(mockInnerCallable.futureCall(Mockito.anyString(), capturedCallContext.capture()))
         .thenReturn(SettableApiFuture.<String>create());

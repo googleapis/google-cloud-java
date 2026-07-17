@@ -59,10 +59,19 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedServerStreamingCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory =
+        mock(ApiTracerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    parentTracer = mock(ApiTracer.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
 
-  @Mock private ApiTracerFactory tracerFactory;
-  @Mock private ApiTracer tracer;
+  private ApiTracerFactory tracerFactory;
+  private ApiTracer tracer;
   @Mock private ApiTracerContext tracerContext;
   @Mock private ApiTracerContext.Builder tracerContextBuilder;
 
@@ -70,7 +79,7 @@ class TracedServerStreamingCallableTest {
   private TracedServerStreamingCallable<String, String> tracedCallable;
   private MockResponseObserver<String> responseObserver;
   private ApiCallContext callContext;
-  @Mock private ApiTracer parentTracer;
+  private ApiTracer parentTracer;
 
   void init(boolean useContext) {
     innerCallable = new MockServerStreamingCallable<>();
