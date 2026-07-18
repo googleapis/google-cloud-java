@@ -448,9 +448,9 @@ class AsyncResultSetImpl extends ForwardingStructReader
 
     /**
      * Returns whether the producer should permanently stop putting rows into the buffer. This is
-     * the case once the result set has entered a terminal state (cancelled/done), or once the
-     * cursor has returned {@code DONE} or thrown an exception. After the latter the callback runner
-     * is not restarted, so continuing to produce rows against a full buffer would spin forever.
+     * the case once the result set has entered a terminal state, or once the cursor has returned
+     * {@link CursorState#DONE} or thrown an exception. After the latter the callback runner is not
+     * restarted, so continuing to produce rows against a full buffer would spin forever.
      */
     private boolean shouldStopProducing() {
       synchronized (monitor) {
