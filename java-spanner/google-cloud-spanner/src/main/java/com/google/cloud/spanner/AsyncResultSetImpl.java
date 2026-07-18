@@ -372,9 +372,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
       try {
         while (!stop && hasNext) {
           try {
-            synchronized (monitor) {
-              stop = state.shouldStop || cursorReturnedDoneOrException;
-            }
+            stop = shouldStopProducing();
             if (!stop) {
               while (buffer.remainingCapacity() == 0 && !stop) {
                 waitIfPaused();
@@ -389,13 +387,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
                         Math.min(buffer.size() / 2 + 1, buffer.size()),
                         MAX_WAIT_FOR_BUFFER_CONSUMPTION));
                 bufferConsumptionLatch.await();
-                synchronized (monitor) {
-                  // Also stop if the callback will never consume any more rows, for example
-                  // because it threw an exception. The callback runner is not restarted once
-                  // cursorReturnedDoneOrException has been set, so continuing to produce rows
-                  // against a full buffer would otherwise spin forever.
-                  stop = state.shouldStop || cursorReturnedDoneOrException;
-                }
+                stop = shouldStopProducing();
               }
             }
             if (!stop) {
@@ -451,6 +443,18 @@ class AsyncResultSetImpl extends ForwardingStructReader
             result.set(null);
           }
         }
+      }
+    }
+
+    /**
+     * Returns whether the producer should permanently stop putting rows into the buffer. This is
+     * the case once the result set has entered a terminal state (cancelled/done), or once the
+     * cursor has returned {@code DONE} or thrown an exception. After the latter the callback runner
+     * is not restarted, so continuing to produce rows against a full buffer would spin forever.
+     */
+    private boolean shouldStopProducing() {
+      synchronized (monitor) {
+        return state.shouldStop || cursorReturnedDoneOrException;
       }
     }
 
