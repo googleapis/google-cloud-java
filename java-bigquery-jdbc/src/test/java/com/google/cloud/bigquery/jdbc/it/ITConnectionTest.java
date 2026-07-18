@@ -341,6 +341,7 @@ public class ITConnectionTest {
   @Test
   public void testCreateArray() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+    // Why is this failing on some PRs only?
     try {
       Array array = connection.createArrayOf("INTEGER", new Object[] {1, 2, 3});
       assertNotNull(array);
