@@ -496,29 +496,33 @@ public class AsyncResultSetImplTest {
 
   @Test
   public void callbackThrowsExceptionWhileBufferIsFull_shouldStopProducer() throws Exception {
-    Executor executor = Executors.newSingleThreadExecutor();
-    ResultSet delegate = mock(ResultSet.class);
-    // Return more rows than the buffer can hold, so the producer is waiting for the callback to
-    // consume rows from the full buffer when the callback throws an exception.
-    when(delegate.next()).thenReturn(true);
-    when(delegate.getCurrentRowAsStruct()).thenReturn(mock(Struct.class));
-    final AtomicInteger callbackCounter = new AtomicInteger();
-    try (AsyncResultSetImpl rs = new AsyncResultSetImpl(simpleProvider, delegate, 1)) {
-      rs.setCallback(
-          executor,
-          resultSet -> {
-            callbackCounter.incrementAndGet();
-            throw new RuntimeException("async test");
-          });
-      ExecutionException e =
-          assertThrows(ExecutionException.class, () -> rs.getResult().get(10L, TimeUnit.SECONDS));
-      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
-      assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
-      assertThat(se.getMessage()).contains("async test");
-      assertThat(callbackCounter.get()).isEqualTo(1);
-      // The producer should have stopped reading from the delegate and closed it.
-      Mockito.verify(delegate).close();
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      ResultSet delegate = mock(ResultSet.class);
+      // Return more rows than the buffer can hold, so the producer is waiting for the callback to
+      // consume rows from the full buffer when the callback throws an exception.
+      when(delegate.next()).thenReturn(true);
+      when(delegate.getCurrentRowAsStruct()).thenReturn(mock(Struct.class));
+      final AtomicInteger callbackCounter = new AtomicInteger();
+      try (AsyncResultSetImpl rs = new AsyncResultSetImpl(simpleProvider, delegate, 1)) {
+        rs.setCallback(
+            executor,
+            resultSet -> {
+              callbackCounter.incrementAndGet();
+              throw new RuntimeException("async test");
+            });
+        ExecutionException e =
+            assertThrows(ExecutionException.class, () -> rs.getResult().get(10L, TimeUnit.SECONDS));
+        assertThat(e.getCause()).isInstanceOf(SpannerException.class);
+        SpannerException se = (SpannerException) e.getCause();
+        assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
+        assertThat(se.getMessage()).contains("async test");
+        assertThat(callbackCounter.get()).isEqualTo(1);
+        // The producer should have stopped reading from the delegate and closed it.
+        Mockito.verify(delegate).close();
+      }
+    } finally {
+      executor.shutdown();
     }
   }
 
