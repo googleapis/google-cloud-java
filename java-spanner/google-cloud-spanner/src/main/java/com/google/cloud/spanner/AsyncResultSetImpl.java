@@ -446,14 +446,12 @@ class AsyncResultSetImpl extends ForwardingStructReader
       }
     }
 
-    /**
-     * Returns whether the producer should permanently stop putting rows into the buffer. This is
-     * the case once the result set has entered a terminal state, or once the cursor has returned
-     * {@link CursorState#DONE} or thrown an exception. After the latter the callback runner is not
-     * restarted, so continuing to produce rows against a full buffer would spin forever.
-     */
     private boolean shouldStopProducing() {
       synchronized (monitor) {
+        // A callback that throws leaves the state at CONSUMING, unlike DONE and CANCELLED, so
+        // shouldStop alone would not catch it. The callback runner is never dispatched again and
+        // bufferConsumptionLatch is left at zero, so the producer would otherwise spin on a full
+        // buffer that nothing will drain.
         return state.shouldStop || cursorReturnedDoneOrException;
       }
     }

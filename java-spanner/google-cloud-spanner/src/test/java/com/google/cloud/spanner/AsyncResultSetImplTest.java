@@ -518,7 +518,6 @@ public class AsyncResultSetImplTest {
         assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
         assertThat(se.getMessage()).contains("async test");
         assertThat(callbackCounter.get()).isEqualTo(1);
-        // The producer should have stopped reading from the delegate and closed it.
         Mockito.verify(delegate).close();
       }
     } finally {
