@@ -38,8 +38,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.NanoClock;
+import com.google.api.gax.core.FakeApiClock;
+import com.google.api.gax.core.RecordingScheduler;
 import com.google.api.gax.retrying.FailingCallable.CustomException;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.time.Duration;
@@ -51,6 +54,7 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -58,6 +62,13 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
   // Number of test runs, essential for multithreaded tests.
   private static final int EXECUTIONS_COUNT = 5;
+  private FakeApiClock fakeClock;
+
+  @BeforeEach
+  void setUp() {
+    fakeClock = new FakeApiClock(0L);
+    scheduledExecutorService = RecordingScheduler.create(fakeClock);
+  }
 
   @Override
   protected RetryingExecutorWithContext<String> getExecutor(RetryAlgorithm<String> retryAlgorithm) {
@@ -67,9 +78,17 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
   @Override
   protected RetryAlgorithm<String> getAlgorithm(
       RetrySettings retrySettings, int apocalypseCountDown, RuntimeException apocalypseException) {
+    return getAlgorithm(retrySettings, apocalypseCountDown, apocalypseException, fakeClock);
+  }
+
+  protected RetryAlgorithm<String> getAlgorithm(
+      RetrySettings retrySettings,
+      int apocalypseCountDown,
+      RuntimeException apocalypseException,
+      ApiClock clock) {
     return new RetryAlgorithm<>(
         new TestResultRetryAlgorithm<String>(apocalypseCountDown, apocalypseException),
-        new ExponentialRetryAlgorithm(retrySettings, NanoClock.getDefaultClock()));
+        new ExponentialRetryAlgorithm(retrySettings, clock));
   }
 
   private RetryingExecutorWithContext<String> getRetryingExecutor(
@@ -81,54 +100,61 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
   void testSuccessWithFailuresPeekAttempt() throws Exception {
     RetrySettings retrySettings =
         FAST_RETRY_SETTINGS.toBuilder()
-            .setTotalTimeoutDuration(java.time.Duration.ofMillis(1000L))
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(10000L))
             .setMaxAttempts(100)
             .build();
     for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
+      ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
+      try {
+        FailingCallable callable = new FailingCallable(15, "request", "SUCCESS", tracer);
 
-      FailingCallable callable = new FailingCallable(15, "request", "SUCCESS", tracer);
+        RetryingExecutorWithContext<String> executor =
+            getRetryingExecutor(
+                getAlgorithm(retrySettings, 0, null, NanoClock.getDefaultClock()), localExecutor);
+        RetryingFuture<String> future =
+            executor.createFuture(
+                callable,
+                FakeCallContext.createDefault()
+                    .withTracer(tracer)
+                    .withRetrySettings(retrySettings));
+        callable.setExternalFuture(future);
 
-      RetryingExecutorWithContext<String> executor =
-          getRetryingExecutor(getAlgorithm(retrySettings, 0, null), scheduledExecutorService);
-      RetryingFuture<String> future =
-          executor.createFuture(
-              callable,
-              FakeCallContext.createDefault().withTracer(tracer).withRetrySettings(retrySettings));
-      callable.setExternalFuture(future);
+        assertNull(future.peekAttemptResult());
+        assertSame(future.peekAttemptResult(), future.peekAttemptResult());
+        assertFalse(future.getAttemptResult().isDone());
+        assertFalse(future.getAttemptResult().isCancelled());
 
-      assertNull(future.peekAttemptResult());
-      assertSame(future.peekAttemptResult(), future.peekAttemptResult());
-      assertFalse(future.getAttemptResult().isDone());
-      assertFalse(future.getAttemptResult().isCancelled());
+        future.setAttemptFuture(executor.submit(future));
 
-      future.setAttemptFuture(executor.submit(future));
-
-      final AtomicInteger failedAttempts = new AtomicInteger(0);
-      final AtomicReference<ApiFuture<String>> lastSeenAttempt = new AtomicReference<>();
-      await()
-          .pollInterval(Duration.ofMillis(2))
-          .atMost(Duration.ofSeconds(5))
-          .until(
-              () -> {
-                ApiFuture<String> attemptResult = future.peekAttemptResult();
-                if (attemptResult != null && attemptResult != lastSeenAttempt.get()) {
-                  lastSeenAttempt.set(attemptResult);
-                  assertTrue(attemptResult.isDone());
-                  assertFalse(attemptResult.isCancelled());
-                  try {
-                    attemptResult.get();
-                  } catch (ExecutionException e) {
-                    if (e.getCause() instanceof CustomException) {
-                      failedAttempts.incrementAndGet();
+        final AtomicInteger failedAttempts = new AtomicInteger(0);
+        final AtomicReference<ApiFuture<String>> lastSeenAttempt = new AtomicReference<>();
+        await()
+            .pollInterval(Duration.ofMillis(2))
+            .atMost(Duration.ofSeconds(5))
+            .until(
+                () -> {
+                  ApiFuture<String> attemptResult = future.peekAttemptResult();
+                  if (attemptResult != null && attemptResult != lastSeenAttempt.get()) {
+                    lastSeenAttempt.set(attemptResult);
+                    assertTrue(attemptResult.isDone());
+                    assertFalse(attemptResult.isCancelled());
+                    try {
+                      attemptResult.get();
+                    } catch (ExecutionException e) {
+                      if (e.getCause() instanceof CustomException) {
+                        failedAttempts.incrementAndGet();
+                      }
                     }
                   }
-                }
-                return future.isDone();
-              });
+                  return future.isDone();
+                });
 
-      assertFutureSuccess(future);
-      assertEquals(15, future.getAttemptSettings().getAttemptCount());
-      assertTrue(failedAttempts.get() > 0);
+        assertFutureSuccess(future);
+        assertEquals(15, future.getAttemptSettings().getAttemptCount());
+        assertTrue(failedAttempts.get() > 0);
+      } finally {
+        localExecutor.shutdownNow();
+      }
     }
   }
 
@@ -260,35 +286,43 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
             .setJittered(false)
             .build();
     for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
-      FailingCallable callable = new FailingCallable(4, "request", "SUCCESS", tracer);
-      RetryingExecutorWithContext<String> executor =
-          getRetryingExecutor(getAlgorithm(retrySettings, 0, null), scheduledExecutorService);
-      RetryingFuture<String> future =
-          executor.createFuture(
-              callable,
-              FakeCallContext.createDefault().withTracer(tracer).withRetrySettings(retrySettings));
-      callable.setExternalFuture(future);
-      future.setAttemptFuture(executor.submit(future));
+      ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
+      try {
+        FailingCallable callable = new FailingCallable(4, "request", "SUCCESS", tracer);
+        RetryingExecutorWithContext<String> executor =
+            getRetryingExecutor(
+                getAlgorithm(retrySettings, 0, null, NanoClock.getDefaultClock()), localExecutor);
+        RetryingFuture<String> future =
+            executor.createFuture(
+                callable,
+                FakeCallContext.createDefault()
+                    .withTracer(tracer)
+                    .withRetrySettings(retrySettings));
+        callable.setExternalFuture(future);
+        future.setAttemptFuture(executor.submit(future));
 
-      await()
-          .atMost(Duration.ofSeconds(5))
-          .until(
-              () ->
-                  future.getAttemptSettings() != null
-                      && future.getAttemptSettings().getAttemptCount() > 0);
+        await()
+            .atMost(Duration.ofSeconds(5))
+            .until(
+                () ->
+                    future.getAttemptSettings() != null
+                        && future.getAttemptSettings().getAttemptCount() > 0);
 
-      boolean res = future.cancel(false);
-      assertTrue(res);
-      assertFutureCancel(future);
+        boolean res = future.cancel(false);
+        assertTrue(res);
+        assertFutureCancel(future);
 
-      // Verify that the cancelled future is traced. Every attempt increases the number
-      // of cancellation attempts from the tracer.
-      Mockito.verify(tracer, Mockito.times(executionsCount + 1)).attemptCancelled();
+        // Verify that the cancelled future is traced. Every attempt increases the number
+        // of cancellation attempts from the tracer.
+        Mockito.verify(tracer, Mockito.times(executionsCount + 1)).attemptCancelled();
 
-      // Assert that future has at least been attempted once
-      // i.e. The future from executor.submit() has been run by the ScheduledExecutor
-      assertTrue(future.getAttemptSettings().getAttemptCount() > 0);
-      assertTrue(future.getAttemptSettings().getAttemptCount() < 4);
+        // Assert that future has at least been attempted once
+        // i.e. The future from executor.submit() has been run by the ScheduledExecutor
+        assertTrue(future.getAttemptSettings().getAttemptCount() > 0);
+        assertTrue(future.getAttemptSettings().getAttemptCount() < 4);
+      } finally {
+        localExecutor.shutdownNow();
+      }
     }
   }
 
