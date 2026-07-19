@@ -73,7 +73,7 @@ public class Client implements AutoCloseable {
   private final Resource<ScheduledExecutorService> backgroundExecutor;
 
   private final CallOptions defaultCallOptions;
-  private final ChannelPool channelPool;
+  private final Resource<ChannelPool> channelPool;
   private final Resource<Metrics> metrics;
   private final Resource<ClientConfigurationManager> configManager;
 
@@ -147,19 +147,23 @@ public class Client implements AutoCloseable {
     return new Client(
         featureFlags,
         clientInfo,
-        settings.getChannelProvider(),
         Resource.createOwned(metrics, metrics::close),
         Resource.createOwned(configManager, configManager::close),
-        Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown));
+        Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
+        settings.getChannelProvider());
   }
 
+  /**
+   * Standard constructor used by non-factory clients. Builds an owned {@link SwitchingChannelPool}
+   * from the provided {@link ChannelProvider}.
+   */
   public Client(
       FeatureFlags featureFlags,
       ClientInfo clientInfo,
-      ChannelProvider channelProvider,
       Resource<Metrics> metrics,
       Resource<ClientConfigurationManager> configManager,
-      Resource<ScheduledExecutorService> bgExecutor)
+      Resource<ScheduledExecutorService> bgExecutor,
+      ChannelProvider channelProvider)
       throws IOException {
     this.featureFlags = featureFlags;
     this.clientInfo = clientInfo;
@@ -181,13 +185,34 @@ public class Client implements AutoCloseable {
                     // TODO: consider localizing this for large reads
                     .maxInboundMessageSize(256 * 1024 * 1024));
 
-    channelPool =
+    SwitchingChannelPool switchingPool =
         new SwitchingChannelPool(
             configuredChannelProvider,
             configManager.get(),
             metrics.get(),
             backgroundExecutor.get());
-    channelPool.start();
+    switchingPool.start();
+    this.channelPool = Resource.createOwned(switchingPool, switchingPool::close);
+  }
+
+  /**
+   * Factory-child constructor. Uses a pre-built, shared {@link ChannelPool} and {@link
+   * ClientConfigurationManager}. The pool is already started and must not be closed by this client.
+   */
+  public Client(
+      FeatureFlags featureFlags,
+      ClientInfo clientInfo,
+      Resource<Metrics> metrics,
+      Resource<ClientConfigurationManager> configManager,
+      Resource<ScheduledExecutorService> bgExecutor,
+      Resource<ChannelPool> sharedChannelPool) {
+    this.featureFlags = featureFlags;
+    this.clientInfo = clientInfo;
+    this.metrics = metrics;
+    this.configManager = configManager;
+    this.backgroundExecutor = bgExecutor;
+    this.channelPool = sharedChannelPool;
+    defaultCallOptions = CallOptions.DEFAULT;
   }
 
   @Override
@@ -200,7 +225,7 @@ public class Client implements AutoCloseable {
                     .setDescription("Client closing")
                     .build()));
     metrics.close();
-    channelPool.close();
+    channelPool.close(); // no-op when Resource.createShared (factory child)
     configManager.close();
     backgroundExecutor.close();
   }
@@ -211,7 +236,7 @@ public class Client implements AutoCloseable {
             featureFlags,
             clientInfo,
             configManager.get(),
-            channelPool,
+            channelPool.get(),
             defaultCallOptions,
             tableId,
             permission,
@@ -228,7 +253,7 @@ public class Client implements AutoCloseable {
             featureFlags,
             clientInfo,
             configManager.get(),
-            channelPool,
+            channelPool.get(),
             defaultCallOptions,
             tableId,
             viewId,
@@ -246,7 +271,7 @@ public class Client implements AutoCloseable {
             featureFlags,
             clientInfo,
             configManager.get(),
-            channelPool,
+            channelPool.get(),
             defaultCallOptions,
             viewId,
             permission,
@@ -254,6 +279,16 @@ public class Client implements AutoCloseable {
             backgroundExecutor.get());
     sessionPools.add(viewAsync.getSessionPool());
     return viewAsync;
+  }
+
+  /** Returns the underlying channel pool (e.g. for sharing with factory children). */
+  public ChannelPool getChannelPool() {
+    return channelPool.get();
+  }
+
+  /** Returns the feature flags (e.g. for sharing with factory children). */
+  public FeatureFlags getFeatureFlags() {
+    return featureFlags;
   }
 
   public static class Resource<T> {

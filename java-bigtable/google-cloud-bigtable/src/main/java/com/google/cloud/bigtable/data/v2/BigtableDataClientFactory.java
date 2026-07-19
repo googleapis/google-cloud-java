@@ -74,12 +74,8 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public static BigtableDataClientFactory create(BigtableDataSettings defaultSettings)
       throws IOException {
-    BigtableDataSettings.Builder builder = defaultSettings.toBuilder();
-    builder.stubSettings().setSessionsEnabled(false);
-    defaultSettings = builder.build();
-
     BigtableClientContext sharedClientContext =
-        BigtableClientContext.create(defaultSettings.getStubSettings());
+        BigtableClientContext.createForFactory(defaultSettings.getStubSettings());
     ClientOperationSettings perOpSettings = defaultSettings.getStubSettings().getPerOpSettings();
     return new BigtableDataClientFactory(sharedClientContext, perOpSettings);
   }

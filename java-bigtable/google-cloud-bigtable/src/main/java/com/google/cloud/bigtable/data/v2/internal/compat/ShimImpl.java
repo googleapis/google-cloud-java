@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelPr
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
+import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
@@ -72,6 +73,7 @@ public class ShimImpl implements Shim {
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
 
   private final ClientConfigurationManager configManager;
+  private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
 
   private final ReadRowShimInner readRowShimInner;
@@ -164,20 +166,64 @@ public class ShimImpl implements Shim {
         new Client(
             clientChannelProvider.updateFeatureFlags(featureFlags),
             clientInfo,
-            clientChannelProvider,
             Resource.createShared(metrics),
             Resource.createShared(configManager),
-            Resource.createShared(bgExecutor));
+            Resource.createShared(bgExecutor),
+            clientChannelProvider);
 
-    return new ShimImpl(configManager, client);
+    return new ShimImpl(Resource.createOwned(configManager, configManager::close), client);
   }
 
-  public ShimImpl(ClientConfigurationManager configManager, Client client) {
-    this.configManager = configManager;
+  public ShimImpl(Resource<ClientConfigurationManager> configManagerResource, Client client) {
+    this.configManagerResource = configManagerResource;
+    this.configManager = configManagerResource.get();
     this.client = client;
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
+  }
+
+  /**
+   * Creates a lightweight child shim for factory mode. Reuses the factory's already-started,
+   * shared channel pool and config manager. The pool and manager are not closed when this shim is
+   * closed — only the child's own session pools are cleaned up.
+   */
+  public static Shim createForFactoryChild(
+      ClientInfo clientInfo,
+      Metrics metrics,
+      ScheduledExecutorService bgExecutor,
+      ChannelPool sharedChannelPool,
+      ClientConfigurationManager sharedConfigManager,
+      FeatureFlags parentFeatureFlags) {
+    // Inherit the parent's fully-computed feature flags (which include channel-provider flags like
+    // trafficDirectorEnabled/directAccessRequested in addition to sessionsRequired).
+    FeatureFlags featureFlags = parentFeatureFlags;
+
+    Client client =
+        new Client(
+            featureFlags,
+            clientInfo,
+            Resource.createShared(metrics),
+            Resource.createShared(sharedConfigManager),
+            Resource.createShared(bgExecutor),
+            Resource.createShared(sharedChannelPool));
+
+    return new ShimImpl(Resource.createShared(sharedConfigManager), client);
+  }
+
+  /** Returns the raw config manager (e.g. for sharing with factory children). */
+  public ClientConfigurationManager getConfigManager() {
+    return configManager;
+  }
+
+  /** Returns the channel pool (e.g. for sharing with factory children). */
+  public ChannelPool getChannelPool() {
+    return client.getChannelPool();
+  }
+
+  /** Returns the feature flags (e.g. for sharing with factory children). */
+  public FeatureFlags getFeatureFlags() {
+    return client.getFeatureFlags();
   }
 
   private static ChannelProvider configureChannelProvider(
@@ -252,7 +298,7 @@ public class ShimImpl implements Shim {
   @Override
   public void close() {
     client.close();
-    configManager.close();
+    configManagerResource.close(); // no-op when Resource.createShared (factory child)
   }
 
   @Override

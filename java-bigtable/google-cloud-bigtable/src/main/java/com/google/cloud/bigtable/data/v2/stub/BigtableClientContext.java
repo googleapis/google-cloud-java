@@ -28,9 +28,11 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.DisabledShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.Shim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
+import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
@@ -42,7 +44,6 @@ import com.google.cloud.bigtable.data.v2.internal.dp.NoopDirectAccessChecker;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
-import com.google.common.base.Preconditions;
 import io.grpc.ManagedChannelBuilder;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.StatsRecorder;
@@ -68,6 +69,8 @@ public class BigtableClientContext {
   private static final Logger logger = Logger.getLogger(BigtableClientContext.class.getName());
 
   private final boolean isChild;
+  // true when this is the parent context of a BigtableDataClientFactory
+  private final boolean isFactory;
   private final ClientInfo clientInfo;
   private final Metrics metrics;
   private final ClientContext clientContext;
@@ -78,11 +81,31 @@ public class BigtableClientContext {
 
   public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
       throws IOException {
-    return create(settings, Tags.getTagger(), Stats.getStatsRecorder());
+    return createInternal(settings, Tags.getTagger(), Stats.getStatsRecorder(), false);
   }
 
   public static BigtableClientContext create(
       EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
+      throws IOException {
+    return createInternal(settings, ocTagger, ocRecorder, false);
+  }
+
+  /**
+   * Creates a context to be used as the shared parent of a {@link
+   * com.google.cloud.bigtable.data.v2.BigtableDataClientFactory}. The context eagerly builds the
+   * shared channel pool and config manager using the factory's default settings. Children are
+   * created via {@link #createChild} and share these resources.
+   */
+  public static BigtableClientContext createForFactory(EnhancedBigtableStubSettings settings)
+      throws IOException {
+    return createInternal(settings, Tags.getTagger(), Stats.getStatsRecorder(), true);
+  }
+
+  private static BigtableClientContext createInternal(
+      EnhancedBigtableStubSettings settings,
+      Tagger ocTagger,
+      StatsRecorder ocRecorder,
+      boolean isFactory)
       throws IOException {
     ClientInfo clientInfo =
         ClientInfo.builder()
@@ -208,7 +231,7 @@ public class BigtableClientContext {
 
     try {
       return new BigtableClientContext(
-          false, shim, clientInfo, clientContext, metrics, executorProvider);
+          false, isFactory, shim, clientInfo, clientContext, metrics, executorProvider);
     } catch (IOException | RuntimeException t) {
       metrics.close();
       throw t;
@@ -237,6 +260,7 @@ public class BigtableClientContext {
 
   private BigtableClientContext(
       boolean isChild,
+      boolean isFactory,
       Shim shim,
       ClientInfo clientInfo,
       ClientContext clientContext,
@@ -244,6 +268,7 @@ public class BigtableClientContext {
       ExecutorProvider backgroundExecutorProvider)
       throws IOException {
     this.isChild = isChild;
+    this.isFactory = isFactory;
     this.sessionShim = shim;
     this.clientInfo = clientInfo;
 
@@ -268,26 +293,38 @@ public class BigtableClientContext {
 
   public BigtableClientContext createChild(InstanceName instanceName, String appProfileId)
       throws IOException {
-    // TODO: either mark BigtableDataClientFactory as deprecated or figure out how to make it
-    //  work with Sessions
-    Preconditions.checkState(
-        sessionShim instanceof DisabledShim, "Sessions don't support BigtableDataClientFactory");
+    ClientInfo childInfo =
+        clientInfo.toBuilder().setInstanceName(instanceName).setAppProfileId(appProfileId).build();
+
+    Shim childShim;
+    if (isFactory && sessionShim instanceof ShimImpl) {
+      // Factory mode: create a lightweight child shim that shares the parent's pool and manager.
+      ShimImpl parentShim = (ShimImpl) sessionShim;
+      childShim =
+          ShimImpl.createForFactoryChild(
+              childInfo,
+              metrics,
+              backgroundExecutorProvider.getExecutor(),
+              parentShim.getChannelPool(),
+              parentShim.getConfigManager(),
+              parentShim.getFeatureFlags());
+    } else {
+      // Legacy mode (sessions disabled): share the parent's DisabledShim.
+      childShim = sessionShim;
+    }
 
     return new BigtableClientContext(
-        true,
-        sessionShim,
-        clientInfo.toBuilder().setInstanceName(instanceName).setAppProfileId(appProfileId).build(),
-        clientContext,
-        metrics,
-        backgroundExecutorProvider);
+        true, false, childShim, childInfo, clientContext, metrics, backgroundExecutorProvider);
   }
 
   public void close() throws Exception {
+    // Always close the shim: no-op for DisabledShim, closes session pools for factory children.
+    sessionShim.close();
+
     if (isChild) {
+      // Shared resources (metrics, executor, transport) are owned by the parent context.
       return;
     }
-
-    sessionShim.close();
 
     for (BackgroundResource resource : clientContext.getBackgroundResources()) {
       resource.close();

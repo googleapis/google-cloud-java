@@ -36,19 +36,18 @@ import io.grpc.Status.Code;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Deque;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,9 +56,36 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * Proof of concept channel pool that avoids parallel channels to the same afe. The pool is
- * dynamically sized based on outstanding streams and tries to limit each channel to at most 10
- * streams.
+ * Dynamically-sized channel pool that spreads sessions across AFEs and supports multi-tenant
+ * factory usage.
+ *
+ * <p>Accounting is anchored on sessions rather than channels:
+ *
+ * <ul>
+ *   <li>{@code sessionsPerAfeId} tracks how many active sessions each AFE holds globally.
+ *   <li>{@code routeObservations} maps {@code (channelId, tenantKey) → lastObservedAfeId},
+ *       populated on every {@code onBeforeSessionStart}. Used to place new sessions on the channel
+ *       most likely to route to the desired AFE for a given tenant.
+ * </ul>
+ *
+ * <p>Channels have a two-state lifecycle: ACTIVE (eligible for new sessions) and DRAINING (no new
+ * sessions; shut down when numOutstanding reaches 0).
+ *
+ * <p>Placement logic for each new stream:
+ *
+ * <ol>
+ *   <li>Capacity mode: find the AFE with the smallest session count below {@code softMaxPerGroup}.
+ *       <ul>
+ *         <li>3a. Preferred: pick the ACTIVE channel whose last observed route for this tenant was
+ *             that AFE, choosing the least-loaded.
+ *         <li>3b. Unobserved-tenant fallback: pick any ACTIVE channel with capacity (least-loaded).
+ *             RLS may route to the target AFE or somewhere else; {@code routeObservations} will
+ *             be updated on {@code onBeforeSessionStart} for future placements.
+ *       </ul>
+ *   <li>Diversity mode (all known AFEs at cap, or none known): prefer an ACTIVE channel with fewer
+ *       than {@code softMaxPerGroup / 2} streams; otherwise add a new channel and absorb whatever
+ *       AFE it lands on.
+ * </ol>
  */
 public class ChannelPoolDpImpl implements ChannelPool {
   private static final Logger LOGGER = Logger.getLogger(ChannelPoolDpImpl.class.getName());
@@ -70,6 +96,9 @@ public class ChannelPoolDpImpl implements ChannelPool {
   private static final int CONSECUTIVE_OPEN_SESSION_FAILURE_THRESHOLD = 5;
   private static final Duration INITIAL_RECYCLE_BACKOFF = Duration.ofMillis(1);
   private static final Duration MAX_RECYCLE_BACKOFF = Duration.ofMinutes(1);
+  // Preserves the existing desiredGroups = ceil(totalStreams / softMaxPerGroup * 2) factor, which
+  // keeps extra channels around at low load for AFE diversity.
+  private static final double HEADROOM = 2.0;
 
   private final String poolLogId;
 
@@ -83,16 +112,23 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
   private final DebugTagTracer debugTagTracer;
 
+  /** Flat list of all channels (ACTIVE + DRAINING). */
   @GuardedBy("this")
-  private final List<AfeChannelGroup> channelGroups;
+  private final List<ChannelWrapper> channels = new ArrayList<>();
 
+  /**
+   * Per-(channel, tenant) observation of the last AFE seen on {@code onBeforeSessionStart}.
+   * Self-healing: updated on every session open, so stale entries from ~1hr AFE drift are
+   * corrected automatically.
+   */
   @GuardedBy("this")
-  private final AfeChannelGroup startingGroup;
+  private final Map<RouteKey, AfeId> routeObservations = new HashMap<>();
+
+  private final AtomicLong nextChannelId = new AtomicLong();
 
   @GuardedBy("this")
   private int totalStreams = 0;
 
-  // TODO: replace SocketAddress with AfeId
   @GuardedBy("this")
   private final Multiset<AfeId> sessionsPerAfeId = HashMultiset.create();
 
@@ -164,8 +200,6 @@ public class ChannelPoolDpImpl implements ChannelPool {
     this.channelSupplier = channelSupplier;
     this.executor = executor;
     updateConfig(config);
-    channelGroups = new ArrayList<>();
-    startingGroup = new AfeChannelGroup(null);
     this.debugTagTracer = debugTagTracer;
   }
 
@@ -190,9 +224,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
       serviceFuture.cancel(false);
     }
 
-    channelGroups.stream()
-        .flatMap(g -> g.channels.stream())
-        .forEach(channelWrapper -> channelWrapper.channel.shutdown());
+    channels.forEach(cw -> cw.channel.shutdown());
   }
 
   @Override
@@ -202,55 +234,72 @@ public class ChannelPoolDpImpl implements ChannelPool {
       debugTagTracer.record(TelemetryConfiguration.Level.WARN, "channel_pool_new_stream_failed");
       return new FailingSessionStream(Status.UNAVAILABLE.withDescription("ChannelPool is closed"));
     }
-    // Find the AFE with the fewest sessions
-    Optional<AfeChannelGroup> maybeGroup =
-        channelGroups.stream()
-            .filter(g -> g.numStreams < softMaxPerGroup)
-            .min(Comparator.comparingInt(a -> a.numStreams));
 
-    // Find the first channel that has capacity
-    Optional<ChannelWrapper> maybeChannel =
-        maybeGroup.flatMap(g -> g.channels.stream().findFirst());
+    TenantKey tenant = callOptions.getOption(ChannelPoolOptions.TENANT_KEY_OPTION);
 
-    // try to find a channel that has capacity in the least loaded afe
-    final ChannelWrapper channelWrapper =
-        maybeChannel.orElseGet(
-            () -> {
-              log(
-                  Level.FINE,
-                  "Couldn't find an existing channel with capacity, num outstanding streams across"
-                      + " all channel groups: %d, num groups: %d",
-                  channelGroups.stream().mapToInt(g -> g.numStreams).sum(),
-                  channelGroups.size());
+    // --- Capacity mode: find the least-loaded AFE that still has room ---
+    AfeId targetAfe =
+        sessionsPerAfeId.entrySet().stream()
+            .filter(e -> e.getCount() < softMaxPerGroup)
+            .min(Comparator.comparingInt(Multiset.Entry::getCount))
+            .map(Multiset.Entry::getElement)
+            .orElse(null);
 
-              // If there is no such channel, then try to add a channel that being resolved
-              // and if no channel is in the process of being added or its already nearing 50%
-              // utilization
-              // during initialization, then add a new channel
-              return startingGroup.channels.stream()
-                  .filter(w -> w.numOutstanding < softMaxPerGroup / 2)
-                  .min(Comparator.comparingInt(w -> w.numOutstanding))
-                  .map(
-                      (w) -> {
-                        log(Level.FINE, "Using a channel thats already connecting");
-                        return w;
-                      })
-                  .orElseGet(
-                      () -> {
-                        log(Level.FINE, "Creating a new channel");
-                        return addChannel();
-                      });
-            });
+    ChannelWrapper channelWrapper = null;
 
-    channelWrapper.numOutstanding++;
-    channelWrapper.group.numStreams++;
+    if (targetAfe != null) {
+      // 3a: prefer the ACTIVE channel that already routes this tenant to targetAfe.
+      // For-loop avoids accessing the guarded routeObservations field inside a lambda.
+      for (ChannelWrapper c : channels) {
+        if (c.state == ChannelWrapper.State.ACTIVE
+            && targetAfe.equals(routeObservations.get(new RouteKey(c.id, tenant)))) {
+          if (channelWrapper == null || c.numOutstanding < channelWrapper.numOutstanding) {
+            channelWrapper = c;
+          }
+        }
+      }
+
+      // 3b: no observed route for this tenant → any ACTIVE channel with capacity (least-loaded).
+      if (channelWrapper == null) {
+        channelWrapper =
+            channels.stream()
+                .filter(c -> c.state == ChannelWrapper.State.ACTIVE)
+                .filter(c -> c.numOutstanding < softMaxPerGroup)
+                .min(Comparator.comparingInt(c -> c.numOutstanding))
+                .orElse(null);
+      }
+    }
+
+    // --- Diversity mode: all AFEs at cap, or pool is empty ---
+    if (channelWrapper == null) {
+      // Reuse an ACTIVE channel that has plenty of headroom before spawning a new one.
+      channelWrapper =
+          channels.stream()
+              .filter(c -> c.state == ChannelWrapper.State.ACTIVE)
+              .filter(c -> c.numOutstanding < softMaxPerGroup / 2)
+              .min(Comparator.comparingInt(c -> c.numOutstanding))
+              .orElse(null);
+
+      if (channelWrapper == null) {
+        log(
+            Level.FINE,
+            "Couldn't find an existing channel with capacity, num outstanding streams: %d,"
+                + " num channels: %d",
+            totalStreams,
+            channels.size());
+        channelWrapper = addChannel();
+      }
+    }
+
+    final ChannelWrapper fw = channelWrapper;
+    fw.numOutstanding++;
     totalStreams++;
 
     ClientCall<SessionRequest, SessionResponse> innerCall =
-        channelWrapper.channel.newCall(desc, callOptions);
+        fw.channel.newCall(desc, callOptions);
 
     return new SessionStreamImpl(innerCall) {
-      // mark as null so that onClose can tell if onBeforeSessionStart was never called
+      // null until onBeforeSessionStart fires
       @Nullable AfeId afeId = null;
 
       @Override
@@ -261,10 +310,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
               public void onBeforeSessionStart(PeerInfo peerInfo) {
                 afeId = AfeId.extract(peerInfo);
                 synchronized (ChannelPoolDpImpl.this) {
-                  channelWrapper.consecutiveFailures = 0;
+                  fw.consecutiveFailures = 0;
                   recycleBackoff = INITIAL_RECYCLE_BACKOFF;
-                  rehomeChannel(channelWrapper, afeId);
                   sessionsPerAfeId.add(afeId);
+                  routeObservations.put(new RouteKey(fw.id, tenant), afeId);
+                  fw.lastUsedAt = Instant.now(clock);
                 }
                 super.onBeforeSessionStart(peerInfo);
               }
@@ -275,9 +325,9 @@ public class ChannelPoolDpImpl implements ChannelPool {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
                   } else if (!status.isOk() && status.getCode() != Code.CANCELLED) {
-                    channelWrapper.consecutiveFailures++;
+                    fw.consecutiveFailures++;
                   }
-                  releaseChannel(channelWrapper, status);
+                  releaseChannel(fw, status);
                 }
                 super.onClose(status, trailers);
               }
@@ -292,63 +342,35 @@ public class ChannelPoolDpImpl implements ChannelPool {
     debugTagTracer.checkPrecondition(
         !closed, "channel_pool_add_channel_failure", "Channel pool is closed");
     log(Level.FINE, "Adding a new channel");
-    ChannelWrapper wrapped = new ChannelWrapper(startingGroup, channelSupplier.get(), clock);
-    startingGroup.channels.addFirst(wrapped);
+    ChannelWrapper wrapped =
+        new ChannelWrapper(nextChannelId.getAndIncrement(), channelSupplier.get(), clock);
+    channels.add(wrapped);
     return wrapped;
   }
 
+  /** Removes a channel from the pool and purges its route observations. */
   @GuardedBy("this")
-  private void removeGroup(AfeChannelGroup group) {
-    log(Level.FINE, "Removing group: %s", group.afeId);
-    group.channels.forEach(c -> c.channel.shutdown());
-    channelGroups.remove(group);
-    // TODO: need to handle a group being added right after it was removed with lingering sessions
+  private void removeChannel(ChannelWrapper cw) {
+    channels.remove(cw);
+    final long id = cw.id;
+    routeObservations.keySet().removeIf(k -> k.channelId == id);
+    cw.channel.shutdown();
   }
 
-  @GuardedBy("this")
-  private void rehomeChannel(ChannelWrapper channelWrapper, AfeId afeId) {
-    // No need to rehome recycled channels.
-    if (channelWrapper.channel.isShutdown()) {
-      return;
-    }
-
-    AfeChannelGroup origGroup = channelWrapper.group;
-
-    if (Objects.equals(origGroup.afeId, afeId)) {
-      return;
-    }
-
-    log(Level.FINE, "Rehoming channel from: %s to %s", origGroup.afeId, afeId);
-
-    // Re-home the channel
-    AfeChannelGroup newGroup =
-        channelGroups.stream()
-            .filter(g -> Objects.equals(g.afeId, afeId))
-            .findAny()
-            .orElseGet(
-                () -> {
-                  AfeChannelGroup g = new AfeChannelGroup(afeId);
-                  channelGroups.add(g);
-                  return g;
-                });
-    channelWrapper.group = newGroup;
-    origGroup.channels.remove(channelWrapper);
-    if (origGroup.channels.isEmpty()) {
-      channelGroups.remove(origGroup);
-    }
-    origGroup.numStreams -= channelWrapper.numOutstanding;
-    newGroup.channels.add(channelWrapper);
-    newGroup.numStreams += channelWrapper.numOutstanding;
-
-    return;
-  }
-
-  // Update accounting when a stream is closed and releases its channel
   @GuardedBy("this")
   private void releaseChannel(ChannelWrapper channelWrapper, Status status) {
     totalStreams--;
-    channelWrapper.group.numStreams--;
     channelWrapper.numOutstanding--;
+    channelWrapper.lastUsedAt = Instant.now(clock);
+
+    // Draining channels: don't recycle (that would spawn a replacement, undoing the drain).
+    // Just remove when they go quiet.
+    if (channelWrapper.state == ChannelWrapper.State.DRAINING) {
+      if (channelWrapper.numOutstanding == 0) {
+        removeChannel(channelWrapper);
+      }
+      return;
+    }
 
     if (shouldRecycleChannel(channelWrapper, status)) {
       recycleChannel(channelWrapper);
@@ -391,12 +413,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
       recycleBackoff = MAX_RECYCLE_BACKOFF;
     }
 
-    channelWrapper.group.channels.remove(channelWrapper);
-    channelWrapper.channel.shutdown();
-    // Checking for starting group because we don't want to delete the stating group.
-    if (channelWrapper.group.channels.isEmpty() && channelWrapper.group != startingGroup) {
-      removeGroup(channelWrapper.group);
-    }
+    removeChannel(channelWrapper);
     addChannel();
   }
 
@@ -410,65 +427,55 @@ public class ChannelPoolDpImpl implements ChannelPool {
     }
   }
 
-  /*
-  - add new group if existing groups are overflowing
-  - shutdown older channels within a group
-   */
   private synchronized void serviceChannelsSafe() {
     log(Level.FINE, "Servicing channels");
     dumpState();
 
-    // Thin out the channels in each group, so that each AFEGroup only has 1 channel
-    for (AfeChannelGroup group : channelGroups) {
-      if (LOGGER.isLoggable(Level.FINEST) && group.channels.size() > 1) {
-        log(
-            Level.FINEST,
-            "Shutting down %d parallel channels for %s",
-            group.channels.size() - 1,
-            group.afeId);
-      }
-      while (group.channels.size() > 1) {
-        // Clean up parallel channels.
-        // Recent channels added to the end, thus removing the oldest from the beginning.
-        group.channels.removeFirst().channel.shutdown();
-      }
+    int target = (int) Math.ceil((totalStreams * HEADROOM) / softMaxPerGroup);
+    if (target > maxGroups) {
+      target = maxGroups;
+    } else if (target < minGroups) {
+      target = minGroups;
     }
 
-    // try to adjust the groups
-    int desiredGroups = (int) Math.ceil(((float) totalStreams / softMaxPerGroup) * 2);
-    if (desiredGroups > maxGroups) {
-      desiredGroups = maxGroups;
-    } else if (desiredGroups < minGroups) {
-      desiredGroups = minGroups;
-    }
+    int activeCount = (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
 
-    // Right size the groups
-    if (desiredGroups < channelGroups.size()) {
-      // Remove extra groups, oldest first
-      Iterator<AfeChannelGroup> it =
-          channelGroups.stream()
-              .sorted(Comparator.comparing(g -> g.channels.peek().createdAt))
-              .limit(channelGroups.size() - desiredGroups)
-              .iterator();
-
-      while (it.hasNext()) {
-        AfeChannelGroup group = it.next();
-        log(
-            Level.FINE,
-            "Removing %d channel for %s due to lack of concurrency",
-            group.channels.size(),
-            group.afeId);
-        removeGroup(group);
+    if (activeCount > target) {
+      List<ChannelWrapper> candidates = pickDrainCandidates(activeCount - target);
+      for (ChannelWrapper cw : candidates) {
+        log(Level.FINE, "Draining channel (outstanding: %d)", cw.numOutstanding);
+        cw.state = ChannelWrapper.State.DRAINING;
+        if (cw.numOutstanding == 0) {
+          removeChannel(cw);
+        }
       }
-    } else if (desiredGroups > channelGroups.size() + startingGroup.channels.size()) {
-      log(Level.FINE, "Adding %d channels", desiredGroups - channelGroups.size());
-      for (int i = channelGroups.size(); i < desiredGroups; i++) {
+    } else if (activeCount < target) {
+      log(Level.FINE, "Adding %d channels to reach target %d", target - activeCount, target);
+      for (int i = activeCount; i < target; i++) {
         addChannel();
       }
     }
 
     log(Level.FINE, "Done servicing channels");
     dumpState();
+  }
+
+  /**
+   * Picks channels to drain, preferring idle channels (numOutstanding == 0) then by least-recently
+   * used, then by oldest createdAt.
+   */
+  @GuardedBy("this")
+  private List<ChannelWrapper> pickDrainCandidates(int count) {
+    return channels.stream()
+        .filter(c -> c.state == ChannelWrapper.State.ACTIVE)
+        .sorted(
+            Comparator.comparingInt((ChannelWrapper c) -> c.numOutstanding)
+                .thenComparing(
+                    c -> c.lastUsedAt == null ? Instant.MIN : c.lastUsedAt,
+                    Comparator.naturalOrder())
+                .thenComparing(c -> c.createdAt))
+        .limit(count)
+        .collect(Collectors.toList());
   }
 
   private void log(Level level, String msg, Throwable throwable) {
@@ -485,8 +492,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
       return;
     }
 
-    int channels =
-        channelGroups.stream().mapToInt((AfeChannelGroup chg) -> chg.channels.size()).sum();
+    long activeCount = channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
+    long drainingCount = channels.stream().filter(c -> c.state == ChannelWrapper.State.DRAINING).count();
     String s =
         sessionsPerAfeId.entrySet().stream()
             .sorted(Comparator.comparing(e -> e.getElement().toString()))
@@ -495,12 +502,10 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
     log(
         Level.FINE,
-        "ChannelPool channelGroups: "
-            + channelGroups.size()
-            + ", channels: "
-            + channels
-            + ", starting channels: "
-            + startingGroup.channels.size()
+        "ChannelPool active: "
+            + activeCount
+            + ", draining: "
+            + drainingCount
             + ", totalStreams: "
             + totalStreams
             + ", AFEs: "
@@ -519,29 +524,51 @@ public class ChannelPoolDpImpl implements ChannelPool {
     }
   }
 
-  static class AfeChannelGroup {
-    private final AfeId afeId;
-    private final Deque<ChannelWrapper> channels;
-    private int numStreams;
+  /**
+   * Key for the route-observation map: the combination of a channel id and a tenant uniquely
+   * determines the last observed AFE (RLS is stable per channel + tenant).
+   */
+  static final class RouteKey {
+    final long channelId;
+    final TenantKey tenantKey;
 
-    public AfeChannelGroup(AfeId afeId) {
-      this.afeId = afeId;
-      channels = new ArrayDeque<>();
-      numStreams = 0;
+    RouteKey(long channelId, TenantKey tenantKey) {
+      this.channelId = channelId;
+      this.tenantKey = tenantKey;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (!(o instanceof RouteKey)) return false;
+      RouteKey other = (RouteKey) o;
+      return channelId == other.channelId && Objects.equals(tenantKey, other.tenantKey);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(channelId, tenantKey);
     }
   }
 
   static class ChannelWrapper {
-    private AfeChannelGroup group;
-    private final ManagedChannel channel;
-    private final Instant createdAt;
-    private int numOutstanding = 0;
-    private int consecutiveFailures = 0;
+    enum State {
+      ACTIVE,
+      DRAINING
+    }
 
-    public ChannelWrapper(AfeChannelGroup group, ManagedChannel channel, Clock clock) {
-      this.group = group;
+    final long id;
+    final ManagedChannel channel;
+    final Instant createdAt;
+    volatile State state = State.ACTIVE;
+    int numOutstanding = 0;
+    int consecutiveFailures = 0;
+    Instant lastUsedAt;
+
+    ChannelWrapper(long id, ManagedChannel channel, Clock clock) {
+      this.id = id;
       this.channel = channel;
-      createdAt = Instant.now(clock);
+      this.createdAt = Instant.now(clock);
+      this.lastUsedAt = this.createdAt;
     }
   }
 
