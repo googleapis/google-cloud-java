@@ -179,4 +179,47 @@ public interface ProductInstallmentOrBuilder
    * @return The annualPercentageRate.
    */
   double getAnnualPercentageRate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the totalAmount field is set.
+   */
+  boolean hasTotalAmount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The totalAmount.
+   */
+  com.google.shopping.type.Price getTotalAmount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.type.PriceOrBuilder getTotalAmountOrBuilder();
 }

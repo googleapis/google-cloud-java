@@ -11,6 +11,5 @@
   "repo_short": "java-shopping-merchant-product-studio",
   "distribution_name": "com.google.shopping:google-shopping-merchant-productstudio",
   "api_id": "merchantapi.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

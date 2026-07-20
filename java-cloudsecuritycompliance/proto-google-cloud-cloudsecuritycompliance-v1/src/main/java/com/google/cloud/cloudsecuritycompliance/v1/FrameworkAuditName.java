@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -158,7 +159,7 @@ public class FrameworkAuditName implements ResourceName {
         .toString();
   }
 
-  public static FrameworkAuditName parse(String formattedString) {
+  public static @Nullable FrameworkAuditName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -182,7 +183,7 @@ public class FrameworkAuditName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FrameworkAuditName> values) {
+  public static List<String> toStringList(List<@Nullable FrameworkAuditName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FrameworkAuditName value : values) {
       if (value == null) {
@@ -234,7 +235,7 @@ public class FrameworkAuditName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

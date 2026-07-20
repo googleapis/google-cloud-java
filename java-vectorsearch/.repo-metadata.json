@@ -11,6 +11,5 @@
   "repo_short": "java-vectorsearch",
   "distribution_name": "com.google.cloud:google-cloud-vectorsearch",
   "api_id": "vectorsearch.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

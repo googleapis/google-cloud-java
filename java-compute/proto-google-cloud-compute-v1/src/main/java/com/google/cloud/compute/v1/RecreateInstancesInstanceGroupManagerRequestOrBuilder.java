@@ -103,6 +103,34 @@ public interface RecreateInstancesInstanceGroupManagerRequestOrBuilder
    *
    *
    * <pre>
+   * When set, graceful shutdown is skipped for instance recreation even if it's
+   * configured for the instances.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return Whether the noGracefulShutdown field is set.
+   */
+  boolean hasNoGracefulShutdown();
+
+  /**
+   *
+   *
+   * <pre>
+   * When set, graceful shutdown is skipped for instance recreation even if it's
+   * configured for the instances.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return The noGracefulShutdown.
+   */
+  boolean getNoGracefulShutdown();
+
+  /**
+   *
+   *
+   * <pre>
    * Project ID for this request.
    * </pre>
    *

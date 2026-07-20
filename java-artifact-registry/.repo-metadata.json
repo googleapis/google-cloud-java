@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-artifact-registry",
   "api_id": "artifactregistry.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
   "rest_documentation": "https://cloud.google.com/artifact-registry/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/artifact-registry/docs/reference/rpc"
