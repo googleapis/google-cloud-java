@@ -3505,7 +3505,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertTrue(rs.next());
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
@@ -3541,7 +3541,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertFalse(rs.next());
     }
   }
