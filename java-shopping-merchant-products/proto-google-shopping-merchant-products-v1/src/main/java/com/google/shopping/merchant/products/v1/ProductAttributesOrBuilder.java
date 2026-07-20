@@ -3500,6 +3500,55 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pickupCost field is set.
+   */
+  boolean hasPickupCost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pickupCost.
+   */
+  com.google.shopping.merchant.products.v1.PickupCost getPickupCost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.PickupCostOrBuilder getPickupCostOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Link template](https://support.google.com/merchants/answer/13871172) for
    * business hosted local storefront.
    * </pre>
@@ -4714,4 +4763,1875 @@ public interface ProductAttributesOrBuilder
    * @return The bytes of the videoLinks at the given index.
    */
   com.google.protobuf.ByteString getVideoLinksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+      getMinimumOrderValuesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductMinimumOrderValue getMinimumOrderValues(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  int getMinimumOrderValuesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>
+      getMinimumOrderValuesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder
+      getMinimumOrderValuesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Vehicle Identification Number
+   * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>string vin = 147;</code>
+   *
+   * @return The vin.
+   */
+  java.lang.String getVin();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Vehicle Identification Number
+   * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>string vin = 147;</code>
+   *
+   * @return The bytes for vin.
+   */
+  com.google.protobuf.ByteString getVinBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+   * vehicle, such as `LX`, `EX`, and others.
+   * </pre>
+   *
+   * <code>string model = 148;</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+   * vehicle, such as `LX`, `EX`, and others.
+   * </pre>
+   *
+   * <code>string model = 148;</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+   * vehicle model, such as `S`, `SV`, `SL` and others.
+   * </pre>
+   *
+   * <code>string trim = 149;</code>
+   *
+   * @return The trim.
+   */
+  java.lang.String getTrim();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+   * vehicle model, such as `S`, `SV`, `SL` and others.
+   * </pre>
+   *
+   * <code>string trim = 149;</code>
+   *
+   * @return The bytes for trim.
+   */
+  com.google.protobuf.ByteString getTrimBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [body style](https://support.google.com/google-ads/answer/14157085) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bodyStyle.
+   */
+  int getBodyStyleValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [body style](https://support.google.com/google-ads/answer/14157085) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+   * </code>
+   *
+   * @return The bodyStyle.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle getBodyStyle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Year](https://support.google.com/google-ads/answer/14152816) of the
+   * vehicle model.
+   * </pre>
+   *
+   * <code>int64 year = 151;</code>
+   *
+   * @return The year.
+   */
+  long getYear();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   *
+   * @return Whether the mileage field is set.
+   */
+  boolean hasMileage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   *
+   * @return The mileage.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder getMileageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   *
+   * @return Whether the electricRange field is set.
+   */
+  boolean hasElectricRange();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   *
+   * @return The electricRange.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getElectricRange();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+      getElectricRangeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   *
+   * @return Whether the fuelConsumption field is set.
+   */
+  boolean hasFuelConsumption();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   *
+   * @return The fuelConsumption.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption getFuelConsumption();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+      getFuelConsumptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   *
+   * @return Whether the fuelConsumptionDischargedBattery field is set.
+   */
+  boolean hasFuelConsumptionDischargedBattery();
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   *
+   * @return The fuelConsumptionDischargedBattery.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+      getFuelConsumptionDischargedBattery();
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+      getFuelConsumptionDischargedBatteryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   *
+   * @return Whether the energyConsumption field is set.
+   */
+  boolean hasEnergyConsumption();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   *
+   * @return The energyConsumption.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+      getEnergyConsumption();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder
+      getEnergyConsumptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   *
+   * @return Whether the co2Emissions field is set.
+   */
+  boolean hasCo2Emissions();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   *
+   * @return The co2Emissions.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions getCo2Emissions();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder
+      getCo2EmissionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+   * [Date first
+   * registered](https://support.google.com/google-ads/answer/14546138) for more
+   * information.
+   * </pre>
+   *
+   * <code>string date_first_registered = 158;</code>
+   *
+   * @return The dateFirstRegistered.
+   */
+  java.lang.String getDateFirstRegistered();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+   * [Date first
+   * registered](https://support.google.com/google-ads/answer/14546138) for more
+   * information.
+   * </pre>
+   *
+   * <code>string date_first_registered = 158;</code>
+   *
+   * @return The bytes for dateFirstRegistered.
+   */
+  com.google.protobuf.ByteString getDateFirstRegisteredBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+   *
+   * @return The enum numeric value on the wire for engine.
+   */
+  int getEngineValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+   *
+   * @return The engine.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.EngineType getEngine();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [emission
+   * standard](https://support.google.com/google-ads/answer/14869021) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for emissionsStandard.
+   */
+  int getEmissionsStandardValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [emission
+   * standard](https://support.google.com/google-ads/answer/14869021) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+   * </code>
+   *
+   * @return The emissionsStandard.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+      getEmissionsStandard();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the vehicle is OEM [certified
+   * pre-owned](https://support.google.com/google-ads/answer/14156475).
+   * </pre>
+   *
+   * <code>bool certified_pre_owned = 161;</code>
+   *
+   * @return The certifiedPreOwned.
+   */
+  boolean getCertifiedPreOwned();
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   *
+   * @return Whether the vehicleMsrp field is set.
+   */
+  boolean hasVehicleMsrp();
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   *
+   * @return The vehicleMsrp.
+   */
+  com.google.shopping.type.Price getVehicleMsrp();
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   */
+  com.google.shopping.type.PriceOrBuilder getVehicleMsrpOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   *
+   * @return Whether the vehicleAllInPrice field is set.
+   */
+  boolean hasVehicleAllInPrice();
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   *
+   * @return The vehicleAllInPrice.
+   */
+  com.google.shopping.type.Price getVehicleAllInPrice();
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   */
+  com.google.shopping.type.PriceOrBuilder getVehicleAllInPriceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [price type](https://support.google.com/google-ads/answer/14592783) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vehiclePriceType.
+   */
+  int getVehiclePriceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [price type](https://support.google.com/google-ads/answer/14592783) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+   * </code>
+   *
+   * @return The vehiclePriceType.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType getVehiclePriceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the vehicle is sold with mandatory inspection and maintenance
+   * performed before delivery. See the [Vehicle mandatory inspection
+   * included](https://support.google.com/google-ads/answer/15956630) for more
+   * information.`
+   * </pre>
+   *
+   * <code>bool vehicle_mandatory_inspection_included = 166;</code>
+   *
+   * @return The vehicleMandatoryInspectionIncluded.
+   */
+  boolean getVehicleMandatoryInspectionIncluded();
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   *
+   * @return Whether the vehicleExpenses field is set.
+   */
+  boolean hasVehicleExpenses();
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   *
+   * @return The vehicleExpenses.
+   */
+  com.google.shopping.type.Price getVehicleExpenses();
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   */
+  com.google.shopping.type.PriceOrBuilder getVehicleExpensesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   *
+   * @return Whether the warranty field is set.
+   */
+  boolean hasWarranty();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   *
+   * @return The warranty.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Warranty getWarranty();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder
+      getWarrantyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   *
+   * @return Whether the displayAddress field is set.
+   */
+  boolean hasDisplayAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   *
+   * @return The displayAddress.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress getDisplayAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder
+      getDisplayAddressOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The latitude of the property. The value must be between -90 (inclusive) and
+   * 90 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double latitude = 180;</code>
+   *
+   * @return Whether the latitude field is set.
+   */
+  boolean hasLatitude();
+
+  /**
+   *
+   *
+   * <pre>
+   * The latitude of the property. The value must be between -90 (inclusive) and
+   * 90 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double latitude = 180;</code>
+   *
+   * @return The latitude.
+   */
+  double getLatitude();
+
+  /**
+   *
+   *
+   * <pre>
+   * The longitude of the property. The value must be between -180 (inclusive)
+   * and 180 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double longitude = 181;</code>
+   *
+   * @return Whether the longitude field is set.
+   */
+  boolean hasLongitude();
+
+  /**
+   *
+   *
+   * <pre>
+   * The longitude of the property. The value must be between -180 (inclusive)
+   * and 180 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double longitude = 181;</code>
+   *
+   * @return The longitude.
+   */
+  double getLongitude();
+
+  /**
+   *
+   *
+   * <pre>
+   * The neighborhood (locality) of the property, such as `Wallingford`,
+   * `Greenwood`, etc.
+   * </pre>
+   *
+   * <code>string neighborhood = 182;</code>
+   *
+   * @return The neighborhood.
+   */
+  java.lang.String getNeighborhood();
+
+  /**
+   *
+   *
+   * <pre>
+   * The neighborhood (locality) of the property, such as `Wallingford`,
+   * `Greenwood`, etc.
+   * </pre>
+   *
+   * <code>string neighborhood = 182;</code>
+   *
+   * @return The bytes for neighborhood.
+   */
+  com.google.protobuf.ByteString getNeighborhoodBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   *
+   * @return Whether the unitArea field is set.
+   */
+  boolean hasUnitArea();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   *
+   * @return The unitArea.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea getUnitArea();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder
+      getUnitAreaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of units available for a specific floor plan of the property.
+   * The value must be greater than 0.
+   * </pre>
+   *
+   * <code>optional int64 number_of_units = 184;</code>
+   *
+   * @return Whether the numberOfUnits field is set.
+   */
+  boolean hasNumberOfUnits();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of units available for a specific floor plan of the property.
+   * The value must be greater than 0.
+   * </pre>
+   *
+   * <code>optional int64 number_of_units = 184;</code>
+   *
+   * @return The numberOfUnits.
+   */
+  long getNumberOfUnits();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the property.
+   * </pre>
+   *
+   * <code>string property_name = 185;</code>
+   *
+   * @return The propertyName.
+   */
+  java.lang.String getPropertyName();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the property.
+   * </pre>
+   *
+   * <code>string property_name = 185;</code>
+   *
+   * @return The bytes for propertyName.
+   */
+  com.google.protobuf.ByteString getPropertyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bedrooms in the property. The value must be greater than or
+   * equal to 0 and a multiple of 1.0.
+   * </pre>
+   *
+   * <code>optional double number_of_bedrooms = 186;</code>
+   *
+   * @return Whether the numberOfBedrooms field is set.
+   */
+  boolean hasNumberOfBedrooms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bedrooms in the property. The value must be greater than or
+   * equal to 0 and a multiple of 1.0.
+   * </pre>
+   *
+   * <code>optional double number_of_bedrooms = 186;</code>
+   *
+   * @return The numberOfBedrooms.
+   */
+  double getNumberOfBedrooms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bathrooms in the property. The value must be greater than 0
+   * and a multiple of 0.5.
+   * </pre>
+   *
+   * <code>optional double number_of_bathrooms = 187;</code>
+   *
+   * @return Whether the numberOfBathrooms field is set.
+   */
+  boolean hasNumberOfBathrooms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bathrooms in the property. The value must be greater than 0
+   * and a multiple of 0.5.
+   * </pre>
+   *
+   * <code>optional double number_of_bathrooms = 187;</code>
+   *
+   * @return The numberOfBathrooms.
+   */
+  double getNumberOfBathrooms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  int getPropertyTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+   * </code>
+   *
+   * @return The propertyType.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType getPropertyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return A list containing the amenityFeature.
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>
+      getAmenityFeatureList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return The count of amenityFeature.
+   */
+  int getAmenityFeatureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The amenityFeature at the given index.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature getAmenityFeature(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for amenityFeature.
+   */
+  java.util.List<java.lang.Integer> getAmenityFeatureValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of amenityFeature at the given index.
+   */
+  int getAmenityFeatureValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return A list containing the utilitiesIncluded.
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>
+      getUtilitiesIncludedList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return The count of utilitiesIncluded.
+   */
+  int getUtilitiesIncludedCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The utilitiesIncluded at the given index.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded getUtilitiesIncluded(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for utilitiesIncluded.
+   */
+  java.util.List<java.lang.Integer> getUtilitiesIncludedValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of utilitiesIncluded at the given index.
+   */
+  int getUtilitiesIncludedValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   *
+   * @return Whether the petPolicy field is set.
+   */
+  boolean hasPetPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   *
+   * @return The petPolicy.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy getPetPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder
+      getPetPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The specialty housing type for the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for specialtyHousingType.
+   */
+  int getSpecialtyHousingTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The specialty housing type for the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+   * </code>
+   *
+   * @return The specialtyHousingType.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+      getSpecialtyHousingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+      getProductFeeList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee getProductFee(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  int getProductFeeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>
+      getProductFeeOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder
+      getProductFeeOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return Whether the shortTitle field is set.
+   */
+  boolean hasShortTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return The shortTitle.
+   */
+  java.lang.String getShortTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return The bytes for shortTitle.
+   */
+  com.google.protobuf.ByteString getShortTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+      getQuestionsAndAnswersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+      getQuestionsAndAnswers(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getQuestionsAndAnswersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder>
+      getQuestionsAndAnswersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder
+      getQuestionsAndAnswersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the
+   * [popularity](https://support.google.com/merchants/answer/17085297) of the
+   * product in a merchant's inventory. Using a scale of 0.0 (lowest) to 100.0
+   * (highest).
+   * </pre>
+   *
+   * <code>float popularity_rank = 174 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The popularityRank.
+   */
+  float getPopularityRank();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the [title of the product
+   * group](https://support.google.com/merchants/answer/17085146) to which
+   * this variant product belongs. This can be used along with the [item group
+   * id](https://support.google.com/merchants/answer/6324507) attribute.
+   * It lets you perform better grouping of variant products, and helps
+   * identifying common product characteristics more efficiently.
+   * </pre>
+   *
+   * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The itemGroupTitle.
+   */
+  java.lang.String getItemGroupTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the [title of the product
+   * group](https://support.google.com/merchants/answer/17085146) to which
+   * this variant product belongs. This can be used along with the [item group
+   * id](https://support.google.com/merchants/answer/6324507) attribute.
+   * It lets you perform better grouping of variant products, and helps
+   * identifying common product characteristics more efficiently.
+   * </pre>
+   *
+   * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for itemGroupTitle.
+   */
+  com.google.protobuf.ByteString getItemGroupTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the documentLinks.
+   */
+  java.util.List<java.lang.String> getDocumentLinksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of documentLinks.
+   */
+  int getDocumentLinksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The documentLinks at the given index.
+   */
+  java.lang.String getDocumentLinks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the documentLinks at the given index.
+   */
+  com.google.protobuf.ByteString getDocumentLinksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+      getVariantOptionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption getVariantOptions(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getVariantOptionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>
+      getVariantOptionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder
+      getVariantOptionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+      getRelatedProductsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct getRelatedProducts(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getRelatedProductsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>
+      getRelatedProductsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder
+      getRelatedProductsOrBuilder(int index);
 }

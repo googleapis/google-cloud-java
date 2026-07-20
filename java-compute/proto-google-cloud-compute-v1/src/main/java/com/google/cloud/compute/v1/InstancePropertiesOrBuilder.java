@@ -437,6 +437,51 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attached to the VM.
+   * Check the LocalSsdEncryptionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string local_ssd_encryption_mode = 121582032;</code>
+   *
+   * @return Whether the localSsdEncryptionMode field is set.
+   */
+  boolean hasLocalSsdEncryptionMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attached to the VM.
+   * Check the LocalSsdEncryptionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string local_ssd_encryption_mode = 121582032;</code>
+   *
+   * @return The localSsdEncryptionMode.
+   */
+  java.lang.String getLocalSsdEncryptionMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attached to the VM.
+   * Check the LocalSsdEncryptionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string local_ssd_encryption_mode = 121582032;</code>
+   *
+   * @return The bytes for localSsdEncryptionMode.
+   */
+  com.google.protobuf.ByteString getLocalSsdEncryptionModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The machine type to use for instances that are created from these
    * properties.
    * This field only accepts a machine type name, for example `n2-standard-4`.

@@ -12,6 +12,5 @@
   "distribution_name": "com.google.analytics:google-analytics-data",
   "api_id": "analytics-data.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/analytics-dpe"
 }

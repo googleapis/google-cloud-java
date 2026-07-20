@@ -1,0 +1,15 @@
+{
+  "api_shortname": "commerceproducer",
+  "name_pretty": "Cloud Commerce Producer",
+  "product_documentation": "https://docs.cloud.google.com/marketplace/",
+  "api_description": "Partner API for the Cloud Commerce Producer API Early Access.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-commerceproducer/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-commerceproducer",
+  "distribution_name": "com.google.cloud:google-cloud-commerceproducer",
+  "api_id": "commerceproducer.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}
