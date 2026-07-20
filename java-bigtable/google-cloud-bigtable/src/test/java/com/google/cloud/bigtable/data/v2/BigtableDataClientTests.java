@@ -58,7 +58,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Answers;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
@@ -78,7 +77,7 @@ public class BigtableDataClientTests {
 
   private EnhancedBigtableStub mockStub;
 
-  private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
+  @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
 
   private UnaryCallable<Query, Row> mockReadRowCallable;
   private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
@@ -93,9 +92,11 @@ public class BigtableDataClientTests {
   private Batcher<ByteString, Row> mockBulkReadRowsBatcher;
   private UnaryCallable<PrepareQueryRequest, PrepareResponse> mockPrepareQueryCallable;
 
+  @Mock
   private ServerStreamingCallable<String, ByteStringRange>
       mockGenerateInitialChangeStreamPartitionsCallable;
 
+  @Mock
   private ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
       mockReadChangeStreamCallable;
 
