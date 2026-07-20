@@ -105,9 +105,7 @@ public class BigtableDataClientTests {
     mockStub =
         Mockito.mock(EnhancedBigtableStub.class, Mockito.withSettings().withoutAnnotations());
     mockReadRowsCallable =
-        Mockito.mock(
-            ServerStreamingCallable.class,
-            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+        Mockito.mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
     mockReadRowCallable =
         Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     mockSampleRowKeysCallable =
@@ -129,13 +127,9 @@ public class BigtableDataClientTests {
     mockPrepareQueryCallable =
         Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     mockGenerateInitialChangeStreamPartitionsCallable =
-        Mockito.mock(
-            ServerStreamingCallable.class,
-            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+        Mockito.mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
     mockReadChangeStreamCallable =
-        Mockito.mock(
-            ServerStreamingCallable.class,
-            Mockito.withSettings().withoutAnnotations().defaultAnswer(Answers.RETURNS_DEEP_STUBS));
+        Mockito.mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
 
     bigtableDataClient = new BigtableDataClient(mockStub);
   }
