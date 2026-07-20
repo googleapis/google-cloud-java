@@ -38,6 +38,7 @@ import com.google.common.io.ByteStreams;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -618,9 +619,7 @@ public class ReleaseNoteGeneration {
     builder.redirectErrorStream(true);
     Process process = builder.start();
     String output =
-        new String(
-            ByteStreams.toByteArray(process.getInputStream()),
-            java.nio.charset.StandardCharsets.UTF_8);
+        new String(ByteStreams.toByteArray(process.getInputStream()), StandardCharsets.UTF_8);
     boolean finished = process.waitFor(1, TimeUnit.MINUTES);
     Verify.verify(finished, "The process timed out");
     Verify.verify(0 == process.exitValue(), "The command failed: %s", output);
