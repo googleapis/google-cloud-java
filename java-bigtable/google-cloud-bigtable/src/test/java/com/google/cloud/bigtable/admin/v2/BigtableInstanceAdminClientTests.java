@@ -88,7 +88,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnit;
@@ -143,168 +142,139 @@ public class BigtableInstanceAdminClientTests {
 
   private BigtableInstanceAdminStub mockStub;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateInstanceRequest,
           com.google.bigtable.admin.v2.Instance,
           CreateInstanceMetadata>
       mockCreateInstanceCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.PartialUpdateInstanceRequest,
           com.google.bigtable.admin.v2.Instance,
           UpdateInstanceMetadata>
       mockUpdateInstanceCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetInstanceRequest, com.google.bigtable.admin.v2.Instance>
       mockGetInstanceCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListInstancesRequest,
           com.google.bigtable.admin.v2.ListInstancesResponse>
       mockListInstancesCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteInstanceRequest, Empty>
       mockDeleteInstanceCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateClusterRequest,
           com.google.bigtable.admin.v2.Cluster,
           com.google.bigtable.admin.v2.CreateClusterMetadata>
       mockCreateClusterCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetClusterRequest, com.google.bigtable.admin.v2.Cluster>
       mockGetClusterCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListClustersRequest,
           com.google.bigtable.admin.v2.ListClustersResponse>
       mockListClustersCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.Cluster,
           com.google.bigtable.admin.v2.Cluster,
           UpdateClusterMetadata>
       mockUpdateClusterCallable;
 
-  @Mock
   private OperationCallable<
           PartialUpdateClusterRequest,
           com.google.bigtable.admin.v2.Cluster,
           PartialUpdateClusterMetadata>
       mockPartialUpdateClusterCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteClusterRequest, Empty>
       mockDeleteClusterCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.CreateAppProfileRequest,
           com.google.bigtable.admin.v2.AppProfile>
       mockCreateAppProfileCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetAppProfileRequest,
           com.google.bigtable.admin.v2.AppProfile>
       mockGetAppProfileCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListAppProfilesRequest, ListAppProfilesPagedResponse>
       mockListAppProfilesCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateAppProfileRequest,
           com.google.bigtable.admin.v2.AppProfile,
           com.google.bigtable.admin.v2.UpdateAppProfileMetadata>
       mockUpdateAppProfileCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteAppProfileRequest, Empty>
       mockDeleteAppProfileCallable;
 
-  @Mock
   private UnaryCallable<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       mockGetIamPolicyCallable;
 
-  @Mock
   private UnaryCallable<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
       mockSetIamPolicyCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
       mockTestIamPermissionsCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
           com.google.bigtable.admin.v2.MaterializedView,
           com.google.bigtable.admin.v2.CreateMaterializedViewMetadata>
       mockCreateMaterializedViewCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetMaterializedViewRequest,
           com.google.bigtable.admin.v2.MaterializedView>
       mockGetMaterializedViewCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
           ListMaterializedViewsPagedResponse>
       mockListMaterializedViewsCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
           com.google.bigtable.admin.v2.MaterializedView,
           com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata>
       mockUpdateMaterializedViewCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteMaterializedViewRequest, Empty>
       mockDeleteMaterializedViewCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.CreateLogicalViewRequest,
           com.google.bigtable.admin.v2.LogicalView,
           com.google.bigtable.admin.v2.CreateLogicalViewMetadata>
       mockCreateLogicalViewCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.GetLogicalViewRequest,
           com.google.bigtable.admin.v2.LogicalView>
       mockGetLogicalViewCallable;
 
-  @Mock
   private UnaryCallable<
           com.google.bigtable.admin.v2.ListLogicalViewsRequest, ListLogicalViewsPagedResponse>
       mockListLogicalViewsCallable;
 
-  @Mock
   private OperationCallable<
           com.google.bigtable.admin.v2.UpdateLogicalViewRequest,
           com.google.bigtable.admin.v2.LogicalView,
           com.google.bigtable.admin.v2.UpdateLogicalViewMetadata>
       mockUpdateLogicalViewCallable;
 
-  @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteLogicalViewRequest, Empty>
       mockDeleteLogicalViewCallable;
 
@@ -313,6 +283,65 @@ public class BigtableInstanceAdminClientTests {
     mockStub =
         Mockito.mock(BigtableInstanceAdminStub.class, Mockito.withSettings().withoutAnnotations());
     adminClient = BigtableInstanceAdminClient.create(PROJECT_ID, mockStub);
+
+    mockCreateInstanceCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateInstanceCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetInstanceCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListInstancesCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteInstanceCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateClusterCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetClusterCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListClustersCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateClusterCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockPartialUpdateClusterCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteClusterCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateAppProfileCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetAppProfileCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListAppProfilesCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateAppProfileCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteAppProfileCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetIamPolicyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockSetIamPolicyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockTestIamPermissionsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateMaterializedViewCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetMaterializedViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListMaterializedViewsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateMaterializedViewCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteMaterializedViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCreateLogicalViewCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockGetLogicalViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockListLogicalViewsCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockUpdateLogicalViewCallable =
+        Mockito.mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockDeleteLogicalViewCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
   }
 
   @Test

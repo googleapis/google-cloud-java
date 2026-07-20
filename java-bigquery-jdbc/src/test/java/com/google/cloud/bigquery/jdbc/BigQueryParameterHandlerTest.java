@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
 import org.junit.jupiter.api.Test;
@@ -138,5 +139,21 @@ public class BigQueryParameterHandlerTest {
     assertEquals(2, scale);
     assertEquals(String.class, paramHandler.getType(2));
     assertEquals(StandardSQLTypeName.STRING, paramHandler.getSqlType(2));
+  }
+
+  @Test
+  public void testConfigureParametersWidenNumericTypes() throws Exception {
+    BigQueryParameterHandler paramHandler = new BigQueryParameterHandler(3);
+    paramHandler.setParameter(1, (short) 5, Short.class);
+    paramHandler.setParameter(2, (byte) 10, Byte.class);
+    paramHandler.setParameter(3, 3.14f, Float.class);
+
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT 1");
+    paramHandler.configureParameters(builder);
+
+    QueryJobConfiguration config = builder.build();
+    assertEquals(3, config.getPositionalParameters().size());
+    assertEquals("5", config.getPositionalParameters().get(0).getValue());
+    assertEquals("10", config.getPositionalParameters().get(1).getValue());
   }
 }

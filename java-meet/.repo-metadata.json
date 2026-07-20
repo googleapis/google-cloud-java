@@ -11,6 +11,5 @@
   "repo_short": "java-meet",
   "distribution_name": "com.google.cloud:google-cloud-meet",
   "api_id": "meet.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

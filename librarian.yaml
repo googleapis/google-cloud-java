@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.26.0
+version: v0.27.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -105,6 +105,19 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentidentity
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentidentity/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/agentidentity/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: agentregistry
     version: 0.2.0-SNAPSHOT
     apis:
@@ -945,6 +958,13 @@ libraries:
       api_description_override: Manages Google Cloud technical support cases for Customer Care support offerings.
       name_pretty_override: Google Cloud Support API
       product_documentation_override: https://cloud.google.com/support/docs/reference/support-api/
+  - name: commerceproducer
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/commerceproducer/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: common-protos
     version: 2.74.0-SNAPSHOT
     apis:
@@ -1035,6 +1055,14 @@ libraries:
           generate_gapic: false
           generate_resource_names: false
           samples: false
+    keep:
+      - README.md
+    postprocess:
+      remove_file:
+        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
     java:
       api_description_override: Protobuf classes for Google's common protos.
       api_shortname_override: common-protos
@@ -1050,14 +1078,6 @@ libraries:
       transport_override: grpc
       skip_pom_updates: true
       skip_api_id: true
-    keep:
-      - README.md
-    postprocess:
-      remove_file:
-        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
-        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
   - name: compute
     version: 1.105.0-SNAPSHOT
     apis:
@@ -2803,6 +2823,10 @@ libraries:
       name_pretty_override: Privileged Access Manager API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
       rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
+  - name: productregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/productregistry/v1
   - name: profiler
     version: 2.95.0-SNAPSHOT
     apis:
@@ -3387,9 +3411,9 @@ libraries:
           grpc_artifact_id_override: grpc-gapic-showcase-v1beta1
           proto_artifact_id_override: proto-gapic-showcase-v1beta1
     keep:
+      - README.md
       - gapic-showcase/src/main/java/com/google/showcase/v1beta1/Version.java
       - gapic-showcase/src/test
-      - README.md
     roots:
       - showcase
       - googleapis
