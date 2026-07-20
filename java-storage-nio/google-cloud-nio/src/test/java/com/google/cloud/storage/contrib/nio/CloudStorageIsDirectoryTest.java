@@ -36,6 +36,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 /** Unit tests for {@code Files.isDirectory()}. */
 @RunWith(JUnit4.class)
