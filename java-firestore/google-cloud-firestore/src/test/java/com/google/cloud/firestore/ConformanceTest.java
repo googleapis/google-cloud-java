@@ -85,7 +85,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.AllTests;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
@@ -616,13 +615,15 @@ public class ConformanceTest {
       extends BaseConformanceTestRunner<ListenTest> {
 
     @Captor private ArgumentCaptor<BidiStreamObserver<Message, Message>> streamObserverCapture;
-    @Mock private ClientStream<ListenRequest> noOpRequestObserver;
+    private final ClientStream<ListenRequest> noOpRequestObserver;
 
     private final Query watchQuery;
 
     private ConformanceListenTestRunner(
         String description, TestDefinition.ListenTest testParameters) {
       super(description, testParameters);
+      noOpRequestObserver =
+          Mockito.mock(ClientStream.class, Mockito.withSettings().withoutAnnotations());
       watchQuery = collection(ROOT_COLLECTION_PATH + "C").orderBy("a");
     }
 
