@@ -352,6 +352,9 @@ public class RegionalAccessBoundaryTest {
     assertTrue(
         extraManager.isCooldownActive(),
         "106th task should have entered cooldown on scheduling failure");
+    assertEquals(
+        RegionalAccessBoundaryManager.INITIAL_COOLDOWN_MILLIS,
+        extraManager.getCurrentCooldownMillis());
 
     latch.countDown();
     testExecutor.shutdownNow();

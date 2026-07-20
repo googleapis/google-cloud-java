@@ -244,7 +244,6 @@ final class RegionalAccessBoundaryManager {
             "Could not submit background refresh task for Regional Access Boundary. "
                 + "This is non-blocking and the library will attempt to refresh on the next access. Error: "
                 + e.getMessage());
-        handleRefreshFailure(e);
         isRefreshing.set(false);
       }
     }
