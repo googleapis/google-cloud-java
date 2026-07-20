@@ -442,8 +442,7 @@ public class EndpointLifecycleManagerTest {
     manager.requestEndpointRecreation("server1");
     await()
         .atMost(Duration.ofSeconds(5))
-        .until(
-            () -> !manager.isManaged("server1") && cache.getIfPresent("server1") == null);
+        .until(() -> !manager.isManaged("server1") && cache.getIfPresent("server1") == null);
   }
 
   @Test
