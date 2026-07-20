@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -151,7 +152,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ShippingSettingsServiceClient implements BackgroundResource {
-  private final ShippingSettingsServiceSettings settings;
+  private final @Nullable ShippingSettingsServiceSettings settings;
   private final ShippingSettingsServiceStub stub;
 
   /** Constructs an instance of ShippingSettingsServiceClient with default settings. */
@@ -192,7 +193,7 @@ public class ShippingSettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ShippingSettingsServiceSettings getSettings() {
+  public final @Nullable ShippingSettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -223,7 +224,7 @@ public class ShippingSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}/shippingsettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ShippingSettings getShippingSettings(ShippingSettingsName name) {
+  public final ShippingSettings getShippingSettings(@Nullable ShippingSettingsName name) {
     GetShippingSettingsRequest request =
         GetShippingSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())

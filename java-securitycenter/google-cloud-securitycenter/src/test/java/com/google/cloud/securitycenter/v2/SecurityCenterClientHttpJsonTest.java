@@ -631,6 +631,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -738,6 +741,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4314,6 +4320,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4421,6 +4430,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4624,6 +4636,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4731,6 +4746,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5090,6 +5108,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5155,6 +5176,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5246,6 +5270,9 @@ public class SecurityCenterClientHttpJsonTest {
               .setAiModel(AiModel.newBuilder().build())
               .setChokepoint(Chokepoint.newBuilder().build())
               .setVertexAi(VertexAi.newBuilder().build())
+              .setAgent(Agent.newBuilder().build())
+              .addAllAgentSessions(new ArrayList<AgentSession>())
+              .setAgentAnomaly(AgentAnomaly.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFinding(finding, updateMask);

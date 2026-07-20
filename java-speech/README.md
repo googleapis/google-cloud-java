@@ -11,7 +11,6 @@ Java idiomatic client for [Cloud Speech][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -44,6 +43,14 @@ If you are using Maven without the BOM, add this to your dependencies:
   <artifactId>google-cloud-speech</artifactId>
   <version>4.89.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-speech'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
@@ -130,6 +137,8 @@ Note, to play the file on Unix-like system you may use the following command: `p
 
 
 
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -183,8 +192,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 

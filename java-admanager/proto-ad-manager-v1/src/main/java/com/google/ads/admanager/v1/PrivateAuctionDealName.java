@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -80,7 +81,7 @@ public class PrivateAuctionDealName implements ResourceName {
         .toString();
   }
 
-  public static PrivateAuctionDealName parse(String formattedString) {
+  public static @Nullable PrivateAuctionDealName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -98,7 +99,7 @@ public class PrivateAuctionDealName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<PrivateAuctionDealName> values) {
+  public static List<String> toStringList(List<@Nullable PrivateAuctionDealName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (PrivateAuctionDealName value : values) {
       if (value == null) {
@@ -144,7 +145,7 @@ public class PrivateAuctionDealName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

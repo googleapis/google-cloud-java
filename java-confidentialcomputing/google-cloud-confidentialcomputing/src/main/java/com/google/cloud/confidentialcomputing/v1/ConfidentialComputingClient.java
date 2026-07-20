@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -222,7 +223,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConfidentialComputingClient implements BackgroundResource {
-  private final ConfidentialComputingSettings settings;
+  private final @Nullable ConfidentialComputingSettings settings;
   private final ConfidentialComputingStub stub;
 
   /** Constructs an instance of ConfidentialComputingClient with default settings. */
@@ -262,7 +263,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConfidentialComputingSettings getSettings() {
+  public final @Nullable ConfidentialComputingSettings getSettings() {
     return settings;
   }
 
@@ -296,7 +297,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
    *     all the Challenge fields are set by the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Challenge createChallenge(LocationName parent, Challenge challenge) {
+  public final Challenge createChallenge(@Nullable LocationName parent, Challenge challenge) {
     CreateChallengeRequest request =
         CreateChallengeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -863,8 +864,8 @@ public class ConfidentialComputingClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -874,14 +875,14 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -895,7 +896,8 @@ public class ConfidentialComputingClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -905,7 +907,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

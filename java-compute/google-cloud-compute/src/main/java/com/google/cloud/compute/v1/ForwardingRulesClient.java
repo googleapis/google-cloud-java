@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -266,7 +267,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ForwardingRulesClient implements BackgroundResource {
-  private final ForwardingRulesSettings settings;
+  private final @Nullable ForwardingRulesSettings settings;
   private final ForwardingRulesStub stub;
 
   /** Constructs an instance of ForwardingRulesClient with default settings. */
@@ -306,7 +307,7 @@ public class ForwardingRulesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ForwardingRulesSettings getSettings() {
+  public final @Nullable ForwardingRulesSettings getSettings() {
     return settings;
   }
 
@@ -661,6 +662,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setForwardingRule("forwardingRule-1429104743")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
+   *           .setView("view3619493")
    *           .build();
    *   ForwardingRule response = forwardingRulesClient.get(request);
    * }
@@ -691,6 +693,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setForwardingRule("forwardingRule-1429104743")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
+   *           .setView("view3619493")
    *           .build();
    *   ApiFuture<ForwardingRule> future = forwardingRulesClient.getCallable().futureCall(request);
    *   // Do something.
@@ -1488,12 +1491,13 @@ public class ForwardingRulesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
                 Map.Entry<String, ForwardingRulesScopedList>>
             context,
-        ForwardingRuleAggregatedList response) {
+        @Nullable ForwardingRuleAggregatedList response) {
       super(context, response);
     }
 
@@ -1503,18 +1507,20 @@ public class ForwardingRulesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
                 Map.Entry<String, ForwardingRulesScopedList>>
             context,
-        ForwardingRuleAggregatedList response) {
+        @Nullable ForwardingRuleAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListForwardingRulesRequest,
                 ForwardingRuleAggregatedList,
                 Map.Entry<String, ForwardingRulesScopedList>>
@@ -1532,7 +1538,8 @@ public class ForwardingRulesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1542,7 +1549,7 @@ public class ForwardingRulesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1574,8 +1581,9 @@ public class ForwardingRulesClient implements BackgroundResource {
           ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule, ListPage> {
 
     private ListPage(
-        PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
-        ForwardingRuleList response) {
+        @Nullable PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
+        @Nullable ForwardingRuleList response) {
       super(context, response);
     }
 
@@ -1585,14 +1593,16 @@ public class ForwardingRulesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
-        ForwardingRuleList response) {
+        @Nullable PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
+        @Nullable ForwardingRuleList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule> context,
+        @Nullable PageContext<ListForwardingRulesRequest, ForwardingRuleList, ForwardingRule>
+            context,
         ApiFuture<ForwardingRuleList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1606,7 +1616,7 @@ public class ForwardingRulesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1615,7 +1625,8 @@ public class ForwardingRulesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

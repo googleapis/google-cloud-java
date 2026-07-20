@@ -165,4 +165,54 @@ public interface RotationOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the managedRotationStatus field is set.
+   */
+  boolean hasManagedRotationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The managedRotationStatus.
+   */
+  com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus getManagedRotationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder
+      getManagedRotationStatusOrBuilder();
 }

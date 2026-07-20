@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-workloadmanager",
   "api_id": "workloadmanager.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://docs.cloud.google.com/workload-manager/docs/reference/rest"
 }

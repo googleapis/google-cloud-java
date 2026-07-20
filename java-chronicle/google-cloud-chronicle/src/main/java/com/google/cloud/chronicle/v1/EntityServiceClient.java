@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -217,7 +218,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EntityServiceClient implements BackgroundResource {
-  private final EntityServiceSettings settings;
+  private final @Nullable EntityServiceSettings settings;
   private final EntityServiceStub stub;
 
   /** Constructs an instance of EntityServiceClient with default settings. */
@@ -257,7 +258,7 @@ public class EntityServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EntityServiceSettings getSettings() {
+  public final @Nullable EntityServiceSettings getSettings() {
     return settings;
   }
 
@@ -288,7 +289,7 @@ public class EntityServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/watchlists/{watchlist}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Watchlist getWatchlist(WatchlistName name) {
+  public final Watchlist getWatchlist(@Nullable WatchlistName name) {
     GetWatchlistRequest request =
         GetWatchlistRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWatchlist(request);
@@ -406,7 +407,7 @@ public class EntityServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWatchlistsPagedResponse listWatchlists(InstanceName parent) {
+  public final ListWatchlistsPagedResponse listWatchlists(@Nullable InstanceName parent) {
     ListWatchlistsRequest request =
         ListWatchlistsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -581,7 +582,7 @@ public class EntityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Watchlist createWatchlist(
-      InstanceName parent, Watchlist watchlist, String watchlistId) {
+      @Nullable InstanceName parent, Watchlist watchlist, String watchlistId) {
     CreateWatchlistRequest request =
         CreateWatchlistRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -809,7 +810,7 @@ public class EntityServiceClient implements BackgroundResource {
    *     (Otherwise, the request will only work if the watchlist has no entities.)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWatchlist(WatchlistName name, boolean force) {
+  public final void deleteWatchlist(@Nullable WatchlistName name, boolean force) {
     DeleteWatchlistRequest request =
         DeleteWatchlistRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -970,8 +971,8 @@ public class EntityServiceClient implements BackgroundResource {
           ListWatchlistsRequest, ListWatchlistsResponse, Watchlist, ListWatchlistsPage> {
 
     private ListWatchlistsPage(
-        PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
-        ListWatchlistsResponse response) {
+        @Nullable PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
+        @Nullable ListWatchlistsResponse response) {
       super(context, response);
     }
 
@@ -981,14 +982,14 @@ public class EntityServiceClient implements BackgroundResource {
 
     @Override
     protected ListWatchlistsPage createPage(
-        PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
-        ListWatchlistsResponse response) {
+        @Nullable PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
+        @Nullable ListWatchlistsResponse response) {
       return new ListWatchlistsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWatchlistsPage> createPageAsync(
-        PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
+        @Nullable PageContext<ListWatchlistsRequest, ListWatchlistsResponse, Watchlist> context,
         ApiFuture<ListWatchlistsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1002,7 +1003,8 @@ public class EntityServiceClient implements BackgroundResource {
           ListWatchlistsPage,
           ListWatchlistsFixedSizeCollection> {
 
-    private ListWatchlistsFixedSizeCollection(List<ListWatchlistsPage> pages, int collectionSize) {
+    private ListWatchlistsFixedSizeCollection(
+        @Nullable List<ListWatchlistsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1012,7 +1014,7 @@ public class EntityServiceClient implements BackgroundResource {
 
     @Override
     protected ListWatchlistsFixedSizeCollection createCollection(
-        List<ListWatchlistsPage> pages, int collectionSize) {
+        @Nullable List<ListWatchlistsPage> pages, int collectionSize) {
       return new ListWatchlistsFixedSizeCollection(pages, collectionSize);
     }
   }
