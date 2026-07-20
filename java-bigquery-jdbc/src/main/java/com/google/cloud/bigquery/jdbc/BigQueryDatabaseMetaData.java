@@ -794,6 +794,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         targetDatasets,
         procedureNamePattern,
         true,
+        false,
         collectedResults,
         resultSchemaFields,
         (routine, results, fields) -> {
@@ -944,6 +945,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     processTargetRoutinesConcurrently(
         targetDatasets,
         procedureNamePattern,
+        true,
         true,
         collectedResults,
         resultSchemaFields,
@@ -1460,6 +1462,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         tableNamePattern,
         true,
         false,
+        false,
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
@@ -1697,6 +1700,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         tableNamePattern,
         true,
         false,
+        true,
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
@@ -2146,6 +2150,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         table,
         false,
         true,
+        true,
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
@@ -2245,6 +2250,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         table,
         false,
         true,
+        true,
         collectedResults,
         resultSchemaFields,
         (bqTable, results, fields) -> {
@@ -2301,6 +2307,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           targetDatasets,
           null,
           false,
+          true,
           true,
           collectedResults,
           resultSchemaFields,
@@ -2380,6 +2387,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         targetDatasets,
         foreignTable,
         false,
+        true,
         true,
         collectedResults,
         resultSchemaFields,
@@ -3507,6 +3515,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         targetDatasets,
         functionNamePattern,
         true,
+        false,
         collectedResults,
         resultSchemaFields,
         (routine, results, fields) -> {
@@ -3640,6 +3649,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     processTargetRoutinesConcurrently(
         targetDatasets,
         functionNamePattern,
+        true,
         true,
         collectedResults,
         resultSchemaFields,
@@ -4704,25 +4714,28 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private void processSingleTable(
       DatasetId datasetId,
       String tableName,
+      Table preFetchedTable,
       boolean requireBaseTable,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       TableProcessor processor)
       throws SQLException {
-    Table bqTable;
-    try {
-      bqTable =
-          bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
-    } catch (BigQueryException e) {
-      if (e.getCode() == 404) {
-        LOG.info(
-            "Table '%s' or dataset '%s' not found in project '%s' (API error 404). Skipping.",
-            tableName, datasetId.getDataset(), datasetId.getProject());
-        return;
+    Table bqTable = preFetchedTable;
+    if (bqTable == null) {
+      try {
+        bqTable =
+            bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+      } catch (BigQueryException e) {
+        if (e.getCode() == 404) {
+          LOG.info(
+              "Table '%s' or dataset '%s' not found in project '%s' (API error 404). Skipping.",
+              tableName, datasetId.getDataset(), datasetId.getProject());
+          return;
+        }
+        throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
+      } catch (Exception e) {
+        throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
       }
-      throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
-    } catch (Exception e) {
-      throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
     }
 
     if (bqTable == null || bqTable.getDefinition() == null) {
@@ -4743,23 +4756,26 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private void processSingleRoutine(
       DatasetId datasetId,
       String routineName,
+      Routine preFetchedRoutine,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       RoutineProcessor processor)
       throws SQLException {
-    Routine routine;
-    try {
-      routine =
-          bigquery.getRoutine(
-              RoutineId.of(datasetId.getProject(), datasetId.getDataset(), routineName));
-    } catch (BigQueryException e) {
-      if (e.getCode() == 404) {
-        LOG.info("Routine '%s' not found. Skipping.", routineName);
-        return;
+    Routine routine = preFetchedRoutine;
+    if (routine == null) {
+      try {
+        routine =
+            bigquery.getRoutine(
+                RoutineId.of(datasetId.getProject(), datasetId.getDataset(), routineName));
+      } catch (BigQueryException e) {
+        if (e.getCode() == 404) {
+          LOG.info("Routine '%s' not found. Skipping.", routineName);
+          return;
+        }
+        throw new SQLException("Error while fetching routine metadata: " + e.getMessage(), e);
+      } catch (Exception e) {
+        throw new SQLException("Error while fetching routine metadata: " + e.getMessage(), e);
       }
-      throw new SQLException("Error while fetching routine metadata: " + e.getMessage(), e);
-    } catch (Exception e) {
-      throw new SQLException("Error while fetching routine metadata: " + e.getMessage(), e);
     }
 
     if (routine == null) {
@@ -4772,6 +4788,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<DatasetId> targetDatasets,
       String routineNamePattern,
       boolean isPattern,
+      boolean requiresFullRoutine,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       RoutineProcessor processor)
@@ -4785,6 +4802,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       processSingleRoutine(
           targetDatasets.get(0),
           routineNamePattern,
+          null,
           collectedResults,
           resultSchemaFields,
           processor);
@@ -4801,7 +4819,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           tasks.add(
               () -> {
                 processSingleRoutine(
-                    datasetId, routineNamePattern, collectedResults, resultSchemaFields, processor);
+                    datasetId,
+                    routineNamePattern,
+                    null,
+                    collectedResults,
+                    resultSchemaFields,
+                    processor);
                 return null;
               });
           continue;
@@ -4819,7 +4842,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             tasks.add(
                 () -> {
                   processSingleRoutine(
-                      datasetId, routineName, collectedResults, resultSchemaFields, processor);
+                      datasetId,
+                      requiresFullRoutine ? routineName : null,
+                      requiresFullRoutine ? null : routine,
+                      collectedResults,
+                      resultSchemaFields,
+                      processor);
                   return null;
                 });
           }
@@ -4847,6 +4875,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String tableNamePattern,
       boolean isPattern,
       boolean requireBaseTable,
+      boolean requiresFullTable,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       TableProcessor processor)
@@ -4860,6 +4889,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       processSingleTable(
           targetDatasets.get(0),
           tableNamePattern,
+          null, // always fetch for literal matches
           requireBaseTable,
           collectedResults,
           resultSchemaFields,
@@ -4879,6 +4909,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 processSingleTable(
                     datasetId,
                     tableNamePattern,
+                    null,
                     requireBaseTable,
                     collectedResults,
                     resultSchemaFields,
@@ -4903,7 +4934,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 () -> {
                   processSingleTable(
                       datasetId,
-                      tableName,
+                      requiresFullTable ? tableName : null,
+                      requiresFullTable ? null : table,
                       requireBaseTable,
                       collectedResults,
                       resultSchemaFields,
