@@ -56,6 +56,7 @@ import javax.annotation.Nullable;
  *
  * <p>View parameters can also be specified on the statement using {@link
  * Builder#setStringViewParameter(String, String)} or {@link Builder#setStringViewParameters(Map)}.
+ * This map provides the runtime values returned by the VIEW_PARAMETERS() function calls.
  */
 public class BoundStatement {
 
@@ -117,7 +118,8 @@ public class BoundStatement {
 
     /**
      * Sets a view parameter with the name {@code paramName} and the String typed value {@code
-     * value}.
+     * value}. This map provides the runtime values returned by the VIEW_PARAMETERS() function
+     * calls.
      */
     public Builder setStringViewParameter(String paramName, @Nullable String value) {
       Preconditions.checkNotNull(paramName, "paramName cannot be null");
@@ -125,7 +127,10 @@ public class BoundStatement {
       return this;
     }
 
-    /** Sets String typed view parameters from a map. */
+    /**
+     * Sets String typed view parameters from a map. This map provides the runtime values returned
+     * by the VIEW_PARAMETERS() function calls.
+     */
     public Builder setStringViewParameters(Map<String, String> viewParameters) {
       Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
       viewParameters.forEach(this::setStringViewParameter);

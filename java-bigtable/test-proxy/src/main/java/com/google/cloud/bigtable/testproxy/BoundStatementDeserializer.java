@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class BoundStatementDeserializer {
 
-  static BoundStatement toBoundStatement(
+  public static BoundStatement toBoundStatement(
       PreparedStatement preparedStatement, ExecuteQueryRequest request) {
     BoundStatement.Builder boundStatementBuilder = preparedStatement.bind();
     for (Map.Entry<String, Value> paramEntry : request.getRequest().getParamsMap().entrySet()) {
@@ -131,12 +131,18 @@ public class BoundStatementDeserializer {
     for (Map.Entry<String, Value> entry : request.getRequest().getViewParametersMap().entrySet()) {
       String name = entry.getKey();
       Value value = entry.getValue();
-      if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-        boundStatementBuilder.setStringViewParameter(name, null);
-      } else if (value.getKindCase().equals(KindCase.STRING_VALUE)) {
-        boundStatementBuilder.setStringViewParameter(name, value.getStringValue());
-      } else {
-        throw new IllegalArgumentException("Unexpected view parameter type in param: " + value);
+      switch (value.getType().getKindCase()) {
+        case STRING_TYPE:
+          if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
+            boundStatementBuilder.setStringViewParameter(name, null);
+          } else if (value.getKindCase().equals(KindCase.STRING_VALUE)) {
+            boundStatementBuilder.setStringViewParameter(name, value.getStringValue());
+          } else {
+            throw new IllegalArgumentException("Malformed string value: " + value);
+          }
+          break;
+        default:
+          throw new IllegalArgumentException("Unexpected view parameter type in param: " + value);
       }
     }
     return boundStatementBuilder.build();
