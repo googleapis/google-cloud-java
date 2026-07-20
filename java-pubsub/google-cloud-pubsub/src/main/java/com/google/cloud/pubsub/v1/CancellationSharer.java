@@ -28,6 +28,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
+
+
 /**
  * Coordinates multiple publish attempts for a single batch of messages.
  *
@@ -42,6 +44,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private final AtomicBoolean done = new AtomicBoolean(false);
   final AtomicBoolean isInQueue = new AtomicBoolean(false);
   private final AtomicReference<Throwable> lastError = new AtomicReference<>();
+
 
   CancellationSharer(Publisher.OutstandingBatch batch, Publisher publisher) {
     this.batch = batch;

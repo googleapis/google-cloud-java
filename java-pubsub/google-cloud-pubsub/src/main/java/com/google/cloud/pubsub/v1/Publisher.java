@@ -18,11 +18,13 @@ package com.google.cloud.pubsub.v1;
 
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -70,7 +72,10 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
@@ -140,6 +145,12 @@ public class Publisher implements PublisherInterface {
 
   private final HedgeSettings hedgeSettings;
   private final HedgeTokenBucket hedgeTokenBucket;
+  private final ApiClock clock;
+
+  private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
+  private final AtomicBoolean isQueueProcessingScheduled;
+  private ScheduledFuture<?> queueProcessingFuture;
+  private final Object queueLock;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -236,10 +247,15 @@ public class Publisher implements PublisherInterface {
     this.hedgeSettings = builder.hedgeSettings;
     this.hedgeTokenBucket =
         this.hedgeSettings != null ? new HedgeTokenBucket(this.hedgeSettings) : null;
+    this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
+    this.hedgingQueue = new ConcurrentLinkedQueue<>();
+    this.isQueueProcessingScheduled = new AtomicBoolean(false);
+    this.queueLock = new Object();
+    this.queueProcessingFuture = null;
   }
 
   /** Topic which the publisher publishes to. */
@@ -587,7 +603,11 @@ public class Publisher implements PublisherInterface {
     ApiFuture<PublishResponse> future;
     Executor callbackExecutor = directExecutor();
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
-      future = publishCall(outstandingBatch);
+      if (hedgeSettings != null) {
+        future = startHedgedCall(outstandingBatch);
+      } else {
+        future = publishCall(outstandingBatch);
+      }
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
       future =
@@ -603,7 +623,13 @@ public class Publisher implements PublisherInterface {
     ApiFutures.addCallback(future, futureCallback, callbackExecutor);
   }
 
-  private final class OutstandingBatch {
+  void refillTokenBucket() {
+    if (hedgeTokenBucket != null) {
+      hedgeTokenBucket.refill();
+    }
+  }
+
+  final class OutstandingBatch {
     final List<OutstandingPublish> outstandingPublishes;
     final long creationTime;
     int attempt;
@@ -615,7 +641,7 @@ public class Publisher implements PublisherInterface {
         List<OutstandingPublish> outstandingPublishes, int batchSizeBytes, String orderingKey) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
-      creationTime = System.currentTimeMillis();
+      creationTime = clock.millisTime();
       this.batchSizeBytes = batchSizeBytes;
       this.orderingKey = orderingKey;
     }
@@ -691,6 +717,9 @@ public class Publisher implements PublisherInterface {
         !shutdown.getAndSet(true), "Cannot shut down a publisher already shut-down.");
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
+    }
+    if (queueProcessingFuture != null) {
+      queueProcessingFuture.cancel(false);
     }
     publishAllOutstanding();
     messagesWaiter.waitComplete();
@@ -830,6 +859,7 @@ public class Publisher implements PublisherInterface {
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
     private HedgeSettings hedgeSettings = null;
+    ApiClock clock = null;
 
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -985,6 +1015,11 @@ public class Publisher implements PublisherInterface {
     /** Configures the Publisher's hedging parameters. */
     public Builder setHedgeSettings(HedgeSettings hedgeSettings) {
       this.hedgeSettings = hedgeSettings;
+      return this;
+    }
+
+    Builder setClock(ApiClock clock) {
+      this.clock = clock;
       return this;
     }
 
@@ -1205,6 +1240,91 @@ public class Publisher implements PublisherInterface {
       }
 
       return batchesToSend;
+    }
+  }
+
+  private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
+    final CancellationSharer coordinator = new CancellationSharer(outstandingBatch, this);
+
+    // Register cancellation listeners on client futures to propagate cancel to coordinator
+    final AtomicInteger cancelledCount = new AtomicInteger(0);
+    final int batchSize = outstandingBatch.outstandingPublishes.size();
+    for (final OutstandingPublish outstanding : outstandingBatch.outstandingPublishes) {
+      outstanding.publishResult.addListener(new Runnable() {
+        @Override
+        public void run() {
+          if (outstanding.publishResult.isCancelled()) {
+            if (cancelledCount.incrementAndGet() == batchSize) {
+              coordinator.cancel(true);
+            }
+          }
+        }
+      }, directExecutor());
+    }
+
+    ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
+    coordinator.addAttempt(1, firstAttemptFuture);
+    long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+    HedgedRequest item = new HedgedRequest(coordinator, 2, clock.millisTime() + delayMs);
+    hedgingQueue.add(item);
+    coordinator.isInQueue.set(true);
+    scheduleQueueProcessing();
+
+    return coordinator;
+  }
+
+  private void scheduleQueueProcessing() {
+    if (isQueueProcessingScheduled.compareAndSet(false, true)) {
+      HedgedRequest nextItem = hedgingQueue.peek();
+      if (nextItem == null) {
+        isQueueProcessingScheduled.set(false);
+        return;
+      }
+
+      long delay = nextItem.getSendAfterMs() - clock.millisTime();
+      delay = Math.max(0, delay);
+
+      queueProcessingFuture = executor.schedule(new Runnable() {
+        @Override
+        public void run() {
+          processQueue();
+        }
+      }, delay, TimeUnit.MILLISECONDS);
+    }
+  }
+
+  private void processQueue() {
+    synchronized (queueLock) {
+      isQueueProcessingScheduled.set(false);
+      long now = clock.millisTime();
+
+      HedgedRequest item;
+      while ((item = hedgingQueue.peek()) != null && item.getSendAfterMs() <= now) {
+        hedgingQueue.poll();
+
+        CancellationSharer coordinator = item.getCoordinator();
+        if (coordinator.isDone()) {
+          coordinator.isInQueue.set(false);
+          continue;
+        }
+
+        if (hedgeTokenBucket.tryAcquire()) {
+          // Clone and schedule next attempt check (Attempt + 1)
+          long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+          HedgedRequest nextItem = new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
+          hedgingQueue.add(nextItem);
+
+          // Start Hedged Attempt
+          ApiFuture<PublishResponse> hedgedFuture = publishCall(coordinator.getBatch());
+          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
+        } else {
+          coordinator.isInQueue.set(false);
+          coordinator.checkCompletionOnQueueExit();
+        }
+      }
+
+      // Reschedule for next items
+      scheduleQueueProcessing();
     }
   }
 }
