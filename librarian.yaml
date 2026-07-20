@@ -580,6 +580,26 @@ libraries:
             - path: google/cloud/location/locations.proto
     keep:
       - google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/SampleApp.java
+    postprocess:
+      method_operations:
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
+          action: delete
+          func_name: "public static List<DataSourceName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable DataSourceName> values)"
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
+          action: delete
+          func_name: "public static List<TransferConfigName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable TransferConfigName> values)"
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
+          action: delete
+          func_name: "public static List<RunName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable RunName> values)"
     java:
       api_description_override: transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
@@ -745,6 +765,64 @@ libraries:
           grpc_artifact_id_override: grpc-google-cloud-bigtable-admin-v2
           proto_artifact_id_override: proto-google-cloud-bigtable-admin-v2
           samples: false
+    keep:
+      - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java
+      - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/package-info.java
+    postprocess:
+      remove_file:
+        - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java
+        - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClientTest.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtable.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtableImpl.java
+      replace:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          original: "public final void close() {"
+          replacement: "public void close() {"
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          original: "package com.google.cloud.bigtable.data.v2.stub;"
+          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          original: "package com.google.cloud.bigtable.data.v2.stub;"
+          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          original: "package com.google.cloud.bigtable.data.v2.stub;"
+          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          original: "package com.google.cloud.bigtable.data.v2.stub;"
+          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
+      replace_regex:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          pattern: "public static final BaseBigtable(.*)AdminClient create\\("
+          replacement: "protected static BaseBigtable${1}AdminClient create("
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
     java:
       api_id_override: bigtable.googleapis.com
       api_description_override: API for reading and writing the contents of Bigtables associated with a cloud project.
@@ -1177,6 +1255,25 @@ libraries:
     keep:
       - google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/GrafeasUtils.java
       - google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java
+    postprocess:
+      replace:
+        - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
+          original: "import com.google.iam.v1.TestIamPermissionsResponse;"
+          replacement: "import com.google.iam.v1.TestIamPermissionsResponse;\nimport io.grafeas.v1.GrafeasClient;"
+      replace_regex:
+        - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
+          pattern: "(\\s+private final ContainerAnalysisStub stub;.*)"
+          replacement: |
+            $1
+
+              /**
+               * Returns a new GrafeasClient with the same configured settings.
+               *
+               * @throws IOException
+               */
+              public GrafeasClient getGrafeasClient() throws IOException {
+                return GrafeasClient.create(GrafeasUtils.transformSettings(settings));
+              }
     java:
       api_description_override: is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.
       codeowner_team: '@googleapis/aap-dpes'
@@ -1450,6 +1547,55 @@ libraries:
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java
+    postprocess:
+      method_operations:
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: duplicate
+          func_name: "public static AgentName ofProjectName(String project)"
+          new_name: "ofProjectAgentName"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: deprecate
+          func_name: "public static AgentName ofProjectAgentName(String project)"
+          deprecation_message: "Please use {@link #ofProjectName()} instead"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: duplicate
+          func_name: "public static AgentName ofProjectLocationName(String project, String location)"
+          new_name: "ofProjectLocationAgentName"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: deprecate
+          func_name: "public static AgentName ofProjectLocationAgentName(String project, String location)"
+          deprecation_message: "Please use {@link #ofProjectLocationName()} instead"
+      replace:
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "public static String formatProjectName"
+          replacement: "public static String formatProjectAgentName"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "public static String formatProjectLocationName"
+          replacement: "public static String formatProjectLocationAgentName"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "ProjectBuilder"
+          replacement: "ProjectAgentBuilder"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "ProjectLocationBuilder"
+          replacement: "ProjectLocationAgentBuilder"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "return ofProjectName"
+          replacement: "return ofProjectAgentName"
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: "return ofProjectLocationName"
+          replacement: "return ofProjectLocationAgentName"
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java
+          original: "ofProjectName"
+          replacement: "ofProjectAgentName"
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java
+          original: "ofProjectName"
+          replacement: "ofProjectAgentName"
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java
+          original: "ofProjectName"
+          replacement: "ofProjectAgentName"
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java
+          original: "ofProjectName"
+          replacement: "ofProjectAgentName"
     java:
       api_description_override: is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business. Dialogflow Enterprise Edition users have access to Google Cloud Support and a service level agreement (SLA) for production deployments.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5300385
@@ -1524,6 +1670,26 @@ libraries:
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java
+    postprocess:
+      method_operations:
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
+          action: delete
+          func_name: "public static List<InspectTemplateName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable InspectTemplateName> values)"
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
+          action: delete
+          func_name: "public static List<DeidentifyTemplateName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable DeidentifyTemplateName> values)"
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
+          action: delete
+          func_name: "public static List<StoredInfoTypeName> parseList(List<String> formattedStrings)"
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
+          action: delete
+          func_name: "public static List<String> toStringList(List<@Nullable StoredInfoTypeName> values)"
     java:
       api_description_override: provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5548083
@@ -1596,6 +1762,44 @@ libraries:
     keep:
       - google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java
       - proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java
+    postprocess:
+      replace_regex:
+        - path: google-cloud-errorreporting/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceClient.java
+          pattern: "(\\s+public ErrorGroupServiceStub getStub\\(\\) \\{\\n\\s+return stub;\\n\\s+\\})"
+          replacement: |
+            $1
+
+              // Inserted by synthtool to preserve backwards-compatibility
+              /**
+               * Get the specified group.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+               *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+               *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+               * }
+               * </code></pre>
+               *
+               * @param groupName Required. The group resource name. Written as
+               *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
+               *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
+               *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
+               *     this project.
+               *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use ErrorGroupServiceClient#getGroup(ErrorGroupName)
+               */
+              @Deprecated
+              public final ErrorGroup getGroup(GroupName groupName) {
+            
+                GetGroupRequest request =
+                    GetGroupRequest.newBuilder()
+                        .setGroupName(groupName == null ? null : groupName.toString())
+                        .build();
+                return getGroup(request);
+              }
     java:
       api_description_override: 'counts, analyzes, and aggregates the crashes in your running cloud services. A centralized error management interface displays the results with sorting and filtering capabilities. A dedicated view shows the error details: time chart, occurrences, affected user count, first- and last-seen dates and a cleaned exception stack trace. Opt in to receive email and mobile alerts on new errors.'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559780
@@ -1702,6 +1906,16 @@ libraries:
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/DocumentRootName.java
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/BUILD.bazel
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/bundle.proto
+    postprocess:
+      remove_file:
+        - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/Version.java
+      replace:
+        - path: google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminStubSettings.java
+          original: "Version.VERSION"
+          replacement: "FirestoreAdminVersion.VERSION"
+        - path: .repo-metadata.json
+          original: "  \"recommended_package\": \"com.google.cloud.firestore\"\n}"
+          replacement: "  \"recommended_package\": \"com.google.cloud.firestore\",\n  \"library_path_overrides\": {\n    \"FirestoreAdminClient\": \"google-cloud-firestore-admin\"\n  }\n}\n"
     java:
       api_id_override: firestore.googleapis.com
       api_description_override: is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
@@ -1870,6 +2084,15 @@ libraries:
           samples: false
     keep:
       - src/main/java/io/grafeas/v1/stub/Version.java
+    postprocess:
+      replace:
+        - path: src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java
+          original: '    return "containeranalysis.googleapis.com:443";'
+          replacement: '    return null;'
+      replace_regex:
+        - path: src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java
+          pattern: '\s+\*.*default service address.*\n\s+\*.*'
+          replacement: ''
     java:
       alternate_headers: license-header.txt
       api_description_override: n/a
@@ -2367,6 +2590,13 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
+  - name: maps-isochrones
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/maps/isochrones/v1
+    java:
+      artifact_id: google-maps-isochrones
+      group_id: com.google.maps
   - name: maps-mapmanagement
     version: 0.4.0-SNAPSHOT
     apis:
