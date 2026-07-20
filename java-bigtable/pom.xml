@@ -389,7 +389,6 @@
     <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-bigtable-bom</module>
     <module>google-cloud-bigtable-deps-bom</module>
-    <module>test-proxy</module>
   </modules>
 
   </project>
