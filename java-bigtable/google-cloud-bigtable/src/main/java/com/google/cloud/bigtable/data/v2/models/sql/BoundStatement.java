@@ -128,9 +128,7 @@ public class BoundStatement {
     /** Sets String typed view parameters from a map. */
     public Builder setStringViewParameters(Map<String, String> viewParameters) {
       Preconditions.checkNotNull(viewParameters, "viewParameters cannot be null");
-      for (Map.Entry<String, String> entry : viewParameters.entrySet()) {
-        setStringViewParameter(entry.getKey(), entry.getValue());
-      }
+      viewParameters.forEach(this::setStringViewParameter);
       return this;
     }
 
