@@ -994,6 +994,9 @@ public class Publisher implements PublisherInterface {
     }
 
     public Publisher build() throws IOException {
+      Preconditions.checkState(
+          !(enableMessageOrdering && hedgeSettings != null),
+          "Publish hedging and message ordering cannot be enabled at the same time.");
       return new Publisher(this);
     }
   }

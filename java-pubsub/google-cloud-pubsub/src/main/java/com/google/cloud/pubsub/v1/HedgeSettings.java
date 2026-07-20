@@ -50,7 +50,7 @@ public final class HedgeSettings {
    *
    * @return the hedging delay.
    */
-  public Duration getHedgeDelay() {
+  Duration getHedgeDelay() {
     return hedgeDelay;
   }
 
@@ -83,7 +83,6 @@ public final class HedgeSettings {
     private float refill = DEFAULT_REFILL;
 
     private Builder() {
-      super();
     }
 
     /**
