@@ -584,22 +584,22 @@ libraries:
       method_operations:
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
           action: delete
-          func_name: "public static List<DataSourceName> parseList(List<String> formattedStrings)"
+          func_name: public static List<DataSourceName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable DataSourceName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable DataSourceName> values)
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
           action: delete
-          func_name: "public static List<TransferConfigName> parseList(List<String> formattedStrings)"
+          func_name: public static List<TransferConfigName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable TransferConfigName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable TransferConfigName> values)
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
           action: delete
-          func_name: "public static List<RunName> parseList(List<String> formattedStrings)"
+          func_name: public static List<RunName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable RunName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable RunName> values)
     java:
       api_description_override: transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
@@ -769,60 +769,72 @@ libraries:
       - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java
       - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/package-info.java
     postprocess:
+      replace:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          original: public final void close() {
+          replacement: public void close() {
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+      replace_regex:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          pattern: public static final BaseBigtable(.*)AdminClient create\(
+          replacement: protected static BaseBigtable${1}AdminClient create(
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
       remove_file:
         - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java
         - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java
         - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClientTest.java
         - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtable.java
         - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtableImpl.java
-      replace:
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
-          original: "public final void close() {"
-          replacement: "public void close() {"
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
-          original: "package com.google.cloud.bigtable.data.v2.stub;"
-          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
-          original: "package com.google.cloud.bigtable.data.v2.stub;"
-          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
-          original: "package com.google.cloud.bigtable.data.v2.stub;"
-          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
-          original: "package com.google.cloud.bigtable.data.v2.stub;"
-          replacement: "package com.google.cloud.bigtable.data.v2.stub;\n\nimport com.google.api.core.InternalApi;"
-      replace_regex:
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
-          pattern: "public static final BaseBigtable(.*)AdminClient create\\("
-          replacement: "protected static BaseBigtable${1}AdminClient create("
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
-          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
-          replacement: |
-            /** For internal use only. */
-            @Generated("by gapic-generator")
-            @InternalApi
-            $2
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
-          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
-          replacement: |
-            /** For internal use only. */
-            @Generated("by gapic-generator")
-            @InternalApi
-            $2
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
-          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
-          replacement: |
-            /** For internal use only. */
-            @Generated("by gapic-generator")
-            @InternalApi
-            $2
-        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
-          pattern: "(/\\*\\*(?s).+?\\*/\\n(?:^@[^\\n]*\\n)*)(public\\s+(?:abstract\\s+|final\\s+)?class\\s+\\w+)"
-          replacement: |
-            /** For internal use only. */
-            @Generated("by gapic-generator")
-            @InternalApi
-            $2
     java:
       api_id_override: bigtable.googleapis.com
       api_description_override: API for reading and writing the contents of Bigtables associated with a cloud project.
@@ -1258,11 +1270,13 @@ libraries:
     postprocess:
       replace:
         - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
-          original: "import com.google.iam.v1.TestIamPermissionsResponse;"
-          replacement: "import com.google.iam.v1.TestIamPermissionsResponse;\nimport io.grafeas.v1.GrafeasClient;"
+          original: import com.google.iam.v1.TestIamPermissionsResponse;
+          replacement: |-
+            import com.google.iam.v1.TestIamPermissionsResponse;
+            import io.grafeas.v1.GrafeasClient;
       replace_regex:
         - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
-          pattern: "(\\s+private final ContainerAnalysisStub stub;.*)"
+          pattern: (\s+private final ContainerAnalysisStub stub;.*)
           replacement: |
             $1
 
@@ -1548,54 +1562,54 @@ libraries:
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java
     postprocess:
+      replace:
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: public static String formatProjectName
+          replacement: public static String formatProjectAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: public static String formatProjectLocationName
+          replacement: public static String formatProjectLocationAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: ProjectBuilder
+          replacement: ProjectAgentBuilder
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: ProjectLocationBuilder
+          replacement: ProjectLocationAgentBuilder
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: return ofProjectName
+          replacement: return ofProjectAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: return ofProjectLocationName
+          replacement: return ofProjectLocationAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
       method_operations:
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
           action: duplicate
-          func_name: "public static AgentName ofProjectName(String project)"
-          new_name: "ofProjectAgentName"
+          func_name: public static AgentName ofProjectName(String project)
+          new_name: ofProjectAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
           action: deprecate
-          func_name: "public static AgentName ofProjectAgentName(String project)"
-          deprecation_message: "Please use {@link #ofProjectName()} instead"
+          func_name: public static AgentName ofProjectAgentName(String project)
+          deprecation_message: 'Please use {@link #ofProjectName()} instead'
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
           action: duplicate
-          func_name: "public static AgentName ofProjectLocationName(String project, String location)"
-          new_name: "ofProjectLocationAgentName"
+          func_name: public static AgentName ofProjectLocationName(String project, String location)
+          new_name: ofProjectLocationAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
           action: deprecate
-          func_name: "public static AgentName ofProjectLocationAgentName(String project, String location)"
-          deprecation_message: "Please use {@link #ofProjectLocationName()} instead"
-      replace:
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "public static String formatProjectName"
-          replacement: "public static String formatProjectAgentName"
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "public static String formatProjectLocationName"
-          replacement: "public static String formatProjectLocationAgentName"
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "ProjectBuilder"
-          replacement: "ProjectAgentBuilder"
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "ProjectLocationBuilder"
-          replacement: "ProjectLocationAgentBuilder"
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "return ofProjectName"
-          replacement: "return ofProjectAgentName"
-        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          original: "return ofProjectLocationName"
-          replacement: "return ofProjectLocationAgentName"
-        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java
-          original: "ofProjectName"
-          replacement: "ofProjectAgentName"
-        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java
-          original: "ofProjectName"
-          replacement: "ofProjectAgentName"
-        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java
-          original: "ofProjectName"
-          replacement: "ofProjectAgentName"
-        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java
-          original: "ofProjectName"
-          replacement: "ofProjectAgentName"
+          func_name: public static AgentName ofProjectLocationAgentName(String project, String location)
+          deprecation_message: 'Please use {@link #ofProjectLocationName()} instead'
     java:
       api_description_override: is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business. Dialogflow Enterprise Edition users have access to Google Cloud Support and a service level agreement (SLA) for production deployments.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5300385
@@ -1674,22 +1688,22 @@ libraries:
       method_operations:
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
           action: delete
-          func_name: "public static List<InspectTemplateName> parseList(List<String> formattedStrings)"
+          func_name: public static List<InspectTemplateName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable InspectTemplateName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable InspectTemplateName> values)
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
           action: delete
-          func_name: "public static List<DeidentifyTemplateName> parseList(List<String> formattedStrings)"
+          func_name: public static List<DeidentifyTemplateName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable DeidentifyTemplateName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable DeidentifyTemplateName> values)
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
           action: delete
-          func_name: "public static List<StoredInfoTypeName> parseList(List<String> formattedStrings)"
+          func_name: public static List<StoredInfoTypeName> parseList(List<String> formattedStrings)
         - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
           action: delete
-          func_name: "public static List<String> toStringList(List<@Nullable StoredInfoTypeName> values)"
+          func_name: public static List<String> toStringList(List<@Nullable StoredInfoTypeName> values)
     java:
       api_description_override: provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5548083
@@ -1765,7 +1779,7 @@ libraries:
     postprocess:
       replace_regex:
         - path: google-cloud-errorreporting/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceClient.java
-          pattern: "(\\s+public ErrorGroupServiceStub getStub\\(\\) \\{\\n\\s+return stub;\\n\\s+\\})"
+          pattern: (\s+public ErrorGroupServiceStub getStub\(\) \{\n\s+return stub;\n\s+\})
           replacement: |
             $1
 
@@ -1793,7 +1807,7 @@ libraries:
                */
               @Deprecated
               public final ErrorGroup getGroup(GroupName groupName) {
-            
+
                 GetGroupRequest request =
                     GetGroupRequest.newBuilder()
                         .setGroupName(groupName == null ? null : groupName.toString())
@@ -1907,15 +1921,22 @@ libraries:
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/BUILD.bazel
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/bundle.proto
     postprocess:
-      remove_file:
-        - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/Version.java
       replace:
         - path: google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminStubSettings.java
-          original: "Version.VERSION"
-          replacement: "FirestoreAdminVersion.VERSION"
+          original: Version.VERSION
+          replacement: FirestoreAdminVersion.VERSION
         - path: .repo-metadata.json
-          original: "  \"recommended_package\": \"com.google.cloud.firestore\"\n}"
-          replacement: "  \"recommended_package\": \"com.google.cloud.firestore\",\n  \"library_path_overrides\": {\n    \"FirestoreAdminClient\": \"google-cloud-firestore-admin\"\n  }\n}\n"
+          original: |2-
+              "recommended_package": "com.google.cloud.firestore"
+            }
+          replacement: |2
+              "recommended_package": "com.google.cloud.firestore",
+              "library_path_overrides": {
+                "FirestoreAdminClient": "google-cloud-firestore-admin"
+              }
+            }
+      remove_file:
+        - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/Version.java
     java:
       api_id_override: firestore.googleapis.com
       api_description_override: is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
@@ -2091,8 +2112,8 @@ libraries:
           replacement: '    return null;'
       replace_regex:
         - path: src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java
-          pattern: '\s+\*.*default service address.*\n\s+\*.*'
-          replacement: ''
+          pattern: \s+\*.*default service address.*\n\s+\*.*
+          replacement: ""
     java:
       alternate_headers: license-header.txt
       api_description_override: n/a
@@ -2375,6 +2396,19 @@ libraries:
       name_pretty_override: Merchant Order Tracking API
       product_documentation_override: https://developers.google.com/merchant/api
   - name: kms
+    version: 2.98.0-SNAPSHOT
+    apis:
+      - path: google/cloud/kms/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+    keep:
+      - google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java
+      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java
+      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java
+      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java
+      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java
     postprocess:
       replace:
         - path: proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyName.java
@@ -2581,19 +2615,6 @@ libraries:
                         .build();
                 return testIamPermissions(request);
               }
-    version: 2.98.0-SNAPSHOT
-    apis:
-      - path: google/cloud/kms/v1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
-    keep:
-      - google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java
-      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java
-      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java
-      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java
-      - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java
     java:
       api_description_override: a cloud-hosted key management service that lets you manage cryptographic keys for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit Logging so that you can manage permissions on individual keys and monitor how these are used. Use Cloud KMS to protect secrets and other sensitive data that you need to store in Google Cloud Platform.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5264932
@@ -2662,6 +2683,11 @@ libraries:
       product_documentation_override: https://cloud.google.com/location-finder/docs/overview
       rpc_documentation: https://cloud.google.com/locationfinder/docs/reference/rest
   - name: logging
+    version: 3.36.0-SNAPSHOT
+    apis:
+      - path: google/logging/v2
+        java:
+          samples: false
     postprocess:
       replace:
         - path: google-cloud-logging/src/test/java/com/google/cloud/logging/v2/ConfigClientTest.java
@@ -2809,11 +2835,6 @@ libraries:
                     .build()
                     .toString();
               }
-    version: 3.36.0-SNAPSHOT
-    apis:
-      - path: google/logging/v2
-        java:
-          samples: false
     java:
       api_id_override: logging.googleapis.com
       api_description_override: allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
@@ -3106,6 +3127,11 @@ libraries:
       name_pretty_override: Model Armor API
       product_documentation_override: https://cloud.google.com/security-command-center/docs/model-armor-overview
   - name: monitoring
+    version: 3.96.0-SNAPSHOT
+    apis:
+      - path: google/monitoring/v3
+    keep:
+      - google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java
     postprocess:
       replace:
         - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java
@@ -3144,24 +3170,19 @@ libraries:
         - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClient.java
           original: FolderName
           replacement: ResourceName
-    version: 3.96.0-SNAPSHOT
-    apis:
-      - path: google/monitoring/v3
-    keep:
-      - google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java
     java:
       api_description_override: collects metrics, events, and metadata from Google Cloud, Amazon Web Services (AWS), hosted uptime probes, and application instrumentation. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premise systems, and hybrid cloud systems. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts. BindPlane is included with your Google Cloud project at no additional cost.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559785
       name_pretty_override: Stackdriver Monitoring
       product_documentation_override: https://cloud.google.com/monitoring/docs
   - name: monitoring-dashboards
+    version: 2.97.0-SNAPSHOT
+    apis:
+      - path: google/monitoring/dashboard/v1
     postprocess:
       remove_file:
         - proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java
         - proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java
-    version: 2.97.0-SNAPSHOT
-    apis:
-      - path: google/monitoring/dashboard/v1
     java:
       api_id_override: monitoring.googleapis.com
       api_description_override: are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
@@ -3191,6 +3212,18 @@ libraries:
       name_pretty_override: NetApp API
       product_documentation_override: https://cloud.google.com/netapp/volumes/docs/discover/overview
   - name: network-management
+    version: 1.96.0-SNAPSHOT
+    apis:
+      - path: google/cloud/networkmanagement/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/networkmanagement/v1beta1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
     postprocess:
       replace:
         - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
@@ -3429,18 +3462,6 @@ libraries:
               @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
               @Test
               public void testIamPermissionsTest() throws Exception {
-    version: 1.96.0-SNAPSHOT
-    apis:
-      - path: google/cloud/networkmanagement/v1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
-      - path: google/cloud/networkmanagement/v1beta1
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-            - path: google/iam/v1/iam_policy.proto
     java:
       api_description_override: provides a collection of network performance monitoring and diagnostic capabilities.
       name_pretty_override: Network Management API
@@ -3599,9 +3620,6 @@ libraries:
       - proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java
       - proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java
     postprocess:
-      copy_file:
-        - src: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java
-          dst: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java
       replace:
         - path: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java
           original: package com.google.cloud.oslogin.common;
@@ -3651,6 +3669,9 @@ libraries:
         - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
           original: import com.google.cloud.oslogin.common.ProjectName;
           replacement: import com.google.cloud.oslogin.v1.ProjectName;
+      copy_file:
+        - src: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java
+          dst: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java
     java:
       api_description_override: manages OS login configuration for Directory API users.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559755
@@ -3763,6 +3784,63 @@ libraries:
       product_documentation_override: https://cloud.google.com/certificate-manager/docs/public-ca
       rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
   - name: pubsub
+    version: 1.153.0-SNAPSHOT
+    apis:
+      - path: google/pubsub/v1
+        java:
+          additional_protos:
+            - path: google/iam/v1/iam_policy.proto
+          samples: false
+    keep:
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumer.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerImpl.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerWithResponse.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerWithResponseImpl.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckRequestData.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckResponse.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/LoggingUtil.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageDispatcher.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiver.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiverWithAckResponse.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/ModackRequestData.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/OpenCensusUtil.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/OpenTelemetryPubsubTracer.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Publisher.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/PublisherInterface.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/PubsubMessageWrapper.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SequentialExecutorService.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StatusUtil.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnection.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Subscriber.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberInterface.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettings.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberStats.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Waiter.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/it/ITPubSubTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/CustomArgumentMatchers.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeClock.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakePublisherServiceImpl.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeScheduledExecutorService.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeSubscriberServiceImpl.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDataMatcher.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDispatcherTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenCensusUtilTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenTelemetryTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/PublisherImplTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SequentialExecutorServiceTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StatusUtilTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnectionTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettingsTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/TopicAdminSmokeTest.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/WaiterTest.java
+      - google-cloud-pubsub/src/test/resources/META-INF/native-image/com.google.cloud/google-cloud-pubsub/native-image.properties
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeletedTopic.java
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSnapshotName.java
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSubscriptionName.java
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectTopicName.java
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicNames.java
+      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UntypedTopicName.java
     postprocess:
       replace:
         - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/SubscriberStubSettings.java
@@ -4855,63 +4933,6 @@ libraries:
                         .build();
                 return testIamPermissions(request);
               }
-    version: 1.153.0-SNAPSHOT
-    apis:
-      - path: google/pubsub/v1
-        java:
-          additional_protos:
-            - path: google/iam/v1/iam_policy.proto
-          samples: false
-    keep:
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumer.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerImpl.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerWithResponse.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerWithResponseImpl.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckRequestData.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckResponse.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/LoggingUtil.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageDispatcher.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiver.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiverWithAckResponse.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/ModackRequestData.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/OpenCensusUtil.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/OpenTelemetryPubsubTracer.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Publisher.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/PublisherInterface.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/PubsubMessageWrapper.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SequentialExecutorService.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StatusUtil.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnection.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Subscriber.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberInterface.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettings.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberStats.java
-      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Waiter.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/it/ITPubSubTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/CustomArgumentMatchers.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeClock.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakePublisherServiceImpl.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeScheduledExecutorService.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeSubscriberServiceImpl.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDataMatcher.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDispatcherTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenCensusUtilTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenTelemetryTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/PublisherImplTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SequentialExecutorServiceTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StatusUtilTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnectionTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettingsTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/TopicAdminSmokeTest.java
-      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/WaiterTest.java
-      - google-cloud-pubsub/src/test/resources/META-INF/native-image/com.google.cloud/google-cloud-pubsub/native-image.properties
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeletedTopic.java
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSnapshotName.java
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSubscriptionName.java
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectTopicName.java
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicNames.java
-      - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UntypedTopicName.java
     java:
       api_id_override: pubsub.googleapis.com
       api_reference: https://cloud.google.com/pubsub/
@@ -5592,6 +5613,25 @@ libraries:
       name_pretty_override: Talent Solution
       product_documentation_override: https://cloud.google.com/solutions/talent-solution/
   - name: tasks
+    version: 2.95.0-SNAPSHOT
+    apis:
+      - path: google/cloud/tasks/v2
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+      - path: google/cloud/tasks/v2beta3
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+      - path: google/cloud/tasks/v2beta2
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+    keep:
+      - google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java
+      - proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java
+      - proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java
+      - proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java
     postprocess:
       replace_regex:
         - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java
@@ -5678,25 +5718,6 @@ libraries:
                   QueueName queue, List<String> permissions) {
                 return testIamPermissions((ResourceName) queue, permissions);
               }
-    version: 2.95.0-SNAPSHOT
-    apis:
-      - path: google/cloud/tasks/v2
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-      - path: google/cloud/tasks/v2beta3
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-      - path: google/cloud/tasks/v2beta2
-        java:
-          additional_protos:
-            - path: google/cloud/location/locations.proto
-    keep:
-      - google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java
-      - proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java
-      - proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java
-      - proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java
     java:
       api_description_override: a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint.
       codeowner_team: '@googleapis/aap-dpes'
