@@ -1028,7 +1028,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1070,7 +1070,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1105,7 +1105,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
@@ -1115,6 +1115,57 @@ public class BigQueryDatabaseMetaDataTest {
     List<Routine> resultList = new ArrayList<>(results);
     assertEquals(1, resultList.size());
     assertSame(mockRoutine, resultList.get(0));
+  }
+
+  private List<Table> invokeFindMatchingObjectsWithException(
+      BigQueryException bqe, String pattern, boolean throwOn404) throws Exception {
+    return dbMetadata.findMatchingBigQueryObjects(
+        "Table",
+        () -> {
+          throw bqe;
+        },
+        (name) -> {
+          throw bqe;
+        },
+        (table) -> "name",
+        pattern,
+        dbMetadata.compileSqlLikePattern(pattern),
+        throwOn404);
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Swallows404_TargetedScan() throws Exception {
+    List<Table> results =
+        invokeFindMatchingObjectsWithException(
+            new BigQueryException(404, "Not Found"), "exact_match", false);
+    assertTrue(results.isEmpty());
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws404_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(404, "Not Found"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_TargetedScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "exact_match", false));
   }
 
   @Test
