@@ -828,7 +828,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           (rt) -> rt.getRoutineId().getRoutine(),
                           procedureNamePattern,
                           procedureNameRegex,
-                          LOG,
                           false);
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
@@ -1131,7 +1130,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   procedureNamePattern,
                   procedureNameRegex,
-                  logger,
                   false);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
@@ -1631,7 +1629,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           (tbl) -> tbl.getTableId().getTable(),
                           tableNamePattern,
                           tableNameRegex,
-                          LOG,
                           false);
               Future<List<Table>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
@@ -1946,7 +1943,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       (tbl) -> tbl.getTableId().getTable(),
                       tableNamePattern,
                       tableNameRegex,
-                      LOG,
                       false);
 
               for (Table table : tablesToScan) {
@@ -3832,7 +3828,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         (rt) -> rt.getRoutineId().getRoutine(),
                         functionNamePattern,
                         functionNameRegex,
-                        LOG,
                         false);
                   };
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
@@ -4184,7 +4179,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   functionNamePattern,
                   functionNameRegex,
-                  logger,
                   false);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
@@ -4621,7 +4615,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<T, String> nameExtractor,
       String pattern,
       Pattern regex,
-      BigQueryJdbcCustomLogger logger,
       boolean throwOn404)
       throws InterruptedException {
 
@@ -4631,30 +4624,29 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       Iterable<T> objects;
       if (needsList) {
-        logger.info(
+        LOG.info(
             "Listing all %ss (pattern: %s)...",
             objectTypeName, pattern == null ? "<all>" : pattern);
         Page<T> firstPage = listAllOperation.get();
         objects = firstPage.iterateAll();
-        logger.fine(
-            "Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
+        LOG.fine("Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
 
       } else {
-        logger.info("Getting specific %s: '%s'", objectTypeName, pattern);
+        LOG.info("Getting specific %s: '%s'", objectTypeName, pattern);
         T specificObject = getSpecificOperation.apply(pattern);
         objects =
             (specificObject == null)
                 ? Collections.<T>emptyList()
                 : Collections.singletonList(specificObject);
         if (specificObject == null) {
-          logger.info("Specific %s not found: '%s'", objectTypeName, pattern);
+          LOG.info("Specific %s not found: '%s'", objectTypeName, pattern);
         }
       }
 
       boolean wasListing = needsList;
       for (T obj : objects) {
         if (Thread.currentThread().isInterrupted()) {
-          logger.warning("Thread interrupted during " + objectTypeName + " processing loop.");
+          LOG.warning("Thread interrupted during " + objectTypeName + " processing loop.");
           throw new InterruptedException(
               "Interrupted during " + objectTypeName + " processing loop");
         }
@@ -4672,20 +4664,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     } catch (BigQueryException e) {
       if (e.getCode() == 404 && !throwOn404) {
-        logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+        LOG.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
         return Collections.emptyList();
       } else {
-        logger.warning(
+        LOG.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
             objectTypeName, pattern, e.getMessage(), e.getCode());
         throw e;
       }
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      logger.warning("Interrupted while finding " + objectTypeName + "s.");
+      LOG.warning("Interrupted while finding " + objectTypeName + "s.");
       throw e;
     } catch (Exception e) {
-      logger.severe(
+      LOG.severe(
           "Unexpected exception finding %ss for pattern '%s': %s",
           objectTypeName, pattern, e.getMessage());
       throw new RuntimeException(e);
@@ -5000,7 +4992,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               (ds) -> ds.getDatasetId().getDataset(),
               schemaPattern,
               schemaRegex,
-              LOG,
               throwOn404);
       return datasets != null ? datasets : Collections.emptyList();
     } catch (InterruptedException e) {
