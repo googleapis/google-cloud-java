@@ -168,6 +168,17 @@ final class RegionalAccessBoundaryManager {
     this.cachedRAB.set(rab);
   }
 
+  private boolean shouldStartBackgroundRefresh() {
+    if (skipRAB.get() || isCooldownActive()) {
+      return false;
+    }
+    RegionalAccessBoundary currentRab = cachedRAB.get();
+    if (currentRab != null && !currentRab.shouldRefresh()) {
+      return false;
+    }
+    return true;
+  }
+
   /**
    * Triggers an asynchronous refresh of the RegionalAccessBoundary if it is not already being
    * refreshed and if the cooldown period is not active.
@@ -185,12 +196,7 @@ final class RegionalAccessBoundaryManager {
       final AccessToken accessToken,
       final EnvironmentProvider envProvider,
       final PropertyProvider propProvider) {
-    if (skipRAB.get() || isCooldownActive()) {
-      return;
-    }
-
-    RegionalAccessBoundary currentRab = cachedRAB.get();
-    if (currentRab != null && !currentRab.shouldRefresh()) {
+    if (!shouldStartBackgroundRefresh()) {
       return;
     }
 
@@ -198,8 +204,7 @@ final class RegionalAccessBoundaryManager {
     // this thread "won the race" and is responsible for starting the background task.
     // All other concurrent threads will return false and exit immediately.
     if (isRefreshing.compareAndSet(false, true)) {
-      currentRab = cachedRAB.get();
-      if (currentRab != null && !currentRab.shouldRefresh()) {
+      if (!shouldStartBackgroundRefresh()) {
         isRefreshing.set(false);
         return;
       }
