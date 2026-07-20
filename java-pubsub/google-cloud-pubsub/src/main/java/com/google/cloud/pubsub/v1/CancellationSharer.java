@@ -32,8 +32,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * Coordinates multiple publish attempts for a single batch of messages.
  *
  * <p>Implements {@link ApiFuture} to act as the single future returned to the publisher's client.
- * It manages the lifecycle of the original attempt and any subsequent hedged attempts
- * (CancellationSharer in the diagram).
+ * It manages the lifecycle of the original attempt and any subsequent hedged attempts.
  */
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private final Publisher.OutstandingBatch batch;
