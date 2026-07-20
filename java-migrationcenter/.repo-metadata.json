@@ -11,6 +11,5 @@
   "repo_short": "java-migrationcenter",
   "distribution_name": "com.google.cloud:google-cloud-migrationcenter",
   "api_id": "migrationcenter.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

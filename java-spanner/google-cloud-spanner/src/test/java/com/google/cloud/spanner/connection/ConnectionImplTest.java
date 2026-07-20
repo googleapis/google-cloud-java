@@ -40,6 +40,7 @@ import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -228,7 +229,7 @@ public class ConnectionImplTest {
       DdlClient ddlClient = mock(DdlClient.class);
       @SuppressWarnings("unchecked")
       final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
-          mock(OperationFuture.class);
+          mock(OperationFuture.class, withSettings().withoutAnnotations());
       when(operation.get()).thenReturn(null);
       UpdateDatabaseDdlMetadata metadata = UpdateDatabaseDdlMetadata.getDefaultInstance();
       ApiFuture<UpdateDatabaseDdlMetadata> futureMetadata = ApiFutures.immediateFuture(metadata);
