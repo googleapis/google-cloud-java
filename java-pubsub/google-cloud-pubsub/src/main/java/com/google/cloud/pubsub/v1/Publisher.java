@@ -67,15 +67,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
@@ -1250,16 +1249,18 @@ public class Publisher implements PublisherInterface {
     final AtomicInteger cancelledCount = new AtomicInteger(0);
     final int batchSize = outstandingBatch.outstandingPublishes.size();
     for (final OutstandingPublish outstanding : outstandingBatch.outstandingPublishes) {
-      outstanding.publishResult.addListener(new Runnable() {
-        @Override
-        public void run() {
-          if (outstanding.publishResult.isCancelled()) {
-            if (cancelledCount.incrementAndGet() == batchSize) {
-              coordinator.cancel(true);
+      outstanding.publishResult.addListener(
+          new Runnable() {
+            @Override
+            public void run() {
+              if (outstanding.publishResult.isCancelled()) {
+                if (cancelledCount.incrementAndGet() == batchSize) {
+                  coordinator.cancel(true);
+                }
+              }
             }
-          }
-        }
-      }, directExecutor());
+          },
+          directExecutor());
     }
 
     ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
@@ -1284,12 +1285,16 @@ public class Publisher implements PublisherInterface {
       long delay = nextItem.getSendAfterMs() - clock.millisTime();
       delay = Math.max(0, delay);
 
-      queueProcessingFuture = executor.schedule(new Runnable() {
-        @Override
-        public void run() {
-          processQueue();
-        }
-      }, delay, TimeUnit.MILLISECONDS);
+      queueProcessingFuture =
+          executor.schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  processQueue();
+                }
+              },
+              delay,
+              TimeUnit.MILLISECONDS);
     }
   }
 
@@ -1311,7 +1316,8 @@ public class Publisher implements PublisherInterface {
         if (hedgeTokenBucket.tryAcquire()) {
           // Clone and schedule next attempt check (Attempt + 1)
           long delayMs = hedgeSettings.getHedgeDelay().toMillis();
-          HedgedRequest nextItem = new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
+          HedgedRequest nextItem =
+              new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
           hedgingQueue.add(nextItem);
 
           // Start Hedged Attempt

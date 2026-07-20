@@ -28,23 +28,22 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-
-
 /**
  * Coordinates multiple publish attempts for a single batch of messages.
  *
  * <p>Implements {@link ApiFuture} to act as the single future returned to the publisher's client.
- * It manages the lifecycle of the original attempt and any subsequent hedged attempts (CancellationSharer in the diagram).
+ * It manages the lifecycle of the original attempt and any subsequent hedged attempts
+ * (CancellationSharer in the diagram).
  */
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private final Publisher.OutstandingBatch batch;
   private final Publisher publisher;
-  private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts = new ConcurrentHashMap<>();
+  private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts =
+      new ConcurrentHashMap<>();
   private final AtomicInteger totalAttemptsCount = new AtomicInteger(0);
   private final AtomicBoolean done = new AtomicBoolean(false);
   final AtomicBoolean isInQueue = new AtomicBoolean(false);
   private final AtomicReference<Throwable> lastError = new AtomicReference<>();
-
 
   CancellationSharer(Publisher.OutstandingBatch batch, Publisher publisher) {
     this.batch = batch;
@@ -108,7 +107,8 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
     if (!done.get() && runningAttempts.isEmpty() && !isInQueue.get()) {
       if (done.compareAndSet(false, true)) {
         Throwable error = lastError.get();
-        setException(error != null ? error : new RuntimeException("Hedging failed with no active attempts"));
+        setException(
+            error != null ? error : new RuntimeException("Hedging failed with no active attempts"));
       }
     }
   }

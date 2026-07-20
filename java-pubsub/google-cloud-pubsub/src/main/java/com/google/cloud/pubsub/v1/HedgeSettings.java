@@ -82,8 +82,7 @@ public final class HedgeSettings {
     /** Refill rate. */
     private float refill = DEFAULT_REFILL;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     /**
      * Allows hedging delay to be configurable.

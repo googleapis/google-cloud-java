@@ -1364,9 +1364,7 @@ public class PublisherImplTest {
   }
 
   private Publisher getPublisherWithHedge(Duration delay) throws Exception {
-    HedgeSettings hedgeSettings = HedgeSettings.newBuilder()
-        .setHedgeDelay(delay)
-        .build();
+    HedgeSettings hedgeSettings = HedgeSettings.newBuilder().setHedgeDelay(delay).build();
     return getTestPublisherBuilder()
         .setHedgeSettings(hedgeSettings)
         .setClock(fakeExecutor.getClock())
@@ -1380,7 +1378,8 @@ public class PublisherImplTest {
   private void waitForRequests(FakePublisherServiceImpl service, int expectedCount)
       throws InterruptedException {
     long timeout = System.currentTimeMillis() + 5000;
-    while (service.getCapturedRequests().size() < expectedCount && System.currentTimeMillis() < timeout) {
+    while (service.getCapturedRequests().size() < expectedCount
+        && System.currentTimeMillis() < timeout) {
       Thread.sleep(5);
     }
     if (service.getCapturedRequests().size() < expectedCount) {
@@ -1505,8 +1504,6 @@ public class PublisherImplTest {
 
     shutdownTestPublisher(publisher);
   }
-
-
 
   @Test
   public void testHedgingCancellationPropagates() throws Exception {

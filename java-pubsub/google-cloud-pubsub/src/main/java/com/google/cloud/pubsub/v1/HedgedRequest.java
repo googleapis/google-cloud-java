@@ -16,9 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
-/**
- * Represents a pending hedging check in the publisher's queue.
- */
+/** Represents a pending hedging check in the publisher's queue. */
 class HedgedRequest {
   private final CancellationSharer coordinator;
   private final int attemptNumber;
