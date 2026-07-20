@@ -263,6 +263,7 @@ public final class ITAppendableUploadTest {
   }
 
   @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
   public void explicitFinalizeWithCorrectChecksum() throws Exception {
     BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
     assumeTrue(
@@ -286,6 +287,7 @@ public final class ITAppendableUploadTest {
   }
 
   @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
   public void explicitFinalizeWithIncorrectChecksumFails() throws Exception {
     BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
     assumeTrue(
