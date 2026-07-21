@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.util.SslUtils;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -42,6 +41,7 @@ import java.util.Collections;
 import java.util.List;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
+import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -108,47 +108,21 @@ public class ITPqc {
   @Test
   void testHttpJsonPqc() throws Exception {
 
-    Provider conscryptProvider = null;
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     try {
-      conscryptProvider = org.conscrypt.Conscrypt.newProvider();
+      builder.setSecurityProvider(Conscrypt.newProvider());
+      builder.setSslSocketConfigurator(
+          socket -> {
+            if (Conscrypt.isConscrypt(socket)) {
+              Conscrypt.setNamedGroups(
+                  socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+            }
+          });
     } catch (Throwable t) {
       // Conscrypt JNI is not available on this platform/runner
     }
 
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    if (conscryptProvider != null) {
-      builder.setSecurityProvider(conscryptProvider);
-    }
-
-    SSLContext sslContext = SslUtils.getTlsSslContext(conscryptProvider);
-    TrustManagerFactory tmf = SslUtils.getDefaultTrustManagerFactory(conscryptProvider);
-    tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
-    sslContext.init(null, tmf.getTrustManagers(), null);
-    builder.setSslSocketFactory(sslContext.getSocketFactory());
-
-    if (conscryptProvider != null) {
-      builder.setSslSocketConfigurator(
-          socket -> {
-            if (org.conscrypt.Conscrypt.isConscrypt(socket)) {
-              org.conscrypt.Conscrypt.setNamedGroups(
-                  socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
-            }
-          });
-    } else {
-      builder.setSslSocketConfigurator(
-          socket -> {
-            try {
-              javax.net.ssl.SSLParameters params = socket.getSSLParameters();
-              java.lang.reflect.Method method =
-                  params.getClass().getMethod("setNamedGroups", String[].class);
-              method.invoke(params, (Object) new String[] {"X25519"});
-              socket.setSSLParameters(params);
-            } catch (Exception e) {
-              // Ignore if method not supported on this JDK version
-            }
-          });
-    }
-
+    builder.trustCertificates(null, loadCaCert(DEFAULT_CA_CERT_PATH), "");
     NetHttpTransport transport = builder.build();
 
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
@@ -259,7 +233,7 @@ public class ITPqc {
 
   private static boolean isConscryptFunctional() {
     try {
-      org.conscrypt.Conscrypt.newProvider();
+      Conscrypt.newProvider();
       return true;
     } catch (Throwable t) {
       return false;
