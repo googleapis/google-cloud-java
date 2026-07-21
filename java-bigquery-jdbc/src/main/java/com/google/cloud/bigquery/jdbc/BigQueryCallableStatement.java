@@ -443,41 +443,43 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Object getObject(int parameterIndex, Map<String, Class<?>> map) throws SQLException {
     checkClosed();
-    if (map != null && !map.isEmpty()) {
-      StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterIndex);
-      if (sqlType != null && map.containsKey(sqlType.name())) {
-        Class<?> targetClass = map.get(sqlType.name());
-        Object value = getObject(parameterIndex);
-        if (value != null && targetClass != null && !targetClass.isInstance(value)) {
-          throw new BigQueryJdbcException(
-              String.format(
-                  "Cannot map parameter %d of type %s to requested class %s in type map",
-                  parameterIndex, value.getClass().getName(), targetClass.getName()));
-        }
-        return value;
-      }
+    if (map == null || map.isEmpty()) {
+      return getObject(parameterIndex);
     }
-    return getObject(parameterIndex);
+    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterIndex);
+    if (sqlType == null || !map.containsKey(sqlType.name())) {
+      return getObject(parameterIndex);
+    }
+    Class<?> targetClass = map.get(sqlType.name());
+    Object value = getObject(parameterIndex);
+    if (value != null && targetClass != null && !targetClass.isInstance(value)) {
+      throw new BigQueryJdbcException(
+          String.format(
+              "Cannot map parameter %d of type %s to requested class %s in type map",
+              parameterIndex, value.getClass().getName(), targetClass.getName()));
+    }
+    return value;
   }
 
   @Override
   public Object getObject(String parameterName, Map<String, Class<?>> map) throws SQLException {
     checkClosed();
-    if (map != null && !map.isEmpty()) {
-      StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
-      if (sqlType != null && map.containsKey(sqlType.name())) {
-        Class<?> targetClass = map.get(sqlType.name());
-        Object value = getObject(parameterName);
-        if (value != null && targetClass != null && !targetClass.isInstance(value)) {
-          throw new BigQueryJdbcException(
-              String.format(
-                  "Cannot map parameter '%s' of type %s to requested class %s in type map",
-                  parameterName, value.getClass().getName(), targetClass.getName()));
-        }
-        return value;
-      }
+    if (map == null || map.isEmpty()) {
+      return getObject(parameterName);
     }
-    return getObject(parameterName);
+    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
+    if (sqlType == null || !map.containsKey(sqlType.name())) {
+      return getObject(parameterName);
+    }
+    Class<?> targetClass = map.get(sqlType.name());
+    Object value = getObject(parameterName);
+    if (value != null && targetClass != null && !targetClass.isInstance(value)) {
+      throw new BigQueryJdbcException(
+          String.format(
+              "Cannot map parameter '%s' of type %s to requested class %s in type map",
+              parameterName, value.getClass().getName(), targetClass.getName()));
+    }
+    return value;
   }
 
   @Override
@@ -493,10 +495,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       return null;
     }
     if (type.isInstance(value)) {
-      return (T) value;
-    }
-    Class<?> javaType = this.parameterHandler.getType(parameterIndex);
-    if (javaType != null && type.isAssignableFrom(javaType)) {
       return (T) value;
     }
     return null;
@@ -515,10 +513,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       return null;
     }
     if (type.isInstance(value)) {
-      return (T) value;
-    }
-    Class<?> javaType = this.parameterHandler.getType(parameterName);
-    if (javaType != null && type.isAssignableFrom(javaType)) {
       return (T) value;
     }
     return null;
