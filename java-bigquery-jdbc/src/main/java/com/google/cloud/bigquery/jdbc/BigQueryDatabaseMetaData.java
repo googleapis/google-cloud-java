@@ -4998,9 +4998,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching metadata");
+      }
     } catch (ExecutionException e) {
-      throw new SQLException(
-          "Error while fetching routine metadata: " + e.getCause().getMessage(), e);
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
+      throw new SQLException("Error while fetching metadata", e);
+    } finally {
+      taskFutures.forEach(future -> future.cancel(true));
     }
   }
 
@@ -5125,9 +5133,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching metadata");
+      }
     } catch (ExecutionException e) {
-      throw new SQLException(
-          "Error while fetching table metadata: " + e.getCause().getMessage(), e);
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
+      throw new SQLException("Error while fetching metadata", e);
+    } finally {
+      taskFutures.forEach(future -> future.cancel(true));
     }
   }
 
