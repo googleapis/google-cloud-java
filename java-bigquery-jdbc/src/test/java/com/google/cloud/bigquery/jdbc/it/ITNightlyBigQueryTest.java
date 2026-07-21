@@ -60,7 +60,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
-  static BigQuery bigQuery;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String BASE_QUERY =
@@ -91,7 +90,6 @@ public class ITNightlyBigQueryTest extends ITBase {
     DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll
