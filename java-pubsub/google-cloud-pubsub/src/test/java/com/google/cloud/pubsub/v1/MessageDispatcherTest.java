@@ -94,7 +94,7 @@ public class MessageDispatcherTest {
   public void setUp() {
     systemExecutor = new FakeScheduledExecutorService();
     clock = new FakeClock();
-    mockAckLatencyDistribution = mock(Distribution.class);
+    mockAckLatencyDistribution = mock(Distribution.class, withSettings().withoutAnnotations());
 
     mockAckProcessor = mock(MessageDispatcher.AckProcessor.class);
     messageContainsDeliveryAttempt = true;
@@ -710,8 +710,9 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(true)
             .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
             .setMaxDurationPerAckExtensionDefaultUsed(true)
-            .setAckLatencyDistribution(mock(Distribution.class))
-            .setFlowController(mock(FlowController.class))
+            .setAckLatencyDistribution(
+                mock(Distribution.class, withSettings().withoutAnnotations()))
+            .setFlowController(mock(FlowController.class, withSettings().withoutAnnotations()))
             .setExecutor(executor)
             .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .setSystemExecutor(systemExecutor)
@@ -734,8 +735,9 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(true)
             .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
             .setMaxDurationPerAckExtensionDefaultUsed(true)
-            .setAckLatencyDistribution(mock(Distribution.class))
-            .setFlowController(mock(FlowController.class))
+            .setAckLatencyDistribution(
+                mock(Distribution.class, withSettings().withoutAnnotations()))
+            .setFlowController(mock(FlowController.class, withSettings().withoutAnnotations()))
             .setExecutor(MoreExecutors.newDirectExecutorService())
             .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .setSystemExecutor(systemExecutor)

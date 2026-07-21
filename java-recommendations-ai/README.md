@@ -15,7 +15,6 @@ Java idiomatic client for [Recommendations AI][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -48,6 +47,14 @@ If you are using Maven without the BOM, add this to your dependencies:
   <artifactId>google-cloud-recommendations-ai</artifactId>
   <version>0.101.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-recommendations-ai'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

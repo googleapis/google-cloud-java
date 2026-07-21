@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-video-intelligence",
   "api_id": "videointelligence.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5084810",
   "rest_documentation": "https://cloud.google.com/video-intelligence/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/video-intelligence/docs/reference/rpc"

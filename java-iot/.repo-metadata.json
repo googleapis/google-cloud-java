@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-iot",
   "api_id": "cloudiot.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:310170"
 }

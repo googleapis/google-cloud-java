@@ -11,6 +11,5 @@
   "repo_short": "java-maps-area-insights",
   "distribution_name": "com.google.maps:google-maps-area-insights",
   "api_id": "maps-area-insights.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

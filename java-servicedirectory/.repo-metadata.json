@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-servicedirectory",
   "api_id": "servicedirectory.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": false,
   "rest_documentation": "https://cloud.google.com/service-directory/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/service-directory/docs/reference/rpc"
 }

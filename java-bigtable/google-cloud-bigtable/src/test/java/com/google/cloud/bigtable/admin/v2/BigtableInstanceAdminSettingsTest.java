@@ -60,7 +60,8 @@ public class BigtableInstanceAdminSettingsTest {
 
   @Test
   public void testCredentials() throws IOException {
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    CredentialsProvider credentialsProvider =
+        Mockito.mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
 
     BigtableInstanceAdminSettings settings =
         BigtableInstanceAdminSettings.newBuilder()
