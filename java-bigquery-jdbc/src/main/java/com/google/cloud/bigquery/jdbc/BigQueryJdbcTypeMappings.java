@@ -109,39 +109,56 @@ class BigQueryJdbcTypeMappings {
       throws BigQueryJdbcSqlFeatureNotSupportedException {
     if (Boolean.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.BOOL;
-    } else if (String.class.isAssignableFrom(type)) {
+    }
+    if (String.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.STRING;
-    } else if (Integer.class.isAssignableFrom(type)) {
+    }
+    if (Integer.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
-    } else if (Long.class.isAssignableFrom(type)) {
+    }
+    if (Long.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
-    } else if (Short.class.isAssignableFrom(type)) {
+    }
+    if (Short.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
-    } else if (Double.class.isAssignableFrom(type)) {
+    }
+    if (Double.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.FLOAT64;
-    } else if (Float.class.isAssignableFrom(type)) {
+    }
+    if (Float.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.FLOAT64;
-    } else if (BigDecimal.class.isAssignableFrom(type)) {
+    }
+    if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
-    } else if (Date.class.isAssignableFrom(type) || LocalDate.class.isAssignableFrom(type)) {
+    }
+    if (Date.class.isAssignableFrom(type) || LocalDate.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.DATE;
-    } else if (Timestamp.class.isAssignableFrom(type)
-        || LocalDateTime.class.isAssignableFrom(type)
+    }
+    if (LocalDateTime.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATETIME;
+    }
+    if (Timestamp.class.isAssignableFrom(type)
         || OffsetDateTime.class.isAssignableFrom(type)
         || Instant.class.isAssignableFrom(type)
         || ZonedDateTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIMESTAMP;
-    } else if (Time.class.isAssignableFrom(type) || LocalTime.class.isAssignableFrom(type)) {
+    }
+    if (Time.class.isAssignableFrom(type) || LocalTime.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.TIME;
-    } else if (JsonObject.class.isAssignableFrom(type)) {
+    }
+    if (JsonObject.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.JSON;
-    } else if (Byte.class.isAssignableFrom(type)) {
+    }
+    if (Byte.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
-    } else if (Array.class.isAssignableFrom(type)) {
+    }
+    if (Array.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.ARRAY;
-    } else if (Struct.class.isAssignableFrom(type)) {
+    }
+    if (Struct.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.STRUCT;
-    } else if (byte[].class.isAssignableFrom(type)) {
+    }
+    if (byte[].class.isAssignableFrom(type)) {
       return StandardSQLTypeName.BYTES;
     }
     throw new BigQueryJdbcSqlFeatureNotSupportedException(

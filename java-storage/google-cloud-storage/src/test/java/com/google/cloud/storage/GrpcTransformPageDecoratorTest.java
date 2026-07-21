@@ -43,7 +43,8 @@ import org.mockito.Mockito;
 public class GrpcTransformPageDecoratorTest {
 
   // define some common data used across our tests
-  private final ApiCallContext apiCallContext = Mockito.mock(ApiCallContext.class);
+  private final ApiCallContext apiCallContext =
+      Mockito.mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
 
   // Initial values for the first page
   private final ImmutableList<String> page1 = ImmutableList.of("string1", "string2", "string3");

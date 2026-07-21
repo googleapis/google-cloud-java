@@ -1,0 +1,81 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.agentidentity.v1beta",
+  "libraryPackage": "com.google.cloud.agentidentity.v1beta",
+  "services": {
+    "AuthProviderService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuthProviderServiceClient",
+          "rpcs": {
+            "CreateAuthProvider": {
+              "methods": ["createAuthProvider", "createAuthProvider", "createAuthProvider", "createAuthProviderCallable"]
+            },
+            "DeleteAuthProvider": {
+              "methods": ["deleteAuthProvider", "deleteAuthProvider", "deleteAuthProvider", "deleteAuthProviderCallable"]
+            },
+            "DeleteAuthorization": {
+              "methods": ["deleteAuthorization", "deleteAuthorization", "deleteAuthorization", "deleteAuthorizationCallable"]
+            },
+            "DisableAuthProvider": {
+              "methods": ["disableAuthProvider", "disableAuthProvider", "disableAuthProvider", "disableAuthProviderCallable"]
+            },
+            "EnableAuthProvider": {
+              "methods": ["enableAuthProvider", "enableAuthProvider", "enableAuthProvider", "enableAuthProviderCallable"]
+            },
+            "GetAccessSummary": {
+              "methods": ["getAccessSummary", "getAccessSummary", "getAccessSummary", "getAccessSummaryCallable"]
+            },
+            "GetAuthProvider": {
+              "methods": ["getAuthProvider", "getAuthProvider", "getAuthProvider", "getAuthProviderCallable"]
+            },
+            "GetAuthorization": {
+              "methods": ["getAuthorization", "getAuthorization", "getAuthorization", "getAuthorizationCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAccessSummaries": {
+              "methods": ["listAccessSummaries", "listAccessSummaries", "listAccessSummaries", "listAccessSummariesPagedCallable", "listAccessSummariesCallable"]
+            },
+            "ListAuthProviders": {
+              "methods": ["listAuthProviders", "listAuthProviders", "listAuthProviders", "listAuthProvidersPagedCallable", "listAuthProvidersCallable"]
+            },
+            "ListAuthorizations": {
+              "methods": ["listAuthorizations", "listAuthorizations", "listAuthorizations", "listAuthorizationsPagedCallable", "listAuthorizationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryAuthProviders": {
+              "methods": ["queryAuthProviders", "queryAuthProviders", "queryAuthProviders", "queryAuthProvidersPagedCallable", "queryAuthProvidersCallable"]
+            },
+            "QueryWorkloads": {
+              "methods": ["queryWorkloads", "queryWorkloads", "queryWorkloads", "queryWorkloadsPagedCallable", "queryWorkloadsCallable"]
+            },
+            "RevokeAuthorization": {
+              "methods": ["revokeAuthorization", "revokeAuthorization", "revokeAuthorization", "revokeAuthorizationCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteAuthProvider": {
+              "methods": ["undeleteAuthProvider", "undeleteAuthProvider", "undeleteAuthProvider", "undeleteAuthProviderCallable"]
+            },
+            "UpdateAuthProvider": {
+              "methods": ["updateAuthProvider", "updateAuthProvider", "updateAuthProviderCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

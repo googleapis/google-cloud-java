@@ -66,12 +66,13 @@ class BigQueryParameterMetaData implements ParameterMetaData {
   public int getPrecision(int param) throws SQLException {
     checkValidIndex(param);
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
-    if (sqlType != null) {
-      BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-          BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
-      if (typeInfo != null && typeInfo.columnSize != null) {
-        return typeInfo.columnSize;
-      }
+    if (sqlType == null) {
+      return 0;
+    }
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
+    if (typeInfo != null && typeInfo.columnSize != null) {
+      return typeInfo.columnSize;
     }
     return 0;
   }
@@ -80,12 +81,13 @@ class BigQueryParameterMetaData implements ParameterMetaData {
   public int getScale(int param) throws SQLException {
     checkValidIndex(param);
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
-    if (sqlType != null) {
-      BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-          BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
-      if (typeInfo != null && typeInfo.decimalDigits != null) {
-        return typeInfo.decimalDigits;
-      }
+    if (sqlType == null) {
+      return 0;
+    }
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
+    if (typeInfo != null && typeInfo.decimalDigits != null) {
+      return typeInfo.decimalDigits;
     }
     return 0;
   }
@@ -94,11 +96,12 @@ class BigQueryParameterMetaData implements ParameterMetaData {
   public int getParameterType(int param) throws SQLException {
     checkValidIndex(param);
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
-    if (sqlType != null) {
-      Integer jdbcType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
-      if (jdbcType != null) {
-        return jdbcType;
-      }
+    if (sqlType == null) {
+      return Types.OTHER;
+    }
+    Integer jdbcType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
+    if (jdbcType != null) {
+      return jdbcType;
     }
     return Types.OTHER;
   }
@@ -120,6 +123,9 @@ class BigQueryParameterMetaData implements ParameterMetaData {
         return clazz.getName();
       }
     }
+    if (this.parameterHandler == null) {
+      return Object.class.getName();
+    }
     Class<?> boundType = this.parameterHandler.getType(param);
     if (boundType != null) {
       return boundType.getName();
@@ -130,42 +136,47 @@ class BigQueryParameterMetaData implements ParameterMetaData {
   @Override
   public int getParameterMode(int param) throws SQLException {
     checkValidIndex(param);
-    if (this.parameterHandler != null) {
-      BigQueryParameterHandler.BigQueryStatementParameterType paramType =
-          this.parameterHandler.getParameterType(param);
-      if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.OUT) {
-        return parameterModeOut;
-      } else if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.INOUT) {
-        return parameterModeInOut;
-      }
+    if (this.parameterHandler == null) {
+      return parameterModeIn;
+    }
+    BigQueryParameterHandler.BigQueryStatementParameterType paramType =
+        this.parameterHandler.getParameterType(param);
+    if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.OUT) {
+      return parameterModeOut;
+    }
+    if (paramType == BigQueryParameterHandler.BigQueryStatementParameterType.INOUT) {
+      return parameterModeInOut;
     }
     return parameterModeIn;
   }
 
   private StandardSQLTypeName getStandardSQLTypeName(int param) {
-    if (this.parameterHandler != null) {
-      StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(param);
-      if (sqlType != null) {
-        return sqlType;
-      }
-      Class<?> javaType = this.parameterHandler.getType(param);
-      if (javaType != null) {
-        try {
-          return BigQueryJdbcTypeMappings.classToType(javaType);
-        } catch (SQLException ignored) {
-          // fall back to default
-        }
-      }
+    if (this.parameterHandler == null) {
+      return null;
     }
-    return null;
+    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(param);
+    if (sqlType != null) {
+      return sqlType;
+    }
+    Class<?> javaType = this.parameterHandler.getType(param);
+    if (javaType == null) {
+      return null;
+    }
+    try {
+      return BigQueryJdbcTypeMappings.classToType(javaType);
+    } catch (SQLException ignored) {
+      // fall back to default
+      return null;
+    }
   }
 
   @Override
   public <T> T unwrap(Class<T> iface) throws SQLException {
-    if (iface.isInstance(this)) {
-      return iface.cast(this);
+    if (!isWrapperFor(iface)) {
+      throw new BigQueryJdbcException(
+          "Cannot unwrap to " + (iface != null ? iface.getName() : "null"));
     }
-    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
+    return iface.cast(this);
   }
 
   @Override
