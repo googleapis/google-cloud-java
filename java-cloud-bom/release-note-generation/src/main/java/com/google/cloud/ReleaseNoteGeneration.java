@@ -34,9 +34,12 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
 import com.google.common.collect.Streams;
+import com.google.common.io.CharStreams;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -617,8 +620,8 @@ public class ReleaseNoteGeneration {
     builder.redirectErrorStream(true);
     Process process = builder.start();
     String output =
-        new String(
-            process.getInputStream().readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+        CharStreams.toString(
+            new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
     boolean finished = process.waitFor(1, TimeUnit.MINUTES);
     Verify.verify(finished, "The process timed out");
     Verify.verify(0 == process.exitValue(), "The command failed: %s", output);
