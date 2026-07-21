@@ -198,7 +198,14 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
-  void testCreateHttpTransport_returnsValidTransport() throws Exception {
+  void testCreateHttpTransport_pqcConfigured() throws Exception {
+    boolean conscryptAvailable = false;
+    try {
+      org.conscrypt.Conscrypt.newProvider();
+      conscryptAvailable = org.conscrypt.Conscrypt.isAvailable();
+    } catch (Throwable t) {
+      // Conscrypt JNI native shared library is not available on this host environment
+    }
     InstantiatingHttpJsonChannelProvider channelProvider =
         InstantiatingHttpJsonChannelProvider.newBuilder()
             .setEndpoint("localhost:8080")
@@ -207,6 +214,14 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .build();
     NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
     assertThat(transport).isNotNull();
+    if (conscryptAvailable) {
+      Object factory = getPrivateField(transport, "sslSocketFactory");
+      assertThat(factory).isNotNull();
+      assertThat(factory.getClass().getName())
+          .isEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
+      Object configurator = getPrivateField(factory, "configurator");
+      assertThat(configurator).isNotNull();
+    }
   }
 
   @Test
@@ -215,5 +230,11 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
         .asList()
         .containsExactly("X25519MLKEM768", "SecP256r1MLKEM768", "X25519")
         .inOrder();
+  }
+
+  private static Object getPrivateField(Object obj, String fieldName) throws Exception {
+    java.lang.reflect.Field field = obj.getClass().getDeclaredField(fieldName);
+    field.setAccessible(true);
+    return field.get(obj);
   }
 }
