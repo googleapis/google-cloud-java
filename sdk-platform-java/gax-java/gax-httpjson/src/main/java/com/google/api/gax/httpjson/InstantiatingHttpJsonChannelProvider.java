@@ -207,37 +207,42 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     // Attempt to register Conscrypt as the Security Provider for HTTP/JSON connections to enable
     // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
     //
     // Both setSecurityProvider and setSslSocketConfigurator are configured together inside the
     // try block so that socket named group configuration is only applied when Conscrypt
-    // initialization
-    // succeeds.
+    // initialization succeeds.
     //
     // Catching Throwable ensures that if Conscrypt JNI native libraries are not present on the
     // classpath or fail to load on the target host architecture, transport creation gracefully
-    // falls back to standard JDK TLS JSSE provider without interrupting application execution.
+    // falls back to standard JDK TLS JSSE provider using a fresh NetHttpTransport.Builder instance.
     try {
-      builder.setSecurityProvider(Conscrypt.newProvider());
-      builder.setSslSocketConfigurator(
-          socket -> {
-            if (Conscrypt.isConscrypt(socket)) {
-              Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-            }
-          });
+      NetHttpTransport.Builder builder =
+          new NetHttpTransport.Builder()
+              .setSecurityProvider(Conscrypt.newProvider())
+              .setSslSocketConfigurator(
+                  socket -> {
+                    if (Conscrypt.isConscrypt(socket)) {
+                      Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+                    }
+                  });
+      return configureMtls(builder).build();
     } catch (Throwable t) {
       LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+      return configureMtls(new NetHttpTransport.Builder()).build();
     }
+  }
 
+  private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
+      throws IOException, GeneralSecurityException {
     if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
       if (mtlsKeyStore != null) {
         builder.trustCertificates(null, mtlsKeyStore, "");
       }
     }
-    return builder.build();
+    return builder;
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {

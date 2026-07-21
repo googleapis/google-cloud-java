@@ -166,9 +166,7 @@ class HttpTransportOptionsTest {
             UnauthenticatedException.class,
             () -> httpRequestInitializer.initialize(defaultHttpRequest));
     assertEquals(
-        "The configured universe domain (googleapis.com) does not match the universe domain found"
-            + " in the credentials (random.com). If you haven't configured the universe domain"
-            + " explicitly, `googleapis.com` is the default.",
+        "The configured universe domain (googleapis.com) does not match the universe domain found in the credentials (random.com). If you haven't configured the universe domain explicitly, `googleapis.com` is the default.",
         exception.getCause().getMessage());
   }
 
@@ -183,9 +181,7 @@ class HttpTransportOptionsTest {
             UnauthenticatedException.class,
             () -> httpRequestInitializer.initialize(defaultHttpRequest));
     assertEquals(
-        "The configured universe domain (random.com) does not match the universe domain found in"
-            + " the credentials (googleapis.com). If you haven't configured the universe domain"
-            + " explicitly, `googleapis.com` is the default.",
+        "The configured universe domain (random.com) does not match the universe domain found in the credentials (googleapis.com). If you haven't configured the universe domain explicitly, `googleapis.com` is the default.",
         exception.getCause().getMessage());
   }
 
@@ -223,9 +219,7 @@ class HttpTransportOptionsTest {
             UnauthenticatedException.class,
             () -> httpRequestInitializer.initialize(defaultHttpRequest));
     assertEquals(
-        "The configured universe domain (random.com) does not match the universe domain found in"
-            + " the credentials (googleapis.com). If you haven't configured the universe domain"
-            + " explicitly, `googleapis.com` is the default.",
+        "The configured universe domain (random.com) does not match the universe domain found in the credentials (googleapis.com). If you haven't configured the universe domain explicitly, `googleapis.com` is the default.",
         exception.getCause().getMessage());
   }
 

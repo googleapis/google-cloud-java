@@ -72,34 +72,34 @@ public class HttpTransportOptions implements TransportOptions {
         }
       }
 
-      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
       // Attempt to register Conscrypt as the Security Provider for HTTP client connections to
-      // enable
-      // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
+      // enable Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by
+      // default.
       //
       // Both setSecurityProvider and setSslSocketConfigurator are configured together inside the
       // try block so that socket named group configuration is only applied when Conscrypt
-      // initialization
-      // succeeds.
+      // initialization succeeds.
       //
       // Catching Throwable ensures that if Conscrypt JNI native libraries are not present on the
       // classpath or fail to load on the target host architecture, transport creation gracefully
-      // falls back to standard JDK TLS JSSE provider without interrupting application execution.
+      // falls back to standard JDK TLS JSSE provider using a fresh NetHttpTransport.Builder
+      // instance.
       try {
-        builder.setSecurityProvider(Conscrypt.newProvider());
-        builder.setSslSocketConfigurator(
-            socket -> {
-              if (Conscrypt.isConscrypt(socket)) {
-                Conscrypt.setNamedGroups(
-                    socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
-              }
-            });
+        return new NetHttpTransport.Builder()
+            .setSecurityProvider(Conscrypt.newProvider())
+            .setSslSocketConfigurator(
+                socket -> {
+                  if (Conscrypt.isConscrypt(socket)) {
+                    Conscrypt.setNamedGroups(
+                        socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+                  }
+                })
+            .build();
       } catch (Throwable t) {
         LOG.log(
             Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+        return new NetHttpTransport.Builder().build();
       }
-
-      return builder.build();
     }
   }
 
