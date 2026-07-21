@@ -48,6 +48,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -4291,11 +4292,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 populateQueue(collectedResults, queue, resultSchemaFields);
               } catch (Throwable e) {
                 LOG.severe("Error during async metadata fetch: " + e.getMessage());
-                try {
-                  queue.put(BigQueryFieldValueListWrapper.ofError(new SQLException(e)));
-                } catch (InterruptedException ie) {
-                  Thread.currentThread().interrupt();
-                }
+                BigQueryFieldValueListWrapper errorElement =
+                    BigQueryFieldValueListWrapper.ofError(new SQLException(e));
+                Uninterruptibles.putUninterruptibly(queue, errorElement);
               } finally {
                 signalEndOfData(queue, resultSchemaFields);
               }
@@ -4332,19 +4331,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.info("Adding end signal to queue.");
       BigQueryFieldValueListWrapper element =
           BigQueryFieldValueListWrapper.ofEndOfStream(resultSchemaFields);
-      if (!queue.offer(element)) {
-        boolean wasInterrupted = Thread.interrupted();
-        try {
-          queue.put(element);
-        } catch (InterruptedException e) {
-          LOG.warning("Interrupted while sending end signal to queue.");
-          wasInterrupted = true;
-        } finally {
-          if (wasInterrupted) {
-            Thread.currentThread().interrupt();
-          }
-        }
-      }
+      Uninterruptibles.putUninterruptibly(queue, element);
     } catch (Exception e) {
       LOG.severe("Exception while sending end signal to queue: " + e.getMessage());
     }
@@ -4592,73 +4579,52 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Future<?>> taskFutures = new ArrayList<>();
 
     try {
-      List<Callable<List<Callable<Void>>>> datasetListTasks = new ArrayList<>();
+      List<Callable<Void>> detailTasks = new ArrayList<>();
       for (DatasetId datasetId : targetDatasets) {
         if (isLiteralName) {
-          datasetListTasks.add(
+          detailTasks.add(
               () -> {
-                return Collections.singletonList(
-                    () -> {
-                      processSingleRoutine(
-                          datasetId,
-                          routineNamePattern,
-                          null,
-                          collectedResults,
-                          resultSchemaFields,
-                          processor);
-                      return null;
-                    });
+                processSingleRoutine(
+                    datasetId,
+                    routineNamePattern,
+                    null,
+                    collectedResults,
+                    resultSchemaFields,
+                    processor);
+                return null;
               });
           continue;
         }
 
-        datasetListTasks.add(
-            () -> {
-              List<Callable<Void>> routineTasks = new ArrayList<>();
-              try {
-                Page<Routine> routinesPage =
-                    bigquery.listRoutines(
-                        datasetId, BigQuery.RoutineListOption.pageSize(DEFAULT_PAGE_SIZE));
-                for (Routine routine : routinesPage.iterateAll()) {
-                  String routineName = routine.getRoutineId().getRoutine();
-                  if (routineRegex != null && !routineRegex.matcher(routineName).matches())
-                    continue;
-                  routineTasks.add(
-                      () -> {
-                        processSingleRoutine(
-                            datasetId,
-                            requiresFullRoutine ? routineName : null,
-                            requiresFullRoutine ? null : routine,
-                            collectedResults,
-                            resultSchemaFields,
-                            processor);
-                        return null;
-                      });
-                }
-              } catch (BigQueryException e) {
-                if (e.getCode() == 404) {
-                  LOG.info("Dataset '%s' not found while listing routines. Skipping.", datasetId);
-                } else {
-                  throw new SQLException("Error while listing routines: " + e.getMessage(), e);
-                }
-              }
-              return routineTasks;
-            });
-      }
-
-      List<Callable<Void>> detailTasks = new ArrayList<>();
-      try {
-        for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
-          detailTasks.addAll(listTask.call());
+        try {
+          Page<Routine> routinesPage =
+              bigquery.listRoutines(
+                  datasetId, BigQuery.RoutineListOption.pageSize(DEFAULT_PAGE_SIZE));
+          for (Routine routine : routinesPage.iterateAll()) {
+            if (Thread.currentThread().isInterrupted()) {
+              throw new SQLException("Interrupted while listing routines.");
+            }
+            String routineName = routine.getRoutineId().getRoutine();
+            if (routineRegex != null && !routineRegex.matcher(routineName).matches()) continue;
+            detailTasks.add(
+                () -> {
+                  processSingleRoutine(
+                      datasetId,
+                      requiresFullRoutine ? routineName : null,
+                      requiresFullRoutine ? null : routine,
+                      collectedResults,
+                      resultSchemaFields,
+                      processor);
+                  return null;
+                });
+          }
+        } catch (BigQueryException e) {
+          if (e.getCode() == 404) {
+            LOG.info("Dataset '%s' not found while listing routines. Skipping.", datasetId);
+          } else {
+            throw new SQLException("Error while listing routines: " + e.getMessage(), e);
+          }
         }
-      } catch (Exception e) {
-        if (e instanceof InterruptedException) {
-          Thread.currentThread().interrupt();
-        }
-        if (e instanceof SQLException) {
-          throw (SQLException) e;
-        }
-        throw new SQLException("Error while listing routines: " + e.getMessage(), e);
       }
 
       for (Callable<Void> task : detailTasks) {
@@ -4707,77 +4673,56 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     List<Future<?>> taskFutures = new ArrayList<>();
 
     try {
-      List<Callable<List<Callable<Void>>>> datasetListTasks = new ArrayList<>();
+      List<Callable<Void>> detailTasks = new ArrayList<>();
       for (DatasetId datasetId : targetDatasets) {
         if (isLiteralName) {
-          datasetListTasks.add(
+          detailTasks.add(
               () -> {
-                return Collections.singletonList(
-                    () -> {
-                      processSingleTable(
-                          datasetId,
-                          tableNamePattern,
-                          null,
-                          requireBaseTable,
-                          collectedResults,
-                          resultSchemaFields,
-                          processor);
-                      return null;
-                    });
+                processSingleTable(
+                    datasetId,
+                    tableNamePattern,
+                    null,
+                    requireBaseTable,
+                    collectedResults,
+                    resultSchemaFields,
+                    processor);
+                return null;
               });
           continue;
         }
 
-        datasetListTasks.add(
-            () -> {
-              List<Callable<Void>> tableTasks = new ArrayList<>();
-              try {
-                Page<Table> tablesPage =
-                    bigquery.listTables(
-                        datasetId, BigQuery.TableListOption.pageSize(DEFAULT_PAGE_SIZE));
-                for (Table table : tablesPage.iterateAll()) {
-                  if (requireBaseTable
-                      && table.getDefinition() != null
-                      && table.getDefinition().getType() != TableDefinition.Type.TABLE) continue;
-                  String tableName = table.getTableId().getTable();
-                  if (tableRegex != null && !tableRegex.matcher(tableName).matches()) continue;
-                  tableTasks.add(
-                      () -> {
-                        processSingleTable(
-                            datasetId,
-                            requiresFullTable ? tableName : null,
-                            requiresFullTable ? null : table,
-                            requireBaseTable,
-                            collectedResults,
-                            resultSchemaFields,
-                            processor);
-                        return null;
-                      });
-                }
-              } catch (BigQueryException e) {
-                if (e.getCode() == 404) {
-                  LOG.info("Dataset '%s' not found while listing tables. Skipping.", datasetId);
-                } else {
-                  throw new SQLException("Error while listing tables: " + e.getMessage(), e);
-                }
-              }
-              return tableTasks;
-            });
-      }
-
-      List<Callable<Void>> detailTasks = new ArrayList<>();
-      try {
-        for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
-          detailTasks.addAll(listTask.call());
+        try {
+          Page<Table> tablesPage =
+              bigquery.listTables(datasetId, BigQuery.TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          for (Table table : tablesPage.iterateAll()) {
+            if (Thread.currentThread().isInterrupted()) {
+              throw new SQLException("Interrupted while listing tables.");
+            }
+            if (requireBaseTable
+                && table.getDefinition() != null
+                && table.getDefinition().getType() != TableDefinition.Type.TABLE) continue;
+            String tableName = table.getTableId().getTable();
+            if (tableRegex != null && !tableRegex.matcher(tableName).matches()) continue;
+            detailTasks.add(
+                () -> {
+                  processSingleTable(
+                      datasetId,
+                      requiresFullTable ? tableName : null,
+                      requiresFullTable ? null : table,
+                      requireBaseTable,
+                      collectedResults,
+                      resultSchemaFields,
+                      processor);
+                  return null;
+                });
+          }
+        } catch (BigQueryException e) {
+          if (e.getCode() == 404) {
+            LOG.info("Dataset '%s' not found while listing tables. Skipping.", datasetId);
+          } else {
+            throw new SQLException("Error while listing tables: " + e.getMessage(), e);
+          }
         }
-      } catch (Exception e) {
-        if (e instanceof InterruptedException) {
-          Thread.currentThread().interrupt();
-        }
-        if (e instanceof SQLException) {
-          throw (SQLException) e;
-        }
-        throw new SQLException("Error while listing tables: " + e.getMessage(), e);
       }
 
       for (Callable<Void> task : detailTasks) {
