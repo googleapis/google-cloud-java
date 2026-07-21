@@ -207,7 +207,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, Types.DATE);
       return;
     }
-    this.parameterHandler.setParameter(parameterIndex, value.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Date.class);
   }
 
   @Override
@@ -217,7 +217,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, Types.TIME);
       return;
     }
-    this.parameterHandler.setParameter(parameterIndex, value.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Time.class);
   }
 
   @Override
@@ -227,9 +227,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, Types.TIMESTAMP);
       return;
     }
-    Timestamp copy = new Timestamp(value.getTime());
-    copy.setNanos((value.getNanos() / 1000) * 1000);
-    this.parameterHandler.setParameter(parameterIndex, copy.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Timestamp.class);
   }
 
   @Override
@@ -552,7 +550,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       setNull(parameterIndex, Types.DATE);
       return;
     }
-    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateWithCalendar(value, calendar));
+    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
   }
 
   @Override
