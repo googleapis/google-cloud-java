@@ -40,7 +40,8 @@ public class BigQueryJdbcBulkInsertWriterTest {
 
     WriteStream stream =
         WriteStream.newBuilder()
-            .setName("projects/test-project/datasets/test_dataset/tables/test_table/streams/_default")
+            .setName(
+                "projects/test-project/datasets/test_dataset/tables/test_table/streams/_default")
             .setTableSchema(TableSchema.newBuilder().build())
             .build();
     when(mockClient.createWriteStream(any(CreateWriteStreamRequest.class))).thenReturn(stream);
