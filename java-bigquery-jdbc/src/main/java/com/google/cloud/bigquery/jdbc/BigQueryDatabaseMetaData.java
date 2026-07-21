@@ -1530,10 +1530,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     List<DatasetId> targetDatasets = getTargetDatasets(effectiveCatalog, effectiveSchemaPattern);
 
-    boolean hasWildcards =
-        columnNamePattern != null
-            && (columnNamePattern.contains("%") || columnNamePattern.contains("_"));
-    Pattern columnNameRegex = hasWildcards ? compileSqlLikePattern(columnNamePattern) : null;
+    Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
