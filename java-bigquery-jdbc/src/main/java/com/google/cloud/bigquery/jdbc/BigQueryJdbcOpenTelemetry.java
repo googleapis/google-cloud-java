@@ -224,6 +224,7 @@ public class BigQueryJdbcOpenTelemetry {
         authProperties,
         new java.util.HashMap<>(),
         false,
+        null,
         BigQueryJdbcOpenTelemetry.class.getName());
   }
 

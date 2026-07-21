@@ -35,11 +35,8 @@ import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import io.opentelemetry.api.common.AttributeKey;
-import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
-import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
-import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
@@ -52,16 +49,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -93,7 +87,7 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
-when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
+    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
     when(bigQueryConnection.getTracer())
         .thenReturn(
             otelTesting
@@ -109,7 +103,7 @@ when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
 
     Table mockTable = mock(Table.class);
     when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
-when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
+    when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
     when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
@@ -3348,7 +3342,6 @@ when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
             (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
             "BigQueryDatabaseMetaData.getColumns"));
   }
-
 
   @Test
   public void testWrapperMethods() throws SQLException {

@@ -82,10 +82,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.stream.Stream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
@@ -538,7 +538,7 @@ public class BigQueryStatementTest {
   }
 
   @Test
-public void testFetchNextPages_addsLinkToParent() throws Exception {
+  public void testFetchNextPages_addsLinkToParent() throws Exception {
     Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
     Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
 

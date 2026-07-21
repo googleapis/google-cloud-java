@@ -18,8 +18,8 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
-import io.opentelemetry.api.OpenTelemetry;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;

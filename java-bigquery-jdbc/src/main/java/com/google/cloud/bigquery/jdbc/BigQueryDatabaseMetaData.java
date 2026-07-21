@@ -52,10 +52,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
-import io.opentelemetry.context.Scope;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -841,7 +838,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           procedureNamePattern,
                           procedureNameRegex,
                           false);
-              Future<List<Routine>> apiFuture = apiExecutor.submit(Context.current().wrap(apiCallable));
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingRoutines tasks.");
@@ -1642,7 +1640,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           tableNamePattern,
                           tableNameRegex,
                           false);
-              Future<List<Table>> apiFuture = apiExecutor.submit(Context.current().wrap(apiCallable));
+              Future<List<Table>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
@@ -1686,7 +1685,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(Context.current().wrap(tableFetcher));
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(tableFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -2000,7 +2000,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(Context.current().wrap(columnFetcher));
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(columnFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -3602,7 +3603,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
-    return withTracing("BigQueryDatabaseMetaData.getSchemas", () -> getSchemasImpl(catalog, schemaPattern));
+    return withTracing(
+        "BigQueryDatabaseMetaData.getSchemas", () -> getSchemasImpl(catalog, schemaPattern));
   }
 
   private ResultSet getSchemasImpl(String catalog, String schemaPattern) throws SQLException {
@@ -3661,7 +3663,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(Context.current().wrap(multiSchemaFetcher));
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(multiSchemaFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -3875,7 +3878,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         functionNameRegex,
                         false);
                   };
-              Future<List<Routine>> apiFuture = apiExecutor.submit(Context.current().wrap(apiCallable));
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine(

@@ -62,11 +62,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.SpanBuilder;
-import io.opentelemetry.api.trace.SpanContext;
-import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
-import io.opentelemetry.context.Scope;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -911,160 +907,96 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     ExecutorService executor = connection.getExecutorService();
 
     Runnable arrowStreamProcessor =
-Context.current().wrap(
-() -> {
-          long rowsRead = 0;
-          int retryCount = 0;
-          try {
-            // Use the first stream to perform reading.
-            String streamName = readSession.getStreams(0).getName();
+        Context.current()
+            .wrap(
+                () -> {
+                  long rowsRead = 0;
+                  int retryCount = 0;
+                  try {
+                    // Use the first stream to perform reading.
+                    String streamName = readSession.getStreams(0).getName();
 
-            while (true) {
-              try {
-                ReadRowsRequest readRowsRequest =
-                    ReadRowsRequest.newBuilder()
-                        .setReadStream(streamName)
-                        .setOffset(rowsRead)
-                        .build();
+                    while (true) {
+                      try {
+                        ReadRowsRequest readRowsRequest =
+                            ReadRowsRequest.newBuilder()
+                                .setReadStream(streamName)
+                                .setOffset(rowsRead)
+                                .build();
 
-                // Process each block of rows as they arrive and decode using our simple row reader.
-                com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
-                    bqReadClient.readRowsCallable().call(readRowsRequest);
-                for (ReadRowsResponse response : stream) {
-                  if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
-                    break;
+                        // Process each block of rows as they arrive and decode using our simple row
+                        // reader.
+                        com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
+                            bqReadClient.readRowsCallable().call(readRowsRequest);
+                        for (ReadRowsResponse response : stream) {
+                          if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
+                            break;
+                          }
+
+                          ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
+                          Uninterruptibles.putUninterruptibly(
+                              arrowBatchWrapperBlockingQueue,
+                              BigQueryArrowBatchWrapper.of(currentBatch));
+                          rowsRead += response.getRowCount();
+                        }
+                        break;
+                      } catch (ApiException e) {
+                        if (e.getStatusCode().getCode() == StatusCode.Code.NOT_FOUND) {
+                          LOG.warning("Read session expired or not found: %s", e.getMessage());
+                          enqueueError(arrowBatchWrapperBlockingQueue, e);
+                          break;
+                        }
+                        if (retryCount >= MAX_RETRY_COUNT) {
+                          LOG.log(
+                              Level.SEVERE,
+                              "\n"
+                                  + Thread.currentThread().getName()
+                                  + " Interrupted @ arrowStreamProcessor, max retries exceeded",
+                              e);
+                          enqueueError(arrowBatchWrapperBlockingQueue, e);
+                          break;
+                        }
+                        retryCount++;
+                        LOG.warning(
+                            "Connection interrupted during arrow stream read, retrying. attempt: %d",
+                            retryCount);
+                        Thread.sleep(RETRY_DELAY_MS);
+                      }
+                    }
+
+                  } catch (InterruptedException e) {
+                    LOG.log(
+                        Level.WARNING,
+                        "\n"
+                            + Thread.currentThread().getName()
+                            + " Interrupted @ arrowStreamProcessor",
+                        e);
+                    enqueueError(arrowBatchWrapperBlockingQueue, e);
+                    Thread.currentThread().interrupt();
+                  } catch (Exception e) {
+                    if (e.getCause() instanceof InterruptedException
+                        || Thread.currentThread().isInterrupted()) {
+                      LOG.log(
+                          Level.WARNING,
+                          "\n"
+                              + Thread.currentThread().getName()
+                              + " Interrupted @ arrowStreamProcessor",
+                          e);
+                      enqueueError(arrowBatchWrapperBlockingQueue, e);
+                      Thread.currentThread().interrupt();
+                    } else {
+                      LOG.log(
+                          Level.WARNING,
+                          "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
+                          e);
+                      enqueueError(arrowBatchWrapperBlockingQueue, e);
+                    }
+                  } finally { // logic needed for graceful shutdown
+                    enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
                   }
-
-                  ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
-                  Uninterruptibles.putUninterruptibly(
-                      arrowBatchWrapperBlockingQueue, BigQueryArrowBatchWrapper.of(currentBatch));
-                  rowsRead += response.getRowCount();
-                }
-                break;
-              } catch (ApiException e) {
-                if (e.getStatusCode().getCode() == StatusCode.Code.NOT_FOUND) {
-                  LOG.warning("Read session expired or not found: %s", e.getMessage());
-                  enqueueError(arrowBatchWrapperBlockingQueue, e);
-                  break;
-                }
-                if (retryCount >= MAX_RETRY_COUNT) {
-                  LOG.log(
-                      Level.SEVERE,
-                      "\n"
-                          + Thread.currentThread().getName()
-                          + " Interrupted @ arrowStreamProcessor, max retries exceeded",
-                      e);
-                  enqueueError(arrowBatchWrapperBlockingQueue, e);
-                  break;
-                }
-                retryCount++;
-                LOG.warning(
-                    "Connection interrupted during arrow stream read, retrying. attempt: %d",
-                    retryCount);
-                Thread.sleep(RETRY_DELAY_MS);
-              }
-            }
-
-          } catch (InterruptedException e) {
-            LOG.log(
-                Level.WARNING,
-                "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
-                e);
-            enqueueError(arrowBatchWrapperBlockingQueue, e);
-            Thread.currentThread().interrupt();
-          } catch (Exception e) {
-            if (e.getCause() instanceof InterruptedException
-                || Thread.currentThread().isInterrupted()) {
-              LOG.log(
-                  Level.WARNING,
-                  "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
-                  e);
-              enqueueError(arrowBatchWrapperBlockingQueue, e);
-              Thread.currentThread().interrupt();
-            } else {
-              LOG.log(
-                  Level.WARNING,
-                  "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
-                  e);
-              enqueueError(arrowBatchWrapperBlockingQueue, e);
-            }
-          } finally { // logic needed for graceful shutdown
-            enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
-          }
-        });
+                });
 
     return executor.submit(arrowStreamProcessor);
-  }
-
-  private void processArrowStream(
-      ReadSession readSession,
-      BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
-      BigQueryReadClient bqReadClient) {
-    long rowsRead = 0;
-    int retryCount = 0;
-    try {
-      // Use the first stream to perform reading.
-      String streamName = readSession.getStreams(0).getName();
-
-      while (true) {
-        try {
-          ReadRowsRequest readRowsRequest =
-              ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(rowsRead).build();
-
-          // Process each block of rows as they arrive and decode using our simple row
-          // reader.
-          com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
-              bqReadClient.readRowsCallable().call(readRowsRequest);
-          for (ReadRowsResponse response : stream) {
-            if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
-              break;
-            }
-
-            ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
-            Uninterruptibles.putUninterruptibly(
-                arrowBatchWrapperBlockingQueue, BigQueryArrowBatchWrapper.of(currentBatch));
-            rowsRead += response.getRowCount();
-          }
-          break;
-        } catch (ApiException e) {
-          if (e.getStatusCode().getCode() == StatusCode.Code.NOT_FOUND) {
-            LOG.warning("Read session expired or not found: %s", e.getMessage());
-            enqueueError(arrowBatchWrapperBlockingQueue, e);
-            break;
-          }
-          if (retryCount >= MAX_RETRY_COUNT) {
-            LOG.log(
-                Level.SEVERE,
-                "\n"
-                    + Thread.currentThread().getName()
-                    + " Interrupted @ arrowStreamProcessor, max retries exceeded",
-                e);
-            enqueueError(arrowBatchWrapperBlockingQueue, e);
-            break;
-          }
-          retryCount++;
-          LOG.warning(
-              "Connection interrupted during arrow stream read, retrying. attempt: %d", retryCount);
-          Thread.sleep(RETRY_DELAY_MS);
-        }
-      }
-
-    } catch (InterruptedException e) {
-      LOG.log(
-          Level.WARNING,
-          "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
-          e);
-      enqueueError(arrowBatchWrapperBlockingQueue, e);
-      Thread.currentThread().interrupt();
-    } catch (Exception e) {
-      LOG.log(
-          Level.WARNING,
-          "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
-          e);
-      enqueueError(arrowBatchWrapperBlockingQueue, e);
-    } finally { // logic needed for graceful shutdown
-      enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
-    }
   }
 
   /** Executes SQL query using either fast query path or read API */
@@ -1267,55 +1199,61 @@ Context.current().wrap(
     // calls
     populateFirstPage(result, rpcResponseQueue);
 
-ExecutorService executor = connection.getExecutorService();
+    ExecutorService executor = connection.getExecutorService();
 
     // This thread makes the RPC calls and paginates
     Runnable nextPageTask =
-        Context.current().wrap(() -> {
-          String currentPageToken = firstPageToken;
-          TableResult currentResults = result;
-          TableId destinationTable = null;
-          if (firstPageToken != null) {
-            destinationTable = getDestinationTable(jobId);
-          }
+        Context.current()
+            .wrap(
+                () -> {
+                  String currentPageToken = firstPageToken;
+                  TableResult currentResults = result;
+                  TableId destinationTable = null;
+                  if (firstPageToken != null) {
+                    destinationTable = getDestinationTable(jobId);
+                  }
 
-          try {
-            while (currentPageToken != null) {
-              // do not process further pages and shutdown
-              if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
-                LOG.warning(
-                    "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
-                break;
-              }
+                  try {
+                    while (currentPageToken != null) {
+                      // do not process further pages and shutdown
+                      if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
+                        LOG.warning(
+                            "%s Interrupted @ runNextPageTaskAsync",
+                            Thread.currentThread().getName());
+                        break;
+                      }
 
-              long startTime = System.nanoTime();
-              currentResults =
-                  this.bigQuery.listTableData(
-                      destinationTable,
-                      TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
-                      TableDataListOption.pageToken(currentPageToken));
+                      long startTime = System.nanoTime();
+                      currentResults =
+                          this.bigQuery.listTableData(
+                              destinationTable,
+                              TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
+                              TableDataListOption.pageToken(currentPageToken));
 
-              currentPageToken = currentResults.getNextPageToken();
-              // this will be parsed asynchronously without blocking the current
-              // thread
-              Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(currentResults, true));
-              LOG.fine(
-                  "Fetched %d results from the server in %d ms.",
-                  querySettings.getMaxResultPerPage(),
-                  (int) ((System.nanoTime() - startTime) / 1000000));
-            }
-          } catch (Exception ex) {
-            Uninterruptibles.putUninterruptibly(
-                bigQueryFieldValueListWrapperBlockingQueue,
-                BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(ex)));
-          } finally {
-            // this will stop the parseDataTask as well when the pagination
-            // completes
-            Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
-          }
-          // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may not
-          // have finished processing the records and even that will be interrupted
-        });
+                      currentPageToken = currentResults.getNextPageToken();
+                      // this will be parsed asynchronously without blocking the current
+                      // thread
+                      Uninterruptibles.putUninterruptibly(
+                          rpcResponseQueue, Tuple.of(currentResults, true));
+                      LOG.fine(
+                          "Fetched %d results from the server in %d ms.",
+                          querySettings.getMaxResultPerPage(),
+                          (int) ((System.nanoTime() - startTime) / 1000000));
+                    }
+                  } catch (Exception ex) {
+                    Uninterruptibles.putUninterruptibly(
+                        bigQueryFieldValueListWrapperBlockingQueue,
+                        BigQueryFieldValueListWrapper.ofError(
+                            new BigQueryJdbcRuntimeException(ex)));
+                  } finally {
+                    // this will stop the parseDataTask as well when the pagination
+                    // completes
+                    Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
+                  }
+                  // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may
+                  // not
+                  // have finished processing the records and even that will be interrupted
+                });
 
     return executor.submit(nextPageTask);
   }
@@ -1334,78 +1272,84 @@ ExecutorService executor = connection.getExecutorService();
     ExecutorService executor = connection.getExecutorService();
 
     Runnable populateBufferRunnable =
-Context.current().wrap(
-() -> { // producer thread populating the buffer
-          try {
-            Iterable<FieldValueList> fieldValueLists;
-            boolean[] isComplexColumn =
-                BigQueryFieldValueListWrapper.createComplexColumnFlags(
-                    schema != null ? schema.getFields() : null);
-            // as we have to process the first page
-            boolean hasRows = true;
-            while (hasRows) {
-              try {
-                Tuple<TableResult, Boolean> nextPageTuple = rpcResponseQueue.take();
-                if (nextPageTuple.x() != null) {
-                  fieldValueLists = nextPageTuple.x().getValues();
-                } else {
-                  fieldValueLists = null;
-                }
-                hasRows = nextPageTuple.y();
+        Context.current()
+            .wrap(
+                () -> { // producer thread populating the buffer
+                  try {
+                    Iterable<FieldValueList> fieldValueLists;
+                    boolean[] isComplexColumn =
+                        BigQueryFieldValueListWrapper.createComplexColumnFlags(
+                            schema != null ? schema.getFields() : null);
+                    // as we have to process the first page
+                    boolean hasRows = true;
+                    while (hasRows) {
+                      try {
+                        Tuple<TableResult, Boolean> nextPageTuple = rpcResponseQueue.take();
+                        if (nextPageTuple.x() != null) {
+                          fieldValueLists = nextPageTuple.x().getValues();
+                        } else {
+                          fieldValueLists = null;
+                        }
+                        hasRows = nextPageTuple.y();
 
-              } catch (InterruptedException e) {
-                LOG.log(Level.WARNING, "\n" + Thread.currentThread().getName() + " Interrupted", e);
-                // Thread might get interrupted while calling the Cancel method, which is
-                // expected, so logging this instead of throwing the exception back
-                break;
-              }
+                      } catch (InterruptedException e) {
+                        LOG.log(
+                            Level.WARNING,
+                            "\n" + Thread.currentThread().getName() + " Interrupted",
+                            e);
+                        // Thread might get interrupted while calling the Cancel method, which is
+                        // expected, so logging this instead of throwing the exception back
+                        break;
+                      }
 
-              if (Thread.currentThread().isInterrupted()
-                  || executor.isShutdown()
-                  || fieldValueLists == null) {
-                // do not process further pages and shutdown (outerloop)
-                break;
-              }
+                      if (Thread.currentThread().isInterrupted()
+                          || executor.isShutdown()
+                          || fieldValueLists == null) {
+                        // do not process further pages and shutdown (outerloop)
+                        break;
+                      }
 
-              long startTime = System.nanoTime();
-              long results = 0;
-              for (FieldValueList fieldValueList : fieldValueLists) {
+                      long startTime = System.nanoTime();
+                      long results = 0;
+                      for (FieldValueList fieldValueList : fieldValueLists) {
 
-                if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
-                  // do not process further pages and shutdown (inner loop)
-                  break;
-                }
-                Uninterruptibles.putUninterruptibly(
-                    bigQueryFieldValueListWrapperBlockingQueue,
-                    BigQueryFieldValueListWrapper.of(
-                        schema.getFields(), fieldValueList, isComplexColumn));
-                results += 1;
-              }
-              LOG.fine(
-                  "Processed %d results in %d ms.",
-                  results, (int) ((System.nanoTime() - startTime) / 1000000));
-            }
+                        if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
+                          // do not process further pages and shutdown (inner loop)
+                          break;
+                        }
+                        Uninterruptibles.putUninterruptibly(
+                            bigQueryFieldValueListWrapperBlockingQueue,
+                            BigQueryFieldValueListWrapper.of(
+                                schema.getFields(), fieldValueList, isComplexColumn));
+                        results += 1;
+                      }
+                      LOG.fine(
+                          "Processed %d results in %d ms.",
+                          results, (int) ((System.nanoTime() - startTime) / 1000000));
+                    }
 
-          } catch (Exception ex) {
-            if (ex.getCause() instanceof InterruptedException
-                || Thread.currentThread().isInterrupted()) {
-              LOG.log(
-                  Level.WARNING,
-                  "\n" + Thread.currentThread().getName() + " Interrupted @ populateBufferAsync",
-                  ex);
-              enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-              Thread.currentThread().interrupt();
-            } else {
-              LOG.log(
-                  Level.WARNING,
-                  "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
-                  ex);
-              enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-            }
-          } finally {
-            enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
-          }
-        });
+                  } catch (Exception ex) {
+                    if (ex.getCause() instanceof InterruptedException
+                        || Thread.currentThread().isInterrupted()) {
+                      LOG.log(
+                          Level.WARNING,
+                          "\n"
+                              + Thread.currentThread().getName()
+                              + " Interrupted @ populateBufferAsync",
+                          ex);
+                      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+                      Thread.currentThread().interrupt();
+                    } else {
+                      LOG.log(
+                          Level.WARNING,
+                          "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
+                          ex);
+                      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+                    }
+                  } finally {
+                    enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
+                  }
+                });
 
     return executor.submit(populateBufferRunnable);
   }
@@ -1856,125 +1800,5 @@ Context.current().wrap(
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
-  }
-
-  private void fetchNextPages(
-      String firstPageToken,
-      JobId jobId,
-      BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue,
-      BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
-      TableResult result) {
-    SpanContext parentSpanContext = Span.current().getSpanContext();
-    String currentPageToken = firstPageToken;
-    TableResult currentResults = result;
-    TableId destinationTable = null;
-    if (firstPageToken != null) {
-      destinationTable = getDestinationTable(jobId);
-    }
-
-    try {
-      Tracer tracer = this.connection.getTracer();
-      while (currentPageToken != null) {
-        if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
-          LOG.warning("%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
-          break;
-        }
-
-        SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
-        if (parentSpanContext.isValid()) {
-          spanBuilder.addLink(parentSpanContext);
-        }
-        Span paginationSpan = spanBuilder.startSpan();
-        try (Scope scope = paginationSpan.makeCurrent()) {
-          paginationSpan.setAttribute("db.pagination.page_token", currentPageToken);
-
-          long startTime = System.nanoTime();
-          currentResults =
-              this.bigQuery.listTableData(
-                  destinationTable,
-                  TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
-                  TableDataListOption.pageToken(currentPageToken));
-
-          long duration = (System.nanoTime() - startTime) / 1000000;
-          paginationSpan.setAttribute("db.pagination.duration_ms", duration);
-          paginationSpan.setAttribute(
-              "db.pagination.rows_fetched", querySettings.getMaxResultPerPage());
-
-          currentPageToken = currentResults.getNextPageToken();
-          Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(currentResults, true));
-          LOG.fine(
-              "Fetched %d results from the server in %d ms.",
-              querySettings.getMaxResultPerPage(), (int) duration);
-        } catch (Exception e) {
-          paginationSpan.recordException(e);
-          paginationSpan.setStatus(io.opentelemetry.api.trace.StatusCode.ERROR, e.getMessage());
-          throw e;
-        } finally {
-          paginationSpan.end();
-        }
-      }
-    } catch (Exception ex) {
-      Uninterruptibles.putUninterruptibly(
-          bigQueryFieldValueListWrapperBlockingQueue,
-          BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(ex)));
-    } finally {
-      Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
-    }
-  }
-
-  private void parseAndPopulateRpcData(
-      Schema schema,
-      BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
-      BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue) {
-    try {
-      Iterable<FieldValueList> fieldValueLists;
-      boolean hasRows = true;
-      while (hasRows) {
-        try {
-          Tuple<TableResult, Boolean> nextPageTuple = rpcResponseQueue.take();
-          if (nextPageTuple.x() != null) {
-            fieldValueLists = nextPageTuple.x().getValues();
-          } else {
-            fieldValueLists = null;
-          }
-          hasRows = nextPageTuple.y();
-
-        } catch (InterruptedException e) {
-          LOG.log(Level.WARNING, "\n" + Thread.currentThread().getName() + " Interrupted", e);
-          break;
-        }
-
-        if (Thread.currentThread().isInterrupted()
-            || queryTaskExecutor.isShutdown()
-            || fieldValueLists == null) {
-          break;
-        }
-
-        long startTime = System.nanoTime();
-        long results = 0;
-        for (FieldValueList fieldValueList : fieldValueLists) {
-
-          if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
-            break;
-          }
-          Uninterruptibles.putUninterruptibly(
-              bigQueryFieldValueListWrapperBlockingQueue,
-              BigQueryFieldValueListWrapper.of(schema.getFields(), fieldValueList));
-          results += 1;
-        }
-        LOG.fine(
-            "Processed %d results in %d ms.",
-            results, (int) ((System.nanoTime() - startTime) / 1000000));
-      }
-
-    } catch (Exception ex) {
-      LOG.log(
-          Level.WARNING,
-          "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
-          ex);
-      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-    } finally {
-      enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
-    }
   }
 }
