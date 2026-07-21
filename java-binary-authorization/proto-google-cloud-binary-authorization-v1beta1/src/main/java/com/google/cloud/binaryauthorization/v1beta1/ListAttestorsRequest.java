@@ -81,7 +81,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+   * format `projects/&#42;`.
    * </pre>
    *
    * <code>
@@ -108,7 +109,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+   * format `projects/&#42;`.
    * </pre>
    *
    * <code>
@@ -160,8 +162,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token identifying a page of results the server should return. Typically,
-   * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-   * from the previous call to the `ListAttestors` method.
+   * this is the value of
+   * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+   * returned from the previous call to the `ListAttestors` method.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -186,8 +189,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token identifying a page of results the server should return. Typically,
-   * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-   * from the previous call to the `ListAttestors` method.
+   * this is the value of
+   * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+   * returned from the previous call to the `ListAttestors` method.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -577,7 +581,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+     * format `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -603,7 +608,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+     * format `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -629,7 +635,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+     * format `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -654,7 +661,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+     * format `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -675,7 +683,8 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], in the
+     * format `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -762,8 +771,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -787,8 +797,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -812,8 +823,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -836,8 +848,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -856,8 +869,9 @@ public final class ListAttestorsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>

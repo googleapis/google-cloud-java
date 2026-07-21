@@ -50,7 +50,6 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -69,7 +68,6 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private static final String AWS_IMDSV2_SESSION_TOKEN_URL = "https://169.254.169.254/imdsv2";
   private static final String METADATA_SERVER_URL = "https://www.metadata.google.com";
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
-  private static final String REGIONAL_ACCESS_BOUNDARY_URL_END = "/allowedLocations";
 
   private static final String SUBJECT_TOKEN = "subjectToken";
   private static final String TOKEN_TYPE = "Bearer";
@@ -94,11 +92,6 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
-  private final Map<String, RegionalAccessBoundary> regionalAccessBoundaries = new HashMap<>();
-
-  public void addRegionalAccessBoundary(String url, RegionalAccessBoundary regionalAccessBoundary) {
-    this.regionalAccessBoundaries.put(url, regionalAccessBoundary);
-  }
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
@@ -203,26 +196,6 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
             }
 
             if (url.contains(IAM_ENDPOINT)) {
-
-              if (url.endsWith(REGIONAL_ACCESS_BOUNDARY_URL_END)) {
-                RegionalAccessBoundary rab = regionalAccessBoundaries.get(url);
-                if (rab == null) {
-                  rab =
-                      new RegionalAccessBoundary(
-                          TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
-                          TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
-                          null);
-                }
-                GenericJson responseJson = new GenericJson();
-                responseJson.setFactory(OAuth2Utils.JSON_FACTORY);
-                responseJson.put("encodedLocations", rab.getEncodedLocations());
-                responseJson.put("locations", rab.getLocations());
-                String content = responseJson.toPrettyString();
-                return new MockLowLevelHttpResponse()
-                    .setContentType(Json.MEDIA_TYPE)
-                    .setContent(content);
-              }
-
               GenericJson query =
                   OAuth2Utils.JSON_FACTORY
                       .createJsonParser(getContentAsString())
@@ -247,9 +220,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
           }
         };
 
-    if (url == null || !url.contains("allowedLocations")) {
-      this.requests.add(request);
-    }
+    this.requests.add(request);
     return request;
   }
 

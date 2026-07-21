@@ -30,6 +30,105 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  boolean hasGcsSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The gcsSource.
+   */
+  com.google.cloud.memorystore.v1beta.Instance.GcsBackupSource getGcsSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.Instance.GcsBackupSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the managedBackupSource field is set.
+   */
+  boolean hasManagedBackupSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The managedBackupSource.
+   */
+  com.google.cloud.memorystore.v1beta.Instance.ManagedBackupSource getManagedBackupSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.Instance.ManagedBackupSourceOrBuilder
+      getManagedBackupSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. Unique name of the instance.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -405,56 +504,76 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.memorystore.v1beta.DiscoveryEndpoint> getDiscoveryEndpointsList();
 
   /**
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.memorystore.v1beta.DiscoveryEndpoint getDiscoveryEndpoints(int index);
 
   /**
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   int getDiscoveryEndpointsCount();
 
   /**
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.memorystore.v1beta.DiscoveryEndpointOrBuilder>
       getDiscoveryEndpointsOrBuilderList();
 
@@ -462,14 +581,19 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1beta.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.memorystore.v1beta.DiscoveryEndpointOrBuilder getDiscoveryEndpointsOrBuilder(
       int index);
 
@@ -477,11 +601,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Machine type for individual nodes of the instance.
+   * Optional. Machine type for individual nodes of the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1beta.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.memorystore.v1beta.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for nodeType.
@@ -492,11 +616,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Machine type for individual nodes of the instance.
+   * Optional. Machine type for individual nodes of the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1beta.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.memorystore.v1beta.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The nodeType.
@@ -550,12 +674,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Engine version of the instance.
+   * Optional. Engine version of the instance.
    * </pre>
    *
-   * <code>
-   * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The engineVersion.
    */
@@ -565,12 +687,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Engine version of the instance.
+   * Optional. Engine version of the instance.
    * </pre>
    *
-   * <code>
-   * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for engineVersion.
    */
@@ -766,56 +886,60 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.memorystore.v1beta.PscAutoConnection> getPscAutoConnectionsList();
 
   /**
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.memorystore.v1beta.PscAutoConnection getPscAutoConnections(int index);
 
   /**
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   int getPscAutoConnectionsCount();
 
   /**
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.memorystore.v1beta.PscAutoConnectionOrBuilder>
       getPscAutoConnectionsOrBuilderList();
 
@@ -823,15 +947,84 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1beta.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.memorystore.v1beta.PscAutoConnectionOrBuilder getPscAutoConnectionsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1beta.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.memorystore.v1beta.PscAttachmentDetail>
+      getPscAttachmentDetailsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1beta.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.PscAttachmentDetail getPscAttachmentDetails(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1beta.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPscAttachmentDetailsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1beta.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.memorystore.v1beta.PscAttachmentDetailOrBuilder>
+      getPscAttachmentDetailsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1beta.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.PscAttachmentDetailOrBuilder getPscAttachmentDetailsOrBuilder(
       int index);
 
   /**
@@ -905,11 +1098,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1beta.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1beta.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for mode.
@@ -920,16 +1113,676 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1beta.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1beta.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The mode.
    */
   com.google.cloud.memorystore.v1beta.Instance.Mode getMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the simulateMaintenanceEvent field is set.
+   */
+  boolean hasSimulateMaintenanceEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The simulateMaintenanceEvent.
+   */
+  boolean getSimulateMaintenanceEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ondemand maintenance for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+   * @return Whether the ondemandMaintenance field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasOndemandMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ondemand maintenance for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+   * @return The ondemandMaintenance.
+   */
+  @java.lang.Deprecated
+  boolean getOndemandMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.cloud.memorystore.v1beta.MaintenancePolicy getMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.memorystore.v1beta.MaintenanceSchedule getMaintenanceSchedule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.MaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crossInstanceReplicationConfig field is set.
+   */
+  boolean hasCrossInstanceReplicationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crossInstanceReplicationConfig.
+   */
+  com.google.cloud.memorystore.v1beta.CrossInstanceReplicationConfig
+      getCrossInstanceReplicationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.CrossInstanceReplicationConfigOrBuilder
+      getCrossInstanceReplicationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such an instance endpoint
+   * can be de-registered before the forwarding rules in the instance endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the asyncInstanceEndpointsDeletionEnabled field is set.
+   */
+  boolean hasAsyncInstanceEndpointsDeletionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such an instance endpoint
+   * can be de-registered before the forwarding rules in the instance endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The asyncInstanceEndpointsDeletionEnabled.
+   */
+  boolean getAsyncInstanceEndpointsDeletionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  com.google.cloud.memorystore.v1beta.EncryptionInfo getEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backupCollection field is set.
+   */
+  boolean hasBackupCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupCollection.
+   */
+  java.lang.String getBackupCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupCollection.
+   */
+  com.google.protobuf.ByteString getBackupCollectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the automatedBackupConfig field is set.
+   */
+  boolean hasAutomatedBackupConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The automatedBackupConfig.
+   */
+  com.google.cloud.memorystore.v1beta.AutomatedBackupConfig getAutomatedBackupConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.AutomatedBackupConfigOrBuilder
+      getAutomatedBackupConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceVersion field is set.
+   */
+  boolean hasMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceVersion.
+   */
+  java.lang.String getMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for maintenanceVersion.
+   */
+  com.google.protobuf.ByteString getMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveMaintenanceVersion field is set.
+   */
+  boolean hasEffectiveMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveMaintenanceVersion.
+   */
+  java.lang.String getEffectiveMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveMaintenanceVersion.
+   */
+  com.google.protobuf.ByteString getEffectiveMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the availableMaintenanceVersions.
+   */
+  java.util.List<java.lang.String> getAvailableMaintenanceVersionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of availableMaintenanceVersions.
+   */
+  int getAvailableMaintenanceVersionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableMaintenanceVersions at the given index.
+   */
+  java.lang.String getAvailableMaintenanceVersions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableMaintenanceVersions at the given index.
+   */
+  com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Deprecated, do not use.
+   * </pre>
+   *
+   * <code>
+   * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.memorystore.v1beta.Instance.allow_fewer_zones_deployment is
+   *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=825
+   * @return The allowFewerZonesDeployment.
+   */
+  @java.lang.Deprecated
+  boolean getAllowFewerZonesDeployment();
 
   /**
    *
@@ -1056,4 +1909,49 @@ public interface InstanceOrBuilder
    * @return The rotateServerCertificate.
    */
   boolean getRotateServerCertificate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the migrationConfig field is set.
+   */
+  boolean hasMigrationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The migrationConfig.
+   */
+  com.google.cloud.memorystore.v1beta.MigrationConfig getMigrationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1beta.MigrationConfigOrBuilder getMigrationConfigOrBuilder();
+
+  com.google.cloud.memorystore.v1beta.Instance.ImportSourcesCase getImportSourcesCase();
 }

@@ -58,6 +58,146 @@ public interface BackendServiceLogConfigOrBuilder
    *
    *
    * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      getLoggingHttpRequestHeadersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader getLoggingHttpRequestHeaders(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  int getLoggingHttpRequestHeadersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+      getLoggingHttpRequestHeadersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of request headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_request_headers = 430426367;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+      getLoggingHttpRequestHeadersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader>
+      getLoggingHttpResponseHeadersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader
+      getLoggingHttpResponseHeaders(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  int getLoggingHttpResponseHeadersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder>
+      getLoggingHttpResponseHeadersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of response headers that will be logged to Stackdriver.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeader logging_http_response_headers = 515407743;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceLogConfigLoggingHttpHeaderOrBuilder
+      getLoggingHttpResponseHeadersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * This field can only be specified if logging is enabled for this backend
    * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
    * of optional fields you want to include in the logs. For example:

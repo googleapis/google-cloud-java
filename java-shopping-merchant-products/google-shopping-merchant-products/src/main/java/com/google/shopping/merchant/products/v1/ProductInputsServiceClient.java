@@ -25,6 +25,8 @@ import com.google.shopping.merchant.products.v1.stub.ProductInputsServiceStubSet
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -175,9 +177,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ProductInputsServiceClient implements BackgroundResource {
-  private final ProductInputsServiceSettings settings;
+  private final @Nullable ProductInputsServiceSettings settings;
   private final ProductInputsServiceStub stub;
 
   /** Constructs an instance of ProductInputsServiceClient with default settings. */
@@ -217,7 +220,7 @@ public class ProductInputsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProductInputsServiceSettings getSettings() {
+  public final @Nullable ProductInputsServiceSettings getSettings() {
     return settings;
   }
 
@@ -475,7 +478,7 @@ public class ProductInputsServiceClient implements BackgroundResource {
    *     formats.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProductInput(ProductInputName name) {
+  public final void deleteProductInput(@Nullable ProductInputName name) {
     DeleteProductInputRequest request =
         DeleteProductInputRequest.newBuilder()
             .setName(name == null ? null : name.toString())

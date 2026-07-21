@@ -720,6 +720,93 @@ public final class MemorystoreGrpc {
     return getBackupInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.StartMigrationRequest, com.google.longrunning.Operation>
+      getStartMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartMigration",
+      requestType = com.google.cloud.memorystore.v1.StartMigrationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.StartMigrationRequest, com.google.longrunning.Operation>
+      getStartMigrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.StartMigrationRequest, com.google.longrunning.Operation>
+        getStartMigrationMethod;
+    if ((getStartMigrationMethod = MemorystoreGrpc.getStartMigrationMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getStartMigrationMethod = MemorystoreGrpc.getStartMigrationMethod) == null) {
+          MemorystoreGrpc.getStartMigrationMethod =
+              getStartMigrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.StartMigrationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartMigration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.StartMigrationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("StartMigration"))
+                      .build();
+        }
+      }
+    }
+    return getStartMigrationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.FinishMigrationRequest, com.google.longrunning.Operation>
+      getFinishMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FinishMigration",
+      requestType = com.google.cloud.memorystore.v1.FinishMigrationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.FinishMigrationRequest, com.google.longrunning.Operation>
+      getFinishMigrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.FinishMigrationRequest,
+            com.google.longrunning.Operation>
+        getFinishMigrationMethod;
+    if ((getFinishMigrationMethod = MemorystoreGrpc.getFinishMigrationMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getFinishMigrationMethod = MemorystoreGrpc.getFinishMigrationMethod) == null) {
+          MemorystoreGrpc.getFinishMigrationMethod =
+              getFinishMigrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.FinishMigrationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FinishMigration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.FinishMigrationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("FinishMigration"))
+                      .build();
+        }
+      }
+    }
+    return getFinishMigrationMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static MemorystoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MemorystoreStub> factory =
@@ -1011,6 +1098,44 @@ public final class MemorystoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBackupInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    default void startMigration(
+        com.google.cloud.memorystore.v1.StartMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartMigrationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    default void finishMigration(
+        com.google.cloud.memorystore.v1.FinishMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFinishMigrationMethod(), responseObserver);
     }
   }
 
@@ -1307,6 +1432,48 @@ public final class MemorystoreGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public void startMigration(
+        com.google.cloud.memorystore.v1.StartMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartMigrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public void finishMigration(
+        com.google.cloud.memorystore.v1.FinishMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFinishMigrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1553,6 +1720,44 @@ public final class MemorystoreGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBackupInstanceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startMigration(
+        com.google.cloud.memorystore.v1.StartMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation finishMigration(
+        com.google.cloud.memorystore.v1.FinishMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1786,6 +1991,42 @@ public final class MemorystoreGrpc {
         com.google.cloud.memorystore.v1.BackupInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBackupInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startMigration(
+        com.google.cloud.memorystore.v1.StartMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation finishMigration(
+        com.google.cloud.memorystore.v1.FinishMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
     }
   }
 
@@ -2030,6 +2271,42 @@ public final class MemorystoreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBackupInstanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the migration of a source instance to the target Memorystore
+     * instance.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Set up replication with the source instance and replicate any writes to
+     * the source instance.
+     * 2. Only allow reads.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startMigration(com.google.cloud.memorystore.v1.StartMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartMigrationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finalizes the migration process.
+     * After the successful completion of this operation, the target instance
+     * will:
+     * 1. Stop replicating from the source instance.
+     * 2. Allow both reads and writes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        finishMigration(com.google.cloud.memorystore.v1.FinishMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFinishMigrationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -2047,6 +2324,8 @@ public final class MemorystoreGrpc {
   private static final int METHODID_DELETE_BACKUP = 12;
   private static final int METHODID_EXPORT_BACKUP = 13;
   private static final int METHODID_BACKUP_INSTANCE = 14;
+  private static final int METHODID_START_MIGRATION = 15;
+  private static final int METHODID_FINISH_MIGRATION = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2149,6 +2428,16 @@ public final class MemorystoreGrpc {
         case METHODID_BACKUP_INSTANCE:
           serviceImpl.backupInstance(
               (com.google.cloud.memorystore.v1.BackupInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_MIGRATION:
+          serviceImpl.startMigration(
+              (com.google.cloud.memorystore.v1.StartMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FINISH_MIGRATION:
+          serviceImpl.finishMigration(
+              (com.google.cloud.memorystore.v1.FinishMigrationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -2265,6 +2554,18 @@ public final class MemorystoreGrpc {
                 new MethodHandlers<
                     com.google.cloud.memorystore.v1.BackupInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_BACKUP_INSTANCE)))
+        .addMethod(
+            getStartMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.StartMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_MIGRATION)))
+        .addMethod(
+            getFinishMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.FinishMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_FINISH_MIGRATION)))
         .build();
   }
 
@@ -2331,6 +2632,8 @@ public final class MemorystoreGrpc {
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getExportBackupMethod())
                       .addMethod(getBackupInstanceMethod())
+                      .addMethod(getStartMigrationMethod())
+                      .addMethod(getFinishMigrationMethod())
                       .build();
         }
       }

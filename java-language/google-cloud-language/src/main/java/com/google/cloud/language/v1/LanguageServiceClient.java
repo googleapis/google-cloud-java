@@ -23,6 +23,8 @@ import com.google.cloud.language.v1.stub.LanguageServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,9 +246,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LanguageServiceClient implements BackgroundResource {
-  private final LanguageServiceSettings settings;
+  private final @Nullable LanguageServiceSettings settings;
   private final LanguageServiceStub stub;
 
   /** Constructs an instance of LanguageServiceClient with default settings. */
@@ -286,7 +289,7 @@ public class LanguageServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LanguageServiceSettings getSettings() {
+  public final @Nullable LanguageServiceSettings getSettings() {
     return settings;
   }
 

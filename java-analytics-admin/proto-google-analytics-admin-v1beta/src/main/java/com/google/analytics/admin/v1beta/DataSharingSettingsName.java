@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataSharingSettingsName implements ResourceName {
   private static final PathTemplate ACCOUNT =
@@ -63,7 +66,7 @@ public class DataSharingSettingsName implements ResourceName {
     return newBuilder().setAccount(account).build().toString();
   }
 
-  public static DataSharingSettingsName parse(String formattedString) {
+  public static @Nullable DataSharingSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -81,7 +84,7 @@ public class DataSharingSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DataSharingSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable DataSharingSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DataSharingSettingsName value : values) {
       if (value == null) {
@@ -123,7 +126,7 @@ public class DataSharingSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

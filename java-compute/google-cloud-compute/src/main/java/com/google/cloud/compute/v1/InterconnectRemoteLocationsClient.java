@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InterconnectRemoteLocationsClient implements BackgroundResource {
-  private final InterconnectRemoteLocationsSettings settings;
+  private final @Nullable InterconnectRemoteLocationsSettings settings;
   private final InterconnectRemoteLocationsStub stub;
 
   /** Constructs an instance of InterconnectRemoteLocationsClient with default settings. */
@@ -190,7 +193,7 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InterconnectRemoteLocationsSettings getSettings() {
+  public final @Nullable InterconnectRemoteLocationsSettings getSettings() {
     return settings;
   }
 
@@ -509,12 +512,13 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectRemoteLocationsRequest,
                 InterconnectRemoteLocationList,
                 InterconnectRemoteLocation>
             context,
-        InterconnectRemoteLocationList response) {
+        @Nullable InterconnectRemoteLocationList response) {
       super(context, response);
     }
 
@@ -524,18 +528,20 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectRemoteLocationsRequest,
                 InterconnectRemoteLocationList,
                 InterconnectRemoteLocation>
             context,
-        InterconnectRemoteLocationList response) {
+        @Nullable InterconnectRemoteLocationList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectRemoteLocationsRequest,
                 InterconnectRemoteLocationList,
                 InterconnectRemoteLocation>
@@ -553,7 +559,7 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -562,7 +568,8 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

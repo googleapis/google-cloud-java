@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,9 +202,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LfpStoreServiceClient implements BackgroundResource {
-  private final LfpStoreServiceSettings settings;
+  private final @Nullable LfpStoreServiceSettings settings;
   private final LfpStoreServiceStub stub;
 
   /** Constructs an instance of LfpStoreServiceClient with default settings. */
@@ -242,7 +245,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LfpStoreServiceSettings getSettings() {
+  public final @Nullable LfpStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -272,7 +275,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
    *     `accounts/{account}/lfpStores/{target_merchant}~{store_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LfpStore getLfpStore(LfpStoreName name) {
+  public final LfpStore getLfpStore(@Nullable LfpStoreName name) {
     GetLfpStoreRequest request =
         GetLfpStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLfpStore(request);
@@ -384,7 +387,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
    * @param lfpStore Required. The store to insert.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LfpStore insertLfpStore(AccountName parent, LfpStore lfpStore) {
+  public final LfpStore insertLfpStore(@Nullable AccountName parent, LfpStore lfpStore) {
     InsertLfpStoreRequest request =
         InsertLfpStoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -505,7 +508,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
    *     `accounts/{account}/lfpStores/{target_merchant}~{store_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLfpStore(LfpStoreName name) {
+  public final void deleteLfpStore(@Nullable LfpStoreName name) {
     DeleteLfpStoreRequest request =
         DeleteLfpStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteLfpStore(request);
@@ -616,7 +619,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
    * @param parent Required. The LFP partner. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLfpStoresPagedResponse listLfpStores(AccountName parent) {
+  public final ListLfpStoresPagedResponse listLfpStores(@Nullable AccountName parent) {
     ListLfpStoresRequest request =
         ListLfpStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -818,8 +821,8 @@ public class LfpStoreServiceClient implements BackgroundResource {
           ListLfpStoresRequest, ListLfpStoresResponse, LfpStore, ListLfpStoresPage> {
 
     private ListLfpStoresPage(
-        PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
-        ListLfpStoresResponse response) {
+        @Nullable PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
+        @Nullable ListLfpStoresResponse response) {
       super(context, response);
     }
 
@@ -829,14 +832,14 @@ public class LfpStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLfpStoresPage createPage(
-        PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
-        ListLfpStoresResponse response) {
+        @Nullable PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
+        @Nullable ListLfpStoresResponse response) {
       return new ListLfpStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLfpStoresPage> createPageAsync(
-        PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
+        @Nullable PageContext<ListLfpStoresRequest, ListLfpStoresResponse, LfpStore> context,
         ApiFuture<ListLfpStoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -850,7 +853,8 @@ public class LfpStoreServiceClient implements BackgroundResource {
           ListLfpStoresPage,
           ListLfpStoresFixedSizeCollection> {
 
-    private ListLfpStoresFixedSizeCollection(List<ListLfpStoresPage> pages, int collectionSize) {
+    private ListLfpStoresFixedSizeCollection(
+        @Nullable List<ListLfpStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -860,7 +864,7 @@ public class LfpStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLfpStoresFixedSizeCollection createCollection(
-        List<ListLfpStoresPage> pages, int collectionSize) {
+        @Nullable List<ListLfpStoresPage> pages, int collectionSize) {
       return new ListLfpStoresFixedSizeCollection(pages, collectionSize);
     }
   }

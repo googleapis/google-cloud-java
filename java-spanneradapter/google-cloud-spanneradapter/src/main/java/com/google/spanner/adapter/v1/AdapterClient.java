@@ -24,6 +24,8 @@ import com.google.spanner.adapter.v1.stub.AdapterStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,9 +143,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AdapterClient implements BackgroundResource {
-  private final AdapterSettings settings;
+  private final @Nullable AdapterSettings settings;
   private final AdapterStub stub;
 
   /** Constructs an instance of AdapterClient with default settings. */
@@ -181,7 +184,7 @@ public class AdapterClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdapterSettings getSettings() {
+  public final @Nullable AdapterSettings getSettings() {
     return settings;
   }
 
@@ -214,7 +217,7 @@ public class AdapterClient implements BackgroundResource {
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session createSession(DatabaseName parent, Session session) {
+  public final Session createSession(@Nullable DatabaseName parent, Session session) {
     CreateSessionRequest request =
         CreateSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -222,10 +224,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class NotificationsApiServiceClient implements BackgroundResource {
-  private final NotificationsApiServiceSettings settings;
+  private final @Nullable NotificationsApiServiceSettings settings;
   private final NotificationsApiServiceStub stub;
 
   /** Constructs an instance of NotificationsApiServiceClient with default settings. */
@@ -266,7 +269,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NotificationsApiServiceSettings getSettings() {
+  public final @Nullable NotificationsApiServiceSettings getSettings() {
     return settings;
   }
 
@@ -299,7 +302,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationSubscription getNotificationSubscription(
-      NotificationSubscriptionName name) {
+      @Nullable NotificationSubscriptionName name) {
     GetNotificationSubscriptionRequest request =
         GetNotificationSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -438,7 +441,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationSubscription createNotificationSubscription(
-      AccountName parent, NotificationSubscription notificationSubscription) {
+      @Nullable AccountName parent, NotificationSubscription notificationSubscription) {
     CreateNotificationSubscriptionRequest request =
         CreateNotificationSubscriptionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -697,7 +700,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
    * @param name Required. The name of the notification subscription to be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNotificationSubscription(NotificationSubscriptionName name) {
+  public final void deleteNotificationSubscription(@Nullable NotificationSubscriptionName name) {
     DeleteNotificationSubscriptionRequest request =
         DeleteNotificationSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -826,7 +829,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationSubscriptionsPagedResponse listNotificationSubscriptions(
-      AccountName parent) {
+      @Nullable AccountName parent) {
     ListNotificationSubscriptionsRequest request =
         ListNotificationSubscriptionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1048,12 +1051,13 @@ public class NotificationsApiServiceClient implements BackgroundResource {
           ListNotificationSubscriptionsPage> {
 
     private ListNotificationSubscriptionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationSubscriptionsRequest,
                 ListNotificationSubscriptionsResponse,
                 NotificationSubscription>
             context,
-        ListNotificationSubscriptionsResponse response) {
+        @Nullable ListNotificationSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -1063,18 +1067,20 @@ public class NotificationsApiServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationSubscriptionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationSubscriptionsRequest,
                 ListNotificationSubscriptionsResponse,
                 NotificationSubscription>
             context,
-        ListNotificationSubscriptionsResponse response) {
+        @Nullable ListNotificationSubscriptionsResponse response) {
       return new ListNotificationSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationSubscriptionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNotificationSubscriptionsRequest,
                 ListNotificationSubscriptionsResponse,
                 NotificationSubscription>
@@ -1093,7 +1099,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
           ListNotificationSubscriptionsFixedSizeCollection> {
 
     private ListNotificationSubscriptionsFixedSizeCollection(
-        List<ListNotificationSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1103,7 +1109,7 @@ public class NotificationsApiServiceClient implements BackgroundResource {
 
     @Override
     protected ListNotificationSubscriptionsFixedSizeCollection createCollection(
-        List<ListNotificationSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationSubscriptionsPage> pages, int collectionSize) {
       return new ListNotificationSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }

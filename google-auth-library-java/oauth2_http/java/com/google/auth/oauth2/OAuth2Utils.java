@@ -68,17 +68,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
 
-/**
- * Internal utilities for the com.google.auth.oauth2 namespace.
- *
- * <p>These classes are marked public but should be treated effectively as internal classes only.
- * They are not subject to any backwards compatibility guarantees and might change or be removed at
- * any time. They are provided only as a convenience for other libraries within the {@code
- * com.google.auth} family. Application developers should avoid using these classes directly; they
- * are not part of the public API.
- */
+/** Internal utilities for the com.google.auth.oauth2 namespace. */
 @InternalApi
 public class OAuth2Utils {
 
@@ -123,22 +114,6 @@ public class OAuth2Utils {
   static final double RETRY_RANDOMIZATION_FACTOR = 0.1;
   static final double RETRY_MULTIPLIER = 2;
   static final int DEFAULT_NUMBER_OF_RETRIES = 3;
-
-  static final Pattern WORKFORCE_AUDIENCE_PATTERN =
-      Pattern.compile(
-          "^//iam.googleapis.com/locations/(?<location>[^/]+)/workforcePools/(?<pool>[^/]+)/providers/(?<provider>[^/]+)$");
-  static final Pattern WORKLOAD_AUDIENCE_PATTERN =
-      Pattern.compile(
-          "^//iam.googleapis.com/projects/(?<project>[^/]+)/locations/(?<location>[^/]+)/workloadIdentityPools/(?<pool>[^/]+)/providers/(?<provider>[^/]+)$");
-
-  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT =
-      "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/%s/allowedLocations";
-
-  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL =
-      "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/%s/allowedLocations";
-
-  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL =
-      "https://iamcredentials.googleapis.com/v1/projects/%s/locations/global/workloadIdentityPools/%s/allowedLocations";
 
   // Includes expected server errors from Google token endpoint
   // Other 5xx codes are either not used or retries are unlikely to succeed

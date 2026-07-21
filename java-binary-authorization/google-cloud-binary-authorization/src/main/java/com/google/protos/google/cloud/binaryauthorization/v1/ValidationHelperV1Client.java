@@ -23,6 +23,8 @@ import com.google.protos.google.cloud.binaryauthorization.v1.stub.ValidationHelp
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -63,7 +65,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ValidateAttestationOccurrence</td>
- *      <td><p> Returns whether the given Attestation for the given image URI was signed by the given Attestor</td>
+ *      <td><p> Returns whether the given `Attestation` for the given image URI was signed by the given `Attestor`</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -133,9 +135,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ValidationHelperV1Client implements BackgroundResource {
-  private final ValidationHelperV1Settings settings;
+  private final @Nullable ValidationHelperV1Settings settings;
   private final ValidationHelperV1Stub stub;
 
   /** Constructs an instance of ValidationHelperV1Client with default settings. */
@@ -175,7 +178,7 @@ public class ValidationHelperV1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ValidationHelperV1Settings getSettings() {
+  public final @Nullable ValidationHelperV1Settings getSettings() {
     return settings;
   }
 
@@ -185,7 +188,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns whether the given Attestation for the given image URI was signed by the given Attestor
+   * Returns whether the given `Attestation` for the given image URI was signed by the given
+   * `Attestor`
    *
    * <p>Sample code:
    *
@@ -218,7 +222,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns whether the given Attestation for the given image URI was signed by the given Attestor
+   * Returns whether the given `Attestation` for the given image URI was signed by the given
+   * `Attestor`
    *
    * <p>Sample code:
    *

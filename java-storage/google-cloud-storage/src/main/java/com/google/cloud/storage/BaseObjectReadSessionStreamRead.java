@@ -151,7 +151,7 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
       super(rangeSpec, retryContext, onCloseCallback);
       this.readId = readId;
       this.hasher =
-          (rangeSpec.begin() == 0 && !(hasher instanceof Hasher.NoOpHasher))
+          (rangeSpec.begin() == 0)
               ? new CumulativeHasher(hasher, 0, rangeSpec.maxLength())
               : hasher;
       this.complete = SettableApiFuture.create();
@@ -284,7 +284,7 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
       super(rangeSpec, retryContext, onCloseCallback);
       this.readId = new AtomicLong(readId);
       this.hasher =
-          (rangeSpec.begin() == 0 && !(hasher instanceof Hasher.NoOpHasher))
+          (rangeSpec.begin() == 0)
               ? new CumulativeHasher(hasher, 0, rangeSpec.maxLength())
               : hasher;
       this.closed = false;

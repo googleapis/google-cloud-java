@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -669,9 +671,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DeveloperConnectClient implements BackgroundResource {
-  private final DeveloperConnectSettings settings;
+  private final @Nullable DeveloperConnectSettings settings;
   private final DeveloperConnectStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -719,7 +722,7 @@ public class DeveloperConnectClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DeveloperConnectSettings getSettings() {
+  public final @Nullable DeveloperConnectSettings getSettings() {
     return settings;
   }
 
@@ -767,7 +770,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param parent Required. Parent value for ListConnectionsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(LocationName parent) {
+  public final ListConnectionsPagedResponse listConnections(@Nullable LocationName parent) {
     ListConnectionsRequest request =
         ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -935,7 +938,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connection getConnection(ConnectionName name) {
+  public final Connection getConnection(@Nullable ConnectionName name) {
     GetConnectionRequest request =
         GetConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConnection(request);
@@ -1051,7 +1054,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Connection, OperationMetadata> createConnectionAsync(
-      LocationName parent, Connection connection, String connectionId) {
+      @Nullable LocationName parent, Connection connection, String connectionId) {
     CreateConnectionRequest request =
         CreateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1354,7 +1357,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConnectionAsync(
-      ConnectionName name) {
+      @Nullable ConnectionName name) {
     DeleteConnectionRequest request =
         DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteConnectionAsync(request);
@@ -1516,7 +1519,9 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GitRepositoryLink, OperationMetadata> createGitRepositoryLinkAsync(
-      ConnectionName parent, GitRepositoryLink gitRepositoryLink, String gitRepositoryLinkId) {
+      @Nullable ConnectionName parent,
+      GitRepositoryLink gitRepositoryLink,
+      String gitRepositoryLinkId) {
     CreateGitRepositoryLinkRequest request =
         CreateGitRepositoryLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1708,7 +1713,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGitRepositoryLinkAsync(
-      GitRepositoryLinkName name) {
+      @Nullable GitRepositoryLinkName name) {
     DeleteGitRepositoryLinkRequest request =
         DeleteGitRepositoryLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1875,7 +1880,8 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param parent Required. Parent value for ListGitRepositoryLinksRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGitRepositoryLinksPagedResponse listGitRepositoryLinks(ConnectionName parent) {
+  public final ListGitRepositoryLinksPagedResponse listGitRepositoryLinks(
+      @Nullable ConnectionName parent) {
     ListGitRepositoryLinksRequest request =
         ListGitRepositoryLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2049,7 +2055,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GitRepositoryLink getGitRepositoryLink(GitRepositoryLinkName name) {
+  public final GitRepositoryLink getGitRepositoryLink(@Nullable GitRepositoryLinkName name) {
     GetGitRepositoryLinkRequest request =
         GetGitRepositoryLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2176,7 +2182,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchReadWriteTokenResponse fetchReadWriteToken(
-      GitRepositoryLinkName gitRepositoryLink) {
+      @Nullable GitRepositoryLinkName gitRepositoryLink) {
     FetchReadWriteTokenRequest request =
         FetchReadWriteTokenRequest.newBuilder()
             .setGitRepositoryLink(gitRepositoryLink == null ? null : gitRepositoryLink.toString())
@@ -2303,7 +2309,8 @@ public class DeveloperConnectClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchReadTokenResponse fetchReadToken(GitRepositoryLinkName gitRepositoryLink) {
+  public final FetchReadTokenResponse fetchReadToken(
+      @Nullable GitRepositoryLinkName gitRepositoryLink) {
     FetchReadTokenRequest request =
         FetchReadTokenRequest.newBuilder()
             .setGitRepositoryLink(gitRepositoryLink == null ? null : gitRepositoryLink.toString())
@@ -2432,7 +2439,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchLinkableGitRepositoriesPagedResponse fetchLinkableGitRepositories(
-      ConnectionName connection) {
+      @Nullable ConnectionName connection) {
     FetchLinkableGitRepositoriesRequest request =
         FetchLinkableGitRepositoriesRequest.newBuilder()
             .setConnection(connection == null ? null : connection.toString())
@@ -2614,7 +2621,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchGitHubInstallationsResponse fetchGitHubInstallations(
-      ConnectionName connection) {
+      @Nullable ConnectionName connection) {
     FetchGitHubInstallationsRequest request =
         FetchGitHubInstallationsRequest.newBuilder()
             .setConnection(connection == null ? null : connection.toString())
@@ -2748,7 +2755,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchGitRefsPagedResponse fetchGitRefs(
-      GitRepositoryLinkName gitRepositoryLink, FetchGitRefsRequest.RefType refType) {
+      @Nullable GitRepositoryLinkName gitRepositoryLink, FetchGitRefsRequest.RefType refType) {
     FetchGitRefsRequest request =
         FetchGitRefsRequest.newBuilder()
             .setGitRepositoryLink(gitRepositoryLink == null ? null : gitRepositoryLink.toString())
@@ -2933,7 +2940,8 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param parent Required. Parent value for ListAccountConnectorsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountConnectorsPagedResponse listAccountConnectors(LocationName parent) {
+  public final ListAccountConnectorsPagedResponse listAccountConnectors(
+      @Nullable LocationName parent) {
     ListAccountConnectorsRequest request =
         ListAccountConnectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3106,7 +3114,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountConnector getAccountConnector(AccountConnectorName name) {
+  public final AccountConnector getAccountConnector(@Nullable AccountConnectorName name) {
     GetAccountConnectorRequest request =
         GetAccountConnectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3235,7 +3243,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AccountConnector, OperationMetadata> createAccountConnectorAsync(
-      LocationName parent, AccountConnector accountConnector, String accountConnectorId) {
+      @Nullable LocationName parent, AccountConnector accountConnector, String accountConnectorId) {
     CreateAccountConnectorRequest request =
         CreateAccountConnectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3542,7 +3550,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAccountConnectorAsync(
-      AccountConnectorName name) {
+      @Nullable AccountConnectorName name) {
     DeleteAccountConnectorRequest request =
         DeleteAccountConnectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3706,7 +3714,8 @@ public class DeveloperConnectClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchAccessTokenResponse fetchAccessToken(AccountConnectorName accountConnector) {
+  public final FetchAccessTokenResponse fetchAccessToken(
+      @Nullable AccountConnectorName accountConnector) {
     FetchAccessTokenRequest request =
         FetchAccessTokenRequest.newBuilder()
             .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
@@ -3828,7 +3837,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param parent Required. Parent value for ListUsersRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUsersPagedResponse listUsers(AccountConnectorName parent) {
+  public final ListUsersPagedResponse listUsers(@Nullable AccountConnectorName parent) {
     ListUsersRequest request =
         ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listUsers(request);
@@ -3997,7 +4006,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteUserAsync(UserName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteUserAsync(@Nullable UserName name) {
     DeleteUserRequest request =
         DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteUserAsync(request);
@@ -4152,7 +4161,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @param name Required. Name of the AccountConnector resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User fetchSelf(AccountConnectorName name) {
+  public final User fetchSelf(@Nullable AccountConnectorName name) {
     FetchSelfRequest request =
         FetchSelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return fetchSelf(request);
@@ -4267,7 +4276,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSelfAsync(
-      AccountConnectorName name) {
+      @Nullable AccountConnectorName name) {
     DeleteSelfRequest request =
         DeleteSelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSelfAsync(request);
@@ -4414,7 +4423,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StartOAuthResponse startOAuth(AccountConnectorName accountConnector) {
+  public final StartOAuthResponse startOAuth(@Nullable AccountConnectorName accountConnector) {
     StartOAuthRequest request =
         StartOAuthRequest.newBuilder()
             .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
@@ -4534,7 +4543,7 @@ public class DeveloperConnectClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FinishOAuthResponse finishOAuth(AccountConnectorName accountConnector) {
+  public final FinishOAuthResponse finishOAuth(@Nullable AccountConnectorName accountConnector) {
     FinishOAuthRequest request =
         FinishOAuthRequest.newBuilder()
             .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
@@ -4864,8 +4873,8 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
 
     private ListConnectionsPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       super(context, response);
     }
 
@@ -4875,14 +4884,14 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsPage createPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       return new ListConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionsPage> createPageAsync(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
         ApiFuture<ListConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4897,7 +4906,7 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListConnectionsFixedSizeCollection> {
 
     private ListConnectionsFixedSizeCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4907,7 +4916,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsFixedSizeCollection createCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       return new ListConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4946,10 +4955,11 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListGitRepositoryLinksPage> {
 
     private ListGitRepositoryLinksPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGitRepositoryLinksRequest, ListGitRepositoryLinksResponse, GitRepositoryLink>
             context,
-        ListGitRepositoryLinksResponse response) {
+        @Nullable ListGitRepositoryLinksResponse response) {
       super(context, response);
     }
 
@@ -4959,16 +4969,18 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListGitRepositoryLinksPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGitRepositoryLinksRequest, ListGitRepositoryLinksResponse, GitRepositoryLink>
             context,
-        ListGitRepositoryLinksResponse response) {
+        @Nullable ListGitRepositoryLinksResponse response) {
       return new ListGitRepositoryLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGitRepositoryLinksPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGitRepositoryLinksRequest, ListGitRepositoryLinksResponse, GitRepositoryLink>
             context,
         ApiFuture<ListGitRepositoryLinksResponse> futureResponse) {
@@ -4985,7 +4997,7 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListGitRepositoryLinksFixedSizeCollection> {
 
     private ListGitRepositoryLinksFixedSizeCollection(
-        List<ListGitRepositoryLinksPage> pages, int collectionSize) {
+        @Nullable List<ListGitRepositoryLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4995,7 +5007,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListGitRepositoryLinksFixedSizeCollection createCollection(
-        List<ListGitRepositoryLinksPage> pages, int collectionSize) {
+        @Nullable List<ListGitRepositoryLinksPage> pages, int collectionSize) {
       return new ListGitRepositoryLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5037,12 +5049,13 @@ public class DeveloperConnectClient implements BackgroundResource {
           FetchLinkableGitRepositoriesPage> {
 
     private FetchLinkableGitRepositoriesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchLinkableGitRepositoriesRequest,
                 FetchLinkableGitRepositoriesResponse,
                 LinkableGitRepository>
             context,
-        FetchLinkableGitRepositoriesResponse response) {
+        @Nullable FetchLinkableGitRepositoriesResponse response) {
       super(context, response);
     }
 
@@ -5052,18 +5065,20 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected FetchLinkableGitRepositoriesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchLinkableGitRepositoriesRequest,
                 FetchLinkableGitRepositoriesResponse,
                 LinkableGitRepository>
             context,
-        FetchLinkableGitRepositoriesResponse response) {
+        @Nullable FetchLinkableGitRepositoriesResponse response) {
       return new FetchLinkableGitRepositoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchLinkableGitRepositoriesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchLinkableGitRepositoriesRequest,
                 FetchLinkableGitRepositoriesResponse,
                 LinkableGitRepository>
@@ -5082,7 +5097,7 @@ public class DeveloperConnectClient implements BackgroundResource {
           FetchLinkableGitRepositoriesFixedSizeCollection> {
 
     private FetchLinkableGitRepositoriesFixedSizeCollection(
-        List<FetchLinkableGitRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<FetchLinkableGitRepositoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5092,7 +5107,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected FetchLinkableGitRepositoriesFixedSizeCollection createCollection(
-        List<FetchLinkableGitRepositoriesPage> pages, int collectionSize) {
+        @Nullable List<FetchLinkableGitRepositoriesPage> pages, int collectionSize) {
       return new FetchLinkableGitRepositoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5125,8 +5140,8 @@ public class DeveloperConnectClient implements BackgroundResource {
       extends AbstractPage<FetchGitRefsRequest, FetchGitRefsResponse, String, FetchGitRefsPage> {
 
     private FetchGitRefsPage(
-        PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
-        FetchGitRefsResponse response) {
+        @Nullable PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
+        @Nullable FetchGitRefsResponse response) {
       super(context, response);
     }
 
@@ -5136,14 +5151,14 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected FetchGitRefsPage createPage(
-        PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
-        FetchGitRefsResponse response) {
+        @Nullable PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
+        @Nullable FetchGitRefsResponse response) {
       return new FetchGitRefsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchGitRefsPage> createPageAsync(
-        PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
+        @Nullable PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> context,
         ApiFuture<FetchGitRefsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5157,7 +5172,8 @@ public class DeveloperConnectClient implements BackgroundResource {
           FetchGitRefsPage,
           FetchGitRefsFixedSizeCollection> {
 
-    private FetchGitRefsFixedSizeCollection(List<FetchGitRefsPage> pages, int collectionSize) {
+    private FetchGitRefsFixedSizeCollection(
+        @Nullable List<FetchGitRefsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5167,7 +5183,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected FetchGitRefsFixedSizeCollection createCollection(
-        List<FetchGitRefsPage> pages, int collectionSize) {
+        @Nullable List<FetchGitRefsPage> pages, int collectionSize) {
       return new FetchGitRefsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5205,9 +5221,11 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListAccountConnectorsPage> {
 
     private ListAccountConnectorsPage(
-        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+        @Nullable
+            PageContext<
+                ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
             context,
-        ListAccountConnectorsResponse response) {
+        @Nullable ListAccountConnectorsResponse response) {
       super(context, response);
     }
 
@@ -5217,15 +5235,19 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListAccountConnectorsPage createPage(
-        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+        @Nullable
+            PageContext<
+                ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
             context,
-        ListAccountConnectorsResponse response) {
+        @Nullable ListAccountConnectorsResponse response) {
       return new ListAccountConnectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountConnectorsPage> createPageAsync(
-        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+        @Nullable
+            PageContext<
+                ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
             context,
         ApiFuture<ListAccountConnectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5241,7 +5263,7 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListAccountConnectorsFixedSizeCollection> {
 
     private ListAccountConnectorsFixedSizeCollection(
-        List<ListAccountConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountConnectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5251,7 +5273,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListAccountConnectorsFixedSizeCollection createCollection(
-        List<ListAccountConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountConnectorsPage> pages, int collectionSize) {
       return new ListAccountConnectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5278,8 +5300,8 @@ public class DeveloperConnectClient implements BackgroundResource {
       extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
 
     private ListUsersPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       super(context, response);
     }
 
@@ -5289,14 +5311,14 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListUsersPage createPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       return new ListUsersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsersPage> createPageAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
         ApiFuture<ListUsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5306,7 +5328,7 @@ public class DeveloperConnectClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
 
-    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+    private ListUsersFixedSizeCollection(@Nullable List<ListUsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5316,7 +5338,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListUsersFixedSizeCollection createCollection(
-        List<ListUsersPage> pages, int collectionSize) {
+        @Nullable List<ListUsersPage> pages, int collectionSize) {
       return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5350,8 +5372,8 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5361,14 +5383,14 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5382,7 +5404,8 @@ public class DeveloperConnectClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5392,7 +5415,7 @@ public class DeveloperConnectClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

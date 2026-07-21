@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -381,9 +383,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PlaybooksClient implements BackgroundResource {
-  private final PlaybooksSettings settings;
+  private final @Nullable PlaybooksSettings settings;
   private final PlaybooksStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -429,7 +432,7 @@ public class PlaybooksClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PlaybooksSettings getSettings() {
+  public final @Nullable PlaybooksSettings getSettings() {
     return settings;
   }
 
@@ -478,7 +481,7 @@ public class PlaybooksClient implements BackgroundResource {
    * @param playbook Required. The playbook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Playbook createPlaybook(AgentName parent, Playbook playbook) {
+  public final Playbook createPlaybook(@Nullable AgentName parent, Playbook playbook) {
     CreatePlaybookRequest request =
         CreatePlaybookRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -596,7 +599,7 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePlaybook(PlaybookName name) {
+  public final void deletePlaybook(@Nullable PlaybookName name) {
     DeletePlaybookRequest request =
         DeletePlaybookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePlaybook(request);
@@ -710,7 +713,7 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPlaybooksPagedResponse listPlaybooks(AgentName parent) {
+  public final ListPlaybooksPagedResponse listPlaybooks(@Nullable AgentName parent) {
     ListPlaybooksRequest request =
         ListPlaybooksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -871,7 +874,7 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Playbook getPlaybook(PlaybookName name) {
+  public final Playbook getPlaybook(@Nullable PlaybookName name) {
     GetPlaybookRequest request =
         GetPlaybookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPlaybook(request);
@@ -1261,7 +1264,7 @@ public class PlaybooksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PlaybookVersion createPlaybookVersion(
-      PlaybookName parent, PlaybookVersion playbookVersion) {
+      @Nullable PlaybookName parent, PlaybookVersion playbookVersion) {
     CreatePlaybookVersionRequest request =
         CreatePlaybookVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1389,7 +1392,7 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PlaybookVersion getPlaybookVersion(PlaybookVersionName name) {
+  public final PlaybookVersion getPlaybookVersion(@Nullable PlaybookVersionName name) {
     GetPlaybookVersionRequest request =
         GetPlaybookVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1514,7 +1517,8 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestorePlaybookVersionResponse restorePlaybookVersion(PlaybookVersionName name) {
+  public final RestorePlaybookVersionResponse restorePlaybookVersion(
+      @Nullable PlaybookVersionName name) {
     RestorePlaybookVersionRequest request =
         RestorePlaybookVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1643,7 +1647,8 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPlaybookVersionsPagedResponse listPlaybookVersions(PlaybookName parent) {
+  public final ListPlaybookVersionsPagedResponse listPlaybookVersions(
+      @Nullable PlaybookName parent) {
     ListPlaybookVersionsRequest request =
         ListPlaybookVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1814,7 +1819,7 @@ public class PlaybooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePlaybookVersion(PlaybookVersionName name) {
+  public final void deletePlaybookVersion(@Nullable PlaybookVersionName name) {
     DeletePlaybookVersionRequest request =
         DeletePlaybookVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2162,8 +2167,8 @@ public class PlaybooksClient implements BackgroundResource {
           ListPlaybooksRequest, ListPlaybooksResponse, Playbook, ListPlaybooksPage> {
 
     private ListPlaybooksPage(
-        PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
-        ListPlaybooksResponse response) {
+        @Nullable PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
+        @Nullable ListPlaybooksResponse response) {
       super(context, response);
     }
 
@@ -2173,14 +2178,14 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListPlaybooksPage createPage(
-        PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
-        ListPlaybooksResponse response) {
+        @Nullable PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
+        @Nullable ListPlaybooksResponse response) {
       return new ListPlaybooksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPlaybooksPage> createPageAsync(
-        PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
+        @Nullable PageContext<ListPlaybooksRequest, ListPlaybooksResponse, Playbook> context,
         ApiFuture<ListPlaybooksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2194,7 +2199,8 @@ public class PlaybooksClient implements BackgroundResource {
           ListPlaybooksPage,
           ListPlaybooksFixedSizeCollection> {
 
-    private ListPlaybooksFixedSizeCollection(List<ListPlaybooksPage> pages, int collectionSize) {
+    private ListPlaybooksFixedSizeCollection(
+        @Nullable List<ListPlaybooksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2204,7 +2210,7 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListPlaybooksFixedSizeCollection createCollection(
-        List<ListPlaybooksPage> pages, int collectionSize) {
+        @Nullable List<ListPlaybooksPage> pages, int collectionSize) {
       return new ListPlaybooksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2242,9 +2248,10 @@ public class PlaybooksClient implements BackgroundResource {
           ListPlaybookVersionsPage> {
 
     private ListPlaybookVersionsPage(
-        PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
+        @Nullable
+            PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
             context,
-        ListPlaybookVersionsResponse response) {
+        @Nullable ListPlaybookVersionsResponse response) {
       super(context, response);
     }
 
@@ -2254,15 +2261,17 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListPlaybookVersionsPage createPage(
-        PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
+        @Nullable
+            PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
             context,
-        ListPlaybookVersionsResponse response) {
+        @Nullable ListPlaybookVersionsResponse response) {
       return new ListPlaybookVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPlaybookVersionsPage> createPageAsync(
-        PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
+        @Nullable
+            PageContext<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse, PlaybookVersion>
             context,
         ApiFuture<ListPlaybookVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2278,7 +2287,7 @@ public class PlaybooksClient implements BackgroundResource {
           ListPlaybookVersionsFixedSizeCollection> {
 
     private ListPlaybookVersionsFixedSizeCollection(
-        List<ListPlaybookVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListPlaybookVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2288,7 +2297,7 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListPlaybookVersionsFixedSizeCollection createCollection(
-        List<ListPlaybookVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListPlaybookVersionsPage> pages, int collectionSize) {
       return new ListPlaybookVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2322,8 +2331,8 @@ public class PlaybooksClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2333,14 +2342,14 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2354,7 +2363,8 @@ public class PlaybooksClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2364,7 +2374,7 @@ public class PlaybooksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

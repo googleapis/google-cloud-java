@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -377,9 +379,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ProductServiceClient implements BackgroundResource {
-  private final ProductServiceSettings settings;
+  private final @Nullable ProductServiceSettings settings;
   private final ProductServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -427,7 +430,7 @@ public class ProductServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ProductServiceSettings getSettings() {
+  public final @Nullable ProductServiceSettings getSettings() {
     return settings;
   }
 
@@ -488,7 +491,8 @@ public class ProductServiceClient implements BackgroundResource {
    *     Otherwise, an INVALID_ARGUMENT error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product createProduct(BranchName parent, Product product, String productId) {
+  public final Product createProduct(
+      @Nullable BranchName parent, Product product, String productId) {
     CreateProductRequest request =
         CreateProductRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -633,7 +637,7 @@ public class ProductServiceClient implements BackgroundResource {
    *     error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product getProduct(ProductName name) {
+  public final Product getProduct(@Nullable ProductName name) {
     GetProductRequest request =
         GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
@@ -760,7 +764,7 @@ public class ProductServiceClient implements BackgroundResource {
    *     this branch exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductsPagedResponse listProducts(BranchName parent) {
+  public final ListProductsPagedResponse listProducts(@Nullable BranchName parent) {
     ListProductsRequest request =
         ListProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1051,7 +1055,7 @@ public class ProductServiceClient implements BackgroundResource {
    *     be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProduct(ProductName name) {
+  public final void deleteProduct(@Nullable ProductName name) {
     DeleteProductRequest request =
         DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProduct(request);
@@ -1798,7 +1802,7 @@ public class ProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
-      addFulfillmentPlacesAsync(ProductName product) {
+      addFulfillmentPlacesAsync(@Nullable ProductName product) {
     AddFulfillmentPlacesRequest request =
         AddFulfillmentPlacesRequest.newBuilder()
             .setProduct(product == null ? null : product.toString())
@@ -2108,7 +2112,7 @@ public class ProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>
-      removeFulfillmentPlacesAsync(ProductName product) {
+      removeFulfillmentPlacesAsync(@Nullable ProductName product) {
     RemoveFulfillmentPlacesRequest request =
         RemoveFulfillmentPlacesRequest.newBuilder()
             .setProduct(product == null ? null : product.toString())
@@ -2416,7 +2420,7 @@ public class ProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
-      addLocalInventoriesAsync(ProductName product) {
+      addLocalInventoriesAsync(@Nullable ProductName product) {
     AddLocalInventoriesRequest request =
         AddLocalInventoriesRequest.newBuilder()
             .setProduct(product == null ? null : product.toString())
@@ -2703,7 +2707,7 @@ public class ProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>
-      removeLocalInventoriesAsync(ProductName product) {
+      removeLocalInventoriesAsync(@Nullable ProductName product) {
     RemoveLocalInventoriesRequest request =
         RemoveLocalInventoriesRequest.newBuilder()
             .setProduct(product == null ? null : product.toString())
@@ -2991,8 +2995,8 @@ public class ProductServiceClient implements BackgroundResource {
       extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
 
     private ListProductsPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       super(context, response);
     }
 
@@ -3002,14 +3006,14 @@ public class ProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsPage createPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       return new ListProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsPage> createPageAsync(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
         ApiFuture<ListProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3023,7 +3027,8 @@ public class ProductServiceClient implements BackgroundResource {
           ListProductsPage,
           ListProductsFixedSizeCollection> {
 
-    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+    private ListProductsFixedSizeCollection(
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3033,7 +3038,7 @@ public class ProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductsFixedSizeCollection createCollection(
-        List<ListProductsPage> pages, int collectionSize) {
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       return new ListProductsFixedSizeCollection(pages, collectionSize);
     }
   }

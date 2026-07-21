@@ -26,6 +26,8 @@ import com.google.shopping.merchant.accounts.v1beta.stub.CheckoutSettingsService
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -192,10 +194,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CheckoutSettingsServiceClient implements BackgroundResource {
-  private final CheckoutSettingsServiceSettings settings;
+  private final @Nullable CheckoutSettingsServiceSettings settings;
   private final CheckoutSettingsServiceStub stub;
 
   /** Constructs an instance of CheckoutSettingsServiceClient with default settings. */
@@ -236,7 +239,7 @@ public class CheckoutSettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CheckoutSettingsServiceSettings getSettings() {
+  public final @Nullable CheckoutSettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -268,7 +271,7 @@ public class CheckoutSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}/programs/{program}/checkoutSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CheckoutSettings getCheckoutSettings(CheckoutSettingsName name) {
+  public final CheckoutSettings getCheckoutSettings(@Nullable CheckoutSettingsName name) {
     GetCheckoutSettingsRequest request =
         GetCheckoutSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -393,7 +396,7 @@ public class CheckoutSettingsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckoutSettings createCheckoutSettings(
-      ProgramName parent, CheckoutSettings checkoutSettings) {
+      @Nullable ProgramName parent, CheckoutSettings checkoutSettings) {
     CreateCheckoutSettingsRequest request =
         CreateCheckoutSettingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -621,7 +624,7 @@ public class CheckoutSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}/programs/{program}/checkoutSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCheckoutSettings(CheckoutSettingsName name) {
+  public final void deleteCheckoutSettings(@Nullable CheckoutSettingsName name) {
     DeleteCheckoutSettingsRequest request =
         DeleteCheckoutSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())

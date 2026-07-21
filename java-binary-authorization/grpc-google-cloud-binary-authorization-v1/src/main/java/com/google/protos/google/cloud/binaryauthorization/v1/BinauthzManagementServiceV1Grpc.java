@@ -461,12 +461,15 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
-     * image. There is at most one policy per project. All image admission
-     * requests are permitted if a project has no policy.
-     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does not have one.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest
+     * to a container image, before the project is allowed to deploy that image.
+     * There is at most one policy per project. All image admission requests are
+     * permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does
+     * not have one.
      * </pre>
      */
     default void getPolicy(
@@ -481,11 +484,12 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of
+     * the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
+     * always updated as a whole, to avoid race conditions with concurrent policy
+     * enforcement (or management!) requests. Returns `NOT_FOUND` if the project
+     * does not exist, `INVALID_ARGUMENT` if the request is malformed.
      * </pre>
      */
     default void updatePolicy(
@@ -501,9 +505,11 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and
+     * returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns
+     * `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the
+     * request is malformed, `ALREADY_EXISTS` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
      * </pre>
      */
@@ -521,7 +527,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     default void getAttestor(
@@ -538,7 +545,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     default void updateAttestor(
@@ -555,7 +563,7 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns INVALID_ARGUMENT if the project does not exist.
+     * Returns `INVALID_ARGUMENT` if the project does not exist.
      * </pre>
      */
     default void listAttestors(
@@ -571,7 +579,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Returns `NOT_FOUND` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
@@ -631,12 +640,15 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
-     * image. There is at most one policy per project. All image admission
-     * requests are permitted if a project has no policy.
-     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does not have one.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest
+     * to a container image, before the project is allowed to deploy that image.
+     * There is at most one policy per project. All image admission requests are
+     * permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does
+     * not have one.
      * </pre>
      */
     public void getPolicy(
@@ -652,11 +664,12 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of
+     * the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
+     * always updated as a whole, to avoid race conditions with concurrent policy
+     * enforcement (or management!) requests. Returns `NOT_FOUND` if the project
+     * does not exist, `INVALID_ARGUMENT` if the request is malformed.
      * </pre>
      */
     public void updatePolicy(
@@ -674,9 +687,11 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and
+     * returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns
+     * `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the
+     * request is malformed, `ALREADY_EXISTS` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
      * </pre>
      */
@@ -696,7 +711,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public void getAttestor(
@@ -715,7 +731,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public void updateAttestor(
@@ -734,7 +751,7 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns INVALID_ARGUMENT if the project does not exist.
+     * Returns `INVALID_ARGUMENT` if the project does not exist.
      * </pre>
      */
     public void listAttestors(
@@ -752,7 +769,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Returns `NOT_FOUND` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
@@ -794,12 +812,15 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
-     * image. There is at most one policy per project. All image admission
-     * requests are permitted if a project has no policy.
-     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does not have one.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest
+     * to a container image, before the project is allowed to deploy that image.
+     * There is at most one policy per project. All image admission requests are
+     * permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does
+     * not have one.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy getPolicy(
@@ -813,11 +834,12 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of
+     * the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
+     * always updated as a whole, to avoid race conditions with concurrent policy
+     * enforcement (or management!) requests. Returns `NOT_FOUND` if the project
+     * does not exist, `INVALID_ARGUMENT` if the request is malformed.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy updatePolicy(
@@ -831,9 +853,11 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and
+     * returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns
+     * `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the
+     * request is malformed, `ALREADY_EXISTS` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
      * </pre>
      */
@@ -849,7 +873,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor getAttestor(
@@ -864,7 +889,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor updateAttestor(
@@ -879,7 +905,7 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns INVALID_ARGUMENT if the project does not exist.
+     * Returns `INVALID_ARGUMENT` if the project does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse
@@ -895,7 +921,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Returns `NOT_FOUND` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
@@ -936,12 +963,15 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
-     * image. There is at most one policy per project. All image admission
-     * requests are permitted if a project has no policy.
-     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does not have one.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest
+     * to a container image, before the project is allowed to deploy that image.
+     * There is at most one policy per project. All image admission requests are
+     * permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does
+     * not have one.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy getPolicy(
@@ -954,11 +984,12 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of
+     * the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
+     * always updated as a whole, to avoid race conditions with concurrent policy
+     * enforcement (or management!) requests. Returns `NOT_FOUND` if the project
+     * does not exist, `INVALID_ARGUMENT` if the request is malformed.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy updatePolicy(
@@ -971,9 +1002,11 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and
+     * returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns
+     * `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the
+     * request is malformed, `ALREADY_EXISTS` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
      * </pre>
      */
@@ -989,7 +1022,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor getAttestor(
@@ -1003,7 +1037,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor updateAttestor(
@@ -1018,7 +1053,7 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns INVALID_ARGUMENT if the project does not exist.
+     * Returns `INVALID_ARGUMENT` if the project does not exist.
      * </pre>
      */
     public com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse
@@ -1033,7 +1068,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Returns `NOT_FOUND` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
@@ -1074,12 +1110,15 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest to
-     * a container image, before the project is allowed to deploy that
-     * image. There is at most one policy per project. All image admission
-     * requests are permitted if a project has no policy.
-     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this project. Returns a default
-     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does not have one.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] specifies the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] that must attest
+     * to a container image, before the project is allowed to deploy that image.
+     * There is at most one policy per project. All image admission requests are
+     * permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1.Policy] for this
+     * project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1.Policy] if the project does
+     * not have one.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1095,11 +1134,12 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the
-     * new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race
-     * conditions with concurrent policy enforcement (or management!)
-     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
-     * if the request is malformed.
+     * Creates or updates a project's
+     * [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of
+     * the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
+     * always updated as a whole, to avoid race conditions with concurrent policy
+     * enforcement (or management!) requests. Returns `NOT_FOUND` if the project
+     * does not exist, `INVALID_ARGUMENT` if the request is malformed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1115,9 +1155,11 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new
-     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist,
-     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and
+     * returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns
+     * `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the
+     * request is malformed, `ALREADY_EXISTS` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
      * </pre>
      */
@@ -1135,7 +1177,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1152,7 +1195,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
+     * Returns `NOT_FOUND` if the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1169,7 +1213,7 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      * <pre>
      * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor].
-     * Returns INVALID_ARGUMENT if the project does not exist.
+     * Returns `INVALID_ARGUMENT` if the project does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1185,7 +1229,8 @@ public final class BinauthzManagementServiceV1Grpc {
      *
      *
      * <pre>
-     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Returns `NOT_FOUND` if the
      * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
      * </pre>
      */

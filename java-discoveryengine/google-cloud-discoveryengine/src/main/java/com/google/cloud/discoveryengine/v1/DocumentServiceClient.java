@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -277,9 +279,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DocumentServiceClient implements BackgroundResource {
-  private final DocumentServiceSettings settings;
+  private final @Nullable DocumentServiceSettings settings;
   private final DocumentServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -327,7 +330,7 @@ public class DocumentServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DocumentServiceSettings getSettings() {
+  public final @Nullable DocumentServiceSettings getSettings() {
     return settings;
   }
 
@@ -382,7 +385,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document getDocument(DocumentName name) {
+  public final Document getDocument(@Nullable DocumentName name) {
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
@@ -515,7 +518,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDocumentsPagedResponse listDocuments(BranchName parent) {
+  public final ListDocumentsPagedResponse listDocuments(@Nullable BranchName parent) {
     ListDocumentsRequest request =
         ListDocumentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -711,7 +714,8 @@ public class DocumentServiceClient implements BackgroundResource {
    *     a length limit of 128 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document createDocument(BranchName parent, Document document, String documentId) {
+  public final Document createDocument(
+      @Nullable BranchName parent, Document document, String documentId) {
     CreateDocumentRequest request =
         CreateDocumentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -963,7 +967,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDocument(DocumentName name) {
+  public final void deleteDocument(@Nullable DocumentName name) {
     DeleteDocumentRequest request =
         DeleteDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDocument(request);
@@ -1356,7 +1360,8 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(BranchName parent) {
+  public final BatchGetDocumentsMetadataResponse batchGetDocumentsMetadata(
+      @Nullable BranchName parent) {
     BatchGetDocumentsMetadataRequest request =
         BatchGetDocumentsMetadataRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1525,8 +1530,8 @@ public class DocumentServiceClient implements BackgroundResource {
           ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage> {
 
     private ListDocumentsPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       super(context, response);
     }
 
@@ -1536,14 +1541,14 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsPage createPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       return new ListDocumentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDocumentsPage> createPageAsync(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
         ApiFuture<ListDocumentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1557,7 +1562,8 @@ public class DocumentServiceClient implements BackgroundResource {
           ListDocumentsPage,
           ListDocumentsFixedSizeCollection> {
 
-    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+    private ListDocumentsFixedSizeCollection(
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1567,7 +1573,7 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsFixedSizeCollection createCollection(
-        List<ListDocumentsPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       return new ListDocumentsFixedSizeCollection(pages, collectionSize);
     }
   }

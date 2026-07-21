@@ -16,8 +16,12 @@
 
 package com.google.cloud.memorystore.v1beta.stub;
 
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAuthTokensPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -40,17 +44,43 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1beta.AddAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1beta.AuthToken;
+import com.google.cloud.memorystore.v1beta.Backup;
+import com.google.cloud.memorystore.v1beta.BackupCollection;
+import com.google.cloud.memorystore.v1beta.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1beta.CertificateAuthority;
 import com.google.cloud.memorystore.v1beta.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1beta.ExportBackupRequest;
+import com.google.cloud.memorystore.v1beta.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1beta.GetAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest;
+import com.google.cloud.memorystore.v1beta.GetBackupRequest;
 import com.google.cloud.memorystore.v1beta.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.GetInstanceRequest;
 import com.google.cloud.memorystore.v1beta.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1beta.Instance;
+import com.google.cloud.memorystore.v1beta.ListAuthTokensRequest;
+import com.google.cloud.memorystore.v1beta.ListAuthTokensResponse;
+import com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest;
+import com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse;
+import com.google.cloud.memorystore.v1beta.ListBackupsRequest;
+import com.google.cloud.memorystore.v1beta.ListBackupsResponse;
 import com.google.cloud.memorystore.v1beta.ListInstancesRequest;
 import com.google.cloud.memorystore.v1beta.ListInstancesResponse;
+import com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest;
+import com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse;
 import com.google.cloud.memorystore.v1beta.OperationMetadata;
+import com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1beta.StartMigrationRequest;
+import com.google.cloud.memorystore.v1beta.TokenAuthUser;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -63,6 +93,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -70,12 +101,15 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(Backup.getDescriptor())
+          .add(TokenAuthUser.getDescriptor())
           .add(Instance.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
@@ -349,6 +383,689 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<RescheduleMaintenanceRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.memorystore.v1beta.Memorystore/RescheduleMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RescheduleMaintenanceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:rescheduleMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RescheduleMaintenanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.memorystore.v1beta.Memorystore/ListBackupCollections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupCollectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/backupCollections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupCollectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupCollectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupCollectionsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupCollectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetBackupCollection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupCollectionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/backupCollections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupCollectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupCollectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupCollection>newBuilder()
+                      .setDefaultInstance(BackupCollection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/ListBackups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/backupCollections/*}/backups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      ApiMethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetBackup")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetBackupRequest>newBuilder()
+                  .setPath(
+                      "/v1beta/{name=projects/*/locations/*/backupCollections/*/backups/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Backup>newBuilder()
+                  .setDefaultInstance(Backup.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/DeleteBackup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/backupCollections/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportBackupRequest, Operation>
+      exportBackupMethodDescriptor =
+          ApiMethodDescriptor.<ExportBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/ExportBackup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/backupCollections/*/backups/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<BackupInstanceRequest, Operation>
+      backupInstanceMethodDescriptor =
+          ApiMethodDescriptor.<BackupInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/BackupInstance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BackupInstanceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:backup",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BackupInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BackupInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BackupInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StartMigrationRequest, Operation>
+      startMigrationMethodDescriptor =
+          ApiMethodDescriptor.<StartMigrationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/StartMigration")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartMigrationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:startMigration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartMigrationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<FinishMigrationRequest, Operation>
+      finishMigrationMethodDescriptor =
+          ApiMethodDescriptor.<FinishMigrationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/FinishMigration")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FinishMigrationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:finishMigration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FinishMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (FinishMigrationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersMethodDescriptor =
+          ApiMethodDescriptor.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/ListTokenAuthUsers")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTokenAuthUsersRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/instances/*}/tokenAuthUsers",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTokenAuthUsersResponse>newBuilder()
+                      .setDefaultInstance(ListTokenAuthUsersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTokenAuthUserRequest, TokenAuthUser>
+      getTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetTokenAuthUser")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TokenAuthUser>newBuilder()
+                      .setDefaultInstance(TokenAuthUser.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAuthTokensRequest, ListAuthTokensResponse>
+      listAuthTokensMethodDescriptor =
+          ApiMethodDescriptor.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/ListAuthTokens")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuthTokensRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/instances/*/tokenAuthUsers/*}/authTokens",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuthTokensResponse>newBuilder()
+                      .setDefaultInstance(ListAuthTokensResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuthTokenRequest, AuthToken>
+      getAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<GetAuthTokenRequest, AuthToken>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetAuthToken")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuthToken>newBuilder()
+                      .setDefaultInstance(AuthToken.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AddTokenAuthUserRequest, Operation>
+      addTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<AddTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/AddTokenAuthUser")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{instance=projects/*/locations/*/instances/*}:addTokenAuthUser",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearInstance().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/DeleteTokenAuthUser")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<AddAuthTokenRequest, Operation>
+      addAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<AddAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/AddAuthToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{tokenAuthUser=projects/*/locations/*/instances/*/tokenAuthUsers/*}:addAuthToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "tokenAuthUser", request.getTokenAuthUser());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearTokenAuthUser().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAuthTokenRequest, Operation>
+      deleteAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/DeleteAuthToken")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -435,6 +1152,56 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private final UnaryCallable<
           GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
       getSharedRegionalCertificateAuthorityCallable;
+  private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable;
+  private final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable;
+  private final UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable;
+  private final UnaryCallable<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable;
+  private final UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable;
+  private final OperationCallable<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationCallable;
+  private final UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable;
+  private final OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationCallable;
+  private final UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable;
+  private final OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable;
+  private final UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable;
+  private final OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable;
+  private final UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable;
+  private final UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable;
+  private final UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable;
+  private final OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable;
+  private final UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable;
+  private final OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable;
+  private final UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable;
+  private final OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable;
+  private final UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable;
+  private final OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -599,6 +1366,229 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceTransportSettings =
+            HttpJsonCallSettings.<RescheduleMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+        listBackupCollectionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListBackupCollectionsRequest, ListBackupCollectionsResponse>newBuilder()
+                .setMethodDescriptor(listBackupCollectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionTransportSettings =
+            HttpJsonCallSettings.<GetBackupCollectionRequest, BackupCollection>newBuilder()
+                .setMethodDescriptor(getBackupCollectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
+        HttpJsonCallSettings.<ExportBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<BackupInstanceRequest, Operation> backupInstanceTransportSettings =
+        HttpJsonCallSettings.<BackupInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(backupInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
+        HttpJsonCallSettings.<StartMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(startMigrationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<FinishMigrationRequest, Operation> finishMigrationTransportSettings =
+        HttpJsonCallSettings.<FinishMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(finishMigrationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+        listTokenAuthUsersTransportSettings =
+            HttpJsonCallSettings.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+                .setMethodDescriptor(listTokenAuthUsersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+            .setMethodDescriptor(getTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListAuthTokensRequest, ListAuthTokensResponse>
+        listAuthTokensTransportSettings =
+            HttpJsonCallSettings.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+                .setMethodDescriptor(listAuthTokensMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenTransportSettings =
+        HttpJsonCallSettings.<GetAuthTokenRequest, AuthToken>newBuilder()
+            .setMethodDescriptor(getAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<AddTokenAuthUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(addTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getInstance())
+            .build();
+    HttpJsonCallSettings<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserTransportSettings =
+            HttpJsonCallSettings.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteTokenAuthUserMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<AddAuthTokenRequest, Operation> addAuthTokenTransportSettings =
+        HttpJsonCallSettings.<AddAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(addAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("token_auth_user", String.valueOf(request.getTokenAuthUser()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getTokenAuthUser())
+            .build();
+    HttpJsonCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenTransportSettings =
+        HttpJsonCallSettings.<DeleteAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -669,6 +1659,146 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
             getSharedRegionalCertificateAuthorityTransportSettings,
             settings.getSharedRegionalCertificateAuthoritySettings(),
             clientContext);
+    this.rescheduleMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceSettings(),
+            clientContext);
+    this.rescheduleMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBackupCollectionsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.listBackupCollectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupCollectionsTransportSettings,
+            settings.listBackupCollectionsSettings(),
+            clientContext);
+    this.getBackupCollectionCallable =
+        callableFactory.createUnaryCallable(
+            getBackupCollectionTransportSettings,
+            settings.getBackupCollectionSettings(),
+            clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.exportBackupCallable =
+        callableFactory.createUnaryCallable(
+            exportBackupTransportSettings, settings.exportBackupSettings(), clientContext);
+    this.exportBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            exportBackupTransportSettings,
+            settings.exportBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.backupInstanceCallable =
+        callableFactory.createUnaryCallable(
+            backupInstanceTransportSettings, settings.backupInstanceSettings(), clientContext);
+    this.backupInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            backupInstanceTransportSettings,
+            settings.backupInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.startMigrationCallable =
+        callableFactory.createUnaryCallable(
+            startMigrationTransportSettings, settings.startMigrationSettings(), clientContext);
+    this.startMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            startMigrationTransportSettings,
+            settings.startMigrationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.finishMigrationCallable =
+        callableFactory.createUnaryCallable(
+            finishMigrationTransportSettings, settings.finishMigrationSettings(), clientContext);
+    this.finishMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            finishMigrationTransportSettings,
+            settings.finishMigrationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listTokenAuthUsersCallable =
+        callableFactory.createUnaryCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.listTokenAuthUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.getTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            getTokenAuthUserTransportSettings, settings.getTokenAuthUserSettings(), clientContext);
+    this.listAuthTokensCallable =
+        callableFactory.createUnaryCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.listAuthTokensPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.getAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            getAuthTokenTransportSettings, settings.getAuthTokenSettings(), clientContext);
+    this.addTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            addTokenAuthUserTransportSettings, settings.addTokenAuthUserSettings(), clientContext);
+    this.addTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            addTokenAuthUserTransportSettings,
+            settings.addTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserSettings(),
+            clientContext);
+    this.deleteTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.addAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            addAuthTokenTransportSettings, settings.addAuthTokenSettings(), clientContext);
+    this.addAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            addAuthTokenTransportSettings,
+            settings.addAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthTokenTransportSettings, settings.deleteAuthTokenSettings(), clientContext);
+    this.deleteAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthTokenTransportSettings,
+            settings.deleteAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -693,6 +1823,24 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
     methodDescriptors.add(deleteInstanceMethodDescriptor);
     methodDescriptors.add(getCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
+    methodDescriptors.add(rescheduleMaintenanceMethodDescriptor);
+    methodDescriptors.add(listBackupCollectionsMethodDescriptor);
+    methodDescriptors.add(getBackupCollectionMethodDescriptor);
+    methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(getBackupMethodDescriptor);
+    methodDescriptors.add(deleteBackupMethodDescriptor);
+    methodDescriptors.add(exportBackupMethodDescriptor);
+    methodDescriptors.add(backupInstanceMethodDescriptor);
+    methodDescriptors.add(startMigrationMethodDescriptor);
+    methodDescriptors.add(finishMigrationMethodDescriptor);
+    methodDescriptors.add(listTokenAuthUsersMethodDescriptor);
+    methodDescriptors.add(getTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(listAuthTokensMethodDescriptor);
+    methodDescriptors.add(getAuthTokenMethodDescriptor);
+    methodDescriptors.add(addTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(deleteTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(addAuthTokenMethodDescriptor);
+    methodDescriptors.add(deleteAuthTokenMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -762,6 +1910,181 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
           GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
       getSharedRegionalCertificateAuthorityCallable() {
     return getSharedRegionalCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    return rescheduleMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return rescheduleMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    return listBackupCollectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    return listBackupCollectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupCollectionRequest, BackupCollection> getBackupCollectionCallable() {
+    return getBackupCollectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    return exportBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationCallable() {
+    return exportBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable() {
+    return backupInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationCallable() {
+    return backupInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable() {
+    return startMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable() {
+    return startMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
+    return finishMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable() {
+    return finishMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    return listTokenAuthUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    return listTokenAuthUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    return getTokenAuthUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    return listAuthTokensCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    return listAuthTokensPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    return getAuthTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    return addTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    return addTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    return deleteTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    return deleteTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    return addAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    return addAuthTokenOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    return deleteAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    return deleteAuthTokenOperationCallable;
   }
 
   @Override

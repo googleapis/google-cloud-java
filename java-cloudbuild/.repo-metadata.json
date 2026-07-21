@@ -5,14 +5,13 @@
   "api_description": "lets you build software quickly across all languages. Get complete control over defining custom workflows for building, testing, and deploying across multiple environments such as VMs, serverless, Kubernetes, or Firebase.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-build/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-cloudbuild",
   "distribution_name": "com.google.cloud:google-cloud-build",
   "api_id": "cloudbuild.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5226584"
 }

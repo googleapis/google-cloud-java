@@ -5,13 +5,12 @@
   "api_description": "BigQuery Migration API",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquerymigration/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigquerymigration",
   "distribution_name": "com.google.cloud:google-cloud-bigquerymigration",
   "api_id": "bigquerymigration.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/bigquery/docs/reference/rest"
 }

@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -249,9 +251,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TeamServiceClient implements BackgroundResource {
-  private final TeamServiceSettings settings;
+  private final @Nullable TeamServiceSettings settings;
   private final TeamServiceStub stub;
 
   /** Constructs an instance of TeamServiceClient with default settings. */
@@ -290,7 +293,7 @@ public class TeamServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TeamServiceSettings getSettings() {
+  public final @Nullable TeamServiceSettings getSettings() {
     return settings;
   }
 
@@ -320,7 +323,7 @@ public class TeamServiceClient implements BackgroundResource {
    *     `networks/{network_code}/teams/{team_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Team getTeam(TeamName name) {
+  public final Team getTeam(@Nullable TeamName name) {
     GetTeamRequest request =
         GetTeamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTeam(request);
@@ -432,7 +435,7 @@ public class TeamServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTeamsPagedResponse listTeams(NetworkName parent) {
+  public final ListTeamsPagedResponse listTeams(@Nullable NetworkName parent) {
     ListTeamsRequest request =
         ListTeamsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTeams(request);
@@ -601,7 +604,7 @@ public class TeamServiceClient implements BackgroundResource {
    * @param team Required. The `Team` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Team createTeam(NetworkName parent, Team team) {
+  public final Team createTeam(@Nullable NetworkName parent, Team team) {
     CreateTeamRequest request =
         CreateTeamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -723,7 +726,7 @@ public class TeamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateTeamsResponse batchCreateTeams(
-      NetworkName parent, List<CreateTeamRequest> requests) {
+      @Nullable NetworkName parent, List<CreateTeamRequest> requests) {
     BatchCreateTeamsRequest request =
         BatchCreateTeamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -936,7 +939,7 @@ public class TeamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateTeamsResponse batchUpdateTeams(
-      NetworkName parent, List<UpdateTeamRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateTeamRequest> requests) {
     BatchUpdateTeamsRequest request =
         BatchUpdateTeamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1061,7 +1064,7 @@ public class TeamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateTeamsResponse batchActivateTeams(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateTeamsRequest request =
         BatchActivateTeamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1184,7 +1187,7 @@ public class TeamServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateTeamsResponse batchDeactivateTeams(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateTeamsRequest request =
         BatchDeactivateTeamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1336,8 +1339,8 @@ public class TeamServiceClient implements BackgroundResource {
       extends AbstractPage<ListTeamsRequest, ListTeamsResponse, Team, ListTeamsPage> {
 
     private ListTeamsPage(
-        PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
-        ListTeamsResponse response) {
+        @Nullable PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
+        @Nullable ListTeamsResponse response) {
       super(context, response);
     }
 
@@ -1347,14 +1350,14 @@ public class TeamServiceClient implements BackgroundResource {
 
     @Override
     protected ListTeamsPage createPage(
-        PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
-        ListTeamsResponse response) {
+        @Nullable PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
+        @Nullable ListTeamsResponse response) {
       return new ListTeamsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTeamsPage> createPageAsync(
-        PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
+        @Nullable PageContext<ListTeamsRequest, ListTeamsResponse, Team> context,
         ApiFuture<ListTeamsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1364,7 +1367,7 @@ public class TeamServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTeamsRequest, ListTeamsResponse, Team, ListTeamsPage, ListTeamsFixedSizeCollection> {
 
-    private ListTeamsFixedSizeCollection(List<ListTeamsPage> pages, int collectionSize) {
+    private ListTeamsFixedSizeCollection(@Nullable List<ListTeamsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1374,7 +1377,7 @@ public class TeamServiceClient implements BackgroundResource {
 
     @Override
     protected ListTeamsFixedSizeCollection createCollection(
-        List<ListTeamsPage> pages, int collectionSize) {
+        @Nullable List<ListTeamsPage> pages, int collectionSize) {
       return new ListTeamsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -5,13 +5,12 @@
   "api_description": "allows developers to unlock insights from your documents with machine learning.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-document-ai",
   "distribution_name": "com.google.cloud:google-cloud-document-ai",
   "api_id": "documentai.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559755"
 }

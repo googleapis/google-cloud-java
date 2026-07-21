@@ -31,8 +31,6 @@
 
 package com.google.auth.oauth2;
 
-import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
-import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -156,12 +154,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8);
     return createDefaultBuilderWithKey(privateKey);
   }
-
-  @org.junit.jupiter.api.BeforeEach
-  void setUp() {}
-
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {}
 
   @Test
   void setLifetime() throws IOException {
@@ -367,7 +359,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   @Test
   void createdScoped_withAud_noUniverse_jwtWithScopesDisabled_accessToken() throws IOException {
     GoogleCredentials credentials = createDefaultBuilderWithToken(ACCESS_TOKEN).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     // No aud, no scopes gives an exception.
     IOException exception =
@@ -377,8 +368,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
         "expected to fail with exception");
 
     GoogleCredentials scopedCredentials = credentials.createScoped(SCOPES);
-    scopedCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(scopedCredentials.clock));
     assertEquals(false, credentials.isExplicitUniverseDomain());
     assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, credentials.getUniverseDomain());
     Map<String, List<String>> metadata = scopedCredentials.getRequestMetadata(CALL_URI);
@@ -389,22 +378,17 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   void createdScoped_withUniverse_selfSignedJwt() throws IOException {
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setUniverseDomain("foo.bar").build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     IOException exception =
         assertThrows(IOException.class, () -> credentials.getRequestMetadata(null));
     assertTrue(
         exception.getMessage().contains("Scopes and uri are not configured for service account"));
 
     GoogleCredentials scopedCredentials = credentials.createScoped("dummy.scope");
-    scopedCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(scopedCredentials.clock));
     Map<String, List<String>> metadata = scopedCredentials.getRequestMetadata(null);
     verifyJwtAccess(metadata, "dummy.scope");
 
     // Recreate to avoid jwt caching.
     scopedCredentials = credentials.createScoped("dummy.scope2");
-    scopedCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(scopedCredentials.clock));
     assertEquals(true, scopedCredentials.isExplicitUniverseDomain());
     assertEquals("foo.bar", scopedCredentials.getUniverseDomain());
     metadata = scopedCredentials.getRequestMetadata(CALL_URI);
@@ -414,8 +398,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     scopedCredentials =
         credentials.createScoped(
             Collections.<String>emptyList(), Arrays.asList("dummy.default.scope"));
-    scopedCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(scopedCredentials.clock));
     metadata = scopedCredentials.getRequestMetadata(null);
     verifyJwtAccess(metadata, "dummy.default.scope");
 
@@ -423,8 +405,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     scopedCredentials =
         credentials.createScoped(
             Collections.<String>emptyList(), Arrays.asList("dummy.default.scope2"));
-    scopedCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(scopedCredentials.clock));
     metadata = scopedCredentials.getRequestMetadata(CALL_URI);
     verifyJwtAccess(metadata, "dummy.default.scope2");
   }
@@ -545,7 +525,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     GenericJson json = writeServiceAccountJson(PROJECT_ID, null, null);
 
     GoogleCredentials credentials = ServiceAccountCredentials.fromJson(json, transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     credentials = credentials.createScoped(SCOPES);
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
@@ -559,7 +538,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     GenericJson json = writeServiceAccountJson(PROJECT_ID, null, "foo.bar");
 
     GoogleCredentials credentials = ServiceAccountCredentials.fromJson(json, transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     credentials = credentials.createScoped(SCOPES);
     Map<String, List<String>> metadata = credentials.getRequestMetadata(null);
@@ -584,7 +562,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
     GenericJson json = writeServiceAccountJson(PROJECT_ID, QUOTA_PROJECT, null);
     GoogleCredentials credentials = ServiceAccountCredentials.fromJson(json, transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     credentials = credentials.createScoped(SCOPES);
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
@@ -599,7 +576,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   void getRequestMetadata_hasAccessToken() throws IOException {
     GoogleCredentials credentials =
         createDefaultBuilderWithToken(ACCESS_TOKEN).setScopes(SCOPES).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
   }
@@ -610,13 +586,12 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
     transportFactory.transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
     transportFactory.transport.setTokenServerUri(tokenServerUri);
-    ServiceAccountCredentials credentials =
+    OAuth2Credentials credentials =
         createDefaultBuilder()
             .setScopes(SCOPES)
             .setHttpTransportFactory(transportFactory)
             .setTokenServerUri(tokenServerUri)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -641,7 +616,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
 
@@ -657,7 +631,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     credentials.clock = new FixedClock(0L);
 
     AccessToken accessToken = credentials.refreshAccessToken();
@@ -679,7 +652,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -698,7 +670,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -719,7 +690,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -744,7 +714,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build()
             .createWithCustomRetryStrategy(false);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -766,7 +735,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), ACCESS_TOKEN);
@@ -796,7 +764,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), ACCESS_TOKEN);
@@ -828,7 +795,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -854,7 +820,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -892,7 +857,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransport transport = transportFactory.transport;
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), accessToken1);
@@ -925,7 +889,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain(nonGDU)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -957,7 +920,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain(nonGDU)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "differentAudience";
     IdTokenCredentials tokenCredential =
@@ -979,7 +941,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setError(new IOException("404 Not Found"));
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "audience";
     IdTokenCredentials tokenCredential =
@@ -1008,7 +969,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain(universeDomain)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "audience";
     IdTokenCredentials tokenCredential =
@@ -1410,7 +1370,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
 
     GoogleCredentials credentials =
         ServiceAccountCredentials.fromStream(serviceAccountStream, transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertNotNull(credentials);
     credentials = credentials.createScoped(SCOPES);
@@ -1453,7 +1412,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     transport.setError(new IOException("Invalid grant: Account not found"));
     ServiceAccountCredentials credentials =
         createDefaultBuilder().setScopes(SCOPES).setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://bar";
     IdTokenCredentials tokenCredential =
@@ -1538,7 +1496,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setQuotaProjectId("my-quota-project-id")
             .setHttpTransportFactory(transportFactory)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     assertTrue(metadata.containsKey("x-goog-user-project"));
@@ -1565,7 +1522,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setProjectId(PROJECT_ID)
             .setHttpTransportFactory(transportFactory)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     assertFalse(metadata.containsKey("x-goog-user-project"));
@@ -1589,7 +1545,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setQuotaProjectId("my-quota-project-id")
             .setHttpTransportFactory(transportFactory)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     final Map<String, List<String>> plainMetadata = credentials.getRequestMetadata();
     final AtomicBoolean success = new AtomicBoolean(false);
@@ -1630,7 +1585,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain("foo.bar")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     final Map<String, List<String>> plainMetadata = credentials.getRequestMetadata();
     final AtomicBoolean success = new AtomicBoolean(false);
@@ -1667,7 +1621,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(new MockTokenServerTransportFactory())
             .setUseJwtAccessWithScope(true)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     assertNotNull(((ServiceAccountCredentials) credentials).getSelfSignedJwtCredentialsWithScope());
@@ -1699,7 +1652,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setUseJwtAccessWithScope(true)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transport.addServiceAccount(CLIENT_EMAIL, accessToken1);
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
@@ -1724,7 +1676,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setProjectId(PROJECT_ID)
             .setHttpTransportFactory(new MockTokenServerTransportFactory())
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     assertNull(((ServiceAccountCredentials) credentials).getSelfSignedJwtCredentialsWithScope());
@@ -1745,7 +1696,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(new MockTokenServerTransportFactory())
             .setUseJwtAccessWithScope(true)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(null);
     verifyJwtAccess(metadata, "dummy.scope");
@@ -1766,7 +1716,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setUseJwtAccessWithScope(true)
             .setScopes(SCOPES)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     final AtomicBoolean success = new AtomicBoolean(false);
     credentials.getRequestMetadata(
@@ -1804,7 +1753,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setScopes(SCOPES)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     TestUtils.assertContainsBearerToken(credentials.getRequestMetadata(CALL_URI), ACCESS_TOKEN);
 
     // Calling createScoped() again will invalidate the existing access token and calling
@@ -1823,96 +1771,6 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setUseJwtAccessWithScope(true)
             .build();
     verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
-  }
-
-  @Test
-  public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-
-    // Mock regional access boundary response
-    RegionalAccessBoundary regionalAccessBoundary =
-        new RegionalAccessBoundary(
-            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
-            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
-            null);
-
-    MockTokenServerTransport transport = new MockTokenServerTransport();
-    transport.addServiceAccount(CLIENT_EMAIL, "test-access-token");
-    transport.setRegionalAccessBoundary(regionalAccessBoundary);
-
-    ServiceAccountCredentials credentials =
-        ServiceAccountCredentials.newBuilder()
-            .setClientEmail(CLIENT_EMAIL)
-            .setPrivateKey(
-                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
-            .setPrivateKeyId("test-key-id")
-            .setHttpTransportFactory(() -> transport)
-            .setScopes(SCOPES)
-            .build();
-
-    // First call: initiates async refresh.
-    Map<String, List<String>> headers = credentials.getRequestMetadata();
-    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
-
-    waitForRegionalAccessBoundary(credentials);
-
-    // Second call: should have header.
-    headers = credentials.getRequestMetadata();
-    assertEquals(
-        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
-        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-  }
-
-  @Test
-  public void refresh_regionalAccessBoundary_selfSignedJWT()
-      throws IOException, InterruptedException {
-
-    RegionalAccessBoundary regionalAccessBoundary =
-        new RegionalAccessBoundary(
-            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
-            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
-            null);
-
-    MockTokenServerTransport transport = new MockTokenServerTransport();
-    transport.setRegionalAccessBoundary(regionalAccessBoundary);
-
-    ServiceAccountCredentials credentials =
-        ServiceAccountCredentials.newBuilder()
-            .setClientEmail(CLIENT_EMAIL)
-            .setPrivateKey(
-                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
-            .setPrivateKeyId("test-key-id")
-            .setHttpTransportFactory(() -> transport)
-            .setUseJwtAccessWithScope(true)
-            .setScopes(SCOPES)
-            .build();
-
-    // First call: initiates async refresh using the SSJWT as the token.
-    Map<String, List<String>> headers = credentials.getRequestMetadata();
-    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
-
-    waitForRegionalAccessBoundary(credentials);
-
-    // Second call: should have header.
-    headers = credentials.getRequestMetadata();
-    assertEquals(
-        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
-        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-
-    assertEquals(
-        TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
-        credentials.getRegionalAccessBoundary().getEncodedLocations());
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
@@ -1936,7 +1794,7 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertEquals(CLIENT_EMAIL, signature.getPayload().getSubject());
     if (expectedScopeClaim != null) {
       assertEquals(expectedScopeClaim, signature.getPayload().get("scope"));
-      assertFalse(signature.getPayload().containsKey("aud"));
+      assertNull(signature.getPayload().getAudience());
     } else {
       assertEquals(JWT_AUDIENCE, signature.getPayload().getAudience());
       assertFalse(signature.getPayload().containsKey("scope"));

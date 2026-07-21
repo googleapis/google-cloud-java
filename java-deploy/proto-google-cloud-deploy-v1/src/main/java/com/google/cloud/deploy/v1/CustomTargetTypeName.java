@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CustomTargetTypeName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CUSTOM_TARGET_TYPE =
@@ -87,7 +90,7 @@ public class CustomTargetTypeName implements ResourceName {
         .toString();
   }
 
-  public static CustomTargetTypeName parse(String formattedString) {
+  public static @Nullable CustomTargetTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -106,7 +109,7 @@ public class CustomTargetTypeName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CustomTargetTypeName> values) {
+  public static List<String> toStringList(List<@Nullable CustomTargetTypeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CustomTargetTypeName value : values) {
       if (value == null) {
@@ -155,7 +158,7 @@ public class CustomTargetTypeName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

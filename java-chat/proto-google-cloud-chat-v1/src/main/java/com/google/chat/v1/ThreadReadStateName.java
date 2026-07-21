@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ThreadReadStateName implements ResourceName {
   private static final PathTemplate USER_SPACE_THREAD =
@@ -78,7 +81,7 @@ public class ThreadReadStateName implements ResourceName {
     return newBuilder().setUser(user).setSpace(space).setThread(thread).build().toString();
   }
 
-  public static ThreadReadStateName parse(String formattedString) {
+  public static @Nullable ThreadReadStateName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -96,7 +99,7 @@ public class ThreadReadStateName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ThreadReadStateName> values) {
+  public static List<String> toStringList(List<@Nullable ThreadReadStateName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ThreadReadStateName value : values) {
       if (value == null) {
@@ -144,7 +147,7 @@ public class ThreadReadStateName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

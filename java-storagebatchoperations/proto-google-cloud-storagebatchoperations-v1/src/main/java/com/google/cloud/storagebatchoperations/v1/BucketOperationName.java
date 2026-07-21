@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BucketOperationName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_JOB_BUCKET_OPERATION =
@@ -97,7 +100,7 @@ public class BucketOperationName implements ResourceName {
         .toString();
   }
 
-  public static BucketOperationName parse(String formattedString) {
+  public static @Nullable BucketOperationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -119,7 +122,7 @@ public class BucketOperationName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BucketOperationName> values) {
+  public static List<String> toStringList(List<@Nullable BucketOperationName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BucketOperationName value : values) {
       if (value == null) {
@@ -171,7 +174,7 @@ public class BucketOperationName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

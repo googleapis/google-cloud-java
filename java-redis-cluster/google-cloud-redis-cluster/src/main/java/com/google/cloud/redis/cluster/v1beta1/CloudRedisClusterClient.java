@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -478,10 +480,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudRedisClusterClient implements BackgroundResource {
-  private final CloudRedisClusterSettings settings;
+  private final @Nullable CloudRedisClusterSettings settings;
   private final CloudRedisClusterStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -529,7 +532,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudRedisClusterSettings getSettings() {
+  public final @Nullable CloudRedisClusterSettings getSettings() {
     return settings;
   }
 
@@ -588,7 +591,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(LocationName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable LocationName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -792,7 +795,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -1044,7 +1047,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Any> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, Any> deleteClusterAsync(@Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -1209,7 +1212,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, Any> createClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1408,7 +1411,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CertificateAuthority getClusterCertificateAuthority(CertificateAuthorityName name) {
+  public final CertificateAuthority getClusterCertificateAuthority(
+      @Nullable CertificateAuthorityName name) {
     GetClusterCertificateAuthorityRequest request =
         GetClusterCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1532,7 +1536,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SharedRegionalCertificateAuthority getSharedRegionalCertificateAuthority(
-      SharedRegionalCertificateAuthorityName name) {
+      @Nullable SharedRegionalCertificateAuthorityName name) {
     GetSharedRegionalCertificateAuthorityRequest request =
         GetSharedRegionalCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1669,7 +1673,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, Any> rescheduleClusterMaintenanceAsync(
-      ClusterName name,
+      @Nullable ClusterName name,
       RescheduleClusterMaintenanceRequest.RescheduleType rescheduleType,
       Timestamp scheduleTime) {
     RescheduleClusterMaintenanceRequest request =
@@ -1848,7 +1852,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupCollectionsPagedResponse listBackupCollections(LocationName parent) {
+  public final ListBackupCollectionsPagedResponse listBackupCollections(
+      @Nullable LocationName parent) {
     ListBackupCollectionsRequest request =
         ListBackupCollectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2034,7 +2039,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     where `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupCollection getBackupCollection(BackupCollectionName name) {
+  public final BackupCollection getBackupCollection(@Nullable BackupCollectionName name) {
     GetBackupCollectionRequest request =
         GetBackupCollectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2158,7 +2163,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(BackupCollectionName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable BackupCollectionName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2327,7 +2332,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -2442,7 +2447,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Any> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, Any> deleteBackupAsync(@Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -2690,7 +2695,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
    *     refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Cluster, Any> backupClusterAsync(ClusterName name) {
+  public final OperationFuture<Cluster, Any> backupClusterAsync(@Nullable ClusterName name) {
     BackupClusterRequest request =
         BackupClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return backupClusterAsync(request);
@@ -3062,8 +3067,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -3073,14 +3078,14 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3094,7 +3099,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3104,7 +3110,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3142,9 +3148,11 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListBackupCollectionsPage> {
 
     private ListBackupCollectionsPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       super(context, response);
     }
 
@@ -3154,15 +3162,19 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsPage createPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       return new ListBackupCollectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupCollectionsPage> createPageAsync(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
         ApiFuture<ListBackupCollectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3178,7 +3190,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListBackupCollectionsFixedSizeCollection> {
 
     private ListBackupCollectionsFixedSizeCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3188,7 +3200,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsFixedSizeCollection createCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       return new ListBackupCollectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3219,8 +3231,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -3230,14 +3242,14 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3251,7 +3263,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3261,7 +3274,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3295,8 +3308,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3306,14 +3319,14 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3327,7 +3340,8 @@ public class CloudRedisClusterClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3337,7 +3351,7 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

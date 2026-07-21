@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -264,10 +266,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BinauthzManagementServiceV1Beta1Client implements BackgroundResource {
-  private final BinauthzManagementServiceV1Beta1Settings settings;
+  private final @Nullable BinauthzManagementServiceV1Beta1Settings settings;
   private final BinauthzManagementServiceV1Beta1Stub stub;
 
   /** Constructs an instance of BinauthzManagementServiceV1Beta1Client with default settings. */
@@ -312,7 +315,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
     this.stub = stub;
   }
 
-  public final BinauthzManagementServiceV1Beta1Settings getSettings() {
+  public final @Nullable BinauthzManagementServiceV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -351,7 +354,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    *     `projects/&#42;/policy`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getPolicy(PolicyName name) {
+  public final Policy getPolicy(@Nullable PolicyName name) {
     GetPolicyRequest request =
         GetPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPolicy(request);
@@ -596,7 +599,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    *     with the resource name, in the format `projects/&#42;/attestors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attestor createAttestor(ProjectName parent, String attestorId, Attestor attestor) {
+  public final Attestor createAttestor(
+      @Nullable ProjectName parent, String attestorId, Attestor attestor) {
     CreateAttestorRequest request =
         CreateAttestorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -744,7 +748,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    *     `projects/&#42;/attestors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attestor getAttestor(AttestorName name) {
+  public final Attestor getAttestor(@Nullable AttestorName name) {
     GetAttestorRequest request =
         GetAttestorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAttestor(request);
@@ -956,7 +960,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    *     `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttestorsPagedResponse listAttestors(ProjectName parent) {
+  public final ListAttestorsPagedResponse listAttestors(@Nullable ProjectName parent) {
     ListAttestorsRequest request =
         ListAttestorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1133,7 +1137,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    *     `projects/&#42;/attestors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAttestor(AttestorName name) {
+  public final void deleteAttestor(@Nullable AttestorName name) {
     DeleteAttestorRequest request =
         DeleteAttestorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAttestor(request);
@@ -1288,8 +1292,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
           ListAttestorsRequest, ListAttestorsResponse, Attestor, ListAttestorsPage> {
 
     private ListAttestorsPage(
-        PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
-        ListAttestorsResponse response) {
+        @Nullable PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
+        @Nullable ListAttestorsResponse response) {
       super(context, response);
     }
 
@@ -1299,14 +1303,14 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
 
     @Override
     protected ListAttestorsPage createPage(
-        PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
-        ListAttestorsResponse response) {
+        @Nullable PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
+        @Nullable ListAttestorsResponse response) {
       return new ListAttestorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttestorsPage> createPageAsync(
-        PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
+        @Nullable PageContext<ListAttestorsRequest, ListAttestorsResponse, Attestor> context,
         ApiFuture<ListAttestorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1320,7 +1324,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
           ListAttestorsPage,
           ListAttestorsFixedSizeCollection> {
 
-    private ListAttestorsFixedSizeCollection(List<ListAttestorsPage> pages, int collectionSize) {
+    private ListAttestorsFixedSizeCollection(
+        @Nullable List<ListAttestorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1330,7 +1335,7 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
 
     @Override
     protected ListAttestorsFixedSizeCollection createCollection(
-        List<ListAttestorsPage> pages, int collectionSize) {
+        @Nullable List<ListAttestorsPage> pages, int collectionSize) {
       return new ListAttestorsFixedSizeCollection(pages, collectionSize);
     }
   }

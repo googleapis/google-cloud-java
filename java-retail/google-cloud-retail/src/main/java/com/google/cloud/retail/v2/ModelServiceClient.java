@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -287,9 +289,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ModelServiceClient implements BackgroundResource {
-  private final ModelServiceSettings settings;
+  private final @Nullable ModelServiceSettings settings;
   private final ModelServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -336,7 +339,7 @@ public class ModelServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ModelServiceSettings getSettings() {
+  public final @Nullable ModelServiceSettings getSettings() {
     return settings;
   }
 
@@ -386,7 +389,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Model, CreateModelMetadata> createModelAsync(
-      CatalogName parent, Model model) {
+      @Nullable CatalogName parent, Model model) {
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -540,7 +543,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog}/models/{model_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model getModel(ModelName name) {
+  public final Model getModel(@Nullable ModelName name) {
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -651,7 +654,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model pauseModel(ModelName name) {
+  public final Model pauseModel(@Nullable ModelName name) {
     PauseModelRequest request =
         PauseModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseModel(request);
@@ -838,7 +841,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteModel(ModelName name) {
+  public final void deleteModel(@Nullable ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteModel(request);
@@ -951,7 +954,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelsPagedResponse listModels(CatalogName parent) {
+  public final ListModelsPagedResponse listModels(@Nullable CatalogName parent) {
     ListModelsRequest request =
         ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
@@ -1200,7 +1203,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TuneModelResponse, TuneModelMetadata> tuneModelAsync(
-      ModelName name) {
+      @Nullable ModelName name) {
     TuneModelRequest request =
         TuneModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return tuneModelAsync(request);
@@ -1374,8 +1377,8 @@ public class ModelServiceClient implements BackgroundResource {
       extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
 
     private ListModelsPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       super(context, response);
     }
 
@@ -1385,14 +1388,14 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsPage createPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       return new ListModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelsPage> createPageAsync(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
         ApiFuture<ListModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1406,7 +1409,8 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelsPage,
           ListModelsFixedSizeCollection> {
 
-    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+    private ListModelsFixedSizeCollection(
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1416,7 +1420,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsFixedSizeCollection createCollection(
-        List<ListModelsPage> pages, int collectionSize) {
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }

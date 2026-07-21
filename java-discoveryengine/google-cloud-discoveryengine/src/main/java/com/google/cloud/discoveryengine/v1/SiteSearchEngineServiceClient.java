@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -395,9 +397,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SiteSearchEngineServiceClient implements BackgroundResource {
-  private final SiteSearchEngineServiceSettings settings;
+  private final @Nullable SiteSearchEngineServiceSettings settings;
   private final SiteSearchEngineServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -446,7 +449,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SiteSearchEngineServiceSettings getSettings() {
+  public final @Nullable SiteSearchEngineServiceSettings getSettings() {
     return settings;
   }
 
@@ -499,7 +502,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    *     whether or not it exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SiteSearchEngine getSiteSearchEngine(SiteSearchEngineName name) {
+  public final SiteSearchEngine getSiteSearchEngine(@Nullable SiteSearchEngineName name) {
     GetSiteSearchEngineRequest request =
         GetSiteSearchEngineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -638,7 +641,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TargetSite, CreateTargetSiteMetadata> createTargetSiteAsync(
-      SiteSearchEngineName parent, TargetSite targetSite) {
+      @Nullable SiteSearchEngineName parent, TargetSite targetSite) {
     CreateTargetSiteRequest request =
         CreateTargetSiteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -925,7 +928,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    *     exist, a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TargetSite getTargetSite(TargetSiteName name) {
+  public final TargetSite getTargetSite(@Nullable TargetSiteName name) {
     GetTargetSiteRequest request =
         GetTargetSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTargetSite(request);
@@ -1186,7 +1189,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteTargetSiteMetadata> deleteTargetSiteAsync(
-      TargetSiteName name) {
+      @Nullable TargetSiteName name) {
     DeleteTargetSiteRequest request =
         DeleteTargetSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTargetSiteAsync(request);
@@ -1358,7 +1361,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    *     regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTargetSitesPagedResponse listTargetSites(SiteSearchEngineName parent) {
+  public final ListTargetSitesPagedResponse listTargetSites(@Nullable SiteSearchEngineName parent) {
     ListTargetSitesRequest request =
         ListTargetSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1550,7 +1553,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Sitemap, CreateSitemapMetadata> createSitemapAsync(
-      SiteSearchEngineName parent, Sitemap sitemap) {
+      @Nullable SiteSearchEngineName parent, Sitemap sitemap) {
     CreateSitemapRequest request =
         CreateSitemapRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1727,7 +1730,8 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    *     NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteSitemapMetadata> deleteSitemapAsync(SitemapName name) {
+  public final OperationFuture<Empty, DeleteSitemapMetadata> deleteSitemapAsync(
+      @Nullable SitemapName name) {
     DeleteSitemapRequest request =
         DeleteSitemapRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSitemapAsync(request);
@@ -1895,7 +1899,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/collections/&#42;/dataStores/&#42;/siteSearchEngine`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchSitemapsResponse fetchSitemaps(SiteSearchEngineName parent) {
+  public final FetchSitemapsResponse fetchSitemaps(@Nullable SiteSearchEngineName parent) {
     FetchSitemapsRequest request =
         FetchSitemapsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2611,8 +2615,8 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
           ListTargetSitesRequest, ListTargetSitesResponse, TargetSite, ListTargetSitesPage> {
 
     private ListTargetSitesPage(
-        PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
-        ListTargetSitesResponse response) {
+        @Nullable PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
+        @Nullable ListTargetSitesResponse response) {
       super(context, response);
     }
 
@@ -2622,14 +2626,14 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListTargetSitesPage createPage(
-        PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
-        ListTargetSitesResponse response) {
+        @Nullable PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
+        @Nullable ListTargetSitesResponse response) {
       return new ListTargetSitesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTargetSitesPage> createPageAsync(
-        PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
+        @Nullable PageContext<ListTargetSitesRequest, ListTargetSitesResponse, TargetSite> context,
         ApiFuture<ListTargetSitesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2644,7 +2648,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
           ListTargetSitesFixedSizeCollection> {
 
     private ListTargetSitesFixedSizeCollection(
-        List<ListTargetSitesPage> pages, int collectionSize) {
+        @Nullable List<ListTargetSitesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2654,7 +2658,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListTargetSitesFixedSizeCollection createCollection(
-        List<ListTargetSitesPage> pages, int collectionSize) {
+        @Nullable List<ListTargetSitesPage> pages, int collectionSize) {
       return new ListTargetSitesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2696,12 +2700,13 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
           FetchDomainVerificationStatusPage> {
 
     private FetchDomainVerificationStatusPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDomainVerificationStatusRequest,
                 FetchDomainVerificationStatusResponse,
                 TargetSite>
             context,
-        FetchDomainVerificationStatusResponse response) {
+        @Nullable FetchDomainVerificationStatusResponse response) {
       super(context, response);
     }
 
@@ -2711,18 +2716,20 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
 
     @Override
     protected FetchDomainVerificationStatusPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDomainVerificationStatusRequest,
                 FetchDomainVerificationStatusResponse,
                 TargetSite>
             context,
-        FetchDomainVerificationStatusResponse response) {
+        @Nullable FetchDomainVerificationStatusResponse response) {
       return new FetchDomainVerificationStatusPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchDomainVerificationStatusPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDomainVerificationStatusRequest,
                 FetchDomainVerificationStatusResponse,
                 TargetSite>
@@ -2741,7 +2748,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
           FetchDomainVerificationStatusFixedSizeCollection> {
 
     private FetchDomainVerificationStatusFixedSizeCollection(
-        List<FetchDomainVerificationStatusPage> pages, int collectionSize) {
+        @Nullable List<FetchDomainVerificationStatusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2751,7 +2758,7 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
 
     @Override
     protected FetchDomainVerificationStatusFixedSizeCollection createCollection(
-        List<FetchDomainVerificationStatusPage> pages, int collectionSize) {
+        @Nullable List<FetchDomainVerificationStatusPage> pages, int collectionSize) {
       return new FetchDomainVerificationStatusFixedSizeCollection(pages, collectionSize);
     }
   }

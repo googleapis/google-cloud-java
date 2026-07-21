@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GitRepositoryLinkName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONNECTION_GIT_REPOSITORY_LINK =
@@ -98,7 +101,7 @@ public class GitRepositoryLinkName implements ResourceName {
         .toString();
   }
 
-  public static GitRepositoryLinkName parse(String formattedString) {
+  public static @Nullable GitRepositoryLinkName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class GitRepositoryLinkName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GitRepositoryLinkName> values) {
+  public static List<String> toStringList(List<@Nullable GitRepositoryLinkName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GitRepositoryLinkName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class GitRepositoryLinkName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

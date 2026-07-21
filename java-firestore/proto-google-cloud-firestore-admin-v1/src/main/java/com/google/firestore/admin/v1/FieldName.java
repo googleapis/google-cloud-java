@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FieldName implements ResourceName {
   private static final PathTemplate PROJECT_DATABASE_COLLECTION_FIELD =
@@ -96,7 +99,7 @@ public class FieldName implements ResourceName {
         .toString();
   }
 
-  public static FieldName parse(String formattedString) {
+  public static @Nullable FieldName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -118,7 +121,7 @@ public class FieldName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FieldName> values) {
+  public static List<String> toStringList(List<@Nullable FieldName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FieldName value : values) {
       if (value == null) {
@@ -170,7 +173,7 @@ public class FieldName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

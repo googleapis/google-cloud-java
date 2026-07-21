@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -363,10 +365,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ToolsClient implements BackgroundResource {
-  private final ToolsSettings settings;
+  private final @Nullable ToolsSettings settings;
   private final ToolsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -412,7 +415,7 @@ public class ToolsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ToolsSettings getSettings() {
+  public final @Nullable ToolsSettings getSettings() {
     return settings;
   }
 
@@ -461,7 +464,7 @@ public class ToolsClient implements BackgroundResource {
    * @param tool Required. The Tool to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tool createTool(AgentName parent, Tool tool) {
+  public final Tool createTool(@Nullable AgentName parent, Tool tool) {
     CreateToolRequest request =
         CreateToolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -581,7 +584,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListToolsPagedResponse listTools(AgentName parent) {
+  public final ListToolsPagedResponse listTools(@Nullable AgentName parent) {
     ListToolsRequest request =
         ListToolsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTools(request);
@@ -827,7 +830,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tool getTool(ToolName name) {
+  public final Tool getTool(@Nullable ToolName name) {
     GetToolRequest request =
         GetToolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTool(request);
@@ -1024,7 +1027,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTool(ToolName name) {
+  public final void deleteTool(@Nullable ToolName name) {
     DeleteToolRequest request =
         DeleteToolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTool(request);
@@ -1138,7 +1141,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListToolVersionsPagedResponse listToolVersions(ToolName parent) {
+  public final ListToolVersionsPagedResponse listToolVersions(@Nullable ToolName parent) {
     ListToolVersionsRequest request =
         ListToolVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1304,7 +1307,7 @@ public class ToolsClient implements BackgroundResource {
    * @param toolVersion Required. The tool version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ToolVersion createToolVersion(ToolName parent, ToolVersion toolVersion) {
+  public final ToolVersion createToolVersion(@Nullable ToolName parent, ToolVersion toolVersion) {
     CreateToolVersionRequest request =
         CreateToolVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1423,7 +1426,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ToolVersion getToolVersion(ToolVersionName name) {
+  public final ToolVersion getToolVersion(@Nullable ToolVersionName name) {
     GetToolVersionRequest request =
         GetToolVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getToolVersion(request);
@@ -1540,7 +1543,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteToolVersion(ToolVersionName name) {
+  public final void deleteToolVersion(@Nullable ToolVersionName name) {
     DeleteToolVersionRequest request =
         DeleteToolVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1662,7 +1665,7 @@ public class ToolsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestoreToolVersionResponse restoreToolVersion(ToolVersionName name) {
+  public final RestoreToolVersionResponse restoreToolVersion(@Nullable ToolVersionName name) {
     RestoreToolVersionRequest request =
         RestoreToolVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2006,8 +2009,8 @@ public class ToolsClient implements BackgroundResource {
       extends AbstractPage<ListToolsRequest, ListToolsResponse, Tool, ListToolsPage> {
 
     private ListToolsPage(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
-        ListToolsResponse response) {
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable ListToolsResponse response) {
       super(context, response);
     }
 
@@ -2017,14 +2020,14 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListToolsPage createPage(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
-        ListToolsResponse response) {
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable ListToolsResponse response) {
       return new ListToolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListToolsPage> createPageAsync(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
         ApiFuture<ListToolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2034,7 +2037,7 @@ public class ToolsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListToolsRequest, ListToolsResponse, Tool, ListToolsPage, ListToolsFixedSizeCollection> {
 
-    private ListToolsFixedSizeCollection(List<ListToolsPage> pages, int collectionSize) {
+    private ListToolsFixedSizeCollection(@Nullable List<ListToolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2044,7 +2047,7 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListToolsFixedSizeCollection createCollection(
-        List<ListToolsPage> pages, int collectionSize) {
+        @Nullable List<ListToolsPage> pages, int collectionSize) {
       return new ListToolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2078,8 +2081,9 @@ public class ToolsClient implements BackgroundResource {
           ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion, ListToolVersionsPage> {
 
     private ListToolVersionsPage(
-        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
-        ListToolVersionsResponse response) {
+        @Nullable PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+            context,
+        @Nullable ListToolVersionsResponse response) {
       super(context, response);
     }
 
@@ -2089,14 +2093,16 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListToolVersionsPage createPage(
-        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
-        ListToolVersionsResponse response) {
+        @Nullable PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+            context,
+        @Nullable ListToolVersionsResponse response) {
       return new ListToolVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListToolVersionsPage> createPageAsync(
-        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
+        @Nullable PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+            context,
         ApiFuture<ListToolVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2111,7 +2117,7 @@ public class ToolsClient implements BackgroundResource {
           ListToolVersionsFixedSizeCollection> {
 
     private ListToolVersionsFixedSizeCollection(
-        List<ListToolVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListToolVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2121,7 +2127,7 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListToolVersionsFixedSizeCollection createCollection(
-        List<ListToolVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListToolVersionsPage> pages, int collectionSize) {
       return new ListToolVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2155,8 +2161,8 @@ public class ToolsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2166,14 +2172,14 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2187,7 +2193,8 @@ public class ToolsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2197,7 +2204,7 @@ public class ToolsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

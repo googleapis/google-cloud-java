@@ -27,6 +27,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -492,6 +493,20 @@ public class BigQueryStatementTest {
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
   }
 
+  @Test
+  public void testCancelDoesNotRollbackTransaction() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isTransactionStarted();
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    statementSpy.jobIds.add(jobId);
+
+    statementSpy.cancel();
+
+    // Cancel should call bigquery.cancel() but not rollback the transaction
+    verify(bigquery).cancel(eq(jobId));
+    verify(bigQueryConnection, Mockito.never()).rollback();
+    verify(bigQueryConnection).removeStatement(statementSpy);
+  }
+
   @ParameterizedTest
   @ValueSource(booleans = {true, false})
   public void testGetStatementType(boolean isReadOnlyTokenUsed) throws Exception {
@@ -582,8 +597,8 @@ public class BigQueryStatementTest {
   }
 
   private ApiException mockApiException(StatusCode.Code code) {
-    ApiException apiExceptionMock = mock(ApiException.class);
-    StatusCode statusCodeMock = mock(StatusCode.class);
+    ApiException apiExceptionMock = mock(ApiException.class, withSettings().withoutAnnotations());
+    StatusCode statusCodeMock = mock(StatusCode.class, withSettings().withoutAnnotations());
     doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
     doReturn(code).when(statusCodeMock).getCode();
     return apiExceptionMock;

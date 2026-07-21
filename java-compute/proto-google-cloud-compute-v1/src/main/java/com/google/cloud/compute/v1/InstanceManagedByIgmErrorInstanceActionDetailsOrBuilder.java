@@ -30,8 +30,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Action that managed instance group was executing on
-   * the instance when the error occurred. Possible values:
+   * Output only. Action that managed instance group was executing on the instance when the
+   * error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -45,8 +45,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Action that managed instance group was executing on
-   * the instance when the error occurred. Possible values:
+   * Output only. Action that managed instance group was executing on the instance when the
+   * error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -60,8 +60,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Action that managed instance group was executing on
-   * the instance when the error occurred. Possible values:
+   * Output only. Action that managed instance group was executing on the instance when the
+   * error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -75,8 +75,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of the instance.
-   * The URL can be set even if the instance has not yet been created.
+   * Output only. The URL of the instance. The URL can be set even if the instance has not
+   * yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -89,8 +89,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of the instance.
-   * The URL can be set even if the instance has not yet been created.
+   * Output only. The URL of the instance. The URL can be set even if the instance has not
+   * yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -103,8 +103,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of the instance.
-   * The URL can be set even if the instance has not yet been created.
+   * Output only. The URL of the instance. The URL can be set even if the instance has not
+   * yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -117,7 +117,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Version this instance was created from, or was being
+   * Output only. Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.
@@ -133,7 +133,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Version this instance was created from, or was being
+   * Output only. Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.
@@ -149,7 +149,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Version this instance was created from, or was being
+   * Output only. Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.

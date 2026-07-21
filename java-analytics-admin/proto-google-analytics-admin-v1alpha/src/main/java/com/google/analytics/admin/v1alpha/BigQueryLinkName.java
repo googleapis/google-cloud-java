@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BigQueryLinkName implements ResourceName {
   private static final PathTemplate PROPERTY_BIGQUERY_LINK =
@@ -70,7 +73,7 @@ public class BigQueryLinkName implements ResourceName {
     return newBuilder().setProperty(property).setBigqueryLink(bigqueryLink).build().toString();
   }
 
-  public static BigQueryLinkName parse(String formattedString) {
+  public static @Nullable BigQueryLinkName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class BigQueryLinkName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BigQueryLinkName> values) {
+  public static List<String> toStringList(List<@Nullable BigQueryLinkName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BigQueryLinkName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class BigQueryLinkName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -526,9 +526,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
     if (this.connection != null) {
-      if (this.connection.isTransactionStarted()) {
-        this.connection.rollback();
-      }
       this.connection.removeStatement(this);
     }
   }
@@ -1255,6 +1252,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         () -> { // producer thread populating the buffer
           try {
             Iterable<FieldValueList> fieldValueLists;
+            boolean[] isComplexColumn =
+                BigQueryFieldValueListWrapper.createComplexColumnFlags(
+                    schema != null ? schema.getFields() : null);
             // as we have to process the first page
             boolean hasRows = true;
             while (hasRows) {
@@ -1291,7 +1291,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                 }
                 Uninterruptibles.putUninterruptibly(
                     bigQueryFieldValueListWrapperBlockingQueue,
-                    BigQueryFieldValueListWrapper.of(schema.getFields(), fieldValueList));
+                    BigQueryFieldValueListWrapper.of(
+                        schema.getFields(), fieldValueList, isComplexColumn));
                 results += 1;
               }
               LOG.fine(
@@ -1749,6 +1750,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
+    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
   }
 }

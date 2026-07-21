@@ -161,6 +161,7 @@ public class GlobalForwardingRulesClientTest {
             .setAllPorts(true)
             .setAllowGlobalAccess(true)
             .setAllowPscGlobalAccess(true)
+            .addAllAttachedExtensions(new ArrayList<ForwardingRuleAttachedExtension>())
             .setBackendService("backendService-1884714623")
             .setBaseForwardingRule("baseForwardingRule124102858")
             .setCreationTimestamp("creationTimestamp-370203401")

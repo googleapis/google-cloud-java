@@ -27,21 +27,26 @@ import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
+import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+@Timeout(30)
 @ExtendWith(MockitoExtension.class)
 public class TableBaseTest {
 
@@ -50,6 +55,7 @@ public class TableBaseTest {
   private final Metrics noopMetrics = new NoopMetrics();
   private final ScheduledExecutorService mockExecutor =
       Mockito.mock(ScheduledExecutorService.class);
+  private final BigtableTimer mockTimer = Mockito.mock(BigtableTimer.class);
   private static final ClientInfo clientInfo =
       ClientInfo.builder()
           .setInstanceName(
@@ -70,7 +76,8 @@ public class TableBaseTest {
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
             noopMetrics,
-            mockExecutor);
+            mockTimer,
+            MoreExecutors.directExecutor());
     deadline = Deadline.after(1, TimeUnit.MINUTES);
     f = new UnaryResponseFuture<>();
   }
@@ -173,6 +180,11 @@ public class TableBaseTest {
     public void close(CloseSessionRequest req) {}
 
     @Override
+    public boolean awaitTerminated(Duration timeout) {
+      return true;
+    }
+
+    @Override
     public SessionPoolInfo getInfo() {
       return SessionPoolInfo.create(clientInfo, VRpcDescriptor.TABLE_SESSION, "fake-pool");
     }
@@ -206,6 +218,11 @@ public class TableBaseTest {
 
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+    @Override
+    public boolean isDone() {
+      return false;
+    }
 
     @Override
     public void requestNext() {}

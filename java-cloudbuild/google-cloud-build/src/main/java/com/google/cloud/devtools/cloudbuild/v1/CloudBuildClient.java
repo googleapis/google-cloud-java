@@ -77,6 +77,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -557,9 +559,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CloudBuildClient implements BackgroundResource {
-  private final CloudBuildSettings settings;
+  private final @Nullable CloudBuildSettings settings;
   private final CloudBuildStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -605,7 +608,7 @@ public class CloudBuildClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudBuildSettings getSettings() {
+  public final @Nullable CloudBuildSettings getSettings() {
     return settings;
   }
 
@@ -656,7 +659,7 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     CreateBuildRequest request =
         CreateBuildRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -689,7 +692,8 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(ProjectName parent) {
+  public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(
+      @Nullable ProjectName parent) {
     CreateBuildRequest request =
         CreateBuildRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -885,7 +889,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/builds/{build}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Build getBuild(BuildName name) {
+  public final Build getBuild(@Nullable BuildName name) {
     GetBuildRequest request =
         GetBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBuild(request);
@@ -1190,7 +1194,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/builds/{build}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Build cancelBuild(BuildName name) {
+  public final Build cancelBuild(@Nullable BuildName name) {
     CancelBuildRequest request =
         CancelBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelBuild(request);
@@ -1363,7 +1367,8 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/builds/{build}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Build, BuildOperationMetadata> retryBuildAsync(BuildName name) {
+  public final OperationFuture<Build, BuildOperationMetadata> retryBuildAsync(
+      @Nullable BuildName name) {
     RetryBuildRequest request =
         RetryBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return retryBuildAsync(request);
@@ -1828,7 +1833,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BuildTrigger createBuildTrigger(LocationName parent) {
+  public final BuildTrigger createBuildTrigger(@Nullable LocationName parent) {
     CreateBuildTriggerRequest request =
         CreateBuildTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1858,7 +1863,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BuildTrigger createBuildTrigger(ProjectName parent) {
+  public final BuildTrigger createBuildTrigger(@Nullable ProjectName parent) {
     CreateBuildTriggerRequest request =
         CreateBuildTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2005,7 +2010,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/triggers/{trigger}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BuildTrigger getBuildTrigger(BuildTriggerName name) {
+  public final BuildTrigger getBuildTrigger(@Nullable BuildTriggerName name) {
     GetBuildTriggerRequest request =
         GetBuildTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBuildTrigger(request);
@@ -2286,7 +2291,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/triggers/{trigger}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBuildTrigger(BuildTriggerName name) {
+  public final void deleteBuildTrigger(@Nullable BuildTriggerName name) {
     DeleteBuildTriggerRequest request =
         DeleteBuildTriggerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2760,7 +2765,7 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkerPool, CreateWorkerPoolOperationMetadata> createWorkerPoolAsync(
-      LocationName parent, WorkerPool workerPool, String workerPoolId) {
+      @Nullable LocationName parent, WorkerPool workerPool, String workerPoolId) {
     CreateWorkerPoolRequest request =
         CreateWorkerPoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2927,7 +2932,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkerPool getWorkerPool(WorkerPoolName name) {
+  public final WorkerPool getWorkerPool(@Nullable WorkerPoolName name) {
     GetWorkerPoolRequest request =
         GetWorkerPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkerPool(request);
@@ -3038,7 +3043,7 @@ public class CloudBuildClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteWorkerPoolOperationMetadata> deleteWorkerPoolAsync(
-      WorkerPoolName name) {
+      @Nullable WorkerPoolName name) {
     DeleteWorkerPoolRequest request =
         DeleteWorkerPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteWorkerPoolAsync(request);
@@ -3317,7 +3322,7 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkerPoolsPagedResponse listWorkerPools(LocationName parent) {
+  public final ListWorkerPoolsPagedResponse listWorkerPools(@Nullable LocationName parent) {
     ListWorkerPoolsRequest request =
         ListWorkerPoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3480,7 +3485,8 @@ public class CloudBuildClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/defaultServiceAccount`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DefaultServiceAccount getDefaultServiceAccount(DefaultServiceAccountName name) {
+  public final DefaultServiceAccount getDefaultServiceAccount(
+      @Nullable DefaultServiceAccountName name) {
     GetDefaultServiceAccountRequest request =
         GetDefaultServiceAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3630,8 +3636,8 @@ public class CloudBuildClient implements BackgroundResource {
       extends AbstractPage<ListBuildsRequest, ListBuildsResponse, Build, ListBuildsPage> {
 
     private ListBuildsPage(
-        PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
-        ListBuildsResponse response) {
+        @Nullable PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
+        @Nullable ListBuildsResponse response) {
       super(context, response);
     }
 
@@ -3641,14 +3647,14 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListBuildsPage createPage(
-        PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
-        ListBuildsResponse response) {
+        @Nullable PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
+        @Nullable ListBuildsResponse response) {
       return new ListBuildsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBuildsPage> createPageAsync(
-        PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
+        @Nullable PageContext<ListBuildsRequest, ListBuildsResponse, Build> context,
         ApiFuture<ListBuildsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3662,7 +3668,8 @@ public class CloudBuildClient implements BackgroundResource {
           ListBuildsPage,
           ListBuildsFixedSizeCollection> {
 
-    private ListBuildsFixedSizeCollection(List<ListBuildsPage> pages, int collectionSize) {
+    private ListBuildsFixedSizeCollection(
+        @Nullable List<ListBuildsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3672,7 +3679,7 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListBuildsFixedSizeCollection createCollection(
-        List<ListBuildsPage> pages, int collectionSize) {
+        @Nullable List<ListBuildsPage> pages, int collectionSize) {
       return new ListBuildsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3709,8 +3716,9 @@ public class CloudBuildClient implements BackgroundResource {
           ListBuildTriggersPage> {
 
     private ListBuildTriggersPage(
-        PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger> context,
-        ListBuildTriggersResponse response) {
+        @Nullable PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
+            context,
+        @Nullable ListBuildTriggersResponse response) {
       super(context, response);
     }
 
@@ -3720,14 +3728,16 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListBuildTriggersPage createPage(
-        PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger> context,
-        ListBuildTriggersResponse response) {
+        @Nullable PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
+            context,
+        @Nullable ListBuildTriggersResponse response) {
       return new ListBuildTriggersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBuildTriggersPage> createPageAsync(
-        PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger> context,
+        @Nullable PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
+            context,
         ApiFuture<ListBuildTriggersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3742,7 +3752,7 @@ public class CloudBuildClient implements BackgroundResource {
           ListBuildTriggersFixedSizeCollection> {
 
     private ListBuildTriggersFixedSizeCollection(
-        List<ListBuildTriggersPage> pages, int collectionSize) {
+        @Nullable List<ListBuildTriggersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3752,7 +3762,7 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListBuildTriggersFixedSizeCollection createCollection(
-        List<ListBuildTriggersPage> pages, int collectionSize) {
+        @Nullable List<ListBuildTriggersPage> pages, int collectionSize) {
       return new ListBuildTriggersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3786,8 +3796,8 @@ public class CloudBuildClient implements BackgroundResource {
           ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool, ListWorkerPoolsPage> {
 
     private ListWorkerPoolsPage(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
-        ListWorkerPoolsResponse response) {
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable ListWorkerPoolsResponse response) {
       super(context, response);
     }
 
@@ -3797,14 +3807,14 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListWorkerPoolsPage createPage(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
-        ListWorkerPoolsResponse response) {
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable ListWorkerPoolsResponse response) {
       return new ListWorkerPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkerPoolsPage> createPageAsync(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
         ApiFuture<ListWorkerPoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3819,7 +3829,7 @@ public class CloudBuildClient implements BackgroundResource {
           ListWorkerPoolsFixedSizeCollection> {
 
     private ListWorkerPoolsFixedSizeCollection(
-        List<ListWorkerPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkerPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3829,7 +3839,7 @@ public class CloudBuildClient implements BackgroundResource {
 
     @Override
     protected ListWorkerPoolsFixedSizeCollection createCollection(
-        List<ListWorkerPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkerPoolsPage> pages, int collectionSize) {
       return new ListWorkerPoolsFixedSizeCollection(pages, collectionSize);
     }
   }

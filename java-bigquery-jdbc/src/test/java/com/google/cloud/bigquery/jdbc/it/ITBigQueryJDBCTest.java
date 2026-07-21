@@ -25,9 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
@@ -46,6 +44,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -53,9 +52,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -74,7 +76,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   private static String DATASET;
   private static final Object EXCEPTION_REPLACEMENT = "EXCEPTION-WAS-RAISED";
   static Connection bigQueryConnection;
-  static BigQuery bigQuery;
   static Statement bigQueryStatement;
   static Connection bigQueryConnectionNoReadApi;
   static Statement bigQueryStatementNoReadApi;
@@ -89,7 +90,6 @@ public class ITBigQueryJDBCTest extends ITBase {
     noReadApi.setProperty("EnableHighThroughputAPI", "0");
     bigQueryConnectionNoReadApi = DriverManager.getConnection(connection_uri, noReadApi);
     bigQueryStatementNoReadApi = bigQueryConnectionNoReadApi.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll
@@ -988,11 +988,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_PREPARED_EXECUTE_TABLE_" + randomNumber;
     String createQuery =
         String.format(
-            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER);",
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
             DATASET, TABLE_NAME);
     String insertQuery =
         String.format(
-            "INSERT INTO %s.%s (StringField, IntegerField) VALUES (?,?), (?,?), (?,?), (?,?);",
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
             DATASET, TABLE_NAME);
     String updateQuery =
         String.format("UPDATE %s.%s SET StringField=? WHERE IntegerField=?", DATASET, TABLE_NAME);
@@ -1003,14 +1003,23 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertFalse(createStatus);
 
     PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    // Row 1: Testing setString, setInt, setShort, setBytes, setObject, setNull
     insertStmt.setString(1, "String1");
     insertStmt.setInt(2, 111);
-    insertStmt.setString(3, "String2");
-    insertStmt.setInt(4, 222);
-    insertStmt.setString(5, "String3");
-    insertStmt.setInt(6, 333);
-    insertStmt.setString(7, "String4");
-    insertStmt.setInt(8, 444);
+    insertStmt.setShort(3, (short) 12);
+    insertStmt.setBytes(4, new byte[] {0x1, 0x2});
+    insertStmt.setObject(5, 3.14d);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    // Row 2: Testing setString, setInt, setShort, setBytes, setObject, setNull with typeName
+    insertStmt.setString(8, "String2");
+    insertStmt.setInt(9, 222);
+    insertStmt.setShort(10, (short) 34);
+    insertStmt.setBytes(11, new byte[] {0x3, 0x4});
+    insertStmt.setObject(12, 6.28d);
+    insertStmt.setObject(13, false);
+    insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
     assertFalse(insertStatus);
@@ -1509,7 +1518,18 @@ public class ITBigQueryJDBCTest extends ITBase {
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 
+    ParameterMetaData paramMetaData = preparedStatement.getParameterMetaData();
+    assertNotNull(paramMetaData);
+    assertEquals(1, paramMetaData.getParameterCount());
+    assertEquals(Types.NVARCHAR, paramMetaData.getParameterType(1));
+    assertEquals("STRING", paramMetaData.getParameterTypeName(1));
+
     ResultSet jsonResultSet = preparedStatement.executeQuery();
+
+    ResultSetMetaData resultSetMetaData = preparedStatement.getMetaData();
+    if (resultSetMetaData != null) {
+      assertTrue(resultSetMetaData.getColumnCount() > 0);
+    }
 
     int rowCount = resultSetRowCount(jsonResultSet);
     assertEquals(1000, rowCount);
@@ -1637,11 +1657,22 @@ public class ITBigQueryJDBCTest extends ITBase {
     int insertStatus = insertPs.executeUpdate();
     assertEquals(1, insertStatus);
 
+    // Test Calendar overloads (setDate, setTime, setTimestamp with Calendar)
+    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    insertPs.setString(1, "refrigerator");
+    insertPs.setInt(2, 2);
+    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()), utcCal);
+    insertPs.setTime(4, Time.valueOf(LocalTime.NOON), utcCal);
+    insertPs.setDate(5, Date.valueOf("2025-12-03"), utcCal);
+
+    int insertStatus2 = insertPs.executeUpdate();
+    assertEquals(1, insertStatus2);
+
     ResultSet rs =
         bigQueryStatement.executeQuery(
             String.format("SELECT COUNT(*) AS row_count\n" + "FROM %s.%s", DATASET, TABLE_NAME1));
     rs.next();
-    assertEquals(1, rs.getInt(1));
+    assertEquals(2, rs.getInt(1));
 
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME1);
     int dropStatus = bigQueryStatement.executeUpdate(dropQuery);
@@ -1743,30 +1774,34 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDestinationTableAndDestinationDatasetThatDoesNotExistsCreates()
       throws SQLException {
     // setup
+    String largeResultDataset = ITBase.getUniqueDatasetName("FakeDataset");
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri
-            + "QueryDialect=BIG_QUERY;"
-            + "AllowLargeResults=1;"
-            + "LargeResultTable=FakeTable;"
-            + "LargeResultDataset=FakeDataset;";
+        String.format(
+            ITBigQueryJDBCTest.connection_uri
+                + "QueryDialect=BIG_QUERY;"
+                + "AllowLargeResults=1;"
+                + "LargeResultTable=FakeTable;"
+                + "LargeResultDataset=%s;",
+            largeResultDataset);
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
-    Connection connection = driver.connect(connection_uri, new Properties());
-    Statement statement = connection.createStatement();
+    try (Connection connection = driver.connect(connection_uri, new Properties())) {
+      Statement statement = connection.createStatement();
 
-    // act
-    ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
+      // act
+      ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
-    // assertion
-    assertNotNull(resultSet);
-    String separateQuery = "SELECT * FROM FakeDataset.FakeTable;";
-    boolean result = bigQueryStatement.execute(separateQuery);
-    assertTrue(result);
-
-    // clean up
-    bigQueryStatement.execute("DROP SCHEMA FakeDataset CASCADE;");
-    connection.close();
+      // assertion
+      assertNotNull(resultSet);
+      String separateQuery = String.format("SELECT * FROM %s.FakeTable;", largeResultDataset);
+      boolean result = bigQueryStatement.execute(separateQuery);
+      assertTrue(result);
+    } finally {
+      // clean up
+      bigQueryStatement.execute(
+          String.format("DROP SCHEMA IF EXISTS %s CASCADE;", largeResultDataset));
+    }
   }
 
   @Test
@@ -2211,6 +2246,96 @@ public class ITBigQueryJDBCTest extends ITBase {
     connection.close();
   }
 
+  @Test
+  public void testPreparedStatementCloseDoesNotRollbackTransaction() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_PS_CLOSE_TABLE" + randomNumber;
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
+
+    bigQueryStatement.execute(createTransactionTable);
+
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+        ps1.setInt(1, 1);
+        ps1.setString(2, "DwightShrute");
+        ps1.setInt(3, 10);
+        assertEquals(1, ps1.executeUpdate());
+
+        ps2.setInt(1, 2);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
+
+        ps1.close();
+        connection.commit();
+
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          int rowCount = 0;
+          while (resultSet.next()) {
+            rowCount++;
+            assertEquals(rowCount, resultSet.getInt(1));
+          }
+          assertEquals(2, rowCount);
+        }
+      } finally {
+        bigQueryStatement.execute(
+            String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
+      }
+    }
+  }
+
+  @Test
+  public void testClosingUnusedPreparedStatementDoesNotRollbackPreviousExecute()
+      throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_PS_UNUSED_CLOSE_TABLE" + randomNumber;
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
+
+    bigQueryStatement.execute(createTransactionTable);
+
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+
+        ps2.setInt(1, 1);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
+
+        ps1.close();
+        connection.commit();
+
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          assertTrue(resultSet.next());
+          assertEquals(1, resultSet.getInt(1));
+          assertEquals("MichaelScott", resultSet.getString(2));
+          assertEquals(20, resultSet.getInt(3));
+          assertFalse(resultSet.next());
+        }
+      }
+    } finally {
+      bigQueryStatement.execute(
+          String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
+    }
+  }
+
   // Private Helper functions
   private String getSessionId() throws InterruptedException {
     QueryJobConfiguration stubJobConfig =
@@ -2329,7 +2454,9 @@ public class ITBigQueryJDBCTest extends ITBase {
         Statement statementHTAPI = connectionHTAPI.createStatement()) {
 
       String query =
-          "SELECT * FROM INTEGRATION_TEST_FORMAT.all_bq_types WHERE stringField is not null";
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is not null",
+              PROJECT_ID, DATASET);
       ResultSet resultSetRegular = statement.executeQuery(query);
       ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
       resultSetRegular.next();
@@ -2620,7 +2747,8 @@ public class ITBigQueryJDBCTest extends ITBase {
         Statement statementHTAPI = connectionHTAPI.createStatement()) {
 
       String query =
-          "SELECT * FROM INTEGRATION_TEST_FORMAT.all_bq_types WHERE stringField is null;";
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null;", PROJECT_ID, DATASET);
       ResultSet resultSetRegular = statement.executeQuery(query);
       ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
       resultSetRegular.next();

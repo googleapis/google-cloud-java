@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -207,9 +209,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
-  private final NetworkEdgeSecurityServicesSettings settings;
+  private final @Nullable NetworkEdgeSecurityServicesSettings settings;
   private final NetworkEdgeSecurityServicesStub stub;
 
   /** Constructs an instance of NetworkEdgeSecurityServicesClient with default settings. */
@@ -252,7 +255,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworkEdgeSecurityServicesSettings getSettings() {
+  public final @Nullable NetworkEdgeSecurityServicesSettings getSettings() {
     return settings;
   }
 
@@ -1047,12 +1050,13 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkEdgeSecurityServicesRequest,
                 NetworkEdgeSecurityServiceAggregatedList,
                 Map.Entry<String, NetworkEdgeSecurityServicesScopedList>>
             context,
-        NetworkEdgeSecurityServiceAggregatedList response) {
+        @Nullable NetworkEdgeSecurityServiceAggregatedList response) {
       super(context, response);
     }
 
@@ -1062,18 +1066,20 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkEdgeSecurityServicesRequest,
                 NetworkEdgeSecurityServiceAggregatedList,
                 Map.Entry<String, NetworkEdgeSecurityServicesScopedList>>
             context,
-        NetworkEdgeSecurityServiceAggregatedList response) {
+        @Nullable NetworkEdgeSecurityServiceAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkEdgeSecurityServicesRequest,
                 NetworkEdgeSecurityServiceAggregatedList,
                 Map.Entry<String, NetworkEdgeSecurityServicesScopedList>>
@@ -1091,7 +1097,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1101,7 +1108,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }

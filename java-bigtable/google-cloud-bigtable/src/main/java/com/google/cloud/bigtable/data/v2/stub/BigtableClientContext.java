@@ -28,11 +28,9 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
-import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.DisabledShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.Shim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
-import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
@@ -282,6 +280,7 @@ public class BigtableClientContext {
               childInfo,
               metrics,
               backgroundExecutorProvider.getExecutor(),
+              parentShim.getUserCallbackExecutor(),
               parentShim.getChannelPool(),
               parentShim.getConfigManager(),
               parentShim.getFeatureFlags());

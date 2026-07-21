@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InsightName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT =
@@ -267,7 +270,7 @@ public class InsightName implements ResourceName {
         .toString();
   }
 
-  public static InsightName parse(String formattedString) {
+  public static @Nullable InsightName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -313,7 +316,7 @@ public class InsightName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<InsightName> values) {
+  public static List<String> toStringList(List<@Nullable InsightName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (InsightName value : values) {
       if (value == null) {
@@ -376,7 +379,7 @@ public class InsightName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

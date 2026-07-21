@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,10 +140,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class QuotaServiceClient implements BackgroundResource {
-  private final QuotaServiceSettings settings;
+  private final @Nullable QuotaServiceSettings settings;
   private final QuotaServiceStub stub;
 
   /** Constructs an instance of QuotaServiceClient with default settings. */
@@ -180,7 +183,7 @@ public class QuotaServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final QuotaServiceSettings getSettings() {
+  public final @Nullable QuotaServiceSettings getSettings() {
     return settings;
   }
 
@@ -212,7 +215,7 @@ public class QuotaServiceClient implements BackgroundResource {
    *     accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQuotaGroupsPagedResponse listQuotaGroups(AccountName parent) {
+  public final ListQuotaGroupsPagedResponse listQuotaGroups(@Nullable AccountName parent) {
     ListQuotaGroupsRequest request =
         ListQuotaGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -413,8 +416,8 @@ public class QuotaServiceClient implements BackgroundResource {
           ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup, ListQuotaGroupsPage> {
 
     private ListQuotaGroupsPage(
-        PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
-        ListQuotaGroupsResponse response) {
+        @Nullable PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
+        @Nullable ListQuotaGroupsResponse response) {
       super(context, response);
     }
 
@@ -424,14 +427,14 @@ public class QuotaServiceClient implements BackgroundResource {
 
     @Override
     protected ListQuotaGroupsPage createPage(
-        PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
-        ListQuotaGroupsResponse response) {
+        @Nullable PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
+        @Nullable ListQuotaGroupsResponse response) {
       return new ListQuotaGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQuotaGroupsPage> createPageAsync(
-        PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
+        @Nullable PageContext<ListQuotaGroupsRequest, ListQuotaGroupsResponse, QuotaGroup> context,
         ApiFuture<ListQuotaGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -446,7 +449,7 @@ public class QuotaServiceClient implements BackgroundResource {
           ListQuotaGroupsFixedSizeCollection> {
 
     private ListQuotaGroupsFixedSizeCollection(
-        List<ListQuotaGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -456,7 +459,7 @@ public class QuotaServiceClient implements BackgroundResource {
 
     @Override
     protected ListQuotaGroupsFixedSizeCollection createCollection(
-        List<ListQuotaGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaGroupsPage> pages, int collectionSize) {
       return new ListQuotaGroupsFixedSizeCollection(pages, collectionSize);
     }
   }

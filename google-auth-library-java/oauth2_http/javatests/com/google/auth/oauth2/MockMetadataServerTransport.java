@@ -71,9 +71,11 @@ public class MockMetadataServerTransport extends MockHttpTransport {
 
   private boolean emptyContent;
   private MockLowLevelHttpRequest request;
+  private int requestCount = 0;
 
-  private RegionalAccessBoundary regionalAccessBoundary;
-  private IOException lookupError;
+  public int getRequestCount() {
+    return requestCount;
+  }
 
   public MockMetadataServerTransport() {}
 
@@ -122,20 +124,13 @@ public class MockMetadataServerTransport extends MockHttpTransport {
     this.emptyContent = emptyContent;
   }
 
-  public void setRegionalAccessBoundary(RegionalAccessBoundary regionalAccessBoundary) {
-    this.regionalAccessBoundary = regionalAccessBoundary;
-  }
-
-  public void setLookupError(IOException lookupError) {
-    this.lookupError = lookupError;
-  }
-
   public MockLowLevelHttpRequest getRequest() {
     return request;
   }
 
   @Override
   public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+    requestCount++;
     if (url.startsWith(ComputeEngineCredentials.getTokenServerEncodedUrl())) {
       this.request = getMockRequestForTokenEndpoint(url);
       return this.request;
@@ -150,8 +145,6 @@ public class MockMetadataServerTransport extends MockHttpTransport {
       return this.request;
     } else if (isMtlsConfigRequestUrl(url)) {
       return getMockRequestForMtlsConfig(url);
-    } else if (isIamLookupUrl(url)) {
-      return getMockRequestForRegionalAccessBoundaryLookup(url);
     }
     this.request =
         new MockLowLevelHttpRequest(url) {
@@ -226,7 +219,7 @@ public class MockMetadataServerTransport extends MockHttpTransport {
           refreshContents.put(
               "access_token", scopesToAccessToken.get("[" + urlParsed.get(1) + "]"));
         }
-        refreshContents.put("expires_in", 3600);
+        refreshContents.put("expires_in", 3600000);
         refreshContents.put("token_type", "Bearer");
         String refreshText = refreshContents.toPrettyString();
 
@@ -358,33 +351,5 @@ public class MockMetadataServerTransport extends MockHttpTransport {
     return url.equals(
         ComputeEngineCredentials.getMetadataServerUrl()
             + SecureSessionAgent.S2A_CONFIG_ENDPOINT_POSTFIX);
-  }
-
-  private MockLowLevelHttpRequest getMockRequestForRegionalAccessBoundaryLookup(String url) {
-    return new MockLowLevelHttpRequest(url) {
-      @Override
-      public LowLevelHttpResponse execute() throws IOException {
-        if (lookupError != null) {
-          throw lookupError;
-        }
-        if (regionalAccessBoundary == null) {
-          return new MockLowLevelHttpResponse().setStatusCode(404);
-        }
-        GenericJson responseJson = new GenericJson();
-        responseJson.setFactory(OAuth2Utils.JSON_FACTORY);
-        responseJson.put("encodedLocations", regionalAccessBoundary.getEncodedLocations());
-        responseJson.put("locations", regionalAccessBoundary.getLocations());
-        String content = responseJson.toPrettyString();
-        return new MockLowLevelHttpResponse().setContentType(Json.MEDIA_TYPE).setContent(content);
-      }
-    };
-  }
-
-  protected boolean isIamLookupUrl(String url) {
-    // Mocking call to the /allowedLocations endpoint for regional access boundary refresh.
-    // For testing convenience, this mock transport handles
-    // the /allowedLocations endpoint. The actual server for this endpoint
-    // will be the IAM Credentials API.
-    return url.endsWith("/allowedLocations");
   }
 }

@@ -41,6 +41,7 @@ public class SyncRetrieveTools {
               .setToolset(
                   ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
               .addAllToolIds(new ArrayList<String>())
+              .setBypassPersistenceConfig(true)
               .build();
       RetrieveToolsResponse response = toolServiceClient.retrieveTools(request);
     }

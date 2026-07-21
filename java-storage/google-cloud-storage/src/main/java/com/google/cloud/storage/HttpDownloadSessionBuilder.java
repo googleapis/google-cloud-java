@@ -58,7 +58,7 @@ final class HttpDownloadSessionBuilder {
 
     private ReadableByteChannelSessionBuilder(BlobReadChannelContext blobReadChannelContext) {
       this.blobReadChannelContext = blobReadChannelContext;
-      this.hasher = Hasher.defaultHasher();
+      this.hasher = Hasher.readHasher();
       this.autoGzipDecompression = false;
     }
 

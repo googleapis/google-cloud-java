@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SessionEntityTypeName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AGENT_SESSION_ENTITY_TYPE =
@@ -198,7 +201,7 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
-  public static SessionEntityTypeName parse(String formattedString) {
+  public static @Nullable SessionEntityTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -234,7 +237,7 @@ public class SessionEntityTypeName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SessionEntityTypeName> values) {
+  public static List<String> toStringList(List<@Nullable SessionEntityTypeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SessionEntityTypeName value : values) {
       if (value == null) {
@@ -292,7 +295,7 @@ public class SessionEntityTypeName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

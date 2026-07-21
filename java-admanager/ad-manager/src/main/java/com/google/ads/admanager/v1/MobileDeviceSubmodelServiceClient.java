@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -147,9 +149,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
-  private final MobileDeviceSubmodelServiceSettings settings;
+  private final @Nullable MobileDeviceSubmodelServiceSettings settings;
   private final MobileDeviceSubmodelServiceStub stub;
 
   /** Constructs an instance of MobileDeviceSubmodelServiceClient with default settings. */
@@ -192,7 +195,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MobileDeviceSubmodelServiceSettings getSettings() {
+  public final @Nullable MobileDeviceSubmodelServiceSettings getSettings() {
     return settings;
   }
 
@@ -225,7 +228,8 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
    *     `networks/{network_code}/mobileDeviceSubmodels/{mobile_device_submodel_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MobileDeviceSubmodel getMobileDeviceSubmodel(MobileDeviceSubmodelName name) {
+  public final MobileDeviceSubmodel getMobileDeviceSubmodel(
+      @Nullable MobileDeviceSubmodelName name) {
     GetMobileDeviceSubmodelRequest request =
         GetMobileDeviceSubmodelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -356,7 +360,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMobileDeviceSubmodelsPagedResponse listMobileDeviceSubmodels(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListMobileDeviceSubmodelsRequest request =
         ListMobileDeviceSubmodelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -584,12 +588,13 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
           ListMobileDeviceSubmodelsPage> {
 
     private ListMobileDeviceSubmodelsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMobileDeviceSubmodelsRequest,
                 ListMobileDeviceSubmodelsResponse,
                 MobileDeviceSubmodel>
             context,
-        ListMobileDeviceSubmodelsResponse response) {
+        @Nullable ListMobileDeviceSubmodelsResponse response) {
       super(context, response);
     }
 
@@ -599,18 +604,20 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileDeviceSubmodelsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMobileDeviceSubmodelsRequest,
                 ListMobileDeviceSubmodelsResponse,
                 MobileDeviceSubmodel>
             context,
-        ListMobileDeviceSubmodelsResponse response) {
+        @Nullable ListMobileDeviceSubmodelsResponse response) {
       return new ListMobileDeviceSubmodelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMobileDeviceSubmodelsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMobileDeviceSubmodelsRequest,
                 ListMobileDeviceSubmodelsResponse,
                 MobileDeviceSubmodel>
@@ -629,7 +636,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
           ListMobileDeviceSubmodelsFixedSizeCollection> {
 
     private ListMobileDeviceSubmodelsFixedSizeCollection(
-        List<ListMobileDeviceSubmodelsPage> pages, int collectionSize) {
+        @Nullable List<ListMobileDeviceSubmodelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -639,7 +646,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileDeviceSubmodelsFixedSizeCollection createCollection(
-        List<ListMobileDeviceSubmodelsPage> pages, int collectionSize) {
+        @Nullable List<ListMobileDeviceSubmodelsPage> pages, int collectionSize) {
       return new ListMobileDeviceSubmodelsFixedSizeCollection(pages, collectionSize);
     }
   }

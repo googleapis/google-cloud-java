@@ -32,6 +32,7 @@ import com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta2.WriteStream;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -41,6 +42,7 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @BetaApi
 @Deprecated
 @Generated("by gapic-generator-java")

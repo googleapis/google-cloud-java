@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -365,10 +367,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GkeHubMembershipServiceClient implements BackgroundResource {
-  private final GkeHubMembershipServiceSettings settings;
+  private final @Nullable GkeHubMembershipServiceSettings settings;
   private final GkeHubMembershipServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -417,7 +420,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final GkeHubMembershipServiceSettings getSettings() {
+  public final @Nullable GkeHubMembershipServiceSettings getSettings() {
     return settings;
   }
 
@@ -469,7 +472,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     memberships in all the regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembershipsPagedResponse listMemberships(LocationName parent) {
+  public final ListMembershipsPagedResponse listMemberships(@Nullable LocationName parent) {
     ListMembershipsRequest request =
         ListMembershipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -647,7 +650,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership getMembership(MembershipName name) {
+  public final Membership getMembership(@Nullable MembershipName name) {
     GetMembershipRequest request =
         GetMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMembership(request);
@@ -777,7 +780,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Membership, OperationMetadata> createMembershipAsync(
-      LocationName parent, Membership resource, String membershipId) {
+      @Nullable LocationName parent, Membership resource, String membershipId) {
     CreateMembershipRequest request =
         CreateMembershipRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -973,7 +976,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMembershipAsync(
-      MembershipName name) {
+      @Nullable MembershipName name) {
     DeleteMembershipRequest request =
         DeleteMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMembershipAsync(request);
@@ -1153,7 +1156,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Membership, OperationMetadata> updateMembershipAsync(
-      MembershipName name, Membership resource, FieldMask updateMask) {
+      @Nullable MembershipName name, Membership resource, FieldMask updateMask) {
     UpdateMembershipRequest request =
         UpdateMembershipRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1954,8 +1957,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
           ListMembershipsRequest, ListMembershipsResponse, Membership, ListMembershipsPage> {
 
     private ListMembershipsPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       super(context, response);
     }
 
@@ -1965,14 +1968,14 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsPage createPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       return new ListMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipsPage> createPageAsync(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
         ApiFuture<ListMembershipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1987,7 +1990,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
           ListMembershipsFixedSizeCollection> {
 
     private ListMembershipsFixedSizeCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1997,7 +2000,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsFixedSizeCollection createCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       return new ListMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2031,8 +2034,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2042,14 +2045,14 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2063,7 +2066,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2073,7 +2077,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

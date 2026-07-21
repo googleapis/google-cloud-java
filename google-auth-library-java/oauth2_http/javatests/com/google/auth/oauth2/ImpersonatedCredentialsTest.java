@@ -31,8 +31,6 @@
 
 package com.google.auth.oauth2;
 
-import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
-import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -42,7 +40,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -72,7 +69,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -149,11 +145,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
   private static final String REFRESH_TOKEN = "dasdfasdffa4ffdfadgyjirasdfadsft";
   public static final List<String> DELEGATES =
       Arrays.asList("sa1@developer.gserviceaccount.com", "sa2@developer.gserviceaccount.com");
-  public static final RegionalAccessBoundary REGIONAL_ACCESS_BOUNDARY =
-      new RegionalAccessBoundary(
-          TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
-          TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
-          null);
 
   private GoogleCredentials sourceCredentials;
   private MockIAMCredentialsServiceTransportFactory mockTransportFactory;
@@ -176,10 +167,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .setProjectId(PROJECT_ID)
             .setHttpTransportFactory(transportFactory)
             .build();
-    sourceCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(sourceCredentials.clock));
     transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
-    transportFactory.transport.setRegionalAccessBoundary(REGIONAL_ACCESS_BOUNDARY);
 
     return sourceCredentials;
   }
@@ -595,8 +583,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             VALID_LIFETIME,
             mockTransportFactory,
             QUOTA_PROJECT_ID);
-    targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertTrue(metadata.containsKey("x-goog-user-project"));
@@ -619,8 +605,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             IMMUTABLE_SCOPES_LIST,
             VALID_LIFETIME,
             mockTransportFactory);
-    targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        createDummyRab(targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertFalse(metadata.containsKey("x-goog-user-project"));
@@ -1274,54 +1258,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     AccessToken token = deserializedCredentials.refreshAccessToken();
     assertNotNull(token);
     assertEquals(ACCESS_TOKEN, token.getTokenValue());
-  }
-
-  @Test
-  void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-
-    // Mock regional access boundary response
-    RegionalAccessBoundary regionalAccessBoundary = REGIONAL_ACCESS_BOUNDARY;
-
-    mockTransportFactory.getTransport().setRegionalAccessBoundary(regionalAccessBoundary);
-    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
-    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
-    mockTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
-    mockTransportFactory
-        .getTransport()
-        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "", true);
-
-    ImpersonatedCredentials targetCredentials =
-        ImpersonatedCredentials.create(
-            sourceCredentials,
-            IMPERSONATED_CLIENT_EMAIL,
-            null,
-            IMMUTABLE_SCOPES_LIST,
-            VALID_LIFETIME,
-            mockTransportFactory);
-
-    // First call: initiates async refresh.
-    Map<String, List<String>> headers = targetCredentials.getRequestMetadata();
-    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
-
-    waitForRegionalAccessBoundary(targetCredentials);
-
-    // Second call: should have header.
-    headers = targetCredentials.getRequestMetadata();
-    assertEquals(
-        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
-        Collections.singletonList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   public static String getDefaultExpireTime() {

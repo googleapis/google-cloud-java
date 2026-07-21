@@ -30,7 +30,7 @@ public interface QueryUserRootContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Location of the user root folder whose contents to list.
+   * Required. Location of the user root folder to list contents for.
    * Format: projects/&#42;&#47;locations/&#42;
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface QueryUserRootContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Location of the user root folder whose contents to list.
+   * Required. Location of the user root folder to list contents for.
    * Format: projects/&#42;&#47;locations/&#42;
    * </pre>
    *
@@ -117,8 +117,9 @@ public interface QueryUserRootContentsRequestOrBuilder
    * Will order Folders before Repositories, and then by `order_by` in ascending
    * order. Supported keywords: display_name (default), created_at,
    * last_modified_at. Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,8 +136,9 @@ public interface QueryUserRootContentsRequestOrBuilder
    * Will order Folders before Repositories, and then by `order_by` in ascending
    * order. Supported keywords: display_name (default), created_at,
    * last_modified_at. Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -153,7 +155,8 @@ public interface QueryUserRootContentsRequestOrBuilder
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -170,7 +173,8 @@ public interface QueryUserRootContentsRequestOrBuilder
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

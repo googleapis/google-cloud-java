@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AuthorizedDomainsClient implements BackgroundResource {
-  private final AuthorizedDomainsSettings settings;
+  private final @Nullable AuthorizedDomainsSettings settings;
   private final AuthorizedDomainsStub stub;
 
   /** Constructs an instance of AuthorizedDomainsClient with default settings. */
@@ -187,7 +190,7 @@ public class AuthorizedDomainsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AuthorizedDomainsSettings getSettings() {
+  public final @Nullable AuthorizedDomainsSettings getSettings() {
     return settings;
   }
 
@@ -365,9 +368,11 @@ public class AuthorizedDomainsClient implements BackgroundResource {
           ListAuthorizedDomainsPage> {
 
     private ListAuthorizedDomainsPage(
-        PageContext<ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
+        @Nullable
+            PageContext<
+                ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
             context,
-        ListAuthorizedDomainsResponse response) {
+        @Nullable ListAuthorizedDomainsResponse response) {
       super(context, response);
     }
 
@@ -377,15 +382,19 @@ public class AuthorizedDomainsClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizedDomainsPage createPage(
-        PageContext<ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
+        @Nullable
+            PageContext<
+                ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
             context,
-        ListAuthorizedDomainsResponse response) {
+        @Nullable ListAuthorizedDomainsResponse response) {
       return new ListAuthorizedDomainsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAuthorizedDomainsPage> createPageAsync(
-        PageContext<ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
+        @Nullable
+            PageContext<
+                ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse, AuthorizedDomain>
             context,
         ApiFuture<ListAuthorizedDomainsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -401,7 +410,7 @@ public class AuthorizedDomainsClient implements BackgroundResource {
           ListAuthorizedDomainsFixedSizeCollection> {
 
     private ListAuthorizedDomainsFixedSizeCollection(
-        List<ListAuthorizedDomainsPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizedDomainsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -411,7 +420,7 @@ public class AuthorizedDomainsClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizedDomainsFixedSizeCollection createCollection(
-        List<ListAuthorizedDomainsPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizedDomainsPage> pages, int collectionSize) {
       return new ListAuthorizedDomainsFixedSizeCollection(pages, collectionSize);
     }
   }

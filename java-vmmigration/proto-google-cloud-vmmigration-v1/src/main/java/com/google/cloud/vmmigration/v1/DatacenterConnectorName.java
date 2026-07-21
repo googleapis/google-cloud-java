@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DatacenterConnectorName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_SOURCE_DATACENTER_CONNECTOR =
@@ -98,7 +101,7 @@ public class DatacenterConnectorName implements ResourceName {
         .toString();
   }
 
-  public static DatacenterConnectorName parse(String formattedString) {
+  public static @Nullable DatacenterConnectorName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class DatacenterConnectorName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DatacenterConnectorName> values) {
+  public static List<String> toStringList(List<@Nullable DatacenterConnectorName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DatacenterConnectorName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class DatacenterConnectorName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -326,7 +328,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -407,10 +411,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BatchServiceClient implements BackgroundResource {
-  private final BatchServiceSettings settings;
+  private final @Nullable BatchServiceSettings settings;
   private final BatchServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -457,7 +462,7 @@ public class BatchServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BatchServiceSettings getSettings() {
+  public final @Nullable BatchServiceSettings getSettings() {
     return settings;
   }
 
@@ -513,7 +518,7 @@ public class BatchServiceClient implements BackgroundResource {
    *     Job will be "{parent}/jobs/{job_id}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(LocationName parent, Job job, String jobId) {
+  public final Job createJob(@Nullable LocationName parent, Job job, String jobId) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -642,7 +647,7 @@ public class BatchServiceClient implements BackgroundResource {
    * @param name Required. Job name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -866,7 +871,8 @@ public class BatchServiceClient implements BackgroundResource {
    * @param name Required. Job name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(JobName name) {
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(
+      @Nullable JobName name) {
     CancelJobRequest request =
         CancelJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelJobAsync(request);
@@ -1236,7 +1242,7 @@ public class BatchServiceClient implements BackgroundResource {
    * @param name Required. Task name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -1352,7 +1358,7 @@ public class BatchServiceClient implements BackgroundResource {
    *     "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(TaskGroupName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable TaskGroupName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -1534,7 +1540,9 @@ public class BatchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResourceAllowance createResourceAllowance(
-      LocationName parent, ResourceAllowance resourceAllowance, String resourceAllowanceId) {
+      @Nullable LocationName parent,
+      ResourceAllowance resourceAllowance,
+      String resourceAllowanceId) {
     CreateResourceAllowanceRequest request =
         CreateResourceAllowanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1675,7 +1683,7 @@ public class BatchServiceClient implements BackgroundResource {
    * @param name Required. ResourceAllowance name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceAllowance getResourceAllowance(ResourceAllowanceName name) {
+  public final ResourceAllowance getResourceAllowance(@Nullable ResourceAllowanceName name) {
     GetResourceAllowanceRequest request =
         GetResourceAllowanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1795,7 +1803,7 @@ public class BatchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteResourceAllowanceAsync(
-      ResourceAllowanceName name) {
+      @Nullable ResourceAllowanceName name) {
     DeleteResourceAllowanceRequest request =
         DeleteResourceAllowanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1954,7 +1962,8 @@ public class BatchServiceClient implements BackgroundResource {
    * @param parent Required. Parent path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourceAllowancesPagedResponse listResourceAllowances(LocationName parent) {
+  public final ListResourceAllowancesPagedResponse listResourceAllowances(
+      @Nullable LocationName parent) {
     ListResourceAllowancesRequest request =
         ListResourceAllowancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2204,6 +2213,18 @@ public class BatchServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2236,6 +2257,18 @@ public class BatchServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2270,6 +2303,18 @@ public class BatchServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2407,7 +2452,8 @@ public class BatchServiceClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -2417,13 +2463,14 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2433,7 +2480,7 @@ public class BatchServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2443,7 +2490,7 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2470,8 +2517,8 @@ public class BatchServiceClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -2481,14 +2528,14 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2498,7 +2545,7 @@ public class BatchServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2508,7 +2555,7 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2547,10 +2594,11 @@ public class BatchServiceClient implements BackgroundResource {
           ListResourceAllowancesPage> {
 
     private ListResourceAllowancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
             context,
-        ListResourceAllowancesResponse response) {
+        @Nullable ListResourceAllowancesResponse response) {
       super(context, response);
     }
 
@@ -2560,16 +2608,18 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListResourceAllowancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
             context,
-        ListResourceAllowancesResponse response) {
+        @Nullable ListResourceAllowancesResponse response) {
       return new ListResourceAllowancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceAllowancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
             context,
         ApiFuture<ListResourceAllowancesResponse> futureResponse) {
@@ -2586,7 +2636,7 @@ public class BatchServiceClient implements BackgroundResource {
           ListResourceAllowancesFixedSizeCollection> {
 
     private ListResourceAllowancesFixedSizeCollection(
-        List<ListResourceAllowancesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceAllowancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2596,7 +2646,7 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListResourceAllowancesFixedSizeCollection createCollection(
-        List<ListResourceAllowancesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceAllowancesPage> pages, int collectionSize) {
       return new ListResourceAllowancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2630,8 +2680,8 @@ public class BatchServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2641,14 +2691,14 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2662,7 +2712,8 @@ public class BatchServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2672,7 +2723,7 @@ public class BatchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

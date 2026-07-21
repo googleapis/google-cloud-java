@@ -31,6 +31,8 @@ import com.google.shopping.merchant.productstudio.v1alpha.stub.TextSuggestionsSe
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +85,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TextSuggestionsServiceSettings extends ClientSettings<TextSuggestionsServiceSettings> {
@@ -151,7 +154,7 @@ public class TextSuggestionsServiceSettings extends ClientSettings<TextSuggestio
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -172,7 +175,7 @@ public class TextSuggestionsServiceSettings extends ClientSettings<TextSuggestio
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(TextSuggestionsServiceStubSettings.newBuilder(clientContext));
     }
 

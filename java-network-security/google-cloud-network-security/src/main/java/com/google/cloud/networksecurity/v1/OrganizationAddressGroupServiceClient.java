@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -381,9 +383,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OrganizationAddressGroupServiceClient implements BackgroundResource {
-  private final OrganizationAddressGroupServiceSettings settings;
+  private final @Nullable OrganizationAddressGroupServiceSettings settings;
   private final OrganizationAddressGroupServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -431,7 +434,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final OrganizationAddressGroupServiceSettings getSettings() {
+  public final @Nullable OrganizationAddressGroupServiceSettings getSettings() {
     return settings;
   }
 
@@ -473,7 +476,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    *     specified in the format `projects/&#42;/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAddressGroupsPagedResponse listAddressGroups(LocationName parent) {
+  public final ListAddressGroupsPagedResponse listAddressGroups(@Nullable LocationName parent) {
     ListAddressGroupsRequest request =
         ListAddressGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -652,7 +655,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    *     `projects/&#42;/locations/{location}/addressGroups/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AddressGroup getAddressGroup(AddressGroupName name) {
+  public final AddressGroup getAddressGroup(@Nullable AddressGroupName name) {
     GetAddressGroupRequest request =
         GetAddressGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAddressGroup(request);
@@ -786,7 +789,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> createAddressGroupAsync(
-      LocationName parent, AddressGroup addressGroup, String addressGroupId) {
+      @Nullable LocationName parent, AddressGroup addressGroup, String addressGroupId) {
     CreateAddressGroupRequest request =
         CreateAddressGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -829,7 +832,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> createAddressGroupAsync(
-      OrganizationLocationName parent, AddressGroup addressGroup, String addressGroupId) {
+      @Nullable OrganizationLocationName parent, AddressGroup addressGroup, String addressGroupId) {
     CreateAddressGroupRequest request =
         CreateAddressGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1152,7 +1155,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> addAddressGroupItemsAsync(
-      AddressGroupName addressGroup, List<String> items) {
+      @Nullable AddressGroupName addressGroup, List<String> items) {
     AddAddressGroupItemsRequest request =
         AddAddressGroupItemsRequest.newBuilder()
             .setAddressGroup(addressGroup == null ? null : addressGroup.toString())
@@ -1341,7 +1344,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> removeAddressGroupItemsAsync(
-      AddressGroupName addressGroup, List<String> items) {
+      @Nullable AddressGroupName addressGroup, List<String> items) {
     RemoveAddressGroupItemsRequest request =
         RemoveAddressGroupItemsRequest.newBuilder()
             .setAddressGroup(addressGroup == null ? null : addressGroup.toString())
@@ -1534,7 +1537,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> cloneAddressGroupItemsAsync(
-      AddressGroupName addressGroup, AddressGroupName sourceAddressGroup) {
+      @Nullable AddressGroupName addressGroup, @Nullable AddressGroupName sourceAddressGroup) {
     CloneAddressGroupItemsRequest request =
         CloneAddressGroupItemsRequest.newBuilder()
             .setAddressGroup(addressGroup == null ? null : addressGroup.toString())
@@ -1578,7 +1581,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> cloneAddressGroupItemsAsync(
-      AddressGroupName addressGroup, String sourceAddressGroup) {
+      @Nullable AddressGroupName addressGroup, String sourceAddressGroup) {
     CloneAddressGroupItemsRequest request =
         CloneAddressGroupItemsRequest.newBuilder()
             .setAddressGroup(addressGroup == null ? null : addressGroup.toString())
@@ -1621,7 +1624,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AddressGroup, OperationMetadata> cloneAddressGroupItemsAsync(
-      String addressGroup, AddressGroupName sourceAddressGroup) {
+      String addressGroup, @Nullable AddressGroupName sourceAddressGroup) {
     CloneAddressGroupItemsRequest request =
         CloneAddressGroupItemsRequest.newBuilder()
             .setAddressGroup(addressGroup)
@@ -1820,7 +1823,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAddressGroupAsync(
-      AddressGroupName name) {
+      @Nullable AddressGroupName name) {
     DeleteAddressGroupRequest request =
         DeleteAddressGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1994,7 +1997,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAddressGroupReferencesPagedResponse listAddressGroupReferences(
-      AddressGroupName addressGroup) {
+      @Nullable AddressGroupName addressGroup) {
     ListAddressGroupReferencesRequest request =
         ListAddressGroupReferencesRequest.newBuilder()
             .setAddressGroup(addressGroup == null ? null : addressGroup.toString())
@@ -2645,8 +2648,9 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListAddressGroupsPage> {
 
     private ListAddressGroupsPage(
-        PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup> context,
-        ListAddressGroupsResponse response) {
+        @Nullable PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup>
+            context,
+        @Nullable ListAddressGroupsResponse response) {
       super(context, response);
     }
 
@@ -2656,14 +2660,16 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListAddressGroupsPage createPage(
-        PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup> context,
-        ListAddressGroupsResponse response) {
+        @Nullable PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup>
+            context,
+        @Nullable ListAddressGroupsResponse response) {
       return new ListAddressGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAddressGroupsPage> createPageAsync(
-        PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup> context,
+        @Nullable PageContext<ListAddressGroupsRequest, ListAddressGroupsResponse, AddressGroup>
+            context,
         ApiFuture<ListAddressGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2678,7 +2684,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListAddressGroupsFixedSizeCollection> {
 
     private ListAddressGroupsFixedSizeCollection(
-        List<ListAddressGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListAddressGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2688,7 +2694,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListAddressGroupsFixedSizeCollection createCollection(
-        List<ListAddressGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListAddressGroupsPage> pages, int collectionSize) {
       return new ListAddressGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2729,12 +2735,13 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListAddressGroupReferencesPage> {
 
     private ListAddressGroupReferencesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAddressGroupReferencesRequest,
                 ListAddressGroupReferencesResponse,
                 ListAddressGroupReferencesResponse.AddressGroupReference>
             context,
-        ListAddressGroupReferencesResponse response) {
+        @Nullable ListAddressGroupReferencesResponse response) {
       super(context, response);
     }
 
@@ -2744,18 +2751,20 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListAddressGroupReferencesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAddressGroupReferencesRequest,
                 ListAddressGroupReferencesResponse,
                 ListAddressGroupReferencesResponse.AddressGroupReference>
             context,
-        ListAddressGroupReferencesResponse response) {
+        @Nullable ListAddressGroupReferencesResponse response) {
       return new ListAddressGroupReferencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAddressGroupReferencesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAddressGroupReferencesRequest,
                 ListAddressGroupReferencesResponse,
                 ListAddressGroupReferencesResponse.AddressGroupReference>
@@ -2774,7 +2783,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListAddressGroupReferencesFixedSizeCollection> {
 
     private ListAddressGroupReferencesFixedSizeCollection(
-        List<ListAddressGroupReferencesPage> pages, int collectionSize) {
+        @Nullable List<ListAddressGroupReferencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2784,7 +2793,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListAddressGroupReferencesFixedSizeCollection createCollection(
-        List<ListAddressGroupReferencesPage> pages, int collectionSize) {
+        @Nullable List<ListAddressGroupReferencesPage> pages, int collectionSize) {
       return new ListAddressGroupReferencesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2818,8 +2827,8 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2829,14 +2838,14 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2850,7 +2859,8 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2860,7 +2870,7 @@ public class OrganizationAddressGroupServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

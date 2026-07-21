@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -293,9 +295,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InternalRangeServiceClient implements BackgroundResource {
-  private final InternalRangeServiceSettings settings;
+  private final @Nullable InternalRangeServiceSettings settings;
   private final InternalRangeServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -338,7 +341,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final InternalRangeServiceSettings getSettings() {
+  public final @Nullable InternalRangeServiceSettings getSettings() {
     return settings;
   }
 
@@ -379,7 +382,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInternalRangesPagedResponse listInternalRanges(LocationName parent) {
+  public final ListInternalRangesPagedResponse listInternalRanges(@Nullable LocationName parent) {
     ListInternalRangesRequest request =
         ListInternalRangesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -556,7 +559,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
    * @param name Required. Name of the InternalRange to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InternalRange getInternalRange(InternalRangeName name) {
+  public final InternalRange getInternalRange(@Nullable InternalRangeName name) {
     GetInternalRangeRequest request =
         GetInternalRangeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInternalRange(request);
@@ -681,7 +684,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<InternalRange, OperationMetadata> createInternalRangeAsync(
-      LocationName parent, InternalRange internalRange, String internalRangeId) {
+      @Nullable LocationName parent, InternalRange internalRange, String internalRangeId) {
     CreateInternalRangeRequest request =
         CreateInternalRangeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -987,7 +990,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInternalRangeAsync(
-      InternalRangeName name) {
+      @Nullable InternalRangeName name) {
     DeleteInternalRangeRequest request =
         DeleteInternalRangeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1541,8 +1544,9 @@ public class InternalRangeServiceClient implements BackgroundResource {
           ListInternalRangesPage> {
 
     private ListInternalRangesPage(
-        PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange> context,
-        ListInternalRangesResponse response) {
+        @Nullable PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange>
+            context,
+        @Nullable ListInternalRangesResponse response) {
       super(context, response);
     }
 
@@ -1552,14 +1556,16 @@ public class InternalRangeServiceClient implements BackgroundResource {
 
     @Override
     protected ListInternalRangesPage createPage(
-        PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange> context,
-        ListInternalRangesResponse response) {
+        @Nullable PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange>
+            context,
+        @Nullable ListInternalRangesResponse response) {
       return new ListInternalRangesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInternalRangesPage> createPageAsync(
-        PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange> context,
+        @Nullable PageContext<ListInternalRangesRequest, ListInternalRangesResponse, InternalRange>
+            context,
         ApiFuture<ListInternalRangesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1574,7 +1580,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
           ListInternalRangesFixedSizeCollection> {
 
     private ListInternalRangesFixedSizeCollection(
-        List<ListInternalRangesPage> pages, int collectionSize) {
+        @Nullable List<ListInternalRangesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1584,7 +1590,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
 
     @Override
     protected ListInternalRangesFixedSizeCollection createCollection(
-        List<ListInternalRangesPage> pages, int collectionSize) {
+        @Nullable List<ListInternalRangesPage> pages, int collectionSize) {
       return new ListInternalRangesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1618,8 +1624,8 @@ public class InternalRangeServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1629,14 +1635,14 @@ public class InternalRangeServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1650,7 +1656,8 @@ public class InternalRangeServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1660,7 +1667,7 @@ public class InternalRangeServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

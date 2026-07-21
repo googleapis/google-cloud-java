@@ -24,6 +24,8 @@ import com.google.cloud.bigquery.storage.v1.stub.BigQueryWriteStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -222,9 +224,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BigQueryWriteClient implements BackgroundResource {
-  private final BigQueryWriteSettings settings;
+  private final @Nullable BigQueryWriteSettings settings;
   private final BigQueryWriteStub stub;
 
   /** Constructs an instance of BigQueryWriteClient with default settings. */
@@ -264,7 +267,7 @@ public class BigQueryWriteClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BigQueryWriteSettings getSettings() {
+  public final @Nullable BigQueryWriteSettings getSettings() {
     return settings;
   }
 
@@ -299,7 +302,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param writeStream Required. Stream to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WriteStream createWriteStream(TableName parent, WriteStream writeStream) {
+  public final WriteStream createWriteStream(@Nullable TableName parent, WriteStream writeStream) {
     CreateWriteStreamRequest request =
         CreateWriteStreamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -494,7 +497,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WriteStream getWriteStream(WriteStreamName name) {
+  public final WriteStream getWriteStream(@Nullable WriteStreamName name) {
     GetWriteStreamRequest request =
         GetWriteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWriteStream(request);
@@ -610,7 +613,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FinalizeWriteStreamResponse finalizeWriteStream(WriteStreamName name) {
+  public final FinalizeWriteStreamResponse finalizeWriteStream(@Nullable WriteStreamName name) {
     FinalizeWriteStreamRequest request =
         FinalizeWriteStreamRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -734,7 +737,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    *     `projects/{project}/datasets/{dataset}/tables/{table}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(TableName parent) {
+  public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(@Nullable TableName parent) {
     BatchCommitWriteStreamsRequest request =
         BatchCommitWriteStreamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -869,7 +872,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @param writeStream Required. The stream that is the target of the flush operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FlushRowsResponse flushRows(WriteStreamName writeStream) {
+  public final FlushRowsResponse flushRows(@Nullable WriteStreamName writeStream) {
     FlushRowsRequest request =
         FlushRowsRequest.newBuilder()
             .setWriteStream(writeStream == null ? null : writeStream.toString())

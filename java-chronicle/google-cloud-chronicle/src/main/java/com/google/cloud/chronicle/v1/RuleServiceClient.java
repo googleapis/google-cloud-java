@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -373,9 +375,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RuleServiceClient implements BackgroundResource {
-  private final RuleServiceSettings settings;
+  private final @Nullable RuleServiceSettings settings;
   private final RuleServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -422,7 +425,7 @@ public class RuleServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final RuleServiceSettings getSettings() {
+  public final @Nullable RuleServiceSettings getSettings() {
     return settings;
   }
 
@@ -471,7 +474,7 @@ public class RuleServiceClient implements BackgroundResource {
    * @param rule Required. The rule to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Rule createRule(InstanceName parent, Rule rule) {
+  public final Rule createRule(@Nullable InstanceName parent, Rule rule) {
     CreateRuleRequest request =
         CreateRuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -589,7 +592,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Rule getRule(RuleName name) {
+  public final Rule getRule(@Nullable RuleName name) {
     GetRuleRequest request =
         GetRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRule(request);
@@ -703,7 +706,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRulesPagedResponse listRules(InstanceName parent) {
+  public final ListRulesPagedResponse listRules(@Nullable InstanceName parent) {
     ListRulesRequest request =
         ListRulesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRules(request);
@@ -957,7 +960,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRule(RuleName name) {
+  public final void deleteRule(@Nullable RuleName name) {
     DeleteRuleRequest request =
         DeleteRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRule(request);
@@ -1073,7 +1076,8 @@ public class RuleServiceClient implements BackgroundResource {
    * @param ruleText Required. The rule text to verify as a UTF-8 string.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VerifyRuleTextResponse verifyRuleText(InstanceName instance, String ruleText) {
+  public final VerifyRuleTextResponse verifyRuleText(
+      @Nullable InstanceName instance, String ruleText) {
     VerifyRuleTextRequest request =
         VerifyRuleTextRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1196,7 +1200,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuleRevisionsPagedResponse listRuleRevisions(RuleName name) {
+  public final ListRuleRevisionsPagedResponse listRuleRevisions(@Nullable RuleName name) {
     ListRuleRevisionsRequest request =
         ListRuleRevisionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1366,7 +1370,7 @@ public class RuleServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Retrohunt, RetrohuntMetadata> createRetrohuntAsync(
-      RuleName parent, Retrohunt retrohunt) {
+      @Nullable RuleName parent, Retrohunt retrohunt) {
     CreateRetrohuntRequest request =
         CreateRetrohuntRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1517,7 +1521,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}/retrohunts/{retrohunt}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Retrohunt getRetrohunt(RetrohuntName name) {
+  public final Retrohunt getRetrohunt(@Nullable RetrohuntName name) {
     GetRetrohuntRequest request =
         GetRetrohuntRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRetrohunt(request);
@@ -1635,7 +1639,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRetrohuntsPagedResponse listRetrohunts(RuleName parent) {
+  public final ListRetrohuntsPagedResponse listRetrohunts(@Nullable RuleName parent) {
     ListRetrohuntsRequest request =
         ListRetrohuntsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1802,7 +1806,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/{rule}/deployment`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RuleDeployment getRuleDeployment(RuleDeploymentName name) {
+  public final RuleDeployment getRuleDeployment(@Nullable RuleDeploymentName name) {
     GetRuleDeploymentRequest request =
         GetRuleDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1923,7 +1927,7 @@ public class RuleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}/rules/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuleDeploymentsPagedResponse listRuleDeployments(RuleName parent) {
+  public final ListRuleDeploymentsPagedResponse listRuleDeployments(@Nullable RuleName parent) {
     ListRuleDeploymentsRequest request =
         ListRuleDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2224,8 +2228,8 @@ public class RuleServiceClient implements BackgroundResource {
       extends AbstractPage<ListRulesRequest, ListRulesResponse, Rule, ListRulesPage> {
 
     private ListRulesPage(
-        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
-        ListRulesResponse response) {
+        @Nullable PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        @Nullable ListRulesResponse response) {
       super(context, response);
     }
 
@@ -2235,14 +2239,14 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRulesPage createPage(
-        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
-        ListRulesResponse response) {
+        @Nullable PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        @Nullable ListRulesResponse response) {
       return new ListRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRulesPage> createPageAsync(
-        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        @Nullable PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
         ApiFuture<ListRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2252,7 +2256,7 @@ public class RuleServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRulesRequest, ListRulesResponse, Rule, ListRulesPage, ListRulesFixedSizeCollection> {
 
-    private ListRulesFixedSizeCollection(List<ListRulesPage> pages, int collectionSize) {
+    private ListRulesFixedSizeCollection(@Nullable List<ListRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2262,7 +2266,7 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRulesFixedSizeCollection createCollection(
-        List<ListRulesPage> pages, int collectionSize) {
+        @Nullable List<ListRulesPage> pages, int collectionSize) {
       return new ListRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2296,8 +2300,8 @@ public class RuleServiceClient implements BackgroundResource {
           ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule, ListRuleRevisionsPage> {
 
     private ListRuleRevisionsPage(
-        PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
-        ListRuleRevisionsResponse response) {
+        @Nullable PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
+        @Nullable ListRuleRevisionsResponse response) {
       super(context, response);
     }
 
@@ -2307,14 +2311,14 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleRevisionsPage createPage(
-        PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
-        ListRuleRevisionsResponse response) {
+        @Nullable PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
+        @Nullable ListRuleRevisionsResponse response) {
       return new ListRuleRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuleRevisionsPage> createPageAsync(
-        PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
+        @Nullable PageContext<ListRuleRevisionsRequest, ListRuleRevisionsResponse, Rule> context,
         ApiFuture<ListRuleRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2329,7 +2333,7 @@ public class RuleServiceClient implements BackgroundResource {
           ListRuleRevisionsFixedSizeCollection> {
 
     private ListRuleRevisionsFixedSizeCollection(
-        List<ListRuleRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2339,7 +2343,7 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleRevisionsFixedSizeCollection createCollection(
-        List<ListRuleRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleRevisionsPage> pages, int collectionSize) {
       return new ListRuleRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2373,8 +2377,8 @@ public class RuleServiceClient implements BackgroundResource {
           ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt, ListRetrohuntsPage> {
 
     private ListRetrohuntsPage(
-        PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
-        ListRetrohuntsResponse response) {
+        @Nullable PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
+        @Nullable ListRetrohuntsResponse response) {
       super(context, response);
     }
 
@@ -2384,14 +2388,14 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRetrohuntsPage createPage(
-        PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
-        ListRetrohuntsResponse response) {
+        @Nullable PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
+        @Nullable ListRetrohuntsResponse response) {
       return new ListRetrohuntsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRetrohuntsPage> createPageAsync(
-        PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
+        @Nullable PageContext<ListRetrohuntsRequest, ListRetrohuntsResponse, Retrohunt> context,
         ApiFuture<ListRetrohuntsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2405,7 +2409,8 @@ public class RuleServiceClient implements BackgroundResource {
           ListRetrohuntsPage,
           ListRetrohuntsFixedSizeCollection> {
 
-    private ListRetrohuntsFixedSizeCollection(List<ListRetrohuntsPage> pages, int collectionSize) {
+    private ListRetrohuntsFixedSizeCollection(
+        @Nullable List<ListRetrohuntsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2415,7 +2420,7 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRetrohuntsFixedSizeCollection createCollection(
-        List<ListRetrohuntsPage> pages, int collectionSize) {
+        @Nullable List<ListRetrohuntsPage> pages, int collectionSize) {
       return new ListRetrohuntsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2453,9 +2458,10 @@ public class RuleServiceClient implements BackgroundResource {
           ListRuleDeploymentsPage> {
 
     private ListRuleDeploymentsPage(
-        PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
+        @Nullable
+            PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
             context,
-        ListRuleDeploymentsResponse response) {
+        @Nullable ListRuleDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -2465,15 +2471,17 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleDeploymentsPage createPage(
-        PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
+        @Nullable
+            PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
             context,
-        ListRuleDeploymentsResponse response) {
+        @Nullable ListRuleDeploymentsResponse response) {
       return new ListRuleDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuleDeploymentsPage> createPageAsync(
-        PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
+        @Nullable
+            PageContext<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse, RuleDeployment>
             context,
         ApiFuture<ListRuleDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2489,7 +2497,7 @@ public class RuleServiceClient implements BackgroundResource {
           ListRuleDeploymentsFixedSizeCollection> {
 
     private ListRuleDeploymentsFixedSizeCollection(
-        List<ListRuleDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2499,7 +2507,7 @@ public class RuleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleDeploymentsFixedSizeCollection createCollection(
-        List<ListRuleDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleDeploymentsPage> pages, int collectionSize) {
       return new ListRuleDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }

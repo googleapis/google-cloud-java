@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -269,9 +271,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataChatServiceClient implements BackgroundResource {
-  private final DataChatServiceSettings settings;
+  private final @Nullable DataChatServiceSettings settings;
   private final DataChatServiceStub stub;
 
   /** Constructs an instance of DataChatServiceClient with default settings. */
@@ -311,7 +314,7 @@ public class DataChatServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataChatServiceSettings getSettings() {
+  public final @Nullable DataChatServiceSettings getSettings() {
     return settings;
   }
 
@@ -381,7 +384,7 @@ public class DataChatServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(
-      LocationName parent, Conversation conversation, String conversationId) {
+      @Nullable LocationName parent, Conversation conversation, String conversationId) {
     CreateConversationRequest request =
         CreateConversationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -518,7 +521,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/conversations/{conversation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversation(ConversationName name) {
+  public final void deleteConversation(@Nullable ConversationName name) {
     DeleteConversationRequest request =
         DeleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -632,7 +635,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/conversations/{conversation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -745,7 +748,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(LocationName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable LocationName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -915,7 +918,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMessagesPagedResponse listMessages(ConversationName parent) {
+  public final ListMessagesPagedResponse listMessages(@Nullable ConversationName parent) {
     ListMessagesRequest request =
         ListMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1315,8 +1318,9 @@ public class DataChatServiceClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -1326,14 +1330,16 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1348,7 +1354,7 @@ public class DataChatServiceClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1358,7 +1364,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1392,8 +1398,8 @@ public class DataChatServiceClient implements BackgroundResource {
           ListMessagesRequest, ListMessagesResponse, StorageMessage, ListMessagesPage> {
 
     private ListMessagesPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
+        @Nullable ListMessagesResponse response) {
       super(context, response);
     }
 
@@ -1403,14 +1409,14 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesPage createPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
+        @Nullable ListMessagesResponse response) {
       return new ListMessagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessagesPage> createPageAsync(
-        PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, StorageMessage> context,
         ApiFuture<ListMessagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1424,7 +1430,8 @@ public class DataChatServiceClient implements BackgroundResource {
           ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
-    private ListMessagesFixedSizeCollection(List<ListMessagesPage> pages, int collectionSize) {
+    private ListMessagesFixedSizeCollection(
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1434,7 +1441,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesFixedSizeCollection createCollection(
-        List<ListMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       return new ListMessagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1468,8 +1475,8 @@ public class DataChatServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1479,14 +1486,14 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1500,7 +1507,8 @@ public class DataChatServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1510,7 +1518,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -33,6 +33,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -225,9 +227,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NodeGroupControllerClient implements BackgroundResource {
-  private final NodeGroupControllerSettings settings;
+  private final @Nullable NodeGroupControllerSettings settings;
   private final NodeGroupControllerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -275,7 +278,7 @@ public class NodeGroupControllerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final NodeGroupControllerSettings getSettings() {
+  public final @Nullable NodeGroupControllerSettings getSettings() {
     return settings;
   }
 
@@ -333,7 +336,7 @@ public class NodeGroupControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NodeGroup, NodeGroupOperationMetadata> createNodeGroupAsync(
-      ClusterRegionName parent, NodeGroup nodeGroup, String nodeGroupId) {
+      @Nullable ClusterRegionName parent, NodeGroup nodeGroup, String nodeGroupId) {
     CreateNodeGroupRequest request =
         CreateNodeGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -644,7 +647,7 @@ public class NodeGroupControllerClient implements BackgroundResource {
    *     `projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NodeGroup getNodeGroup(NodeGroupName name) {
+  public final NodeGroup getNodeGroup(@Nullable NodeGroupName name) {
     GetNodeGroupRequest request =
         GetNodeGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNodeGroup(request);

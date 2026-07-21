@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -264,9 +266,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PublicDelegatedPrefixesClient implements BackgroundResource {
-  private final PublicDelegatedPrefixesSettings settings;
+  private final @Nullable PublicDelegatedPrefixesSettings settings;
   private final PublicDelegatedPrefixesStub stub;
 
   /** Constructs an instance of PublicDelegatedPrefixesClient with default settings. */
@@ -307,7 +310,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PublicDelegatedPrefixesSettings getSettings() {
+  public final @Nullable PublicDelegatedPrefixesSettings getSettings() {
     return settings;
   }
 
@@ -1518,12 +1521,13 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixAggregatedList,
                 Map.Entry<String, PublicDelegatedPrefixesScopedList>>
             context,
-        PublicDelegatedPrefixAggregatedList response) {
+        @Nullable PublicDelegatedPrefixAggregatedList response) {
       super(context, response);
     }
 
@@ -1533,18 +1537,20 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixAggregatedList,
                 Map.Entry<String, PublicDelegatedPrefixesScopedList>>
             context,
-        PublicDelegatedPrefixAggregatedList response) {
+        @Nullable PublicDelegatedPrefixAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixAggregatedList,
                 Map.Entry<String, PublicDelegatedPrefixesScopedList>>
@@ -1562,7 +1568,8 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1572,7 +1579,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1611,12 +1618,13 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixList,
                 PublicDelegatedPrefix>
             context,
-        PublicDelegatedPrefixList response) {
+        @Nullable PublicDelegatedPrefixList response) {
       super(context, response);
     }
 
@@ -1626,18 +1634,20 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixList,
                 PublicDelegatedPrefix>
             context,
-        PublicDelegatedPrefixList response) {
+        @Nullable PublicDelegatedPrefixList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicDelegatedPrefixesRequest,
                 PublicDelegatedPrefixList,
                 PublicDelegatedPrefix>
@@ -1655,7 +1665,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1664,7 +1674,8 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -168,9 +170,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class KeyTrackingServiceClient implements BackgroundResource {
-  private final KeyTrackingServiceSettings settings;
+  private final @Nullable KeyTrackingServiceSettings settings;
   private final KeyTrackingServiceStub stub;
 
   /** Constructs an instance of KeyTrackingServiceClient with default settings. */
@@ -210,7 +213,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final KeyTrackingServiceSettings getSettings() {
+  public final @Nullable KeyTrackingServiceSettings getSettings() {
     return settings;
   }
 
@@ -251,7 +254,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProtectedResourcesSummary getProtectedResourcesSummary(
-      ProtectedResourcesSummaryName name) {
+      @Nullable ProtectedResourcesSummaryName name) {
     GetProtectedResourcesSummaryRequest request =
         GetProtectedResourcesSummaryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -417,7 +420,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchProtectedResourcesPagedResponse searchProtectedResources(
-      OrganizationName scope, ResourceName cryptoKey) {
+      @Nullable OrganizationName scope, @Nullable ResourceName cryptoKey) {
     SearchProtectedResourcesRequest request =
         SearchProtectedResourcesRequest.newBuilder()
             .setScope(scope == null ? null : scope.toString())
@@ -462,7 +465,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchProtectedResourcesPagedResponse searchProtectedResources(
-      OrganizationName scope, String cryptoKey) {
+      @Nullable OrganizationName scope, String cryptoKey) {
     SearchProtectedResourcesRequest request =
         SearchProtectedResourcesRequest.newBuilder()
             .setScope(scope == null ? null : scope.toString())
@@ -507,7 +510,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchProtectedResourcesPagedResponse searchProtectedResources(
-      ProjectName scope, ResourceName cryptoKey) {
+      @Nullable ProjectName scope, @Nullable ResourceName cryptoKey) {
     SearchProtectedResourcesRequest request =
         SearchProtectedResourcesRequest.newBuilder()
             .setScope(scope == null ? null : scope.toString())
@@ -552,7 +555,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchProtectedResourcesPagedResponse searchProtectedResources(
-      ProjectName scope, String cryptoKey) {
+      @Nullable ProjectName scope, String cryptoKey) {
     SearchProtectedResourcesRequest request =
         SearchProtectedResourcesRequest.newBuilder()
             .setScope(scope == null ? null : scope.toString())
@@ -597,7 +600,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchProtectedResourcesPagedResponse searchProtectedResources(
-      String scope, ResourceName cryptoKey) {
+      String scope, @Nullable ResourceName cryptoKey) {
     SearchProtectedResourcesRequest request =
         SearchProtectedResourcesRequest.newBuilder()
             .setScope(scope)
@@ -833,12 +836,13 @@ public class KeyTrackingServiceClient implements BackgroundResource {
           SearchProtectedResourcesPage> {
 
     private SearchProtectedResourcesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchProtectedResourcesRequest,
                 SearchProtectedResourcesResponse,
                 ProtectedResource>
             context,
-        SearchProtectedResourcesResponse response) {
+        @Nullable SearchProtectedResourcesResponse response) {
       super(context, response);
     }
 
@@ -848,18 +852,20 @@ public class KeyTrackingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchProtectedResourcesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchProtectedResourcesRequest,
                 SearchProtectedResourcesResponse,
                 ProtectedResource>
             context,
-        SearchProtectedResourcesResponse response) {
+        @Nullable SearchProtectedResourcesResponse response) {
       return new SearchProtectedResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchProtectedResourcesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchProtectedResourcesRequest,
                 SearchProtectedResourcesResponse,
                 ProtectedResource>
@@ -878,7 +884,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
           SearchProtectedResourcesFixedSizeCollection> {
 
     private SearchProtectedResourcesFixedSizeCollection(
-        List<SearchProtectedResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchProtectedResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -888,7 +894,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
 
     @Override
     protected SearchProtectedResourcesFixedSizeCollection createCollection(
-        List<SearchProtectedResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchProtectedResourcesPage> pages, int collectionSize) {
       return new SearchProtectedResourcesFixedSizeCollection(pages, collectionSize);
     }
   }

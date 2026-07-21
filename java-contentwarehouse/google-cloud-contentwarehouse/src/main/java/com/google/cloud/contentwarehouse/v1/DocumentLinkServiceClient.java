@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,9 +202,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DocumentLinkServiceClient implements BackgroundResource {
-  private final DocumentLinkServiceSettings settings;
+  private final @Nullable DocumentLinkServiceSettings settings;
   private final DocumentLinkServiceStub stub;
 
   /** Constructs an instance of DocumentLinkServiceClient with default settings. */
@@ -242,7 +245,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DocumentLinkServiceSettings getSettings() {
+  public final @Nullable DocumentLinkServiceSettings getSettings() {
     return settings;
   }
 
@@ -273,7 +276,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
    *     Format: projects/{project_number}/locations/{location}/documents/{target_document_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLinkedTargetsResponse listLinkedTargets(DocumentName parent) {
+  public final ListLinkedTargetsResponse listLinkedTargets(@Nullable DocumentName parent) {
     ListLinkedTargetsRequest request =
         ListLinkedTargetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -402,7 +405,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
    *     Format: projects/{project_number}/locations/{location}/documents/{source_document_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLinkedSourcesPagedResponse listLinkedSources(DocumentName parent) {
+  public final ListLinkedSourcesPagedResponse listLinkedSources(@Nullable DocumentName parent) {
     ListLinkedSourcesRequest request =
         ListLinkedSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -588,7 +591,8 @@ public class DocumentLinkServiceClient implements BackgroundResource {
    *     (source_document_id).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DocumentLink createDocumentLink(DocumentName parent, DocumentLink documentLink) {
+  public final DocumentLink createDocumentLink(
+      @Nullable DocumentName parent, DocumentLink documentLink) {
     CreateDocumentLinkRequest request =
         CreateDocumentLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -723,7 +727,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/documents/{source_document_id}/documentLinks/{document_link_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDocumentLink(DocumentLinkName name) {
+  public final void deleteDocumentLink(@Nullable DocumentLinkName name) {
     DeleteDocumentLinkRequest request =
         DeleteDocumentLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -885,8 +889,9 @@ public class DocumentLinkServiceClient implements BackgroundResource {
           ListLinkedSourcesPage> {
 
     private ListLinkedSourcesPage(
-        PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink> context,
-        ListLinkedSourcesResponse response) {
+        @Nullable PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink>
+            context,
+        @Nullable ListLinkedSourcesResponse response) {
       super(context, response);
     }
 
@@ -896,14 +901,16 @@ public class DocumentLinkServiceClient implements BackgroundResource {
 
     @Override
     protected ListLinkedSourcesPage createPage(
-        PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink> context,
-        ListLinkedSourcesResponse response) {
+        @Nullable PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink>
+            context,
+        @Nullable ListLinkedSourcesResponse response) {
       return new ListLinkedSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLinkedSourcesPage> createPageAsync(
-        PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink> context,
+        @Nullable PageContext<ListLinkedSourcesRequest, ListLinkedSourcesResponse, DocumentLink>
+            context,
         ApiFuture<ListLinkedSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -918,7 +925,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
           ListLinkedSourcesFixedSizeCollection> {
 
     private ListLinkedSourcesFixedSizeCollection(
-        List<ListLinkedSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListLinkedSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -928,7 +935,7 @@ public class DocumentLinkServiceClient implements BackgroundResource {
 
     @Override
     protected ListLinkedSourcesFixedSizeCollection createCollection(
-        List<ListLinkedSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListLinkedSourcesPage> pages, int collectionSize) {
       return new ListLinkedSourcesFixedSizeCollection(pages, collectionSize);
     }
   }

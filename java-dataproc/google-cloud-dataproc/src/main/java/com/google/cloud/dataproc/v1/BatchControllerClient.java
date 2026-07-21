@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -253,9 +255,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BatchControllerClient implements BackgroundResource {
-  private final BatchControllerSettings settings;
+  private final @Nullable BatchControllerSettings settings;
   private final BatchControllerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -303,7 +306,7 @@ public class BatchControllerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BatchControllerSettings getSettings() {
+  public final @Nullable BatchControllerSettings getSettings() {
     return settings;
   }
 
@@ -356,7 +359,7 @@ public class BatchControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Batch, BatchOperationMetadata> createBatchAsync(
-      LocationName parent, Batch batch, String batchId) {
+      @Nullable LocationName parent, Batch batch, String batchId) {
     CreateBatchRequest request =
         CreateBatchRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -520,7 +523,7 @@ public class BatchControllerClient implements BackgroundResource {
    *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Batch getBatch(BatchName name) {
+  public final Batch getBatch(@Nullable BatchName name) {
     GetBatchRequest request =
         GetBatchRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBatch(request);
@@ -631,7 +634,7 @@ public class BatchControllerClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of batches.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBatchesPagedResponse listBatches(LocationName parent) {
+  public final ListBatchesPagedResponse listBatches(@Nullable LocationName parent) {
     ListBatchesRequest request =
         ListBatchesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -800,7 +803,7 @@ public class BatchControllerClient implements BackgroundResource {
    *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBatch(BatchName name) {
+  public final void deleteBatch(@Nullable BatchName name) {
     DeleteBatchRequest request =
         DeleteBatchRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBatch(request);
@@ -1159,8 +1162,8 @@ public class BatchControllerClient implements BackgroundResource {
       extends AbstractPage<ListBatchesRequest, ListBatchesResponse, Batch, ListBatchesPage> {
 
     private ListBatchesPage(
-        PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
-        ListBatchesResponse response) {
+        @Nullable PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
+        @Nullable ListBatchesResponse response) {
       super(context, response);
     }
 
@@ -1170,14 +1173,14 @@ public class BatchControllerClient implements BackgroundResource {
 
     @Override
     protected ListBatchesPage createPage(
-        PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
-        ListBatchesResponse response) {
+        @Nullable PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
+        @Nullable ListBatchesResponse response) {
       return new ListBatchesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBatchesPage> createPageAsync(
-        PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
+        @Nullable PageContext<ListBatchesRequest, ListBatchesResponse, Batch> context,
         ApiFuture<ListBatchesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1191,7 +1194,8 @@ public class BatchControllerClient implements BackgroundResource {
           ListBatchesPage,
           ListBatchesFixedSizeCollection> {
 
-    private ListBatchesFixedSizeCollection(List<ListBatchesPage> pages, int collectionSize) {
+    private ListBatchesFixedSizeCollection(
+        @Nullable List<ListBatchesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1201,7 +1205,7 @@ public class BatchControllerClient implements BackgroundResource {
 
     @Override
     protected ListBatchesFixedSizeCollection createCollection(
-        List<ListBatchesPage> pages, int collectionSize) {
+        @Nullable List<ListBatchesPage> pages, int collectionSize) {
       return new ListBatchesFixedSizeCollection(pages, collectionSize);
     }
   }

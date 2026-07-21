@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -257,10 +259,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssuredWorkloadsServiceClient implements BackgroundResource {
-  private final AssuredWorkloadsServiceSettings settings;
+  private final @Nullable AssuredWorkloadsServiceSettings settings;
   private final AssuredWorkloadsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -309,7 +312,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AssuredWorkloadsServiceSettings getSettings() {
+  public final @Nullable AssuredWorkloadsServiceSettings getSettings() {
     return settings;
   }
 
@@ -360,7 +363,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workload, CreateWorkloadOperationMetadata> createWorkloadAsync(
-      LocationName parent, Workload workload) {
+      @Nullable LocationName parent, Workload workload) {
     CreateWorkloadRequest request =
         CreateWorkloadRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -683,7 +686,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWorkload(WorkloadName name) {
+  public final void deleteWorkload(@Nullable WorkloadName name) {
     DeleteWorkloadRequest request =
         DeleteWorkloadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteWorkload(request);
@@ -811,7 +814,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     example, "organizations/123/locations/us-east1/workloads/assured-workload-1".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workload getWorkload(WorkloadName name) {
+  public final Workload getWorkload(@Nullable WorkloadName name) {
     GetWorkloadRequest request =
         GetWorkloadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkload(request);
@@ -1024,7 +1027,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *     `organizations/{org_id}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkloadsPagedResponse listWorkloads(LocationName parent) {
+  public final ListWorkloadsPagedResponse listWorkloads(@Nullable LocationName parent) {
     ListWorkloadsRequest request =
         ListWorkloadsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1231,8 +1234,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
           ListWorkloadsRequest, ListWorkloadsResponse, Workload, ListWorkloadsPage> {
 
     private ListWorkloadsPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       super(context, response);
     }
 
@@ -1242,14 +1245,14 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsPage createPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       return new ListWorkloadsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkloadsPage> createPageAsync(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
         ApiFuture<ListWorkloadsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1263,7 +1266,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
           ListWorkloadsPage,
           ListWorkloadsFixedSizeCollection> {
 
-    private ListWorkloadsFixedSizeCollection(List<ListWorkloadsPage> pages, int collectionSize) {
+    private ListWorkloadsFixedSizeCollection(
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1273,7 +1277,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsFixedSizeCollection createCollection(
-        List<ListWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
     }
   }

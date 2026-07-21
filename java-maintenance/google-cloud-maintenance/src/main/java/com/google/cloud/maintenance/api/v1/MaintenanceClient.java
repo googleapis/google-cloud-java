@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -208,9 +210,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MaintenanceClient implements BackgroundResource {
-  private final MaintenanceSettings settings;
+  private final @Nullable MaintenanceSettings settings;
   private final MaintenanceStub stub;
 
   /** Constructs an instance of MaintenanceClient with default settings. */
@@ -249,7 +252,7 @@ public class MaintenanceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MaintenanceSettings getSettings() {
+  public final @Nullable MaintenanceSettings getSettings() {
     return settings;
   }
 
@@ -282,7 +285,8 @@ public class MaintenanceClient implements BackgroundResource {
    *     `projects/123/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SummarizeMaintenancesPagedResponse summarizeMaintenances(LocationName parent) {
+  public final SummarizeMaintenancesPagedResponse summarizeMaintenances(
+      @Nullable LocationName parent) {
     SummarizeMaintenancesRequest request =
         SummarizeMaintenancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -458,7 +462,8 @@ public class MaintenanceClient implements BackgroundResource {
    * @param parent Required. The parent of the resource maintenance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourceMaintenancesPagedResponse listResourceMaintenances(LocationName parent) {
+  public final ListResourceMaintenancesPagedResponse listResourceMaintenances(
+      @Nullable LocationName parent) {
     ListResourceMaintenancesRequest request =
         ListResourceMaintenancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -631,7 +636,7 @@ public class MaintenanceClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceMaintenance getResourceMaintenance(ResourceMaintenanceName name) {
+  public final ResourceMaintenance getResourceMaintenance(@Nullable ResourceMaintenanceName name) {
     GetResourceMaintenanceRequest request =
         GetResourceMaintenanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -947,9 +952,11 @@ public class MaintenanceClient implements BackgroundResource {
           SummarizeMaintenancesPage> {
 
     private SummarizeMaintenancesPage(
-        PageContext<SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
+        @Nullable
+            PageContext<
+                SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
             context,
-        SummarizeMaintenancesResponse response) {
+        @Nullable SummarizeMaintenancesResponse response) {
       super(context, response);
     }
 
@@ -959,15 +966,19 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected SummarizeMaintenancesPage createPage(
-        PageContext<SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
+        @Nullable
+            PageContext<
+                SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
             context,
-        SummarizeMaintenancesResponse response) {
+        @Nullable SummarizeMaintenancesResponse response) {
       return new SummarizeMaintenancesPage(context, response);
     }
 
     @Override
     public ApiFuture<SummarizeMaintenancesPage> createPageAsync(
-        PageContext<SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
+        @Nullable
+            PageContext<
+                SummarizeMaintenancesRequest, SummarizeMaintenancesResponse, MaintenanceSummary>
             context,
         ApiFuture<SummarizeMaintenancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -983,7 +994,7 @@ public class MaintenanceClient implements BackgroundResource {
           SummarizeMaintenancesFixedSizeCollection> {
 
     private SummarizeMaintenancesFixedSizeCollection(
-        List<SummarizeMaintenancesPage> pages, int collectionSize) {
+        @Nullable List<SummarizeMaintenancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -993,7 +1004,7 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected SummarizeMaintenancesFixedSizeCollection createCollection(
-        List<SummarizeMaintenancesPage> pages, int collectionSize) {
+        @Nullable List<SummarizeMaintenancesPage> pages, int collectionSize) {
       return new SummarizeMaintenancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1034,12 +1045,13 @@ public class MaintenanceClient implements BackgroundResource {
           ListResourceMaintenancesPage> {
 
     private ListResourceMaintenancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceMaintenancesRequest,
                 ListResourceMaintenancesResponse,
                 ResourceMaintenance>
             context,
-        ListResourceMaintenancesResponse response) {
+        @Nullable ListResourceMaintenancesResponse response) {
       super(context, response);
     }
 
@@ -1049,18 +1061,20 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected ListResourceMaintenancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceMaintenancesRequest,
                 ListResourceMaintenancesResponse,
                 ResourceMaintenance>
             context,
-        ListResourceMaintenancesResponse response) {
+        @Nullable ListResourceMaintenancesResponse response) {
       return new ListResourceMaintenancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceMaintenancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListResourceMaintenancesRequest,
                 ListResourceMaintenancesResponse,
                 ResourceMaintenance>
@@ -1079,7 +1093,7 @@ public class MaintenanceClient implements BackgroundResource {
           ListResourceMaintenancesFixedSizeCollection> {
 
     private ListResourceMaintenancesFixedSizeCollection(
-        List<ListResourceMaintenancesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceMaintenancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1089,7 +1103,7 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected ListResourceMaintenancesFixedSizeCollection createCollection(
-        List<ListResourceMaintenancesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceMaintenancesPage> pages, int collectionSize) {
       return new ListResourceMaintenancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1123,8 +1137,8 @@ public class MaintenanceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1134,14 +1148,14 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1155,7 +1169,8 @@ public class MaintenanceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1165,7 +1180,7 @@ public class MaintenanceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

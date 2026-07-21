@@ -1051,6 +1051,49 @@ public interface AppOrBuilder
    *
    *
    * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vpcScSettings field is set.
+   */
+  boolean hasVpcScSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vpcScSettings.
+   */
+  com.google.cloud.ces.v1.VpcScSettings getVpcScSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.VpcScSettingsOrBuilder getVpcScSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Indicates whether the app is locked for changes. If the app is
    * locked, modifications to the app resources will be rejected.
    * </pre>
@@ -1060,4 +1103,62 @@ public interface AppOrBuilder
    * @return The locked.
    */
   boolean getLocked();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the validationErrors.
+   */
+  java.util.List<java.lang.String> getValidationErrorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of validationErrors.
+   */
+  int getValidationErrorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The validationErrors at the given index.
+   */
+  java.lang.String getValidationErrors(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validationErrors at the given index.
+   */
+  com.google.protobuf.ByteString getValidationErrorsBytes(int index);
 }

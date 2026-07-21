@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -274,9 +276,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HealthProfileServiceClient implements BackgroundResource {
-  private final HealthProfileServiceSettings settings;
+  private final @Nullable HealthProfileServiceSettings settings;
   private final HealthProfileServiceStub stub;
 
   /** Constructs an instance of HealthProfileServiceClient with default settings. */
@@ -316,7 +319,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final HealthProfileServiceSettings getSettings() {
+  public final @Nullable HealthProfileServiceSettings getSettings() {
     return settings;
   }
 
@@ -346,7 +349,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    * @param name Required. The name of the Profile. Format: `users/me/profile`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Profile getProfile(ProfileName name) {
+  public final Profile getProfile(@Nullable ProfileName name) {
     GetProfileRequest request =
         GetProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProfile(request);
@@ -545,7 +548,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    * @param name Required. The name of the Settings. Format: `users/me/settings`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
+  public final Settings getSettings(@Nullable SettingsName name) {
     GetSettingsRequest request =
         GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
@@ -747,7 +750,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the Identity. Format: `users/me/identity`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Identity getIdentity(IdentityName name) {
+  public final Identity getIdentity(@Nullable IdentityName name) {
     GetIdentityRequest request =
         GetIdentityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIdentity(request);
@@ -869,7 +872,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    *     refer to the authenticated user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IrnProfile getIrnProfile(IrnProfileName name) {
+  public final IrnProfile getIrnProfile(@Nullable IrnProfileName name) {
     GetIrnProfileRequest request =
         GetIrnProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIrnProfile(request);
@@ -982,7 +985,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    * @param name Required. The name of the device to retrieve. Format: users/{user}/devices/{device}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PairedDevice getPairedDevice(PairedDeviceName name) {
+  public final PairedDevice getPairedDevice(@Nullable PairedDeviceName name) {
     GetPairedDeviceRequest request =
         GetPairedDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPairedDevice(request);
@@ -1098,7 +1101,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of devices. Format: users/{user}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPairedDevicesPagedResponse listPairedDevices(UserName parent) {
+  public final ListPairedDevicesPagedResponse listPairedDevices(@Nullable UserName parent) {
     ListPairedDevicesRequest request =
         ListPairedDevicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1308,8 +1311,9 @@ public class HealthProfileServiceClient implements BackgroundResource {
           ListPairedDevicesPage> {
 
     private ListPairedDevicesPage(
-        PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice> context,
-        ListPairedDevicesResponse response) {
+        @Nullable PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>
+            context,
+        @Nullable ListPairedDevicesResponse response) {
       super(context, response);
     }
 
@@ -1319,14 +1323,16 @@ public class HealthProfileServiceClient implements BackgroundResource {
 
     @Override
     protected ListPairedDevicesPage createPage(
-        PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice> context,
-        ListPairedDevicesResponse response) {
+        @Nullable PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>
+            context,
+        @Nullable ListPairedDevicesResponse response) {
       return new ListPairedDevicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPairedDevicesPage> createPageAsync(
-        PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice> context,
+        @Nullable PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>
+            context,
         ApiFuture<ListPairedDevicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1341,7 +1347,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
           ListPairedDevicesFixedSizeCollection> {
 
     private ListPairedDevicesFixedSizeCollection(
-        List<ListPairedDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListPairedDevicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1351,7 +1357,7 @@ public class HealthProfileServiceClient implements BackgroundResource {
 
     @Override
     protected ListPairedDevicesFixedSizeCollection createCollection(
-        List<ListPairedDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListPairedDevicesPage> pages, int collectionSize) {
       return new ListPairedDevicesFixedSizeCollection(pages, collectionSize);
     }
   }

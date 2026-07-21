@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -531,9 +533,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AgentRegistryClient implements BackgroundResource {
-  private final AgentRegistrySettings settings;
+  private final @Nullable AgentRegistrySettings settings;
   private final AgentRegistryStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -581,7 +584,7 @@ public class AgentRegistryClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AgentRegistrySettings getSettings() {
+  public final @Nullable AgentRegistrySettings getSettings() {
     return settings;
   }
 
@@ -629,7 +632,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListAgentsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAgentsPagedResponse listAgents(LocationName parent) {
+  public final ListAgentsPagedResponse listAgents(@Nullable LocationName parent) {
     ListAgentsRequest request =
         ListAgentsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAgents(request);
@@ -794,7 +797,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchAgentsPagedResponse searchAgents(LocationName parent) {
+  public final SearchAgentsPagedResponse searchAgents(@Nullable LocationName parent) {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -957,7 +960,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent getAgent(AgentName name) {
+  public final Agent getAgent(@Nullable AgentName name) {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAgent(request);
@@ -1068,7 +1071,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointsPagedResponse listEndpoints(LocationName parent) {
+  public final ListEndpointsPagedResponse listEndpoints(@Nullable LocationName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1233,7 +1236,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Endpoint getEndpoint(EndpointName name) {
+  public final Endpoint getEndpoint(@Nullable EndpointName name) {
     GetEndpointRequest request =
         GetEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEndpoint(request);
@@ -1345,7 +1348,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMcpServersPagedResponse listMcpServers(LocationName parent) {
+  public final ListMcpServersPagedResponse listMcpServers(@Nullable LocationName parent) {
     ListMcpServersRequest request =
         ListMcpServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1517,7 +1520,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchMcpServersPagedResponse searchMcpServers(LocationName parent) {
+  public final SearchMcpServersPagedResponse searchMcpServers(@Nullable LocationName parent) {
     SearchMcpServersRequest request =
         SearchMcpServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1684,7 +1687,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final McpServer getMcpServer(McpServerName name) {
+  public final McpServer getMcpServer(@Nullable McpServerName name) {
     GetMcpServerRequest request =
         GetMcpServerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMcpServer(request);
@@ -1795,7 +1798,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(LocationName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable LocationName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1960,7 +1963,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -2078,7 +2081,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, OperationMetadata> createServiceAsync(
-      LocationName parent, Service service, String serviceId) {
+      @Nullable LocationName parent, Service service, String serviceId) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2369,7 +2372,8 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(ServiceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(
+      @Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteServiceAsync(request);
@@ -2514,7 +2518,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBindingsPagedResponse listBindings(LocationName parent) {
+  public final ListBindingsPagedResponse listBindings(@Nullable LocationName parent) {
     ListBindingsRequest request =
         ListBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2682,7 +2686,7 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/bindings/{binding}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Binding getBinding(BindingName name) {
+  public final Binding getBinding(@Nullable BindingName name) {
     GetBindingRequest request =
         GetBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBinding(request);
@@ -2800,7 +2804,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Binding, OperationMetadata> createBindingAsync(
-      LocationName parent, Binding binding, String bindingId) {
+      @Nullable LocationName parent, Binding binding, String bindingId) {
     CreateBindingRequest request =
         CreateBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3090,7 +3094,8 @@ public class AgentRegistryClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/bindings/{binding}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBindingAsync(BindingName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBindingAsync(
+      @Nullable BindingName name) {
     DeleteBindingRequest request =
         DeleteBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBindingAsync(request);
@@ -3234,7 +3239,8 @@ public class AgentRegistryClient implements BackgroundResource {
    * @param parent Required. The parent, in the format `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchAvailableBindingsPagedResponse fetchAvailableBindings(LocationName parent) {
+  public final FetchAvailableBindingsPagedResponse fetchAvailableBindings(
+      @Nullable LocationName parent) {
     FetchAvailableBindingsRequest request =
         FetchAvailableBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3624,8 +3630,8 @@ public class AgentRegistryClient implements BackgroundResource {
       extends AbstractPage<ListAgentsRequest, ListAgentsResponse, Agent, ListAgentsPage> {
 
     private ListAgentsPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       super(context, response);
     }
 
@@ -3635,14 +3641,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListAgentsPage createPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       return new ListAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAgentsPage> createPageAsync(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
         ApiFuture<ListAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3656,7 +3662,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListAgentsPage,
           ListAgentsFixedSizeCollection> {
 
-    private ListAgentsFixedSizeCollection(List<ListAgentsPage> pages, int collectionSize) {
+    private ListAgentsFixedSizeCollection(
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3666,7 +3673,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListAgentsFixedSizeCollection createCollection(
-        List<ListAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       return new ListAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3699,8 +3706,8 @@ public class AgentRegistryClient implements BackgroundResource {
       extends AbstractPage<SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage> {
 
     private SearchAgentsPage(
-        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
-        SearchAgentsResponse response) {
+        @Nullable PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        @Nullable SearchAgentsResponse response) {
       super(context, response);
     }
 
@@ -3710,14 +3717,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected SearchAgentsPage createPage(
-        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
-        SearchAgentsResponse response) {
+        @Nullable PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        @Nullable SearchAgentsResponse response) {
       return new SearchAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAgentsPage> createPageAsync(
-        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        @Nullable PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
         ApiFuture<SearchAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3731,7 +3738,8 @@ public class AgentRegistryClient implements BackgroundResource {
           SearchAgentsPage,
           SearchAgentsFixedSizeCollection> {
 
-    private SearchAgentsFixedSizeCollection(List<SearchAgentsPage> pages, int collectionSize) {
+    private SearchAgentsFixedSizeCollection(
+        @Nullable List<SearchAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3741,7 +3749,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected SearchAgentsFixedSizeCollection createCollection(
-        List<SearchAgentsPage> pages, int collectionSize) {
+        @Nullable List<SearchAgentsPage> pages, int collectionSize) {
       return new SearchAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3775,8 +3783,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage> {
 
     private ListEndpointsPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       super(context, response);
     }
 
@@ -3786,14 +3794,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsPage createPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       return new ListEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEndpointsPage> createPageAsync(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
         ApiFuture<ListEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3807,7 +3815,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
-    private ListEndpointsFixedSizeCollection(List<ListEndpointsPage> pages, int collectionSize) {
+    private ListEndpointsFixedSizeCollection(
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3817,7 +3826,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsFixedSizeCollection createCollection(
-        List<ListEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       return new ListEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3851,8 +3860,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListMcpServersRequest, ListMcpServersResponse, McpServer, ListMcpServersPage> {
 
     private ListMcpServersPage(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
-        ListMcpServersResponse response) {
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable ListMcpServersResponse response) {
       super(context, response);
     }
 
@@ -3862,14 +3871,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpServersPage createPage(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
-        ListMcpServersResponse response) {
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable ListMcpServersResponse response) {
       return new ListMcpServersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMcpServersPage> createPageAsync(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
         ApiFuture<ListMcpServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3883,7 +3892,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListMcpServersPage,
           ListMcpServersFixedSizeCollection> {
 
-    private ListMcpServersFixedSizeCollection(List<ListMcpServersPage> pages, int collectionSize) {
+    private ListMcpServersFixedSizeCollection(
+        @Nullable List<ListMcpServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3893,7 +3903,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpServersFixedSizeCollection createCollection(
-        List<ListMcpServersPage> pages, int collectionSize) {
+        @Nullable List<ListMcpServersPage> pages, int collectionSize) {
       return new ListMcpServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3927,8 +3937,8 @@ public class AgentRegistryClient implements BackgroundResource {
           SearchMcpServersRequest, SearchMcpServersResponse, McpServer, SearchMcpServersPage> {
 
     private SearchMcpServersPage(
-        PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
-        SearchMcpServersResponse response) {
+        @Nullable PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
+        @Nullable SearchMcpServersResponse response) {
       super(context, response);
     }
 
@@ -3938,14 +3948,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected SearchMcpServersPage createPage(
-        PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
-        SearchMcpServersResponse response) {
+        @Nullable PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
+        @Nullable SearchMcpServersResponse response) {
       return new SearchMcpServersPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchMcpServersPage> createPageAsync(
-        PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
+        @Nullable PageContext<SearchMcpServersRequest, SearchMcpServersResponse, McpServer> context,
         ApiFuture<SearchMcpServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3960,7 +3970,7 @@ public class AgentRegistryClient implements BackgroundResource {
           SearchMcpServersFixedSizeCollection> {
 
     private SearchMcpServersFixedSizeCollection(
-        List<SearchMcpServersPage> pages, int collectionSize) {
+        @Nullable List<SearchMcpServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3970,7 +3980,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected SearchMcpServersFixedSizeCollection createCollection(
-        List<SearchMcpServersPage> pages, int collectionSize) {
+        @Nullable List<SearchMcpServersPage> pages, int collectionSize) {
       return new SearchMcpServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4003,8 +4013,8 @@ public class AgentRegistryClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -4014,14 +4024,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4035,7 +4045,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4045,7 +4056,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4078,8 +4089,8 @@ public class AgentRegistryClient implements BackgroundResource {
       extends AbstractPage<ListBindingsRequest, ListBindingsResponse, Binding, ListBindingsPage> {
 
     private ListBindingsPage(
-        PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
-        ListBindingsResponse response) {
+        @Nullable PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
+        @Nullable ListBindingsResponse response) {
       super(context, response);
     }
 
@@ -4089,14 +4100,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListBindingsPage createPage(
-        PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
-        ListBindingsResponse response) {
+        @Nullable PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
+        @Nullable ListBindingsResponse response) {
       return new ListBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBindingsPage> createPageAsync(
-        PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
+        @Nullable PageContext<ListBindingsRequest, ListBindingsResponse, Binding> context,
         ApiFuture<ListBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4110,7 +4121,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListBindingsPage,
           ListBindingsFixedSizeCollection> {
 
-    private ListBindingsFixedSizeCollection(List<ListBindingsPage> pages, int collectionSize) {
+    private ListBindingsFixedSizeCollection(
+        @Nullable List<ListBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4120,7 +4132,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListBindingsFixedSizeCollection createCollection(
-        List<ListBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListBindingsPage> pages, int collectionSize) {
       return new ListBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4157,8 +4169,10 @@ public class AgentRegistryClient implements BackgroundResource {
           FetchAvailableBindingsPage> {
 
     private FetchAvailableBindingsPage(
-        PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding> context,
-        FetchAvailableBindingsResponse response) {
+        @Nullable
+            PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding>
+            context,
+        @Nullable FetchAvailableBindingsResponse response) {
       super(context, response);
     }
 
@@ -4168,14 +4182,18 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected FetchAvailableBindingsPage createPage(
-        PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding> context,
-        FetchAvailableBindingsResponse response) {
+        @Nullable
+            PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding>
+            context,
+        @Nullable FetchAvailableBindingsResponse response) {
       return new FetchAvailableBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchAvailableBindingsPage> createPageAsync(
-        PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding> context,
+        @Nullable
+            PageContext<FetchAvailableBindingsRequest, FetchAvailableBindingsResponse, Binding>
+            context,
         ApiFuture<FetchAvailableBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4190,7 +4208,7 @@ public class AgentRegistryClient implements BackgroundResource {
           FetchAvailableBindingsFixedSizeCollection> {
 
     private FetchAvailableBindingsFixedSizeCollection(
-        List<FetchAvailableBindingsPage> pages, int collectionSize) {
+        @Nullable List<FetchAvailableBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4200,7 +4218,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected FetchAvailableBindingsFixedSizeCollection createCollection(
-        List<FetchAvailableBindingsPage> pages, int collectionSize) {
+        @Nullable List<FetchAvailableBindingsPage> pages, int collectionSize) {
       return new FetchAvailableBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4234,8 +4252,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4245,14 +4263,14 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4266,7 +4284,8 @@ public class AgentRegistryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4276,7 +4295,7 @@ public class AgentRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

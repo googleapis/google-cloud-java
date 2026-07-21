@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ChannelPartnerRepricingConfigName implements ResourceName {
   private static final PathTemplate ACCOUNT_CHANNEL_PARTNER_CHANNEL_PARTNER_REPRICING_CONFIG =
@@ -90,7 +93,7 @@ public class ChannelPartnerRepricingConfigName implements ResourceName {
         .toString();
   }
 
-  public static ChannelPartnerRepricingConfigName parse(String formattedString) {
+  public static @Nullable ChannelPartnerRepricingConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -112,7 +115,8 @@ public class ChannelPartnerRepricingConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ChannelPartnerRepricingConfigName> values) {
+  public static List<String> toStringList(
+      List<@Nullable ChannelPartnerRepricingConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ChannelPartnerRepricingConfigName value : values) {
       if (value == null) {
@@ -166,7 +170,7 @@ public class ChannelPartnerRepricingConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

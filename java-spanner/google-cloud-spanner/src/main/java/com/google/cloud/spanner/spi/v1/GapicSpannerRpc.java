@@ -251,12 +251,19 @@ public class GapicSpannerRpc implements SpannerRpc {
       "com.google.cloud.spanner.watchdogPeriodSeconds";
   private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
   private static final int DEFAULT_PERIOD_SECONDS = 10;
-  private static final int GRPC_KEEPALIVE_SECONDS = 2 * 60;
   private static final String USER_AGENT_KEY = "user-agent";
   private static final String CLIENT_LIBRARY_LANGUAGE = "spanner-java";
   public static final String DEFAULT_USER_AGENT =
       CLIENT_LIBRARY_LANGUAGE + "/" + GaxProperties.getLibraryVersion(GapicSpannerRpc.class);
-  public static boolean DIRECTPATH_CHANNEL_CREATED = false;
+
+  /**
+   * Whether the most recently initialized RPC created a DirectPath channel.
+   *
+   * <p>This process-wide volatile value may be updated during concurrent client construction and
+   * read from another thread when built-in metric attributes are created.
+   */
+  public static volatile boolean DIRECTPATH_CHANNEL_CREATED = false;
+
   private static final String API_FILE = "grpc-gcp-apiconfig.json";
 
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
@@ -740,9 +747,10 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
             .setPoolSize(options.getNumChannels())
 
-            // Set a keepalive time of 120 seconds to help long running
+            // Set a keepalive time to help long running
             // commit GRPC calls succeed
-            .setKeepAliveTimeDuration(Duration.ofSeconds(GRPC_KEEPALIVE_SECONDS))
+            .setKeepAliveTimeDuration(options.getGrpcKeepAliveTime())
+            .setKeepAliveTimeoutDuration(options.getGrpcKeepAliveTimeout())
 
             // Then check if SpannerOptions provides an InterceptorProvider. Create a default
             // SpannerInterceptorProvider if none is provided

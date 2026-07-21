@@ -377,4 +377,47 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void enableManagedRotation(
+      EnableManagedRotationRequest request, StreamObserver<SecretVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecretVersion) {
+      requests.add(request);
+      responseObserver.onNext(((SecretVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableManagedRotation, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rotateSecret(
+      RotateSecretRequest request, StreamObserver<SecretVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecretVersion) {
+      requests.add(request);
+      responseObserver.onNext(((SecretVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RotateSecret, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

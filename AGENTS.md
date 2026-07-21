@@ -58,4 +58,3 @@ This is a standard Maven project.
 For development on core components, refer to the following guides in `sdk-platform-java`:
 - **GAPIC Generator**: [sdk-platform-java/gapic-generator-java/DEVELOPMENT.md](sdk-platform-java/gapic-generator-java/DEVELOPMENT.md)
 - **GAX**: [sdk-platform-java/gax-java/DEVELOPMENT.md](sdk-platform-java/gax-java/DEVELOPMENT.md)
-- **Hermetic Build**: [sdk-platform-java/hermetic_build/DEVELOPMENT.md](sdk-platform-java/hermetic_build/DEVELOPMENT.md)

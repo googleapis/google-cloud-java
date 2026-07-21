@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class QuotaRuleName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_VOLUME_QUOTA_RULE =
@@ -96,7 +99,7 @@ public class QuotaRuleName implements ResourceName {
         .toString();
   }
 
-  public static QuotaRuleName parse(String formattedString) {
+  public static @Nullable QuotaRuleName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -118,7 +121,7 @@ public class QuotaRuleName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<QuotaRuleName> values) {
+  public static List<String> toStringList(List<@Nullable QuotaRuleName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (QuotaRuleName value : values) {
       if (value == null) {
@@ -170,7 +173,7 @@ public class QuotaRuleName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

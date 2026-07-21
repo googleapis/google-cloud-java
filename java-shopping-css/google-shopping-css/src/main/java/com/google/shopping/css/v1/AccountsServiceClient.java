@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -178,9 +180,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AccountsServiceClient implements BackgroundResource {
-  private final AccountsServiceSettings settings;
+  private final @Nullable AccountsServiceSettings settings;
   private final AccountsServiceStub stub;
 
   /** Constructs an instance of AccountsServiceClient with default settings. */
@@ -220,7 +223,7 @@ public class AccountsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountsServiceSettings getSettings() {
+  public final @Nullable AccountsServiceSettings getSettings() {
     return settings;
   }
 
@@ -253,7 +256,7 @@ public class AccountsServiceClient implements BackgroundResource {
    *     accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChildAccountsPagedResponse listChildAccounts(AccountName parent) {
+  public final ListChildAccountsPagedResponse listChildAccounts(@Nullable AccountName parent) {
     ListChildAccountsRequest request =
         ListChildAccountsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -427,7 +430,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * @param name Required. The name of the managed CSS/MC account. Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Account getAccount(AccountName name) {
+  public final Account getAccount(@Nullable AccountName name) {
     GetAccountRequest request =
         GetAccountRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccount(request);
@@ -537,7 +540,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * @param name Required. The label resource name. Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Account updateLabels(AccountName name) {
+  public final Account updateLabels(@Nullable AccountName name) {
     UpdateAccountLabelsRequest request =
         UpdateAccountLabelsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -690,8 +693,8 @@ public class AccountsServiceClient implements BackgroundResource {
           ListChildAccountsRequest, ListChildAccountsResponse, Account, ListChildAccountsPage> {
 
     private ListChildAccountsPage(
-        PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
-        ListChildAccountsResponse response) {
+        @Nullable PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
+        @Nullable ListChildAccountsResponse response) {
       super(context, response);
     }
 
@@ -701,14 +704,14 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListChildAccountsPage createPage(
-        PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
-        ListChildAccountsResponse response) {
+        @Nullable PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
+        @Nullable ListChildAccountsResponse response) {
       return new ListChildAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChildAccountsPage> createPageAsync(
-        PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
+        @Nullable PageContext<ListChildAccountsRequest, ListChildAccountsResponse, Account> context,
         ApiFuture<ListChildAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -723,7 +726,7 @@ public class AccountsServiceClient implements BackgroundResource {
           ListChildAccountsFixedSizeCollection> {
 
     private ListChildAccountsFixedSizeCollection(
-        List<ListChildAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListChildAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -733,7 +736,7 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListChildAccountsFixedSizeCollection createCollection(
-        List<ListChildAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListChildAccountsPage> pages, int collectionSize) {
       return new ListChildAccountsFixedSizeCollection(pages, collectionSize);
     }
   }

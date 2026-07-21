@@ -24,9 +24,9 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
- * artifacts. An existing attestor cannot be modified except where
- * indicated.
+ * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
+ * to container image artifacts. An existing attestor cannot be modified except
+ * where indicated.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Attestor}
@@ -56,6 +56,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
   private Attestor() {
     name_ = "";
     description_ = "";
+    etag_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -345,6 +346,63 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int ETAG_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the attestor has an up-to-date value before attempting
+   * to update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A checksum, returned by the server, that can be sent on update
+   * requests to ensure the attestor has an up-to-date value before attempting
+   * to update it. See https://google.aip.dev/154.
+   * </pre>
+   *
+   * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -372,6 +430,9 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, description_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -395,6 +456,9 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, description_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, etag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -417,6 +481,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getAttestorTypeCase().equals(other.getAttestorTypeCase())) return false;
     switch (attestorTypeCase_) {
       case 3:
@@ -444,6 +509,8 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     switch (attestorTypeCase_) {
       case 3:
         hash = (37 * hash) + USER_OWNED_DRYDOCK_NOTE_FIELD_NUMBER;
@@ -558,9 +625,9 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
-   * artifacts. An existing attestor cannot be modified except where
-   * indicated.
+   * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
+   * to container image artifacts. An existing attestor cannot be modified except
+   * where indicated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Attestor}
@@ -614,6 +681,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      etag_ = "";
       attestorTypeCase_ = 0;
       attestorType_ = null;
       return this;
@@ -664,6 +732,9 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.etag_ = etag_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -700,6 +771,11 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       switch (other.getAttestorTypeCase()) {
         case USER_OWNED_DRYDOCK_NOTE:
@@ -764,6 +840,12 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 50
+            case 58:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1488,6 +1570,127 @@ public final class Attestor extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.Attestor)

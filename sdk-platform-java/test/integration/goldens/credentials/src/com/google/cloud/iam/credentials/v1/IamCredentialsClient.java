@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -198,9 +200,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IamCredentialsClient implements BackgroundResource {
-  private final IamCredentialsSettings settings;
+  private final @Nullable IamCredentialsSettings settings;
   private final IamCredentialsStub stub;
 
   /** Constructs an instance of IamCredentialsClient with default settings. */
@@ -240,7 +243,7 @@ public class IamCredentialsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IamCredentialsSettings getSettings() {
+  public final @Nullable IamCredentialsSettings getSettings() {
     return settings;
   }
 
@@ -291,7 +294,10 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateAccessTokenResponse generateAccessToken(
-      ServiceAccountName name, List<String> delegates, List<String> scope, Duration lifetime) {
+      @Nullable ServiceAccountName name,
+      List<String> delegates,
+      List<String> scope,
+      Duration lifetime) {
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -460,7 +466,10 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateIdTokenResponse generateIdToken(
-      ServiceAccountName name, List<String> delegates, String audience, boolean includeEmail) {
+      @Nullable ServiceAccountName name,
+      List<String> delegates,
+      String audience,
+      boolean includeEmail) {
     GenerateIdTokenRequest request =
         GenerateIdTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -622,7 +631,7 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(
-      ServiceAccountName name, List<String> delegates, ByteString payload) {
+      @Nullable ServiceAccountName name, List<String> delegates, ByteString payload) {
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -773,7 +782,7 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(
-      ServiceAccountName name, List<String> delegates, String payload) {
+      @Nullable ServiceAccountName name, List<String> delegates, String payload) {
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
             .setName(name == null ? null : name.toString())

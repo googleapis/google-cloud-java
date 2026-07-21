@@ -23,6 +23,7 @@ import com.google.api.servicecontrol.v1.CheckResponse;
 import com.google.api.servicecontrol.v1.ReportRequest;
 import com.google.api.servicecontrol.v1.ReportResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -30,6 +31,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ServiceControllerStub implements BackgroundResource {
 

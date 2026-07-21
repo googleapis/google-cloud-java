@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.stub.TargetSslProxiesStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -110,6 +112,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSettings> {
 
@@ -256,7 +259,7 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -276,7 +279,7 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(TargetSslProxiesStubSettings.newBuilder(clientContext));
     }
 

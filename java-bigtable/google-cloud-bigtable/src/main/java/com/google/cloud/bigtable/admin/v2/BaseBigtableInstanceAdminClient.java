@@ -98,6 +98,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -770,9 +772,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BaseBigtableInstanceAdminClient implements BackgroundResource {
-  private final BaseBigtableInstanceAdminSettings settings;
+  private final @Nullable BaseBigtableInstanceAdminSettings settings;
   private final BigtableInstanceAdminStub stub;
   private final OperationsClient operationsClient;
 
@@ -817,7 +820,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final BaseBigtableInstanceAdminSettings getSettings() {
+  public final @Nullable BaseBigtableInstanceAdminSettings getSettings() {
     return settings;
   }
 
@@ -876,7 +879,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
-      ProjectName parent, String instanceId, Instance instance, Map<String, Cluster> clusters) {
+      @Nullable ProjectName parent,
+      String instanceId,
+      Instance instance,
+      Map<String, Cluster> clusters) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1077,7 +1083,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1192,7 +1198,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     requested. Values are of the form `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesResponse listInstances(ProjectName parent) {
+  public final ListInstancesResponse listInstances(@Nullable ProjectName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1518,7 +1524,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteInstance(InstanceName name) {
+  public final void deleteInstance(@Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteInstance(request);
@@ -1647,7 +1653,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, CreateClusterMetadata> createClusterAsync(
-      InstanceName parent, String clusterId, Cluster cluster) {
+      @Nullable InstanceName parent, String clusterId, Cluster cluster) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1837,7 +1843,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -1954,7 +1960,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersResponse listClusters(InstanceName parent) {
+  public final ListClustersResponse listClusters(@Nullable InstanceName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2355,7 +2361,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCluster(ClusterName name) {
+  public final void deleteCluster(@Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCluster(request);
@@ -2479,7 +2485,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppProfile createAppProfile(
-      InstanceName parent, String appProfileId, AppProfile appProfile) {
+      @Nullable InstanceName parent, String appProfileId, AppProfile appProfile) {
     CreateAppProfileRequest request =
         CreateAppProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2618,7 +2624,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppProfile getAppProfile(AppProfileName name) {
+  public final AppProfile getAppProfile(@Nullable AppProfileName name) {
     GetAppProfileRequest request =
         GetAppProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAppProfile(request);
@@ -2738,7 +2744,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/myproject/instances/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAppProfilesPagedResponse listAppProfiles(InstanceName parent) {
+  public final ListAppProfilesPagedResponse listAppProfiles(@Nullable InstanceName parent) {
     ListAppProfilesRequest request =
         ListAppProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3042,7 +3048,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAppProfile(AppProfileName name) {
+  public final void deleteAppProfile(@Nullable AppProfileName name) {
     DeleteAppProfileRequest request =
         DeleteAppProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAppProfile(request);
@@ -3101,7 +3107,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param ignoreWarnings Required. If true, ignore safety checks when deleting the app profile.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAppProfile(AppProfileName name, boolean ignoreWarnings) {
+  public final void deleteAppProfile(@Nullable AppProfileName name, boolean ignoreWarnings) {
     DeleteAppProfileRequest request =
         DeleteAppProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3228,7 +3234,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3354,7 +3360,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3487,7 +3493,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3623,7 +3629,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHotTabletsPagedResponse listHotTablets(ClusterName parent) {
+  public final ListHotTabletsPagedResponse listHotTablets(@Nullable ClusterName parent) {
     ListHotTabletsRequest request =
         ListHotTabletsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3813,7 +3819,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LogicalView, CreateLogicalViewMetadata> createLogicalViewAsync(
-      InstanceName parent, LogicalView logicalView, String logicalViewId) {
+      @Nullable InstanceName parent, LogicalView logicalView, String logicalViewId) {
     CreateLogicalViewRequest request =
         CreateLogicalViewRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3983,7 +3989,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogicalView getLogicalView(LogicalViewName name) {
+  public final LogicalView getLogicalView(@Nullable LogicalViewName name) {
     GetLogicalViewRequest request =
         GetLogicalViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLogicalView(request);
@@ -4101,7 +4107,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     requested. Values are of the form `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogicalViewsPagedResponse listLogicalViews(InstanceName parent) {
+  public final ListLogicalViewsPagedResponse listLogicalViews(@Nullable InstanceName parent) {
     ListLogicalViewsRequest request =
         ListLogicalViewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4402,7 +4408,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLogicalView(LogicalViewName name) {
+  public final void deleteLogicalView(@Nullable LogicalViewName name) {
     DeleteLogicalViewRequest request =
         DeleteLogicalViewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4531,7 +4537,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final OperationFuture<MaterializedView, CreateMaterializedViewMetadata>
       createMaterializedViewAsync(
-          InstanceName parent, MaterializedView materializedView, String materializedViewId) {
+          @Nullable InstanceName parent,
+          MaterializedView materializedView,
+          String materializedViewId) {
     CreateMaterializedViewRequest request =
         CreateMaterializedViewRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4708,7 +4716,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     form `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MaterializedView getMaterializedView(MaterializedViewName name) {
+  public final MaterializedView getMaterializedView(@Nullable MaterializedViewName name) {
     GetMaterializedViewRequest request =
         GetMaterializedViewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4835,7 +4843,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     views is requested. Values are of the form `projects/{project}/instances/{instance}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMaterializedViewsPagedResponse listMaterializedViews(InstanceName parent) {
+  public final ListMaterializedViewsPagedResponse listMaterializedViews(
+      @Nullable InstanceName parent) {
     ListMaterializedViewsRequest request =
         ListMaterializedViewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5145,7 +5154,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMaterializedView(MaterializedViewName name) {
+  public final void deleteMaterializedView(@Nullable MaterializedViewName name) {
     DeleteMaterializedViewRequest request =
         DeleteMaterializedViewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5307,8 +5316,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListAppProfilesRequest, ListAppProfilesResponse, AppProfile, ListAppProfilesPage> {
 
     private ListAppProfilesPage(
-        PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
-        ListAppProfilesResponse response) {
+        @Nullable PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
+        @Nullable ListAppProfilesResponse response) {
       super(context, response);
     }
 
@@ -5318,14 +5327,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListAppProfilesPage createPage(
-        PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
-        ListAppProfilesResponse response) {
+        @Nullable PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
+        @Nullable ListAppProfilesResponse response) {
       return new ListAppProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAppProfilesPage> createPageAsync(
-        PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
+        @Nullable PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> context,
         ApiFuture<ListAppProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5340,7 +5349,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListAppProfilesFixedSizeCollection> {
 
     private ListAppProfilesFixedSizeCollection(
-        List<ListAppProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListAppProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5350,7 +5359,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListAppProfilesFixedSizeCollection createCollection(
-        List<ListAppProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListAppProfilesPage> pages, int collectionSize) {
       return new ListAppProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5384,8 +5393,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListHotTabletsRequest, ListHotTabletsResponse, HotTablet, ListHotTabletsPage> {
 
     private ListHotTabletsPage(
-        PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
-        ListHotTabletsResponse response) {
+        @Nullable PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
+        @Nullable ListHotTabletsResponse response) {
       super(context, response);
     }
 
@@ -5395,14 +5404,14 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListHotTabletsPage createPage(
-        PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
-        ListHotTabletsResponse response) {
+        @Nullable PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
+        @Nullable ListHotTabletsResponse response) {
       return new ListHotTabletsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHotTabletsPage> createPageAsync(
-        PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
+        @Nullable PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> context,
         ApiFuture<ListHotTabletsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5416,7 +5425,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListHotTabletsPage,
           ListHotTabletsFixedSizeCollection> {
 
-    private ListHotTabletsFixedSizeCollection(List<ListHotTabletsPage> pages, int collectionSize) {
+    private ListHotTabletsFixedSizeCollection(
+        @Nullable List<ListHotTabletsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5426,7 +5436,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListHotTabletsFixedSizeCollection createCollection(
-        List<ListHotTabletsPage> pages, int collectionSize) {
+        @Nullable List<ListHotTabletsPage> pages, int collectionSize) {
       return new ListHotTabletsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5460,8 +5470,9 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView, ListLogicalViewsPage> {
 
     private ListLogicalViewsPage(
-        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
-        ListLogicalViewsResponse response) {
+        @Nullable PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView>
+            context,
+        @Nullable ListLogicalViewsResponse response) {
       super(context, response);
     }
 
@@ -5471,14 +5482,16 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListLogicalViewsPage createPage(
-        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
-        ListLogicalViewsResponse response) {
+        @Nullable PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView>
+            context,
+        @Nullable ListLogicalViewsResponse response) {
       return new ListLogicalViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLogicalViewsPage> createPageAsync(
-        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
+        @Nullable PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView>
+            context,
         ApiFuture<ListLogicalViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5493,7 +5506,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListLogicalViewsFixedSizeCollection> {
 
     private ListLogicalViewsFixedSizeCollection(
-        List<ListLogicalViewsPage> pages, int collectionSize) {
+        @Nullable List<ListLogicalViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5503,7 +5516,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListLogicalViewsFixedSizeCollection createCollection(
-        List<ListLogicalViewsPage> pages, int collectionSize) {
+        @Nullable List<ListLogicalViewsPage> pages, int collectionSize) {
       return new ListLogicalViewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5541,9 +5554,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListMaterializedViewsPage> {
 
     private ListMaterializedViewsPage(
-        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+        @Nullable
+            PageContext<
+                ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
             context,
-        ListMaterializedViewsResponse response) {
+        @Nullable ListMaterializedViewsResponse response) {
       super(context, response);
     }
 
@@ -5553,15 +5568,19 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListMaterializedViewsPage createPage(
-        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+        @Nullable
+            PageContext<
+                ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
             context,
-        ListMaterializedViewsResponse response) {
+        @Nullable ListMaterializedViewsResponse response) {
       return new ListMaterializedViewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMaterializedViewsPage> createPageAsync(
-        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+        @Nullable
+            PageContext<
+                ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
             context,
         ApiFuture<ListMaterializedViewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5577,7 +5596,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
           ListMaterializedViewsFixedSizeCollection> {
 
     private ListMaterializedViewsFixedSizeCollection(
-        List<ListMaterializedViewsPage> pages, int collectionSize) {
+        @Nullable List<ListMaterializedViewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5587,7 +5606,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
     @Override
     protected ListMaterializedViewsFixedSizeCollection createCollection(
-        List<ListMaterializedViewsPage> pages, int collectionSize) {
+        @Nullable List<ListMaterializedViewsPage> pages, int collectionSize) {
       return new ListMaterializedViewsFixedSizeCollection(pages, collectionSize);
     }
   }

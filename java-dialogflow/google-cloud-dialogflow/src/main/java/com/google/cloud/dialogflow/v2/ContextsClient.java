@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -268,9 +270,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ContextsClient implements BackgroundResource {
-  private final ContextsSettings settings;
+  private final @Nullable ContextsSettings settings;
   private final ContextsStub stub;
 
   /** Constructs an instance of ContextsClient with default settings. */
@@ -308,7 +311,7 @@ public class ContextsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContextsSettings getSettings() {
+  public final @Nullable ContextsSettings getSettings() {
     return settings;
   }
 
@@ -343,7 +346,7 @@ public class ContextsClient implements BackgroundResource {
    *     `User ID` is not specified, we assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContextsPagedResponse listContexts(SessionName parent) {
+  public final ListContextsPagedResponse listContexts(@Nullable SessionName parent) {
     ListContextsRequest request =
         ListContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -512,7 +515,7 @@ public class ContextsClient implements BackgroundResource {
    *     default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Context getContext(ContextName name) {
+  public final Context getContext(@Nullable ContextName name) {
     GetContextRequest request =
         GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
@@ -638,7 +641,7 @@ public class ContextsClient implements BackgroundResource {
    * @param context Required. The context to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Context createContext(SessionName parent, Context context) {
+  public final Context createContext(@Nullable SessionName parent, Context context) {
     CreateContextRequest request =
         CreateContextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -856,7 +859,7 @@ public class ContextsClient implements BackgroundResource {
    *     default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteContext(ContextName name) {
+  public final void deleteContext(@Nullable ContextName name) {
     DeleteContextRequest request =
         DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteContext(request);
@@ -978,7 +981,7 @@ public class ContextsClient implements BackgroundResource {
    *     `User ID` is not specified, we assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAllContexts(SessionName parent) {
+  public final void deleteAllContexts(@Nullable SessionName parent) {
     DeleteAllContextsRequest request =
         DeleteAllContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1320,8 +1323,8 @@ public class ContextsClient implements BackgroundResource {
       extends AbstractPage<ListContextsRequest, ListContextsResponse, Context, ListContextsPage> {
 
     private ListContextsPage(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
-        ListContextsResponse response) {
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable ListContextsResponse response) {
       super(context, response);
     }
 
@@ -1331,14 +1334,14 @@ public class ContextsClient implements BackgroundResource {
 
     @Override
     protected ListContextsPage createPage(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
-        ListContextsResponse response) {
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable ListContextsResponse response) {
       return new ListContextsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContextsPage> createPageAsync(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
         ApiFuture<ListContextsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1352,7 +1355,8 @@ public class ContextsClient implements BackgroundResource {
           ListContextsPage,
           ListContextsFixedSizeCollection> {
 
-    private ListContextsFixedSizeCollection(List<ListContextsPage> pages, int collectionSize) {
+    private ListContextsFixedSizeCollection(
+        @Nullable List<ListContextsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1362,7 +1366,7 @@ public class ContextsClient implements BackgroundResource {
 
     @Override
     protected ListContextsFixedSizeCollection createCollection(
-        List<ListContextsPage> pages, int collectionSize) {
+        @Nullable List<ListContextsPage> pages, int collectionSize) {
       return new ListContextsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1396,8 +1400,8 @@ public class ContextsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1407,14 +1411,14 @@ public class ContextsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1428,7 +1432,8 @@ public class ContextsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1438,7 +1443,7 @@ public class ContextsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

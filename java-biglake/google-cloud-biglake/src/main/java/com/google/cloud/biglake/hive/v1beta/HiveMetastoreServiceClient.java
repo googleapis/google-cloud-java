@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -493,10 +495,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HiveMetastoreServiceClient implements BackgroundResource {
-  private final HiveMetastoreServiceSettings settings;
+  private final @Nullable HiveMetastoreServiceSettings settings;
   private final HiveMetastoreServiceStub stub;
 
   /** Constructs an instance of HiveMetastoreServiceClient with default settings. */
@@ -536,7 +539,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final HiveMetastoreServiceSettings getSettings() {
+  public final @Nullable HiveMetastoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -575,7 +578,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HiveCatalog createHiveCatalog(
-      ProjectName parent, HiveCatalog hiveCatalog, String hiveCatalogId) {
+      @Nullable ProjectName parent, HiveCatalog hiveCatalog, String hiveCatalogId) {
     CreateHiveCatalogRequest request =
         CreateHiveCatalogRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -713,7 +716,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HiveCatalog getHiveCatalog(CatalogName name) {
+  public final HiveCatalog getHiveCatalog(@Nullable CatalogName name) {
     GetHiveCatalogRequest request =
         GetHiveCatalogRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHiveCatalog(request);
@@ -830,7 +833,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHiveCatalogsPagedResponse listHiveCatalogs(ProjectName parent) {
+  public final ListHiveCatalogsPagedResponse listHiveCatalogs(@Nullable ProjectName parent) {
     ListHiveCatalogsRequest request =
         ListHiveCatalogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1099,7 +1102,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteHiveCatalog(CatalogName name) {
+  public final void deleteHiveCatalog(@Nullable CatalogName name) {
     DeleteHiveCatalogRequest request =
         DeleteHiveCatalogRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1227,7 +1230,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HiveDatabase createHiveDatabase(
-      CatalogName parent, HiveDatabase hiveDatabase, String hiveDatabaseId) {
+      @Nullable CatalogName parent, HiveDatabase hiveDatabase, String hiveDatabaseId) {
     CreateHiveDatabaseRequest request =
         CreateHiveDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1363,7 +1366,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HiveDatabase getHiveDatabase(NamespaceName name) {
+  public final HiveDatabase getHiveDatabase(@Nullable NamespaceName name) {
     GetHiveDatabaseRequest request =
         GetHiveDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHiveDatabase(request);
@@ -1481,7 +1484,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHiveDatabasesPagedResponse listHiveDatabases(CatalogName parent) {
+  public final ListHiveDatabasesPagedResponse listHiveDatabases(@Nullable CatalogName parent) {
     ListHiveDatabasesRequest request =
         ListHiveDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1749,7 +1752,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteHiveDatabase(NamespaceName name) {
+  public final void deleteHiveDatabase(@Nullable NamespaceName name) {
     DeleteHiveDatabaseRequest request =
         DeleteHiveDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1875,7 +1878,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HiveTable createHiveTable(
-      NamespaceName parent, HiveTable hiveTable, String hiveTableId) {
+      @Nullable NamespaceName parent, HiveTable hiveTable, String hiveTableId) {
     CreateHiveTableRequest request =
         CreateHiveTableRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2010,7 +2013,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HiveTable getHiveTable(TableName name) {
+  public final HiveTable getHiveTable(@Nullable TableName name) {
     GetHiveTableRequest request =
         GetHiveTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHiveTable(request);
@@ -2127,7 +2130,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHiveTablesPagedResponse listHiveTables(NamespaceName parent) {
+  public final ListHiveTablesPagedResponse listHiveTables(@Nullable NamespaceName parent) {
     ListHiveTablesRequest request =
         ListHiveTablesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2391,7 +2394,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteHiveTable(TableName name) {
+  public final void deleteHiveTable(@Nullable TableName name) {
     DeleteHiveTableRequest request =
         DeleteHiveTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteHiveTable(request);
@@ -2507,7 +2510,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     format of projects/{project}/catalogs/{catalogs}/databases/{database}/tables/{table}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCreatePartitionsResponse batchCreatePartitions(TableName parent) {
+  public final BatchCreatePartitionsResponse batchCreatePartitions(@Nullable TableName parent) {
     BatchCreatePartitionsRequest request =
         BatchCreatePartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2633,7 +2636,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     of projects/{project}/catalogs/{catalogs}/databases/{database}/tables/{table}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeletePartitions(TableName parent) {
+  public final void batchDeletePartitions(@Nullable TableName parent) {
     BatchDeletePartitionsRequest request =
         BatchDeletePartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2754,7 +2757,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
    *     of projects/{project}/catalogs/{catalogs}/databases/{database}/tables/{table}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchUpdatePartitionsResponse batchUpdatePartitions(TableName parent) {
+  public final BatchUpdatePartitionsResponse batchUpdatePartitions(@Nullable TableName parent) {
     BatchUpdatePartitionsRequest request =
         BatchUpdatePartitionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2946,8 +2949,9 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog, ListHiveCatalogsPage> {
 
     private ListHiveCatalogsPage(
-        PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog> context,
-        ListHiveCatalogsResponse response) {
+        @Nullable PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog>
+            context,
+        @Nullable ListHiveCatalogsResponse response) {
       super(context, response);
     }
 
@@ -2957,14 +2961,16 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveCatalogsPage createPage(
-        PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog> context,
-        ListHiveCatalogsResponse response) {
+        @Nullable PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog>
+            context,
+        @Nullable ListHiveCatalogsResponse response) {
       return new ListHiveCatalogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHiveCatalogsPage> createPageAsync(
-        PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog> context,
+        @Nullable PageContext<ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog>
+            context,
         ApiFuture<ListHiveCatalogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2979,7 +2985,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveCatalogsFixedSizeCollection> {
 
     private ListHiveCatalogsFixedSizeCollection(
-        List<ListHiveCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListHiveCatalogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2989,7 +2995,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveCatalogsFixedSizeCollection createCollection(
-        List<ListHiveCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListHiveCatalogsPage> pages, int collectionSize) {
       return new ListHiveCatalogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3026,8 +3032,9 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveDatabasesPage> {
 
     private ListHiveDatabasesPage(
-        PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase> context,
-        ListHiveDatabasesResponse response) {
+        @Nullable PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase>
+            context,
+        @Nullable ListHiveDatabasesResponse response) {
       super(context, response);
     }
 
@@ -3037,14 +3044,16 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveDatabasesPage createPage(
-        PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase> context,
-        ListHiveDatabasesResponse response) {
+        @Nullable PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase>
+            context,
+        @Nullable ListHiveDatabasesResponse response) {
       return new ListHiveDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHiveDatabasesPage> createPageAsync(
-        PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase> context,
+        @Nullable PageContext<ListHiveDatabasesRequest, ListHiveDatabasesResponse, HiveDatabase>
+            context,
         ApiFuture<ListHiveDatabasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3059,7 +3068,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveDatabasesFixedSizeCollection> {
 
     private ListHiveDatabasesFixedSizeCollection(
-        List<ListHiveDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListHiveDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3069,7 +3078,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveDatabasesFixedSizeCollection createCollection(
-        List<ListHiveDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListHiveDatabasesPage> pages, int collectionSize) {
       return new ListHiveDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3103,8 +3112,8 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveTablesRequest, ListHiveTablesResponse, HiveTable, ListHiveTablesPage> {
 
     private ListHiveTablesPage(
-        PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
-        ListHiveTablesResponse response) {
+        @Nullable PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
+        @Nullable ListHiveTablesResponse response) {
       super(context, response);
     }
 
@@ -3114,14 +3123,14 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveTablesPage createPage(
-        PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
-        ListHiveTablesResponse response) {
+        @Nullable PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
+        @Nullable ListHiveTablesResponse response) {
       return new ListHiveTablesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHiveTablesPage> createPageAsync(
-        PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
+        @Nullable PageContext<ListHiveTablesRequest, ListHiveTablesResponse, HiveTable> context,
         ApiFuture<ListHiveTablesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3135,7 +3144,8 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
           ListHiveTablesPage,
           ListHiveTablesFixedSizeCollection> {
 
-    private ListHiveTablesFixedSizeCollection(List<ListHiveTablesPage> pages, int collectionSize) {
+    private ListHiveTablesFixedSizeCollection(
+        @Nullable List<ListHiveTablesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3145,7 +3155,7 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListHiveTablesFixedSizeCollection createCollection(
-        List<ListHiveTablesPage> pages, int collectionSize) {
+        @Nullable List<ListHiveTablesPage> pages, int collectionSize) {
       return new ListHiveTablesFixedSizeCollection(pages, collectionSize);
     }
   }

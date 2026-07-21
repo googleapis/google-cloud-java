@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -179,9 +181,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AccountRelationshipsServiceClient implements BackgroundResource {
-  private final AccountRelationshipsServiceSettings settings;
+  private final @Nullable AccountRelationshipsServiceSettings settings;
   private final AccountRelationshipsServiceStub stub;
 
   /** Constructs an instance of AccountRelationshipsServiceClient with default settings. */
@@ -224,7 +227,7 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountRelationshipsServiceSettings getSettings() {
+  public final @Nullable AccountRelationshipsServiceSettings getSettings() {
     return settings;
   }
 
@@ -256,7 +259,7 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
    *     `accounts/123456/relationships/567890`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountRelationship getAccountRelationship(AccountRelationshipName name) {
+  public final AccountRelationship getAccountRelationship(@Nullable AccountRelationshipName name) {
     GetAccountRelationshipRequest request =
         GetAccountRelationshipRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -481,7 +484,8 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountRelationshipsPagedResponse listAccountRelationships(AccountName parent) {
+  public final ListAccountRelationshipsPagedResponse listAccountRelationships(
+      @Nullable AccountName parent) {
     ListAccountRelationshipsRequest request =
         ListAccountRelationshipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -699,12 +703,13 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
           ListAccountRelationshipsPage> {
 
     private ListAccountRelationshipsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccountRelationshipsRequest,
                 ListAccountRelationshipsResponse,
                 AccountRelationship>
             context,
-        ListAccountRelationshipsResponse response) {
+        @Nullable ListAccountRelationshipsResponse response) {
       super(context, response);
     }
 
@@ -714,18 +719,20 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountRelationshipsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccountRelationshipsRequest,
                 ListAccountRelationshipsResponse,
                 AccountRelationship>
             context,
-        ListAccountRelationshipsResponse response) {
+        @Nullable ListAccountRelationshipsResponse response) {
       return new ListAccountRelationshipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountRelationshipsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccountRelationshipsRequest,
                 ListAccountRelationshipsResponse,
                 AccountRelationship>
@@ -744,7 +751,7 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
           ListAccountRelationshipsFixedSizeCollection> {
 
     private ListAccountRelationshipsFixedSizeCollection(
-        List<ListAccountRelationshipsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountRelationshipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -754,7 +761,7 @@ public class AccountRelationshipsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountRelationshipsFixedSizeCollection createCollection(
-        List<ListAccountRelationshipsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountRelationshipsPage> pages, int collectionSize) {
       return new ListAccountRelationshipsFixedSizeCollection(pages, collectionSize);
     }
   }

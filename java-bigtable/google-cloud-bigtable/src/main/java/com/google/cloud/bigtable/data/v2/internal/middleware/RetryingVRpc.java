@@ -17,22 +17,22 @@
 package com.google.cloud.bigtable.data.v2.internal.middleware;
 
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Status;
-import io.grpc.SynchronizationContext;
 import java.util.Optional;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
+// All mutable state is owned by the op executor; VOperationImpl trampolines every inbound call
+// onto it, so no synchronization is needed here.
 public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   private static final Logger LOG = Logger.getLogger(RetryingVRpc.class.getName());
@@ -46,31 +46,20 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private VRpcCallContext context;
   private VRpcTracer tracer;
 
-  private final ScheduledExecutorService executor;
-  private final SynchronizationContext syncContext;
+  private final BigtableTimer timer;
 
-  // current state and all the flags don't need to be volatile because they're only updated within
-  // the sync context.
   private State currentState;
   private boolean started;
-  // Breaks the loop if uncaught exception happens during sync context execution.
+  // Breaks the loop on uncaught exception during cancel.
   private boolean isCancelling;
 
-  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, ScheduledExecutorService executor) {
+  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, BigtableTimer timer) {
     this.attemptFactory = supplier;
 
     grpcContext = Context.current();
     otelContext = io.opentelemetry.context.Context.current();
 
-    this.executor = otelContext.wrap(executor);
-    this.syncContext =
-        new SynchronizationContext(
-            (t, e) -> {
-              this.cancel(
-                  "Unexpected error while notifying the caller of RetryingVRpc. Trying to cancel"
-                      + " vRpc to ensure consistent state",
-                  e);
-            });
+    this.timer = timer;
 
     started = false;
     isCancelling = false;
@@ -79,69 +68,89 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-    syncContext.execute(
-        () -> {
-          if (started) {
-            listener.onClose(
-                VRpcResult.createRejectedError(
-                    Status.FAILED_PRECONDITION.withDescription("operation is already started")));
-            return;
-          }
-          started = true;
+    if (started) {
+      VRpcResult alreadyStarted =
+          VRpcResult.createRejectedError(
+              Status.FAILED_PRECONDITION.withDescription("operation is already started"));
+      ctx.getExecutor().execute(() -> listener.onClose(alreadyStarted));
+      return;
+    }
 
-          this.request = req;
-          this.listener = listener;
-          this.context = ctx;
-          this.tracer = context.getTracer();
+    // Publish the fields BEFORE the try block. If anything below throws and we recover via
+    // cancel(), cancel() reads this.context / this.listener — they must be set already, or
+    // we trade the original failure for an NPE inside the recovery path.
+    this.request = req;
+    this.listener = listener;
+    this.context = ctx;
+    this.tracer = context.getTracer();
 
-          tracer.onOperationStart();
-          currentState.onStart();
-        });
+    tracer.onOperationStart();
+    started = true;
+
+    try {
+      currentState.onStart();
+    } catch (Throwable t) {
+      cancel("Unexpected error in start", t);
+    }
   }
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    syncContext.execute(
-        () -> {
-          if (currentState.isDone() || isCancelling) {
-            LOG.fine("Ignoring cancel because the vRPC is already cancelled or done.");
-            return;
-          }
-          // Prevents infinite loop if there's any error thrown during this phase.
-          isCancelling = true;
-          Throwable finalCause = cause;
-          try {
-            currentState.onCancel(message, cause);
-          } catch (Throwable t) {
-            if (finalCause != null) {
-              finalCause.addSuppressed(t);
-            } else {
-              finalCause = t;
-            }
-          }
-          onStateChange(
-              new Done(
-                  VRpcResult.createRejectedError(
-                      Status.CANCELLED.withDescription(message).withCause(finalCause))));
-        });
+    if (currentState.isDone() || isCancelling) {
+      LOG.fine("Ignoring cancel because the vRPC is already cancelled or done.");
+      return;
+    }
+    // Prevents infinite loop if there's any error thrown during this phase.
+    isCancelling = true;
+    Throwable finalCause = cause;
+    try {
+      currentState.onCancel(message, cause);
+    } catch (Throwable t) {
+      if (finalCause != null) {
+        finalCause.addSuppressed(t);
+      } else {
+        finalCause = t;
+      }
+    }
+    onStateChange(
+        new Done(
+            VRpcResult.createRejectedError(
+                Status.CANCELLED.withDescription(message).withCause(finalCause))));
+  }
+
+  @Override
+  public boolean isDone() {
+    return currentState.isDone();
   }
 
   @Override
   public void requestNext() {
+    // Assert the op-executor affinity even though the body is dead today — when streaming lands
+    // and this becomes real, the missing assertion would silently allow off-thread access.
+    // Guarded on context being set so a misuse before start() still throws
+    // UnsupportedOperationException
+    // rather than NPE on the assertion.
+    if (context != null) {
+      context.getExecutor().throwIfNotInThisExecutor();
+    }
     throw new UnsupportedOperationException("request next is not supported in unary");
   }
 
   void onStateChange(State state) {
-    syncContext.throwIfNotInThisSynchronizationContext();
     if (currentState.isDone()) {
       return;
     }
+    // Give the outgoing state a chance to release per-state resources (timers, registrations,
+    // tracer pairings). Default is a no-op; states that hold cleanup-worthy resources override.
+    currentState.onExit();
     this.currentState = state;
     currentState.onStart();
   }
 
   abstract static class State {
     public abstract void onStart();
+
+    public void onExit() {}
 
     public void onCancel(String reason, Throwable throwable) {}
 
@@ -166,6 +175,16 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   class Active extends State {
 
     private VRpc<ReqT, RespT> attempt;
+    // Tracer pairing flag scoped to this attempt. finishAttempt is idempotent via this flag so
+    // listener path, cancel path, and onExit safety net never double-fire.
+    private boolean attemptFinished = false;
+
+    private void finishAttempt(VRpcResult result) {
+      if (!attemptFinished) {
+        attemptFinished = true;
+        tracer.onAttemptFinish(result);
+      }
+    }
 
     @Override
     public void onStart() {
@@ -177,67 +196,92 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
           new VRpcListener<RespT>() {
             @Override
             public void onMessage(RespT msg) {
-              syncContext.execute(
-                  () -> {
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding response {0} because the attempt is no longer active.",
-                          msg);
-                      return;
-                    }
-                    tracer.onResponseReceived();
-                    Stopwatch appTimer = Stopwatch.createStarted();
-                    try {
-                      listener.onMessage(msg);
-                    } finally {
-                      tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
-                    }
-                  });
+              context.getExecutor().throwIfNotInThisExecutor();
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding response {0} because the attempt is no longer active.",
+                    msg);
+                return;
+              }
+              tracer.onResponseReceived();
+              Stopwatch appTimer = Stopwatch.createStarted();
+              Throwable userThrow = null;
+              try {
+                listener.onMessage(msg);
+              } catch (Throwable t) {
+                userThrow = t;
+              } finally {
+                tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
+              }
+              if (userThrow != null) {
+                // Classify as USER_FAILURE (not CANCELLED, which is what the OpExecutor uncaught
+                // handler would produce via chain.cancel). Finish the attempt's tracer span
+                // with the user-error result, cancel the underlying gRPC call so no further
+                // events arrive (its later onClose is dropped by the currentState !=
+                // Active.this guard), and transition directly to Done.
+                VRpcResult userResult = VRpcResult.createUserError(userThrow);
+                finishAttempt(userResult);
+                attempt.cancel("User callback threw", userThrow);
+                onStateChange(new Done(userResult));
+              }
             }
 
             @Override
             public void onClose(VRpcResult result) {
-              syncContext.execute(
-                  () -> {
-                    tracer.onAttemptFinish(result);
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding server close with result {0} because the the attempt is no"
-                              + " longer active.",
-                          result);
-                      return;
-                    }
-                    if (shouldRetry(result)) {
-                      context = context.createForNextAttempt();
-                      Duration retryDelay =
-                          Optional.ofNullable(result.getRetryInfo())
-                              .map(RetryInfo::getRetryDelay)
-                              .orElse(Durations.ZERO);
-                      if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
-                        Scheduled scheduled = new Scheduled(retryDelay);
-                        onStateChange(scheduled);
-                      } else {
-                        onStateChange(new Idle());
-                      }
-                      return;
-                    }
+              context.getExecutor().throwIfNotInThisExecutor();
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding server close with result {0} because the the attempt is no"
+                        + " longer active.",
+                    result);
+                return;
+              }
+              finishAttempt(result);
+              if (shouldRetry(result)) {
+                context = context.createForNextAttempt();
+                Duration retryDelay =
+                    Optional.ofNullable(result.getRetryInfo())
+                        .map(RetryInfo::getRetryDelay)
+                        .orElse(Durations.ZERO);
+                if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
+                  Scheduled scheduled = new Scheduled(retryDelay);
+                  onStateChange(scheduled);
+                } else {
+                  onStateChange(new Idle());
+                }
+                return;
+              }
 
-                    onStateChange(new Done(result));
-                  });
+              onStateChange(new Done(result));
             }
           });
     }
 
     @Override
     public void onCancel(String reason, Throwable throwable) {
-      // attempt could be null if attemptFactory.get() throws an exception. In which case sync
-      // context uncaught exception handler will be called, which calls cancel on the current
-      // state before transition into done state.
+      // Pair the onAttemptStart fired in onStart with an onAttemptFinish at the moment we
+      // abandon the attempt — the later server onClose for the cancelled attempt is dropped by
+      // the stale-state guard, so this is the only chance to balance the tracer.
+      finishAttempt(
+          VRpcResult.createRejectedError(
+              Status.CANCELLED.withDescription(reason).withCause(throwable)));
+      // attempt could be null if attemptFactory.get() threw before assignment.
       if (attempt != null) {
         attempt.cancel(reason, throwable);
       }
+    }
+
+    @Override
+    public void onExit() {
+      // Defense-in-depth: every existing exit path (listener.onClose, onMessage user-throw,
+      // onCancel) calls finishAttempt with a meaningful result before transitioning. This catches
+      // any new exit path that forgets, recording a generic 'abandoned' instead of leaking the
+      // tracer span.
+      finishAttempt(
+          VRpcResult.createRejectedError(
+              Status.CANCELLED.withDescription("attempt abandoned during transition")));
     }
 
     boolean shouldRetry(VRpcResult result) {
@@ -271,7 +315,10 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   class Scheduled extends State {
     private final Duration retryDelay;
-    private SynchronizationContext.ScheduledHandle future;
+    private BigtableTimer.Timeout future;
+    // Registered with the timer on entry so a Client.close that stops the timer drives this
+    // Scheduled to a CANCELLED Done instead of silently discarding the pending timeout.
+    private BigtableTimer.Registration stopHook;
 
     Scheduled(Duration retryDelay) {
       this.retryDelay = retryDelay;
@@ -279,31 +326,50 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onStart() {
-      try {
-        future =
-            syncContext.schedule(
-                () -> grpcContext.wrap(() -> onStateChange(new Idle())).run(),
-                Durations.toMillis(retryDelay),
-                TimeUnit.MILLISECONDS,
-                executor);
-      } catch (RejectedExecutionException e) {
-        onStateChange(
-            new Done(
-                VRpcResult.createRejectedError(
-                    Status.CANCELLED
-                        .withDescription(
-                            "Executor shutting down, can't schedule operation for retry.")
-                        .withCause(e))));
-      }
+      // If the timer is already stopped, onStop fires the hook synchronously here — which
+      // enqueues an onTimerStopping body on the op executor — and newTimeout returns a
+      // pre-cancelled Timeout. The queued onTimerStopping then drives us to Done(CANCELLED).
+      stopHook = timer.onStop(this::onTimerStopping);
+      // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
+      // the moment the body runs on the op executor.
+      future =
+          timer.newTimeout(
+              () ->
+                  grpcContext
+                      .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
+                      .run(),
+              context.getExecutor(),
+              Durations.toMillis(retryDelay),
+              TimeUnit.MILLISECONDS);
+    }
+
+    // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so
+    // currentState reads and onStateChange are still single-threaded with the rest of the chain.
+    private void onTimerStopping() {
+      context
+          .getExecutor()
+          .execute(
+              () -> {
+                if (currentState != Scheduled.this) {
+                  return; // already transitioned out via normal fire or cancel
+                }
+                onStateChange(
+                    new Done(
+                        VRpcResult.createRejectedError(
+                            Status.CANCELLED.withDescription(
+                                "Client closing while retry pending"))));
+              });
     }
 
     @Override
-    public void onCancel(String reason, Throwable throwable) {
-      // future can be null if schedule throws an exception that's not RejectedExecutionException.
-      // In which case sync context uncaught exception handler will be called, which calls cancel on
-      // the current
-      // state before transition into done state.
-      if (future != null && future.isPending()) {
+    public void onExit() {
+      // Consolidated cleanup: runs on every exit path (normal fire → Idle, cancel → Done,
+      // shutdown hook → Done). Both fields may be null if schedule threw an ISE before assignment.
+      if (stopHook != null) {
+        stopHook.unregister();
+        stopHook = null;
+      }
+      if (future != null && !future.isCancelled()) {
         future.cancel();
       }
     }
@@ -319,10 +385,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onStart() {
-      if (!started) {
-        LOG.fine("operation is not started yet.");
-        return;
-      }
+      // Per-attempt tracer pairing is owned by Active.onExit; Done just runs the user listener
+      // and the per-operation tracer finish.
       Stopwatch appTimer = Stopwatch.createStarted();
       try {
         listener.onClose(result);

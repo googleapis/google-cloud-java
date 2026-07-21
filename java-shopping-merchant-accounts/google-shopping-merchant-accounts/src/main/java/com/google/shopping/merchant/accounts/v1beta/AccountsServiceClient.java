@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -228,10 +230,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AccountsServiceClient implements BackgroundResource {
-  private final AccountsServiceSettings settings;
+  private final @Nullable AccountsServiceSettings settings;
   private final AccountsServiceStub stub;
 
   /** Constructs an instance of AccountsServiceClient with default settings. */
@@ -271,7 +274,7 @@ public class AccountsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountsServiceSettings getSettings() {
+  public final @Nullable AccountsServiceSettings getSettings() {
     return settings;
   }
 
@@ -301,7 +304,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * @param name Required. The name of the account to retrieve. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Account getAccount(AccountName name) {
+  public final Account getAccount(@Nullable AccountName name) {
     GetAccountRequest request =
         GetAccountRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccount(request);
@@ -478,7 +481,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * @param name Required. The name of the account to delete. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAccount(AccountName name) {
+  public final void deleteAccount(@Nullable AccountName name) {
     DeleteAccountRequest request =
         DeleteAccountRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAccount(request);
@@ -803,7 +806,7 @@ public class AccountsServiceClient implements BackgroundResource {
    * @param provider Required. The parent account. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubAccountsPagedResponse listSubAccounts(AccountName provider) {
+  public final ListSubAccountsPagedResponse listSubAccounts(@Nullable AccountName provider) {
     ListSubAccountsRequest request =
         ListSubAccountsRequest.newBuilder()
             .setProvider(provider == null ? null : provider.toString())
@@ -1015,8 +1018,8 @@ public class AccountsServiceClient implements BackgroundResource {
       extends AbstractPage<ListAccountsRequest, ListAccountsResponse, Account, ListAccountsPage> {
 
     private ListAccountsPage(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
-        ListAccountsResponse response) {
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable ListAccountsResponse response) {
       super(context, response);
     }
 
@@ -1026,14 +1029,14 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountsPage createPage(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
-        ListAccountsResponse response) {
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable ListAccountsResponse response) {
       return new ListAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountsPage> createPageAsync(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
         ApiFuture<ListAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1047,7 +1050,8 @@ public class AccountsServiceClient implements BackgroundResource {
           ListAccountsPage,
           ListAccountsFixedSizeCollection> {
 
-    private ListAccountsFixedSizeCollection(List<ListAccountsPage> pages, int collectionSize) {
+    private ListAccountsFixedSizeCollection(
+        @Nullable List<ListAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1057,7 +1061,7 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountsFixedSizeCollection createCollection(
-        List<ListAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountsPage> pages, int collectionSize) {
       return new ListAccountsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1091,8 +1095,8 @@ public class AccountsServiceClient implements BackgroundResource {
           ListSubAccountsRequest, ListSubAccountsResponse, Account, ListSubAccountsPage> {
 
     private ListSubAccountsPage(
-        PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
-        ListSubAccountsResponse response) {
+        @Nullable PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
+        @Nullable ListSubAccountsResponse response) {
       super(context, response);
     }
 
@@ -1102,14 +1106,14 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubAccountsPage createPage(
-        PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
-        ListSubAccountsResponse response) {
+        @Nullable PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
+        @Nullable ListSubAccountsResponse response) {
       return new ListSubAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubAccountsPage> createPageAsync(
-        PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
+        @Nullable PageContext<ListSubAccountsRequest, ListSubAccountsResponse, Account> context,
         ApiFuture<ListSubAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1124,7 +1128,7 @@ public class AccountsServiceClient implements BackgroundResource {
           ListSubAccountsFixedSizeCollection> {
 
     private ListSubAccountsFixedSizeCollection(
-        List<ListSubAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListSubAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1134,7 +1138,7 @@ public class AccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubAccountsFixedSizeCollection createCollection(
-        List<ListSubAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListSubAccountsPage> pages, int collectionSize) {
       return new ListSubAccountsFixedSizeCollection(pages, collectionSize);
     }
   }

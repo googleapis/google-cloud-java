@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -195,10 +197,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ProductReviewsServiceClient implements BackgroundResource {
-  private final ProductReviewsServiceSettings settings;
+  private final @Nullable ProductReviewsServiceSettings settings;
   private final ProductReviewsServiceStub stub;
 
   /** Constructs an instance of ProductReviewsServiceClient with default settings. */
@@ -238,7 +241,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProductReviewsServiceSettings getSettings() {
+  public final @Nullable ProductReviewsServiceSettings getSettings() {
     return settings;
   }
 
@@ -269,7 +272,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
    *     accounts/{account}/productReviews/{productReview}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProductReview getProductReview(ProductReviewName name) {
+  public final ProductReview getProductReview(@Nullable ProductReviewName name) {
     GetProductReviewRequest request =
         GetProductReviewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProductReview(request);
@@ -386,7 +389,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
    * @param parent Required. The account to list product reviews for. Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductReviewsPagedResponse listProductReviews(AccountName parent) {
+  public final ListProductReviewsPagedResponse listProductReviews(@Nullable AccountName parent) {
     ListProductReviewsRequest request =
         ListProductReviewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -621,7 +624,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
    *     accounts/{account}/productReviews/{productReview}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProductReview(ProductReviewName name) {
+  public final void deleteProductReview(@Nullable ProductReviewName name) {
     DeleteProductReviewRequest request =
         DeleteProductReviewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -778,8 +781,9 @@ public class ProductReviewsServiceClient implements BackgroundResource {
           ListProductReviewsPage> {
 
     private ListProductReviewsPage(
-        PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview> context,
-        ListProductReviewsResponse response) {
+        @Nullable PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview>
+            context,
+        @Nullable ListProductReviewsResponse response) {
       super(context, response);
     }
 
@@ -789,14 +793,16 @@ public class ProductReviewsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductReviewsPage createPage(
-        PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview> context,
-        ListProductReviewsResponse response) {
+        @Nullable PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview>
+            context,
+        @Nullable ListProductReviewsResponse response) {
       return new ListProductReviewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductReviewsPage> createPageAsync(
-        PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview> context,
+        @Nullable PageContext<ListProductReviewsRequest, ListProductReviewsResponse, ProductReview>
+            context,
         ApiFuture<ListProductReviewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -811,7 +817,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
           ListProductReviewsFixedSizeCollection> {
 
     private ListProductReviewsFixedSizeCollection(
-        List<ListProductReviewsPage> pages, int collectionSize) {
+        @Nullable List<ListProductReviewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -821,7 +827,7 @@ public class ProductReviewsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProductReviewsFixedSizeCollection createCollection(
-        List<ListProductReviewsPage> pages, int collectionSize) {
+        @Nullable List<ListProductReviewsPage> pages, int collectionSize) {
       return new ListProductReviewsFixedSizeCollection(pages, collectionSize);
     }
   }

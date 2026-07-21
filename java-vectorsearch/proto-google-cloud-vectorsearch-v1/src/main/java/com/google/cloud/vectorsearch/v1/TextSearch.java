@@ -81,10 +81,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The query text.
+   * Optional. The query text. Required when using the default text search mode.
    * </pre>
    *
-   * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The searchText.
    */
@@ -105,10 +105,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The query text.
+   * Optional. The query text. Required when using the default text search mode.
    * </pre>
    *
-   * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for searchText.
    */
@@ -135,10 +135,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The data field names to search.
+   * Optional. The data field names to search. Required when using the default
+   * text search mode.
    * </pre>
    *
-   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the dataFieldNames.
    */
@@ -150,10 +151,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The data field names to search.
+   * Optional. The data field names to search. Required when using the default
+   * text search mode.
    * </pre>
    *
-   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of dataFieldNames.
    */
@@ -165,10 +167,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The data field names to search.
+   * Optional. The data field names to search. Required when using the default
+   * text search mode.
    * </pre>
    *
-   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The dataFieldNames at the given index.
@@ -181,10 +184,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The data field names to search.
+   * Optional. The data field names to search. Required when using the default
+   * text search mode.
    * </pre>
    *
-   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the dataFieldNames at the given index.
@@ -798,10 +802,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The query text.
+     * Optional. The query text. Required when using the default text search mode.
      * </pre>
      *
-     * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The searchText.
      */
@@ -821,10 +825,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The query text.
+     * Optional. The query text. Required when using the default text search mode.
      * </pre>
      *
-     * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for searchText.
      */
@@ -844,10 +848,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The query text.
+     * Optional. The query text. Required when using the default text search mode.
      * </pre>
      *
-     * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The searchText to set.
      * @return This builder for chaining.
@@ -866,10 +870,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The query text.
+     * Optional. The query text. Required when using the default text search mode.
      * </pre>
      *
-     * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -884,10 +888,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The query text.
+     * Optional. The query text. Required when using the default text search mode.
      * </pre>
      *
-     * <code>string search_text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string search_text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for searchText to set.
      * @return This builder for chaining.
@@ -917,10 +921,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the dataFieldNames.
      */
@@ -933,10 +938,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of dataFieldNames.
      */
@@ -948,10 +954,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The dataFieldNames at the given index.
@@ -964,10 +971,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the dataFieldNames at the given index.
@@ -980,10 +988,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The dataFieldNames to set.
@@ -1004,10 +1013,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dataFieldNames to add.
      * @return This builder for chaining.
@@ -1027,10 +1037,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The dataFieldNames to add.
      * @return This builder for chaining.
@@ -1047,10 +1058,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1066,10 +1078,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The data field names to search.
+     * Optional. The data field names to search. Required when using the default
+     * text search mode.
      * </pre>
      *
-     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string data_field_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the dataFieldNames to add.
      * @return This builder for chaining.

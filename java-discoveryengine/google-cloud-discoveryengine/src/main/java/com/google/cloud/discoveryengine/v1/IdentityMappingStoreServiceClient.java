@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -254,9 +256,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IdentityMappingStoreServiceClient implements BackgroundResource {
-  private final IdentityMappingStoreServiceSettings settings;
+  private final @Nullable IdentityMappingStoreServiceSettings settings;
   private final IdentityMappingStoreServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -307,7 +310,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final IdentityMappingStoreServiceSettings getSettings() {
+  public final @Nullable IdentityMappingStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -364,7 +367,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IdentityMappingStore createIdentityMappingStore(
-      LocationName parent,
+      @Nullable LocationName parent,
       IdentityMappingStore identityMappingStore,
       String identityMappingStoreId) {
     CreateIdentityMappingStoreRequest request =
@@ -510,7 +513,8 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/identityMappingStores/{identityMappingStore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IdentityMappingStore getIdentityMappingStore(IdentityMappingStoreName name) {
+  public final IdentityMappingStore getIdentityMappingStore(
+      @Nullable IdentityMappingStoreName name) {
     GetIdentityMappingStoreRequest request =
         GetIdentityMappingStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -640,7 +644,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteIdentityMappingStoreMetadata>
-      deleteIdentityMappingStoreAsync(IdentityMappingStoreName name) {
+      deleteIdentityMappingStoreAsync(@Nullable IdentityMappingStoreName name) {
     DeleteIdentityMappingStoreRequest request =
         DeleteIdentityMappingStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1133,7 +1137,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIdentityMappingStoresPagedResponse listIdentityMappingStores(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListIdentityMappingStoresRequest request =
         ListIdentityMappingStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1349,9 +1353,11 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
           ListIdentityMappingsPage> {
 
     private ListIdentityMappingsPage(
-        PageContext<ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
+        @Nullable
+            PageContext<
+                ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
             context,
-        ListIdentityMappingsResponse response) {
+        @Nullable ListIdentityMappingsResponse response) {
       super(context, response);
     }
 
@@ -1361,15 +1367,19 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListIdentityMappingsPage createPage(
-        PageContext<ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
+        @Nullable
+            PageContext<
+                ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
             context,
-        ListIdentityMappingsResponse response) {
+        @Nullable ListIdentityMappingsResponse response) {
       return new ListIdentityMappingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIdentityMappingsPage> createPageAsync(
-        PageContext<ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
+        @Nullable
+            PageContext<
+                ListIdentityMappingsRequest, ListIdentityMappingsResponse, IdentityMappingEntry>
             context,
         ApiFuture<ListIdentityMappingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1385,7 +1395,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
           ListIdentityMappingsFixedSizeCollection> {
 
     private ListIdentityMappingsFixedSizeCollection(
-        List<ListIdentityMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityMappingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1395,7 +1405,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListIdentityMappingsFixedSizeCollection createCollection(
-        List<ListIdentityMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityMappingsPage> pages, int collectionSize) {
       return new ListIdentityMappingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1436,12 +1446,13 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
           ListIdentityMappingStoresPage> {
 
     private ListIdentityMappingStoresPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityMappingStoresRequest,
                 ListIdentityMappingStoresResponse,
                 IdentityMappingStore>
             context,
-        ListIdentityMappingStoresResponse response) {
+        @Nullable ListIdentityMappingStoresResponse response) {
       super(context, response);
     }
 
@@ -1451,18 +1462,20 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListIdentityMappingStoresPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityMappingStoresRequest,
                 ListIdentityMappingStoresResponse,
                 IdentityMappingStore>
             context,
-        ListIdentityMappingStoresResponse response) {
+        @Nullable ListIdentityMappingStoresResponse response) {
       return new ListIdentityMappingStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIdentityMappingStoresPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIdentityMappingStoresRequest,
                 ListIdentityMappingStoresResponse,
                 IdentityMappingStore>
@@ -1481,7 +1494,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
           ListIdentityMappingStoresFixedSizeCollection> {
 
     private ListIdentityMappingStoresFixedSizeCollection(
-        List<ListIdentityMappingStoresPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityMappingStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1491,7 +1504,7 @@ public class IdentityMappingStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListIdentityMappingStoresFixedSizeCollection createCollection(
-        List<ListIdentityMappingStoresPage> pages, int collectionSize) {
+        @Nullable List<ListIdentityMappingStoresPage> pages, int collectionSize) {
       return new ListIdentityMappingStoresFixedSizeCollection(pages, collectionSize);
     }
   }

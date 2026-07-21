@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -323,9 +325,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ClusterControllerClient implements BackgroundResource {
-  private final ClusterControllerSettings settings;
+  private final @Nullable ClusterControllerSettings settings;
   private final ClusterControllerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -373,7 +376,7 @@ public class ClusterControllerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ClusterControllerSettings getSettings() {
+  public final @Nullable ClusterControllerSettings getSettings() {
     return settings;
   }
 
@@ -1786,8 +1789,8 @@ public class ClusterControllerClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -1797,14 +1800,14 @@ public class ClusterControllerClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1818,7 +1821,8 @@ public class ClusterControllerClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1828,7 +1832,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }

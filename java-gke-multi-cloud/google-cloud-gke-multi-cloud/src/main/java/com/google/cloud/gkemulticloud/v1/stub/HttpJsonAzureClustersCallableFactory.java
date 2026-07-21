@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -41,6 +42,7 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonAzureClustersCallableFactory

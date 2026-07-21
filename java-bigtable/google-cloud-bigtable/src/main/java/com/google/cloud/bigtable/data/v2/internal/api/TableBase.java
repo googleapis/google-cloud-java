@@ -27,10 +27,10 @@ import com.google.cloud.bigtable.data.v2.internal.channels.TenantKey;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
-import com.google.cloud.bigtable.data.v2.internal.middleware.CancellableVRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
-import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcCallContext;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
@@ -41,11 +41,12 @@ import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Executor;
 
 class TableBase implements AutoCloseable {
   private final SessionPool<?> sessionPool;
-  private final ScheduledExecutorService backgroundExecutor;
+  private final BigtableTimer timer;
+  private final Executor userCallbackExecutor;
   private final Metrics metrics;
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
@@ -63,7 +64,9 @@ class TableBase implements AutoCloseable {
       CallOptions callOptions,
       String sessionPoolName,
       Metrics metrics,
-      ScheduledExecutorService executor) {
+      BigtableTimer timer,
+      Executor backgroundExecutor,
+      Executor userCallbackExecutor) {
 
     // Stamp the tenant key so ChannelPoolDpImpl can make tenant-aware placement decisions.
     CallOptions stamped =
@@ -81,11 +84,13 @@ class TableBase implements AutoCloseable {
             stamped,
             sessionDescriptor,
             sessionPoolName,
-            executor);
+            timer,
+            backgroundExecutor);
 
     sessionPool.start(openReq, new Metadata());
 
-    return new TableBase(sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, executor);
+    return new TableBase(
+        sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer, userCallbackExecutor);
   }
 
   @VisibleForTesting
@@ -94,12 +99,14 @@ class TableBase implements AutoCloseable {
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
       Metrics metrics,
-      ScheduledExecutorService executor) {
+      BigtableTimer timer,
+      Executor userCallbackExecutor) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
     this.metrics = metrics;
-    this.backgroundExecutor = executor;
+    this.timer = timer;
+    this.userCallbackExecutor = userCallbackExecutor;
   }
 
   @Override
@@ -118,15 +125,11 @@ class TableBase implements AutoCloseable {
   public void readRow(
       SessionReadRowRequest req, VRpcListener<SessionReadRowResponse> listener, Deadline deadline) {
     RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), backgroundExecutor);
-
+        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), timer);
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, true, tracer);
 
-    CancellableVRpc<SessionReadRowRequest, SessionReadRowResponse> cancellableVRpc =
-        new CancellableVRpc<>(retry, Context.current());
-
-    cancellableVRpc.start(req, ctx, listener);
+    new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, true)
+        .start(req, listener);
   }
 
   public void mutateRow(
@@ -134,17 +137,13 @@ class TableBase implements AutoCloseable {
       VRpcListener<SessionMutateRowResponse> listener,
       Deadline deadline) {
     RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), backgroundExecutor);
-
+        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), timer);
     boolean idempotent = Util.isIdempotent(req.getMutationsList());
-
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer);
 
-    CancellableVRpc<SessionMutateRowRequest, SessionMutateRowResponse> cancellable =
-        new CancellableVRpc<>(retry, Context.current());
-
-    cancellable.start(req, ctx, listener);
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
+        .start(req, listener);
   }
 }

@@ -26,8 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -56,11 +54,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class ITNightlyBigQueryTest {
+public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
-  static BigQuery bigQuery;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String BASE_QUERY =
@@ -91,7 +88,6 @@ public class ITNightlyBigQueryTest {
     DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll
@@ -215,24 +211,23 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=1", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("User requested cancellation"));
               threadException.set(false);
             });
     t.start();
     // Allow thread to actually initiate the query
-    Thread.sleep(3000);
+    // Even when job is created, we might be using `query` API which means if we cancle within first
+    // 10 seconds,
+    // it is similar to Optional job cancellation. Need to wait until after we're in "Wait for job
+    // completion" mode.
+    Thread.sleep(15000);
     bigQueryStatement.cancel();
     // Wait until background thread is finished
     t.join();
@@ -250,18 +245,13 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=2", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("Query was cancelled."));
               threadException.set(false);
             });
@@ -1679,13 +1669,5 @@ public class ITNightlyBigQueryTest {
     job = job.waitFor();
     Job stubJob = bigQuery.getJob(job.getJobId());
     return stubJob.getStatistics().getSessionInfo().getSessionId();
-  }
-
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
   }
 }

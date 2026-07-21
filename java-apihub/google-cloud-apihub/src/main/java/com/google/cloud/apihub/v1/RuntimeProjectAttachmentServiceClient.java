@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -241,9 +243,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RuntimeProjectAttachmentServiceClient implements BackgroundResource {
-  private final RuntimeProjectAttachmentServiceSettings settings;
+  private final @Nullable RuntimeProjectAttachmentServiceSettings settings;
   private final RuntimeProjectAttachmentServiceStub stub;
 
   /** Constructs an instance of RuntimeProjectAttachmentServiceClient with default settings. */
@@ -288,7 +291,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
     this.stub = stub;
   }
 
-  public final RuntimeProjectAttachmentServiceSettings getSettings() {
+  public final @Nullable RuntimeProjectAttachmentServiceSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +333,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RuntimeProjectAttachment createRuntimeProjectAttachment(
-      LocationName parent,
+      @Nullable LocationName parent,
       RuntimeProjectAttachment runtimeProjectAttachment,
       String runtimeProjectAttachmentId) {
     CreateRuntimeProjectAttachmentRequest request =
@@ -482,7 +485,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RuntimeProjectAttachment getRuntimeProjectAttachment(
-      RuntimeProjectAttachmentName name) {
+      @Nullable RuntimeProjectAttachmentName name) {
     GetRuntimeProjectAttachmentRequest request =
         GetRuntimeProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -620,7 +623,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRuntimeProjectAttachmentsPagedResponse listRuntimeProjectAttachments(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListRuntimeProjectAttachmentsRequest request =
         ListRuntimeProjectAttachmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -813,7 +816,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
    *     `projects/{project}/locations/{location}/runtimeProjectAttachments/{runtime_project_attachment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRuntimeProjectAttachment(RuntimeProjectAttachmentName name) {
+  public final void deleteRuntimeProjectAttachment(@Nullable RuntimeProjectAttachmentName name) {
     DeleteRuntimeProjectAttachmentRequest request =
         DeleteRuntimeProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -947,7 +950,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupRuntimeProjectAttachmentResponse lookupRuntimeProjectAttachment(
-      LocationName name) {
+      @Nullable LocationName name) {
     LookupRuntimeProjectAttachmentRequest request =
         LookupRuntimeProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1279,12 +1282,13 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
           ListRuntimeProjectAttachmentsPage> {
 
     private ListRuntimeProjectAttachmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuntimeProjectAttachmentsRequest,
                 ListRuntimeProjectAttachmentsResponse,
                 RuntimeProjectAttachment>
             context,
-        ListRuntimeProjectAttachmentsResponse response) {
+        @Nullable ListRuntimeProjectAttachmentsResponse response) {
       super(context, response);
     }
 
@@ -1294,18 +1298,20 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
 
     @Override
     protected ListRuntimeProjectAttachmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuntimeProjectAttachmentsRequest,
                 ListRuntimeProjectAttachmentsResponse,
                 RuntimeProjectAttachment>
             context,
-        ListRuntimeProjectAttachmentsResponse response) {
+        @Nullable ListRuntimeProjectAttachmentsResponse response) {
       return new ListRuntimeProjectAttachmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuntimeProjectAttachmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuntimeProjectAttachmentsRequest,
                 ListRuntimeProjectAttachmentsResponse,
                 RuntimeProjectAttachment>
@@ -1324,7 +1330,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
           ListRuntimeProjectAttachmentsFixedSizeCollection> {
 
     private ListRuntimeProjectAttachmentsFixedSizeCollection(
-        List<ListRuntimeProjectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListRuntimeProjectAttachmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1334,7 +1340,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
 
     @Override
     protected ListRuntimeProjectAttachmentsFixedSizeCollection createCollection(
-        List<ListRuntimeProjectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListRuntimeProjectAttachmentsPage> pages, int collectionSize) {
       return new ListRuntimeProjectAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1368,8 +1374,8 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1379,14 +1385,14 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1400,7 +1406,8 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1410,7 +1417,7 @@ public class RuntimeProjectAttachmentServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

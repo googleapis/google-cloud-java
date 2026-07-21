@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -400,9 +402,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SecurityProfileGroupServiceClient implements BackgroundResource {
-  private final SecurityProfileGroupServiceSettings settings;
+  private final @Nullable SecurityProfileGroupServiceSettings settings;
   private final SecurityProfileGroupServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -448,7 +451,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final SecurityProfileGroupServiceSettings getSettings() {
+  public final @Nullable SecurityProfileGroupServiceSettings getSettings() {
     return settings;
   }
 
@@ -492,7 +495,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityProfileGroupsPagedResponse listSecurityProfileGroups(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListSecurityProfileGroupsRequest request =
         ListSecurityProfileGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -528,7 +531,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityProfileGroupsPagedResponse listSecurityProfileGroups(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListSecurityProfileGroupsRequest request =
         ListSecurityProfileGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -708,7 +711,8 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    *     `projects|organizations/&#42;/locations/{location}/securityProfileGroups/{security_profile_group}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecurityProfileGroup getSecurityProfileGroup(SecurityProfileGroupName name) {
+  public final SecurityProfileGroup getSecurityProfileGroup(
+      @Nullable SecurityProfileGroupName name) {
     GetSecurityProfileGroupRequest request =
         GetSecurityProfileGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -851,7 +855,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    */
   public final OperationFuture<SecurityProfileGroup, OperationMetadata>
       createSecurityProfileGroupAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           SecurityProfileGroup securityProfileGroup,
           String securityProfileGroupId) {
     CreateSecurityProfileGroupRequest request =
@@ -898,7 +902,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    */
   public final OperationFuture<SecurityProfileGroup, OperationMetadata>
       createSecurityProfileGroupAsync(
-          OrganizationLocationName parent,
+          @Nullable OrganizationLocationName parent,
           SecurityProfileGroup securityProfileGroup,
           String securityProfileGroupId) {
     CreateSecurityProfileGroupRequest request =
@@ -1223,7 +1227,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSecurityProfileGroupAsync(
-      SecurityProfileGroupName name) {
+      @Nullable SecurityProfileGroupName name) {
     DeleteSecurityProfileGroupRequest request =
         DeleteSecurityProfileGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1397,7 +1401,8 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    *     `projects|organizations/&#42;/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSecurityProfilesPagedResponse listSecurityProfiles(LocationName parent) {
+  public final ListSecurityProfilesPagedResponse listSecurityProfiles(
+      @Nullable LocationName parent) {
     ListSecurityProfilesRequest request =
         ListSecurityProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1433,7 +1438,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityProfilesPagedResponse listSecurityProfiles(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListSecurityProfilesRequest request =
         ListSecurityProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1609,7 +1614,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    *     `projects|organizations/&#42;/locations/{location}/securityProfiles/{security_profile_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecurityProfile getSecurityProfile(SecurityProfileName name) {
+  public final SecurityProfile getSecurityProfile(@Nullable SecurityProfileName name) {
     GetSecurityProfileRequest request =
         GetSecurityProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1747,7 +1752,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SecurityProfile, OperationMetadata> createSecurityProfileAsync(
-      LocationName parent, SecurityProfile securityProfile, String securityProfileId) {
+      @Nullable LocationName parent, SecurityProfile securityProfile, String securityProfileId) {
     CreateSecurityProfileRequest request =
         CreateSecurityProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1790,7 +1795,9 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SecurityProfile, OperationMetadata> createSecurityProfileAsync(
-      OrganizationLocationName parent, SecurityProfile securityProfile, String securityProfileId) {
+      @Nullable OrganizationLocationName parent,
+      SecurityProfile securityProfile,
+      String securityProfileId) {
     CreateSecurityProfileRequest request =
         CreateSecurityProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2104,7 +2111,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSecurityProfileAsync(
-      SecurityProfileName name) {
+      @Nullable SecurityProfileName name) {
     DeleteSecurityProfileRequest request =
         DeleteSecurityProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2731,12 +2738,13 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListSecurityProfileGroupsPage> {
 
     private ListSecurityProfileGroupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityProfileGroupsRequest,
                 ListSecurityProfileGroupsResponse,
                 SecurityProfileGroup>
             context,
-        ListSecurityProfileGroupsResponse response) {
+        @Nullable ListSecurityProfileGroupsResponse response) {
       super(context, response);
     }
 
@@ -2746,18 +2754,20 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecurityProfileGroupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityProfileGroupsRequest,
                 ListSecurityProfileGroupsResponse,
                 SecurityProfileGroup>
             context,
-        ListSecurityProfileGroupsResponse response) {
+        @Nullable ListSecurityProfileGroupsResponse response) {
       return new ListSecurityProfileGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecurityProfileGroupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityProfileGroupsRequest,
                 ListSecurityProfileGroupsResponse,
                 SecurityProfileGroup>
@@ -2776,7 +2786,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListSecurityProfileGroupsFixedSizeCollection> {
 
     private ListSecurityProfileGroupsFixedSizeCollection(
-        List<ListSecurityProfileGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityProfileGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2786,7 +2796,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecurityProfileGroupsFixedSizeCollection createCollection(
-        List<ListSecurityProfileGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityProfileGroupsPage> pages, int collectionSize) {
       return new ListSecurityProfileGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2824,9 +2834,10 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListSecurityProfilesPage> {
 
     private ListSecurityProfilesPage(
-        PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
+        @Nullable
+            PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
             context,
-        ListSecurityProfilesResponse response) {
+        @Nullable ListSecurityProfilesResponse response) {
       super(context, response);
     }
 
@@ -2836,15 +2847,17 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecurityProfilesPage createPage(
-        PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
+        @Nullable
+            PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
             context,
-        ListSecurityProfilesResponse response) {
+        @Nullable ListSecurityProfilesResponse response) {
       return new ListSecurityProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecurityProfilesPage> createPageAsync(
-        PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
+        @Nullable
+            PageContext<ListSecurityProfilesRequest, ListSecurityProfilesResponse, SecurityProfile>
             context,
         ApiFuture<ListSecurityProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2860,7 +2873,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListSecurityProfilesFixedSizeCollection> {
 
     private ListSecurityProfilesFixedSizeCollection(
-        List<ListSecurityProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2870,7 +2883,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecurityProfilesFixedSizeCollection createCollection(
-        List<ListSecurityProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityProfilesPage> pages, int collectionSize) {
       return new ListSecurityProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2904,8 +2917,8 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2915,14 +2928,14 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2936,7 +2949,8 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2946,7 +2960,7 @@ public class SecurityProfileGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

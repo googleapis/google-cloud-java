@@ -5,12 +5,11 @@
   "api_description": "Network management API for Distributed Cloud Edge.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-edgenetwork/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-edgenetwork",
   "distribution_name": "com.google.cloud:google-cloud-edgenetwork",
   "api_id": "edgenetwork.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,9 +143,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BrowserServiceClient implements BackgroundResource {
-  private final BrowserServiceSettings settings;
+  private final @Nullable BrowserServiceSettings settings;
   private final BrowserServiceStub stub;
 
   /** Constructs an instance of BrowserServiceClient with default settings. */
@@ -183,7 +186,7 @@ public class BrowserServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BrowserServiceSettings getSettings() {
+  public final @Nullable BrowserServiceSettings getSettings() {
     return settings;
   }
 
@@ -213,7 +216,7 @@ public class BrowserServiceClient implements BackgroundResource {
    *     `networks/{network_code}/browsers/{browser_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Browser getBrowser(BrowserName name) {
+  public final Browser getBrowser(@Nullable BrowserName name) {
     GetBrowserRequest request =
         GetBrowserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBrowser(request);
@@ -325,7 +328,7 @@ public class BrowserServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBrowsersPagedResponse listBrowsers(NetworkName parent) {
+  public final ListBrowsersPagedResponse listBrowsers(@Nullable NetworkName parent) {
     ListBrowsersRequest request =
         ListBrowsersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -532,8 +535,8 @@ public class BrowserServiceClient implements BackgroundResource {
       extends AbstractPage<ListBrowsersRequest, ListBrowsersResponse, Browser, ListBrowsersPage> {
 
     private ListBrowsersPage(
-        PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
-        ListBrowsersResponse response) {
+        @Nullable PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
+        @Nullable ListBrowsersResponse response) {
       super(context, response);
     }
 
@@ -543,14 +546,14 @@ public class BrowserServiceClient implements BackgroundResource {
 
     @Override
     protected ListBrowsersPage createPage(
-        PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
-        ListBrowsersResponse response) {
+        @Nullable PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
+        @Nullable ListBrowsersResponse response) {
       return new ListBrowsersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBrowsersPage> createPageAsync(
-        PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
+        @Nullable PageContext<ListBrowsersRequest, ListBrowsersResponse, Browser> context,
         ApiFuture<ListBrowsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -564,7 +567,8 @@ public class BrowserServiceClient implements BackgroundResource {
           ListBrowsersPage,
           ListBrowsersFixedSizeCollection> {
 
-    private ListBrowsersFixedSizeCollection(List<ListBrowsersPage> pages, int collectionSize) {
+    private ListBrowsersFixedSizeCollection(
+        @Nullable List<ListBrowsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -574,7 +578,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
     @Override
     protected ListBrowsersFixedSizeCollection createCollection(
-        List<ListBrowsersPage> pages, int collectionSize) {
+        @Nullable List<ListBrowsersPage> pages, int collectionSize) {
       return new ListBrowsersFixedSizeCollection(pages, collectionSize);
     }
   }

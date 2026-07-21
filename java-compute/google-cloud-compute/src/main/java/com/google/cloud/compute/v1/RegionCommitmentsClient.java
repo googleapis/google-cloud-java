@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -205,9 +207,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionCommitmentsClient implements BackgroundResource {
-  private final RegionCommitmentsSettings settings;
+  private final @Nullable RegionCommitmentsSettings settings;
   private final RegionCommitmentsStub stub;
 
   /** Constructs an instance of RegionCommitmentsClient with default settings. */
@@ -247,7 +250,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionCommitmentsSettings getSettings() {
+  public final @Nullable RegionCommitmentsSettings getSettings() {
     return settings;
   }
 
@@ -1008,12 +1011,13 @@ public class RegionCommitmentsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
                 Map.Entry<String, CommitmentsScopedList>>
             context,
-        CommitmentAggregatedList response) {
+        @Nullable CommitmentAggregatedList response) {
       super(context, response);
     }
 
@@ -1023,18 +1027,20 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
                 Map.Entry<String, CommitmentsScopedList>>
             context,
-        CommitmentAggregatedList response) {
+        @Nullable CommitmentAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCommitmentsRequest,
                 CommitmentAggregatedList,
                 Map.Entry<String, CommitmentsScopedList>>
@@ -1052,7 +1058,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1062,7 +1069,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1093,8 +1100,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
       extends AbstractPage<ListRegionCommitmentsRequest, CommitmentList, Commitment, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
-        CommitmentList response) {
+        @Nullable PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
+        @Nullable CommitmentList response) {
       super(context, response);
     }
 
@@ -1104,14 +1111,14 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
-        CommitmentList response) {
+        @Nullable PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
+        @Nullable CommitmentList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
+        @Nullable PageContext<ListRegionCommitmentsRequest, CommitmentList, Commitment> context,
         ApiFuture<CommitmentList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1125,7 +1132,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1134,7 +1141,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

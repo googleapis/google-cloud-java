@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -462,10 +464,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SecurityCenterClient implements BackgroundResource {
-  private final SecurityCenterSettings settings;
+  private final @Nullable SecurityCenterSettings settings;
   private final SecurityCenterStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -513,7 +516,7 @@ public class SecurityCenterClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SecurityCenterSettings getSettings() {
+  public final @Nullable SecurityCenterSettings getSettings() {
     return settings;
   }
 
@@ -563,7 +566,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     used. All other fields will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source createSource(OrganizationName parent, Source source) {
+  public final Source createSource(@Nullable OrganizationName parent, Source source) {
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -689,7 +692,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding createFinding(SourceName parent, String findingId, Finding finding) {
+  public final Finding createFinding(
+      @Nullable SourceName parent, String findingId, Finding finding) {
     CreateFindingRequest request =
         CreateFindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -819,7 +823,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -933,7 +937,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]/organizationSettings".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OrganizationSettings getOrganizationSettings(OrganizationSettingsName name) {
+  public final OrganizationSettings getOrganizationSettings(
+      @Nullable OrganizationSettingsName name) {
     GetOrganizationSettingsRequest request =
         GetOrganizationSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1049,7 +1054,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]/source/[source_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source getSource(SourceName name) {
+  public final Source getSource(@Nullable SourceName name) {
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -1292,7 +1297,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
+  public final GroupFindingsPagedResponse groupFindings(
+      @Nullable SourceName parent, String groupBy) {
     GroupFindingsRequest request =
         GroupFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1734,7 +1740,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(OrganizationName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable OrganizationName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1899,7 +1905,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(OrganizationName parent) {
+  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(
+      @Nullable OrganizationName parent) {
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2060,7 +2067,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding setFindingState(FindingName name, Finding.State state, Timestamp startTime) {
+  public final Finding setFindingState(
+      @Nullable FindingName name, Finding.State state, Timestamp startTime) {
     SetFindingStateRequest request =
         SetFindingStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2191,7 +2199,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2319,7 +2327,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2831,8 +2839,8 @@ public class SecurityCenterClient implements BackgroundResource {
       extends AbstractPage<GroupAssetsRequest, GroupAssetsResponse, GroupResult, GroupAssetsPage> {
 
     private GroupAssetsPage(
-        PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
-        GroupAssetsResponse response) {
+        @Nullable PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
+        @Nullable GroupAssetsResponse response) {
       super(context, response);
     }
 
@@ -2842,14 +2850,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupAssetsPage createPage(
-        PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
-        GroupAssetsResponse response) {
+        @Nullable PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
+        @Nullable GroupAssetsResponse response) {
       return new GroupAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<GroupAssetsPage> createPageAsync(
-        PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
+        @Nullable PageContext<GroupAssetsRequest, GroupAssetsResponse, GroupResult> context,
         ApiFuture<GroupAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2863,7 +2871,8 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupAssetsPage,
           GroupAssetsFixedSizeCollection> {
 
-    private GroupAssetsFixedSizeCollection(List<GroupAssetsPage> pages, int collectionSize) {
+    private GroupAssetsFixedSizeCollection(
+        @Nullable List<GroupAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2873,7 +2882,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupAssetsFixedSizeCollection createCollection(
-        List<GroupAssetsPage> pages, int collectionSize) {
+        @Nullable List<GroupAssetsPage> pages, int collectionSize) {
       return new GroupAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2907,8 +2916,8 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage> {
 
     private GroupFindingsPage(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
-        GroupFindingsResponse response) {
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable GroupFindingsResponse response) {
       super(context, response);
     }
 
@@ -2918,14 +2927,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupFindingsPage createPage(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
-        GroupFindingsResponse response) {
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable GroupFindingsResponse response) {
       return new GroupFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<GroupFindingsPage> createPageAsync(
-        PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
+        @Nullable PageContext<GroupFindingsRequest, GroupFindingsResponse, GroupResult> context,
         ApiFuture<GroupFindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2939,7 +2948,8 @@ public class SecurityCenterClient implements BackgroundResource {
           GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
-    private GroupFindingsFixedSizeCollection(List<GroupFindingsPage> pages, int collectionSize) {
+    private GroupFindingsFixedSizeCollection(
+        @Nullable List<GroupFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2949,7 +2959,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected GroupFindingsFixedSizeCollection createCollection(
-        List<GroupFindingsPage> pages, int collectionSize) {
+        @Nullable List<GroupFindingsPage> pages, int collectionSize) {
       return new GroupFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2985,9 +2995,10 @@ public class SecurityCenterClient implements BackgroundResource {
           ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
+        @Nullable
+            PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
             context,
-        ListAssetsResponse response) {
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -2997,15 +3008,17 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
+        @Nullable
+            PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
             context,
-        ListAssetsResponse response) {
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
+        @Nullable
+            PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
             context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3020,7 +3033,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3030,7 +3044,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3063,8 +3077,8 @@ public class SecurityCenterClient implements BackgroundResource {
       extends AbstractPage<ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage> {
 
     private ListFindingsPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       super(context, response);
     }
 
@@ -3074,14 +3088,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListFindingsPage createPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       return new ListFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingsPage> createPageAsync(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
         ApiFuture<ListFindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3095,7 +3109,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
-    private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
+    private ListFindingsFixedSizeCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3105,7 +3120,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListFindingsFixedSizeCollection createCollection(
-        List<ListFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3136,8 +3151,8 @@ public class SecurityCenterClient implements BackgroundResource {
       extends AbstractPage<ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage> {
 
     private ListSourcesPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       super(context, response);
     }
 
@@ -3147,14 +3162,14 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesPage createPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       return new ListSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSourcesPage> createPageAsync(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
         ApiFuture<ListSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3168,7 +3183,8 @@ public class SecurityCenterClient implements BackgroundResource {
           ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
-    private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {
+    private ListSourcesFixedSizeCollection(
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3178,7 +3194,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesFixedSizeCollection createCollection(
-        List<ListSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
     }
   }

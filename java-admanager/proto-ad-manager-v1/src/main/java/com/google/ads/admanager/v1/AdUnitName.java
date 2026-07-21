@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AdUnitName implements ResourceName {
   private static final PathTemplate NETWORK_CODE_AD_UNIT =
@@ -70,7 +73,7 @@ public class AdUnitName implements ResourceName {
     return newBuilder().setNetworkCode(networkCode).setAdUnit(adUnit).build().toString();
   }
 
-  public static AdUnitName parse(String formattedString) {
+  public static @Nullable AdUnitName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class AdUnitName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AdUnitName> values) {
+  public static List<String> toStringList(List<@Nullable AdUnitName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AdUnitName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class AdUnitName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

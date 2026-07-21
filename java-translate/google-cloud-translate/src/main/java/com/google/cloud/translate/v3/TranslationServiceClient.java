@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -861,9 +863,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TranslationServiceClient implements BackgroundResource {
-  private final TranslationServiceSettings settings;
+  private final @Nullable TranslationServiceSettings settings;
   private final TranslationServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -911,7 +914,7 @@ public class TranslationServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TranslationServiceSettings getSettings() {
+  public final @Nullable TranslationServiceSettings getSettings() {
     return settings;
   }
 
@@ -974,7 +977,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
-      LocationName parent, String targetLanguageCode, List<String> contents) {
+      @Nullable LocationName parent, String targetLanguageCode, List<String> contents) {
     TranslateTextRequest request =
         TranslateTextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1092,7 +1095,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TranslateTextResponse translateText(
-      LocationName parent,
+      @Nullable LocationName parent,
       String model,
       String mimeType,
       String sourceLanguageCode,
@@ -1287,7 +1290,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param contents Required. The content of the input in string format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RomanizeTextResponse romanizeText(LocationName parent, List<String> contents) {
+  public final RomanizeTextResponse romanizeText(
+      @Nullable LocationName parent, List<String> contents) {
     RomanizeTextRequest request =
         RomanizeTextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1430,7 +1434,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetectLanguageResponse detectLanguage(
-      LocationName parent, String model, String mimeType, String content) {
+      @Nullable LocationName parent, String model, String mimeType, String content) {
     DetectLanguageRequest request =
         DetectLanguageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1599,7 +1603,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportedLanguages getSupportedLanguages(
-      LocationName parent, String model, String displayLanguageCode) {
+      @Nullable LocationName parent, String model, String displayLanguageCode) {
     GetSupportedLanguagesRequest request =
         GetSupportedLanguagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1978,7 +1982,7 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
       batchTranslateDocumentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           String sourceLanguageCode,
           List<String> targetLanguageCodes,
           List<BatchDocumentInputConfig> inputConfigs,
@@ -2226,7 +2230,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Glossary, CreateGlossaryMetadata> createGlossaryAsync(
-      LocationName parent, Glossary glossary) {
+      @Nullable LocationName parent, Glossary glossary) {
     CreateGlossaryRequest request =
         CreateGlossaryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2505,7 +2509,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param parent Required. The name of the project from which to list all of the glossaries.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossariesPagedResponse listGlossaries(LocationName parent) {
+  public final ListGlossariesPagedResponse listGlossaries(@Nullable LocationName parent) {
     ListGlossariesRequest request =
         ListGlossariesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2670,7 +2674,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The name of the glossary to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Glossary getGlossary(GlossaryName name) {
+  public final Glossary getGlossary(@Nullable GlossaryName name) {
     GetGlossaryRequest request =
         GetGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossary(request);
@@ -2781,7 +2785,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
-      GlossaryName name) {
+      @Nullable GlossaryName name) {
     DeleteGlossaryRequest request =
         DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGlossaryAsync(request);
@@ -2927,7 +2931,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the glossary entry to get
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GlossaryEntry getGlossaryEntry(GlossaryEntryName name) {
+  public final GlossaryEntry getGlossaryEntry(@Nullable GlossaryEntryName name) {
     GetGlossaryEntryRequest request =
         GetGlossaryEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGlossaryEntry(request);
@@ -3045,7 +3049,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param parent Required. The parent glossary resource name for listing the glossary's entries.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGlossaryEntriesPagedResponse listGlossaryEntries(GlossaryName parent) {
+  public final ListGlossaryEntriesPagedResponse listGlossaryEntries(@Nullable GlossaryName parent) {
     ListGlossaryEntriesRequest request =
         ListGlossaryEntriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3213,7 +3217,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param glossaryEntry Required. The glossary entry to create
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GlossaryEntry createGlossaryEntry(GlossaryName parent, GlossaryEntry glossaryEntry) {
+  public final GlossaryEntry createGlossaryEntry(
+      @Nullable GlossaryName parent, GlossaryEntry glossaryEntry) {
     CreateGlossaryEntryRequest request =
         CreateGlossaryEntryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3419,7 +3424,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the glossary entry to delete
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGlossaryEntry(GlossaryEntryName name) {
+  public final void deleteGlossaryEntry(@Nullable GlossaryEntryName name) {
     DeleteGlossaryEntryRequest request =
         DeleteGlossaryEntryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3540,7 +3545,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Dataset, CreateDatasetMetadata> createDatasetAsync(
-      LocationName parent, Dataset dataset) {
+      @Nullable LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3689,7 +3694,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -3800,7 +3805,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable LocationName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3962,7 +3967,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The name of the dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteDatasetMetadata> deleteDatasetAsync(DatasetName name) {
+  public final OperationFuture<Empty, DeleteDatasetMetadata> deleteDatasetAsync(
+      @Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
@@ -4106,7 +4112,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AdaptiveMtDataset createAdaptiveMtDataset(
-      LocationName parent, AdaptiveMtDataset adaptiveMtDataset) {
+      @Nullable LocationName parent, AdaptiveMtDataset adaptiveMtDataset) {
     CreateAdaptiveMtDatasetRequest request =
         CreateAdaptiveMtDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4231,7 +4237,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAdaptiveMtDataset(AdaptiveMtDatasetName name) {
+  public final void deleteAdaptiveMtDataset(@Nullable AdaptiveMtDatasetName name) {
     DeleteAdaptiveMtDatasetRequest request =
         DeleteAdaptiveMtDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4346,7 +4352,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdaptiveMtDataset getAdaptiveMtDataset(AdaptiveMtDatasetName name) {
+  public final AdaptiveMtDataset getAdaptiveMtDataset(@Nullable AdaptiveMtDatasetName name) {
     GetAdaptiveMtDatasetRequest request =
         GetAdaptiveMtDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4464,7 +4470,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     datasets. `projects/{project-number-or-id}/locations/{location-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdaptiveMtDatasetsPagedResponse listAdaptiveMtDatasets(LocationName parent) {
+  public final ListAdaptiveMtDatasetsPagedResponse listAdaptiveMtDatasets(
+      @Nullable LocationName parent) {
     ListAdaptiveMtDatasetsRequest request =
         ListAdaptiveMtDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4639,7 +4646,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AdaptiveMtTranslateResponse adaptiveMtTranslate(
-      LocationName parent, List<String> content) {
+      @Nullable LocationName parent, List<String> content) {
     AdaptiveMtTranslateRequest request =
         AdaptiveMtTranslateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4774,7 +4781,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdaptiveMtFile getAdaptiveMtFile(AdaptiveMtFileName name) {
+  public final AdaptiveMtFile getAdaptiveMtFile(@Nullable AdaptiveMtFileName name) {
     GetAdaptiveMtFileRequest request =
         GetAdaptiveMtFileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4893,7 +4900,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAdaptiveMtFile(AdaptiveMtFileName name) {
+  public final void deleteAdaptiveMtFile(@Nullable AdaptiveMtFileName name) {
     DeleteAdaptiveMtFileRequest request =
         DeleteAdaptiveMtFileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5013,7 +5020,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImportAdaptiveMtFileResponse importAdaptiveMtFile(AdaptiveMtDatasetName parent) {
+  public final ImportAdaptiveMtFileResponse importAdaptiveMtFile(
+      @Nullable AdaptiveMtDatasetName parent) {
     ImportAdaptiveMtFileRequest request =
         ImportAdaptiveMtFileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5136,7 +5144,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     files. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdaptiveMtFilesPagedResponse listAdaptiveMtFiles(AdaptiveMtDatasetName parent) {
+  public final ListAdaptiveMtFilesPagedResponse listAdaptiveMtFiles(
+      @Nullable AdaptiveMtDatasetName parent) {
     ListAdaptiveMtFilesRequest request =
         ListAdaptiveMtFilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5315,7 +5324,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAdaptiveMtSentencesPagedResponse listAdaptiveMtSentences(
-      AdaptiveMtFileName parent) {
+      @Nullable AdaptiveMtFileName parent) {
     ListAdaptiveMtSentencesRequest request =
         ListAdaptiveMtSentencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5735,7 +5744,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/datasets/{dataset-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExamplesPagedResponse listExamples(DatasetName parent) {
+  public final ListExamplesPagedResponse listExamples(@Nullable DatasetName parent) {
     ListExamplesRequest request =
         ListExamplesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5903,7 +5912,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Model, CreateModelMetadata> createModelAsync(
-      LocationName parent, Model model) {
+      @Nullable LocationName parent, Model model) {
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6055,7 +6064,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelsPagedResponse listModels(LocationName parent) {
+  public final ListModelsPagedResponse listModels(@Nullable LocationName parent) {
     ListModelsRequest request =
         ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
@@ -6216,7 +6225,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the model to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model getModel(ModelName name) {
+  public final Model getModel(@Nullable ModelName name) {
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -6324,7 +6333,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param name Required. The name of the model to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteModelMetadata> deleteModelAsync(ModelName name) {
+  public final OperationFuture<Empty, DeleteModelMetadata> deleteModelAsync(
+      @Nullable ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
@@ -6501,8 +6511,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossariesRequest, ListGlossariesResponse, Glossary, ListGlossariesPage> {
 
     private ListGlossariesPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       super(context, response);
     }
 
@@ -6512,14 +6522,14 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesPage createPage(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
-        ListGlossariesResponse response) {
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable ListGlossariesResponse response) {
       return new ListGlossariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossariesPage> createPageAsync(
-        PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
+        @Nullable PageContext<ListGlossariesRequest, ListGlossariesResponse, Glossary> context,
         ApiFuture<ListGlossariesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6533,7 +6543,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossariesPage,
           ListGlossariesFixedSizeCollection> {
 
-    private ListGlossariesFixedSizeCollection(List<ListGlossariesPage> pages, int collectionSize) {
+    private ListGlossariesFixedSizeCollection(
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6543,7 +6554,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossariesFixedSizeCollection createCollection(
-        List<ListGlossariesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossariesPage> pages, int collectionSize) {
       return new ListGlossariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6580,8 +6591,10 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossaryEntriesPage> {
 
     private ListGlossaryEntriesPage(
-        PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry> context,
-        ListGlossaryEntriesResponse response) {
+        @Nullable
+            PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>
+            context,
+        @Nullable ListGlossaryEntriesResponse response) {
       super(context, response);
     }
 
@@ -6591,14 +6604,18 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryEntriesPage createPage(
-        PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry> context,
-        ListGlossaryEntriesResponse response) {
+        @Nullable
+            PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>
+            context,
+        @Nullable ListGlossaryEntriesResponse response) {
       return new ListGlossaryEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGlossaryEntriesPage> createPageAsync(
-        PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry> context,
+        @Nullable
+            PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>
+            context,
         ApiFuture<ListGlossaryEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6613,7 +6630,7 @@ public class TranslationServiceClient implements BackgroundResource {
           ListGlossaryEntriesFixedSizeCollection> {
 
     private ListGlossaryEntriesFixedSizeCollection(
-        List<ListGlossaryEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6623,7 +6640,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListGlossaryEntriesFixedSizeCollection createCollection(
-        List<ListGlossaryEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListGlossaryEntriesPage> pages, int collectionSize) {
       return new ListGlossaryEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6656,8 +6673,8 @@ public class TranslationServiceClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -6667,14 +6684,14 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6688,7 +6705,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6698,7 +6716,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6737,10 +6755,11 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtDatasetsPage> {
 
     private ListAdaptiveMtDatasetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
             context,
-        ListAdaptiveMtDatasetsResponse response) {
+        @Nullable ListAdaptiveMtDatasetsResponse response) {
       super(context, response);
     }
 
@@ -6750,16 +6769,18 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtDatasetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
             context,
-        ListAdaptiveMtDatasetsResponse response) {
+        @Nullable ListAdaptiveMtDatasetsResponse response) {
       return new ListAdaptiveMtDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdaptiveMtDatasetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
             context,
         ApiFuture<ListAdaptiveMtDatasetsResponse> futureResponse) {
@@ -6776,7 +6797,7 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtDatasetsFixedSizeCollection> {
 
     private ListAdaptiveMtDatasetsFixedSizeCollection(
-        List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6786,7 +6807,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtDatasetsFixedSizeCollection createCollection(
-        List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
       return new ListAdaptiveMtDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6824,9 +6845,10 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtFilesPage> {
 
     private ListAdaptiveMtFilesPage(
-        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+        @Nullable
+            PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
             context,
-        ListAdaptiveMtFilesResponse response) {
+        @Nullable ListAdaptiveMtFilesResponse response) {
       super(context, response);
     }
 
@@ -6836,15 +6858,17 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtFilesPage createPage(
-        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+        @Nullable
+            PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
             context,
-        ListAdaptiveMtFilesResponse response) {
+        @Nullable ListAdaptiveMtFilesResponse response) {
       return new ListAdaptiveMtFilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdaptiveMtFilesPage> createPageAsync(
-        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+        @Nullable
+            PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
             context,
         ApiFuture<ListAdaptiveMtFilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6860,7 +6884,7 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtFilesFixedSizeCollection> {
 
     private ListAdaptiveMtFilesFixedSizeCollection(
-        List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6870,7 +6894,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtFilesFixedSizeCollection createCollection(
-        List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
       return new ListAdaptiveMtFilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6909,10 +6933,11 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtSentencesPage> {
 
     private ListAdaptiveMtSentencesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
             context,
-        ListAdaptiveMtSentencesResponse response) {
+        @Nullable ListAdaptiveMtSentencesResponse response) {
       super(context, response);
     }
 
@@ -6922,16 +6947,18 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtSentencesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
             context,
-        ListAdaptiveMtSentencesResponse response) {
+        @Nullable ListAdaptiveMtSentencesResponse response) {
       return new ListAdaptiveMtSentencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdaptiveMtSentencesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
             context,
         ApiFuture<ListAdaptiveMtSentencesResponse> futureResponse) {
@@ -6948,7 +6975,7 @@ public class TranslationServiceClient implements BackgroundResource {
           ListAdaptiveMtSentencesFixedSizeCollection> {
 
     private ListAdaptiveMtSentencesFixedSizeCollection(
-        List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6958,7 +6985,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdaptiveMtSentencesFixedSizeCollection createCollection(
-        List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
+        @Nullable List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
       return new ListAdaptiveMtSentencesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6991,8 +7018,8 @@ public class TranslationServiceClient implements BackgroundResource {
       extends AbstractPage<ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage> {
 
     private ListExamplesPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       super(context, response);
     }
 
@@ -7002,14 +7029,14 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesPage createPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       return new ListExamplesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExamplesPage> createPageAsync(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
         ApiFuture<ListExamplesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7023,7 +7050,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
-    private ListExamplesFixedSizeCollection(List<ListExamplesPage> pages, int collectionSize) {
+    private ListExamplesFixedSizeCollection(
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7033,7 +7061,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesFixedSizeCollection createCollection(
-        List<ListExamplesPage> pages, int collectionSize) {
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       return new ListExamplesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7064,8 +7092,8 @@ public class TranslationServiceClient implements BackgroundResource {
       extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
 
     private ListModelsPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       super(context, response);
     }
 
@@ -7075,14 +7103,14 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsPage createPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       return new ListModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelsPage> createPageAsync(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
         ApiFuture<ListModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7096,7 +7124,8 @@ public class TranslationServiceClient implements BackgroundResource {
           ListModelsPage,
           ListModelsFixedSizeCollection> {
 
-    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+    private ListModelsFixedSizeCollection(
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7106,7 +7135,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsFixedSizeCollection createCollection(
-        List<ListModelsPage> pages, int collectionSize) {
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }
