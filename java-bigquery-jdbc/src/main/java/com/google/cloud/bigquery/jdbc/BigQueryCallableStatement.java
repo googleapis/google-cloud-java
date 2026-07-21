@@ -49,6 +49,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   BigQueryCallableStatement(BigQueryConnection connection, String callableStmtSql)
       throws SQLException {
     super(connection, callableStmtSql);
+    LOG.finer("++enter++");
   }
 
   @VisibleForTesting
