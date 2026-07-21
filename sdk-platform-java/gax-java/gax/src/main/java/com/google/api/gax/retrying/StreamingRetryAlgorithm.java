@@ -31,6 +31,8 @@ package com.google.api.gax.retrying;
 
 import com.google.api.core.InternalApi;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The streaming retry algorithm, which makes decision based either on the thrown exception and the
@@ -41,6 +43,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Internal use only - public for technical reasons.
  */
+@NullMarked
 @InternalApi("For internal use only")
 public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
 
@@ -89,7 +92,7 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    */
   @Override
   public TimedAttemptSettings createNextAttempt(
-      RetryingContext context,
+      @Nullable RetryingContext context,
       Throwable previousThrowable,
       ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
@@ -135,7 +138,7 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    */
   @Override
   public boolean shouldRetry(
-      RetryingContext context,
+      @Nullable RetryingContext context,
       Throwable previousThrowable,
       ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)

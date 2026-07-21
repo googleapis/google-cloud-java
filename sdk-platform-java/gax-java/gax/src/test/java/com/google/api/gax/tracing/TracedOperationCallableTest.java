@@ -32,6 +32,7 @@ package com.google.api.gax.tracing;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -50,7 +51,6 @@ import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -58,10 +58,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class TracedOperationCallableTest {
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeOperation");
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
-  @Mock private ApiTracer tracer;
-  @Mock private OperationCallable<String, String, Long> innerCallable;
+  private ApiTracer tracer;
+  private OperationCallable<String, String, Long> innerCallable;
   private FakeOperationFuture innerResult;
 
   private TracedOperationCallable<String, String, Long> tracedOperationCallable;
@@ -69,6 +69,9 @@ class TracedOperationCallableTest {
 
   @BeforeEach
   void setUp() {
+    innerCallable = mock(OperationCallable.class, Mockito.withSettings().withoutAnnotations());
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory

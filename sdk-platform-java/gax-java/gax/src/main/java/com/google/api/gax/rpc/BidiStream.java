@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A wrapper around a bidirectional stream.
@@ -68,6 +69,7 @@ import com.google.api.core.InternalApi;
  * @param <RequestT> The type of each request.
  * @param <ResponseT> The type of each response.
  */
+@NullMarked
 public class BidiStream<RequestT, ResponseT> extends ServerStream<ResponseT>
     implements ClientStream<RequestT> {
 

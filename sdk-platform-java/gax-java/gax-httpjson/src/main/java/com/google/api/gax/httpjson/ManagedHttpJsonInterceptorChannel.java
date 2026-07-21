@@ -31,7 +31,9 @@ package com.google.api.gax.httpjson;
 
 import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
 
   private final ManagedHttpJsonChannel channel;

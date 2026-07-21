@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Exception thrown when parsing protocol buffer message failed */
+@NullMarked
 public class ProtocolBufferParsingException extends RuntimeException {
 
   public ProtocolBufferParsingException(String message, Throwable cause) {

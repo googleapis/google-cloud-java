@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown due to internal errors. Means some invariants expected by underlying system has
  * been broken. If you see one of these errors, something is very broken.
  */
+@NullMarked
 public class InternalException extends ApiException {
   public InternalException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

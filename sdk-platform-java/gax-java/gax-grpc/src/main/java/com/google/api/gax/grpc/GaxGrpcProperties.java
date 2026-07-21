@@ -33,8 +33,10 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
 import io.grpc.Channel;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides properties of the GAX-GRPC library. */
+@NullMarked
 @InternalApi
 public class GaxGrpcProperties {
   private static final String GAX_GRPC_VERSION =

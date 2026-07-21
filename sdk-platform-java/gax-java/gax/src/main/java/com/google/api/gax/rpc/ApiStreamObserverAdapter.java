@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Backwards compatibility bridge from the new {@link ResponseObserver} api to the old {@link
  * ApiStreamObserver} api.
@@ -38,6 +40,7 @@ package com.google.api.gax.rpc;
  * @param <T> The type of the response.
  * @deprecated Use ResponseObserver directly
  */
+@NullMarked
 @Deprecated
 class ApiStreamObserverAdapter<T> extends StateCheckingResponseObserver<T> {
   private final ApiStreamObserver<T> delegate;

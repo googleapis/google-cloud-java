@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ObservabilityAttributes;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A resource name extractor takes a request message and extracts the resource name from it. This
@@ -42,6 +43,7 @@ import com.google.api.gax.tracing.ObservabilityAttributes;
  *
  * @param <RequestT> request message type
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public interface ResourceNameExtractor<RequestT> {
   /**

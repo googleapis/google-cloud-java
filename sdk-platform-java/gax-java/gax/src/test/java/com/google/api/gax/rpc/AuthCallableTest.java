@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.api.gax.rpc.testing.FakeCallableFactory;
 import com.google.api.gax.rpc.testing.FakeChannel;
@@ -65,7 +67,10 @@ class AuthCallableTest {
         FakeCallableFactory.createUnaryCallable(
             stash,
             callSettings,
-            clientContext.toBuilder().setCredentials(Mockito.mock(Credentials.class)).build());
+            clientContext.toBuilder()
+                .setCredentials(
+                    mock(Credentials.class, Mockito.withSettings().withoutAnnotations()))
+                .build());
     Truth.assertThat(callable.futureCall(0).get()).isEqualTo(42);
     Truth.assertThat(stash.getContext()).isNotNull();
     FakeCallContext callContext = (FakeCallContext) stash.getContext();

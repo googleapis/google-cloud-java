@@ -40,7 +40,9 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public interface HttpJsonStubCallableFactory<
     OperationT, OperationsStub extends BackgroundResource> {
 

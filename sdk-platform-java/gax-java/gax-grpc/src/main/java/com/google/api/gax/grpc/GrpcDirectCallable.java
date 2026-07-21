@@ -38,12 +38,14 @@ import com.google.common.base.Preconditions;
 import io.grpc.ClientCall;
 import io.grpc.MethodDescriptor;
 import io.grpc.stub.ClientCalls;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code GrpcDirectCallable} creates gRPC calls.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 @InternalApi
 class GrpcDirectCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final MethodDescriptor<RequestT, ResponseT> descriptor;

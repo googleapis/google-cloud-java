@@ -31,8 +31,10 @@ package com.google.api.gax.core;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** Treats a collection of background resources as a single background resource. */
+@NullMarked
 public class BackgroundResourceAggregation implements BackgroundResource {
 
   private final List<BackgroundResource> resources;

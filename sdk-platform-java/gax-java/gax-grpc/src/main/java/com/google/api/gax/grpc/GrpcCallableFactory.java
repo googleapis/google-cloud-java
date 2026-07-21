@@ -61,8 +61,10 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import io.grpc.MethodDescriptor;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create grpc-based direct callables. */
+@NullMarked
 public class GrpcCallableFactory {
 
   private GrpcCallableFactory() {}

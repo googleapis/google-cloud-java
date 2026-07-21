@@ -35,8 +35,10 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 /** A value class to represent the name of the operation in an {@link ApiTracer}. */
+@NullMarked
 @BetaApi("Surface for tracing is not yet stable")
 @InternalApi("For google-cloud-java client use only")
 @AutoValue

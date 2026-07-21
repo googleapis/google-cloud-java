@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * This exception is used to preserve the caller's stacktrace when invoking an async task in a sync
  * context. It will be added as a suppressed exception when propagating the async exception. This
  * allows callers to catch ApiException thrown in an async operation, while still maintaining the
  * call site.
  */
+@NullMarked
 public class AsyncTaskException extends RuntimeException {
   AsyncTaskException() {
     super("Asynchronous task failed");

@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ResponseObserver} to mark a started operation trace as finished.
@@ -43,6 +44,7 @@ import javax.annotation.Nonnull;
  * that the span of the instrumentation will not include processing of the innerObserver's
  * onComplete.
  */
+@NullMarked
 @InternalApi
 class TracedResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
   private final ApiTracer tracer;
