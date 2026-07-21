@@ -45,8 +45,6 @@ public abstract class EnvInfo {
 
   private static final AtomicLong uidSuffix = new AtomicLong(0);
 
-  private static final GCPResourceProvider gcpResourceProvider = new GCPResourceProvider();
-
   public abstract String getUid();
 
   /** The Google platform running this client. ie. gcp_compute_engine */
@@ -103,7 +101,7 @@ public abstract class EnvInfo {
 
   public static EnvInfo detect() {
     return detect(
-        gcpResourceProvider.getAttributes(),
+        new GCPResourceProvider().getAttributes(),
         System::getenv,
         () -> {
           try {
