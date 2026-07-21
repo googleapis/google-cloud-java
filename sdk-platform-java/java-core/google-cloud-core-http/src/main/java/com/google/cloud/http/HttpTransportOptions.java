@@ -74,22 +74,26 @@ public class HttpTransportOptions implements TransportOptions {
       // by default. This ensures that client connections automatically benefit from
       // quantum-resistant
       // key exchange when Conscrypt is present.
+      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
       try {
-        NetHttpTransport.Builder builder =
-            new NetHttpTransport.Builder().setSecurityProvider(Conscrypt.newProvider());
-        builder.setSslSocketConfigurator(
-            socket -> {
+        builder.setSecurityProvider(Conscrypt.newProvider());
+      } catch (Throwable t) {
+        // Conscrypt native libraries not available, fallback to standard JDK TLS
+      }
+
+      builder.setSslSocketConfigurator(
+          socket -> {
+            try {
               if (Conscrypt.isConscrypt(socket)) {
                 Conscrypt.setNamedGroups(
                     socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
               }
-            });
-        return builder.build();
-      } catch (Throwable t) {
-        // Fallback to standard NetHttpTransport if Conscrypt is not available or failed to load
-      }
+            } catch (Throwable t) {
+              // Conscrypt not available or socket is standard JDK TLS socket
+            }
+          });
 
-      return new NetHttpTransport();
+      return builder.build();
     }
   }
 

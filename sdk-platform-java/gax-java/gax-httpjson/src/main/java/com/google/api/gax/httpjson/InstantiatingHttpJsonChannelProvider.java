@@ -83,7 +83,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
    * </ul>
    */
   public static final String[] DEFAULT_PQC_GROUPS =
-      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519Kyber768Draft00", "X25519"};
+      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
@@ -209,33 +209,31 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     try {
-      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
       builder.setSecurityProvider(Conscrypt.newProvider());
-      builder.setSslSocketConfigurator(
-          socket -> {
+    } catch (Throwable t) {
+      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+    }
+
+    builder.setSslSocketConfigurator(
+        socket -> {
+          try {
             if (Conscrypt.isConscrypt(socket)) {
               Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
             }
-          });
-      if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
-        KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-        if (mtlsKeyStore != null) {
-          builder.trustCertificates(null, mtlsKeyStore, "");
-        }
+          } catch (Throwable t) {
+            // Conscrypt not available or socket is standard JDK TLS socket
+          }
+        });
+
+    if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+      if (mtlsKeyStore != null) {
+        builder.trustCertificates(null, mtlsKeyStore, "");
       }
-      return builder.build();
-    } catch (Throwable t) {
-      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-      NetHttpTransport.Builder fallbackBuilder = new NetHttpTransport.Builder();
-      if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
-        KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-        if (mtlsKeyStore != null) {
-          fallbackBuilder.trustCertificates(null, mtlsKeyStore, "");
-        }
-      }
-      return fallbackBuilder.build();
     }
+    return builder.build();
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
