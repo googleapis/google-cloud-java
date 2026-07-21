@@ -20,6 +20,8 @@ com.google.errorprone:error_prone_annotations,errorprone=2.50.0
 com.google.j2objc:j2objc-annotations,j2objc-annotations=3.1
 org.threeten:threetenbp,threetenbp=1.7.3
 org.slf4j:slf4j-api,slf4j=2.0.18
+org.jspecify:jspecify,jspecify=1.0.0
+org.conscrypt:conscrypt-openjdk,conscrypt=2.6.0
 
 # 1P Shared-Deps
 # These dependencies are declared: https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml
