@@ -42,6 +42,8 @@ import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.conscrypt.Conscrypt;
 
 /** Class representing service options for those services that use HTTP as the transport layer. */
@@ -56,6 +58,7 @@ public class HttpTransportOptions implements TransportOptions {
 
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
+    private static final Logger LOG = Logger.getLogger(DefaultHttpTransportFactory.class.getName());
     private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
 
     @Override
@@ -92,7 +95,8 @@ public class HttpTransportOptions implements TransportOptions {
               }
             });
       } catch (Throwable t) {
-        // Conscrypt native libraries not available, fallback to standard JDK TLS
+        LOG.log(
+            Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
       }
 
       return builder.build();
