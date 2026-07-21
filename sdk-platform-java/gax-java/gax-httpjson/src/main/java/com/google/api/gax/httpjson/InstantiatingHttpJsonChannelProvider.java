@@ -224,6 +224,14 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     // Attempt to register Conscrypt as the Security Provider for HTTP/JSON connections to enable
     // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
+    //
+    // Tradeoff Decision: We intentionally catch errors and gracefully fall back to JDK TLS or
+    // Conscrypt defaults rather than failing fast. Because Conscrypt depends on native JNI
+    // libraries that may not be available or compatible across all user environments (e.g.
+    // non-x86 architectures, musl libc, custom runtimes), failing fast would cause breaking
+    // outages for existing customers upgrading the SDK. We accept the tradeoff of a potential
+    // silent fallback to classical TLS (logged at WARNING level) in exchange for maintaining high
+    // availability and backward compatibility across all client environments.
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
     if (conscryptProvider == null) {
@@ -239,8 +247,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
               try {
                 Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
               } catch (Throwable t) {
-                // Catch runtime socket configuration errors (e.g. version mismatch or JNI
-                // error)
+                // Catch runtime socket configuration errors (e.g. version mismatch or JNI error)
                 // and fall back to Conscrypt's default TLS groups without failing the request.
                 LOG.log(
                     Level.WARNING,
