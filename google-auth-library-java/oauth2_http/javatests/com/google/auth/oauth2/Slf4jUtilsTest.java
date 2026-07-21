@@ -84,8 +84,10 @@ class Slf4jUtilsTest {
     testEnvironmentProvider.setEnv(LoggingUtils.GOOGLE_SDK_JAVA_LOGGING, "true");
     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
     // Create a mock LoggerFactoryProvider
-    LoggerFactoryProvider mockLoggerFactoryProvider = mock(LoggerFactoryProvider.class);
-    ILoggerFactory mockLoggerFactory = mock(ILoggerFactory.class);
+    LoggerFactoryProvider mockLoggerFactoryProvider =
+        mock(LoggerFactoryProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    ILoggerFactory mockLoggerFactory =
+        mock(ILoggerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
     when(mockLoggerFactoryProvider.getLoggerFactory()).thenReturn(mockLoggerFactory);
     when(mockLoggerFactory.getLogger(anyString()))
         .thenReturn(org.slf4j.helpers.NOPLogger.NOP_LOGGER);

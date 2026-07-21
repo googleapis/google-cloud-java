@@ -850,7 +850,10 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     // Currently, no credentials allowed as source credentials throws exception for
     // getUniverseDomain(), mock this behavior for test only. ServiceAccountCredentials
     // should not throw for getUniverseDomain() calls.
-    ServiceAccountCredentials sourceCredentialsMock = mock(ServiceAccountCredentials.class);
+    ServiceAccountCredentials sourceCredentialsMock =
+        mock(
+            ServiceAccountCredentials.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
     when(sourceCredentialsMock.getUniverseDomain()).thenThrow(IOException.class);
 
     MockIAMCredentialsServiceTransportFactory transportFactory =
