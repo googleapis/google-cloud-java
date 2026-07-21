@@ -339,12 +339,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>net.jqwik</groupId>
-      <artifactId>jqwik</artifactId>
-      <version>1.9.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>io.github.classgraph</groupId>
       <artifactId>classgraph</artifactId>
       <version>4.8.184</version>
@@ -474,6 +468,55 @@
   </build>
 
   <profiles>
+    <profile>
+      <id>jqwik-tests</id>
+      <activation>
+        <jdk>[11,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>net.jqwik</groupId>
+          <artifactId>jqwik</artifactId>
+          <version>1.9.3</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>exclude-jqwik-on-java8</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>default-testCompile</id>
+                <configuration>
+                  <testExcludes>
+                    <exclude>**/*PropertyTest.java</exclude>
+                    <exclude>**/JqwikTest.java</exclude>
+                    <exclude>**/jqwik/**</exclude>
+                    <exclude>**/StorageV2ProtoUtilsTest.java</exclude>
+                    <exclude>**/JsonUtilsTest.java</exclude>
+                    <exclude>**/ChunkSegmenterTest.java</exclude>
+                    <exclude>**/DefaultBufferedWritableByteChannelTest.java</exclude>
+                    <exclude>**/MinFlushBufferedWritableByteChannelTest.java</exclude>
+                    <exclude>**/DefaultBufferedReadableByteChannelTest.java</exclude>
+                    <exclude>**/Crc32cValueTest.java</exclude>
+                    <exclude>**/ITSyncingFileChannelTest.java</exclude>
+                    <exclude>**/RewindableByteBufferContentTest.java</exclude>
+                  </testExcludes>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>idea-jqwik</id>
       <dependencies>
