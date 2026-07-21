@@ -40,6 +40,7 @@ import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.List;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLParameters;
 import javax.net.ssl.TrustManagerFactory;
 import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.BeforeAll;
@@ -149,8 +150,7 @@ public class ITPqc {
       assertThat(capturedHeaders).isNotNull();
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      String expectedGroup = isConscryptFunctional() ? "X25519MLKEM768" : "X25519";
-      assertThat(negotiatedGroup).isEqualTo(expectedGroup);
+      assertThat(negotiatedGroup).isEqualTo(EXPECTED_TLS_GROUP);
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
@@ -171,9 +171,22 @@ public class ITPqc {
     tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
     sslContext.init(null, tmf.getTrustManagers(), null);
 
-    // Build NetHttpTransport using the SunJSSE socket factory
+    // Build NetHttpTransport using SunJSSE socket factory and explicitly restrict named groups to
+    // classical curves (no ML-KEM)
     NetHttpTransport transport =
-        new NetHttpTransport.Builder().setSslSocketFactory(sslContext.getSocketFactory()).build();
+        new NetHttpTransport.Builder()
+            .setSslSocketFactory(sslContext.getSocketFactory())
+            .setSslSocketConfigurator(
+                socket -> {
+                  try {
+                    SSLParameters params = socket.getSSLParameters();
+                    params.setNamedGroups(new String[] {"X25519", "SecP256r1"});
+                    socket.setSSLParameters(params);
+                  } catch (Exception e) {
+                    // Ignore on JDK versions where setNamedGroups is unsupported
+                  }
+                })
+            .build();
 
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
@@ -200,9 +213,8 @@ public class ITPqc {
       assertThat(capturedHeaders).isNotNull();
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      // Under SunJSSE (JDK default), PQC curves are unsupported, so it falls back to a classical
-      // curve (either X25519 or CurveP256 depending on JDK / Go negotiation)
-      assertThat(negotiatedGroup).isAnyOf("X25519", "CurveP256");
+      // Under classical non-PQC configuration, negotiated group is a classical curve
+      assertThat(negotiatedGroup).isAnyOf("X25519", "SecP256r1", "CurveP256");
       assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_TLS_GROUP);
     }
   }
@@ -229,14 +241,5 @@ public class ITPqc {
       trustStore.setCertificateEntry("showcase-ca", cert);
     }
     return trustStore;
-  }
-
-  private static boolean isConscryptFunctional() {
-    try {
-      Conscrypt.newProvider();
-      return true;
-    } catch (Throwable t) {
-      return false;
-    }
   }
 }
