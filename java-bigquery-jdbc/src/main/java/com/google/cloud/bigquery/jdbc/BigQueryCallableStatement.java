@@ -63,6 +63,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Array getArray(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Array) {
       return (Array) param;
@@ -72,6 +73,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Array getArray(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Array) {
       return (Array) param;
@@ -81,6 +83,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public BigDecimal getBigDecimal(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof BigDecimal) {
       return (BigDecimal) param;
@@ -90,6 +93,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public BigDecimal getBigDecimal(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof BigDecimal) {
       return (BigDecimal) param;
@@ -101,11 +105,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Deprecated
   @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(int parameterIndex, int scale) throws SQLException {
+    checkClosed();
     return getBigDecimal(parameterIndex);
   }
 
   @Override
   public Blob getBlob(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Blob) {
       return (Blob) param;
@@ -115,6 +121,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Blob getBlob(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Blob) {
       return (Blob) param;
@@ -124,6 +131,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public boolean getBoolean(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Boolean) {
       return (Boolean) param;
@@ -134,6 +142,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public boolean getBoolean(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Boolean) {
       return (Boolean) param;
@@ -144,6 +153,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte getByte(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Byte) {
       return (Byte) param;
@@ -157,6 +167,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte getByte(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Byte) {
       return (Byte) param;
@@ -170,6 +181,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte[] getBytes(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof byte[]) {
       return (byte[]) param;
@@ -182,6 +194,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte[] getBytes(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof byte[]) {
       return (byte[]) param;
@@ -194,6 +207,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Reader getCharacterStream(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Reader) {
       return (Reader) param;
@@ -206,6 +220,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Reader getCharacterStream(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Reader) {
       return (Reader) param;
@@ -218,6 +233,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Clob getClob(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Clob) {
       return (Clob) param;
@@ -227,6 +243,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Clob getClob(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Clob) {
       return (Clob) param;
@@ -236,6 +253,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Date) {
       return (Date) param;
@@ -248,6 +266,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Date) {
       return (Date) param;
@@ -276,6 +295,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public double getDouble(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Double) {
       return (Double) param;
@@ -289,6 +309,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public double getDouble(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Double) {
       return (Double) param;
@@ -302,6 +323,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public float getFloat(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Float) {
       return (Float) param;
@@ -315,6 +337,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public float getFloat(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Float) {
       return (Float) param;
@@ -328,6 +351,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public int getInt(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Integer) {
       return (Integer) param;
@@ -341,6 +365,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public int getInt(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Integer) {
       return (Integer) param;
@@ -354,6 +379,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public long getLong(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Long) {
       return (Long) param;
@@ -367,6 +393,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public long getLong(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Long) {
       return (Long) param;
@@ -380,16 +407,19 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Reader getNCharacterStream(int parameterIndex) throws SQLException {
+    checkClosed();
     return getCharacterStream(parameterIndex);
   }
 
   @Override
   public Reader getNCharacterStream(String parameterName) throws SQLException {
+    checkClosed();
     return getCharacterStream(parameterName);
   }
 
   @Override
   public NClob getNClob(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof NClob) {
       return (NClob) param;
@@ -399,6 +429,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public NClob getNClob(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof NClob) {
       return (NClob) param;
@@ -408,6 +439,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getNString(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof String) {
       return param.toString();
@@ -417,6 +449,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getNString(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof String) {
       return param.toString();
@@ -532,6 +565,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public RowId getRowId(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof RowId) {
       return (RowId) param;
@@ -541,6 +575,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public RowId getRowId(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof RowId) {
       return (RowId) param;
@@ -562,6 +597,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public short getShort(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Short) {
       return (Short) param;
@@ -575,6 +611,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public short getShort(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Short) {
       return (Short) param;
@@ -588,6 +625,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getString(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof String) {
       return param.toString();
@@ -597,6 +635,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getString(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof String) {
       return param.toString();
@@ -606,6 +645,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Time) {
       return (Time) param;
@@ -618,6 +658,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Time) {
       return (Time) param;
@@ -646,6 +687,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof Timestamp) {
       return (Timestamp) param;
@@ -658,6 +700,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof Timestamp) {
       return (Timestamp) param;
@@ -686,6 +729,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public URL getURL(int parameterIndex) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterIndex);
     if (param instanceof URL) {
       return (URL) param;
@@ -695,6 +739,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public URL getURL(String parameterName) throws SQLException {
+    checkClosed();
     Object param = this.parameterHandler.getParameter(parameterName);
     if (param instanceof URL) {
       return (URL) param;
@@ -827,6 +872,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setBigDecimal(String parameterName, BigDecimal value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.NUMERIC);
       return;
@@ -868,18 +914,21 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setBoolean(String parameterName, boolean value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Boolean.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setByte(String parameterName, byte value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Byte.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setBytes(String parameterName, byte[] value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.VARBINARY);
       return;
@@ -922,6 +971,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setDate(String parameterName, Date value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.DATE);
       return;
@@ -947,24 +997,28 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setDouble(String parameterName, double value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Double.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setFloat(String parameterName, float value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Float.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setInt(String parameterName, int value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Integer.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setLong(String parameterName, long value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Long.class, BigQueryStatementParameterType.IN, 0);
   }
@@ -997,6 +1051,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setNString(String parameterName, String value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.NVARCHAR);
       return;
@@ -1023,6 +1078,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setObject(String parameterName, Object value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.OTHER);
       return;
@@ -1033,6 +1089,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setObject(String parameterName, Object value, int targetSqlType) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, targetSqlType);
       return;
@@ -1055,6 +1112,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public void setObject(String parameterName, Object value, int targetSqlType, int scaleOrLength)
       throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, targetSqlType);
       return;
@@ -1086,12 +1144,14 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setShort(String parameterName, short value) throws SQLException {
+    checkClosed();
     this.parameterHandler.setParameter(
         parameterName, value, Short.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
   public void setString(String parameterName, String value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.VARCHAR);
       return;
@@ -1102,6 +1162,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setTime(String parameterName, Time value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.TIME);
       return;
@@ -1127,6 +1188,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void setTimestamp(String parameterName, Timestamp value) throws SQLException {
+    checkClosed();
     if (value == null) {
       setNull(parameterName, Types.TIMESTAMP);
       return;
