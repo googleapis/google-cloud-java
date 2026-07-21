@@ -544,6 +544,7 @@ abstract class BidiUploadState {
         if (state == State.INITIALIZING || state == State.RETRYING) {
           transitionTo(
               stateToReturnToAfterRetry != null ? stateToReturnToAfterRetry : State.RUNNING);
+          stateToReturnToAfterRetry = null;
         }
 
         boolean signalTerminalSuccess = false;
@@ -679,7 +680,9 @@ abstract class BidiUploadState {
       lock.lock();
       try {
         validateCurrentStateIsOneOf(State.allNonTerminal);
-        stateToReturnToAfterRetry = state;
+        if (state != State.RETRYING && state != State.PENDING_RETRY) {
+          stateToReturnToAfterRetry = state;
+        }
         transitionTo(State.PENDING_RETRY);
       } finally {
         lock.unlock();
@@ -887,10 +890,11 @@ abstract class BidiUploadState {
       lock.lock();
       try {
         ImmutableSet<State> states = ImmutableSet.copyOf(anyOf);
-        while (!states.contains(this.state) && !stateUpdated.await(5, TimeUnit.MILLISECONDS)) {
+        while (!states.contains(this.state)) {
           if (resultFuture.isDone()) {
             return;
           }
+          stateUpdated.await(5, TimeUnit.MILLISECONDS);
         }
       } finally {
         lock.unlock();
@@ -913,11 +917,11 @@ abstract class BidiUploadState {
     public void awaitAck(long writeOffset) throws InterruptedException {
       lock.lock();
       try {
-        while (confirmedBytes < writeOffset
-            && !confirmedBytesUpdated.await(5, TimeUnit.MILLISECONDS)) {
+        while (confirmedBytes < writeOffset) {
           if (resultFuture.isDone()) {
             return;
           }
+          confirmedBytesUpdated.await(5, TimeUnit.MILLISECONDS);
         }
       } finally {
         lock.unlock();
