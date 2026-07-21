@@ -65,11 +65,12 @@ public class HttpJsonTransportUtils {
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.
    *
-   * <p>Note: Conscrypt native JNI libraries may not be available or compatible across all
-   * environment runtimes (e.g. non-x86 architectures, musl libc, or constrained environments).
-   * Caching {@code null} on failure allows us to attempt using Conscrypt as the default security
-   * provider without causing breaking compatibility issues for customers on special environments
-   * when upgrading our SDK.
+   * <p>Caches the Conscrypt {@link Provider} instance (or {@code null} if initialization fails) to
+   * avoid repeated expensive JNI initialization operations on every transport creation.
+   *
+   * <p>Returns {@code null} on failure so that transport creation can fall back to default JDK TLS,
+   * ensuring that setting Conscrypt as the default security provider does not cause breaking
+   * failures for customers running on environments where Conscrypt is unsupported or unavailable.
    */
   private static class ConscryptProviderHolder {
     private static final Provider INSTANCE = createProvider();
