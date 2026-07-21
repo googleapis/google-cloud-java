@@ -233,19 +233,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
   @Deprecated
   @SuppressWarnings("deprecation")
-  public void setUnicodeStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setUnicodeStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setUnicodeStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream value, int length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
@@ -563,13 +566,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar) throws SQLException {
+  public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar)
+      throws SQLException {
     checkClosed();
     if (value == null) {
       setNull(parameterIndex, Types.TIMESTAMP);
       return;
     }
-    setTimestamp(parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
+    setTimestamp(
+        parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override

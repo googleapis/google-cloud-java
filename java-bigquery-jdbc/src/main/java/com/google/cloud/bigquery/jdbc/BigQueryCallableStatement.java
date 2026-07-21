@@ -783,7 +783,8 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public void registerOutParameter(int parameterIndex, int sqlType, int scale) throws SQLException {
     LOG.finer(
-        "registerOutParameter: parameterIndex %s, sqlType %s, scale %s", parameterIndex, sqlType, scale);
+        "registerOutParameter: parameterIndex %s, sqlType %s, scale %s",
+        parameterIndex, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
       IllegalArgumentException ex =
@@ -817,9 +818,11 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(String parameterName, int sqlType, int scale) throws SQLException {
+  public void registerOutParameter(String parameterName, int sqlType, int scale)
+      throws SQLException {
     LOG.finer(
-        "registerOutParameter: parameterName %s, sqlType %s, scale %s", parameterName, sqlType, scale);
+        "registerOutParameter: parameterName %s, sqlType %s, scale %s",
+        parameterName, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
       IllegalArgumentException ex =
@@ -858,12 +861,14 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setAsciiStream(String parameterName, InputStream value, int length) throws SQLException {
+  public void setAsciiStream(String parameterName, InputStream value, int length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setAsciiStream(String parameterName, InputStream value, long length) throws SQLException {
+  public void setAsciiStream(String parameterName, InputStream value, long length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
@@ -884,7 +889,8 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setBinaryStream(String parameterName, InputStream value, int length) throws SQLException {
+  public void setBinaryStream(String parameterName, InputStream value, int length)
+      throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
@@ -1195,7 +1201,8 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setTimestamp(String parameterName, Timestamp value, Calendar calendar) throws SQLException {
+  public void setTimestamp(String parameterName, Timestamp value, Calendar calendar)
+      throws SQLException {
     checkClosed();
     if (value == null) {
       setNull(parameterName, Types.TIMESTAMP);
