@@ -85,7 +85,8 @@ run-it-standalone:
 		-v "$(GOOGLE_APPLICATION_CREDENTIALS).p12":/auth/application_creds.p12 \
 		-e "GOOGLE_APPLICATION_CREDENTIALS=/auth/application_creds.json" \
 		-v $(SRC):/src \
-		-e "SA_EMAIL=test_email" \
+		-e "SA_EMAIL=$(SA_EMAIL)" \
+		-e "KMS_RESOURCE_PATH=$(KMS_RESOURCE_PATH)" \
 		-e "SA_SECRET=/auth/application_creds.json" \
 		-e "SA_SECRET_P12=/auth/application_creds.p12" \
 		-e "BIGQUERY_BASE_URL=$(BIGQUERY_BASE_URL)" \

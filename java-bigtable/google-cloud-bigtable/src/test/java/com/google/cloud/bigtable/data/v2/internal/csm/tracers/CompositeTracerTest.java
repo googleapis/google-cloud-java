@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -37,7 +36,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -45,30 +44,34 @@ import org.mockito.junit.MockitoRule;
 public class CompositeTracerTest {
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  @Mock private ApiTracer child1;
-  @Mock private ApiTracer child2;
-  @Mock private BigtableTracer child3;
-  @Mock private BigtableTracer child4;
+  private ApiTracer child1;
+  private ApiTracer child2;
+  private BigtableTracer child3;
+  private BigtableTracer child4;
 
   private CompositeTracer compositeTracer;
 
   @Before
   public void setup() {
+    child1 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    child2 = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    child3 = Mockito.mock(BigtableTracer.class, Mockito.withSettings().withoutAnnotations());
+    child4 = Mockito.mock(BigtableTracer.class, Mockito.withSettings().withoutAnnotations());
     compositeTracer = new CompositeTracer(ImmutableList.of(child1, child2, child3, child4));
   }
 
   @Test
   public void testInScope() {
-    Scope scope1 = mock(Scope.class);
+    Scope scope1 = Mockito.mock(Scope.class, Mockito.withSettings().withoutAnnotations());
     when(child1.inScope()).thenReturn(scope1);
 
-    Scope scope2 = mock(Scope.class);
+    Scope scope2 = Mockito.mock(Scope.class, Mockito.withSettings().withoutAnnotations());
     when(child2.inScope()).thenReturn(scope2);
 
-    Scope scope3 = mock(Scope.class);
+    Scope scope3 = Mockito.mock(Scope.class, Mockito.withSettings().withoutAnnotations());
     when(child3.inScope()).thenReturn(scope3);
 
-    Scope scope4 = mock(Scope.class);
+    Scope scope4 = Mockito.mock(Scope.class, Mockito.withSettings().withoutAnnotations());
     when(child4.inScope()).thenReturn(scope4);
 
     Scope parentScope = compositeTracer.inScope();
