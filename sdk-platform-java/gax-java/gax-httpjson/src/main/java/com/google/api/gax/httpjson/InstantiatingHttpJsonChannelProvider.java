@@ -229,8 +229,12 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                   } catch (Throwable t) {
                     // Catch runtime socket configuration errors (e.g. version mismatch or JNI
                     // error)
-                    // so individual API calls do not fail if Conscrypt named group setup fails.
-                    LOG.log(Level.WARNING, "Failed to set PQC named groups on Conscrypt socket", t);
+                    // and fall back to Conscrypt's default TLS groups without failing the request.
+                    LOG.log(
+                        Level.FINE,
+                        "Failed to set PQC named groups on Conscrypt socket. Falling back to"
+                            + " Conscrypt default TLS groups.",
+                        t);
                   }
                 }
               });
