@@ -57,6 +57,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -354,6 +355,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     }
   }
 
+  @Ignore("Flaky test, tracked in b/537361102")
   @Test
   public void readWriteTransactionAbortedCommitUsesReadAffinityReplicaForBypassTraffic()
       throws Exception {
