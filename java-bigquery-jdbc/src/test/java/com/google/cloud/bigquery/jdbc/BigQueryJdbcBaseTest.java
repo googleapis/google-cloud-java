@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -53,7 +54,9 @@ public class BigQueryJdbcBaseTest {
       Connection conn = DriverManager.getConnection(connectionUrl);
       Object unwrapped = conn.unwrap(bqConnClass);
       if (unwrapped != null) {
-        return (BigQuery) bqConnClass.getMethod("getBigQuery").invoke(unwrapped);
+        Method method = bqConnClass.getDeclaredMethod("getBigQuery");
+        method.setAccessible(true);
+        return (BigQuery) method.invoke(unwrapped);
       }
     } catch (Throwable e) {
       // ignore for some set of tests; Proxy/TPC tests will fail if it doesn't work.
