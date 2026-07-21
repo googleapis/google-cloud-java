@@ -11,6 +11,5 @@
   "repo_short": "java-policysimulator",
   "distribution_name": "com.google.cloud:google-cloud-policysimulator",
   "api_id": "policysimulator.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }
