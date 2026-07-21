@@ -787,28 +787,36 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineGetProceduresSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
-    processTargetRoutinesConcurrently(
-        targetDatasets,
-        procedureNamePattern,
-        true,
-        false,
-        collectedResults,
-        resultSchemaFields,
-        (routine, results, fields) -> {
-          if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
-            return;
-          }
-          processProcedureInfo(routine, results, fields);
-        });
-
-    Comparator<FieldValueList> comparator = defineGetProceduresComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getProcedures", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetRoutinesConcurrently(
+                  targetDatasets,
+                  procedureNamePattern,
+                  true,
+                  false,
+                  collectedResults,
+                  resultSchemaFields,
+                  (routine, results, fields) -> {
+                    if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
+                      return;
+                    }
+                    processProcedureInfo(routine, results, fields);
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetProceduresComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getProcedures", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -938,35 +946,48 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineGetProcedureColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
     Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
-    processTargetRoutinesConcurrently(
-        targetDatasets,
-        procedureNamePattern,
-        true,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (routine, results, fields) -> {
-          if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
-            return;
-          }
-          try {
-            processProcedureArgumentsSequentially(
-                Collections.singletonList(routine), columnNameRegex, results, fields, LOG);
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException("Interrupted while processing procedure arguments", e);
-          }
-        });
-
-    Comparator<FieldValueList> comparator = defineGetProcedureColumnsComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getProcedureColumns", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetRoutinesConcurrently(
+                  targetDatasets,
+                  procedureNamePattern,
+                  true,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (routine, results, fields) -> {
+                    if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
+                      return;
+                    }
+                    try {
+                      processProcedureArgumentsSequentially(
+                          Collections.singletonList(routine),
+                          columnNameRegex,
+                          results,
+                          fields,
+                          LOG);
+                    } catch (InterruptedException e) {
+                      Thread.currentThread().interrupt();
+                      throw new RuntimeException(
+                          "Interrupted while processing procedure arguments", e);
+                    }
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetProcedureColumnsComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getProcedureColumns", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -1445,8 +1466,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     final Schema resultSchema = defineGetTablesSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
     String effectiveCatalog = effectiveIdentifiers.x();
@@ -1457,23 +1476,32 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Set<String> requestedTypes =
         (types == null || types.length == 0) ? null : new HashSet<>(Arrays.asList(types));
 
-    processTargetTablesConcurrently(
-        targetDatasets,
-        tableNamePattern,
-        true,
-        false,
-        false,
-        collectedResults,
-        resultSchemaFields,
-        (bqTable, results, fields) -> {
-          processTableInfo(bqTable, requestedTypes, results, fields);
-        });
-
-    Comparator<FieldValueList> comparator = defineGetTablesComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getTables", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetTablesConcurrently(
+                  targetDatasets,
+                  tableNamePattern,
+                  true,
+                  false,
+                  false,
+                  collectedResults,
+                  resultSchemaFields,
+                  (bqTable, results, fields) -> {
+                    processTableInfo(bqTable, requestedTypes, results, fields);
+                  });
+
+              Comparator<FieldValueList> comparator = defineGetTablesComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getTables", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
+
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -1607,7 +1635,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(catalogRows.isEmpty() ? 1 : catalogRows.size() + 1);
 
-    Future<?> fetcherFuture = populateQueueAsync(catalogRows, queue, schemaFields);
+    Future<?> fetcherFuture = fetchAndPopulateQueueAsync(() -> catalogRows, queue, schemaFields);
 
     return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, fetcherFuture);
   }
@@ -1638,7 +1666,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         new LinkedBlockingQueue<>(tableTypeRows.size() + 1);
 
     Future<?> fetcherFuture =
-        populateQueueAsync(tableTypeRows, queue, tableTypesSchema.getFields());
+        fetchAndPopulateQueueAsync(() -> tableTypeRows, queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
         tableTypesSchema, tableTypeRows.size(), queue, null, fetcherFuture);
@@ -1681,8 +1709,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     final Schema resultSchema = defineGetColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
     String effectiveCatalog = effectiveIdentifiers.x();
@@ -1695,23 +1721,33 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             && (columnNamePattern.contains("%") || columnNamePattern.contains("_"));
     Pattern columnNameRegex = hasWildcards ? compileSqlLikePattern(columnNamePattern) : null;
 
-    processTargetTablesConcurrently(
-        targetDatasets,
-        tableNamePattern,
-        true,
-        false,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (bqTable, results, fields) -> {
-          processTableColumns(bqTable, columnNameRegex, results, fields);
-        });
-
-    Comparator<FieldValueList> comparator = defineGetColumnsComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getColumns", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetTablesConcurrently(
+                  targetDatasets,
+                  tableNamePattern,
+                  true,
+                  false,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (bqTable, results, fields) -> {
+                    processTableColumns(bqTable, columnNameRegex, results, fields);
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetColumnsComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getColumns", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
+
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -2141,29 +2177,36 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineGetPrimaryKeysSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
-
-    processTargetTablesConcurrently(
-        targetDatasets,
-        table,
-        false,
-        true,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (bqTable, results, fields) -> {
-          TableConstraints constraints = bqTable.getTableConstraints();
-          processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
-        });
-
-    Comparator<FieldValueList> comparator = defineGetPrimaryKeysComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getPrimaryKeys", LOG);
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetTablesConcurrently(
+                  targetDatasets,
+                  table,
+                  false,
+                  true,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (bqTable, results, fields) -> {
+                    TableConstraints constraints = bqTable.getTableConstraints();
+                    processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetPrimaryKeysComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getPrimaryKeys", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
+
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -2241,35 +2284,41 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
-
-    processTargetTablesConcurrently(
-        targetDatasets,
-        table,
-        false,
-        true,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (bqTable, results, fields) -> {
-          TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints == null || constraints.getForeignKeys() == null) {
-            return;
-          }
-          for (ForeignKey fk : constraints.getForeignKeys()) {
-            TableId pkTableId = fk.getReferencedTable();
-            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-          }
-        });
-
-    Comparator<FieldValueList> comparator = definePkTableSortComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getImportedKeys", LOG);
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetTablesConcurrently(
+                  targetDatasets,
+                  table,
+                  false,
+                  true,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (bqTable, results, fields) -> {
+                    TableConstraints constraints = bqTable.getTableConstraints();
+                    if (constraints == null || constraints.getForeignKeys() == null) {
+                      return;
+                    }
+                    for (ForeignKey fk : constraints.getForeignKeys()) {
+                      TableId pkTableId = fk.getReferencedTable();
+                      processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+                    }
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  definePkTableSortComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getImportedKeys", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -2300,40 +2349,46 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     // Fallback Path: If catalog or schema is null, fall back to REST API metadata scan.
     if (catalog == null || schema == null) {
-      final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
       List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
-
-      processTargetTablesConcurrently(
-          targetDatasets,
-          null,
-          false,
-          true,
-          true,
-          collectedResults,
-          resultSchemaFields,
-          (bqTable, results, fields) -> {
-            TableConstraints constraints = bqTable.getTableConstraints();
-            if (constraints == null || constraints.getForeignKeys() == null) {
-              return;
-            }
-            for (ForeignKey fk : constraints.getForeignKeys()) {
-              TableId pkTableId = fk.getReferencedTable();
-              if (pkTableId == null
-                  || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
-                  || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
-                  || !table.equals(pkTableId.getTable())) {
-                continue;
-              }
-              processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-            }
-          });
-
-      Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
-      sortResults(collectedResults, comparator, "getExportedKeys", LOG);
-
       final BlockingQueue<BigQueryFieldValueListWrapper> queue =
           new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      Future<?> fetcherFuture =
+          fetchAndPopulateQueueAsync(
+              () -> {
+                final List<FieldValueList> collectedResults =
+                    Collections.synchronizedList(new ArrayList<>());
+                processTargetTablesConcurrently(
+                    targetDatasets,
+                    null,
+                    false,
+                    true,
+                    true,
+                    collectedResults,
+                    resultSchemaFields,
+                    (bqTable, results, fields) -> {
+                      TableConstraints constraints = bqTable.getTableConstraints();
+                      if (constraints == null || constraints.getForeignKeys() == null) {
+                        return;
+                      }
+                      for (ForeignKey fk : constraints.getForeignKeys()) {
+                        TableId pkTableId = fk.getReferencedTable();
+                        if (pkTableId == null
+                            || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                            || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                            || !table.equals(pkTableId.getTable())) {
+                          continue;
+                        }
+                        processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+                      }
+                    });
+
+                Comparator<FieldValueList> comparator =
+                    defineFkTableSortComparator(resultSchemaFields);
+                sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+                return collectedResults;
+              },
+              queue,
+              resultSchemaFields);
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
     }
 
@@ -2379,40 +2434,46 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema, false);
-
-    processTargetTablesConcurrently(
-        targetDatasets,
-        foreignTable,
-        false,
-        true,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (bqTable, results, fields) -> {
-          TableConstraints constraints = bqTable.getTableConstraints();
-          if (constraints == null || constraints.getForeignKeys() == null) {
-            return;
-          }
-          for (ForeignKey fk : constraints.getForeignKeys()) {
-            TableId pkTableId = fk.getReferencedTable();
-            if (!equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
-                || !equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
-                || !parentTable.equals(pkTableId.getTable())) {
-              continue;
-            }
-            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
-          }
-        });
-
-    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getCrossReference", LOG);
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetTablesConcurrently(
+                  targetDatasets,
+                  foreignTable,
+                  false,
+                  true,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (bqTable, results, fields) -> {
+                    TableConstraints constraints = bqTable.getTableConstraints();
+                    if (constraints == null || constraints.getForeignKeys() == null) {
+                      return;
+                    }
+                    for (ForeignKey fk : constraints.getForeignKeys()) {
+                      TableId pkTableId = fk.getReferencedTable();
+                      if (!equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
+                          || !equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
+                          || !parentTable.equals(pkTableId.getTable())) {
+                        continue;
+                      }
+                      processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+                    }
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineFkTableSortComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getCrossReference", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -2429,7 +2490,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
-    Future<?> fetcherFuture = populateQueueAsync(typeInfoRows, queue, schemaFields);
+    Future<?> fetcherFuture = fetchAndPopulateQueueAsync(() -> typeInfoRows, queue, schemaFields);
     return BigQueryJsonResultSet.of(
         typeInfoSchema, typeInfoRows.size(), queue, null, fetcherFuture);
   }
@@ -3341,18 +3402,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final Schema resultSchema = defineGetSchemasSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     final Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
-    List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
-    List<FieldValueList> collectedResults = new ArrayList<>(datasets.size());
-    for (Dataset dataset : datasets) {
-      processSchemaInfo(dataset.getDatasetId(), collectedResults, resultSchemaFields);
-    }
-
-    Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getSchemas", LOG);
-
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+              List<FieldValueList> collectedResults = new ArrayList<>(datasets.size());
+              for (Dataset dataset : datasets) {
+                processSchemaInfo(dataset.getDatasetId(), collectedResults, resultSchemaFields);
+              }
+              Comparator<FieldValueList> comparator =
+                  defineGetSchemasComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getSchemas", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -3508,29 +3574,37 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineGetFunctionsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
-    processTargetRoutinesConcurrently(
-        targetDatasets,
-        functionNamePattern,
-        true,
-        false,
-        collectedResults,
-        resultSchemaFields,
-        (routine, results, fields) -> {
-          if (!"SCALAR_FUNCTION".equalsIgnoreCase(routine.getRoutineType())
-              && !"TABLE_FUNCTION".equalsIgnoreCase(routine.getRoutineType())) {
-            return;
-          }
-          processFunctionInfo(routine, results, fields);
-        });
-
-    Comparator<FieldValueList> comparator = defineGetFunctionsComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getFunctions", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetRoutinesConcurrently(
+                  targetDatasets,
+                  functionNamePattern,
+                  true,
+                  false,
+                  collectedResults,
+                  resultSchemaFields,
+                  (routine, results, fields) -> {
+                    if (!"SCALAR_FUNCTION".equalsIgnoreCase(routine.getRoutineType())
+                        && !"TABLE_FUNCTION".equalsIgnoreCase(routine.getRoutineType())) {
+                      return;
+                    }
+                    processFunctionInfo(routine, results, fields);
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetFunctionsComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getFunctions", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -3641,37 +3715,50 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     final Schema resultSchema = defineGetFunctionColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
     Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
-    processTargetRoutinesConcurrently(
-        targetDatasets,
-        functionNamePattern,
-        true,
-        true,
-        collectedResults,
-        resultSchemaFields,
-        (routine, results, fields) -> {
-          if (!"SCALAR_FUNCTION".equalsIgnoreCase(routine.getRoutineType())
-              && !"TABLE_FUNCTION".equalsIgnoreCase(routine.getRoutineType())) {
-            return;
-          }
-          try {
-            processFunctionParametersSequentially(
-                Collections.singletonList(routine), columnNameRegex, results, fields, LOG);
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException("Interrupted while processing function parameters", e);
-          }
-        });
-
-    Comparator<FieldValueList> comparator = defineGetFunctionColumnsComparator(resultSchemaFields);
-    sortResults(collectedResults, comparator, "getFunctionColumns", LOG);
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
-    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    Future<?> fetcherFuture =
+        fetchAndPopulateQueueAsync(
+            () -> {
+              final List<FieldValueList> collectedResults =
+                  Collections.synchronizedList(new ArrayList<>());
+              processTargetRoutinesConcurrently(
+                  targetDatasets,
+                  functionNamePattern,
+                  true,
+                  true,
+                  collectedResults,
+                  resultSchemaFields,
+                  (routine, results, fields) -> {
+                    if (!"SCALAR_FUNCTION".equalsIgnoreCase(routine.getRoutineType())
+                        && !"TABLE_FUNCTION".equalsIgnoreCase(routine.getRoutineType())) {
+                      return;
+                    }
+                    try {
+                      processFunctionParametersSequentially(
+                          Collections.singletonList(routine),
+                          columnNameRegex,
+                          results,
+                          fields,
+                          LOG);
+                    } catch (InterruptedException e) {
+                      Thread.currentThread().interrupt();
+                      throw new RuntimeException(
+                          "Interrupted while processing function parameters", e);
+                    }
+                  });
+
+              Comparator<FieldValueList> comparator =
+                  defineGetFunctionColumnsComparator(resultSchemaFields);
+              sortResults(collectedResults, comparator, "getFunctionColumns", LOG);
+              return collectedResults;
+            },
+            queue,
+            resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
@@ -4507,16 +4594,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info("Finished waiting for tasks.");
   }
 
-  private Future<?> populateQueueAsync(
-      List<FieldValueList> collectedResults,
+  private Future<?> fetchAndPopulateQueueAsync(
+      Callable<List<FieldValueList>> task,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
       FieldList resultSchemaFields) {
     return connection
         .getMetadataExecutor()
         .submit(
             () -> {
-              populateQueue(collectedResults, queue, resultSchemaFields);
-              signalEndOfData(queue, resultSchemaFields);
+              try {
+                List<FieldValueList> collectedResults = task.call();
+                populateQueue(collectedResults, queue, resultSchemaFields);
+              } catch (Exception e) {
+                LOG.severe("Error during async metadata fetch: " + e.getMessage());
+                try {
+                  queue.put(BigQueryFieldValueListWrapper.ofError(e));
+                } catch (InterruptedException ie) {
+                  Thread.currentThread().interrupt();
+                }
+              } finally {
+                signalEndOfData(queue, resultSchemaFields);
+              }
             });
   }
 
@@ -4724,7 +4822,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     if (bqTable == null) {
       try {
         bqTable =
-            bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+            bigquery.getTable(
+                TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
       } catch (BigQueryException e) {
         if (e.getCode() == 404) {
           LOG.info(
