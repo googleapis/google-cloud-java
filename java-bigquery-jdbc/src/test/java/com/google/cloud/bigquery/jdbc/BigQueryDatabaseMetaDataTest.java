@@ -1024,7 +1024,6 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG,
             false);
 
     verify(bigqueryClient, times(1))
@@ -1067,7 +1066,6 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG,
             false);
 
     verify(bigqueryClient, times(1))
@@ -1103,7 +1101,6 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
             regex,
-            dbMetadata.LOG,
             false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
@@ -1129,7 +1126,6 @@ public class BigQueryDatabaseMetaDataTest {
         (table) -> "name",
         pattern,
         dbMetadata.compileSqlLikePattern(pattern),
-        dbMetadata.LOG,
         throwOn404);
   }
 

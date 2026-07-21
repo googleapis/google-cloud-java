@@ -20,8 +20,6 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
-import com.google.cloud.bigquery.BigQuery.RoutineListOption;
-import com.google.cloud.bigquery.BigQuery.RoutineOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
@@ -967,18 +965,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
                       return;
                     }
-                    try {
-                      processProcedureArgumentsSequentially(
-                          Collections.singletonList(routine),
-                          columnNameRegex,
-                          results,
-                          fields,
-                          LOG);
-                    } catch (InterruptedException e) {
-                      Thread.currentThread().interrupt();
-                      throw new RuntimeException(
-                          "Interrupted while processing procedure arguments", e);
-                    }
+                    processProcedureArguments(routine, columnNameRegex, results, fields);
                   });
 
               Comparator<FieldValueList> comparator =
@@ -989,180 +976,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             queue,
             resultSchemaFields);
     return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
-  }
-
-  List<RoutineId> listMatchingProcedureIdsFromDatasets(
-      List<Dataset> datasetsToScan,
-      String procedureNamePattern,
-      Pattern procedureNameRegex,
-      ExecutorService listRoutinesExecutor,
-      String catalogParam,
-      BigQueryJdbcCustomLogger logger)
-      throws InterruptedException, ExecutionException {
-
-    logger.fine(
-        "Listing matching procedure IDs from %d datasets for catalog '%s'.",
-        datasetsToScan.size(), catalogParam);
-    final List<Future<List<Routine>>> listRoutineFutures = new ArrayList<>();
-    final List<RoutineId> procedureIdsToGet = Collections.synchronizedList(new ArrayList<>());
-
-    for (Dataset dataset : datasetsToScan) {
-      if (Thread.currentThread().isInterrupted()) {
-        InterruptedException ex =
-            new InterruptedException(
-                "Interrupted while listing routines for catalog: " + catalogParam);
-        logger.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      final DatasetId currentDatasetId = dataset.getDatasetId();
-      Callable<List<Routine>> listCallable =
-          () ->
-              findMatchingBigQueryObjects(
-                  "Routine",
-                  () ->
-                      bigquery.listRoutines(
-                          currentDatasetId, RoutineListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                  (name) ->
-                      bigquery.getRoutine(
-                          RoutineId.of(
-                              currentDatasetId.getProject(), currentDatasetId.getDataset(), name)),
-                  (rt) -> rt.getRoutineId().getRoutine(),
-                  procedureNamePattern,
-                  procedureNameRegex,
-                  logger,
-                  false);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
-    }
-    logger.fine(
-        "Submitted "
-            + listRoutineFutures.size()
-            + " routine list tasks for catalog: "
-            + catalogParam);
-
-    for (Future<List<Routine>> listFuture : listRoutineFutures) {
-      if (Thread.currentThread().isInterrupted()) {
-        listRoutineFutures.forEach(f -> f.cancel(true));
-        InterruptedException ex =
-            new InterruptedException(
-                "Interrupted while collecting routine lists for catalog: " + catalogParam);
-        logger.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      try {
-        List<Routine> listedRoutines = listFuture.get();
-        if (listedRoutines != null) {
-          for (Routine listedRoutine : listedRoutines) {
-            if (listedRoutine != null
-                && "PROCEDURE".equalsIgnoreCase(listedRoutine.getRoutineType())) {
-              if (listedRoutine.getRoutineId() != null) {
-                procedureIdsToGet.add(listedRoutine.getRoutineId());
-              } else {
-                logger.warning(
-                    "Found a procedure type routine with a null ID during listing phase for"
-                        + " catalog: "
-                        + catalogParam);
-              }
-            }
-          }
-        }
-      } catch (CancellationException e) {
-        logger.warning("Routine list task cancelled for catalog: " + catalogParam);
-      }
-    }
-    logger.info(
-        "Found %d procedure IDs to fetch details for in catalog '%s'.",
-        procedureIdsToGet.size(), catalogParam);
-    return procedureIdsToGet;
-  }
-
-  List<Routine> fetchFullRoutineDetailsForIds(
-      List<RoutineId> procedureIdsToGet,
-      ExecutorService getRoutineDetailsExecutor,
-      BigQueryJdbcCustomLogger logger,
-      RoutineOption... options)
-      throws InterruptedException, ExecutionException {
-    logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
-    final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
-    final List<Routine> fullRoutines = Collections.synchronizedList(new ArrayList<>());
-
-    for (RoutineId procId : procedureIdsToGet) {
-      if (Thread.currentThread().isInterrupted()) {
-        InterruptedException ex =
-            new InterruptedException("Interrupted while submitting getRoutine tasks");
-        logger.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      final RoutineId currentProcId = procId;
-      Callable<Routine> getCallable =
-          () -> {
-            try {
-              return bigquery.getRoutine(currentProcId, options);
-            } catch (Exception e) {
-              logger.warning(
-                  "Failed to get full details for routine "
-                      + currentProcId
-                      + ": "
-                      + e.getMessage());
-              return null;
-            }
-          };
-      getRoutineFutures.add(getRoutineDetailsExecutor.submit(getCallable));
-    }
-    logger.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
-
-    for (Future<Routine> getFuture : getRoutineFutures) {
-      if (Thread.currentThread().isInterrupted()) {
-        getRoutineFutures.forEach(f -> f.cancel(true)); // Cancel remaining
-        InterruptedException ex =
-            new InterruptedException("Interrupted while collecting Routine details");
-        logger.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      try {
-        Routine fullRoutine = getFuture.get();
-        if (fullRoutine != null) {
-          fullRoutines.add(fullRoutine);
-        }
-      } catch (CancellationException e) {
-        logger.warning("getRoutine detail task cancelled.");
-      }
-    }
-    logger.info("Successfully fetched full details for %d routines.", fullRoutines.size());
-    return fullRoutines;
-  }
-
-  void processProcedureArgumentsSequentially(
-      List<Routine> fullRoutines,
-      Pattern columnNameRegex,
-      List<FieldValueList> collectedResults,
-      FieldList resultSchemaFields,
-      BigQueryJdbcCustomLogger logger)
-      throws InterruptedException {
-    logger.fine("Processing argument jobs sequentially for %d routines.", fullRoutines.size());
-
-    for (Routine fullRoutine : fullRoutines) {
-      if (Thread.currentThread().isInterrupted()) {
-        InterruptedException ex =
-            new InterruptedException("Interrupted while processing argument jobs sequentially");
-        logger.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      if (fullRoutine != null) {
-        if ("PROCEDURE".equalsIgnoreCase(fullRoutine.getRoutineType())) {
-          processProcedureArguments(
-              fullRoutine, columnNameRegex, collectedResults, resultSchemaFields);
-        } else {
-          logger.warning(
-              "Routine "
-                  + (fullRoutine.getRoutineId() != null
-                      ? fullRoutine.getRoutineId().toString()
-                      : "UNKNOWN_ID")
-                  + " fetched via getRoutine was not of type PROCEDURE (Type: "
-                  + fullRoutine.getRoutineType()
-                  + "). Skipping argument processing.");
-        }
-      }
-    }
   }
 
   Schema defineGetProcedureColumnsSchema() {
@@ -3738,18 +3551,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         && !"TABLE_FUNCTION".equalsIgnoreCase(routine.getRoutineType())) {
                       return;
                     }
-                    try {
-                      processFunctionParametersSequentially(
-                          Collections.singletonList(routine),
-                          columnNameRegex,
-                          results,
-                          fields,
-                          LOG);
-                    } catch (InterruptedException e) {
-                      Thread.currentThread().interrupt();
-                      throw new RuntimeException(
-                          "Interrupted while processing function parameters", e);
-                    }
+                    processFunctionParametersAndReturnValue(
+                        routine, columnNameRegex, results, fields);
                   });
 
               Comparator<FieldValueList> comparator =
@@ -3827,124 +3630,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             .setMode(Mode.REQUIRED)
             .build()); // 17
     return Schema.of(fields);
-  }
-
-  List<RoutineId> listMatchingFunctionIdsFromDatasets(
-      List<Dataset> datasetsToScan,
-      String functionNamePattern,
-      Pattern functionNameRegex,
-      ExecutorService listRoutinesExecutor,
-      String catalogParam,
-      BigQueryJdbcCustomLogger logger)
-      throws InterruptedException, ExecutionException {
-
-    logger.fine(
-        "Listing matching function IDs from %d datasets for catalog '%s'.",
-        datasetsToScan.size(), catalogParam);
-    final List<Future<List<Routine>>> listRoutineFutures = new ArrayList<>();
-    final List<RoutineId> functionIdsToGet = Collections.synchronizedList(new ArrayList<>());
-
-    for (Dataset dataset : datasetsToScan) {
-      if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
-            "Interrupted during submission of routine (function) listing tasks for catalog: "
-                + catalogParam);
-        throw new InterruptedException("Interrupted while listing functions");
-      }
-      final DatasetId currentDatasetId = dataset.getDatasetId();
-      Callable<List<Routine>> listCallable =
-          () ->
-              findMatchingBigQueryObjects(
-                  "Routine",
-                  () ->
-                      bigquery.listRoutines(
-                          currentDatasetId, RoutineListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                  (name) ->
-                      bigquery.getRoutine(
-                          RoutineId.of(
-                              currentDatasetId.getProject(), currentDatasetId.getDataset(), name)),
-                  (rt) -> rt.getRoutineId().getRoutine(),
-                  functionNamePattern,
-                  functionNameRegex,
-                  logger,
-                  false);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
-    }
-    logger.fine(
-        "Submitted "
-            + listRoutineFutures.size()
-            + " routine (function) list tasks for catalog: "
-            + catalogParam);
-
-    for (Future<List<Routine>> listFuture : listRoutineFutures) {
-      if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
-            "Interrupted while collecting routine (function) list results for catalog: "
-                + catalogParam);
-        listRoutineFutures.forEach(f -> f.cancel(true));
-        throw new InterruptedException("Interrupted while collecting function lists");
-      }
-      try {
-        List<Routine> listedRoutines = listFuture.get();
-        if (listedRoutines != null) {
-          for (Routine listedRoutine : listedRoutines) {
-            if (listedRoutine != null
-                && ("SCALAR_FUNCTION".equalsIgnoreCase(listedRoutine.getRoutineType())
-                    || "TABLE_FUNCTION".equalsIgnoreCase(listedRoutine.getRoutineType()))) {
-              if (listedRoutine.getRoutineId() != null) {
-                functionIdsToGet.add(listedRoutine.getRoutineId());
-              } else {
-                logger.warning(
-                    "Found a function type routine with a null ID during listing phase for catalog:"
-                        + " "
-                        + catalogParam);
-              }
-            }
-          }
-        }
-      } catch (CancellationException e) {
-        logger.warning("Routine (function) list task cancelled for catalog: " + catalogParam);
-      }
-    }
-    logger.info(
-        "Found %d function IDs to fetch details for in catalog '%s'.",
-        functionIdsToGet.size(), catalogParam);
-    return functionIdsToGet;
-  }
-
-  void processFunctionParametersSequentially(
-      List<Routine> fullFunctions,
-      Pattern columnNameRegex,
-      List<FieldValueList> collectedResults,
-      FieldList resultSchemaFields,
-      BigQueryJdbcCustomLogger logger)
-      throws InterruptedException {
-    logger.fine("Processing parameter jobs sequentially for %d functions.", fullFunctions.size());
-
-    for (Routine fullFunction : fullFunctions) {
-      if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted during function parameter processing.");
-        throw new InterruptedException(
-            "Interrupted while processing function parameters sequentially");
-      }
-      if (fullFunction != null) {
-        String routineType = fullFunction.getRoutineType();
-        if ("SCALAR_FUNCTION".equalsIgnoreCase(routineType)
-            || "TABLE_FUNCTION".equalsIgnoreCase(routineType)) {
-          processFunctionParametersAndReturnValue(
-              fullFunction, columnNameRegex, collectedResults, resultSchemaFields);
-        } else {
-          logger.warning(
-              "Routine "
-                  + (fullFunction.getRoutineId() != null
-                      ? fullFunction.getRoutineId().toString()
-                      : "UNKNOWN_ID")
-                  + " fetched for getFunctionColumns was not of a function type (Type: "
-                  + routineType
-                  + "). Skipping parameter processing.");
-        }
-      }
-    }
   }
 
   void processFunctionParametersAndReturnValue(
@@ -4303,7 +3988,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<T, String> nameExtractor,
       String pattern,
       Pattern regex,
-      BigQueryJdbcCustomLogger logger,
       boolean throwOn404)
       throws InterruptedException {
 
@@ -4313,30 +3997,29 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       Iterable<T> objects;
       if (needsList) {
-        logger.info(
+        LOG.info(
             "Listing all %ss (pattern: %s)...",
             objectTypeName, pattern == null ? "<all>" : pattern);
         Page<T> firstPage = listAllOperation.get();
         objects = firstPage.iterateAll();
-        logger.fine(
-            "Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
+        LOG.fine("Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
 
       } else {
-        logger.info("Getting specific %s: '%s'", objectTypeName, pattern);
+        LOG.info("Getting specific %s: '%s'", objectTypeName, pattern);
         T specificObject = getSpecificOperation.apply(pattern);
         objects =
             (specificObject == null)
                 ? Collections.<T>emptyList()
                 : Collections.singletonList(specificObject);
         if (specificObject == null) {
-          logger.info("Specific %s not found: '%s'", objectTypeName, pattern);
+          LOG.info("Specific %s not found: '%s'", objectTypeName, pattern);
         }
       }
 
       boolean wasListing = needsList;
       for (T obj : objects) {
         if (Thread.currentThread().isInterrupted()) {
-          logger.warning("Thread interrupted during " + objectTypeName + " processing loop.");
+          LOG.warning("Thread interrupted during " + objectTypeName + " processing loop.");
           throw new InterruptedException(
               "Interrupted during " + objectTypeName + " processing loop");
         }
@@ -4354,20 +4037,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     } catch (BigQueryException e) {
       if (e.getCode() == 404 && !throwOn404) {
-        logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+        LOG.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
         return Collections.emptyList();
       } else {
-        logger.warning(
+        LOG.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
             objectTypeName, pattern, e.getMessage(), e.getCode());
         throw e;
       }
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      logger.warning("Interrupted while finding " + objectTypeName + "s.");
+      LOG.warning("Interrupted while finding " + objectTypeName + "s.");
       throw e;
     } catch (Exception e) {
-      logger.severe(
+      LOG.severe(
           "Unexpected exception finding %ss for pattern '%s': %s",
           objectTypeName, pattern, e.getMessage());
       throw new RuntimeException(e);
@@ -4679,7 +4362,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               (ds) -> ds.getDatasetId().getDataset(),
               schemaPattern,
               schemaRegex,
-              LOG,
               throwOn404);
       return datasets != null ? datasets : Collections.emptyList();
     } catch (InterruptedException e) {
