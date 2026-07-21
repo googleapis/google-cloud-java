@@ -274,6 +274,11 @@
         <version>${jspecify.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.conscrypt</groupId>
+        <artifactId>conscrypt-openjdk</artifactId>
+        <version>${conscrypt.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.awaitility</groupId>
         <artifactId>awaitility</artifactId>
         <version>${awaitility.version}</version>

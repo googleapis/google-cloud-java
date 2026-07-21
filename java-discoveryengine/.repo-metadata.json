@@ -11,6 +11,5 @@
   "repo_short": "java-discoveryengine",
   "distribution_name": "com.google.cloud:google-cloud-discoveryengine",
   "api_id": "discoveryengine.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }
