@@ -4606,10 +4606,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               try {
                 List<FieldValueList> collectedResults = task.call();
                 populateQueue(collectedResults, queue, resultSchemaFields);
-              } catch (Exception e) {
+              } catch (Throwable e) {
                 LOG.severe("Error during async metadata fetch: " + e.getMessage());
                 try {
-                  queue.put(BigQueryFieldValueListWrapper.ofError(e));
+                  queue.put(BigQueryFieldValueListWrapper.ofError(new SQLException(e)));
                 } catch (InterruptedException ie) {
                   Thread.currentThread().interrupt();
                 }
@@ -4964,29 +4964,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             });
       }
 
-      List<Future<List<Callable<Void>>>> listFutures = new ArrayList<>();
-      for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
-        listFutures.add(executor.submit(listTask));
-      }
-
       List<Callable<Void>> detailTasks = new ArrayList<>();
       try {
-        for (Future<List<Callable<Void>>> future : listFutures) {
-          if (!future.isCancelled()) {
-            detailTasks.addAll(future.get());
-          }
+        for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
+          detailTasks.addAll(listTask.call());
         }
-      } catch (CancellationException e) {
-        LOG.warning("A dataset listing task was cancelled.");
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        LOG.warning("Fetcher thread interrupted while listing datasets.");
-      } finally {
-        for (Future<List<Callable<Void>>> future : listFutures) {
-          if (!future.isDone()) {
-            future.cancel(true);
-          }
+      } catch (Exception e) {
+        if (e instanceof InterruptedException) {
+          Thread.currentThread().interrupt();
         }
+        if (e instanceof SQLException) {
+          throw (SQLException) e;
+        }
+        throw new SQLException("Error while listing routines: " + e.getMessage(), e);
       }
 
       for (Callable<Void> task : detailTasks) {
@@ -5093,29 +5083,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             });
       }
 
-      List<Future<List<Callable<Void>>>> listFutures = new ArrayList<>();
-      for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
-        listFutures.add(executor.submit(listTask));
-      }
-
       List<Callable<Void>> detailTasks = new ArrayList<>();
       try {
-        for (Future<List<Callable<Void>>> future : listFutures) {
-          if (!future.isCancelled()) {
-            detailTasks.addAll(future.get());
-          }
+        for (Callable<List<Callable<Void>>> listTask : datasetListTasks) {
+          detailTasks.addAll(listTask.call());
         }
-      } catch (CancellationException e) {
-        LOG.warning("A dataset listing task was cancelled.");
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        LOG.warning("Fetcher thread interrupted while listing datasets.");
-      } finally {
-        for (Future<List<Callable<Void>>> future : listFutures) {
-          if (!future.isDone()) {
-            future.cancel(true);
-          }
+      } catch (Exception e) {
+        if (e instanceof InterruptedException) {
+          Thread.currentThread().interrupt();
         }
+        if (e instanceof SQLException) {
+          throw (SQLException) e;
+        }
+        throw new SQLException("Error while listing tables: " + e.getMessage(), e);
       }
 
       for (Callable<Void> task : detailTasks) {

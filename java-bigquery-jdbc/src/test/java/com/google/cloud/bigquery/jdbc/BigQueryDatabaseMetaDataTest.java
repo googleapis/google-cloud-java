@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -1005,7 +1006,7 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
     Routine otherProc = mockBigQueryRoutine(catalog, schema, "another_proc", "PROCEDURE", "p3");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1, proc2, otherProc));
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
@@ -1050,7 +1051,7 @@ public class BigQueryDatabaseMetaDataTest {
     Routine proc1 = mockBigQueryRoutine(catalog, schema, "proc_abc", "PROCEDURE", "p1");
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1));
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
@@ -3270,20 +3271,20 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
     when(bigqueryClient.listDatasets(
             eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
     when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pageAdditional);
 
-    Page<Dataset> pageDiscovered = mock(Page.class);
+    Page<Dataset> pageDiscovered = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
     when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
     when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class)))
@@ -3315,14 +3316,14 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
     when(bigqueryClient.listDatasets(
             eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
     when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
@@ -3349,7 +3350,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   private void mockDatasetIteration(DatasetId datasetId) {
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mock(Dataset.class);
     when(dsPrimary.getDatasetId()).thenReturn(datasetId);
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
@@ -3372,7 +3373,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   private void mockTableIteration(DatasetId datasetId, Table... tables) {
-    Page<Table> pageTables = mock(Page.class);
+    Page<Table> pageTables = mock(Page.class, withSettings().withoutAnnotations());
     when(pageTables.iterateAll()).thenReturn(Arrays.asList(tables));
     when(bigqueryClient.listTables(eq(datasetId), any(BigQuery.TableListOption[].class)))
         .thenReturn(pageTables);
@@ -3483,7 +3484,27 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_hasKeys() throws SQLException {
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+
+    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
+    assertEquals(mockRs, rs);
+    verify(mockStmt).closeOnCompletion();
+    verify(mockStmt).executeQuery();
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntSchema() throws SQLException {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset.p", "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_hasKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
     TableId refTableId = TableId.of("test-project", "dataset_p", "ref_table");
@@ -3533,7 +3554,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_noKeys() throws SQLException {
+  public void testGetExportedKeys_fallback_noKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
 
