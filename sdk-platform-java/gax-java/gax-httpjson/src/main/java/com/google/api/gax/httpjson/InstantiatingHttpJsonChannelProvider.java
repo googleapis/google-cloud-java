@@ -45,14 +45,12 @@ import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
-import java.security.Provider;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.conscrypt.Conscrypt;
 
 /**
  * InstantiatingHttpJsonChannelProvider is a TransportChannelProvider which constructs a {@link
@@ -81,22 +79,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
    *   <li>{@code X25519}: Classical non-quantum key exchange fallback.
    * </ul>
    */
-  public static final String[] DEFAULT_PQC_GROUPS =
-      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
-
-  private static class ConscryptProviderHolder {
-    private static final Provider INSTANCE = createProvider();
-
-    private static Provider createProvider() {
-      try {
-        return Conscrypt.newProvider();
-      } catch (Throwable t) {
-        LOG.log(
-            Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-        return null;
-      }
-    }
-  }
+  public static final String[] DEFAULT_PQC_GROUPS = HttpJsonTransportUtils.DEFAULT_PQC_GROUPS;
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
@@ -222,40 +205,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    // Attempt to register Conscrypt as the Security Provider for HTTP/JSON connections to enable
-    // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
-    //
-    // Tradeoff Decision: We intentionally catch errors and gracefully fall back to JDK TLS or
-    // Conscrypt defaults rather than failing fast. Because Conscrypt depends on native JNI
-    // libraries that may not be available or compatible across all user environments (e.g.
-    // non-x86 architectures, musl libc, custom runtimes), failing fast would cause breaking
-    // outages for existing customers upgrading the SDK. We accept the tradeoff of a potential
-    // silent fallback to classical TLS (logged at WARNING level) in exchange for maintaining high
-    // availability and backward compatibility across all client environments.
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
-    if (conscryptProvider == null) {
-      return configureMtls(builder).build();
-    }
-    builder
-        .setSecurityProvider(conscryptProvider)
-        .setSslSocketConfigurator(
-            socket -> {
-              if (!Conscrypt.isConscrypt(socket)) {
-                return;
-              }
-              try {
-                Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-              } catch (Throwable t) {
-                // Catch runtime socket configuration errors (e.g. version mismatch or JNI error)
-                // and fall back to Conscrypt's default TLS groups without failing the request.
-                LOG.log(
-                    Level.WARNING,
-                    "Failed to set PQC named groups on Conscrypt socket. Falling back to"
-                        + " Conscrypt default TLS groups.",
-                    t);
-              }
-            });
+    NetHttpTransport.Builder builder = HttpJsonTransportUtils.createPqcHttpTransportBuilder();
     return configureMtls(builder).build();
   }
 

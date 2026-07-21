@@ -22,10 +22,10 @@ import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
+import com.google.api.gax.httpjson.HttpJsonTransportUtils;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -40,11 +40,8 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.security.Provider;
 import java.util.Objects;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.conscrypt.Conscrypt;
 
 /** Class representing service options for those services that use HTTP as the transport layer. */
 public class HttpTransportOptions implements TransportOptions {
@@ -59,25 +56,7 @@ public class HttpTransportOptions implements TransportOptions {
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
     private static final Logger LOG = Logger.getLogger(DefaultHttpTransportFactory.class.getName());
-    private static final String[] PQC_GROUPS =
-        new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
     private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
-
-    private static class ConscryptProviderHolder {
-      private static final Provider INSTANCE = createProvider();
-
-      private static Provider createProvider() {
-        try {
-          return Conscrypt.newProvider();
-        } catch (Throwable t) {
-          LOG.log(
-              Level.WARNING,
-              "Conscrypt native libraries not available. Falling back to JDK TLS.",
-              t);
-          return null;
-        }
-      }
-    }
 
     @Override
     public HttpTransport create() {
@@ -90,44 +69,7 @@ public class HttpTransportOptions implements TransportOptions {
         }
       }
 
-      // Attempt to register Conscrypt as the Security Provider for HTTP client connections to
-      // enable Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by
-      // default.
-      //
-      // Tradeoff Decision: We intentionally catch errors and gracefully fall back to JDK TLS or
-      // Conscrypt defaults rather than failing fast. Because Conscrypt depends on native JNI
-      // libraries that may not be available or compatible across all user environments (e.g.
-      // non-x86 architectures, musl libc, custom runtimes), failing fast would cause breaking
-      // outages for existing customers upgrading the SDK. We accept the tradeoff of a potential
-      // silent fallback to classical TLS (logged at WARNING level) in exchange for maintaining high
-      // availability and backward compatibility across all client environments.
-      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-      Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
-      if (conscryptProvider == null) {
-        return builder.build();
-      }
-      builder
-          .setSecurityProvider(conscryptProvider)
-          .setSslSocketConfigurator(
-              socket -> {
-                if (!Conscrypt.isConscrypt(socket)) {
-                  return;
-                }
-                try {
-                  Conscrypt.setNamedGroups(socket, PQC_GROUPS);
-                } catch (Throwable t) {
-                  // Catch runtime socket configuration errors (e.g. version mismatch or JNI
-                  // error)
-                  // and fall back to Conscrypt's default TLS groups without failing the
-                  // request.
-                  LOG.log(
-                      Level.WARNING,
-                      "Failed to set PQC named groups on Conscrypt socket. Falling back to"
-                          + " Conscrypt default TLS groups.",
-                      t);
-                }
-              });
-      return builder.build();
+      return HttpJsonTransportUtils.createPqcHttpTransportBuilder().build();
     }
   }
 
