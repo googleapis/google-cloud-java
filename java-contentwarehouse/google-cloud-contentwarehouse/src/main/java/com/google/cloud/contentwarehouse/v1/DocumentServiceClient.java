@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -274,9 +276,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DocumentServiceClient implements BackgroundResource {
-  private final DocumentServiceSettings settings;
+  private final @Nullable DocumentServiceSettings settings;
   private final DocumentServiceStub stub;
 
   /** Constructs an instance of DocumentServiceClient with default settings. */
@@ -316,7 +319,7 @@ public class DocumentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DocumentServiceSettings getSettings() {
+  public final @Nullable DocumentServiceSettings getSettings() {
     return settings;
   }
 
@@ -348,7 +351,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param document Required. The document to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CreateDocumentResponse createDocument(LocationName parent, Document document) {
+  public final CreateDocumentResponse createDocument(
+      @Nullable LocationName parent, Document document) {
     CreateDocumentRequest request =
         CreateDocumentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -478,7 +482,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/documents/referenceId/{reference_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document getDocument(DocumentName name) {
+  public final Document getDocument(@Nullable DocumentName name) {
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
@@ -604,7 +608,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param document Required. The document to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UpdateDocumentResponse updateDocument(DocumentName name, Document document) {
+  public final UpdateDocumentResponse updateDocument(
+      @Nullable DocumentName name, Document document) {
     UpdateDocumentRequest request =
         UpdateDocumentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -744,7 +749,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/documents/referenceId/{reference_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDocument(DocumentName name) {
+  public final void deleteDocument(@Nullable DocumentName name) {
     DeleteDocumentRequest request =
         DeleteDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDocument(request);
@@ -870,7 +875,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchDocumentsPagedResponse searchDocuments(LocationName parent) {
+  public final SearchDocumentsPagedResponse searchDocuments(@Nullable LocationName parent) {
     SearchDocumentsRequest request =
         SearchDocumentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1067,7 +1072,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/documents/{document}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document lockDocument(DocumentName name) {
+  public final Document lockDocument(@Nullable DocumentName name) {
     LockDocumentRequest request =
         LockDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return lockDocument(request);
@@ -1431,12 +1436,13 @@ public class DocumentServiceClient implements BackgroundResource {
           SearchDocumentsPage> {
 
     private SearchDocumentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchDocumentsRequest,
                 SearchDocumentsResponse,
                 SearchDocumentsResponse.MatchingDocument>
             context,
-        SearchDocumentsResponse response) {
+        @Nullable SearchDocumentsResponse response) {
       super(context, response);
     }
 
@@ -1446,18 +1452,20 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchDocumentsRequest,
                 SearchDocumentsResponse,
                 SearchDocumentsResponse.MatchingDocument>
             context,
-        SearchDocumentsResponse response) {
+        @Nullable SearchDocumentsResponse response) {
       return new SearchDocumentsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDocumentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchDocumentsRequest,
                 SearchDocumentsResponse,
                 SearchDocumentsResponse.MatchingDocument>
@@ -1476,7 +1484,7 @@ public class DocumentServiceClient implements BackgroundResource {
           SearchDocumentsFixedSizeCollection> {
 
     private SearchDocumentsFixedSizeCollection(
-        List<SearchDocumentsPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1486,7 +1494,7 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentsFixedSizeCollection createCollection(
-        List<SearchDocumentsPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentsPage> pages, int collectionSize) {
       return new SearchDocumentsFixedSizeCollection(pages, collectionSize);
     }
   }

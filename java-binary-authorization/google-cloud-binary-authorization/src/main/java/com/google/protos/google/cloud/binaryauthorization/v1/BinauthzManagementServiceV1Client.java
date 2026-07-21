@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -94,7 +96,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePolicy</td>
- *      <td><p> Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race conditions with concurrent policy enforcement (or management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed.</td>
+ *      <td><p> Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and returns a copy of the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is always updated as a whole, to avoid race conditions with concurrent policy enforcement (or management!) requests. Returns `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the request is malformed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -112,7 +114,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAttestor</td>
- *      <td><p> Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.</td>
+ *      <td><p> Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if the request is malformed, `ALREADY_EXISTS` if the [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -131,7 +133,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAttestor</td>
- *      <td><p> Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
+ *      <td><p> Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -150,7 +152,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAttestor</td>
- *      <td><p> Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
+ *      <td><p> Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -168,7 +170,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAttestors</td>
- *      <td><p> Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if the project does not exist.</td>
+ *      <td><p> Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if the project does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -188,7 +190,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteAttestor</td>
- *      <td><p> Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
+ *      <td><p> Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -263,9 +265,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BinauthzManagementServiceV1Client implements BackgroundResource {
-  private final BinauthzManagementServiceV1Settings settings;
+  private final @Nullable BinauthzManagementServiceV1Settings settings;
   private final BinauthzManagementServiceV1Stub stub;
 
   /** Constructs an instance of BinauthzManagementServiceV1Client with default settings. */
@@ -308,7 +311,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BinauthzManagementServiceV1Settings getSettings() {
+  public final @Nullable BinauthzManagementServiceV1Settings getSettings() {
     return settings;
   }
 
@@ -346,7 +349,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    *     `projects/&#42;/policy`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Resources.Policy getPolicy(PolicyName name) {
+  public final Resources.Policy getPolicy(@Nullable PolicyName name) {
     Service.GetPolicyRequest request =
         Service.GetPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -464,8 +467,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and
    * returns a copy of the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
    * always updated as a whole, to avoid race conditions with concurrent policy enforcement (or
-   * management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the
-   * request is malformed.
+   * management!) requests. Returns `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if
+   * the request is malformed.
    *
    * <p>Sample code:
    *
@@ -499,8 +502,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and
    * returns a copy of the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
    * always updated as a whole, to avoid race conditions with concurrent policy enforcement (or
-   * management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the
-   * request is malformed.
+   * management!) requests. Returns `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if
+   * the request is malformed.
    *
    * <p>Sample code:
    *
@@ -532,8 +535,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1.Policy], and
    * returns a copy of the new [policy][google.cloud.binaryauthorization.v1.Policy]. A policy is
    * always updated as a whole, to avoid race conditions with concurrent policy enforcement (or
-   * management!) requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the
-   * request is malformed.
+   * management!) requests. Returns `NOT_FOUND` if the project does not exist, `INVALID_ARGUMENT` if
+   * the request is malformed.
    *
    * <p>Sample code:
    *
@@ -563,8 +566,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the
-   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project
-   * does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
+   * project does not exist, `INVALID_ARGUMENT` if the request is malformed, `ALREADY_EXISTS` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
    *
    * <p>Sample code:
@@ -595,7 +598,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Resources.Attestor createAttestor(
-      ProjectName parent, String attestorId, Resources.Attestor attestor) {
+      @Nullable ProjectName parent, String attestorId, Resources.Attestor attestor) {
     Service.CreateAttestorRequest request =
         Service.CreateAttestorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -608,8 +611,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the
-   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project
-   * does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
+   * project does not exist, `INVALID_ARGUMENT` if the request is malformed, `ALREADY_EXISTS` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
    *
    * <p>Sample code:
@@ -653,8 +656,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the
-   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project
-   * does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
+   * project does not exist, `INVALID_ARGUMENT` if the request is malformed, `ALREADY_EXISTS` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
    *
    * <p>Sample code:
@@ -687,8 +690,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an [attestor][google.cloud.binaryauthorization.v1.Attestor], and returns a copy of the
-   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the project
-   * does not exist, INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+   * new [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
+   * project does not exist, `INVALID_ARGUMENT` if the request is malformed, `ALREADY_EXISTS` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] already exists.
    *
    * <p>Sample code:
@@ -721,7 +724,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -743,7 +746,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    *     to retrieve, in the format `projects/&#42;/attestors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Resources.Attestor getAttestor(AttestorName name) {
+  public final Resources.Attestor getAttestor(@Nullable AttestorName name) {
     Service.GetAttestorRequest request =
         Service.GetAttestorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -753,7 +756,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -783,7 +786,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -813,7 +816,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Gets an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -843,7 +846,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -875,7 +878,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -905,7 +908,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Updates an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -936,7 +939,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if
+   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if
    * the project does not exist.
    *
    * <p>Sample code:
@@ -961,7 +964,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    *     [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttestorsPagedResponse listAttestors(ProjectName parent) {
+  public final ListAttestorsPagedResponse listAttestors(@Nullable ProjectName parent) {
     Service.ListAttestorsRequest request =
         Service.ListAttestorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -971,7 +974,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if
+   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if
    * the project does not exist.
    *
    * <p>Sample code:
@@ -1004,7 +1007,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if
+   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if
    * the project does not exist.
    *
    * <p>Sample code:
@@ -1039,7 +1042,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if
+   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if
    * the project does not exist.
    *
    * <p>Sample code:
@@ -1074,7 +1077,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns INVALID_ARGUMENT if
+   * Lists [attestors][google.cloud.binaryauthorization.v1.Attestor]. Returns `INVALID_ARGUMENT` if
    * the project does not exist.
    *
    * <p>Sample code:
@@ -1116,7 +1119,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -1138,7 +1141,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    *     to delete, in the format `projects/&#42;/attestors/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAttestor(AttestorName name) {
+  public final void deleteAttestor(@Nullable AttestorName name) {
     Service.DeleteAttestorRequest request =
         Service.DeleteAttestorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1148,7 +1151,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -1178,7 +1181,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -1208,7 +1211,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns NOT_FOUND if the
+   * Deletes an [attestor][google.cloud.binaryauthorization.v1.Attestor]. Returns `NOT_FOUND` if the
    * [attestor][google.cloud.binaryauthorization.v1.Attestor] does not exist.
    *
    * <p>Sample code:
@@ -1299,9 +1302,11 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
           ListAttestorsPage> {
 
     private ListAttestorsPage(
-        PageContext<Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
+        @Nullable
+            PageContext<
+                Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
             context,
-        Service.ListAttestorsResponse response) {
+        Service.@Nullable ListAttestorsResponse response) {
       super(context, response);
     }
 
@@ -1311,15 +1316,19 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
     @Override
     protected ListAttestorsPage createPage(
-        PageContext<Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
+        @Nullable
+            PageContext<
+                Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
             context,
-        Service.ListAttestorsResponse response) {
+        Service.@Nullable ListAttestorsResponse response) {
       return new ListAttestorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttestorsPage> createPageAsync(
-        PageContext<Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
+        @Nullable
+            PageContext<
+                Service.ListAttestorsRequest, Service.ListAttestorsResponse, Resources.Attestor>
             context,
         ApiFuture<Service.ListAttestorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1334,7 +1343,8 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
           ListAttestorsPage,
           ListAttestorsFixedSizeCollection> {
 
-    private ListAttestorsFixedSizeCollection(List<ListAttestorsPage> pages, int collectionSize) {
+    private ListAttestorsFixedSizeCollection(
+        @Nullable List<ListAttestorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1344,7 +1354,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
 
     @Override
     protected ListAttestorsFixedSizeCollection createCollection(
-        List<ListAttestorsPage> pages, int collectionSize) {
+        @Nullable List<ListAttestorsPage> pages, int collectionSize) {
       return new ListAttestorsFixedSizeCollection(pages, collectionSize);
     }
   }

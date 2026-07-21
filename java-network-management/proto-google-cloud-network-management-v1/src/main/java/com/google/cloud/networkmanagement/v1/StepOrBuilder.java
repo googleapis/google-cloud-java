@@ -791,7 +791,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=311
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -810,7 +810,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=311
+   *     google/cloud/networkmanagement/v1/trace.proto;l=318
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -1303,6 +1303,43 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunJobInfo cloud_run_job = 45;</code>
+   *
+   * @return Whether the cloudRunJob field is set.
+   */
+  boolean hasCloudRunJob();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunJobInfo cloud_run_job = 45;</code>
+   *
+   * @return The cloudRunJob.
+   */
+  com.google.cloud.networkmanagement.v1.CloudRunJobInfo getCloudRunJob();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunJobInfo cloud_run_job = 45;</code>
+   */
+  com.google.cloud.networkmanagement.v1.CloudRunJobInfoOrBuilder getCloudRunJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of a NAT.
    * </pre>
    *
@@ -1534,6 +1571,47 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfoOrBuilder
       getNgfwPacketInspectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return Whether the dmsPrivateConnection field is set.
+   */
+  boolean hasDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfo getDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a DMS Private Connection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.PrivateConnectionInfo dms_private_connection = 43;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+      getDmsPrivateConnectionOrBuilder();
 
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

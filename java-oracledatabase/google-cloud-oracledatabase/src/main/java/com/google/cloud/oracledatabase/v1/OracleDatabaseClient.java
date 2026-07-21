@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,6 +154,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteCloudExadataInfrastructureOperationCallable()
  *           <li><p> deleteCloudExadataInfrastructureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ConfigureExascaleCloudExadataInfrastructure</td>
+ *      <td><p> Configures Exascale for a single Exadata Infrastructure.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(ConfigureExascaleCloudExadataInfrastructureRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(CloudExadataInfrastructureName name, int totalStorageSizeGb)
+ *           <li><p> configureExascaleCloudExadataInfrastructureAsync(String name, int totalStorageSizeGb)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> configureExascaleCloudExadataInfrastructureOperationCallable()
+ *           <li><p> configureExascaleCloudExadataInfrastructureCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1387,25 +1409,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> GetGoldengateDeploymentVersion</td>
- *      <td><p> Gets details of a single GoldengateDeploymentVersion.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentVersion(GetGoldengateDeploymentVersionRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentVersion(GoldengateDeploymentVersionName name)
- *           <li><p> getGoldengateDeploymentVersion(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentVersionCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> ListGoldengateDeploymentVersions</td>
  *      <td><p> Lists GoldengateDeploymentVersions in a given project and location.</td>
  *      <td>
@@ -1422,25 +1425,6 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listGoldengateDeploymentVersionsPagedCallable()
  *           <li><p> listGoldengateDeploymentVersionsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> GetGoldengateDeploymentType</td>
- *      <td><p> Gets details of a single GoldenGateDeploymentType.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentType(GetGoldengateDeploymentTypeRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentType(GoldengateDeploymentTypeName name)
- *           <li><p> getGoldengateDeploymentType(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1465,25 +1449,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> GetGoldengateDeploymentEnvironment</td>
- *      <td><p> Gets details of a single GoldengateDeploymentEnvironment.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentEnvironment(GetGoldengateDeploymentEnvironmentRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentEnvironment(GoldengateDeploymentEnvironmentName name)
- *           <li><p> getGoldengateDeploymentEnvironment(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getGoldengateDeploymentEnvironmentCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> ListGoldengateDeploymentEnvironments</td>
  *      <td><p> Lists GoldengateDeploymentEnvironments in a given project and location.</td>
  *      <td>
@@ -1500,25 +1465,6 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listGoldengateDeploymentEnvironmentsPagedCallable()
  *           <li><p> listGoldengateDeploymentEnvironmentsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> GetGoldengateConnectionType</td>
- *      <td><p> Gets details of a single GoldengateConnectionType.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> getGoldengateConnectionType(GetGoldengateConnectionTypeRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> getGoldengateConnectionType(GoldengateConnectionTypeName name)
- *           <li><p> getGoldengateConnectionType(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> getGoldengateConnectionTypeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1766,9 +1712,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OracleDatabaseClient implements BackgroundResource {
-  private final OracleDatabaseSettings settings;
+  private final @Nullable OracleDatabaseSettings settings;
   private final OracleDatabaseStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1816,7 +1763,7 @@ public class OracleDatabaseClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final OracleDatabaseSettings getSettings() {
+  public final @Nullable OracleDatabaseSettings getSettings() {
     return settings;
   }
 
@@ -1867,7 +1814,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudExadataInfrastructuresPagedResponse listCloudExadataInfrastructures(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListCloudExadataInfrastructuresRequest request =
         ListCloudExadataInfrastructuresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2048,7 +1995,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudExadataInfrastructure getCloudExadataInfrastructure(
-      CloudExadataInfrastructureName name) {
+      @Nullable CloudExadataInfrastructureName name) {
     GetCloudExadataInfrastructureRequest request =
         GetCloudExadataInfrastructureRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2189,7 +2136,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           CloudExadataInfrastructure cloudExadataInfrastructure,
           String cloudExadataInfrastructureId) {
     CreateCloudExadataInfrastructureRequest request =
@@ -2374,7 +2321,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteCloudExadataInfrastructureAsync(
-      CloudExadataInfrastructureName name) {
+      @Nullable CloudExadataInfrastructureName name) {
     DeleteCloudExadataInfrastructureRequest request =
         DeleteCloudExadataInfrastructureRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2520,6 +2467,197 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudExadataInfrastructureName name =
+   *       CloudExadataInfrastructureName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+   *   int totalStorageSizeGb = 1493200154;
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud Exadata Infrastructure in the following format:
+   *     projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_infrastructure}.
+   * @param totalStorageSizeGb Required. The total storage to be allocated to Exascale in GBs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(
+          @Nullable CloudExadataInfrastructureName name, int totalStorageSizeGb) {
+    ConfigureExascaleCloudExadataInfrastructureRequest request =
+        ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setTotalStorageSizeGb(totalStorageSizeGb)
+            .build();
+    return configureExascaleCloudExadataInfrastructureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       CloudExadataInfrastructureName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *           .toString();
+   *   int totalStorageSizeGb = 1493200154;
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud Exadata Infrastructure in the following format:
+   *     projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_infrastructure}.
+   * @param totalStorageSizeGb Required. The total storage to be allocated to Exascale in GBs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(String name, int totalStorageSizeGb) {
+    ConfigureExascaleCloudExadataInfrastructureRequest request =
+        ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+            .setName(name)
+            .setTotalStorageSizeGb(totalStorageSizeGb)
+            .build();
+    return configureExascaleCloudExadataInfrastructureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient.configureExascaleCloudExadataInfrastructureAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      configureExascaleCloudExadataInfrastructureAsync(
+          ConfigureExascaleCloudExadataInfrastructureRequest request) {
+    return configureExascaleCloudExadataInfrastructureOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CloudExadataInfrastructure, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CloudExadataInfrastructure response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    return stub.configureExascaleCloudExadataInfrastructureOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures Exascale for a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ConfigureExascaleCloudExadataInfrastructureRequest request =
+   *       ConfigureExascaleCloudExadataInfrastructureRequest.newBuilder()
+   *           .setName(
+   *               CloudExadataInfrastructureName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+   *                   .toString())
+   *           .setTotalStorageSizeGb(1493200154)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient
+   *           .configureExascaleCloudExadataInfrastructureCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    return stub.configureExascaleCloudExadataInfrastructureCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists the VM Clusters in a given project and location.
    *
    * <p>Sample code:
@@ -2542,7 +2680,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCloudVmClustersPagedResponse listCloudVmClusters(LocationName parent) {
+  public final ListCloudVmClustersPagedResponse listCloudVmClusters(@Nullable LocationName parent) {
     ListCloudVmClustersRequest request =
         ListCloudVmClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2713,7 +2851,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloudVmCluster getCloudVmCluster(CloudVmClusterName name) {
+  public final CloudVmCluster getCloudVmCluster(@Nullable CloudVmClusterName name) {
     GetCloudVmClusterRequest request =
         GetCloudVmClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2839,7 +2977,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CloudVmCluster, OperationMetadata> createCloudVmClusterAsync(
-      LocationName parent, CloudVmCluster cloudVmCluster, String cloudVmClusterId) {
+      @Nullable LocationName parent, CloudVmCluster cloudVmCluster, String cloudVmClusterId) {
     CreateCloudVmClusterRequest request =
         CreateCloudVmClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3011,7 +3149,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteCloudVmClusterAsync(
-      CloudVmClusterName name) {
+      @Nullable CloudVmClusterName name) {
     DeleteCloudVmClusterRequest request =
         DeleteCloudVmClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3168,7 +3306,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntitlementsPagedResponse listEntitlements(LocationName parent) {
+  public final ListEntitlementsPagedResponse listEntitlements(@Nullable LocationName parent) {
     ListEntitlementsRequest request =
         ListEntitlementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3337,7 +3475,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/cloudExadataInfrastructures/{cloudExadataInfrastructure}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbServersPagedResponse listDbServers(CloudExadataInfrastructureName parent) {
+  public final ListDbServersPagedResponse listDbServers(
+      @Nullable CloudExadataInfrastructureName parent) {
     ListDbServersRequest request =
         ListDbServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3514,7 +3653,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/cloudVmClusters/{cloudVmCluster}. .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbNodesPagedResponse listDbNodes(CloudVmClusterName parent) {
+  public final ListDbNodesPagedResponse listDbNodes(@Nullable CloudVmClusterName parent) {
     ListDbNodesRequest request =
         ListDbNodesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3547,7 +3686,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/cloudVmClusters/{cloudVmCluster}. .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbNodesPagedResponse listDbNodes(ExadbVmClusterName parent) {
+  public final ListDbNodesPagedResponse listDbNodes(@Nullable ExadbVmClusterName parent) {
     ListDbNodesRequest request =
         ListDbNodesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3716,7 +3855,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     format: Format: projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGiVersionsPagedResponse listGiVersions(LocationName parent) {
+  public final ListGiVersionsPagedResponse listGiVersions(@Nullable LocationName parent) {
     ListGiVersionsRequest request =
         ListGiVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3890,7 +4029,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/giVersions/{gi_version}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMinorVersionsPagedResponse listMinorVersions(GiVersionName parent) {
+  public final ListMinorVersionsPagedResponse listMinorVersions(@Nullable GiVersionName parent) {
     ListMinorVersionsRequest request =
         ListMinorVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4064,7 +4203,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbSystemShapesPagedResponse listDbSystemShapes(LocationName parent) {
+  public final ListDbSystemShapesPagedResponse listDbSystemShapes(@Nullable LocationName parent) {
     ListDbSystemShapesRequest request =
         ListDbSystemShapesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4236,7 +4375,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAutonomousDatabasesPagedResponse listAutonomousDatabases(LocationName parent) {
+  public final ListAutonomousDatabasesPagedResponse listAutonomousDatabases(
+      @Nullable LocationName parent) {
     ListAutonomousDatabasesRequest request =
         ListAutonomousDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4411,7 +4551,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AutonomousDatabase getAutonomousDatabase(AutonomousDatabaseName name) {
+  public final AutonomousDatabase getAutonomousDatabase(@Nullable AutonomousDatabaseName name) {
     GetAutonomousDatabaseRequest request =
         GetAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4541,7 +4681,9 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata> createAutonomousDatabaseAsync(
-      LocationName parent, AutonomousDatabase autonomousDatabase, String autonomousDatabaseId) {
+      @Nullable LocationName parent,
+      AutonomousDatabase autonomousDatabase,
+      String autonomousDatabaseId) {
     CreateAutonomousDatabaseRequest request =
         CreateAutonomousDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4847,7 +4989,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAutonomousDatabaseAsync(
-      AutonomousDatabaseName name) {
+      @Nullable AutonomousDatabaseName name) {
     DeleteAutonomousDatabaseRequest request =
         DeleteAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5008,7 +5150,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
-      restoreAutonomousDatabaseAsync(AutonomousDatabaseName name, Timestamp restoreTime) {
+      restoreAutonomousDatabaseAsync(@Nullable AutonomousDatabaseName name, Timestamp restoreTime) {
     RestoreAutonomousDatabaseRequest request =
         RestoreAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5185,7 +5327,10 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
-      AutonomousDatabaseName name, GenerateType type, boolean isRegional, String password) {
+      @Nullable AutonomousDatabaseName name,
+      GenerateType type,
+      boolean isRegional,
+      String password) {
     GenerateAutonomousDatabaseWalletRequest request =
         GenerateAutonomousDatabaseWalletRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5336,7 +5481,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAutonomousDbVersionsPagedResponse listAutonomousDbVersions(LocationName parent) {
+  public final ListAutonomousDbVersionsPagedResponse listAutonomousDbVersions(
+      @Nullable LocationName parent) {
     ListAutonomousDbVersionsRequest request =
         ListAutonomousDbVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5508,7 +5654,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutonomousDatabaseCharacterSetsPagedResponse listAutonomousDatabaseCharacterSets(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListAutonomousDatabaseCharacterSetsRequest request =
         ListAutonomousDatabaseCharacterSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5690,7 +5836,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutonomousDatabaseBackupsPagedResponse listAutonomousDatabaseBackups(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListAutonomousDatabaseBackupsRequest request =
         ListAutonomousDatabaseBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5866,7 +6012,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata> stopAutonomousDatabaseAsync(
-      AutonomousDatabaseName name) {
+      @Nullable AutonomousDatabaseName name) {
     StopAutonomousDatabaseRequest request =
         StopAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6022,7 +6168,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata> startAutonomousDatabaseAsync(
-      AutonomousDatabaseName name) {
+      @Nullable AutonomousDatabaseName name) {
     StartAutonomousDatabaseRequest request =
         StartAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6179,7 +6325,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
-      restartAutonomousDatabaseAsync(AutonomousDatabaseName name) {
+      restartAutonomousDatabaseAsync(@Nullable AutonomousDatabaseName name) {
     RestartAutonomousDatabaseRequest request =
         RestartAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6344,7 +6490,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
       switchoverAutonomousDatabaseAsync(
-          AutonomousDatabaseName name, AutonomousDatabaseName peerAutonomousDatabase) {
+          @Nullable AutonomousDatabaseName name,
+          @Nullable AutonomousDatabaseName peerAutonomousDatabase) {
     SwitchoverAutonomousDatabaseRequest request =
         SwitchoverAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6386,7 +6533,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
       switchoverAutonomousDatabaseAsync(
-          AutonomousDatabaseName name, String peerAutonomousDatabase) {
+          @Nullable AutonomousDatabaseName name, String peerAutonomousDatabase) {
     SwitchoverAutonomousDatabaseRequest request =
         SwitchoverAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6427,7 +6574,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
       switchoverAutonomousDatabaseAsync(
-          String name, AutonomousDatabaseName peerAutonomousDatabase) {
+          String name, @Nullable AutonomousDatabaseName peerAutonomousDatabase) {
     SwitchoverAutonomousDatabaseRequest request =
         SwitchoverAutonomousDatabaseRequest.newBuilder()
             .setName(name)
@@ -6611,7 +6758,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseAsync(
-          AutonomousDatabaseName name, AutonomousDatabaseName peerAutonomousDatabase) {
+          @Nullable AutonomousDatabaseName name,
+          @Nullable AutonomousDatabaseName peerAutonomousDatabase) {
     FailoverAutonomousDatabaseRequest request =
         FailoverAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6650,7 +6798,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
-      failoverAutonomousDatabaseAsync(AutonomousDatabaseName name, String peerAutonomousDatabase) {
+      failoverAutonomousDatabaseAsync(
+          @Nullable AutonomousDatabaseName name, String peerAutonomousDatabase) {
     FailoverAutonomousDatabaseRequest request =
         FailoverAutonomousDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6688,7 +6837,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata>
-      failoverAutonomousDatabaseAsync(String name, AutonomousDatabaseName peerAutonomousDatabase) {
+      failoverAutonomousDatabaseAsync(
+          String name, @Nullable AutonomousDatabaseName peerAutonomousDatabase) {
     FailoverAutonomousDatabaseRequest request =
         FailoverAutonomousDatabaseRequest.newBuilder()
             .setName(name)
@@ -6864,7 +7014,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOdbNetworksPagedResponse listOdbNetworks(LocationName parent) {
+  public final ListOdbNetworksPagedResponse listOdbNetworks(@Nullable LocationName parent) {
     ListOdbNetworksRequest request =
         ListOdbNetworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7034,7 +7184,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OdbNetwork getOdbNetwork(OdbNetworkName name) {
+  public final OdbNetwork getOdbNetwork(@Nullable OdbNetworkName name) {
     GetOdbNetworkRequest request =
         GetOdbNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOdbNetwork(request);
@@ -7153,7 +7303,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<OdbNetwork, OperationMetadata> createOdbNetworkAsync(
-      LocationName parent, OdbNetwork odbNetwork, String odbNetworkId) {
+      @Nullable LocationName parent, OdbNetwork odbNetwork, String odbNetworkId) {
     CreateOdbNetworkRequest request =
         CreateOdbNetworkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7321,7 +7471,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteOdbNetworkAsync(
-      OdbNetworkName name) {
+      @Nullable OdbNetworkName name) {
     DeleteOdbNetworkRequest request =
         DeleteOdbNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteOdbNetworkAsync(request);
@@ -7467,7 +7617,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOdbSubnetsPagedResponse listOdbSubnets(OdbNetworkName parent) {
+  public final ListOdbSubnetsPagedResponse listOdbSubnets(@Nullable OdbNetworkName parent) {
     ListOdbSubnetsRequest request =
         ListOdbSubnetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7638,7 +7788,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OdbSubnet getOdbSubnet(OdbSubnetName name) {
+  public final OdbSubnet getOdbSubnet(@Nullable OdbSubnetName name) {
     GetOdbSubnetRequest request =
         GetOdbSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOdbSubnet(request);
@@ -7761,7 +7911,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<OdbSubnet, OperationMetadata> createOdbSubnetAsync(
-      OdbNetworkName parent, OdbSubnet odbSubnet, String odbSubnetId) {
+      @Nullable OdbNetworkName parent, OdbSubnet odbSubnet, String odbSubnetId) {
     CreateOdbSubnetRequest request =
         CreateOdbSubnetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7929,7 +8079,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{region}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteOdbSubnetAsync(OdbSubnetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbSubnetAsync(
+      @Nullable OdbSubnetName name) {
     DeleteOdbSubnetRequest request =
         DeleteOdbSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteOdbSubnetAsync(request);
@@ -8082,7 +8233,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExadbVmClustersPagedResponse listExadbVmClusters(LocationName parent) {
+  public final ListExadbVmClustersPagedResponse listExadbVmClusters(@Nullable LocationName parent) {
     ListExadbVmClustersRequest request =
         ListExadbVmClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8256,7 +8407,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExadbVmCluster getExadbVmCluster(ExadbVmClusterName name) {
+  public final ExadbVmCluster getExadbVmCluster(@Nullable ExadbVmClusterName name) {
     GetExadbVmClusterRequest request =
         GetExadbVmClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8382,7 +8533,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExadbVmCluster, OperationMetadata> createExadbVmClusterAsync(
-      LocationName parent, ExadbVmCluster exadbVmCluster, String exadbVmClusterId) {
+      @Nullable LocationName parent, ExadbVmCluster exadbVmCluster, String exadbVmClusterId) {
     CreateExadbVmClusterRequest request =
         CreateExadbVmClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8554,7 +8705,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteExadbVmClusterAsync(
-      ExadbVmClusterName name) {
+      @Nullable ExadbVmClusterName name) {
     DeleteExadbVmClusterRequest request =
         DeleteExadbVmClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8845,7 +8996,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExadbVmCluster, OperationMetadata>
-      removeVirtualMachineExadbVmClusterAsync(ExadbVmClusterName name, List<String> hostnames) {
+      removeVirtualMachineExadbVmClusterAsync(
+          @Nullable ExadbVmClusterName name, List<String> hostnames) {
     RemoveVirtualMachineExadbVmClusterRequest request =
         RemoveVirtualMachineExadbVmClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9017,7 +9169,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExascaleDbStorageVaultsPagedResponse listExascaleDbStorageVaults(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListExascaleDbStorageVaultsRequest request =
         ListExascaleDbStorageVaultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9194,7 +9346,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExascaleDbStorageVault getExascaleDbStorageVault(ExascaleDbStorageVaultName name) {
+  public final ExascaleDbStorageVault getExascaleDbStorageVault(
+      @Nullable ExascaleDbStorageVaultName name) {
     GetExascaleDbStorageVaultRequest request =
         GetExascaleDbStorageVaultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9330,7 +9483,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<ExascaleDbStorageVault, OperationMetadata>
       createExascaleDbStorageVaultAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ExascaleDbStorageVault exascaleDbStorageVault,
           String exascaleDbStorageVaultId) {
     CreateExascaleDbStorageVaultRequest request =
@@ -9510,7 +9663,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteExascaleDbStorageVaultAsync(
-      ExascaleDbStorageVaultName name) {
+      @Nullable ExascaleDbStorageVaultName name) {
     DeleteExascaleDbStorageVaultRequest request =
         DeleteExascaleDbStorageVaultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9674,7 +9827,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDbSystemInitialStorageSizesPagedResponse listDbSystemInitialStorageSizes(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListDbSystemInitialStorageSizesRequest request =
         ListDbSystemInitialStorageSizesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9847,7 +10000,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{region}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabasesPagedResponse listDatabases(LocationName parent) {
+  public final ListDatabasesPagedResponse listDatabases(@Nullable LocationName parent) {
     ListDatabasesRequest request =
         ListDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10012,7 +10165,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{region}/databases/{database}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database getDatabase(DatabaseName name) {
+  public final Database getDatabase(@Nullable DatabaseName name) {
     GetDatabaseRequest request =
         GetDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatabase(request);
@@ -10125,7 +10278,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPluggableDatabasesPagedResponse listPluggableDatabases(LocationName parent) {
+  public final ListPluggableDatabasesPagedResponse listPluggableDatabases(
+      @Nullable LocationName parent) {
     ListPluggableDatabasesRequest request =
         ListPluggableDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10297,7 +10451,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{region}/pluggableDatabases/{pluggable_database}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PluggableDatabase getPluggableDatabase(PluggableDatabaseName name) {
+  public final PluggableDatabase getPluggableDatabase(@Nullable PluggableDatabaseName name) {
     GetPluggableDatabaseRequest request =
         GetPluggableDatabaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10419,7 +10573,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbSystemsPagedResponse listDbSystems(LocationName parent) {
+  public final ListDbSystemsPagedResponse listDbSystems(@Nullable LocationName parent) {
     ListDbSystemsRequest request =
         ListDbSystemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10587,7 +10741,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/dbSystems/{db_system}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DbSystem getDbSystem(DbSystemName name) {
+  public final DbSystem getDbSystem(@Nullable DbSystemName name) {
     GetDbSystemRequest request =
         GetDbSystemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDbSystem(request);
@@ -10705,7 +10859,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DbSystem, OperationMetadata> createDbSystemAsync(
-      LocationName parent, DbSystem dbSystem, String dbSystemId) {
+      @Nullable LocationName parent, DbSystem dbSystem, String dbSystemId) {
     CreateDbSystemRequest request =
         CreateDbSystemRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10872,7 +11026,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/dbSystems/{db_system}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDbSystemAsync(DbSystemName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDbSystemAsync(
+      @Nullable DbSystemName name) {
     DeleteDbSystemRequest request =
         DeleteDbSystemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDbSystemAsync(request);
@@ -11020,7 +11175,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateDeploymentsPagedResponse listGoldengateDeployments(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateDeploymentsRequest request =
         ListGoldengateDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -11196,7 +11351,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/goldengateDeployments/{goldengate_deployment}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GoldengateDeployment getGoldengateDeployment(GoldengateDeploymentName name) {
+  public final GoldengateDeployment getGoldengateDeployment(
+      @Nullable GoldengateDeploymentName name) {
     GetGoldengateDeploymentRequest request =
         GetGoldengateDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11329,7 +11485,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           GoldengateDeployment goldengateDeployment,
           String goldengateDeploymentId) {
     CreateGoldengateDeploymentRequest request =
@@ -11506,7 +11662,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGoldengateDeploymentAsync(
-      GoldengateDeploymentName name) {
+      @Nullable GoldengateDeploymentName name) {
     DeleteGoldengateDeploymentRequest request =
         DeleteGoldengateDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11666,7 +11822,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoldengateDeployment, OperationMetadata>
-      stopGoldengateDeploymentAsync(GoldengateDeploymentName name) {
+      stopGoldengateDeploymentAsync(@Nullable GoldengateDeploymentName name) {
     StopGoldengateDeploymentRequest request =
         StopGoldengateDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11826,7 +11982,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoldengateDeployment, OperationMetadata>
-      startGoldengateDeploymentAsync(GoldengateDeploymentName name) {
+      startGoldengateDeploymentAsync(@Nullable GoldengateDeploymentName name) {
     StartGoldengateDeploymentRequest request =
         StartGoldengateDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11987,7 +12143,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateConnectionsPagedResponse listGoldengateConnections(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateConnectionsRequest request =
         ListGoldengateConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -12163,7 +12319,8 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/goldengateConnections/{goldengate_connection}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GoldengateConnection getGoldengateConnection(GoldengateConnectionName name) {
+  public final GoldengateConnection getGoldengateConnection(
+      @Nullable GoldengateConnectionName name) {
     GetGoldengateConnectionRequest request =
         GetGoldengateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -12296,7 +12453,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<GoldengateConnection, OperationMetadata>
       createGoldengateConnectionAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           GoldengateConnection goldengateConnection,
           String goldengateConnectionId) {
     CreateGoldengateConnectionRequest request =
@@ -12473,7 +12630,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGoldengateConnectionAsync(
-      GoldengateConnectionName name) {
+      @Nullable GoldengateConnectionName name) {
     DeleteGoldengateConnectionRequest request =
         DeleteGoldengateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -12610,137 +12767,6 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single GoldengateDeploymentVersion.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GoldengateDeploymentVersionName name =
-   *       GoldengateDeploymentVersionName.of(
-   *           "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]");
-   *   GoldengateDeploymentVersion response =
-   *       oracleDatabaseClient.getGoldengateDeploymentVersion(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the GoldengateDeploymentVersion to retrieve. Format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentVersions/{goldengate_deployment_version}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentVersion getGoldengateDeploymentVersion(
-      GoldengateDeploymentVersionName name) {
-    GetGoldengateDeploymentVersionRequest request =
-        GetGoldengateDeploymentVersionRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getGoldengateDeploymentVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentVersion.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   String name =
-   *       GoldengateDeploymentVersionName.of(
-   *               "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
-   *           .toString();
-   *   GoldengateDeploymentVersion response =
-   *       oracleDatabaseClient.getGoldengateDeploymentVersion(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the GoldengateDeploymentVersion to retrieve. Format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentVersions/{goldengate_deployment_version}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentVersion getGoldengateDeploymentVersion(String name) {
-    GetGoldengateDeploymentVersionRequest request =
-        GetGoldengateDeploymentVersionRequest.newBuilder().setName(name).build();
-    return getGoldengateDeploymentVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentVersion.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentVersionRequest request =
-   *       GetGoldengateDeploymentVersionRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentVersionName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
-   *                   .toString())
-   *           .build();
-   *   GoldengateDeploymentVersion response =
-   *       oracleDatabaseClient.getGoldengateDeploymentVersion(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentVersion getGoldengateDeploymentVersion(
-      GetGoldengateDeploymentVersionRequest request) {
-    return getGoldengateDeploymentVersionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentVersion.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentVersionRequest request =
-   *       GetGoldengateDeploymentVersionRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentVersionName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<GoldengateDeploymentVersion> future =
-   *       oracleDatabaseClient.getGoldengateDeploymentVersionCallable().futureCall(request);
-   *   // Do something.
-   *   GoldengateDeploymentVersion response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable() {
-    return stub.getGoldengateDeploymentVersionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Lists GoldengateDeploymentVersions in a given project and location.
    *
    * <p>Sample code:
@@ -12765,7 +12791,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateDeploymentVersionsPagedResponse listGoldengateDeploymentVersions(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateDeploymentVersionsRequest request =
         ListGoldengateDeploymentVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -12919,133 +12945,6 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single GoldenGateDeploymentType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GoldengateDeploymentTypeName name =
-   *       GoldengateDeploymentTypeName.of(
-   *           "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]");
-   *   GoldengateDeploymentType response = oracleDatabaseClient.getGoldengateDeploymentType(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the GoldengateDeploymentType to retrieve. Format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentTypes/{goldengate_deployment_type}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentType getGoldengateDeploymentType(
-      GoldengateDeploymentTypeName name) {
-    GetGoldengateDeploymentTypeRequest request =
-        GetGoldengateDeploymentTypeRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getGoldengateDeploymentType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldenGateDeploymentType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   String name =
-   *       GoldengateDeploymentTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
-   *           .toString();
-   *   GoldengateDeploymentType response = oracleDatabaseClient.getGoldengateDeploymentType(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the GoldengateDeploymentType to retrieve. Format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentTypes/{goldengate_deployment_type}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentType getGoldengateDeploymentType(String name) {
-    GetGoldengateDeploymentTypeRequest request =
-        GetGoldengateDeploymentTypeRequest.newBuilder().setName(name).build();
-    return getGoldengateDeploymentType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldenGateDeploymentType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentTypeRequest request =
-   *       GetGoldengateDeploymentTypeRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentTypeName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
-   *                   .toString())
-   *           .build();
-   *   GoldengateDeploymentType response = oracleDatabaseClient.getGoldengateDeploymentType(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentType getGoldengateDeploymentType(
-      GetGoldengateDeploymentTypeRequest request) {
-    return getGoldengateDeploymentTypeCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldenGateDeploymentType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentTypeRequest request =
-   *       GetGoldengateDeploymentTypeRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentTypeName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<GoldengateDeploymentType> future =
-   *       oracleDatabaseClient.getGoldengateDeploymentTypeCallable().futureCall(request);
-   *   // Do something.
-   *   GoldengateDeploymentType response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable() {
-    return stub.getGoldengateDeploymentTypeCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Lists GoldenGateDeploymentTypes in a given project and location.
    *
    * <p>Sample code:
@@ -13069,7 +12968,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateDeploymentTypesPagedResponse listGoldengateDeploymentTypes(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateDeploymentTypesRequest request =
         ListGoldengateDeploymentTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -13225,138 +13124,6 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single GoldengateDeploymentEnvironment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GoldengateDeploymentEnvironmentName name =
-   *       GoldengateDeploymentEnvironmentName.of(
-   *           "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]");
-   *   GoldengateDeploymentEnvironment response =
-   *       oracleDatabaseClient.getGoldengateDeploymentEnvironment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource with the format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentEnvironments/{goldengate_deployment_environment}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentEnvironment getGoldengateDeploymentEnvironment(
-      GoldengateDeploymentEnvironmentName name) {
-    GetGoldengateDeploymentEnvironmentRequest request =
-        GetGoldengateDeploymentEnvironmentRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getGoldengateDeploymentEnvironment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentEnvironment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   String name =
-   *       GoldengateDeploymentEnvironmentName.of(
-   *               "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
-   *           .toString();
-   *   GoldengateDeploymentEnvironment response =
-   *       oracleDatabaseClient.getGoldengateDeploymentEnvironment(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource with the format:
-   *     projects/{project}/locations/{location}/goldengateDeploymentEnvironments/{goldengate_deployment_environment}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentEnvironment getGoldengateDeploymentEnvironment(String name) {
-    GetGoldengateDeploymentEnvironmentRequest request =
-        GetGoldengateDeploymentEnvironmentRequest.newBuilder().setName(name).build();
-    return getGoldengateDeploymentEnvironment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentEnvironment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentEnvironmentRequest request =
-   *       GetGoldengateDeploymentEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentEnvironmentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   GoldengateDeploymentEnvironment response =
-   *       oracleDatabaseClient.getGoldengateDeploymentEnvironment(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateDeploymentEnvironment getGoldengateDeploymentEnvironment(
-      GetGoldengateDeploymentEnvironmentRequest request) {
-    return getGoldengateDeploymentEnvironmentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateDeploymentEnvironment.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateDeploymentEnvironmentRequest request =
-   *       GetGoldengateDeploymentEnvironmentRequest.newBuilder()
-   *           .setName(
-   *               GoldengateDeploymentEnvironmentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<GoldengateDeploymentEnvironment> future =
-   *       oracleDatabaseClient.getGoldengateDeploymentEnvironmentCallable().futureCall(request);
-   *   // Do something.
-   *   GoldengateDeploymentEnvironment response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable() {
-    return stub.getGoldengateDeploymentEnvironmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Lists GoldengateDeploymentEnvironments in a given project and location.
    *
    * <p>Sample code:
@@ -13381,7 +13148,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateDeploymentEnvironmentsPagedResponse
-      listGoldengateDeploymentEnvironments(LocationName parent) {
+      listGoldengateDeploymentEnvironments(@Nullable LocationName parent) {
     ListGoldengateDeploymentEnvironmentsRequest request =
         ListGoldengateDeploymentEnvironmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -13536,133 +13303,6 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single GoldengateConnectionType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GoldengateConnectionTypeName name =
-   *       GoldengateConnectionTypeName.of(
-   *           "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]");
-   *   GoldengateConnectionType response = oracleDatabaseClient.getGoldengateConnectionType(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource in the format:
-   *     projects/{project}/locations/{location}/goldengateConnectionTypes/{goldengate_connection_type}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateConnectionType getGoldengateConnectionType(
-      GoldengateConnectionTypeName name) {
-    GetGoldengateConnectionTypeRequest request =
-        GetGoldengateConnectionTypeRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getGoldengateConnectionType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateConnectionType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   String name =
-   *       GoldengateConnectionTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
-   *           .toString();
-   *   GoldengateConnectionType response = oracleDatabaseClient.getGoldengateConnectionType(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource in the format:
-   *     projects/{project}/locations/{location}/goldengateConnectionTypes/{goldengate_connection_type}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateConnectionType getGoldengateConnectionType(String name) {
-    GetGoldengateConnectionTypeRequest request =
-        GetGoldengateConnectionTypeRequest.newBuilder().setName(name).build();
-    return getGoldengateConnectionType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateConnectionType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateConnectionTypeRequest request =
-   *       GetGoldengateConnectionTypeRequest.newBuilder()
-   *           .setName(
-   *               GoldengateConnectionTypeName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
-   *                   .toString())
-   *           .build();
-   *   GoldengateConnectionType response = oracleDatabaseClient.getGoldengateConnectionType(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GoldengateConnectionType getGoldengateConnectionType(
-      GetGoldengateConnectionTypeRequest request) {
-    return getGoldengateConnectionTypeCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets details of a single GoldengateConnectionType.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
-   *   GetGoldengateConnectionTypeRequest request =
-   *       GetGoldengateConnectionTypeRequest.newBuilder()
-   *           .setName(
-   *               GoldengateConnectionTypeName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<GoldengateConnectionType> future =
-   *       oracleDatabaseClient.getGoldengateConnectionTypeCallable().futureCall(request);
-   *   // Do something.
-   *   GoldengateConnectionType response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable() {
-    return stub.getGoldengateConnectionTypeCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Lists GoldengateConnectionTypes in a given project and location.
    *
    * <p>Sample code:
@@ -13687,7 +13327,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateConnectionTypesPagedResponse listGoldengateConnectionTypes(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateConnectionTypesRequest request =
         ListGoldengateConnectionTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -13863,7 +13503,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDbVersionsPagedResponse listDbVersions(LocationName parent) {
+  public final ListDbVersionsPagedResponse listDbVersions(@Nullable LocationName parent) {
     ListDbVersionsRequest request =
         ListDbVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -14034,7 +13674,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatabaseCharacterSetsPagedResponse listDatabaseCharacterSets(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListDatabaseCharacterSetsRequest request =
         ListDatabaseCharacterSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -14210,7 +13850,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGoldengateConnectionAssignmentsPagedResponse listGoldengateConnectionAssignments(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListGoldengateConnectionAssignmentsRequest request =
         ListGoldengateConnectionAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -14395,7 +14035,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoldengateConnectionAssignment getGoldengateConnectionAssignment(
-      GoldengateConnectionAssignmentName name) {
+      @Nullable GoldengateConnectionAssignmentName name) {
     GetGoldengateConnectionAssignmentRequest request =
         GetGoldengateConnectionAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -14535,7 +14175,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final OperationFuture<GoldengateConnectionAssignment, OperationMetadata>
       createGoldengateConnectionAssignmentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           GoldengateConnectionAssignment goldengateConnectionAssignment,
           String goldengateConnectionAssignmentId) {
     CreateGoldengateConnectionAssignmentRequest request =
@@ -14724,7 +14364,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGoldengateConnectionAssignmentAsync(
-      GoldengateConnectionAssignmentName name) {
+      @Nullable GoldengateConnectionAssignmentName name) {
     DeleteGoldengateConnectionAssignmentRequest request =
         DeleteGoldengateConnectionAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -14892,7 +14532,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestGoldengateConnectionAssignmentResponse testGoldengateConnectionAssignment(
-      GoldengateConnectionAssignmentName name) {
+      @Nullable GoldengateConnectionAssignmentName name) {
     TestGoldengateConnectionAssignmentRequest request =
         TestGoldengateConnectionAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -15257,12 +14897,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListCloudExadataInfrastructuresPage> {
 
     private ListCloudExadataInfrastructuresPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCloudExadataInfrastructuresRequest,
                 ListCloudExadataInfrastructuresResponse,
                 CloudExadataInfrastructure>
             context,
-        ListCloudExadataInfrastructuresResponse response) {
+        @Nullable ListCloudExadataInfrastructuresResponse response) {
       super(context, response);
     }
 
@@ -15272,18 +14913,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListCloudExadataInfrastructuresPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCloudExadataInfrastructuresRequest,
                 ListCloudExadataInfrastructuresResponse,
                 CloudExadataInfrastructure>
             context,
-        ListCloudExadataInfrastructuresResponse response) {
+        @Nullable ListCloudExadataInfrastructuresResponse response) {
       return new ListCloudExadataInfrastructuresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloudExadataInfrastructuresPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCloudExadataInfrastructuresRequest,
                 ListCloudExadataInfrastructuresResponse,
                 CloudExadataInfrastructure>
@@ -15302,7 +14945,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListCloudExadataInfrastructuresFixedSizeCollection> {
 
     private ListCloudExadataInfrastructuresFixedSizeCollection(
-        List<ListCloudExadataInfrastructuresPage> pages, int collectionSize) {
+        @Nullable List<ListCloudExadataInfrastructuresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15312,7 +14955,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListCloudExadataInfrastructuresFixedSizeCollection createCollection(
-        List<ListCloudExadataInfrastructuresPage> pages, int collectionSize) {
+        @Nullable List<ListCloudExadataInfrastructuresPage> pages, int collectionSize) {
       return new ListCloudExadataInfrastructuresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15350,9 +14993,10 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListCloudVmClustersPage> {
 
     private ListCloudVmClustersPage(
-        PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
+        @Nullable
+            PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
             context,
-        ListCloudVmClustersResponse response) {
+        @Nullable ListCloudVmClustersResponse response) {
       super(context, response);
     }
 
@@ -15362,15 +15006,17 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListCloudVmClustersPage createPage(
-        PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
+        @Nullable
+            PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
             context,
-        ListCloudVmClustersResponse response) {
+        @Nullable ListCloudVmClustersResponse response) {
       return new ListCloudVmClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloudVmClustersPage> createPageAsync(
-        PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
+        @Nullable
+            PageContext<ListCloudVmClustersRequest, ListCloudVmClustersResponse, CloudVmCluster>
             context,
         ApiFuture<ListCloudVmClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -15386,7 +15032,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListCloudVmClustersFixedSizeCollection> {
 
     private ListCloudVmClustersFixedSizeCollection(
-        List<ListCloudVmClustersPage> pages, int collectionSize) {
+        @Nullable List<ListCloudVmClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15396,7 +15042,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListCloudVmClustersFixedSizeCollection createCollection(
-        List<ListCloudVmClustersPage> pages, int collectionSize) {
+        @Nullable List<ListCloudVmClustersPage> pages, int collectionSize) {
       return new ListCloudVmClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15430,8 +15076,9 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListEntitlementsRequest, ListEntitlementsResponse, Entitlement, ListEntitlementsPage> {
 
     private ListEntitlementsPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       super(context, response);
     }
 
@@ -15441,14 +15088,16 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsPage createPage(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
-        ListEntitlementsResponse response) {
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
+        @Nullable ListEntitlementsResponse response) {
       return new ListEntitlementsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitlementsPage> createPageAsync(
-        PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement> context,
+        @Nullable PageContext<ListEntitlementsRequest, ListEntitlementsResponse, Entitlement>
+            context,
         ApiFuture<ListEntitlementsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15463,7 +15112,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListEntitlementsFixedSizeCollection> {
 
     private ListEntitlementsFixedSizeCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15473,7 +15122,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListEntitlementsFixedSizeCollection createCollection(
-        List<ListEntitlementsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       return new ListEntitlementsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15507,8 +15156,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbServersRequest, ListDbServersResponse, DbServer, ListDbServersPage> {
 
     private ListDbServersPage(
-        PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
-        ListDbServersResponse response) {
+        @Nullable PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
+        @Nullable ListDbServersResponse response) {
       super(context, response);
     }
 
@@ -15518,14 +15167,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbServersPage createPage(
-        PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
-        ListDbServersResponse response) {
+        @Nullable PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
+        @Nullable ListDbServersResponse response) {
       return new ListDbServersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbServersPage> createPageAsync(
-        PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
+        @Nullable PageContext<ListDbServersRequest, ListDbServersResponse, DbServer> context,
         ApiFuture<ListDbServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15539,7 +15188,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbServersPage,
           ListDbServersFixedSizeCollection> {
 
-    private ListDbServersFixedSizeCollection(List<ListDbServersPage> pages, int collectionSize) {
+    private ListDbServersFixedSizeCollection(
+        @Nullable List<ListDbServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15549,7 +15199,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbServersFixedSizeCollection createCollection(
-        List<ListDbServersPage> pages, int collectionSize) {
+        @Nullable List<ListDbServersPage> pages, int collectionSize) {
       return new ListDbServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15580,8 +15230,8 @@ public class OracleDatabaseClient implements BackgroundResource {
       extends AbstractPage<ListDbNodesRequest, ListDbNodesResponse, DbNode, ListDbNodesPage> {
 
     private ListDbNodesPage(
-        PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
-        ListDbNodesResponse response) {
+        @Nullable PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
+        @Nullable ListDbNodesResponse response) {
       super(context, response);
     }
 
@@ -15591,14 +15241,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbNodesPage createPage(
-        PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
-        ListDbNodesResponse response) {
+        @Nullable PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
+        @Nullable ListDbNodesResponse response) {
       return new ListDbNodesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbNodesPage> createPageAsync(
-        PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
+        @Nullable PageContext<ListDbNodesRequest, ListDbNodesResponse, DbNode> context,
         ApiFuture<ListDbNodesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15612,7 +15262,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbNodesPage,
           ListDbNodesFixedSizeCollection> {
 
-    private ListDbNodesFixedSizeCollection(List<ListDbNodesPage> pages, int collectionSize) {
+    private ListDbNodesFixedSizeCollection(
+        @Nullable List<ListDbNodesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15622,7 +15273,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbNodesFixedSizeCollection createCollection(
-        List<ListDbNodesPage> pages, int collectionSize) {
+        @Nullable List<ListDbNodesPage> pages, int collectionSize) {
       return new ListDbNodesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15656,8 +15307,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGiVersionsRequest, ListGiVersionsResponse, GiVersion, ListGiVersionsPage> {
 
     private ListGiVersionsPage(
-        PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
-        ListGiVersionsResponse response) {
+        @Nullable PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
+        @Nullable ListGiVersionsResponse response) {
       super(context, response);
     }
 
@@ -15667,14 +15318,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGiVersionsPage createPage(
-        PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
-        ListGiVersionsResponse response) {
+        @Nullable PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
+        @Nullable ListGiVersionsResponse response) {
       return new ListGiVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGiVersionsPage> createPageAsync(
-        PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
+        @Nullable PageContext<ListGiVersionsRequest, ListGiVersionsResponse, GiVersion> context,
         ApiFuture<ListGiVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15688,7 +15339,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGiVersionsPage,
           ListGiVersionsFixedSizeCollection> {
 
-    private ListGiVersionsFixedSizeCollection(List<ListGiVersionsPage> pages, int collectionSize) {
+    private ListGiVersionsFixedSizeCollection(
+        @Nullable List<ListGiVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15698,7 +15350,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGiVersionsFixedSizeCollection createCollection(
-        List<ListGiVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListGiVersionsPage> pages, int collectionSize) {
       return new ListGiVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15735,8 +15387,9 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListMinorVersionsPage> {
 
     private ListMinorVersionsPage(
-        PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion> context,
-        ListMinorVersionsResponse response) {
+        @Nullable PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>
+            context,
+        @Nullable ListMinorVersionsResponse response) {
       super(context, response);
     }
 
@@ -15746,14 +15399,16 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListMinorVersionsPage createPage(
-        PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion> context,
-        ListMinorVersionsResponse response) {
+        @Nullable PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>
+            context,
+        @Nullable ListMinorVersionsResponse response) {
       return new ListMinorVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMinorVersionsPage> createPageAsync(
-        PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion> context,
+        @Nullable PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>
+            context,
         ApiFuture<ListMinorVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15768,7 +15423,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListMinorVersionsFixedSizeCollection> {
 
     private ListMinorVersionsFixedSizeCollection(
-        List<ListMinorVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListMinorVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15778,7 +15433,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListMinorVersionsFixedSizeCollection createCollection(
-        List<ListMinorVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListMinorVersionsPage> pages, int collectionSize) {
       return new ListMinorVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15815,8 +15470,9 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemShapesPage> {
 
     private ListDbSystemShapesPage(
-        PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape> context,
-        ListDbSystemShapesResponse response) {
+        @Nullable PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape>
+            context,
+        @Nullable ListDbSystemShapesResponse response) {
       super(context, response);
     }
 
@@ -15826,14 +15482,16 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemShapesPage createPage(
-        PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape> context,
-        ListDbSystemShapesResponse response) {
+        @Nullable PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape>
+            context,
+        @Nullable ListDbSystemShapesResponse response) {
       return new ListDbSystemShapesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbSystemShapesPage> createPageAsync(
-        PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape> context,
+        @Nullable PageContext<ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape>
+            context,
         ApiFuture<ListDbSystemShapesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15848,7 +15506,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemShapesFixedSizeCollection> {
 
     private ListDbSystemShapesFixedSizeCollection(
-        List<ListDbSystemShapesPage> pages, int collectionSize) {
+        @Nullable List<ListDbSystemShapesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15858,7 +15516,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemShapesFixedSizeCollection createCollection(
-        List<ListDbSystemShapesPage> pages, int collectionSize) {
+        @Nullable List<ListDbSystemShapesPage> pages, int collectionSize) {
       return new ListDbSystemShapesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15897,10 +15555,11 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabasesPage> {
 
     private ListAutonomousDatabasesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse, AutonomousDatabase>
             context,
-        ListAutonomousDatabasesResponse response) {
+        @Nullable ListAutonomousDatabasesResponse response) {
       super(context, response);
     }
 
@@ -15910,16 +15569,18 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabasesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse, AutonomousDatabase>
             context,
-        ListAutonomousDatabasesResponse response) {
+        @Nullable ListAutonomousDatabasesResponse response) {
       return new ListAutonomousDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAutonomousDatabasesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse, AutonomousDatabase>
             context,
         ApiFuture<ListAutonomousDatabasesResponse> futureResponse) {
@@ -15936,7 +15597,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabasesFixedSizeCollection> {
 
     private ListAutonomousDatabasesFixedSizeCollection(
-        List<ListAutonomousDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15946,7 +15607,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabasesFixedSizeCollection createCollection(
-        List<ListAutonomousDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabasesPage> pages, int collectionSize) {
       return new ListAutonomousDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15987,12 +15648,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDbVersionsPage> {
 
     private ListAutonomousDbVersionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDbVersionsRequest,
                 ListAutonomousDbVersionsResponse,
                 AutonomousDbVersion>
             context,
-        ListAutonomousDbVersionsResponse response) {
+        @Nullable ListAutonomousDbVersionsResponse response) {
       super(context, response);
     }
 
@@ -16002,18 +15664,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDbVersionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDbVersionsRequest,
                 ListAutonomousDbVersionsResponse,
                 AutonomousDbVersion>
             context,
-        ListAutonomousDbVersionsResponse response) {
+        @Nullable ListAutonomousDbVersionsResponse response) {
       return new ListAutonomousDbVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAutonomousDbVersionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDbVersionsRequest,
                 ListAutonomousDbVersionsResponse,
                 AutonomousDbVersion>
@@ -16032,7 +15696,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDbVersionsFixedSizeCollection> {
 
     private ListAutonomousDbVersionsFixedSizeCollection(
-        List<ListAutonomousDbVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDbVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16042,7 +15706,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDbVersionsFixedSizeCollection createCollection(
-        List<ListAutonomousDbVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDbVersionsPage> pages, int collectionSize) {
       return new ListAutonomousDbVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16085,12 +15749,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabaseCharacterSetsPage> {
 
     private ListAutonomousDatabaseCharacterSetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseCharacterSetsRequest,
                 ListAutonomousDatabaseCharacterSetsResponse,
                 AutonomousDatabaseCharacterSet>
             context,
-        ListAutonomousDatabaseCharacterSetsResponse response) {
+        @Nullable ListAutonomousDatabaseCharacterSetsResponse response) {
       super(context, response);
     }
 
@@ -16100,18 +15765,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabaseCharacterSetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseCharacterSetsRequest,
                 ListAutonomousDatabaseCharacterSetsResponse,
                 AutonomousDatabaseCharacterSet>
             context,
-        ListAutonomousDatabaseCharacterSetsResponse response) {
+        @Nullable ListAutonomousDatabaseCharacterSetsResponse response) {
       return new ListAutonomousDatabaseCharacterSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAutonomousDatabaseCharacterSetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseCharacterSetsRequest,
                 ListAutonomousDatabaseCharacterSetsResponse,
                 AutonomousDatabaseCharacterSet>
@@ -16130,7 +15797,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabaseCharacterSetsFixedSizeCollection> {
 
     private ListAutonomousDatabaseCharacterSetsFixedSizeCollection(
-        List<ListAutonomousDatabaseCharacterSetsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabaseCharacterSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16140,7 +15807,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabaseCharacterSetsFixedSizeCollection createCollection(
-        List<ListAutonomousDatabaseCharacterSetsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabaseCharacterSetsPage> pages, int collectionSize) {
       return new ListAutonomousDatabaseCharacterSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16182,12 +15849,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabaseBackupsPage> {
 
     private ListAutonomousDatabaseBackupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseBackupsRequest,
                 ListAutonomousDatabaseBackupsResponse,
                 AutonomousDatabaseBackup>
             context,
-        ListAutonomousDatabaseBackupsResponse response) {
+        @Nullable ListAutonomousDatabaseBackupsResponse response) {
       super(context, response);
     }
 
@@ -16197,18 +15865,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabaseBackupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseBackupsRequest,
                 ListAutonomousDatabaseBackupsResponse,
                 AutonomousDatabaseBackup>
             context,
-        ListAutonomousDatabaseBackupsResponse response) {
+        @Nullable ListAutonomousDatabaseBackupsResponse response) {
       return new ListAutonomousDatabaseBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAutonomousDatabaseBackupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAutonomousDatabaseBackupsRequest,
                 ListAutonomousDatabaseBackupsResponse,
                 AutonomousDatabaseBackup>
@@ -16227,7 +15897,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabaseBackupsFixedSizeCollection> {
 
     private ListAutonomousDatabaseBackupsFixedSizeCollection(
-        List<ListAutonomousDatabaseBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabaseBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16237,7 +15907,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListAutonomousDatabaseBackupsFixedSizeCollection createCollection(
-        List<ListAutonomousDatabaseBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListAutonomousDatabaseBackupsPage> pages, int collectionSize) {
       return new ListAutonomousDatabaseBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16271,8 +15941,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork, ListOdbNetworksPage> {
 
     private ListOdbNetworksPage(
-        PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
-        ListOdbNetworksResponse response) {
+        @Nullable PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
+        @Nullable ListOdbNetworksResponse response) {
       super(context, response);
     }
 
@@ -16282,14 +15952,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListOdbNetworksPage createPage(
-        PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
-        ListOdbNetworksResponse response) {
+        @Nullable PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
+        @Nullable ListOdbNetworksResponse response) {
       return new ListOdbNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOdbNetworksPage> createPageAsync(
-        PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
+        @Nullable PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> context,
         ApiFuture<ListOdbNetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -16304,7 +15974,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListOdbNetworksFixedSizeCollection> {
 
     private ListOdbNetworksFixedSizeCollection(
-        List<ListOdbNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListOdbNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16314,7 +15984,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListOdbNetworksFixedSizeCollection createCollection(
-        List<ListOdbNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListOdbNetworksPage> pages, int collectionSize) {
       return new ListOdbNetworksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16348,8 +16018,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet, ListOdbSubnetsPage> {
 
     private ListOdbSubnetsPage(
-        PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
-        ListOdbSubnetsResponse response) {
+        @Nullable PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
+        @Nullable ListOdbSubnetsResponse response) {
       super(context, response);
     }
 
@@ -16359,14 +16029,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListOdbSubnetsPage createPage(
-        PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
-        ListOdbSubnetsResponse response) {
+        @Nullable PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
+        @Nullable ListOdbSubnetsResponse response) {
       return new ListOdbSubnetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOdbSubnetsPage> createPageAsync(
-        PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
+        @Nullable PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> context,
         ApiFuture<ListOdbSubnetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -16380,7 +16050,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListOdbSubnetsPage,
           ListOdbSubnetsFixedSizeCollection> {
 
-    private ListOdbSubnetsFixedSizeCollection(List<ListOdbSubnetsPage> pages, int collectionSize) {
+    private ListOdbSubnetsFixedSizeCollection(
+        @Nullable List<ListOdbSubnetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16390,7 +16061,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListOdbSubnetsFixedSizeCollection createCollection(
-        List<ListOdbSubnetsPage> pages, int collectionSize) {
+        @Nullable List<ListOdbSubnetsPage> pages, int collectionSize) {
       return new ListOdbSubnetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16428,9 +16099,10 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListExadbVmClustersPage> {
 
     private ListExadbVmClustersPage(
-        PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
+        @Nullable
+            PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
             context,
-        ListExadbVmClustersResponse response) {
+        @Nullable ListExadbVmClustersResponse response) {
       super(context, response);
     }
 
@@ -16440,15 +16112,17 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListExadbVmClustersPage createPage(
-        PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
+        @Nullable
+            PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
             context,
-        ListExadbVmClustersResponse response) {
+        @Nullable ListExadbVmClustersResponse response) {
       return new ListExadbVmClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExadbVmClustersPage> createPageAsync(
-        PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
+        @Nullable
+            PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
             context,
         ApiFuture<ListExadbVmClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -16464,7 +16138,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListExadbVmClustersFixedSizeCollection> {
 
     private ListExadbVmClustersFixedSizeCollection(
-        List<ListExadbVmClustersPage> pages, int collectionSize) {
+        @Nullable List<ListExadbVmClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16474,7 +16148,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListExadbVmClustersFixedSizeCollection createCollection(
-        List<ListExadbVmClustersPage> pages, int collectionSize) {
+        @Nullable List<ListExadbVmClustersPage> pages, int collectionSize) {
       return new ListExadbVmClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16516,12 +16190,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListExascaleDbStorageVaultsPage> {
 
     private ListExascaleDbStorageVaultsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExascaleDbStorageVaultsRequest,
                 ListExascaleDbStorageVaultsResponse,
                 ExascaleDbStorageVault>
             context,
-        ListExascaleDbStorageVaultsResponse response) {
+        @Nullable ListExascaleDbStorageVaultsResponse response) {
       super(context, response);
     }
 
@@ -16531,18 +16206,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListExascaleDbStorageVaultsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExascaleDbStorageVaultsRequest,
                 ListExascaleDbStorageVaultsResponse,
                 ExascaleDbStorageVault>
             context,
-        ListExascaleDbStorageVaultsResponse response) {
+        @Nullable ListExascaleDbStorageVaultsResponse response) {
       return new ListExascaleDbStorageVaultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExascaleDbStorageVaultsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExascaleDbStorageVaultsRequest,
                 ListExascaleDbStorageVaultsResponse,
                 ExascaleDbStorageVault>
@@ -16561,7 +16238,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListExascaleDbStorageVaultsFixedSizeCollection> {
 
     private ListExascaleDbStorageVaultsFixedSizeCollection(
-        List<ListExascaleDbStorageVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListExascaleDbStorageVaultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16571,7 +16248,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListExascaleDbStorageVaultsFixedSizeCollection createCollection(
-        List<ListExascaleDbStorageVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListExascaleDbStorageVaultsPage> pages, int collectionSize) {
       return new ListExascaleDbStorageVaultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16613,12 +16290,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemInitialStorageSizesPage> {
 
     private ListDbSystemInitialStorageSizesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDbSystemInitialStorageSizesRequest,
                 ListDbSystemInitialStorageSizesResponse,
                 DbSystemInitialStorageSize>
             context,
-        ListDbSystemInitialStorageSizesResponse response) {
+        @Nullable ListDbSystemInitialStorageSizesResponse response) {
       super(context, response);
     }
 
@@ -16628,18 +16306,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemInitialStorageSizesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDbSystemInitialStorageSizesRequest,
                 ListDbSystemInitialStorageSizesResponse,
                 DbSystemInitialStorageSize>
             context,
-        ListDbSystemInitialStorageSizesResponse response) {
+        @Nullable ListDbSystemInitialStorageSizesResponse response) {
       return new ListDbSystemInitialStorageSizesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbSystemInitialStorageSizesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDbSystemInitialStorageSizesRequest,
                 ListDbSystemInitialStorageSizesResponse,
                 DbSystemInitialStorageSize>
@@ -16658,7 +16338,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemInitialStorageSizesFixedSizeCollection> {
 
     private ListDbSystemInitialStorageSizesFixedSizeCollection(
-        List<ListDbSystemInitialStorageSizesPage> pages, int collectionSize) {
+        @Nullable List<ListDbSystemInitialStorageSizesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16668,7 +16348,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemInitialStorageSizesFixedSizeCollection createCollection(
-        List<ListDbSystemInitialStorageSizesPage> pages, int collectionSize) {
+        @Nullable List<ListDbSystemInitialStorageSizesPage> pages, int collectionSize) {
       return new ListDbSystemInitialStorageSizesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16702,8 +16382,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage> {
 
     private ListDatabasesPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       super(context, response);
     }
 
@@ -16713,14 +16393,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesPage createPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       return new ListDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabasesPage> createPageAsync(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
         ApiFuture<ListDatabasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -16734,7 +16414,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
-    private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
+    private ListDatabasesFixedSizeCollection(
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16744,7 +16425,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesFixedSizeCollection createCollection(
-        List<ListDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       return new ListDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16783,10 +16464,11 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListPluggableDatabasesPage> {
 
     private ListPluggableDatabasesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPluggableDatabasesRequest, ListPluggableDatabasesResponse, PluggableDatabase>
             context,
-        ListPluggableDatabasesResponse response) {
+        @Nullable ListPluggableDatabasesResponse response) {
       super(context, response);
     }
 
@@ -16796,16 +16478,18 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListPluggableDatabasesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPluggableDatabasesRequest, ListPluggableDatabasesResponse, PluggableDatabase>
             context,
-        ListPluggableDatabasesResponse response) {
+        @Nullable ListPluggableDatabasesResponse response) {
       return new ListPluggableDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPluggableDatabasesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPluggableDatabasesRequest, ListPluggableDatabasesResponse, PluggableDatabase>
             context,
         ApiFuture<ListPluggableDatabasesResponse> futureResponse) {
@@ -16822,7 +16506,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListPluggableDatabasesFixedSizeCollection> {
 
     private ListPluggableDatabasesFixedSizeCollection(
-        List<ListPluggableDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListPluggableDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16832,7 +16516,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListPluggableDatabasesFixedSizeCollection createCollection(
-        List<ListPluggableDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListPluggableDatabasesPage> pages, int collectionSize) {
       return new ListPluggableDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16866,8 +16550,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemsRequest, ListDbSystemsResponse, DbSystem, ListDbSystemsPage> {
 
     private ListDbSystemsPage(
-        PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
-        ListDbSystemsResponse response) {
+        @Nullable PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
+        @Nullable ListDbSystemsResponse response) {
       super(context, response);
     }
 
@@ -16877,14 +16561,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemsPage createPage(
-        PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
-        ListDbSystemsResponse response) {
+        @Nullable PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
+        @Nullable ListDbSystemsResponse response) {
       return new ListDbSystemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbSystemsPage> createPageAsync(
-        PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
+        @Nullable PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> context,
         ApiFuture<ListDbSystemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -16898,7 +16582,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemsPage,
           ListDbSystemsFixedSizeCollection> {
 
-    private ListDbSystemsFixedSizeCollection(List<ListDbSystemsPage> pages, int collectionSize) {
+    private ListDbSystemsFixedSizeCollection(
+        @Nullable List<ListDbSystemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -16908,7 +16593,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbSystemsFixedSizeCollection createCollection(
-        List<ListDbSystemsPage> pages, int collectionSize) {
+        @Nullable List<ListDbSystemsPage> pages, int collectionSize) {
       return new ListDbSystemsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -16949,12 +16634,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentsPage> {
 
     private ListGoldengateDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentsRequest,
                 ListGoldengateDeploymentsResponse,
                 GoldengateDeployment>
             context,
-        ListGoldengateDeploymentsResponse response) {
+        @Nullable ListGoldengateDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -16964,18 +16650,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentsRequest,
                 ListGoldengateDeploymentsResponse,
                 GoldengateDeployment>
             context,
-        ListGoldengateDeploymentsResponse response) {
+        @Nullable ListGoldengateDeploymentsResponse response) {
       return new ListGoldengateDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentsRequest,
                 ListGoldengateDeploymentsResponse,
                 GoldengateDeployment>
@@ -16994,7 +16682,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentsFixedSizeCollection> {
 
     private ListGoldengateDeploymentsFixedSizeCollection(
-        List<ListGoldengateDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17004,7 +16692,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentsFixedSizeCollection createCollection(
-        List<ListGoldengateDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentsPage> pages, int collectionSize) {
       return new ListGoldengateDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17045,12 +16733,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionsPage> {
 
     private ListGoldengateConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionsRequest,
                 ListGoldengateConnectionsResponse,
                 GoldengateConnection>
             context,
-        ListGoldengateConnectionsResponse response) {
+        @Nullable ListGoldengateConnectionsResponse response) {
       super(context, response);
     }
 
@@ -17060,18 +16749,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionsRequest,
                 ListGoldengateConnectionsResponse,
                 GoldengateConnection>
             context,
-        ListGoldengateConnectionsResponse response) {
+        @Nullable ListGoldengateConnectionsResponse response) {
       return new ListGoldengateConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionsRequest,
                 ListGoldengateConnectionsResponse,
                 GoldengateConnection>
@@ -17090,7 +16781,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionsFixedSizeCollection> {
 
     private ListGoldengateConnectionsFixedSizeCollection(
-        List<ListGoldengateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17100,7 +16791,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionsFixedSizeCollection createCollection(
-        List<ListGoldengateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionsPage> pages, int collectionSize) {
       return new ListGoldengateConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17143,12 +16834,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentVersionsPage> {
 
     private ListGoldengateDeploymentVersionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentVersionsRequest,
                 ListGoldengateDeploymentVersionsResponse,
                 GoldengateDeploymentVersion>
             context,
-        ListGoldengateDeploymentVersionsResponse response) {
+        @Nullable ListGoldengateDeploymentVersionsResponse response) {
       super(context, response);
     }
 
@@ -17158,18 +16850,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentVersionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentVersionsRequest,
                 ListGoldengateDeploymentVersionsResponse,
                 GoldengateDeploymentVersion>
             context,
-        ListGoldengateDeploymentVersionsResponse response) {
+        @Nullable ListGoldengateDeploymentVersionsResponse response) {
       return new ListGoldengateDeploymentVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateDeploymentVersionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentVersionsRequest,
                 ListGoldengateDeploymentVersionsResponse,
                 GoldengateDeploymentVersion>
@@ -17188,7 +16882,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentVersionsFixedSizeCollection> {
 
     private ListGoldengateDeploymentVersionsFixedSizeCollection(
-        List<ListGoldengateDeploymentVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17198,7 +16892,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentVersionsFixedSizeCollection createCollection(
-        List<ListGoldengateDeploymentVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentVersionsPage> pages, int collectionSize) {
       return new ListGoldengateDeploymentVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17240,12 +16934,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentTypesPage> {
 
     private ListGoldengateDeploymentTypesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentTypesRequest,
                 ListGoldengateDeploymentTypesResponse,
                 GoldengateDeploymentType>
             context,
-        ListGoldengateDeploymentTypesResponse response) {
+        @Nullable ListGoldengateDeploymentTypesResponse response) {
       super(context, response);
     }
 
@@ -17255,18 +16950,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentTypesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentTypesRequest,
                 ListGoldengateDeploymentTypesResponse,
                 GoldengateDeploymentType>
             context,
-        ListGoldengateDeploymentTypesResponse response) {
+        @Nullable ListGoldengateDeploymentTypesResponse response) {
       return new ListGoldengateDeploymentTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateDeploymentTypesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentTypesRequest,
                 ListGoldengateDeploymentTypesResponse,
                 GoldengateDeploymentType>
@@ -17285,7 +16982,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentTypesFixedSizeCollection> {
 
     private ListGoldengateDeploymentTypesFixedSizeCollection(
-        List<ListGoldengateDeploymentTypesPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17295,7 +16992,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentTypesFixedSizeCollection createCollection(
-        List<ListGoldengateDeploymentTypesPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentTypesPage> pages, int collectionSize) {
       return new ListGoldengateDeploymentTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17338,12 +17035,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentEnvironmentsPage> {
 
     private ListGoldengateDeploymentEnvironmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentEnvironmentsRequest,
                 ListGoldengateDeploymentEnvironmentsResponse,
                 GoldengateDeploymentEnvironment>
             context,
-        ListGoldengateDeploymentEnvironmentsResponse response) {
+        @Nullable ListGoldengateDeploymentEnvironmentsResponse response) {
       super(context, response);
     }
 
@@ -17353,18 +17051,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentEnvironmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentEnvironmentsRequest,
                 ListGoldengateDeploymentEnvironmentsResponse,
                 GoldengateDeploymentEnvironment>
             context,
-        ListGoldengateDeploymentEnvironmentsResponse response) {
+        @Nullable ListGoldengateDeploymentEnvironmentsResponse response) {
       return new ListGoldengateDeploymentEnvironmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateDeploymentEnvironmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateDeploymentEnvironmentsRequest,
                 ListGoldengateDeploymentEnvironmentsResponse,
                 GoldengateDeploymentEnvironment>
@@ -17383,7 +17083,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateDeploymentEnvironmentsFixedSizeCollection> {
 
     private ListGoldengateDeploymentEnvironmentsFixedSizeCollection(
-        List<ListGoldengateDeploymentEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentEnvironmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17393,7 +17093,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateDeploymentEnvironmentsFixedSizeCollection createCollection(
-        List<ListGoldengateDeploymentEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateDeploymentEnvironmentsPage> pages, int collectionSize) {
       return new ListGoldengateDeploymentEnvironmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17435,12 +17135,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionTypesPage> {
 
     private ListGoldengateConnectionTypesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionTypesRequest,
                 ListGoldengateConnectionTypesResponse,
                 GoldengateConnectionType>
             context,
-        ListGoldengateConnectionTypesResponse response) {
+        @Nullable ListGoldengateConnectionTypesResponse response) {
       super(context, response);
     }
 
@@ -17450,18 +17151,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionTypesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionTypesRequest,
                 ListGoldengateConnectionTypesResponse,
                 GoldengateConnectionType>
             context,
-        ListGoldengateConnectionTypesResponse response) {
+        @Nullable ListGoldengateConnectionTypesResponse response) {
       return new ListGoldengateConnectionTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateConnectionTypesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionTypesRequest,
                 ListGoldengateConnectionTypesResponse,
                 GoldengateConnectionType>
@@ -17480,7 +17183,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionTypesFixedSizeCollection> {
 
     private ListGoldengateConnectionTypesFixedSizeCollection(
-        List<ListGoldengateConnectionTypesPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17490,7 +17193,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionTypesFixedSizeCollection createCollection(
-        List<ListGoldengateConnectionTypesPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionTypesPage> pages, int collectionSize) {
       return new ListGoldengateConnectionTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17524,8 +17227,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbVersionsRequest, ListDbVersionsResponse, DbVersion, ListDbVersionsPage> {
 
     private ListDbVersionsPage(
-        PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
-        ListDbVersionsResponse response) {
+        @Nullable PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
+        @Nullable ListDbVersionsResponse response) {
       super(context, response);
     }
 
@@ -17535,14 +17238,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbVersionsPage createPage(
-        PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
-        ListDbVersionsResponse response) {
+        @Nullable PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
+        @Nullable ListDbVersionsResponse response) {
       return new ListDbVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDbVersionsPage> createPageAsync(
-        PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
+        @Nullable PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> context,
         ApiFuture<ListDbVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -17556,7 +17259,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbVersionsPage,
           ListDbVersionsFixedSizeCollection> {
 
-    private ListDbVersionsFixedSizeCollection(List<ListDbVersionsPage> pages, int collectionSize) {
+    private ListDbVersionsFixedSizeCollection(
+        @Nullable List<ListDbVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17566,7 +17270,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDbVersionsFixedSizeCollection createCollection(
-        List<ListDbVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListDbVersionsPage> pages, int collectionSize) {
       return new ListDbVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17607,12 +17311,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDatabaseCharacterSetsPage> {
 
     private ListDatabaseCharacterSetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatabaseCharacterSetsRequest,
                 ListDatabaseCharacterSetsResponse,
                 DatabaseCharacterSet>
             context,
-        ListDatabaseCharacterSetsResponse response) {
+        @Nullable ListDatabaseCharacterSetsResponse response) {
       super(context, response);
     }
 
@@ -17622,18 +17327,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseCharacterSetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatabaseCharacterSetsRequest,
                 ListDatabaseCharacterSetsResponse,
                 DatabaseCharacterSet>
             context,
-        ListDatabaseCharacterSetsResponse response) {
+        @Nullable ListDatabaseCharacterSetsResponse response) {
       return new ListDatabaseCharacterSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabaseCharacterSetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDatabaseCharacterSetsRequest,
                 ListDatabaseCharacterSetsResponse,
                 DatabaseCharacterSet>
@@ -17652,7 +17359,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDatabaseCharacterSetsFixedSizeCollection> {
 
     private ListDatabaseCharacterSetsFixedSizeCollection(
-        List<ListDatabaseCharacterSetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseCharacterSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17662,7 +17369,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseCharacterSetsFixedSizeCollection createCollection(
-        List<ListDatabaseCharacterSetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseCharacterSetsPage> pages, int collectionSize) {
       return new ListDatabaseCharacterSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17705,12 +17412,13 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionAssignmentsPage> {
 
     private ListGoldengateConnectionAssignmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionAssignmentsRequest,
                 ListGoldengateConnectionAssignmentsResponse,
                 GoldengateConnectionAssignment>
             context,
-        ListGoldengateConnectionAssignmentsResponse response) {
+        @Nullable ListGoldengateConnectionAssignmentsResponse response) {
       super(context, response);
     }
 
@@ -17720,18 +17428,20 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionAssignmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionAssignmentsRequest,
                 ListGoldengateConnectionAssignmentsResponse,
                 GoldengateConnectionAssignment>
             context,
-        ListGoldengateConnectionAssignmentsResponse response) {
+        @Nullable ListGoldengateConnectionAssignmentsResponse response) {
       return new ListGoldengateConnectionAssignmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoldengateConnectionAssignmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGoldengateConnectionAssignmentsRequest,
                 ListGoldengateConnectionAssignmentsResponse,
                 GoldengateConnectionAssignment>
@@ -17750,7 +17460,7 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListGoldengateConnectionAssignmentsFixedSizeCollection> {
 
     private ListGoldengateConnectionAssignmentsFixedSizeCollection(
-        List<ListGoldengateConnectionAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionAssignmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17760,7 +17470,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListGoldengateConnectionAssignmentsFixedSizeCollection createCollection(
-        List<ListGoldengateConnectionAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListGoldengateConnectionAssignmentsPage> pages, int collectionSize) {
       return new ListGoldengateConnectionAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -17794,8 +17504,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -17805,14 +17515,14 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -17826,7 +17536,8 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -17836,7 +17547,7 @@ public class OracleDatabaseClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

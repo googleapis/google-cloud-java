@@ -57,6 +57,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -95,21 +96,13 @@ import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GoldengateConnection;
 import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
-import com.google.cloud.oracledatabase.v1.GoldengateConnectionType;
 import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentType;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -188,6 +181,8 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -195,14 +190,16 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class OracleDatabaseStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -249,6 +246,21 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       deleteCloudExadataInfrastructureCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteCloudExadataInfrastructureCallable()");
+  }
+
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureOperationCallable()");
+  }
+
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureCallable()");
   }
 
   public UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>
@@ -844,12 +856,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: deleteGoldengateConnectionCallable()");
   }
 
-  public UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentVersionCallable()");
-  }
-
   public UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable() {
@@ -862,12 +868,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listGoldengateDeploymentVersionsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listGoldengateDeploymentVersionsCallable()");
-  }
-
-  public UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentTypeCallable()");
   }
 
   public UnaryCallable<
@@ -883,12 +883,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: listGoldengateDeploymentTypesCallable()");
   }
 
-  public UnaryCallable<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentEnvironmentCallable()");
-  }
-
   public UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest,
           ListGoldengateDeploymentEnvironmentsPagedResponse>
@@ -902,12 +896,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listGoldengateDeploymentEnvironmentsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listGoldengateDeploymentEnvironmentsCallable()");
-  }
-
-  public UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateConnectionTypeCallable()");
   }
 
   public UnaryCallable<

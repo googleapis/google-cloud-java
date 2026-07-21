@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RoomName implements ResourceName {
   private static final PathTemplate ROOM = PathTemplate.createWithoutUrlEncoding("rooms/{room}");
@@ -62,7 +65,7 @@ public class RoomName implements ResourceName {
     return newBuilder().setRoom(room).build().toString();
   }
 
-  public static RoomName parse(String formattedString) {
+  public static @Nullable RoomName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -79,7 +82,7 @@ public class RoomName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RoomName> values) {
+  public static List<String> toStringList(List<@Nullable RoomName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RoomName value : values) {
       if (value == null) {
@@ -121,7 +124,7 @@ public class RoomName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

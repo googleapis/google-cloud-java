@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrantName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_ENTITLEMENT_GRANT =
@@ -216,7 +219,7 @@ public class GrantName implements ResourceName {
         .toString();
   }
 
-  public static GrantName parse(String formattedString) {
+  public static @Nullable GrantName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -253,7 +256,7 @@ public class GrantName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GrantName> values) {
+  public static List<String> toStringList(List<@Nullable GrantName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GrantName value : values) {
       if (value == null) {
@@ -312,7 +315,7 @@ public class GrantName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

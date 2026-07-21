@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RecommenderName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_RECOMMENDER =
@@ -244,7 +247,7 @@ public class RecommenderName implements ResourceName {
         .toString();
   }
 
-  public static RecommenderName parse(String formattedString) {
+  public static @Nullable RecommenderName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -276,7 +279,7 @@ public class RecommenderName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RecommenderName> values) {
+  public static List<String> toStringList(List<@Nullable RecommenderName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RecommenderName value : values) {
       if (value == null) {
@@ -336,7 +339,7 @@ public class RecommenderName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

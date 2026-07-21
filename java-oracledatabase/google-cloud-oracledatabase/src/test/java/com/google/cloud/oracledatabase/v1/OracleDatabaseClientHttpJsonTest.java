@@ -572,6 +572,134 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
+  public void configureExascaleCloudExadataInfrastructureTest() throws Exception {
+    CloudExadataInfrastructure expectedResponse =
+        CloudExadataInfrastructure.newBuilder()
+            .setName(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setEntitlementId("entitlementId-1302274264")
+            .setProperties(CloudExadataInfrastructureProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("configureExascaleCloudExadataInfrastructureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CloudExadataInfrastructureName name =
+        CloudExadataInfrastructureName.of(
+            "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+    int totalStorageSizeGb = 1493200154;
+
+    CloudExadataInfrastructure actualResponse =
+        client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CloudExadataInfrastructureName name =
+          CloudExadataInfrastructureName.of(
+              "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+      int totalStorageSizeGb = 1493200154;
+      client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureTest2() throws Exception {
+    CloudExadataInfrastructure expectedResponse =
+        CloudExadataInfrastructure.newBuilder()
+            .setName(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setEntitlementId("entitlementId-1302274264")
+            .setProperties(CloudExadataInfrastructureProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("configureExascaleCloudExadataInfrastructureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+    int totalStorageSizeGb = 1493200154;
+
+    CloudExadataInfrastructure actualResponse =
+        client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+      int totalStorageSizeGb = 1493200154;
+      client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listCloudVmClustersTest() throws Exception {
     CloudVmCluster responsesElement = CloudVmCluster.newBuilder().build();
     ListCloudVmClustersResponse expectedResponse =
@@ -697,6 +825,10 @@ public class OracleDatabaseClientHttpJsonTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -764,6 +896,10 @@ public class OracleDatabaseClientHttpJsonTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -831,6 +967,10 @@ public class OracleDatabaseClientHttpJsonTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -906,6 +1046,10 @@ public class OracleDatabaseClientHttpJsonTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5500,6 +5644,10 @@ public class OracleDatabaseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5555,6 +5703,10 @@ public class OracleDatabaseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5610,6 +5762,10 @@ public class OracleDatabaseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5679,6 +5835,10 @@ public class OracleDatabaseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -7947,110 +8107,6 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
-  public void getGoldengateDeploymentVersionTest() throws Exception {
-    GoldengateDeploymentVersion expectedResponse =
-        GoldengateDeploymentVersion.newBuilder()
-            .setName(
-                GoldengateDeploymentVersionName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
-                    .toString())
-            .setOcid("ocid3405295")
-            .setProperties(GoldengateDeploymentVersionProperties.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    GoldengateDeploymentVersionName name =
-        GoldengateDeploymentVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]");
-
-    GoldengateDeploymentVersion actualResponse = client.getGoldengateDeploymentVersion(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentVersionExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      GoldengateDeploymentVersionName name =
-          GoldengateDeploymentVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]");
-      client.getGoldengateDeploymentVersion(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateDeploymentVersionTest2() throws Exception {
-    GoldengateDeploymentVersion expectedResponse =
-        GoldengateDeploymentVersion.newBuilder()
-            .setName(
-                GoldengateDeploymentVersionName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
-                    .toString())
-            .setOcid("ocid3405295")
-            .setProperties(GoldengateDeploymentVersionProperties.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-820/locations/location-820/goldengateDeploymentVersions/goldengateDeploymentVersion-820";
-
-    GoldengateDeploymentVersion actualResponse = client.getGoldengateDeploymentVersion(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentVersionExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-820/locations/location-820/goldengateDeploymentVersions/goldengateDeploymentVersion-820";
-      client.getGoldengateDeploymentVersion(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void listGoldengateDeploymentVersionsTest() throws Exception {
     GoldengateDeploymentVersion responsesElement = GoldengateDeploymentVersion.newBuilder().build();
     ListGoldengateDeploymentVersionsResponse expectedResponse =
@@ -8150,121 +8206,6 @@ public class OracleDatabaseClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listGoldengateDeploymentVersions(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateDeploymentTypeTest() throws Exception {
-    GoldengateDeploymentType expectedResponse =
-        GoldengateDeploymentType.newBuilder()
-            .setName(
-                GoldengateDeploymentTypeName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
-                    .toString())
-            .addAllConnectionTypes(new ArrayList<String>())
-            .setDisplayName("displayName1714148973")
-            .setOggVersion("oggVersion-685279159")
-            .addAllSourceTechnologies(new ArrayList<String>())
-            .addAllSupportedCapabilities(new ArrayList<String>())
-            .setSupportedTechnologiesUrl("supportedTechnologiesUrl-159890473")
-            .addAllTargetTechnologies(new ArrayList<String>())
-            .setDefaultUsername("defaultUsername1732375095")
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    GoldengateDeploymentTypeName name =
-        GoldengateDeploymentTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]");
-
-    GoldengateDeploymentType actualResponse = client.getGoldengateDeploymentType(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentTypeExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      GoldengateDeploymentTypeName name =
-          GoldengateDeploymentTypeName.of(
-              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]");
-      client.getGoldengateDeploymentType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateDeploymentTypeTest2() throws Exception {
-    GoldengateDeploymentType expectedResponse =
-        GoldengateDeploymentType.newBuilder()
-            .setName(
-                GoldengateDeploymentTypeName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
-                    .toString())
-            .addAllConnectionTypes(new ArrayList<String>())
-            .setDisplayName("displayName1714148973")
-            .setOggVersion("oggVersion-685279159")
-            .addAllSourceTechnologies(new ArrayList<String>())
-            .addAllSupportedCapabilities(new ArrayList<String>())
-            .setSupportedTechnologiesUrl("supportedTechnologiesUrl-159890473")
-            .addAllTargetTechnologies(new ArrayList<String>())
-            .setDefaultUsername("defaultUsername1732375095")
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-4950/locations/location-4950/goldengateDeploymentTypes/goldengateDeploymentType-4950";
-
-    GoldengateDeploymentType actualResponse = client.getGoldengateDeploymentType(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentTypeExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-4950/locations/location-4950/goldengateDeploymentTypes/goldengateDeploymentType-4950";
-      client.getGoldengateDeploymentType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -8376,124 +8317,6 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
-  public void getGoldengateDeploymentEnvironmentTest() throws Exception {
-    GoldengateDeploymentEnvironment expectedResponse =
-        GoldengateDeploymentEnvironment.newBuilder()
-            .setName(
-                GoldengateDeploymentEnvironmentName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
-                    .toString())
-            .setDisplayName("displayName1714148973")
-            .setDefaultCpuCoreCount(731109668)
-            .setAutoScalingEnabled(true)
-            .setMaxCpuCoreCount(1499430817)
-            .setMemoryGbPerCpuCore(-1825740194)
-            .setMinCpuCoreCount(251380979)
-            .setNetworkBandwidthGbpsPerCpuCore(-1374535526)
-            .setStorageUsageLimitGbPerCpuCore(-1737003722)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    GoldengateDeploymentEnvironmentName name =
-        GoldengateDeploymentEnvironmentName.of(
-            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]");
-
-    GoldengateDeploymentEnvironment actualResponse =
-        client.getGoldengateDeploymentEnvironment(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentEnvironmentExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      GoldengateDeploymentEnvironmentName name =
-          GoldengateDeploymentEnvironmentName.of(
-              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]");
-      client.getGoldengateDeploymentEnvironment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateDeploymentEnvironmentTest2() throws Exception {
-    GoldengateDeploymentEnvironment expectedResponse =
-        GoldengateDeploymentEnvironment.newBuilder()
-            .setName(
-                GoldengateDeploymentEnvironmentName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
-                    .toString())
-            .setDisplayName("displayName1714148973")
-            .setDefaultCpuCoreCount(731109668)
-            .setAutoScalingEnabled(true)
-            .setMaxCpuCoreCount(1499430817)
-            .setMemoryGbPerCpuCore(-1825740194)
-            .setMinCpuCoreCount(251380979)
-            .setNetworkBandwidthGbpsPerCpuCore(-1374535526)
-            .setStorageUsageLimitGbPerCpuCore(-1737003722)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-1463/locations/location-1463/goldengateDeploymentEnvironments/goldengateDeploymentEnvironment-1463";
-
-    GoldengateDeploymentEnvironment actualResponse =
-        client.getGoldengateDeploymentEnvironment(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateDeploymentEnvironmentExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-1463/locations/location-1463/goldengateDeploymentEnvironments/goldengateDeploymentEnvironment-1463";
-      client.getGoldengateDeploymentEnvironment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void listGoldengateDeploymentEnvironmentsTest() throws Exception {
     GoldengateDeploymentEnvironment responsesElement =
         GoldengateDeploymentEnvironment.newBuilder().build();
@@ -8595,107 +8418,6 @@ public class OracleDatabaseClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listGoldengateDeploymentEnvironments(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateConnectionTypeTest() throws Exception {
-    GoldengateConnectionType expectedResponse =
-        GoldengateConnectionType.newBuilder()
-            .setName(
-                GoldengateConnectionTypeName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
-                    .toString())
-            .addAllTechnologyTypes(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    GoldengateConnectionTypeName name =
-        GoldengateConnectionTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]");
-
-    GoldengateConnectionType actualResponse = client.getGoldengateConnectionType(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateConnectionTypeExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      GoldengateConnectionTypeName name =
-          GoldengateConnectionTypeName.of(
-              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]");
-      client.getGoldengateConnectionType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getGoldengateConnectionTypeTest2() throws Exception {
-    GoldengateConnectionType expectedResponse =
-        GoldengateConnectionType.newBuilder()
-            .setName(
-                GoldengateConnectionTypeName.of(
-                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
-                    .toString())
-            .addAllTechnologyTypes(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name =
-        "projects/project-8771/locations/location-8771/goldengateConnectionTypes/goldengateConnectionType-8771";
-
-    GoldengateConnectionType actualResponse = client.getGoldengateConnectionType(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getGoldengateConnectionTypeExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name =
-          "projects/project-8771/locations/location-8771/goldengateConnectionTypes/goldengateConnectionType-8771";
-      client.getGoldengateConnectionType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

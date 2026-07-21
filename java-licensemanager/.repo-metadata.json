@@ -5,12 +5,11 @@
   "api_description": "License Manager is a tool to manage and track third-party licenses on Google Cloud.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-licensemanager",
   "distribution_name": "com.google.cloud:google-cloud-licensemanager",
   "api_id": "licensemanager.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

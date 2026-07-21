@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -316,9 +318,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IndexServiceClient implements BackgroundResource {
-  private final IndexServiceSettings settings;
+  private final @Nullable IndexServiceSettings settings;
   private final IndexServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -360,7 +363,7 @@ public class IndexServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final IndexServiceSettings getSettings() {
+  public final @Nullable IndexServiceSettings getSettings() {
     return settings;
   }
 
@@ -401,7 +404,7 @@ public class IndexServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, CreateIndexOperationMetadata> createIndexAsync(
-      LocationName parent, Index index) {
+      @Nullable LocationName parent, Index index) {
     CreateIndexRequest request =
         CreateIndexRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -551,7 +554,7 @@ public class IndexServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Index getIndex(IndexName name) {
+  public final Index getIndex(@Nullable IndexName name) {
     GetIndexRequest request =
         GetIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndex(request);
@@ -663,7 +666,7 @@ public class IndexServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexesPagedResponse listIndexes(LocationName parent) {
+  public final ListIndexesPagedResponse listIndexes(@Nullable LocationName parent) {
     ListIndexesRequest request =
         ListIndexesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -950,7 +953,8 @@ public class IndexServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteOperationMetadata> deleteIndexAsync(IndexName name) {
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteIndexAsync(
+      @Nullable IndexName name) {
     DeleteIndexRequest request =
         DeleteIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteIndexAsync(request);
@@ -1612,8 +1616,8 @@ public class IndexServiceClient implements BackgroundResource {
       extends AbstractPage<ListIndexesRequest, ListIndexesResponse, Index, ListIndexesPage> {
 
     private ListIndexesPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       super(context, response);
     }
 
@@ -1623,14 +1627,14 @@ public class IndexServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexesPage createPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       return new ListIndexesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexesPage> createPageAsync(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
         ApiFuture<ListIndexesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1644,7 +1648,8 @@ public class IndexServiceClient implements BackgroundResource {
           ListIndexesPage,
           ListIndexesFixedSizeCollection> {
 
-    private ListIndexesFixedSizeCollection(List<ListIndexesPage> pages, int collectionSize) {
+    private ListIndexesFixedSizeCollection(
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1654,7 +1659,7 @@ public class IndexServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexesFixedSizeCollection createCollection(
-        List<ListIndexesPage> pages, int collectionSize) {
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       return new ListIndexesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1688,8 +1693,8 @@ public class IndexServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1699,14 +1704,14 @@ public class IndexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1720,7 +1725,8 @@ public class IndexServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1730,7 +1736,7 @@ public class IndexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

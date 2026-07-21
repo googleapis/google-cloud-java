@@ -5,12 +5,11 @@
   "api_description": "enables controlling access to your organization's data by Google personnel.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-accessapproval/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-accessapproval",
   "distribution_name": "com.google.cloud:google-cloud-accessapproval",
   "api_id": "accessapproval.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

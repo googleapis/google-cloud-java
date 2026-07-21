@@ -24,8 +24,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class KeyRingName extends KeyName {
   private static final PathTemplate PROJECT_LOCATION_KEY_RING =
@@ -82,7 +85,7 @@ public class KeyRingName extends KeyName {
         .toString();
   }
 
-  public static KeyRingName parse(String formattedString) {
+  public static @Nullable KeyRingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -100,7 +103,7 @@ public class KeyRingName extends KeyName {
     return list;
   }
 
-  public static List<String> toStringList(List<KeyRingName> values) {
+  public static List<String> toStringList(List<@Nullable KeyRingName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (KeyRingName value : values) {
       if (value == null) {
@@ -149,7 +152,7 @@ public class KeyRingName extends KeyName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -238,10 +240,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CatalogServiceClient implements BackgroundResource {
-  private final CatalogServiceSettings settings;
+  private final @Nullable CatalogServiceSettings settings;
   private final CatalogServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -289,7 +292,7 @@ public class CatalogServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CatalogServiceSettings getSettings() {
+  public final @Nullable CatalogServiceSettings getSettings() {
     return settings;
   }
 
@@ -338,7 +341,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * @param catalogItem Required. The catalog item to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CatalogItem createCatalogItem(CatalogName parent, CatalogItem catalogItem) {
+  public final CatalogItem createCatalogItem(
+      @Nullable CatalogName parent, CatalogItem catalogItem) {
     CreateCatalogItemRequest request =
         CreateCatalogItemRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -458,7 +462,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CatalogItem getCatalogItem(CatalogItemPathName name) {
+  public final CatalogItem getCatalogItem(@Nullable CatalogItemPathName name) {
     GetCatalogItemRequest request =
         GetCatalogItemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCatalogItem(request);
@@ -582,7 +586,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * @param filter Optional. A filter to apply on the list results.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCatalogItemsPagedResponse listCatalogItems(CatalogName parent, String filter) {
+  public final ListCatalogItemsPagedResponse listCatalogItems(
+      @Nullable CatalogName parent, String filter) {
     ListCatalogItemsRequest request =
         ListCatalogItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -762,7 +767,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CatalogItem updateCatalogItem(
-      CatalogItemPathName name, CatalogItem catalogItem, FieldMask updateMask) {
+      @Nullable CatalogItemPathName name, CatalogItem catalogItem, FieldMask updateMask) {
     UpdateCatalogItemRequest request =
         UpdateCatalogItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -902,7 +907,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCatalogItem(CatalogItemPathName name) {
+  public final void deleteCatalogItem(@Nullable CatalogItemPathName name) {
     DeleteCatalogItemRequest request =
         DeleteCatalogItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1039,7 +1044,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
-      CatalogName parent,
+      @Nullable CatalogName parent,
       String requestId,
       InputConfig inputConfig,
       ImportErrorsConfig errorsConfig) {
@@ -1270,8 +1275,9 @@ public class CatalogServiceClient implements BackgroundResource {
           ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem, ListCatalogItemsPage> {
 
     private ListCatalogItemsPage(
-        PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem> context,
-        ListCatalogItemsResponse response) {
+        @Nullable PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
+            context,
+        @Nullable ListCatalogItemsResponse response) {
       super(context, response);
     }
 
@@ -1281,14 +1287,16 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogItemsPage createPage(
-        PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem> context,
-        ListCatalogItemsResponse response) {
+        @Nullable PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
+            context,
+        @Nullable ListCatalogItemsResponse response) {
       return new ListCatalogItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCatalogItemsPage> createPageAsync(
-        PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem> context,
+        @Nullable PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
+            context,
         ApiFuture<ListCatalogItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1303,7 +1311,7 @@ public class CatalogServiceClient implements BackgroundResource {
           ListCatalogItemsFixedSizeCollection> {
 
     private ListCatalogItemsFixedSizeCollection(
-        List<ListCatalogItemsPage> pages, int collectionSize) {
+        @Nullable List<ListCatalogItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1313,7 +1321,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogItemsFixedSizeCollection createCollection(
-        List<ListCatalogItemsPage> pages, int collectionSize) {
+        @Nullable List<ListCatalogItemsPage> pages, int collectionSize) {
       return new ListCatalogItemsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.grpc.LoadBalancerRegistry;
 import io.grpc.internal.PickFirstLoadBalancerProvider;
 import io.opentelemetry.api.OpenTelemetry;
@@ -56,9 +57,6 @@ public class BigQueryDriver implements Driver {
 
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryDriver.class.getName());
-  // TODO: update this when JDBC goes GA
-  private static final int JDBC_MAJOR_VERSION = 0;
-  private static final int JDBC_MINOR_VERSION = 1;
   static BigQueryDriver registeredBigqueryJdbcDriver;
 
   static {
@@ -262,13 +260,13 @@ public class BigQueryDriver implements Driver {
   @Override
   public int getMajorVersion() {
     LOG.finest("++enter++");
-    return JDBC_MAJOR_VERSION;
+    return BigQueryJdbcVersionUtility.getDriverMajorVersion();
   }
 
   @Override
   public int getMinorVersion() {
     LOG.finest("++enter++");
-    return JDBC_MINOR_VERSION;
+    return BigQueryJdbcVersionUtility.getDriverMinorVersion();
   }
 
   @Override

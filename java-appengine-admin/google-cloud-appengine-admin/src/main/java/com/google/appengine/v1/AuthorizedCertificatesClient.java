@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,9 +201,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AuthorizedCertificatesClient implements BackgroundResource {
-  private final AuthorizedCertificatesSettings settings;
+  private final @Nullable AuthorizedCertificatesSettings settings;
   private final AuthorizedCertificatesStub stub;
 
   /** Constructs an instance of AuthorizedCertificatesClient with default settings. */
@@ -242,7 +245,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AuthorizedCertificatesSettings getSettings() {
+  public final @Nullable AuthorizedCertificatesSettings getSettings() {
     return settings;
   }
 
@@ -684,12 +687,13 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
           ListAuthorizedCertificatesPage> {
 
     private ListAuthorizedCertificatesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizedCertificatesRequest,
                 ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
-        ListAuthorizedCertificatesResponse response) {
+        @Nullable ListAuthorizedCertificatesResponse response) {
       super(context, response);
     }
 
@@ -699,18 +703,20 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizedCertificatesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizedCertificatesRequest,
                 ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
-        ListAuthorizedCertificatesResponse response) {
+        @Nullable ListAuthorizedCertificatesResponse response) {
       return new ListAuthorizedCertificatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAuthorizedCertificatesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAuthorizedCertificatesRequest,
                 ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
@@ -729,7 +735,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
           ListAuthorizedCertificatesFixedSizeCollection> {
 
     private ListAuthorizedCertificatesFixedSizeCollection(
-        List<ListAuthorizedCertificatesPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizedCertificatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -739,7 +745,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
 
     @Override
     protected ListAuthorizedCertificatesFixedSizeCollection createCollection(
-        List<ListAuthorizedCertificatesPage> pages, int collectionSize) {
+        @Nullable List<ListAuthorizedCertificatesPage> pages, int collectionSize) {
       return new ListAuthorizedCertificatesFixedSizeCollection(pages, collectionSize);
     }
   }

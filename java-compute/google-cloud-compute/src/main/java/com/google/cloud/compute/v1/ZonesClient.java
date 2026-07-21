@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -139,9 +141,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ZonesClient implements BackgroundResource {
-  private final ZonesSettings settings;
+  private final @Nullable ZonesSettings settings;
   private final ZonesStub stub;
 
   /** Constructs an instance of ZonesClient with default settings. */
@@ -179,7 +182,7 @@ public class ZonesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ZonesSettings getSettings() {
+  public final @Nullable ZonesSettings getSettings() {
     return settings;
   }
 
@@ -459,7 +462,9 @@ public class ZonesClient implements BackgroundResource {
 
   public static class ListPage extends AbstractPage<ListZonesRequest, ZoneList, Zone, ListPage> {
 
-    private ListPage(PageContext<ListZonesRequest, ZoneList, Zone> context, ZoneList response) {
+    private ListPage(
+        @Nullable PageContext<ListZonesRequest, ZoneList, Zone> context,
+        @Nullable ZoneList response) {
       super(context, response);
     }
 
@@ -469,13 +474,15 @@ public class ZonesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListZonesRequest, ZoneList, Zone> context, ZoneList response) {
+        @Nullable PageContext<ListZonesRequest, ZoneList, Zone> context,
+        @Nullable ZoneList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListZonesRequest, ZoneList, Zone> context, ApiFuture<ZoneList> futureResponse) {
+        @Nullable PageContext<ListZonesRequest, ZoneList, Zone> context,
+        ApiFuture<ZoneList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
   }
@@ -484,7 +491,7 @@ public class ZonesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListZonesRequest, ZoneList, Zone, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -493,7 +500,8 @@ public class ZonesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

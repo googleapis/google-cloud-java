@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -279,8 +281,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -361,9 +362,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AgentsClient implements BackgroundResource {
-  private final AgentsSettings settings;
+  private final @Nullable AgentsSettings settings;
   private final AgentsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -409,7 +411,7 @@ public class AgentsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AgentsSettings getSettings() {
+  public final @Nullable AgentsSettings getSettings() {
     return settings;
   }
 
@@ -458,7 +460,7 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAgentsPagedResponse listAgents(LocationName parent) {
+  public final ListAgentsPagedResponse listAgents(@Nullable LocationName parent) {
     ListAgentsRequest request =
         ListAgentsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAgents(request);
@@ -616,7 +618,7 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent getAgent(AgentName name) {
+  public final Agent getAgent(@Nullable AgentName name) {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAgent(request);
@@ -731,7 +733,7 @@ public class AgentsClient implements BackgroundResource {
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent createAgent(LocationName parent, Agent agent) {
+  public final Agent createAgent(@Nullable LocationName parent, Agent agent) {
     CreateAgentRequest request =
         CreateAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -954,7 +956,7 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAgent(AgentName name) {
+  public final void deleteAgent(@Nullable AgentName name) {
     DeleteAgentRequest request =
         DeleteAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAgent(request);
@@ -1384,7 +1386,8 @@ public class AgentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AgentValidationResult getAgentValidationResult(AgentValidationResultName name) {
+  public final AgentValidationResult getAgentValidationResult(
+      @Nullable AgentValidationResultName name) {
     GetAgentValidationResultRequest request =
         GetAgentValidationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1511,7 +1514,7 @@ public class AgentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerativeSettings getGenerativeSettings(
-      AgentGenerativeSettingsName name, String languageCode) {
+      @Nullable AgentGenerativeSettingsName name, String languageCode) {
     GetGenerativeSettingsRequest request =
         GetGenerativeSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1714,9 +1717,8 @@ public class AgentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1760,9 +1762,8 @@ public class AgentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1806,9 +1807,8 @@ public class AgentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1958,8 +1958,8 @@ public class AgentsClient implements BackgroundResource {
       extends AbstractPage<ListAgentsRequest, ListAgentsResponse, Agent, ListAgentsPage> {
 
     private ListAgentsPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       super(context, response);
     }
 
@@ -1969,14 +1969,14 @@ public class AgentsClient implements BackgroundResource {
 
     @Override
     protected ListAgentsPage createPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       return new ListAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAgentsPage> createPageAsync(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
         ApiFuture<ListAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1990,7 +1990,8 @@ public class AgentsClient implements BackgroundResource {
           ListAgentsPage,
           ListAgentsFixedSizeCollection> {
 
-    private ListAgentsFixedSizeCollection(List<ListAgentsPage> pages, int collectionSize) {
+    private ListAgentsFixedSizeCollection(
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2000,7 +2001,7 @@ public class AgentsClient implements BackgroundResource {
 
     @Override
     protected ListAgentsFixedSizeCollection createCollection(
-        List<ListAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       return new ListAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2034,8 +2035,8 @@ public class AgentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2045,14 +2046,14 @@ public class AgentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2066,7 +2067,8 @@ public class AgentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2076,7 +2078,7 @@ public class AgentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

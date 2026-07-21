@@ -22,7 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
 import com.google.gson.JsonObject;
@@ -34,6 +33,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,6 +42,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ITBase extends BigQueryJdbcBaseTest {
+
+  // This query takes 300 seconds to complete
+  public static final String query300seconds =
+      "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
+          + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
 
   private static String sharedDataset;
   private static String sharedDataset2;
@@ -114,6 +119,78 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + "  CONSTRAINT my_fk2 FOREIGN KEY (address) REFERENCES `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE3`(address) NOT ENFORCED\n"
           + ");\n";
 
+  private static final String DDL_ALL_BQ_TYPES =
+      "CREATE OR REPLACE TABLE `%1$s.%2$s.all_bq_types`\n"
+          + "(\n"
+          + "  stringField STRING,\n"
+          + "  bytesField BYTES,\n"
+          + "  intField INT64,\n"
+          + "  floatField FLOAT64,\n"
+          + "  numericField NUMERIC,\n"
+          + "  bigNumericField BIGNUMERIC,\n"
+          + "  booleanField BOOLEAN,\n"
+          + "  timestampFiled TIMESTAMP,\n"
+          + "  dateField DATE,\n"
+          + "  timeField TIME,\n"
+          + "  dateTimeField DATETIME,\n"
+          + "  geographyField GEOGRAPHY,\n"
+          + "  recordField STRUCT<name STRING, recordNested STRUCT<lastName STRING>>,\n"
+          + "  rangeField RANGE<DATE>,\n"
+          + "  jsonField JSON,\n"
+          + "  arrayString ARRAY<STRING>,\n"
+          + "  arrayRecord ARRAY<STRUCT<value STRING>>,\n"
+          + "  arrayBytes ARRAY<BYTES>,\n"
+          + "  arrayInteger ARRAY<INT64>,\n"
+          + "  arrayNumeric ARRAY<NUMERIC>,\n"
+          + "  arrayBignumeric ARRAY<BIGNUMERIC>,\n"
+          + "  arrayBoolean ARRAY<BOOLEAN>,\n"
+          + "  arrayTimestamp ARRAY<TIMESTAMP>,\n"
+          + "  arrayDate ARRAY<DATE>,\n"
+          + "  arrayTime ARRAY<TIME>,\n"
+          + "  arrayDatetime ARRAY<DATETIME>,\n"
+          + "  arrayGeography ARRAY<GEOGRAPHY>,\n"
+          + "  arrayRange ARRAY<RANGE<DATE>>,\n"
+          + "  arrayJson ARRAY<JSON>,\n"
+          + "  arrayFloat ARRAY<FLOAT64>\n"
+          + ");\n";
+
+  private static final String DML_ALL_BQ_TYPES =
+      "INSERT INTO `%1$s.%2$s.all_bq_types`\n"
+          + "(\n"
+          + "  stringField, bytesField, intField, floatField, numericField, bigNumericField, booleanField,\n"
+          + "  timestampFiled, dateField, timeField, dateTimeField, geographyField, recordField, rangeField, jsonField,\n"
+          + "  arrayString, arrayRecord, arrayBytes, arrayInteger, arrayNumeric, arrayBignumeric, arrayBoolean,\n"
+          + "  arrayTimestamp, arrayDate, arrayTime, arrayDatetime, arrayGeography, arrayRange, arrayJson, arrayFloat\n"
+          + ")\n"
+          + "VALUES\n"
+          + "(\n"
+          + "  'StringValue', CAST('BytesValue' AS BYTES), 123, 10.5, CAST('12345.67' AS NUMERIC), CAST('98765432109876543210.123456789' AS BIGNUMERIC), true,\n"
+          + "  TIMESTAMP '2023-07-28 12:30:00', DATE '2023-07-28', TIME '12:30:00', DATETIME '2023-07-28 12:30:00', ST_GEOGFROMTEXT('POINT(-74.006 40.7128)'),\n"
+          + "  STRUCT('NameValue' AS name, STRUCT('LastNameValue' AS lastName) AS recordNested),\n"
+          + "  RANGE<DATE> '[2023-01-01, 2023-12-01)', JSON '{\"key\":\"value\"}',\n"
+          + "  ['abc', 'def', 'ghi'],\n"
+          + "  [STRUCT('rec_val1' AS value), STRUCT('rec_val2' AS value)],\n"
+          + "  [CAST('byte1' AS BYTES), CAST('byte2' AS BYTES)],\n"
+          + "  [10, 20],\n"
+          + "  [CAST('10.5' AS NUMERIC), CAST('20.5' AS NUMERIC)],\n"
+          + "  [CAST('100.1' AS BIGNUMERIC), CAST('200.2' AS BIGNUMERIC)],\n"
+          + "  [true, false],\n"
+          + "  [TIMESTAMP '2023-01-01 01:00:00', TIMESTAMP '2023-01-01 02:00:00'],\n"
+          + "  [DATE '2023-01-01', DATE '2023-01-02'],\n"
+          + "  [TIME '01:00:00', TIME '02:00:00'],\n"
+          + "  [DATETIME '2023-01-01 01:00:00', DATETIME '2023-01-01 02:00:00'],\n"
+          + "  [ST_GEOGFROMTEXT('POINT(1 1)'), ST_GEOGFROMTEXT('POINT(2 2)')],\n"
+          + "  [RANGE<DATE> '[2023-01-01, 2023-01-03)', RANGE<DATE> '[2023-01-04, 2023-01-06)'],\n"
+          + "  [JSON '{\"a\":1}', JSON '{\"b\":2}'],\n"
+          + "  [1.1, 2.2]\n"
+          + "),\n"
+          + "(\n"
+          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
+          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
+          + "  [], [], [], [], [], [], [],\n"
+          + "  [], [], [], [], [], [], [], []\n"
+          + ");\n";
+
   private static final String CREATE_RESOURCES_SCRIPT =
       DDL_IT_CALLABLE_STMT_PROC_DML_TABLE
           + DDL_IT_CALLABLE_STMT_PROC_TABLE
@@ -123,7 +200,13 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + DDL_IT_CALLABLE_STMT_PROC_DML_INSERT_TEST
           + DDL_IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST
           + DDL_IT_CALLABLE_STMT_PROC_DML_DELETE_TEST
-          + DDL_IT_CALLABLE_STMT_PROC_TEST;
+          + DDL_IT_CALLABLE_STMT_PROC_TEST
+          + DDL_ALL_BQ_TYPES
+          + DML_ALL_BQ_TYPES;
+
+  public static String getUniqueDatasetName(String prefix) {
+    return prefix + System.currentTimeMillis() + "_" + (100 + new java.util.Random().nextInt(900));
+  }
 
   public static synchronized String getSharedDataset() {
     if (sharedDataset == null) {
@@ -163,7 +246,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   private static void createSharedResources(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     String project = DEFAULT_CATALOG;
     String script = String.format(CREATE_RESOURCES_SCRIPT, project, dataset);
     bigQuery.query(QueryJobConfiguration.of(script));
@@ -175,7 +257,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
             new Thread(
                 () -> {
                   try {
-                    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
                     bigQuery.query(
                         QueryJobConfiguration.of(
                             String.format(dropSchema, DEFAULT_CATALOG, dataset)));
@@ -188,10 +269,14 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
-  public static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-          + DEFAULT_CATALOG
-          + ";OAuthType=3;Timeout=3600;";
+
+  public static String getBaseConnectionUrl() {
+    return TestUtilities.getBaseConnectionUrl();
+  }
+
+  public static final String connectionUrl =
+      getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
+  public static final BigQuery bigQuery = BigQueryJdbcBaseTest.getBigQuery(connectionUrl);
 
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";
@@ -265,7 +350,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
 
   public static void setUpProcedure(String dataset, String table) throws InterruptedException {
     {
-      BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
       bigQuery.query(
           QueryJobConfiguration.of(
               String.format(
@@ -274,13 +358,11 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void setUpDataset(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(
         QueryJobConfiguration.of(String.format(createDatasetQuery, DEFAULT_CATALOG, dataset)));
   }
 
   public static void setUpTable(String dataset, String table) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(
         QueryJobConfiguration.of(String.format(createTableQuery, DEFAULT_CATALOG, dataset, table)));
     bigQuery.query(
@@ -290,7 +372,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void cleanUp(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(QueryJobConfiguration.of(String.format(dropSchema, DEFAULT_CATALOG, dataset)));
   }
 

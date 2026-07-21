@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -503,9 +505,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkFirewallPoliciesClient implements BackgroundResource {
-  private final NetworkFirewallPoliciesSettings settings;
+  private final @Nullable NetworkFirewallPoliciesSettings settings;
   private final NetworkFirewallPoliciesStub stub;
 
   /** Constructs an instance of NetworkFirewallPoliciesClient with default settings. */
@@ -546,7 +549,7 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworkFirewallPoliciesSettings getSettings() {
+  public final @Nullable NetworkFirewallPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -3296,12 +3299,13 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkFirewallPoliciesRequest,
                 NetworkFirewallPolicyAggregatedList,
                 Map.Entry<String, FirewallPoliciesScopedList>>
             context,
-        NetworkFirewallPolicyAggregatedList response) {
+        @Nullable NetworkFirewallPolicyAggregatedList response) {
       super(context, response);
     }
 
@@ -3311,18 +3315,20 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkFirewallPoliciesRequest,
                 NetworkFirewallPolicyAggregatedList,
                 Map.Entry<String, FirewallPoliciesScopedList>>
             context,
-        NetworkFirewallPolicyAggregatedList response) {
+        @Nullable NetworkFirewallPolicyAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNetworkFirewallPoliciesRequest,
                 NetworkFirewallPolicyAggregatedList,
                 Map.Entry<String, FirewallPoliciesScopedList>>
@@ -3340,7 +3346,8 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3350,7 +3357,7 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3382,8 +3389,10 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
           ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
-        FirewallPolicyList response) {
+        @Nullable
+            PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
+        @Nullable FirewallPolicyList response) {
       super(context, response);
     }
 
@@ -3393,14 +3402,18 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
-        FirewallPolicyList response) {
+        @Nullable
+            PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
+        @Nullable FirewallPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy> context,
+        @Nullable
+            PageContext<ListNetworkFirewallPoliciesRequest, FirewallPolicyList, FirewallPolicy>
+            context,
         ApiFuture<FirewallPolicyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3414,7 +3427,7 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3423,7 +3436,8 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

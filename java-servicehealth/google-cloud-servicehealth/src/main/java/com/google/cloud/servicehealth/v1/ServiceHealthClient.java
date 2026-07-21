@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -266,9 +268,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ServiceHealthClient implements BackgroundResource {
-  private final ServiceHealthSettings settings;
+  private final @Nullable ServiceHealthSettings settings;
   private final ServiceHealthStub stub;
 
   /** Constructs an instance of ServiceHealthClient with default settings. */
@@ -308,7 +311,7 @@ public class ServiceHealthClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ServiceHealthSettings getSettings() {
+  public final @Nullable ServiceHealthSettings getSettings() {
     return settings;
   }
 
@@ -343,7 +346,7 @@ public class ServiceHealthClient implements BackgroundResource {
    *     category = INCIDENT, use `location` = `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(LocationName parent) {
+  public final ListEventsPagedResponse listEvents(@Nullable LocationName parent) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listEvents(request);
@@ -513,7 +516,7 @@ public class ServiceHealthClient implements BackgroundResource {
    *     retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Event getEvent(EventName name) {
+  public final Event getEvent(@Nullable EventName name) {
     GetEventRequest request =
         GetEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvent(request);
@@ -635,7 +638,7 @@ public class ServiceHealthClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrganizationEventsPagedResponse listOrganizationEvents(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListOrganizationEventsRequest request =
         ListOrganizationEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -820,7 +823,7 @@ public class ServiceHealthClient implements BackgroundResource {
    *     `event_id` - Organization event ID to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OrganizationEvent getOrganizationEvent(OrganizationEventName name) {
+  public final OrganizationEvent getOrganizationEvent(@Nullable OrganizationEventName name) {
     GetOrganizationEventRequest request =
         GetOrganizationEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -949,7 +952,7 @@ public class ServiceHealthClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrganizationImpactsPagedResponse listOrganizationImpacts(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListOrganizationImpactsRequest request =
         ListOrganizationImpactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1130,7 +1133,7 @@ public class ServiceHealthClient implements BackgroundResource {
    *     resource](/service-health/docs/reference/rest/v1beta/organizations.locations.organizationImpacts#OrganizationImpact).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OrganizationImpact getOrganizationImpact(OrganizationImpactName name) {
+  public final OrganizationImpact getOrganizationImpact(@Nullable OrganizationImpactName name) {
     GetOrganizationImpactRequest request =
         GetOrganizationImpactRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1448,8 +1451,8 @@ public class ServiceHealthClient implements BackgroundResource {
       extends AbstractPage<ListEventsRequest, ListEventsResponse, Event, ListEventsPage> {
 
     private ListEventsPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       super(context, response);
     }
 
@@ -1459,14 +1462,14 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListEventsPage createPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       return new ListEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventsPage> createPageAsync(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1480,7 +1483,8 @@ public class ServiceHealthClient implements BackgroundResource {
           ListEventsPage,
           ListEventsFixedSizeCollection> {
 
-    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+    private ListEventsFixedSizeCollection(
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1490,7 +1494,7 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListEventsFixedSizeCollection createCollection(
-        List<ListEventsPage> pages, int collectionSize) {
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1529,10 +1533,11 @@ public class ServiceHealthClient implements BackgroundResource {
           ListOrganizationEventsPage> {
 
     private ListOrganizationEventsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationEventsRequest, ListOrganizationEventsResponse, OrganizationEvent>
             context,
-        ListOrganizationEventsResponse response) {
+        @Nullable ListOrganizationEventsResponse response) {
       super(context, response);
     }
 
@@ -1542,16 +1547,18 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationEventsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationEventsRequest, ListOrganizationEventsResponse, OrganizationEvent>
             context,
-        ListOrganizationEventsResponse response) {
+        @Nullable ListOrganizationEventsResponse response) {
       return new ListOrganizationEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrganizationEventsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationEventsRequest, ListOrganizationEventsResponse, OrganizationEvent>
             context,
         ApiFuture<ListOrganizationEventsResponse> futureResponse) {
@@ -1568,7 +1575,7 @@ public class ServiceHealthClient implements BackgroundResource {
           ListOrganizationEventsFixedSizeCollection> {
 
     private ListOrganizationEventsFixedSizeCollection(
-        List<ListOrganizationEventsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1578,7 +1585,7 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationEventsFixedSizeCollection createCollection(
-        List<ListOrganizationEventsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationEventsPage> pages, int collectionSize) {
       return new ListOrganizationEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1617,10 +1624,11 @@ public class ServiceHealthClient implements BackgroundResource {
           ListOrganizationImpactsPage> {
 
     private ListOrganizationImpactsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationImpactsRequest, ListOrganizationImpactsResponse, OrganizationImpact>
             context,
-        ListOrganizationImpactsResponse response) {
+        @Nullable ListOrganizationImpactsResponse response) {
       super(context, response);
     }
 
@@ -1630,16 +1638,18 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationImpactsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationImpactsRequest, ListOrganizationImpactsResponse, OrganizationImpact>
             context,
-        ListOrganizationImpactsResponse response) {
+        @Nullable ListOrganizationImpactsResponse response) {
       return new ListOrganizationImpactsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrganizationImpactsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrganizationImpactsRequest, ListOrganizationImpactsResponse, OrganizationImpact>
             context,
         ApiFuture<ListOrganizationImpactsResponse> futureResponse) {
@@ -1656,7 +1666,7 @@ public class ServiceHealthClient implements BackgroundResource {
           ListOrganizationImpactsFixedSizeCollection> {
 
     private ListOrganizationImpactsFixedSizeCollection(
-        List<ListOrganizationImpactsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationImpactsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1666,7 +1676,7 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListOrganizationImpactsFixedSizeCollection createCollection(
-        List<ListOrganizationImpactsPage> pages, int collectionSize) {
+        @Nullable List<ListOrganizationImpactsPage> pages, int collectionSize) {
       return new ListOrganizationImpactsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1700,8 +1710,8 @@ public class ServiceHealthClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1711,14 +1721,14 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1732,7 +1742,8 @@ public class ServiceHealthClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1742,7 +1753,7 @@ public class ServiceHealthClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

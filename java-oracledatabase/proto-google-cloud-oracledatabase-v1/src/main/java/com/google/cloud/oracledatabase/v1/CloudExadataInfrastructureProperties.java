@@ -1539,6 +1539,65 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
     }
   }
 
+  public static final int EXASCALE_CONFIG_FIELD_NUMBER = 32;
+  private com.google.cloud.oracledatabase.v1.ExascaleConfig exascaleConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the exascaleConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasExascaleConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The exascaleConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ExascaleConfig getExascaleConfig() {
+    return exascaleConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.ExascaleConfig.getDefaultInstance()
+        : exascaleConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Exascale configuration for the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder getExascaleConfigOrBuilder() {
+    return exascaleConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.ExascaleConfig.getDefaultInstance()
+        : exascaleConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1646,6 +1705,9 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
     if (computeModel_
         != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(31, computeModel_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(32, getExascaleConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1755,6 +1817,9 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
         != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, computeModel_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getExascaleConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1815,6 +1880,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
     if (computeModel_ != other.computeModel_) return false;
     if (!getDatabaseServerType().equals(other.getDatabaseServerType())) return false;
     if (!getStorageServerType().equals(other.getStorageServerType())) return false;
+    if (hasExascaleConfig() != other.hasExascaleConfig()) return false;
+    if (hasExascaleConfig()) {
+      if (!getExascaleConfig().equals(other.getExascaleConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1900,6 +1969,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
     hash = (53 * hash) + getDatabaseServerType().hashCode();
     hash = (37 * hash) + STORAGE_SERVER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getStorageServerType().hashCode();
+    if (hasExascaleConfig()) {
+      hash = (37 * hash) + EXASCALE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getExascaleConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2049,6 +2122,7 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
         internalGetNextMaintenanceRunTimeFieldBuilder();
         internalGetNextSecurityMaintenanceRunTimeFieldBuilder();
         internalGetCustomerContactsFieldBuilder();
+        internalGetExascaleConfigFieldBuilder();
       }
     }
 
@@ -2104,6 +2178,11 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
       computeModel_ = 0;
       databaseServerType_ = "";
       storageServerType_ = "";
+      exascaleConfig_ = null;
+      if (exascaleConfigBuilder_ != null) {
+        exascaleConfigBuilder_.dispose();
+        exascaleConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2258,6 +2337,11 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.storageServerType_ = storageServerType_;
       }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.exascaleConfig_ =
+            exascaleConfigBuilder_ == null ? exascaleConfig_ : exascaleConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2411,6 +2495,9 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
         storageServerType_ = other.storageServerType_;
         bitField0_ |= 0x20000000;
         onChanged();
+      }
+      if (other.hasExascaleConfig()) {
+        mergeExascaleConfig(other.getExascaleConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2631,6 +2718,13 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
                 bitField0_ |= 0x08000000;
                 break;
               } // case 248
+            case 258:
+              {
+                input.readMessage(
+                    internalGetExascaleConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5892,6 +5986,220 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
       bitField0_ |= 0x20000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.oracledatabase.v1.ExascaleConfig exascaleConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.oracledatabase.v1.ExascaleConfig,
+            com.google.cloud.oracledatabase.v1.ExascaleConfig.Builder,
+            com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder>
+        exascaleConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the exascaleConfig field is set.
+     */
+    public boolean hasExascaleConfig() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The exascaleConfig.
+     */
+    public com.google.cloud.oracledatabase.v1.ExascaleConfig getExascaleConfig() {
+      if (exascaleConfigBuilder_ == null) {
+        return exascaleConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.ExascaleConfig.getDefaultInstance()
+            : exascaleConfig_;
+      } else {
+        return exascaleConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExascaleConfig(com.google.cloud.oracledatabase.v1.ExascaleConfig value) {
+      if (exascaleConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exascaleConfig_ = value;
+      } else {
+        exascaleConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExascaleConfig(
+        com.google.cloud.oracledatabase.v1.ExascaleConfig.Builder builderForValue) {
+      if (exascaleConfigBuilder_ == null) {
+        exascaleConfig_ = builderForValue.build();
+      } else {
+        exascaleConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExascaleConfig(com.google.cloud.oracledatabase.v1.ExascaleConfig value) {
+      if (exascaleConfigBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && exascaleConfig_ != null
+            && exascaleConfig_
+                != com.google.cloud.oracledatabase.v1.ExascaleConfig.getDefaultInstance()) {
+          getExascaleConfigBuilder().mergeFrom(value);
+        } else {
+          exascaleConfig_ = value;
+        }
+      } else {
+        exascaleConfigBuilder_.mergeFrom(value);
+      }
+      if (exascaleConfig_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExascaleConfig() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      exascaleConfig_ = null;
+      if (exascaleConfigBuilder_ != null) {
+        exascaleConfigBuilder_.dispose();
+        exascaleConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.ExascaleConfig.Builder getExascaleConfigBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return internalGetExascaleConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder getExascaleConfigOrBuilder() {
+      if (exascaleConfigBuilder_ != null) {
+        return exascaleConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return exascaleConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.ExascaleConfig.getDefaultInstance()
+            : exascaleConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Exascale configuration for the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ExascaleConfig exascale_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.oracledatabase.v1.ExascaleConfig,
+            com.google.cloud.oracledatabase.v1.ExascaleConfig.Builder,
+            com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder>
+        internalGetExascaleConfigFieldBuilder() {
+      if (exascaleConfigBuilder_ == null) {
+        exascaleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.oracledatabase.v1.ExascaleConfig,
+                com.google.cloud.oracledatabase.v1.ExascaleConfig.Builder,
+                com.google.cloud.oracledatabase.v1.ExascaleConfigOrBuilder>(
+                getExascaleConfig(), getParentForChildren(), isClean());
+        exascaleConfig_ = null;
+      }
+      return exascaleConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties)

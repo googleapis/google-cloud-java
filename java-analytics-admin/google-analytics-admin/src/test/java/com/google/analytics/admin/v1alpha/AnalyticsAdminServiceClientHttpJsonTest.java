@@ -13607,6 +13607,59 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateReportingIdentitySettingsTest() throws Exception {
+    ReportingIdentitySettings expectedResponse =
+        ReportingIdentitySettings.newBuilder()
+            .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReportingIdentitySettings reportingIdentitySettings =
+        ReportingIdentitySettings.newBuilder()
+            .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ReportingIdentitySettings actualResponse =
+        client.updateReportingIdentitySettings(reportingIdentitySettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateReportingIdentitySettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReportingIdentitySettings reportingIdentitySettings =
+          ReportingIdentitySettings.newBuilder()
+              .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateReportingIdentitySettings(reportingIdentitySettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getUserProvidedDataSettingsTest() throws Exception {
     UserProvidedDataSettings expectedResponse =
         UserProvidedDataSettings.newBuilder()

@@ -14,7 +14,6 @@ Java idiomatic client for [Malachite Common Protos][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -45,20 +44,28 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-backstory</artifactId>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-backstory'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-backstory:0.0.0'
+implementation 'com.google.cloud:google-cloud-backstory:0.2.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-backstory" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-backstory" % "0.2.0"
 ```
 
 ## Authentication
@@ -103,7 +110,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Malachite Common Protos uses gRPC for the transport layer.
+Malachite Common Protos uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -150,8 +157,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -181,7 +186,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-backstory.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-backstory/0.0.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-backstory/0.2.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

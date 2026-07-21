@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.spi.v2;
 
+import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.Bigquery.Jobs.Query;
 import com.google.api.services.bigquery.model.Dataset;
@@ -107,6 +108,15 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   Tuple<String, Iterable<Dataset>> listDatasets(String projectId, Map<Option, ?> options);
+
+  /**
+   * Lists the projects accessible to the caller, keyed by page token.
+   *
+   * @throws BigQueryException upon failure
+   */
+  @InternalApi
+  Tuple<String, Iterable<com.google.api.services.bigquery.model.ProjectList.Projects>> listProjects(
+      Map<Option, ?> options);
 
   /**
    * Creates a new dataset.

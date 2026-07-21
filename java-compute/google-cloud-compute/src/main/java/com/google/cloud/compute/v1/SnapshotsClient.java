@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -273,9 +275,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SnapshotsClient implements BackgroundResource {
-  private final SnapshotsSettings settings;
+  private final @Nullable SnapshotsSettings settings;
   private final SnapshotsStub stub;
 
   /** Constructs an instance of SnapshotsClient with default settings. */
@@ -313,7 +316,7 @@ public class SnapshotsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SnapshotsSettings getSettings() {
+  public final @Nullable SnapshotsSettings getSettings() {
     return settings;
   }
 
@@ -1431,7 +1434,8 @@ public class SnapshotsClient implements BackgroundResource {
       extends AbstractPage<ListSnapshotsRequest, SnapshotList, Snapshot, ListPage> {
 
     private ListPage(
-        PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context, SnapshotList response) {
+        @Nullable PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context,
+        @Nullable SnapshotList response) {
       super(context, response);
     }
 
@@ -1441,13 +1445,14 @@ public class SnapshotsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context, SnapshotList response) {
+        @Nullable PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context,
+        @Nullable SnapshotList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context,
+        @Nullable PageContext<ListSnapshotsRequest, SnapshotList, Snapshot> context,
         ApiFuture<SnapshotList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1457,7 +1462,7 @@ public class SnapshotsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSnapshotsRequest, SnapshotList, Snapshot, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1466,7 +1471,8 @@ public class SnapshotsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -284,6 +284,65 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     return annualPercentageRate_;
   }
 
+  public static final int TOTAL_AMOUNT_FIELD_NUMBER = 6;
+  private com.google.shopping.type.Price totalAmount_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the totalAmount field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalAmount() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The totalAmount.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.Price getTotalAmount() {
+    return totalAmount_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : totalAmount_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.PriceOrBuilder getTotalAmountOrBuilder() {
+    return totalAmount_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : totalAmount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -313,6 +372,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeDouble(5, annualPercentageRate_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(6, getTotalAmount());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -336,6 +398,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, annualPercentageRate_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTotalAmount());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -371,6 +436,10 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       if (java.lang.Double.doubleToLongBits(getAnnualPercentageRate())
           != java.lang.Double.doubleToLongBits(other.getAnnualPercentageRate())) return false;
     }
+    if (hasTotalAmount() != other.hasTotalAmount()) return false;
+    if (hasTotalAmount()) {
+      if (!getTotalAmount().equals(other.getTotalAmount())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -402,6 +471,10 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getAnnualPercentageRate()));
+    }
+    if (hasTotalAmount()) {
+      hash = (37 * hash) + TOTAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalAmount().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -547,6 +620,7 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetAmountFieldBuilder();
         internalGetDownpaymentFieldBuilder();
+        internalGetTotalAmountFieldBuilder();
       }
     }
 
@@ -567,6 +641,11 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       }
       creditType_ = 0;
       annualPercentageRate_ = 0D;
+      totalAmount_ = null;
+      if (totalAmountBuilder_ != null) {
+        totalAmountBuilder_.dispose();
+        totalAmountBuilder_ = null;
+      }
       return this;
     }
 
@@ -624,6 +703,11 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         result.annualPercentageRate_ = annualPercentageRate_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.totalAmount_ =
+            totalAmountBuilder_ == null ? totalAmount_ : totalAmountBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -654,6 +738,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasAnnualPercentageRate()) {
         setAnnualPercentageRate(other.getAnnualPercentageRate());
+      }
+      if (other.hasTotalAmount()) {
+        mergeTotalAmount(other.getTotalAmount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -712,6 +799,13 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 41
+            case 50:
+              {
+                input.readMessage(
+                    internalGetTotalAmountFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1358,6 +1452,218 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       annualPercentageRate_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.google.shopping.type.Price totalAmount_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        totalAmountBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the totalAmount field is set.
+     */
+    public boolean hasTotalAmount() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The totalAmount.
+     */
+    public com.google.shopping.type.Price getTotalAmount() {
+      if (totalAmountBuilder_ == null) {
+        return totalAmount_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : totalAmount_;
+      } else {
+        return totalAmountBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTotalAmount(com.google.shopping.type.Price value) {
+      if (totalAmountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        totalAmount_ = value;
+      } else {
+        totalAmountBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTotalAmount(com.google.shopping.type.Price.Builder builderForValue) {
+      if (totalAmountBuilder_ == null) {
+        totalAmount_ = builderForValue.build();
+      } else {
+        totalAmountBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTotalAmount(com.google.shopping.type.Price value) {
+      if (totalAmountBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && totalAmount_ != null
+            && totalAmount_ != com.google.shopping.type.Price.getDefaultInstance()) {
+          getTotalAmountBuilder().mergeFrom(value);
+        } else {
+          totalAmount_ = value;
+        }
+      } else {
+        totalAmountBuilder_.mergeFrom(value);
+      }
+      if (totalAmount_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTotalAmount() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      totalAmount_ = null;
+      if (totalAmountBuilder_ != null) {
+        totalAmountBuilder_.dispose();
+        totalAmountBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.Price.Builder getTotalAmountBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetTotalAmountFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.PriceOrBuilder getTotalAmountOrBuilder() {
+      if (totalAmountBuilder_ != null) {
+        return totalAmountBuilder_.getMessageOrBuilder();
+      } else {
+        return totalAmount_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : totalAmount_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total amount the buyer has to pay, including interest.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        internalGetTotalAmountFieldBuilder() {
+      if (totalAmountBuilder_ == null) {
+        totalAmountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.type.Price,
+                com.google.shopping.type.Price.Builder,
+                com.google.shopping.type.PriceOrBuilder>(
+                getTotalAmount(), getParentForChildren(), isClean());
+        totalAmount_ = null;
+      }
+      return totalAmountBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductInstallment)

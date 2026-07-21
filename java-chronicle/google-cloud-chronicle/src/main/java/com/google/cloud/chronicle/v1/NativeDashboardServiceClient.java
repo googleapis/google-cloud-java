@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -353,9 +355,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NativeDashboardServiceClient implements BackgroundResource {
-  private final NativeDashboardServiceSettings settings;
+  private final @Nullable NativeDashboardServiceSettings settings;
   private final NativeDashboardServiceStub stub;
 
   /** Constructs an instance of NativeDashboardServiceClient with default settings. */
@@ -396,7 +399,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NativeDashboardServiceSettings getSettings() {
+  public final @Nullable NativeDashboardServiceSettings getSettings() {
     return settings;
   }
 
@@ -431,7 +434,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NativeDashboard createNativeDashboard(
-      InstanceName parent, NativeDashboard nativeDashboard) {
+      @Nullable InstanceName parent, NativeDashboard nativeDashboard) {
     CreateNativeDashboardRequest request =
         CreateNativeDashboardRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -561,7 +564,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/nativeDashboards/{dashboard}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NativeDashboard getNativeDashboard(NativeDashboardName name) {
+  public final NativeDashboard getNativeDashboard(@Nullable NativeDashboardName name) {
     GetNativeDashboardRequest request =
         GetNativeDashboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -690,7 +693,8 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNativeDashboardsPagedResponse listNativeDashboards(InstanceName parent) {
+  public final ListNativeDashboardsPagedResponse listNativeDashboards(
+      @Nullable InstanceName parent) {
     ListNativeDashboardsRequest request =
         ListNativeDashboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -972,7 +976,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NativeDashboard duplicateNativeDashboard(
-      NativeDashboardName name, NativeDashboard nativeDashboard) {
+      @Nullable NativeDashboardName name, NativeDashboard nativeDashboard) {
     DuplicateNativeDashboardRequest request =
         DuplicateNativeDashboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1108,7 +1112,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/nativeDashboards/{dashboard}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNativeDashboard(NativeDashboardName name) {
+  public final void deleteNativeDashboard(@Nullable NativeDashboardName name) {
     DeleteNativeDashboardRequest request =
         DeleteNativeDashboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1238,7 +1242,9 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddChartResponse addChart(
-      NativeDashboardName name, DashboardQuery dashboardQuery, DashboardChart dashboardChart) {
+      @Nullable NativeDashboardName name,
+      DashboardQuery dashboardQuery,
+      DashboardChart dashboardChart) {
     AddChartRequest request =
         AddChartRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1380,7 +1386,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/nativeDashboards/{dashboard}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NativeDashboard removeChart(NativeDashboardName name) {
+  public final NativeDashboard removeChart(@Nullable NativeDashboardName name) {
     RemoveChartRequest request =
         RemoveChartRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return removeChart(request);
@@ -1520,7 +1526,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EditChartResponse editChart(
-      NativeDashboardName name,
+      @Nullable NativeDashboardName name,
       DashboardQuery dashboardQuery,
       DashboardChart dashboardChart,
       FieldMask editMask) {
@@ -1679,7 +1685,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/nativeDashboards/{dashboard}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DuplicateChartResponse duplicateChart(NativeDashboardName name) {
+  public final DuplicateChartResponse duplicateChart(@Nullable NativeDashboardName name) {
     DuplicateChartRequest request =
         DuplicateChartRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return duplicateChart(request);
@@ -1810,7 +1816,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExportNativeDashboardsResponse exportNativeDashboards(
-      InstanceName parent, List<String> names) {
+      @Nullable InstanceName parent, List<String> names) {
     ExportNativeDashboardsRequest request =
         ExportNativeDashboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1943,7 +1949,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportNativeDashboardsResponse importNativeDashboards(
-      InstanceName parent, ImportNativeDashboardsInlineSource source) {
+      @Nullable InstanceName parent, ImportNativeDashboardsInlineSource source) {
     ImportNativeDashboardsRequest request =
         ImportNativeDashboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2112,9 +2118,10 @@ public class NativeDashboardServiceClient implements BackgroundResource {
           ListNativeDashboardsPage> {
 
     private ListNativeDashboardsPage(
-        PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
+        @Nullable
+            PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
             context,
-        ListNativeDashboardsResponse response) {
+        @Nullable ListNativeDashboardsResponse response) {
       super(context, response);
     }
 
@@ -2124,15 +2131,17 @@ public class NativeDashboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListNativeDashboardsPage createPage(
-        PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
+        @Nullable
+            PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
             context,
-        ListNativeDashboardsResponse response) {
+        @Nullable ListNativeDashboardsResponse response) {
       return new ListNativeDashboardsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNativeDashboardsPage> createPageAsync(
-        PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
+        @Nullable
+            PageContext<ListNativeDashboardsRequest, ListNativeDashboardsResponse, NativeDashboard>
             context,
         ApiFuture<ListNativeDashboardsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2148,7 +2157,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
           ListNativeDashboardsFixedSizeCollection> {
 
     private ListNativeDashboardsFixedSizeCollection(
-        List<ListNativeDashboardsPage> pages, int collectionSize) {
+        @Nullable List<ListNativeDashboardsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2158,7 +2167,7 @@ public class NativeDashboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListNativeDashboardsFixedSizeCollection createCollection(
-        List<ListNativeDashboardsPage> pages, int collectionSize) {
+        @Nullable List<ListNativeDashboardsPage> pages, int collectionSize) {
       return new ListNativeDashboardsFixedSizeCollection(pages, collectionSize);
     }
   }

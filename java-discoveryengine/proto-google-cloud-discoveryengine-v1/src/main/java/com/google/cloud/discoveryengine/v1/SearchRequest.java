@@ -31086,6 +31086,2232 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface RelevanceFilterSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the keywordSearchThreshold field is set.
+     */
+    boolean hasKeywordSearchThreshold();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keywordSearchThreshold.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec
+        getKeywordSearchThreshold();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpecOrBuilder
+        getKeywordSearchThresholdOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the semanticSearchThreshold field is set.
+     */
+    boolean hasSemanticSearchThreshold();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The semanticSearchThreshold.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec
+        getSemanticSearchThreshold();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpecOrBuilder
+        getSemanticSearchThresholdOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Relevance filtering specification.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec}
+   */
+  public static final class RelevanceFilterSpec extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)
+      RelevanceFilterSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "RelevanceFilterSpec");
+    }
+
+    // Use RelevanceFilterSpec.newBuilder() to construct.
+    private RelevanceFilterSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RelevanceFilterSpec() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder.class);
+    }
+
+    public interface RelevanceThresholdSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return Whether the relevanceThreshold field is set.
+       */
+      boolean hasRelevanceThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for relevanceThreshold.
+       */
+      int getRelevanceThresholdValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return The relevanceThreshold.
+       */
+      com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold getRelevanceThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom relevance threshold for the sub-search.
+       * The value must be in [0.0, 1.0].
+       * </pre>
+       *
+       * <code>float semantic_relevance_threshold = 2;</code>
+       *
+       * @return Whether the semanticRelevanceThreshold field is set.
+       */
+      boolean hasSemanticRelevanceThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom relevance threshold for the sub-search.
+       * The value must be in [0.0, 1.0].
+       * </pre>
+       *
+       * <code>float semantic_relevance_threshold = 2;</code>
+       *
+       * @return The semanticRelevanceThreshold.
+       */
+      float getSemanticRelevanceThreshold();
+
+      com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec
+              .RelevanceThresholdSpecCase
+          getRelevanceThresholdSpecCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for relevance filtering on a specific sub-search.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec}
+     */
+    public static final class RelevanceThresholdSpec extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec)
+        RelevanceThresholdSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "RelevanceThresholdSpec");
+      }
+
+      // Use RelevanceThresholdSpec.newBuilder() to construct.
+      private RelevanceThresholdSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RelevanceThresholdSpec() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .RelevanceThresholdSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .RelevanceThresholdSpec.Builder.class);
+      }
+
+      private int relevanceThresholdSpecCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object relevanceThresholdSpec_;
+
+      public enum RelevanceThresholdSpecCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        RELEVANCE_THRESHOLD(1),
+        SEMANTIC_RELEVANCE_THRESHOLD(2),
+        RELEVANCETHRESHOLDSPEC_NOT_SET(0);
+        private final int value;
+
+        private RelevanceThresholdSpecCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static RelevanceThresholdSpecCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static RelevanceThresholdSpecCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return RELEVANCE_THRESHOLD;
+            case 2:
+              return SEMANTIC_RELEVANCE_THRESHOLD;
+            case 0:
+              return RELEVANCETHRESHOLDSPEC_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public RelevanceThresholdSpecCase getRelevanceThresholdSpecCase() {
+        return RelevanceThresholdSpecCase.forNumber(relevanceThresholdSpecCase_);
+      }
+
+      public static final int RELEVANCE_THRESHOLD_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return Whether the relevanceThreshold field is set.
+       */
+      public boolean hasRelevanceThreshold() {
+        return relevanceThresholdSpecCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for relevanceThreshold.
+       */
+      public int getRelevanceThresholdValue() {
+        if (relevanceThresholdSpecCase_ == 1) {
+          return (java.lang.Integer) relevanceThresholdSpec_;
+        }
+        return 0;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Pre-defined relevance threshold for the sub-search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+       * </code>
+       *
+       * @return The relevanceThreshold.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold
+          getRelevanceThreshold() {
+        if (relevanceThresholdSpecCase_ == 1) {
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold result =
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold.forNumber(
+                  (java.lang.Integer) relevanceThresholdSpec_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold.UNRECOGNIZED
+              : result;
+        }
+        return com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold
+            .RELEVANCE_THRESHOLD_UNSPECIFIED;
+      }
+
+      public static final int SEMANTIC_RELEVANCE_THRESHOLD_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom relevance threshold for the sub-search.
+       * The value must be in [0.0, 1.0].
+       * </pre>
+       *
+       * <code>float semantic_relevance_threshold = 2;</code>
+       *
+       * @return Whether the semanticRelevanceThreshold field is set.
+       */
+      @java.lang.Override
+      public boolean hasSemanticRelevanceThreshold() {
+        return relevanceThresholdSpecCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom relevance threshold for the sub-search.
+       * The value must be in [0.0, 1.0].
+       * </pre>
+       *
+       * <code>float semantic_relevance_threshold = 2;</code>
+       *
+       * @return The semanticRelevanceThreshold.
+       */
+      @java.lang.Override
+      public float getSemanticRelevanceThreshold() {
+        if (relevanceThresholdSpecCase_ == 2) {
+          return (java.lang.Float) relevanceThresholdSpec_;
+        }
+        return 0F;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (relevanceThresholdSpecCase_ == 1) {
+          output.writeEnum(1, ((java.lang.Integer) relevanceThresholdSpec_));
+        }
+        if (relevanceThresholdSpecCase_ == 2) {
+          output.writeFloat(2, (float) ((java.lang.Float) relevanceThresholdSpec_));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (relevanceThresholdSpecCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(
+                  1, ((java.lang.Integer) relevanceThresholdSpec_));
+        }
+        if (relevanceThresholdSpecCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeFloatSize(
+                  2, (float) ((java.lang.Float) relevanceThresholdSpec_));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .RelevanceThresholdSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec
+            other =
+                (com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                        .RelevanceThresholdSpec)
+                    obj;
+
+        if (!getRelevanceThresholdSpecCase().equals(other.getRelevanceThresholdSpecCase()))
+          return false;
+        switch (relevanceThresholdSpecCase_) {
+          case 1:
+            if (getRelevanceThresholdValue() != other.getRelevanceThresholdValue()) return false;
+            break;
+          case 2:
+            if (java.lang.Float.floatToIntBits(getSemanticRelevanceThreshold())
+                != java.lang.Float.floatToIntBits(other.getSemanticRelevanceThreshold()))
+              return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (relevanceThresholdSpecCase_) {
+          case 1:
+            hash = (37 * hash) + RELEVANCE_THRESHOLD_FIELD_NUMBER;
+            hash = (53 * hash) + getRelevanceThresholdValue();
+            break;
+          case 2:
+            hash = (37 * hash) + SEMANTIC_RELEVANCE_THRESHOLD_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(getSemanticRelevanceThreshold());
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specification for relevance filtering on a specific sub-search.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec)
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.class,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          relevanceThresholdSpecCase_ = 0;
+          relevanceThresholdSpec_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .RelevanceThresholdSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .RelevanceThresholdSpec
+            build() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .RelevanceThresholdSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              result =
+                  new com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .RelevanceThresholdSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .RelevanceThresholdSpec
+                result) {
+          result.relevanceThresholdSpecCase_ = relevanceThresholdSpecCase_;
+          result.relevanceThresholdSpec_ = this.relevanceThresholdSpec_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                        .RelevanceThresholdSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .RelevanceThresholdSpec
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.getDefaultInstance()) return this;
+          switch (other.getRelevanceThresholdSpecCase()) {
+            case RELEVANCE_THRESHOLD:
+              {
+                setRelevanceThresholdValue(other.getRelevanceThresholdValue());
+                break;
+              }
+            case SEMANTIC_RELEVANCE_THRESHOLD:
+              {
+                setSemanticRelevanceThreshold(other.getSemanticRelevanceThreshold());
+                break;
+              }
+            case RELEVANCETHRESHOLDSPEC_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int rawValue = input.readEnum();
+                    relevanceThresholdSpecCase_ = 1;
+                    relevanceThresholdSpec_ = rawValue;
+                    break;
+                  } // case 8
+                case 21:
+                  {
+                    relevanceThresholdSpec_ = input.readFloat();
+                    relevanceThresholdSpecCase_ = 2;
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int relevanceThresholdSpecCase_ = 0;
+        private java.lang.Object relevanceThresholdSpec_;
+
+        public RelevanceThresholdSpecCase getRelevanceThresholdSpecCase() {
+          return RelevanceThresholdSpecCase.forNumber(relevanceThresholdSpecCase_);
+        }
+
+        public Builder clearRelevanceThresholdSpec() {
+          relevanceThresholdSpecCase_ = 0;
+          relevanceThresholdSpec_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @return Whether the relevanceThreshold field is set.
+         */
+        @java.lang.Override
+        public boolean hasRelevanceThreshold() {
+          return relevanceThresholdSpecCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for relevanceThreshold.
+         */
+        @java.lang.Override
+        public int getRelevanceThresholdValue() {
+          if (relevanceThresholdSpecCase_ == 1) {
+            return ((java.lang.Integer) relevanceThresholdSpec_).intValue();
+          }
+          return 0;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for relevanceThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRelevanceThresholdValue(int value) {
+          relevanceThresholdSpecCase_ = 1;
+          relevanceThresholdSpec_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @return The relevanceThreshold.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold
+            getRelevanceThreshold() {
+          if (relevanceThresholdSpecCase_ == 1) {
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold result =
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold.forNumber(
+                    (java.lang.Integer) relevanceThresholdSpec_);
+            return result == null
+                ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold.UNRECOGNIZED
+                : result;
+          }
+          return com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold
+              .RELEVANCE_THRESHOLD_UNSPECIFIED;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @param value The relevanceThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRelevanceThreshold(
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          relevanceThresholdSpecCase_ = 1;
+          relevanceThresholdSpec_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Pre-defined relevance threshold for the sub-search.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRelevanceThreshold() {
+          if (relevanceThresholdSpecCase_ == 1) {
+            relevanceThresholdSpecCase_ = 0;
+            relevanceThresholdSpec_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Custom relevance threshold for the sub-search.
+         * The value must be in [0.0, 1.0].
+         * </pre>
+         *
+         * <code>float semantic_relevance_threshold = 2;</code>
+         *
+         * @return Whether the semanticRelevanceThreshold field is set.
+         */
+        public boolean hasSemanticRelevanceThreshold() {
+          return relevanceThresholdSpecCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Custom relevance threshold for the sub-search.
+         * The value must be in [0.0, 1.0].
+         * </pre>
+         *
+         * <code>float semantic_relevance_threshold = 2;</code>
+         *
+         * @return The semanticRelevanceThreshold.
+         */
+        public float getSemanticRelevanceThreshold() {
+          if (relevanceThresholdSpecCase_ == 2) {
+            return (java.lang.Float) relevanceThresholdSpec_;
+          }
+          return 0F;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Custom relevance threshold for the sub-search.
+         * The value must be in [0.0, 1.0].
+         * </pre>
+         *
+         * <code>float semantic_relevance_threshold = 2;</code>
+         *
+         * @param value The semanticRelevanceThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSemanticRelevanceThreshold(float value) {
+
+          relevanceThresholdSpecCase_ = 2;
+          relevanceThresholdSpec_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Custom relevance threshold for the sub-search.
+         * The value must be in [0.0, 1.0].
+         * </pre>
+         *
+         * <code>float semantic_relevance_threshold = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSemanticRelevanceThreshold() {
+          if (relevanceThresholdSpecCase_ == 2) {
+            relevanceThresholdSpecCase_ = 0;
+            relevanceThresholdSpec_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec)
+      private static final com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .RelevanceThresholdSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RelevanceThresholdSpec> PARSER =
+          new com.google.protobuf.AbstractParser<RelevanceThresholdSpec>() {
+            @java.lang.Override
+            public RelevanceThresholdSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RelevanceThresholdSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RelevanceThresholdSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int KEYWORD_SEARCH_THRESHOLD_FIELD_NUMBER = 1;
+    private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpec
+        keywordSearchThreshold_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the keywordSearchThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordSearchThreshold() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keywordSearchThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpec
+        getKeywordSearchThreshold() {
+      return keywordSearchThreshold_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.getDefaultInstance()
+          : keywordSearchThreshold_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for keyword search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpecOrBuilder
+        getKeywordSearchThresholdOrBuilder() {
+      return keywordSearchThreshold_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.getDefaultInstance()
+          : keywordSearchThreshold_;
+    }
+
+    public static final int SEMANTIC_SEARCH_THRESHOLD_FIELD_NUMBER = 2;
+    private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpec
+        semanticSearchThreshold_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the semanticSearchThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasSemanticSearchThreshold() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The semanticSearchThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpec
+        getSemanticSearchThreshold() {
+      return semanticSearchThreshold_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.getDefaultInstance()
+          : semanticSearchThreshold_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relevance filtering threshold specification for semantic
+     * search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .RelevanceThresholdSpecOrBuilder
+        getSemanticSearchThresholdOrBuilder() {
+      return semanticSearchThreshold_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.getDefaultInstance()
+          : semanticSearchThreshold_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getKeywordSearchThreshold());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getSemanticSearchThreshold());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getKeywordSearchThreshold());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getSemanticSearchThreshold());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec) obj;
+
+      if (hasKeywordSearchThreshold() != other.hasKeywordSearchThreshold()) return false;
+      if (hasKeywordSearchThreshold()) {
+        if (!getKeywordSearchThreshold().equals(other.getKeywordSearchThreshold())) return false;
+      }
+      if (hasSemanticSearchThreshold() != other.hasSemanticSearchThreshold()) return false;
+      if (hasSemanticSearchThreshold()) {
+        if (!getSemanticSearchThreshold().equals(other.getSemanticSearchThreshold())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasKeywordSearchThreshold()) {
+        hash = (37 * hash) + KEYWORD_SEARCH_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getKeywordSearchThreshold().hashCode();
+      }
+      if (hasSemanticSearchThreshold()) {
+        hash = (37 * hash) + SEMANTIC_SEARCH_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getSemanticSearchThreshold().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relevance filtering specification.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetKeywordSearchThresholdFieldBuilder();
+          internalGetSemanticSearchThresholdFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        keywordSearchThreshold_ = null;
+        if (keywordSearchThresholdBuilder_ != null) {
+          keywordSearchThresholdBuilder_.dispose();
+          keywordSearchThresholdBuilder_ = null;
+        }
+        semanticSearchThreshold_ = null;
+        if (semanticSearchThresholdBuilder_ != null) {
+          semanticSearchThresholdBuilder_.dispose();
+          semanticSearchThresholdBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_RelevanceFilterSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keywordSearchThreshold_ =
+              keywordSearchThresholdBuilder_ == null
+                  ? keywordSearchThreshold_
+                  : keywordSearchThresholdBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.semanticSearchThreshold_ =
+              semanticSearchThresholdBuilder_ == null
+                  ? semanticSearchThreshold_
+                  : semanticSearchThresholdBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .getDefaultInstance()) return this;
+        if (other.hasKeywordSearchThreshold()) {
+          mergeKeywordSearchThreshold(other.getKeywordSearchThreshold());
+        }
+        if (other.hasSemanticSearchThreshold()) {
+          mergeSemanticSearchThreshold(other.getSemanticSearchThreshold());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetKeywordSearchThresholdFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetSemanticSearchThresholdFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          keywordSearchThreshold_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpecOrBuilder>
+          keywordSearchThresholdBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the keywordSearchThreshold field is set.
+       */
+      public boolean hasKeywordSearchThreshold() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The keywordSearchThreshold.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          getKeywordSearchThreshold() {
+        if (keywordSearchThresholdBuilder_ == null) {
+          return keywordSearchThreshold_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.getDefaultInstance()
+              : keywordSearchThreshold_;
+        } else {
+          return keywordSearchThresholdBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setKeywordSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              value) {
+        if (keywordSearchThresholdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keywordSearchThreshold_ = value;
+        } else {
+          keywordSearchThresholdBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setKeywordSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder
+              builderForValue) {
+        if (keywordSearchThresholdBuilder_ == null) {
+          keywordSearchThreshold_ = builderForValue.build();
+        } else {
+          keywordSearchThresholdBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeKeywordSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              value) {
+        if (keywordSearchThresholdBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && keywordSearchThreshold_ != null
+              && keywordSearchThreshold_
+                  != com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.getDefaultInstance()) {
+            getKeywordSearchThresholdBuilder().mergeFrom(value);
+          } else {
+            keywordSearchThreshold_ = value;
+          }
+        } else {
+          keywordSearchThresholdBuilder_.mergeFrom(value);
+        }
+        if (keywordSearchThreshold_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearKeywordSearchThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        keywordSearchThreshold_ = null;
+        if (keywordSearchThresholdBuilder_ != null) {
+          keywordSearchThresholdBuilder_.dispose();
+          keywordSearchThresholdBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.Builder
+          getKeywordSearchThresholdBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetKeywordSearchThresholdFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpecOrBuilder
+          getKeywordSearchThresholdOrBuilder() {
+        if (keywordSearchThresholdBuilder_ != null) {
+          return keywordSearchThresholdBuilder_.getMessageOrBuilder();
+        } else {
+          return keywordSearchThreshold_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.getDefaultInstance()
+              : keywordSearchThreshold_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for keyword search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec keyword_search_threshold = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpecOrBuilder>
+          internalGetKeywordSearchThresholdFieldBuilder() {
+        if (keywordSearchThresholdBuilder_ == null) {
+          keywordSearchThresholdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpecOrBuilder>(
+                  getKeywordSearchThreshold(), getParentForChildren(), isClean());
+          keywordSearchThreshold_ = null;
+        }
+        return keywordSearchThresholdBuilder_;
+      }
+
+      private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          semanticSearchThreshold_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpecOrBuilder>
+          semanticSearchThresholdBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the semanticSearchThreshold field is set.
+       */
+      public boolean hasSemanticSearchThreshold() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The semanticSearchThreshold.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec
+          getSemanticSearchThreshold() {
+        if (semanticSearchThresholdBuilder_ == null) {
+          return semanticSearchThreshold_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.getDefaultInstance()
+              : semanticSearchThreshold_;
+        } else {
+          return semanticSearchThresholdBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSemanticSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              value) {
+        if (semanticSearchThresholdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          semanticSearchThreshold_ = value;
+        } else {
+          semanticSearchThresholdBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSemanticSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder
+              builderForValue) {
+        if (semanticSearchThresholdBuilder_ == null) {
+          semanticSearchThreshold_ = builderForValue.build();
+        } else {
+          semanticSearchThresholdBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSemanticSearchThreshold(
+          com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec
+              value) {
+        if (semanticSearchThresholdBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && semanticSearchThreshold_ != null
+              && semanticSearchThreshold_
+                  != com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.getDefaultInstance()) {
+            getSemanticSearchThresholdBuilder().mergeFrom(value);
+          } else {
+            semanticSearchThreshold_ = value;
+          }
+        } else {
+          semanticSearchThresholdBuilder_.mergeFrom(value);
+        }
+        if (semanticSearchThreshold_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSemanticSearchThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        semanticSearchThreshold_ = null;
+        if (semanticSearchThresholdBuilder_ != null) {
+          semanticSearchThresholdBuilder_.dispose();
+          semanticSearchThresholdBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpec.Builder
+          getSemanticSearchThresholdBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetSemanticSearchThresholdFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+              .RelevanceThresholdSpecOrBuilder
+          getSemanticSearchThresholdOrBuilder() {
+        if (semanticSearchThresholdBuilder_ != null) {
+          return semanticSearchThresholdBuilder_.getMessageOrBuilder();
+        } else {
+          return semanticSearchThreshold_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.getDefaultInstance()
+              : semanticSearchThreshold_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance filtering threshold specification for semantic
+       * search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpec semantic_search_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                  .RelevanceThresholdSpecOrBuilder>
+          internalGetSemanticSearchThresholdFieldBuilder() {
+        if (semanticSearchThresholdBuilder_ == null) {
+          semanticSearchThresholdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpec.Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                      .RelevanceThresholdSpecOrBuilder>(
+                  getSemanticSearchThreshold(), getParentForChildren(), isClean());
+          semanticSearchThreshold_ = null;
+        }
+        return semanticSearchThresholdBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RelevanceFilterSpec> PARSER =
+        new com.google.protobuf.AbstractParser<RelevanceFilterSpec>() {
+          @java.lang.Override
+          public RelevanceFilterSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RelevanceFilterSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelevanceFilterSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SERVING_CONFIG_FIELD_NUMBER = 1;
 
@@ -33684,6 +35910,86 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int RELEVANCE_FILTER_SPEC_FIELD_NUMBER = 86;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+      relevanceFilterSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relevanceFilterSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelevanceFilterSpec() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relevanceFilterSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+      getRelevanceFilterSpec() {
+    return relevanceFilterSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.getDefaultInstance()
+        : relevanceFilterSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The granular relevance filtering specification.
+   *
+   * If not specified, the global `relevance_threshold` will be used for all
+   * sub-searches. If specified, this overrides the global
+   * `relevance_threshold` to use thresholds on a per sub-search basis.
+   *
+   * This feature is currently supported only for custom and site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder
+      getRelevanceFilterSpecOrBuilder() {
+    return relevanceFilterSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.getDefaultInstance()
+        : relevanceFilterSpec_;
+  }
+
   public static final int RELEVANCE_SCORE_SPEC_FIELD_NUMBER = 52;
   private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec relevanceScoreSpec_;
 
@@ -33702,7 +36008,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRelevanceScoreSpec() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -33853,7 +36159,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     if (oneBoxPageSize_ != 0) {
       output.writeInt32(47, oneBoxPageSize_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(52, getRelevanceScoreSpec());
     }
     if (rankingExpressionBackend_
@@ -33864,6 +36170,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < pageCategories_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 63, pageCategories_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(86, getRelevanceFilterSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -33988,7 +36297,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     if (oneBoxPageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(47, oneBoxPageSize_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getRelevanceScoreSpec());
     }
     if (rankingExpressionBackend_
@@ -34004,6 +36313,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       }
       size += dataSize;
       size += 2 * getPageCategoriesList().size();
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(86, getRelevanceFilterSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -34086,6 +36399,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       if (!getSessionSpec().equals(other.getSessionSpec())) return false;
     }
     if (relevanceThreshold_ != other.relevanceThreshold_) return false;
+    if (hasRelevanceFilterSpec() != other.hasRelevanceFilterSpec()) return false;
+    if (hasRelevanceFilterSpec()) {
+      if (!getRelevanceFilterSpec().equals(other.getRelevanceFilterSpec())) return false;
+    }
     if (hasRelevanceScoreSpec() != other.hasRelevanceScoreSpec()) return false;
     if (hasRelevanceScoreSpec()) {
       if (!getRelevanceScoreSpec().equals(other.getRelevanceScoreSpec())) return false;
@@ -34199,6 +36516,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + RELEVANCE_THRESHOLD_FIELD_NUMBER;
     hash = (53 * hash) + relevanceThreshold_;
+    if (hasRelevanceFilterSpec()) {
+      hash = (37 * hash) + RELEVANCE_FILTER_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getRelevanceFilterSpec().hashCode();
+    }
     if (hasRelevanceScoreSpec()) {
       hash = (37 * hash) + RELEVANCE_SCORE_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getRelevanceScoreSpec().hashCode();
@@ -34385,6 +36706,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         internalGetDisplaySpecFieldBuilder();
         internalGetCrowdingSpecsFieldBuilder();
         internalGetSessionSpecFieldBuilder();
+        internalGetRelevanceFilterSpecFieldBuilder();
         internalGetRelevanceScoreSpecFieldBuilder();
       }
     }
@@ -34485,6 +36807,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         sessionSpecBuilder_ = null;
       }
       relevanceThreshold_ = 0;
+      relevanceFilterSpec_ = null;
+      if (relevanceFilterSpecBuilder_ != null) {
+        relevanceFilterSpecBuilder_.dispose();
+        relevanceFilterSpecBuilder_ = null;
+      }
       relevanceScoreSpec_ = null;
       if (relevanceScoreSpecBuilder_ != null) {
         relevanceScoreSpecBuilder_.dispose();
@@ -34688,11 +37015,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.relevanceFilterSpec_ =
+            relevanceFilterSpecBuilder_ == null
+                ? relevanceFilterSpec_
+                : relevanceFilterSpecBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         result.relevanceScoreSpec_ =
             relevanceScoreSpecBuilder_ == null
                 ? relevanceScoreSpec_
                 : relevanceScoreSpecBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -34908,6 +37242,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       }
       if (other.relevanceThreshold_ != 0) {
         setRelevanceThresholdValue(other.getRelevanceThresholdValue());
+      }
+      if (other.hasRelevanceFilterSpec()) {
+        mergeRelevanceFilterSpec(other.getRelevanceFilterSpec());
       }
       if (other.hasRelevanceScoreSpec()) {
         mergeRelevanceScoreSpec(other.getRelevanceScoreSpec());
@@ -35175,7 +37512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetRelevanceScoreSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 418
             case 424:
@@ -35191,6 +37528,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
                 pageCategories_.add(s);
                 break;
               } // case 506
+            case 690:
+              {
+                input.readMessage(
+                    internalGetRelevanceFilterSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 690
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -42694,6 +45038,284 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        relevanceFilterSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder>
+        relevanceFilterSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the relevanceFilterSpec field is set.
+     */
+    public boolean hasRelevanceFilterSpec() {
+      return ((bitField1_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The relevanceFilterSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+        getRelevanceFilterSpec() {
+      if (relevanceFilterSpecBuilder_ == null) {
+        return relevanceFilterSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .getDefaultInstance()
+            : relevanceFilterSpec_;
+      } else {
+        return relevanceFilterSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelevanceFilterSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec value) {
+      if (relevanceFilterSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relevanceFilterSpec_ = value;
+      } else {
+        relevanceFilterSpecBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelevanceFilterSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder
+            builderForValue) {
+      if (relevanceFilterSpecBuilder_ == null) {
+        relevanceFilterSpec_ = builderForValue.build();
+      } else {
+        relevanceFilterSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRelevanceFilterSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec value) {
+      if (relevanceFilterSpecBuilder_ == null) {
+        if (((bitField1_ & 0x00000002) != 0)
+            && relevanceFilterSpec_ != null
+            && relevanceFilterSpec_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                    .getDefaultInstance()) {
+          getRelevanceFilterSpecBuilder().mergeFrom(value);
+        } else {
+          relevanceFilterSpec_ = value;
+        }
+      } else {
+        relevanceFilterSpecBuilder_.mergeFrom(value);
+      }
+      if (relevanceFilterSpec_ != null) {
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRelevanceFilterSpec() {
+      bitField1_ = (bitField1_ & ~0x00000002);
+      relevanceFilterSpec_ = null;
+      if (relevanceFilterSpecBuilder_ != null) {
+        relevanceFilterSpecBuilder_.dispose();
+        relevanceFilterSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder
+        getRelevanceFilterSpecBuilder() {
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return internalGetRelevanceFilterSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder
+        getRelevanceFilterSpecOrBuilder() {
+      if (relevanceFilterSpecBuilder_ != null) {
+        return relevanceFilterSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return relevanceFilterSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec
+                .getDefaultInstance()
+            : relevanceFilterSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The granular relevance filtering specification.
+     *
+     * If not specified, the global `relevance_threshold` will be used for all
+     * sub-searches. If specified, this overrides the global
+     * `relevance_threshold` to use thresholds on a per sub-search basis.
+     *
+     * This feature is currently supported only for custom and site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec relevance_filter_spec = 86 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder>
+        internalGetRelevanceFilterSpecFieldBuilder() {
+      if (relevanceFilterSpecBuilder_ == null) {
+        relevanceFilterSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceFilterSpecOrBuilder>(
+                getRelevanceFilterSpec(), getParentForChildren(), isClean());
+        relevanceFilterSpec_ = null;
+      }
+      return relevanceFilterSpecBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec
         relevanceScoreSpec_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -42716,7 +45338,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the relevanceScoreSpec field is set.
      */
     public boolean hasRelevanceScoreSpec() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -42765,7 +45387,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       } else {
         relevanceScoreSpecBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -42789,7 +45411,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       } else {
         relevanceScoreSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -42808,7 +45430,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
     public Builder mergeRelevanceScoreSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec value) {
       if (relevanceScoreSpecBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x00000004) != 0)
             && relevanceScoreSpec_ != null
             && relevanceScoreSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec
@@ -42821,7 +45443,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         relevanceScoreSpecBuilder_.mergeFrom(value);
       }
       if (relevanceScoreSpec_ != null) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -42839,7 +45461,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRelevanceScoreSpec() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       relevanceScoreSpec_ = null;
       if (relevanceScoreSpecBuilder_ != null) {
         relevanceScoreSpecBuilder_.dispose();
@@ -42862,7 +45484,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec.Builder
         getRelevanceScoreSpecBuilder() {
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return internalGetRelevanceScoreSpecFieldBuilder().getBuilder();
     }

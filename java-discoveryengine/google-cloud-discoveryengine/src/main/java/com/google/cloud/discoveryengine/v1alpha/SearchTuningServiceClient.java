@@ -28,6 +28,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,10 +154,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SearchTuningServiceClient implements BackgroundResource {
-  private final SearchTuningServiceSettings settings;
+  private final @Nullable SearchTuningServiceSettings settings;
   private final SearchTuningServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -203,7 +206,7 @@ public class SearchTuningServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SearchTuningServiceSettings getSettings() {
+  public final @Nullable SearchTuningServiceSettings getSettings() {
     return settings;
   }
 

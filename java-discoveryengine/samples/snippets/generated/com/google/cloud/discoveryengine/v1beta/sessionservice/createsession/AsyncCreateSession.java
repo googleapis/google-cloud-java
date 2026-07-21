@@ -43,6 +43,7 @@ public class AsyncCreateSession {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setSession(Session.newBuilder().build())
+              .setSessionId("sessionId607796817")
               .build();
       ApiFuture<Session> future = sessionServiceClient.createSessionCallable().futureCall(request);
       // Do something.

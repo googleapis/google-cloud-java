@@ -53,6 +53,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
@@ -163,21 +164,24 @@ public class BigQueryJsonResultSetTest {
 
   @BeforeEach
   public void setUp() {
+    boolean[] isComplexColumn = BigQueryFieldValueListWrapper.createComplexColumnFlags(fieldList);
     // Buffer with one row
     buffer = new LinkedBlockingDeque<>(2);
     statement = mock(BigQueryStatement.class);
-    buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    buffer.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
-    Thread[] workerThreads = {new Thread()};
+    buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    buffer.add(BigQueryFieldValueListWrapper.ofEndOfStream(null)); // last marker
+    Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
 
     // Buffer with 2 rows.
     bufferWithTwoRows = new LinkedBlockingDeque<>(3);
     statementForTwoRows = mock(BigQueryStatement.class);
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
-    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
+    bufferWithTwoRows.add(
+        BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    bufferWithTwoRows.add(
+        BigQueryFieldValueListWrapper.of(fieldList, fieldValues, isComplexColumn));
+    bufferWithTwoRows.add(BigQueryFieldValueListWrapper.ofEndOfStream(null)); // last marker
 
     // values for nested types
     Field fieldEight = fieldList.get("eight");
@@ -196,9 +200,9 @@ public class BigQueryJsonResultSetTest {
 
   private boolean resetResultSet()
       throws SQLException { // re-initialises the resultset and moves the cursor to the first row
-    Thread[] workerThreads = {new Thread()};
+    Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
     return bigQueryJsonResultSet.next(); // move to the first row
   }
 
@@ -214,15 +218,15 @@ public class BigQueryJsonResultSetTest {
 
   @Test
   public void testRowCount() throws SQLException {
-    Thread[] workerThreads = {new Thread()};
+    Future<?>[] workerTasks = {mock(Future.class)};
     // ResultSet with 1 row buffer and 1 total rows.
     BigQueryJsonResultSet bigQueryJsonResultSet2 =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
     // ResultSet with 2 rows buffer and 1 total rows.
     bigQueryJsonResultSet2 =
         BigQueryJsonResultSet.of(
-            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerThreads);
+            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerTasks);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
   }
 

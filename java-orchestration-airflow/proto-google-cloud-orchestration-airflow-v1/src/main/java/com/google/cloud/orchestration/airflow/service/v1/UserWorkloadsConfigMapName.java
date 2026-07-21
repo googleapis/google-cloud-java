@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class UserWorkloadsConfigMapName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_ENVIRONMENT_USER_WORKLOADS_CONFIG_MAP =
@@ -98,7 +101,7 @@ public class UserWorkloadsConfigMapName implements ResourceName {
         .toString();
   }
 
-  public static UserWorkloadsConfigMapName parse(String formattedString) {
+  public static @Nullable UserWorkloadsConfigMapName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -121,7 +124,7 @@ public class UserWorkloadsConfigMapName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<UserWorkloadsConfigMapName> values) {
+  public static List<String> toStringList(List<@Nullable UserWorkloadsConfigMapName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (UserWorkloadsConfigMapName value : values) {
       if (value == null) {
@@ -180,7 +183,7 @@ public class UserWorkloadsConfigMapName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

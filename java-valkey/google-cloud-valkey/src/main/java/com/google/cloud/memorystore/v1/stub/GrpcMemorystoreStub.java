@@ -41,6 +41,7 @@ import com.google.cloud.memorystore.v1.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.FinishMigrationRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
@@ -56,6 +57,7 @@ import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -65,6 +67,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -72,6 +75,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcMemorystoreStub extends MemorystoreStub {
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -242,6 +246,28 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<StartMigrationRequest, Operation>
+      startMigrationMethodDescriptor =
+          MethodDescriptor.<StartMigrationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/StartMigration")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartMigrationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FinishMigrationRequest, Operation>
+      finishMigrationMethodDescriptor =
+          MethodDescriptor.<FinishMigrationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/FinishMigration")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FinishMigrationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -304,6 +330,12 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   private final UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable;
   private final OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationCallable;
+  private final UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable;
+  private final OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable;
+  private final UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable;
+  private final OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -524,6 +556,28 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
+        GrpcCallSettings.<StartMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(startMigrationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<FinishMigrationRequest, Operation> finishMigrationTransportSettings =
+        GrpcCallSettings.<FinishMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(finishMigrationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -651,6 +705,24 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
         callableFactory.createOperationCallable(
             backupInstanceTransportSettings,
             settings.backupInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.startMigrationCallable =
+        callableFactory.createUnaryCallable(
+            startMigrationTransportSettings, settings.startMigrationSettings(), clientContext);
+    this.startMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            startMigrationTransportSettings,
+            settings.startMigrationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.finishMigrationCallable =
+        callableFactory.createUnaryCallable(
+            finishMigrationTransportSettings, settings.finishMigrationSettings(), clientContext);
+    this.finishMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            finishMigrationTransportSettings,
+            settings.finishMigrationOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -807,6 +879,28 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   public OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
       backupInstanceOperationCallable() {
     return backupInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable() {
+    return startMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable() {
+    return startMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
+    return finishMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable() {
+    return finishMigrationOperationCallable;
   }
 
   @Override

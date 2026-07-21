@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -294,10 +296,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DocumentServiceClient implements BackgroundResource {
-  private final DocumentServiceSettings settings;
+  private final @Nullable DocumentServiceSettings settings;
   private final DocumentServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -345,7 +348,7 @@ public class DocumentServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DocumentServiceSettings getSettings() {
+  public final @Nullable DocumentServiceSettings getSettings() {
     return settings;
   }
 
@@ -525,7 +528,7 @@ public class DocumentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata>
-      importDocumentsAsync(DatasetName dataset) {
+      importDocumentsAsync(@Nullable DatasetName dataset) {
     ImportDocumentsRequest request =
         ImportDocumentsRequest.newBuilder()
             .setDataset(dataset == null ? null : dataset.toString())
@@ -677,7 +680,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     Format: projects/{project}/locations/{location}/processors/{processor}/dataset
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetDocumentResponse getDocument(DatasetName dataset) {
+  public final GetDocumentResponse getDocument(@Nullable DatasetName dataset) {
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder()
             .setDataset(dataset == null ? null : dataset.toString())
@@ -798,7 +801,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/processors/{processor}/dataset
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDocumentsPagedResponse listDocuments(DatasetName dataset) {
+  public final ListDocumentsPagedResponse listDocuments(@Nullable DatasetName dataset) {
     ListDocumentsRequest request =
         ListDocumentsRequest.newBuilder()
             .setDataset(dataset == null ? null : dataset.toString())
@@ -1092,7 +1095,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/processors/{processor}/dataset/datasetSchema
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DatasetSchema getDatasetSchema(DatasetSchemaName name) {
+  public final DatasetSchema getDatasetSchema(@Nullable DatasetSchemaName name) {
     GetDatasetSchemaRequest request =
         GetDatasetSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatasetSchema(request);
@@ -1509,8 +1512,9 @@ public class DocumentServiceClient implements BackgroundResource {
           ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata, ListDocumentsPage> {
 
     private ListDocumentsPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>
+            context,
+        @Nullable ListDocumentsResponse response) {
       super(context, response);
     }
 
@@ -1520,14 +1524,16 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsPage createPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>
+            context,
+        @Nullable ListDocumentsResponse response) {
       return new ListDocumentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDocumentsPage> createPageAsync(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>
+            context,
         ApiFuture<ListDocumentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1541,7 +1547,8 @@ public class DocumentServiceClient implements BackgroundResource {
           ListDocumentsPage,
           ListDocumentsFixedSizeCollection> {
 
-    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+    private ListDocumentsFixedSizeCollection(
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1551,7 +1558,7 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsFixedSizeCollection createCollection(
-        List<ListDocumentsPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       return new ListDocumentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1585,8 +1592,8 @@ public class DocumentServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1596,14 +1603,14 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1617,7 +1624,8 @@ public class DocumentServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1627,7 +1635,7 @@ public class DocumentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

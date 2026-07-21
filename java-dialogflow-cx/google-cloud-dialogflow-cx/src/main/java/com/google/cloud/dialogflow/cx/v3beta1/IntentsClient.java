@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -207,8 +209,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -289,10 +290,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class IntentsClient implements BackgroundResource {
-  private final IntentsSettings settings;
+  private final @Nullable IntentsSettings settings;
   private final IntentsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -338,7 +340,7 @@ public class IntentsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final IntentsSettings getSettings() {
+  public final @Nullable IntentsSettings getSettings() {
     return settings;
   }
 
@@ -387,7 +389,7 @@ public class IntentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntentsPagedResponse listIntents(AgentName parent) {
+  public final ListIntentsPagedResponse listIntents(@Nullable AgentName parent) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -554,7 +556,7 @@ public class IntentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent getIntent(IntentName name) {
+  public final Intent getIntent(@Nullable IntentName name) {
     GetIntentRequest request =
         GetIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIntent(request);
@@ -671,7 +673,7 @@ public class IntentsClient implements BackgroundResource {
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Intent createIntent(AgentName parent, Intent intent) {
+  public final Intent createIntent(@Nullable AgentName parent, Intent intent) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -901,7 +903,7 @@ public class IntentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteIntent(IntentName name) {
+  public final void deleteIntent(@Nullable IntentName name) {
     DeleteIntentRequest request =
         DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIntent(request);
@@ -1224,9 +1226,8 @@ public class IntentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1270,9 +1271,8 @@ public class IntentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1316,9 +1316,8 @@ public class IntentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1468,8 +1467,8 @@ public class IntentsClient implements BackgroundResource {
       extends AbstractPage<ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage> {
 
     private ListIntentsPage(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
-        ListIntentsResponse response) {
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable ListIntentsResponse response) {
       super(context, response);
     }
 
@@ -1479,14 +1478,14 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListIntentsPage createPage(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
-        ListIntentsResponse response) {
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable ListIntentsResponse response) {
       return new ListIntentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntentsPage> createPageAsync(
-        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        @Nullable PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
         ApiFuture<ListIntentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1500,7 +1499,8 @@ public class IntentsClient implements BackgroundResource {
           ListIntentsPage,
           ListIntentsFixedSizeCollection> {
 
-    private ListIntentsFixedSizeCollection(List<ListIntentsPage> pages, int collectionSize) {
+    private ListIntentsFixedSizeCollection(
+        @Nullable List<ListIntentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1510,7 +1510,7 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListIntentsFixedSizeCollection createCollection(
-        List<ListIntentsPage> pages, int collectionSize) {
+        @Nullable List<ListIntentsPage> pages, int collectionSize) {
       return new ListIntentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1544,8 +1544,8 @@ public class IntentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1555,14 +1555,14 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1576,7 +1576,8 @@ public class IntentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1586,7 +1587,7 @@ public class IntentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

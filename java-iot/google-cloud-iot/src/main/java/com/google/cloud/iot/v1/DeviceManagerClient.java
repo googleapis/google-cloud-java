@@ -40,6 +40,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -489,9 +491,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DeviceManagerClient implements BackgroundResource {
-  private final DeviceManagerSettings settings;
+  private final @Nullable DeviceManagerSettings settings;
   private final DeviceManagerStub stub;
 
   /** Constructs an instance of DeviceManagerClient with default settings. */
@@ -531,7 +534,7 @@ public class DeviceManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeviceManagerSettings getSettings() {
+  public final @Nullable DeviceManagerSettings getSettings() {
     return settings;
   }
 
@@ -565,7 +568,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeviceRegistry createDeviceRegistry(
-      LocationName parent, DeviceRegistry deviceRegistry) {
+      @Nullable LocationName parent, DeviceRegistry deviceRegistry) {
     CreateDeviceRegistryRequest request =
         CreateDeviceRegistryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -689,7 +692,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceRegistry getDeviceRegistry(RegistryName name) {
+  public final DeviceRegistry getDeviceRegistry(@Nullable RegistryName name) {
     GetDeviceRegistryRequest request =
         GetDeviceRegistryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -900,7 +903,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeviceRegistry(RegistryName name) {
+  public final void deleteDeviceRegistry(@Nullable RegistryName name) {
     DeleteDeviceRegistryRequest request =
         DeleteDeviceRegistryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1016,7 +1019,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/example-project/locations/us-central1`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceRegistriesPagedResponse listDeviceRegistries(LocationName parent) {
+  public final ListDeviceRegistriesPagedResponse listDeviceRegistries(
+      @Nullable LocationName parent) {
     ListDeviceRegistriesRequest request =
         ListDeviceRegistriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1186,7 +1190,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     server generates `name` from the device registry `id` and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Device createDevice(RegistryName parent, Device device) {
+  public final Device createDevice(@Nullable RegistryName parent, Device device) {
     CreateDeviceRequest request =
         CreateDeviceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1306,7 +1310,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Device getDevice(DeviceName name) {
+  public final Device getDevice(@Nullable DeviceName name) {
     GetDeviceRequest request =
         GetDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDevice(request);
@@ -1513,7 +1517,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDevice(DeviceName name) {
+  public final void deleteDevice(@Nullable DeviceName name) {
     DeleteDeviceRequest request =
         DeleteDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDevice(request);
@@ -1628,7 +1632,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/registries/my-registry`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDevicesPagedResponse listDevices(RegistryName parent) {
+  public final ListDevicesPagedResponse listDevices(@Nullable RegistryName parent) {
     ListDevicesRequest request =
         ListDevicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1805,7 +1809,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * @param binaryData Required. The configuration data for the device.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceConfig modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData) {
+  public final DeviceConfig modifyCloudToDeviceConfig(
+      @Nullable DeviceName name, ByteString binaryData) {
     ModifyCloudToDeviceConfigRequest request =
         ModifyCloudToDeviceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1939,7 +1944,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceConfigVersionsResponse listDeviceConfigVersions(DeviceName name) {
+  public final ListDeviceConfigVersionsResponse listDeviceConfigVersions(
+      @Nullable DeviceName name) {
     ListDeviceConfigVersionsRequest request =
         ListDeviceConfigVersionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2066,7 +2072,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceStatesResponse listDeviceStates(DeviceName name) {
+  public final ListDeviceStatesResponse listDeviceStates(@Nullable DeviceName name) {
     ListDeviceStatesRequest request =
         ListDeviceStatesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listDeviceStates(request);
@@ -2187,7 +2193,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2311,7 +2317,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2436,7 +2442,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2581,7 +2587,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(
-      DeviceName name, ByteString binaryData) {
+      @Nullable DeviceName name, ByteString binaryData) {
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2673,7 +2679,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SendCommandToDeviceResponse sendCommandToDevice(
-      DeviceName name, ByteString binaryData, String subfolder) {
+      @Nullable DeviceName name, ByteString binaryData, String subfolder) {
     SendCommandToDeviceRequest request =
         SendCommandToDeviceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2846,7 +2852,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BindDeviceToGatewayResponse bindDeviceToGateway(
-      RegistryName parent, String gatewayId, String deviceId) {
+      @Nullable RegistryName parent, String gatewayId, String deviceId) {
     BindDeviceToGatewayRequest request =
         BindDeviceToGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2987,7 +2993,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
-      RegistryName parent, String gatewayId, String deviceId) {
+      @Nullable RegistryName parent, String gatewayId, String deviceId) {
     UnbindDeviceFromGatewayRequest request =
         UnbindDeviceFromGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3163,9 +3169,10 @@ public class DeviceManagerClient implements BackgroundResource {
           ListDeviceRegistriesPage> {
 
     private ListDeviceRegistriesPage(
-        PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
+        @Nullable
+            PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
             context,
-        ListDeviceRegistriesResponse response) {
+        @Nullable ListDeviceRegistriesResponse response) {
       super(context, response);
     }
 
@@ -3175,15 +3182,17 @@ public class DeviceManagerClient implements BackgroundResource {
 
     @Override
     protected ListDeviceRegistriesPage createPage(
-        PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
+        @Nullable
+            PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
             context,
-        ListDeviceRegistriesResponse response) {
+        @Nullable ListDeviceRegistriesResponse response) {
       return new ListDeviceRegistriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeviceRegistriesPage> createPageAsync(
-        PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
+        @Nullable
+            PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
             context,
         ApiFuture<ListDeviceRegistriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3199,7 +3208,7 @@ public class DeviceManagerClient implements BackgroundResource {
           ListDeviceRegistriesFixedSizeCollection> {
 
     private ListDeviceRegistriesFixedSizeCollection(
-        List<ListDeviceRegistriesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceRegistriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3209,7 +3218,7 @@ public class DeviceManagerClient implements BackgroundResource {
 
     @Override
     protected ListDeviceRegistriesFixedSizeCollection createCollection(
-        List<ListDeviceRegistriesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceRegistriesPage> pages, int collectionSize) {
       return new ListDeviceRegistriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3240,8 +3249,8 @@ public class DeviceManagerClient implements BackgroundResource {
       extends AbstractPage<ListDevicesRequest, ListDevicesResponse, Device, ListDevicesPage> {
 
     private ListDevicesPage(
-        PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
-        ListDevicesResponse response) {
+        @Nullable PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
+        @Nullable ListDevicesResponse response) {
       super(context, response);
     }
 
@@ -3251,14 +3260,14 @@ public class DeviceManagerClient implements BackgroundResource {
 
     @Override
     protected ListDevicesPage createPage(
-        PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
-        ListDevicesResponse response) {
+        @Nullable PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
+        @Nullable ListDevicesResponse response) {
       return new ListDevicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDevicesPage> createPageAsync(
-        PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
+        @Nullable PageContext<ListDevicesRequest, ListDevicesResponse, Device> context,
         ApiFuture<ListDevicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3272,7 +3281,8 @@ public class DeviceManagerClient implements BackgroundResource {
           ListDevicesPage,
           ListDevicesFixedSizeCollection> {
 
-    private ListDevicesFixedSizeCollection(List<ListDevicesPage> pages, int collectionSize) {
+    private ListDevicesFixedSizeCollection(
+        @Nullable List<ListDevicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3282,7 +3292,7 @@ public class DeviceManagerClient implements BackgroundResource {
 
     @Override
     protected ListDevicesFixedSizeCollection createCollection(
-        List<ListDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListDevicesPage> pages, int collectionSize) {
       return new ListDevicesFixedSizeCollection(pages, collectionSize);
     }
   }

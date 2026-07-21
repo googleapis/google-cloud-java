@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -298,9 +300,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource {
-  private final EnterpriseKnowledgeGraphServiceSettings settings;
+  private final @Nullable EnterpriseKnowledgeGraphServiceSettings settings;
   private final EnterpriseKnowledgeGraphServiceStub stub;
 
   /** Constructs an instance of EnterpriseKnowledgeGraphServiceClient with default settings. */
@@ -345,7 +348,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
     this.stub = stub;
   }
 
-  public final EnterpriseKnowledgeGraphServiceSettings getSettings() {
+  public final @Nullable EnterpriseKnowledgeGraphServiceSettings getSettings() {
     return settings;
   }
 
@@ -383,7 +386,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityReconciliationJob createEntityReconciliationJob(
-      LocationName parent, EntityReconciliationJob entityReconciliationJob) {
+      @Nullable LocationName parent, EntityReconciliationJob entityReconciliationJob) {
     CreateEntityReconciliationJobRequest request =
         CreateEntityReconciliationJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -524,7 +527,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityReconciliationJob getEntityReconciliationJob(
-      EntityReconciliationJobName name) {
+      @Nullable EntityReconciliationJobName name) {
     GetEntityReconciliationJobRequest request =
         GetEntityReconciliationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -660,7 +663,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityReconciliationJobsPagedResponse listEntityReconciliationJobs(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListEntityReconciliationJobsRequest request =
         ListEntityReconciliationJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -846,7 +849,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    *     `projects/{project}/locations/{location}/entityReconciliationJobs/{entity_reconciliation_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelEntityReconciliationJob(EntityReconciliationJobName name) {
+  public final void cancelEntityReconciliationJob(@Nullable EntityReconciliationJobName name) {
     CancelEntityReconciliationJobRequest request =
         CancelEntityReconciliationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -977,7 +980,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    *     `projects/{project}/locations/{location}/entityReconciliationJobs/{entity_reconciliation_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEntityReconciliationJob(EntityReconciliationJobName name) {
+  public final void deleteEntityReconciliationJob(@Nullable EntityReconciliationJobName name) {
     DeleteEntityReconciliationJobRequest request =
         DeleteEntityReconciliationJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1111,7 +1114,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @param ids Required. The list of entity ids to be used for lookup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LookupResponse lookup(LocationName parent, List<String> ids) {
+  public final LookupResponse lookup(@Nullable LocationName parent, List<String> ids) {
     LookupRequest request =
         LookupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1237,7 +1240,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @param query Required. The literal query string for search.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchResponse search(LocationName parent, String query) {
+  public final SearchResponse search(@Nullable LocationName parent, String query) {
     SearchRequest request =
         SearchRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1368,7 +1371,8 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @param ids Required. The list of entity ids to be used for lookup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LookupPublicKgResponse lookupPublicKg(LocationName parent, List<String> ids) {
+  public final LookupPublicKgResponse lookupPublicKg(
+      @Nullable LocationName parent, List<String> ids) {
     LookupPublicKgRequest request =
         LookupPublicKgRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1499,7 +1503,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
    * @param query Required. The literal query string for search.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchPublicKgResponse searchPublicKg(LocationName parent, String query) {
+  public final SearchPublicKgResponse searchPublicKg(@Nullable LocationName parent, String query) {
     SearchPublicKgRequest request =
         SearchPublicKgRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1675,12 +1679,13 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
           ListEntityReconciliationJobsPage> {
 
     private ListEntityReconciliationJobsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntityReconciliationJobsRequest,
                 ListEntityReconciliationJobsResponse,
                 EntityReconciliationJob>
             context,
-        ListEntityReconciliationJobsResponse response) {
+        @Nullable ListEntityReconciliationJobsResponse response) {
       super(context, response);
     }
 
@@ -1690,18 +1695,20 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
 
     @Override
     protected ListEntityReconciliationJobsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntityReconciliationJobsRequest,
                 ListEntityReconciliationJobsResponse,
                 EntityReconciliationJob>
             context,
-        ListEntityReconciliationJobsResponse response) {
+        @Nullable ListEntityReconciliationJobsResponse response) {
       return new ListEntityReconciliationJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntityReconciliationJobsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntityReconciliationJobsRequest,
                 ListEntityReconciliationJobsResponse,
                 EntityReconciliationJob>
@@ -1720,7 +1727,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
           ListEntityReconciliationJobsFixedSizeCollection> {
 
     private ListEntityReconciliationJobsFixedSizeCollection(
-        List<ListEntityReconciliationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListEntityReconciliationJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1730,7 +1737,7 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
 
     @Override
     protected ListEntityReconciliationJobsFixedSizeCollection createCollection(
-        List<ListEntityReconciliationJobsPage> pages, int collectionSize) {
+        @Nullable List<ListEntityReconciliationJobsPage> pages, int collectionSize) {
       return new ListEntityReconciliationJobsFixedSizeCollection(pages, collectionSize);
     }
   }

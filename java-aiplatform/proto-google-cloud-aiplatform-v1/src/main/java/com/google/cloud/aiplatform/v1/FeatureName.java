@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FeatureName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE =
@@ -184,7 +187,7 @@ public class FeatureName implements ResourceName {
         .toString();
   }
 
-  public static FeatureName parse(String formattedString) {
+  public static @Nullable FeatureName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -216,7 +219,7 @@ public class FeatureName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FeatureName> values) {
+  public static List<String> toStringList(List<@Nullable FeatureName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FeatureName value : values) {
       if (value == null) {
@@ -274,7 +277,7 @@ public class FeatureName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

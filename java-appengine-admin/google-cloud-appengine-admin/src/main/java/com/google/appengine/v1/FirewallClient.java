@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -215,9 +217,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FirewallClient implements BackgroundResource {
-  private final FirewallSettings settings;
+  private final @Nullable FirewallSettings settings;
   private final FirewallStub stub;
 
   /** Constructs an instance of FirewallClient with default settings. */
@@ -255,7 +258,7 @@ public class FirewallClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FirewallSettings getSettings() {
+  public final @Nullable FirewallSettings getSettings() {
     return settings;
   }
 
@@ -717,8 +720,9 @@ public class FirewallClient implements BackgroundResource {
           ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule, ListIngressRulesPage> {
 
     private ListIngressRulesPage(
-        PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule> context,
-        ListIngressRulesResponse response) {
+        @Nullable PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule>
+            context,
+        @Nullable ListIngressRulesResponse response) {
       super(context, response);
     }
 
@@ -728,14 +732,16 @@ public class FirewallClient implements BackgroundResource {
 
     @Override
     protected ListIngressRulesPage createPage(
-        PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule> context,
-        ListIngressRulesResponse response) {
+        @Nullable PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule>
+            context,
+        @Nullable ListIngressRulesResponse response) {
       return new ListIngressRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIngressRulesPage> createPageAsync(
-        PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule> context,
+        @Nullable PageContext<ListIngressRulesRequest, ListIngressRulesResponse, FirewallRule>
+            context,
         ApiFuture<ListIngressRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -750,7 +756,7 @@ public class FirewallClient implements BackgroundResource {
           ListIngressRulesFixedSizeCollection> {
 
     private ListIngressRulesFixedSizeCollection(
-        List<ListIngressRulesPage> pages, int collectionSize) {
+        @Nullable List<ListIngressRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -760,7 +766,7 @@ public class FirewallClient implements BackgroundResource {
 
     @Override
     protected ListIngressRulesFixedSizeCollection createCollection(
-        List<ListIngressRulesPage> pages, int collectionSize) {
+        @Nullable List<ListIngressRulesPage> pages, int collectionSize) {
       return new ListIngressRulesFixedSizeCollection(pages, collectionSize);
     }
   }

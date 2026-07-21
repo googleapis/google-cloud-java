@@ -36,6 +36,7 @@ import com.google.cloud.memorystore.v1.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.FinishMigrationRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
@@ -51,11 +52,14 @@ import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -63,14 +67,16 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class MemorystoreStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -188,6 +194,24 @@ public abstract class MemorystoreStub implements BackgroundResource {
 
   public UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: backupInstanceCallable()");
+  }
+
+  public OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startMigrationOperationCallable()");
+  }
+
+  public UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startMigrationCallable()");
+  }
+
+  public OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: finishMigrationOperationCallable()");
+  }
+
+  public UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
+    throw new UnsupportedOperationException("Not implemented: finishMigrationCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

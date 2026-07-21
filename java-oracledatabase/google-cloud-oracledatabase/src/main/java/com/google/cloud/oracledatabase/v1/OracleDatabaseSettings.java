@@ -70,6 +70,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +150,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSettings> {
 
@@ -194,6 +197,29 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       deleteCloudExadataInfrastructureOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .deleteCloudExadataInfrastructureOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public UnaryCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .configureExascaleCloudExadataInfrastructureSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public OperationCallSettings<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .configureExascaleCloudExadataInfrastructureOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listCloudVmClusters. */
@@ -796,13 +822,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
         .deleteGoldengateConnectionOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentVersion. */
-  public UnaryCallSettings<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionSettings() {
-    return ((OracleDatabaseStubSettings) getStubSettings())
-        .getGoldengateDeploymentVersionSettings();
-  }
-
   /** Returns the object with the settings used for calls to listGoldengateDeploymentVersions. */
   public PagedCallSettings<
           ListGoldengateDeploymentVersionsRequest,
@@ -813,12 +832,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
         .listGoldengateDeploymentVersionsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentType. */
-  public UnaryCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeSettings() {
-    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateDeploymentTypeSettings();
-  }
-
   /** Returns the object with the settings used for calls to listGoldengateDeploymentTypes. */
   public PagedCallSettings<
           ListGoldengateDeploymentTypesRequest,
@@ -826,14 +839,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
           ListGoldengateDeploymentTypesPagedResponse>
       listGoldengateDeploymentTypesSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).listGoldengateDeploymentTypesSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentEnvironment. */
-  public UnaryCallSettings<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentSettings() {
-    return ((OracleDatabaseStubSettings) getStubSettings())
-        .getGoldengateDeploymentEnvironmentSettings();
   }
 
   /**
@@ -846,12 +851,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       listGoldengateDeploymentEnvironmentsSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .listGoldengateDeploymentEnvironmentsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getGoldengateConnectionType. */
-  public UnaryCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeSettings() {
-    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateConnectionTypeSettings();
   }
 
   /** Returns the object with the settings used for calls to listGoldengateConnectionTypes. */
@@ -1011,7 +1010,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1031,7 +1030,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(OracleDatabaseStubSettings.newBuilder(clientContext));
     }
 
@@ -1107,6 +1106,28 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
         deleteCloudExadataInfrastructureOperationSettings() {
       return getStubSettingsBuilder().deleteCloudExadataInfrastructureOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public UnaryCallSettings.Builder<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureSettings() {
+      return getStubSettingsBuilder().configureExascaleCloudExadataInfrastructureSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public OperationCallSettings.Builder<
+            ConfigureExascaleCloudExadataInfrastructureRequest,
+            CloudExadataInfrastructure,
+            OperationMetadata>
+        configureExascaleCloudExadataInfrastructureOperationSettings() {
+      return getStubSettingsBuilder()
+          .configureExascaleCloudExadataInfrastructureOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listCloudVmClusters. */
@@ -1717,13 +1738,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().deleteGoldengateConnectionOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getGoldengateDeploymentVersion. */
-    public UnaryCallSettings.Builder<
-            GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersionSettings() {
-      return getStubSettingsBuilder().getGoldengateDeploymentVersionSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listGoldengateDeploymentVersions. */
     public PagedCallSettings.Builder<
             ListGoldengateDeploymentVersionsRequest,
@@ -1731,12 +1745,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             ListGoldengateDeploymentVersionsPagedResponse>
         listGoldengateDeploymentVersionsSettings() {
       return getStubSettingsBuilder().listGoldengateDeploymentVersionsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getGoldengateDeploymentType. */
-    public UnaryCallSettings.Builder<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-        getGoldengateDeploymentTypeSettings() {
-      return getStubSettingsBuilder().getGoldengateDeploymentTypeSettings();
     }
 
     /** Returns the builder for the settings used for calls to listGoldengateDeploymentTypes. */
@@ -1749,15 +1757,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     }
 
     /**
-     * Returns the builder for the settings used for calls to getGoldengateDeploymentEnvironment.
-     */
-    public UnaryCallSettings.Builder<
-            GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironmentSettings() {
-      return getStubSettingsBuilder().getGoldengateDeploymentEnvironmentSettings();
-    }
-
-    /**
      * Returns the builder for the settings used for calls to listGoldengateDeploymentEnvironments.
      */
     public PagedCallSettings.Builder<
@@ -1766,12 +1765,6 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             ListGoldengateDeploymentEnvironmentsPagedResponse>
         listGoldengateDeploymentEnvironmentsSettings() {
       return getStubSettingsBuilder().listGoldengateDeploymentEnvironmentsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getGoldengateConnectionType. */
-    public UnaryCallSettings.Builder<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-        getGoldengateConnectionTypeSettings() {
-      return getStubSettingsBuilder().getGoldengateConnectionTypeSettings();
     }
 
     /** Returns the builder for the settings used for calls to listGoldengateConnectionTypes. */

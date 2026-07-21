@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -176,8 +178,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -260,10 +261,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class KnowledgeBasesClient implements BackgroundResource {
-  private final KnowledgeBasesSettings settings;
+  private final @Nullable KnowledgeBasesSettings settings;
   private final KnowledgeBasesStub stub;
 
   /** Constructs an instance of KnowledgeBasesClient with default settings. */
@@ -303,7 +305,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final KnowledgeBasesSettings getSettings() {
+  public final @Nullable KnowledgeBasesSettings getSettings() {
     return settings;
   }
 
@@ -338,7 +340,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKnowledgeBasesPagedResponse listKnowledgeBases(LocationName parent) {
+  public final ListKnowledgeBasesPagedResponse listKnowledgeBases(@Nullable LocationName parent) {
     ListKnowledgeBasesRequest request =
         ListKnowledgeBasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -373,7 +375,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
+  public final ListKnowledgeBasesPagedResponse listKnowledgeBases(@Nullable ProjectName parent) {
     ListKnowledgeBasesRequest request =
         ListKnowledgeBasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -558,7 +560,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KnowledgeBase getKnowledgeBase(KnowledgeBaseName name) {
+  public final KnowledgeBase getKnowledgeBase(@Nullable KnowledgeBaseName name) {
     GetKnowledgeBaseRequest request =
         GetKnowledgeBaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKnowledgeBase(request);
@@ -688,7 +690,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KnowledgeBase createKnowledgeBase(LocationName parent, KnowledgeBase knowledgeBase) {
+  public final KnowledgeBase createKnowledgeBase(
+      @Nullable LocationName parent, KnowledgeBase knowledgeBase) {
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -724,7 +727,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KnowledgeBase createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase) {
+  public final KnowledgeBase createKnowledgeBase(
+      @Nullable ProjectName parent, KnowledgeBase knowledgeBase) {
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -860,7 +864,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteKnowledgeBase(KnowledgeBaseName name) {
+  public final void deleteKnowledgeBase(@Nullable KnowledgeBaseName name) {
     DeleteKnowledgeBaseRequest request =
         DeleteKnowledgeBaseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1105,9 +1109,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1151,9 +1154,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1198,9 +1200,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1356,8 +1357,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
           ListKnowledgeBasesPage> {
 
     private ListKnowledgeBasesPage(
-        PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase> context,
-        ListKnowledgeBasesResponse response) {
+        @Nullable PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
+            context,
+        @Nullable ListKnowledgeBasesResponse response) {
       super(context, response);
     }
 
@@ -1367,14 +1369,16 @@ public class KnowledgeBasesClient implements BackgroundResource {
 
     @Override
     protected ListKnowledgeBasesPage createPage(
-        PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase> context,
-        ListKnowledgeBasesResponse response) {
+        @Nullable PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
+            context,
+        @Nullable ListKnowledgeBasesResponse response) {
       return new ListKnowledgeBasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKnowledgeBasesPage> createPageAsync(
-        PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase> context,
+        @Nullable PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
+            context,
         ApiFuture<ListKnowledgeBasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1389,7 +1393,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
           ListKnowledgeBasesFixedSizeCollection> {
 
     private ListKnowledgeBasesFixedSizeCollection(
-        List<ListKnowledgeBasesPage> pages, int collectionSize) {
+        @Nullable List<ListKnowledgeBasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1399,7 +1403,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
 
     @Override
     protected ListKnowledgeBasesFixedSizeCollection createCollection(
-        List<ListKnowledgeBasesPage> pages, int collectionSize) {
+        @Nullable List<ListKnowledgeBasesPage> pages, int collectionSize) {
       return new ListKnowledgeBasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1433,8 +1437,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1444,14 +1448,14 @@ public class KnowledgeBasesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1465,7 +1469,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1475,7 +1480,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

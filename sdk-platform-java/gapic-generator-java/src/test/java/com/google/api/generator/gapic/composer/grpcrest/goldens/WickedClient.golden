@@ -10,6 +10,8 @@ import com.google.showcase.v1beta1.stub.WickedStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -113,10 +115,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WickedClient implements BackgroundResource {
-  private final WickedSettings settings;
+  private final @Nullable WickedSettings settings;
   private final WickedStub stub;
 
   /** Constructs an instance of WickedClient with default settings. */
@@ -154,7 +157,7 @@ public class WickedClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WickedSettings getSettings() {
+  public final @Nullable WickedSettings getSettings() {
     return settings;
   }
 

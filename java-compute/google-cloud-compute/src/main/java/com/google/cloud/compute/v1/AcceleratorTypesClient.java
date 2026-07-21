@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -167,9 +169,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AcceleratorTypesClient implements BackgroundResource {
-  private final AcceleratorTypesSettings settings;
+  private final @Nullable AcceleratorTypesSettings settings;
   private final AcceleratorTypesStub stub;
 
   /** Constructs an instance of AcceleratorTypesClient with default settings. */
@@ -209,7 +212,7 @@ public class AcceleratorTypesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AcceleratorTypesSettings getSettings() {
+  public final @Nullable AcceleratorTypesSettings getSettings() {
     return settings;
   }
 
@@ -686,12 +689,13 @@ public class AcceleratorTypesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListAcceleratorTypesRequest,
                 AcceleratorTypeAggregatedList,
                 Map.Entry<String, AcceleratorTypesScopedList>>
             context,
-        AcceleratorTypeAggregatedList response) {
+        @Nullable AcceleratorTypeAggregatedList response) {
       super(context, response);
     }
 
@@ -701,18 +705,20 @@ public class AcceleratorTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListAcceleratorTypesRequest,
                 AcceleratorTypeAggregatedList,
                 Map.Entry<String, AcceleratorTypesScopedList>>
             context,
-        AcceleratorTypeAggregatedList response) {
+        @Nullable AcceleratorTypeAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListAcceleratorTypesRequest,
                 AcceleratorTypeAggregatedList,
                 Map.Entry<String, AcceleratorTypesScopedList>>
@@ -730,7 +736,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -740,7 +747,7 @@ public class AcceleratorTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -772,8 +779,9 @@ public class AcceleratorTypesClient implements BackgroundResource {
           ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType, ListPage> {
 
     private ListPage(
-        PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType> context,
-        AcceleratorTypeList response) {
+        @Nullable PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType>
+            context,
+        @Nullable AcceleratorTypeList response) {
       super(context, response);
     }
 
@@ -783,14 +791,16 @@ public class AcceleratorTypesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType> context,
-        AcceleratorTypeList response) {
+        @Nullable PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType>
+            context,
+        @Nullable AcceleratorTypeList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType> context,
+        @Nullable PageContext<ListAcceleratorTypesRequest, AcceleratorTypeList, AcceleratorType>
+            context,
         ApiFuture<AcceleratorTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -804,7 +814,7 @@ public class AcceleratorTypesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -813,7 +823,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

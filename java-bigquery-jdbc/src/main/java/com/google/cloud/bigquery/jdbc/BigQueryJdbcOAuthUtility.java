@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryErrorMessage.OAUTH_TYPE_ERR
 
 import com.google.api.client.util.PemReader;
 import com.google.api.client.util.SecurityUtils;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.ClientId;
 import com.google.auth.oauth2.ExternalAccountCredentials;
@@ -51,6 +52,7 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
@@ -262,6 +264,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       Boolean reqGoogleDriveScopeBool,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
 
@@ -272,21 +275,26 @@ final class BigQueryJdbcOAuthUtility {
     switch (authType) {
       case GOOGLE_SERVICE_ACCOUNT:
         credentials =
-            getGoogleServiceAccountCredentials(authProperties, overrideProperties, callerClassName);
+            getGoogleServiceAccountCredentials(
+                authProperties, overrideProperties, httpTransportFactory, callerClassName);
         break;
       case GOOGLE_USER_ACCOUNT:
         credentials =
-            getGoogleUserAccountCredentials(authProperties, overrideProperties, callerClassName);
+            getGoogleUserAccountCredentials(
+                authProperties, overrideProperties, httpTransportFactory, callerClassName);
         break;
       case PRE_GENERATED_TOKEN:
         credentials =
-            getPreGeneratedTokensCredentials(authProperties, overrideProperties, callerClassName);
+            getPreGeneratedTokensCredentials(
+                authProperties, overrideProperties, httpTransportFactory, callerClassName);
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
-        credentials = getApplicationDefaultCredentials(callerClassName);
+        credentials = getApplicationDefaultCredentials(httpTransportFactory, callerClassName);
         break;
       case EXTERNAL_ACCOUNT_AUTH:
-        credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
+        credentials =
+            getExternalAccountAuthCredentials(
+                authProperties, httpTransportFactory, callerClassName);
         break;
       default:
         IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
@@ -295,7 +303,7 @@ final class BigQueryJdbcOAuthUtility {
     }
 
     return getServiceAccountImpersonatedCredentials(
-        credentials, reqGoogleDriveScopeBool, authProperties);
+        credentials, reqGoogleDriveScopeBool, authProperties, httpTransportFactory);
   }
 
   private static boolean isFileExists(String filename) {
@@ -326,6 +334,7 @@ final class BigQueryJdbcOAuthUtility {
   private static GoogleCredentials getGoogleServiceAccountCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
 
@@ -370,6 +379,10 @@ final class BigQueryJdbcOAuthUtility {
         throw new BigQueryJdbcRuntimeException("No valid credentials provided.");
       }
 
+      if (httpTransportFactory != null) {
+        builder.setHttpTransportFactory(httpTransportFactory);
+      }
+
       if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
         builder.setTokenServerUri(
             new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
@@ -391,6 +404,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       int port,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws URISyntaxException {
     LOG.finer("++enter++\t" + callerClassName);
@@ -411,6 +425,10 @@ final class BigQueryJdbcOAuthUtility {
             .setScopes(scopes)
             .setCallbackUri(URI.create("http://localhost:" + port));
 
+    if (httpTransportFactory != null) {
+      userAuthorizerBuilder.setHttpTransportFactory(httpTransportFactory);
+    }
+
     if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
       userAuthorizerBuilder.setTokenServerUri(
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
@@ -420,14 +438,23 @@ final class BigQueryJdbcOAuthUtility {
   }
 
   static UserCredentials getCredentialsFromCode(
-      UserAuthorizer userAuthorizer, String code, String callerClassName) throws IOException {
+      UserAuthorizer userAuthorizer,
+      String code,
+      HttpTransportFactory httpTransportFactory,
+      String callerClassName)
+      throws IOException {
     LOG.finer("++enter++\t" + callerClassName);
-    return userAuthorizer.getCredentialsFromCode(code, URI.create(""));
+    UserCredentials credentials = userAuthorizer.getCredentialsFromCode(code, URI.create(""));
+    if (httpTransportFactory != null) {
+      credentials = credentials.toBuilder().setHttpTransportFactory(httpTransportFactory).build();
+    }
+    return credentials;
   }
 
   private static GoogleCredentials getGoogleUserAccountCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
@@ -435,7 +462,8 @@ final class BigQueryJdbcOAuthUtility {
       serverSocket.setSoTimeout(USER_AUTH_TIMEOUT_MS);
       int port = serverSocket.getLocalPort();
       UserAuthorizer userAuthorizer =
-          getUserAuthorizer(authProperties, overrideProperties, port, callerClassName);
+          getUserAuthorizer(
+              authProperties, overrideProperties, port, httpTransportFactory, callerClassName);
 
       URL authURL = userAuthorizer.getAuthorizationUrl("user", "", URI.create(""));
       String code;
@@ -468,7 +496,7 @@ final class BigQueryJdbcOAuthUtility {
         throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
       }
 
-      return getCredentialsFromCode(userAuthorizer, code, callerClassName);
+      return getCredentialsFromCode(userAuthorizer, code, httpTransportFactory, callerClassName);
     } catch (IOException | URISyntaxException ex) {
       throw new BigQueryJdbcRuntimeException(
           "Failed to establish connection using User Account authentication", ex);
@@ -503,12 +531,13 @@ final class BigQueryJdbcOAuthUtility {
   static GoogleCredentials getPreGeneratedTokensCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     if (authProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME)) {
       try {
         return getPreGeneratedRefreshTokenCredentials(
-            authProperties, overrideProperties, callerClassName);
+            authProperties, overrideProperties, httpTransportFactory, callerClassName);
       } catch (URISyntaxException ex) {
         throw new BigQueryJdbcRuntimeException(
             "URISyntaxException during getPreGeneratedTokensCredentials", ex);
@@ -522,6 +551,7 @@ final class BigQueryJdbcOAuthUtility {
   static UserCredentials getPreGeneratedRefreshTokenCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws URISyntaxException {
     LOG.finer("++enter++\t" + callerClassName);
@@ -533,6 +563,10 @@ final class BigQueryJdbcOAuthUtility {
             .setClientId(authProperties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME))
             .setClientSecret(
                 authProperties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME));
+
+    if (httpTransportFactory != null) {
+      userCredentialsBuilder.setHttpTransportFactory(httpTransportFactory);
+    }
 
     if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
       userCredentialsBuilder.setTokenServerUri(
@@ -548,10 +582,14 @@ final class BigQueryJdbcOAuthUtility {
     return userCredentialsBuilder.build();
   }
 
-  private static GoogleCredentials getApplicationDefaultCredentials(String callerClassName) {
+  private static GoogleCredentials getApplicationDefaultCredentials(
+      HttpTransportFactory httpTransportFactory, String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
-      GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+      GoogleCredentials credentials =
+          httpTransportFactory != null
+              ? GoogleCredentials.getApplicationDefault(httpTransportFactory)
+              : GoogleCredentials.getApplicationDefault();
       String principal = "unknown";
       if (credentials instanceof ServiceAccountCredentials) {
         principal = ((ServiceAccountCredentials) credentials).getClientEmail();
@@ -572,7 +610,9 @@ final class BigQueryJdbcOAuthUtility {
   }
 
   private static GoogleCredentials getExternalAccountAuthCredentials(
-      Map<String, String> authProperties, String callerClassName) {
+      Map<String, String> authProperties,
+      HttpTransportFactory httpTransportFactory,
+      String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
       JsonObject jsonObject = null;
@@ -609,18 +649,28 @@ final class BigQueryJdbcOAuthUtility {
         }
       }
 
+      ExternalAccountCredentials credentials;
       if (credentialsPath != null) {
-        return ExternalAccountCredentials.fromStream(
-            Files.newInputStream(Paths.get(credentialsPath)));
+        try (InputStream stream = Files.newInputStream(Paths.get(credentialsPath))) {
+          credentials =
+              httpTransportFactory != null
+                  ? ExternalAccountCredentials.fromStream(stream, httpTransportFactory)
+                  : ExternalAccountCredentials.fromStream(stream);
+        }
       } else if (jsonObject != null) {
-        return ExternalAccountCredentials.fromStream(
-            new ByteArrayInputStream(jsonObject.toString().getBytes()));
+        InputStream stream =
+            new ByteArrayInputStream(jsonObject.toString().getBytes(StandardCharsets.UTF_8));
+        credentials =
+            httpTransportFactory != null
+                ? ExternalAccountCredentials.fromStream(stream, httpTransportFactory)
+                : ExternalAccountCredentials.fromStream(stream);
       } else {
         IllegalArgumentException ex =
             new IllegalArgumentException("Insufficient info provided for external authentication");
         LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
+      return credentials;
     } catch (IOException e) {
       throw new BigQueryJdbcRuntimeException(
           "IOException during getExternalAccountAuthCredentials", e);
@@ -634,7 +684,8 @@ final class BigQueryJdbcOAuthUtility {
   private static GoogleCredentials getServiceAccountImpersonatedCredentials(
       GoogleCredentials credentials,
       Boolean reqGoogleDriveScopeBool,
-      Map<String, String> authProperties) {
+      Map<String, String> authProperties,
+      HttpTransportFactory httpTransportFactory) {
 
     String impersonationEmail =
         authProperties.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME);
@@ -684,6 +735,15 @@ final class BigQueryJdbcOAuthUtility {
       throw ex;
     }
 
+    if (httpTransportFactory != null) {
+      return ImpersonatedCredentials.create(
+          credentials,
+          impersonationEmail,
+          impersonationChain,
+          impersonationScopes,
+          impersonationLifetimeInt,
+          httpTransportFactory);
+    }
     return ImpersonatedCredentials.create(
         credentials,
         impersonationEmail,

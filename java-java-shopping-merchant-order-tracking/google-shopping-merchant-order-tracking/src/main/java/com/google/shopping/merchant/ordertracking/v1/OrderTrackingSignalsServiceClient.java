@@ -23,6 +23,8 @@ import com.google.shopping.merchant.ordertracking.v1.stub.OrderTrackingSignalsSe
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -135,9 +137,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OrderTrackingSignalsServiceClient implements BackgroundResource {
-  private final OrderTrackingSignalsServiceSettings settings;
+  private final @Nullable OrderTrackingSignalsServiceSettings settings;
   private final OrderTrackingSignalsServiceStub stub;
 
   /** Constructs an instance of OrderTrackingSignalsServiceClient with default settings. */
@@ -180,7 +183,7 @@ public class OrderTrackingSignalsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OrderTrackingSignalsServiceSettings getSettings() {
+  public final @Nullable OrderTrackingSignalsServiceSettings getSettings() {
     return settings;
   }
 
@@ -217,7 +220,7 @@ public class OrderTrackingSignalsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrderTrackingSignal createOrderTrackingSignal(
-      AccountName parent, String orderTrackingSignalId) {
+      @Nullable AccountName parent, String orderTrackingSignalId) {
     CreateOrderTrackingSignalRequest request =
         CreateOrderTrackingSignalRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -299,9 +301,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceGroupsClient implements BackgroundResource {
-  private final InstanceGroupsSettings settings;
+  private final @Nullable InstanceGroupsSettings settings;
   private final InstanceGroupsStub stub;
 
   /** Constructs an instance of InstanceGroupsClient with default settings. */
@@ -341,7 +344,7 @@ public class InstanceGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InstanceGroupsSettings getSettings() {
+  public final @Nullable InstanceGroupsSettings getSettings() {
     return settings;
   }
 
@@ -1882,12 +1885,13 @@ public class InstanceGroupsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
                 Map.Entry<String, InstanceGroupsScopedList>>
             context,
-        InstanceGroupAggregatedList response) {
+        @Nullable InstanceGroupAggregatedList response) {
       super(context, response);
     }
 
@@ -1897,18 +1901,20 @@ public class InstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
                 Map.Entry<String, InstanceGroupsScopedList>>
             context,
-        InstanceGroupAggregatedList response) {
+        @Nullable InstanceGroupAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstanceGroupsRequest,
                 InstanceGroupAggregatedList,
                 Map.Entry<String, InstanceGroupsScopedList>>
@@ -1926,7 +1932,8 @@ public class InstanceGroupsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1936,7 +1943,7 @@ public class InstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1967,8 +1974,8 @@ public class InstanceGroupsClient implements BackgroundResource {
       extends AbstractPage<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup, ListPage> {
 
     private ListPage(
-        PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
-        InstanceGroupList response) {
+        @Nullable PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
+        @Nullable InstanceGroupList response) {
       super(context, response);
     }
 
@@ -1978,14 +1985,14 @@ public class InstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
-        InstanceGroupList response) {
+        @Nullable PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
+        @Nullable InstanceGroupList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
+        @Nullable PageContext<ListInstanceGroupsRequest, InstanceGroupList, InstanceGroup> context,
         ApiFuture<InstanceGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1999,7 +2006,7 @@ public class InstanceGroupsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2008,7 +2015,8 @@ public class InstanceGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2049,12 +2057,13 @@ public class InstanceGroupsClient implements BackgroundResource {
           ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesInstanceGroupsRequest,
                 InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
-        InstanceGroupsListInstances response) {
+        @Nullable InstanceGroupsListInstances response) {
       super(context, response);
     }
 
@@ -2064,18 +2073,20 @@ public class InstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesInstanceGroupsRequest,
                 InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
-        InstanceGroupsListInstances response) {
+        @Nullable InstanceGroupsListInstances response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstancesInstanceGroupsRequest,
                 InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
@@ -2093,7 +2104,8 @@ public class InstanceGroupsClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2103,7 +2115,7 @@ public class InstanceGroupsClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }

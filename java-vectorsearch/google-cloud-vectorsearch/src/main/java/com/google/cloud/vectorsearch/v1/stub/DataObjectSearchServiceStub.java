@@ -35,6 +35,7 @@ import com.google.cloud.vectorsearch.v1.QueryDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1.SearchDataObjectsRequest;
 import com.google.cloud.vectorsearch.v1.SearchDataObjectsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -42,6 +43,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class DataObjectSearchServiceStub implements BackgroundResource {
 

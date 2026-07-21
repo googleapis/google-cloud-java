@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -286,10 +288,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GenAiCacheServiceClient implements BackgroundResource {
-  private final GenAiCacheServiceSettings settings;
+  private final @Nullable GenAiCacheServiceSettings settings;
   private final GenAiCacheServiceStub stub;
 
   /** Constructs an instance of GenAiCacheServiceClient with default settings. */
@@ -329,7 +332,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GenAiCacheServiceSettings getSettings() {
+  public final @Nullable GenAiCacheServiceSettings getSettings() {
     return settings;
   }
 
@@ -361,7 +364,8 @@ public class GenAiCacheServiceClient implements BackgroundResource {
    * @param cachedContent Required. The cached content to create
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CachedContent createCachedContent(LocationName parent, CachedContent cachedContent) {
+  public final CachedContent createCachedContent(
+      @Nullable LocationName parent, CachedContent cachedContent) {
     CreateCachedContentRequest request =
         CreateCachedContentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -485,7 +489,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
    * @param name Required. The resource name referring to the cached content
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CachedContent getCachedContent(CachedContentName name) {
+  public final CachedContent getCachedContent(@Nullable CachedContentName name) {
     GetCachedContentRequest request =
         GetCachedContentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCachedContent(request);
@@ -689,7 +693,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
    * @param name Required. The resource name referring to the cached content
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCachedContent(CachedContentName name) {
+  public final void deleteCachedContent(@Nullable CachedContentName name) {
     DeleteCachedContentRequest request =
         DeleteCachedContentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -806,7 +810,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
    * @param parent Required. The parent, which owns this collection of cached contents.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCachedContentsPagedResponse listCachedContents(LocationName parent) {
+  public final ListCachedContentsPagedResponse listCachedContents(@Nullable LocationName parent) {
     ListCachedContentsRequest request =
         ListCachedContentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1379,8 +1383,9 @@ public class GenAiCacheServiceClient implements BackgroundResource {
           ListCachedContentsPage> {
 
     private ListCachedContentsPage(
-        PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent> context,
-        ListCachedContentsResponse response) {
+        @Nullable PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent>
+            context,
+        @Nullable ListCachedContentsResponse response) {
       super(context, response);
     }
 
@@ -1390,14 +1395,16 @@ public class GenAiCacheServiceClient implements BackgroundResource {
 
     @Override
     protected ListCachedContentsPage createPage(
-        PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent> context,
-        ListCachedContentsResponse response) {
+        @Nullable PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent>
+            context,
+        @Nullable ListCachedContentsResponse response) {
       return new ListCachedContentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCachedContentsPage> createPageAsync(
-        PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent> context,
+        @Nullable PageContext<ListCachedContentsRequest, ListCachedContentsResponse, CachedContent>
+            context,
         ApiFuture<ListCachedContentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1412,7 +1419,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
           ListCachedContentsFixedSizeCollection> {
 
     private ListCachedContentsFixedSizeCollection(
-        List<ListCachedContentsPage> pages, int collectionSize) {
+        @Nullable List<ListCachedContentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1422,7 +1429,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
 
     @Override
     protected ListCachedContentsFixedSizeCollection createCollection(
-        List<ListCachedContentsPage> pages, int collectionSize) {
+        @Nullable List<ListCachedContentsPage> pages, int collectionSize) {
       return new ListCachedContentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1456,8 +1463,8 @@ public class GenAiCacheServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1467,14 +1474,14 @@ public class GenAiCacheServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1488,7 +1495,8 @@ public class GenAiCacheServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1498,7 +1506,7 @@ public class GenAiCacheServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

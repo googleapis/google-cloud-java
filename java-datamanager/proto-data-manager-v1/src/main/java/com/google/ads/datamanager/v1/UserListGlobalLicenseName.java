@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class UserListGlobalLicenseName implements ResourceName {
   private static final PathTemplate ACCOUNT_TYPE_ACCOUNT_USER_LIST_GLOBAL_LICENSE =
@@ -88,7 +91,7 @@ public class UserListGlobalLicenseName implements ResourceName {
         .toString();
   }
 
-  public static UserListGlobalLicenseName parse(String formattedString) {
+  public static @Nullable UserListGlobalLicenseName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -110,7 +113,7 @@ public class UserListGlobalLicenseName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<UserListGlobalLicenseName> values) {
+  public static List<String> toStringList(List<@Nullable UserListGlobalLicenseName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (UserListGlobalLicenseName value : values) {
       if (value == null) {
@@ -164,7 +167,7 @@ public class UserListGlobalLicenseName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

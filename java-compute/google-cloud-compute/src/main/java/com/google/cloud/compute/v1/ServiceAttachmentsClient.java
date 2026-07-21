@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -278,9 +280,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ServiceAttachmentsClient implements BackgroundResource {
-  private final ServiceAttachmentsSettings settings;
+  private final @Nullable ServiceAttachmentsSettings settings;
   private final ServiceAttachmentsStub stub;
 
   /** Constructs an instance of ServiceAttachmentsClient with default settings. */
@@ -320,7 +323,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ServiceAttachmentsSettings getSettings() {
+  public final @Nullable ServiceAttachmentsSettings getSettings() {
     return settings;
   }
 
@@ -1535,12 +1538,13 @@ public class ServiceAttachmentsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListServiceAttachmentsRequest,
                 ServiceAttachmentAggregatedList,
                 Map.Entry<String, ServiceAttachmentsScopedList>>
             context,
-        ServiceAttachmentAggregatedList response) {
+        @Nullable ServiceAttachmentAggregatedList response) {
       super(context, response);
     }
 
@@ -1550,18 +1554,20 @@ public class ServiceAttachmentsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListServiceAttachmentsRequest,
                 ServiceAttachmentAggregatedList,
                 Map.Entry<String, ServiceAttachmentsScopedList>>
             context,
-        ServiceAttachmentAggregatedList response) {
+        @Nullable ServiceAttachmentAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListServiceAttachmentsRequest,
                 ServiceAttachmentAggregatedList,
                 Map.Entry<String, ServiceAttachmentsScopedList>>
@@ -1579,7 +1585,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1589,7 +1596,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1622,9 +1629,10 @@ public class ServiceAttachmentsClient implements BackgroundResource {
           ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment, ListPage> {
 
     private ListPage(
-        PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
+        @Nullable
+            PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
             context,
-        ServiceAttachmentList response) {
+        @Nullable ServiceAttachmentList response) {
       super(context, response);
     }
 
@@ -1634,15 +1642,17 @@ public class ServiceAttachmentsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
+        @Nullable
+            PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
             context,
-        ServiceAttachmentList response) {
+        @Nullable ServiceAttachmentList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
+        @Nullable
+            PageContext<ListServiceAttachmentsRequest, ServiceAttachmentList, ServiceAttachment>
             context,
         ApiFuture<ServiceAttachmentList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1657,7 +1667,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1666,7 +1676,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

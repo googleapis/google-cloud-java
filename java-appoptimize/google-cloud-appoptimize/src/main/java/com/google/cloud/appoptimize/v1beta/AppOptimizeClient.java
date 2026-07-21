@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -257,10 +259,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AppOptimizeClient implements BackgroundResource {
-  private final AppOptimizeSettings settings;
+  private final @Nullable AppOptimizeSettings settings;
   private final AppOptimizeStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -307,7 +310,7 @@ public class AppOptimizeClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AppOptimizeSettings getSettings() {
+  public final @Nullable AppOptimizeSettings getSettings() {
     return settings;
   }
 
@@ -367,7 +370,7 @@ public class AppOptimizeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Report, OperationMetadata> createReportAsync(
-      LocationName parent, Report report, String reportId) {
+      @Nullable LocationName parent, Report report, String reportId) {
     CreateReportRequest request =
         CreateReportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -544,7 +547,7 @@ public class AppOptimizeClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}/reports/{report_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Report getReport(ReportName name) {
+  public final Report getReport(@Nullable ReportName name) {
     GetReportRequest request =
         GetReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReport(request);
@@ -656,7 +659,7 @@ public class AppOptimizeClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportsPagedResponse listReports(LocationName parent) {
+  public final ListReportsPagedResponse listReports(@Nullable LocationName parent) {
     ListReportsRequest request =
         ListReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -817,7 +820,7 @@ public class AppOptimizeClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}/reports/{report_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReport(ReportName name) {
+  public final void deleteReport(@Nullable ReportName name) {
     DeleteReportRequest request =
         DeleteReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteReport(request);
@@ -931,7 +934,7 @@ public class AppOptimizeClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}/reports/{report_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReadReportPagedResponse readReport(ReportName name) {
+  public final ReadReportPagedResponse readReport(@Nullable ReportName name) {
     ReadReportRequest request =
         ReadReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return readReport(request);
@@ -1317,8 +1320,8 @@ public class AppOptimizeClient implements BackgroundResource {
       extends AbstractPage<ListReportsRequest, ListReportsResponse, Report, ListReportsPage> {
 
     private ListReportsPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       super(context, response);
     }
 
@@ -1328,14 +1331,14 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ListReportsPage createPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       return new ListReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportsPage> createPageAsync(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
         ApiFuture<ListReportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1349,7 +1352,8 @@ public class AppOptimizeClient implements BackgroundResource {
           ListReportsPage,
           ListReportsFixedSizeCollection> {
 
-    private ListReportsFixedSizeCollection(List<ListReportsPage> pages, int collectionSize) {
+    private ListReportsFixedSizeCollection(
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1359,7 +1363,7 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ListReportsFixedSizeCollection createCollection(
-        List<ListReportsPage> pages, int collectionSize) {
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       return new ListReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1390,8 +1394,8 @@ public class AppOptimizeClient implements BackgroundResource {
       extends AbstractPage<ReadReportRequest, ReadReportResponse, ListValue, ReadReportPage> {
 
     private ReadReportPage(
-        PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
-        ReadReportResponse response) {
+        @Nullable PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
+        @Nullable ReadReportResponse response) {
       super(context, response);
     }
 
@@ -1401,14 +1405,14 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ReadReportPage createPage(
-        PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
-        ReadReportResponse response) {
+        @Nullable PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
+        @Nullable ReadReportResponse response) {
       return new ReadReportPage(context, response);
     }
 
     @Override
     public ApiFuture<ReadReportPage> createPageAsync(
-        PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
+        @Nullable PageContext<ReadReportRequest, ReadReportResponse, ListValue> context,
         ApiFuture<ReadReportResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1422,7 +1426,8 @@ public class AppOptimizeClient implements BackgroundResource {
           ReadReportPage,
           ReadReportFixedSizeCollection> {
 
-    private ReadReportFixedSizeCollection(List<ReadReportPage> pages, int collectionSize) {
+    private ReadReportFixedSizeCollection(
+        @Nullable List<ReadReportPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1432,7 +1437,7 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ReadReportFixedSizeCollection createCollection(
-        List<ReadReportPage> pages, int collectionSize) {
+        @Nullable List<ReadReportPage> pages, int collectionSize) {
       return new ReadReportFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1466,8 +1471,8 @@ public class AppOptimizeClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1477,14 +1482,14 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1498,7 +1503,8 @@ public class AppOptimizeClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1508,7 +1514,7 @@ public class AppOptimizeClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

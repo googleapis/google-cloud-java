@@ -45,6 +45,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -347,9 +349,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CloudFunctionsServiceClient implements BackgroundResource {
-  private final CloudFunctionsServiceSettings settings;
+  private final @Nullable CloudFunctionsServiceSettings settings;
   private final CloudFunctionsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -397,7 +400,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudFunctionsServiceSettings getSettings() {
+  public final @Nullable CloudFunctionsServiceSettings getSettings() {
     return settings;
   }
 
@@ -552,7 +555,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * @param name Required. The name of the function which details should be obtained.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloudFunction getFunction(CloudFunctionName name) {
+  public final CloudFunction getFunction(@Nullable CloudFunctionName name) {
     GetFunctionRequest request =
         GetFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFunction(request);
@@ -673,7 +676,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CloudFunction, OperationMetadataV1> createFunctionAsync(
-      LocationName location, CloudFunction function) {
+      @Nullable LocationName location, CloudFunction function) {
     CreateFunctionRequest request =
         CreateFunctionRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -956,7 +959,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadataV1> deleteFunctionAsync(
-      CloudFunctionName name) {
+      @Nullable CloudFunctionName name) {
     DeleteFunctionRequest request =
         DeleteFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFunctionAsync(request);
@@ -1108,7 +1111,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * @param data Required. Input to be passed to the function.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CallFunctionResponse callFunction(CloudFunctionName name, String data) {
+  public final CallFunctionResponse callFunction(@Nullable CloudFunctionName name, String data) {
     CallFunctionRequest request =
         CallFunctionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1754,8 +1757,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
           ListFunctionsRequest, ListFunctionsResponse, CloudFunction, ListFunctionsPage> {
 
     private ListFunctionsPage(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
-        ListFunctionsResponse response) {
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
+        @Nullable ListFunctionsResponse response) {
       super(context, response);
     }
 
@@ -1765,14 +1768,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListFunctionsPage createPage(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
-        ListFunctionsResponse response) {
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
+        @Nullable ListFunctionsResponse response) {
       return new ListFunctionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFunctionsPage> createPageAsync(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, CloudFunction> context,
         ApiFuture<ListFunctionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1786,7 +1789,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
           ListFunctionsPage,
           ListFunctionsFixedSizeCollection> {
 
-    private ListFunctionsFixedSizeCollection(List<ListFunctionsPage> pages, int collectionSize) {
+    private ListFunctionsFixedSizeCollection(
+        @Nullable List<ListFunctionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1796,7 +1800,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListFunctionsFixedSizeCollection createCollection(
-        List<ListFunctionsPage> pages, int collectionSize) {
+        @Nullable List<ListFunctionsPage> pages, int collectionSize) {
       return new ListFunctionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1830,8 +1834,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1841,14 +1845,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1862,7 +1866,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1872,7 +1877,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

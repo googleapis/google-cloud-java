@@ -23,6 +23,8 @@ import com.google.maps.places.v1.stub.PlacesStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -201,9 +203,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PlacesClient implements BackgroundResource {
-  private final PlacesSettings settings;
+  private final @Nullable PlacesSettings settings;
   private final PlacesStub stub;
 
   /** Constructs an instance of PlacesClient with default settings. */
@@ -241,7 +244,7 @@ public class PlacesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PlacesSettings getSettings() {
+  public final @Nullable PlacesSettings getSettings() {
     return settings;
   }
 
@@ -435,7 +438,7 @@ public class PlacesClient implements BackgroundResource {
    *     at the end of the photo resource to get the photo media resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PhotoMedia getPhotoMedia(PhotoMediaName name) {
+  public final PhotoMedia getPhotoMedia(@Nullable PhotoMediaName name) {
     GetPhotoMediaRequest request =
         GetPhotoMediaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPhotoMedia(request);
@@ -554,7 +557,7 @@ public class PlacesClient implements BackgroundResource {
    * @param name Required. The resource name of a place, in the `places/{place_id}` format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Place getPlace(PlaceName name) {
+  public final Place getPlace(@Nullable PlaceName name) {
     GetPlaceRequest request =
         GetPlaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPlace(request);

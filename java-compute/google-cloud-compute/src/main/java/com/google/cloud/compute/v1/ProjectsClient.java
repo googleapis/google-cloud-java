@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -378,9 +380,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ProjectsClient implements BackgroundResource {
-  private final ProjectsSettings settings;
+  private final @Nullable ProjectsSettings settings;
   private final ProjectsStub stub;
 
   /** Constructs an instance of ProjectsClient with default settings. */
@@ -418,7 +421,7 @@ public class ProjectsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProjectsSettings getSettings() {
+  public final @Nullable ProjectsSettings getSettings() {
     return settings;
   }
 
@@ -2333,8 +2336,10 @@ public class ProjectsClient implements BackgroundResource {
           GetXpnResourcesPage> {
 
     private GetXpnResourcesPage(
-        PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId> context,
-        ProjectsGetXpnResources response) {
+        @Nullable
+            PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId>
+            context,
+        @Nullable ProjectsGetXpnResources response) {
       super(context, response);
     }
 
@@ -2344,14 +2349,18 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected GetXpnResourcesPage createPage(
-        PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId> context,
-        ProjectsGetXpnResources response) {
+        @Nullable
+            PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId>
+            context,
+        @Nullable ProjectsGetXpnResources response) {
       return new GetXpnResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<GetXpnResourcesPage> createPageAsync(
-        PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId> context,
+        @Nullable
+            PageContext<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId>
+            context,
         ApiFuture<ProjectsGetXpnResources> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2366,7 +2375,7 @@ public class ProjectsClient implements BackgroundResource {
           GetXpnResourcesFixedSizeCollection> {
 
     private GetXpnResourcesFixedSizeCollection(
-        List<GetXpnResourcesPage> pages, int collectionSize) {
+        @Nullable List<GetXpnResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2376,7 +2385,7 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected GetXpnResourcesFixedSizeCollection createCollection(
-        List<GetXpnResourcesPage> pages, int collectionSize) {
+        @Nullable List<GetXpnResourcesPage> pages, int collectionSize) {
       return new GetXpnResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2409,8 +2418,8 @@ public class ProjectsClient implements BackgroundResource {
       extends AbstractPage<ListXpnHostsProjectsRequest, XpnHostList, Project, ListXpnHostsPage> {
 
     private ListXpnHostsPage(
-        PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
-        XpnHostList response) {
+        @Nullable PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
+        @Nullable XpnHostList response) {
       super(context, response);
     }
 
@@ -2420,14 +2429,14 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected ListXpnHostsPage createPage(
-        PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
-        XpnHostList response) {
+        @Nullable PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
+        @Nullable XpnHostList response) {
       return new ListXpnHostsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListXpnHostsPage> createPageAsync(
-        PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
+        @Nullable PageContext<ListXpnHostsProjectsRequest, XpnHostList, Project> context,
         ApiFuture<XpnHostList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2441,7 +2450,8 @@ public class ProjectsClient implements BackgroundResource {
           ListXpnHostsPage,
           ListXpnHostsFixedSizeCollection> {
 
-    private ListXpnHostsFixedSizeCollection(List<ListXpnHostsPage> pages, int collectionSize) {
+    private ListXpnHostsFixedSizeCollection(
+        @Nullable List<ListXpnHostsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2451,7 +2461,7 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected ListXpnHostsFixedSizeCollection createCollection(
-        List<ListXpnHostsPage> pages, int collectionSize) {
+        @Nullable List<ListXpnHostsPage> pages, int collectionSize) {
       return new ListXpnHostsFixedSizeCollection(pages, collectionSize);
     }
   }

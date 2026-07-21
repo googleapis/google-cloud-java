@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -142,9 +144,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConnectionServiceClient implements BackgroundResource {
-  private final ConnectionServiceSettings settings;
+  private final @Nullable ConnectionServiceSettings settings;
   private final ConnectionServiceStub stub;
 
   /** Constructs an instance of ConnectionServiceClient with default settings. */
@@ -184,7 +187,7 @@ public class ConnectionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConnectionServiceSettings getSettings() {
+  public final @Nullable ConnectionServiceSettings getSettings() {
     return settings;
   }
 
@@ -216,7 +219,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *     project_id}/endpoints/{endpoint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionsPagedResponse listConnections(EndpointName parent) {
+  public final ListConnectionsPagedResponse listConnections(@Nullable EndpointName parent) {
     ListConnectionsRequest request =
         ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -417,8 +420,8 @@ public class ConnectionServiceClient implements BackgroundResource {
           ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
 
     private ListConnectionsPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       super(context, response);
     }
 
@@ -428,14 +431,14 @@ public class ConnectionServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsPage createPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       return new ListConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionsPage> createPageAsync(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
         ApiFuture<ListConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -450,7 +453,7 @@ public class ConnectionServiceClient implements BackgroundResource {
           ListConnectionsFixedSizeCollection> {
 
     private ListConnectionsFixedSizeCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -460,7 +463,7 @@ public class ConnectionServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsFixedSizeCollection createCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       return new ListConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }

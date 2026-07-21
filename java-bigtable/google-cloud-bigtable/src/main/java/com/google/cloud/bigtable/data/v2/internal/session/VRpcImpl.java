@@ -54,7 +54,11 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   // Narrow view of SessionImpl
   interface VRpcSessionApi {
-    Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
+    /**
+     * Submit the vRPC for sending. Async: errors are delivered via {@link
+     * VRpcImpl#handleError(VRpcResult)}, which dispatches onto {@code ctx.getExecutor()}.
+     */
+    void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
 
     void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause);
   }
@@ -69,6 +73,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   private final VRpcDescriptor<OpenReqT, ReqT, RespT> desc;
   final long rpcId;
   private VRpcListener<RespT> listener;
+  private VRpcCallContext ctx;
   private PeerInfo peerInfo;
 
   private AtomicReference<State> state;
@@ -91,55 +96,47 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-    this.listener = listener;
-
-    Status status;
-    boolean retryable = true;
-
     if (!state.compareAndSet(State.NEW, State.STARTED)) {
-      status = Status.INTERNAL.withDescription("VRpc already started in state: " + state.get());
-      retryable = false;
-    } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
+      // Lost the CAS — a duplicate start. Dispatch to the local listener/ctx without touching
+      // the shared fields, otherwise we'd corrupt the in-flight call owned by the CAS winner.
+      VRpcResult result =
+          VRpcResult.createRejectedError(
+              Status.INTERNAL.withDescription("VRpc already started in state: " + state.get()));
+      ctx.getExecutor().execute(() -> listener.onClose(result));
+      return;
+    }
+    // Won the CAS — publish the fields.
+    this.listener = listener;
+    this.ctx = ctx;
+
+    if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
         < TimeUnit.MILLISECONDS.toMicros(1)) {
-      // Don't send RPCs that don't have any hope of succeeding
-      status =
-          Status.DEADLINE_EXCEEDED.withDescription("Remaining deadline is too short to send RPC");
-      retryable = false;
-    } else {
-      Metadata vRpcMetadata =
-          Metadata.newBuilder()
-              .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())
-              .setTraceparent(ctx.getTraceParent())
-              .build();
-      ctx.getTracer().onRequestSent(peerInfo);
-      status =
-          session.startRpc(
-              this,
-              VirtualRpcRequest.newBuilder()
-                  .setRpcId(rpcId)
-                  .setMetadata(vRpcMetadata)
-                  .setDeadline(
-                      Durations.fromNanos(
-                          ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
-                  .setPayload(desc.encode(req))
-                  .build());
-      // if status is not OK, the session might not be ready and the vRPC can be retried on a
-      // different session
+      state.set(State.CLOSED);
+      VRpcResult result =
+          VRpcResult.createRejectedError(
+              Status.DEADLINE_EXCEEDED.withDescription(
+                  "Remaining deadline is too short to send RPC"));
+      ctx.getExecutor().execute(() -> listener.onClose(result));
+      return;
     }
 
-    if (!status.isOk()) {
-      debugTagTracer.checkPrecondition(
-          state.compareAndSet(State.STARTED, State.CLOSED),
-          "vrpc_incorrect_start_state",
-          "VRpc has incorrect state. Expected to be started but was %s",
-          state);
-      // TODO: loop through the session executor
-      if (retryable) {
-        listener.onClose(VRpcResult.createUncommitedError(status));
-      } else {
-        listener.onClose(VRpcResult.createRejectedError(status));
-      }
-    }
+    Metadata vRpcMetadata =
+        Metadata.newBuilder()
+            .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())
+            .setTraceparent(ctx.getTraceParent())
+            .build();
+    ctx.getTracer().onRequestSent(peerInfo);
+    session.startRpc(
+        this,
+        VirtualRpcRequest.newBuilder()
+            .setRpcId(rpcId)
+            .setMetadata(vRpcMetadata)
+            .setDeadline(
+                Durations.fromNanos(
+                    ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
+            .setPayload(desc.encode(req))
+            .build());
+    // Session delivers startRpc errors asynchronously via handleError() on ctx.getExecutor().
   }
 
   void handleSessionClose(VRpcResult result) {
@@ -147,8 +144,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
       logger.warning("tried to close a vRPC after it was already closed state: " + state.get());
       return;
     }
-
-    listener.onClose(result);
+    ctx.getExecutor().execute(() -> listener.onClose(result));
   }
 
   void handleResponse(VirtualRpcResponse response) {
@@ -159,43 +155,50 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
     }
     // TODO: handle streaming
 
-    RespT resp;
-    try {
-      resp = desc.decode(response.getPayload());
-    } catch (Throwable e) {
-      // TODO: notify Session to cancel the vRPC
-      // Right now, vrpc streaming & cancellation is not supported, so notifying SessionImpl is
-      // unnecessary. In the future handleResponse will need to notify that Session that the user
-      // was already notified of the error and no further notifications should be delivered
-      VRpcResult result =
-          VRpcResult.createLocalTransportError(
-              Status.INTERNAL.withDescription("Failed to decode VRpc payload").withCause(e));
-      listener.onClose(result);
-      return;
-    }
-
-    try {
-      listener.onMessage(resp);
-    } catch (Throwable e) {
-      VRpcResult result = VRpcResult.createUserError(e);
-      listener.onClose(result);
-      return;
-    }
-
-    listener.onClose(VRpcResult.createServerOk(response));
+    // Decode + callback fan-out all run on the op executor: keeps the (potentially heavy) decode
+    // off the session sync context, and gives every callback a single dispatcher.
+    ctx.getExecutor()
+        .execute(
+            () -> {
+              RespT resp;
+              try {
+                resp = desc.decode(response.getPayload());
+              } catch (Throwable e) {
+                // TODO: notify Session to cancel the vRPC
+                listener.onClose(
+                    VRpcResult.createLocalTransportError(
+                        Status.INTERNAL
+                            .withDescription("Failed to decode VRpc payload")
+                            .withCause(e)));
+                return;
+              }
+              try {
+                listener.onMessage(resp);
+              } catch (Throwable e) {
+                listener.onClose(VRpcResult.createUserError(e));
+                return;
+              }
+              listener.onClose(VRpcResult.createServerOk(response));
+            });
   }
 
   void handleError(VRpcResult result) {
-    if (state.getAndSet(State.CLOSED) == State.CLOSED) {
+    // CAS STARTED -> CLOSED, matching handleResponse / handleSessionClose. The previous
+    // getAndSet(CLOSED) would proceed from NEW and dereference null ctx/listener fields.
+    if (!state.compareAndSet(State.STARTED, State.CLOSED)) {
       return;
     }
-
-    listener.onClose(result);
+    ctx.getExecutor().execute(() -> listener.onClose(result));
   }
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
     session.cancelRpc(rpcId, message, cause);
+  }
+
+  @Override
+  public boolean isDone() {
+    return state.get() == State.CLOSED;
   }
 
   @Override

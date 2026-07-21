@@ -97,6 +97,8 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENCODED_CREDENTIALS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENDPOINT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIME_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.IS_EXPERIMENTAL_HOST_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.KEEP_TRANSACTION_ALIVE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.LENIENT_PROPERTY_NAME;
@@ -253,6 +255,24 @@ public class ConnectionProperties {
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);
+  static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIME =
+      create(
+          GRPC_KEEPALIVE_TIME_PROPERTY_NAME,
+          "The keepalive time for gRPC connections (e.g. '120s', '20s'). "
+              + "Setting a lower keep-alive time (minimum 10s enforced by the gRPC library) "
+              + "helps detect disconnected connections faster.",
+          null,
+          DurationConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIMEOUT =
+      create(
+          GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME,
+          "The keepalive timeout for gRPC connections (e.g. '20s', '5s'). This determines how long"
+              + " the client waits for a keep-alive ping response before terminating the"
+              + " connection. A lower timeout helps speed up recovery during network failures.",
+          null,
+          DurationConverter.INSTANCE,
+          Context.STARTUP);
 
   /**
    * @deprecated Use {@link #TYPE} with value "omni" instead.
@@ -278,6 +298,20 @@ public class ConnectionProperties {
             SpannerOptions.InstanceType.CLOUD, SpannerOptions.InstanceType.OMNI,
           },
           InstanceTypeConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> USERNAME =
+      create(
+          ConnectionOptions.USERNAME_PROPERTY_NAME,
+          "The username to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_USERNAME,
+          StringValueConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> PASSWORD =
+      create(
+          ConnectionOptions.PASSWORD_PROPERTY_NAME,
+          "The password to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_PASSWORD,
+          StringValueConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CLIENT_CERTIFICATE =
       create(

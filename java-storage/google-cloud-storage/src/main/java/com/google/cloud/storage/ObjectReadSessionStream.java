@@ -351,6 +351,12 @@ final class ObjectReadSessionStream
             executor.execute(
                 StorageException.liftToRunnable(
                     () -> {
+                      try {
+                        validateCumulativeChecksum(read);
+                      } catch (UncheckedCumulativeChecksumMismatchException e) {
+                        state.removeOutstandingReadOnFailure(id, read::fail).onFailure(e);
+                        return;
+                      }
                       read.eof();
                       // don't remove the outstanding read until the future has been resolved
                       state.removeOutstandingRead(id);
@@ -542,6 +548,15 @@ final class ObjectReadSessionStream
     @Override
     public void onComplete() {
       delegate.onComplete();
+    }
+  }
+
+  private void validateCumulativeChecksum(ObjectReadSessionStreamRead<?> read) {
+    Hasher hasher = read.hasher();
+    if (hasher instanceof CumulativeHasher) {
+      CumulativeHasher cumulativeHasher = (CumulativeHasher) hasher;
+      com.google.storage.v2.Object metadata = state.getMetadata();
+      cumulativeHasher.validateCumulativeChecksum(metadata);
     }
   }
 

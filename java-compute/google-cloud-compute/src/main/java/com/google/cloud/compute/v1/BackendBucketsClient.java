@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -369,9 +371,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BackendBucketsClient implements BackgroundResource {
-  private final BackendBucketsSettings settings;
+  private final @Nullable BackendBucketsSettings settings;
   private final BackendBucketsStub stub;
 
   /** Constructs an instance of BackendBucketsClient with default settings. */
@@ -411,7 +414,7 @@ public class BackendBucketsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BackendBucketsSettings getSettings() {
+  public final @Nullable BackendBucketsSettings getSettings() {
     return settings;
   }
 
@@ -2242,12 +2245,13 @@ public class BackendBucketsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListBackendBucketsRequest,
                 BackendBucketAggregatedList,
                 Map.Entry<String, BackendBucketsScopedList>>
             context,
-        BackendBucketAggregatedList response) {
+        @Nullable BackendBucketAggregatedList response) {
       super(context, response);
     }
 
@@ -2257,18 +2261,20 @@ public class BackendBucketsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListBackendBucketsRequest,
                 BackendBucketAggregatedList,
                 Map.Entry<String, BackendBucketsScopedList>>
             context,
-        BackendBucketAggregatedList response) {
+        @Nullable BackendBucketAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListBackendBucketsRequest,
                 BackendBucketAggregatedList,
                 Map.Entry<String, BackendBucketsScopedList>>
@@ -2286,7 +2292,8 @@ public class BackendBucketsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2296,7 +2303,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2327,8 +2334,8 @@ public class BackendBucketsClient implements BackgroundResource {
       extends AbstractPage<ListBackendBucketsRequest, BackendBucketList, BackendBucket, ListPage> {
 
     private ListPage(
-        PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
-        BackendBucketList response) {
+        @Nullable PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
+        @Nullable BackendBucketList response) {
       super(context, response);
     }
 
@@ -2338,14 +2345,14 @@ public class BackendBucketsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
-        BackendBucketList response) {
+        @Nullable PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
+        @Nullable BackendBucketList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
+        @Nullable PageContext<ListBackendBucketsRequest, BackendBucketList, BackendBucket> context,
         ApiFuture<BackendBucketList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2359,7 +2366,7 @@ public class BackendBucketsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2368,7 +2375,8 @@ public class BackendBucketsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2401,9 +2409,10 @@ public class BackendBucketsClient implements BackgroundResource {
           ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket, ListUsablePage> {
 
     private ListUsablePage(
-        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+        @Nullable
+            PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
             context,
-        BackendBucketListUsable response) {
+        @Nullable BackendBucketListUsable response) {
       super(context, response);
     }
 
@@ -2413,15 +2422,17 @@ public class BackendBucketsClient implements BackgroundResource {
 
     @Override
     protected ListUsablePage createPage(
-        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+        @Nullable
+            PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
             context,
-        BackendBucketListUsable response) {
+        @Nullable BackendBucketListUsable response) {
       return new ListUsablePage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsablePage> createPageAsync(
-        PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+        @Nullable
+            PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
             context,
         ApiFuture<BackendBucketListUsable> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2436,7 +2447,8 @@ public class BackendBucketsClient implements BackgroundResource {
           ListUsablePage,
           ListUsableFixedSizeCollection> {
 
-    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+    private ListUsableFixedSizeCollection(
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2446,7 +2458,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
     @Override
     protected ListUsableFixedSizeCollection createCollection(
-        List<ListUsablePage> pages, int collectionSize) {
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }

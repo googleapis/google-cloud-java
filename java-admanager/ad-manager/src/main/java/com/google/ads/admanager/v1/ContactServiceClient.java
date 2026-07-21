@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -211,9 +213,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ContactServiceClient implements BackgroundResource {
-  private final ContactServiceSettings settings;
+  private final @Nullable ContactServiceSettings settings;
   private final ContactServiceStub stub;
 
   /** Constructs an instance of ContactServiceClient with default settings. */
@@ -253,7 +256,7 @@ public class ContactServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContactServiceSettings getSettings() {
+  public final @Nullable ContactServiceSettings getSettings() {
     return settings;
   }
 
@@ -283,7 +286,7 @@ public class ContactServiceClient implements BackgroundResource {
    *     `networks/{network_code}/contacts/{contact_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Contact getContact(ContactName name) {
+  public final Contact getContact(@Nullable ContactName name) {
     GetContactRequest request =
         GetContactRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContact(request);
@@ -395,7 +398,7 @@ public class ContactServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContactsPagedResponse listContacts(NetworkName parent) {
+  public final ListContactsPagedResponse listContacts(@Nullable NetworkName parent) {
     ListContactsRequest request =
         ListContactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -568,7 +571,7 @@ public class ContactServiceClient implements BackgroundResource {
    * @param contact Required. The `Contact` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Contact createContact(NetworkName parent, Contact contact) {
+  public final Contact createContact(@Nullable NetworkName parent, Contact contact) {
     CreateContactRequest request =
         CreateContactRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -692,7 +695,7 @@ public class ContactServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateContactsResponse batchCreateContacts(
-      NetworkName parent, List<CreateContactRequest> requests) {
+      @Nullable NetworkName parent, List<CreateContactRequest> requests) {
     BatchCreateContactsRequest request =
         BatchCreateContactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -909,7 +912,7 @@ public class ContactServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateContactsResponse batchUpdateContacts(
-      NetworkName parent, List<UpdateContactRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateContactRequest> requests) {
     BatchUpdateContactsRequest request =
         BatchUpdateContactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1069,8 +1072,8 @@ public class ContactServiceClient implements BackgroundResource {
       extends AbstractPage<ListContactsRequest, ListContactsResponse, Contact, ListContactsPage> {
 
     private ListContactsPage(
-        PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
-        ListContactsResponse response) {
+        @Nullable PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
+        @Nullable ListContactsResponse response) {
       super(context, response);
     }
 
@@ -1080,14 +1083,14 @@ public class ContactServiceClient implements BackgroundResource {
 
     @Override
     protected ListContactsPage createPage(
-        PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
-        ListContactsResponse response) {
+        @Nullable PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
+        @Nullable ListContactsResponse response) {
       return new ListContactsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContactsPage> createPageAsync(
-        PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
+        @Nullable PageContext<ListContactsRequest, ListContactsResponse, Contact> context,
         ApiFuture<ListContactsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1101,7 +1104,8 @@ public class ContactServiceClient implements BackgroundResource {
           ListContactsPage,
           ListContactsFixedSizeCollection> {
 
-    private ListContactsFixedSizeCollection(List<ListContactsPage> pages, int collectionSize) {
+    private ListContactsFixedSizeCollection(
+        @Nullable List<ListContactsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1111,7 +1115,7 @@ public class ContactServiceClient implements BackgroundResource {
 
     @Override
     protected ListContactsFixedSizeCollection createCollection(
-        List<ListContactsPage> pages, int collectionSize) {
+        @Nullable List<ListContactsPage> pages, int collectionSize) {
       return new ListContactsFixedSizeCollection(pages, collectionSize);
     }
   }

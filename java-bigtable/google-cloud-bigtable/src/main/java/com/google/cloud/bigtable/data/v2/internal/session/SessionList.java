@@ -16,15 +16,12 @@
 
 package com.google.cloud.bigtable.data.v2.internal.session;
 
-import static com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT;
-
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.cloud.bigtable.data.v2.internal.session.Session.SessionState;
 import com.google.common.annotations.VisibleForTesting;
-import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -41,7 +38,6 @@ import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.concurrent.NotThreadSafe;
 
@@ -68,12 +64,6 @@ class SessionList {
   // - closing sessions
   private final Set<SessionHandle> allSessions = new HashSet<>();
   private final Set<SessionHandle> inUseSessions = new HashSet<>();
-
-  private final CloseSessionRequest missedHeartbeatCloseRequest =
-      CloseSessionRequest.newBuilder()
-          .setReason(CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
-          .setDescription("missed heartbeat")
-          .build();
 
   // pool level statistics across all  the afes
   private final PoolStats poolStats = new PoolStats();
@@ -122,8 +112,12 @@ class SessionList {
 
   /** Closes all the sessions with this reason. */
   void close(CloseSessionRequest req) {
-    // Notify all sessions to close and have the callbacks clean up the rest of the state
-    for (SessionHandle s : allSessions) {
+    // Snapshot before iterating: session.close(req) enqueues on sessionSyncContext, and
+    // io.grpc.SynchronizationContext.execute drains inline when the caller is the drainer. A
+    // pre-existing queued task (e.g. dispatchStreamClosed from a transport error just before
+    // close, or a heartbeat-miss forceClose that already fired) can drain here and remove its
+    // handle via onSessionClosed → allSessions.remove, tripping a fail-fast iterator CME.
+    for (SessionHandle s : new ArrayList<>(allSessions)) {
       s.getSession().close(req);
     }
   }
@@ -143,20 +137,6 @@ class SessionList {
         it.remove();
       }
     }
-  }
-
-  void checkHeartbeat(Clock clock) {
-    Instant now = clock.instant();
-    inUseSessions.forEach(
-        handle -> {
-          if (now.isAfter(handle.getSession().getNextHeartbeat())) {
-            LOG.log(
-                Level.WARNING,
-                "Missed heartbeat for {0}, forcing session close",
-                handle.getSession().getLogName());
-            handle.getSession().forceClose(missedHeartbeatCloseRequest);
-          }
-        });
   }
 
   @NotThreadSafe
@@ -194,18 +174,34 @@ class SessionList {
     }
 
     /**
-     * The session is returned to the pool after use. This undoes what SessionList#checkoutSession
+     * The session is returned to the pool after a vRPC that reached the wire completes. Updates the
+     * picker's per-AFE latency stats on success; non-OK results skip the latency update so a
+     * fast-failing or cancelled-mid-flight AFE doesn't look the fastest.
      */
     void onVRpcFinish(Duration elapsed, VRpcResult result) {
-      // Guaranteed to be set - vrpc can only start after the session is ready
+      releaseToPool();
+      if (result.getStatus().isOk()) {
+        // Guaranteed to be set - vrpc can only start after the session is ready
+        this.afe.get().updateLatency(elapsed, result.getBackendLatency());
+      }
+    }
+
+    /**
+     * The session is returned to the pool after a pending vRPC was drained but cancelled before it
+     * could be attached to a real call (e.g. user cancelled or deadline expired between
+     * checkoutSession and drainTo). No latency is reported because the vRPC never reached the wire.
+     */
+    void onPendingVRpcCancelled() {
+      releaseToPool();
+    }
+
+    // Shared bookkeeping for both completion paths. Undoes what SessionList#checkoutSession did.
+    private void releaseToPool() {
+      // Guaranteed to be set - checkoutSession only runs after the session is ready
       AfeHandle afeHandle = this.afe.get();
 
       poolStats.inUseCount--;
       inUseSessions.remove(this);
-
-      if (result.getStatus().isOk()) {
-        afeHandle.updateLatency(elapsed, result.getBackendLatency());
-      }
 
       if (session.getState() == SessionState.READY) {
         poolStats.readyCount++;
@@ -247,41 +243,51 @@ class SessionList {
     }
 
     void onSessionClosed(SessionState prevState) {
-      if (inExpectedCount) {
-        poolStats.expectedCapacity--;
-        inExpectedCount = false;
-      }
-      // only update counts after the session started and has an afe associated
-      afe.ifPresent(afeHandle -> afeHandle.refCount--);
+      // Always drop from allSessions on the way out, even if the branch below throws — otherwise a
+      // stranded handle blocks drainedFuture and pool.awaitTerminated hangs until the shared close
+      // deadline elapses.
+      try {
+        if (inExpectedCount) {
+          poolStats.expectedCapacity--;
+          inExpectedCount = false;
+        }
+        // only update counts after the session started and has an afe associated
+        afe.ifPresent(afeHandle -> afeHandle.refCount--);
 
-      // NOTE: don't need to update vRpc counters, onVRpcFinish will have been invoked already
-      switch (prevState) {
-        case NEW:
-          throw new IllegalStateException("NEW session was closed");
-        case STARTING:
-          poolStats.startingCount--;
-          break;
-        case READY:
-          {
-            AfeHandle afeHandle = afe.get();
-            // If the session was available & idle, then we need to remove it
-            if (afeHandle.sessions.remove(this)) {
-              poolStats.readyCount--;
-              if (afeHandle.sessions.isEmpty()) {
-                afesWithReadySessions.remove(afeHandle);
-              }
-            }
+        // NOTE: don't need to update vRpc counters, onVRpcFinish will have been invoked already
+        switch (prevState) {
+          case NEW:
+            throw new IllegalStateException("NEW session was closed");
+          case STARTING:
+            poolStats.startingCount--;
             break;
-          }
-        case CLOSING:
-        case WAIT_SERVER_CLOSE:
-          // noop
-          break;
-        case CLOSED:
-          throw new IllegalStateException("double close");
+          case READY:
+            {
+              // afe may be empty if SessionPoolImpl.onSessionReady early-returned on poolState !=
+              // STARTED (pool closed after SessionImpl transitioned to READY but before
+              // handle.onSessionStarted ran). Skip the AFE bookkeeping cleanly rather than NPE.
+              if (afe.isPresent()) {
+                AfeHandle afeHandle = afe.get();
+                // If the session was available & idle, then we need to remove it
+                if (afeHandle.sessions.remove(this)) {
+                  poolStats.readyCount--;
+                  if (afeHandle.sessions.isEmpty()) {
+                    afesWithReadySessions.remove(afeHandle);
+                  }
+                }
+              }
+              break;
+            }
+          case CLOSING:
+          case WAIT_SERVER_CLOSE:
+            // noop
+            break;
+          case CLOSED:
+            throw new IllegalStateException("double close");
+        }
+      } finally {
+        allSessions.remove(this);
       }
-
-      allSessions.remove(this);
     }
   }
 

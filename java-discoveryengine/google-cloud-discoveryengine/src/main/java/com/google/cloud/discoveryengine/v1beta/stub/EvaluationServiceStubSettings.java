@@ -67,6 +67,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -146,13 +148,19 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class EvaluationServiceStubSettings extends StubSettings<EvaluationServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.assist.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings;
   private final PagedCallSettings<
@@ -421,7 +429,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -476,7 +484,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -503,7 +511,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
               .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_5_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -511,7 +519,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -584,8 +592,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
 
       builder
           .createEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .listEvaluationResultsSettings()
@@ -597,8 +605,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateEvaluationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Evaluation.class))

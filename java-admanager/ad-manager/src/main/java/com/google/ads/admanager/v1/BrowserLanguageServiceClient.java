@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BrowserLanguageServiceClient implements BackgroundResource {
-  private final BrowserLanguageServiceSettings settings;
+  private final @Nullable BrowserLanguageServiceSettings settings;
   private final BrowserLanguageServiceStub stub;
 
   /** Constructs an instance of BrowserLanguageServiceClient with default settings. */
@@ -188,7 +191,7 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BrowserLanguageServiceSettings getSettings() {
+  public final @Nullable BrowserLanguageServiceSettings getSettings() {
     return settings;
   }
 
@@ -219,7 +222,7 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
    *     `networks/{network_code}/browserLanguages/{browser_language_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BrowserLanguage getBrowserLanguage(BrowserLanguageName name) {
+  public final BrowserLanguage getBrowserLanguage(@Nullable BrowserLanguageName name) {
     GetBrowserLanguageRequest request =
         GetBrowserLanguageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -341,7 +344,8 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBrowserLanguagesPagedResponse listBrowserLanguages(NetworkName parent) {
+  public final ListBrowserLanguagesPagedResponse listBrowserLanguages(
+      @Nullable NetworkName parent) {
     ListBrowserLanguagesRequest request =
         ListBrowserLanguagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -563,9 +567,10 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
           ListBrowserLanguagesPage> {
 
     private ListBrowserLanguagesPage(
-        PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
+        @Nullable
+            PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
             context,
-        ListBrowserLanguagesResponse response) {
+        @Nullable ListBrowserLanguagesResponse response) {
       super(context, response);
     }
 
@@ -575,15 +580,17 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
 
     @Override
     protected ListBrowserLanguagesPage createPage(
-        PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
+        @Nullable
+            PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
             context,
-        ListBrowserLanguagesResponse response) {
+        @Nullable ListBrowserLanguagesResponse response) {
       return new ListBrowserLanguagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBrowserLanguagesPage> createPageAsync(
-        PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
+        @Nullable
+            PageContext<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse, BrowserLanguage>
             context,
         ApiFuture<ListBrowserLanguagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -599,7 +606,7 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
           ListBrowserLanguagesFixedSizeCollection> {
 
     private ListBrowserLanguagesFixedSizeCollection(
-        List<ListBrowserLanguagesPage> pages, int collectionSize) {
+        @Nullable List<ListBrowserLanguagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -609,7 +616,7 @@ public class BrowserLanguageServiceClient implements BackgroundResource {
 
     @Override
     protected ListBrowserLanguagesFixedSizeCollection createCollection(
-        List<ListBrowserLanguagesPage> pages, int collectionSize) {
+        @Nullable List<ListBrowserLanguagesPage> pages, int collectionSize) {
       return new ListBrowserLanguagesFixedSizeCollection(pages, collectionSize);
     }
   }

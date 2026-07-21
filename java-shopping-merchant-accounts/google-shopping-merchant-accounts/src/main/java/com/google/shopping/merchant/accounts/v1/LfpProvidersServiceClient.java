@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -162,9 +164,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LfpProvidersServiceClient implements BackgroundResource {
-  private final LfpProvidersServiceSettings settings;
+  private final @Nullable LfpProvidersServiceSettings settings;
   private final LfpProvidersServiceStub stub;
 
   /** Constructs an instance of LfpProvidersServiceClient with default settings. */
@@ -204,7 +207,7 @@ public class LfpProvidersServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LfpProvidersServiceSettings getSettings() {
+  public final @Nullable LfpProvidersServiceSettings getSettings() {
     return settings;
   }
 
@@ -237,7 +240,8 @@ public class LfpProvidersServiceClient implements BackgroundResource {
    *     found. Format: `accounts/{account}/omnichannelSettings/{omnichannel_setting}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FindLfpProvidersPagedResponse findLfpProviders(OmnichannelSettingName parent) {
+  public final FindLfpProvidersPagedResponse findLfpProviders(
+      @Nullable OmnichannelSettingName parent) {
     FindLfpProvidersRequest request =
         FindLfpProvidersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -404,7 +408,7 @@ public class LfpProvidersServiceClient implements BackgroundResource {
    *     The `lfp_provider` is the LFP provider ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LinkLfpProviderResponse linkLfpProvider(LfpProviderName name) {
+  public final LinkLfpProviderResponse linkLfpProvider(@Nullable LfpProviderName name) {
     LinkLfpProviderRequest request =
         LinkLfpProviderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return linkLfpProvider(request);
@@ -561,8 +565,9 @@ public class LfpProvidersServiceClient implements BackgroundResource {
           FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider, FindLfpProvidersPage> {
 
     private FindLfpProvidersPage(
-        PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider> context,
-        FindLfpProvidersResponse response) {
+        @Nullable PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider>
+            context,
+        @Nullable FindLfpProvidersResponse response) {
       super(context, response);
     }
 
@@ -572,14 +577,16 @@ public class LfpProvidersServiceClient implements BackgroundResource {
 
     @Override
     protected FindLfpProvidersPage createPage(
-        PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider> context,
-        FindLfpProvidersResponse response) {
+        @Nullable PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider>
+            context,
+        @Nullable FindLfpProvidersResponse response) {
       return new FindLfpProvidersPage(context, response);
     }
 
     @Override
     public ApiFuture<FindLfpProvidersPage> createPageAsync(
-        PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider> context,
+        @Nullable PageContext<FindLfpProvidersRequest, FindLfpProvidersResponse, LfpProvider>
+            context,
         ApiFuture<FindLfpProvidersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -594,7 +601,7 @@ public class LfpProvidersServiceClient implements BackgroundResource {
           FindLfpProvidersFixedSizeCollection> {
 
     private FindLfpProvidersFixedSizeCollection(
-        List<FindLfpProvidersPage> pages, int collectionSize) {
+        @Nullable List<FindLfpProvidersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -604,7 +611,7 @@ public class LfpProvidersServiceClient implements BackgroundResource {
 
     @Override
     protected FindLfpProvidersFixedSizeCollection createCollection(
-        List<FindLfpProvidersPage> pages, int collectionSize) {
+        @Nullable List<FindLfpProvidersPage> pages, int collectionSize) {
       return new FindLfpProvidersFixedSizeCollection(pages, collectionSize);
     }
   }

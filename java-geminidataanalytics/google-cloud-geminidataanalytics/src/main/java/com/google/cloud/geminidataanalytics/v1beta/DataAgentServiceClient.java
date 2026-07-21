@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -378,10 +380,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataAgentServiceClient implements BackgroundResource {
-  private final DataAgentServiceSettings settings;
+  private final @Nullable DataAgentServiceSettings settings;
   private final DataAgentServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -429,7 +432,7 @@ public class DataAgentServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataAgentServiceSettings getSettings() {
+  public final @Nullable DataAgentServiceSettings getSettings() {
     return settings;
   }
 
@@ -477,7 +480,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListDataAgentsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataAgentsPagedResponse listDataAgents(LocationName parent) {
+  public final ListDataAgentsPagedResponse listDataAgents(@Nullable LocationName parent) {
     ListDataAgentsRequest request =
         ListDataAgentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -651,7 +654,8 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListAccessibleDataAgentsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccessibleDataAgentsPagedResponse listAccessibleDataAgents(LocationName parent) {
+  public final ListAccessibleDataAgentsPagedResponse listAccessibleDataAgents(
+      @Nullable LocationName parent) {
     ListAccessibleDataAgentsRequest request =
         ListAccessibleDataAgentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -826,7 +830,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataAgent getDataAgent(DataAgentName name) {
+  public final DataAgent getDataAgent(@Nullable DataAgentName name) {
     GetDataAgentRequest request =
         GetDataAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataAgent(request);
@@ -943,7 +947,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataAgent, OperationMetadata> createDataAgentAsync(
-      LocationName parent, DataAgent dataAgent, String dataAgentId) {
+      @Nullable LocationName parent, DataAgent dataAgent, String dataAgentId) {
     CreateDataAgentRequest request =
         CreateDataAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1116,7 +1120,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataAgent createDataAgentSync(
-      LocationName parent, DataAgent dataAgent, String dataAgentId) {
+      @Nullable LocationName parent, DataAgent dataAgent, String dataAgentId) {
     CreateDataAgentRequest request =
         CreateDataAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1475,7 +1479,8 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDataAgentAsync(DataAgentName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDataAgentAsync(
+      @Nullable DataAgentName name) {
     DeleteDataAgentRequest request =
         DeleteDataAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataAgentAsync(request);
@@ -1617,7 +1622,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataAgentSync(DataAgentName name) {
+  public final void deleteDataAgentSync(@Nullable DataAgentName name) {
     DeleteDataAgentRequest request =
         DeleteDataAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataAgentSync(request);
@@ -1729,7 +1734,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1843,7 +1848,7 @@ public class DataAgentServiceClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2188,8 +2193,8 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListDataAgentsRequest, ListDataAgentsResponse, DataAgent, ListDataAgentsPage> {
 
     private ListDataAgentsPage(
-        PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
-        ListDataAgentsResponse response) {
+        @Nullable PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
+        @Nullable ListDataAgentsResponse response) {
       super(context, response);
     }
 
@@ -2199,14 +2204,14 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAgentsPage createPage(
-        PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
-        ListDataAgentsResponse response) {
+        @Nullable PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
+        @Nullable ListDataAgentsResponse response) {
       return new ListDataAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAgentsPage> createPageAsync(
-        PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
+        @Nullable PageContext<ListDataAgentsRequest, ListDataAgentsResponse, DataAgent> context,
         ApiFuture<ListDataAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2220,7 +2225,8 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListDataAgentsPage,
           ListDataAgentsFixedSizeCollection> {
 
-    private ListDataAgentsFixedSizeCollection(List<ListDataAgentsPage> pages, int collectionSize) {
+    private ListDataAgentsFixedSizeCollection(
+        @Nullable List<ListDataAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2230,7 +2236,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAgentsFixedSizeCollection createCollection(
-        List<ListDataAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAgentsPage> pages, int collectionSize) {
       return new ListDataAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2268,9 +2274,11 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListAccessibleDataAgentsPage> {
 
     private ListAccessibleDataAgentsPage(
-        PageContext<ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
+        @Nullable
+            PageContext<
+                ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
             context,
-        ListAccessibleDataAgentsResponse response) {
+        @Nullable ListAccessibleDataAgentsResponse response) {
       super(context, response);
     }
 
@@ -2280,15 +2288,19 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccessibleDataAgentsPage createPage(
-        PageContext<ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
+        @Nullable
+            PageContext<
+                ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
             context,
-        ListAccessibleDataAgentsResponse response) {
+        @Nullable ListAccessibleDataAgentsResponse response) {
       return new ListAccessibleDataAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccessibleDataAgentsPage> createPageAsync(
-        PageContext<ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
+        @Nullable
+            PageContext<
+                ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse, DataAgent>
             context,
         ApiFuture<ListAccessibleDataAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2304,7 +2316,7 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListAccessibleDataAgentsFixedSizeCollection> {
 
     private ListAccessibleDataAgentsFixedSizeCollection(
-        List<ListAccessibleDataAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessibleDataAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2314,7 +2326,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccessibleDataAgentsFixedSizeCollection createCollection(
-        List<ListAccessibleDataAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessibleDataAgentsPage> pages, int collectionSize) {
       return new ListAccessibleDataAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2348,8 +2360,8 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2359,14 +2371,14 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2380,7 +2392,8 @@ public class DataAgentServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2390,7 +2403,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

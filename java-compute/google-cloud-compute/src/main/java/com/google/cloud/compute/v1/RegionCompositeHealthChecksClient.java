@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -262,9 +264,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionCompositeHealthChecksClient implements BackgroundResource {
-  private final RegionCompositeHealthChecksSettings settings;
+  private final @Nullable RegionCompositeHealthChecksSettings settings;
   private final RegionCompositeHealthChecksStub stub;
 
   /** Constructs an instance of RegionCompositeHealthChecksClient with default settings. */
@@ -307,7 +310,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionCompositeHealthChecksSettings getSettings() {
+  public final @Nullable RegionCompositeHealthChecksSettings getSettings() {
     return settings;
   }
 
@@ -1465,12 +1468,13 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
             context,
-        CompositeHealthCheckAggregatedList response) {
+        @Nullable CompositeHealthCheckAggregatedList response) {
       super(context, response);
     }
 
@@ -1480,18 +1484,20 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
             context,
-        CompositeHealthCheckAggregatedList response) {
+        @Nullable CompositeHealthCheckAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
@@ -1509,7 +1515,8 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1519,7 +1526,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1558,12 +1565,13 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
             context,
-        CompositeHealthCheckList response) {
+        @Nullable CompositeHealthCheckList response) {
       super(context, response);
     }
 
@@ -1573,18 +1581,20 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
             context,
-        CompositeHealthCheckList response) {
+        @Nullable CompositeHealthCheckList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
@@ -1602,7 +1612,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1611,7 +1621,8 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

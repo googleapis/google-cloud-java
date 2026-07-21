@@ -5,12 +5,11 @@
   "api_description": "allows users to manage BigQuery connections to external data sources.",
   "client_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigqueryconnection",
   "distribution_name": "com.google.cloud:google-cloud-bigqueryconnection",
   "api_id": "bigqueryconnection.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

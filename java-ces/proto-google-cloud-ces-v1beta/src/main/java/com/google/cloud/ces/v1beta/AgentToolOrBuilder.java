@@ -82,46 +82,6 @@ public interface AgentToolOrBuilder
    *
    *
    * <pre>
-   * Optional. Deprecated: Use `agent` instead.
-   * The resource name of the root agent that is the entry point of the tool.
-   * Format: `projects/{project}/locations/{location}/agents/{agent}`
-   * </pre>
-   *
-   * <code>
-   * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
-   *     google/cloud/ces/v1beta/agent_tool.proto;l=37
-   * @return The rootAgent.
-   */
-  @java.lang.Deprecated
-  java.lang.String getRootAgent();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Deprecated: Use `agent` instead.
-   * The resource name of the root agent that is the entry point of the tool.
-   * Format: `projects/{project}/locations/{location}/agents/{agent}`
-   * </pre>
-   *
-   * <code>
-   * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
-   *     google/cloud/ces/v1beta/agent_tool.proto;l=37
-   * @return The bytes for rootAgent.
-   */
-  @java.lang.Deprecated
-  com.google.protobuf.ByteString getRootAgentBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. The resource name of the agent that is the entry point of the
    * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
    * </pre>

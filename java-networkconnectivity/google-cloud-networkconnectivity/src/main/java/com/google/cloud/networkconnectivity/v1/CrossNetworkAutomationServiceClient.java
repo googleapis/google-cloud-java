@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -549,9 +551,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CrossNetworkAutomationServiceClient implements BackgroundResource {
-  private final CrossNetworkAutomationServiceSettings settings;
+  private final @Nullable CrossNetworkAutomationServiceSettings settings;
   private final CrossNetworkAutomationServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -598,7 +601,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final CrossNetworkAutomationServiceSettings getSettings() {
+  public final @Nullable CrossNetworkAutomationServiceSettings getSettings() {
     return settings;
   }
 
@@ -640,7 +643,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConnectionMapsPagedResponse listServiceConnectionMaps(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListServiceConnectionMapsRequest request =
         ListServiceConnectionMapsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -822,7 +825,8 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @param name Required. Name of the ServiceConnectionMap to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceConnectionMap getServiceConnectionMap(ServiceConnectionMapName name) {
+  public final ServiceConnectionMap getServiceConnectionMap(
+      @Nullable ServiceConnectionMapName name) {
     GetServiceConnectionMapRequest request =
         GetServiceConnectionMapRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -961,7 +965,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ServiceConnectionMap, OperationMetadata>
       createServiceConnectionMapAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ServiceConnectionMap serviceConnectionMap,
           String serviceConnectionMapId) {
     CreateServiceConnectionMapRequest request =
@@ -1290,7 +1294,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceConnectionMapAsync(
-      ServiceConnectionMapName name) {
+      @Nullable ServiceConnectionMapName name) {
     DeleteServiceConnectionMapRequest request =
         DeleteServiceConnectionMapRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1461,7 +1465,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConnectionPoliciesPagedResponse listServiceConnectionPolicies(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListServiceConnectionPoliciesRequest request =
         ListServiceConnectionPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1648,7 +1652,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceConnectionPolicy getServiceConnectionPolicy(
-      ServiceConnectionPolicyName name) {
+      @Nullable ServiceConnectionPolicyName name) {
     GetServiceConnectionPolicyRequest request =
         GetServiceConnectionPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1792,7 +1796,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ServiceConnectionPolicy, OperationMetadata>
       createServiceConnectionPolicyAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ServiceConnectionPolicy serviceConnectionPolicy,
           String serviceConnectionPolicyId) {
     CreateServiceConnectionPolicyRequest request =
@@ -2125,7 +2129,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceConnectionPolicyAsync(
-      ServiceConnectionPolicyName name) {
+      @Nullable ServiceConnectionPolicyName name) {
     DeleteServiceConnectionPolicyRequest request =
         DeleteServiceConnectionPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2298,7 +2302,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name. ex. projects/123/locations/us-east1
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServiceClassesPagedResponse listServiceClasses(LocationName parent) {
+  public final ListServiceClassesPagedResponse listServiceClasses(@Nullable LocationName parent) {
     ListServiceClassesRequest request =
         ListServiceClassesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2475,7 +2479,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @param name Required. Name of the ServiceClass to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceClass getServiceClass(ServiceClassName name) {
+  public final ServiceClass getServiceClass(@Nullable ServiceClassName name) {
     GetServiceClassRequest request =
         GetServiceClassRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getServiceClass(request);
@@ -2727,7 +2731,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceClassAsync(
-      ServiceClassName name) {
+      @Nullable ServiceClassName name) {
     DeleteServiceClassRequest request =
         DeleteServiceClassRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2884,7 +2888,8 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @param name Required. Name of the ServiceConnectionToken to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceConnectionToken getServiceConnectionToken(ServiceConnectionTokenName name) {
+  public final ServiceConnectionToken getServiceConnectionToken(
+      @Nullable ServiceConnectionTokenName name) {
     GetServiceConnectionTokenRequest request =
         GetServiceConnectionTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3018,7 +3023,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConnectionTokensPagedResponse listServiceConnectionTokens(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListServiceConnectionTokensRequest request =
         ListServiceConnectionTokensRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3213,7 +3218,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ServiceConnectionToken, OperationMetadata>
       createServiceConnectionTokenAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ServiceConnectionToken serviceConnectionToken,
           String serviceConnectionTokenId) {
     CreateServiceConnectionTokenRequest request =
@@ -3402,7 +3407,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceConnectionTokenAsync(
-      ServiceConnectionTokenName name) {
+      @Nullable ServiceConnectionTokenName name) {
     DeleteServiceConnectionTokenRequest request =
         DeleteServiceConnectionTokenRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3979,12 +3984,13 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionMapsPage> {
 
     private ListServiceConnectionMapsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionMapsRequest,
                 ListServiceConnectionMapsResponse,
                 ServiceConnectionMap>
             context,
-        ListServiceConnectionMapsResponse response) {
+        @Nullable ListServiceConnectionMapsResponse response) {
       super(context, response);
     }
 
@@ -3994,18 +4000,20 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionMapsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionMapsRequest,
                 ListServiceConnectionMapsResponse,
                 ServiceConnectionMap>
             context,
-        ListServiceConnectionMapsResponse response) {
+        @Nullable ListServiceConnectionMapsResponse response) {
       return new ListServiceConnectionMapsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceConnectionMapsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionMapsRequest,
                 ListServiceConnectionMapsResponse,
                 ServiceConnectionMap>
@@ -4024,7 +4032,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionMapsFixedSizeCollection> {
 
     private ListServiceConnectionMapsFixedSizeCollection(
-        List<ListServiceConnectionMapsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionMapsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4034,7 +4042,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionMapsFixedSizeCollection createCollection(
-        List<ListServiceConnectionMapsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionMapsPage> pages, int collectionSize) {
       return new ListServiceConnectionMapsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4076,12 +4084,13 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionPoliciesPage> {
 
     private ListServiceConnectionPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionPoliciesRequest,
                 ListServiceConnectionPoliciesResponse,
                 ServiceConnectionPolicy>
             context,
-        ListServiceConnectionPoliciesResponse response) {
+        @Nullable ListServiceConnectionPoliciesResponse response) {
       super(context, response);
     }
 
@@ -4091,18 +4100,20 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionPoliciesRequest,
                 ListServiceConnectionPoliciesResponse,
                 ServiceConnectionPolicy>
             context,
-        ListServiceConnectionPoliciesResponse response) {
+        @Nullable ListServiceConnectionPoliciesResponse response) {
       return new ListServiceConnectionPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceConnectionPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionPoliciesRequest,
                 ListServiceConnectionPoliciesResponse,
                 ServiceConnectionPolicy>
@@ -4121,7 +4132,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionPoliciesFixedSizeCollection> {
 
     private ListServiceConnectionPoliciesFixedSizeCollection(
-        List<ListServiceConnectionPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4131,7 +4142,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionPoliciesFixedSizeCollection createCollection(
-        List<ListServiceConnectionPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionPoliciesPage> pages, int collectionSize) {
       return new ListServiceConnectionPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4168,8 +4179,9 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceClassesPage> {
 
     private ListServiceClassesPage(
-        PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass> context,
-        ListServiceClassesResponse response) {
+        @Nullable PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass>
+            context,
+        @Nullable ListServiceClassesResponse response) {
       super(context, response);
     }
 
@@ -4179,14 +4191,16 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceClassesPage createPage(
-        PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass> context,
-        ListServiceClassesResponse response) {
+        @Nullable PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass>
+            context,
+        @Nullable ListServiceClassesResponse response) {
       return new ListServiceClassesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceClassesPage> createPageAsync(
-        PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass> context,
+        @Nullable PageContext<ListServiceClassesRequest, ListServiceClassesResponse, ServiceClass>
+            context,
         ApiFuture<ListServiceClassesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4201,7 +4215,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceClassesFixedSizeCollection> {
 
     private ListServiceClassesFixedSizeCollection(
-        List<ListServiceClassesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceClassesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4211,7 +4225,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceClassesFixedSizeCollection createCollection(
-        List<ListServiceClassesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceClassesPage> pages, int collectionSize) {
       return new ListServiceClassesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4253,12 +4267,13 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionTokensPage> {
 
     private ListServiceConnectionTokensPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionTokensRequest,
                 ListServiceConnectionTokensResponse,
                 ServiceConnectionToken>
             context,
-        ListServiceConnectionTokensResponse response) {
+        @Nullable ListServiceConnectionTokensResponse response) {
       super(context, response);
     }
 
@@ -4268,18 +4283,20 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionTokensPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionTokensRequest,
                 ListServiceConnectionTokensResponse,
                 ServiceConnectionToken>
             context,
-        ListServiceConnectionTokensResponse response) {
+        @Nullable ListServiceConnectionTokensResponse response) {
       return new ListServiceConnectionTokensPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceConnectionTokensPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceConnectionTokensRequest,
                 ListServiceConnectionTokensResponse,
                 ServiceConnectionToken>
@@ -4298,7 +4315,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListServiceConnectionTokensFixedSizeCollection> {
 
     private ListServiceConnectionTokensFixedSizeCollection(
-        List<ListServiceConnectionTokensPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionTokensPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4308,7 +4325,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceConnectionTokensFixedSizeCollection createCollection(
-        List<ListServiceConnectionTokensPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConnectionTokensPage> pages, int collectionSize) {
       return new ListServiceConnectionTokensFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4342,8 +4359,8 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4353,14 +4370,14 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4374,7 +4391,8 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4384,7 +4402,7 @@ public class CrossNetworkAutomationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

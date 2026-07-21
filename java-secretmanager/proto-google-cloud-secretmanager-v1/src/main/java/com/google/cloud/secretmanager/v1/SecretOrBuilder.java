@@ -969,5 +969,90 @@ public interface SecretOrBuilder
    */
   java.lang.String getTagsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This defines the type of the secret.
+   * Enforces certain structural requirements on the
+   * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+   * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for secretType.
+   */
+  int getSecretTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This defines the type of the secret.
+   * Enforces certain structural requirements on the
+   * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+   * For secret of type UNSPECIFIED, the SecretVersions can be of any type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.SecretType secret_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretType.
+   */
+  com.google.cloud.secretmanager.v1.Secret.SecretType getSecretType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the policyMember field is set.
+   */
+  boolean hasPolicyMember();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The policyMember.
+   */
+  com.google.iam.v1.ResourcePolicyMember getPolicyMember();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the policy member for the secret.
+   * This will be used to check if the caller has the permission to perform
+   * certain operations on the typed secret.
+   * </pre>
+   *
+   * <code>
+   * .google.iam.v1.ResourcePolicyMember policy_member = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder();
+
   com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReportJobName implements ResourceName {
   private static final PathTemplate ACCOUNT_REPORT_JOB =
@@ -70,7 +73,7 @@ public class ReportJobName implements ResourceName {
     return newBuilder().setAccount(account).setReportJob(reportJob).build().toString();
   }
 
-  public static ReportJobName parse(String formattedString) {
+  public static @Nullable ReportJobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class ReportJobName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ReportJobName> values) {
+  public static List<String> toStringList(List<@Nullable ReportJobName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ReportJobName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class ReportJobName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

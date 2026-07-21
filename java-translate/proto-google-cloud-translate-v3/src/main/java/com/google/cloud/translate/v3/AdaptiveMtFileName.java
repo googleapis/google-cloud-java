@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AdaptiveMtFileName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATASET_FILE =
@@ -97,7 +100,7 @@ public class AdaptiveMtFileName implements ResourceName {
         .toString();
   }
 
-  public static AdaptiveMtFileName parse(String formattedString) {
+  public static @Nullable AdaptiveMtFileName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -119,7 +122,7 @@ public class AdaptiveMtFileName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AdaptiveMtFileName> values) {
+  public static List<String> toStringList(List<@Nullable AdaptiveMtFileName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AdaptiveMtFileName value : values) {
       if (value == null) {
@@ -171,7 +174,7 @@ public class AdaptiveMtFileName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

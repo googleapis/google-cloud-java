@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,8 +167,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -248,9 +249,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EnvironmentsClient implements BackgroundResource {
-  private final EnvironmentsSettings settings;
+  private final @Nullable EnvironmentsSettings settings;
   private final EnvironmentsStub stub;
 
   /** Constructs an instance of EnvironmentsClient with default settings. */
@@ -289,7 +291,7 @@ public class EnvironmentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EnvironmentsSettings getSettings() {
+  public final @Nullable EnvironmentsSettings getSettings() {
     return settings;
   }
 
@@ -322,7 +324,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
+  public final ListEnvironmentsPagedResponse listEnvironments(@Nullable AgentName parent) {
     ListEnvironmentsRequest request =
         ListEnvironmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -834,9 +836,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -880,9 +881,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -927,9 +927,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1082,8 +1081,9 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage> {
 
     private ListEnvironmentsPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       super(context, response);
     }
 
@@ -1093,14 +1093,16 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsPage createPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       return new ListEnvironmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnvironmentsPage> createPageAsync(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
         ApiFuture<ListEnvironmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1115,7 +1117,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsFixedSizeCollection> {
 
     private ListEnvironmentsFixedSizeCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1125,7 +1127,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsFixedSizeCollection createCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1163,9 +1165,10 @@ public class EnvironmentsClient implements BackgroundResource {
           GetEnvironmentHistoryPage> {
 
     private GetEnvironmentHistoryPage(
-        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+        @Nullable
+            PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
             context,
-        EnvironmentHistory response) {
+        @Nullable EnvironmentHistory response) {
       super(context, response);
     }
 
@@ -1175,15 +1178,17 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected GetEnvironmentHistoryPage createPage(
-        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+        @Nullable
+            PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
             context,
-        EnvironmentHistory response) {
+        @Nullable EnvironmentHistory response) {
       return new GetEnvironmentHistoryPage(context, response);
     }
 
     @Override
     public ApiFuture<GetEnvironmentHistoryPage> createPageAsync(
-        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+        @Nullable
+            PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
             context,
         ApiFuture<EnvironmentHistory> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1199,7 +1204,7 @@ public class EnvironmentsClient implements BackgroundResource {
           GetEnvironmentHistoryFixedSizeCollection> {
 
     private GetEnvironmentHistoryFixedSizeCollection(
-        List<GetEnvironmentHistoryPage> pages, int collectionSize) {
+        @Nullable List<GetEnvironmentHistoryPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1209,7 +1214,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected GetEnvironmentHistoryFixedSizeCollection createCollection(
-        List<GetEnvironmentHistoryPage> pages, int collectionSize) {
+        @Nullable List<GetEnvironmentHistoryPage> pages, int collectionSize) {
       return new GetEnvironmentHistoryFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1243,8 +1248,8 @@ public class EnvironmentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1254,14 +1259,14 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1275,7 +1280,8 @@ public class EnvironmentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1285,7 +1291,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

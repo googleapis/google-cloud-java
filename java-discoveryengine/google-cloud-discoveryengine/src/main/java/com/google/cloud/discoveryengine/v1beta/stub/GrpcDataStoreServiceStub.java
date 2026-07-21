@@ -44,6 +44,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -51,6 +52,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
@@ -179,7 +181,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
-            .setResourceNameExtractor(request -> request.getParent())
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     GrpcCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         GrpcCallSettings.<GetDataStoreRequest, DataStore>newBuilder()

@@ -55,19 +55,23 @@ public final class PythonFunctionProto extends com.google.protobuf.GeneratedFile
     java.lang.String[] descriptorData = {
       "\n"
           + ")google/cloud/ces/v1/python_function.pr"
-          + "oto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\"W\n"
+          + "oto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\032"
+          + " google/cloud/ces/v1/common.proto\"\253\001\n"
           + "\016PythonFunction\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\030\n"
           + "\013python_code\030\002 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\003 \001(\tB\003\340A\003B[\n"
-          + "\027com.google.cloud.ces.v1B\023PythonFunctionProtoP\001Z)cl"
-          + "oud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "\013description\030\003 \001(\tB\003\340A\003\022R\n"
+          + "\030service_directory_config\030\004"
+          + " \001(\0132+.google.cloud.ces.v1.ServiceDirectoryConfigB\003\340A\001B[\n"
+          + "\027com.google.cloud.ces.v1B\023PythonFunctionProtoP\001Z)clo"
+          + "ud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.ces.v1.CommonProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1_PythonFunction_descriptor =
         getDescriptor().getMessageType(0);
@@ -75,10 +79,11 @@ public final class PythonFunctionProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_PythonFunction_descriptor,
             new java.lang.String[] {
-              "Name", "PythonCode", "Description",
+              "Name", "PythonCode", "Description", "ServiceDirectoryConfig",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.ces.v1.CommonProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

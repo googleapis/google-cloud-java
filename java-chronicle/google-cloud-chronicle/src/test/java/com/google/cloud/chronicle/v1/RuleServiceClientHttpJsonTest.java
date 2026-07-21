@@ -637,6 +637,100 @@ public class RuleServiceClientHttpJsonTest {
   }
 
   @Test
+  public void verifyRuleTextTest() throws Exception {
+    VerifyRuleTextResponse expectedResponse =
+        VerifyRuleTextResponse.newBuilder()
+            .setSuccess(true)
+            .addAllCompilationDiagnostics(new ArrayList<CompilationDiagnostic>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String ruleText = "ruleText763458121";
+
+    VerifyRuleTextResponse actualResponse = client.verifyRuleText(instance, ruleText);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifyRuleTextExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String ruleText = "ruleText763458121";
+      client.verifyRuleText(instance, ruleText);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyRuleTextTest2() throws Exception {
+    VerifyRuleTextResponse expectedResponse =
+        VerifyRuleTextResponse.newBuilder()
+            .setSuccess(true)
+            .addAllCompilationDiagnostics(new ArrayList<CompilationDiagnostic>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String instance = "projects/project-2526/locations/location-2526/instances/instance-2526";
+    String ruleText = "ruleText763458121";
+
+    VerifyRuleTextResponse actualResponse = client.verifyRuleText(instance, ruleText);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifyRuleTextExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String instance = "projects/project-2526/locations/location-2526/instances/instance-2526";
+      String ruleText = "ruleText763458121";
+      client.verifyRuleText(instance, ruleText);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listRuleRevisionsTest() throws Exception {
     Rule responsesElement = Rule.newBuilder().build();
     ListRuleRevisionsResponse expectedResponse =

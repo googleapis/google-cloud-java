@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -848,10 +850,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
-  private final EvaluationServiceSettings settings;
+  private final @Nullable EvaluationServiceSettings settings;
   private final EvaluationServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -899,7 +902,7 @@ public class EvaluationServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EvaluationServiceSettings getSettings() {
+  public final @Nullable EvaluationServiceSettings getSettings() {
     return settings;
   }
 
@@ -947,7 +950,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata>
-      runEvaluationAsync(AppName app) {
+      runEvaluationAsync(@Nullable AppName app) {
     RunEvaluationRequest request =
         RunEvaluationRequest.newBuilder().setApp(app == null ? null : app.toString()).build();
     return runEvaluationAsync(request);
@@ -1015,6 +1018,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   RunEvaluationResponse response = evaluationServiceClient.runEvaluationAsync(request).get();
    * }
@@ -1062,6 +1066,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata> future =
    *       evaluationServiceClient.runEvaluationOperationCallable().futureCall(request);
@@ -1110,6 +1115,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       evaluationServiceClient.runEvaluationCallable().futureCall(request);
@@ -1152,7 +1158,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadEvaluationAudioResponse uploadEvaluationAudio(
-      EvaluationName name, ByteString audioContent) {
+      @Nullable EvaluationName name, ByteString audioContent) {
     UploadEvaluationAudioRequest request =
         UploadEvaluationAudioRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1294,7 +1300,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param evaluation Required. The evaluation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation createEvaluation(AppName parent, Evaluation evaluation) {
+  public final Evaluation createEvaluation(@Nullable AppName parent, Evaluation evaluation) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1363,7 +1369,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Evaluation createEvaluation(
-      AppName parent, Evaluation evaluation, String evaluationId) {
+      @Nullable AppName parent, Evaluation evaluation, String evaluationId) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1497,7 +1503,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Evaluation, GenerateEvaluationOperationMetadata>
-      generateEvaluationAsync(ConversationName conversation) {
+      generateEvaluationAsync(@Nullable ConversationName conversation) {
     GenerateEvaluationRequest request =
         GenerateEvaluationRequest.newBuilder()
             .setConversation(conversation == null ? null : conversation.toString())
@@ -1652,7 +1658,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportEvaluationsResponse, ImportEvaluationsOperationMetadata>
-      importEvaluationsAsync(AppName parent) {
+      importEvaluationsAsync(@Nullable AppName parent) {
     ImportEvaluationsRequest request =
         ImportEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1807,7 +1813,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationDataset createEvaluationDataset(
-      AppName parent, EvaluationDataset evaluationDataset) {
+      @Nullable AppName parent, EvaluationDataset evaluationDataset) {
     CreateEvaluationDatasetRequest request =
         CreateEvaluationDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1882,7 +1888,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationDataset createEvaluationDataset(
-      AppName parent, EvaluationDataset evaluationDataset, String evaluationDatasetId) {
+      @Nullable AppName parent, EvaluationDataset evaluationDataset, String evaluationDatasetId) {
     CreateEvaluationDatasetRequest request =
         CreateEvaluationDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2200,7 +2206,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluation(EvaluationName name) {
+  public final void deleteEvaluation(@Nullable EvaluationName name) {
     DeleteEvaluationRequest request =
         DeleteEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEvaluation(request);
@@ -2318,7 +2324,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation result to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationResult(EvaluationResultName name) {
+  public final void deleteEvaluationResult(@Nullable EvaluationResultName name) {
     DeleteEvaluationResultRequest request =
         DeleteEvaluationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2441,7 +2447,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationDataset(EvaluationDatasetName name) {
+  public final void deleteEvaluationDataset(@Nullable EvaluationDatasetName name) {
     DeleteEvaluationDatasetRequest request =
         DeleteEvaluationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2566,7 +2572,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteEvaluationRunOperationMetadata>
-      deleteEvaluationRunAsync(EvaluationRunName name) {
+      deleteEvaluationRunAsync(@Nullable EvaluationRunName name) {
     DeleteEvaluationRunRequest request =
         DeleteEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2717,7 +2723,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -2831,7 +2837,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation result to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationResult getEvaluationResult(EvaluationResultName name) {
+  public final EvaluationResult getEvaluationResult(@Nullable EvaluationResultName name) {
     GetEvaluationResultRequest request =
         GetEvaluationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2954,7 +2960,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationDataset getEvaluationDataset(EvaluationDatasetName name) {
+  public final EvaluationDataset getEvaluationDataset(@Nullable EvaluationDatasetName name) {
     GetEvaluationDatasetRequest request =
         GetEvaluationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3076,7 +3082,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation run to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationRun getEvaluationRun(EvaluationRunName name) {
+  public final EvaluationRun getEvaluationRun(@Nullable EvaluationRunName name) {
     GetEvaluationRunRequest request =
         GetEvaluationRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluationRun(request);
@@ -3192,7 +3198,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluations from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationsPagedResponse listEvaluations(AppName parent) {
+  public final ListEvaluationsPagedResponse listEvaluations(@Nullable AppName parent) {
     ListEvaluationsRequest request =
         ListEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3374,7 +3380,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     the filter. For example: `projects/{project}/locations/{location}/apps/{app}/evaluations/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationResultsPagedResponse listEvaluationResults(EvaluationName parent) {
+  public final ListEvaluationResultsPagedResponse listEvaluationResults(
+      @Nullable EvaluationName parent) {
     ListEvaluationResultsRequest request =
         ListEvaluationResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3555,7 +3562,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation datasets from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationDatasetsPagedResponse listEvaluationDatasets(AppName parent) {
+  public final ListEvaluationDatasetsPagedResponse listEvaluationDatasets(
+      @Nullable AppName parent) {
     ListEvaluationDatasetsRequest request =
         ListEvaluationDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3730,7 +3738,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation runs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationRunsPagedResponse listEvaluationRuns(AppName parent) {
+  public final ListEvaluationRunsPagedResponse listEvaluationRuns(@Nullable AppName parent) {
     ListEvaluationRunsRequest request =
         ListEvaluationRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3905,7 +3913,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation expectations from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationExpectationsPagedResponse listEvaluationExpectations(AppName parent) {
+  public final ListEvaluationExpectationsPagedResponse listEvaluationExpectations(
+      @Nullable AppName parent) {
     ListEvaluationExpectationsRequest request =
         ListEvaluationExpectationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4080,7 +4089,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation expectation to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationExpectation getEvaluationExpectation(EvaluationExpectationName name) {
+  public final EvaluationExpectation getEvaluationExpectation(
+      @Nullable EvaluationExpectationName name) {
     GetEvaluationExpectationRequest request =
         GetEvaluationExpectationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4208,7 +4218,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationExpectation createEvaluationExpectation(
-      AppName parent, EvaluationExpectation evaluationExpectation) {
+      @Nullable AppName parent, EvaluationExpectation evaluationExpectation) {
     CreateEvaluationExpectationRequest request =
         CreateEvaluationExpectationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4283,7 +4293,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationExpectation createEvaluationExpectation(
-      AppName parent, EvaluationExpectation evaluationExpectation, String evaluationExpectationId) {
+      @Nullable AppName parent,
+      EvaluationExpectation evaluationExpectation,
+      String evaluationExpectationId) {
     CreateEvaluationExpectationRequest request =
         CreateEvaluationExpectationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4514,7 +4526,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation expectation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationExpectation(EvaluationExpectationName name) {
+  public final void deleteEvaluationExpectation(@Nullable EvaluationExpectationName name) {
     DeleteEvaluationExpectationRequest request =
         DeleteEvaluationExpectationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4643,7 +4655,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScheduledEvaluationRun createScheduledEvaluationRun(
-      AppName parent, ScheduledEvaluationRun scheduledEvaluationRun) {
+      @Nullable AppName parent, ScheduledEvaluationRun scheduledEvaluationRun) {
     CreateScheduledEvaluationRunRequest request =
         CreateScheduledEvaluationRunRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4718,7 +4730,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScheduledEvaluationRun createScheduledEvaluationRun(
-      AppName parent,
+      @Nullable AppName parent,
       ScheduledEvaluationRun scheduledEvaluationRun,
       String scheduledEvaluationRunId) {
     CreateScheduledEvaluationRunRequest request =
@@ -4859,7 +4871,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the scheduled evaluation run to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScheduledEvaluationRun getScheduledEvaluationRun(ScheduledEvaluationRunName name) {
+  public final ScheduledEvaluationRun getScheduledEvaluationRun(
+      @Nullable ScheduledEvaluationRunName name) {
     GetScheduledEvaluationRunRequest request =
         GetScheduledEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4986,7 +4999,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScheduledEvaluationRunsPagedResponse listScheduledEvaluationRuns(
-      AppName parent) {
+      @Nullable AppName parent) {
     ListScheduledEvaluationRunsRequest request =
         ListScheduledEvaluationRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5258,7 +5271,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the scheduled evaluation run to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteScheduledEvaluationRun(ScheduledEvaluationRunName name) {
+  public final void deleteScheduledEvaluationRun(@Nullable ScheduledEvaluationRunName name) {
     DeleteScheduledEvaluationRunRequest request =
         DeleteScheduledEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5383,7 +5396,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apps/{app}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestPersonaVoiceResponse testPersonaVoice(AppName app) {
+  public final TestPersonaVoiceResponse testPersonaVoice(@Nullable AppName app) {
     TestPersonaVoiceRequest request =
         TestPersonaVoiceRequest.newBuilder().setApp(app == null ? null : app.toString()).build();
     return testPersonaVoice(request);
@@ -5501,7 +5514,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
-      AppName parent) {
+      @Nullable AppName parent) {
     ExportEvaluationsRequest request =
         ExportEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5665,7 +5678,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportEvaluationRunsResponse, ExportEvaluationRunsOperationMetadata>
-      exportEvaluationRunsAsync(AppName parent, List<String> names) {
+      exportEvaluationRunsAsync(@Nullable AppName parent, List<String> names) {
     ExportEvaluationRunsRequest request =
         ExportEvaluationRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5830,7 +5843,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           ExportEvaluationResultsResponse, ExportEvaluationResultsOperationMetadata>
-      exportEvaluationResultsAsync(EvaluationName parent, List<String> names) {
+      exportEvaluationResultsAsync(@Nullable EvaluationName parent, List<String> names) {
     ExportEvaluationResultsRequest request =
         ExportEvaluationResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6004,7 +6017,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           RunEvaluationResultMetricsResponse, RunEvaluationResultMetricsOperationMetadata>
-      runEvaluationResultMetricsAsync(EvaluationResultName evaluationResultId) {
+      runEvaluationResultMetricsAsync(@Nullable EvaluationResultName evaluationResultId) {
     RunEvaluationResultMetricsRequest request =
         RunEvaluationResultMetricsRequest.newBuilder()
             .setEvaluationResultId(
@@ -6406,8 +6419,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
 
     private ListEvaluationsPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -6417,14 +6430,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsPage createPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       return new ListEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationsPage> createPageAsync(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
         ApiFuture<ListEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6439,7 +6452,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsFixedSizeCollection> {
 
     private ListEvaluationsFixedSizeCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6449,7 +6462,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsFixedSizeCollection createCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6487,9 +6500,11 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsPage> {
 
     private ListEvaluationResultsPage(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       super(context, response);
     }
 
@@ -6499,15 +6514,19 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsPage createPage(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       return new ListEvaluationResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationResultsPage> createPageAsync(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
         ApiFuture<ListEvaluationResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6523,7 +6542,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsFixedSizeCollection> {
 
     private ListEvaluationResultsFixedSizeCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6533,7 +6552,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsFixedSizeCollection createCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       return new ListEvaluationResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6572,10 +6591,11 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationDatasetsPage> {
 
     private ListEvaluationDatasetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
-        ListEvaluationDatasetsResponse response) {
+        @Nullable ListEvaluationDatasetsResponse response) {
       super(context, response);
     }
 
@@ -6585,16 +6605,18 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationDatasetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
-        ListEvaluationDatasetsResponse response) {
+        @Nullable ListEvaluationDatasetsResponse response) {
       return new ListEvaluationDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationDatasetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
         ApiFuture<ListEvaluationDatasetsResponse> futureResponse) {
@@ -6611,7 +6633,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationDatasetsFixedSizeCollection> {
 
     private ListEvaluationDatasetsFixedSizeCollection(
-        List<ListEvaluationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6621,7 +6643,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationDatasetsFixedSizeCollection createCollection(
-        List<ListEvaluationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationDatasetsPage> pages, int collectionSize) {
       return new ListEvaluationDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6658,8 +6680,9 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationRunsPage> {
 
     private ListEvaluationRunsPage(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
-        ListEvaluationRunsResponse response) {
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
+        @Nullable ListEvaluationRunsResponse response) {
       super(context, response);
     }
 
@@ -6669,14 +6692,16 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationRunsPage createPage(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
-        ListEvaluationRunsResponse response) {
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
+        @Nullable ListEvaluationRunsResponse response) {
       return new ListEvaluationRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationRunsPage> createPageAsync(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
         ApiFuture<ListEvaluationRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6691,7 +6716,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationRunsFixedSizeCollection> {
 
     private ListEvaluationRunsFixedSizeCollection(
-        List<ListEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6701,7 +6726,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationRunsFixedSizeCollection createCollection(
-        List<ListEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationRunsPage> pages, int collectionSize) {
       return new ListEvaluationRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6742,12 +6767,13 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationExpectationsPage> {
 
     private ListEvaluationExpectationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
             context,
-        ListEvaluationExpectationsResponse response) {
+        @Nullable ListEvaluationExpectationsResponse response) {
       super(context, response);
     }
 
@@ -6757,18 +6783,20 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationExpectationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
             context,
-        ListEvaluationExpectationsResponse response) {
+        @Nullable ListEvaluationExpectationsResponse response) {
       return new ListEvaluationExpectationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationExpectationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
@@ -6787,7 +6815,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationExpectationsFixedSizeCollection> {
 
     private ListEvaluationExpectationsFixedSizeCollection(
-        List<ListEvaluationExpectationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationExpectationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6797,7 +6825,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationExpectationsFixedSizeCollection createCollection(
-        List<ListEvaluationExpectationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationExpectationsPage> pages, int collectionSize) {
       return new ListEvaluationExpectationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6839,12 +6867,13 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListScheduledEvaluationRunsPage> {
 
     private ListScheduledEvaluationRunsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
             context,
-        ListScheduledEvaluationRunsResponse response) {
+        @Nullable ListScheduledEvaluationRunsResponse response) {
       super(context, response);
     }
 
@@ -6854,18 +6883,20 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListScheduledEvaluationRunsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
             context,
-        ListScheduledEvaluationRunsResponse response) {
+        @Nullable ListScheduledEvaluationRunsResponse response) {
       return new ListScheduledEvaluationRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScheduledEvaluationRunsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
@@ -6884,7 +6915,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListScheduledEvaluationRunsFixedSizeCollection> {
 
     private ListScheduledEvaluationRunsFixedSizeCollection(
-        List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6894,7 +6925,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListScheduledEvaluationRunsFixedSizeCollection createCollection(
-        List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
       return new ListScheduledEvaluationRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6928,8 +6959,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6939,14 +6970,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6960,7 +6991,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6970,7 +7002,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

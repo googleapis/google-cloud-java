@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NFSShareName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_NFS_SHARE =
@@ -83,7 +86,7 @@ public class NFSShareName implements ResourceName {
         .toString();
   }
 
-  public static NFSShareName parse(String formattedString) {
+  public static @Nullable NFSShareName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -101,7 +104,7 @@ public class NFSShareName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<NFSShareName> values) {
+  public static List<String> toStringList(List<@Nullable NFSShareName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (NFSShareName value : values) {
       if (value == null) {
@@ -150,7 +153,7 @@ public class NFSShareName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

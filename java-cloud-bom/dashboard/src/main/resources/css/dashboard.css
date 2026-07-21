@@ -1,0 +1,218 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.625;
+    margin-left: 2em;
+}
+
+#libraryVersions {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    width: 75%;
+}
+
+#libraryVersions td, #libraryVersions th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#libraryVersions th {
+    cursor: pointer;
+}
+
+#libraryVersions tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#libraryVersions tr:hover {
+    background-color: #ddd;
+}
+
+#libraryVersions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+h1,
+h2,
+h3 {
+    color: #333333;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+pre {
+    line-height: normal;
+}
+
+.pass {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+.fail {
+    background-color: pink;
+    font-weight: bold;
+}
+
+.unavailable {
+    background-color: gray;
+    font-weight: bold;
+}
+
+p.dependency-tree-node {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.linkage-check-dependency-paths, .jar-linkage-report {
+    margin-left: 1em;
+}
+
+p.jar-linkage-report-cause {
+    margin-bottom: 0;
+    margin-left: 2em;
+}
+
+ul.jar-linkage-report-cause {
+    margin-top: 0;
+    margin-left: 3em;
+}
+
+ul.jar-linkage-report-cause > li {
+    font: 1em 'Droid Sans Mono', monospace;
+}
+
+/* ----- Statistic ----- */
+.statistics {
+    padding-top: 50px;
+}
+
+.container {
+    min-height: 20ex;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.statistic-item {
+    flex: 0 0 16em;
+    padding: 1.6em 2.5em;
+    position: relative;
+    min-height: 180px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.03);
+    margin: auto;
+    border-style: solid;
+    border-width: medium;
+}
+
+.statistic-item .desc {
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.statistic-item h2 {
+    font-size: 2.3em;
+    font-weight: 300;
+}
+
+.statistic-item-green {
+    border-color: #00b26f;
+}
+
+.statistic-item-orange {
+    border-color: #ff8300;
+}
+
+.statistic-item-blue {
+    border-color: #00b5e9;
+}
+
+.statistic-item-red {
+    border-color: #fa4251;
+}
+
+.statistic-item-yellow {
+    border-color: #f1c40f;
+}
+
+#filterBar {
+    width: 50%;
+    font-size: 16px;
+    padding: 12px 40px 12px 40px;
+    border: 1px solid #ddd;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 12px;
+    background: #f1f1f1;
+    height: 30px;
+}
+
+.dropdown-button {
+    background-color: #00b26f;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-button {
+    cursor: pointer;
+}

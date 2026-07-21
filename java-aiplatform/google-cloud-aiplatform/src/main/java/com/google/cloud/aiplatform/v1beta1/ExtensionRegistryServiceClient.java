@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -292,10 +294,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ExtensionRegistryServiceClient implements BackgroundResource {
-  private final ExtensionRegistryServiceSettings settings;
+  private final @Nullable ExtensionRegistryServiceSettings settings;
   private final ExtensionRegistryServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -340,7 +343,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ExtensionRegistryServiceSettings getSettings() {
+  public final @Nullable ExtensionRegistryServiceSettings getSettings() {
     return settings;
   }
 
@@ -383,7 +386,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Extension, ImportExtensionOperationMetadata> importExtensionAsync(
-      LocationName parent, Extension extension) {
+      @Nullable LocationName parent, Extension extension) {
     ImportExtensionRequest request =
         ImportExtensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -541,7 +544,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/extensions/{extension}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Extension getExtension(ExtensionName name) {
+  public final Extension getExtension(@Nullable ExtensionName name) {
     GetExtensionRequest request =
         GetExtensionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExtension(request);
@@ -658,7 +661,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExtensionsPagedResponse listExtensions(LocationName parent) {
+  public final ListExtensionsPagedResponse listExtensions(@Nullable LocationName parent) {
     ListExtensionsRequest request =
         ListExtensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -930,7 +933,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteExtensionAsync(
-      ExtensionName name) {
+      @Nullable ExtensionName name) {
     DeleteExtensionRequest request =
         DeleteExtensionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteExtensionAsync(request);
@@ -1492,8 +1495,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
           ListExtensionsRequest, ListExtensionsResponse, Extension, ListExtensionsPage> {
 
     private ListExtensionsPage(
-        PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
-        ListExtensionsResponse response) {
+        @Nullable PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
+        @Nullable ListExtensionsResponse response) {
       super(context, response);
     }
 
@@ -1503,14 +1506,14 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListExtensionsPage createPage(
-        PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
-        ListExtensionsResponse response) {
+        @Nullable PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
+        @Nullable ListExtensionsResponse response) {
       return new ListExtensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExtensionsPage> createPageAsync(
-        PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
+        @Nullable PageContext<ListExtensionsRequest, ListExtensionsResponse, Extension> context,
         ApiFuture<ListExtensionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1524,7 +1527,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
           ListExtensionsPage,
           ListExtensionsFixedSizeCollection> {
 
-    private ListExtensionsFixedSizeCollection(List<ListExtensionsPage> pages, int collectionSize) {
+    private ListExtensionsFixedSizeCollection(
+        @Nullable List<ListExtensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1534,7 +1538,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListExtensionsFixedSizeCollection createCollection(
-        List<ListExtensionsPage> pages, int collectionSize) {
+        @Nullable List<ListExtensionsPage> pages, int collectionSize) {
       return new ListExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1568,8 +1572,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1579,14 +1583,14 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1600,7 +1604,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1610,7 +1615,7 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

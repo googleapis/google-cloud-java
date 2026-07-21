@@ -59,6 +59,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   private InstanceGroupManagerResizeRequest() {
     creationTimestamp_ = "";
     description_ = "";
+    instances_ = java.util.Collections.emptyList();
     kind_ = "";
     name_ = "";
     region_ = "";
@@ -529,6 +530,97 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   @java.lang.Override
   public long getId() {
     return id_;
+  }
+
+  public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+      getInstancesOrBuilderList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public int getInstancesCount() {
+    return instances_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index) {
+    return instances_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getInstancesOrBuilder(int index) {
+    return instances_.get(index);
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1213,6 +1305,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
     }
+    for (int i = 0; i < instances_.size(); i++) {
+      output.writeMessage(29097598, instances_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
@@ -1260,6 +1355,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
+    }
+    for (int i = 0; i < instances_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29097598, instances_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
@@ -1318,6 +1416,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (hasId()) {
       if (getId() != other.getId()) return false;
     }
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
@@ -1380,6 +1479,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
+    }
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1567,6 +1670,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetInstancesFieldBuilder();
         internalGetRequestedRunDurationFieldBuilder();
         internalGetStatusFieldBuilder();
       }
@@ -1579,6 +1683,13 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       creationTimestamp_ = "";
       description_ = "";
       id_ = 0L;
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+      } else {
+        instances_ = null;
+        instancesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
       name_ = "";
       region_ = "";
@@ -1625,11 +1736,25 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest result) {
+      if (instancesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          instances_ = java.util.Collections.unmodifiableList(instances_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.instances_ = instances_;
+      } else {
+        result.instances_ = instancesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -1648,46 +1773,46 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         result.id_ = id_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.requestedRunDuration_ =
             requestedRunDurationBuilder_ == null
                 ? requestedRunDuration_
                 : requestedRunDurationBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.resizeBy_ = resizeBy_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.state_ = state_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.zone_ = zone_;
         to_bitField0_ |= 0x00001000;
       }
@@ -1721,19 +1846,46 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       if (other.hasId()) {
         setId(other.getId());
       }
+      if (instancesBuilder_ == null) {
+        if (!other.instances_.isEmpty()) {
+          if (instances_.isEmpty()) {
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureInstancesIsMutable();
+            instances_.addAll(other.instances_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.instances_.isEmpty()) {
+          if (instancesBuilder_.isEmpty()) {
+            instancesBuilder_.dispose();
+            instancesBuilder_ = null;
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            instancesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetInstancesFieldBuilder()
+                    : null;
+          } else {
+            instancesBuilder_.addAllMessages(other.instances_);
+          }
+        }
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasRequestedRunDuration()) {
@@ -1744,17 +1896,17 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1762,7 +1914,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1800,21 +1952,34 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 29957474
+            case 232780786:
+              {
+                com.google.cloud.compute.v1.PerInstanceConfig m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.PerInstanceConfig.parser(), extensionRegistry);
+                if (instancesBuilder_ == null) {
+                  ensureInstancesIsMutable();
+                  instances_.add(m);
+                } else {
+                  instancesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 232780786
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
@@ -1824,32 +1989,32 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 356167698
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 878060682
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1111570338
             case 1450082194:
               {
                 input.readMessage(internalGetStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1857171402:
               {
                 input.readMessage(
                     internalGetRequestedRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1857171402
             case -911466526:
@@ -1861,13 +2026,13 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -645248918
             case -25084400:
               {
                 resizeBy_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -25084400
             default:
@@ -2223,6 +2388,428 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_ =
+        java.util.Collections.emptyList();
+
+    private void ensureInstancesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        instances_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.PerInstanceConfig>(instances_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.PerInstanceConfig,
+            com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+            com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        instancesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList() {
+      if (instancesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instances_);
+      } else {
+        return instancesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public int getInstancesCount() {
+      if (instancesBuilder_ == null) {
+        return instances_.size();
+      } else {
+        return instancesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder setInstances(int index, com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.set(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder setInstances(
+        int index, com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(int index, com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(
+        com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(
+        int index, com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addAllInstances(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.PerInstanceConfig> values) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+        onChanged();
+      } else {
+        instancesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder clearInstances() {
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        instancesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder removeInstances(int index) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.remove(index);
+        onChanged();
+      } else {
+        instancesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder getInstancesBuilder(int index) {
+      return internalGetInstancesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getInstancesOrBuilder(int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        getInstancesOrBuilderList() {
+      if (instancesBuilder_ != null) {
+        return instancesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instances_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder addInstancesBuilder() {
+      return internalGetInstancesFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder addInstancesBuilder(int index) {
+      return internalGetInstancesFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig.Builder>
+        getInstancesBuilderList() {
+      return internalGetInstancesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.PerInstanceConfig,
+            com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+            com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        internalGetInstancesFieldBuilder() {
+      if (instancesBuilder_ == null) {
+        instancesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.PerInstanceConfig,
+                com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+                com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>(
+                instances_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        instances_ = null;
+      }
+      return instancesBuilder_;
+    }
+
     private java.lang.Object kind_ = "";
 
     /**
@@ -2237,7 +2824,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2303,7 +2890,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2321,7 +2908,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2344,7 +2931,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2364,7 +2951,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2433,7 +3020,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2452,7 +3039,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2476,7 +3063,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2497,7 +3084,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2569,7 +3156,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2589,7 +3176,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2614,7 +3201,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2639,7 +3226,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the requestedRunDuration field is set.
      */
     public boolean hasRequestedRunDuration() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2683,7 +3270,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         requestedRunDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2705,7 +3292,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         requestedRunDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2722,7 +3309,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder mergeRequestedRunDuration(com.google.cloud.compute.v1.Duration value) {
       if (requestedRunDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && requestedRunDuration_ != null
             && requestedRunDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getRequestedRunDurationBuilder().mergeFrom(value);
@@ -2733,7 +3320,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         requestedRunDurationBuilder_.mergeFrom(value);
       }
       if (requestedRunDuration_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2750,7 +3337,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
      */
     public Builder clearRequestedRunDuration() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       requestedRunDuration_ = null;
       if (requestedRunDurationBuilder_ != null) {
         requestedRunDurationBuilder_.dispose();
@@ -2771,7 +3358,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getRequestedRunDurationBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetRequestedRunDurationFieldBuilder().getBuilder();
     }
@@ -2840,7 +3427,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     @java.lang.Override
     public boolean hasResizeBy() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2878,7 +3465,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public Builder setResizeBy(int value) {
 
       resizeBy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2897,7 +3484,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearResizeBy() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       resizeBy_ = 0;
       onChanged();
       return this;
@@ -2917,7 +3504,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2983,7 +3570,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3001,7 +3588,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3024,7 +3611,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3043,7 +3630,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3109,7 +3696,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3127,7 +3714,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3150,7 +3737,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3170,7 +3757,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3239,7 +3826,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3258,7 +3845,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3282,7 +3869,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3308,7 +3895,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3356,7 +3943,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3380,7 +3967,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3399,7 +3986,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public Builder mergeStatus(
         com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus
@@ -3412,7 +3999,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3430,7 +4017,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -3453,7 +4040,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus.Builder
         getStatusBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetStatusFieldBuilder().getBuilder();
     }
@@ -3525,7 +4112,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3597,7 +4184,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3617,7 +4204,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3642,7 +4229,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -352,10 +354,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TransportManagerClient implements BackgroundResource {
-  private final TransportManagerSettings settings;
+  private final @Nullable TransportManagerSettings settings;
   private final TransportManagerStub stub;
   private final OperationsClient operationsClient;
 
@@ -398,7 +401,7 @@ public class TransportManagerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final TransportManagerSettings getSettings() {
+  public final @Nullable TransportManagerSettings getSettings() {
     return settings;
   }
 
@@ -439,7 +442,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRemoteTransportProfilesPagedResponse listRemoteTransportProfiles(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListRemoteTransportProfilesRequest request =
         ListRemoteTransportProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -614,7 +617,8 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RemoteTransportProfile getRemoteTransportProfile(RemoteTransportProfileName name) {
+  public final RemoteTransportProfile getRemoteTransportProfile(
+      @Nullable RemoteTransportProfileName name) {
     GetRemoteTransportProfileRequest request =
         GetRemoteTransportProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -738,7 +742,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListTransportsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransportsPagedResponse listTransports(LocationName parent) {
+  public final ListTransportsPagedResponse listTransports(@Nullable LocationName parent) {
     ListTransportsRequest request =
         ListTransportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -906,7 +910,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Transport getTransport(TransportName name) {
+  public final Transport getTransport(@Nullable TransportName name) {
     GetTransportRequest request =
         GetTransportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTransport(request);
@@ -1015,7 +1019,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetStatusResponse getStatus(TransportName name) {
+  public final GetStatusResponse getStatus(@Nullable TransportName name) {
     GetStatusRequest request =
         GetStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStatus(request);
@@ -1130,7 +1134,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Transport, OperationMetadata> createTransportAsync(
-      LocationName parent, Transport transport, String transportId) {
+      @Nullable LocationName parent, Transport transport, String transportId) {
     CreateTransportRequest request =
         CreateTransportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1422,7 +1426,8 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteTransportAsync(TransportName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteTransportAsync(
+      @Nullable TransportName name) {
     DeleteTransportRequest request =
         DeleteTransportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTransportAsync(request);
@@ -1975,12 +1980,13 @@ public class TransportManagerClient implements BackgroundResource {
           ListRemoteTransportProfilesPage> {
 
     private ListRemoteTransportProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
             context,
-        ListRemoteTransportProfilesResponse response) {
+        @Nullable ListRemoteTransportProfilesResponse response) {
       super(context, response);
     }
 
@@ -1990,18 +1996,20 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListRemoteTransportProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
             context,
-        ListRemoteTransportProfilesResponse response) {
+        @Nullable ListRemoteTransportProfilesResponse response) {
       return new ListRemoteTransportProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRemoteTransportProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
@@ -2020,7 +2028,7 @@ public class TransportManagerClient implements BackgroundResource {
           ListRemoteTransportProfilesFixedSizeCollection> {
 
     private ListRemoteTransportProfilesFixedSizeCollection(
-        List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2030,7 +2038,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListRemoteTransportProfilesFixedSizeCollection createCollection(
-        List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
       return new ListRemoteTransportProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2064,8 +2072,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListTransportsRequest, ListTransportsResponse, Transport, ListTransportsPage> {
 
     private ListTransportsPage(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
-        ListTransportsResponse response) {
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable ListTransportsResponse response) {
       super(context, response);
     }
 
@@ -2075,14 +2083,14 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListTransportsPage createPage(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
-        ListTransportsResponse response) {
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable ListTransportsResponse response) {
       return new ListTransportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransportsPage> createPageAsync(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
         ApiFuture<ListTransportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2096,7 +2104,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListTransportsPage,
           ListTransportsFixedSizeCollection> {
 
-    private ListTransportsFixedSizeCollection(List<ListTransportsPage> pages, int collectionSize) {
+    private ListTransportsFixedSizeCollection(
+        @Nullable List<ListTransportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2106,7 +2115,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListTransportsFixedSizeCollection createCollection(
-        List<ListTransportsPage> pages, int collectionSize) {
+        @Nullable List<ListTransportsPage> pages, int collectionSize) {
       return new ListTransportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2140,8 +2149,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2151,14 +2160,14 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2172,7 +2181,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2182,7 +2192,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

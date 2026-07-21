@@ -24,6 +24,8 @@ import com.google.cloud.security.publicca.v1beta1.stub.PublicCertificateAuthorit
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,10 +140,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PublicCertificateAuthorityServiceClient implements BackgroundResource {
-  private final PublicCertificateAuthorityServiceSettings settings;
+  private final @Nullable PublicCertificateAuthorityServiceSettings settings;
   private final PublicCertificateAuthorityServiceStub stub;
 
   /** Constructs an instance of PublicCertificateAuthorityServiceClient with default settings. */
@@ -186,7 +189,7 @@ public class PublicCertificateAuthorityServiceClient implements BackgroundResour
     this.stub = stub;
   }
 
-  public final PublicCertificateAuthorityServiceSettings getSettings() {
+  public final @Nullable PublicCertificateAuthorityServiceSettings getSettings() {
     return settings;
   }
 
@@ -227,7 +230,7 @@ public class PublicCertificateAuthorityServiceClient implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExternalAccountKey createExternalAccountKey(
-      LocationName parent, ExternalAccountKey externalAccountKey) {
+      @Nullable LocationName parent, ExternalAccountKey externalAccountKey) {
     CreateExternalAccountKeyRequest request =
         CreateExternalAccountKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

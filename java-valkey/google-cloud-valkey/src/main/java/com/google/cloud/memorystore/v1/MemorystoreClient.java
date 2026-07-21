@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -364,8 +366,47 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StartMigration</td>
+ *      <td><p> Initiates the migration of a source instance to the target Memorystore instance.
+ * <p>  After the successful completion of this operation, the target instance will: 1. Set up replication with the source instance and replicate any writes to the source instance. 2. Only allow reads.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startMigrationAsync(StartMigrationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startMigrationOperationCallable()
+ *           <li><p> startMigrationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FinishMigration</td>
+ *      <td><p> Finalizes the migration process.
+ * <p>  After the successful completion of this operation, the target instance will: 1. Stop replicating from the source instance. 2. Allow both reads and writes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> finishMigrationAsync(FinishMigrationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> finishMigrationAsync(InstanceName name, boolean force)
+ *           <li><p> finishMigrationAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> finishMigrationOperationCallable()
+ *           <li><p> finishMigrationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -446,9 +487,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MemorystoreClient implements BackgroundResource {
-  private final MemorystoreSettings settings;
+  private final @Nullable MemorystoreSettings settings;
   private final MemorystoreStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -495,7 +537,7 @@ public class MemorystoreClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final MemorystoreSettings getSettings() {
+  public final @Nullable MemorystoreSettings getSettings() {
     return settings;
   }
 
@@ -544,7 +586,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -712,7 +754,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -837,7 +879,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1132,7 +1174,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1275,7 +1318,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/certificateAuthority
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CertificateAuthority getCertificateAuthority(InstanceName name) {
+  public final CertificateAuthority getCertificateAuthority(@Nullable InstanceName name) {
     GetCertificateAuthorityRequest request =
         GetCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1395,7 +1438,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SharedRegionalCertificateAuthority getSharedRegionalCertificateAuthority(
-      SharedRegionalCertificateAuthorityName name) {
+      @Nullable SharedRegionalCertificateAuthorityName name) {
     GetSharedRegionalCertificateAuthorityRequest request =
         GetSharedRegionalCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1526,7 +1569,7 @@ public class MemorystoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
-      InstanceName name,
+      @Nullable InstanceName name,
       RescheduleMaintenanceRequest.RescheduleType rescheduleType,
       Timestamp scheduleTime) {
     RescheduleMaintenanceRequest request =
@@ -1700,7 +1743,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupCollectionsPagedResponse listBackupCollections(LocationName parent) {
+  public final ListBackupCollectionsPagedResponse listBackupCollections(
+      @Nullable LocationName parent) {
     ListBackupCollectionsRequest request =
         ListBackupCollectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1887,7 +1931,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     where `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupCollection getBackupCollection(BackupCollectionName name) {
+  public final BackupCollection getBackupCollection(@Nullable BackupCollectionName name) {
     GetBackupCollectionRequest request =
         GetBackupCollectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2011,7 +2055,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(BackupCollectionName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable BackupCollectionName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2179,7 +2223,7 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -2294,7 +2338,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/backupCollections/{backup_collection_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -2544,7 +2589,8 @@ public class MemorystoreClient implements BackgroundResource {
    *     refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Instance, OperationMetadata> backupInstanceAsync(InstanceName name) {
+  public final OperationFuture<Instance, OperationMetadata> backupInstanceAsync(
+      @Nullable InstanceName name) {
     BackupInstanceRequest request =
         BackupInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return backupInstanceAsync(request);
@@ -2703,7 +2749,288 @@ public class MemorystoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Initiates the migration of a source instance to the target Memorystore instance.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Set up
+   * replication with the source instance and replicate any writes to the source instance. 2. Only
+   * allow reads.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   StartMigrationRequest request =
+   *       StartMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   Instance response = memorystoreClient.startMigrationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> startMigrationAsync(
+      StartMigrationRequest request) {
+    return startMigrationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the migration of a source instance to the target Memorystore instance.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Set up
+   * replication with the source instance and replicate any writes to the source instance. 2. Only
+   * allow reads.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   StartMigrationRequest request =
+   *       StartMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       memorystoreClient.startMigrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationCallable() {
+    return stub.startMigrationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the migration of a source instance to the target Memorystore instance.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Set up
+   * replication with the source instance and replicate any writes to the source instance. 2. Only
+   * allow reads.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   StartMigrationRequest request =
+   *       StartMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = memorystoreClient.startMigrationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartMigrationRequest, Operation> startMigrationCallable() {
+    return stub.startMigrationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finalizes the migration process.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Stop
+   * replicating from the source instance. 2. Allow both reads and writes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   boolean force = true;
+   *   Instance response = memorystoreClient.finishMigrationAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the instance to finalize migration on. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @param force Optional. By default, the `FinishMigration` operation ensures the target
+   *     replication offset to catch up to the source offset as of the time of the call. Set this
+   *     field to `true` to bypass this offset verification check.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> finishMigrationAsync(
+      @Nullable InstanceName name, boolean force) {
+    FinishMigrationRequest request =
+        FinishMigrationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return finishMigrationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finalizes the migration process.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Stop
+   * replicating from the source instance. 2. Allow both reads and writes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   boolean force = true;
+   *   Instance response = memorystoreClient.finishMigrationAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the instance to finalize migration on. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @param force Optional. By default, the `FinishMigration` operation ensures the target
+   *     replication offset to catch up to the source offset as of the time of the call. Set this
+   *     field to `true` to bypass this offset verification check.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> finishMigrationAsync(
+      String name, boolean force) {
+    FinishMigrationRequest request =
+        FinishMigrationRequest.newBuilder().setName(name).setForce(force).build();
+    return finishMigrationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finalizes the migration process.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Stop
+   * replicating from the source instance. 2. Allow both reads and writes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   FinishMigrationRequest request =
+   *       FinishMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   Instance response = memorystoreClient.finishMigrationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> finishMigrationAsync(
+      FinishMigrationRequest request) {
+    return finishMigrationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finalizes the migration process.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Stop
+   * replicating from the source instance. 2. Allow both reads and writes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   FinishMigrationRequest request =
+   *       FinishMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       memorystoreClient.finishMigrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationCallable() {
+    return stub.finishMigrationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finalizes the migration process.
+   *
+   * <p>After the successful completion of this operation, the target instance will: 1. Stop
+   * replicating from the source instance. 2. Allow both reads and writes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   FinishMigrationRequest request =
+   *       FinishMigrationRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future = memorystoreClient.finishMigrationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
+    return stub.finishMigrationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2738,6 +3065,18 @@ public class MemorystoreClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2771,6 +3110,18 @@ public class MemorystoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2915,8 +3266,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -2926,14 +3277,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2947,7 +3298,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2957,7 +3309,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2995,9 +3347,11 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupCollectionsPage> {
 
     private ListBackupCollectionsPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       super(context, response);
     }
 
@@ -3007,15 +3361,19 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsPage createPage(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
-        ListBackupCollectionsResponse response) {
+        @Nullable ListBackupCollectionsResponse response) {
       return new ListBackupCollectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupCollectionsPage> createPageAsync(
-        PageContext<ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+        @Nullable
+            PageContext<
+                ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
             context,
         ApiFuture<ListBackupCollectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3031,7 +3389,7 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupCollectionsFixedSizeCollection> {
 
     private ListBackupCollectionsFixedSizeCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3041,7 +3399,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupCollectionsFixedSizeCollection createCollection(
-        List<ListBackupCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupCollectionsPage> pages, int collectionSize) {
       return new ListBackupCollectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3072,8 +3430,8 @@ public class MemorystoreClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -3083,14 +3441,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3104,7 +3462,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3114,7 +3473,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3148,8 +3507,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3159,14 +3518,14 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3180,7 +3539,8 @@ public class MemorystoreClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3190,7 +3550,7 @@ public class MemorystoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

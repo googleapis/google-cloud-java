@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -495,10 +497,11 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public class AzureClustersClient implements BackgroundResource {
-  private final AzureClustersSettings settings;
+  private final @Nullable AzureClustersSettings settings;
   private final AzureClustersStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -546,7 +549,7 @@ public class AzureClustersClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AzureClustersSettings getSettings() {
+  public final @Nullable AzureClustersSettings getSettings() {
     return settings;
   }
 
@@ -618,7 +621,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
-      LocationName parent, AzureClient azureClient, String azureClientId) {
+      @Nullable LocationName parent, AzureClient azureClient, String azureClientId) {
     CreateAzureClientRequest request =
         CreateAzureClientRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -840,7 +843,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureClient getAzureClient(AzureClientName name) {
+  public final AzureClient getAzureClient(@Nullable AzureClientName name) {
     GetAzureClientRequest request =
         GetAzureClientRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAzureClient(request);
@@ -970,7 +973,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListAzureClientsPagedResponse listAzureClients(LocationName parent) {
+  public final ListAzureClientsPagedResponse listAzureClients(@Nullable LocationName parent) {
     ListAzureClientsRequest request =
         ListAzureClientsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1166,7 +1169,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClientAsync(
-      AzureClientName name) {
+      @Nullable AzureClientName name) {
     DeleteAzureClientRequest request =
         DeleteAzureClientRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1379,7 +1382,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
-      LocationName parent, AzureCluster azureCluster, String azureClusterId) {
+      @Nullable LocationName parent, AzureCluster azureCluster, String azureClusterId) {
     CreateAzureClusterRequest request =
         CreateAzureClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1737,7 +1740,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureCluster getAzureCluster(AzureClusterName name) {
+  public final AzureCluster getAzureCluster(@Nullable AzureClusterName name) {
     GetAzureClusterRequest request =
         GetAzureClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAzureCluster(request);
@@ -1867,7 +1870,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListAzureClustersPagedResponse listAzureClusters(LocationName parent) {
+  public final ListAzureClustersPagedResponse listAzureClusters(@Nullable LocationName parent) {
     ListAzureClustersRequest request =
         ListAzureClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2063,7 +2066,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(
-      AzureClusterName name) {
+      @Nullable AzureClusterName name) {
     DeleteAzureClusterRequest request =
         DeleteAzureClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2439,7 +2442,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
-      AzureClusterName parent, AzureNodePool azureNodePool, String azureNodePoolId) {
+      @Nullable AzureClusterName parent, AzureNodePool azureNodePool, String azureNodePoolId) {
     CreateAzureNodePoolRequest request =
         CreateAzureNodePoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2798,7 +2801,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureNodePool getAzureNodePool(AzureNodePoolName name) {
+  public final AzureNodePool getAzureNodePool(@Nullable AzureNodePoolName name) {
     GetAzureNodePoolRequest request =
         GetAzureNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAzureNodePool(request);
@@ -2937,7 +2940,8 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListAzureNodePoolsPagedResponse listAzureNodePools(AzureClusterName parent) {
+  public final ListAzureNodePoolsPagedResponse listAzureNodePools(
+      @Nullable AzureClusterName parent) {
     ListAzureNodePoolsRequest request =
         ListAzureNodePoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3136,7 +3140,7 @@ public class AzureClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureNodePoolAsync(
-      AzureNodePoolName name) {
+      @Nullable AzureNodePoolName name) {
     DeleteAzureNodePoolRequest request =
         DeleteAzureNodePoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3337,7 +3341,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureOpenIdConfig getAzureOpenIdConfig(AzureClusterName azureCluster) {
+  public final AzureOpenIdConfig getAzureOpenIdConfig(@Nullable AzureClusterName azureCluster) {
     GetAzureOpenIdConfigRequest request =
         GetAzureOpenIdConfigRequest.newBuilder()
             .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
@@ -3468,7 +3472,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureJsonWebKeys getAzureJsonWebKeys(AzureClusterName azureCluster) {
+  public final AzureJsonWebKeys getAzureJsonWebKeys(@Nullable AzureClusterName azureCluster) {
     GetAzureJsonWebKeysRequest request =
         GetAzureJsonWebKeysRequest.newBuilder()
             .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
@@ -3600,7 +3604,7 @@ public class AzureClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AzureServerConfig getAzureServerConfig(AzureServerConfigName name) {
+  public final AzureServerConfig getAzureServerConfig(@Nullable AzureServerConfigName name) {
     GetAzureServerConfigRequest request =
         GetAzureServerConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3766,8 +3770,9 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureClientsRequest, ListAzureClientsResponse, AzureClient, ListAzureClientsPage> {
 
     private ListAzureClientsPage(
-        PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient> context,
-        ListAzureClientsResponse response) {
+        @Nullable PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient>
+            context,
+        @Nullable ListAzureClientsResponse response) {
       super(context, response);
     }
 
@@ -3777,14 +3782,16 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureClientsPage createPage(
-        PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient> context,
-        ListAzureClientsResponse response) {
+        @Nullable PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient>
+            context,
+        @Nullable ListAzureClientsResponse response) {
       return new ListAzureClientsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAzureClientsPage> createPageAsync(
-        PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient> context,
+        @Nullable PageContext<ListAzureClientsRequest, ListAzureClientsResponse, AzureClient>
+            context,
         ApiFuture<ListAzureClientsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3799,7 +3806,7 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureClientsFixedSizeCollection> {
 
     private ListAzureClientsFixedSizeCollection(
-        List<ListAzureClientsPage> pages, int collectionSize) {
+        @Nullable List<ListAzureClientsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3809,7 +3816,7 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureClientsFixedSizeCollection createCollection(
-        List<ListAzureClientsPage> pages, int collectionSize) {
+        @Nullable List<ListAzureClientsPage> pages, int collectionSize) {
       return new ListAzureClientsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3846,8 +3853,9 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureClustersPage> {
 
     private ListAzureClustersPage(
-        PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster> context,
-        ListAzureClustersResponse response) {
+        @Nullable PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster>
+            context,
+        @Nullable ListAzureClustersResponse response) {
       super(context, response);
     }
 
@@ -3857,14 +3865,16 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureClustersPage createPage(
-        PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster> context,
-        ListAzureClustersResponse response) {
+        @Nullable PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster>
+            context,
+        @Nullable ListAzureClustersResponse response) {
       return new ListAzureClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAzureClustersPage> createPageAsync(
-        PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster> context,
+        @Nullable PageContext<ListAzureClustersRequest, ListAzureClustersResponse, AzureCluster>
+            context,
         ApiFuture<ListAzureClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3879,7 +3889,7 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureClustersFixedSizeCollection> {
 
     private ListAzureClustersFixedSizeCollection(
-        List<ListAzureClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAzureClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3889,7 +3899,7 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureClustersFixedSizeCollection createCollection(
-        List<ListAzureClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAzureClustersPage> pages, int collectionSize) {
       return new ListAzureClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3926,8 +3936,9 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureNodePoolsPage> {
 
     private ListAzureNodePoolsPage(
-        PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool> context,
-        ListAzureNodePoolsResponse response) {
+        @Nullable PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool>
+            context,
+        @Nullable ListAzureNodePoolsResponse response) {
       super(context, response);
     }
 
@@ -3937,14 +3948,16 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureNodePoolsPage createPage(
-        PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool> context,
-        ListAzureNodePoolsResponse response) {
+        @Nullable PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool>
+            context,
+        @Nullable ListAzureNodePoolsResponse response) {
       return new ListAzureNodePoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAzureNodePoolsPage> createPageAsync(
-        PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool> context,
+        @Nullable PageContext<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, AzureNodePool>
+            context,
         ApiFuture<ListAzureNodePoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3959,7 +3972,7 @@ public class AzureClustersClient implements BackgroundResource {
           ListAzureNodePoolsFixedSizeCollection> {
 
     private ListAzureNodePoolsFixedSizeCollection(
-        List<ListAzureNodePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListAzureNodePoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3969,7 +3982,7 @@ public class AzureClustersClient implements BackgroundResource {
 
     @Override
     protected ListAzureNodePoolsFixedSizeCollection createCollection(
-        List<ListAzureNodePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListAzureNodePoolsPage> pages, int collectionSize) {
       return new ListAzureNodePoolsFixedSizeCollection(pages, collectionSize);
     }
   }

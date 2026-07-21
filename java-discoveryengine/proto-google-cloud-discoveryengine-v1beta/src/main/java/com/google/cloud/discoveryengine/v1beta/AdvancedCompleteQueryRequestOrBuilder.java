@@ -106,9 +106,9 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies the autocomplete data model. This overrides any model specified
-   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-   * supported values:
+   * Specifies the autocomplete query model, which only applies to the QUERY
+   * SuggestionType. This overrides any model specified in the Configuration &gt;
+   * Autocomplete section of the Cloud console. Currently supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -135,9 +135,9 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies the autocomplete data model. This overrides any model specified
-   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-   * supported values:
+   * Specifies the autocomplete query model, which only applies to the QUERY
+   * SuggestionType. This overrides any model specified in the Configuration &gt;
+   * Autocomplete section of the Cloud console. Currently supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -164,10 +164,10 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -179,7 +179,7 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * The field must be a UTF-8 encoded string with a length limit of 128
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userPseudoId.
    */
@@ -189,10 +189,10 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -204,7 +204,7 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * The field must be a UTF-8 encoded string with a length limit of 128
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for userPseudoId.
    */
@@ -417,4 +417,131 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The enum numeric value on the wire of suggestionTypes at the given index.
    */
   int getSuggestionTypesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec>
+      getSuggestionTypeSpecsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+      getSuggestionTypeSpecs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSuggestionTypeSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpecOrBuilder>
+      getSuggestionTypeSpecsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpecOrBuilder
+      getSuggestionTypeSpecsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the experimentIds.
+   */
+  java.util.List<java.lang.String> getExperimentIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of experimentIds.
+   */
+  int getExperimentIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The experimentIds at the given index.
+   */
+  java.lang.String getExperimentIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the experimentIds at the given index.
+   */
+  com.google.protobuf.ByteString getExperimentIdsBytes(int index);
 }

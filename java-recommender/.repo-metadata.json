@@ -5,12 +5,11 @@
   "api_description": "delivers highly personalized product recommendations at scale.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-recommender/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-recommender",
   "distribution_name": "com.google.cloud:google-cloud-recommender",
   "api_id": "recommender.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

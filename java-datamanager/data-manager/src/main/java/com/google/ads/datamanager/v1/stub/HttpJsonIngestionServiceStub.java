@@ -16,6 +16,8 @@
 
 package com.google.ads.datamanager.v1.stub;
 
+import com.google.ads.datamanager.v1.IngestAdEventsRequest;
+import com.google.ads.datamanager.v1.IngestAdEventsResponse;
 import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
@@ -43,6 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -50,6 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -166,6 +170,42 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<IngestAdEventsRequest, IngestAdEventsResponse>
+      ingestAdEventsMethodDescriptor =
+          ApiMethodDescriptor.<IngestAdEventsRequest, IngestAdEventsResponse>newBuilder()
+              .setFullMethodName("google.ads.datamanager.v1.IngestionService/IngestAdEvents")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<IngestAdEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1/adEvents:ingest",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestAdEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestAdEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IngestAdEventsResponse>newBuilder()
+                      .setDefaultInstance(IngestAdEventsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
       retrieveRequestStatusMethodDescriptor =
@@ -207,6 +247,7 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
   private final UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable;
   private final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable;
+  private final UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable;
   private final UnaryCallable<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
       retrieveRequestStatusCallable;
 
@@ -271,6 +312,12 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
             .setMethodDescriptor(ingestEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<IngestAdEventsRequest, IngestAdEventsResponse>
+        ingestAdEventsTransportSettings =
+            HttpJsonCallSettings.<IngestAdEventsRequest, IngestAdEventsResponse>newBuilder()
+                .setMethodDescriptor(ingestAdEventsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
         retrieveRequestStatusTransportSettings =
             HttpJsonCallSettings
@@ -292,6 +339,9 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
     this.ingestEventsCallable =
         callableFactory.createUnaryCallable(
             ingestEventsTransportSettings, settings.ingestEventsSettings(), clientContext);
+    this.ingestAdEventsCallable =
+        callableFactory.createUnaryCallable(
+            ingestAdEventsTransportSettings, settings.ingestAdEventsSettings(), clientContext);
     this.retrieveRequestStatusCallable =
         callableFactory.createUnaryCallable(
             retrieveRequestStatusTransportSettings,
@@ -308,6 +358,7 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
     methodDescriptors.add(ingestAudienceMembersMethodDescriptor);
     methodDescriptors.add(removeAudienceMembersMethodDescriptor);
     methodDescriptors.add(ingestEventsMethodDescriptor);
+    methodDescriptors.add(ingestAdEventsMethodDescriptor);
     methodDescriptors.add(retrieveRequestStatusMethodDescriptor);
     return methodDescriptors;
   }
@@ -327,6 +378,11 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
   @Override
   public UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {
     return ingestEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable() {
+    return ingestAdEventsCallable;
   }
 
   @Override

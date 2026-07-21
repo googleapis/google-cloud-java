@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: sdk-platform-java SonarCloud Build
 on:
   push:
@@ -13,7 +16,9 @@ jobs:
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
@@ -27,22 +32,23 @@ jobs:
     name: Build
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          persist-credentials: false
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3
         with:
           java-version: 17
           distribution: temurin
       - name: Cache SonarCloud packages
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache Maven packages
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -64,7 +70,7 @@ jobs:
         run: |
             sudo mkdir -p /usr/src/showcase
             sudo chown -R ${USER} /usr/src/
-            curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${{env.SHOWCASE_VERSION}}/gapic-showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz
+            curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${SHOWCASE_VERSION}/gapic-showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz
             cd /usr/src/showcase/
             tar -xf showcase-*
             ./gapic-showcase run &

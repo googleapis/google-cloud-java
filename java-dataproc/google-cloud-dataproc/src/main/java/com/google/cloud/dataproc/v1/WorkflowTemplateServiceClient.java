@@ -43,6 +43,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -329,9 +331,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WorkflowTemplateServiceClient implements BackgroundResource {
-  private final WorkflowTemplateServiceSettings settings;
+  private final @Nullable WorkflowTemplateServiceSettings settings;
   private final WorkflowTemplateServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -380,7 +383,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WorkflowTemplateServiceSettings getSettings() {
+  public final @Nullable WorkflowTemplateServiceSettings getSettings() {
     return settings;
   }
 
@@ -441,7 +444,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate createWorkflowTemplate(
-      LocationName parent, WorkflowTemplate template) {
+      @Nullable LocationName parent, WorkflowTemplate template) {
     CreateWorkflowTemplateRequest request =
         CreateWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -486,7 +489,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate createWorkflowTemplate(
-      RegionName parent, WorkflowTemplate template) {
+      @Nullable RegionName parent, WorkflowTemplate template) {
     CreateWorkflowTemplateRequest request =
         CreateWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -635,7 +638,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
+  public final WorkflowTemplate getWorkflowTemplate(@Nullable WorkflowTemplateName name) {
     GetWorkflowTemplateRequest request =
         GetWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -812,7 +815,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      WorkflowTemplateName name) {
+      @Nullable WorkflowTemplateName name) {
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -936,7 +939,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      WorkflowTemplateName name, Map<String, String> parameters) {
+      @Nullable WorkflowTemplateName name, Map<String, String> parameters) {
     InstantiateWorkflowTemplateRequest request =
         InstantiateWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1225,7 +1228,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      LocationName parent, WorkflowTemplate template) {
+      @Nullable LocationName parent, WorkflowTemplate template) {
     InstantiateInlineWorkflowTemplateRequest request =
         InstantiateInlineWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1290,7 +1293,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      RegionName parent, WorkflowTemplate template) {
+      @Nullable RegionName parent, WorkflowTemplate template) {
     InstantiateInlineWorkflowTemplateRequest request =
         InstantiateInlineWorkflowTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1653,7 +1656,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(LocationName parent) {
+  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(
+      @Nullable LocationName parent) {
     ListWorkflowTemplatesRequest request =
         ListWorkflowTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1696,7 +1700,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(RegionName parent) {
+  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(
+      @Nullable RegionName parent) {
     ListWorkflowTemplatesRequest request =
         ListWorkflowTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1891,7 +1896,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWorkflowTemplate(WorkflowTemplateName name) {
+  public final void deleteWorkflowTemplate(@Nullable WorkflowTemplateName name) {
     DeleteWorkflowTemplateRequest request =
         DeleteWorkflowTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2290,9 +2295,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
           ListWorkflowTemplatesPage> {
 
     private ListWorkflowTemplatesPage(
-        PageContext<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
+        @Nullable
+            PageContext<
+                ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
             context,
-        ListWorkflowTemplatesResponse response) {
+        @Nullable ListWorkflowTemplatesResponse response) {
       super(context, response);
     }
 
@@ -2302,15 +2309,19 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowTemplatesPage createPage(
-        PageContext<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
+        @Nullable
+            PageContext<
+                ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
             context,
-        ListWorkflowTemplatesResponse response) {
+        @Nullable ListWorkflowTemplatesResponse response) {
       return new ListWorkflowTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkflowTemplatesPage> createPageAsync(
-        PageContext<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
+        @Nullable
+            PageContext<
+                ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
             context,
         ApiFuture<ListWorkflowTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2326,7 +2337,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
           ListWorkflowTemplatesFixedSizeCollection> {
 
     private ListWorkflowTemplatesFixedSizeCollection(
-        List<ListWorkflowTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2336,7 +2347,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkflowTemplatesFixedSizeCollection createCollection(
-        List<ListWorkflowTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListWorkflowTemplatesPage> pages, int collectionSize) {
       return new ListWorkflowTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }

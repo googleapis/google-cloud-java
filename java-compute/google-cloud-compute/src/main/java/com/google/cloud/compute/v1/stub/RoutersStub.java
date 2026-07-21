@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListNamedSetsPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
@@ -26,8 +27,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
+import com.google.cloud.compute.v1.DeleteNamedSetRouterRequest;
 import com.google.cloud.compute.v1.DeleteRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
+import com.google.cloud.compute.v1.GetNamedSetRouterRequest;
 import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
 import com.google.cloud.compute.v1.GetRoutePolicyRouterRequest;
@@ -35,10 +38,12 @@ import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
 import com.google.cloud.compute.v1.ListBgpRoutesRoutersRequest;
+import com.google.cloud.compute.v1.ListNamedSetsRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutePoliciesRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
 import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNamedSetRouterRequest;
 import com.google.cloud.compute.v1.PatchRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
@@ -46,14 +51,18 @@ import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
+import com.google.cloud.compute.v1.RoutersGetNamedSetResponse;
 import com.google.cloud.compute.v1.RoutersGetRoutePolicyResponse;
 import com.google.cloud.compute.v1.RoutersListBgpRoutes;
+import com.google.cloud.compute.v1.RoutersListNamedSets;
 import com.google.cloud.compute.v1.RoutersListRoutePolicies;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
+import com.google.cloud.compute.v1.UpdateNamedSetRouterRequest;
 import com.google.cloud.compute.v1.UpdateRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -61,6 +70,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RoutersStub implements BackgroundResource {
 
@@ -82,6 +92,15 @@ public abstract class RoutersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
+  public OperationCallable<DeleteNamedSetRouterRequest, Operation, Operation>
+      deleteNamedSetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNamedSetOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNamedSetRouterRequest, Operation> deleteNamedSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNamedSetCallable()");
+  }
+
   public OperationCallable<DeleteRoutePolicyRouterRequest, Operation, Operation>
       deleteRoutePolicyOperationCallable() {
     throw new UnsupportedOperationException(
@@ -94,6 +113,10 @@ public abstract class RoutersStub implements BackgroundResource {
 
   public UnaryCallable<GetRouterRequest, Router> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetNamedSetRouterRequest, RoutersGetNamedSetResponse> getNamedSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNamedSetCallable()");
   }
 
   public UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable() {
@@ -145,6 +168,15 @@ public abstract class RoutersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listBgpRoutesCallable()");
   }
 
+  public UnaryCallable<ListNamedSetsRoutersRequest, ListNamedSetsPagedResponse>
+      listNamedSetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNamedSetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNamedSetsRoutersRequest, RoutersListNamedSets> listNamedSetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNamedSetsCallable()");
+  }
+
   public UnaryCallable<ListRoutePoliciesRoutersRequest, ListRoutePoliciesPagedResponse>
       listRoutePoliciesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listRoutePoliciesPagedCallable()");
@@ -161,6 +193,15 @@ public abstract class RoutersStub implements BackgroundResource {
 
   public UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<PatchNamedSetRouterRequest, Operation, Operation>
+      patchNamedSetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchNamedSetOperationCallable()");
+  }
+
+  public UnaryCallable<PatchNamedSetRouterRequest, Operation> patchNamedSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchNamedSetCallable()");
   }
 
   public OperationCallable<PatchRoutePolicyRouterRequest, Operation, Operation>
@@ -182,6 +223,15 @@ public abstract class RoutersStub implements BackgroundResource {
 
   public UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCallable()");
+  }
+
+  public OperationCallable<UpdateNamedSetRouterRequest, Operation, Operation>
+      updateNamedSetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNamedSetOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateNamedSetRouterRequest, Operation> updateNamedSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNamedSetCallable()");
   }
 
   public OperationCallable<UpdateRoutePolicyRouterRequest, Operation, Operation>

@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -207,9 +209,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceGroupManagerResizeRequestsClient implements BackgroundResource {
-  private final InstanceGroupManagerResizeRequestsSettings settings;
+  private final @Nullable InstanceGroupManagerResizeRequestsSettings settings;
   private final InstanceGroupManagerResizeRequestsStub stub;
 
   /** Constructs an instance of InstanceGroupManagerResizeRequestsClient with default settings. */
@@ -254,7 +257,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
     this.stub = stub;
   }
 
-  public final InstanceGroupManagerResizeRequestsSettings getSettings() {
+  public final @Nullable InstanceGroupManagerResizeRequestsSettings getSettings() {
     return settings;
   }
 
@@ -1074,12 +1077,13 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagerResizeRequestsRequest,
                 InstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
             context,
-        InstanceGroupManagerResizeRequestsListResponse response) {
+        @Nullable InstanceGroupManagerResizeRequestsListResponse response) {
       super(context, response);
     }
 
@@ -1089,18 +1093,20 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagerResizeRequestsRequest,
                 InstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
             context,
-        InstanceGroupManagerResizeRequestsListResponse response) {
+        @Nullable InstanceGroupManagerResizeRequestsListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInstanceGroupManagerResizeRequestsRequest,
                 InstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
@@ -1118,7 +1124,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1127,7 +1133,8 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

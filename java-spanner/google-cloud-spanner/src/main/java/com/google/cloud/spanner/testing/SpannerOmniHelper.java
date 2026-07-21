@@ -26,6 +26,8 @@ public class SpannerOmniHelper {
   private static final String USE_MTLS = "spanner.mtls";
   private static final String CLIENT_CERT_PATH = "spanner.client_cert_path";
   private static final String CLIENT_CERT_KEY_PATH = "spanner.client_cert_key_path";
+  private static final String USERNAME = "spanner.username";
+  private static final String PASSWORD = "spanner.password";
 
   /**
    * Checks whether the Spanner Omni host is being used. This is done by checking if the
@@ -40,6 +42,14 @@ public class SpannerOmniHelper {
 
   public static void appendSpannerOmniProperties(StringBuilder uri) {
     uri.append(";type=omni");
+    String username = System.getProperty(USERNAME, "");
+    String password = System.getProperty(PASSWORD, "");
+    if (!Strings.isNullOrEmpty(username)) {
+      uri.append(";username=").append(username);
+    }
+    if (!Strings.isNullOrEmpty(password)) {
+      uri.append(";password=").append(password);
+    }
     if (isMtlsSetup()) {
       String clientCertificate = System.getProperty(CLIENT_CERT_PATH, "");
       String clientKey = System.getProperty(CLIENT_CERT_KEY_PATH, "");
@@ -61,6 +71,11 @@ public class SpannerOmniHelper {
     boolean usePlainText = Boolean.getBoolean(USE_PLAIN_TEXT);
     builder.setHost(omniEndpoint);
     builder.setType(SpannerOptions.InstanceType.OMNI);
+    String username = System.getProperty(USERNAME, "");
+    String password = System.getProperty(PASSWORD, "");
+    if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
+      builder.login(username, password.toCharArray());
+    }
     if (usePlainText) {
       builder.usePlainText();
     }

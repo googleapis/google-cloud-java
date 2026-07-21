@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -166,8 +168,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -249,9 +250,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SipTrunksClient implements BackgroundResource {
-  private final SipTrunksSettings settings;
+  private final @Nullable SipTrunksSettings settings;
   private final SipTrunksStub stub;
 
   /** Constructs an instance of SipTrunksClient with default settings. */
@@ -289,7 +291,7 @@ public class SipTrunksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SipTrunksSettings getSettings() {
+  public final @Nullable SipTrunksSettings getSettings() {
     return settings;
   }
 
@@ -321,7 +323,7 @@ public class SipTrunksClient implements BackgroundResource {
    * @param sipTrunk Required. The SIP trunk to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SipTrunk createSipTrunk(LocationName parent, SipTrunk sipTrunk) {
+  public final SipTrunk createSipTrunk(@Nullable LocationName parent, SipTrunk sipTrunk) {
     CreateSipTrunkRequest request =
         CreateSipTrunkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -439,7 +441,7 @@ public class SipTrunksClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/sipTrunks/&lt;SipTrunk ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSipTrunk(SipTrunkName name) {
+  public final void deleteSipTrunk(@Nullable SipTrunkName name) {
     DeleteSipTrunkRequest request =
         DeleteSipTrunkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSipTrunk(request);
@@ -551,7 +553,7 @@ public class SipTrunksClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSipTrunksPagedResponse listSipTrunks(LocationName parent) {
+  public final ListSipTrunksPagedResponse listSipTrunks(@Nullable LocationName parent) {
     ListSipTrunksRequest request =
         ListSipTrunksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -712,7 +714,7 @@ public class SipTrunksClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/sipTrunks/&lt;SipTrunk ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SipTrunk getSipTrunk(SipTrunkName name) {
+  public final SipTrunk getSipTrunk(@Nullable SipTrunkName name) {
     GetSipTrunkRequest request =
         GetSipTrunkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSipTrunk(request);
@@ -892,9 +894,8 @@ public class SipTrunksClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -938,9 +939,8 @@ public class SipTrunksClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -984,9 +984,8 @@ public class SipTrunksClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1139,8 +1138,8 @@ public class SipTrunksClient implements BackgroundResource {
           ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk, ListSipTrunksPage> {
 
     private ListSipTrunksPage(
-        PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
-        ListSipTrunksResponse response) {
+        @Nullable PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
+        @Nullable ListSipTrunksResponse response) {
       super(context, response);
     }
 
@@ -1150,14 +1149,14 @@ public class SipTrunksClient implements BackgroundResource {
 
     @Override
     protected ListSipTrunksPage createPage(
-        PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
-        ListSipTrunksResponse response) {
+        @Nullable PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
+        @Nullable ListSipTrunksResponse response) {
       return new ListSipTrunksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSipTrunksPage> createPageAsync(
-        PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
+        @Nullable PageContext<ListSipTrunksRequest, ListSipTrunksResponse, SipTrunk> context,
         ApiFuture<ListSipTrunksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1171,7 +1170,8 @@ public class SipTrunksClient implements BackgroundResource {
           ListSipTrunksPage,
           ListSipTrunksFixedSizeCollection> {
 
-    private ListSipTrunksFixedSizeCollection(List<ListSipTrunksPage> pages, int collectionSize) {
+    private ListSipTrunksFixedSizeCollection(
+        @Nullable List<ListSipTrunksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1181,7 +1181,7 @@ public class SipTrunksClient implements BackgroundResource {
 
     @Override
     protected ListSipTrunksFixedSizeCollection createCollection(
-        List<ListSipTrunksPage> pages, int collectionSize) {
+        @Nullable List<ListSipTrunksPage> pages, int collectionSize) {
       return new ListSipTrunksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1215,8 +1215,8 @@ public class SipTrunksClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1226,14 +1226,14 @@ public class SipTrunksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1247,7 +1247,8 @@ public class SipTrunksClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1257,7 +1258,7 @@ public class SipTrunksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

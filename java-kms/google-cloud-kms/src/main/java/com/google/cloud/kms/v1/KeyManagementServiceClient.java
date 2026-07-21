@@ -49,6 +49,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -717,8 +719,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -848,9 +849,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class KeyManagementServiceClient implements BackgroundResource {
-  private final KeyManagementServiceSettings settings;
+  private final @Nullable KeyManagementServiceSettings settings;
   private final KeyManagementServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -898,7 +900,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final KeyManagementServiceSettings getSettings() {
+  public final @Nullable KeyManagementServiceSettings getSettings() {
     return settings;
   }
 
@@ -948,7 +950,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyRingsPagedResponse listKeyRings(LocationName parent) {
+  public final ListKeyRingsPagedResponse listKeyRings(@Nullable LocationName parent) {
     ListKeyRingsRequest request =
         ListKeyRingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1124,7 +1126,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCryptoKeysPagedResponse listCryptoKeys(KeyRingName parent) {
+  public final ListCryptoKeysPagedResponse listCryptoKeys(@Nullable KeyRingName parent) {
     ListCryptoKeysRequest request =
         ListCryptoKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1303,7 +1305,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;/cryptoKeys/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(CryptoKeyName parent) {
+  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(
+      @Nullable CryptoKeyName parent) {
     ListCryptoKeyVersionsRequest request =
         ListCryptoKeyVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1491,7 +1494,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListImportJobsPagedResponse listImportJobs(KeyRingName parent) {
+  public final ListImportJobsPagedResponse listImportJobs(@Nullable KeyRingName parent) {
     ListImportJobsRequest request =
         ListImportJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1672,7 +1675,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRetiredResourcesPagedResponse listRetiredResources(LocationName parent) {
+  public final ListRetiredResourcesPagedResponse listRetiredResources(
+      @Nullable LocationName parent) {
     ListRetiredResourcesRequest request =
         ListRetiredResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1854,7 +1858,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyRing getKeyRing(KeyRingName name) {
+  public final KeyRing getKeyRing(@Nullable KeyRingName name) {
     GetKeyRingRequest request =
         GetKeyRingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKeyRing(request);
@@ -1972,7 +1976,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKey getCryptoKey(CryptoKeyName name) {
+  public final CryptoKey getCryptoKey(@Nullable CryptoKeyName name) {
     GetCryptoKeyRequest request =
         GetCryptoKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCryptoKey(request);
@@ -2100,7 +2104,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion getCryptoKeyVersion(CryptoKeyVersionName name) {
+  public final CryptoKeyVersion getCryptoKeyVersion(@Nullable CryptoKeyVersionName name) {
     GetCryptoKeyVersionRequest request =
         GetCryptoKeyVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2241,7 +2245,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublicKey getPublicKey(CryptoKeyVersionName name) {
+  public final PublicKey getPublicKey(@Nullable CryptoKeyVersionName name) {
     GetPublicKeyRequest request =
         GetPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPublicKey(request);
@@ -2383,7 +2387,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImportJob getImportJob(ImportJobName name) {
+  public final ImportJob getImportJob(@Nullable ImportJobName name) {
     GetImportJobRequest request =
         GetImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getImportJob(request);
@@ -2505,7 +2509,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [RetiredResource][google.cloud.kms.v1.RetiredResource] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RetiredResource getRetiredResource(RetiredResourceName name) {
+  public final RetiredResource getRetiredResource(@Nullable RetiredResourceName name) {
     GetRetiredResourceRequest request =
         GetRetiredResourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2637,7 +2641,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyRing createKeyRing(LocationName parent, String keyRingId, KeyRing keyRing) {
+  public final KeyRing createKeyRing(
+      @Nullable LocationName parent, String keyRingId, KeyRing keyRing) {
     CreateKeyRingRequest request =
         CreateKeyRingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2783,7 +2788,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKey createCryptoKey(
-      KeyRingName parent, String cryptoKeyId, CryptoKey cryptoKey) {
+      @Nullable KeyRingName parent, String cryptoKeyId, CryptoKey cryptoKey) {
     CreateCryptoKeyRequest request =
         CreateCryptoKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2947,7 +2952,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKeyVersion createCryptoKeyVersion(
-      CryptoKeyName parent, CryptoKeyVersion cryptoKeyVersion) {
+      @Nullable CryptoKeyName parent, CryptoKeyVersion cryptoKeyVersion) {
     CreateCryptoKeyVersionRequest request =
         CreateCryptoKeyVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3105,7 +3110,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteCryptoKeyMetadata> deleteCryptoKeyAsync(
-      CryptoKeyName name) {
+      @Nullable CryptoKeyName name) {
     DeleteCryptoKeyRequest request =
         DeleteCryptoKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCryptoKeyAsync(request);
@@ -3289,7 +3294,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteCryptoKeyVersionMetadata> deleteCryptoKeyVersionAsync(
-      CryptoKeyVersionName name) {
+      @Nullable CryptoKeyVersionName name) {
     DeleteCryptoKeyVersionRequest request =
         DeleteCryptoKeyVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3604,7 +3609,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportJob createImportJob(
-      KeyRingName parent, String importJobId, ImportJob importJob) {
+      @Nullable KeyRingName parent, String importJobId, ImportJob importJob) {
     CreateImportJobRequest request =
         CreateImportJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3973,7 +3978,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CryptoKey updateCryptoKeyPrimaryVersion(
-      CryptoKeyName name, String cryptoKeyVersionId) {
+      @Nullable CryptoKeyName name, String cryptoKeyVersionId) {
     UpdateCryptoKeyPrimaryVersionRequest request =
         UpdateCryptoKeyPrimaryVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4136,7 +4141,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion destroyCryptoKeyVersion(CryptoKeyVersionName name) {
+  public final CryptoKeyVersion destroyCryptoKeyVersion(@Nullable CryptoKeyVersionName name) {
     DestroyCryptoKeyVersionRequest request =
         DestroyCryptoKeyVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4323,7 +4328,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CryptoKeyVersion restoreCryptoKeyVersion(CryptoKeyVersionName name) {
+  public final CryptoKeyVersion restoreCryptoKeyVersion(@Nullable CryptoKeyVersionName name) {
     RestoreCryptoKeyVersionRequest request =
         RestoreCryptoKeyVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4495,46 +4500,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     than 8KiB.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EncryptResponse encrypt(ResourceName name, ByteString plaintext) {
-    EncryptRequest request =
-        EncryptRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setPlaintext(plaintext)
-            .build();
-    return encrypt(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Encrypts data, so that it can only be recovered by a call to
-   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt]. The
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyPathName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   ByteString plaintext = ByteString.copyFromUtf8("");
-   *   EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for encryption.
-   *     <p>If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-   *     [primary version][google.cloud.kms.v1.CryptoKey.primary].
-   * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
-   *     <p>The maximum size depends on the key version's
-   *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
-   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
-   *     length of the plaintext and additional_authenticated_data fields must be no larger than
-   *     8KiB.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final EncryptResponse encrypt(CryptoKeyPathName name, ByteString plaintext) {
+  public final EncryptResponse encrypt(@Nullable ResourceName name, ByteString plaintext) {
     EncryptRequest request =
         EncryptRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4693,7 +4659,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DecryptResponse decrypt(CryptoKeyName name, ByteString ciphertext) {
+  public final DecryptResponse decrypt(@Nullable CryptoKeyName name, ByteString ciphertext) {
     DecryptRequest request =
         DecryptRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5002,7 +4968,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] is supplied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
+  public final AsymmetricSignResponse asymmetricSign(
+      @Nullable CryptoKeyVersionName name, Digest digest) {
     AsymmetricSignRequest request =
         AsymmetricSignRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5172,7 +5139,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AsymmetricDecryptResponse asymmetricDecrypt(
-      CryptoKeyVersionName name, ByteString ciphertext) {
+      @Nullable CryptoKeyVersionName name, ByteString ciphertext) {
     AsymmetricDecryptRequest request =
         AsymmetricDecryptRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5333,7 +5300,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *     the specific algorithm.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MacSignResponse macSign(CryptoKeyVersionName name, ByteString data) {
+  public final MacSignResponse macSign(@Nullable CryptoKeyVersionName name, ByteString data) {
     MacSignRequest request =
         MacSignRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5491,7 +5458,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MacVerifyResponse macVerify(
-      CryptoKeyVersionName name, ByteString data, ByteString mac) {
+      @Nullable CryptoKeyVersionName name, ByteString data, ByteString mac) {
     MacVerifyRequest request =
         MacVerifyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5817,9 +5784,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -5864,9 +5830,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -5912,9 +5877,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -6464,8 +6428,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
       extends AbstractPage<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing, ListKeyRingsPage> {
 
     private ListKeyRingsPage(
-        PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
-        ListKeyRingsResponse response) {
+        @Nullable PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
+        @Nullable ListKeyRingsResponse response) {
       super(context, response);
     }
 
@@ -6475,14 +6439,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeyRingsPage createPage(
-        PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
-        ListKeyRingsResponse response) {
+        @Nullable PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
+        @Nullable ListKeyRingsResponse response) {
       return new ListKeyRingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKeyRingsPage> createPageAsync(
-        PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
+        @Nullable PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> context,
         ApiFuture<ListKeyRingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6496,7 +6460,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListKeyRingsPage,
           ListKeyRingsFixedSizeCollection> {
 
-    private ListKeyRingsFixedSizeCollection(List<ListKeyRingsPage> pages, int collectionSize) {
+    private ListKeyRingsFixedSizeCollection(
+        @Nullable List<ListKeyRingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6506,7 +6471,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeyRingsFixedSizeCollection createCollection(
-        List<ListKeyRingsPage> pages, int collectionSize) {
+        @Nullable List<ListKeyRingsPage> pages, int collectionSize) {
       return new ListKeyRingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6540,8 +6505,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage> {
 
     private ListCryptoKeysPage(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
-        ListCryptoKeysResponse response) {
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable ListCryptoKeysResponse response) {
       super(context, response);
     }
 
@@ -6551,14 +6516,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeysPage createPage(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
-        ListCryptoKeysResponse response) {
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable ListCryptoKeysResponse response) {
       return new ListCryptoKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCryptoKeysPage> createPageAsync(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
         ApiFuture<ListCryptoKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6572,7 +6537,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
-    private ListCryptoKeysFixedSizeCollection(List<ListCryptoKeysPage> pages, int collectionSize) {
+    private ListCryptoKeysFixedSizeCollection(
+        @Nullable List<ListCryptoKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6582,7 +6548,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeysFixedSizeCollection createCollection(
-        List<ListCryptoKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCryptoKeysPage> pages, int collectionSize) {
       return new ListCryptoKeysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6620,9 +6586,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListCryptoKeyVersionsPage> {
 
     private ListCryptoKeyVersionsPage(
-        PageContext<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
+        @Nullable
+            PageContext<
+                ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
             context,
-        ListCryptoKeyVersionsResponse response) {
+        @Nullable ListCryptoKeyVersionsResponse response) {
       super(context, response);
     }
 
@@ -6632,15 +6600,19 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeyVersionsPage createPage(
-        PageContext<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
+        @Nullable
+            PageContext<
+                ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
             context,
-        ListCryptoKeyVersionsResponse response) {
+        @Nullable ListCryptoKeyVersionsResponse response) {
       return new ListCryptoKeyVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCryptoKeyVersionsPage> createPageAsync(
-        PageContext<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
+        @Nullable
+            PageContext<
+                ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
             context,
         ApiFuture<ListCryptoKeyVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6656,7 +6628,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListCryptoKeyVersionsFixedSizeCollection> {
 
     private ListCryptoKeyVersionsFixedSizeCollection(
-        List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6666,7 +6638,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeyVersionsFixedSizeCollection createCollection(
-        List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
       return new ListCryptoKeyVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6700,8 +6672,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage> {
 
     private ListImportJobsPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable ListImportJobsResponse response) {
       super(context, response);
     }
 
@@ -6711,14 +6683,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListImportJobsPage createPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable ListImportJobsResponse response) {
       return new ListImportJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImportJobsPage> createPageAsync(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
         ApiFuture<ListImportJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6732,7 +6704,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListImportJobsPage,
           ListImportJobsFixedSizeCollection> {
 
-    private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {
+    private ListImportJobsFixedSizeCollection(
+        @Nullable List<ListImportJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6742,7 +6715,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListImportJobsFixedSizeCollection createCollection(
-        List<ListImportJobsPage> pages, int collectionSize) {
+        @Nullable List<ListImportJobsPage> pages, int collectionSize) {
       return new ListImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6780,9 +6753,10 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListRetiredResourcesPage> {
 
     private ListRetiredResourcesPage(
-        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+        @Nullable
+            PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
             context,
-        ListRetiredResourcesResponse response) {
+        @Nullable ListRetiredResourcesResponse response) {
       super(context, response);
     }
 
@@ -6792,15 +6766,17 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListRetiredResourcesPage createPage(
-        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+        @Nullable
+            PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
             context,
-        ListRetiredResourcesResponse response) {
+        @Nullable ListRetiredResourcesResponse response) {
       return new ListRetiredResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRetiredResourcesPage> createPageAsync(
-        PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
+        @Nullable
+            PageContext<ListRetiredResourcesRequest, ListRetiredResourcesResponse, RetiredResource>
             context,
         ApiFuture<ListRetiredResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6816,7 +6792,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListRetiredResourcesFixedSizeCollection> {
 
     private ListRetiredResourcesFixedSizeCollection(
-        List<ListRetiredResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListRetiredResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6826,7 +6802,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListRetiredResourcesFixedSizeCollection createCollection(
-        List<ListRetiredResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListRetiredResourcesPage> pages, int collectionSize) {
       return new ListRetiredResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6860,8 +6836,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6871,14 +6847,14 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6892,7 +6868,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6902,7 +6879,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

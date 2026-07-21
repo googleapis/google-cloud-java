@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -342,10 +344,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SecurityCenterSettingsServiceClient implements BackgroundResource {
-  private final SecurityCenterSettingsServiceSettings settings;
+  private final @Nullable SecurityCenterSettingsServiceSettings settings;
   private final SecurityCenterSettingsServiceStub stub;
 
   /** Constructs an instance of SecurityCenterSettingsServiceClient with default settings. */
@@ -389,7 +392,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SecurityCenterSettingsServiceSettings getSettings() {
+  public final @Nullable SecurityCenterSettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -427,7 +430,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     `organizations/{organization}/serviceAccount`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceAccount getServiceAccount(ServiceAccountName name) {
+  public final ServiceAccount getServiceAccount(@Nullable ServiceAccountName name) {
     GetServiceAccountRequest request =
         GetServiceAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -569,7 +572,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
+  public final Settings getSettings(@Nullable SettingsName name) {
     GetSettingsRequest request =
         GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
@@ -931,7 +934,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     `projects/{project}/zones/{zone}/clusters/{cluster}/effectiveSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings calculateEffectiveSettings(SettingsName name) {
+  public final Settings calculateEffectiveSettings(@Nullable SettingsName name) {
     CalculateEffectiveSettingsRequest request =
         CalculateEffectiveSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1144,7 +1147,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     &#42; `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ComponentSettings getComponentSettings(ComponentSettingsName name) {
+  public final ComponentSettings getComponentSettings(@Nullable ComponentSettingsName name) {
     GetComponentSettingsRequest request =
         GetComponentSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1461,7 +1464,8 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     &#42; `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ComponentSettings calculateEffectiveComponentSettings(ComponentSettingsName name) {
+  public final ComponentSettings calculateEffectiveComponentSettings(
+      @Nullable ComponentSettingsName name) {
     CalculateEffectiveComponentSettingsRequest request =
         CalculateEffectiveComponentSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1600,7 +1604,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     `organizations/{organization}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDetectorsPagedResponse listDetectors(OrganizationName parent) {
+  public final ListDetectorsPagedResponse listDetectors(@Nullable OrganizationName parent) {
     ListDetectorsRequest request =
         ListDetectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1776,7 +1780,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *     `organizations/{organization}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListComponentsPagedResponse listComponents(OrganizationName parent) {
+  public final ListComponentsPagedResponse listComponents(@Nullable OrganizationName parent) {
     ListComponentsRequest request =
         ListComponentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1983,8 +1987,8 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListDetectorsRequest, ListDetectorsResponse, Detector, ListDetectorsPage> {
 
     private ListDetectorsPage(
-        PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
-        ListDetectorsResponse response) {
+        @Nullable PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
+        @Nullable ListDetectorsResponse response) {
       super(context, response);
     }
 
@@ -1994,14 +1998,14 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDetectorsPage createPage(
-        PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
-        ListDetectorsResponse response) {
+        @Nullable PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
+        @Nullable ListDetectorsResponse response) {
       return new ListDetectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDetectorsPage> createPageAsync(
-        PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
+        @Nullable PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> context,
         ApiFuture<ListDetectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2015,7 +2019,8 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListDetectorsPage,
           ListDetectorsFixedSizeCollection> {
 
-    private ListDetectorsFixedSizeCollection(List<ListDetectorsPage> pages, int collectionSize) {
+    private ListDetectorsFixedSizeCollection(
+        @Nullable List<ListDetectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2025,7 +2030,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListDetectorsFixedSizeCollection createCollection(
-        List<ListDetectorsPage> pages, int collectionSize) {
+        @Nullable List<ListDetectorsPage> pages, int collectionSize) {
       return new ListDetectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2059,8 +2064,8 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListComponentsRequest, ListComponentsResponse, String, ListComponentsPage> {
 
     private ListComponentsPage(
-        PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
-        ListComponentsResponse response) {
+        @Nullable PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
+        @Nullable ListComponentsResponse response) {
       super(context, response);
     }
 
@@ -2070,14 +2075,14 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListComponentsPage createPage(
-        PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
-        ListComponentsResponse response) {
+        @Nullable PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
+        @Nullable ListComponentsResponse response) {
       return new ListComponentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListComponentsPage> createPageAsync(
-        PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
+        @Nullable PageContext<ListComponentsRequest, ListComponentsResponse, String> context,
         ApiFuture<ListComponentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2091,7 +2096,8 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
           ListComponentsPage,
           ListComponentsFixedSizeCollection> {
 
-    private ListComponentsFixedSizeCollection(List<ListComponentsPage> pages, int collectionSize) {
+    private ListComponentsFixedSizeCollection(
+        @Nullable List<ListComponentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2101,7 +2107,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListComponentsFixedSizeCollection createCollection(
-        List<ListComponentsPage> pages, int collectionSize) {
+        @Nullable List<ListComponentsPage> pages, int collectionSize) {
       return new ListComponentsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -45,6 +45,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -55,11 +56,13 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -78,17 +81,19 @@ public class BigQueryDatabaseMetaDataTest {
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
   private BigQuery bigqueryClient;
+  private ExecutorService metadataExecutor;
 
   @BeforeEach
   public void setUp() throws SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
     bigqueryClient = mock(BigQuery.class);
     Statement mockStatement = mock(Statement.class);
+    metadataExecutor = Executors.newCachedThreadPool();
 
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
-    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
+when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
     when(bigQueryConnection.getTracer())
         .thenReturn(
             otelTesting
@@ -104,8 +109,17 @@ public class BigQueryDatabaseMetaDataTest {
 
     Table mockTable = mock(Table.class);
     when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
+when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
+    when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+  }
+
+  @AfterEach
+  public void tearDown() {
+    if (metadataExecutor != null) {
+      metadataExecutor.shutdownNow();
+    }
   }
 
   private Table mockBigQueryTable(
@@ -180,25 +194,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("Dataset", dbMetadata.getSchemaTerm());
     assertEquals("Procedure", dbMetadata.getProcedureTerm());
     assertEquals("Project", dbMetadata.getCatalogTerm());
-  }
-
-  @Test
-  public void testReadSqlFromFile() throws SQLException {
-    BigQueryDatabaseMetaData dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
-
-    String primaryKeysQuery =
-        BigQueryDatabaseMetaData.readSqlFromFile("DatabaseMetaData_GetPrimaryKeys.sql");
-    assertTrue(primaryKeysQuery.contains("pk$"));
-
-    try {
-      when(bigQueryConnection.prepareStatement(primaryKeysQuery)).thenCallRealMethod();
-      String sql =
-          dbMetadata.replaceSqlParameters(
-              primaryKeysQuery, "project_name", "dataset_name", "table_name");
-      assertTrue(sql.contains("project_name.dataset_name.INFORMATION_SCHEMA.KEY_COLUMN_USAGE"));
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   @Test
@@ -1040,7 +1035,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = "proc_%";
@@ -1051,9 +1046,9 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
     Routine otherProc = mockBigQueryRoutine(catalog, schema, "another_proc", "PROCEDURE", "p3");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1, proc2, otherProc));
-    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class)))
+    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
     Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
@@ -1069,10 +1064,10 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
-        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
+        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
     verify(bigqueryClient, never()).getRoutine(any(RoutineId.class));
 
     assertNotNull(results);
@@ -1086,7 +1081,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = null;
@@ -1095,9 +1090,9 @@ public class BigQueryDatabaseMetaDataTest {
     Routine proc1 = mockBigQueryRoutine(catalog, schema, "proc_abc", "PROCEDURE", "p1");
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1));
-    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class)))
+    when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
     Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
@@ -1111,10 +1106,10 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
-        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
+        .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
 
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
@@ -1125,7 +1120,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() {
+  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String procNameExact = "exactprocname";
@@ -1146,16 +1141,67 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
-        .listRoutines(any(DatasetId.class), any(BigQuery.RoutineListOption.class));
+        .listRoutines(any(DatasetId.class), any(BigQuery.RoutineListOption[].class));
 
     assertNotNull(results);
     List<Routine> resultList = new ArrayList<>(results);
     assertEquals(1, resultList.size());
     assertSame(mockRoutine, resultList.get(0));
+  }
+
+  private List<Table> invokeFindMatchingObjectsWithException(
+      BigQueryException bqe, String pattern, boolean throwOn404) throws Exception {
+    return dbMetadata.findMatchingBigQueryObjects(
+        "Table",
+        () -> {
+          throw bqe;
+        },
+        (name) -> {
+          throw bqe;
+        },
+        (table) -> "name",
+        pattern,
+        dbMetadata.compileSqlLikePattern(pattern),
+        throwOn404);
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Swallows404_TargetedScan() throws Exception {
+    List<Table> results =
+        invokeFindMatchingObjectsWithException(
+            new BigQueryException(404, "Not Found"), "exact_match", false);
+    assertTrue(results.isEmpty());
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws404_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(404, "Not Found"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_TargetedScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "exact_match", false));
   }
 
   @Test
@@ -1587,12 +1633,12 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "func_b", "FUNCTION", "desc b");
     Routine proc2_ds2 = mockBigQueryRoutine(catalog, schema2Name, "proc_c", "PROCEDURE", "desc c");
 
-    Page<Routine> page1 = mock(Page.class);
+    Page<Routine> page1 = mock(Page.class, withSettings().withoutAnnotations());
     when(page1.iterateAll()).thenReturn(Arrays.asList(proc1_ds1, func1_ds1));
     when(bigqueryClient.listRoutines(eq(dataset1.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page1);
 
-    Page<Routine> page2 = mock(Page.class);
+    Page<Routine> page2 = mock(Page.class, withSettings().withoutAnnotations());
     when(page2.iterateAll()).thenReturn(Collections.singletonList(proc2_ds2));
     when(bigqueryClient.listRoutines(eq(dataset2.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page2);
@@ -1630,7 +1676,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testSubmitProcedureArgumentProcessingJobs_Basic() throws InterruptedException {
+  public void testProcessProcedureArgumentsSequentially_Basic() throws InterruptedException {
     String catalog = "p";
     String schemaName = "d";
     RoutineArgument arg1 = mockRoutineArgument("arg1_name", StandardSQLTypeName.STRING, "IN");
@@ -1655,32 +1701,13 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultSchemaFields = resultSchema.getFields();
 
-    ExecutorService mockExecutor = mock(ExecutorService.class);
-    List<Future<?>> processingTaskFutures = new ArrayList<>();
+    dbMetadata.processProcedureArgumentsSequentially(
+        fullRoutines, columnNameRegex, collectedResults, resultSchemaFields, dbMetadata.LOG);
 
-    // Capture the runnable submitted to the executor
-    List<Runnable> submittedRunnables = new ArrayList<>();
-    doAnswer(
-            invocation -> {
-              Runnable runnable = invocation.getArgument(0);
-              submittedRunnables.add(runnable);
-              Future<?> future = mock(Future.class);
-              return future;
-            })
-        .when(mockExecutor)
-        .submit(any(Runnable.class));
-
-    dbMetadata.submitProcedureArgumentProcessingJobs(
-        fullRoutines,
-        columnNameRegex,
-        collectedResults,
-        resultSchemaFields,
-        mockExecutor,
-        processingTaskFutures,
-        dbMetadata.LOG);
-
-    verify(mockExecutor, times(2)).submit(any(Runnable.class));
-    assertEquals(2, processingTaskFutures.size());
+    // Only proc1 has arguments, so collectedResults should contain 1 row.
+    assertEquals(1, collectedResults.size());
+    FieldValueList row = collectedResults.get(0);
+    assertEquals("arg1_name", row.get("COLUMN_NAME").getStringValue());
   }
 
   @Test
@@ -2992,11 +3019,14 @@ public class BigQueryDatabaseMetaDataTest {
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
 
-    ResultSet rs = spiedDbMetadata.getSchemas();
+    try (ResultSet rs = spiedDbMetadata.getSchemas()) {
 
-    assertSame(
-        mockResultSet, rs, "The returned ResultSet should be the one from the two-argument method");
-    verify(spiedDbMetadata, times(1)).getSchemas(null, null);
+      assertSame(
+          mockResultSet,
+          rs,
+          "The returned ResultSet should be the one from the two-argument method");
+      verify(spiedDbMetadata, times(1)).getSchemas(null, null);
+    }
   }
 
   // Non-Resultset DatabaseMetadata tests
@@ -3319,64 +3349,6 @@ public class BigQueryDatabaseMetaDataTest {
             "BigQueryDatabaseMetaData.getColumns"));
   }
 
-  @ParameterizedTest
-  @MethodSource("asyncMetadataOperationProvider")
-  public void testAsyncMetadataOperation_createsDetachedLinkedSpan(
-      AsyncMetadataOperation operation, String expectedSpanName) throws Exception {
-    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
-
-    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
-    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
-
-    try (Scope scope = parentSpan.makeCurrent()) {
-      Thread workerThread = operation.run(queue);
-
-      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
-      workerThread.join();
-
-      OpenTelemetryTestUtility.assertSpanLinkedToParent(
-          otelTesting.getSpans(), expectedSpanName, parentSpan);
-    } finally {
-      parentSpan.end();
-    }
-  }
-
-  @FunctionalInterface
-  interface AsyncMetadataOperation {
-    Thread run(BlockingQueue<BigQueryFieldValueListWrapper> queue) throws Exception;
-  }
-
-  Stream<Arguments> asyncMetadataOperationProvider() {
-    return Stream.of(
-        Arguments.of(
-            (AsyncMetadataOperation)
-                (q) ->
-                    dbMetadata.runGetTablesTaskAsync(
-                        "catalog",
-                        "schema",
-                        "table",
-                        new String[] {"TABLE"},
-                        dbMetadata.defineGetTablesSchema(),
-                        q),
-            "BigQueryDatabaseMetaData.getTables.background"),
-        Arguments.of(
-            (AsyncMetadataOperation)
-                (q) ->
-                    dbMetadata.runGetColumnsTaskAsync(
-                        "catalog",
-                        "schema",
-                        "table",
-                        "column",
-                        dbMetadata.defineGetColumnsSchema(),
-                        q),
-            "BigQueryDatabaseMetaData.getColumns.background"),
-        Arguments.of(
-            (AsyncMetadataOperation)
-                (q) ->
-                    dbMetadata.runGetSchemasTaskAsync(
-                        "catalog", "schema", dbMetadata.defineGetSchemasSchema(), q),
-            "BigQueryDatabaseMetaData.getSchemas.background"));
-  }
 
   @Test
   public void testWrapperMethods() throws SQLException {
@@ -3392,36 +3364,6 @@ public class BigQueryDatabaseMetaDataTest {
         assertThrows(
             BigQueryJdbcException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
-  }
-
-  @Test
-  public void testMetadataMethodsDoNotInterfere() throws SQLException {
-    Statement mockStatement1 = mock(Statement.class);
-    Statement mockStatement2 = mock(Statement.class);
-    ResultSet mockResultSet1 = mock(ResultSet.class);
-    ResultSet mockResultSet2 = mock(ResultSet.class);
-
-    when(bigQueryConnection.createStatement())
-        .thenReturn(mockStatement1)
-        .thenReturn(mockStatement2);
-
-    when(mockStatement1.executeQuery(any())).thenReturn(mockResultSet1);
-    when(mockStatement2.executeQuery(any())).thenReturn(mockResultSet2);
-
-    // Call first metadata method
-    ResultSet rs1 = dbMetadata.getPrimaryKeys("cat", "schema", "table");
-    assertSame(mockResultSet1, rs1);
-
-    // Call second metadata method
-    ResultSet rs2 = dbMetadata.getImportedKeys("cat", "schema", "table");
-    assertSame(mockResultSet2, rs2);
-
-    // Verify closeOnCompletion was called on both statements
-    verify(mockStatement1).closeOnCompletion();
-    verify(mockStatement2).closeOnCompletion();
-
-    // Verify connection.createStatement() was called twice
-    verify(bigQueryConnection, times(2)).createStatement();
   }
 
   @ParameterizedTest
@@ -3444,5 +3386,416 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
         metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
+  }
+
+  @Test
+  public void testGetCatalogs_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
+
+    try (ResultSet rs = dbMetadata.getCatalogs()) {
+      assertNotNull(rs);
+
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        catalogs.add(rs.getString("TABLE_CAT"));
+      }
+
+      assertThat(catalogs)
+          .containsExactly(
+              "additional-1", "additional-2", "discovered-1", "discovered-2", "primary-project")
+          .inOrder();
+    }
+  }
+
+  @Test
+  public void testGetCatalogs_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
+
+    try (ResultSet rs = dbMetadata.getCatalogs()) {
+      assertNotNull(rs);
+
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        catalogs.add(rs.getString("TABLE_CAT"));
+      }
+
+      assertThat(catalogs)
+          .containsExactly("additional-1", "additional-2", "primary-project")
+          .inOrder();
+    }
+  }
+
+  @Test
+  public void testGetSchemas_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
+
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(
+            eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pagePrimary);
+
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pageAdditional);
+
+    Page<Dataset> pageDiscovered = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
+    when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
+    when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pageDiscovered);
+
+    try (ResultSet rs = dbMetadata.getSchemas(null, null)) {
+      assertNotNull(rs);
+
+      List<String> schemas = new ArrayList<>();
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        schemas.add(rs.getString("TABLE_SCHEM"));
+        catalogs.add(rs.getString("TABLE_CATALOG"));
+      }
+
+      // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+      // alphabetical catalog: "additional-1", "discovered-1", "primary-project"
+      assertThat(catalogs)
+          .containsExactly("additional-1", "discovered-1", "primary-project")
+          .inOrder();
+      assertThat(schemas).containsExactly("dataset_a", "dataset_d", "dataset_p").inOrder();
+    }
+  }
+
+  @Test
+  public void testGetSchemas_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
+
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(
+            eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pagePrimary);
+
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pageAdditional);
+
+    try (ResultSet rs = dbMetadata.getSchemas(null, null)) {
+      assertNotNull(rs);
+
+      List<String> schemas = new ArrayList<>();
+      List<String> catalogs = new ArrayList<>();
+      while (rs.next()) {
+        schemas.add(rs.getString("TABLE_SCHEM"));
+        catalogs.add(rs.getString("TABLE_CATALOG"));
+      }
+
+      // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+      // alphabetical catalog: "additional-1", "primary-project" (discovered-1 is ignored)
+      assertThat(catalogs).containsExactly("additional-1", "primary-project").inOrder();
+      assertThat(schemas).containsExactly("dataset_a", "dataset_p").inOrder();
+
+      verify(bigqueryClient, never())
+          .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class));
+    }
+  }
+
+  private void mockDatasetIteration(DatasetId datasetId) {
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
+    Dataset dsPrimary = mock(Dataset.class);
+    when(dsPrimary.getDatasetId()).thenReturn(datasetId);
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(
+            eq(datasetId.getProject()), any(BigQuery.DatasetListOption[].class)))
+        .thenReturn(pagePrimary);
+  }
+
+  private Table mockTableWithConstraints(TableId tableId, TableConstraints constraints) {
+    Table mockTable = mock(Table.class);
+    when(mockTable.getTableId()).thenReturn(tableId);
+    TableDefinition mockDef = mock(TableDefinition.class);
+    when(mockDef.getType()).thenReturn(TableDefinition.Type.TABLE);
+    when(mockTable.getDefinition()).thenReturn(mockDef);
+    if (constraints != null) {
+      when(mockTable.getTableConstraints()).thenReturn(constraints);
+    }
+    when(bigqueryClient.getTable(eq(tableId))).thenReturn(mockTable);
+    return mockTable;
+  }
+
+  private void mockTableIteration(DatasetId datasetId, Table... tables) {
+    Page<Table> pageTables = mock(Page.class, withSettings().withoutAnnotations());
+    when(pageTables.iterateAll()).thenReturn(Arrays.asList(tables));
+    when(bigqueryClient.listTables(eq(datasetId), any(BigQuery.TableListOption[].class)))
+        .thenReturn(pageTables);
+  }
+
+  @Test
+  public void testGetPrimaryKeys_hasKey() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    PrimaryKey mockPk = mock(PrimaryKey.class);
+    when(mockPk.getColumns()).thenReturn(Arrays.asList("id_col1", "id_col2"));
+    when(mockConstraints.getPrimaryKey()).thenReturn(mockPk);
+
+    mockTableWithConstraints(tableId, mockConstraints);
+
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("TABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("TABLE_NAME"));
+      assertEquals("id_col1", rs.getString("COLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertNull(rs.getString("PK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("TABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("TABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("TABLE_NAME"));
+      assertEquals("id_col2", rs.getString("COLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertNull(rs.getString("PK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetPrimaryKeys_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    mockTableWithConstraints(tableId, null);
+
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "table_p")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetImportedKeys_hasKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable())
+        .thenReturn(TableId.of("test-project", "dataset_p", "ref_table"));
+
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+    mockTableWithConstraints(tableId, mockConstraints);
+
+    try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetImportedKeys_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    mockTableWithConstraints(tableId, null);
+
+    try (ResultSet rs = dbMetadata.getImportedKeys("test-project", "dataset_p", "table_p")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+
+    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
+    assertEquals(mockRs, rs);
+    verify(mockStmt).closeOnCompletion();
+    verify(mockStmt).executeQuery();
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntSchema() throws SQLException {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset.p", "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_hasKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+    TableId refTableId = TableId.of("test-project", "dataset_p", "ref_table");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable()).thenReturn(refTableId);
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+
+    Table mockTableP = mockTableWithConstraints(tableId, mockConstraints);
+    mockDatasetIteration(datasetId);
+    mockTableIteration(datasetId, mockTableP);
+
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("ref_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("table_p", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_noKeys() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
+    TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
+
+    Table mockTableP = mockTableWithConstraints(tableId, null);
+    mockDatasetIteration(datasetId);
+    mockTableIteration(datasetId, mockTableP);
+
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetCrossReference_hasKeys() throws SQLException {
+    TableId fkTableId = TableId.of("test-project", "dataset_p", "fk_table");
+    TableId pkTableId = TableId.of("test-project", "dataset_p", "pk_table");
+
+    TableConstraints mockConstraints = mock(TableConstraints.class);
+    ForeignKey mockFk = mock(ForeignKey.class);
+    when(mockFk.getName()).thenReturn("fk_name");
+    when(mockFk.getReferencedTable()).thenReturn(pkTableId);
+
+    ColumnReference mockRef1 = mock(ColumnReference.class);
+    when(mockRef1.getReferencingColumn()).thenReturn("fk_col1");
+    when(mockRef1.getReferencedColumn()).thenReturn("pk_col1");
+    ColumnReference mockRef2 = mock(ColumnReference.class);
+    when(mockRef2.getReferencingColumn()).thenReturn("fk_col2");
+    when(mockRef2.getReferencedColumn()).thenReturn("pk_col2");
+    when(mockFk.getColumnReferences()).thenReturn(Arrays.asList(mockRef1, mockRef2));
+    when(mockConstraints.getForeignKeys()).thenReturn(Collections.singletonList(mockFk));
+
+    mockTableWithConstraints(fkTableId, mockConstraints);
+
+    try (ResultSet rs =
+        dbMetadata.getCrossReference(
+            "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col1", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col1", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(1, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertTrue(rs.next());
+      assertEquals("test-project", rs.getString("PKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
+      assertEquals("pk_table", rs.getString("PKTABLE_NAME"));
+      assertEquals("pk_col2", rs.getString("PKCOLUMN_NAME"));
+      assertEquals("test-project", rs.getString("FKTABLE_CAT"));
+      assertEquals("dataset_p", rs.getString("FKTABLE_SCHEM"));
+      assertEquals("fk_table", rs.getString("FKTABLE_NAME"));
+      assertEquals("fk_col2", rs.getString("FKCOLUMN_NAME"));
+      assertEquals(2, rs.getInt("KEY_SEQ"));
+      assertEquals("fk_name", rs.getString("FK_NAME"));
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetCrossReference_noKeys() throws SQLException {
+    TableId fkTableId = TableId.of("test-project", "dataset_p", "fk_table");
+
+    mockTableWithConstraints(fkTableId, null);
+
+    try (ResultSet rs =
+        dbMetadata.getCrossReference(
+            "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
+      assertFalse(rs.next());
+    }
   }
 }

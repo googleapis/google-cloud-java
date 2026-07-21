@@ -5,12 +5,11 @@
   "api_description": "Common Universal Data Model (UDM) and Entity protos used by Chronicle.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-backstory",
   "distribution_name": "com.google.cloud:google-cloud-backstory",
   "api_id": "backstory.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

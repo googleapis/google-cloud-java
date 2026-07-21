@@ -40,6 +40,7 @@ public class SyncCreateHttpRoute {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setHttpRouteId("httpRouteId-2054835300")
               .setHttpRoute(HttpRoute.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       HttpRoute response = networkServicesClient.createHttpRouteAsync(request).get();
     }

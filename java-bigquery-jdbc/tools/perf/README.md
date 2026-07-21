@@ -24,24 +24,32 @@ The easiest way to run tests is using the provided `Makefile`. It defines target
 The Makefile uses the following defaults which can be overridden:
 
 - `ITERATIONS`: 5
-- `ROWS`: 1000
-- `COLS`: 5
+- `ROWS`: 1000 (default, used if no query/query_file is specified)
+- `COLS`: 5 (default, used if no query/query_file is specified)
+- `QUERY`: Optional custom query to run
+- `QUERY_FILE`: Optional path to a SQL file containing the query to run
 - `JAR1`: `../../drivers/google-cloud-bigquery-jdbc-0.9.0-all.jar`
 - `PROJECT_ID`: `bigquery-devtools-drivers`
 - `CREDENTIALS`: Value of `$GOOGLE_APPLICATION_CREDENTIALS`
 
 ### Examples
 
-#### Run REST API tests with defaults
+#### Run REST API tests with defaults (generates 1000 rows, 5 columns)
 
 ```bash
 make run-rest
 ```
 
-#### Run HTAPI tests with custom iterations and rows
+#### Run REST API tests with custom generated data size
 
 ```bash
-make run-htapi ITERATIONS=3 ROWS=50000
+make run-rest ROWS=50000 COLS=10
+```
+
+#### Run HTAPI tests with custom iterations and query
+
+```bash
+make run-htapi ITERATIONS=3 QUERY="SELECT * FROM my_dataset.my_table LIMIT 50000"
 ```
 
 #### Compare two drivers
@@ -64,13 +72,20 @@ For more control, you can run `run_perf.py` directly.
 - `--class1`: Class name for the first driver (default: `com.google.cloud.bigquery.jdbc.BigQueryDriver`).
 - `--class2`: Class name for the second driver (default: `com.google.cloud.bigquery.jdbc.BigQueryDriver`).
 - `-n`, `--iterations`: Number of iterations to run (default: 5).
-- `--generate-rows`: Number of rows to generate via query (default: 0).
-- `--generate-cols`: Number of columns to generate via query (default: 5).
-- `--query`: A specific query to run (if not using generated data).
+- `--query`: The query to run.
+- `--query-file`: Path to a SQL file containing the query to run.
+- `--generate-rows`: Number of rows to generate (default: 0, used if no query/query_file is specified).
+- `--generate-cols`: Number of columns to generate (default: 5).
 - `--output-md`: Append results as a markdown table to this file.
 - `--filter-metrics`: Comma-separated list of metrics to include in the markdown table.
 
 ### Examples
+
+#### Run a single driver with a custom query
+
+```bash
+python3 run_perf.py --url "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3" --jar1 path/to/driver.jar --query "SELECT * FROM my_dataset.my_table LIMIT 1000" -n 3
+```
 
 #### Run a single driver with generated data
 

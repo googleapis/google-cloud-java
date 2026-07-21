@@ -50,6 +50,7 @@ import com.google.api.services.bigquery.model.ListRoutinesResponse;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
 import com.google.api.services.bigquery.model.Policy;
+import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Routine;
@@ -259,6 +260,49 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                   datasets != null ? datasets : ImmutableList.<DatasetList.Datasets>of(),
                   LIST_TO_DATASET));
         });
+  }
+
+  @Override
+  public Tuple<String, Iterable<ProjectList.Projects>> listProjects(Map<Option, ?> options) {
+    try {
+      validateRPC();
+      Bigquery.Projects.List request = bigquery.projects().list();
+      Long maxResults = Option.MAX_RESULTS.getLong(options);
+      if (maxResults != null) {
+        request.setMaxResults(maxResults);
+      }
+      String pageToken = Option.PAGE_TOKEN.getString(options);
+      if (pageToken != null) {
+        request.setPageToken(pageToken);
+      }
+      request
+          .getRequestHeaders()
+          .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+
+      String gcpResourceDestinationId = RESOURCE_PROJECT_PREFIX + this.options.getProjectId();
+
+      return executeWithSpan(
+          createRpcTracingSpan(
+              "com.google.cloud.bigquery.BigQueryRpc.listProjects",
+              "ProjectService",
+              "ListProjects",
+              gcpResourceDestinationId,
+              request.getUriTemplate(),
+              options),
+          span -> {
+            if (span != null) {
+              span.setAttribute("bq.rpc.page_token", request.getPageToken());
+            }
+            ProjectList projectList = request.execute();
+            Iterable<ProjectList.Projects> projects = projectList.getProjects();
+            if (span != null) {
+              span.setAttribute("bq.rpc.next_page_token", projectList.getNextPageToken());
+            }
+            return Tuple.of(projectList.getNextPageToken(), projects);
+          });
+    } catch (IOException e) {
+      throw translate(e);
+    }
   }
 
   @Override

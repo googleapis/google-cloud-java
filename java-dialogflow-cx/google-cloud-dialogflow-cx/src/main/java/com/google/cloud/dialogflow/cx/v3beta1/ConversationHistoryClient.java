@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -130,8 +132,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -217,10 +218,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversationHistoryClient implements BackgroundResource {
-  private final ConversationHistorySettings settings;
+  private final @Nullable ConversationHistorySettings settings;
   private final ConversationHistoryStub stub;
 
   /** Constructs an instance of ConversationHistoryClient with default settings. */
@@ -260,7 +262,7 @@ public class ConversationHistoryClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConversationHistorySettings getSettings() {
+  public final @Nullable ConversationHistorySettings getSettings() {
     return settings;
   }
 
@@ -293,7 +295,7 @@ public class ConversationHistoryClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(AgentName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable AgentName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -464,7 +466,7 @@ public class ConversationHistoryClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -581,7 +583,7 @@ public class ConversationHistoryClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversation(ConversationName name) {
+  public final void deleteConversation(@Nullable ConversationName name) {
     DeleteConversationRequest request =
         DeleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -683,9 +685,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -729,9 +730,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -776,9 +776,8 @@ public class ConversationHistoryClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -936,8 +935,9 @@ public class ConversationHistoryClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -947,14 +947,16 @@ public class ConversationHistoryClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -969,7 +971,7 @@ public class ConversationHistoryClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -979,7 +981,7 @@ public class ConversationHistoryClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1013,8 +1015,8 @@ public class ConversationHistoryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1024,14 +1026,14 @@ public class ConversationHistoryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1045,7 +1047,8 @@ public class ConversationHistoryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1055,7 +1058,7 @@ public class ConversationHistoryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

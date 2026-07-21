@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MobileCarrierServiceClient implements BackgroundResource {
-  private final MobileCarrierServiceSettings settings;
+  private final @Nullable MobileCarrierServiceSettings settings;
   private final MobileCarrierServiceStub stub;
 
   /** Constructs an instance of MobileCarrierServiceClient with default settings. */
@@ -187,7 +190,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MobileCarrierServiceSettings getSettings() {
+  public final @Nullable MobileCarrierServiceSettings getSettings() {
     return settings;
   }
 
@@ -218,7 +221,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
    *     `networks/{network_code}/mobileCarriers/{mobile_carrier_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MobileCarrier getMobileCarrier(MobileCarrierName name) {
+  public final MobileCarrier getMobileCarrier(@Nullable MobileCarrierName name) {
     GetMobileCarrierRequest request =
         GetMobileCarrierRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMobileCarrier(request);
@@ -336,7 +339,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMobileCarriersPagedResponse listMobileCarriers(NetworkName parent) {
+  public final ListMobileCarriersPagedResponse listMobileCarriers(@Nullable NetworkName parent) {
     ListMobileCarriersRequest request =
         ListMobileCarriersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -557,8 +560,9 @@ public class MobileCarrierServiceClient implements BackgroundResource {
           ListMobileCarriersPage> {
 
     private ListMobileCarriersPage(
-        PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier> context,
-        ListMobileCarriersResponse response) {
+        @Nullable PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier>
+            context,
+        @Nullable ListMobileCarriersResponse response) {
       super(context, response);
     }
 
@@ -568,14 +572,16 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileCarriersPage createPage(
-        PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier> context,
-        ListMobileCarriersResponse response) {
+        @Nullable PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier>
+            context,
+        @Nullable ListMobileCarriersResponse response) {
       return new ListMobileCarriersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMobileCarriersPage> createPageAsync(
-        PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier> context,
+        @Nullable PageContext<ListMobileCarriersRequest, ListMobileCarriersResponse, MobileCarrier>
+            context,
         ApiFuture<ListMobileCarriersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -590,7 +596,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
           ListMobileCarriersFixedSizeCollection> {
 
     private ListMobileCarriersFixedSizeCollection(
-        List<ListMobileCarriersPage> pages, int collectionSize) {
+        @Nullable List<ListMobileCarriersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -600,7 +606,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileCarriersFixedSizeCollection createCollection(
-        List<ListMobileCarriersPage> pages, int collectionSize) {
+        @Nullable List<ListMobileCarriersPage> pages, int collectionSize) {
       return new ListMobileCarriersFixedSizeCollection(pages, collectionSize);
     }
   }

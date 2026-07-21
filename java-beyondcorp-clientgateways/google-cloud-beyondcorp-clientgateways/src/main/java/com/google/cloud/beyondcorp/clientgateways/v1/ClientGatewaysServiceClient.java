@@ -45,6 +45,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -283,9 +285,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ClientGatewaysServiceClient implements BackgroundResource {
-  private final ClientGatewaysServiceSettings settings;
+  private final @Nullable ClientGatewaysServiceSettings settings;
   private final ClientGatewaysServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -328,7 +331,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ClientGatewaysServiceSettings getSettings() {
+  public final @Nullable ClientGatewaysServiceSettings getSettings() {
     return settings;
   }
 
@@ -369,7 +372,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListClientGatewaysRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClientGatewaysPagedResponse listClientGateways(LocationName parent) {
+  public final ListClientGatewaysPagedResponse listClientGateways(@Nullable LocationName parent) {
     ListClientGatewaysRequest request =
         ListClientGatewaysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -546,7 +549,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ClientGateway getClientGateway(ClientGatewayName name) {
+  public final ClientGateway getClientGateway(@Nullable ClientGatewayName name) {
     GetClientGatewayRequest request =
         GetClientGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getClientGateway(request);
@@ -672,7 +675,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
    */
   public final OperationFuture<ClientGateway, ClientGatewayOperationMetadata>
       createClientGatewayAsync(
-          LocationName parent, ClientGateway clientGateway, String clientGatewayId) {
+          @Nullable LocationName parent, ClientGateway clientGateway, String clientGatewayId) {
     CreateClientGatewayRequest request =
         CreateClientGatewayRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -849,7 +852,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, ClientGatewayOperationMetadata> deleteClientGatewayAsync(
-      ClientGatewayName name) {
+      @Nullable ClientGatewayName name) {
     DeleteClientGatewayRequest request =
         DeleteClientGatewayRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1413,8 +1416,9 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
           ListClientGatewaysPage> {
 
     private ListClientGatewaysPage(
-        PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway> context,
-        ListClientGatewaysResponse response) {
+        @Nullable PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway>
+            context,
+        @Nullable ListClientGatewaysResponse response) {
       super(context, response);
     }
 
@@ -1424,14 +1428,16 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
 
     @Override
     protected ListClientGatewaysPage createPage(
-        PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway> context,
-        ListClientGatewaysResponse response) {
+        @Nullable PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway>
+            context,
+        @Nullable ListClientGatewaysResponse response) {
       return new ListClientGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClientGatewaysPage> createPageAsync(
-        PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway> context,
+        @Nullable PageContext<ListClientGatewaysRequest, ListClientGatewaysResponse, ClientGateway>
+            context,
         ApiFuture<ListClientGatewaysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1446,7 +1452,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
           ListClientGatewaysFixedSizeCollection> {
 
     private ListClientGatewaysFixedSizeCollection(
-        List<ListClientGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListClientGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1456,7 +1462,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
 
     @Override
     protected ListClientGatewaysFixedSizeCollection createCollection(
-        List<ListClientGatewaysPage> pages, int collectionSize) {
+        @Nullable List<ListClientGatewaysPage> pages, int collectionSize) {
       return new ListClientGatewaysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1490,8 +1496,8 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1501,14 +1507,14 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1522,7 +1528,8 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1532,7 +1539,7 @@ public class ClientGatewaysServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

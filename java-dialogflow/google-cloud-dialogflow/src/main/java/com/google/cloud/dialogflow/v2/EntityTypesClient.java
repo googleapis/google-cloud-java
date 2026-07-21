@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -296,8 +298,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -379,9 +380,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EntityTypesClient implements BackgroundResource {
-  private final EntityTypesSettings settings;
+  private final @Nullable EntityTypesSettings settings;
   private final EntityTypesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -428,7 +430,7 @@ public class EntityTypesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EntityTypesSettings getSettings() {
+  public final @Nullable EntityTypesSettings getSettings() {
     return settings;
   }
 
@@ -477,7 +479,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
+  public final ListEntityTypesPagedResponse listEntityTypes(@Nullable AgentName parent) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -544,7 +546,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent, String languageCode) {
+  public final ListEntityTypesPagedResponse listEntityTypes(
+      @Nullable AgentName parent, String languageCode) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -719,7 +722,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType getEntityType(EntityTypeName name) {
+  public final EntityType getEntityType(@Nullable EntityTypeName name) {
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
@@ -779,7 +782,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType getEntityType(EntityTypeName name, String languageCode) {
+  public final EntityType getEntityType(@Nullable EntityTypeName name, String languageCode) {
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -907,7 +910,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntityType createEntityType(AgentName parent, EntityType entityType) {
+  public final EntityType createEntityType(@Nullable AgentName parent, EntityType entityType) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -982,7 +985,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
-      AgentName parent, EntityType entityType, String languageCode) {
+      @Nullable AgentName parent, EntityType entityType, String languageCode) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1260,7 +1263,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEntityType(EntityTypeName name) {
+  public final void deleteEntityType(@Nullable EntityTypeName name) {
     DeleteEntityTypeRequest request =
         DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntityType(request);
@@ -1528,7 +1531,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
-      AgentName parent, List<String> entityTypeNames) {
+      @Nullable AgentName parent, List<String> entityTypeNames) {
     BatchDeleteEntityTypesRequest request =
         BatchDeleteEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1747,7 +1750,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
-      EntityTypeName parent, List<EntityType.Entity> entities) {
+      @Nullable EntityTypeName parent, List<EntityType.Entity> entities) {
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1842,7 +1845,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
-      EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
+      @Nullable EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2074,7 +2077,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
-      EntityTypeName parent, List<EntityType.Entity> entities) {
+      @Nullable EntityTypeName parent, List<EntityType.Entity> entities) {
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2171,7 +2174,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
-      EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
+      @Nullable EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2410,7 +2413,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      EntityTypeName parent, List<String> entityValues) {
+      @Nullable EntityTypeName parent, List<String> entityValues) {
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2510,7 +2513,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      EntityTypeName parent, List<String> entityValues, String languageCode) {
+      @Nullable EntityTypeName parent, List<String> entityValues, String languageCode) {
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2710,9 +2713,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2756,9 +2758,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2803,9 +2804,8 @@ public class EntityTypesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2958,8 +2958,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage> {
 
     private ListEntityTypesPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       super(context, response);
     }
 
@@ -2969,14 +2969,14 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesPage createPage(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
-        ListEntityTypesResponse response) {
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable ListEntityTypesResponse response) {
       return new ListEntityTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntityTypesPage> createPageAsync(
-        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        @Nullable PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
         ApiFuture<ListEntityTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2991,7 +2991,7 @@ public class EntityTypesClient implements BackgroundResource {
           ListEntityTypesFixedSizeCollection> {
 
     private ListEntityTypesFixedSizeCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3001,7 +3001,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListEntityTypesFixedSizeCollection createCollection(
-        List<ListEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntityTypesPage> pages, int collectionSize) {
       return new ListEntityTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3035,8 +3035,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3046,14 +3046,14 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3067,7 +3067,8 @@ public class EntityTypesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3077,7 +3078,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

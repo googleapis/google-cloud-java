@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1152,10 +1154,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AgentServiceClient implements BackgroundResource {
-  private final AgentServiceSettings settings;
+  private final @Nullable AgentServiceSettings settings;
   private final AgentServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1202,7 +1205,7 @@ public class AgentServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AgentServiceSettings getSettings() {
+  public final @Nullable AgentServiceSettings getSettings() {
     return settings;
   }
 
@@ -1250,7 +1253,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the location to list apps from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAppsPagedResponse listApps(LocationName parent) {
+  public final ListAppsPagedResponse listApps(@Nullable LocationName parent) {
     ListAppsRequest request =
         ListAppsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listApps(request);
@@ -1412,7 +1415,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the app to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final App getApp(AppName name) {
+  public final App getApp(@Nullable AppName name) {
     GetAppRequest request =
         GetAppRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApp(request);
@@ -1523,7 +1526,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<App, OperationMetadata> createAppAsync(
-      LocationName parent, App app) {
+      @Nullable LocationName parent, App app) {
     CreateAppRequest request =
         CreateAppRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1588,7 +1591,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<App, OperationMetadata> createAppAsync(
-      LocationName parent, App app, String appId) {
+      @Nullable LocationName parent, App app, String appId) {
     CreateAppRequest request =
         CreateAppRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1830,7 +1833,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the app to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteAppAsync(AppName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteAppAsync(@Nullable AppName name) {
     DeleteAppRequest request =
         DeleteAppRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAppAsync(request);
@@ -1970,7 +1973,8 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the app to export.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<ExportAppResponse, OperationMetadata> exportAppAsync(AppName name) {
+  public final OperationFuture<ExportAppResponse, OperationMetadata> exportAppAsync(
+      @Nullable AppName name) {
     ExportAppRequest request =
         ExportAppRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return exportAppAsync(request);
@@ -2138,7 +2142,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportAppResponse, OperationMetadata> importAppAsync(
-      LocationName parent, String displayName, String appId) {
+      @Nullable LocationName parent, String displayName, String appId) {
     ImportAppRequest request =
         ImportAppRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2319,7 +2323,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/securitySettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
+  public final SecuritySettings getSecuritySettings(@Nullable SecuritySettingsName name) {
     GetSecuritySettingsRequest request =
         GetSecuritySettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2529,7 +2533,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list agents from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAgentsPagedResponse listAgents(AppName parent) {
+  public final ListAgentsPagedResponse listAgents(@Nullable AppName parent) {
     ListAgentsRequest request =
         ListAgentsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAgents(request);
@@ -2691,7 +2695,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the agent to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent getAgent(AgentName name) {
+  public final Agent getAgent(@Nullable AgentName name) {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAgent(request);
@@ -2801,7 +2805,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent createAgent(AppName parent, Agent agent) {
+  public final Agent createAgent(@Nullable AppName parent, Agent agent) {
     CreateAgentRequest request =
         CreateAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2866,7 +2870,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     the agent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Agent createAgent(AppName parent, Agent agent, String agentId) {
+  public final Agent createAgent(@Nullable AppName parent, Agent agent, String agentId) {
     CreateAgentRequest request =
         CreateAgentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3080,7 +3084,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the agent to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAgent(AgentName name) {
+  public final void deleteAgent(@Nullable AgentName name) {
     DeleteAgentRequest request =
         DeleteAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAgent(request);
@@ -3194,7 +3198,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list examples from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExamplesPagedResponse listExamples(AppName parent) {
+  public final ListExamplesPagedResponse listExamples(@Nullable AppName parent) {
     ListExamplesRequest request =
         ListExamplesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3360,7 +3364,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the example to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example getExample(ExampleName name) {
+  public final Example getExample(@Nullable ExampleName name) {
     GetExampleRequest request =
         GetExampleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExample(request);
@@ -3470,7 +3474,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param example Required. The example to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example createExample(AppName parent, Example example) {
+  public final Example createExample(@Nullable AppName parent, Example example) {
     CreateExampleRequest request =
         CreateExampleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3535,7 +3539,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     for the example.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example createExample(AppName parent, Example example, String exampleId) {
+  public final Example createExample(@Nullable AppName parent, Example example, String exampleId) {
     CreateExampleRequest request =
         CreateExampleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3749,7 +3753,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the example to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteExample(ExampleName name) {
+  public final void deleteExample(@Nullable ExampleName name) {
     DeleteExampleRequest request =
         DeleteExampleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteExample(request);
@@ -3861,7 +3865,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list tools from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListToolsPagedResponse listTools(AppName parent) {
+  public final ListToolsPagedResponse listTools(@Nullable AppName parent) {
     ListToolsRequest request =
         ListToolsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTools(request);
@@ -4023,7 +4027,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the tool to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tool getTool(ToolName name) {
+  public final Tool getTool(@Nullable ToolName name) {
     GetToolRequest request =
         GetToolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTool(request);
@@ -4133,7 +4137,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list conversations from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(AppName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable AppName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4303,7 +4307,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the conversation to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -4418,7 +4422,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the conversation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversation(ConversationName name) {
+  public final void deleteConversation(@Nullable ConversationName name) {
     DeleteConversationRequest request =
         DeleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4537,7 +4541,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchDeleteConversationsResponse, OperationMetadata>
-      batchDeleteConversationsAsync(AppName parent) {
+      batchDeleteConversationsAsync(@Nullable AppName parent) {
     BatchDeleteConversationsRequest request =
         BatchDeleteConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4690,7 +4694,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param tool Required. The tool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tool createTool(AppName parent, Tool tool) {
+  public final Tool createTool(@Nullable AppName parent, Tool tool) {
     CreateToolRequest request =
         CreateToolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4755,7 +4759,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     the tool.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tool createTool(AppName parent, Tool tool, String toolId) {
+  public final Tool createTool(@Nullable AppName parent, Tool tool, String toolId) {
     CreateToolRequest request =
         CreateToolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4965,7 +4969,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the tool to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTool(ToolName name) {
+  public final void deleteTool(@Nullable ToolName name) {
     DeleteToolRequest request =
         DeleteToolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTool(request);
@@ -5079,7 +5083,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list guardrails from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGuardrailsPagedResponse listGuardrails(AppName parent) {
+  public final ListGuardrailsPagedResponse listGuardrails(@Nullable AppName parent) {
     ListGuardrailsRequest request =
         ListGuardrailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5246,7 +5250,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the guardrail to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Guardrail getGuardrail(GuardrailName name) {
+  public final Guardrail getGuardrail(@Nullable GuardrailName name) {
     GetGuardrailRequest request =
         GetGuardrailRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGuardrail(request);
@@ -5358,7 +5362,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param guardrail Required. The guardrail to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Guardrail createGuardrail(AppName parent, Guardrail guardrail) {
+  public final Guardrail createGuardrail(@Nullable AppName parent, Guardrail guardrail) {
     CreateGuardrailRequest request =
         CreateGuardrailRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5423,7 +5427,8 @@ public class AgentServiceClient implements BackgroundResource {
    *     automatically assigned for the guardrail.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Guardrail createGuardrail(AppName parent, Guardrail guardrail, String guardrailId) {
+  public final Guardrail createGuardrail(
+      @Nullable AppName parent, Guardrail guardrail, String guardrailId) {
     CreateGuardrailRequest request =
         CreateGuardrailRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5642,7 +5647,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the guardrail to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGuardrail(GuardrailName name) {
+  public final void deleteGuardrail(@Nullable GuardrailName name) {
     DeleteGuardrailRequest request =
         DeleteGuardrailRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteGuardrail(request);
@@ -5759,7 +5764,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apps/{app}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(AppName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(@Nullable AppName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5926,7 +5931,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -6041,7 +6046,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param deployment Required. The deployment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment createDeployment(AppName parent, Deployment deployment) {
+  public final Deployment createDeployment(@Nullable AppName parent, Deployment deployment) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6109,7 +6114,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment createDeployment(
-      AppName parent, Deployment deployment, String deploymentId) {
+      @Nullable AppName parent, Deployment deployment, String deploymentId) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6330,7 +6335,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeployment(DeploymentName name) {
+  public final void deleteDeployment(@Nullable DeploymentName name) {
     DeleteDeploymentRequest request =
         DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDeployment(request);
@@ -6446,7 +6451,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list toolsets from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListToolsetsPagedResponse listToolsets(AppName parent) {
+  public final ListToolsetsPagedResponse listToolsets(@Nullable AppName parent) {
     ListToolsetsRequest request =
         ListToolsetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6612,7 +6617,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the toolset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Toolset getToolset(ToolsetName name) {
+  public final Toolset getToolset(@Nullable ToolsetName name) {
     GetToolsetRequest request =
         GetToolsetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getToolset(request);
@@ -6722,7 +6727,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param toolset Required. The toolset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Toolset createToolset(AppName parent, Toolset toolset) {
+  public final Toolset createToolset(@Nullable AppName parent, Toolset toolset) {
     CreateToolsetRequest request =
         CreateToolsetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6787,7 +6792,7 @@ public class AgentServiceClient implements BackgroundResource {
    *     for the toolset.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Toolset createToolset(AppName parent, Toolset toolset, String toolsetId) {
+  public final Toolset createToolset(@Nullable AppName parent, Toolset toolset, String toolsetId) {
     CreateToolsetRequest request =
         CreateToolsetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7001,7 +7006,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the toolset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteToolset(ToolsetName name) {
+  public final void deleteToolset(@Nullable ToolsetName name) {
     DeleteToolsetRequest request =
         DeleteToolsetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteToolset(request);
@@ -7115,7 +7120,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list app versions from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAppVersionsPagedResponse listAppVersions(AppName parent) {
+  public final ListAppVersionsPagedResponse listAppVersions(@Nullable AppName parent) {
     ListAppVersionsRequest request =
         ListAppVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7283,7 +7288,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the app version to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppVersion getAppVersion(AppVersionName name) {
+  public final AppVersion getAppVersion(@Nullable AppVersionName name) {
     GetAppVersionRequest request =
         GetAppVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAppVersion(request);
@@ -7395,7 +7400,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param appVersion Required. The app version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppVersion createAppVersion(AppName parent, AppVersion appVersion) {
+  public final AppVersion createAppVersion(@Nullable AppName parent, AppVersion appVersion) {
     CreateAppVersionRequest request =
         CreateAppVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7461,7 +7466,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AppVersion createAppVersion(
-      AppName parent, AppVersion appVersion, String appVersionId) {
+      @Nullable AppName parent, AppVersion appVersion, String appVersionId) {
     CreateAppVersionRequest request =
         CreateAppVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7590,7 +7595,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the app version to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAppVersion(AppVersionName name) {
+  public final void deleteAppVersion(@Nullable AppVersionName name) {
     DeleteAppVersionRequest request =
         DeleteAppVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAppVersion(request);
@@ -7704,7 +7709,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RestoreAppVersionResponse, OperationMetadata> restoreAppVersionAsync(
-      AppVersionName name) {
+      @Nullable AppVersionName name) {
     RestoreAppVersionRequest request =
         RestoreAppVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7856,7 +7861,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GenerateAppResourceResponse, GenerateAppResourceOperationMetadata>
-      generateAppResourceAsync(AppName parent) {
+      generateAppResourceAsync(@Nullable AppName parent) {
     GenerateAppResourceRequest request =
         GenerateAppResourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8051,7 +8056,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list changelogs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChangelogsPagedResponse listChangelogs(AppName parent) {
+  public final ListChangelogsPagedResponse listChangelogs(@Nullable AppName parent) {
     ListChangelogsRequest request =
         ListChangelogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8218,7 +8223,7 @@ public class AgentServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the changelog to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Changelog getChangelog(ChangelogName name) {
+  public final Changelog getChangelog(@Nullable ChangelogName name) {
     GetChangelogRequest request =
         GetChangelogRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getChangelog(request);
@@ -8550,7 +8555,8 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractPage<ListAppsRequest, ListAppsResponse, App, ListAppsPage> {
 
     private ListAppsPage(
-        PageContext<ListAppsRequest, ListAppsResponse, App> context, ListAppsResponse response) {
+        @Nullable PageContext<ListAppsRequest, ListAppsResponse, App> context,
+        @Nullable ListAppsResponse response) {
       super(context, response);
     }
 
@@ -8560,13 +8566,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppsPage createPage(
-        PageContext<ListAppsRequest, ListAppsResponse, App> context, ListAppsResponse response) {
+        @Nullable PageContext<ListAppsRequest, ListAppsResponse, App> context,
+        @Nullable ListAppsResponse response) {
       return new ListAppsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAppsPage> createPageAsync(
-        PageContext<ListAppsRequest, ListAppsResponse, App> context,
+        @Nullable PageContext<ListAppsRequest, ListAppsResponse, App> context,
         ApiFuture<ListAppsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8576,7 +8583,7 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListAppsRequest, ListAppsResponse, App, ListAppsPage, ListAppsFixedSizeCollection> {
 
-    private ListAppsFixedSizeCollection(List<ListAppsPage> pages, int collectionSize) {
+    private ListAppsFixedSizeCollection(@Nullable List<ListAppsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8586,7 +8593,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppsFixedSizeCollection createCollection(
-        List<ListAppsPage> pages, int collectionSize) {
+        @Nullable List<ListAppsPage> pages, int collectionSize) {
       return new ListAppsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8617,8 +8624,8 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractPage<ListAgentsRequest, ListAgentsResponse, Agent, ListAgentsPage> {
 
     private ListAgentsPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       super(context, response);
     }
 
@@ -8628,14 +8635,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAgentsPage createPage(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
-        ListAgentsResponse response) {
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable ListAgentsResponse response) {
       return new ListAgentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAgentsPage> createPageAsync(
-        PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
+        @Nullable PageContext<ListAgentsRequest, ListAgentsResponse, Agent> context,
         ApiFuture<ListAgentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8649,7 +8656,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListAgentsPage,
           ListAgentsFixedSizeCollection> {
 
-    private ListAgentsFixedSizeCollection(List<ListAgentsPage> pages, int collectionSize) {
+    private ListAgentsFixedSizeCollection(
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8659,7 +8667,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAgentsFixedSizeCollection createCollection(
-        List<ListAgentsPage> pages, int collectionSize) {
+        @Nullable List<ListAgentsPage> pages, int collectionSize) {
       return new ListAgentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8692,8 +8700,8 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractPage<ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage> {
 
     private ListExamplesPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       super(context, response);
     }
 
@@ -8703,14 +8711,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesPage createPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       return new ListExamplesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExamplesPage> createPageAsync(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
         ApiFuture<ListExamplesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8724,7 +8732,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
-    private ListExamplesFixedSizeCollection(List<ListExamplesPage> pages, int collectionSize) {
+    private ListExamplesFixedSizeCollection(
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8734,7 +8743,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListExamplesFixedSizeCollection createCollection(
-        List<ListExamplesPage> pages, int collectionSize) {
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       return new ListExamplesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8761,8 +8770,8 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractPage<ListToolsRequest, ListToolsResponse, Tool, ListToolsPage> {
 
     private ListToolsPage(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
-        ListToolsResponse response) {
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable ListToolsResponse response) {
       super(context, response);
     }
 
@@ -8772,14 +8781,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListToolsPage createPage(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
-        ListToolsResponse response) {
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable ListToolsResponse response) {
       return new ListToolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListToolsPage> createPageAsync(
-        PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
+        @Nullable PageContext<ListToolsRequest, ListToolsResponse, Tool> context,
         ApiFuture<ListToolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8789,7 +8798,7 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListToolsRequest, ListToolsResponse, Tool, ListToolsPage, ListToolsFixedSizeCollection> {
 
-    private ListToolsFixedSizeCollection(List<ListToolsPage> pages, int collectionSize) {
+    private ListToolsFixedSizeCollection(@Nullable List<ListToolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8799,7 +8808,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListToolsFixedSizeCollection createCollection(
-        List<ListToolsPage> pages, int collectionSize) {
+        @Nullable List<ListToolsPage> pages, int collectionSize) {
       return new ListToolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8836,8 +8845,9 @@ public class AgentServiceClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -8847,14 +8857,16 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8869,7 +8881,7 @@ public class AgentServiceClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8879,7 +8891,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8913,8 +8925,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListGuardrailsRequest, ListGuardrailsResponse, Guardrail, ListGuardrailsPage> {
 
     private ListGuardrailsPage(
-        PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
-        ListGuardrailsResponse response) {
+        @Nullable PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
+        @Nullable ListGuardrailsResponse response) {
       super(context, response);
     }
 
@@ -8924,14 +8936,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListGuardrailsPage createPage(
-        PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
-        ListGuardrailsResponse response) {
+        @Nullable PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
+        @Nullable ListGuardrailsResponse response) {
       return new ListGuardrailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGuardrailsPage> createPageAsync(
-        PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
+        @Nullable PageContext<ListGuardrailsRequest, ListGuardrailsResponse, Guardrail> context,
         ApiFuture<ListGuardrailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8945,7 +8957,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListGuardrailsPage,
           ListGuardrailsFixedSizeCollection> {
 
-    private ListGuardrailsFixedSizeCollection(List<ListGuardrailsPage> pages, int collectionSize) {
+    private ListGuardrailsFixedSizeCollection(
+        @Nullable List<ListGuardrailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8955,7 +8968,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListGuardrailsFixedSizeCollection createCollection(
-        List<ListGuardrailsPage> pages, int collectionSize) {
+        @Nullable List<ListGuardrailsPage> pages, int collectionSize) {
       return new ListGuardrailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8989,8 +9002,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -9000,14 +9013,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9022,7 +9035,7 @@ public class AgentServiceClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9032,7 +9045,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9065,8 +9078,8 @@ public class AgentServiceClient implements BackgroundResource {
       extends AbstractPage<ListToolsetsRequest, ListToolsetsResponse, Toolset, ListToolsetsPage> {
 
     private ListToolsetsPage(
-        PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
-        ListToolsetsResponse response) {
+        @Nullable PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
+        @Nullable ListToolsetsResponse response) {
       super(context, response);
     }
 
@@ -9076,14 +9089,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListToolsetsPage createPage(
-        PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
-        ListToolsetsResponse response) {
+        @Nullable PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
+        @Nullable ListToolsetsResponse response) {
       return new ListToolsetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListToolsetsPage> createPageAsync(
-        PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
+        @Nullable PageContext<ListToolsetsRequest, ListToolsetsResponse, Toolset> context,
         ApiFuture<ListToolsetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9097,7 +9110,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListToolsetsPage,
           ListToolsetsFixedSizeCollection> {
 
-    private ListToolsetsFixedSizeCollection(List<ListToolsetsPage> pages, int collectionSize) {
+    private ListToolsetsFixedSizeCollection(
+        @Nullable List<ListToolsetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9107,7 +9121,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListToolsetsFixedSizeCollection createCollection(
-        List<ListToolsetsPage> pages, int collectionSize) {
+        @Nullable List<ListToolsetsPage> pages, int collectionSize) {
       return new ListToolsetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9141,8 +9155,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListAppVersionsRequest, ListAppVersionsResponse, AppVersion, ListAppVersionsPage> {
 
     private ListAppVersionsPage(
-        PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
-        ListAppVersionsResponse response) {
+        @Nullable PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
+        @Nullable ListAppVersionsResponse response) {
       super(context, response);
     }
 
@@ -9152,14 +9166,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppVersionsPage createPage(
-        PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
-        ListAppVersionsResponse response) {
+        @Nullable PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
+        @Nullable ListAppVersionsResponse response) {
       return new ListAppVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAppVersionsPage> createPageAsync(
-        PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
+        @Nullable PageContext<ListAppVersionsRequest, ListAppVersionsResponse, AppVersion> context,
         ApiFuture<ListAppVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9174,7 +9188,7 @@ public class AgentServiceClient implements BackgroundResource {
           ListAppVersionsFixedSizeCollection> {
 
     private ListAppVersionsFixedSizeCollection(
-        List<ListAppVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAppVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9184,7 +9198,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppVersionsFixedSizeCollection createCollection(
-        List<ListAppVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAppVersionsPage> pages, int collectionSize) {
       return new ListAppVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9218,8 +9232,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListChangelogsRequest, ListChangelogsResponse, Changelog, ListChangelogsPage> {
 
     private ListChangelogsPage(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
-        ListChangelogsResponse response) {
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable ListChangelogsResponse response) {
       super(context, response);
     }
 
@@ -9229,14 +9243,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListChangelogsPage createPage(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
-        ListChangelogsResponse response) {
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable ListChangelogsResponse response) {
       return new ListChangelogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChangelogsPage> createPageAsync(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
         ApiFuture<ListChangelogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9250,7 +9264,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListChangelogsPage,
           ListChangelogsFixedSizeCollection> {
 
-    private ListChangelogsFixedSizeCollection(List<ListChangelogsPage> pages, int collectionSize) {
+    private ListChangelogsFixedSizeCollection(
+        @Nullable List<ListChangelogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9260,7 +9275,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListChangelogsFixedSizeCollection createCollection(
-        List<ListChangelogsPage> pages, int collectionSize) {
+        @Nullable List<ListChangelogsPage> pages, int collectionSize) {
       return new ListChangelogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9294,8 +9309,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -9305,14 +9320,14 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9326,7 +9341,8 @@ public class AgentServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9336,7 +9352,7 @@ public class AgentServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

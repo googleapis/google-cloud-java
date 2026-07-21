@@ -39,6 +39,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.FieldVector;
@@ -81,8 +82,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   // Decoder object will be reused to avoid re-allocation and too much garbage collection.
   private VectorSchemaRoot vectorSchemaRoot;
   private VectorLoader vectorLoader;
-  // producer thread's reference
-  private final Thread ownedThread;
+  // producer task's reference
+  private final Future<?> ownedTask;
 
   private BigQueryArrowResultSet(
       Schema schema,
@@ -94,7 +95,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       boolean isNested,
       int fromIndex,
       int toIndexExclusive,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery,
       Job job)
       throws SQLException {
@@ -106,7 +107,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
-    this.ownedThread = ownedThread;
+    this.ownedTask = ownedTask;
     if (!isNested && arrowSchema != null) {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
@@ -128,10 +129,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BigQueryStatement statement,
       BlockingQueue<BigQueryArrowBatchWrapper> buffer,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery)
       throws SQLException {
-    return of(schema, arrowSchema, totalRows, statement, buffer, ownedThread, bigQuery, null);
+    return of(schema, arrowSchema, totalRows, statement, buffer, ownedTask, bigQuery, null);
   }
 
   static BigQueryArrowResultSet of(
@@ -140,7 +141,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BigQueryStatement statement,
       BlockingQueue<BigQueryArrowBatchWrapper> buffer,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery,
       Job job)
       throws SQLException {
@@ -154,7 +155,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         false,
         -1,
         -1,
-        ownedThread,
+        ownedTask,
         bigQuery,
         job);
   }
@@ -166,7 +167,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.currentNestedBatch = null;
     this.fromIndex = 0;
     this.toIndexExclusive = 0;
-    this.ownedThread = null;
+    this.ownedTask = null;
     this.arrowDeserializer = null;
     this.vectorSchemaRoot = null;
     this.vectorLoader = null;
@@ -487,9 +488,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   public void close() {
     LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
-    if (ownedThread != null && !ownedThread.isInterrupted()) {
-      // interrupt the producer thread when result set is closed
-      ownedThread.interrupt();
+    if (ownedTask != null) {
+      // cancel the producer task when result set is closed
+      ownedTask.cancel(true);
     }
     super.close();
   }

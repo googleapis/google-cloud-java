@@ -635,6 +635,7 @@ class UserCredentialsTest extends BaseSerializationTest {
             .setClientId(CLIENT_ID)
             .setClientSecret(CLIENT_SECRET)
             .setRefreshToken(REFRESH_TOKEN)
+            .setQuotaProjectId(QUOTA_PROJECT)
             .build();
 
     File file = File.createTempFile("GOOGLE_APPLICATION_CREDENTIALS", null, null);
@@ -649,6 +650,7 @@ class UserCredentialsTest extends BaseSerializationTest {
       assertEquals(userCredentials.getClientId(), restoredCredentials.getClientId());
       assertEquals(userCredentials.getClientSecret(), restoredCredentials.getClientSecret());
       assertEquals(userCredentials.getRefreshToken(), restoredCredentials.getRefreshToken());
+      assertEquals(userCredentials.getQuotaProjectId(), restoredCredentials.getQuotaProjectId());
     }
   }
 

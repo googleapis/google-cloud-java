@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
 import io.opentelemetry.api.OpenTelemetry;
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -80,12 +81,14 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testGetMajorVersionMatchesDriverMajorVersion() {
-    assertThat(bigQueryDriver.getMajorVersion()).isEqualTo(0);
+    assertThat(bigQueryDriver.getMajorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMajorVersion());
   }
 
   @Test
   public void testGetMinorVersionMatchesDriverMinorVersion() {
-    assertThat(bigQueryDriver.getMinorVersion()).isEqualTo(1);
+    assertThat(bigQueryDriver.getMinorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMinorVersion());
   }
 
   @Test

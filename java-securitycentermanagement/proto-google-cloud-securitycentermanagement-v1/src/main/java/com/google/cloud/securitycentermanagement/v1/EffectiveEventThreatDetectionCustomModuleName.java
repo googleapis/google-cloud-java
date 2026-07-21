@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EffectiveEventThreatDetectionCustomModuleName implements ResourceName {
   private static final PathTemplate
@@ -212,7 +215,8 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .toString();
   }
 
-  public static EffectiveEventThreatDetectionCustomModuleName parse(String formattedString) {
+  public static @Nullable EffectiveEventThreatDetectionCustomModuleName parse(
+      String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -257,7 +261,7 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
   }
 
   public static List<String> toStringList(
-      List<EffectiveEventThreatDetectionCustomModuleName> values) {
+      List<@Nullable EffectiveEventThreatDetectionCustomModuleName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EffectiveEventThreatDetectionCustomModuleName value : values) {
       if (value == null) {
@@ -316,7 +320,7 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

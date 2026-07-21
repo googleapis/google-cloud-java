@@ -33,6 +33,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -109,6 +111,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FleetRoutingSettings extends ClientSettings<FleetRoutingSettings> {
 
@@ -185,7 +188,7 @@ public class FleetRoutingSettings extends ClientSettings<FleetRoutingSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -205,7 +208,7 @@ public class FleetRoutingSettings extends ClientSettings<FleetRoutingSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(FleetRoutingStubSettings.newBuilder(clientContext));
     }
 

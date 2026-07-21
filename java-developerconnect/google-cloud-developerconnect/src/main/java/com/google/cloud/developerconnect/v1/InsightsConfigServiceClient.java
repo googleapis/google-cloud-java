@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -301,9 +303,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InsightsConfigServiceClient implements BackgroundResource {
-  private final InsightsConfigServiceSettings settings;
+  private final @Nullable InsightsConfigServiceSettings settings;
   private final InsightsConfigServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -351,7 +354,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final InsightsConfigServiceSettings getSettings() {
+  public final @Nullable InsightsConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -401,7 +404,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInsightsConfigsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInsightsConfigsPagedResponse listInsightsConfigs(LocationName parent) {
+  public final ListInsightsConfigsPagedResponse listInsightsConfigs(@Nullable LocationName parent) {
     ListInsightsConfigsRequest request =
         ListInsightsConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -586,7 +589,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<InsightsConfig, OperationMetadata> createInsightsConfigAsync(
-      LocationName parent, InsightsConfig insightsConfig, String insightsConfigId) {
+      @Nullable LocationName parent, InsightsConfig insightsConfig, String insightsConfigId) {
     CreateInsightsConfigRequest request =
         CreateInsightsConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -759,7 +762,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InsightsConfig getInsightsConfig(InsightsConfigName name) {
+  public final InsightsConfig getInsightsConfig(@Nullable InsightsConfigName name) {
     GetInsightsConfigRequest request =
         GetInsightsConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -979,7 +982,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteInsightsConfigAsync(
-      InsightsConfigName name) {
+      @Nullable InsightsConfigName name) {
     DeleteInsightsConfigRequest request =
         DeleteInsightsConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1143,7 +1146,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/insightsConfigs/{insights_config}/deploymentEvents/{uuid}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeploymentEvent getDeploymentEvent(DeploymentEventName name) {
+  public final DeploymentEvent getDeploymentEvent(@Nullable DeploymentEventName name) {
     GetDeploymentEventRequest request =
         GetDeploymentEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1275,7 +1278,8 @@ public class InsightsConfigServiceClient implements BackgroundResource {
    *     events. Format: projects/{project}/locations/{location}/insightsConfigs/{insights_config}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentEventsPagedResponse listDeploymentEvents(InsightsConfigName parent) {
+  public final ListDeploymentEventsPagedResponse listDeploymentEvents(
+      @Nullable InsightsConfigName parent) {
     ListDeploymentEventsRequest request =
         ListDeploymentEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1675,9 +1679,10 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListInsightsConfigsPage> {
 
     private ListInsightsConfigsPage(
-        PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
+        @Nullable
+            PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
             context,
-        ListInsightsConfigsResponse response) {
+        @Nullable ListInsightsConfigsResponse response) {
       super(context, response);
     }
 
@@ -1687,15 +1692,17 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListInsightsConfigsPage createPage(
-        PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
+        @Nullable
+            PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
             context,
-        ListInsightsConfigsResponse response) {
+        @Nullable ListInsightsConfigsResponse response) {
       return new ListInsightsConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInsightsConfigsPage> createPageAsync(
-        PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
+        @Nullable
+            PageContext<ListInsightsConfigsRequest, ListInsightsConfigsResponse, InsightsConfig>
             context,
         ApiFuture<ListInsightsConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1711,7 +1718,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListInsightsConfigsFixedSizeCollection> {
 
     private ListInsightsConfigsFixedSizeCollection(
-        List<ListInsightsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListInsightsConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1721,7 +1728,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListInsightsConfigsFixedSizeCollection createCollection(
-        List<ListInsightsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListInsightsConfigsPage> pages, int collectionSize) {
       return new ListInsightsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1759,9 +1766,10 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListDeploymentEventsPage> {
 
     private ListDeploymentEventsPage(
-        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+        @Nullable
+            PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
             context,
-        ListDeploymentEventsResponse response) {
+        @Nullable ListDeploymentEventsResponse response) {
       super(context, response);
     }
 
@@ -1771,15 +1779,17 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentEventsPage createPage(
-        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+        @Nullable
+            PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
             context,
-        ListDeploymentEventsResponse response) {
+        @Nullable ListDeploymentEventsResponse response) {
       return new ListDeploymentEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentEventsPage> createPageAsync(
-        PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+        @Nullable
+            PageContext<ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
             context,
         ApiFuture<ListDeploymentEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1795,7 +1805,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListDeploymentEventsFixedSizeCollection> {
 
     private ListDeploymentEventsFixedSizeCollection(
-        List<ListDeploymentEventsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1805,7 +1815,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentEventsFixedSizeCollection createCollection(
-        List<ListDeploymentEventsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentEventsPage> pages, int collectionSize) {
       return new ListDeploymentEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1839,8 +1849,8 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1850,14 +1860,14 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1871,7 +1881,8 @@ public class InsightsConfigServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1881,7 +1892,7 @@ public class InsightsConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

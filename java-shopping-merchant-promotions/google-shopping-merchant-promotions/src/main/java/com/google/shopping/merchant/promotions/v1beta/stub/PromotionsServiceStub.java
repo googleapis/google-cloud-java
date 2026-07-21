@@ -27,6 +27,7 @@ import com.google.shopping.merchant.promotions.v1beta.ListPromotionsRequest;
 import com.google.shopping.merchant.promotions.v1beta.ListPromotionsResponse;
 import com.google.shopping.merchant.promotions.v1beta.Promotion;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,6 +35,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class PromotionsServiceStub implements BackgroundResource {

@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -357,10 +359,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FunctionServiceClient implements BackgroundResource {
-  private final FunctionServiceSettings settings;
+  private final @Nullable FunctionServiceSettings settings;
   private final FunctionServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -408,7 +411,7 @@ public class FunctionServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final FunctionServiceSettings getSettings() {
+  public final @Nullable FunctionServiceSettings getSettings() {
     return settings;
   }
 
@@ -454,7 +457,7 @@ public class FunctionServiceClient implements BackgroundResource {
    * @param name Required. The name of the function which details should be obtained.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Function getFunction(FunctionName name) {
+  public final Function getFunction(@Nullable FunctionName name) {
     GetFunctionRequest request =
         GetFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFunction(request);
@@ -570,7 +573,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *     reachable locations along with the names of any unreachable locations.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFunctionsPagedResponse listFunctions(LocationName parent) {
+  public final ListFunctionsPagedResponse listFunctions(@Nullable LocationName parent) {
     ListFunctionsRequest request =
         ListFunctionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -751,7 +754,7 @@ public class FunctionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Function, OperationMetadata> createFunctionAsync(
-      LocationName parent, Function function, String functionId) {
+      @Nullable LocationName parent, Function function, String functionId) {
     CreateFunctionRequest request =
         CreateFunctionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1039,7 +1042,8 @@ public class FunctionServiceClient implements BackgroundResource {
    * @param name Required. The name of the function which should be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteFunctionAsync(FunctionName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteFunctionAsync(
+      @Nullable FunctionName name) {
     DeleteFunctionRequest request =
         DeleteFunctionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFunctionAsync(request);
@@ -1359,7 +1363,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *     specified in the format `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuntimesResponse listRuntimes(LocationName parent) {
+  public final ListRuntimesResponse listRuntimes(@Nullable LocationName parent) {
     ListRuntimesRequest request =
         ListRuntimesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1809,8 +1813,8 @@ public class FunctionServiceClient implements BackgroundResource {
           ListFunctionsRequest, ListFunctionsResponse, Function, ListFunctionsPage> {
 
     private ListFunctionsPage(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
-        ListFunctionsResponse response) {
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
+        @Nullable ListFunctionsResponse response) {
       super(context, response);
     }
 
@@ -1820,14 +1824,14 @@ public class FunctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListFunctionsPage createPage(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
-        ListFunctionsResponse response) {
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
+        @Nullable ListFunctionsResponse response) {
       return new ListFunctionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFunctionsPage> createPageAsync(
-        PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
+        @Nullable PageContext<ListFunctionsRequest, ListFunctionsResponse, Function> context,
         ApiFuture<ListFunctionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1841,7 +1845,8 @@ public class FunctionServiceClient implements BackgroundResource {
           ListFunctionsPage,
           ListFunctionsFixedSizeCollection> {
 
-    private ListFunctionsFixedSizeCollection(List<ListFunctionsPage> pages, int collectionSize) {
+    private ListFunctionsFixedSizeCollection(
+        @Nullable List<ListFunctionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1851,7 +1856,7 @@ public class FunctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListFunctionsFixedSizeCollection createCollection(
-        List<ListFunctionsPage> pages, int collectionSize) {
+        @Nullable List<ListFunctionsPage> pages, int collectionSize) {
       return new ListFunctionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1885,8 +1890,8 @@ public class FunctionServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1896,14 +1901,14 @@ public class FunctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1917,7 +1922,8 @@ public class FunctionServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1927,7 +1933,7 @@ public class FunctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

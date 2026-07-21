@@ -24,6 +24,8 @@ import com.google.cloud.retail.v2alpha.stub.ConversationalSearchServiceStubSetti
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -147,10 +149,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversationalSearchServiceClient implements BackgroundResource {
-  private final ConversationalSearchServiceSettings settings;
+  private final @Nullable ConversationalSearchServiceSettings settings;
   private final ConversationalSearchServiceStub stub;
 
   /** Constructs an instance of ConversationalSearchServiceClient with default settings. */
@@ -193,7 +196,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConversationalSearchServiceSettings getSettings() {
+  public final @Nullable ConversationalSearchServiceSettings getSettings() {
     return settings;
   }
 
