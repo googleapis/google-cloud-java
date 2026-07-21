@@ -1,0 +1,65 @@
+name: PQC Connectivity Integration Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pqc-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout sibling HTTP Client repository
+    - name: Checkout google-http-java-client
+      uses: actions/checkout@v4
+      with:
+        repository: googleapis/google-http-java-client
+        ref: chore/pqc-poc-2
+        path: google-http-java-client
+
+    # 2. Checkout this monorepo
+    - name: Checkout google-cloud-java-pqc
+      uses: actions/checkout@v4
+      with:
+        path: google-cloud-java-pqc
+
+    # 3. Set up JDK 17
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+        cache-dependency-path: 'google-cloud-java-pqc/pom.xml'
+
+    # 4. Build and install modified google-http-client SNAPSHOT locally
+    - name: Build and Install google-http-java-client
+      run: |
+        cd google-http-java-client
+        mvn clean install -DskipTests=true -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip
+
+    # 5. Build and Install sdk-platform-java core libraries first (using monorepo root reactor to resolve siblings)
+    - name: Build and Install sdk-platform-java Core
+      run: |
+        cd google-cloud-java-pqc
+        mvn clean install -pl :gax,:gax-grpc,:gax-httpjson,:google-cloud-shared-dependencies,:first-party-dependencies,:third-party-dependencies -am -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+
+    # 6. Build and Install snapshot bigquery, java-translate, and pqc-test targets (specifying actual sub-modules)
+    - name: Build and Install Client Snapshot Libraries and Test Modules
+      run: |
+        cd google-cloud-java-pqc
+        mvn clean install -pl java-bigquery/google-cloud-bigquery,java-translate/google-cloud-translate,sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+
+    # 7. Run Snapshot PQC Tests (EXPECT PASS)
+    - name: Run Snapshot PQC Connectivity Tests (Expect PASS)
+      run: |
+        cd google-cloud-java-pqc
+        mvn install -pl sdk-platform-java/pqc-test/pqc-test-snapshot -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
+
+    # 8. Run Release PQC Tests (Expect PASS because tests assert negative behavior and pass)
+    - name: Run Release PQC Connectivity Tests
+      run: |
+        cd google-cloud-java-pqc
+        mvn install -pl sdk-platform-java/pqc-test/pqc-test-release -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest

@@ -82,6 +82,11 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
+import io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslProvider;
 import javax.annotation.Nullable;
 import javax.net.ssl.KeyManagerFactory;
 
@@ -818,6 +823,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     if (interceptorProvider != null) {
       builder.intercept(interceptorProvider.getInterceptors());
     }
+    configurePqc(builder);
+
     if (channelConfigurator != null) {
       builder = channelConfigurator.apply(builder);
     }
@@ -833,6 +840,34 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       channelPrimer.primeChannel(managedChannel);
     }
     return managedChannel;
+  }
+
+  private void configurePqc(ManagedChannelBuilder<?> builder) {
+    NettyChannelBuilder nettyBuilder = (NettyChannelBuilder) builder;
+    try {
+      ApplicationProtocolConfig apn =
+          new ApplicationProtocolConfig(
+              ApplicationProtocolConfig.Protocol.ALPN,
+              ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
+              ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
+              "h2");
+
+      java.security.Provider bcProvider = new org.bouncycastle.jce.provider.BouncyCastleProvider();
+      java.security.Provider bcJsseProvider =
+          new org.bouncycastle.jsse.provider.BouncyCastleJsseProvider(bcProvider);
+
+      SslContext shadedSslContext =
+          SslContextBuilder.forClient()
+              .sslProvider(SslProvider.JDK)
+              .sslContextProvider(bcJsseProvider)
+              .protocols("TLSv1.3")
+              .applicationProtocolConfig(apn)
+              .build();
+
+      nettyBuilder.sslContext(shadedSslContext);
+    } catch (Exception e) {
+      LOG.log(Level.WARNING, "Failed to configure shaded gRPC Netty channel for PQC", e);
+    }
   }
 
   /* Remove provided headers that will also get set by {@link com.google.auth.ApiKeyCredentials}. They will be added as part of the grpc call when performing auth
