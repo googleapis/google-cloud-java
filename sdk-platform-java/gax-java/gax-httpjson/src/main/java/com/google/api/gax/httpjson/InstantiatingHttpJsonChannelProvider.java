@@ -45,6 +45,7 @@ import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
@@ -82,6 +83,20 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
    */
   public static final String[] DEFAULT_PQC_GROUPS =
       new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
+
+  private static class ConscryptProviderHolder {
+    private static final Provider INSTANCE = createProvider();
+
+    private static Provider createProvider() {
+      try {
+        return Conscrypt.newProvider();
+      } catch (Throwable t) {
+        LOG.log(
+            Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+        return null;
+      }
+    }
+  }
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
@@ -209,18 +224,11 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     // Attempt to register Conscrypt as the Security Provider for HTTP/JSON connections to enable
     // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
-    //
-    // Both setSecurityProvider and setSslSocketConfigurator are configured together inside the
-    // try block so that socket named group configuration is only applied when Conscrypt
-    // initialization succeeds.
-    //
-    // Catching Throwable ensures that if Conscrypt JNI native libraries are not present on the
-    // classpath or fail to load on the target host architecture, transport creation gracefully
-    // falls back to standard JDK TLS JSSE provider using a fresh NetHttpTransport.Builder instance.
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    try {
+    Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
+    if (conscryptProvider != null) {
       builder
-          .setSecurityProvider(Conscrypt.newProvider())
+          .setSecurityProvider(conscryptProvider)
           .setSslSocketConfigurator(
               socket -> {
                 if (Conscrypt.isConscrypt(socket)) {
@@ -238,9 +246,6 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                   }
                 }
               });
-    } catch (Throwable t) {
-      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-      builder = new NetHttpTransport.Builder();
     }
     return configureMtls(builder).build();
   }
