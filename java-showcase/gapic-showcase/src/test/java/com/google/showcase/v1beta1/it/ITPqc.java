@@ -80,10 +80,15 @@ public class ITPqc {
       "x-showcase-tls-client-supported-groups";
 
   // Expected TLS parameters
-  private static final String EXPECTED_TLS_GROUP = "X25519MLKEM768";
+  private static final String EXPECTED_PQC_GROUP = "X25519MLKEM768";
 
   private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
 
+  /**
+   * Resolves the absolute path to the Showcase server's CA certificate PEM file.
+   *
+   * @return absolute path to the CA certificate file
+   */
   private static String getCaCertPath() {
     String prop = System.getProperty("showcase.ca.cert.path");
     if (prop != null) {
@@ -109,22 +114,18 @@ public class ITPqc {
   @Test
   void testHttpJsonPqc() throws Exception {
 
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    try {
-      builder.setSecurityProvider(Conscrypt.newProvider());
-      builder.setSslSocketConfigurator(
-          socket -> {
-            if (Conscrypt.isConscrypt(socket)) {
-              Conscrypt.setNamedGroups(
-                  socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
-            }
-          });
-    } catch (Throwable t) {
-      // Conscrypt JNI is not available on this platform/runner
-    }
-
-    builder.trustCertificates(null, loadCaCert(DEFAULT_CA_CERT_PATH), "");
-    NetHttpTransport transport = builder.build();
+    NetHttpTransport transport =
+        new NetHttpTransport.Builder()
+            .setSecurityProvider(Conscrypt.newProvider())
+            .setSslSocketConfigurator(
+                socket -> {
+                  if (Conscrypt.isConscrypt(socket)) {
+                    Conscrypt.setNamedGroups(
+                        socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+                  }
+                })
+            .trustCertificates(null, loadCaCert(DEFAULT_CA_CERT_PATH), "")
+            .build();
 
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
@@ -150,7 +151,7 @@ public class ITPqc {
       assertThat(capturedHeaders).isNotNull();
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      assertThat(negotiatedGroup).isEqualTo(EXPECTED_TLS_GROUP);
+      assertThat(negotiatedGroup).isEqualTo(EXPECTED_PQC_GROUP);
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
@@ -158,7 +159,7 @@ public class ITPqc {
   }
 
   @Test
-  void testHttpJsonPqc_withExplicitSecurityProvider() throws Exception {
+  void testHttpJsonPqc_withExplicitSecurityProviderNoPqcGroups() throws Exception {
     // Explicitly use SunJSSE (JDK default) instead of Conscrypt
     Provider sunJsseProvider = Security.getProvider("SunJSSE");
     assertThat(sunJsseProvider).isNotNull();
@@ -171,8 +172,10 @@ public class ITPqc {
     tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
     sslContext.init(null, tmf.getTrustManagers(), null);
 
-    // Build NetHttpTransport using SunJSSE socket factory and explicitly restrict named groups to
-    // classical curves (no ML-KEM)
+    // This test verifies behavior for environments where PQC is not enabled or supported. When
+    // future JDK versions (e.g. JDK 27+) enable PQC by default in standard JDK JSSE, explicitly
+    // configuring classical named groups ensures that non-PQC classical TLS connections can still
+    // be established.
     NetHttpTransport transport =
         new NetHttpTransport.Builder()
             .setSslSocketFactory(sslContext.getSocketFactory())
@@ -183,7 +186,11 @@ public class ITPqc {
                     params.setNamedGroups(new String[] {"X25519", "SecP256r1"});
                     socket.setSSLParameters(params);
                   } catch (Exception e) {
-                    // Ignore on JDK versions where setNamedGroups is unsupported
+                    // For JDK 8-19, SSLParameters.setNamedGroups() does not exist, so JSSE
+                    // naturally
+                    // defaults to classical algorithms, which is expected. Hardcoding classical
+                    // algorithms via setNamedGroups is primarily for JDK 20+ when PQC becomes
+                    // default.
                   }
                 })
             .build();
@@ -215,10 +222,17 @@ public class ITPqc {
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
       // Under classical non-PQC configuration, negotiated group is a classical curve
       assertThat(negotiatedGroup).isAnyOf("X25519", "SecP256r1", "CurveP256");
-      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_TLS_GROUP);
+      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_PQC_GROUP);
     }
   }
 
+  /**
+   * Extracts the first string value of a specified HTTP response header from metadata.
+   *
+   * @param metadata the HTTP metadata containing response headers
+   * @param name the case-insensitive header key name
+   * @return header value string, or {@code null} if not found
+   */
   private static String getSingleHeaderString(HttpJsonMetadata metadata, String name) {
     Object valueObj = metadata.getHeaders().get(name);
     if (valueObj instanceof List) {
@@ -232,6 +246,13 @@ public class ITPqc {
     return null;
   }
 
+  /**
+   * Loads an X.509 CA certificate file from disk into a new KeyStore instance.
+   *
+   * @param certPath path to the X.509 certificate file
+   * @return initialized KeyStore containing the certificate entry
+   * @throws Exception if reading or parsing the certificate fails
+   */
   private static KeyStore loadCaCert(String certPath) throws Exception {
     KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
     trustStore.load(null, null);
