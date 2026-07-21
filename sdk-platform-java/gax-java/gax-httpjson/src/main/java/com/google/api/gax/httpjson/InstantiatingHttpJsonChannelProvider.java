@@ -208,6 +208,17 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    // Attempt to register Conscrypt as the Security Provider for HTTP/JSON connections to enable
+    // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
+    //
+    // Both setSecurityProvider and setSslSocketConfigurator are configured together inside the
+    // try block so that socket named group configuration is only applied when Conscrypt
+    // initialization
+    // succeeds.
+    //
+    // Catching Throwable ensures that if Conscrypt JNI native libraries are not present on the
+    // classpath or fail to load on the target host architecture, transport creation gracefully
+    // falls back to standard JDK TLS JSSE provider without interrupting application execution.
     try {
       builder.setSecurityProvider(Conscrypt.newProvider());
       builder.setSslSocketConfigurator(
