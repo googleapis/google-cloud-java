@@ -65,7 +65,18 @@ jobs:
                 ./gapic-showcase run &
                 # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
                 ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
-                sleep 2
+                # Wait deterministically for both background showcase servers to finish binding ports 7469/7470
+                # and writing /tmp/showcase-ca.pem. Starting TLS requires RSA key generation and disk I/O,
+                # which can cause race conditions if tests start before /tmp/showcase-ca.pem is created.
+                for i in $(seq 1 30); do
+                  if (echo > /dev/tcp/127.0.0.1/7469) 2>/dev/null && \
+                     (echo > /dev/tcp/127.0.0.1/7470) 2>/dev/null && \
+                     [ -f /tmp/showcase-ca.pem ]; then
+                    echo "Showcase servers (ports 7469, 7470) and CA cert ready in attempt $i."
+                    break
+                  fi
+                  sleep 0.2
+                done
                 cd -
       - name: Showcase integration tests
         working-directory: java-showcase
@@ -174,7 +185,18 @@ jobs:
           ./gapic-showcase run &
           # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
           ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
-          sleep 2
+          # Wait deterministically for both background showcase servers to finish binding ports 7469/7470
+          # and writing /tmp/showcase-ca.pem. Starting TLS requires RSA key generation and disk I/O,
+          # which can cause race conditions if tests start before /tmp/showcase-ca.pem is created.
+          for i in $(seq 1 30); do
+            if (echo > /dev/tcp/127.0.0.1/7469) 2>/dev/null && \
+               (echo > /dev/tcp/127.0.0.1/7470) 2>/dev/null && \
+               [ -f /tmp/showcase-ca.pem ]; then
+              echo "Showcase servers (ports 7469, 7470) and CA cert ready in attempt $i."
+              break
+            fi
+            sleep 0.2
+          done
           cd -
       - name: Showcase integration tests
         working-directory: java-showcase
