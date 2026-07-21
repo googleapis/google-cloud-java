@@ -72,7 +72,7 @@ import org.junit.jupiter.api.Test;
  *       back gracefully to classical key exchange ({@code X25519}) instead of crashing.
  * </ol>
  */
-public class ITPqc {
+public class ITPostQuantumCryptography {
 
   // TLS response header names from Showcase server
   private static final String TLS_GROUP_HEADER = "x-showcase-tls-group";
