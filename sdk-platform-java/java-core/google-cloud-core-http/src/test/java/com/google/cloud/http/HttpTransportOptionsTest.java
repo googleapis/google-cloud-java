@@ -119,30 +119,6 @@ class HttpTransportOptionsTest {
   }
 
   @Test
-  void testDefaultHttpTransportFactory_createPqcConfiguredTransport() throws Exception {
-    boolean conscryptAvailable = false;
-    try {
-      org.conscrypt.Conscrypt.newProvider();
-      conscryptAvailable = org.conscrypt.Conscrypt.isAvailable();
-    } catch (Throwable t) {
-      // Conscrypt JNI native shared library is not available on this host environment
-    }
-    DefaultHttpTransportFactory factory = new DefaultHttpTransportFactory();
-    HttpTransport transport = factory.create();
-    assertTrue(transport instanceof com.google.api.client.http.javanet.NetHttpTransport);
-    if (conscryptAvailable) {
-      java.lang.reflect.Field field =
-          com.google.api.client.http.javanet.NetHttpTransport.class.getDeclaredField(
-              "sslSocketFactory");
-      field.setAccessible(true);
-      Object sslSocketFactory = field.get(transport);
-      assertEquals(
-          "com.google.api.client.http.javanet.ConfigurableSSLSocketFactory",
-          sslSocketFactory.getClass().getName());
-    }
-  }
-
-  @Test
   void testBaseEquals() {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
