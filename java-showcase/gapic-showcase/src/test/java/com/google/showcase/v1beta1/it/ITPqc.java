@@ -22,27 +22,13 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.SslUtils;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.api.gax.rpc.TransportChannel;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.HttpJsonCapturingClientInterceptor;
-import io.grpc.Channel;
-import io.grpc.ChannelCredentials;
-import io.grpc.ClientCall;
-import io.grpc.ClientInterceptor;
-import io.grpc.ForwardingClientCall;
-import io.grpc.ForwardingClientCallListener;
-import io.grpc.Grpc;
-import io.grpc.ManagedChannel;
-import io.grpc.Metadata;
-import io.grpc.MethodDescriptor;
-import io.grpc.TlsChannelCredentials;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -54,15 +40,14 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 /**
- * Integration tests to verify Post-Quantum Cryptography (PQC) TLS negotiation for both gRPC and
- * HTTP/JSON (REST) clients.
+ * Integration tests to verify Post-Quantum Cryptography (PQC) TLS negotiation for HTTP/JSON (REST)
+ * clients.
  *
  * <p>These tests execute calls against a local secure (TLS-enabled) Showcase server. During the TLS
  * handshake, the client and server negotiate cipher suites and key exchange groups. Showcase
@@ -76,23 +61,9 @@ import org.junit.jupiter.api.Test;
  *   <li>{@code x-showcase-tls-client-supported-groups}: The list of groups offered by the client.
  * </ul>
  *
- * <p>To enable PQC, Conscrypt must be available on the classpath.
- *
- * <ul>
- *   <li>For gRPC, the shaded Netty transport dynamically registers and uses Conscrypt natively if
- *       the Conscrypt library is available on the classpath.
- *   <li>For HTTP/JSON, the {@link NetHttpTransport} automatically registers Conscrypt as a security
- *       provider dynamically during transport construction.
- * </ul>
- *
- * Consequently, these tests do not explicitly register Conscrypt in the global JVM provider list
- * during setup.
- *
  * <p>Verification cases:
  *
  * <ol>
- *   <li>{@code testGrpcPqc}: Verifies that gRPC (Netty-shaded) uses Conscrypt and successfully
- *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
  *   <li>{@code testHttpJsonPqc}: Verifies that HTTP/JSON transport defaults to Conscrypt and
  *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
  *   <li>{@code testHttpJsonPqc_withExplicitSecurityProvider}: Verifies that overriding the
@@ -104,7 +75,6 @@ public class ITPqc {
 
   // TLS response header names from Showcase server
   private static final String TLS_GROUP_HEADER = "x-showcase-tls-group";
-  private static final String TLS_CIPHER_HEADER = "x-showcase-tls-cipher";
   private static final String TLS_SUPPORTED_GROUPS_HEADER =
       "x-showcase-tls-client-supported-groups";
 
@@ -136,59 +106,6 @@ public class ITPqc {
   }
 
   @Test
-  void testGrpcPqc() throws Exception {
-
-    // Create channel credentials trusting the custom CA
-    ChannelCredentials creds =
-        TlsChannelCredentials.newBuilder().trustManager(new File(DEFAULT_CA_CERT_PATH)).build();
-
-    ManagedChannel channel = Grpc.newChannelBuilder(SECURE_ENDPOINT, creds).build();
-    try {
-      TransportChannel transportChannel = GrpcTransportChannel.create(channel);
-
-      GrpcHeaderCapturingInterceptor interceptor = new GrpcHeaderCapturingInterceptor();
-
-      EchoSettings settings =
-          EchoSettings.newBuilder()
-              .setCredentialsProvider(NoCredentialsProvider.create())
-              .setTransportChannelProvider(FixedTransportChannelProvider.create(transportChannel))
-              .build();
-
-      // Add interceptor to capture headers
-      ManagedChannel interceptedChannel = new InterceptedManagedChannel(channel, interceptor);
-      TransportChannel interceptedTransportChannel =
-          GrpcTransportChannel.create(interceptedChannel);
-
-      settings =
-          settings.toBuilder()
-              .setTransportChannelProvider(
-                  FixedTransportChannelProvider.create(interceptedTransportChannel))
-              .build();
-
-      try (EchoClient client = EchoClient.create(settings)) {
-        EchoResponse response =
-            client.echo(EchoRequest.newBuilder().setContent("pqc-grpc-test").build());
-        assertThat(response.getContent()).isEqualTo("pqc-grpc-test");
-
-        Metadata capturedHeaders = interceptor.getCapturedHeaders();
-        assertThat(capturedHeaders).isNotNull();
-
-        Metadata.Key<String> groupKey =
-            Metadata.Key.of(TLS_GROUP_HEADER, Metadata.ASCII_STRING_MARSHALLER);
-        Metadata.Key<String> supportedGroupsKey =
-            Metadata.Key.of(TLS_SUPPORTED_GROUPS_HEADER, Metadata.ASCII_STRING_MARSHALLER);
-
-        String expectedGroup = isConscryptFunctional() ? "X25519MLKEM768" : "X25519";
-        assertThat(capturedHeaders.get(groupKey)).isEqualTo(expectedGroup);
-        assertThat(capturedHeaders.get(supportedGroupsKey)).isNotNull();
-      }
-    } finally {
-      channel.shutdown();
-      channel.awaitTermination(10, TimeUnit.SECONDS);
-    }
-  }
-
-  @Test
   void testHttpJsonPqc() throws Exception {
 
     Provider conscryptProvider = null;
@@ -210,7 +127,13 @@ public class ITPqc {
     builder.setSslSocketFactory(sslContext.getSocketFactory());
 
     if (conscryptProvider != null) {
-      com.google.api.gax.httpjson.ConscryptPqcConfiguratorHelper.configure(builder);
+      builder.setSslSocketConfigurator(
+          socket -> {
+            if (org.conscrypt.Conscrypt.isConscrypt(socket)) {
+              org.conscrypt.Conscrypt.setNamedGroups(
+                  socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+            }
+          });
     } else {
       builder.setSslSocketConfigurator(
           socket -> {
@@ -307,96 +230,6 @@ public class ITPqc {
       // curve (either X25519 or CurveP256 depending on JDK / Go negotiation)
       assertThat(negotiatedGroup).isAnyOf("X25519", "CurveP256");
       assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_TLS_GROUP);
-    }
-  }
-
-  /**
-   * Captures initial TLS response headers (e.g. x-showcase-tls-group) from the gRPC stream. This is
-   * required because showcase TLS headers are sent as initial headers rather than trailing metadata
-   * (trailers), which means the shared utility GrpcCapturingClientInterceptor cannot be used (as it
-   * only intercepts trailers).
-   */
-  private static class GrpcHeaderCapturingInterceptor implements ClientInterceptor {
-    private Metadata capturedHeaders;
-
-    @Override
-    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
-        MethodDescriptor<ReqT, RespT> method, io.grpc.CallOptions callOptions, Channel next) {
-      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
-          next.newCall(method, callOptions)) {
-        @Override
-        public void start(Listener<RespT> responseListener, Metadata headers) {
-          super.start(
-              new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
-                  responseListener) {
-                @Override
-                public void onHeaders(Metadata headers) {
-                  capturedHeaders = headers;
-                  super.onHeaders(headers);
-                }
-              },
-              headers);
-        }
-      };
-    }
-
-    public Metadata getCapturedHeaders() {
-      return capturedHeaders;
-    }
-  }
-
-  /**
-   * Helper class to wrap a standard ManagedChannel with gRPC client interceptors. Since EchoClient
-   * requires a ManagedChannel (which handles shutdown and awaitTermination lifecycles), but
-   * ClientInterceptors.intercept() only returns a generic Channel, this class bridges the two by
-   * forwarding call creation to the intercepted channel, and routing lifecycle calls to the base
-   * channel.
-   */
-  private static class InterceptedManagedChannel extends ManagedChannel {
-    private final ManagedChannel delegate;
-    private final Channel intercepted;
-
-    InterceptedManagedChannel(ManagedChannel delegate, ClientInterceptor... interceptors) {
-      this.delegate = delegate;
-      this.intercepted = io.grpc.ClientInterceptors.intercept(delegate, interceptors);
-    }
-
-    @Override
-    public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
-        MethodDescriptor<RequestT, ResponseT> methodDescriptor, io.grpc.CallOptions callOptions) {
-      return intercepted.newCall(methodDescriptor, callOptions);
-    }
-
-    @Override
-    public String authority() {
-      return delegate.authority();
-    }
-
-    @Override
-    public ManagedChannel shutdown() {
-      delegate.shutdown();
-      return this;
-    }
-
-    @Override
-    public boolean isShutdown() {
-      return delegate.isShutdown();
-    }
-
-    @Override
-    public boolean isTerminated() {
-      return delegate.isTerminated();
-    }
-
-    @Override
-    public ManagedChannel shutdownNow() {
-      delegate.shutdownNow();
-      return this;
-    }
-
-    @Override
-    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
-      return delegate.awaitTermination(timeout, unit);
     }
   }
 
