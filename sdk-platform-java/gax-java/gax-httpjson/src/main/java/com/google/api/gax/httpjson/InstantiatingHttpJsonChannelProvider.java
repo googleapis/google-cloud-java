@@ -92,7 +92,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         return Conscrypt.newProvider();
       } catch (Throwable t) {
         LOG.log(
-            Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+            Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
         return null;
       }
     }
@@ -226,27 +226,29 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     // Post-Quantum Cryptography (PQC) hybrid key exchange (e.g. X25519MLKEM768) by default.
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
-    if (conscryptProvider != null) {
-      builder
-          .setSecurityProvider(conscryptProvider)
-          .setSslSocketConfigurator(
-              socket -> {
-                if (Conscrypt.isConscrypt(socket)) {
-                  try {
-                    Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-                  } catch (Throwable t) {
-                    // Catch runtime socket configuration errors (e.g. version mismatch or JNI
-                    // error)
-                    // and fall back to Conscrypt's default TLS groups without failing the request.
-                    LOG.log(
-                        Level.FINE,
-                        "Failed to set PQC named groups on Conscrypt socket. Falling back to"
-                            + " Conscrypt default TLS groups.",
-                        t);
-                  }
-                }
-              });
+    if (conscryptProvider == null) {
+      return configureMtls(builder).build();
     }
+    builder
+        .setSecurityProvider(conscryptProvider)
+        .setSslSocketConfigurator(
+            socket -> {
+              if (!Conscrypt.isConscrypt(socket)) {
+                return;
+              }
+              try {
+                Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+              } catch (Throwable t) {
+                // Catch runtime socket configuration errors (e.g. version mismatch or JNI
+                // error)
+                // and fall back to Conscrypt's default TLS groups without failing the request.
+                LOG.log(
+                    Level.WARNING,
+                    "Failed to set PQC named groups on Conscrypt socket. Falling back to"
+                        + " Conscrypt default TLS groups.",
+                    t);
+              }
+            });
     return configureMtls(builder).build();
   }
 
