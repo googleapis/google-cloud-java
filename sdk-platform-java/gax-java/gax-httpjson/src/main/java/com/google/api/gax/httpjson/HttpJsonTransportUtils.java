@@ -65,8 +65,11 @@ public class HttpJsonTransportUtils {
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.
    *
-   * <p>Caches the provider instance (or {@code null} if native libraries fail to load) to avoid
-   * repeated JNI allocations and error logging.
+   * <p>Note: Conscrypt native JNI libraries may not be available or compatible across all
+   * environment runtimes (e.g. non-x86 architectures, musl libc, or constrained environments).
+   * Caching {@code null} on failure allows us to attempt using Conscrypt as the default security
+   * provider without causing breaking compatibility issues for customers on special environments
+   * when upgrading our SDK.
    */
   private static class ConscryptProviderHolder {
     private static final Provider INSTANCE = createProvider();
@@ -84,12 +87,8 @@ public class HttpJsonTransportUtils {
 
   /**
    * Creates a {@link NetHttpTransport.Builder} pre-configured with Conscrypt as the security
-   * provider by default.
-   *
-   * <p>Note: Conscrypt native JNI libraries may not be available or compatible across all
-   * environments. If Conscrypt is not available, transport creation gracefully falls back to the
-   * default JDK TLS provider. Users can customize the {@link NetHttpTransport.Builder} to use a
-   * different security provider.
+   * provider by default if Conscrypt is available. Users can customize the {@link
+   * NetHttpTransport.Builder} to use a different security provider.
    */
   public static NetHttpTransport.Builder createConscryptHttpTransportBuilder() {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
@@ -107,6 +106,9 @@ public class HttpJsonTransportUtils {
               try {
                 Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
               } catch (Throwable t) {
+                // Catch runtime socket configuration errors (e.g. version mismatch or unexpected
+                // socket implementation) to gracefully fall back to Conscrypt's default TLS groups
+                // without failing transport creation.
                 LOG.log(
                     Level.WARNING,
                     "Failed to set PQC named groups on Conscrypt socket. Falling back to"
