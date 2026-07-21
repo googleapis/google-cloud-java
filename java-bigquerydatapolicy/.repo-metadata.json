@@ -11,6 +11,5 @@
   "repo_short": "java-bigquerydatapolicy",
   "distribution_name": "com.google.cloud:google-cloud-bigquerydatapolicy",
   "api_id": "bigquerydatapolicy.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

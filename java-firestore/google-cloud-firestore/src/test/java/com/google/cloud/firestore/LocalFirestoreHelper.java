@@ -20,6 +20,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -415,7 +416,7 @@ public final class LocalFirestoreHelper {
     return invocation -> {
       Object[] args = invocation.getArguments();
       ResponseObserver<T> observer = (ResponseObserver<T>) args[1];
-      observer.onStart(mock(StreamController.class));
+      observer.onStart(mock(StreamController.class, withSettings().withoutAnnotations()));
       for (T resp : response) {
         observer.onResponse(resp);
       }
@@ -432,7 +433,7 @@ public final class LocalFirestoreHelper {
     return invocation -> {
       Object[] args = invocation.getArguments();
       ResponseObserver<T> observer = (ResponseObserver<T>) args[1];
-      observer.onStart(mock(StreamController.class));
+      observer.onStart(mock(StreamController.class, withSettings().withoutAnnotations()));
       for (T resp : response) {
         observer.onResponse(resp);
       }
