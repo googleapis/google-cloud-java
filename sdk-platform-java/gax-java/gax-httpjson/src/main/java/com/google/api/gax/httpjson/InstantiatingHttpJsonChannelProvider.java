@@ -67,20 +67,6 @@ import javax.annotation.Nullable;
 @InternalExtensionOnly
 public final class InstantiatingHttpJsonChannelProvider implements TransportChannelProvider {
 
-  /**
-   * Default TLS 1.3 Post-Quantum Cryptography (PQC) named groups used when Conscrypt security
-   * provider is present.
-   *
-   * <ul>
-   *   <li>{@code X25519MLKEM768}: Primary preferred group. Combines Curve25519 ECDHE with NIST FIPS
-   *       203 (ML-KEM-768) standard.
-   *   <li>{@code SecP256r1MLKEM768}: Secondary preferred group. Combines NIST P-256 (SecP256r1)
-   *       with NIST FIPS 203 (ML-KEM-768) for FIPS compliance.
-   *   <li>{@code X25519}: Classical non-quantum key exchange fallback.
-   * </ul>
-   */
-  public static final String[] DEFAULT_PQC_GROUPS = HttpJsonTransportUtils.DEFAULT_PQC_GROUPS;
-
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
 

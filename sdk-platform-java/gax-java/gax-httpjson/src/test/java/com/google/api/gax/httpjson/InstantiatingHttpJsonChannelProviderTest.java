@@ -211,7 +211,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
 
   @Test
   void testDefaultPqcGroups_containsExpectedGroups() {
-    assertThat(InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS)
+    assertThat(HttpJsonTransportUtils.DEFAULT_PQC_GROUPS)
         .asList()
         .containsExactly("X25519MLKEM768", "SecP256r1MLKEM768", "X25519")
         .inOrder();

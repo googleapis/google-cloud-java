@@ -63,20 +63,10 @@ public class HttpJsonTransportUtils {
       new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
 
   /**
-   * Lazy Initialization-on-Demand Holder Idiom (Singleton pattern).
+   * Lazy initialization holder for Conscrypt {@link Provider}.
    *
-   * <p>This static nested class defers Conscrypt {@link Provider} creation until first access and
-   * caches the resulting instance (or {@code null} if Conscrypt native JNI libraries fail to load).
-   *
-   * <ul>
-   *   <li><b>Thread Safety</b>: Leverages JVM class-loading guarantees to initialize the singleton
-   *       thread-safely without requiring synchronized blocks or locks.
-   *   <li><b>Performance</b>: Avoids re-instantiating {@code Conscrypt.newProvider()} JNI
-   *       allocations on every transport creation.
-   *   <li><b>Single Log Output</b>: If Conscrypt JNI is not available on the target architecture,
-   *       the failure is logged at WARNING level exactly once during class initialization and
-   *       caches {@code null}, preventing repeated JNI error logging on subsequent calls.
-   * </ul>
+   * <p>Caches the provider instance (or {@code null} if native libraries fail to load) to avoid
+   * repeated JNI allocations and error logging.
    */
   private static class ConscryptProviderHolder {
     private static final Provider INSTANCE = createProvider();
@@ -98,8 +88,8 @@ public class HttpJsonTransportUtils {
    *
    * <p>Note: Conscrypt native JNI libraries may not be available or compatible across all
    * environments. If Conscrypt is not available, transport creation gracefully falls back to the
-   * default JDK TLS provider. Users can customize the {@link NetHttpTransport.Builder} or security
-   * provider if needed.
+   * default JDK TLS provider. Users can customize the {@link NetHttpTransport.Builder} to use a
+   * different security provider.
    */
   public static NetHttpTransport.Builder createConscryptHttpTransportBuilder() {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
