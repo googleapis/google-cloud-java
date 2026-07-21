@@ -26,6 +26,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -41,6 +42,7 @@ import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import org.conscrypt.Conscrypt;
 
 /** Class representing service options for those services that use HTTP as the transport layer. */
 public class HttpTransportOptions implements TransportOptions {
@@ -66,6 +68,27 @@ public class HttpTransportOptions implements TransportOptions {
           // Maybe not on App Engine
         }
       }
+
+      // If Conscrypt is available on the classpath, instantiate it as the security provider
+      // and configure the HTTP client to enable Post-Quantum Cryptography (PQC) named groups
+      // by default. This ensures that client connections automatically benefit from
+      // quantum-resistant
+      // key exchange when Conscrypt is present.
+      try {
+        NetHttpTransport.Builder builder =
+            new NetHttpTransport.Builder().setSecurityProvider(Conscrypt.newProvider());
+        builder.setSslSocketConfigurator(
+            socket -> {
+              if (Conscrypt.isConscrypt(socket)) {
+                Conscrypt.setNamedGroups(
+                    socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+              }
+            });
+        return builder.build();
+      } catch (Throwable t) {
+        // Fallback to standard NetHttpTransport if Conscrypt is not available or failed to load
+      }
+
       return new NetHttpTransport();
     }
   }

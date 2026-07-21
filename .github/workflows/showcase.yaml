@@ -61,7 +61,11 @@ jobs:
                 curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${SHOWCASE_VERSION}/gapic-showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz
                 cd /usr/src/showcase/
                 tar -xf showcase-*
+                # Start standard insecure showcase server on default port 7469 for standard integration tests
                 ./gapic-showcase run &
+                # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
+                ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
+                sleep 2
                 cd -
       - name: Showcase integration tests
         working-directory: java-showcase
@@ -166,7 +170,11 @@ jobs:
           curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${SHOWCASE_VERSION}/gapic-showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${SHOWCASE_VERSION}-linux-amd64.tar.gz
           cd /usr/src/showcase/
           tar -xf showcase-*
+          # Start standard insecure showcase server on default port 7469 for standard integration tests
           ./gapic-showcase run &
+          # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
+          ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
+          sleep 2
           cd -
       - name: Showcase integration tests
         working-directory: java-showcase

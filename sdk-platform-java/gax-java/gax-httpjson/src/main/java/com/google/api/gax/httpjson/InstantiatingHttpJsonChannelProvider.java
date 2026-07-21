@@ -51,6 +51,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+import org.conscrypt.Conscrypt;
 
 /**
  * InstantiatingHttpJsonChannelProvider is a TransportChannelProvider which constructs a {@link
@@ -66,6 +67,23 @@ import javax.annotation.Nullable;
  */
 @InternalExtensionOnly
 public final class InstantiatingHttpJsonChannelProvider implements TransportChannelProvider {
+
+  /**
+   * Default TLS 1.3 Post-Quantum Cryptography (PQC) named groups used when Conscrypt security
+   * provider is present.
+   *
+   * <ul>
+   *   <li>{@code X25519MLKEM768}: Primary preferred group. Combines Curve25519 ECDHE with NIST FIPS
+   *       203 (ML-KEM-768) standard.
+   *   <li>{@code SecP256r1MLKEM768}: Secondary preferred group. Combines NIST P-256 (SecP256r1)
+   *       with NIST FIPS 203 (ML-KEM-768) for FIPS compliance.
+   *   <li>{@code X25519Kyber768Draft00}: Legacy pre-FIPS draft fallback for endpoints deployed
+   *       prior to FIPS 203 finalization.
+   *   <li>{@code X25519}: Classical non-quantum key exchange fallback.
+   * </ul>
+   */
+  public static final String[] DEFAULT_PQC_GROUPS =
+      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519Kyber768Draft00", "X25519"};
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(InstantiatingHttpJsonChannelProvider.class.getName());
@@ -191,16 +209,33 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null) {
-      return null;
-    }
-    if (certificateBasedAccess.useMtlsClientCertificate()) {
-      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-      if (mtlsKeyStore != null) {
-        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
+    try {
+      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+      builder.setSecurityProvider(Conscrypt.newProvider());
+      builder.setSslSocketConfigurator(
+          socket -> {
+            if (Conscrypt.isConscrypt(socket)) {
+              Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+            }
+          });
+      if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+        KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+        if (mtlsKeyStore != null) {
+          builder.trustCertificates(null, mtlsKeyStore, "");
+        }
       }
+      return builder.build();
+    } catch (Throwable t) {
+      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+      NetHttpTransport.Builder fallbackBuilder = new NetHttpTransport.Builder();
+      if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+        KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+        if (mtlsKeyStore != null) {
+          fallbackBuilder.trustCertificates(null, mtlsKeyStore, "");
+        }
+      }
+      return fallbackBuilder.build();
     }
-    return null;
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
@@ -364,7 +399,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize."
+                    + " Falling back to non-mTLS channel.");
           }
         }
       }

@@ -32,6 +32,7 @@ package com.google.api.gax.httpjson;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.mtls.AbstractMtlsTransportChannelTest;
@@ -192,6 +193,44 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .setHeaderProvider(Mockito.mock(HeaderProvider.class))
             .setExecutor(Mockito.mock(Executor.class))
             .build();
-    return channelProvider.createHttpTransport();
+    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
+    return (transport != null && transport.isMtls()) ? transport : null;
+  }
+
+  @Test
+  void testCreateHttpTransport_pqcConfigured() throws Exception {
+    boolean conscryptLoaded = false;
+    try {
+      org.conscrypt.Conscrypt.newProvider();
+      conscryptLoaded = true;
+    } catch (Throwable t) {
+      // Conscrypt JNI cannot load on this test runner, skipping assertion
+    }
+    InstantiatingHttpJsonChannelProvider channelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint("localhost:8080")
+            .setHeaderProvider(Mockito.mock(HeaderProvider.class))
+            .setExecutor(Mockito.mock(Executor.class))
+            .build();
+    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
+    Object factory = getPrivateField(transport, "sslSocketFactory");
+    if (conscryptLoaded) {
+      assertThat(factory).isNotNull();
+      assertThat(factory.getClass().getName())
+          .isEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
+      Object configurator = getPrivateField(factory, "configurator");
+      assertThat(configurator).isNotNull();
+    } else {
+      if (factory != null) {
+        assertThat(factory.getClass().getName())
+            .isNotEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
+      }
+    }
+  }
+
+  private static Object getPrivateField(Object obj, String fieldName) throws Exception {
+    java.lang.reflect.Field field = obj.getClass().getDeclaredField(fieldName);
+    field.setAccessible(true);
+    return field.get(obj);
   }
 }

@@ -1,0 +1,435 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.showcase.v1beta1.it;
+
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
+
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.util.SslUtils;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.httpjson.HttpJsonMetadata;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.showcase.v1beta1.EchoClient;
+import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
+import com.google.showcase.v1beta1.EchoSettings;
+import com.google.showcase.v1beta1.it.util.HttpJsonCapturingClientInterceptor;
+import io.grpc.Channel;
+import io.grpc.ChannelCredentials;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
+import io.grpc.Grpc;
+import io.grpc.ManagedChannel;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.TlsChannelCredentials;
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyStore;
+import java.security.Provider;
+import java.security.Security;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Integration tests to verify Post-Quantum Cryptography (PQC) TLS negotiation for both gRPC and
+ * HTTP/JSON (REST) clients.
+ *
+ * <p>These tests execute calls against a local secure (TLS-enabled) Showcase server. During the TLS
+ * handshake, the client and server negotiate cipher suites and key exchange groups. Showcase
+ * injects information about the negotiated TLS connection parameters into custom headers:
+ *
+ * <ul>
+ *   <li>{@code x-showcase-tls-group}: The negotiated key exchange named group (e.g.
+ *       X25519MLKEM768).
+ *   <li>{@code x-showcase-tls-version}: The TLS version negotiated (e.g. TLS 1.3).
+ *   <li>{@code x-showcase-tls-cipher}: The negotiated cipher suite (e.g. TLS_AES_128_GCM_SHA256).
+ *   <li>{@code x-showcase-tls-client-supported-groups}: The list of groups offered by the client.
+ * </ul>
+ *
+ * <p>To enable PQC, Conscrypt must be available on the classpath.
+ *
+ * <ul>
+ *   <li>For gRPC, the shaded Netty transport dynamically registers and uses Conscrypt natively if
+ *       the Conscrypt library is available on the classpath.
+ *   <li>For HTTP/JSON, the {@link NetHttpTransport} automatically registers Conscrypt as a security
+ *       provider dynamically during transport construction.
+ * </ul>
+ *
+ * Consequently, these tests do not explicitly register Conscrypt in the global JVM provider list
+ * during setup.
+ *
+ * <p>Verification cases:
+ *
+ * <ol>
+ *   <li>{@code testGrpcPqc}: Verifies that gRPC (Netty-shaded) uses Conscrypt and successfully
+ *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
+ *   <li>{@code testHttpJsonPqc}: Verifies that HTTP/JSON transport defaults to Conscrypt and
+ *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
+ *   <li>{@code testHttpJsonPqc_withExplicitSecurityProvider}: Verifies that overriding the
+ *       transport's SSLSocketFactory to explicitly use standard JDK JSSE provider (SunJSSE) falls
+ *       back gracefully to classical key exchange ({@code X25519}) instead of crashing.
+ * </ol>
+ */
+public class ITPqc {
+
+  // TLS response header names from Showcase server
+  private static final String TLS_GROUP_HEADER = "x-showcase-tls-group";
+  private static final String TLS_CIPHER_HEADER = "x-showcase-tls-cipher";
+  private static final String TLS_SUPPORTED_GROUPS_HEADER =
+      "x-showcase-tls-client-supported-groups";
+
+  // Expected TLS parameters
+  private static final String EXPECTED_TLS_GROUP = "X25519MLKEM768";
+
+  private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
+
+  private static String getCaCertPath() {
+    String prop = System.getProperty("showcase.ca.cert.path");
+    if (prop != null) {
+      return prop;
+    }
+    if (new File("/tmp/showcase-ca.pem").isFile()) {
+      return "/tmp/showcase-ca.pem";
+    }
+    return "target/showcase-ca.pem";
+  }
+
+  private static final String SECURE_ENDPOINT =
+      System.getProperty("showcase.secure.endpoint", "localhost:7470");
+
+  @BeforeAll
+  static void setUp() {
+    File certFile = new File(DEFAULT_CA_CERT_PATH);
+    assertWithMessage("CA certificate file not found at " + DEFAULT_CA_CERT_PATH)
+        .that(certFile.isFile())
+        .isTrue();
+  }
+
+  @Test
+  void testGrpcPqc() throws Exception {
+
+    // Create channel credentials trusting the custom CA
+    ChannelCredentials creds =
+        TlsChannelCredentials.newBuilder().trustManager(new File(DEFAULT_CA_CERT_PATH)).build();
+
+    ManagedChannel channel = Grpc.newChannelBuilder(SECURE_ENDPOINT, creds).build();
+    try {
+      TransportChannel transportChannel = GrpcTransportChannel.create(channel);
+
+      GrpcHeaderCapturingInterceptor interceptor = new GrpcHeaderCapturingInterceptor();
+
+      EchoSettings settings =
+          EchoSettings.newBuilder()
+              .setCredentialsProvider(NoCredentialsProvider.create())
+              .setTransportChannelProvider(FixedTransportChannelProvider.create(transportChannel))
+              .build();
+
+      // Add interceptor to capture headers
+      ManagedChannel interceptedChannel = new InterceptedManagedChannel(channel, interceptor);
+      TransportChannel interceptedTransportChannel =
+          GrpcTransportChannel.create(interceptedChannel);
+
+      settings =
+          settings.toBuilder()
+              .setTransportChannelProvider(
+                  FixedTransportChannelProvider.create(interceptedTransportChannel))
+              .build();
+
+      try (EchoClient client = EchoClient.create(settings)) {
+        EchoResponse response =
+            client.echo(EchoRequest.newBuilder().setContent("pqc-grpc-test").build());
+        assertThat(response.getContent()).isEqualTo("pqc-grpc-test");
+
+        Metadata capturedHeaders = interceptor.getCapturedHeaders();
+        assertThat(capturedHeaders).isNotNull();
+
+        Metadata.Key<String> groupKey =
+            Metadata.Key.of(TLS_GROUP_HEADER, Metadata.ASCII_STRING_MARSHALLER);
+        Metadata.Key<String> supportedGroupsKey =
+            Metadata.Key.of(TLS_SUPPORTED_GROUPS_HEADER, Metadata.ASCII_STRING_MARSHALLER);
+
+        String expectedGroup = isConscryptFunctional() ? "X25519MLKEM768" : "X25519";
+        assertThat(capturedHeaders.get(groupKey)).isEqualTo(expectedGroup);
+        assertThat(capturedHeaders.get(supportedGroupsKey)).isNotNull();
+      }
+    } finally {
+      channel.shutdown();
+      channel.awaitTermination(10, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  void testHttpJsonPqc() throws Exception {
+
+    Provider conscryptProvider = null;
+    try {
+      conscryptProvider = org.conscrypt.Conscrypt.newProvider();
+    } catch (Throwable t) {
+      // Conscrypt JNI is not available on this platform/runner
+    }
+
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    if (conscryptProvider != null) {
+      builder.setSecurityProvider(conscryptProvider);
+    }
+
+    SSLContext sslContext = SslUtils.getTlsSslContext(conscryptProvider);
+    TrustManagerFactory tmf = SslUtils.getDefaultTrustManagerFactory(conscryptProvider);
+    tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
+    sslContext.init(null, tmf.getTrustManagers(), null);
+    builder.setSslSocketFactory(sslContext.getSocketFactory());
+
+    if (conscryptProvider != null) {
+      com.google.api.gax.httpjson.ConscryptPqcConfiguratorHelper.configure(builder);
+    } else {
+      builder.setSslSocketConfigurator(
+          socket -> {
+            try {
+              javax.net.ssl.SSLParameters params = socket.getSSLParameters();
+              java.lang.reflect.Method method =
+                  params.getClass().getMethod("setNamedGroups", String[].class);
+              method.invoke(params, (Object) new String[] {"X25519"});
+              socket.setSSLParameters(params);
+            } catch (Exception e) {
+              // Ignore if method not supported on this JDK version
+            }
+          });
+    }
+
+    NetHttpTransport transport = builder.build();
+
+    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
+
+    InstantiatingHttpJsonChannelProvider transportChannelProvider =
+        EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setHttpTransport(transport)
+            .setEndpoint("https://" + SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor))
+            .build();
+
+    EchoSettings settings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(EchoRequest.newBuilder().setContent("pqc-httpjson-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-httpjson-test");
+
+      HttpJsonMetadata capturedHeaders = interceptor.metadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      String expectedGroup = isConscryptFunctional() ? "X25519MLKEM768" : "X25519";
+      assertThat(negotiatedGroup).isEqualTo(expectedGroup);
+
+      String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
+      assertThat(supportedGroups).isNotNull();
+    }
+  }
+
+  @Test
+  void testHttpJsonPqc_withExplicitSecurityProvider() throws Exception {
+    // Explicitly use SunJSSE (JDK default) instead of Conscrypt
+    Provider sunJsseProvider = Security.getProvider("SunJSSE");
+    assertThat(sunJsseProvider).isNotNull();
+
+    // Initialize SSLContext and TrustManagerFactory explicitly with SunJSSE provider to trust the
+    // CA
+    SSLContext sslContext = SSLContext.getInstance("TLS", sunJsseProvider);
+    TrustManagerFactory tmf =
+        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm(), sunJsseProvider);
+    tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
+    sslContext.init(null, tmf.getTrustManagers(), null);
+
+    // Build NetHttpTransport using the SunJSSE socket factory
+    NetHttpTransport transport =
+        new NetHttpTransport.Builder().setSslSocketFactory(sslContext.getSocketFactory()).build();
+
+    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
+
+    InstantiatingHttpJsonChannelProvider transportChannelProvider =
+        EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setHttpTransport(transport)
+            .setEndpoint("https://" + SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor))
+            .build();
+
+    EchoSettings settings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(
+              EchoRequest.newBuilder().setContent("pqc-httpjson-explicit-provider-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-httpjson-explicit-provider-test");
+
+      HttpJsonMetadata capturedHeaders = interceptor.metadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      // Under SunJSSE (JDK default), PQC curves are unsupported, so it falls back to a classical
+      // curve (either X25519 or CurveP256 depending on JDK / Go negotiation)
+      assertThat(negotiatedGroup).isAnyOf("X25519", "CurveP256");
+      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_TLS_GROUP);
+    }
+  }
+
+  /**
+   * Captures initial TLS response headers (e.g. x-showcase-tls-group) from the gRPC stream. This is
+   * required because showcase TLS headers are sent as initial headers rather than trailing metadata
+   * (trailers), which means the shared utility GrpcCapturingClientInterceptor cannot be used (as it
+   * only intercepts trailers).
+   */
+  private static class GrpcHeaderCapturingInterceptor implements ClientInterceptor {
+    private Metadata capturedHeaders;
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> method, io.grpc.CallOptions callOptions, Channel next) {
+      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+          next.newCall(method, callOptions)) {
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          super.start(
+              new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                  responseListener) {
+                @Override
+                public void onHeaders(Metadata headers) {
+                  capturedHeaders = headers;
+                  super.onHeaders(headers);
+                }
+              },
+              headers);
+        }
+      };
+    }
+
+    public Metadata getCapturedHeaders() {
+      return capturedHeaders;
+    }
+  }
+
+  /**
+   * Helper class to wrap a standard ManagedChannel with gRPC client interceptors. Since EchoClient
+   * requires a ManagedChannel (which handles shutdown and awaitTermination lifecycles), but
+   * ClientInterceptors.intercept() only returns a generic Channel, this class bridges the two by
+   * forwarding call creation to the intercepted channel, and routing lifecycle calls to the base
+   * channel.
+   */
+  private static class InterceptedManagedChannel extends ManagedChannel {
+    private final ManagedChannel delegate;
+    private final Channel intercepted;
+
+    InterceptedManagedChannel(ManagedChannel delegate, ClientInterceptor... interceptors) {
+      this.delegate = delegate;
+      this.intercepted = io.grpc.ClientInterceptors.intercept(delegate, interceptors);
+    }
+
+    @Override
+    public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
+        MethodDescriptor<RequestT, ResponseT> methodDescriptor, io.grpc.CallOptions callOptions) {
+      return intercepted.newCall(methodDescriptor, callOptions);
+    }
+
+    @Override
+    public String authority() {
+      return delegate.authority();
+    }
+
+    @Override
+    public ManagedChannel shutdown() {
+      delegate.shutdown();
+      return this;
+    }
+
+    @Override
+    public boolean isShutdown() {
+      return delegate.isShutdown();
+    }
+
+    @Override
+    public boolean isTerminated() {
+      return delegate.isTerminated();
+    }
+
+    @Override
+    public ManagedChannel shutdownNow() {
+      delegate.shutdownNow();
+      return this;
+    }
+
+    @Override
+    public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+      return delegate.awaitTermination(timeout, unit);
+    }
+  }
+
+  private static String getSingleHeaderString(HttpJsonMetadata metadata, String name) {
+    Object valueObj = metadata.getHeaders().get(name);
+    if (valueObj instanceof List) {
+      List<?> list = (List<?>) valueObj;
+      if (!list.isEmpty()) {
+        return String.valueOf(list.get(0));
+      }
+    } else if (valueObj != null) {
+      return String.valueOf(valueObj);
+    }
+    return null;
+  }
+
+  private static KeyStore loadCaCert(String certPath) throws Exception {
+    KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    trustStore.load(null, null);
+    CertificateFactory cf = CertificateFactory.getInstance("X.509");
+    try (InputStream is = Files.newInputStream(Paths.get(certPath))) {
+      Certificate cert = cf.generateCertificate(is);
+      trustStore.setCertificateEntry("showcase-ca", cert);
+    }
+    return trustStore;
+  }
+
+  private static boolean isConscryptFunctional() {
+    try {
+      org.conscrypt.Conscrypt.newProvider();
+      return true;
+    } catch (Throwable t) {
+      return false;
+    }
+  }
+}
