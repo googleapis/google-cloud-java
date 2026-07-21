@@ -482,6 +482,11 @@
         </dependency>
       </dependencies>
     </profile>
+    <!--
+      Exclude Jqwik and its tests on Java 8 because Jqwik 1.9+ requires Java 11+.
+      Jqwik's reflection-based test scanning fails on Java 8 when JSpecify annotations are present.
+      Test coverage for these Jqwik property tests is still run and maintained on JDK 11+ matrix builds.
+    -->
     <profile>
       <id>exclude-jqwik-on-java8</id>
       <activation>
