@@ -31,7 +31,10 @@
 
 package com.google.auth.http;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Internal constants used for auth in http */
+@NullMarked
 class InternalAuthHttpConstants {
   static final String BEARER_PREFIX = AuthHttpConstants.BEARER + " ";
 }

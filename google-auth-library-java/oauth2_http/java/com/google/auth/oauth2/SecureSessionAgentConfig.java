@@ -31,8 +31,10 @@
 package com.google.auth.oauth2;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import org.jspecify.annotations.NullMarked;
 
 /** Holds an mTLS configuration (consists of address of S2A) retrieved from the Metadata Server. */
+@NullMarked
 public class SecureSessionAgentConfig {
   // plaintextAddress is the plaintext address to reach the S2A.
   private final String plaintextAddress;

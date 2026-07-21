@@ -32,6 +32,7 @@ package com.google.auth.mtls;
 
 import java.io.IOException;
 import java.security.KeyStore;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * MtlsProvider is used by the Gax library for configuring mutual TLS in the HTTP and GRPC transport
@@ -41,6 +42,7 @@ import java.security.KeyStore;
  * Gax library. The Gax library version of MtlsProvider will be marked as deprecated. See
  * https://github.com/googleapis/google-auth-library-java/issues/1758
  */
+@NullMarked
 public interface MtlsProvider {
   /**
    * Returns a mutual TLS key store.

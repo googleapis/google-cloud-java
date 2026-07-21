@@ -83,12 +83,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Executor;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing a Service Account for calling Google APIs.
  *
  * <p>By default uses a JSON Web Token (JWT) to fetch access tokens.
  */
+@NullMarked
 public class ServiceAccountCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider, JwtProvider {
 
@@ -116,7 +119,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   private transient HttpTransportFactory transportFactory;
 
-  private transient JwtCredentials selfSignedJwtCredentialsWithScope = null;
+  private transient @Nullable JwtCredentials selfSignedJwtCredentialsWithScope = null;
 
   /**
    * Internal constructor
@@ -748,7 +751,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    */
   @Override
   public GoogleCredentials createScoped(
-      Collection<String> newScopes, Collection<String> newDefaultScopes) {
+      Collection<String> newScopes, @Nullable Collection<String> newDefaultScopes) {
     return this.toBuilder().setScopes(newScopes, newDefaultScopes).setAccessToken(null).build();
   }
 
@@ -908,7 +911,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ServiceAccountCredentials)) {
       return false;
     }
@@ -1008,12 +1011,13 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  JwtCredentials createSelfSignedJwtCredentials(final URI uri) {
+  JwtCredentials createSelfSignedJwtCredentials(final @Nullable URI uri) {
     return createSelfSignedJwtCredentials(uri, scopes.isEmpty() ? defaultScopes : scopes);
   }
 
   @VisibleForTesting
-  JwtCredentials createSelfSignedJwtCredentials(final URI uri, Collection<String> scopes) {
+  JwtCredentials createSelfSignedJwtCredentials(
+      final @Nullable URI uri, Collection<String> scopes) {
     // Create a JwtCredentials for self-signed JWT. See https://google.aip.dev/auth/4111.
     JwtClaims.Builder claimsBuilder =
         JwtClaims.newBuilder().setIssuer(clientEmail).setSubject(clientEmail);
