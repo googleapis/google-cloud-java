@@ -2163,7 +2163,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     // Fallback Path: If catalog or schema is null, fall back to REST API metadata scan.
     if (catalog == null || schema == null) {
-      List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+      List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
       final BlockingQueue<BigQueryFieldValueListWrapper> queue =
           new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
       Future<?> fetcherFuture =
