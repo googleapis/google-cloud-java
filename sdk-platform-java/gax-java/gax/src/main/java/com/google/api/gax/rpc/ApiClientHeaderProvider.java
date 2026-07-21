@@ -253,7 +253,7 @@ public class ApiClientHeaderProvider implements HeaderProvider, Serializable {
       return this;
     }
 
-    private @Nullable String constructToken(String name, String version) {
+    private @Nullable String constructToken(String name, @Nullable String version) {
       if (version == null) {
         return null;
       }

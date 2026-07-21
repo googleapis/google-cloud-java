@@ -128,9 +128,8 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
   // can be cancelled if a response (either an error or valid payload) has been
   // received before the timeout. This value may be null if the RPC does not have a
   // timeout.
-  @Nullable
   @GuardedBy("lock")
-  private volatile ScheduledFuture<?> timeoutFuture;
+  private volatile @Nullable ScheduledFuture<?> timeoutFuture;
 
   HttpJsonClientCallImpl(
       ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,

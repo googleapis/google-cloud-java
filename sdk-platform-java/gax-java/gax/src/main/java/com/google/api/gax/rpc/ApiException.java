@@ -44,11 +44,11 @@ public class ApiException extends RuntimeException {
   private final StatusCode statusCode;
   private final boolean retryable;
 
-  public ApiException(Throwable cause, StatusCode statusCode, boolean retryable) {
+  public ApiException(@Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
     this(cause, statusCode, retryable, null);
   }
 
-  public ApiException(String message, Throwable cause, StatusCode statusCode, boolean retryable) {
+  public ApiException(@Nullable String message, @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
     super(message, cause);
     this.statusCode = Preconditions.checkNotNull(statusCode);
     this.retryable = retryable;
@@ -56,7 +56,7 @@ public class ApiException extends RuntimeException {
   }
 
   public ApiException(
-      Throwable cause,
+      @Nullable Throwable cause,
       StatusCode statusCode,
       boolean retryable,
       @Nullable ErrorDetails errorDetails) {
@@ -67,11 +67,11 @@ public class ApiException extends RuntimeException {
   }
 
   public ApiException(
-      String message,
-      Throwable cause,
+      @Nullable String message,
+      @Nullable Throwable cause,
       StatusCode statusCode,
       boolean retryable,
-      ErrorDetails errorDetails) {
+      @Nullable ErrorDetails errorDetails) {
     super(message, cause);
     this.statusCode = Preconditions.checkNotNull(statusCode);
     this.retryable = retryable;

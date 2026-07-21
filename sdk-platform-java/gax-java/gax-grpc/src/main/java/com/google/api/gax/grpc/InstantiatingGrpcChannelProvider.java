@@ -166,7 +166,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   // This is initialized once for the lifetime of the application. This enables re-using
   // channels to S2A.
-  private static @Nullable volatile ChannelCredentials s2aChannelCredentials;
+  private static volatile @Nullable ChannelCredentials s2aChannelCredentials;
 
   /**
    * Resets the s2aChannelCredentials of the {@link InstantiatingGrpcChannelProvider} class for

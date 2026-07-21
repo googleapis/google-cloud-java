@@ -41,12 +41,12 @@ public class ApiExceptionFactory {
   private ApiExceptionFactory() {}
 
   public static ApiException createException(
-      Throwable cause, StatusCode statusCode, boolean retryable) {
+      @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
     return createException(cause, statusCode, retryable, null);
   }
 
   public static ApiException createException(
-      String message, Throwable cause, StatusCode statusCode, boolean retryable) {
+      @Nullable String message, @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
     switch (statusCode.getCode()) {
       case CANCELLED:
         return new CancelledException(message, cause, statusCode, retryable);
@@ -86,7 +86,7 @@ public class ApiExceptionFactory {
   }
 
   public static ApiException createException(
-      Throwable cause,
+      @Nullable Throwable cause,
       StatusCode statusCode,
       boolean retryable,
       @Nullable ErrorDetails errorDetails) {
@@ -96,10 +96,10 @@ public class ApiExceptionFactory {
 
   public static ApiException createException(
       @Nullable String message,
-      Throwable cause,
+      @Nullable Throwable cause,
       StatusCode statusCode,
       boolean retryable,
-      ErrorDetails errorDetails) {
+      @Nullable ErrorDetails errorDetails) {
     switch (statusCode.getCode()) {
       case CANCELLED:
         return new CancelledException(message, cause, statusCode, retryable, errorDetails);
