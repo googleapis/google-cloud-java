@@ -26,7 +26,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
-import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -59,6 +58,8 @@ public class HttpTransportOptions implements TransportOptions {
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
     private static final Logger LOG = Logger.getLogger(DefaultHttpTransportFactory.class.getName());
+    private static final String[] PQC_GROUPS =
+        new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
     private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
 
     @Override
@@ -84,22 +85,30 @@ public class HttpTransportOptions implements TransportOptions {
       // classpath or fail to load on the target host architecture, transport creation gracefully
       // falls back to standard JDK TLS JSSE provider using a fresh NetHttpTransport.Builder
       // instance.
+      NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
       try {
-        return new NetHttpTransport.Builder()
+        builder
             .setSecurityProvider(Conscrypt.newProvider())
             .setSslSocketConfigurator(
                 socket -> {
                   if (Conscrypt.isConscrypt(socket)) {
-                    Conscrypt.setNamedGroups(
-                        socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+                    try {
+                      Conscrypt.setNamedGroups(socket, PQC_GROUPS);
+                    } catch (Throwable t) {
+                      // Catch runtime socket configuration errors (e.g. version mismatch or JNI
+                      // error)
+                      // so individual API calls do not fail if Conscrypt named group setup fails.
+                      LOG.log(
+                          Level.WARNING, "Failed to set PQC named groups on Conscrypt socket", t);
+                    }
                   }
-                })
-            .build();
+                });
       } catch (Throwable t) {
         LOG.log(
             Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-        return new NetHttpTransport.Builder().build();
+        builder = new NetHttpTransport.Builder();
       }
+      return builder.build();
     }
   }
 

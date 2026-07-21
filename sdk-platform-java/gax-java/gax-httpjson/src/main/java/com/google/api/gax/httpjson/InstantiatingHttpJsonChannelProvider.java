@@ -217,21 +217,28 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     // Catching Throwable ensures that if Conscrypt JNI native libraries are not present on the
     // classpath or fail to load on the target host architecture, transport creation gracefully
     // falls back to standard JDK TLS JSSE provider using a fresh NetHttpTransport.Builder instance.
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     try {
-      NetHttpTransport.Builder builder =
-          new NetHttpTransport.Builder()
-              .setSecurityProvider(Conscrypt.newProvider())
-              .setSslSocketConfigurator(
-                  socket -> {
-                    if (Conscrypt.isConscrypt(socket)) {
-                      Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-                    }
-                  });
-      return configureMtls(builder).build();
+      builder
+          .setSecurityProvider(Conscrypt.newProvider())
+          .setSslSocketConfigurator(
+              socket -> {
+                if (Conscrypt.isConscrypt(socket)) {
+                  try {
+                    Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+                  } catch (Throwable t) {
+                    // Catch runtime socket configuration errors (e.g. version mismatch or JNI
+                    // error)
+                    // so individual API calls do not fail if Conscrypt named group setup fails.
+                    LOG.log(Level.WARNING, "Failed to set PQC named groups on Conscrypt socket", t);
+                  }
+                }
+              });
     } catch (Throwable t) {
       LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-      return configureMtls(new NetHttpTransport.Builder()).build();
+      builder = new NetHttpTransport.Builder();
     }
+    return configureMtls(builder).build();
   }
 
   private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
