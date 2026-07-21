@@ -4569,7 +4569,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private void waitForTasksCompletion(List<Future<?>> taskFutures) throws ExecutionException {
+  private void waitForTasksCompletion(List<Future<?>> taskFutures)
+      throws ExecutionException, SQLException {
     LOG.info("Waiting for %d submitted tasks to complete...", taskFutures.size());
     try {
       for (Future<?> future : taskFutures) {
@@ -4582,8 +4583,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
       LOG.warning(
-          "Fetcher thread interrupted while waiting for tasks. Attempting to cancel remaining"
-              + " tasks.");
+          "Fetcher thread interrupted while waiting for tasks. Attempting to cancel remaining tasks.");
+      throw new SQLException("Metadata fetch interrupted.", e);
     } finally {
       for (Future<?> future : taskFutures) {
         if (!future.isDone()) {
@@ -4724,9 +4725,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
       waitForTasksCompletion(taskFutures);
-      if (Thread.currentThread().isInterrupted()) {
-        throw new SQLException("Interrupted while parallel-fetching matching datasets");
-      }
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
       if (cause instanceof SQLException) {
@@ -4939,24 +4937,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Page<Routine> routinesPage =
                     bigquery.listRoutines(
                         datasetId, BigQuery.RoutineListOption.pageSize(DEFAULT_PAGE_SIZE));
-                if (routinesPage != null) {
-                  for (Routine routine : routinesPage.iterateAll()) {
-                    if (routine == null) continue;
-                    String routineName = routine.getRoutineId().getRoutine();
-                    if (routineRegex != null && !routineRegex.matcher(routineName).matches())
-                      continue;
-                    routineTasks.add(
-                        () -> {
-                          processSingleRoutine(
-                              datasetId,
-                              requiresFullRoutine ? routineName : null,
-                              requiresFullRoutine ? null : routine,
-                              collectedResults,
-                              resultSchemaFields,
-                              processor);
-                          return null;
-                        });
-                  }
+                for (Routine routine : routinesPage.iterateAll()) {
+                  String routineName = routine.getRoutineId().getRoutine();
+                  if (routineRegex != null && !routineRegex.matcher(routineName).matches())
+                    continue;
+                  routineTasks.add(
+                      () -> {
+                        processSingleRoutine(
+                            datasetId,
+                            requiresFullRoutine ? routineName : null,
+                            requiresFullRoutine ? null : routine,
+                            collectedResults,
+                            resultSchemaFields,
+                            processor);
+                        return null;
+                      });
                 }
               } catch (BigQueryException e) {
                 if (e.getCode() == 404) {
@@ -4998,9 +4993,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
-      if (Thread.currentThread().isInterrupted()) {
-        throw new SQLException("Interrupted while parallel-fetching metadata");
-      }
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
       if (cause instanceof SQLException) {
@@ -5071,27 +5063,24 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Page<Table> tablesPage =
                     bigquery.listTables(
                         datasetId, BigQuery.TableListOption.pageSize(DEFAULT_PAGE_SIZE));
-                if (tablesPage != null) {
-                  for (Table table : tablesPage.iterateAll()) {
-                    if (table == null) continue;
-                    if (requireBaseTable
-                        && table.getDefinition() != null
-                        && table.getDefinition().getType() != TableDefinition.Type.TABLE) continue;
-                    String tableName = table.getTableId().getTable();
-                    if (tableRegex != null && !tableRegex.matcher(tableName).matches()) continue;
-                    tableTasks.add(
-                        () -> {
-                          processSingleTable(
-                              datasetId,
-                              requiresFullTable ? tableName : null,
-                              requiresFullTable ? null : table,
-                              requireBaseTable,
-                              collectedResults,
-                              resultSchemaFields,
-                              processor);
-                          return null;
-                        });
-                  }
+                for (Table table : tablesPage.iterateAll()) {
+                  if (requireBaseTable
+                      && table.getDefinition() != null
+                      && table.getDefinition().getType() != TableDefinition.Type.TABLE) continue;
+                  String tableName = table.getTableId().getTable();
+                  if (tableRegex != null && !tableRegex.matcher(tableName).matches()) continue;
+                  tableTasks.add(
+                      () -> {
+                        processSingleTable(
+                            datasetId,
+                            requiresFullTable ? tableName : null,
+                            requiresFullTable ? null : table,
+                            requireBaseTable,
+                            collectedResults,
+                            resultSchemaFields,
+                            processor);
+                        return null;
+                      });
                 }
               } catch (BigQueryException e) {
                 if (e.getCode() == 404) {
@@ -5133,9 +5122,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         taskFutures.add(executor.submit(task));
       }
       waitForTasksCompletion(taskFutures);
-      if (Thread.currentThread().isInterrupted()) {
-        throw new SQLException("Interrupted while parallel-fetching metadata");
-      }
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
       if (cause instanceof SQLException) {
