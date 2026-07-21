@@ -172,10 +172,10 @@ public class ITPqc {
     tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
     sslContext.init(null, tmf.getTrustManagers(), null);
 
-    // This test verifies behavior for environments where PQC is not enabled or supported. When
-    // future JDK versions (e.g. JDK 27+) enable PQC by default in standard JDK JSSE, explicitly
-    // configuring classical named groups ensures that non-PQC classical TLS connections can still
-    // be established.
+    // This test verifies client transport behavior when PQC algorithms are not offered.
+    // Future Java versions (e.g. JDK 27+) will enable PQC (ML-KEM) by default in standard JDK JSSE.
+    // Explicitly setting named groups to classical algorithms ensures that this test reliably
+    // tests the non-PQC classical TLS connection path regardless of underlying JDK defaults.
     NetHttpTransport transport =
         new NetHttpTransport.Builder()
             .setSslSocketFactory(sslContext.getSocketFactory())
@@ -186,11 +186,11 @@ public class ITPqc {
                     params.setNamedGroups(new String[] {"X25519", "SecP256r1"});
                     socket.setSSLParameters(params);
                   } catch (Exception e) {
-                    // For JDK 8-19, SSLParameters.setNamedGroups() does not exist, so JSSE
+                    // For JDK 8-19, SSLParameters.setNamedGroups() is unsupported, and JSSE
                     // naturally
-                    // defaults to classical algorithms, which is expected. Hardcoding classical
-                    // algorithms via setNamedGroups is primarily for JDK 20+ when PQC becomes
-                    // default.
+                    // defaults to classical algorithms. Setting classical named groups is primarily
+                    // for
+                    // JDK 20+ when PQC becomes the default in standard JSSE.
                   }
                 })
             .build();
