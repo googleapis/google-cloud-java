@@ -313,7 +313,9 @@ public class ChannelPoolDpImpl implements ChannelPool {
                   fw.consecutiveFailures = 0;
                   recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   sessionsPerAfeId.add(afeId);
-                  routeObservations.put(new RouteKey(fw.id, tenant), afeId);
+                  if (!fw.channel.isShutdown()) {
+                    routeObservations.put(new RouteKey(fw.id, tenant), afeId);
+                  }
                   fw.lastUsedAt = Instant.now(clock);
                 }
                 super.onBeforeSessionStart(peerInfo);

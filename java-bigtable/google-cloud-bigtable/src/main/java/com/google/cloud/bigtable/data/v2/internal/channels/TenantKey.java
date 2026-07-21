@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.internal.channels;
 
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import java.util.Objects;
-import javax.annotation.Nullable;
 
 /**
  * Identifies a single (instanceName, appProfileId) tenant within a shared channel pool. Used as
@@ -26,12 +25,12 @@ import javax.annotation.Nullable;
  */
 public final class TenantKey {
   /** Sentinel used when no tenant is stamped (single-tenant / sessions-disabled clients). */
-  public static final TenantKey UNKNOWN = new TenantKey(null, "");
+  public static final TenantKey UNKNOWN = new TenantKey(InstanceName.of("", ""), "");
 
-  @Nullable private final InstanceName instanceName;
+  private final InstanceName instanceName;
   private final String appProfileId;
 
-  public TenantKey(@Nullable InstanceName instanceName, String appProfileId) {
+  public TenantKey(InstanceName instanceName, String appProfileId) {
     this.instanceName = instanceName;
     this.appProfileId = appProfileId == null ? "" : appProfileId;
   }

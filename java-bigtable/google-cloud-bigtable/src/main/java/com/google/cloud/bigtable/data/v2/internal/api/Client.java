@@ -197,7 +197,8 @@ public class Client implements AutoCloseable {
 
   /**
    * Factory-child constructor. Uses a pre-built, shared {@link ChannelPool} and {@link
-   * ClientConfigurationManager}. The pool is already started and must not be closed by this client.
+   * ClientConfigurationManager}. The pool and config manager should be created with
+   * Resource.createShared() and closed when the factory closes.
    */
   public Client(
       FeatureFlags featureFlags,
@@ -225,7 +226,7 @@ public class Client implements AutoCloseable {
                     .setDescription("Client closing")
                     .build()));
     metrics.close();
-    channelPool.close(); // no-op when Resource.createShared (factory child)
+    channelPool.close();
     configManager.close();
     backgroundExecutor.close();
   }

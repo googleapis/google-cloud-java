@@ -298,7 +298,7 @@ public class ShimImpl implements Shim {
   @Override
   public void close() {
     client.close();
-    configManagerResource.close(); // no-op when Resource.createShared (factory child)
+    configManagerResource.close();
   }
 
   @Override
