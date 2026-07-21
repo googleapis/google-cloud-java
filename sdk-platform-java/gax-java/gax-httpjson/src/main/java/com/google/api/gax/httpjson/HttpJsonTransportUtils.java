@@ -51,8 +51,7 @@ public class HttpJsonTransportUtils {
    *
    * <ul>
    *   <li>{@code X25519MLKEM768}: Primary preferred hybrid key exchange algorithm combining
-   *       Curve25519 ECDHE with NIST FIPS 203 (ML-KEM-768 / Kyber768), selected as the primary
-   *       group per Google Cloud PQC guidelines.
+   *       Curve25519 ECDHE with NIST FIPS 203 (ML-KEM-768 / Kyber768).
    *   <li>{@code SecP256r1MLKEM768}: Secondary preferred hybrid key exchange algorithm combining
    *       NIST P-256 (SecP256r1) with NIST FIPS 203 (ML-KEM-768) for environments requiring
    *       FIPS-compliant elliptic curves.
@@ -68,8 +67,6 @@ public class HttpJsonTransportUtils {
    *
    * <p>This static nested class defers Conscrypt {@link Provider} creation until first access and
    * caches the resulting instance (or {@code null} if Conscrypt native JNI libraries fail to load).
-   *
-   * <p>Design rationale:
    *
    * <ul>
    *   <li><b>Thread Safety</b>: Leverages JVM class-loading guarantees to initialize the singleton
@@ -96,18 +93,15 @@ public class HttpJsonTransportUtils {
   }
 
   /**
-   * Creates a {@link NetHttpTransport.Builder} pre-configured with Conscrypt security provider and
-   * PQC named groups if Conscrypt is available.
+   * Creates a {@link NetHttpTransport.Builder} pre-configured with Conscrypt as the security
+   * provider by default.
    *
-   * <p>Tradeoff Decision: We intentionally catch errors and gracefully fall back to JDK TLS or
-   * Conscrypt defaults rather than failing fast. Because Conscrypt depends on native JNI libraries
-   * that may not be available or compatible across all user environments (e.g. non-x86
-   * architectures, musl libc, custom runtimes), failing fast would cause breaking outages for
-   * existing customers upgrading the SDK. We accept the tradeoff of a potential silent fallback to
-   * classical TLS (logged at WARNING level) in exchange for maintaining high availability and
-   * backward compatibility across all client environments.
+   * <p>Note: Conscrypt native JNI libraries may not be available or compatible across all
+   * environments. If Conscrypt is not available, transport creation gracefully falls back to the
+   * default JDK TLS provider. Users can customize the {@link NetHttpTransport.Builder} or security
+   * provider if needed.
    */
-  public static NetHttpTransport.Builder createPqcHttpTransportBuilder() {
+  public static NetHttpTransport.Builder createConscryptHttpTransportBuilder() {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
     if (conscryptProvider == null) {

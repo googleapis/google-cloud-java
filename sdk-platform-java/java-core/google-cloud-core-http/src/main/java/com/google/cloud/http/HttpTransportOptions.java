@@ -69,7 +69,7 @@ public class HttpTransportOptions implements TransportOptions {
         }
       }
 
-      return HttpJsonTransportUtils.createPqcHttpTransportBuilder().build();
+      return HttpJsonTransportUtils.createConscryptHttpTransportBuilder().build();
     }
   }
 
