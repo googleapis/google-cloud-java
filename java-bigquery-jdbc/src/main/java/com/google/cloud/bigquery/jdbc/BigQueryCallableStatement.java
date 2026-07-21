@@ -259,19 +259,19 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public Date getDate(int parameterIndex, Calendar cal) throws SQLException {
+  public Date getDate(int parameterIndex, Calendar calendar) throws SQLException {
     checkClosed();
     Date date = getDate(parameterIndex);
     this.lastReadWasNull = (date == null);
-    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
+    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, calendar);
   }
 
   @Override
-  public Date getDate(String parameterName, Calendar cal) throws SQLException {
+  public Date getDate(String parameterName, Calendar calendar) throws SQLException {
     checkClosed();
     Date date = getDate(parameterName);
     this.lastReadWasNull = (date == null);
-    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
+    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, calendar);
   }
 
   @Override
@@ -629,19 +629,19 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public Time getTime(int parameterIndex, Calendar cal) throws SQLException {
+  public Time getTime(int parameterIndex, Calendar calendar) throws SQLException {
     checkClosed();
     Time time = getTime(parameterIndex);
     this.lastReadWasNull = (time == null);
-    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
+    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, calendar);
   }
 
   @Override
-  public Time getTime(String parameterName, Calendar cal) throws SQLException {
+  public Time getTime(String parameterName, Calendar calendar) throws SQLException {
     checkClosed();
     Time time = getTime(parameterName);
     this.lastReadWasNull = (time == null);
-    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
+    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, calendar);
   }
 
   @Override
@@ -669,19 +669,19 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public Timestamp getTimestamp(int parameterIndex, Calendar cal) throws SQLException {
+  public Timestamp getTimestamp(int parameterIndex, Calendar calendar) throws SQLException {
     checkClosed();
     Timestamp ts = getTimestamp(parameterIndex);
     this.lastReadWasNull = (ts == null);
-    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, cal);
+    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, calendar);
   }
 
   @Override
-  public Timestamp getTimestamp(String parameterName, Calendar cal) throws SQLException {
+  public Timestamp getTimestamp(String parameterName, Calendar calendar) throws SQLException {
     checkClosed();
     Timestamp ts = getTimestamp(parameterName);
     this.lastReadWasNull = (ts == null);
-    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, cal);
+    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, calendar);
   }
 
   @Override
@@ -703,12 +703,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(int paramIndex, int sqlType) throws SQLException {
-    LOG.finer("registerOutParameter: paramIndex %s, sqlType %s", paramIndex, sqlType);
+  public void registerOutParameter(int parameterIndex, int sqlType) throws SQLException {
+    LOG.finer("registerOutParameter: parameterIndex %s, sqlType %s", parameterIndex, sqlType);
     checkClosed();
     try {
       this.parameterHandler.setParameter(
-          paramIndex,
+          parameterIndex,
           null,
           BigQueryJdbcTypeMappings.getJavaType(sqlType),
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
@@ -721,12 +721,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(String paramName, int sqlType) throws SQLException {
-    LOG.finer("registerOutParameter: paramName %s, sqlType %s", paramName, sqlType);
+  public void registerOutParameter(String parameterName, int sqlType) throws SQLException {
+    LOG.finer("registerOutParameter: parameterName %s, sqlType %s", parameterName, sqlType);
     checkClosed();
     try {
       this.parameterHandler.setParameter(
-          paramName,
+          parameterName,
           null,
           BigQueryJdbcTypeMappings.getJavaType(sqlType),
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
@@ -739,9 +739,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(int paramIndex, int sqlType, int scale) throws SQLException {
+  public void registerOutParameter(int parameterIndex, int sqlType, int scale) throws SQLException {
     LOG.finer(
-        "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramIndex, sqlType, scale);
+        "registerOutParameter: parameterIndex %s, sqlType %s, scale %s", parameterIndex, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
       IllegalArgumentException ex =
@@ -752,7 +752,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     }
     try {
       this.parameterHandler.setParameter(
-          paramIndex,
+          parameterIndex,
           null,
           BigQueryJdbcTypeMappings.getJavaType(sqlType),
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
@@ -765,19 +765,19 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(int paramIndex, int sqlType, String typeName)
+  public void registerOutParameter(int parameterIndex, int sqlType, String typeName)
       throws SQLException {
     LOG.finer(
-        "registerOutParameter: paramIndex %s, sqlType %s, typeName %s",
-        paramIndex, sqlType, typeName);
+        "registerOutParameter: parameterIndex %s, sqlType %s, typeName %s",
+        parameterIndex, sqlType, typeName);
     // fully qualified sql typeName is not supported by the driver and hence ignored.
-    registerOutParameter(paramIndex, sqlType);
+    registerOutParameter(parameterIndex, sqlType);
   }
 
   @Override
-  public void registerOutParameter(String paramName, int sqlType, int scale) throws SQLException {
+  public void registerOutParameter(String parameterName, int sqlType, int scale) throws SQLException {
     LOG.finer(
-        "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramName, sqlType, scale);
+        "registerOutParameter: parameterName %s, sqlType %s, scale %s", parameterName, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
       IllegalArgumentException ex =
@@ -788,7 +788,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     }
     try {
       this.parameterHandler.setParameter(
-          paramName,
+          parameterName,
           null,
           BigQueryJdbcTypeMappings.getJavaType(sqlType),
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
@@ -801,91 +801,91 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void registerOutParameter(String paramName, int sqlType, String typeName)
+  public void registerOutParameter(String parameterName, int sqlType, String typeName)
       throws SQLException {
     LOG.finer(
-        "registerOutParameter: paramIndex %s, sqlType %s, typeName %s",
-        paramName, sqlType, typeName);
+        "registerOutParameter: parameterName %s, sqlType %s, typeName %s",
+        parameterName, sqlType, typeName);
     // fully qualified sql typeName is not supported by the driver and hence ignored.
-    registerOutParameter(paramName, sqlType);
+    registerOutParameter(parameterName, sqlType);
   }
 
   @Override
-  public void setAsciiStream(String parameterName, InputStream x) throws SQLException {
+  public void setAsciiStream(String parameterName, InputStream value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setAsciiStream(String parameterName, InputStream x, int length) throws SQLException {
+  public void setAsciiStream(String parameterName, InputStream value, int length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setAsciiStream(String parameterName, InputStream x, long length) throws SQLException {
+  public void setAsciiStream(String parameterName, InputStream value, long length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBigDecimal(String parameterName, BigDecimal x) throws SQLException {
-    if (x == null) {
+  public void setBigDecimal(String parameterName, BigDecimal value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.NUMERIC);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, BigDecimal.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, BigDecimal.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setBinaryStream(String parameterName, InputStream x) throws SQLException {
+  public void setBinaryStream(String parameterName, InputStream value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBinaryStream(String parameterName, InputStream x, int length) throws SQLException {
+  public void setBinaryStream(String parameterName, InputStream value, int length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBinaryStream(String parameterName, InputStream x, long length)
+  public void setBinaryStream(String parameterName, InputStream value, long length)
       throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBlob(String parameterName, Blob x) throws SQLException {
+  public void setBlob(String parameterName, Blob value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBlob(String parameterName, InputStream x) throws SQLException {
+  public void setBlob(String parameterName, InputStream value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBlob(String parameterName, InputStream x, long length) throws SQLException {
+  public void setBlob(String parameterName, InputStream value, long length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
   @Override
-  public void setBoolean(String parameterName, boolean x) throws SQLException {
+  public void setBoolean(String parameterName, boolean value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Boolean.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Boolean.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setByte(String parameterName, byte x) throws SQLException {
+  public void setByte(String parameterName, byte value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Byte.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Byte.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setBytes(String parameterName, byte[] x) throws SQLException {
-    if (x == null) {
+  public void setBytes(String parameterName, byte[] value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.VARBINARY);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, byte[].class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, byte[].class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
@@ -906,7 +906,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setClob(String parameterName, Clob x) throws SQLException {
+  public void setClob(String parameterName, Clob value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
@@ -921,52 +921,52 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setDate(String parameterName, Date x) throws SQLException {
-    if (x == null) {
+  public void setDate(String parameterName, Date value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.DATE);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, Date.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Date.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setDate(String parameterName, Date x, Calendar cal) throws SQLException {
+  public void setDate(String parameterName, Date value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterName, Types.DATE);
       return;
     }
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertDateToCalendar(x, cal),
+        BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar),
         Date.class,
         BigQueryStatementParameterType.IN,
         0);
   }
 
   @Override
-  public void setDouble(String parameterName, double x) throws SQLException {
+  public void setDouble(String parameterName, double value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Double.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Double.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setFloat(String parameterName, float x) throws SQLException {
+  public void setFloat(String parameterName, float value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Float.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Float.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setInt(String parameterName, int x) throws SQLException {
+  public void setInt(String parameterName, int value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Integer.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Integer.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setLong(String parameterName, long x) throws SQLException {
+  public void setLong(String parameterName, long value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Long.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Long.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
@@ -996,13 +996,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setNString(String parameterName, String x) throws SQLException {
-    if (x == null) {
+  public void setNString(String parameterName, String value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.NVARCHAR);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, String.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, String.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
@@ -1022,23 +1022,23 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setObject(String parameterName, Object x) throws SQLException {
-    if (x == null) {
+  public void setObject(String parameterName, Object value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.OTHER);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, x.getClass(), BigQueryStatementParameterType.IN, 0);
+        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setObject(String parameterName, Object x, int targetSqlType) throws SQLException {
-    if (x == null) {
+  public void setObject(String parameterName, Object value, int targetSqlType) throws SQLException {
+    if (value == null) {
       setNull(parameterName, targetSqlType);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, x.getClass(), BigQueryStatementParameterType.IN, 0);
+        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, 0);
     StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
@@ -1053,14 +1053,14 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setObject(String parameterName, Object x, int targetSqlType, int scaleOrLength)
+  public void setObject(String parameterName, Object value, int targetSqlType, int scaleOrLength)
       throws SQLException {
-    if (x == null) {
+    if (value == null) {
       setNull(parameterName, targetSqlType);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, x.getClass(), BigQueryStatementParameterType.IN, scaleOrLength);
+        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, scaleOrLength);
     StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
@@ -1075,7 +1075,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setRowId(String parameterName, RowId x) throws SQLException {
+  public void setRowId(String parameterName, RowId value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
@@ -1085,73 +1085,73 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
-  public void setShort(String parameterName, short x) throws SQLException {
+  public void setShort(String parameterName, short value) throws SQLException {
     this.parameterHandler.setParameter(
-        parameterName, x, Short.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Short.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setString(String parameterName, String x) throws SQLException {
-    if (x == null) {
+  public void setString(String parameterName, String value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.VARCHAR);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, String.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, String.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setTime(String parameterName, Time x) throws SQLException {
-    if (x == null) {
+  public void setTime(String parameterName, Time value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.TIME);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, Time.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Time.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setTime(String parameterName, Time x, Calendar cal) throws SQLException {
+  public void setTime(String parameterName, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterName, Types.TIME);
       return;
     }
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertTimeWithCalendar(x, cal),
+        BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar),
         Time.class,
         BigQueryStatementParameterType.IN,
         0);
   }
 
   @Override
-  public void setTimestamp(String parameterName, Timestamp x) throws SQLException {
-    if (x == null) {
+  public void setTimestamp(String parameterName, Timestamp value) throws SQLException {
+    if (value == null) {
       setNull(parameterName, Types.TIMESTAMP);
       return;
     }
     this.parameterHandler.setParameter(
-        parameterName, x, Timestamp.class, BigQueryStatementParameterType.IN, 0);
+        parameterName, value, Timestamp.class, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
-  public void setTimestamp(String parameterName, Timestamp x, Calendar cal) throws SQLException {
+  public void setTimestamp(String parameterName, Timestamp value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterName, Types.TIMESTAMP);
       return;
     }
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(x, cal),
+        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar),
         Timestamp.class,
         BigQueryStatementParameterType.IN,
         0);
   }
 
   @Override
-  public void setURL(String parameterName, URL val) throws SQLException {
+  public void setURL(String parameterName, URL value) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("Data type not supported");
   }
 
