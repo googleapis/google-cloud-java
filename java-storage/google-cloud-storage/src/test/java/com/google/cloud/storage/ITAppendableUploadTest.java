@@ -302,7 +302,12 @@ public final class ITAppendableUploadTest {
       assertThat(written).isEqualTo(p.content.length());
 
       String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
-      channel.finalizeAndClose(badCrc);
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
     }
 
     try {
@@ -338,7 +343,12 @@ public final class ITAppendableUploadTest {
 
     String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
-      channel.finalizeAndClose(badCrc);
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
     }
 
     try {
@@ -412,7 +422,12 @@ public final class ITAppendableUploadTest {
       assertThat(written).isEqualTo(p.content.length());
 
       String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
-      channel.finalizeAndClose(badCrc);
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
     }
 
     try {
