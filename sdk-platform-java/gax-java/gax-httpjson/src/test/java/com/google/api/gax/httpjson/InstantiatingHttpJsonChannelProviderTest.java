@@ -214,11 +214,18 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .build();
     NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
     Object factory = getPrivateField(transport, "sslSocketFactory");
-    assertThat(factory).isNotNull();
-    assertThat(factory.getClass().getName())
-        .isEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
-    Object configurator = getPrivateField(factory, "configurator");
-    assertThat(configurator).isNotNull();
+    if (conscryptLoaded) {
+      assertThat(factory).isNotNull();
+      assertThat(factory.getClass().getName())
+          .isEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
+      Object configurator = getPrivateField(factory, "configurator");
+      assertThat(configurator).isNotNull();
+    } else {
+      if (factory != null) {
+        assertThat(factory.getClass().getName())
+            .isNotEqualTo("com.google.api.client.http.javanet.ConfigurableSSLSocketFactory");
+      }
+    }
   }
 
   @Test

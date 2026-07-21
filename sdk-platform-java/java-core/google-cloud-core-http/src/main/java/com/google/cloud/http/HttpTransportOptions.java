@@ -77,21 +77,16 @@ public class HttpTransportOptions implements TransportOptions {
       NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
       try {
         builder.setSecurityProvider(Conscrypt.newProvider());
-      } catch (Throwable t) {
-        // Conscrypt native libraries not available, fallback to standard JDK TLS
-      }
-
-      builder.setSslSocketConfigurator(
-          socket -> {
-            try {
+        builder.setSslSocketConfigurator(
+            socket -> {
               if (Conscrypt.isConscrypt(socket)) {
                 Conscrypt.setNamedGroups(
                     socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
               }
-            } catch (Throwable t) {
-              // Conscrypt not available or socket is standard JDK TLS socket
-            }
-          });
+            });
+      } catch (Throwable t) {
+        // Conscrypt native libraries not available, fallback to standard JDK TLS
+      }
 
       return builder.build();
     }

@@ -77,8 +77,6 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
    *       203 (ML-KEM-768) standard.
    *   <li>{@code SecP256r1MLKEM768}: Secondary preferred group. Combines NIST P-256 (SecP256r1)
    *       with NIST FIPS 203 (ML-KEM-768) for FIPS compliance.
-   *   <li>{@code X25519Kyber768Draft00}: Legacy pre-FIPS draft fallback for endpoints deployed
-   *       prior to FIPS 203 finalization.
    *   <li>{@code X25519}: Classical non-quantum key exchange fallback.
    * </ul>
    */
@@ -212,20 +210,15 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     try {
       builder.setSecurityProvider(Conscrypt.newProvider());
-    } catch (Throwable t) {
-      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
-    }
-
-    builder.setSslSocketConfigurator(
-        socket -> {
-          try {
+      builder.setSslSocketConfigurator(
+          socket -> {
             if (Conscrypt.isConscrypt(socket)) {
               Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
             }
-          } catch (Throwable t) {
-            // Conscrypt not available or socket is standard JDK TLS socket
-          }
-        });
+          });
+    } catch (Throwable t) {
+      LOG.log(Level.FINE, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+    }
 
     if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
