@@ -129,156 +129,176 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setBoolean(int parameterIndex, boolean x) throws SQLException {
+  public void setBoolean(int parameterIndex, boolean value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Boolean.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Boolean.class);
   }
 
   @Override
-  public void setByte(int parameterIndex, byte x) throws SQLException {
+  public void setByte(int parameterIndex, byte value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Byte.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Byte.class);
   }
 
   @Override
-  public void setShort(int parameterIndex, short x) throws SQLException {
+  public void setShort(int parameterIndex, short value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Short.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Short.class);
   }
 
   @Override
-  public void setInt(int parameterIndex, int x) throws SQLException {
+  public void setInt(int parameterIndex, int value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Integer.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Integer.class);
   }
 
   @Override
-  public void setLong(int parameterIndex, long x) throws SQLException {
+  public void setLong(int parameterIndex, long value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Long.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Long.class);
   }
 
   @Override
-  public void setFloat(int parameterIndex, float x) throws SQLException {
+  public void setFloat(int parameterIndex, float value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Float.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Float.class);
   }
 
   @Override
-  public void setDouble(int parameterIndex, double x) throws SQLException {
+  public void setDouble(int parameterIndex, double value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Double.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Double.class);
   }
 
   @Override
-  public void setBigDecimal(int parameterIndex, BigDecimal x) throws SQLException {
+  public void setBigDecimal(int parameterIndex, BigDecimal value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, BigDecimal.class);
-  }
-
-  @Override
-  public void setString(int parameterIndex, String x) throws SQLException {
-    checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, String.class);
-  }
-
-  @Override
-  public void setBytes(int parameterIndex, byte[] x) throws SQLException {
-    checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, byte[].class);
-  }
-
-  @Override
-  public void setDate(int parameterIndex, Date x) throws SQLException {
-    checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x.toString(), String.class);
-  }
-
-  @Override
-  public void setTime(int parameterIndex, Time x) throws SQLException {
-    checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x.toString(), String.class);
-  }
-
-  @Override
-  public void setTimestamp(int parameterIndex, Timestamp x) throws SQLException {
-    checkClosed();
-    if (x == null) {
-      this.parameterHandler.setParameter(parameterIndex, null, String.class);
+    if (value == null) {
+      setNull(parameterIndex, Types.NUMERIC);
       return;
     }
-    Timestamp copy = new Timestamp(x.getTime());
-    copy.setNanos((x.getNanos() / 1000) * 1000);
+    this.parameterHandler.setParameter(parameterIndex, value, BigDecimal.class);
+  }
+
+  @Override
+  public void setString(int parameterIndex, String value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.VARCHAR);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value, String.class);
+  }
+
+  @Override
+  public void setBytes(int parameterIndex, byte[] value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.VARBINARY);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value, byte[].class);
+  }
+
+  @Override
+  public void setDate(int parameterIndex, Date value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.DATE);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value.toString(), String.class);
+  }
+
+  @Override
+  public void setTime(int parameterIndex, Time value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.TIME);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value.toString(), String.class);
+  }
+
+  @Override
+  public void setTimestamp(int parameterIndex, Timestamp value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.TIMESTAMP);
+      return;
+    }
+    Timestamp copy = new Timestamp(value.getTime());
+    copy.setNanos((value.getNanos() / 1000) * 1000);
     this.parameterHandler.setParameter(parameterIndex, copy.toString(), String.class);
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setAsciiStream(int parameterIndex, InputStream value, int length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
   @Deprecated
   @SuppressWarnings("deprecation")
-  public void setUnicodeStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setUnicodeStream(int parameterIndex, InputStream value, int length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setUnicodeStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, int length) throws SQLException {
+  public void setBinaryStream(int parameterIndex, InputStream value, int length) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType) throws SQLException {
+  public void setObject(int parameterIndex, Object value, int targetSqlType) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterIndex, targetSqlType);
       return;
     }
-    if (setTemporalObject(parameterIndex, x)) {
+    if (setTemporalObject(parameterIndex, value)) {
       return;
     }
     Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
-    this.parameterHandler.setParameter(parameterIndex, x, javaType);
+    this.parameterHandler.setParameter(parameterIndex, value, javaType);
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x) throws SQLException {
+  public void setObject(int parameterIndex, Object value) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterIndex, Types.NULL);
       return;
     }
-    if (setTemporalObject(parameterIndex, x)) {
+    if (setTemporalObject(parameterIndex, value)) {
       return;
     }
-    this.parameterHandler.setParameter(parameterIndex, x, x.getClass());
+    this.parameterHandler.setParameter(parameterIndex, value, value.getClass());
   }
 
-  private boolean setTemporalObject(int parameterIndex, Object x) throws SQLException {
-    if (x instanceof LocalDate) {
-      setDate(parameterIndex, Date.valueOf((LocalDate) x));
+  private boolean setTemporalObject(int parameterIndex, Object value) throws SQLException {
+    if (value instanceof LocalDate) {
+      setDate(parameterIndex, Date.valueOf((LocalDate) value));
       return true;
     }
-    if (x instanceof LocalTime) {
-      setTime(parameterIndex, Time.valueOf((LocalTime) x));
+    if (value instanceof LocalTime) {
+      setTime(parameterIndex, Time.valueOf((LocalTime) value));
       return true;
     }
-    if (x instanceof LocalDateTime) {
-      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) x));
+    if (value instanceof LocalDateTime) {
+      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) value));
       return true;
     }
-    if (x instanceof OffsetDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) x).toInstant()));
+    if (value instanceof OffsetDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) value).toInstant()));
       return true;
     }
-    if (x instanceof Instant) {
-      setTimestamp(parameterIndex, Timestamp.from((Instant) x));
+    if (value instanceof Instant) {
+      setTimestamp(parameterIndex, Timestamp.from((Instant) value));
       return true;
     }
-    if (x instanceof ZonedDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) x).toInstant()));
+    if (value instanceof ZonedDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) value).toInstant()));
       return true;
     }
     return false;
@@ -504,9 +524,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setArray(int parameterIndex, Array x) throws SQLException {
+  public void setArray(int parameterIndex, Array value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Array.class);
+    if (value == null) {
+      setNull(parameterIndex, Types.ARRAY);
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value, Array.class);
   }
 
   @Override
@@ -519,33 +543,33 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setDate(int parameterIndex, Date x, Calendar cal) throws SQLException {
+  public void setDate(int parameterIndex, Date value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterIndex, Types.DATE);
       return;
     }
-    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateWithCalendar(x, cal));
+    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateWithCalendar(value, calendar));
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x, Calendar cal) throws SQLException {
+  public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterIndex, Types.TIME);
       return;
     }
-    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(x, cal));
+    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x, Calendar cal) throws SQLException {
+  public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (x == null) {
+    if (value == null) {
       setNull(parameterIndex, Types.TIMESTAMP);
       return;
     }
-    setTimestamp(parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(x, cal));
+    setTimestamp(parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override
@@ -612,10 +636,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
    * #setObject(int, Object, int)}.
    */
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType, int scaleOrLength)
+  public void setObject(int parameterIndex, Object value, int targetSqlType, int scaleOrLength)
       throws SQLException {
     checkClosed();
-    setObject(parameterIndex, x, targetSqlType);
+    setObject(parameterIndex, value, targetSqlType);
   }
 
   @Override
