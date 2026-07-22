@@ -313,9 +313,10 @@ final class BigQueryJdbcProxyUtility {
 
   private static KeyStore loadKeyStore(String type, String provider)
       throws GeneralSecurityException {
-    String resolvedType = type != null ? type : KeyStore.getDefaultType();
-    return provider != null
-        ? KeyStore.getInstance(resolvedType, provider)
+    String resolvedType =
+        (type != null && !type.trim().isEmpty()) ? type.trim() : KeyStore.getDefaultType();
+    return (provider != null && !provider.trim().isEmpty())
+        ? KeyStore.getInstance(resolvedType, provider.trim())
         : KeyStore.getInstance(resolvedType);
   }
 

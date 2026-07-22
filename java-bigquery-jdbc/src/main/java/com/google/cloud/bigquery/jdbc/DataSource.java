@@ -598,13 +598,12 @@ public class DataSource implements javax.sql.DataSource {
     }
     if (this.sslTrustStoreType != null) {
       connectionProperties.setProperty(
-          BigQueryJdbcUrlUtility.SSL_TRUST_STORE_TYPE_PROPERTY_NAME,
-          String.valueOf(this.sslTrustStoreType));
+          BigQueryJdbcUrlUtility.SSL_TRUST_STORE_TYPE_PROPERTY_NAME, this.sslTrustStoreType);
     }
     if (this.sslTrustStoreProvider != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME,
-          String.valueOf(this.sslTrustStoreProvider));
+          this.sslTrustStoreProvider);
     }
     if (this.labels != null) {
       connectionProperties.setProperty(
