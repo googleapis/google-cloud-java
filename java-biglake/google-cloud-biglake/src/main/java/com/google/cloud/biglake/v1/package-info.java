@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to BigLake API
+ * A client to Lakehouse API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

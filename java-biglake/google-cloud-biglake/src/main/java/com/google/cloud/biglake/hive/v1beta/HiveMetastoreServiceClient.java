@@ -437,6 +437,24 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> FailoverHiveCatalog</td>
+ *      <td><p> Failover the catalog to a new primary replica region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> failoverHiveCatalog(FailoverHiveCatalogRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> failoverHiveCatalog(String name, String primaryReplica)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> failoverHiveCatalogCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -2888,6 +2906,109 @@ public class HiveMetastoreServiceClient implements BackgroundResource {
   public final ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable() {
     return stub.listPartitionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Failover the catalog to a new primary replica region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HiveMetastoreServiceClient hiveMetastoreServiceClient =
+   *     HiveMetastoreServiceClient.create()) {
+   *   String name = "name3373707";
+   *   String primaryReplica = "primaryReplica-389090218";
+   *   FailoverHiveCatalogResponse response =
+   *       hiveMetastoreServiceClient.failoverHiveCatalog(name, primaryReplica);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the catalog in the form
+   *     "projects/{project_id}/catalogs/{catalog_id}"
+   * @param primaryReplica Required. The region being assigned as the new primary replica region.
+   *     For example "us-east1". This must be one of the replica regions in the catalog's list of
+   *     replicas marked as a "secondary".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FailoverHiveCatalogResponse failoverHiveCatalog(String name, String primaryReplica) {
+    FailoverHiveCatalogRequest request =
+        FailoverHiveCatalogRequest.newBuilder()
+            .setName(name)
+            .setPrimaryReplica(primaryReplica)
+            .build();
+    return failoverHiveCatalog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Failover the catalog to a new primary replica region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HiveMetastoreServiceClient hiveMetastoreServiceClient =
+   *     HiveMetastoreServiceClient.create()) {
+   *   FailoverHiveCatalogRequest request =
+   *       FailoverHiveCatalogRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPrimaryReplica("primaryReplica-389090218")
+   *           .setValidateOnly(true)
+   *           .setConditionalFailoverReplicationTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   FailoverHiveCatalogResponse response =
+   *       hiveMetastoreServiceClient.failoverHiveCatalog(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FailoverHiveCatalogResponse failoverHiveCatalog(FailoverHiveCatalogRequest request) {
+    return failoverHiveCatalogCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Failover the catalog to a new primary replica region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HiveMetastoreServiceClient hiveMetastoreServiceClient =
+   *     HiveMetastoreServiceClient.create()) {
+   *   FailoverHiveCatalogRequest request =
+   *       FailoverHiveCatalogRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPrimaryReplica("primaryReplica-389090218")
+   *           .setValidateOnly(true)
+   *           .setConditionalFailoverReplicationTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FailoverHiveCatalogResponse> future =
+   *       hiveMetastoreServiceClient.failoverHiveCatalogCallable().futureCall(request);
+   *   // Do something.
+   *   FailoverHiveCatalogResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable() {
+    return stub.failoverHiveCatalogCallable();
   }
 
   @Override

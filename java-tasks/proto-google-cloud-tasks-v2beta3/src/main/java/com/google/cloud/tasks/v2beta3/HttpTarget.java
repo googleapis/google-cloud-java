@@ -26,8 +26,8 @@ package com.google.cloud.tasks.v2beta3;
  * <pre>
  * HTTP target.
  *
- * When specified as a [Queue][target_type], all the tasks with [HttpRequest]
- * will be overridden according to the target.
+ * When specified as a [Queue][google.cloud.tasks.v2beta3.Queue], all the tasks
+ * with [HttpRequest] will be overridden according to the target.
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.HttpTarget}
@@ -905,7 +905,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -918,7 +923,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -931,7 +941,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -994,7 +1009,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1010,7 +1030,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1028,7 +1053,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * header embodying a key and a value.
+     * Header embodying a key and a value.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1382,7 +1412,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1397,7 +1432,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1418,7 +1458,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1441,7 +1486,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1462,7 +1512,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1490,7 +1545,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1510,7 +1570,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1525,7 +1590,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1544,7 +1614,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * header embodying a key and a value.
+       * Header embodying a key and a value.
+       *
+       * Do not put business sensitive or personally identifying data in the HTTP
+       * Header Override Configuration or other similar fields in accordance with
+       * Section 12 (Resource Fields) of the
+       * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
        * </pre>
        *
        * <code>.google.cloud.tasks.v2beta3.HttpTarget.Header header = 1;</code>
@@ -1738,9 +1813,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * The HTTP method to use for the request.
    *
    * When specified, it overrides
-   * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-   * task. Note that if the value is set to [HttpMethod][GET] the
-   * [HttpRequest][body] of the task will be ignored at execution time.
+   * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+   * for the task. Note that if the value is set to
+   * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+   * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+   * will be ignored at execution time.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -1759,9 +1836,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * The HTTP method to use for the request.
    *
    * When specified, it overrides
-   * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-   * task. Note that if the value is set to [HttpMethod][GET] the
-   * [HttpRequest][body] of the task will be ignored at execution time.
+   * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+   * for the task. Note that if the value is set to
+   * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+   * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+   * will be ignored at execution time.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -1815,6 +1894,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    *
    * The size of the headers must be less than 80KB.
    * Queue-level headers to override headers of all the tasks in the queue.
+   *
+   * Do not put business sensitive or personally identifying data in the HTTP
+   * Header Override Configuration or other similar fields in accordance with
+   * Section 12 (Resource Fields) of the
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -1861,6 +1945,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    *
    * The size of the headers must be less than 80KB.
    * Queue-level headers to override headers of all the tasks in the queue.
+   *
+   * Do not put business sensitive or personally identifying data in the HTTP
+   * Header Override Configuration or other similar fields in accordance with
+   * Section 12 (Resource Fields) of the
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -1907,6 +1996,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    *
    * The size of the headers must be less than 80KB.
    * Queue-level headers to override headers of all the tasks in the queue.
+   *
+   * Do not put business sensitive or personally identifying data in the HTTP
+   * Header Override Configuration or other similar fields in accordance with
+   * Section 12 (Resource Fields) of the
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -1952,6 +2046,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    *
    * The size of the headers must be less than 80KB.
    * Queue-level headers to override headers of all the tasks in the queue.
+   *
+   * Do not put business sensitive or personally identifying data in the HTTP
+   * Header Override Configuration or other similar fields in accordance with
+   * Section 12 (Resource Fields) of the
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -1997,6 +2096,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    *
    * The size of the headers must be less than 80KB.
    * Queue-level headers to override headers of all the tasks in the queue.
+   *
+   * Do not put business sensitive or personally identifying data in the HTTP
+   * Header Override Configuration or other similar fields in accordance with
+   * Section 12 (Resource Fields) of the
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -2016,11 +2120,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-   * will be generated and attached as the `Authorization` header in the HTTP
+   * is generated and attached as the `Authorization` header in the HTTP
    * request.
    *
-   * This type of authorization should generally only be used when calling
-   * Google APIs hosted on *.googleapis.com.
+   * This type of authorization should generally be used only when calling
+   * Google APIs hosted on *.googleapis.com. Note that both the service
+   * account email and the scope MUST be specified when using the queue-level
+   * authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -2038,11 +2144,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-   * will be generated and attached as the `Authorization` header in the HTTP
+   * is generated and attached as the `Authorization` header in the HTTP
    * request.
    *
-   * This type of authorization should generally only be used when calling
-   * Google APIs hosted on *.googleapis.com.
+   * This type of authorization should generally be used only when calling
+   * Google APIs hosted on *.googleapis.com. Note that both the service
+   * account email and the scope MUST be specified when using the queue-level
+   * authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -2063,11 +2171,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-   * will be generated and attached as the `Authorization` header in the HTTP
+   * is generated and attached as the `Authorization` header in the HTTP
    * request.
    *
-   * This type of authorization should generally only be used when calling
-   * Google APIs hosted on *.googleapis.com.
+   * This type of authorization should generally be used only when calling
+   * Google APIs hosted on *.googleapis.com. Note that both the service
+   * account email and the scope MUST be specified when using the queue-level
+   * authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -2088,12 +2198,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-   * token will be generated and attached as an `Authorization` header in the
+   * token is generated and attached as an `Authorization` header in the
    * HTTP request.
    *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
-   * yourself.
+   * yourself. Note that both the service account email and the audience MUST
+   * be specified when using the queue-level authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2111,12 +2222,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-   * token will be generated and attached as an `Authorization` header in the
+   * token is generated and attached as an `Authorization` header in the
    * HTTP request.
    *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
-   * yourself.
+   * yourself. Note that both the service account email and the audience MUST
+   * be specified when using the queue-level authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2137,12 +2249,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If specified, an
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-   * token will be generated and attached as an `Authorization` header in the
+   * token is generated and attached as an `Authorization` header in the
    * HTTP request.
    *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
-   * yourself.
+   * yourself. Note that both the service account email and the audience MUST
+   * be specified when using the queue-level authorization override.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2387,8 +2500,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
    * <pre>
    * HTTP target.
    *
-   * When specified as a [Queue][target_type], all the tasks with [HttpRequest]
-   * will be overridden according to the target.
+   * When specified as a [Queue][google.cloud.tasks.v2beta3.Queue], all the tasks
+   * with [HttpRequest] will be overridden according to the target.
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.HttpTarget}
@@ -2910,9 +3023,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * The HTTP method to use for the request.
      *
      * When specified, it overrides
-     * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-     * task. Note that if the value is set to [HttpMethod][GET] the
-     * [HttpRequest][body] of the task will be ignored at execution time.
+     * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+     * for the task. Note that if the value is set to
+     * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+     * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+     * will be ignored at execution time.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -2931,9 +3046,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * The HTTP method to use for the request.
      *
      * When specified, it overrides
-     * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-     * task. Note that if the value is set to [HttpMethod][GET] the
-     * [HttpRequest][body] of the task will be ignored at execution time.
+     * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+     * for the task. Note that if the value is set to
+     * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+     * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+     * will be ignored at execution time.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -2955,9 +3072,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * The HTTP method to use for the request.
      *
      * When specified, it overrides
-     * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-     * task. Note that if the value is set to [HttpMethod][GET] the
-     * [HttpRequest][body] of the task will be ignored at execution time.
+     * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+     * for the task. Note that if the value is set to
+     * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+     * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+     * will be ignored at execution time.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -2978,9 +3097,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * The HTTP method to use for the request.
      *
      * When specified, it overrides
-     * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-     * task. Note that if the value is set to [HttpMethod][GET] the
-     * [HttpRequest][body] of the task will be ignored at execution time.
+     * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+     * for the task. Note that if the value is set to
+     * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+     * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+     * will be ignored at execution time.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -3005,9 +3126,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * The HTTP method to use for the request.
      *
      * When specified, it overrides
-     * [HttpRequest][google.cloud.tasks.v2beta3.HttpTarget.http_method] for the
-     * task. Note that if the value is set to [HttpMethod][GET] the
-     * [HttpRequest][body] of the task will be ignored at execution time.
+     * [HttpRequest.http_method][google.cloud.tasks.v2beta3.HttpRequest.http_method]
+     * for the task. Note that if the value is set to
+     * [HttpMethod.GET][google.cloud.tasks.v2beta3.HttpMethod.GET] the
+     * [HttpRequest.body][google.cloud.tasks.v2beta3.HttpRequest.body] of the task
+     * will be ignored at execution time.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 2;</code>
@@ -3074,6 +3197,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3123,6 +3251,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3171,6 +3304,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3219,6 +3357,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3274,6 +3417,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3327,6 +3475,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3382,6 +3535,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3437,6 +3595,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3489,6 +3652,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3542,6 +3710,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3595,6 +3768,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3646,6 +3824,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3697,6 +3880,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3742,6 +3930,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3791,6 +3984,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3841,6 +4039,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3888,6 +4091,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3935,6 +4143,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      *
      * The size of the headers must be less than 80KB.
      * Queue-level headers to override headers of all the tasks in the queue.
+     *
+     * Do not put business sensitive or personally identifying data in the HTTP
+     * Header Override Configuration or other similar fields in accordance with
+     * Section 12 (Resource Fields) of the
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride header_overrides = 3;
@@ -3977,11 +4190,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -3999,11 +4214,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4031,11 +4248,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4060,11 +4279,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4087,11 +4308,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4127,11 +4350,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4159,11 +4384,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4178,11 +4405,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4205,11 +4434,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
-     * will be generated and attached as the `Authorization` header in the HTTP
+     * is generated and attached as the `Authorization` header in the HTTP
      * request.
      *
-     * This type of authorization should generally only be used when calling
-     * Google APIs hosted on *.googleapis.com.
+     * This type of authorization should generally be used only when calling
+     * Google APIs hosted on *.googleapis.com. Note that both the service
+     * account email and the scope MUST be specified when using the queue-level
+     * authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
@@ -4250,12 +4481,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4273,12 +4505,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4306,12 +4539,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4336,12 +4570,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4363,12 +4598,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4404,12 +4640,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4437,12 +4674,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4457,12 +4695,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -4485,12 +4724,13 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If specified, an
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
-     * token will be generated and attached as an `Authorization` header in the
+     * token is generated and attached as an `Authorization` header in the
      * HTTP request.
      *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
-     * yourself.
+     * yourself. Note that both the service account email and the audience MUST
+     * be specified when using the queue-level authorization override.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>

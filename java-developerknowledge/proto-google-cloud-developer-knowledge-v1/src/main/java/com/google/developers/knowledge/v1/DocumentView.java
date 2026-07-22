@@ -49,6 +49,7 @@ public enum DocumentView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Includes only the basic metadata fields:
+   *
    * - `name`
    * - `uri`
    * - `data_source`
@@ -56,6 +57,7 @@ public enum DocumentView implements com.google.protobuf.ProtocolMessageEnum {
    * - `description`
    * - `update_time`
    * - `view`
+   * - `content_length_bytes`
    *
    * This is the default of view for
    * [DeveloperKnowledge.SearchDocumentChunks][google.developers.knowledge.v1.DeveloperKnowledge.SearchDocumentChunks].
@@ -120,6 +122,7 @@ public enum DocumentView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Includes only the basic metadata fields:
+   *
    * - `name`
    * - `uri`
    * - `data_source`
@@ -127,6 +130,7 @@ public enum DocumentView implements com.google.protobuf.ProtocolMessageEnum {
    * - `description`
    * - `update_time`
    * - `view`
+   * - `content_length_bytes`
    *
    * This is the default of view for
    * [DeveloperKnowledge.SearchDocumentChunks][google.developers.knowledge.v1.DeveloperKnowledge.SearchDocumentChunks].
