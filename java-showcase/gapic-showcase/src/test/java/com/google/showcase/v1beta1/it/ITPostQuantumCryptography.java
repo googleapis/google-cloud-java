@@ -42,6 +42,7 @@ import java.util.List;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 import org.conscrypt.Conscrypt;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -102,12 +103,20 @@ public class ITPostQuantumCryptography {
   private static final String SECURE_ENDPOINT =
       System.getProperty("showcase.secure.endpoint", "localhost:7470");
 
+  private static SSLContext originalSslContext;
+
   @BeforeAll
   static void setUp() throws Exception {
     File certFile = new File(DEFAULT_CA_CERT_PATH);
     assertWithMessage("CA certificate file not found at " + DEFAULT_CA_CERT_PATH)
         .that(certFile.isFile())
         .isTrue();
+
+    try {
+      originalSslContext = SSLContext.getDefault();
+    } catch (Throwable t) {
+      // Ignore if default SSLContext cannot be retrieved
+    }
 
     // Register local Showcase CA cert in default SSLContext so the default NetHttpTransport trusts
     // the server
@@ -118,6 +127,17 @@ public class ITPostQuantumCryptography {
     SSLContext sslContext = SSLContext.getInstance("TLS");
     sslContext.init(null, tmf.getTrustManagers(), null);
     SSLContext.setDefault(sslContext);
+  }
+
+  @AfterAll
+  static void tearDown() {
+    if (originalSslContext != null) {
+      try {
+        SSLContext.setDefault(originalSslContext);
+      } catch (Throwable t) {
+        // Ignore during test cleanup
+      }
+    }
   }
 
   @Test
