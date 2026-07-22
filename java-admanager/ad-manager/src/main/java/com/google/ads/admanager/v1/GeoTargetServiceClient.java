@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetGeoTarget</td>
- *      <td><p> API to retrieve a `GeoTarget` object.</td>
+ *      <td><p> Retrieves a `GeoTarget` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListGeoTargets</td>
- *      <td><p> API to retrieve a list of `GeoTarget` objects.</td>
+ *      <td><p> Lists `GeoTarget` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -199,7 +199,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -310,7 +310,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -342,7 +342,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -406,7 +406,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -442,7 +442,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *

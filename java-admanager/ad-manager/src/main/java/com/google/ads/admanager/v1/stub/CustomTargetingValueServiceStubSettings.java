@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.GetCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingValueRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -125,6 +135,22 @@ public class CustomTargetingValueServiceStubSettings
           ListCustomTargetingValuesResponse,
           ListCustomTargetingValuesPagedResponse>
       listCustomTargetingValuesSettings;
+  private final UnaryCallSettings<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueSettings;
+  private final UnaryCallSettings<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesSettings;
+  private final UnaryCallSettings<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueSettings;
+  private final UnaryCallSettings<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesSettings;
+  private final UnaryCallSettings<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesSettings;
 
   private static final PagedListDescriptor<
           ListCustomTargetingValuesRequest, ListCustomTargetingValuesResponse, CustomTargetingValue>
@@ -214,6 +240,48 @@ public class CustomTargetingValueServiceStubSettings
     return listCustomTargetingValuesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createCustomTargetingValue. */
+  public UnaryCallSettings<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueSettings() {
+    return createCustomTargetingValueSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCustomTargetingValues. */
+  public UnaryCallSettings<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesSettings() {
+    return batchCreateCustomTargetingValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetingValue. */
+  public UnaryCallSettings<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueSettings() {
+    return updateCustomTargetingValueSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCustomTargetingValues. */
+  public UnaryCallSettings<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesSettings() {
+    return batchUpdateCustomTargetingValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCustomTargetingValues. */
+  public UnaryCallSettings<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesSettings() {
+    return batchActivateCustomTargetingValuesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchDeactivateCustomTargetingValues.
+   */
+  public UnaryCallSettings<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesSettings() {
+    return batchDeactivateCustomTargetingValuesSettings;
+  }
+
   public CustomTargetingValueServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -298,6 +366,18 @@ public class CustomTargetingValueServiceStubSettings
 
     getCustomTargetingValueSettings = settingsBuilder.getCustomTargetingValueSettings().build();
     listCustomTargetingValuesSettings = settingsBuilder.listCustomTargetingValuesSettings().build();
+    createCustomTargetingValueSettings =
+        settingsBuilder.createCustomTargetingValueSettings().build();
+    batchCreateCustomTargetingValuesSettings =
+        settingsBuilder.batchCreateCustomTargetingValuesSettings().build();
+    updateCustomTargetingValueSettings =
+        settingsBuilder.updateCustomTargetingValueSettings().build();
+    batchUpdateCustomTargetingValuesSettings =
+        settingsBuilder.batchUpdateCustomTargetingValuesSettings().build();
+    batchActivateCustomTargetingValuesSettings =
+        settingsBuilder.batchActivateCustomTargetingValuesSettings().build();
+    batchDeactivateCustomTargetingValuesSettings =
+        settingsBuilder.batchDeactivateCustomTargetingValuesSettings().build();
   }
 
   @Override
@@ -320,6 +400,23 @@ public class CustomTargetingValueServiceStubSettings
             ListCustomTargetingValuesResponse,
             ListCustomTargetingValuesPagedResponse>
         listCustomTargetingValuesSettings;
+    private final UnaryCallSettings.Builder<CreateCustomTargetingValueRequest, CustomTargetingValue>
+        createCustomTargetingValueSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+        batchCreateCustomTargetingValuesSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+        updateCustomTargetingValueSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+        batchUpdateCustomTargetingValuesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+        batchActivateCustomTargetingValuesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateCustomTargetingValuesRequest,
+            BatchDeactivateCustomTargetingValuesResponse>
+        batchDeactivateCustomTargetingValuesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -350,10 +447,24 @@ public class CustomTargetingValueServiceStubSettings
       getCustomTargetingValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomTargetingValuesSettings =
           PagedCallSettings.newBuilder(LIST_CUSTOM_TARGETING_VALUES_PAGE_STR_FACT);
+      createCustomTargetingValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateCustomTargetingValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomTargetingValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateCustomTargetingValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateCustomTargetingValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateCustomTargetingValuesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomTargetingValueSettings, listCustomTargetingValuesSettings);
+              getCustomTargetingValueSettings,
+              listCustomTargetingValuesSettings,
+              createCustomTargetingValueSettings,
+              batchCreateCustomTargetingValuesSettings,
+              updateCustomTargetingValueSettings,
+              batchUpdateCustomTargetingValuesSettings,
+              batchActivateCustomTargetingValuesSettings,
+              batchDeactivateCustomTargetingValuesSettings);
       initDefaults(this);
     }
 
@@ -362,10 +473,27 @@ public class CustomTargetingValueServiceStubSettings
 
       getCustomTargetingValueSettings = settings.getCustomTargetingValueSettings.toBuilder();
       listCustomTargetingValuesSettings = settings.listCustomTargetingValuesSettings.toBuilder();
+      createCustomTargetingValueSettings = settings.createCustomTargetingValueSettings.toBuilder();
+      batchCreateCustomTargetingValuesSettings =
+          settings.batchCreateCustomTargetingValuesSettings.toBuilder();
+      updateCustomTargetingValueSettings = settings.updateCustomTargetingValueSettings.toBuilder();
+      batchUpdateCustomTargetingValuesSettings =
+          settings.batchUpdateCustomTargetingValuesSettings.toBuilder();
+      batchActivateCustomTargetingValuesSettings =
+          settings.batchActivateCustomTargetingValuesSettings.toBuilder();
+      batchDeactivateCustomTargetingValuesSettings =
+          settings.batchDeactivateCustomTargetingValuesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomTargetingValueSettings, listCustomTargetingValuesSettings);
+              getCustomTargetingValueSettings,
+              listCustomTargetingValuesSettings,
+              createCustomTargetingValueSettings,
+              batchCreateCustomTargetingValuesSettings,
+              updateCustomTargetingValueSettings,
+              batchUpdateCustomTargetingValuesSettings,
+              batchActivateCustomTargetingValuesSettings,
+              batchDeactivateCustomTargetingValuesSettings);
     }
 
     private static Builder createDefault() {
@@ -388,6 +516,36 @@ public class CustomTargetingValueServiceStubSettings
 
       builder
           .listCustomTargetingValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCustomTargetingValueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateCustomTargetingValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateCustomTargetingValueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateCustomTargetingValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateCustomTargetingValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateCustomTargetingValuesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -422,6 +580,51 @@ public class CustomTargetingValueServiceStubSettings
             ListCustomTargetingValuesPagedResponse>
         listCustomTargetingValuesSettings() {
       return listCustomTargetingValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetingValue. */
+    public UnaryCallSettings.Builder<CreateCustomTargetingValueRequest, CustomTargetingValue>
+        createCustomTargetingValueSettings() {
+      return createCustomTargetingValueSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCustomTargetingValues. */
+    public UnaryCallSettings.Builder<
+            BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+        batchCreateCustomTargetingValuesSettings() {
+      return batchCreateCustomTargetingValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetingValue. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+        updateCustomTargetingValueSettings() {
+      return updateCustomTargetingValueSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCustomTargetingValues. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+        batchUpdateCustomTargetingValuesSettings() {
+      return batchUpdateCustomTargetingValuesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchActivateCustomTargetingValues.
+     */
+    public UnaryCallSettings.Builder<
+            BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+        batchActivateCustomTargetingValuesSettings() {
+      return batchActivateCustomTargetingValuesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchDeactivateCustomTargetingValues.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCustomTargetingValuesRequest,
+            BatchDeactivateCustomTargetingValuesResponse>
+        batchDeactivateCustomTargetingValuesSettings() {
+      return batchDeactivateCustomTargetingValuesSettings;
     }
 
     @Override

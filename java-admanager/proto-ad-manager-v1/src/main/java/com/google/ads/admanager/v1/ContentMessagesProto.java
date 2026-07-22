@@ -44,6 +44,14 @@ public final class ContentMessagesProto extends com.google.protobuf.GeneratedFil
       internal_static_google_ads_admanager_v1_Content_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_Content_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DaiIngestError_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DaiIngestError_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CmsContent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CmsContent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -55,41 +63,137 @@ public final class ContentMessagesProto extends com.google.protobuf.GeneratedFil
     java.lang.String[] descriptorData = {
       "\n"
           + ".google/ads/admanager/v1/content_messag"
-          + "es.proto\022\027google.ads.admanager.v1\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/resource.proto\"\261\001\n"
+          + "es.proto\022\027google.ads.admanager.v1\032+googl"
+          + "e/ads/admanager/v1/content_enums.proto\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\032\036google/protobuf/dura"
+          + "tion.proto\032\037google/protobuf/timestamp.proto\"\216\013\n"
           + "\007Content\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\003H\000\210\001\001:b\352A_\n"
-          + " admanager.googleapis.com/Content\022)net"
-          + "works/{network_code}/content/{content}*\007content2\007contentB\017\n\r"
-          + "_display_nameB\310\001\n"
-          + "\033com.google.ads.admanager.v1B\024ContentMessag"
-          + "esProtoP\001Z@google.golang.org/genproto/go"
-          + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
-          + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
-          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\014display_name\030\002 \001(\tB\003\340A\003H\000\210\001\001\022R\n"
+          + "\006status\030\003 \001"
+          + "(\01628.google.ads.admanager.v1.ContentStatusEnum.ContentStatusB\003\340A\003H\001\210\001\001\022m\n"
+          + "\025content_status_source\030\004 \001(\0162D.google.ads.adman"
+          + "ager.v1.ContentStatusSourceEnum.ContentStatusSourceB\003\340A\003H\002\210\001\001\022a\n"
+          + "\021hls_ingest_status\030\005 \001(\0162<.google.ads.admanager.v1.DaiIn"
+          + "gestStatusEnum.DaiIngestStatusB\003\340A\003H\003\210\001\001\022G\n"
+          + "\021hls_ingest_errors\030\006"
+          + " \003(\0132\'.google.ads.admanager.v1.DaiIngestErrorB\003\340A\003\022B\n"
+          + "\024last_hls_ingest_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\004\210\001\001\022b\n"
+          + "\022dash_ingest_status\030\010 \001(\0162<.google.ads.admanager.v1.DaiI"
+          + "ngestStatusEnum.DaiIngestStatusB\003\340A\003H\005\210\001\001\022H\n"
+          + "\022dash_ingest_errors\030\t"
+          + " \003(\0132\'.google.ads.admanager.v1.DaiIngestErrorB\003\340A\003\022C\n"
+          + "\025last_dash_ingest_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\006\210\001\001\0229\n"
+          + "\013import_time\030\013"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\007\210\001\001\0229\n"
+          + "\013update_time\030\014"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\010\210\001\001\022=\n"
+          + "\013cms_sources\030\r"
+          + " \003(\0132#.google.ads.admanager.v1.CmsContentB\003\340A\003\022G\n"
+          + "\017content_bundles\030\016 \003(\tB.\340A\003\372A(\n"
+          + "&admanager.googleapis.com/ContentBundle\022N\n"
+          + "\023cms_metadata_values\030\017 \003(\tB1\340A\003\372A+\n"
+          + ")admanager.googleapis.com/CmsMetadataValue\0225\n"
+          + "\010duration\030\020 \001(\0132\031.google.protobuf.DurationB\003\340A\003H"
+          + "\t\210\001\001:b\352A_\n"
+          + " admanager.googleapis"
+          + ".com/Content\022)networks/{network_code}/content/{content}*\007content2\007contentB\017\n\r"
+          + "_display_nameB\t\n"
+          + "\007_statusB\030\n"
+          + "\026_content_status_sourceB\024\n"
+          + "\022_hls_ingest_statusB\027\n"
+          + "\025_last_hls_ingest_timeB\025\n"
+          + "\023_dash_ingest_statusB\030\n"
+          + "\026_last_dash_ingest_timeB\016\n"
+          + "\014_import_timeB\016\n"
+          + "\014_update_timeB\013\n"
+          + "\t_duration\"\237\001\n"
+          + "\016DaiIngestError\022[\n"
+          + "\006reason\030\001 \001(\0162F.google.ads.adm"
+          + "anager.v1.DaiIngestErrorReasonEnum.DaiIngestErrorReasonH\000\210\001\001\022\031\n"
+          + "\007trigger\030\002 \001(\tB\003\340A\003H\001\210\001\001B\t\n"
+          + "\007_reasonB\n\n"
+          + "\010_trigger\"\353\001\n\n"
+          + "CmsContent\022K\n"
+          + "\016content_source\030\001 \001(\tB.\340A\003\372A(\n"
+          + "&admanager.googleapis.com/ContentSourceH\000\210\001\001\022-\n"
+          + "\033content_source_display_name\030\002 \001("
+          + "\tB\003\340A\003H\001\210\001\001\022\033\n"
+          + "\016cms_content_id\030\003 \001(\tH\002\210\001\001B\021\n"
+          + "\017_content_sourceB\036\n"
+          + "\034_content_source_display_nameB\021\n"
+          + "\017_cms_content_idB\314\002\n"
+          + "\033com.google.ads.admanager.v1B\024ContentMessagesPro"
+          + "toP\001Z@google.golang.org/genproto/googlea"
+          + "pis/ads/admanager/v1;admanager\252\002\027Google."
+          + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1\352A\200\001\n"
+          + "&admanager.googleapis.com/ContentSource\0227net"
+          + "works/{network_code}/contentSources/{content_source}*\016contentSources2\r"
+          + "contentSourceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.ContentEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_Content_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_ads_admanager_v1_Content_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Content_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName",
+              "Name",
+              "DisplayName",
+              "Status",
+              "ContentStatusSource",
+              "HlsIngestStatus",
+              "HlsIngestErrors",
+              "LastHlsIngestTime",
+              "DashIngestStatus",
+              "DashIngestErrors",
+              "LastDashIngestTime",
+              "ImportTime",
+              "UpdateTime",
+              "CmsSources",
+              "ContentBundles",
+              "CmsMetadataValues",
+              "Duration",
+            });
+    internal_static_google_ads_admanager_v1_DaiIngestError_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_ads_admanager_v1_DaiIngestError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DaiIngestError_descriptor,
+            new java.lang.String[] {
+              "Reason", "Trigger",
+            });
+    internal_static_google_ads_admanager_v1_CmsContent_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_CmsContent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CmsContent_descriptor,
+            new java.lang.String[] {
+              "ContentSource", "ContentSourceDisplayName", "CmsContentId",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.ContentEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

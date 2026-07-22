@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetOperatingSystem</td>
- *      <td><p> API to retrieve a `OperatingSystem` object.</td>
+ *      <td><p> Retrieves a `OperatingSystem` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListOperatingSystems</td>
- *      <td><p> API to retrieve a list of `OperatingSystem` objects.</td>
+ *      <td><p> Lists `OperatingSystem` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -201,7 +201,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -261,7 +261,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -290,7 +290,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -355,7 +355,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -387,7 +387,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -425,7 +425,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -462,7 +462,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *

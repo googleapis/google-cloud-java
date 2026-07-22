@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetDeviceCapability</td>
- *      <td><p> API to retrieve a `DeviceCapability` object.</td>
+ *      <td><p> Retrieves a `DeviceCapability` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListDeviceCapabilities</td>
- *      <td><p> API to retrieve a list of `DeviceCapability` objects.</td>
+ *      <td><p> Lists `DeviceCapability` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -201,7 +201,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCapability` object.
+   * Retrieves a `DeviceCapability` object.
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCapability` object.
+   * Retrieves a `DeviceCapability` object.
    *
    * <p>Sample code:
    *
@@ -261,7 +261,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCapability` object.
+   * Retrieves a `DeviceCapability` object.
    *
    * <p>Sample code:
    *
@@ -290,7 +290,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCapability` object.
+   * Retrieves a `DeviceCapability` object.
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCapability` objects.
+   * Lists `DeviceCapability` objects.
    *
    * <p>Sample code:
    *
@@ -355,7 +355,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCapability` objects.
+   * Lists `DeviceCapability` objects.
    *
    * <p>Sample code:
    *
@@ -387,7 +387,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCapability` objects.
+   * Lists `DeviceCapability` objects.
    *
    * <p>Sample code:
    *
@@ -425,7 +425,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCapability` objects.
+   * Lists `DeviceCapability` objects.
    *
    * <p>Sample code:
    *
@@ -462,7 +462,7 @@ public class DeviceCapabilityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCapability` objects.
+   * Lists `DeviceCapability` objects.
    *
    * <p>Sample code:
    *

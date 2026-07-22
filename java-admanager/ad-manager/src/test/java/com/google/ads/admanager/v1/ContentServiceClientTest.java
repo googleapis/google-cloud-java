@@ -29,7 +29,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Duration;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -81,6 +84,16 @@ public class ContentServiceClientTest {
         Content.newBuilder()
             .setName(ContentName.of("[NETWORK_CODE]", "[CONTENT]").toString())
             .setDisplayName("displayName1714148973")
+            .addAllHlsIngestErrors(new ArrayList<DaiIngestError>())
+            .setLastHlsIngestTime(Timestamp.newBuilder().build())
+            .addAllDashIngestErrors(new ArrayList<DaiIngestError>())
+            .setLastDashIngestTime(Timestamp.newBuilder().build())
+            .setImportTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCmsSources(new ArrayList<CmsContent>())
+            .addAllContentBundles(new ArrayList<String>())
+            .addAllCmsMetadataValues(new ArrayList<String>())
+            .setDuration(Duration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -126,6 +139,16 @@ public class ContentServiceClientTest {
         Content.newBuilder()
             .setName(ContentName.of("[NETWORK_CODE]", "[CONTENT]").toString())
             .setDisplayName("displayName1714148973")
+            .addAllHlsIngestErrors(new ArrayList<DaiIngestError>())
+            .setLastHlsIngestTime(Timestamp.newBuilder().build())
+            .addAllDashIngestErrors(new ArrayList<DaiIngestError>())
+            .setLastDashIngestTime(Timestamp.newBuilder().build())
+            .setImportTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCmsSources(new ArrayList<CmsContent>())
+            .addAllContentBundles(new ArrayList<String>())
+            .addAllCmsMetadataValues(new ArrayList<String>())
+            .setDuration(Duration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

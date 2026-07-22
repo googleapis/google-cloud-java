@@ -16,10 +16,12 @@
 
 package com.google.cloud.memorystore.v1;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -1993,6 +1995,816 @@ public class MemorystoreClientTest {
       String name = "name3373707";
       boolean force = true;
       client.finishMigrationAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTokenAuthUsersRequest actualRequest = ((ListTokenAuthUsersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest2() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTokenAuthUsersRequest actualRequest = ((ListTokenAuthUsersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTokenAuthUserRequest actualRequest = ((GetTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTokenAuthUserRequest actualRequest = ((GetTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    TokenAuthUserName parent =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthTokensRequest actualRequest = ((ListAuthTokensRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      TokenAuthUserName parent =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest2() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthTokensRequest actualRequest = ((ListAuthTokensRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[INSTANCE]",
+                        "[TOKEN_AUTH_USER]",
+                        "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthTokenRequest actualRequest = ((GetAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest2() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[INSTANCE]",
+                        "[TOKEN_AUTH_USER]",
+                        "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockMemorystore.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthTokenRequest actualRequest = ((GetAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Instance actualResponse = client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddTokenAuthUserRequest actualRequest = ((AddTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(tokenAuthUser, actualRequest.getTokenAuthUser());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    String instance = "instance555127957";
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Instance actualResponse = client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddTokenAuthUserRequest actualRequest = ((AddTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(tokenAuthUser, actualRequest.getTokenAuthUser());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTokenAuthUserRequest actualRequest = ((DeleteTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTokenAuthUserRequest actualRequest = ((DeleteTokenAuthUserRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    TokenAuthUserName tokenAuthUser =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddAuthTokenRequest actualRequest = ((AddAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tokenAuthUser.toString(), actualRequest.getTokenAuthUser());
+    Assert.assertEquals(authToken, actualRequest.getAuthToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      TokenAuthUserName tokenAuthUser =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    String tokenAuthUser = "tokenAuthUser345456300";
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddAuthTokenRequest actualRequest = ((AddAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(tokenAuthUser, actualRequest.getTokenAuthUser());
+    Assert.assertEquals(authToken, actualRequest.getAuthToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String tokenAuthUser = "tokenAuthUser345456300";
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthTokenRequest actualRequest = ((DeleteAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.deleteAuthTokenAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMemorystore.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockMemorystore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthTokenRequest actualRequest = ((DeleteAuthTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMemorystore.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAuthTokenAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
