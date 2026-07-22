@@ -286,7 +286,7 @@ public class ITLocalSslValidationTest {
       uriBuilder.append("SSLTrustStore", args[1]);
     }
     if (args.length > 2 && !args[2].isEmpty()) {
-      uriBuilder.append("SSLTrustStorePassword", args[2]);
+      uriBuilder.append("SSLTrustStorePwd", args[2]);
     }
     if (args.length > 3 && !args[3].isEmpty()) {
       uriBuilder.append("SSLTrustStoreType", args[3]);
