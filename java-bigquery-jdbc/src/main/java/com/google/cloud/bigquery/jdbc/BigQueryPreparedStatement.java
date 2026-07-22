@@ -173,60 +173,36 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setBigDecimal(int parameterIndex, BigDecimal value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.NUMERIC);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, BigDecimal.class);
   }
 
   @Override
   public void setString(int parameterIndex, String value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.VARCHAR);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, String.class);
   }
 
   @Override
   public void setBytes(int parameterIndex, byte[] value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.VARBINARY);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, byte[].class);
   }
 
   @Override
   public void setDate(int parameterIndex, Date value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.DATE);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, Date.class);
   }
 
   @Override
   public void setTime(int parameterIndex, Time value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.TIME);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, Time.class);
   }
 
   @Override
   public void setTimestamp(int parameterIndex, Timestamp value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.TIMESTAMP);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, Timestamp.class);
   }
 
@@ -482,7 +458,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
 
       for (BigQueryJdbcParameter parameter : parameterList) {
-        Object parameterValue = parameter.getValue();
+        Object parameterValue =
+            BigQueryParameterHandler.formatValueForQueryParameter(
+                parameter.getValue(), parameter.getSqlType());
         StandardSQLTypeName sqlType = parameter.getSqlType();
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
@@ -527,10 +505,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setArray(int parameterIndex, Array value) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.ARRAY);
-      return;
-    }
     this.parameterHandler.setParameter(parameterIndex, value, Array.class);
   }
 
@@ -546,33 +520,32 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setDate(int parameterIndex, Date value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.DATE);
-      return;
-    }
-    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
+    setDate(
+        parameterIndex,
+        value == null
+            ? null
+            : BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
   }
 
   @Override
   public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.TIME);
-      return;
-    }
-    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
+    setTime(
+        parameterIndex,
+        value == null
+            ? null
+            : BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
   }
 
   @Override
   public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar)
       throws SQLException {
     checkClosed();
-    if (value == null) {
-      setNull(parameterIndex, Types.TIMESTAMP);
-      return;
-    }
     setTimestamp(
-        parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
+        parameterIndex,
+        value == null
+            ? null
+            : BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override
