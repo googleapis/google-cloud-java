@@ -292,6 +292,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <configuration>
                     <ignoreNonCompile>true</ignoreNonCompile>
+                    <ignoredDependencies>io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi</ignoredDependencies>
                 </configuration>
             </plugin>
         </plugins>
