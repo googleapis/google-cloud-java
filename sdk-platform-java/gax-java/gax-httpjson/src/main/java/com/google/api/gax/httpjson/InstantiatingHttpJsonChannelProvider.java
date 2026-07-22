@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.util.SslUtils;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
@@ -45,11 +46,12 @@ import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.net.ssl.SSLContext;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -204,7 +206,20 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
       if (mtlsKeyStore != null) {
-        builder.trustCertificates(null, mtlsKeyStore, "");
+        Provider conscryptProvider = HttpJsonTransportUtils.getConscryptProvider();
+        if (conscryptProvider != null) {
+          SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+          SslUtils.initSslContext(
+              sslContext,
+              null,
+              SslUtils.getPkixTrustManagerFactory(),
+              mtlsKeyStore,
+              "",
+              SslUtils.getDefaultKeyManagerFactory());
+          builder.setSslSocketFactory(sslContext.getSocketFactory());
+        } else {
+          builder.trustCertificates(null, mtlsKeyStore, "");
+        }
       }
     }
     return builder;

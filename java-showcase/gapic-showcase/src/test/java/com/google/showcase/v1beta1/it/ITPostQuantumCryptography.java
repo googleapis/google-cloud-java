@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
+import com.google.api.gax.httpjson.HttpJsonTransportUtils;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -33,8 +34,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
-import java.security.Provider;
-import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Collections;
@@ -175,26 +174,11 @@ public class ITPostQuantumCryptography {
   }
 
   @Test
-  void testHttpJsonPqc_withExplicitSecurityProviderNoPqcGroups() throws Exception {
-    // Explicitly use SunJSSE (JDK default) instead of Conscrypt
-    Provider sunJsseProvider = Security.getProvider("SunJSSE");
-    assertThat(sunJsseProvider).isNotNull();
-
-    // Initialize SSLContext and TrustManagerFactory explicitly with SunJSSE provider to trust the
-    // CA
-    SSLContext sslContext = SSLContext.getInstance("TLS", sunJsseProvider);
-    TrustManagerFactory tmf =
-        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm(), sunJsseProvider);
-    tmf.init(loadCaCert(DEFAULT_CA_CERT_PATH));
-    sslContext.init(null, tmf.getTrustManagers(), null);
-
-    // This test verifies client transport behavior when PQC algorithms are not offered.
-    // Future Java versions (e.g. JDK 27+) will enable PQC (ML-KEM) by default in standard JDK JSSE.
-    // Explicitly setting named groups to classical algorithms ensures that this test reliably
-    // tests the non-PQC classical TLS connection path regardless of underlying JDK defaults.
+  void testHttpJsonPqc_withExplicitClassicalGroupsNoPqc() throws Exception {
+    // This test explicitly configures non-PQC classical groups (X25519, SecP256r1) on Conscrypt
+    // to verify that the client falls back gracefully to classical TLS key exchange.
     NetHttpTransport transport =
-        new NetHttpTransport.Builder()
-            .setSslSocketFactory(sslContext.getSocketFactory())
+        HttpJsonTransportUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
             .setSslSocketConfigurator(
                 socket -> {
                   if (Conscrypt.isConscrypt(socket)) {

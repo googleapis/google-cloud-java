@@ -120,5 +120,14 @@ public class HttpJsonTransportUtils {
             });
   }
 
+  /**
+   * Returns the Conscrypt {@link Provider} instance, or {@code null} if Conscrypt is unavailable.
+   *
+   * @return the Conscrypt provider or null
+   */
+  public static Provider getConscryptProvider() {
+    return ConscryptProviderHolder.INSTANCE;
+  }
+
   private HttpJsonTransportUtils() {}
 }
