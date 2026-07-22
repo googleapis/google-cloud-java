@@ -140,7 +140,7 @@ class AgentIdentityUtilsTest {
   @Test
   public void getAgentIdentityCertificate_noConfigEnvVar_returnsNull() throws IOException {
     AgentIdentityUtils.setTimeService(new FakeTimeService());
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
@@ -173,6 +173,7 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv(
         "GOOGLE_API_CERTIFICATE_CONFIG",
         tempDir.resolve("missing.json").toAbsolutePath().toString());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     AgentIdentityUtils.setTimeService(new FakeTimeService());
     IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(
