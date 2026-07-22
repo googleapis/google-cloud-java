@@ -41,8 +41,11 @@ import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Iterables;
 import java.util.Iterator;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Partial implementation of {@link AsyncPage}. */
+@NullMarked
 public abstract class AbstractPage<
         RequestT,
         ResponseT,
@@ -107,7 +110,7 @@ public abstract class AbstractPage<
     }
   }
 
-  private PageT getNextPageImpl(Integer pageSize) {
+  private PageT getNextPageImpl(@Nullable Integer pageSize) {
     if (hasNextPage()) {
       RequestT request =
           context.getPageDescriptor().injectToken(context.getRequest(), getNextPageToken());

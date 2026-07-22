@@ -38,22 +38,25 @@ import com.google.common.truth.Truth;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 
 class MetricsTracerFactoryTest {
   private static final int DEFAULT_ATTRIBUTES_COUNT = 2;
 
-  @Mock private MetricsRecorder metricsRecorder;
-  @Mock private ApiTracer parent;
+  private MetricsRecorder metricsRecorder;
+  private ApiTracer parent;
   private SpanName spanName;
   private MetricsTracerFactory metricsTracerFactory;
 
   @BeforeEach
   void setUp() {
+    metricsRecorder =
+        Mockito.mock(MetricsRecorder.class, Mockito.withSettings().withoutAnnotations());
+    parent = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     // Create an instance of MetricsTracerFactory with the mocked MetricsRecorder
     metricsTracerFactory = new MetricsTracerFactory(metricsRecorder);
 
-    spanName = mock(SpanName.class);
+    spanName = mock(SpanName.class, Mockito.withSettings().withoutAnnotations());
     when(spanName.getClientName()).thenReturn("testService");
     when(spanName.getMethodName()).thenReturn("testMethod");
   }

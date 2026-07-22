@@ -33,13 +33,15 @@ package com.google.api.gax.rpc;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A context object that contains information about the GAPIC library.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 @BetaApi
 @AutoValue
@@ -52,8 +54,7 @@ public abstract class LibraryMetadata {
    *
    * @return the repository, or {@code null} if not set
    */
-  @Nullable
-  public abstract String repository();
+  public abstract @Nullable String repository();
 
   /**
    * Returns the artifact name of the client library.
@@ -62,8 +63,7 @@ public abstract class LibraryMetadata {
    *
    * @return the artifact name, or {@code null} if not set
    */
-  @Nullable
-  public abstract String artifactName();
+  public abstract @Nullable String artifactName();
 
   /**
    * Returns the version of the client library.
@@ -72,8 +72,7 @@ public abstract class LibraryMetadata {
    *
    * @return the version, or {@code null} if not set
    */
-  @Nullable
-  public abstract String version();
+  public abstract @Nullable String version();
 
   public static LibraryMetadata empty() {
     return newBuilder().build();

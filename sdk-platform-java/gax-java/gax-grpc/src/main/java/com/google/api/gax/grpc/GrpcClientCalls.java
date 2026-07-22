@@ -48,12 +48,14 @@ import io.grpc.stub.MetadataUtils;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code GrpcClientCalls} creates a new {@code ClientCall} from the given call context.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcClientCalls {
   private static final Logger LOGGER = Logger.getLogger(GrpcDirectCallable.class.getName());
 
@@ -69,7 +71,7 @@ class GrpcClientCalls {
     }
 
     GrpcCallContext grpcContext = (GrpcCallContext) context;
-    Preconditions.checkNotNull(grpcContext.getChannel());
+    Channel channel = Preconditions.checkNotNull(grpcContext.getChannel());
 
     CallOptions callOptions = grpcContext.getCallOptions();
     Preconditions.checkNotNull(callOptions);
@@ -85,7 +87,6 @@ class GrpcClientCalls {
       }
     }
 
-    Channel channel = grpcContext.getChannel();
     if (grpcContext.getChannelAffinity() != null && channel instanceof ChannelPool) {
       channel = ((ChannelPool) channel).getChannel(grpcContext.getChannelAffinity());
     }

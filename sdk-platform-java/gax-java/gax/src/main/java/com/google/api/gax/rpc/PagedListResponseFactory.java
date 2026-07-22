@@ -30,12 +30,14 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Interface for constructing futures which return PagedListResponse objects.
  *
  * <p>This class is designed to be used by generated code.
  */
+@NullMarked
 public interface PagedListResponseFactory<RequestT, ResponseT, PagedListResponseT> {
 
   ApiFuture<PagedListResponseT> getFuturePagedResponse(

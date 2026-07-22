@@ -34,12 +34,14 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.longrunning.Operation;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implementation of OperationSnapshot based on REST transport.
  *
  * <p>Public for technical reasons. For internal use only.
  */
+@NullMarked
 @InternalApi
 public class HttpJsonOperationSnapshot implements OperationSnapshot {
   private final String name;

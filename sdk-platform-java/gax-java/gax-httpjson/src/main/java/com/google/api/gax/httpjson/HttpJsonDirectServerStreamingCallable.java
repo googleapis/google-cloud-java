@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code HttpJsonDirectServerStreamingCallable} creates server-streaming REST calls.
@@ -45,6 +46,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class HttpJsonDirectServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 

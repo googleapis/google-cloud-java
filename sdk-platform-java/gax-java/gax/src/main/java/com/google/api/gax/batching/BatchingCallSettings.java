@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This is an extension of {@link UnaryCallSettings} class to configure a {@link UnaryCallable} for
@@ -63,6 +64,7 @@ import java.util.Set;
  * @param <RequestT> The type of the request that will contain the accumulated elements.
  * @param <ResponseT> The type of the response that will unpack into individual element results.
  */
+@NullMarked
 public final class BatchingCallSettings<ElementT, ElementResultT, RequestT, ResponseT>
     extends UnaryCallSettings<RequestT, ResponseT> {
   private final BatchingDescriptor<ElementT, ElementResultT, RequestT, ResponseT>

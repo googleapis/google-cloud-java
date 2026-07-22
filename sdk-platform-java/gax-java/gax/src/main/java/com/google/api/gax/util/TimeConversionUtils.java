@@ -30,29 +30,33 @@
 
 package com.google.api.gax.util;
 
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+@NullMarked
 public class TimeConversionUtils {
-  public static java.time.Duration toJavaTimeDuration(org.threeten.bp.Duration source) {
+  public static java.time.@Nullable Duration toJavaTimeDuration(org.threeten.bp.Duration source) {
     if (source == null) {
       return null;
     }
     return java.time.Duration.ofSeconds(source.getSeconds(), source.getNano());
   }
 
-  public static org.threeten.bp.Duration toThreetenDuration(java.time.Duration source) {
+  public static org.threeten.bp.@Nullable Duration toThreetenDuration(java.time.Duration source) {
     if (source == null) {
       return null;
     }
     return org.threeten.bp.Duration.ofSeconds(source.getSeconds(), source.getNano());
   }
 
-  public static java.time.Instant toJavaTimeInstant(org.threeten.bp.Instant source) {
+  public static java.time.@Nullable Instant toJavaTimeInstant(org.threeten.bp.Instant source) {
     if (source == null) {
       return null;
     }
     return java.time.Instant.ofEpochSecond(source.getEpochSecond(), source.getNano());
   }
 
-  public static org.threeten.bp.Instant toThreetenInstant(java.time.Instant source) {
+  public static org.threeten.bp.@Nullable Instant toThreetenInstant(java.time.Instant source) {
     if (source == null) {
       return null;
     }
