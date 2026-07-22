@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.UrlEscapers;
+import java.security.KeyStore;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -173,6 +174,8 @@ final class BigQueryJdbcUrlUtility {
   static final String REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME = "RequestGoogleDriveScope";
   static final String SSL_TRUST_STORE_PROPERTY_NAME = "SSLTrustStore";
   static final String SSL_TRUST_STORE_PWD_PROPERTY_NAME = "SSLTrustStorePwd";
+  static final String SSL_TRUST_STORE_TYPE_PROPERTY_NAME = "SSLTrustStoreType";
+  static final String SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME = "SSLTrustStoreProvider";
   static final int DEFAULT_REQUEST_GOOGLE_DRIVE_SCOPE_VALUE = 0;
   static final String MAX_BYTES_BILLED_PROPERTY_NAME = "MaximumBytesBilled";
   static final Long DEFAULT_MAX_BYTES_BILLED_VALUE = 0L;
@@ -606,6 +609,17 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "The password for accessing the Java TrustStore that is specified using"
                               + " the property SSLTrustStore.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(SSL_TRUST_STORE_TYPE_PROPERTY_NAME)
+                      .setDescription(
+                          "The type of the Java TrustStore specified using the property SSLTrustStore.")
+                      .setLazyDefaultValue(KeyStore::getDefaultType)
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME)
+                      .setDescription(
+                          "The security provider of the Java TrustStore specified using the property SSLTrustStore.")
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(HTTP_CONNECT_TIMEOUT_PROPERTY_NAME)
