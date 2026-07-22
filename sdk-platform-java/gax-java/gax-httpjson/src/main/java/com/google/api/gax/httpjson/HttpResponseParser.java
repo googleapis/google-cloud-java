@@ -34,8 +34,10 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.protobuf.TypeRegistry;
 import java.io.InputStream;
 import java.io.Reader;
+import org.jspecify.annotations.NullMarked;
 
 /** Interface for classes that parse parts of HTTP responses into the parameterized message type. */
+@NullMarked
 @InternalExtensionOnly
 public interface HttpResponseParser<MessageFormatT> {
 

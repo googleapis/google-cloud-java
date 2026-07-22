@@ -35,6 +35,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import java.util.concurrent.ExecutionException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A future callable which relies on callback chaining to execute server polling (asking for a
@@ -46,6 +47,7 @@ import java.util.concurrent.ExecutionException;
  *
  * @param <RequestT> type of the request
  */
+@NullMarked
 class OperationCheckingCallable<RequestT> extends UnaryCallable<RequestT, OperationSnapshot> {
   private final LongRunningClient longRunningClient;
   private final ApiFuture<OperationSnapshot> initialFuture;

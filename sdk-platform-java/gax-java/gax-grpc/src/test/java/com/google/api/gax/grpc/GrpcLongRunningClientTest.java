@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.grpc;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFuture;
@@ -45,13 +44,14 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class GrpcLongRunningClientTest {
 
   @Test
   void get() {
     OperationsStub operationsStub =
-        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        Mockito.mock(OperationsStub.class, Mockito.withSettings().withoutAnnotations());
     when(operationsStub.getOperationCallable())
         .thenReturn(
             new UnaryCallable<GetOperationRequest, Operation>() {
@@ -75,7 +75,7 @@ class GrpcLongRunningClientTest {
   @Test
   void cancel() {
     OperationsStub operationsStub =
-        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        Mockito.mock(OperationsStub.class, Mockito.withSettings().withoutAnnotations());
     when(operationsStub.cancelOperationCallable())
         .thenReturn(
             new UnaryCallable<CancelOperationRequest, Empty>() {
@@ -97,7 +97,7 @@ class GrpcLongRunningClientTest {
   @Test
   void delete() {
     OperationsStub operationsStub =
-        mock(OperationsStub.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        Mockito.mock(OperationsStub.class, Mockito.withSettings().withoutAnnotations());
     when(operationsStub.deleteOperationCallable())
         .thenReturn(
             new UnaryCallable<DeleteOperationRequest, Empty>() {

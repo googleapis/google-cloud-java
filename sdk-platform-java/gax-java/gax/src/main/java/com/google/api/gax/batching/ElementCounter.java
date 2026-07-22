@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Interface representing an object that provides a numerical count given an object of the
  * parameterized type.
  */
+@NullMarked
 public interface ElementCounter<E> {
   /** Provides the numerical count associated with the given object. */
   long count(E element);

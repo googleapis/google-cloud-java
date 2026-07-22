@@ -34,6 +34,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A composite implementation of {@link ApiTracer} that delegates all tracing events to a list of
@@ -41,6 +42,7 @@ import java.util.Map;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
   private final List<ApiTracer> children;

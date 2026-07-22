@@ -34,6 +34,7 @@ import com.google.api.core.BetaApi;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
 import java.time.Duration;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Settings to control {@link ChannelPool} behavior.
@@ -52,6 +53,7 @@ import java.time.Duration;
  *
  * <p>The settings in this class will be applied every minute.
  */
+@NullMarked
 @BetaApi("surface for channel pool sizing is not yet stable")
 @AutoValue
 public abstract class ChannelPoolSettings {

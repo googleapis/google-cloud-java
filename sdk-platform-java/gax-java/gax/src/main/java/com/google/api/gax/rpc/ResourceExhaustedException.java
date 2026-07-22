@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when some resource has been exhausted, perhaps a per-user quota, or perhaps the
  * entire file system is out of space.
  */
+@NullMarked
 public class ResourceExhaustedException extends ApiException {
   public ResourceExhaustedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

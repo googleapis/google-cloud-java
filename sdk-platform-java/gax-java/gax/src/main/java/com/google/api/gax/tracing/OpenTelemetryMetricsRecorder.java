@@ -41,6 +41,7 @@ import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * OpenTelemetry implementation of recording metrics. This implementation collections the
@@ -51,6 +52,7 @@ import java.util.Map;
  * error). A single call (i.e. `EchoClient.echo()`) should have an operation_count of 1 and may have
  * an attempt_count of 1+ (depending on the retry configurations).
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class OpenTelemetryMetricsRecorder implements MetricsRecorder {

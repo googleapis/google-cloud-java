@@ -29,9 +29,12 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when the operation is not implemented or not supported/enabled in this service.
  */
+@NullMarked
 public class UnimplementedException extends ApiException {
   public UnimplementedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

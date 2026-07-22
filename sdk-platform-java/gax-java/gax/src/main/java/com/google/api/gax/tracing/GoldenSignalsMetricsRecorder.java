@@ -38,7 +38,8 @@ import io.opentelemetry.api.metrics.MeterBuilder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class takes an OpenTelemetry object, and creates instruments (meters, histograms etc.) from
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  * GoldenSignalsMetricsRecorder per client, all the methods in this class are expected to be called
  * from multiple threads, hence they need to be thread safe.
  */
+@NullMarked
 class GoldenSignalsMetricsRecorder {
   static final String CLIENT_REQUEST_DURATION_METRIC_NAME = "gcp.client.request.duration";
   static final String CLIENT_REQUEST_DURATION_METRIC_DESCRIPTION =

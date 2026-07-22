@@ -50,7 +50,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * InstantiatingHttpJsonChannelProvider is a TransportChannelProvider which constructs a {@link
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  * <p>The client lib header and generator header values are used to form a value that goes into the
  * http header of requests to the service.
  */
+@NullMarked
 @InternalExtensionOnly
 public final class InstantiatingHttpJsonChannelProvider implements TransportChannelProvider {
 
@@ -75,7 +77,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   private final HttpJsonInterceptorProvider interceptorProvider;
   private final String endpoint;
   private final HttpTransport httpTransport;
-  @Nullable private final MtlsProvider mtlsProvider;
+  private final @Nullable MtlsProvider mtlsProvider;
   private final CertificateBasedAccess certificateBasedAccess;
 
   private InstantiatingHttpJsonChannelProvider(
@@ -190,7 +192,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         "InstantiatingHttpJsonChannelProvider doesn't need credentials");
   }
 
-  HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+  @Nullable HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     if (mtlsProvider == null) {
       return null;
     }
