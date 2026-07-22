@@ -203,25 +203,32 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
   private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
       throws IOException, GeneralSecurityException {
-    if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
-      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-      if (mtlsKeyStore != null) {
-        Provider conscryptProvider = HttpJsonTransportUtils.getConscryptProvider();
-        if (conscryptProvider != null) {
-          SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
-          SslUtils.initSslContext(
-              sslContext,
-              null,
-              SslUtils.getPkixTrustManagerFactory(),
-              mtlsKeyStore,
-              "",
-              SslUtils.getDefaultKeyManagerFactory());
-          builder.setSslSocketFactory(sslContext.getSocketFactory());
-        } else {
-          builder.trustCertificates(null, mtlsKeyStore, "");
-        }
-      }
+    if (mtlsProvider == null || !certificateBasedAccess.useMtlsClientCertificate()) {
+      return builder;
     }
+    KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+    if (mtlsKeyStore == null) {
+      return builder;
+    }
+    Provider conscryptProvider = HttpJsonTransportUtils.getConscryptProvider();
+    if (conscryptProvider == null) {
+      // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
+      builder.trustCertificates(null, mtlsKeyStore, "");
+      return builder;
+    }
+    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
+    // key managers
+    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
+    // key exchange).
+    SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    SslUtils.initSslContext(
+        sslContext,
+        null,
+        SslUtils.getPkixTrustManagerFactory(),
+        mtlsKeyStore,
+        "",
+        SslUtils.getDefaultKeyManagerFactory());
+    builder.setSslSocketFactory(sslContext.getSocketFactory());
     return builder;
   }
 
