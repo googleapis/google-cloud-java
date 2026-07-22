@@ -24,22 +24,22 @@ import com.google.api.gax.rpc.StreamController;
 import java.util.function.Consumer;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(MockitoJUnitRunner.class)
 public class SilenceableBidiStreamTest {
 
-  @Mock BidiStreamObserver<Integer, String> mockObserver;
+  BidiStreamObserver<Integer, String> mockObserver;
 
-  @Mock ClientStream<Integer> mockClientStream;
+  ClientStream<Integer> mockClientStream;
 
   SilenceableBidiStream<Integer, String> sut;
 
   @Before
   public void before() {
+    mockObserver =
+        Mockito.mock(BidiStreamObserver.class, Mockito.withSettings().withoutAnnotations());
+    mockClientStream =
+        Mockito.mock(ClientStream.class, Mockito.withSettings().withoutAnnotations());
     Consumer captureCall = Mockito.mock(Consumer.class);
     sut =
         new SilenceableBidiStream<>(
@@ -76,7 +76,8 @@ public class SilenceableBidiStreamTest {
 
   @Test
   public void byDefault_theStreamWillPassThroughData_onStart() {
-    StreamController controller = Mockito.mock(StreamController.class);
+    StreamController controller =
+        Mockito.mock(StreamController.class, Mockito.withSettings().withoutAnnotations());
     sut.onStart(controller);
     Mockito.verify(mockObserver, Mockito.times(1)).onStart(controller);
     Mockito.verifyNoMoreInteractions(mockClientStream, mockObserver, controller);
@@ -84,7 +85,8 @@ public class SilenceableBidiStreamTest {
 
   @Test
   public void byDefault_theStreamWillPassThroughData_onReady() {
-    ClientStream<Integer> client = Mockito.mock(ClientStream.class);
+    ClientStream<Integer> client =
+        Mockito.mock(ClientStream.class, Mockito.withSettings().withoutAnnotations());
     sut.onReady(client);
     Mockito.verify(mockObserver, Mockito.times(1)).onReady(client);
     Mockito.verifyNoMoreInteractions(mockClientStream, mockObserver, client);

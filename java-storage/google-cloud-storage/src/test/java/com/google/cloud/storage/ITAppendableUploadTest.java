@@ -58,7 +58,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(StorageITRunner.class)
 @CrossRun(
-    backends = {Backend.TEST_BENCH},
+    backends = {Backend.TEST_BENCH, Backend.PROD},
     transports = Transport.GRPC)
 @Parameterized(UploadConfigParameters.class)
 public final class ITAppendableUploadTest {

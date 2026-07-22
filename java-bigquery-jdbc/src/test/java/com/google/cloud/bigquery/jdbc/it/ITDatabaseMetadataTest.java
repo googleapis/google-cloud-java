@@ -852,10 +852,9 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(rsNoMatch.next());
 
     // Test case 4: Get schemas with non-existent catalog
-    Assertions.assertThrows(
-        SQLException.class,
-        () -> databaseMetaData.getSchemas("invalid-catalog", null),
-        "Should throw SQLException for non-existent catalog");
+    ResultSet rsInvalid = databaseMetaData.getSchemas("invalid-catalog", null);
+    Assertions.assertFalse(
+        rsInvalid.next(), "Should return empty ResultSet for non-existent catalog");
     connection.close();
   }
 
