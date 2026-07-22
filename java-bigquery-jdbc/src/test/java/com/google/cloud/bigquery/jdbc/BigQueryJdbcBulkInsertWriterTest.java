@@ -22,6 +22,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
@@ -35,7 +36,10 @@ public class BigQueryJdbcBulkInsertWriterTest {
   @Test
   public void testInitializePassesClientToJsonStreamWriter() throws Exception {
     BigQueryWriteClient mockClient = mock(BigQueryWriteClient.class);
-    BigQueryWriteSettings mockSettings = BigQueryWriteSettings.newBuilder().build();
+    BigQueryWriteSettings mockSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
     when(mockClient.getSettings()).thenReturn(mockSettings);
 
     WriteStream stream =
