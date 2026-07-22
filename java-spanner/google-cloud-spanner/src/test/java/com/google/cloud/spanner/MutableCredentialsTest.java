@@ -75,7 +75,8 @@ public class MutableCredentialsTest {
     MutableCredentials credentials = new MutableCredentials(initialCredentials, scopes);
     URI testUri = URI.create("https://spanner.googleapis.com");
     Executor executor = mock(Executor.class);
-    RequestMetadataCallback callback = mock(RequestMetadataCallback.class);
+    RequestMetadataCallback callback =
+        mock(RequestMetadataCallback.class, withSettings().withoutAnnotations());
 
     validateInitialDelegatedCredentialsAreSet(credentials, testUri);
 
@@ -116,7 +117,8 @@ public class MutableCredentialsTest {
     MutableCredentials credentials = new MutableCredentials(initialCredentials, scopes);
     URI testUri = URI.create("https://example.com");
     Executor executor = mock(Executor.class);
-    RequestMetadataCallback callback = mock(RequestMetadataCallback.class);
+    RequestMetadataCallback callback =
+        mock(RequestMetadataCallback.class, withSettings().withoutAnnotations());
 
     validateInitialDelegatedCredentialsAreSet(credentials, testUri);
 
