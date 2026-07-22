@@ -25,7 +25,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.util.Durations;
+import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -43,11 +47,14 @@ import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import io.grpc.protobuf.StatusProto;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import java.io.IOException;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
+import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -81,6 +88,8 @@ final class KeyAwareChannel extends ManagedChannel {
       "google.spanner.v1.Spanner/BeginTransaction";
   private static final String COMMIT_METHOD = "google.spanner.v1.Spanner/Commit";
   private static final String ROLLBACK_METHOD = "google.spanner.v1.Spanner/Rollback";
+  private static final Metadata.Key<RetryInfo> RETRY_INFO_KEY =
+      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
   private final ManagedChannel defaultChannel;
   private final ChannelEndpointCache endpointCache;
@@ -355,7 +364,10 @@ final class KeyAwareChannel extends ManagedChannel {
     transactionAffinities.invalidate(transactionId);
   }
 
-  private void recordEndpointCooldown(@Nullable ChannelEndpoint endpoint) {
+  private void recordEndpointCooldown(
+      @Nullable ChannelEndpoint endpoint,
+      io.grpc.Status.Code statusCode,
+      @Nullable Metadata trailers) {
     if (endpoint == null) {
       return;
     }
@@ -363,7 +375,65 @@ final class KeyAwareChannel extends ManagedChannel {
     if (defaultEndpointAddress.equals(address)) {
       return;
     }
-    endpointOverloadCooldowns.recordFailure(address);
+    endpointOverloadCooldowns.recordFailure(address, statusCode, retryDelay(statusCode, trailers));
+  }
+
+  private void recordEndpointSuccess(@Nullable ChannelEndpoint endpoint) {
+    if (endpoint == null) {
+      return;
+    }
+    String address = endpoint.getAddress();
+    if (!defaultEndpointAddress.equals(address)) {
+      endpointOverloadCooldowns.recordSuccess(address);
+    }
+  }
+
+  @Nullable
+  @VisibleForTesting
+  static Duration retryDelay(io.grpc.Status.Code statusCode, @Nullable Metadata trailers) {
+    if (trailers == null) {
+      return null;
+    }
+    Duration retryDelay = null;
+    try {
+      retryDelay = retryDelay(trailers.get(RETRY_INFO_KEY));
+    } catch (IllegalArgumentException ignored) {
+      // Treat malformed direct details as absent.
+    }
+    try {
+      com.google.rpc.Status richStatus =
+          StatusProto.fromStatusAndTrailers(io.grpc.Status.fromCode(statusCode), trailers);
+      if (richStatus != null) {
+        for (Any detail : richStatus.getDetailsList()) {
+          if (!detail.is(RetryInfo.class)) {
+            continue;
+          }
+          try {
+            Duration candidate = retryDelay(detail.unpack(RetryInfo.class));
+            if (candidate != null && (retryDelay == null || candidate.compareTo(retryDelay) > 0)) {
+              retryDelay = candidate;
+            }
+          } catch (InvalidProtocolBufferException ignored) {
+            // Skip malformed details without hiding later valid RetryInfo details.
+          }
+        }
+      }
+    } catch (IllegalArgumentException ignored) {
+      // Malformed rich status metadata must not interfere with transport close handling.
+    }
+    return retryDelay;
+  }
+
+  @Nullable
+  private static Duration retryDelay(@Nullable RetryInfo retryInfo) {
+    if (retryInfo == null
+        || !retryInfo.hasRetryDelay()
+        || !Durations.isValid(retryInfo.getRetryDelay())
+        || Durations.isNegative(retryInfo.getRetryDelay())) {
+      return null;
+    }
+    return Duration.ofSeconds(
+        retryInfo.getRetryDelay().getSeconds(), retryInfo.getRetryDelay().getNanos());
   }
 
   private void maybeRecordErrorPenalty(
@@ -791,7 +861,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
     private Predicate<String> excludedEndpoints() {
       if (excludedEndpoints == null) {
-        excludedEndpoints = parentChannel.endpointOverloadCooldowns::isCoolingDown;
+        excludedEndpoints = parentChannel.endpointOverloadCooldowns;
       }
       return excludedEndpoints;
     }
@@ -932,14 +1002,17 @@ final class KeyAwareChannel extends ManagedChannel {
 
     @Override
     public void onClose(io.grpc.Status status, Metadata trailers) {
-      if (shouldExcludeEndpointOnRetry(status.getCode())) {
+      if (status.isOk()) {
+        call.parentChannel.recordEndpointSuccess(call.selectedEndpoint);
+      } else if (shouldExcludeEndpointOnRetry(status.getCode())) {
         call.parentChannel.maybeRecordErrorPenalty(
             call.selectedDatabaseScope,
             call.selectedEndpoint,
             status.getCode(),
             call.selectedOperationUid,
             call.selectedPreferLeader);
-        call.parentChannel.recordEndpointCooldown(call.selectedEndpoint);
+        call.parentChannel.recordEndpointCooldown(
+            call.selectedEndpoint, status.getCode(), trailers);
       }
       if (call.selectedEndpoint != null) {
         call.selectedEndpoint.decrementActiveRequests();

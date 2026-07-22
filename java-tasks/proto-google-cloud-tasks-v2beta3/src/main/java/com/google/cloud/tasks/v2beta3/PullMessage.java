@@ -30,9 +30,9 @@ package com.google.cloud.tasks.v2beta3;
  * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
  * backwards compatibility with the App Engine Task Queue SDK. This message type
  * maybe returned with methods
- * [list][google.cloud.tasks.v2beta3.CloudTask.ListTasks] and
- * [get][google.cloud.tasks.v2beta3.CloudTask.ListTasks], when the response view
- * is [FULL][google.cloud.tasks.v2beta3.Task.View.Full].
+ * [list][google.cloud.tasks.v2beta3.CloudTasks.ListTasks] and
+ * [get][google.cloud.tasks.v2beta3.CloudTasks.ListTasks], when the response
+ * view is [FULL][google.cloud.tasks.v2beta3.Task.View.FULL].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.PullMessage}
@@ -346,9 +346,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessage
    * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
    * backwards compatibility with the App Engine Task Queue SDK. This message type
    * maybe returned with methods
-   * [list][google.cloud.tasks.v2beta3.CloudTask.ListTasks] and
-   * [get][google.cloud.tasks.v2beta3.CloudTask.ListTasks], when the response view
-   * is [FULL][google.cloud.tasks.v2beta3.Task.View.Full].
+   * [list][google.cloud.tasks.v2beta3.CloudTasks.ListTasks] and
+   * [get][google.cloud.tasks.v2beta3.CloudTasks.ListTasks], when the response
+   * view is [FULL][google.cloud.tasks.v2beta3.Task.View.FULL].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.PullMessage}

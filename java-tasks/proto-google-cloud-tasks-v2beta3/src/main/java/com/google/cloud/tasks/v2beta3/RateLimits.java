@@ -88,9 +88,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessage
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
    *
-   * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-   * the maximum allowed value
-   * is 500.
+   * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the
+   * maximum allowed value is 500.
    *
    *
    * This field has the same meaning as
@@ -565,9 +564,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessage
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
      *
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
-     * is 500.
+     * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the
+     * maximum allowed value is 500.
      *
      *
      * This field has the same meaning as
@@ -593,9 +591,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessage
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
      *
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
-     * is 500.
+     * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the
+     * maximum allowed value is 500.
      *
      *
      * This field has the same meaning as
@@ -625,9 +622,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessage
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
      *
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
-     * is 500.
+     * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the
+     * maximum allowed value is 500.
      *
      *
      * This field has the same meaning as

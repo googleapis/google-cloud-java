@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetPlacement</td>
- *      <td><p> API to retrieve a `Placement` object.</td>
+ *      <td><p> Retrieves a `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListPlacements</td>
- *      <td><p> API to retrieve a list of `Placement` objects.</td>
+ *      <td><p> Lists `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +106,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePlacement</td>
- *      <td><p> API to create an `Placement` object.</td>
+ *      <td><p> Creates an `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePlacement</td>
- *      <td><p> API to update an `Placement` object.</td>
+ *      <td><p> Updates an `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -143,7 +143,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreatePlacements</td>
- *      <td><p> API to batch create `Placement` objects.</td>
+ *      <td><p> Creates `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -159,7 +159,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdatePlacements</td>
- *      <td><p> API to batch update `Placement` objects.</td>
+ *      <td><p> Batch updates `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -326,7 +326,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -354,7 +354,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -381,7 +381,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -409,7 +409,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -437,7 +437,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +469,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -498,7 +498,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -533,7 +533,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -569,7 +569,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -612,7 +612,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -645,7 +645,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -675,7 +675,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -704,7 +704,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -733,7 +733,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -767,7 +767,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -796,7 +796,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -825,7 +825,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -862,7 +862,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -899,7 +899,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -930,7 +930,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -960,7 +960,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -997,7 +997,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -1034,7 +1034,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -1065,7 +1065,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *

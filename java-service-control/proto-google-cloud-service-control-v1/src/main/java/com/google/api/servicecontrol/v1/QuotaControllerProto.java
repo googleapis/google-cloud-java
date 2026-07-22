@@ -71,10 +71,10 @@ public final class QuotaControllerProto extends com.google.protobuf.GeneratedFil
     java.lang.String[] descriptorData = {
       "\n3google/api/servicecontrol/v1/quota_con"
           + "troller.proto\022\034google.api.servicecontrol"
-          + ".v1\032\034google/api/annotations.proto\032/googl"
-          + "e/api/servicecontrol/v1/metric_value.pro"
-          + "to\032\027google/rpc/status.proto\032\027google/api/"
-          + "client.proto\"\221\001\n\024AllocateQuotaRequest\022\024\n"
+          + ".v1\032\034google/api/annotations.proto\032\027googl"
+          + "e/api/client.proto\032/google/api/serviceco"
+          + "ntrol/v1/metric_value.proto\032\027google/rpc/"
+          + "status.proto\"\221\001\n\024AllocateQuotaRequest\022\024\n"
           + "\014service_name\030\001 \001(\t\022H\n\022allocate_operatio"
           + "n\030\002 \001(\0132,.google.api.servicecontrol.v1.Q"
           + "uotaOperation\022\031\n\021service_config_id\030\004 \001(\t"
@@ -110,22 +110,22 @@ public final class QuotaControllerProto extends com.google.protobuf.GeneratedFil
           + "rvicecontrol.googleapis.com\322A]https://ww"
           + "w.googleapis.com/auth/cloud-platform,htt"
           + "ps://www.googleapis.com/auth/servicecont"
-          + "rolB\357\001\n com.google.api.servicecontrol.v1"
+          + "rolB\354\001\n com.google.api.servicecontrol.v1"
           + "B\024QuotaControllerProtoP\001ZJcloud.google.c"
           + "om/go/servicecontrol/apiv1/servicecontro"
-          + "lpb;servicecontrolpb\370\001\001\252\002\036Google.Cloud.S"
-          + "erviceControl.V1\312\002\036Google\\Cloud\\ServiceC"
-          + "ontrol\\V1\352\002!Google::Cloud::ServiceContro"
-          + "l::V1b\006proto3"
+          + "lpb;servicecontrolpb\252\002\036Google.Cloud.Serv"
+          + "iceControl.V1\312\002\036Google\\Cloud\\ServiceCont"
+          + "rol\\V1\352\002!Google::Cloud::ServiceControl::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.servicecontrol.v1.MetricValueSetProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_api_servicecontrol_v1_AllocateQuotaRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -169,9 +169,9 @@ public final class QuotaControllerProto extends com.google.protobuf.GeneratedFil
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.servicecontrol.v1.MetricValueSetProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

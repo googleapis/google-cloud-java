@@ -807,6 +807,368 @@ public final class MemorystoreGrpc {
     return getFinishMigrationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest,
+          com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTokenAuthUsers",
+      requestType = com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest.class,
+      responseType = com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest,
+          com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest,
+            com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+        getListTokenAuthUsersMethod;
+    if ((getListTokenAuthUsersMethod = MemorystoreGrpc.getListTokenAuthUsersMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListTokenAuthUsersMethod = MemorystoreGrpc.getListTokenAuthUsersMethod) == null) {
+          MemorystoreGrpc.getListTokenAuthUsersMethod =
+              getListTokenAuthUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest,
+                          com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTokenAuthUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListTokenAuthUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListTokenAuthUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetTokenAuthUserRequest,
+          com.google.cloud.memorystore.v1.TokenAuthUser>
+      getGetTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1.GetTokenAuthUserRequest.class,
+      responseType = com.google.cloud.memorystore.v1.TokenAuthUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetTokenAuthUserRequest,
+          com.google.cloud.memorystore.v1.TokenAuthUser>
+      getGetTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.GetTokenAuthUserRequest,
+            com.google.cloud.memorystore.v1.TokenAuthUser>
+        getGetTokenAuthUserMethod;
+    if ((getGetTokenAuthUserMethod = MemorystoreGrpc.getGetTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetTokenAuthUserMethod = MemorystoreGrpc.getGetTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getGetTokenAuthUserMethod =
+              getGetTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.GetTokenAuthUserRequest,
+                          com.google.cloud.memorystore.v1.TokenAuthUser>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.GetTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.TokenAuthUser.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("GetTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getGetTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAuthTokensRequest,
+          com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+      getListAuthTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthTokens",
+      requestType = com.google.cloud.memorystore.v1.ListAuthTokensRequest.class,
+      responseType = com.google.cloud.memorystore.v1.ListAuthTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAuthTokensRequest,
+          com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+      getListAuthTokensMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.ListAuthTokensRequest,
+            com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+        getListAuthTokensMethod;
+    if ((getListAuthTokensMethod = MemorystoreGrpc.getListAuthTokensMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListAuthTokensMethod = MemorystoreGrpc.getListAuthTokensMethod) == null) {
+          MemorystoreGrpc.getListAuthTokensMethod =
+              getListAuthTokensMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.ListAuthTokensRequest,
+                          com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthTokens"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAuthTokensRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAuthTokensResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListAuthTokens"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAuthTokenRequest,
+          com.google.cloud.memorystore.v1.AuthToken>
+      getGetAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthToken",
+      requestType = com.google.cloud.memorystore.v1.GetAuthTokenRequest.class,
+      responseType = com.google.cloud.memorystore.v1.AuthToken.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAuthTokenRequest,
+          com.google.cloud.memorystore.v1.AuthToken>
+      getGetAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.GetAuthTokenRequest,
+            com.google.cloud.memorystore.v1.AuthToken>
+        getGetAuthTokenMethod;
+    if ((getGetAuthTokenMethod = MemorystoreGrpc.getGetAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetAuthTokenMethod = MemorystoreGrpc.getGetAuthTokenMethod) == null) {
+          MemorystoreGrpc.getGetAuthTokenMethod =
+              getGetAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.GetAuthTokenRequest,
+                          com.google.cloud.memorystore.v1.AuthToken>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.GetAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AuthToken.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("GetAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.AddTokenAuthUserRequest, com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1.AddTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.AddTokenAuthUserRequest, com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.AddTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getAddTokenAuthUserMethod;
+    if ((getAddTokenAuthUserMethod = MemorystoreGrpc.getAddTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getAddTokenAuthUserMethod = MemorystoreGrpc.getAddTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getAddTokenAuthUserMethod =
+              getAddTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.AddTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AddTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("AddTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getAddTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokenAuthUser",
+      requestType = com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getDeleteTokenAuthUserMethod;
+    if ((getDeleteTokenAuthUserMethod = MemorystoreGrpc.getDeleteTokenAuthUserMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteTokenAuthUserMethod = MemorystoreGrpc.getDeleteTokenAuthUserMethod) == null) {
+          MemorystoreGrpc.getDeleteTokenAuthUserMethod =
+              getDeleteTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("DeleteTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddAuthToken",
+      requestType = com.google.cloud.memorystore.v1.AddAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+        getAddAuthTokenMethod;
+    if ((getAddAuthTokenMethod = MemorystoreGrpc.getAddAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getAddAuthTokenMethod = MemorystoreGrpc.getAddAuthTokenMethod) == null) {
+          MemorystoreGrpc.getAddAuthTokenMethod =
+              getAddAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.AddAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AddAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("AddAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getAddAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteAuthTokenRequest, com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthToken",
+      requestType = com.google.cloud.memorystore.v1.DeleteAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteAuthTokenRequest, com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.DeleteAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getDeleteAuthTokenMethod;
+    if ((getDeleteAuthTokenMethod = MemorystoreGrpc.getDeleteAuthTokenMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteAuthTokenMethod = MemorystoreGrpc.getDeleteAuthTokenMethod) == null) {
+          MemorystoreGrpc.getDeleteAuthTokenMethod =
+              getDeleteAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.DeleteAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.DeleteAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("DeleteAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static MemorystoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MemorystoreStub> factory =
@@ -1136,6 +1498,121 @@ public final class MemorystoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFinishMigrationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    default void listTokenAuthUsers(
+        com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTokenAuthUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void getTokenAuthUser(
+        com.google.cloud.memorystore.v1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    default void listAuthTokens(
+        com.google.cloud.memorystore.v1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    default void getAuthToken(
+        com.google.cloud.memorystore.v1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AuthToken> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void addTokenAuthUser(
+        com.google.cloud.memorystore.v1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void addAuthToken(
+        com.google.cloud.memorystore.v1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteAuthToken(
+        com.google.cloud.memorystore.v1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthTokenMethod(), responseObserver);
     }
   }
 
@@ -1474,6 +1951,137 @@ public final class MemorystoreGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public void listTokenAuthUsers(
+        com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void getTokenAuthUser(
+        com.google.cloud.memorystore.v1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public void listAuthTokens(
+        com.google.cloud.memorystore.v1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public void getAuthToken(
+        com.google.cloud.memorystore.v1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AuthToken> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void addTokenAuthUser(
+        com.google.cloud.memorystore.v1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void addAuthToken(
+        com.google.cloud.memorystore.v1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteAuthToken(
+        com.google.cloud.memorystore.v1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1758,6 +2366,118 @@ public final class MemorystoreGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.memorystore.v1.GetTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.memorystore.v1.ListAuthTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AuthToken getAuthToken(
+        com.google.cloud.memorystore.v1.GetAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.memorystore.v1.AddTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.memorystore.v1.AddAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.memorystore.v1.DeleteAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2027,6 +2747,110 @@ public final class MemorystoreGrpc {
         com.google.cloud.memorystore.v1.FinishMigrationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFinishMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.memorystore.v1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.memorystore.v1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AuthToken getAuthToken(
+        com.google.cloud.memorystore.v1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.memorystore.v1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.memorystore.v1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.memorystore.v1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -2307,6 +3131,114 @@ public final class MemorystoreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFinishMigrationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>
+        listTokenAuthUsers(com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.TokenAuthUser>
+        getTokenAuthUser(com.google.cloud.memorystore.v1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.ListAuthTokensResponse>
+        listAuthTokens(com.google.cloud.memorystore.v1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a token based auth enabled instance's auth token for a given user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.AuthToken>
+        getAuthToken(com.google.cloud.memorystore.v1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addTokenAuthUser(com.google.cloud.memorystore.v1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTokenAuthUser(com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addAuthToken(com.google.cloud.memorystore.v1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAuthToken(com.google.cloud.memorystore.v1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -2326,6 +3258,14 @@ public final class MemorystoreGrpc {
   private static final int METHODID_BACKUP_INSTANCE = 14;
   private static final int METHODID_START_MIGRATION = 15;
   private static final int METHODID_FINISH_MIGRATION = 16;
+  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 17;
+  private static final int METHODID_GET_TOKEN_AUTH_USER = 18;
+  private static final int METHODID_LIST_AUTH_TOKENS = 19;
+  private static final int METHODID_GET_AUTH_TOKEN = 20;
+  private static final int METHODID_ADD_TOKEN_AUTH_USER = 21;
+  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 22;
+  private static final int METHODID_ADD_AUTH_TOKEN = 23;
+  private static final int METHODID_DELETE_AUTH_TOKEN = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2438,6 +3378,51 @@ public final class MemorystoreGrpc {
         case METHODID_FINISH_MIGRATION:
           serviceImpl.finishMigration(
               (com.google.cloud.memorystore.v1.FinishMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_TOKEN_AUTH_USERS:
+          serviceImpl.listTokenAuthUsers(
+              (com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TOKEN_AUTH_USER:
+          serviceImpl.getTokenAuthUser(
+              (com.google.cloud.memorystore.v1.GetTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.TokenAuthUser>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTH_TOKENS:
+          serviceImpl.listAuthTokens(
+              (com.google.cloud.memorystore.v1.ListAuthTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAuthTokensResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTH_TOKEN:
+          serviceImpl.getAuthToken(
+              (com.google.cloud.memorystore.v1.GetAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AuthToken>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_TOKEN_AUTH_USER:
+          serviceImpl.addTokenAuthUser(
+              (com.google.cloud.memorystore.v1.AddTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKEN_AUTH_USER:
+          serviceImpl.deleteTokenAuthUser(
+              (com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ADD_AUTH_TOKEN:
+          serviceImpl.addAuthToken(
+              (com.google.cloud.memorystore.v1.AddAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTH_TOKEN:
+          serviceImpl.deleteAuthToken(
+              (com.google.cloud.memorystore.v1.DeleteAuthTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -2566,6 +3551,57 @@ public final class MemorystoreGrpc {
                 new MethodHandlers<
                     com.google.cloud.memorystore.v1.FinishMigrationRequest,
                     com.google.longrunning.Operation>(service, METHODID_FINISH_MIGRATION)))
+        .addMethod(
+            getListTokenAuthUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest,
+                    com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse>(
+                    service, METHODID_LIST_TOKEN_AUTH_USERS)))
+        .addMethod(
+            getGetTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.GetTokenAuthUserRequest,
+                    com.google.cloud.memorystore.v1.TokenAuthUser>(
+                    service, METHODID_GET_TOKEN_AUTH_USER)))
+        .addMethod(
+            getListAuthTokensMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.ListAuthTokensRequest,
+                    com.google.cloud.memorystore.v1.ListAuthTokensResponse>(
+                    service, METHODID_LIST_AUTH_TOKENS)))
+        .addMethod(
+            getGetAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.GetAuthTokenRequest,
+                    com.google.cloud.memorystore.v1.AuthToken>(service, METHODID_GET_AUTH_TOKEN)))
+        .addMethod(
+            getAddTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.AddTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_TOKEN_AUTH_USER)))
+        .addMethod(
+            getDeleteTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TOKEN_AUTH_USER)))
+        .addMethod(
+            getAddAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.AddAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_AUTH_TOKEN)))
+        .addMethod(
+            getDeleteAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.DeleteAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTH_TOKEN)))
         .build();
   }
 
@@ -2634,6 +3670,14 @@ public final class MemorystoreGrpc {
                       .addMethod(getBackupInstanceMethod())
                       .addMethod(getStartMigrationMethod())
                       .addMethod(getFinishMigrationMethod())
+                      .addMethod(getListTokenAuthUsersMethod())
+                      .addMethod(getGetTokenAuthUserMethod())
+                      .addMethod(getListAuthTokensMethod())
+                      .addMethod(getGetAuthTokenMethod())
+                      .addMethod(getAddTokenAuthUserMethod())
+                      .addMethod(getDeleteTokenAuthUserMethod())
+                      .addMethod(getAddAuthTokenMethod())
+                      .addMethod(getDeleteAuthTokenMethod())
                       .build();
         }
       }

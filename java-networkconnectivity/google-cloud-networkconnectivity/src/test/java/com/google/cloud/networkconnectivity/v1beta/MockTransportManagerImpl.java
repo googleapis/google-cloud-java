@@ -106,6 +106,29 @@ public class MockTransportManagerImpl extends TransportManagerImplBase {
   }
 
   @Override
+  public void parseFromActivationKey(
+      ParseFromActivationKeyRequest request,
+      StreamObserver<ParseFromActivationKeyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ParseFromActivationKeyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ParseFromActivationKeyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ParseFromActivationKey, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ParseFromActivationKeyResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listTransports(
       ListTransportsRequest request, StreamObserver<ListTransportsResponse> responseObserver) {
     Object response = responses.poll();

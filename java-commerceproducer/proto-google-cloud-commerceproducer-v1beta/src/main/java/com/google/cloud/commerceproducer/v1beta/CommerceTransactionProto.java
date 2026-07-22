@@ -374,10 +374,11 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + ".v1beta.ListSkuGroupsResponse\"B\332A\006parent"
           + "\202\323\344\223\0023\0221/v1beta/{parent=projects/*/locat"
           + "ions/*}/skuGroups\032S\312A\037commerceproducer.g"
-          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\303\001\n"
+          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\030CommerceTra"
           + "nsactionProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1beta/commerceproducer"
-          + "pb;commerceproducerpb\252\002$Google.Cloud.CommerceProducer.V1Betab\006proto3"
+          + "pb;commerceproducerpb\252\002$Google.Cloud.Com"
+          + "merceProducer.V1Beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

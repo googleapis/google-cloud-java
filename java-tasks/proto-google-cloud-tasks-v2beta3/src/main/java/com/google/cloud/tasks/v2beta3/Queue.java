@@ -758,8 +758,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-   * what happens to
-   * particular a task after its first attempt fails. That is,
+   * what happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    * task retries (the second attempt, third attempt, etc).
    *
@@ -801,8 +801,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-   * what happens to
-   * particular a task after its first attempt fails. That is,
+   * what happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    * task retries (the second attempt, third attempt, etc).
    *
@@ -846,8 +846,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-   * what happens to
-   * particular a task after its first attempt fails. That is,
+   * what happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    * task retries (the second attempt, third attempt, etc).
    *
@@ -1095,17 +1095,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The maximum amount of time that a task will be retained in
-   * this queue.
-   *
-   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-   * After a task has lived for `task_ttl`, the task will be deleted
+   * this queue. After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
    *
-   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-   * maximum duration because there is a
-   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-   * these queues. To view the maximum valid duration, see the documentation for
-   * [Duration][google.protobuf.Duration].
+   * The minimum value is 10 days. The maximum value is 10 years. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   *
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * .
+   *
+   * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+   * duration, because there is a
+   * [storage
+   * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+   * for these queues.
    * </pre>
    *
    * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -1122,17 +1128,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The maximum amount of time that a task will be retained in
-   * this queue.
-   *
-   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-   * After a task has lived for `task_ttl`, the task will be deleted
+   * this queue. After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
    *
-   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-   * maximum duration because there is a
-   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-   * these queues. To view the maximum valid duration, see the documentation for
-   * [Duration][google.protobuf.Duration].
+   * The minimum value is 10 days. The maximum value is 10 years. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   *
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * .
+   *
+   * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+   * duration, because there is a
+   * [storage
+   * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+   * for these queues.
    * </pre>
    *
    * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -1149,17 +1161,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The maximum amount of time that a task will be retained in
-   * this queue.
-   *
-   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-   * After a task has lived for `task_ttl`, the task will be deleted
+   * this queue. After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
    *
-   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-   * maximum duration because there is a
-   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-   * these queues. To view the maximum valid duration, see the documentation for
-   * [Duration][google.protobuf.Duration].
+   * The minimum value is 10 days. The maximum value is 10 years. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   *
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * .
+   *
+   * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+   * duration, because there is a
+   * [storage
+   * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+   * for these queues.
    * </pre>
    *
    * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -1185,6 +1203,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
    *
+   * The minimum value is 1 hour. The maximum value is 9 days. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
    *
@@ -1209,6 +1233,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * name can't be created until the tombstone has expired. For more information
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+   *
+   * The minimum value is 1 hour. The maximum value is 9 days. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
@@ -1236,6 +1266,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * name can't be created until the tombstone has expired. For more information
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+   *
+   * The minimum value is 1 hour. The maximum value is 9 days. The value
+   * must be given as a string that indicates the length of time (in seconds)
+   * followed by `s` (for "seconds"). For more information on the format, see
+   * the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
@@ -2815,8 +2851,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -2857,8 +2893,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -2905,8 +2941,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -2955,8 +2991,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3003,8 +3039,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3058,8 +3094,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3105,8 +3141,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3147,8 +3183,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3193,8 +3229,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
-     * what happens to
-     * particular a task after its first attempt fails. That is,
+     * what happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      * task retries (the second attempt, third attempt, etc).
      *
@@ -3941,17 +3977,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -3967,17 +4009,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -3997,17 +4045,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4031,17 +4085,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4062,17 +4122,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4101,17 +4167,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4132,17 +4204,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4158,17 +4236,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4186,17 +4270,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The maximum amount of time that a task will be retained in
-     * this queue.
-     *
-     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
-     * After a task has lived for `task_ttl`, the task will be deleted
+     * this queue. After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
      *
-     * The `task_ttl` for queues created via queue.yaml/xml is equal to the
-     * maximum duration because there is a
-     * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
-     * these queues. To view the maximum valid duration, see the documentation for
-     * [Duration][google.protobuf.Duration].
+     * The minimum value is 10 days. The maximum value is 10 years. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
+     * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+     * .
+     *
+     * Queues created by queue.yaml/xml have a fixed `task_ttl` of the maximum
+     * duration, because there is a
+     * [storage
+     * quota](https://docs.cloud.google.com/appengine/docs/standard/quotas#Task_Queue)
+     * for these queues.
      * </pre>
      *
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
@@ -4238,6 +4328,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
      *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -4261,6 +4357,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
@@ -4291,6 +4393,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
@@ -4324,6 +4432,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
      *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -4352,6 +4466,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
@@ -4390,6 +4510,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
      *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -4419,6 +4545,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
      *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -4442,6 +4574,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
@@ -4470,6 +4608,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
+     * The minimum value is 1 hour. The maximum value is 9 days. The value
+     * must be given as a string that indicates the length of time (in seconds)
+     * followed by `s` (for "seconds"). For more information on the format, see
+     * the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>

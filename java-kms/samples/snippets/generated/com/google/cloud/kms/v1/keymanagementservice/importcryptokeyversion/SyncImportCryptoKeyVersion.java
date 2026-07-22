@@ -53,6 +53,7 @@ public class SyncImportCryptoKeyVersion {
                       .toString())
               .setImportJob("importJob-208547368")
               .setWrappedKey(ByteString.EMPTY)
+              .setTrustedWrappingEnabled(true)
               .build();
       CryptoKeyVersion response = keyManagementServiceClient.importCryptoKeyVersion(request);
     }
