@@ -22,7 +22,6 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
-import com.google.api.gax.httpjson.HttpJsonTransportUtils;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -104,33 +103,31 @@ public class ITPostQuantumCryptography {
       System.getProperty("showcase.secure.endpoint", "localhost:7470");
 
   @BeforeAll
-  static void setUp() {
+  static void setUp() throws Exception {
     File certFile = new File(DEFAULT_CA_CERT_PATH);
     assertWithMessage("CA certificate file not found at " + DEFAULT_CA_CERT_PATH)
         .that(certFile.isFile())
         .isTrue();
+
+    // Register local Showcase CA cert in default SSLContext so the default NetHttpTransport trusts
+    // the server
+    KeyStore trustStore = loadCaCert(DEFAULT_CA_CERT_PATH);
+    TrustManagerFactory tmf =
+        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    tmf.init(trustStore);
+    SSLContext sslContext = SSLContext.getInstance("TLS");
+    sslContext.init(null, tmf.getTrustManagers(), null);
+    SSLContext.setDefault(sslContext);
   }
 
   @Test
   void testHttpJsonPqc() throws Exception {
-
-    NetHttpTransport transport =
-        new NetHttpTransport.Builder()
-            .setSecurityProvider(Conscrypt.newProvider())
-            .setSslSocketConfigurator(
-                socket -> {
-                  if (Conscrypt.isConscrypt(socket)) {
-                    Conscrypt.setNamedGroups(socket, HttpJsonTransportUtils.DEFAULT_PQC_GROUPS);
-                  }
-                })
-            .trustCertificates(null, loadCaCert(DEFAULT_CA_CERT_PATH), "")
-            .build();
-
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
+    // Test that the Java client creates a PQC-compliant NetHttpTransport by default (no custom
+    // transport provided)
     InstantiatingHttpJsonChannelProvider transportChannelProvider =
         EchoSettings.defaultHttpJsonTransportProviderBuilder()
-            .setHttpTransport(transport)
             .setEndpoint("https://" + SECURE_ENDPOINT)
             .setInterceptorProvider(() -> Collections.singletonList(interceptor))
             .build();
