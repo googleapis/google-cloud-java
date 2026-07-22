@@ -117,18 +117,20 @@ public class ITLargeDocumentTest extends ITBaseTest {
   @After
   @Override
   public void after() throws Exception {
-    if (firestore != null && collectionName != null) {
-      try {
-        // Delete documents in parallel
-        ApiFuture<WriteResult> d1 = docRef.delete();
-        ApiFuture<WriteResult> d2 = docA.delete();
-        ApiFuture<WriteResult> d3 = docB.delete();
-        ApiFutures.allAsList(Arrays.asList(d1, d2, d3)).get(30, TimeUnit.SECONDS);
-      } catch (Exception e) {
-        // Suppress errors during cleanup to not mask test failures
+    if (firestore != null) {
+      if (collectionName != null) {
+        try {
+          // Delete documents in parallel
+          ApiFuture<WriteResult> d1 = docRef.delete();
+          ApiFuture<WriteResult> d2 = docA.delete();
+          ApiFuture<WriteResult> d3 = docB.delete();
+          ApiFutures.allAsList(Arrays.asList(d1, d2, d3)).get(30, TimeUnit.SECONDS);
+        } catch (Exception e) {
+          // Suppress errors during cleanup to not mask test failures
+        }
       }
+      super.after();
     }
-    super.after();
   }
 
   @Test
