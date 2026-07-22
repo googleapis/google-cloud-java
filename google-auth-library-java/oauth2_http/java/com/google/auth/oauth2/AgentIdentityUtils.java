@@ -194,8 +194,10 @@ public final class AgentIdentityUtils {
     String keyPath = null;
 
     if (!Strings.isNullOrEmpty(certConfigPath)) {
-      if (!Files.exists(Paths.get(certConfigPath)) && !Files.exists(Paths.get(wellKnownDir))) {
-        // Fail-fast if config doesn't exist and we're not in a workload environment (e.g. workstation)
+      java.nio.file.Path configPath = Paths.get(certConfigPath);
+      java.nio.file.Path parentPath = configPath.getParent();
+      if (!Files.exists(configPath) && (parentPath == null || !Files.exists(parentPath))) {
+        // Fail-fast if config doesn't exist and its parent directory doesn't exist
         return new ResolvedCertAndKeyPaths(null, null);
       }
       // Read cert and key paths from config file. We use retry with backoff to handle transient
