@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,7 +219,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class UserServiceClient implements BackgroundResource {
-  private final UserServiceSettings settings;
+  private final @Nullable UserServiceSettings settings;
   private final UserServiceStub stub;
 
   /** Constructs an instance of UserServiceClient with default settings. */
@@ -257,7 +258,7 @@ public class UserServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserServiceSettings getSettings() {
+  public final @Nullable UserServiceSettings getSettings() {
     return settings;
   }
 
@@ -289,7 +290,7 @@ public class UserServiceClient implements BackgroundResource {
    *     rather than an email address as in `accounts/{account}/users/me`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User getUser(UserName name) {
+  public final User getUser(@Nullable UserName name) {
     GetUserRequest request =
         GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUser(request);
@@ -403,7 +404,7 @@ public class UserServiceClient implements BackgroundResource {
    * @param user Required. The user to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User createUser(AccountName parent, User user) {
+  public final User createUser(@Nullable AccountName parent, User user) {
     CreateUserRequest request =
         CreateUserRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -525,7 +526,7 @@ public class UserServiceClient implements BackgroundResource {
    *     than an email address as in `accounts/{account}/users/me`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUser(UserName name) {
+  public final void deleteUser(@Nullable UserName name) {
     DeleteUserRequest request =
         DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUser(request);
@@ -726,7 +727,7 @@ public class UserServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUsersPagedResponse listUsers(AccountName parent) {
+  public final ListUsersPagedResponse listUsers(@Nullable AccountName parent) {
     ListUsersRequest request =
         ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listUsers(request);
@@ -914,8 +915,8 @@ public class UserServiceClient implements BackgroundResource {
       extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
 
     private ListUsersPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       super(context, response);
     }
 
@@ -925,14 +926,14 @@ public class UserServiceClient implements BackgroundResource {
 
     @Override
     protected ListUsersPage createPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       return new ListUsersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsersPage> createPageAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
         ApiFuture<ListUsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -942,7 +943,7 @@ public class UserServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
 
-    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+    private ListUsersFixedSizeCollection(@Nullable List<ListUsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -952,7 +953,7 @@ public class UserServiceClient implements BackgroundResource {
 
     @Override
     protected ListUsersFixedSizeCollection createCollection(
-        List<ListUsersPage> pages, int collectionSize) {
+        @Nullable List<ListUsersPage> pages, int collectionSize) {
       return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }

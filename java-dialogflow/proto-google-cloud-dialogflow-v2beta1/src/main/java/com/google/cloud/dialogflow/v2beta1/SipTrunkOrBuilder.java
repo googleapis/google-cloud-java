@@ -205,4 +205,100 @@ public interface SipTrunkOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname> getPeerHostnamesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SipHostname getPeerHostnames(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  int getPeerHostnamesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>
+      getPeerHostnamesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder getPeerHostnamesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root certificate file to use for this SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for googleRootCertFile.
+   */
+  int getGoogleRootCertFileValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root certificate file to use for this SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleRootCertFile.
+   */
+  com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile getGoogleRootCertFile();
 }

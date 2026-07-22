@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -112,6 +113,11 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
     return ((DeveloperKnowledgeStubSettings) getStubSettings()).batchGetDocumentsSettings();
   }
 
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return ((DeveloperKnowledgeStubSettings) getStubSettings()).answerQuerySettings();
+  }
+
   public static final DeveloperKnowledgeSettings create(DeveloperKnowledgeStubSettings stub)
       throws IOException {
     return new DeveloperKnowledgeSettings.Builder(stub.toBuilder()).build();
@@ -168,7 +174,7 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -188,7 +194,7 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(DeveloperKnowledgeStubSettings.newBuilder(clientContext));
     }
 
@@ -242,6 +248,12 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
     public UnaryCallSettings.Builder<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
         batchGetDocumentsSettings() {
       return getStubSettingsBuilder().batchGetDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return getStubSettingsBuilder().answerQuerySettings();
     }
 
     @Override

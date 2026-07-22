@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,7 +153,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ProjectServiceClient implements BackgroundResource {
-  private final ProjectServiceSettings settings;
+  private final @Nullable ProjectServiceSettings settings;
   private final ProjectServiceStub stub;
 
   /** Constructs an instance of ProjectServiceClient with default settings. */
@@ -192,7 +193,7 @@ public class ProjectServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProjectServiceSettings getSettings() {
+  public final @Nullable ProjectServiceSettings getSettings() {
     return settings;
   }
 
@@ -222,7 +223,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *     projects/{project_number}/alertConfig
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertConfig getAlertConfig(AlertConfigName name) {
+  public final AlertConfig getAlertConfig(@Nullable AlertConfigName name) {
     GetAlertConfigRequest request =
         GetAlertConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAlertConfig(request);

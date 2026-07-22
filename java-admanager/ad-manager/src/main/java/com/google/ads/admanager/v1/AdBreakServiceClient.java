@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetAdBreak</td>
- *      <td><p> API to retrieve an `AdBreak` object.
+ *      <td><p> Retrieves an `AdBreak` object.
  * <p>  Query an ad break by its resource name or custom asset key. Check the resource's `breakState` field to determine its state.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -86,7 +87,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListAdBreaks</td>
- *      <td><p> API to retrieve a list of `AdBreak` objects.
+ *      <td><p> Lists `AdBreak` objects.
  * <p>  By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are prioritized and appear first.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -107,7 +108,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAdBreak</td>
- *      <td><p> API to create an `AdBreak` object.
+ *      <td><p> Creates an `AdBreak` object.
  * <p>  Informs DAI of an upcoming ad break for a live stream event, with an optional expected start time. DAI will begin decisioning ads for the break shortly before the expected start time, if provided. Each live stream event can only have one incomplete ad break at any given time. The next ad break can be scheduled after the previous ad break has started serving, indicated by its state being [`COMPLETE`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.COMPLETE], or it has been deleted.
  * <p>  This method cannot be used if the `LiveStreamEvent` has [prefetching ad breaks enabled](https://developers.google.com/ad-manager/api/reference/latest/LiveStreamEventService.LiveStreamEvent#prefetchenabled) or the event is not active. If a `LiveStreamEvent` is deactivated after creating an ad break and before the ad break is complete, the ad break is discarded.
  * <p>  An ad break's state is complete when the following occurs:  - Full service DAI: after a matching ad break shows in the  `LiveStreamEvent` manifest only when the ad break has started decisioning.  - Pod Serving: after the ad break is requested using the ad break ID or  break sequence.</td>
@@ -129,7 +130,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAdBreak</td>
- *      <td><p> API to update an `AdBreak` object.
+ *      <td><p> Updates an `AdBreak` object.
  * <p>  Modify an ad break when its state is [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -148,7 +149,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteAdBreak</td>
- *      <td><p> API to delete an `AdBreak` object.
+ *      <td><p> Deletes an `AdBreak` object.
  * <p>  Deletes and cancels an incomplete ad break, mitigating the need to wait for the current break to serve before recreating an ad break. You can delete an ad break that has not started serving or seen in manifests, indicated by its state being [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED] or [`DECISIONED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.DECISIONED].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -210,7 +211,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AdBreakServiceClient implements BackgroundResource {
-  private final AdBreakServiceSettings settings;
+  private final @Nullable AdBreakServiceSettings settings;
   private final AdBreakServiceStub stub;
 
   /** Constructs an instance of AdBreakServiceClient with default settings. */
@@ -250,7 +251,7 @@ public class AdBreakServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdBreakServiceSettings getSettings() {
+  public final @Nullable AdBreakServiceSettings getSettings() {
     return settings;
   }
 
@@ -260,7 +261,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AdBreak` object.
+   * Retrieves an `AdBreak` object.
    *
    * <p>Query an ad break by its resource name or custom asset key. Check the resource's
    * `breakState` field to determine its state.
@@ -285,7 +286,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByCustomAssetKey/{custom_asset_key}/adBreaks/{ad_break_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdBreak getAdBreak(AdBreakName name) {
+  public final AdBreak getAdBreak(@Nullable AdBreakName name) {
     GetAdBreakRequest request =
         GetAdBreakRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAdBreak(request);
@@ -293,7 +294,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AdBreak` object.
+   * Retrieves an `AdBreak` object.
    *
    * <p>Query an ad break by its resource name or custom asset key. Check the resource's
    * `breakState` field to determine its state.
@@ -325,7 +326,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AdBreak` object.
+   * Retrieves an `AdBreak` object.
    *
    * <p>Query an ad break by its resource name or custom asset key. Check the resource's
    * `breakState` field to determine its state.
@@ -356,7 +357,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AdBreak` object.
+   * Retrieves an `AdBreak` object.
    *
    * <p>Query an ad break by its resource name or custom asset key. Check the resource's
    * `breakState` field to determine its state.
@@ -386,7 +387,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AdBreak` objects.
+   * Lists `AdBreak` objects.
    *
    * <p>By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse
    * chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are
@@ -413,7 +414,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByCustomAssetKey/{custom_asset_key}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdBreaksPagedResponse listAdBreaks(LiveStreamEventName parent) {
+  public final ListAdBreaksPagedResponse listAdBreaks(@Nullable LiveStreamEventName parent) {
     ListAdBreaksRequest request =
         ListAdBreaksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -423,7 +424,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AdBreak` objects.
+   * Lists `AdBreak` objects.
    *
    * <p>By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse
    * chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are
@@ -457,7 +458,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AdBreak` objects.
+   * Lists `AdBreak` objects.
    *
    * <p>By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse
    * chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are
@@ -496,7 +497,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AdBreak` objects.
+   * Lists `AdBreak` objects.
    *
    * <p>By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse
    * chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are
@@ -536,7 +537,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AdBreak` objects.
+   * Lists `AdBreak` objects.
    *
    * <p>By default, when no `orderBy` query parameter is specified, ad breaks are ordered reverse
    * chronologically. However, ad breaks with a 'breakState' of 'SCHEDULED' or 'DECISIONED' are
@@ -581,7 +582,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdBreak` object.
+   * Creates an `AdBreak` object.
    *
    * <p>Informs DAI of an upcoming ad break for a live stream event, with an optional expected start
    * time. DAI will begin decisioning ads for the break shortly before the expected start time, if
@@ -622,7 +623,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    * @param adBreak Required. The `AdBreak` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdBreak createAdBreak(LiveStreamEventName parent, AdBreak adBreak) {
+  public final AdBreak createAdBreak(@Nullable LiveStreamEventName parent, AdBreak adBreak) {
     CreateAdBreakRequest request =
         CreateAdBreakRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -633,7 +634,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdBreak` object.
+   * Creates an `AdBreak` object.
    *
    * <p>Informs DAI of an upcoming ad break for a live stream event, with an optional expected start
    * time. DAI will begin decisioning ads for the break shortly before the expected start time, if
@@ -682,7 +683,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdBreak` object.
+   * Creates an `AdBreak` object.
    *
    * <p>Informs DAI of an upcoming ad break for a live stream event, with an optional expected start
    * time. DAI will begin decisioning ads for the break shortly before the expected start time, if
@@ -728,7 +729,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdBreak` object.
+   * Creates an `AdBreak` object.
    *
    * <p>Informs DAI of an upcoming ad break for a live stream event, with an optional expected start
    * time. DAI will begin decisioning ads for the break shortly before the expected start time, if
@@ -773,7 +774,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdBreak` object.
+   * Updates an `AdBreak` object.
    *
    * <p>Modify an ad break when its state is
    * [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED].
@@ -806,7 +807,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdBreak` object.
+   * Updates an `AdBreak` object.
    *
    * <p>Modify an ad break when its state is
    * [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED].
@@ -838,7 +839,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdBreak` object.
+   * Updates an `AdBreak` object.
    *
    * <p>Modify an ad break when its state is
    * [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED].
@@ -869,7 +870,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to delete an `AdBreak` object.
+   * Deletes an `AdBreak` object.
    *
    * <p>Deletes and cancels an incomplete ad break, mitigating the need to wait for the current
    * break to serve before recreating an ad break. You can delete an ad break that has not started
@@ -896,7 +897,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *     `networks/{network_code}/liveStreamEventsByAssetKey/{asset_key}/adBreaks/{ad_break}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAdBreak(AdBreakName name) {
+  public final void deleteAdBreak(@Nullable AdBreakName name) {
     DeleteAdBreakRequest request =
         DeleteAdBreakRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAdBreak(request);
@@ -904,7 +905,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to delete an `AdBreak` object.
+   * Deletes an `AdBreak` object.
    *
    * <p>Deletes and cancels an incomplete ad break, mitigating the need to wait for the current
    * break to serve before recreating an ad break. You can delete an ad break that has not started
@@ -938,7 +939,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to delete an `AdBreak` object.
+   * Deletes an `AdBreak` object.
    *
    * <p>Deletes and cancels an incomplete ad break, mitigating the need to wait for the current
    * break to serve before recreating an ad break. You can delete an ad break that has not started
@@ -972,7 +973,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to delete an `AdBreak` object.
+   * Deletes an `AdBreak` object.
    *
    * <p>Deletes and cancels an incomplete ad break, mitigating the need to wait for the current
    * break to serve before recreating an ad break. You can delete an ad break that has not started
@@ -1061,8 +1062,8 @@ public class AdBreakServiceClient implements BackgroundResource {
       extends AbstractPage<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak, ListAdBreaksPage> {
 
     private ListAdBreaksPage(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
-        ListAdBreaksResponse response) {
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable ListAdBreaksResponse response) {
       super(context, response);
     }
 
@@ -1072,14 +1073,14 @@ public class AdBreakServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdBreaksPage createPage(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
-        ListAdBreaksResponse response) {
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable ListAdBreaksResponse response) {
       return new ListAdBreaksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdBreaksPage> createPageAsync(
-        PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
+        @Nullable PageContext<ListAdBreaksRequest, ListAdBreaksResponse, AdBreak> context,
         ApiFuture<ListAdBreaksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1093,7 +1094,8 @@ public class AdBreakServiceClient implements BackgroundResource {
           ListAdBreaksPage,
           ListAdBreaksFixedSizeCollection> {
 
-    private ListAdBreaksFixedSizeCollection(List<ListAdBreaksPage> pages, int collectionSize) {
+    private ListAdBreaksFixedSizeCollection(
+        @Nullable List<ListAdBreaksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1103,7 +1105,7 @@ public class AdBreakServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdBreaksFixedSizeCollection createCollection(
-        List<ListAdBreaksPage> pages, int collectionSize) {
+        @Nullable List<ListAdBreaksPage> pages, int collectionSize) {
       return new ListAdBreaksFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -21,7 +21,8 @@
  *
  * <p>======================= QuotaControllerClient =======================
  *
- * <p>Service Description: [Google Quota Control API](/service-control/overview)
+ * <p>Service Description: [Google Quota Control
+ * API](https://cloud.google.com/service-control/overview)
  *
  * <p>Allows clients to allocate and release quota against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
@@ -47,7 +48,8 @@
  *
  * <p>======================= ServiceControllerClient =======================
  *
- * <p>Service Description: [Google Service Control API](/service-control/overview)
+ * <p>Service Description: [Google Service Control
+ * API](https://cloud.google.com/service-control/overview)
  *
  * <p>Lets clients check and report operations against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).

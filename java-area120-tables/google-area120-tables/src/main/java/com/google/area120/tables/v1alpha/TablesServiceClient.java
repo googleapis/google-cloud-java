@@ -58,6 +58,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -360,7 +361,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TablesServiceClient implements BackgroundResource {
-  private final TablesServiceSettings settings;
+  private final @Nullable TablesServiceSettings settings;
   private final TablesServiceStub stub;
 
   /** Constructs an instance of TablesServiceClient with default settings. */
@@ -400,7 +401,7 @@ public class TablesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TablesServiceSettings getSettings() {
+  public final @Nullable TablesServiceSettings getSettings() {
     return settings;
   }
 
@@ -429,7 +430,7 @@ public class TablesServiceClient implements BackgroundResource {
    * @param name Required. The name of the table to retrieve. Format: tables/{table}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table getTable(TableName name) {
+  public final Table getTable(@Nullable TableName name) {
     GetTableRequest request =
         GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTable(request);
@@ -631,7 +632,7 @@ public class TablesServiceClient implements BackgroundResource {
    * @param name Required. The name of the workspace to retrieve. Format: workspaces/{workspace}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workspace getWorkspace(WorkspaceName name) {
+  public final Workspace getWorkspace(@Nullable WorkspaceName name) {
     GetWorkspaceRequest request =
         GetWorkspaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkspace(request);
@@ -841,7 +842,7 @@ public class TablesServiceClient implements BackgroundResource {
    * @param name Required. The name of the row to retrieve. Format: tables/{table}/rows/{row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Row getRow(RowName name) {
+  public final Row getRow(@Nullable RowName name) {
     GetRowRequest request =
         GetRowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRow(request);
@@ -1379,7 +1380,7 @@ public class TablesServiceClient implements BackgroundResource {
    * @param name Required. The name of the row to delete. Format: tables/{table}/rows/{row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRow(RowName name) {
+  public final void deleteRow(@Nullable RowName name) {
     DeleteRowRequest request =
         DeleteRowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRow(request);
@@ -1575,8 +1576,8 @@ public class TablesServiceClient implements BackgroundResource {
       extends AbstractPage<ListTablesRequest, ListTablesResponse, Table, ListTablesPage> {
 
     private ListTablesPage(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
-        ListTablesResponse response) {
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable ListTablesResponse response) {
       super(context, response);
     }
 
@@ -1586,14 +1587,14 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListTablesPage createPage(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
-        ListTablesResponse response) {
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable ListTablesResponse response) {
       return new ListTablesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTablesPage> createPageAsync(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
         ApiFuture<ListTablesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1607,7 +1608,8 @@ public class TablesServiceClient implements BackgroundResource {
           ListTablesPage,
           ListTablesFixedSizeCollection> {
 
-    private ListTablesFixedSizeCollection(List<ListTablesPage> pages, int collectionSize) {
+    private ListTablesFixedSizeCollection(
+        @Nullable List<ListTablesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1617,7 +1619,7 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListTablesFixedSizeCollection createCollection(
-        List<ListTablesPage> pages, int collectionSize) {
+        @Nullable List<ListTablesPage> pages, int collectionSize) {
       return new ListTablesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1651,8 +1653,8 @@ public class TablesServiceClient implements BackgroundResource {
           ListWorkspacesRequest, ListWorkspacesResponse, Workspace, ListWorkspacesPage> {
 
     private ListWorkspacesPage(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
-        ListWorkspacesResponse response) {
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable ListWorkspacesResponse response) {
       super(context, response);
     }
 
@@ -1662,14 +1664,14 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkspacesPage createPage(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
-        ListWorkspacesResponse response) {
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable ListWorkspacesResponse response) {
       return new ListWorkspacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkspacesPage> createPageAsync(
-        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        @Nullable PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
         ApiFuture<ListWorkspacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1683,7 +1685,8 @@ public class TablesServiceClient implements BackgroundResource {
           ListWorkspacesPage,
           ListWorkspacesFixedSizeCollection> {
 
-    private ListWorkspacesFixedSizeCollection(List<ListWorkspacesPage> pages, int collectionSize) {
+    private ListWorkspacesFixedSizeCollection(
+        @Nullable List<ListWorkspacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1693,7 +1696,7 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListWorkspacesFixedSizeCollection createCollection(
-        List<ListWorkspacesPage> pages, int collectionSize) {
+        @Nullable List<ListWorkspacesPage> pages, int collectionSize) {
       return new ListWorkspacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1720,7 +1723,8 @@ public class TablesServiceClient implements BackgroundResource {
       extends AbstractPage<ListRowsRequest, ListRowsResponse, Row, ListRowsPage> {
 
     private ListRowsPage(
-        PageContext<ListRowsRequest, ListRowsResponse, Row> context, ListRowsResponse response) {
+        @Nullable PageContext<ListRowsRequest, ListRowsResponse, Row> context,
+        @Nullable ListRowsResponse response) {
       super(context, response);
     }
 
@@ -1730,13 +1734,14 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListRowsPage createPage(
-        PageContext<ListRowsRequest, ListRowsResponse, Row> context, ListRowsResponse response) {
+        @Nullable PageContext<ListRowsRequest, ListRowsResponse, Row> context,
+        @Nullable ListRowsResponse response) {
       return new ListRowsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRowsPage> createPageAsync(
-        PageContext<ListRowsRequest, ListRowsResponse, Row> context,
+        @Nullable PageContext<ListRowsRequest, ListRowsResponse, Row> context,
         ApiFuture<ListRowsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1746,7 +1751,7 @@ public class TablesServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRowsRequest, ListRowsResponse, Row, ListRowsPage, ListRowsFixedSizeCollection> {
 
-    private ListRowsFixedSizeCollection(List<ListRowsPage> pages, int collectionSize) {
+    private ListRowsFixedSizeCollection(@Nullable List<ListRowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1756,7 +1761,7 @@ public class TablesServiceClient implements BackgroundResource {
 
     @Override
     protected ListRowsFixedSizeCollection createCollection(
-        List<ListRowsPage> pages, int collectionSize) {
+        @Nullable List<ListRowsPage> pages, int collectionSize) {
       return new ListRowsFixedSizeCollection(pages, collectionSize);
     }
   }

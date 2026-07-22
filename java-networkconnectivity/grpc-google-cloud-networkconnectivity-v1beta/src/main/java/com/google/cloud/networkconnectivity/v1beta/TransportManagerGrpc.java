@@ -145,6 +145,58 @@ public final class TransportManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest,
+          com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+      getParseFromActivationKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ParseFromActivationKey",
+      requestType = com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest.class,
+      responseType =
+          com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest,
+          com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+      getParseFromActivationKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest,
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+        getParseFromActivationKeyMethod;
+    if ((getParseFromActivationKeyMethod = TransportManagerGrpc.getParseFromActivationKeyMethod)
+        == null) {
+      synchronized (TransportManagerGrpc.class) {
+        if ((getParseFromActivationKeyMethod = TransportManagerGrpc.getParseFromActivationKeyMethod)
+            == null) {
+          TransportManagerGrpc.getParseFromActivationKeyMethod =
+              getParseFromActivationKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest,
+                          com.google.cloud.networkconnectivity.v1beta
+                              .ParseFromActivationKeyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ParseFromActivationKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1beta
+                                  .ParseFromActivationKeyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1beta
+                                  .ParseFromActivationKeyResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TransportManagerMethodDescriptorSupplier("ParseFromActivationKey"))
+                      .build();
+        }
+      }
+    }
+    return getParseFromActivationKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networkconnectivity.v1beta.ListTransportsRequest,
           com.google.cloud.networkconnectivity.v1beta.ListTransportsResponse>
       getListTransportsMethod;
@@ -522,6 +574,22 @@ public final class TransportManagerGrpc {
      *
      *
      * <pre>
+     * Gets details of a single RemoteTransportProfile given an activation key.
+     * </pre>
+     */
+    default void parseFromActivationKey(
+        com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getParseFromActivationKeyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Transports in a given project and location.
      * </pre>
      */
@@ -680,6 +748,24 @@ public final class TransportManagerGrpc {
      *
      *
      * <pre>
+     * Gets details of a single RemoteTransportProfile given an activation key.
+     * </pre>
+     */
+    public void parseFromActivationKey(
+        com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getParseFromActivationKeyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Transports in a given project and location.
      * </pre>
      */
@@ -829,6 +915,21 @@ public final class TransportManagerGrpc {
      *
      *
      * <pre>
+     * Gets details of a single RemoteTransportProfile given an activation key.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse
+        parseFromActivationKey(
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getParseFromActivationKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Transports in a given project and location.
      * </pre>
      */
@@ -956,6 +1057,20 @@ public final class TransportManagerGrpc {
             com.google.cloud.networkconnectivity.v1beta.GetRemoteTransportProfileRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRemoteTransportProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RemoteTransportProfile given an activation key.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse
+        parseFromActivationKey(
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getParseFromActivationKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1091,6 +1206,21 @@ public final class TransportManagerGrpc {
      *
      *
      * <pre>
+     * Gets details of a single RemoteTransportProfile given an activation key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>
+        parseFromActivationKey(
+            com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getParseFromActivationKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Transports in a given project and location.
      * </pre>
      */
@@ -1174,12 +1304,13 @@ public final class TransportManagerGrpc {
 
   private static final int METHODID_LIST_REMOTE_TRANSPORT_PROFILES = 0;
   private static final int METHODID_GET_REMOTE_TRANSPORT_PROFILE = 1;
-  private static final int METHODID_LIST_TRANSPORTS = 2;
-  private static final int METHODID_GET_TRANSPORT = 3;
-  private static final int METHODID_GET_STATUS = 4;
-  private static final int METHODID_CREATE_TRANSPORT = 5;
-  private static final int METHODID_UPDATE_TRANSPORT = 6;
-  private static final int METHODID_DELETE_TRANSPORT = 7;
+  private static final int METHODID_PARSE_FROM_ACTIVATION_KEY = 2;
+  private static final int METHODID_LIST_TRANSPORTS = 3;
+  private static final int METHODID_GET_TRANSPORT = 4;
+  private static final int METHODID_GET_STATUS = 5;
+  private static final int METHODID_CREATE_TRANSPORT = 6;
+  private static final int METHODID_UPDATE_TRANSPORT = 7;
+  private static final int METHODID_DELETE_TRANSPORT = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1213,6 +1344,13 @@ public final class TransportManagerGrpc {
                   request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile>)
+                  responseObserver);
+          break;
+        case METHODID_PARSE_FROM_ACTIVATION_KEY:
+          serviceImpl.parseFromActivationKey(
+              (com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_TRANSPORTS:
@@ -1283,6 +1421,13 @@ public final class TransportManagerGrpc {
                     com.google.cloud.networkconnectivity.v1beta.GetRemoteTransportProfileRequest,
                     com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile>(
                     service, METHODID_GET_REMOTE_TRANSPORT_PROFILE)))
+        .addMethod(
+            getParseFromActivationKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest,
+                    com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse>(
+                    service, METHODID_PARSE_FROM_ACTIVATION_KEY)))
         .addMethod(
             getListTransportsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1375,6 +1520,7 @@ public final class TransportManagerGrpc {
                       .setSchemaDescriptor(new TransportManagerFileDescriptorSupplier())
                       .addMethod(getListRemoteTransportProfilesMethod())
                       .addMethod(getGetRemoteTransportProfileMethod())
+                      .addMethod(getParseFromActivationKeyMethod())
                       .addMethod(getListTransportsMethod())
                       .addMethod(getGetTransportMethod())
                       .addMethod(getGetStatusMethod())

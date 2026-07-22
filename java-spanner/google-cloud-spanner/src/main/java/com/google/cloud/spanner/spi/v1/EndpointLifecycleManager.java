@@ -621,6 +621,9 @@ class EndpointLifecycleManager {
    * Requests that an evicted endpoint be recreated. The endpoint is created in the background and
    * probing starts immediately. The endpoint will only become eligible for location-aware routing
    * once it reaches READY state.
+   *
+   * <p>Recreation is refused when no finder currently lists the address as active. Route lookups
+   * can race with cache updates that have already removed a tablet.
    */
   void requestEndpointRecreation(String address) {
     if (isShutdown.get() || address == null || address.isEmpty()) {
@@ -635,9 +638,32 @@ class EndpointLifecycleManager {
       return;
     }
 
-    logger.log(Level.FINE, "Recreating previously evicted endpoint for address: {0}", address);
-    EndpointState state = new EndpointState(address, clock.instant());
-    if (endpoints.putIfAbsent(address, state) == null) {
+    boolean stillActive = false;
+    boolean recreated = false;
+    // Check membership and insert under the reconciliation lock so active-set removal cannot
+    // complete between them and leave an inactive endpoint behind.
+    synchronized (activeAddressLock) {
+      for (Set<String> addresses : activeAddressesPerFinder.values()) {
+        if (addresses.contains(address)) {
+          stillActive = true;
+          break;
+        }
+      }
+      if (stillActive) {
+        EndpointState state = new EndpointState(address, clock.instant());
+        recreated = endpoints.putIfAbsent(address, state) == null;
+      }
+    }
+    if (!stillActive) {
+      logger.log(
+          Level.FINE,
+          "Skipping endpoint recreation for {0}: address is not in any finder's active set",
+          address);
+      return;
+    }
+
+    if (recreated) {
+      logger.log(Level.FINE, "Recreating previously evicted endpoint for address: {0}", address);
       // Schedule after putIfAbsent returns so the entry is visible to the scheduler thread.
       scheduler.submit(() -> createAndStartProbing(address));
     }

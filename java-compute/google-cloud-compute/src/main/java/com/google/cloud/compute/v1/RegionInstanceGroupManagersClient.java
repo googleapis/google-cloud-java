@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -575,7 +576,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionInstanceGroupManagersClient implements BackgroundResource {
-  private final RegionInstanceGroupManagersSettings settings;
+  private final @Nullable RegionInstanceGroupManagersSettings settings;
   private final RegionInstanceGroupManagersStub stub;
 
   /** Constructs an instance of RegionInstanceGroupManagersClient with default settings. */
@@ -618,7 +619,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionInstanceGroupManagersSettings getSettings() {
+  public final @Nullable RegionInstanceGroupManagersSettings getSettings() {
     return settings;
   }
 
@@ -1232,6 +1233,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1265,6 +1267,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1298,6 +1301,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1407,6 +1411,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1453,6 +1458,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1500,6 +1506,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -3078,6 +3085,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -3123,6 +3131,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -3171,6 +3180,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -4241,6 +4251,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(
@@ -4295,6 +4306,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(
@@ -4350,6 +4362,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(
@@ -4838,12 +4851,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
-        RegionInstanceGroupManagerList response) {
+        @Nullable RegionInstanceGroupManagerList response) {
       super(context, response);
     }
 
@@ -4853,18 +4867,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
-        RegionInstanceGroupManagerList response) {
+        @Nullable RegionInstanceGroupManagerList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagerList,
                 InstanceGroupManager>
@@ -4882,7 +4898,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4891,7 +4907,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4930,12 +4947,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListErrorsPage> {
 
     private ListErrorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
             context,
-        RegionInstanceGroupManagersListErrorsResponse response) {
+        @Nullable RegionInstanceGroupManagersListErrorsResponse response) {
       super(context, response);
     }
 
@@ -4945,18 +4963,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListErrorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
             context,
-        RegionInstanceGroupManagersListErrorsResponse response) {
+        @Nullable RegionInstanceGroupManagersListErrorsResponse response) {
       return new ListErrorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListErrorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListErrorsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListErrorsResponse,
                 InstanceManagedByIgmError>
@@ -4974,7 +4994,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListErrorsPage,
           ListErrorsFixedSizeCollection> {
 
-    private ListErrorsFixedSizeCollection(List<ListErrorsPage> pages, int collectionSize) {
+    private ListErrorsFixedSizeCollection(
+        @Nullable List<ListErrorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4984,7 +5005,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListErrorsFixedSizeCollection createCollection(
-        List<ListErrorsPage> pages, int collectionSize) {
+        @Nullable List<ListErrorsPage> pages, int collectionSize) {
       return new ListErrorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5025,12 +5046,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListManagedInstancesPage> {
 
     private ListManagedInstancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstancesResponse,
                 ManagedInstance>
             context,
-        RegionInstanceGroupManagersListInstancesResponse response) {
+        @Nullable RegionInstanceGroupManagersListInstancesResponse response) {
       super(context, response);
     }
 
@@ -5040,18 +5062,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListManagedInstancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstancesResponse,
                 ManagedInstance>
             context,
-        RegionInstanceGroupManagersListInstancesResponse response) {
+        @Nullable RegionInstanceGroupManagersListInstancesResponse response) {
       return new ListManagedInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagedInstancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagedInstancesRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstancesResponse,
                 ManagedInstance>
@@ -5070,7 +5094,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListManagedInstancesFixedSizeCollection> {
 
     private ListManagedInstancesFixedSizeCollection(
-        List<ListManagedInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListManagedInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5080,7 +5104,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListManagedInstancesFixedSizeCollection createCollection(
-        List<ListManagedInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListManagedInstancesPage> pages, int collectionSize) {
       return new ListManagedInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5121,12 +5145,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListPerInstanceConfigsPage> {
 
     private ListPerInstanceConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstanceConfigsResp,
                 PerInstanceConfig>
             context,
-        RegionInstanceGroupManagersListInstanceConfigsResp response) {
+        @Nullable RegionInstanceGroupManagersListInstanceConfigsResp response) {
       super(context, response);
     }
 
@@ -5136,18 +5161,20 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPerInstanceConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstanceConfigsResp,
                 PerInstanceConfig>
             context,
-        RegionInstanceGroupManagersListInstanceConfigsResp response) {
+        @Nullable RegionInstanceGroupManagersListInstanceConfigsResp response) {
       return new ListPerInstanceConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPerInstanceConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
                 RegionInstanceGroupManagersListInstanceConfigsResp,
                 PerInstanceConfig>
@@ -5166,7 +5193,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
           ListPerInstanceConfigsFixedSizeCollection> {
 
     private ListPerInstanceConfigsFixedSizeCollection(
-        List<ListPerInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListPerInstanceConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5176,7 +5203,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
     @Override
     protected ListPerInstanceConfigsFixedSizeCollection createCollection(
-        List<ListPerInstanceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListPerInstanceConfigsPage> pages, int collectionSize) {
       return new ListPerInstanceConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

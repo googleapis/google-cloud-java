@@ -227,6 +227,7 @@ public class ServiceAttachmentsClientTest {
             .setKind("kind3292052")
             .putAllMetadata(new HashMap<String, String>())
             .setName("name3373707")
+            .setNatIpsPerEndpoint(-1776023800)
             .addAllNatSubnets(new ArrayList<String>())
             .setProducerForwardingRule("producerForwardingRule-1240429621")
             .setPropagatedConnectionLimit(-1814764418)

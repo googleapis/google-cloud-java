@@ -37,7 +37,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -46,11 +45,15 @@ import org.mockito.junit.MockitoRule;
 public class BigtableUnaryOperationCallableTest {
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  @Mock private ApiTracerFactory tracerFactory;
-  @Mock private BigtableTracer tracer;
+  private ApiTracerFactory tracerFactory;
+  private BigtableTracer tracer;
 
   @Before
   public void setUp() throws Exception {
+    tracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = Mockito.mock(BigtableTracer.class, Mockito.withSettings().withoutAnnotations());
+
     Mockito.when(tracerFactory.newTracer(Mockito.any(), Mockito.any(), Mockito.any()))
         .thenReturn(tracer);
   }

@@ -21,11 +21,14 @@ import static com.google.cloud.compute.v1.RolloutsClient.ListPagedResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AdvanceRolloutRequest;
 import com.google.cloud.compute.v1.CancelRolloutRequest;
 import com.google.cloud.compute.v1.DeleteRolloutRequest;
 import com.google.cloud.compute.v1.GetRolloutRequest;
 import com.google.cloud.compute.v1.ListRolloutsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PauseRolloutRequest;
+import com.google.cloud.compute.v1.ResumeRolloutRequest;
 import com.google.cloud.compute.v1.Rollout;
 import com.google.cloud.compute.v1.RolloutsListResponse;
 import javax.annotation.Generated;
@@ -40,6 +43,14 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RolloutsStub implements BackgroundResource {
+
+  public OperationCallable<AdvanceRolloutRequest, Operation, Operation> advanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: advanceOperationCallable()");
+  }
+
+  public UnaryCallable<AdvanceRolloutRequest, Operation> advanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: advanceCallable()");
+  }
 
   public OperationCallable<CancelRolloutRequest, Operation, Operation> cancelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelOperationCallable()");
@@ -67,6 +78,22 @@ public abstract class RolloutsStub implements BackgroundResource {
 
   public UnaryCallable<ListRolloutsRequest, RolloutsListResponse> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PauseRolloutRequest, Operation, Operation> pauseOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: pauseOperationCallable()");
+  }
+
+  public UnaryCallable<PauseRolloutRequest, Operation> pauseCallable() {
+    throw new UnsupportedOperationException("Not implemented: pauseCallable()");
+  }
+
+  public OperationCallable<ResumeRolloutRequest, Operation, Operation> resumeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeOperationCallable()");
+  }
+
+  public UnaryCallable<ResumeRolloutRequest, Operation> resumeCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeCallable()");
   }
 
   @Override

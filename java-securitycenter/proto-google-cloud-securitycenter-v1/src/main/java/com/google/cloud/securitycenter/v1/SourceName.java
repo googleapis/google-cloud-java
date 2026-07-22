@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -146,7 +147,7 @@ public class SourceName implements ResourceName {
     return newProjectSourceBuilder().setProject(project).setSource(source).build().toString();
   }
 
-  public static SourceName parse(String formattedString) {
+  public static @Nullable SourceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -171,7 +172,7 @@ public class SourceName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SourceName> values) {
+  public static List<String> toStringList(List<@Nullable SourceName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SourceName value : values) {
       if (value == null) {
@@ -224,7 +225,7 @@ public class SourceName implements ResourceName {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }

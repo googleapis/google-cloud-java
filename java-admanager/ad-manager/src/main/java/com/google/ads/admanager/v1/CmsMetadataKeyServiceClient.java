@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetCmsMetadataKey</td>
- *      <td><p> API to retrieve a `CmsMetadataKey` object.</td>
+ *      <td><p> Retrieves a `CmsMetadataKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListCmsMetadataKeys</td>
- *      <td><p> API to retrieve a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Lists `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +106,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCmsMetadataKeys</td>
- *      <td><p> API to activate a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Activates a list of `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +125,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateCmsMetadataKeys</td>
- *      <td><p> API to deactivate a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Deactivates a list of `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CmsMetadataKeyServiceClient implements BackgroundResource {
-  private final CmsMetadataKeyServiceSettings settings;
+  private final @Nullable CmsMetadataKeyServiceSettings settings;
   private final CmsMetadataKeyServiceStub stub;
 
   /** Constructs an instance of CmsMetadataKeyServiceClient with default settings. */
@@ -227,7 +228,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CmsMetadataKeyServiceSettings getSettings() {
+  public final @Nullable CmsMetadataKeyServiceSettings getSettings() {
     return settings;
   }
 
@@ -237,7 +238,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -258,7 +259,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
    *     `networks/{network_code}/cmsMetadataKeys/{cms_metadata_key_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CmsMetadataKey getCmsMetadataKey(CmsMetadataKeyName name) {
+  public final CmsMetadataKey getCmsMetadataKey(@Nullable CmsMetadataKeyName name) {
     GetCmsMetadataKeyRequest request =
         GetCmsMetadataKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -268,7 +269,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -296,7 +297,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -325,7 +326,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -354,7 +355,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -378,7 +379,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCmsMetadataKeysPagedResponse listCmsMetadataKeys(NetworkName parent) {
+  public final ListCmsMetadataKeysPagedResponse listCmsMetadataKeys(@Nullable NetworkName parent) {
     ListCmsMetadataKeysRequest request =
         ListCmsMetadataKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -388,7 +389,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -420,7 +421,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -458,7 +459,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -495,7 +496,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -539,7 +540,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -565,7 +566,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateCmsMetadataKeysResponse batchActivateCmsMetadataKeys(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateCmsMetadataKeysRequest request =
         BatchActivateCmsMetadataKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -576,7 +577,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -613,7 +614,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -645,7 +646,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -677,7 +678,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -703,7 +704,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateCmsMetadataKeysResponse batchDeactivateCmsMetadataKeys(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateCmsMetadataKeysRequest request =
         BatchDeactivateCmsMetadataKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -714,7 +715,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -751,7 +752,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -783,7 +784,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -876,9 +877,10 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
           ListCmsMetadataKeysPage> {
 
     private ListCmsMetadataKeysPage(
-        PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
+        @Nullable
+            PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
             context,
-        ListCmsMetadataKeysResponse response) {
+        @Nullable ListCmsMetadataKeysResponse response) {
       super(context, response);
     }
 
@@ -888,15 +890,17 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCmsMetadataKeysPage createPage(
-        PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
+        @Nullable
+            PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
             context,
-        ListCmsMetadataKeysResponse response) {
+        @Nullable ListCmsMetadataKeysResponse response) {
       return new ListCmsMetadataKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCmsMetadataKeysPage> createPageAsync(
-        PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
+        @Nullable
+            PageContext<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
             context,
         ApiFuture<ListCmsMetadataKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -912,7 +916,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
           ListCmsMetadataKeysFixedSizeCollection> {
 
     private ListCmsMetadataKeysFixedSizeCollection(
-        List<ListCmsMetadataKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCmsMetadataKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -922,7 +926,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCmsMetadataKeysFixedSizeCollection createCollection(
-        List<ListCmsMetadataKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCmsMetadataKeysPage> pages, int collectionSize) {
       return new ListCmsMetadataKeysFixedSizeCollection(pages, collectionSize);
     }
   }

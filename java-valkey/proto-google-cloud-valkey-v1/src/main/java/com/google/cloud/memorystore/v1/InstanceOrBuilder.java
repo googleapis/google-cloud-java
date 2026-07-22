@@ -1097,11 +1097,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for mode.
@@ -1112,11 +1112,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The mode config for the instance.
+   * Optional. Immutable. The mode config for the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.memorystore.v1.Instance.Mode mode = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The mode.
@@ -1165,7 +1165,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=604
+   *     google/cloud/memorystore/v1/memorystore.proto;l=744
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Deprecated
@@ -1183,7 +1183,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=604
+   *     google/cloud/memorystore/v1/memorystore.proto;l=744
    * @return The ondemandMaintenance.
    */
   @java.lang.Deprecated
@@ -1776,7 +1776,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=685
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=825
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Deprecated
@@ -1907,6 +1907,49 @@ public interface InstanceOrBuilder
    * @return The rotateServerCertificate.
    */
   boolean getRotateServerCertificate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the migrationConfig field is set.
+   */
+  boolean hasMigrationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The migrationConfig.
+   */
+  com.google.cloud.memorystore.v1.MigrationConfig getMigrationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Migration config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MigrationConfig migration_config = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1.MigrationConfigOrBuilder getMigrationConfigOrBuilder();
 
   com.google.cloud.memorystore.v1.Instance.ImportSourcesCase getImportSourcesCase();
 }

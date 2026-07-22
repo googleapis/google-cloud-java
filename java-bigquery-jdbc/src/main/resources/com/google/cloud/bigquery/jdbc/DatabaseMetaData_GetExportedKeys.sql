@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,58 +14,37 @@
  * limitations under the License.
  */
 
-SELECT PKTABLE_CAT,
-       PKTABLE_SCHEM,
-       PKTABLE_NAME,
-       PRIMARY.column_name        AS PKCOLUMN_NAME,
-       FOREIGN.constraint_catalog AS FKTABLE_CAT,
-       FOREIGN.constraint_schema  AS FKTABLE_SCHEM,
-       FOREIGN.table_name         AS FKTABLE_NAME,
-       FOREIGN.column_name        AS FKCOLUMN_NAME,
-       FOREIGN.ordinal_position   AS KEY_SEQ,
-       NULL                       AS UPDATE_RULE,
-       NULL                       AS DELETE_RULE,
-       FOREIGN.constraint_name    AS FK_NAME,
-       PRIMARY.constraint_name    AS PK_NAME,
-       NULL                       AS DEFERRABILITY
-FROM (SELECT DISTINCT CCU.table_catalog AS PKTABLE_CAT,
-                      CCU.table_schema  AS PKTABLE_SCHEM,
-                      CCU.table_name    AS PKTABLE_NAME,
-                      TC.constraint_catalog,
-                      TC.constraint_schema,
-                      TC.constraint_name,
-                      TC.table_catalog,
-                      TC.table_schema,
-                      TC.table_name,
-                      TC.constraint_type,
-                      KCU.column_name,
-                      KCU.ordinal_position,
-                      KCU.position_in_unique_constraint
-      FROM `%1$s.%2$s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS` TC
-               INNER JOIN
-           `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` KCU
-           USING
-               (constraint_catalog,
-                constraint_schema,
-                constraint_name,
-                table_catalog,
-                table_schema,
-                table_name)
-               INNER JOIN
-           `%1$s.%2$s.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE` CCU
-           USING
-               (constraint_catalog,
-                constraint_schema,
-                constraint_name)
-      WHERE constraint_type = 'FOREIGN KEY') FOREIGN
-         INNER JOIN (SELECT *
-                     FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`
-                     WHERE position_in_unique_constraint IS NULL
-                       AND RTRIM(table_name) = '%3$s') PRIMARY
-ON
-    FOREIGN.PKTABLE_CAT = PRIMARY.table_catalog
-    AND FOREIGN.PKTABLE_SCHEM = PRIMARY.table_schema
-    AND FOREIGN.PKTABLE_NAME = PRIMARY.table_name
-    AND FOREIGN.position_in_unique_constraint =
-    PRIMARY.ordinal_position
-ORDER BY FKTABLE_CAT, FKTABLE_SCHEM, FKTABLE_NAME, KEY_SEQ
+SELECT
+  pk.table_catalog        AS PKTABLE_CAT,
+  pk.table_schema         AS PKTABLE_SCHEM,
+  pk.table_name           AS PKTABLE_NAME,
+  pk.column_name          AS PKCOLUMN_NAME,
+  fk.table_catalog        AS FKTABLE_CAT,
+  fk.table_schema         AS FKTABLE_SCHEM,
+  fk.table_name           AS FKTABLE_NAME,
+  fk.column_name          AS FKCOLUMN_NAME,
+  fk.ordinal_position     AS KEY_SEQ,
+  1                       AS UPDATE_RULE,
+  1                       AS DELETE_RULE,
+  REGEXP_EXTRACT(fk.constraint_name, r'[^.]+$') AS FK_NAME,
+  REGEXP_EXTRACT(pk.constraint_name, r'[^.]+$') AS PK_NAME,
+  7                       AS DEFERRABILITY
+FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` AS pk
+JOIN `%1$s.%2$s.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE` AS ccu
+  ON ccu.table_catalog = pk.table_catalog
+ AND ccu.table_schema  = pk.table_schema
+ AND ccu.table_name    = pk.table_name
+ AND ccu.column_name   = pk.column_name
+JOIN `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` AS fk
+  ON fk.constraint_catalog = ccu.constraint_catalog
+ AND fk.constraint_schema  = ccu.constraint_schema
+ AND fk.constraint_name    = ccu.constraint_name
+ AND fk.position_in_unique_constraint = pk.ordinal_position
+JOIN `%1$s.%2$s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS` AS tc
+  ON tc.constraint_catalog = fk.constraint_catalog
+ AND tc.constraint_schema  = fk.constraint_schema
+ AND tc.constraint_name    = fk.constraint_name
+ AND tc.constraint_type    = 'FOREIGN KEY'
+WHERE CASE WHEN pk.table_name = '%3$s' THEN 1 ELSE 0 END = 1
+  AND pk.position_in_unique_constraint IS NULL
+ORDER BY fk.table_schema, fk.table_name, fk.ordinal_position

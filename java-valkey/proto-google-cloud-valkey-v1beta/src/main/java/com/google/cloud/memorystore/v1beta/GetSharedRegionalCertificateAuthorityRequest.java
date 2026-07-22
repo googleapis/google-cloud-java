@@ -24,8 +24,7 @@ package com.google.cloud.memorystore.v1beta;
  *
  *
  * <pre>
- * Request for
- * [GetSharedRegionalCertificateAuthority][google.cloud.memorystore.v1beta.Memorystore.GetSharedRegionalCertificateAuthority].
+ * Request for `GetSharedRegionalCertificateAuthority`.
  * </pre>
  *
  * Protobuf type {@code
@@ -309,8 +308,7 @@ public final class GetSharedRegionalCertificateAuthorityRequest
    *
    *
    * <pre>
-   * Request for
-   * [GetSharedRegionalCertificateAuthority][google.cloud.memorystore.v1beta.Memorystore.GetSharedRegionalCertificateAuthority].
+   * Request for `GetSharedRegionalCertificateAuthority`.
    * </pre>
    *
    * Protobuf type {@code

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -589,7 +590,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ProductSearchClient implements BackgroundResource {
-  private final ProductSearchSettings settings;
+  private final @Nullable ProductSearchSettings settings;
   private final ProductSearchStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -637,7 +638,7 @@ public class ProductSearchClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ProductSearchSettings getSettings() {
+  public final @Nullable ProductSearchSettings getSettings() {
     return settings;
   }
 
@@ -698,7 +699,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet createProductSet(
-      LocationName parent, ProductSet productSet, String productSetId) {
+      @Nullable LocationName parent, ProductSet productSet, String productSetId) {
     CreateProductSetRequest request =
         CreateProductSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -856,7 +857,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductSetsPagedResponse listProductSets(LocationName parent) {
+  public final ListProductSetsPagedResponse listProductSets(@Nullable LocationName parent) {
     ListProductSetsRequest request =
         ListProductSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1050,7 +1051,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProductSet getProductSet(ProductSetName name) {
+  public final ProductSet getProductSet(@Nullable ProductSetName name) {
     GetProductSetRequest request =
         GetProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProductSet(request);
@@ -1298,7 +1299,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProductSet(ProductSetName name) {
+  public final void deleteProductSet(@Nullable ProductSetName name) {
     DeleteProductSetRequest request =
         DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProductSet(request);
@@ -1432,7 +1433,8 @@ public class ProductSearchClient implements BackgroundResource {
    *     `/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product createProduct(LocationName parent, Product product, String productId) {
+  public final Product createProduct(
+      @Nullable LocationName parent, Product product, String productId) {
     CreateProductRequest request =
         CreateProductRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1594,7 +1596,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format: `projects/PROJECT_ID/locations/LOC_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductsPagedResponse listProducts(LocationName parent) {
+  public final ListProductsPagedResponse listProducts(@Nullable LocationName parent) {
     ListProductsRequest request =
         ListProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1786,7 +1788,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product getProduct(ProductName name) {
+  public final Product getProduct(@Nullable ProductName name) {
     GetProductRequest request =
         GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
@@ -2052,7 +2054,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteProduct(ProductName name) {
+  public final void deleteProduct(@Nullable ProductName name) {
     DeleteProductRequest request =
         DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProduct(request);
@@ -2202,7 +2204,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage createReferenceImage(
-      ProductName parent, ReferenceImage referenceImage, String referenceImageId) {
+      @Nullable ProductName parent, ReferenceImage referenceImage, String referenceImageId) {
     CreateReferenceImageRequest request =
         CreateReferenceImageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2398,7 +2400,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReferenceImage(ReferenceImageName name) {
+  public final void deleteReferenceImage(@Nullable ReferenceImageName name) {
     DeleteReferenceImageRequest request =
         DeleteReferenceImageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2543,7 +2545,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReferenceImagesPagedResponse listReferenceImages(ProductName parent) {
+  public final ListReferenceImagesPagedResponse listReferenceImages(@Nullable ProductName parent) {
     ListReferenceImagesRequest request =
         ListReferenceImagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2745,7 +2747,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReferenceImage getReferenceImage(ReferenceImageName name) {
+  public final ReferenceImage getReferenceImage(@Nullable ReferenceImageName name) {
     GetReferenceImageRequest request =
         GetReferenceImageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2895,7 +2897,8 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void addProductToProductSet(ProductSetName name, ProductName product) {
+  public final void addProductToProductSet(
+      @Nullable ProductSetName name, @Nullable ProductName product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2938,7 +2941,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void addProductToProductSet(ProductSetName name, String product) {
+  public final void addProductToProductSet(@Nullable ProductSetName name, String product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2981,7 +2984,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void addProductToProductSet(String name, ProductName product) {
+  public final void addProductToProductSet(String name, @Nullable ProductName product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name)
@@ -3132,7 +3135,8 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeProductFromProductSet(ProductSetName name, ProductName product) {
+  public final void removeProductFromProductSet(
+      @Nullable ProductSetName name, @Nullable ProductName product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3166,7 +3170,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeProductFromProductSet(ProductSetName name, String product) {
+  public final void removeProductFromProductSet(@Nullable ProductSetName name, String product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3200,7 +3204,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeProductFromProductSet(String name, ProductName product) {
+  public final void removeProductFromProductSet(String name, @Nullable ProductName product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name)
@@ -3330,7 +3334,8 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductsInProductSetPagedResponse listProductsInProductSet(ProductSetName name) {
+  public final ListProductsInProductSetPagedResponse listProductsInProductSet(
+      @Nullable ProductSetName name) {
     ListProductsInProductSetRequest request =
         ListProductsInProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3538,7 +3543,8 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
+      importProductSetsAsync(
+          @Nullable LocationName parent, ImportProductSetsInputConfig inputConfig) {
     ImportProductSetsRequest request =
         ImportProductSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3754,7 +3760,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     PurgeProductsRequest request =
         PurgeProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4020,8 +4026,8 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductSetsRequest, ListProductSetsResponse, ProductSet, ListProductSetsPage> {
 
     private ListProductSetsPage(
-        PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
-        ListProductSetsResponse response) {
+        @Nullable PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
+        @Nullable ListProductSetsResponse response) {
       super(context, response);
     }
 
@@ -4031,14 +4037,14 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductSetsPage createPage(
-        PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
-        ListProductSetsResponse response) {
+        @Nullable PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
+        @Nullable ListProductSetsResponse response) {
       return new ListProductSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductSetsPage> createPageAsync(
-        PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
+        @Nullable PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> context,
         ApiFuture<ListProductSetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4053,7 +4059,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductSetsFixedSizeCollection> {
 
     private ListProductSetsFixedSizeCollection(
-        List<ListProductSetsPage> pages, int collectionSize) {
+        @Nullable List<ListProductSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4063,7 +4069,7 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductSetsFixedSizeCollection createCollection(
-        List<ListProductSetsPage> pages, int collectionSize) {
+        @Nullable List<ListProductSetsPage> pages, int collectionSize) {
       return new ListProductSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4096,8 +4102,8 @@ public class ProductSearchClient implements BackgroundResource {
       extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
 
     private ListProductsPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       super(context, response);
     }
 
@@ -4107,14 +4113,14 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductsPage createPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       return new ListProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsPage> createPageAsync(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
         ApiFuture<ListProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4128,7 +4134,8 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductsPage,
           ListProductsFixedSizeCollection> {
 
-    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+    private ListProductsFixedSizeCollection(
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4138,7 +4145,7 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductsFixedSizeCollection createCollection(
-        List<ListProductsPage> pages, int collectionSize) {
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       return new ListProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4176,9 +4183,10 @@ public class ProductSearchClient implements BackgroundResource {
           ListReferenceImagesPage> {
 
     private ListReferenceImagesPage(
-        PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
+        @Nullable
+            PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
             context,
-        ListReferenceImagesResponse response) {
+        @Nullable ListReferenceImagesResponse response) {
       super(context, response);
     }
 
@@ -4188,15 +4196,17 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListReferenceImagesPage createPage(
-        PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
+        @Nullable
+            PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
             context,
-        ListReferenceImagesResponse response) {
+        @Nullable ListReferenceImagesResponse response) {
       return new ListReferenceImagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReferenceImagesPage> createPageAsync(
-        PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
+        @Nullable
+            PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
             context,
         ApiFuture<ListReferenceImagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4212,7 +4222,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListReferenceImagesFixedSizeCollection> {
 
     private ListReferenceImagesFixedSizeCollection(
-        List<ListReferenceImagesPage> pages, int collectionSize) {
+        @Nullable List<ListReferenceImagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4222,7 +4232,7 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListReferenceImagesFixedSizeCollection createCollection(
-        List<ListReferenceImagesPage> pages, int collectionSize) {
+        @Nullable List<ListReferenceImagesPage> pages, int collectionSize) {
       return new ListReferenceImagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4260,9 +4270,10 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductsInProductSetPage> {
 
     private ListProductsInProductSetPage(
-        PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
+        @Nullable
+            PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
             context,
-        ListProductsInProductSetResponse response) {
+        @Nullable ListProductsInProductSetResponse response) {
       super(context, response);
     }
 
@@ -4272,15 +4283,17 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductsInProductSetPage createPage(
-        PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
+        @Nullable
+            PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
             context,
-        ListProductsInProductSetResponse response) {
+        @Nullable ListProductsInProductSetResponse response) {
       return new ListProductsInProductSetPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsInProductSetPage> createPageAsync(
-        PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
+        @Nullable
+            PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
             context,
         ApiFuture<ListProductsInProductSetResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4296,7 +4309,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductsInProductSetFixedSizeCollection> {
 
     private ListProductsInProductSetFixedSizeCollection(
-        List<ListProductsInProductSetPage> pages, int collectionSize) {
+        @Nullable List<ListProductsInProductSetPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4306,7 +4319,7 @@ public class ProductSearchClient implements BackgroundResource {
 
     @Override
     protected ListProductsInProductSetFixedSizeCollection createCollection(
-        List<ListProductsInProductSetPage> pages, int collectionSize) {
+        @Nullable List<ListProductsInProductSetPage> pages, int collectionSize) {
       return new ListProductsInProductSetFixedSizeCollection(pages, collectionSize);
     }
   }

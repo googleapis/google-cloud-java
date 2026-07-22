@@ -248,10 +248,6 @@
       <artifactId>opentelemetry-sdk-common</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud.opentelemetry</groupId>
-      <artifactId>detector-resources-support</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
       <scope>test</scope>
@@ -263,6 +259,14 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry.contrib</groupId>
+      <artifactId>opentelemetry-gcp-resources</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
     </dependency>
 
     <!-- export custom metrics to cloud console -->

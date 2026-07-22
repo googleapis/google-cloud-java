@@ -35,6 +35,7 @@ import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
+import com.google.iam.v1.ResourcePolicyMember;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -257,6 +258,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -316,6 +318,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -375,6 +378,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -546,6 +550,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -601,6 +606,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -656,6 +662,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -673,6 +680,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -716,6 +724,7 @@ public class SecretManagerServiceClientHttpJsonTest {
               .setVersionDestroyTtl(Duration.newBuilder().build())
               .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
               .putAllTags(new HashMap<String, String>())
+              .setPolicyMember(ResourcePolicyMember.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSecret(secret, updateMask);
@@ -1609,6 +1618,232 @@ public class SecretManagerServiceClientHttpJsonTest {
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableManagedRotationTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+    EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+        EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+
+    SecretVersion actualResponse =
+        client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void enableManagedRotationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+          EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+      client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableManagedRotationTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3502/secrets/secret-3502";
+    EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+        EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+
+    SecretVersion actualResponse =
+        client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void enableManagedRotationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3502/secrets/secret-3502";
+      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
+          EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+      client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rotateSecretTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+
+    SecretVersion actualResponse = client.rotateSecret(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rotateSecretExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+      client.rotateSecret(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rotateSecretTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
+            .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3502/secrets/secret-3502";
+
+    SecretVersion actualResponse = client.rotateSecret(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rotateSecretExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3502/secrets/secret-3502";
+      client.rotateSecret(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

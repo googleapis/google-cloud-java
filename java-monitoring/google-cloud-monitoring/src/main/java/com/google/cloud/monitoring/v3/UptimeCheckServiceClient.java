@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -245,7 +246,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UptimeCheckServiceClient implements BackgroundResource {
-  private final UptimeCheckServiceSettings settings;
+  private final @Nullable UptimeCheckServiceSettings settings;
   private final UptimeCheckServiceStub stub;
 
   /** Constructs an instance of UptimeCheckServiceClient with default settings. */
@@ -285,7 +286,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UptimeCheckServiceSettings getSettings() {
+  public final @Nullable UptimeCheckServiceSettings getSettings() {
     return settings;
   }
 
@@ -320,7 +321,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(ResourceName parent) {
+  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(
+      @Nullable ResourceName parent) {
     ListUptimeCheckConfigsRequest request =
         ListUptimeCheckConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -355,7 +357,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(OrganizationName parent) {
+  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(
+      @Nullable OrganizationName parent) {
     ListUptimeCheckConfigsRequest request =
         ListUptimeCheckConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -390,7 +393,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(ProjectName parent) {
+  public final ListUptimeCheckConfigsPagedResponse listUptimeCheckConfigs(
+      @Nullable ProjectName parent) {
     ListUptimeCheckConfigsRequest request =
         ListUptimeCheckConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -568,7 +572,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UptimeCheckConfig getUptimeCheckConfig(UptimeCheckConfigName name) {
+  public final UptimeCheckConfig getUptimeCheckConfig(@Nullable UptimeCheckConfigName name) {
     GetUptimeCheckConfigRequest request =
         GetUptimeCheckConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -696,7 +700,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig createUptimeCheckConfig(
-      ResourceName parent, UptimeCheckConfig uptimeCheckConfig) {
+      @Nullable ResourceName parent, UptimeCheckConfig uptimeCheckConfig) {
     CreateUptimeCheckConfigRequest request =
         CreateUptimeCheckConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -732,7 +736,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig createUptimeCheckConfig(
-      OrganizationName parent, UptimeCheckConfig uptimeCheckConfig) {
+      @Nullable OrganizationName parent, UptimeCheckConfig uptimeCheckConfig) {
     CreateUptimeCheckConfigRequest request =
         CreateUptimeCheckConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -768,7 +772,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig createUptimeCheckConfig(
-      ProjectName parent, UptimeCheckConfig uptimeCheckConfig) {
+      @Nullable ProjectName parent, UptimeCheckConfig uptimeCheckConfig) {
     CreateUptimeCheckConfigRequest request =
         CreateUptimeCheckConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -998,7 +1002,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUptimeCheckConfig(UptimeCheckConfigName name) {
+  public final void deleteUptimeCheckConfig(@Nullable UptimeCheckConfigName name) {
     DeleteUptimeCheckConfigRequest request =
         DeleteUptimeCheckConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1273,10 +1277,11 @@ public class UptimeCheckServiceClient implements BackgroundResource {
           ListUptimeCheckConfigsPage> {
 
     private ListUptimeCheckConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
             context,
-        ListUptimeCheckConfigsResponse response) {
+        @Nullable ListUptimeCheckConfigsResponse response) {
       super(context, response);
     }
 
@@ -1286,16 +1291,18 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
     @Override
     protected ListUptimeCheckConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
             context,
-        ListUptimeCheckConfigsResponse response) {
+        @Nullable ListUptimeCheckConfigsResponse response) {
       return new ListUptimeCheckConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUptimeCheckConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
             context,
         ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
@@ -1312,7 +1319,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
           ListUptimeCheckConfigsFixedSizeCollection> {
 
     private ListUptimeCheckConfigsFixedSizeCollection(
-        List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1322,7 +1329,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
     @Override
     protected ListUptimeCheckConfigsFixedSizeCollection createCollection(
-        List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
       return new ListUptimeCheckConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1359,8 +1366,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
           ListUptimeCheckIpsPage> {
 
     private ListUptimeCheckIpsPage(
-        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
-        ListUptimeCheckIpsResponse response) {
+        @Nullable PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
+            context,
+        @Nullable ListUptimeCheckIpsResponse response) {
       super(context, response);
     }
 
@@ -1370,14 +1378,16 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
     @Override
     protected ListUptimeCheckIpsPage createPage(
-        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
-        ListUptimeCheckIpsResponse response) {
+        @Nullable PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
+            context,
+        @Nullable ListUptimeCheckIpsResponse response) {
       return new ListUptimeCheckIpsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUptimeCheckIpsPage> createPageAsync(
-        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
+        @Nullable PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
+            context,
         ApiFuture<ListUptimeCheckIpsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1392,7 +1402,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
           ListUptimeCheckIpsFixedSizeCollection> {
 
     private ListUptimeCheckIpsFixedSizeCollection(
-        List<ListUptimeCheckIpsPage> pages, int collectionSize) {
+        @Nullable List<ListUptimeCheckIpsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1402,7 +1412,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
     @Override
     protected ListUptimeCheckIpsFixedSizeCollection createCollection(
-        List<ListUptimeCheckIpsPage> pages, int collectionSize) {
+        @Nullable List<ListUptimeCheckIpsPage> pages, int collectionSize) {
       return new ListUptimeCheckIpsFixedSizeCollection(pages, collectionSize);
     }
   }

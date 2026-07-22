@@ -11,6 +11,5 @@
   "repo_short": "java-spanneradapter",
   "distribution_name": "com.google.cloud:google-cloud-spanneradapter",
   "api_id": "spanneradapter.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

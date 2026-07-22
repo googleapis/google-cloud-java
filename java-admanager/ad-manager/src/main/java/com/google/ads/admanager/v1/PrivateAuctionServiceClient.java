@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -67,7 +68,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetPrivateAuction</td>
- *      <td><p> API to retrieve a `PrivateAuction` object.</td>
+ *      <td><p> Retrieves a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +87,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListPrivateAuctions</td>
- *      <td><p> API to retrieve a list of `PrivateAuction` objects.</td>
+ *      <td><p> Lists `PrivateAuction` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +107,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePrivateAuction</td>
- *      <td><p> API to create a `PrivateAuction` object.</td>
+ *      <td><p> Creates a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +126,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePrivateAuction</td>
- *      <td><p> API to update a `PrivateAuction` object.</td>
+ *      <td><p> Updates a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PrivateAuctionServiceClient implements BackgroundResource {
-  private final PrivateAuctionServiceSettings settings;
+  private final @Nullable PrivateAuctionServiceSettings settings;
   private final PrivateAuctionServiceStub stub;
 
   /** Constructs an instance of PrivateAuctionServiceClient with default settings. */
@@ -227,7 +228,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PrivateAuctionServiceSettings getSettings() {
+  public final @Nullable PrivateAuctionServiceSettings getSettings() {
     return settings;
   }
 
@@ -237,7 +238,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -258,7 +259,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    *     `networks/{network_code}/privateAuctions/{private_auction_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateAuction getPrivateAuction(PrivateAuctionName name) {
+  public final PrivateAuction getPrivateAuction(@Nullable PrivateAuctionName name) {
     GetPrivateAuctionRequest request =
         GetPrivateAuctionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -268,7 +269,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -296,7 +297,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -325,7 +326,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -354,7 +355,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -378,7 +379,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateAuctionsPagedResponse listPrivateAuctions(NetworkName parent) {
+  public final ListPrivateAuctionsPagedResponse listPrivateAuctions(@Nullable NetworkName parent) {
     ListPrivateAuctionsRequest request =
         ListPrivateAuctionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -388,7 +389,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -420,7 +421,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -458,7 +459,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -495,7 +496,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -539,7 +540,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -564,7 +565,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrivateAuction createPrivateAuction(
-      NetworkName parent, PrivateAuction privateAuction) {
+      @Nullable NetworkName parent, PrivateAuction privateAuction) {
     CreatePrivateAuctionRequest request =
         CreatePrivateAuctionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -575,7 +576,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -610,7 +611,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -640,7 +641,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -671,7 +672,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -707,7 +708,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -737,7 +738,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -829,9 +830,10 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
           ListPrivateAuctionsPage> {
 
     private ListPrivateAuctionsPage(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
-        ListPrivateAuctionsResponse response) {
+        @Nullable ListPrivateAuctionsResponse response) {
       super(context, response);
     }
 
@@ -841,15 +843,17 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateAuctionsPage createPage(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
-        ListPrivateAuctionsResponse response) {
+        @Nullable ListPrivateAuctionsResponse response) {
       return new ListPrivateAuctionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateAuctionsPage> createPageAsync(
-        PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
+        @Nullable
+            PageContext<ListPrivateAuctionsRequest, ListPrivateAuctionsResponse, PrivateAuction>
             context,
         ApiFuture<ListPrivateAuctionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -865,7 +869,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
           ListPrivateAuctionsFixedSizeCollection> {
 
     private ListPrivateAuctionsFixedSizeCollection(
-        List<ListPrivateAuctionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateAuctionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -875,7 +879,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
     @Override
     protected ListPrivateAuctionsFixedSizeCollection createCollection(
-        List<ListPrivateAuctionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateAuctionsPage> pages, int collectionSize) {
       return new ListPrivateAuctionsFixedSizeCollection(pages, collectionSize);
     }
   }

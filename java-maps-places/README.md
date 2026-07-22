@@ -14,7 +14,6 @@ Java idiomatic client for [Places API (New)][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven, add this to your pom.xml file:
 
 
@@ -78,6 +77,8 @@ use this Places API (New) Client Library.
 
 
 
+
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
@@ -131,8 +132,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
