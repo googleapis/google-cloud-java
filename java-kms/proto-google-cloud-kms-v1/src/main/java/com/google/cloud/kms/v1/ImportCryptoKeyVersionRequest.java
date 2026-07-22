@@ -494,6 +494,31 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER = 9;
+  private boolean trustedWrappingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether trusted wrapping will be enabled on the imported
+   * [CryptoKeyVersion]. This field is only supported for keys with
+   * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field is supported for all
+   * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] besides
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  @java.lang.Override
+  public boolean getTrustedWrappingEnabled() {
+    return trustedWrappingEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -529,6 +554,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     if (!wrappedKey_.isEmpty()) {
       output.writeBytes(8, wrappedKey_);
     }
+    if (trustedWrappingEnabled_ != false) {
+      output.writeBool(9, trustedWrappingEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -561,6 +589,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     if (!wrappedKey_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(8, wrappedKey_);
     }
+    if (trustedWrappingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, trustedWrappingEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -582,6 +613,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     if (algorithm_ != other.algorithm_) return false;
     if (!getImportJob().equals(other.getImportJob())) return false;
     if (!getWrappedKey().equals(other.getWrappedKey())) return false;
+    if (getTrustedWrappingEnabled() != other.getTrustedWrappingEnabled()) return false;
     if (!getWrappedKeyMaterialCase().equals(other.getWrappedKeyMaterialCase())) return false;
     switch (wrappedKeyMaterialCase_) {
       case 5:
@@ -611,6 +643,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     hash = (53 * hash) + getImportJob().hashCode();
     hash = (37 * hash) + WRAPPED_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getWrappedKey().hashCode();
+    hash = (37 * hash) + TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrustedWrappingEnabled());
     switch (wrappedKeyMaterialCase_) {
       case 5:
         hash = (37 * hash) + RSA_AES_WRAPPED_KEY_FIELD_NUMBER;
@@ -766,6 +800,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       algorithm_ = 0;
       importJob_ = "";
       wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
+      trustedWrappingEnabled_ = false;
       wrappedKeyMaterialCase_ = 0;
       wrappedKeyMaterial_ = null;
       return this;
@@ -820,6 +855,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.wrappedKey_ = wrappedKey_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.trustedWrappingEnabled_ = trustedWrappingEnabled_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest result) {
@@ -860,6 +898,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       }
       if (!other.getWrappedKey().isEmpty()) {
         setWrappedKey(other.getWrappedKey());
+      }
+      if (other.getTrustedWrappingEnabled() != false) {
+        setTrustedWrappingEnabled(other.getTrustedWrappingEnabled());
       }
       switch (other.getWrappedKeyMaterialCase()) {
         case RSA_AES_WRAPPED_KEY:
@@ -934,6 +975,12 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000010;
                 break;
               } // case 66
+            case 72:
+              {
+                trustedWrappingEnabled_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1839,6 +1886,80 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         wrappedKeyMaterial_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    private boolean trustedWrappingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the imported
+     * [CryptoKeyVersion]. This field is only supported for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] besides
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The trustedWrappingEnabled.
+     */
+    @java.lang.Override
+    public boolean getTrustedWrappingEnabled() {
+      return trustedWrappingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the imported
+     * [CryptoKeyVersion]. This field is only supported for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] besides
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The trustedWrappingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrustedWrappingEnabled(boolean value) {
+
+      trustedWrappingEnabled_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the imported
+     * [CryptoKeyVersion]. This field is only supported for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] besides
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrustedWrappingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      trustedWrappingEnabled_ = false;
+      onChanged();
       return this;
     }
 

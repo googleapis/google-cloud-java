@@ -28,7 +28,8 @@ import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Google Service Control API](/service-control/overview)
+ * Service Description: [Google Service Control
+ * API](https://cloud.google.com/service-control/overview)
  *
  * <p>Lets clients check and report operations against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).

@@ -266,4 +266,17 @@ public interface DocumentOrBuilder
    * @return The view.
    */
   com.google.developers.knowledge.v1.DocumentView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The length of the `content` field in bytes.
+   * </pre>
+   *
+   * <code>int32 content_length_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The contentLengthBytes.
+   */
+  int getContentLengthBytes();
 }

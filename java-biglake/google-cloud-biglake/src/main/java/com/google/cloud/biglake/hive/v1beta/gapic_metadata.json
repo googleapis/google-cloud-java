@@ -37,6 +37,9 @@
             "DeleteHiveTable": {
               "methods": ["deleteHiveTable", "deleteHiveTable", "deleteHiveTable", "deleteHiveTableCallable"]
             },
+            "FailoverHiveCatalog": {
+              "methods": ["failoverHiveCatalog", "failoverHiveCatalog", "failoverHiveCatalogCallable"]
+            },
             "GetHiveCatalog": {
               "methods": ["getHiveCatalog", "getHiveCatalog", "getHiveCatalog", "getHiveCatalogCallable"]
             },

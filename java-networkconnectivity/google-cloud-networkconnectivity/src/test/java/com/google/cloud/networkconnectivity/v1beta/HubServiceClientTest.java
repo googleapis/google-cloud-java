@@ -218,6 +218,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -268,6 +269,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -318,6 +320,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -382,6 +385,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -446,6 +450,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

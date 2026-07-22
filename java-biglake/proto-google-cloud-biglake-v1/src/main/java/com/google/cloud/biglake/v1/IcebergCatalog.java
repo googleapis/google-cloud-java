@@ -2473,6 +2473,51 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the snowflakeCatalogInfo field is set.
+     */
+    boolean hasSnowflakeCatalogInfo();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The snowflakeCatalogInfo.
+     */
+    com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+        getSnowflakeCatalogInfo();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfoOrBuilder
+        getSnowflakeCatalogInfoOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The secret resource name in Secret Manager, in the format
      * `projects/{project_id}/locations/{location}/secrets/{secret_id}` or
      * `projects/{project_id}/locations/{location}/secrets/{secret_id}/versions/{version_id}`.
@@ -2481,7 +2526,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -2504,7 +2553,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -2527,7 +2580,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -2846,7 +2903,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -2863,7 +2920,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -2880,7 +2937,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -3117,7 +3174,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -3137,7 +3194,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -3165,7 +3222,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. The application ID of the Databricks service principal that
        * will be used to access the Unity Catalog in the OIDC authentication
-       * flow. With OIDC, the secret_name field is not used.
+       * flow.
        * </pre>
        *
        * <code>
@@ -3921,7 +3978,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -3940,7 +3997,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -3967,7 +4024,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -3994,7 +4051,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -4020,7 +4077,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -4042,7 +4099,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. The application ID of the Databricks service principal that
          * will be used to access the Unity Catalog in the OIDC authentication
-         * flow. With OIDC, the secret_name field is not used.
+         * flow.
          * </pre>
          *
          * <code>
@@ -5571,6 +5628,1502 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.GlueCatalogInfo
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface SnowflakeCatalogInfoOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the accountIdentifier field is set.
+       */
+      boolean hasAccountIdentifier();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The accountIdentifier.
+       */
+      java.lang.String getAccountIdentifier();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The bytes for accountIdentifier.
+       */
+      com.google.protobuf.ByteString getAccountIdentifierBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the warehouse field is set.
+       */
+      boolean hasWarehouse();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The warehouse.
+       */
+      java.lang.String getWarehouse();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for warehouse.
+       */
+      com.google.protobuf.ByteString getWarehouseBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the snowflakeRole field is set.
+       */
+      boolean hasSnowflakeRole();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The snowflakeRole.
+       */
+      java.lang.String getSnowflakeRole();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for snowflakeRole.
+       */
+      com.google.protobuf.ByteString getSnowflakeRoleBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Snowflake Catalog info.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo}
+     */
+    public static final class SnowflakeCatalogInfo extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo)
+        SnowflakeCatalogInfoOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SnowflakeCatalogInfo");
+      }
+
+      // Use SnowflakeCatalogInfo.newBuilder() to construct.
+      private SnowflakeCatalogInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SnowflakeCatalogInfo() {
+        accountIdentifier_ = "";
+        warehouse_ = "";
+        snowflakeRole_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.biglake.v1.IcebergRestCatalogProto
+            .internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_SnowflakeCatalogInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.biglake.v1.IcebergRestCatalogProto
+            .internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_SnowflakeCatalogInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo.class,
+                com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int ACCOUNT_IDENTIFIER_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object accountIdentifier_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the accountIdentifier field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccountIdentifier() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The accountIdentifier.
+       */
+      @java.lang.Override
+      public java.lang.String getAccountIdentifier() {
+        java.lang.Object ref = accountIdentifier_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountIdentifier_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The account identifier in Snowflake (See:
+       * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+       * is the prefix to log into your Snowflake deployment URL. For example:
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+       * </pre>
+       *
+       * <code>
+       * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The bytes for accountIdentifier.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAccountIdentifierBytes() {
+        java.lang.Object ref = accountIdentifier_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          accountIdentifier_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int WAREHOUSE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object warehouse_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the warehouse field is set.
+       */
+      @java.lang.Override
+      public boolean hasWarehouse() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The warehouse.
+       */
+      @java.lang.Override
+      public java.lang.String getWarehouse() {
+        java.lang.Object ref = warehouse_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          warehouse_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The warehouse to connect to in Snowflake REST Catalog.
+       * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+       *
+       * This is the Snowflake database name containing the Iceberg metadata to
+       * be federated.
+       *
+       * Must be non-empty.
+       * </pre>
+       *
+       * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for warehouse.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getWarehouseBytes() {
+        java.lang.Object ref = warehouse_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          warehouse_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SNOWFLAKE_ROLE_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object snowflakeRole_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the snowflakeRole field is set.
+       */
+      @java.lang.Override
+      public boolean hasSnowflakeRole() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The snowflakeRole.
+       */
+      @java.lang.Override
+      public java.lang.String getSnowflakeRole() {
+        java.lang.Object ref = snowflakeRole_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          snowflakeRole_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specific Snowflake role name to request in the OAuth
+       * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+       * session. This role grants the GCP BigLake service account the necessary
+       * permissions to interact with the Iceberg catalog, namespaces, and
+       * tables.
+       *
+       * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+       * the Snowflake service user mapped to the BigLake service account.
+       * </pre>
+       *
+       * <code>
+       * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for snowflakeRole.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSnowflakeRoleBytes() {
+        java.lang.Object ref = snowflakeRole_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          snowflakeRole_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, accountIdentifier_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, warehouse_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, snowflakeRole_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accountIdentifier_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, warehouse_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, snowflakeRole_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+            other =
+                (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                        .SnowflakeCatalogInfo)
+                    obj;
+
+        if (hasAccountIdentifier() != other.hasAccountIdentifier()) return false;
+        if (hasAccountIdentifier()) {
+          if (!getAccountIdentifier().equals(other.getAccountIdentifier())) return false;
+        }
+        if (hasWarehouse() != other.hasWarehouse()) return false;
+        if (hasWarehouse()) {
+          if (!getWarehouse().equals(other.getWarehouse())) return false;
+        }
+        if (hasSnowflakeRole() != other.hasSnowflakeRole()) return false;
+        if (hasSnowflakeRole()) {
+          if (!getSnowflakeRole().equals(other.getSnowflakeRole())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasAccountIdentifier()) {
+          hash = (37 * hash) + ACCOUNT_IDENTIFIER_FIELD_NUMBER;
+          hash = (53 * hash) + getAccountIdentifier().hashCode();
+        }
+        if (hasWarehouse()) {
+          hash = (37 * hash) + WAREHOUSE_FIELD_NUMBER;
+          hash = (53 * hash) + getWarehouse().hashCode();
+        }
+        if (hasSnowflakeRole()) {
+          hash = (37 * hash) + SNOWFLAKE_ROLE_FIELD_NUMBER;
+          hash = (53 * hash) + getSnowflakeRole().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Snowflake Catalog info.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo)
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.biglake.v1.IcebergRestCatalogProto
+              .internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_SnowflakeCatalogInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.biglake.v1.IcebergRestCatalogProto
+              .internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_SnowflakeCatalogInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo.class,
+                  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          accountIdentifier_ = "";
+          warehouse_ = "";
+          snowflakeRole_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.biglake.v1.IcebergRestCatalogProto
+              .internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_SnowflakeCatalogInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo
+            getDefaultInstanceForType() {
+          return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo
+            build() {
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo
+            buildPartial() {
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              result =
+                  new com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.accountIdentifier_ = accountIdentifier_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.warehouse_ = warehouse_;
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.snowflakeRole_ = snowflakeRole_;
+            to_bitField0_ |= 0x00000004;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo) {
+            return mergeFrom(
+                (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                        .SnowflakeCatalogInfo)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+                other) {
+          if (other
+              == com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo.getDefaultInstance()) return this;
+          if (other.hasAccountIdentifier()) {
+            accountIdentifier_ = other.accountIdentifier_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasWarehouse()) {
+            warehouse_ = other.warehouse_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (other.hasSnowflakeRole()) {
+            snowflakeRole_ = other.snowflakeRole_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    accountIdentifier_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    warehouse_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    snowflakeRole_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object accountIdentifier_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the accountIdentifier field is set.
+         */
+        public boolean hasAccountIdentifier() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The accountIdentifier.
+         */
+        public java.lang.String getAccountIdentifier() {
+          java.lang.Object ref = accountIdentifier_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            accountIdentifier_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The bytes for accountIdentifier.
+         */
+        public com.google.protobuf.ByteString getAccountIdentifierBytes() {
+          java.lang.Object ref = accountIdentifier_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            accountIdentifier_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The accountIdentifier to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccountIdentifier(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          accountIdentifier_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAccountIdentifier() {
+          accountIdentifier_ = getDefaultInstance().getAccountIdentifier();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The account identifier in Snowflake (See:
+         * https://docs.snowflake.com/en/user-guide/admin-account-identifier). It
+         * is the prefix to log into your Snowflake deployment URL. For example:
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com.
+         * </pre>
+         *
+         * <code>
+         * optional string account_identifier = 1 [json_name = "account-identifier", (.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The bytes for accountIdentifier to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccountIdentifierBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          accountIdentifier_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object warehouse_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return Whether the warehouse field is set.
+         */
+        public boolean hasWarehouse() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The warehouse.
+         */
+        public java.lang.String getWarehouse() {
+          java.lang.Object ref = warehouse_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            warehouse_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for warehouse.
+         */
+        public com.google.protobuf.ByteString getWarehouseBytes() {
+          java.lang.Object ref = warehouse_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            warehouse_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The warehouse to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWarehouse(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          warehouse_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearWarehouse() {
+          warehouse_ = getDefaultInstance().getWarehouse();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The warehouse to connect to in Snowflake REST Catalog.
+         * https://&lt;account_identifier&gt;.snowflakecomputing.com/polaris/api/catalog/v1/config?warehouse=&lt;database_name&gt;.
+         *
+         * This is the Snowflake database name containing the Iceberg metadata to
+         * be federated.
+         *
+         * Must be non-empty.
+         * </pre>
+         *
+         * <code>optional string warehouse = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for warehouse to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWarehouseBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          warehouse_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object snowflakeRole_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the snowflakeRole field is set.
+         */
+        public boolean hasSnowflakeRole() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The snowflakeRole.
+         */
+        public java.lang.String getSnowflakeRole() {
+          java.lang.Object ref = snowflakeRole_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            snowflakeRole_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for snowflakeRole.
+         */
+        public com.google.protobuf.ByteString getSnowflakeRoleBytes() {
+          java.lang.Object ref = snowflakeRole_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            snowflakeRole_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The snowflakeRole to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSnowflakeRole(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          snowflakeRole_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSnowflakeRole() {
+          snowflakeRole_ = getDefaultInstance().getSnowflakeRole();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specific Snowflake role name to request in the OAuth
+         * token scope (via session:role:$ROLE) for the Iceberg REST Catalog
+         * session. This role grants the GCP BigLake service account the necessary
+         * permissions to interact with the Iceberg catalog, namespaces, and
+         * tables.
+         *
+         * Note: The role provided here must be the DEFAULT_ROLE or be granted to,
+         * the Snowflake service user mapped to the BigLake service account.
+         * </pre>
+         *
+         * <code>
+         * optional string snowflake_role = 3 [json_name = "snowflake-role", (.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for snowflakeRole to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSnowflakeRoleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          snowflakeRole_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo)
+      private static final com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo();
+      }
+
+      public static com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SnowflakeCatalogInfo> PARSER =
+          new com.google.protobuf.AbstractParser<SnowflakeCatalogInfo>() {
+            @java.lang.Override
+            public SnowflakeCatalogInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SnowflakeCatalogInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SnowflakeCatalogInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -10092,6 +11645,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       UNITY_CATALOG_INFO(2),
       GLUE_CATALOG_INFO(4),
+      SNOWFLAKE_CATALOG_INFO(7),
       REMOTECATALOGINFO_NOT_SET(0);
       private final int value;
 
@@ -10115,6 +11669,8 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
             return UNITY_CATALOG_INFO;
           case 4:
             return GLUE_CATALOG_INFO;
+          case 7:
+            return SNOWFLAKE_CATALOG_INFO;
           case 0:
             return REMOTECATALOGINFO_NOT_SET;
           default:
@@ -10265,6 +11821,75 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           .getDefaultInstance();
     }
 
+    public static final int SNOWFLAKE_CATALOG_INFO_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the snowflakeCatalogInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasSnowflakeCatalogInfo() {
+      return remoteCatalogInfoCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The snowflakeCatalogInfo.
+     */
+    @java.lang.Override
+    public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+        getSnowflakeCatalogInfo() {
+      if (remoteCatalogInfoCase_ == 7) {
+        return (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo)
+            remoteCatalogInfo_;
+      }
+      return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Info specific to a Snowflake Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+            .SnowflakeCatalogInfoOrBuilder
+        getSnowflakeCatalogInfoOrBuilder() {
+      if (remoteCatalogInfoCase_ == 7) {
+        return (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                .SnowflakeCatalogInfo)
+            remoteCatalogInfo_;
+      }
+      return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+          .getDefaultInstance();
+    }
+
     public static final int SECRET_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -10282,7 +11907,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -10308,7 +11937,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -10342,7 +11975,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
      * the catalog's location.
      * If the version is not specified, the latest version will be used.
      *
-     * This field is not used when `service_principal_application_id` is set.
+     * This field is not used when
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+     * or
+     * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+     * is set.
      * </pre>
      *
      * <code>
@@ -10615,6 +12252,13 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(6, getRefreshStatus());
       }
+      if (remoteCatalogInfoCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo)
+                remoteCatalogInfo_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10650,6 +12294,14 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRefreshStatus());
+      }
+      if (remoteCatalogInfoCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                        .SnowflakeCatalogInfo)
+                    remoteCatalogInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10691,6 +12343,9 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         case 4:
           if (!getGlueCatalogInfo().equals(other.getGlueCatalogInfo())) return false;
           break;
+        case 7:
+          if (!getSnowflakeCatalogInfo().equals(other.getSnowflakeCatalogInfo())) return false;
+          break;
         case 0:
         default:
       }
@@ -10729,6 +12384,10 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         case 4:
           hash = (37 * hash) + GLUE_CATALOG_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getGlueCatalogInfo().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + SNOWFLAKE_CATALOG_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getSnowflakeCatalogInfo().hashCode();
           break;
         case 0:
         default:
@@ -10892,6 +12551,9 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         if (glueCatalogInfoBuilder_ != null) {
           glueCatalogInfoBuilder_.clear();
         }
+        if (snowflakeCatalogInfoBuilder_ != null) {
+          snowflakeCatalogInfoBuilder_.clear();
+        }
         secretName_ = "";
         serviceDirectoryName_ = "";
         refreshOptions_ = null;
@@ -10947,20 +12609,20 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.secretName_ = secretName_;
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.serviceDirectoryName_ = serviceDirectoryName_;
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.refreshOptions_ =
               refreshOptionsBuilder_ == null ? refreshOptions_ : refreshOptionsBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.refreshStatus_ =
               refreshStatusBuilder_ == null ? refreshStatus_ : refreshStatusBuilder_.build();
           to_bitField0_ |= 0x00000008;
@@ -10977,6 +12639,9 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         }
         if (remoteCatalogInfoCase_ == 4 && glueCatalogInfoBuilder_ != null) {
           result.remoteCatalogInfo_ = glueCatalogInfoBuilder_.build();
+        }
+        if (remoteCatalogInfoCase_ == 7 && snowflakeCatalogInfoBuilder_ != null) {
+          result.remoteCatalogInfo_ = snowflakeCatalogInfoBuilder_.build();
         }
       }
 
@@ -10998,12 +12663,12 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (other.hasSecretName()) {
           secretName_ = other.secretName_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.hasServiceDirectoryName()) {
           serviceDirectoryName_ = other.serviceDirectoryName_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasRefreshOptions()) {
@@ -11021,6 +12686,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           case GLUE_CATALOG_INFO:
             {
               mergeGlueCatalogInfo(other.getGlueCatalogInfo());
+              break;
+            }
+          case SNOWFLAKE_CATALOG_INFO:
+            {
+              mergeSnowflakeCatalogInfo(other.getSnowflakeCatalogInfo());
               break;
             }
           case REMOTECATALOGINFO_NOT_SET:
@@ -11057,7 +12727,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   secretName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 10
               case 18:
@@ -11071,7 +12741,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetRefreshOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 26
               case 34:
@@ -11084,16 +12754,24 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
               case 42:
                 {
                   serviceDirectoryName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       internalGetRefreshStatusFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetSnowflakeCatalogInfoFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  remoteCatalogInfoCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11666,6 +13344,278 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         return glueCatalogInfoBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo,
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo.Builder,
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfoOrBuilder>
+          snowflakeCatalogInfoBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the snowflakeCatalogInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasSnowflakeCatalogInfo() {
+        return remoteCatalogInfoCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The snowflakeCatalogInfo.
+       */
+      @java.lang.Override
+      public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+          getSnowflakeCatalogInfo() {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          if (remoteCatalogInfoCase_ == 7) {
+            return (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo)
+                remoteCatalogInfo_;
+          }
+          return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo.getDefaultInstance();
+        } else {
+          if (remoteCatalogInfoCase_ == 7) {
+            return snowflakeCatalogInfoBuilder_.getMessage();
+          }
+          return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSnowflakeCatalogInfo(
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              value) {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          remoteCatalogInfo_ = value;
+          onChanged();
+        } else {
+          snowflakeCatalogInfoBuilder_.setMessage(value);
+        }
+        remoteCatalogInfoCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSnowflakeCatalogInfo(
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+                  .Builder
+              builderForValue) {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          remoteCatalogInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          snowflakeCatalogInfoBuilder_.setMessage(builderForValue.build());
+        }
+        remoteCatalogInfoCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSnowflakeCatalogInfo(
+          com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              value) {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          if (remoteCatalogInfoCase_ == 7
+              && remoteCatalogInfo_
+                  != com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo.getDefaultInstance()) {
+            remoteCatalogInfo_ =
+                com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo.newBuilder(
+                        (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                                .SnowflakeCatalogInfo)
+                            remoteCatalogInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            remoteCatalogInfo_ = value;
+          }
+          onChanged();
+        } else {
+          if (remoteCatalogInfoCase_ == 7) {
+            snowflakeCatalogInfoBuilder_.mergeFrom(value);
+          } else {
+            snowflakeCatalogInfoBuilder_.setMessage(value);
+          }
+        }
+        remoteCatalogInfoCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSnowflakeCatalogInfo() {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          if (remoteCatalogInfoCase_ == 7) {
+            remoteCatalogInfoCase_ = 0;
+            remoteCatalogInfo_ = null;
+            onChanged();
+          }
+        } else {
+          if (remoteCatalogInfoCase_ == 7) {
+            remoteCatalogInfoCase_ = 0;
+            remoteCatalogInfo_ = null;
+          }
+          snowflakeCatalogInfoBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo
+              .Builder
+          getSnowflakeCatalogInfoBuilder() {
+        return internalGetSnowflakeCatalogInfoFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfoOrBuilder
+          getSnowflakeCatalogInfoOrBuilder() {
+        if ((remoteCatalogInfoCase_ == 7) && (snowflakeCatalogInfoBuilder_ != null)) {
+          return snowflakeCatalogInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (remoteCatalogInfoCase_ == 7) {
+            return (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo)
+                remoteCatalogInfo_;
+          }
+          return com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+              .SnowflakeCatalogInfo.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Info specific to a Snowflake Catalog.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo snowflake_catalog_info = 7 [json_name = "snowflake-catalog-info", (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo,
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfo.Builder,
+              com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                  .SnowflakeCatalogInfoOrBuilder>
+          internalGetSnowflakeCatalogInfoFieldBuilder() {
+        if (snowflakeCatalogInfoBuilder_ == null) {
+          if (!(remoteCatalogInfoCase_ == 7)) {
+            remoteCatalogInfo_ =
+                com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                    .SnowflakeCatalogInfo.getDefaultInstance();
+          }
+          snowflakeCatalogInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo,
+                  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfo.Builder,
+                  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                      .SnowflakeCatalogInfoOrBuilder>(
+                  (com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
+                          .SnowflakeCatalogInfo)
+                      remoteCatalogInfo_,
+                  getParentForChildren(),
+                  isClean());
+          remoteCatalogInfo_ = null;
+        }
+        remoteCatalogInfoCase_ = 7;
+        onChanged();
+        return snowflakeCatalogInfoBuilder_;
+      }
+
       private java.lang.Object secretName_ = "";
 
       /**
@@ -11680,7 +13630,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11690,7 +13644,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * @return Whether the secretName field is set.
        */
       public boolean hasSecretName() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
 
       /**
@@ -11705,7 +13659,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11738,7 +13696,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11771,7 +13733,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11786,7 +13752,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         secretName_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -11803,7 +13769,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11814,7 +13784,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearSecretName() {
         secretName_ = getDefaultInstance().getSecretName();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -11831,7 +13801,11 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * the catalog's location.
        * If the version is not specified, the latest version will be used.
        *
-       * This field is not used when `service_principal_application_id` is set.
+       * This field is not used when
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.UnityCatalogInfo.service_principal_application_id]
+       * or
+       * [google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role][google.cloud.biglake.v1main.IcebergCatalog.FederatedCatalogOptions.SnowflakeCatalogInfo.snowflake_role]
+       * is set.
        * </pre>
        *
        * <code>
@@ -11847,7 +13821,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         secretName_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -11871,7 +13845,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * @return Whether the serviceDirectoryName field is set.
        */
       public boolean hasServiceDirectoryName() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
 
       /**
@@ -11952,7 +13926,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         serviceDirectoryName_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -11975,7 +13949,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearServiceDirectoryName() {
         serviceDirectoryName_ = getDefaultInstance().getServiceDirectoryName();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -12003,7 +13977,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         serviceDirectoryName_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12032,7 +14006,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * @return Whether the refreshOptions field is set.
        */
       public boolean hasRefreshOptions() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
 
       /**
@@ -12081,7 +14055,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         } else {
           refreshOptionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12105,7 +14079,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         } else {
           refreshOptionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12124,7 +14098,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       public Builder mergeRefreshOptions(
           com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.RefreshOptions value) {
         if (refreshOptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && refreshOptions_ != null
               && refreshOptions_
                   != com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
@@ -12137,7 +14111,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           refreshOptionsBuilder_.mergeFrom(value);
         }
         if (refreshOptions_ != null) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         return this;
@@ -12155,7 +14129,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearRefreshOptions() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         refreshOptions_ = null;
         if (refreshOptionsBuilder_ != null) {
           refreshOptionsBuilder_.dispose();
@@ -12179,7 +14153,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.RefreshOptions
               .Builder
           getRefreshOptionsBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return internalGetRefreshOptionsFieldBuilder().getBuilder();
       }
@@ -12264,7 +14238,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * @return Whether the refreshStatus field is set.
        */
       public boolean hasRefreshStatus() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
 
       /**
@@ -12313,7 +14287,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         } else {
           refreshStatusBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12337,7 +14311,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
         } else {
           refreshStatusBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12356,7 +14330,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       public Builder mergeRefreshStatus(
           com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.RefreshStatus value) {
         if (refreshStatusBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && refreshStatus_ != null
               && refreshStatus_
                   != com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions
@@ -12369,7 +14343,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
           refreshStatusBuilder_.mergeFrom(value);
         }
         if (refreshStatus_ != null) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         return this;
@@ -12387,7 +14361,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearRefreshStatus() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         refreshStatus_ = null;
         if (refreshStatusBuilder_ != null) {
           refreshStatusBuilder_.dispose();
@@ -12411,7 +14385,7 @@ public final class IcebergCatalog extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.RefreshStatus
               .Builder
           getRefreshStatusBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return internalGetRefreshStatusFieldBuilder().getBuilder();
       }

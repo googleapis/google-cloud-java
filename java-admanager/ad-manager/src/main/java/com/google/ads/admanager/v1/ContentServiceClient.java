@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetContent</td>
- *      <td><p> API to retrieve a `Content` object.</td>
+ *      <td><p> Retrieves a `Content` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListContent</td>
- *      <td><p> API to retrieve a list of `Content` objects.</td>
+ *      <td><p> Lists `Content` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -196,7 +196,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Content` object.
+   * Retrieves a `Content` object.
    *
    * <p>Sample code:
    *
@@ -224,7 +224,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Content` object.
+   * Retrieves a `Content` object.
    *
    * <p>Sample code:
    *
@@ -251,7 +251,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Content` object.
+   * Retrieves a `Content` object.
    *
    * <p>Sample code:
    *
@@ -279,7 +279,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Content` object.
+   * Retrieves a `Content` object.
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Content` objects.
+   * Lists `Content` objects.
    *
    * <p>Sample code:
    *
@@ -338,7 +338,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Content` objects.
+   * Lists `Content` objects.
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Content` objects.
+   * Lists `Content` objects.
    *
    * <p>Sample code:
    *
@@ -402,7 +402,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Content` objects.
+   * Lists `Content` objects.
    *
    * <p>Sample code:
    *
@@ -438,7 +438,7 @@ public class ContentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Content` objects.
+   * Lists `Content` objects.
    *
    * <p>Sample code:
    *

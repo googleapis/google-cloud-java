@@ -20,6 +20,8 @@ import static com.google.developers.knowledge.v1.DeveloperKnowledgeClient.Search
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.developers.knowledge.v1.AnswerQueryRequest;
+import com.google.developers.knowledge.v1.AnswerQueryResponse;
 import com.google.developers.knowledge.v1.BatchGetDocumentsRequest;
 import com.google.developers.knowledge.v1.BatchGetDocumentsResponse;
 import com.google.developers.knowledge.v1.Document;
@@ -56,6 +58,10 @@ public abstract class DeveloperKnowledgeStub implements BackgroundResource {
   public UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchGetDocumentsCallable()");
+  }
+
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: answerQueryCallable()");
   }
 
   @Override

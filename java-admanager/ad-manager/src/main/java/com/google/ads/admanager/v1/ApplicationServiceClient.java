@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetApplication</td>
- *      <td><p> API to retrieve a `Application` object.</td>
+ *      <td><p> Retrieves a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListApplications</td>
- *      <td><p> API to retrieve a list of `Application` objects.</td>
+ *      <td><p> Lists `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +106,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateApplication</td>
- *      <td><p> API to create a `Application` object.</td>
+ *      <td><p> Creates a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateApplications</td>
- *      <td><p> API to batch create `Application` objects.</td>
+ *      <td><p> Creates `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -141,7 +141,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateApplication</td>
- *      <td><p> API to update a `Application` object.</td>
+ *      <td><p> Updates a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -159,7 +159,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateApplications</td>
- *      <td><p> API to batch update `Application` objects.</td>
+ *      <td><p> Batch updates `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -175,7 +175,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchArchiveApplications</td>
- *      <td><p> / API to batch archive `Application` objects.</td>
+ *      <td><p> Batch archives `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -194,7 +194,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUnarchiveApplications</td>
- *      <td><p> / API to batch unarchive `Application` objects.</td>
+ *      <td><p> Batch unarchives `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -307,7 +307,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -335,7 +335,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -362,7 +362,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -390,7 +390,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -418,7 +418,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -450,7 +450,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -480,7 +480,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -515,7 +515,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -551,7 +551,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -594,7 +594,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -628,7 +628,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -658,7 +658,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -687,7 +687,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -716,7 +716,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -752,7 +752,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -788,7 +788,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -819,7 +819,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -849,7 +849,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -882,7 +882,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -911,7 +911,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -940,7 +940,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -976,7 +976,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1012,7 +1012,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1043,7 +1043,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1073,7 +1073,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1108,7 +1108,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1140,7 +1140,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1171,7 +1171,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1201,7 +1201,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1236,7 +1236,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1268,7 +1268,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1299,7 +1299,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
