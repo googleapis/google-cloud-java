@@ -169,10 +169,11 @@ public abstract class ClientSettings<SettingsT extends ClientSettings<SettingsT>
     }
 
     /** Create a builder from a StubSettings object. */
-    protected Builder(StubSettings.@Nullable Builder stubSettings) {
+    protected Builder(StubSettings.Builder stubSettings) {
       this.stubSettings = stubSettings;
     }
 
+    @SuppressWarnings("nullness")
     protected Builder() {
       this((StubSettings.Builder) null);
     }

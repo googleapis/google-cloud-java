@@ -48,7 +48,11 @@ public class ApiException extends RuntimeException {
     this(cause, statusCode, retryable, null);
   }
 
-  public ApiException(@Nullable String message, @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
+  public ApiException(
+      @Nullable String message,
+      @Nullable Throwable cause,
+      StatusCode statusCode,
+      boolean retryable) {
     super(message, cause);
     this.statusCode = Preconditions.checkNotNull(statusCode);
     this.retryable = retryable;

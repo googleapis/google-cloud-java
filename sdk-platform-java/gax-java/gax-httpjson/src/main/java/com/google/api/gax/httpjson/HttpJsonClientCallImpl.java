@@ -111,9 +111,8 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
   //
   // Response-specific data (received from server).
   //
-  @Nullable
   @GuardedBy("lock")
-  private HttpRequestRunnable<RequestT, ResponseT> requestRunnable;
+  private @Nullable HttpRequestRunnable<RequestT, ResponseT> requestRunnable;
 
   @GuardedBy("lock")
   private RunnableResult runnableResult;

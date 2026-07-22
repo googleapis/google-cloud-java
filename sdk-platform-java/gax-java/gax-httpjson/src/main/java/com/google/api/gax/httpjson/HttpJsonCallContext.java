@@ -71,7 +71,7 @@ import org.jspecify.annotations.Nullable;
 public final class HttpJsonCallContext implements ApiCallContext {
   private static final HttpJsonStatusCode UNAUTHENTICATED_STATUS_CODE =
       HttpJsonStatusCode.of(StatusCode.Code.UNAUTHENTICATED);
-  private final HttpJsonChannel channel;
+  private final @Nullable HttpJsonChannel channel;
   private final HttpJsonCallOptions callOptions;
   private final java.time.@Nullable Duration timeout;
   private final java.time.@Nullable Duration streamWaitTimeout;
@@ -491,7 +491,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
     }
   }
 
-  public HttpJsonChannel getChannel() {
+  public @Nullable HttpJsonChannel getChannel() {
     return channel;
   }
 
@@ -551,7 +551,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
         this.endpointContext);
   }
 
-  public HttpJsonCallContext withChannel(HttpJsonChannel newChannel) {
+  public HttpJsonCallContext withChannel(@Nullable HttpJsonChannel newChannel) {
     return new HttpJsonCallContext(
         newChannel,
         this.callOptions,

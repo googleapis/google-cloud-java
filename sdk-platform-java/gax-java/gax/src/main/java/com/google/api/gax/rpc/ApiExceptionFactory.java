@@ -46,7 +46,10 @@ public class ApiExceptionFactory {
   }
 
   public static ApiException createException(
-      @Nullable String message, @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
+      @Nullable String message,
+      @Nullable Throwable cause,
+      StatusCode statusCode,
+      boolean retryable) {
     switch (statusCode.getCode()) {
       case CANCELLED:
         return new CancelledException(message, cause, statusCode, retryable);

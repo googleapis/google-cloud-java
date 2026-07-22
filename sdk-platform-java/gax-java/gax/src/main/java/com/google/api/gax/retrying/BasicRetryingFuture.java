@@ -147,7 +147,7 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   }
 
   // "super." is used here to avoid infinite loops of callback chains
-  void handleAttempt(@Nullable Throwable throwable, ResponseT response) {
+  void handleAttempt(@Nullable Throwable throwable, @Nullable ResponseT response) {
     ApiTracer tracer = retryingContext.getTracer();
 
     synchronized (lock) {
@@ -233,7 +233,7 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   // attemptResult is set to the same result as the one returned by peekAttemptResult(), indicating
   // that the ultimate unmodifiable result of the whole future was reached.
   private void setAttemptResult(
-      @Nullable Throwable throwable, ResponseT response, boolean shouldRetry) {
+      @Nullable Throwable throwable, @Nullable ResponseT response, boolean shouldRetry) {
     ApiFuture<ResponseT> prevAttemptResult = attemptResult;
     try {
       if (throwable instanceof CancellationException) {

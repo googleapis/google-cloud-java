@@ -123,7 +123,7 @@ class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<Respons
       }
     }
 
-    private void handle(@Nullable Throwable t, ResponseT response) {
+    private void handle(@Nullable Throwable t, @Nullable ResponseT response) {
       // Essential check, to ensure that we do not execute callback of an abandoned attempt.
       // First before the lock, to increase performance and reduce chance of deadlocking
       // (should never happen, but being extra cautious is appropriate here).

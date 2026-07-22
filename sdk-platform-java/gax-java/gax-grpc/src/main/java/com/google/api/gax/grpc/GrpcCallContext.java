@@ -86,7 +86,7 @@ public final class GrpcCallContext implements ApiCallContext {
   // CallOptions
   public static final CallOptions.Key<ApiTracer> TRACER_KEY = CallOptions.Key.create("gax.tracer");
 
-  private final Channel channel;
+  private final @Nullable Channel channel;
   private final @Nullable Credentials credentials;
   private final CallOptions callOptions;
   private final java.time.@Nullable Duration timeout;
@@ -561,7 +561,7 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   /** The {@link Channel} set on this context. */
-  public Channel getChannel() {
+  public @Nullable Channel getChannel() {
     return channel;
   }
 
@@ -621,7 +621,7 @@ public final class GrpcCallContext implements ApiCallContext {
    * with the channel set to the given channel.
    */
   @ObsoleteApi("Use withTransportChannel() instead")
-  public GrpcCallContext withChannel(Channel newChannel) {
+  public GrpcCallContext withChannel(@Nullable Channel newChannel) {
     return new GrpcCallContext(
         newChannel,
         credentials,

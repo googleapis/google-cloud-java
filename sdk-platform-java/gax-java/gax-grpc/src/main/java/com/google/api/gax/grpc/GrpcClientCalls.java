@@ -71,7 +71,7 @@ class GrpcClientCalls {
     }
 
     GrpcCallContext grpcContext = (GrpcCallContext) context;
-    Preconditions.checkNotNull(grpcContext.getChannel());
+    Channel channel = Preconditions.checkNotNull(grpcContext.getChannel());
 
     CallOptions callOptions = grpcContext.getCallOptions();
     Preconditions.checkNotNull(callOptions);
@@ -87,7 +87,6 @@ class GrpcClientCalls {
       }
     }
 
-    Channel channel = grpcContext.getChannel();
     if (grpcContext.getChannelAffinity() != null && channel instanceof ChannelPool) {
       channel = ((ChannelPool) channel).getChannel(grpcContext.getChannelAffinity());
     }
