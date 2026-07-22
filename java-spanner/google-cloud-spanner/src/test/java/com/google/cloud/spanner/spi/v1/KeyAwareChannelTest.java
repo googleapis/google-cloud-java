@@ -26,11 +26,14 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.base.Ticker;
 import com.google.common.testing.FakeTicker;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.TextFormat;
 import com.google.protobuf.Value;
+import com.google.protobuf.util.Durations;
+import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
@@ -57,6 +60,8 @@ import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.protobuf.ProtoUtils;
+import io.grpc.protobuf.StatusProto;
 import java.io.IOException;
 import java.time.Clock;
 import java.time.Duration;
@@ -509,6 +514,186 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void retryDelayExtractsDirectRetryInfo() {
+    Metadata trailers = new Metadata();
+    trailers.put(
+        ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()),
+        RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(100)).build());
+
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, trailers))
+        .isEqualTo(Duration.ofMillis(100));
+  }
+
+  @Test
+  public void retryDelayExtractsRichStatusRetryInfo() {
+    Metadata trailers =
+        StatusProto.toStatusRuntimeException(
+                com.google.rpc.Status.newBuilder()
+                    .setCode(Status.Code.RESOURCE_EXHAUSTED.value())
+                    .addDetails(
+                        Any.pack(
+                            RetryInfo.newBuilder()
+                                .setRetryDelay(Durations.fromMillis(200))
+                                .build()))
+                    .build())
+            .getTrailers();
+
+    assertThat(trailers).isNotNull();
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, trailers))
+        .isEqualTo(Duration.ofMillis(200));
+  }
+
+  @Test
+  public void retryDelayUsesLargestDirectOrRichRetryInfo() {
+    Metadata trailers =
+        StatusProto.toStatusRuntimeException(
+                com.google.rpc.Status.newBuilder()
+                    .setCode(Status.Code.RESOURCE_EXHAUSTED.value())
+                    .addDetails(
+                        Any.pack(
+                            RetryInfo.newBuilder()
+                                .setRetryDelay(Durations.fromMillis(200))
+                                .build()))
+                    .build())
+            .getTrailers();
+    assertThat(trailers).isNotNull();
+    trailers.put(
+        ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()),
+        RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(100)).build());
+
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, trailers))
+        .isEqualTo(Duration.ofMillis(200));
+  }
+
+  @Test
+  public void retryDelaySkipsMalformedRichDetailBeforeValidRetryInfo() {
+    Metadata trailers =
+        StatusProto.toStatusRuntimeException(
+                com.google.rpc.Status.newBuilder()
+                    .setCode(Status.Code.RESOURCE_EXHAUSTED.value())
+                    .addDetails(
+                        Any.newBuilder()
+                            .setTypeUrl("type.googleapis.com/google.rpc.RetryInfo")
+                            .setValue(ByteString.copyFrom(new byte[] {(byte) 0xff}))
+                            .build())
+                    .addDetails(
+                        Any.pack(
+                            RetryInfo.newBuilder()
+                                .setRetryDelay(Durations.fromMillis(200))
+                                .build()))
+                    .build())
+            .getTrailers();
+
+    assertThat(trailers).isNotNull();
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, trailers))
+        .isEqualTo(Duration.ofMillis(200));
+  }
+
+  @Test
+  public void retryDelayRetainsValidRetryInfoBeforeMalformedRichDetail() {
+    Metadata trailers =
+        StatusProto.toStatusRuntimeException(
+                com.google.rpc.Status.newBuilder()
+                    .setCode(Status.Code.RESOURCE_EXHAUSTED.value())
+                    .addDetails(
+                        Any.pack(
+                            RetryInfo.newBuilder()
+                                .setRetryDelay(Durations.fromMillis(200))
+                                .build()))
+                    .addDetails(
+                        Any.newBuilder()
+                            .setTypeUrl("type.googleapis.com/google.rpc.RetryInfo")
+                            .setValue(ByteString.copyFrom(new byte[] {(byte) 0xff}))
+                            .build())
+                    .build())
+            .getTrailers();
+
+    assertThat(trailers).isNotNull();
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, trailers))
+        .isEqualTo(Duration.ofMillis(200));
+  }
+
+  @Test
+  public void retryDelayTreatsMalformedDirectAndRichDetailsAsAbsent() {
+    Metadata malformedDirect = new Metadata();
+    malformedDirect.put(
+        Metadata.Key.of(
+            ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()).name(),
+            Metadata.BINARY_BYTE_MARSHALLER),
+        new byte[] {(byte) 0xff});
+    Metadata malformedRich = new Metadata();
+    malformedRich.put(
+        Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER),
+        new byte[] {(byte) 0xff});
+
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, malformedDirect))
+        .isNull();
+    assertThat(KeyAwareChannel.retryDelay(Status.Code.RESOURCE_EXHAUSTED, malformedRich)).isNull();
+  }
+
+  @Test
+  public void routedFailurePassesRetryInfoToCooldownTracker() throws Exception {
+    Instant now = Instant.ofEpochSecond(100);
+    EndpointOverloadCooldownTracker tracker =
+        new EndpointOverloadCooldownTracker(
+            Duration.ofSeconds(10),
+            Duration.ofMinutes(1),
+            Duration.ofMinutes(10),
+            Clock.fixed(now, ZoneOffset.UTC),
+            ignored -> 0L);
+    TestHarness harness = createHarness(tracker);
+    seedCache(harness, createLeaderAndReplicaCacheUpdate());
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(
+            SpannerGrpc.getExecuteSqlMethod(), retryCallOptions(retryRequestId(6L)));
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("b")))
+            .build());
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    Metadata trailers = new Metadata();
+    trailers.put(
+        ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()),
+        RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(100)).build());
+
+    delegate.emitOnClose(Status.RESOURCE_EXHAUSTED, trailers);
+
+    EndpointOverloadCooldownTracker.CooldownState state = tracker.getState("server-a:1234");
+    assertThat(state.overloadFailures).isEqualTo(1);
+    assertThat(state.overloadUntil).isEqualTo(now.plusMillis(100));
+  }
+
+  @Test
+  public void successfulRoutedCloseAdvancesCooldownRepair() throws Exception {
+    EndpointOverloadCooldownTracker tracker = createDeterministicCooldownTracker();
+    TestHarness harness = createHarness(tracker);
+    seedCache(harness, createLeaderAndReplicaCacheUpdate());
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(
+            SpannerGrpc.getExecuteSqlMethod(), retryCallOptions(retryRequestId(7L)));
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("b")))
+            .build());
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    tracker.recordFailure("server-a:1234", Status.Code.RESOURCE_EXHAUSTED, Duration.ofMillis(100));
+
+    delegate.emitOnClose(Status.OK, new Metadata());
+
+    assertThat(tracker.getState("server-a:1234").successesTowardRepair).isEqualTo(1);
+  }
+
+  @Test
   public void resourceExhaustedOrUnavailableRoutedEndpointRecordsErrorPenalty() throws Exception {
     assertRoutedEndpointErrorPenaltyRecorded(Status.RESOURCE_EXHAUSTED, 101L);
     EndpointLatencyRegistry.clear();
@@ -580,7 +765,7 @@ public class KeyAwareChannelTest {
   }
 
   @Test
-  public void resourceExhaustedRoutedEndpointRetriesSameReplicaWhenSingleReplicaIsExcluded()
+  public void resourceExhaustedRoutedEndpointDoesNotProbeBeforeUnhintedCooldownExpires()
       throws Exception {
     TestHarness harness = createHarness();
     CallOptions retryCallOptions = retryCallOptions(3L);
@@ -610,14 +795,13 @@ public class KeyAwareChannelTest {
     secondCall.start(new CapturingListener<ResultSet>(), new Metadata());
     secondCall.sendMessage(request);
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
-    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
   }
 
   @Test
-  public void
-      resourceExhaustedRoutedEndpointRetriesLowestCostExcludedReplicaWhenAllReplicasExcluded()
-          throws Exception {
+  public void resourceExhaustedRoutedEndpointsDoNotProbeBeforeUnhintedCooldownExpires()
+      throws Exception {
     TestHarness harness = createHarness();
     seedCache(harness, createLeaderAndReplicaCacheUpdate());
     CallOptions retryCallOptions = retryCallOptions(100L);
@@ -660,8 +844,9 @@ public class KeyAwareChannelTest {
     thirdCall.start(new CapturingListener<ResultSet>(), new Metadata());
     thirdCall.sendMessage(request);
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
     assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
   }
 
   @Test
